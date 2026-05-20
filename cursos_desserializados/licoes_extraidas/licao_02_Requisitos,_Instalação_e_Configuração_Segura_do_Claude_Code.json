@@ -1,0 +1,656 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Requisitos, Instalação e Configuração Segura do Claude Code",
+  "lesson": {
+    "author": "aid|88eceb03-1628-5248-83ab-fa4e4b8676c6",
+    "courseId": "ydeKrX5_dXI-t61oXUZkJTzYc20wgA-Y",
+    "createdAt": "2026-05-19T20:39:39.039Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmpd3ji6h002i357m3b9srroe",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|88eceb03-1628-5248-83ab-fa4e4b8676c6",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|88eceb03-1628-5248-83ab-fa4e4b8676c6",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Requisitos, Instalação e Configuração Segura do Claude Code",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-05-19T20:40:46.065Z",
+    "items": [
+      {
+        "id": "f8qgt0bwf0jzjac6m79hjet1",
+        "type": "text",
+        "items": [
+          {
+            "id": "qh5xirchyk1qw3xhxdapja9j",
+            "heading": "Preparando o Terreno: Por que uma Instalação Segura e Correta é Fundamental?",
+            "paragraph": "<p>Antes de começar a usar o Claude Code no VS Code, é essencial preparar corretamente seu ambiente de desenvolvimento. Uma instalação segura e bem planejada não só garante produtividade e fluidez no uso da extensão, mas também protege seus dados sensíveis e evita dores de cabeça com erros ou bloqueios inesperados.</p><p>Ao seguir um processo estruturado de preparação, você minimiza riscos, identifica possíveis restrições do seu contexto (como políticas de TI ou limitações de rede) e assegura que o Claude Code funcione de forma estável e segura desde o primeiro uso.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "3e0a822f-9671-47f4-b957-b811eff03620"
+      },
+      {
+        "id": "whyet016m0q51fovd8fdtcrt",
+        "type": "text",
+        "items": [
+          {
+            "id": "gkiqh3xzmbi8x469bf42c1bn",
+            "paragraph": "<p>Nesta seção, você aprenderá a preparar seu ambiente para instalar e configurar o Claude Code com segurança. A seguir, estão os principais objetivos que você irá alcançar ao final deste módulo:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "4b86b5a6-aad3-4667-b454-e7354884d662"
+      },
+      {
+        "id": "lqm85b1h23eibk6bwc3wu17n",
+        "type": "list",
+        "items": [
+          {
+            "id": "u40vkgy98c8h1xgsxkesdvvp",
+            "number": "1",
+            "paragraph": "<p>Verificar pré-requisitos do ambiente</p>"
+          },
+          {
+            "id": "p894qha3szu9mvvfgixjjr6n",
+            "number": "2",
+            "paragraph": "<p>Identificar e contornar possíveis bloqueios de instalação</p>"
+          },
+          {
+            "id": "pxe87x5alsnu81gyqu1wfskd",
+            "number": "3",
+            "paragraph": "<p>Realizar a instalação e configuração segura do Claude Code</p>"
+          },
+          {
+            "id": "i9l5l13a7rdtoq4z46h4kucc",
+            "number": "4",
+            "paragraph": "<p>Validar se a instalação foi bem-sucedida</p>"
+          },
+          {
+            "id": "d8cqx6jlgrx40dyceyy6mq6o",
+            "number": "5",
+            "paragraph": "<p>Executar o primeiro teste prático com a extensão</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "347732e5-991c-425a-ad77-7809c7845880"
+      },
+      {
+        "id": "g7i6idu2tzfosdiksrd2nbm8",
+        "type": "text",
+        "items": [
+          {
+            "id": "r2rcc6av4ola3ji41ljclaxk",
+            "paragraph": "<p>Ao longo deste módulo, você irá adquirir habilidades essenciais para garantir uma instalação tranquila e segura. Confira as competências práticas que serão desenvolvidas:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7de34000-cd0a-445d-ba0b-030f6b2fbeee"
+      },
+      {
+        "id": "t9cg5y6o3xml4lx7qchlirxt",
+        "type": "list",
+        "items": [
+          {
+            "id": "xmh7y7bhjacujgwy44mf1brw",
+            "number": "1",
+            "paragraph": "<p>Checar a versão do VS Code instalada</p>"
+          },
+          {
+            "id": "dxblk5ioy4t0mgkkclkmpuva",
+            "number": "2",
+            "paragraph": "<p>Identificar restrições de instalação de extensões</p>"
+          },
+          {
+            "id": "kx2j0hsfb1hd6nptxh6hf1qh",
+            "number": "3",
+            "paragraph": "<p>Configurar e armazenar a chave de API de forma segura</p>"
+          },
+          {
+            "id": "vhb7zkf9t0sbhu1417il6hsg",
+            "number": "4",
+            "paragraph": "<p>Solucionar problemas comuns durante a instalação</p>"
+          },
+          {
+            "id": "hbqyxc58qkhuufpiddev0x73",
+            "number": "5",
+            "paragraph": "<p>Validar o funcionamento da extensão Claude Code</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "1a2b9aab-1925-470b-b0b2-4271151ad1e8"
+      },
+      {
+        "id": "kv3xau150a6fpddc6r49o5ex",
+        "type": "text",
+        "items": [
+          {
+            "id": "mzzp8clsjp182pwmg1omzu4x",
+            "heading": "Conceitos essenciais: Checklist de Pré-Requisitos por Contexto",
+            "paragraph": "Antes de instalar o Claude Code, é importante entender que cada ambiente de uso (pessoal, laboratório, corporativo) possui requisitos e desafios específicos. Avaliar corretamente o seu contexto evita perda de tempo e problemas durante a instalação."
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "9d54d8f2-9487-4dfb-8288-44c410359a2d"
+      },
+      {
+        "id": "cmpd3kyyn0038357mjjz06fik",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3kyyn0039357mk6xkhs6f",
+            "title": "Notebook Pessoal",
+            "description": "<p>Para notebooks pessoais, os pré-requisitos são simples: VS Code versão 1.95.0 ou superior, acesso à internet estável, permissão para instalar extensões, conta criada no claude.ai e terminal funcionando (cmd.exe, bash ou zsh). Verifique a versão do VS Code em Help → About (Windows/Linux) ou Code → About (Mac).</p><p></p><p>Certifique-se de que não há restrições de acesso à pasta de extensões e que você pode instalar novos plugins normalmente.</p>"
+          },
+          {
+            "id": "cmpd3kyyn003a357meuc726ff",
+            "title": "Máquina de Laboratório",
+            "description": "<p>Em ambientes de laboratório gerenciados por TI, podem existir restrições para instalação de extensões ou envio de dados. Antes de tentar instalar, consulte o administrador de TI com perguntas como: \"Posso instalar extensões do VS Code?\", \"Há restrição de firewall/proxy?\", \"Claude Code é permitido pela política de dados?\".</p><p></p><p>Se houver bloqueios, utilize alternativas como Claude Web ou CLI em uma máquina pessoal.</p>"
+          },
+          {
+            "id": "cmpd3kyyn003b357m5euffenh",
+            "title": "Máquina Corporativa",
+            "description": "<p>Máquinas corporativas frequentemente possuem bloqueadores como proxy autenticado, firewall restritivo ou políticas MDM que desativam extensões. Soluções incluem: verificar se api.anthropic.com está liberado, configurar proxy no VS Code (File → Preferences → Settings → \"proxy\") ou, se não for possível, usar Claude Web no navegador corporativo.</p><p></p><p>Se persistirem as restrições, consulte o suporte de TI ou utilize o Claude Code em ambiente pessoal autorizado.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "34e91b46-c35e-40ba-a5d1-b1651d10876b"
+      },
+      {
+        "id": "cmpd3kyyo003i357m43lohc4q",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3kyyo003c357mr6x1s8xc",
+            "type": "intro",
+            "title": "Introdução",
+            "isHidden": false,
+            "description": "<p>Antes de instalar, certifique-se de que seu ambiente atende aos pré-requisitos e que você possui permissão para instalar extensões.</p>"
+          },
+          {
+            "id": "cmpd3kyyo003d357mpa0o1exp",
+            "type": "summary",
+            "title": "Resumo",
+            "isHidden": false,
+            "description": "<p>Seguindo esses passos, você garante que a extensão foi instalada corretamente e está pronta para ser configurada.</p>"
+          },
+          {
+            "id": "cmpd3kyyo003e357mrbsil5qc",
+            "type": "step",
+            "title": "Abrir VS Code e acessar extensões",
+            "isHidden": false,
+            "description": "<p>Abra o VS Code e acesse a aba de extensões pressionando Ctrl + Shift + X (Windows/Linux) ou Cmd + Shift + X (Mac). A barra lateral de extensões será exibida.</p>"
+          },
+          {
+            "id": "cmpd3kyyo003f357mjg7p8q3l",
+            "type": "step",
+            "title": "Buscar e instalar Claude Code",
+            "isHidden": false,
+            "description": "<p>No campo de pesquisa, digite \"claude code\" e localize a extensão oficial publicada pela Anthropic. Clique em \"Install\" e aguarde a conclusão da instalação.</p>"
+          },
+          {
+            "id": "cmpd3kyyo003g357mfxrnjyyk",
+            "type": "step",
+            "title": "Recarregar o VS Code se necessário",
+            "isHidden": false,
+            "description": "<p>Após a instalação, o VS Code pode solicitar que você recarregue a janela. Clique em \"Reload\" na notificação ou use Ctrl + Shift + P → \"Developer: Reload Window\".</p>"
+          },
+          {
+            "id": "cmpd3kyyo003h357mcl3wpmu7",
+            "type": "step",
+            "title": "Verificar instalação da extensão",
+            "isHidden": false,
+            "description": "<p>Confirme se a extensão Claude Code aparece na aba de extensões e se o ícone Spark (⚡) está visível na barra lateral esquerda do VS Code.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "cbec6d7b-a1f1-4d28-a771-089224d3b730"
+      },
+      {
+        "id": "vrlyoqwzij4cq08dxjtyb497",
+        "type": "text",
+        "items": [
+          {
+            "id": "mxbpivcfjo1r7v49koearg8r",
+            "heading": "Instalação Específica: Windows, macOS e Linux",
+            "paragraph": "Cada sistema operacional possui particularidades no processo de instalação do Claude Code. Expanda cada aba para conferir as instruções detalhadas para o seu ambiente."
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f5324979-5697-4e61-862b-3794492cf752"
+      },
+      {
+        "id": "cmpd3kyyo003j357msg9ztv4k",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3kyyo003k357mmt4ayau7",
+            "title": "Windows",
+            "description": "<p>No Windows, utilize o atalho Ctrl + Shift + X para acessar a aba de extensões. As extensões são armazenadas em %USERPROFILE%\\.vscode\\extensions, e as credenciais ficam no Credential Manager do sistema operacional.</p><p></p><p>Após instalar, verifique a versão do VS Code em Help → About. O caminho do CLI geralmente é C:\\Users\\[user]\\AppData\\Local\\Programs\\Microsoft VS Code\\bin.</p>"
+          },
+          {
+            "id": "cmpd3kyyo003l357mybd67ehu",
+            "title": "macOS",
+            "description": "<p>No macOS, o atalho para extensões é Cmd + Shift + X. As extensões ficam em ~/.vscode/extensions e as chaves de API são armazenadas no Keychain. Usuários Apple Silicon podem precisar rodar o VS Code via Rosetta para compatibilidade total.</p><p></p><p>Para verificar a versão, acesse o menu Apple → About Visual Studio Code. O caminho do CLI é /Applications/Visual Studio Code.app/Contents/Resources/app/bin.</p>"
+          },
+          {
+            "id": "cmpd3kyyo003m357md2hi92qa",
+            "title": "Linux",
+            "description": "<p>No Linux (ex: Ubuntu 22.04 LTS), recomenda-se instalar o VS Code via APT ou Snap. Para checar a versão, use o comando code --version no terminal. As extensões ficam em ~/.vscode/extensions e as credenciais podem ser gerenciadas pelo Pass.</p><p></p><p>Se o VS Code não estiver instalado, utilize sudo apt install code ou sudo snap install code --classic. Sempre confira se a versão instalada é 1.95.0 ou superior.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "b092ffff-fd95-4566-a109-8f20e336773a"
+      },
+      {
+        "id": "l4omj5hmem487lrdecl21w6x",
+        "type": "text",
+        "items": [
+          {
+            "id": "gzh2kygwhyybile7l6za6i8g",
+            "heading": "Geração e Armazenamento Seguro da Chave de API Anthropic",
+            "paragraph": "<p>Gerenciar a chave de API com segurança é fundamental para proteger sua conta e evitar vazamentos de dados. Explore cada etapa para garantir boas práticas na configuração.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "635a54d6-56d7-4ce5-acd8-a5dd3350b74f"
+      },
+      {
+        "id": "cmpd3kyyo003n357mj9qb6dcg",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3kyyo003o357mfivswcc7",
+            "title": "Como gerar a chave no console Anthropic",
+            "description": "<p>Acesse https://console.anthropic.com, faça login e vá até o menu API Keys. Clique em \"Create API Key\", dê um nome descritivo e copie a chave exibida (ela só aparece uma vez!). Guarde em local seguro e nunca compartilhe.</p><p></p><p>Evite salvar a chave em arquivos versionados ou locais inseguros.</p>"
+          },
+          {
+            "id": "cmpd3kyyo003p357mmdey61ov",
+            "title": "Como inserir a chave no VS Code (método automático)",
+            "description": "<p>Abra o VS Code, clique no ícone Spark (Claude Code) ou use Ctrl + Shift + P → \"Claude Code: Sign In\". Cole a chave de API na caixa de diálogo e pressione Enter. A chave será armazenada de forma segura no Keychain (Mac), Credential Manager (Windows) ou Pass (Linux).</p><p></p><p>Esse método é o mais recomendado para a maioria dos usuários.</p>"
+          },
+          {
+            "id": "cmpd3kyyo003q357mbdpag33n",
+            "title": "Como usar variável de ambiente (avançado)",
+            "description": "<p>Para uso avançado ou scripts, defina a variável ANTHROPIC_API_KEY no seu shell (.bashrc, .zshrc, etc.). Após adicionar, recarregue o shell com source ~/.bashrc. Nunca exponha essa variável em arquivos públicos.</p><p></p><p>Esse método é útil para automação, mas exige atenção redobrada à segurança.</p>"
+          },
+          {
+            "id": "cmpd3kyyo003r357me2sc1v9k",
+            "title": "O que NUNCA fazer",
+            "description": "<p>Nunca versionar a chave de API em arquivos .env ou código-fonte. Não compartilhe a chave em repositórios ou com terceiros. Sempre adicione .env ao .gitignore para evitar exposição acidental.</p><p></p><p>Expor a chave pode comprometer sua conta e gerar riscos de segurança graves.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "6bdd31cb-a93b-4eb9-a11c-0df4036159ee"
+      },
+      {
+        "id": "cvyd2jfzzgnad55tchycnt76",
+        "type": "text",
+        "items": [
+          {
+            "id": "vzahw3c5hsqsk36ppwyhe2h0",
+            "paragraph": "<h2>Validando a Instalação: Checklist Final e Teste Prático</h2><p>Após instalar e configurar o Claude Code, é hora de validar se tudo está funcionando corretamente. Verifique se a extensão aparece na aba de extensões, se o ícone Spark (⚡) está visível na barra lateral e se o painel de chat abre normalmente. Faça um teste prático: clique no ícone, digite \"Hello Claude! What is 2+2?\" e aguarde a resposta. Se receber \"2+2 equals 4\", a instalação foi bem-sucedida!</p><p>Caso encontre erros de autenticação ou a extensão não apareça, revise os passos anteriores, confira a chave de API e, se necessário, consulte as dicas de solução de problemas. Validar a instalação garante que você está pronto para usar o Claude Code com segurança e eficiência.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "1e6ef554-5f23-4e02-bdf8-002c5a057823"
+      },
+      {
+        "id": "jzxwhneacrsqb0kgxka3vbg6",
+        "type": "text",
+        "items": [
+          {
+            "id": "c916zpqq32563guj0ibnbdzk",
+            "heading": "Dúvidas Frequentes e Soluções Rápidas",
+            "paragraph": "Confira abaixo as dúvidas mais comuns durante a instalação e configuração do Claude Code. Revise cada cartão para saber como agir rapidamente em caso de problemas."
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f33aca3e-1136-4dd6-9d60-5b73e37b3055"
+      },
+      {
+        "id": "vkk9k561jupjfz4b7soqyxfb",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "a4k3r04r1smhk6rx22yt3h6l",
+            "back": {
+              "type": "description",
+              "description": "Solução: Recarregue a janela do VS Code ou reinstale a extensão. Verifique também se a versão do VS Code é 1.95 ou superior."
+            },
+            "front": {
+              "type": "description",
+              "description": "Extensão não aparece após instalar"
+            }
+          },
+          {
+            "id": "chpemex8mtazvdrz4635ktic",
+            "back": {
+              "type": "description",
+              "description": "Solução: Gere uma nova chave no console Anthropic, re-insira no VS Code e limpe o cache se necessário."
+            },
+            "front": {
+              "type": "description",
+              "description": "Erro de autenticação (API key inválida)"
+            }
+          },
+          {
+            "id": "m73b14461xsh8omwhp80xesi",
+            "back": {
+              "type": "description",
+              "description": "Solução: Peça ao TI para liberar api.anthropic.com, configure proxy no VS Code ou utilize Claude Web como alternativa."
+            },
+            "front": {
+              "type": "description",
+              "description": "Firewall ou proxy bloqueando acesso"
+            }
+          },
+          {
+            "id": "o4cfj5d4kfdc5gr67cyngi1f",
+            "back": {
+              "type": "description",
+              "description": "Solução: Use git diff para revisar mudanças e git checkout para reverter arquivos afetados. Aprenda com o erro e siga boas práticas."
+            },
+            "front": {
+              "type": "description",
+              "description": "Aceitei sugestão ruim por engano"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "e5f215b8-e863-4753-8741-341ec8a34e5c"
+      },
+      {
+        "id": "oz957pmrunjfozqup4q92gxl",
+        "type": "text",
+        "items": [
+          {
+            "id": "e374q998339vtitumx260rvq",
+            "paragraph": "<h2>Exemplo prático guiado: Instalação e Primeiro Teste no VS Code</h2><p>Imagine que você acabou de instalar o Claude Code no seu VS Code. O próximo passo é acessar o console Anthropic, gerar uma chave de API exclusiva e armazená-la com segurança. Em seguida, abra o VS Code, clique no ícone Spark (⚡), insira a chave quando solicitado e confirme.</p><p>Para testar, digite no painel: \"Hello Claude! What is 2+2?\". Se tudo estiver correto, você verá a resposta \"2+2 equals 4\". Caso não funcione, revise cada etapa, confira permissões, conexão com a internet e a validade da chave de API. Esse processo garante que você está pronto para explorar todo o potencial do Claude Code!</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "da409d94-8e28-4709-a59a-2a0aad412ceb"
+      },
+      {
+        "id": "9ede3187-797f-4b49-9029-4ffd725274b4",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "91c60892-d9e2-45e1-8585-cd3e12fa0699",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual foi o maior desafio encontrado ao instalar e configurar a extensão Claude Code no VS Code?",
+            "answers": [
+              {
+                "id": "d35994ea-e982-4a77-b31e-85fc56496682",
+                "title": "Não consegui instalar a extensão",
+                "correct": false,
+                "feedback": "Se você não conseguiu instalar a extensão, pode ser devido a permissões restritas no seu computador. Verifique se você tem permissão para instalar extensões e, se necessário, consulte o suporte de TI."
+              },
+              {
+                "id": "07ea2d8f-6c4c-4527-9919-a2ec2f02958b",
+                "title": "Problemas com proxy/firewall",
+                "correct": false,
+                "feedback": "Problemas de proxy ou firewall podem impedir a comunicação do VS Code com a internet. Configure o proxy no VS Code ou peça ao TI para liberar o domínio necessário."
+              },
+              {
+                "id": "6bef5df9-2572-4d9b-98c1-b6bc29402368",
+                "title": "Dificuldade em gerar ou inserir a chave de API",
+                "correct": false,
+                "feedback": "Dificuldades com a chave de API geralmente estão relacionadas a seguir incorretamente o passo a passo. Revise as instruções deste módulo para garantir que está gerando e inserindo a chave corretamente."
+              },
+              {
+                "id": "692f31d2-3582-4a08-ada9-671a5398d12b",
+                "title": "Nenhum problema, tudo funcionou",
+                "correct": true,
+                "feedback": "Ótimo! Se tudo funcionou, você está pronto para avançar para o próximo módulo."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "fdcbaa6d-48fe-4515-be1b-f595231c66fa"
+      },
+      {
+        "id": "vaw1v4apyoqofqyp1x6h4w0q",
+        "type": "text",
+        "items": [
+          {
+            "id": "tfndu40lryysez9b54il8goe",
+            "paragraph": "<p>Antes de avançar para o próximo módulo, utilize este checklist para garantir que todas as etapas essenciais do processo foram concluídas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "efeddfe7-28c2-4091-a56c-6f3ae3b6e070"
+      },
+      {
+        "id": "jpsm1ihtmpl2mtobg9wzebl3",
+        "type": "list",
+        "items": [
+          {
+            "id": "smtke7ts6j315eu7q95w0myp",
+            "number": "1",
+            "paragraph": "<p>Verifiquei os pré-requisitos do ambiente</p>"
+          },
+          {
+            "id": "q7azlaa0vye8cgogk5ya7x89",
+            "number": "2",
+            "paragraph": "<p>Instalei e ativei a extensão Claude Code</p>"
+          },
+          {
+            "id": "smvf57sfch46g22u1bm1el3n",
+            "number": "3",
+            "paragraph": "<p>Gerei e armazenei a chave de API de forma segura</p>"
+          },
+          {
+            "id": "e0orvcuk3f1g2e20ov2jc8s1",
+            "number": "4",
+            "paragraph": "<p>Validei a instalação com um teste prático</p>"
+          },
+          {
+            "id": "a82hx477uof4l0u1f2orekl0",
+            "number": "5",
+            "paragraph": "<p>Solucionei eventuais problemas de instalação</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "42c07b6c-6059-4768-b71d-43e99f8aea28"
+      },
+      {
+        "id": "cmpd3kyyq003s357mzyactpzw",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmpd3kyyq003t357mqu7kb37e",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "71898660-0b53-4fed-aef5-e1510396d098"
+      },
+      {
+        "id": "c8tx9y2brwc999c9nwfdmmdv",
+        "type": "text",
+        "items": [
+          {
+            "id": "sqg57nu60fta7bgrbzimxn6a",
+            "paragraph": "<p>Agora que você já instalou e configurou o Claude Code com segurança, é hora de conhecer a fundo a interface da extensão e aprender como navegar, interagir e aproveitar ao máximo seus recursos. No próximo módulo, você vai descobrir como usar o painel de chat, referenciar arquivos do projeto e iniciar suas primeiras conversas produtivas com a IA. Continue para transformar seu fluxo de trabalho!</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "ea1a0f6d-c9ff-459e-ad81-05f9cb874154"
+      }
+    ]
+  }
+}
