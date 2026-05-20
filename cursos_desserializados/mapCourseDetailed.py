@@ -1,8 +1,8 @@
 import json
 from pathlib import Path
 
-arquivo = Path(__file__).parent / "cursoVSCODE.json"
-arquivo_saida = Path(__file__).parent / "mapa_detalhado_curso.txt"
+arquivo = Path(__file__).parent / "cursoVSCODEtest.json"
+arquivo_saida = Path(__file__).parent / "mapa_detalhado_curso_VSCODE_test.txt"
 
 with open(arquivo, "r", encoding="utf-8") as f:
     dados = json.load(f)

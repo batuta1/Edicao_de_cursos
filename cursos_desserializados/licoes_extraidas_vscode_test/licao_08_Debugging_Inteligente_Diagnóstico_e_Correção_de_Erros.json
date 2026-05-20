@@ -1,0 +1,846 @@
+{
+  "numero_da_licao": 8,
+  "position_original": 7,
+  "title": "Debugging Inteligente: Diagnóstico e Correção de Erros",
+  "lesson": {
+    "author": "aid|88eceb03-1628-5248-83ab-fa4e4b8676c6",
+    "courseId": "ydeKrX5_dXI-t61oXUZkJTzYc20wgA-Y",
+    "createdAt": "2026-05-19T20:39:39.039Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmpd3ji6h002o357mxkvcbh7c",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|88eceb03-1628-5248-83ab-fa4e4b8676c6",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 7,
+    "ready": true,
+    "selectedAuthorId": "aid|88eceb03-1628-5248-83ab-fa4e4b8676c6",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Debugging Inteligente: Diagnóstico e Correção de Erros",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-05-19T20:43:16.055Z",
+    "items": [
+      {
+        "id": "i2z1v4mnn8qu9fdvb3t9azqs",
+        "type": "text",
+        "items": [
+          {
+            "id": "lrb032uay32uuj8bo5d6tspd",
+            "heading": "Debugging inteligente: Torne-se um solucionador de problemas com Claude Code",
+            "paragraph": "<p>Debugging é uma das atividades mais frequentes — e críticas — na vida de qualquer desenvolvedor. Identificar e corrigir erros rapidamente é fundamental para manter a produtividade e garantir a qualidade do software. Com o Claude Code integrado ao VS Code, você pode acelerar o diagnóstico e a solução de bugs, aproveitando o poder da IA para ir além do debugging tradicional. No entanto, é essencial saber quando usar a IA, quando recorrer ao debugger clássico e como combinar o melhor dos dois mundos para resolver problemas de forma eficiente.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "11f3bbef-9076-47f6-9b22-808720f43094"
+      },
+      {
+        "id": "crfesdbwzf49q7esrdxnxyj2",
+        "type": "text",
+        "items": [
+          {
+            "id": "vkflssjdsxn1vbtyc56axm7u",
+            "paragraph": "<p>Nesta seção, você aprenderá a utilizar o Claude Code para diagnosticar e corrigir erros de maneira inteligente, além de compreender quando é mais adequado utilizar o debugger tradicional.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "02c54273-f21c-4f95-bea4-5ba1ed39e5df"
+      },
+      {
+        "id": "sfxj4tx1phnpqb8svs6brgj5",
+        "type": "list",
+        "items": [
+          {
+            "id": "czntdjvvn09zdzgousjjgdsr",
+            "number": "1",
+            "paragraph": "<p>Diagnosticar erros com Claude Code</p>"
+          },
+          {
+            "id": "ubau4r59fs2i4lcqnv5lzli5",
+            "number": "2",
+            "paragraph": "<p>Interpretar stack traces de forma eficiente</p>"
+          },
+          {
+            "id": "h42wvnv5mrgvqkyjtd3oefch",
+            "number": "3",
+            "paragraph": "<p>Diferenciar exceções, erros lógicos e problemas de performance</p>"
+          },
+          {
+            "id": "w9ahh1axefpysf3w4bl6j4nw",
+            "number": "4",
+            "paragraph": "<p>Escolher a melhor ferramenta para cada tipo de bug</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "b6db24d7-6155-43d3-88f3-bd5916b2f816"
+      },
+      {
+        "id": "nejcy4c834odbjmsdz422t8a",
+        "type": "text",
+        "items": [
+          {
+            "id": "fcwpu27riomtoxh6jy8eswh8",
+            "paragraph": "<p>Ao final deste módulo, você será capaz de aplicar técnicas práticas de debugging com IA e métodos tradicionais. Confira as habilidades que irá desenvolver:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "ebdb8a5a-05e2-465d-bf97-cfaceea7327c"
+      },
+      {
+        "id": "q2vo4558ga2p8ez4xf6egbt0",
+        "type": "list",
+        "items": [
+          {
+            "id": "hhk7z2qmj94e1cosvlnhkx6m",
+            "number": "1",
+            "paragraph": "<p>Coletar e analisar stack traces</p>"
+          },
+          {
+            "id": "knpjrfvdxx9v0vwxsgq7pghg",
+            "number": "2",
+            "paragraph": "<p>Construir prompts eficazes para diagnóstico de erros</p>"
+          },
+          {
+            "id": "azvx13sazpmrtdk9tp9vnwbm",
+            "number": "3",
+            "paragraph": "<p>Revisar e aplicar sugestões da IA no código</p>"
+          },
+          {
+            "id": "karzvpucoxdpins3aa6wpcsi",
+            "number": "4",
+            "paragraph": "<p>Decidir entre usar IA ou debugger tradicional</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "beffcbe6-aac1-4a11-a500-114194e0e823"
+      },
+      {
+        "id": "srtzef9ugnhoby8ovepvic5q",
+        "type": "text",
+        "items": [
+          {
+            "id": "pz44vvpzer8bxlm8y9lb7596",
+            "heading": "Conceitos essenciais: Tipos de erros e estratégias de debugging",
+            "paragraph": "Revise cada flashcard para memorizar os principais tipos de erro e abordagens de debugging que você encontrará no dia a dia do desenvolvimento."
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "5f30bb76-0b77-427b-aabd-454a0621e3d8"
+      },
+      {
+        "id": "jhi2tgtj8wdhmwoe5jrpjzra",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "ljv0f4yb8q9lfm1npc71de72",
+            "back": {
+              "type": "description",
+              "description": "Erros que interrompem a execução do programa, geralmente acompanhados de stack trace. Exemplo: ZeroDivisionError em Python."
+            },
+            "front": {
+              "type": "description",
+              "description": "Exceções (Exceptions)"
+            }
+          },
+          {
+            "id": "ef1s2qmbz8mc794kje85mtxo",
+            "back": {
+              "type": "description",
+              "description": "O código executa sem travar, mas o resultado está incorreto. Exemplo: filtro que retorna menos itens do que deveria."
+            },
+            "front": {
+              "type": "description",
+              "description": "Erros lógicos"
+            }
+          },
+          {
+            "id": "yirn4eapmp8ijnktx6ox473w",
+            "back": {
+              "type": "description",
+              "description": "O código funciona, mas é lento ou consome muitos recursos. Exemplo: função com complexidade O(n²) em listas grandes."
+            },
+            "front": {
+              "type": "description",
+              "description": "Problemas de performance"
+            }
+          },
+          {
+            "id": "jhhav646g9ao2xoj6y08zpqw",
+            "back": {
+              "type": "description",
+              "description": "Relatório gerado por exceções mostrando a sequência de chamadas de função até o erro. Essencial para diagnóstico rápido."
+            },
+            "front": {
+              "type": "description",
+              "description": "Stack trace"
+            }
+          },
+          {
+            "id": "tqsqste177byj2e5f55l48et",
+            "back": {
+              "type": "description",
+              "description": "Ferramenta do VS Code para executar código passo a passo, inspecionar variáveis e encontrar bugs detalhadamente."
+            },
+            "front": {
+              "type": "description",
+              "description": "Debugger tradicional"
+            }
+          },
+          {
+            "id": "vc5mfpt13uc58rceln1v2ylx",
+            "back": {
+              "type": "description",
+              "description": "Uso do Claude Code para analisar erros, sugerir correções e explicar causas, acelerando o processo de troubleshooting."
+            },
+            "front": {
+              "type": "description",
+              "description": "Debugging com IA"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "3d34c195-bb20-4c49-83c0-78c26518b7eb"
+      },
+      {
+        "id": "gnchnksptkwbp1tb3c6biy0o",
+        "type": "text",
+        "items": [
+          {
+            "id": "bzlva9tzw4pe52vnmt91nz59",
+            "heading": "Quando usar Claude Code vs. debugger tradicional?",
+            "paragraph": "<p>Explore cada item para entender os pontos fortes e limitações de cada abordagem, e saiba quando escolher IA ou debugging clássico.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "40ac335a-c6df-4023-b1d8-f1ad18670a2a"
+      },
+      {
+        "id": "cmpd3o6pd008a357mcgw8t030",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3o6pd008b357mbo92rg9e",
+            "title": "Diagnóstico de erros com stack trace",
+            "description": "<p>Claude Code é excelente para analisar stack traces e sugerir correções rápidas, especialmente quando o erro é claro e reproduzível. Basta fornecer o stack trace e o contexto do código para receber uma explicação detalhada e sugestões de ajuste.</p><p></p><p>O debugger tradicional também pode ser usado para investigar o estado do programa no momento do erro, mas a IA acelera o entendimento inicial.</p>"
+          },
+          {
+            "id": "cmpd3o6pd008c357m97ot4qjo",
+            "title": "Correção de bugs lógicos",
+            "description": "<p>Para erros onde o código executa mas o resultado está errado, Claude Code pode ajudar a revisar a lógica e sugerir ajustes. Basta descrever o comportamento esperado versus o real e pedir uma análise.</p><p></p><p>O debugger tradicional é útil para acompanhar valores de variáveis passo a passo e identificar exatamente onde a lógica falha.</p>"
+          },
+          {
+            "id": "cmpd3o6pd008d357mcwbga44h",
+            "title": "Análise de performance",
+            "description": "<p>Claude Code pode sugerir otimizações quando você relata lentidão e mostra o trecho de código. A IA pode propor algoritmos mais eficientes ou identificar gargalos comuns.</p><p></p><p>Ferramentas de profiling e o debugger tradicional são recomendados para análise detalhada de uso de recursos e identificação de pontos críticos em grandes sistemas.</p>"
+          },
+          {
+            "id": "cmpd3o6pd008e357moqmw6ath",
+            "title": "Casos onde o debugger tradicional é melhor",
+            "description": "<p>Quando é necessário inspecionar variáveis em tempo real, depurar interações complexas ou lidar com bugs intermitentes, o debugger tradicional do VS Code é insubstituível.</p><p></p><p>Ele permite controle total sobre a execução, uso de breakpoints e análise minuciosa do fluxo do programa.</p>"
+          },
+          {
+            "id": "cmpd3o6pd008f357mabcyp6cx",
+            "title": "Limitações da IA para debugging",
+            "description": "<p>Claude Code depende da clareza do contexto fornecido. Se o erro não for bem descrito ou envolver múltiplos arquivos sem contexto suficiente, a IA pode sugerir soluções superficiais.</p><p></p><p>Combine sempre a análise da IA com revisão manual e, se necessário, use o debugger tradicional para casos complexos.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "517ceaca-d351-4ec4-a5ec-081028a98d3e"
+      },
+      {
+        "id": "cmpd3o6pe008n357m90ymmwtc",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3o6pe008g357mhe98gypv",
+            "type": "intro",
+            "title": "Diagnosticando erros com Claude Code",
+            "isHidden": false,
+            "description": "<p>Siga este fluxo para usar o Claude Code de forma eficiente na identificação e correção de bugs.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008h357mghf3nuam",
+            "type": "summary",
+            "title": "Resumo do processo",
+            "isHidden": false,
+            "description": "<p>Seguindo esse fluxo, você aproveita o melhor da IA para acelerar o diagnóstico, sem abrir mão do controle e da revisão manual.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008i357mf6zawnt4",
+            "type": "step",
+            "title": "Reproduza o erro e colete informações",
+            "isHidden": false,
+            "description": "<p>Execute o código até que o erro aconteça novamente. Copie o stack trace completo ou registre o resultado inesperado, além dos dados de entrada usados.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008j357muvhzmven",
+            "type": "step",
+            "title": "Abra o arquivo relevante no VS Code",
+            "isHidden": false,
+            "description": "<p>Certifique-se de que o arquivo/função onde ocorreu o erro está aberto no editor. Isso permite que o Claude Code acesse o contexto correto.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008k357m3lalz9fa",
+            "type": "step",
+            "title": "Construa um prompt contextualizado",
+            "isHidden": false,
+            "description": "<p>Monte um prompt claro, incluindo o stack trace, a função afetada, dados de entrada e descreva o resultado esperado versus o real. Quanto mais detalhes, melhor a resposta da IA.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008l357mulgkfvd4",
+            "type": "step",
+            "title": "Envie para o Claude Code e revise a explicação",
+            "isHidden": false,
+            "description": "<p>Envie o prompt pelo painel do Claude Code. Analise a explicação recebida, verificando se a IA identificou corretamente a causa do erro.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008m357m5b9okg92",
+            "type": "step",
+            "title": "Aplique ou revise a sugestão de correção",
+            "isHidden": false,
+            "description": "<p>Implemente a sugestão da IA no código, ou ajuste conforme necessário. Teste novamente para garantir que o problema foi resolvido.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "672f133b-4e76-4602-a240-fcb385b41738"
+      },
+      {
+        "id": "gu9ouybr68dadjyhaun8e0ab",
+        "type": "text",
+        "items": [
+          {
+            "id": "g5m28efkmyxrbbkvpjlebrgn",
+            "heading": "Exemplos práticos: Debugging com Claude Code em cenários reais",
+            "paragraph": "<p>Explore cada cenário para ver como Claude Code pode ajudar a resolver diferentes tipos de bugs no seu projeto.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "9d6cdd26-8bc0-40f4-a7eb-c21bf4163d86"
+      },
+      {
+        "id": "cmpd3o6pe008o357mmtask5vm",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3o6pe008p357m6obqkz33",
+            "title": "Exceção com stack trace",
+            "description": "<p>Imagine que você recebe um erro ZeroDivisionError em um arquivo Python. O stack trace aponta para a linha 12 da função calculate em math_ops.py. Ao abrir o arquivo e enviar um prompt detalhado com o stack trace e o contexto da função, o Claude Code identifica que data - threshold pode ser zero e sugere adicionar uma verificação para evitar a divisão por zero.</p><p></p><p>Você implementa a sugestão, testa novamente e confirma que o erro foi resolvido. Esse fluxo mostra como a IA pode acelerar a identificação e correção de exceções clássicas.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008q357m5a8sk8dn",
+            "title": "Erro lógico sem exceção",
+            "description": "<p>Seu código roda sem travar, mas retorna resultados errados. Por exemplo, uma função filter_users deveria retornar usuários com idade >= 18, mas retorna apenas quem tem mais de 18. Ao descrever o comportamento esperado e real no prompt, Claude Code identifica que o operador deveria ser >= e sugere a correção.</p><p></p><p>Após ajustar o código conforme a sugestão, o resultado passa a ser o esperado. Esse cenário mostra como a IA pode ajudar a encontrar e corrigir bugs lógicos sutis.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008r357mdjolyxcr",
+            "title": "Problema de performance",
+            "description": "<p>Você percebe que uma função para encontrar duplicatas está muito lenta em listas grandes. Ao enviar o código e relatar o problema de performance, Claude Code sugere uma versão otimizada usando set, reduzindo a complexidade de O(n²) para O(n).</p><p></p><p>Após aplicar a refatoração, o tempo de execução cai drasticamente, mostrando como a IA pode propor melhorias de performance além de corrigir erros funcionais.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "e3ddd430-2e06-40fb-a58f-2715f9dc801e"
+      },
+      {
+        "id": "cmpd3o6pe008s357mj7wifxru",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmpd3o6pe008t357mwrqig2qh",
+            "paragraph": "Quanto mais contexto você fornecer no prompt — stack trace, função, dados de entrada e resultado esperado — mais precisa será a resposta do Claude Code. Contexto detalhado é o segredo para diagnósticos rápidos e soluções eficazes!"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "2cef05dc-36b7-4a5c-b4ca-a7bf45912cbc"
+      },
+      {
+        "id": "w1688b8ag067yy4g3id2455r",
+        "type": "text",
+        "items": [
+          {
+            "id": "r8ywn994br74cul7jks75jaz",
+            "paragraph": "<p>Vamos acompanhar um exemplo completo de debugging inteligente. Suponha que você recebe o seguinte stack trace ao rodar seu código:</p><p>ZeroDivisionError: division by zero File \"math_ops.py\", line 12, in calculate return data / (data - threshold)</p><p>Abra o arquivo math_ops.py no VS Code, selecione a função calculate e construa um prompt assim: \"Tenho ZeroDivisionError em math_ops.py linha 12. Stack trace: ... A função calculate(data) deveria funcionar mesmo se data == threshold. Qual é o problema e como corrigir?\"</p><p>O Claude Code irá analisar o contexto, identificar que data - threshold pode ser zero e sugerir adicionar uma verificação para evitar a divisão por zero. Implemente a sugestão, teste novamente e valide se o erro foi resolvido. Sempre revise a explicação da IA e adapte a solução ao seu contexto real.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "42091131-92b5-47bb-9c42-193c76dbeac8"
+      },
+      {
+        "id": "f1b124b3-8fd5-4ad9-b44d-bdc53c173885",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "a64e4fcf-82f8-46f1-a2d1-2373fb422eaf",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você encontra um erro de performance em uma função que processa listas grandes. O que usar primeiro?",
+            "answers": [
+              {
+                "id": "f1a4941d-f95c-401f-8e29-e4624ad0f9e9",
+                "title": "Claude Code",
+                "correct": true,
+                "feedback": "Claude Code pode sugerir otimizações rápidas para problemas de performance, tornando-o a melhor escolha inicial."
+              },
+              {
+                "id": "095da005-a2fe-42de-928a-e71dba7e0611",
+                "title": "Debugger tradicional",
+                "correct": false,
+                "feedback": "Embora útil para análise detalhada, o debugger tradicional pode ser mais lento do que começar com sugestões da IA."
+              },
+              {
+                "id": "6c5c8fdd-748a-4b1a-a036-c0fe346e967a",
+                "title": "Ambos em sequência",
+                "correct": false,
+                "feedback": "Usar ambos pode ser válido, mas começar pela IA geralmente é mais produtivo."
+              },
+              {
+                "id": "603f6af5-0811-41fe-97e5-c4497e563949",
+                "title": "Nenhum dos dois",
+                "correct": false,
+                "feedback": "Ignorar ferramentas de debugging não é recomendado."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "bb5fab09-a37a-4960-b02b-7bc1d5f06daf"
+      },
+      {
+        "id": "cmpd3o6pe0092357mcpxbxx4r",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3o6pe008u357mcljbksf7",
+            "type": "intro",
+            "title": "Checklist de troubleshooting: Diagnóstico eficiente de problemas",
+            "isHidden": false,
+            "description": "<p>Use este checklist sempre que enfrentar um bug para garantir um diagnóstico completo e eficiente.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008v357m7s3w4e51",
+            "type": "summary",
+            "title": "Resumo do checklist",
+            "isHidden": false,
+            "description": "<p>Seguindo este checklist, você sistematiza o troubleshooting e aumenta suas chances de corrigir o bug rapidamente.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008w357ma8gwaka8",
+            "type": "step",
+            "title": "Coletar stack trace e dados",
+            "isHidden": false,
+            "description": "<p>Registre o stack trace completo e os dados de entrada usados para reproduzir o erro.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008x357mlfyub4zj",
+            "type": "step",
+            "title": "Abrir arquivo no VS Code",
+            "isHidden": false,
+            "description": "<p>Certifique-se de que o arquivo/função relevante está aberto para fornecer contexto ao Claude Code.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008y357mkexqjd8d",
+            "type": "step",
+            "title": "Descrever resultado esperado vs. real",
+            "isHidden": false,
+            "description": "<p>Explique claramente o que deveria acontecer e o que realmente ocorreu.</p>"
+          },
+          {
+            "id": "cmpd3o6pe008z357me0sopety",
+            "type": "step",
+            "title": "Identificar tipo de erro",
+            "isHidden": false,
+            "description": "<p>Classifique se é exceção, erro lógico ou problema de performance.</p>"
+          },
+          {
+            "id": "cmpd3o6pe0090357m4qpfydhp",
+            "type": "step",
+            "title": "Formular prompt detalhado",
+            "isHidden": false,
+            "description": "<p>Monte um prompt claro e completo para o Claude Code, incluindo todas as informações anteriores.</p>"
+          },
+          {
+            "id": "cmpd3o6pe0091357mxfqj82s2",
+            "type": "step",
+            "title": "Validar sugestão e testar",
+            "isHidden": false,
+            "description": "<p>Implemente a sugestão da IA, teste novamente e confirme se o problema foi resolvido.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "fab9df2a-fc0a-446d-ba57-0d023ba9729c"
+      },
+      {
+        "id": "oxohr04oxpex8n8uk4kwach8",
+        "type": "text",
+        "items": [
+          {
+            "id": "u7lztzqrddbyj6y5rxuqhuom",
+            "heading": "Dicas rápidas: Evite armadilhas comuns no debugging com IA",
+            "paragraph": "Revise cada flashcard para internalizar boas práticas e evitar erros frequentes ao usar Claude Code para debugging."
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "59b45e14-0cc3-4739-96b3-d2a68587bcbc"
+      },
+      {
+        "id": "xd9od92hajnvssygpdva66y8",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "rnj14el5sm7xdy8ivelbgcps",
+            "back": {
+              "type": "description",
+              "description": "Antes de compartilhar stack traces, remova informações como emails, senhas, tokens ou dados de clientes."
+            },
+            "front": {
+              "type": "description",
+              "description": "Não envie dados sensíveis"
+            }
+          },
+          {
+            "id": "u1ojn1zkv81qj5581nu452uz",
+            "back": {
+              "type": "description",
+              "description": "Substitua dados pessoais por variáveis genéricas (ex: email=email) para proteger a privacidade."
+            },
+            "front": {
+              "type": "description",
+              "description": "Sanitizar informações"
+            }
+          },
+          {
+            "id": "cgamktclpxwjgcipg5y8gapp",
+            "back": {
+              "type": "description",
+              "description": "Se a sugestão da IA não resolver, peça uma alternativa ou revise manualmente com o debugger tradicional."
+            },
+            "front": {
+              "type": "description",
+              "description": "Peça segunda opinião"
+            }
+          },
+          {
+            "id": "g08oxnlrai357g9f0wavqwh6",
+            "back": {
+              "type": "description",
+              "description": "Após corrigir um bug, registre o que foi feito e como resolveu para referência futura e melhoria contínua."
+            },
+            "front": {
+              "type": "description",
+              "description": "Documente aprendizados"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "8e860717-a308-49ee-ac0e-3ee179a37bb1"
+      },
+      {
+        "id": "d68a5bf4-d7a8-4c62-857c-41bdc657fa95",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "5c6e336c-22d6-4106-9213-82cce2ec3c30",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual é o objetivo principal da atividade prática de debugging apresentada na lição?",
+            "answers": [
+              {
+                "id": "287a70c1-c352-4b63-ba9f-97090b231cd8",
+                "title": "Corrigir um erro real utilizando diferentes abordagens de debugging.",
+                "correct": true,
+                "feedback": "O objetivo é pegar um erro real, coletar o stack trace, usar o Claude Code e o debugger tradicional para corrigi-lo e comparar os resultados."
+              },
+              {
+                "id": "be8778ba-51ac-4998-82e3-404d22d0ce35",
+                "title": "Aprender a instalar o VS Code.",
+                "correct": false,
+                "feedback": "Instalar o VS Code não é o foco da atividade, mas sim utilizá-lo para debugging."
+              },
+              {
+                "id": "650f1f68-0d5e-4cb5-ba2c-498f82c229b5",
+                "title": "Criar um novo projeto do zero.",
+                "correct": false,
+                "feedback": "A atividade pede para usar um erro de um projeto existente, não criar um novo projeto."
+              },
+              {
+                "id": "bb0d6b9d-e2c1-422c-b34f-a6d7be8dad4f",
+                "title": "Escrever testes automatizados para o código.",
+                "correct": false,
+                "feedback": "A atividade não menciona escrever testes automatizados, mas sim corrigir um erro existente."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "4c1eec6a-9fa8-4137-b3ef-50028b24803d"
+      },
+      {
+        "id": "e464acr87daolp590uebz9w0",
+        "type": "text",
+        "items": [
+          {
+            "id": "m892hu657nmmbd0krn2rsefx",
+            "heading": "Resumo prático: Troubleshooting e melhores práticas de debugging",
+            "paragraph": "<p>Expanda cada item para revisar estratégias avançadas e dicas para manter seu processo de debugging eficiente e seguro.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "30e9bd30-f563-4547-ab05-28db18e1f5c3"
+      },
+      {
+        "id": "cmpd3o6pe0093357mk4j10rcn",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3o6pe0094357m11n5p70h",
+            "title": "Lidando com erros recorrentes",
+            "description": "<p>Se um bug aparece repetidamente, investigue causas raízes e considere adicionar testes automatizados para prevenir regressões.</p><p></p><p>Documente padrões de erro e compartilhe soluções com o time para evitar retrabalho.</p>"
+          },
+          {
+            "id": "cmpd3o6pe0095357mw89k4ati",
+            "title": "Quando escalar para o time",
+            "description": "<p>Se não conseguir resolver um bug após várias tentativas, peça ajuda a colegas ou ao time. Compartilhar contexto e tentativas já feitas acelera a solução.</p><p></p><p>Colaboração é fundamental para resolver problemas complexos e aprender com diferentes perspectivas.</p>"
+          },
+          {
+            "id": "cmpd3o6pe0096357my9wy4dt8",
+            "title": "Integração de debugging com versionamento",
+            "description": "<p>Use o Git para registrar mudanças feitas durante o debugging. Se uma sugestão da IA não funcionar, reverta facilmente para o estado anterior.</p><p></p><p>Versionamento garante segurança e rastreabilidade durante o troubleshooting.</p>"
+          },
+          {
+            "id": "cmpd3o6pe0097357mgtaam0el",
+            "title": "Registrando lições aprendidas",
+            "description": "<p>Após corrigir um bug, anote o que causou o problema, como foi resolvido e como evitar no futuro. Isso ajuda a construir uma base de conhecimento para o time.</p><p></p><p>Documentação de aprendizados reduz a reincidência de erros e acelera o onboarding de novos membros.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "b98ad932-b407-4530-952b-7fd8c974ca48"
+      },
+      {
+        "id": "srxc9gkynjlt1deqls4mk896",
+        "type": "text",
+        "items": [
+          {
+            "id": "cc1jjxh2yvka2ttnebz5i0js",
+            "paragraph": "<p>Utilize este checklist para garantir que você consolidou os principais aprendizados deste módulo antes de avançar.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "6e492436-cc28-45b5-b941-67d992b72d32"
+      },
+      {
+        "id": "xgltuywffnfd88tvuai2yzw8",
+        "type": "list",
+        "items": [
+          {
+            "id": "umymcx00b00l0piwl2p0xsbd",
+            "number": "1",
+            "paragraph": "<p>Usei o Claude Code para diagnosticar e corrigir um erro real.</p>"
+          },
+          {
+            "id": "blh7nux8gxm25vllphsy1be8",
+            "number": "2",
+            "paragraph": "<p>Diferenciei entre exceções, bugs lógicos e problemas de performance.</p>"
+          },
+          {
+            "id": "ptw00okvcb1dlkow6vnodqde",
+            "number": "3",
+            "paragraph": "<p>Escolhi a melhor ferramenta para cada cenário.</p>"
+          },
+          {
+            "id": "koyq4zzlz4g6jagm2oj1p6j3",
+            "number": "4",
+            "paragraph": "<p>Apliquei o checklist de troubleshooting no meu projeto.</p>"
+          },
+          {
+            "id": "cm479hmxcg9crnuywmvbilao",
+            "number": "5",
+            "paragraph": "<p>Documentei a solução e aprendi com o problema.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "c0c77c75-4427-437c-8133-5b39311d83d1"
+      }
+    ]
+  }
+}

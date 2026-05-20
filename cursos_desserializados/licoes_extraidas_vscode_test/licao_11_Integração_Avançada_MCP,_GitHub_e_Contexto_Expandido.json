@@ -1,0 +1,786 @@
+{
+  "numero_da_licao": 11,
+  "position_original": 10,
+  "title": "Integração Avançada: MCP, GitHub e Contexto Expandido",
+  "lesson": {
+    "author": "aid|88eceb03-1628-5248-83ab-fa4e4b8676c6",
+    "courseId": "ydeKrX5_dXI-t61oXUZkJTzYc20wgA-Y",
+    "createdAt": "2026-05-19T20:39:39.039Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmpd3ji6h002r357m7o5d75l5",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|88eceb03-1628-5248-83ab-fa4e4b8676c6",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 10,
+    "ready": true,
+    "selectedAuthorId": "aid|88eceb03-1628-5248-83ab-fa4e4b8676c6",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Integração Avançada: MCP, GitHub e Contexto Expandido",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-05-19T20:53:50.242Z",
+    "items": [
+      {
+        "id": "t6m7a9a77ph629pjjmr8bjhe",
+        "type": "text",
+        "items": [
+          {
+            "id": "dmirdgeefj25yf50s7sofv9c",
+            "heading": "Amplie os limites do seu desenvolvimento: Integrações avançadas com Claude Code",
+            "paragraph": "<p>Imagine poder conectar o Claude Code não só ao seu código, mas também ao histórico do Git, issues do GitHub, bancos de dados e até sistemas internos — tudo sem sair do VS Code. Essa é a proposta das integrações avançadas, que transformam o editor em um verdadeiro cockpit de engenharia, onde contexto, automação e colaboração atingem outro patamar.</p><p>Neste módulo, você vai descobrir como ativar e configurar integrações poderosas, automatizar tarefas e ampliar o contexto disponível para a IA, tornando seu workflow mais inteligente, produtivo e alinhado às melhores práticas de equipes modernas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "344b7c9b-b207-4a65-b184-4d21920af2b1"
+      },
+      {
+        "id": "ngn5fj7f91wc6dq8dxaue7ai",
+        "type": "text",
+        "items": [
+          {
+            "id": "zz8y7empqi6vt9j326b37auh",
+            "paragraph": "<p>Explore os principais objetivos deste módulo para saber exatamente o que você será capaz de fazer ao final. Cada item representa uma habilidade essencial para dominar integrações avançadas no Claude Code.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "12b035e3-fb20-4333-970b-d7bf9ce053c7"
+      },
+      {
+        "id": "i6del803z8dozfp7lhz6o4uc",
+        "type": "list",
+        "items": [
+          {
+            "id": "tea9h47a1xzgosqzqwymwyht",
+            "number": "1",
+            "paragraph": "<p>Entender o conceito e funcionamento do MCP</p>"
+          },
+          {
+            "id": "a2phoytyrsy4ljychiighnph",
+            "number": "2",
+            "paragraph": "<p>Ativar e configurar integrações com Git, GitHub e SQL</p>"
+          },
+          {
+            "id": "x4ky3jwln0yn8jzlhavlx03f",
+            "number": "3",
+            "paragraph": "<p>Criar e registrar MCPs customizados para necessidades específicas</p>"
+          },
+          {
+            "id": "ierz3q09wl87n5vmwcj8g45j",
+            "number": "4",
+            "paragraph": "<p>Aplicar integrações em fluxos reais de engenharia e automação</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "11f6d54f-509d-4e49-8883-de4144ecedea"
+      },
+      {
+        "id": "kxupg182asiu1y2ad894qmxh",
+        "type": "text",
+        "items": [
+          {
+            "id": "rtunq7s8gduvswyhm1emh0nz",
+            "heading": "Conceitos essenciais: O que é MCP e por que usar?",
+            "paragraph": "Revise cada flashcard para fixar os conceitos fundamentais sobre MCP e entender como ele expande o poder do Claude Code."
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "b54cf7c8-b7ef-4e7f-a644-a465578c8c37"
+      },
+      {
+        "id": "wpz4g7h97m40nalfgmopw99q",
+        "type": "list",
+        "items": [
+          {
+            "id": "ocgv06ewf5vbjxs29vva0ddi",
+            "number": "1",
+            "paragraph": "<p><strong>O que é MCP?</strong> MCP (Model Context Protocol) é um protocolo que permite ao Claude Code acessar dados e ferramentas externas, como Git, GitHub, bancos de dados e APIs customizadas.</p>"
+          },
+          {
+            "id": "n4sb4ifvxbyjmbglc6e0p4pd",
+            "number": "2",
+            "paragraph": "<p><strong>Por que integrar MCP?</strong> Integrar MCP amplia o contexto disponível para a IA, permitindo respostas mais precisas e automação de tarefas complexas diretamente no VS Code.</p>"
+          },
+          {
+            "id": "ogtjxot0hvfdx9c0idamepnl",
+            "number": "3",
+            "paragraph": "<p><strong>Exemplos de integrações MCP:</strong> Git (histórico de commits), GitHub (issues e PRs), SQL (consultas a banco), MCP customizado (build server ou API interna).</p>"
+          },
+          {
+            "id": "k150k55cfeygjhtd84pcpfv4",
+            "number": "4",
+            "paragraph": "<p><strong>Benefícios do MCP:</strong> Mais contexto, automação de tarefas, integração com ferramentas do time e decisões baseadas em dados reais do projeto.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 3,
+          "quotesInline": false,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "abd317cc-46ed-49bc-8c88-f38d1b49957b"
+      },
+      {
+        "id": "g9ponm1u8o0pgp3wzi0dgw4e",
+        "type": "text",
+        "items": [
+          {
+            "id": "j80hf19ud73juxt2u8khs0xx",
+            "heading": "Conceitos em ação: Como funciona a integração MCP no Claude Code?",
+            "paragraph": "<p>Explore cada seção para entender o fluxo de dados, tipos de servidores MCP suportados, requisitos de configuração e limitações práticas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "b0cdbdb0-3a53-45fd-a825-2f25f2cf03ba"
+      },
+      {
+        "id": "cmpd3psh500b9357m6dkl22h9",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3psh500ba357mbly47uat",
+            "title": "Fluxo de dados entre Claude e MCP",
+            "description": "<p>Quando você ativa um MCP, o Claude Code pode enviar comandos e receber dados de servidores externos, como Git ou bancos de dados, diretamente do VS Code. Isso permite que a IA acesse histórico, issues, métricas e outros dados relevantes sem sair do ambiente de desenvolvimento.</p><p></p><p>O fluxo é seguro e controlado: apenas as informações necessárias para cada comando são transmitidas, respeitando as configurações de privacidade e compliance do projeto.</p>"
+          },
+          {
+            "id": "cmpd3psh500bb357mrivopee2",
+            "title": "Tipos de servidores MCP suportados",
+            "description": "<p>O Claude Code suporta integrações MCP com servidores de Git (repositórios locais), GitHub (API), bancos de dados SQL (SQLite, PostgreSQL) e servidores customizados criados pelo próprio time (por exemplo, para build, métricas ou sistemas internos).</p><p></p><p>Esses servidores MCP podem ser ativados individualmente conforme a necessidade do projeto, tornando o ambiente altamente flexível.</p>"
+          },
+          {
+            "id": "cmpd3psh500bc357mucwa9xgz",
+            "title": "Requisitos de configuração e segurança",
+            "description": "<p>Para ativar um MCP, é necessário editar o arquivo de configuração do Claude Code e instalar as dependências do servidor MCP correspondente (ex: npm para Git/GitHub, pip para customizados em Python).</p><p></p><p>É fundamental garantir que tokens, chaves e permissões estejam corretos e nunca expor segredos sensíveis nos arquivos de configuração.</p>"
+          },
+          {
+            "id": "cmpd3psh500bd357mvwtdwfjm",
+            "title": "Limitações práticas das integrações",
+            "description": "<p>Nem todo dado do projeto pode ser acessado automaticamente: arquivos fechados, históricos antigos ou sistemas externos podem exigir configuração extra ou permissões especiais.</p><p></p><p>Além disso, o desempenho pode variar conforme a complexidade do servidor MCP e a quantidade de dados consultados.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "24dfc646-7cca-49b3-9663-561d7e352a15"
+      },
+      {
+        "id": "cmpd3psh500be357mi8c17gsb",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmpd3psh500bf357med3x23pz",
+            "paragraph": "Integração é poder: quanto mais contexto você oferece ao Claude Code, mais inteligentes e precisas serão as respostas e automações!"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "842096e1-ae13-4d23-9b44-6c1798416aed"
+      },
+      {
+        "id": "b70pel1dpgqbfnsg0v22ovq1",
+        "type": "text",
+        "items": [
+          {
+            "id": "deo5wgcd2cv01nzckjm5jkue",
+            "heading": "Casos de uso práticos: O MCP em ação para Engenharia",
+            "paragraph": "<p>Expanda cada aba para ver exemplos reais de como as integrações MCP podem transformar seu workflow de engenharia.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "034a5432-5283-4706-8f61-9713d7d158e9"
+      },
+      {
+        "id": "cmpd3psh500bg357m3go3icao",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3psh500bh357m32ij0nt4",
+            "title": "Git MCP — Análise de histórico",
+            "description": "<p>Imagine que você precisa entender rapidamente quem alterou um arquivo crítico do projeto. Com o Git MCP ativado, basta perguntar ao Claude Code: \"Analise histórico de @legacy_module.py usando Git MCP. Quem foi o último a editar? Quais foram os últimos commits?\"</p><p></p><p>O Claude consulta o repositório e retorna dados como autor, data, mensagens de commit e até comentários, permitindo decisões rápidas sobre refatoração ou depreciação de código.</p>"
+          },
+          {
+            "id": "cmpd3psh500bi357mr68ncw38",
+            "title": "GitHub MCP — Gerenciamento de issues",
+            "description": "<p>Com o GitHub MCP, você pode listar issues abertas, criar novas, ou até vincular uma issue a um pull request sem sair do VS Code. Por exemplo: \"Liste issues abertas com label 'bug'\" ou \"Crie uma issue para refatoração do módulo X\".</p><p></p><p>O Claude interage com a API do GitHub, automatizando tarefas de gestão e mantendo o time sincronizado, tudo em um único fluxo de trabalho.</p>"
+          },
+          {
+            "id": "cmpd3psh500bj357mkry3j2ea",
+            "title": "SQL MCP — Consultas ao banco",
+            "description": "<p>Ao integrar um MCP de banco de dados (como SQLite ou PostgreSQL), é possível pedir ao Claude Code para contar usuários, analisar pedidos ou identificar oportunidades de negócio: \"Quantos usuários foram criados no último mês? Quem não fez pedidos ainda?\"</p><p></p><p>O resultado é uma análise instantânea, sem precisar abrir um client SQL separado, acelerando decisões e insights para o time.</p>"
+          },
+          {
+            "id": "cmpd3psh500bk357mfkorbuag",
+            "title": "MCP Customizado — Build server e além",
+            "description": "<p>Se seu projeto tem sistemas internos (como um build server), você pode criar um MCP customizado em Python, registrar comandos (status, logs, trigger build) e integrar tudo ao Claude Code. Exemplo: \"Qual é o status do último build?\"</p><p></p><p>Assim, a IA consulta o sistema em tempo real, trazendo logs, status e permitindo automação de tarefas críticas do ciclo de desenvolvimento.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "82fbbf9f-2a4e-45ab-b678-083534750123"
+      },
+      {
+        "id": "cmpd3psh500bs357mev4uyzy7",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3psh500bl357mv12j4dbw",
+            "type": "intro",
+            "title": "Como ativar e configurar MCP no Claude Code",
+            "isHidden": false,
+            "description": "<p>Siga este processo linear para habilitar integrações MCP no seu ambiente VS Code, do início ao fim.</p>"
+          },
+          {
+            "id": "cmpd3psh500bm357mszmyybwa",
+            "type": "summary",
+            "title": "Resumo do processo",
+            "isHidden": false,
+            "description": "<p>Seguindo esses passos, você habilita integrações avançadas que ampliam o contexto e automatizam tarefas, tornando o Claude Code um verdadeiro hub de engenharia dentro do VS Code.</p>"
+          },
+          {
+            "id": "cmpd3psh500bn357m9vbpeanc",
+            "type": "step",
+            "title": "Localize o arquivo de configuração",
+            "isHidden": false,
+            "description": "<p>Identifique onde está o arquivo de configuração do Claude Code no seu sistema operacional: Windows (%APPDATA%\\Anthropic\\claude_desktop_config.json), Mac (~/Library/Application Support/Claude/claude_desktop_config.json) ou Linux (~/.config/Claude/claude_desktop_config.json).</p>"
+          },
+          {
+            "id": "cmpd3psh500bo357mrhwegxbz",
+            "type": "step",
+            "title": "Edite e registre servidores MCP",
+            "isHidden": false,
+            "description": "<p>Abra o arquivo de configuração e adicione as entradas dos servidores MCP desejados (Git, GitHub, SQL ou custom). Defina o comando, argumentos e variáveis de ambiente necessárias para cada integração.</p>"
+          },
+          {
+            "id": "cmpd3psh500bp357m8v9wenr5",
+            "type": "step",
+            "title": "Instale dependências MCP",
+            "isHidden": false,
+            "description": "<p>No terminal, instale os pacotes necessários para cada servidor MCP. Por exemplo, use \"npm install @anthropic-ai/mcp-server-git @anthropic-ai/mcp-server-github\" para Git e GitHub, ou \"pip install\" para servidores customizados em Python.</p>"
+          },
+          {
+            "id": "cmpd3psh500bq357muwqwghte",
+            "type": "step",
+            "title": "Reinicie o VS Code e teste",
+            "isHidden": false,
+            "description": "<p>Após configurar e instalar tudo, reinicie o VS Code para que as integrações MCP sejam reconhecidas. Verifique se as opções aparecem no painel do Claude Code.</p>"
+          },
+          {
+            "id": "cmpd3psh500br357m8e2syux5",
+            "type": "step",
+            "title": "Valide prompts e respostas",
+            "isHidden": false,
+            "description": "<p>Envie prompts de teste (ex: \"Liste os últimos commits\" ou \"Consulte usuários sem pedidos\") e confira se as respostas retornam corretamente, ajustando a configuração se necessário.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "b76ca48b-d4c9-492e-9e8c-b27eb2704159"
+      },
+      {
+        "id": "x2tsuqqbl3rqwk0jjsgw7diu",
+        "type": "text",
+        "items": [
+          {
+            "id": "t2xq3ckizmybax69inythkfd",
+            "heading": "Configurando MCP customizado para seu projeto",
+            "paragraph": "<p>Explore cada seção para aprender como criar, registrar e manter um MCP customizado totalmente adaptado ao seu workflow.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7c84a0e6-6f6a-4ca9-8be3-800b6fe6284d"
+      },
+      {
+        "id": "cmpd3psh500bt357mds2w2qpj",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3psh500bu357mvnqj4um4",
+            "title": "Criando um servidor MCP customizado",
+            "description": "<p>Desenvolva um servidor MCP em Python (ou outra linguagem), expondo funções como status de build, logs ou comandos específicos do seu sistema. Implemente endpoints que retornem dados em JSON para fácil integração.</p><p></p><p>O exemplo clássico é um build server que responde a comandos como \"get_build_status\" ou \"trigger_build\".</p>"
+          },
+          {
+            "id": "cmpd3psh500bv357m825499xu",
+            "title": "Registrando comandos e schemas",
+            "description": "<p>No script do MCP, registre cada comando disponível, sua descrição e o schema de entrada/saída (quando necessário). Isso permite que o Claude Code descubra e utilize as funções corretamente.</p><p></p><p>Inclua validações e descrições claras para facilitar o uso e manutenção futura.</p>"
+          },
+          {
+            "id": "cmpd3psh500bw357mc2466a64",
+            "title": "Integrando com Claude Code",
+            "description": "<p>Adicione o servidor MCP customizado ao arquivo de configuração do Claude Code, especificando o comando de execução (ex: \"python mcp_build_server.py\").</p><p></p><p>Após reiniciar o VS Code, teste comandos diretamente no painel do Claude para garantir que a integração está funcionando.</p>"
+          },
+          {
+            "id": "cmpd3psh500bx357mpyr9jzy2",
+            "title": "Dicas para debugging e manutenção",
+            "description": "<p>Monitore logs do servidor MCP para identificar erros ou lentidão. Atualize schemas e comandos conforme o sistema evolui e documente todas as integrações para facilitar o onboarding de novos membros do time.</p><p></p><p>Considere automatizar testes para garantir a confiabilidade do MCP customizado ao longo do tempo.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "102894fd-cc97-4f60-85e4-c51d3d3cb832"
+      },
+      {
+        "id": "kng6n52mkxvbu77jyhj4xd7v",
+        "type": "text",
+        "items": [
+          {
+            "id": "prqjr4zjjqthkx7fwijp6m4c",
+            "heading": "Benefícios práticos das integrações avançadas para Engenharia",
+            "paragraph": "<p>Revise cada flashcard para memorizar as principais vantagens de usar MCP e integrações avançadas no seu workflow.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "be272de3-445c-4c06-9bd2-3a6f9f87c45c"
+      },
+      {
+        "id": "t8nwghxegs92dhffwxn9a25p",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "i59amnz5tgfaryh7y27jbxl2",
+            "back": {
+              "type": "description",
+              "description": "<p>Permite identificar rapidamente autores, datas e padrões de alteração, facilitando refatoração e auditoria.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Análise de histórico de código</p>"
+            }
+          },
+          {
+            "id": "h2hdg262p0nvcctyg8wb3m9k",
+            "back": {
+              "type": "description",
+              "description": "<p>Automatiza criação de issues, builds, consultas e outras tarefas repetitivas, liberando tempo para inovação.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Automação de tarefas de time</p>"
+            }
+          },
+          {
+            "id": "r2gn6vo0eewexopipet81a95",
+            "back": {
+              "type": "description",
+              "description": "<p>Conecta o Claude Code a pipelines de integração contínua, monitorando builds e status sem sair do editor.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Integração com CI/CD</p>"
+            }
+          },
+          {
+            "id": "wug7za5os0j0g3u1tyk8bc6t",
+            "back": {
+              "type": "description",
+              "description": "<p>Permite análises e relatórios de dados em tempo real, sem precisar alternar entre múltiplas ferramentas.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Consultas a bancos no editor</p>"
+            }
+          },
+          {
+            "id": "ph9glkx40ikgm18tvib2gfs9",
+            "back": {
+              "type": "description",
+              "description": "<p>Garante que todas as ações e mudanças fiquem documentadas, apoiando decisões técnicas e de negócio.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Rastreabilidade e tomada de decisão</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "c38aa076-8259-48d0-941e-9825f21cdc17"
+      },
+      {
+        "id": "ezkkkd4lsixbwya24vfw8mao",
+        "type": "text",
+        "items": [
+          {
+            "id": "rlsfd7gs96tyrbn689tml0e2",
+            "paragraph": "<h2>Exemplo prático guiado: Da configuração ao uso do MCP no seu projeto</h2><p>Suponha que você deseja analisar o histórico de um arquivo e gerenciar issues sem sair do VS Code. Primeiro, localize e edite o arquivo de configuração do Claude Code, adicionando os servidores MCP de Git e GitHub com os comandos e tokens necessários. Instale as dependências via npm e reinicie o editor.</p><p>No painel do Claude Code, envie prompts como \"Analise histórico de @legacy_module.py usando Git MCP\" ou \"Crie uma issue para refatoração do módulo X\". O Claude retorna informações detalhadas do Git e interage com o GitHub, criando issues e vinculando-as a PRs automaticamente. Se algo não funcionar, revise o log do servidor MCP e ajuste permissões ou variáveis de ambiente.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "85d41099-502f-4835-a5d7-7c23a9f76087"
+      },
+      {
+        "id": "ca9ef4d9-7c0f-4c34-aaae-4ffc3ac2b5a5",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "835ea06f-3415-4da5-939b-47e15de3b876",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual integração MCP é mais indicada para analisar histórico de commits e quem alterou determinado arquivo?",
+            "answers": [
+              {
+                "id": "8f5a84f6-f4ee-4ba3-863c-afa92b068c11",
+                "title": "SQL MCP",
+                "correct": false,
+                "feedback": "O SQL MCP é usado para consultas a bancos de dados, não para histórico de código."
+              },
+              {
+                "id": "afd732e9-4b9b-4e31-892b-f0c3f41e0c4a",
+                "title": "GitHub MCP",
+                "correct": false,
+                "feedback": "O GitHub MCP gerencia issues e PRs, mas não acessa o histórico detalhado de arquivos."
+              },
+              {
+                "id": "b00d252b-fa5f-4a81-ab5b-074403d95d65",
+                "title": "Git MCP",
+                "correct": true,
+                "feedback": "Correto! O Git MCP acessa o histórico de commits e autoria de arquivos."
+              },
+              {
+                "id": "d63cb20e-4f0e-4571-b697-73599bed9f27",
+                "title": "MCP Customizado",
+                "correct": false,
+                "feedback": "MCP customizado é para integrações específicas, não para histórico de código."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "0f2fceb6-e219-4ed7-84d1-c87d59e5281c"
+      },
+      {
+        "id": "8b382ab0-da46-4a64-8d7c-8811e5abf056",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "d08bd0f6-db7d-47f2-8d45-85481bd41886",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual prompt você pode usar para testar se a integração MCP está funcionando?",
+            "answers": [
+              {
+                "id": "223b229e-da9c-49f4-84fa-fdb1a3c00c80",
+                "title": "\"Liste os últimos commits deste arquivo\"",
+                "correct": false,
+                "feedback": "Este prompt é adequado para a integração Git MCP, mas não cobre outras integrações possíveis."
+              },
+              {
+                "id": "cabb53e4-4fb3-45c0-8343-1fe463b2b4cc",
+                "title": "\"Calcule a média de vendas do mês\"",
+                "correct": false,
+                "feedback": "Este prompt é apropriado para a integração SQL MCP, mas depende do contexto e não cobre todas as integrações."
+              },
+              {
+                "id": "b7aadf35-bbf6-456b-9bb7-20a380e4bfa2",
+                "title": "\"Crie uma issue para refatoração\"",
+                "correct": false,
+                "feedback": "Este prompt é correto para a integração GitHub MCP, mas não contempla todas as opções de integração."
+              },
+              {
+                "id": "a1160da3-2926-48da-8055-8fb1cbc9d598",
+                "title": "Todas as anteriores, dependendo da integração",
+                "correct": true,
+                "feedback": "Correto! O prompt apropriado depende da integração MCP configurada. Todas as opções apresentadas são válidas conforme o MCP ativado."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7db18a7e-f984-4c6e-9a80-479c98f64bde"
+      },
+      {
+        "id": "sf2qlywh6junks8cuzmvjkff",
+        "type": "text",
+        "items": [
+          {
+            "id": "toss7z2fxte5nd5jde4wyj1h",
+            "heading": "Dúvidas frequentes e dicas para integração avançada com Claude Code",
+            "paragraph": "Consulte cada seção para solucionar problemas comuns e otimizar suas integrações MCP."
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "05ecd81c-af21-4898-8491-d671e4db7307"
+      },
+      {
+        "id": "cmpd3psh600by357mow050pji",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmpd3psh600bz357m755lf23s",
+            "title": "Erros comuns de configuração",
+            "description": "<p>Verifique se os caminhos dos comandos e variáveis de ambiente estão corretos no arquivo de configuração. Erros de digitação ou permissões insuficientes são causas frequentes de falha na integração.</p><p></p><p>Reinicie sempre o VS Code após alterações para garantir que as integrações sejam recarregadas.</p>"
+          },
+          {
+            "id": "cmpd3psh600c0357mqypjx7zj",
+            "title": "Troubleshooting de MCP servers",
+            "description": "<p>Monitore os logs dos servidores MCP para identificar falhas de comunicação, erros de autenticação ou problemas de dependências. Use mensagens de erro detalhadas para ajustar configurações rapidamente.</p><p></p><p>Se necessário, reinstale dependências ou atualize versões dos pacotes MCP.</p>"
+          },
+          {
+            "id": "cmpd3psh600c1357m1d0hgb70",
+            "title": "Limitações de segurança das integrações",
+            "description": "<p>Evite expor tokens, senhas ou dados sensíveis nos arquivos de configuração. Prefira variáveis de ambiente e siga as políticas de segurança do seu time ou empresa.</p><p></p><p>Considere limitar o escopo de acesso dos MCPs apenas ao necessário para cada projeto.</p>"
+          },
+          {
+            "id": "cmpd3psh600c2357mtlabyu10",
+            "title": "Atualização de integrações e colaboração",
+            "description": "<p>Mantenha os servidores MCP e dependências sempre atualizados para garantir compatibilidade e segurança. Documente integrações e compartilhe boas práticas com o time para facilitar o onboarding e a colaboração.</p><p></p><p>Automatize testes de integração para detectar problemas rapidamente em ambientes de equipe grande.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "e593ee89-082b-4b8d-84b0-2b3662dd6295"
+      },
+      {
+        "id": "pq6nvmkiqyfj1nao34o9o165",
+        "type": "text",
+        "items": [
+          {
+            "id": "jmpnjc71uiwfu3301ubnhp40",
+            "paragraph": "<p>Antes de avançar para o projeto final, utilize este checklist para garantir que você completou todos os passos essenciais deste módulo.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "67983191-2cc2-48da-850c-ffe8479c427e"
+      },
+      {
+        "id": "apm6dteovlt9wfwyazz4rs7s",
+        "type": "list",
+        "items": [
+          {
+            "id": "g0m44dd7r56sj5vks33w0hxb",
+            "number": "1",
+            "paragraph": "<p>Entendi o conceito e benefícios do MCP</p>"
+          },
+          {
+            "id": "qb515jb37z7oqbqsj3zua5x4",
+            "number": "2",
+            "paragraph": "<p>Ativei e configurei pelo menos uma integração (Git, GitHub, SQL ou custom)</p>"
+          },
+          {
+            "id": "s0gog2m6nh9ub8v54yidagiz",
+            "number": "3",
+            "paragraph": "<p>Usei prompts avançados para obter contexto expandido</p>"
+          },
+          {
+            "id": "d05mrpz93c19bcoj1sst6hly",
+            "number": "4",
+            "paragraph": "<p>Testei e validei integrações no meu workflow</p>"
+          },
+          {
+            "id": "ndimi64c3i2qurvrdbm597px",
+            "number": "5",
+            "paragraph": "<p>Documentei e compartilhei aprendizados com meu time</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "91cbd9b6-00b5-46ca-8997-0f42feb9c429"
+      },
+      {
+        "id": "cmpd3psh700c3357mxsg2hrwo",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmpd3psh700c4357mrzbbseky",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "3d04eea5-efca-4c79-aaee-5fab0a6e82f8"
+      },
+      {
+        "id": "tels1kzsgzzje43nkugs0eax",
+        "type": "text",
+        "items": [
+          {
+            "id": "oj09l0aahkbvwc7galzmspe8",
+            "paragraph": "<p>No próximo módulo, você vai colocar em prática todas as habilidades desenvolvidas até aqui. Prepare-se para um projeto final completo: refatorando, testando, documentando e automatizando com Claude Code e suas integrações avançadas. É hora de consolidar seu aprendizado e mostrar como a IA pode transformar o desenvolvimento real em equipe!</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "ab328a13-f61f-464d-bb8b-d3b928da1e09"
+      }
+    ]
+  }
+}

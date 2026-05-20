@@ -2,7 +2,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-arquivo = Path(__file__).parent / "cursoVSCODE.json"
+arquivo = Path(__file__).parent / "cursoVSCODEtest.json"
 
 with open(arquivo, "r", encoding="utf-8") as f:
     dados = json.load(f)
