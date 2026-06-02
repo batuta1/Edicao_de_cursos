@@ -14,7 +14,7 @@ pasta_licoes = pasta_base / "licoes_extraidas_vscode_test"
 arquivo_curso_editado = pasta_base / "cursoVSCODEtest_editado.json"
 arquivo_base64_editado = pasta_base / "cursoVSCODEtest_editado_base64.txt"
 
-frase_teste = "OI EU EDITEI"
+frase_teste = "2027"
 
 
 # ============================================================
