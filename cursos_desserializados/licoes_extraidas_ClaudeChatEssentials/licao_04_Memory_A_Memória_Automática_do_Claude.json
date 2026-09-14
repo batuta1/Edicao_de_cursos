@@ -1,0 +1,586 @@
+{
+  "numero_da_licao": 4,
+  "position_original": 3,
+  "title": "Memory: A Memória Automática do Claude",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "Z8gE8VzC54li0t7wSL6MTTW3PdZXGKuC",
+    "createdAt": "2026-08-10T18:12:33.973Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmsnju33j002l358180nzxyqj",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 3,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Memory: A Memória Automática do Claude",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-08-10T18:14:12.139Z",
+    "items": [
+      {
+        "id": "uw7as2m7bf4ojzodzr32e5cd",
+        "type": "text",
+        "items": [
+          {
+            "id": "sr8zvpjdbpb3pmow532txceb",
+            "heading": "Memória automática: Como o Claude aprende com você ao longo do tempo",
+            "paragraph": "<p>A Memory se diferencia das Custom Instructions (Módulo 2) por sua natureza automática: em vez de um perfil que você redige diretamente, ela resulta da observação, pelo próprio Claude, das conversas realizadas ao longo do tempo — da qual são inferidos padrões como cargo, público atendido e preferências recorrentes. Essa automação tem uma contrapartida: a atualização não é instantânea, e usar a Memory bem exige entender tanto essa defasagem quanto os cuidados de privacidade envolvidos.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "acdb97cc-8e1c-4fe9-a612-864120578848"
+      },
+      {
+        "id": "m4nf8q8ghsok9szawu3m5nnz",
+        "type": "text",
+        "items": [
+          {
+            "id": "ccd3h6fa3fs03l81hin7y47c",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "b8c1c441-66a0-401b-8247-1a3d80bd856d"
+      },
+      {
+        "id": "s1gxqpdykxgrr9kzs6tcitkr",
+        "type": "list",
+        "items": [
+          {
+            "id": "i4hwy8yucs1j8l0oqvwii1lj",
+            "number": "1",
+            "paragraph": "<p>Diferenciar Memory e Custom Instructions</p>"
+          },
+          {
+            "id": "ge19pked6x2lfsrqj0ofvkps",
+            "number": "2",
+            "paragraph": "<p>Ativar e auditar a Memory</p>"
+          },
+          {
+            "id": "sld8692o8wqhwbj525vnxpwi",
+            "number": "3",
+            "paragraph": "<p>Selecionar informações apropriadas</p>"
+          },
+          {
+            "id": "rk30ca87v1o293a2cbdhznhm",
+            "number": "4",
+            "paragraph": "<p>Revisar e corrigir conteúdos da Memory</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "56879be2-bd48-482f-b442-aa2845a35411"
+      },
+      {
+        "id": "p0kji188edh3o3yqwf8zqnxj",
+        "type": "text",
+        "items": [
+          {
+            "id": "m12b3r7oerftoh6c1l4torcg",
+            "heading": "O que torna a Memory diferente das Custom Instructions?",
+            "paragraph": "<p>Descubra como a Memory funciona de forma automática, diferenciando-se das Custom Instructions, e como ela pode otimizar seu fluxo de trabalho.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "99331707-c530-4294-a72c-a73d7c92f85d"
+      },
+      {
+        "id": "cmsnjw6tz004z35815x41d1qu",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnjw6tz005035818syifhjz",
+            "title": "Natureza automática",
+            "description": "<p>A Memory é inferida pelo Claude a partir das conversas, sem necessidade de preenchimento manual pelo usuário. O sistema identifica padrões recorrentes, como cargo, público atendido e preferências, e armazena essas informações para uso futuro.</p><p></p><p>Essa abordagem reduz a necessidade de repetir dados estáveis em cada nova interação, tornando o fluxo de trabalho mais fluido.</p>"
+          },
+          {
+            "id": "cmsnjw6tz00513581evxsuxez",
+            "title": "Atualização periódica",
+            "description": "<p>A atualização das informações na Memory não ocorre em tempo real. Existe um intervalo de 24 a 48 horas entre o momento em que um dado aparece em uma conversa e sua integração à Memory.</p><p></p><p>Isso significa que mudanças recentes podem demorar até dois dias para serem refletidas, exigindo acompanhamento periódico.</p>"
+          },
+          {
+            "id": "cmsnjw6tz00523581vo8pzmhj",
+            "title": "Influência direta",
+            "description": "<p>Apesar de ser automática, a Memory pode ser influenciada por instruções explícitas do usuário, como \"lembre que eu trabalho com...\".</p><p></p><p>Esse recurso é recomendado para registrar informações genéricas e estáveis, evitando dados sensíveis ou de terceiros.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "9c85f191-5b20-4854-8cdf-ba1568ad1e7b"
+      },
+      {
+        "id": "bv26e9m14kfcq76mc53s2az2",
+        "type": "text",
+        "items": [
+          {
+            "id": "pxp3di03gvec1axiimwlgql5",
+            "heading": "Conceitos Essenciais sobre a Memory",
+            "paragraph": "<p>Revise os principais conceitos sobre o funcionamento da Memory, suas diferenças em relação às Custom Instructions, frequência de atualização e como o usuário pode influenciá-la.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "e480885d-54ae-43bd-8bec-d01e211b6423"
+      },
+      {
+        "id": "xd04o5zaghlfh8zjk50ks6ly",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "jkq8xlqekkvi3xgjswo9zums",
+            "back": {
+              "type": "description",
+              "description": "<p>Memory é automática e baseada em inferências, enquanto Custom Instructions são permanentes e redigidas diretamente pelo usuário.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Diferença para Custom Instructions</p>"
+            }
+          },
+          {
+            "id": "ufkbyv685x8xhgcpp28sx6f9",
+            "back": {
+              "type": "description",
+              "description": "<p>A Memory é atualizada a cada 24 a 48 horas, não em tempo real.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Frequência de atualização</p>"
+            }
+          },
+          {
+            "id": "xvdvdm1c1hfbz39mu7q6mrwz",
+            "back": {
+              "type": "description",
+              "description": "<p>O usuário pode influenciar a Memory fornecendo instruções explícitas como “lembre que eu…”.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Influência do usuário</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "bcabc7a5-1795-4cf8-afdf-78c43d5c3fd2"
+      },
+      {
+        "id": "rgmbh544ujvmcxongzqfk85l",
+        "type": "text",
+        "items": [
+          {
+            "id": "dht7kulifctjul77rfuasljq",
+            "heading": "Ativando, auditando e revisando a Memory",
+            "paragraph": "<p>Para aproveitar ao máximo a Memory, é importante saber como ativá-la, alimentar com informações seguras e auditar periodicamente o que foi registrado. Esse processo garante que apenas dados relevantes e corretos sejam mantidos, além de permitir a correção de eventuais equívocos ou desatualizações. A revisão regular é essencial para manter a precisão e a utilidade da Memory no seu fluxo de trabalho.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "5546c37b-c8d6-438c-859f-ca63fd4ca21e"
+      },
+      {
+        "id": "cmsnjw6tz005a3581kg47leho",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnjw6tz0053358173zrjg1s",
+            "type": "intro",
+            "title": "Introdução ao Processo de Ativação, Contribuição e Auditoria da Memory",
+            "isHidden": false,
+            "description": "<p>Neste processo, você irá ativar a Memory, registrar informações seguras e auditar o que foi armazenado sobre você.</p>"
+          },
+          {
+            "id": "cmsnjw6tz00543581yuez7437",
+            "type": "summary",
+            "title": "Resumo do Processo",
+            "isHidden": false,
+            "description": "<p>Ao concluir o processo, você terá ativado a Memory, registrado informações seguras e auditado o conteúdo armazenado, garantindo maior controle e segurança sobre seus dados.</p>"
+          },
+          {
+            "id": "cmsnjw6tz00553581d184vqzc",
+            "type": "step",
+            "title": "Ativar a Memory",
+            "isHidden": false,
+            "description": "<p>Acesse o caminho: Settings &gt; Privacy (ou Data &amp; Privacy) &gt; Memory e, caso não esteja ativa, habilite-a.</p>"
+          },
+          {
+            "id": "cmsnjw6tz00563581groqgfg4",
+            "type": "step",
+            "title": "Registrar Informações Seguras",
+            "isHidden": false,
+            "description": "<p>Em uma nova conversa, registre uma instrução explícita do tipo \"lembre que eu…\", contendo de duas a três informações genéricas e seguras sobre seu trabalho (cargo, público atendido ou preferências), sem mencionar terceiros identificáveis.</p>"
+          },
+          {
+            "id": "cmsnjw6tz005735815059qe4r",
+            "type": "step",
+            "title": "Solicitar Síntese ao Claude",
+            "isHidden": false,
+            "description": "<p>Solicite ao Claude, na mesma ou em nova conversa, uma síntese do que foi registrado a seu respeito, utilizando uma pergunta do tipo \"o que você sabe sobre mim até agora?\".</p>"
+          },
+          {
+            "id": "cmsnjw6tz00583581giiuxrow",
+            "type": "step",
+            "title": "Comparar Resposta",
+            "isHidden": false,
+            "description": "<p>Registre a resposta obtida e compare com as informações fornecidas no passo anterior.</p>"
+          },
+          {
+            "id": "cmsnjw6tz00593581vhs10ah9",
+            "type": "step",
+            "title": "Aguardar Atualização",
+            "isHidden": false,
+            "description": "<p>Caso alguma informação relevante ainda não conste da síntese, anote que a atualização integral pode ocorrer somente após o intervalo de vinte e quatro a quarenta e oito horas mencionado anteriormente.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "71e48e93-d786-4705-9b43-ff51be0001fe"
+      },
+      {
+        "id": "omy2d9l5k2zt2jrv5z0af9ih",
+        "type": "text",
+        "items": [
+          {
+            "id": "hs1f207don8nzxhum09lrx8e",
+            "heading": "Boas Práticas para Alimentar a Memory",
+            "paragraph": "<p>Confira exemplos de boas práticas e situações a evitar ao registrar informações na Memory. Seguir essas orientações ajuda a proteger sua privacidade e a de terceiros, além de garantir o uso adequado da ferramenta.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "bb94646b-5590-49e7-9267-aa46d404c142"
+      },
+      {
+        "id": "cmsnjw6tz005b35816dgfmyu0",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnjw6tz005c35814twxkpk4",
+            "title": "Informações apropriadas",
+            "description": "<p>Registre apenas dados genéricos e estáveis, como seu cargo, o público que atende, objetivos profissionais ou preferências de estilo. Essas informações ajudam o Claude a personalizar as respostas sem comprometer a privacidade.</p><p></p><p>Evite detalhamentos excessivos ou informações que mudam com frequência, priorizando sempre aquilo que é relevante para o seu trabalho de forma ampla.</p>"
+          },
+          {
+            "id": "cmsnjw6tz005d3581r2rl98d6",
+            "title": "Evite dados sensíveis",
+            "description": "<p>Não registre nomes completos de terceiros, informações de saúde, dados financeiros ou credenciais de acesso. Esses dados são considerados sensíveis e não devem ser armazenados na Memory.</p><p></p><p>O cuidado com dados sensíveis protege você e outras pessoas, além de garantir conformidade com legislações de proteção de dados.</p>"
+          },
+          {
+            "id": "cmsnjw6tz005e3581yxg1ds7h",
+            "title": "Generalização de informações",
+            "description": "<p>Ao mencionar terceiros, prefira generalizações, como \"turma heterogênea\" ou \"alunos com diferentes ritmos de aprendizagem\", em vez de identificar indivíduos ou condições específicas.</p><p></p><p>Essa prática contribui para a privacidade e evita o registro de informações que possam expor outras pessoas.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "100367fc-24f1-4847-a745-7cb2e543c245"
+      },
+      {
+        "id": "t0f04j4i0i8hptzdnzar66wf",
+        "type": "text",
+        "items": [
+          {
+            "id": "lbm9gu67grcq2ohf0eed4djy",
+            "heading": "Entenda sua responsabilidade ao alimentar a Memory do Claude",
+            "paragraph": "<p>Ao utilizar a Memory do Claude, é importante compreender suas responsabilidades e os cuidados necessários para garantir a segurança e a conformidade das informações compartilhadas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "37b78a64-c626-478c-b95f-74aafd4c7e40"
+      },
+      {
+        "id": "cmsnjw6tz005f3581ibw3bu6i",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnjw6tz005g3581l16xhxsu",
+            "title": "Responsabilidade do usuário",
+            "description": "<p>O participante é responsável pelo conteúdo compartilhado com o Claude, inclusive o que alimenta a Memory. É fundamental adotar critérios rigorosos na seleção das informações registradas.</p><p></p><p>O uso consciente protege sua privacidade e a de terceiros.</p>"
+          },
+          {
+            "id": "cmsnjw6tz005h3581q28fcxh5",
+            "title": "Legislação de dados",
+            "description": "<p>Leis como a Lei Geral de Proteção de Dados (LGPD) se aplicam às informações fornecidas ao Claude. Compartilhar dados sensíveis pode gerar riscos legais e éticos.</p><p></p><p>Respeite sempre as normas de proteção de dados ao utilizar a Memory.</p>"
+          },
+          {
+            "id": "cmsnjw6tz005i3581tp41zear",
+            "title": "Critérios de revisão periódica",
+            "description": "<p>Solicite auditoria regular ao Claude para revisar o que está registrado sobre você. Corrija informações desatualizadas ou equivocadas por meio de instruções diretas.</p><p></p><p>Recomenda-se realizar essa revisão a cada duas a quatro semanas para manter a precisão dos dados.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "55915e46-9fee-4e34-b436-c54a66d8e958"
+      },
+      {
+        "id": "9f05759b-fa78-44c5-973b-61861115d6c5",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "23aa877a-3300-47bd-9886-f4a419e78361",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual das seguintes informações NÃO deve ser registrada na Memory do Claude?",
+            "answers": [
+              {
+                "id": "9f8c66bf-6317-4a72-8bea-8c6f3ee396e8",
+                "title": "Seu cargo ou função",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "cbb1527d-c593-4fb8-b852-578a933858cd",
+                "title": "Preferências de estilo de resposta",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "c9cb8e66-7eca-441e-becd-87c01dd307e5",
+                "title": "Nome completo de um colega de equipe",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "8cbf1c42-3dcd-45c9-8413-4ba4d9d9e18a",
+                "title": "Público atendido (de forma genérica)",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto! Dados sensíveis de terceiros, como nomes completos de colegas, nunca devem ser registrados na Memory para garantir a privacidade.",
+            "feedbackIncorrect": "Incorreto. Apenas dados sensíveis de terceiros, como nomes completos de colegas, não devem ser registrados na Memory. Informações profissionais e preferências podem ser registradas."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "dafcece5-5847-419c-b55e-6c7020020ea6"
+      },
+      {
+        "id": "pmes1xfs8a7fkkacpc9s6n4r",
+        "type": "text",
+        "items": [
+          {
+            "id": "g0h3idtzsq2lpv1agfd0s3ot",
+            "heading": "Comandos Úteis para Revisar e Auditar sua Memory",
+            "paragraph": "<p>Estes comandos ajudam você a revisar, auditar e registrar informações importantes na sua Memory. Use-os para garantir que seus dados estejam sempre atualizados e corretos.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "db3e75d1-5db4-492d-a3c8-849970e0b1bf"
+      },
+      {
+        "id": "zk5kpx7130n3324zu5e3904g",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "m25f118kikk0wey9zkxf1vtg",
+            "back": {
+              "type": "description",
+              "description": "<p>Faça uma auditoria da minha memória. Resuma tudo que você se lembra sobre: (1) meu cargo/profissão; (2) meu público-alvo; (3) meus objetivos; (4) minhas preferências de estilo. Para cada item, diga se está correto ou desatualizado.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Comando para auditoria</p>"
+            }
+          },
+          {
+            "id": "zywn46rtlpds9y7luslyqb39",
+            "back": {
+              "type": "description",
+              "description": "<p>Lembre que eu [cargo/função], atendo [público-alvo] e priorizo [objetivo ou preferência de trabalho]. Não associe isso a nenhum indivíduo específico além de mim.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Comando para registrar informações</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "151b3bd2-57cf-4657-bcf6-5977fc9a9ca3"
+      },
+      {
+        "id": "cmsnjw6u0005j3581g9dv334i",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsnjw6u0005k35812x4my59s",
+            "paragraph": "<p>🏁 Ponto de controle: registro escrito das informações fornecidas à Memory e da resposta obtida na auditoria, com a Memory ativa em Settings &gt; Privacy &gt; Memory.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "aea817a3-4640-4ad8-b1f4-107a8685afa0"
+      },
+      {
+        "id": "cmsnjw6u0005l3581yj2w6y0p",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmsnjw6u0005m35813kq5v5l8",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "3b07b6cb-2188-427a-961a-b6a0be23b32a"
+      },
+      {
+        "id": "y3g2jtla0hjgvbsts7tf29gc",
+        "type": "text",
+        "items": [
+          {
+            "id": "rli7fk1o7yy70rrnw53uboar",
+            "paragraph": "<p>Na próxima lição, você vai descobrir como os Projects permitem isolar diferentes frentes de trabalho, criando contextos independentes dentro do Claude para maior organização e precisão nas respostas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "c620455e-a29c-4da1-a5b2-a9a166a17239"
+      }
+    ]
+  }
+}

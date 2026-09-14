@@ -8,13 +8,13 @@ from pathlib import Path
 
 pasta_base = Path(__file__).parent
 
-arquivo_curso_original = pasta_base / "cursoVSCODEtest.json"
-pasta_licoes = pasta_base / "licoes_extraidas_vscode_test"
+arquivo_curso_original = pasta_base / "cursoClaudeDesignHandsOn.json"
+pasta_licoes = pasta_base / "licoes_extraidas_ClaudeDesignHandsOn"
 
-arquivo_curso_editado = pasta_base / "cursoVSCODEtest_editado.json"
-arquivo_base64_editado = pasta_base / "cursoVSCODEtest_editado_base64.txt"
+arquivo_curso_editado = pasta_base / "cursoClaudeDesignHandsOn_editado.json"
+arquivo_base64_editado = pasta_base / "cursoClaudeDesignHandsOn_editado_base64.txt"
 
-frase_teste = "2027"
+frase_teste = "XXXX"
 
 
 # ============================================================
@@ -141,9 +141,9 @@ with open(arquivo_curso_editado, "r", encoding="utf-8") as f:
     dados_salvos = json.load(f)
 
 if procurar_texto(dados_salvos, frase_teste):
-    print("OK: a frase de teste apareceu no cursoVSCODE_editado.json salvo.")
+    print("OK: a frase de teste apareceu no cursoChatGPTExcel_editado.json salvo.")
 else:
-    print("ERRO: a frase de teste NÃO apareceu no cursoVSCODE_editado.json salvo.")
+    print("ERRO: a frase de teste NÃO apareceu no cursoChatGPTExcel_editado.json salvo.")
 
 
 # ============================================================

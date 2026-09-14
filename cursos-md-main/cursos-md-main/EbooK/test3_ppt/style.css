@@ -1,0 +1,563 @@
+/* =============================================================================
+   estilo.css — Folha de Estilo para E-Book Técnico/Pedagógico
+   Formato: EPUB 3 | Conversão: Pandoc (--css estilo.css)
+   Compatibilidade: Kindle (KFX/MOBI), Kobo, Apple Books, e-readers móveis
+   
+   AVISO DE COMPATIBILIDADE:
+   Este arquivo evita intencionalmente: Flexbox, CSS Grid, position absolute/fixed,
+   float complexo e unidades de viewport (vw/vh). Essas propriedades são suportadas
+   de forma inconsistente entre os motores de renderização dos e-readers (WebKit
+   embedded, AZK, KF8). Todo o layout usa o fluxo de bloco padrão (block flow),
+   garantindo comportamento previsível em todos os dispositivos.
+   ============================================================================= */
+
+
+/* =============================================================================
+   1. CORPO DO TEXTO (body)
+   Define a base tipográfica do livro. Usa apenas fontes seguras presentes na
+   maioria dos e-readers. Unidades relativas (em, %) garantem que o usuário
+   possa aumentar ou diminuir a fonte no aparelho sem quebrar o layout.
+   ============================================================================= */
+
+body {
+    /* Fonte serifada para leitura longa — mais confortável em telas e-ink */
+    font-family: "Georgia", "Times New Roman", serif;
+
+    /* Espaçamento generoso entre linhas melhora a legibilidade */
+    line-height: 1.6;
+
+    /* Justificado é o padrão editorial para livros impressos e e-books */
+    text-align: justify;
+
+    /* Margens laterais em % se adaptam a qualquer largura de tela */
+    margin: 0 5%;
+
+    /* Tamanho base relativo — o e-reader multiplica sobre este valor */
+    font-size: 1em;
+
+    /* Cor quase-preta é mais suave que #000 puro em telas de baixa resolução */
+    color: #1a1a1a;
+
+    /* Melhora a renderização de texto em telas de alta resolução */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =============================================================================
+   2. CAPÍTULOS — TÍTULOS PRINCIPAIS (h1)
+   Cada h1 corresponde a um capítulo/módulo. A propriedade page-break-before
+   força o e-reader a iniciar um novo "capítulo" na página seguinte, exatamente
+   como um livro físico. É amplamente suportada por Kindle, Kobo e Apple Books.
+   ============================================================================= */
+
+h1 {
+    /* Sans-serif cria contraste visual forte com o corpo serifado */
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+    /* Centralizado reforça a hierarquia de título principal */
+    text-align: center;
+
+    /* Tamanho grande mas relativo — respeita o ajuste do usuário no device */
+    font-size: 1.8em;
+
+    /* Peso extranegrito para presença visual máxima */
+    font-weight: 700;
+
+    /* Cor quase-preta ligeiramente mais suave que o corpo */
+    color: #111111;
+
+    /* Espaço generoso acima do título para "respirar" na página */
+    margin-top: 3em;
+
+    /* Pequena margem inferior para colar o subtítulo ou parágrafo inicial */
+    margin-bottom: 0.6em;
+
+    /* INSTRUÇÃO CHAVE: força cada h1 a começar em nova página no e-reader */
+    page-break-before: always;
+
+    /* Fallback moderno para e-readers com suporte a EPUB 3 */
+    break-before: page;
+
+    /* Evita que o título fique sozinho no final de uma página */
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+/* Exceção: o Prefácio e primeiros elementos não devem quebrar de página */
+h1:first-of-type {
+    page-break-before: auto;
+    break-before: auto;
+}
+
+
+/* =============================================================================
+   3. SUBTÍTULOS DE SEÇÃO (h2)
+   Representa uma seção dentro de um capítulo. Visualmente subordinado ao h1,
+   mas com peso suficiente para guiar o leitor pelo conteúdo.
+   ============================================================================= */
+
+h2 {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+    font-size: 1.35em;
+    font-weight: 700;
+    color: #222222;
+
+    /* Espaço acima separa visualmente das seções anteriores */
+    margin-top: 2em;
+
+    /* Margem inferior pequena — o parágrafo deve ficar próximo ao título */
+    margin-bottom: 0.4em;
+
+    /* Impede que o h2 fique viúvo no final de uma página sem seu conteúdo */
+    page-break-after: avoid;
+    break-after: avoid;
+
+    /* Linha decorativa discreta abaixo do h2 — amplamente suportada */
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 0.2em;
+}
+
+
+/* =============================================================================
+   4. SUBTÍTULOS TERCIÁRIOS (h3)
+   Representa uma subseção dentro de uma seção. Peso menor, sem decoração,
+   apenas com diferenciação tipográfica clara.
+   ============================================================================= */
+
+h3 {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+    font-size: 1.1em;
+    font-weight: 700;
+
+    /* Itálico diferencia o h3 do h2 sem exigir variação de cor */
+    font-style: italic;
+
+    color: #333333;
+
+    margin-top: 1.5em;
+    margin-bottom: 0.3em;
+
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+
+/* =============================================================================
+   5. PARÁGRAFOS E RECUOS (p)
+   Implementa a regra clássica do design editorial: recuo na primeira linha
+   com margens zeradas entre parágrafos consecutivos. O recuo substitui o
+   espaço entre parágrafos — escolha um ou outro, nunca os dois juntos.
+   ============================================================================= */
+
+p {
+    /* Recuo padrão de livro físico */
+    text-indent: 1.5em;
+
+    /* Margens zeradas — o recuo já cumpre o papel de separar parágrafos */
+    margin-top: 0;
+    margin-bottom: 0;
+
+    /* Evita linhas órfãs (última linha de parágrafo sozinha em nova página) */
+    orphans: 2;
+    widows: 2;
+}
+
+/* -----------------------------------------------------------------------
+   EXCEÇÃO EDITORIAL: Primeiro parágrafo após qualquer título
+   O primeiro § de uma seção nova não recebe recuo — convenção tipográfica
+   universal. O recuo existe para separar parágrafos consecutivos; o primeiro
+   já está separado pelo próprio título.
+   ----------------------------------------------------------------------- */
+h1 + p,
+h2 + p,
+h3 + p {
+    text-indent: 0;
+}
+
+/* -----------------------------------------------------------------------
+   EXCEÇÃO: parágrafos dentro de blockquote, pre, figcaption, tabelas
+   Nesses contextos o recuo editorial não se aplica.
+   ----------------------------------------------------------------------- */
+blockquote p,
+figcaption p,
+td p,
+th p,
+li p {
+    text-indent: 0;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+
+/* =============================================================================
+   6. BREADCRUMBS — Trilhas de Navegação Técnica (p > em)
+   Os breadcrumbs são linhas em itálico no topo das subseções, geradas pelo
+   Pandoc a partir da sintaxe Markdown: *Ferramenta > Menu > Opção*
+   (que produz <p><em>Ferramenta > Menu > Opção</em></p>).
+
+   O seletor "p:has(> em:only-child)" funciona em e-readers modernos.
+   O fallback ".breadcrumb" pode ser aplicado manualmente se necessário.
+   ============================================================================= */
+
+/* Seletor estrutural para parágrafos cujo único conteúdo é um <em> */
+p:has(> em:only-child) {
+    /* Remove o recuo — breadcrumb é uma etiqueta, não prosa corrida */
+    text-indent: 0;
+
+    /* Leve separação visual acima para não colapsar com o h2/h3 anterior */
+    margin-top: 0.1em;
+    margin-bottom: 0.6em;
+}
+
+p:has(> em:only-child) em {
+    /* Fonte menor — deve ser discreta, não competir com o título */
+    font-size: 0.8em;
+
+    /* Cinza médio — visível mas não intrusivo */
+    color: #666666;
+
+    /* Mantém o itálico herdado do <em> */
+    font-style: italic;
+
+    /* Sem sublinhado — não é um link */
+    text-decoration: none;
+
+    /* Espaçamento entre letras ligeiramente aberto para parecer etiqueta */
+    letter-spacing: 0.02em;
+}
+
+/* Fallback: classe manual para e-readers que não suportam :has() */
+p.breadcrumb {
+    text-indent: 0;
+    margin-top: 0.1em;
+    margin-bottom: 0.6em;
+    font-size: 0.8em;
+    color: #666666;
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+
+
+/* =============================================================================
+   7. BLOCOS DE CÓDIGO (pre, code)
+   Dois contextos distintos:
+   — code inline: pequenos trechos no meio do texto (ex: `variavel`)
+   — pre > code: blocos completos de código, gerados pelo Pandoc a partir
+     de blocos delimitados por três crases (``` ... ```)
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------
+   7a. Código inline
+   ----------------------------------------------------------------------- */
+code {
+    font-family: "Courier New", "Lucida Console", "Consolas", monospace;
+
+    /* Levemente menor que o corpo para não desalinhar a linha base */
+    font-size: 0.88em;
+
+    /* Fundo cinza muito claro — identifica visualmente o trecho como código */
+    background-color: #f0f0f0;
+
+    /* Bordas arredondadas são bem suportadas em EPUB 3 */
+    border-radius: 3px;
+
+    /* Padding horizontal pequeno para o texto não tocar na borda */
+    padding: 0.1em 0.35em;
+
+    /* Cor levemente mais escura para contraste com o fundo */
+    color: #333333;
+
+    /* Impede que um code inline quebre no meio de uma palavra em e-readers */
+    white-space: nowrap;
+}
+
+/* -----------------------------------------------------------------------
+   7b. Blocos de código (pre)
+   O <pre> envolve o <code> nos blocos multilinha do Pandoc.
+   Aqui as regras são mais elaboradas para garantir legibilidade.
+   ----------------------------------------------------------------------- */
+pre {
+    font-family: "Courier New", "Lucida Console", "Consolas", monospace;
+    font-size: 0.85em;
+
+    /* Fundo levemente diferente do code inline para distinção visual */
+    background-color: #f4f4f4;
+
+    /* Borda esquerda colorida — sinaliza visualmente "isto é código" */
+    border-left: 3px solid #aaaaaa;
+    border-radius: 3px;
+
+    /* Padding interno generoso para o código respirar */
+    padding: 0.8em 1em;
+
+    /* Margens verticais para separar o bloco do texto ao redor */
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    /* CRÍTICO para e-readers e PDFs: garante quebra automática na margem */
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-all !important;
+
+    /* CORREÇÃO DO BUG DO PDF: Remove as barras de rolagem congeladas e 
+       força o motor do Calibre a expandir o bloco verticalmente */
+    overflow: visible !important;
+    overflow-x: visible !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    display: block !important;
+
+    /* Impede page-break dentro de um bloco de código curto */
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Anula as regras de code inline quando ele está dentro de um pre */
+pre code {
+    font-size: 1em;       /* Herda o tamanho já definido pelo pre */
+    background: none !important; /* Remove o fundo duplo */
+    background-color: transparent !important;
+    border-radius: 0 !important; /* Remove bordas redundantes */
+    padding: 0 !important;       /* Remove padding duplicado */
+    color: inherit;       /* Herda a cor do pre */
+    
+    /* CORREÇÃO CRÍTICA: Força o código interno a aceitar a quebra de linha, 
+       anulando o 'nowrap' do code comum que causava o estouro horizontal */
+    white-space: pre-wrap !important; 
+}
+
+/* =============================================================================
+   8. LINKS DO GLOSSÁRIO ([id^="glos-"] e a[href^="#glos-"])
+   Os termos técnicos no texto são convertidos pelo Pandoc em links internos
+   apontando para âncoras do glossário (ex: href="#glos-prompt").
+   Devem ser claramente interativos mas discretos — não podem parecer links
+   de internet em azul brilhante, o que seria perturbador num e-book.
+   ============================================================================= */
+
+/* Todos os links internos do documento */
+a {
+    /* Azul escuro discreto — indica interatividade sem parecer link web */
+    color: #2a6496;
+
+    /* Sublinhado padrão para acessibilidade */
+    text-decoration: underline;
+}
+
+/* Links específicos do glossário */
+a[href^="#glos-"] {
+    /* Azul ligeiramente diferente para identificar os links de glossário */
+    color: #2a6496;
+
+    /* Sublinhado pontilhado — convenção visual de "definição disponível" */
+    text-decoration: underline;
+    text-decoration-style: dotted;
+
+    /* Fallback para e-readers que não suportam text-decoration-style */
+    border-bottom: 1px dotted #2a6496;
+
+    /* Remove o sublinhado nativo para não duplicar com o border-bottom */
+    /* (Ativado apenas se o e-reader suportar text-decoration-style) */
+}
+
+/* As âncoras-alvo do glossário (os próprios termos definidos) */
+[id^="glos-"] {
+    /* Pequeno espaço acima da âncora para que o e-reader não corte
+       o título quando navegar diretamente para ela */
+    padding-top: 0.5em;
+}
+
+
+/* =============================================================================
+   9. LISTAS (ul, ol, li)
+   E-readers tendem a comprimir ou expandir padding de listas de forma
+   imprevisível. Definições explícitas garantem consistência.
+   ============================================================================= */
+
+ul,
+ol {
+    /* Recuo suficiente para o marcador não ficar colado à margem */
+    padding-left: 1.8em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+li {
+    /* Espaço entre itens — melhora muito a legibilidade de listas longas */
+    margin-bottom: 0.3em;
+
+    /* Alinhamento padrão para listas — justify pode criar espaços estranhos
+       em itens muito curtos */
+    text-align: left;
+}
+
+/* Remove recuo de parágrafos dentro de itens de lista */
+li > p {
+    text-indent: 0;
+}
+
+
+/* =============================================================================
+   10. BLOCKQUOTE
+   Usado para citações e exemplos em destaque no texto pedagógico.
+   ============================================================================= */
+
+blockquote {
+    /* Recuo lateral para criar a sensação de "citação recuada" */
+    margin: 1em 2em;
+
+    /* Borda esquerda discreta — convenção visual de citação */
+    border-left: 3px solid #cccccc;
+    padding-left: 1em;
+
+    /* Texto levemente menor e em itálico para diferenciar da prosa */
+    font-size: 0.95em;
+    font-style: italic;
+    color: #444444;
+}
+
+blockquote p {
+    text-indent: 0;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+
+/* =============================================================================
+   11. TABELAS
+   Tabelas são amplamente usadas em guias técnicos. E-readers têm suporte
+   limitado — evite tabelas muito largas; elas podem transbordar a tela.
+   ============================================================================= */
+
+table {
+    /* Largura máxima de 100% para caber em qualquer tela */
+    width: 100%;
+
+    /* Colapsa bordas duplas em uma única linha mais limpa */
+    border-collapse: collapse;
+
+    /* Margens verticais para separar a tabela do texto */
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    /* Fonte levemente menor para tabelas com muitas colunas */
+    font-size: 0.9em;
+}
+
+th {
+    /* Cabeçalho com fundo escuro e texto branco para destaque */
+    background-color: #333333;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.5em 0.7em;
+    text-align: left;
+    border: 1px solid #555555;
+}
+
+td {
+    padding: 0.4em 0.7em;
+    border: 1px solid #cccccc;
+    vertical-align: top;
+
+    /* Alinhamento padrão dentro de células */
+    text-align: left;
+}
+
+/* Listras zebradas para facilitar a leitura de tabelas longas */
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+
+/* =============================================================================
+   12. LINHA HORIZONTAL (hr)
+   Usada como separador de seções no Markdown (---).
+   ============================================================================= */
+
+hr {
+    /* Borda simples e discreta — sem efeitos 3D que e-readers ignoram */
+    border: none;
+    border-top: 1px solid #dddddd;
+
+    /* Margens verticais generosas para dar respiro entre seções */
+    margin: 2em 0;
+}
+
+
+/* =============================================================================
+   13. STRONG E EMPHASIS (b, strong, i, em)
+   Refinamentos tipográficos para ênfases no texto corrido.
+   ============================================================================= */
+
+strong,
+b {
+    font-weight: 700;
+    /* Mantém a cor do corpo — negrito por peso, não por cor */
+    color: inherit;
+}
+
+em,
+i {
+    font-style: italic;
+    color: inherit;
+}
+
+
+/* =============================================================================
+   14. IMAGENS
+   Regras defensivas para imagens não extrapolarem a largura da tela.
+   ============================================================================= */
+
+img {
+    /* Nunca deixa uma imagem ser mais larga que o contêiner */
+    max-width: 100%;
+
+    /* Mantém a proporção original ao redimensionar */
+    height: auto;
+
+    /* Centraliza a imagem no bloco */
+    display: block;
+    margin: 1em auto;
+}
+
+figcaption {
+    font-size: 0.85em;
+    color: #555555;
+    text-align: center;
+    font-style: italic;
+    margin-top: 0.4em;
+}
+
+
+/* =============================================================================
+   15. NOTAS DE RODAPÉ
+   O Pandoc gera notas de rodapé como <section class="footnotes"> com uma
+   lista <ol> interna. Estilização sutil para diferenciar do corpo principal.
+   ============================================================================= */
+
+.footnotes {
+    /* Separador visual antes das notas */
+    border-top: 1px solid #cccccc;
+    margin-top: 2em;
+    padding-top: 1em;
+
+    /* Fonte menor para notas de rodapé */
+    font-size: 0.85em;
+    color: #555555;
+}
+
+.footnotes ol {
+    padding-left: 1.5em;
+}
+
+.footnotes li {
+    margin-bottom: 0.5em;
+}
+
+.footnotes p {
+    text-indent: 0;
+    margin-bottom: 0.2em;
+}

@@ -1,0 +1,461 @@
+> » IA: usar como bloco **Cover**; preservar título e subtítulo verbatim.
+
+# Claude for Legal na Prática
+
+*Crie, em 120 minutos, um fluxo jurídico verificável para analisar documentos fictícios com segurança.*
+
+> » IA: usar como bloco **Text**; não resumir.
+
+## Antes de Arregaçar as Mangas
+
+Este curso é uma oficina prática sobre o ecossistema Claude for Legal. Você trabalhará com documentos fictícios, formulará instruções verificáveis, construirá um pequeno playbook e produzirá um pacote jurídico organizado para revisão humana. O objetivo não é substituir análise profissional, mas aprender a usar a IA para extrair, comparar, classificar e preparar informações com fontes e limites explícitos.
+
+> » IA: usar como bloco **Checklist**; preservar requisitos e marcações de validação.
+
+### O que você precisa ter aberto agora
+
+- [ ] Um computador ou smartphone conectado à internet.
+- [ ] Um navegador atualizado.
+- [ ] Um aplicativo de notas ou editor de texto.
+- [ ] Uma conta Claude. Para executar comandos de plugin, é necessário que o plugin jurídico esteja disponível e habilitado no ambiente utilizado **[PONTO A VALIDAR]**.
+- [ ] Esta página do curso, que contém todos os textos fictícios necessários.
+- [ ] Nenhum documento real de cliente, assistido, processo ou organização.
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o texto verbatim.
+
+> 🔑 **Regra de ouro:** use apenas material fictício, público ou expressamente autorizado. Toda saída da IA deve ser tratada como minuta para conferência humana.
+
+> » IA: usar como bloco **Table**; preservar títulos, problemas e tempos.
+
+## O Mapa da Mão na Massa
+
+| Oficina | Problema que vai resolver | Tempo |
+|---|---|---:|
+| 1 — Extrair sem inventar | Transformar um contrato curto em fatos rastreáveis | 20 min |
+| 2 — Revisar com critérios | Comparar cláusulas com um miniplaybook | 20 min |
+| 3 — Fazer triagem de NDA | Classificar um NDA fictício e justificar o encaminhamento | 20 min |
+| 4 — Produzir um briefing | Organizar achados, fontes, incertezas e próximos passos | 20 min |
+| Projeto Final — Dossiê de entrada jurídica | Criar um pacote autônomo para revisão humana | 40 min |
+|  | **Carga horária total** | **120 min** |
+
+> » IA: usar como bloco **Text**; preservar a frase de progressão.
+
+Você começará pela extração de fatos, acrescentará critérios de revisão, fará uma triagem e converterá os resultados em briefing. No Projeto Final, essas competências serão mobilizadas em uma missão única, com rastreabilidade e supervisão desde o início.
+
+---
+
+# Oficina 1 — Extraia fatos sem inventar
+
+> *» IA: ▼▼▼ INÍCIO DA LIÇÃO — "Oficina 1" — todo o conteúdo até o ▲▲▲ FIM correspondente é UMA única lição no Rise; não dividir nem fundir, mesmo que haja blocos de código no meio. ▼▼▼*
+
+> » IA: usar como bloco **Text**; preservar o título e o parágrafo.
+
+### 🎯 O Problema
+
+Um contrato chegou para análise inicial, mas ninguém deseja reler o documento inteiro apenas para localizar partes, objeto, prazo e encerramento. Nesta oficina, você criará uma extração estruturada, exigirá evidências e impedirá que lacunas sejam preenchidas por suposição.
+
+> » IA: usar como bloco **List**; manter a lista enxuta e preservar a marcação de validação.
+
+### 🧰 O que você vai usar
+
+- Claude em uma conversa nova;
+- aplicativo de notas;
+- contrato fictício fornecido abaixo;
+- caminho genérico `Claude > Nova conversa`, cuja nomenclatura exata deve ser conferida no ambiente utilizado **[PONTO A VALIDAR]**.
+
+> » IA: usar como bloco **Statement** ou **Download**; conteúdo verbatim; manter o texto entre aspas triplas; não converter em código.
+
+> 📌 **Contrato fictício para a oficina**
+
+"""
+CONTRATO DE SERVIÇOS — EXCERTO DIDÁTICO
+
+Partes: Aurora Educação Ltda. e Nuvem Clara Serviços Digitais Ltda.
+
+Objeto: prestação de serviço de organização de documentos acadêmicos em ambiente digital.
+
+Prazo: 12 meses a partir de 1º de março de 2026.
+
+Renovação: automática por períodos de 12 meses, salvo comunicação escrita com antecedência mínima de 30 dias.
+
+Pagamento: R$ 2.400,00 por mês.
+
+Encerramento: qualquer parte poderá encerrar o contrato por descumprimento não corrigido em até 15 dias após notificação escrita.
+
+Responsabilidade: o limite de responsabilidade não está definido neste excerto.
+
+Documento fictício para fins educacionais. Não constitui modelo jurídico.
+"""
+
+> » IA: usar como bloco **Process**; preservar a numeração, os breadcrumbs, o prompt e o ponto de controle. Não traduzir termos de interface.
+
+### 👐 Mão na massa
+
+1. Abra uma conversa nova em `Claude > Nova conversa`.
+2. Cole o contrato fictício.
+3. Logo abaixo, cole o modelo editável:
+
+> “Analise exclusivamente o contrato fictício fornecido. Identifique as partes, o objeto, o prazo, a renovação, o pagamento, as hipóteses de encerramento e o limite de responsabilidade. Organize a resposta em tabela com as colunas Item, Informação, Evidência textual e Estado da verificação. Não invente dados. Quando uma informação não estiver disponível, escreva ‘não localizado’.”
+
+4. Envie a solicitação.
+5. Compare cada linha da resposta com o excerto original.
+6. Copie a tabela para o aplicativo de notas e marque qualquer divergência.
+
+> » IA: usar como bloco **Statement**; preservar o emoji, o breadcrumb e o texto verbatim.
+
+> 🏁 **Ponto de controle:** em `Claude > Conversa atual > Resposta`, confirme se o limite de responsabilidade aparece como “não localizado” e se cada informação possui evidência textual.
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o critério de êxito.
+
+### ✅ Deu certo?
+
+Você concluiu a oficina se a resposta contém sete itens, apresenta evidências do excerto e não inventa um limite de responsabilidade.
+
+> » IA: usar como bloco **Accordion**; um item por linha; preservar problemas e soluções.
+
+### 🚑 Se travar
+
+| Problema | O que fazer |
+|---|---|
+| A resposta completou uma informação ausente | Acrescente: “Use somente o texto fornecido e registre ‘não localizado’ para qualquer lacuna”. |
+| A resposta não mostrou evidências | Peça uma coluna específica chamada “Evidência textual” e confira cada trecho no original. |
+| O texto ficou longo demais | Limite a resposta aos sete itens solicitados e exija uma linha por item. |
+
+> » IA: usar como bloco **Accordion** ou **List**; marcar como **OPCIONAL** e preservar formas de validação.
+
+### 🚀 Quer ir além?
+
+- **OPCIONAL — Cronologia:** peça uma linha do tempo com início, renovação e prazo de aviso; valide as três referências no excerto.
+- **OPCIONAL — Perguntas:** solicite três perguntas para completar as lacunas; valide se nenhuma pergunta presume fato inexistente.
+- **OPCIONAL — Versão executiva:** peça um resumo de até 80 palavras; valide se valores e prazos permanecem corretos.
+
+> *» IA: ▲▲▲ FIM DA LIÇÃO — "Oficina 1" — encerre esta lição aqui; o que vier a seguir é outra lição. ▲▲▲*
+
+---
+
+# Oficina 2 — Revise com um miniplaybook
+
+> *» IA: ▼▼▼ INÍCIO DA LIÇÃO — "Oficina 2" — todo o conteúdo até o ▲▲▲ FIM correspondente é UMA única lição no Rise; não dividir nem fundir, mesmo que haja blocos de código no meio. ▼▼▼*
+
+> » IA: usar como bloco **Text**; preservar o parágrafo.
+
+### 🎯 O Problema
+
+Uma extração correta ainda não informa se determinado ponto está aderente ao padrão da organização. Nesta oficina, você transformará três critérios simples em um playbook e classificará achados como verdes, amarelos ou vermelhos, sempre com justificativa.
+
+> » IA: usar como bloco **List**; preservar comandos e marcações de validação.
+
+### 🧰 O que você vai usar
+
+- a conversa ou tabela produzida na Oficina 1;
+- o miniplaybook fictício abaixo;
+- o comando documentado `/review-contract`, se o plugin jurídico estiver habilitado;
+- como alternativa, uma conversa comum com o mesmo prompt e os mesmos critérios;
+- caminho de referência `Claude > Plugins > Legal > /review-contract`, a validar no ambiente utilizado **[PONTO A VALIDAR]**.
+
+> » IA: usar como bloco **Statement** ou **Download**; manter o conteúdo verbatim entre aspas triplas.
+
+> 📌 **Miniplaybook fictício**
+
+"""
+PRAZO: verde entre 6 e 12 meses; amarelo acima de 12 até 24 meses; vermelho acima de 24 meses.
+
+RENOVAÇÃO: verde quando não automática; amarelo quando automática com aviso mínimo de 30 dias; vermelho quando automática com aviso inferior a 30 dias.
+
+RESPONSABILIDADE: verde quando existe limite definido; amarelo quando exige esclarecimento; vermelho quando há responsabilidade ilimitada expressa.
+
+ESCALONAMENTO: todo item vermelho e todo dado não localizado devem ser encaminhados ao responsável jurídico.
+
+Critérios fictícios para fins educacionais. Não representam recomendação jurídica.
+"""
+
+> » IA: usar como bloco **Process**; preservar os passos, o comando, o modelo e o breadcrumb.
+
+### 👐 Mão na massa
+
+1. Se o plugin estiver disponível, acesse `Claude > Plugins > Legal > /review-contract`. Caso não esteja, abra `Claude > Nova conversa`.
+2. Cole o contrato fictício da Oficina 1.
+3. Cole o miniplaybook.
+4. Digite o comando `/review-contract` quando habilitado ou use o modelo:
+
+> “Compare exclusivamente os itens prazo, renovação e responsabilidade com o miniplaybook fornecido. Para cada item, apresente Achado, Classificação, Critério aplicado, Evidência e Encaminhamento. Não transforme a classificação em parecer jurídico. Dados ausentes devem ser marcados como ‘não localizado’ e encaminhados ao responsável jurídico.”
+
+5. Confira a classificação diretamente nos critérios.
+6. Corrija qualquer resultado cuja justificativa não corresponda ao miniplaybook.
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o ponto de controle.
+
+> 🏁 **Ponto de controle:** em `Claude > Conversa atual > Tabela de revisão`, confirme se prazo e renovação estão verdes ou amarelos conforme os critérios e se responsabilidade foi encaminhada por estar “não localizada”.
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o critério.
+
+### ✅ Deu certo?
+
+O resultado está correto quando os três itens possuem evidência, critério, classificação e encaminhamento compatíveis com o playbook.
+
+> » IA: usar como bloco **Accordion**; um item por linha.
+
+### 🚑 Se travar
+
+| Problema | O que fazer |
+|---|---|
+| O comando `/review-contract` não está disponível | Use uma conversa comum e cole integralmente o prompt alternativo. |
+| A cor foi apresentada sem justificativa | Exija a reprodução do critério aplicado em coluna própria. |
+| A IA criou uma nova regra | Acrescente: “Não crie critérios além dos quatro itens do playbook fornecido”. |
+
+> » IA: usar como bloco **Accordion** ou **List**; marcar como **OPCIONAL** e preservar formas de validação.
+
+### 🚀 Quer ir além?
+
+- **OPCIONAL — Novo critério:** acrescente regra fictícia para pagamento; valide se a classificação usa apenas essa regra.
+- **OPCIONAL — Contraproposta:** peça uma redação alternativa para o item amarelo; valide se a saída está marcada como minuta.
+- **OPCIONAL — Resumo executivo:** gere três bullets para área não jurídica; valide se as cores e os encaminhamentos foram preservados.
+
+> *» IA: ▲▲▲ FIM DA LIÇÃO — "Oficina 2" — encerre esta lição aqui; o que vier a seguir é outra lição. ▲▲▲*
+
+---
+
+# Oficina 3 — Faça a triagem de um NDA
+
+> *» IA: ▼▼▼ INÍCIO DA LIÇÃO — "Oficina 3" — todo o conteúdo até o ▲▲▲ FIM correspondente é UMA única lição no Rise; não dividir nem fundir, mesmo que haja blocos de código no meio. ▼▼▼*
+
+> » IA: usar como bloco **Text**; preservar o parágrafo.
+
+### 🎯 O Problema
+
+Um acordo de confidencialidade chegou para triagem, mas o responsável precisa saber rapidamente se o documento segue o padrão, exige atenção ou demanda revisão completa. Você aplicará critérios explícitos e produzirá um encaminhamento justificável.
+
+> » IA: usar como bloco **List**; preservar o comando e a marcação de validação.
+
+### 🧰 O que você vai usar
+
+- Claude ou aplicativo de notas;
+- NDA fictício e critérios fornecidos abaixo;
+- o comando documentado `/triage-nda`, se disponível;
+- caminho de referência `Claude > Plugins > Legal > /triage-nda`, a validar no ambiente utilizado **[PONTO A VALIDAR]**.
+
+> » IA: usar como bloco **Statement** ou **Download**; manter o conteúdo verbatim entre aspas triplas.
+
+> 📌 **NDA fictício e critérios de triagem**
+
+"""
+NDA — EXCERTO DIDÁTICO
+
+Partes: Aurora Educação Ltda. e Nuvem Clara Serviços Digitais Ltda.
+Finalidade: avaliação de possível contratação de serviço digital.
+Prazo de confidencialidade: 5 anos.
+Informação confidencial: inclui informação escrita ou oral relacionada ao projeto.
+Exclusões: informação pública, já conhecida legitimamente ou recebida de terceiro autorizado.
+Foro: não informado no excerto.
+
+CRITÉRIOS FICTÍCIOS DE TRIAGEM
+- Aprovação padrão: prazo de até 3 anos, exclusões presentes e foro autorizado.
+- Revisão do responsável: prazo acima de 3 até 5 anos ou foro não informado.
+- Revisão completa: prazo acima de 5 anos ou ausência de exclusões.
+
+Documento e critérios fictícios. Não constituem recomendação jurídica.
+"""
+
+> » IA: usar como bloco **Process**; preservar a numeração, o comando, o prompt e os breadcrumbs.
+
+### 👐 Mão na massa
+
+1. Acesse `Claude > Plugins > Legal > /triage-nda` se o comando estiver habilitado. Caso contrário, abra `Claude > Nova conversa`.
+2. Cole o NDA e os critérios fictícios.
+3. Execute `/triage-nda` quando disponível ou cole:
+
+> “Faça a triagem exclusivamente segundo os critérios fornecidos. Extraia prazo, exclusões e foro. Para cada item, apresente evidência. Escolha apenas um encaminhamento: aprovação padrão, revisão do responsável ou revisão completa. Justifique o encaminhamento sem acrescentar critérios.”
+
+4. Confira os três itens no texto original.
+5. Verifique se o prazo de cinco anos e o foro não informado foram considerados.
+6. Registre a decisão como triagem preliminar, não como aprovação jurídica final.
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o ponto de controle.
+
+> 🏁 **Ponto de controle:** em `Claude > Conversa atual > Encaminhamento`, confirme se o resultado é “revisão do responsável” e se a justificativa menciona o prazo de cinco anos ou o foro não informado.
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o critério.
+
+### ✅ Deu certo?
+
+A triagem foi concluída quando apresenta um único encaminhamento, três evidências e nenhuma regra criada fora dos critérios fornecidos.
+
+> » IA: usar como bloco **Accordion**; um item por linha.
+
+### 🚑 Se travar
+
+| Problema | O que fazer |
+|---|---|
+| A resposta escolheu dois encaminhamentos | Solicite uma categoria final única e mantenha os demais pontos como justificativas. |
+| O foro foi tratado como existente | Peça que a IA diferencie “não informado” de “não aplicável”. |
+| A saída virou parecer jurídico | Reforce que o produto é triagem preliminar para encaminhamento humano. |
+
+> » IA: usar como bloco **Accordion** ou **List**; marcar como **OPCIONAL** e preservar formas de validação.
+
+### 🚀 Quer ir além?
+
+- **OPCIONAL — Cenário padrão:** altere o prazo para três anos e indique um foro autorizado fictício; valide a nova categoria.
+- **OPCIONAL — Cenário crítico:** remova as exclusões; valide se o resultado muda para revisão completa.
+- **OPCIONAL — Comunicação:** gere uma mensagem de encaminhamento de até 100 palavras; valide se a triagem aparece como preliminar.
+
+> *» IA: ▲▲▲ FIM DA LIÇÃO — "Oficina 3" — encerre esta lição aqui; o que vier a seguir é outra lição. ▲▲▲*
+
+---
+
+# Oficina 4 — Produza um briefing verificável
+
+> *» IA: ▼▼▼ INÍCIO DA LIÇÃO — "Oficina 4" — todo o conteúdo até o ▲▲▲ FIM correspondente é UMA única lição no Rise; não dividir nem fundir, mesmo que haja blocos de código no meio. ▼▼▼*
+
+> » IA: usar como bloco **Text**; preservar o parágrafo.
+
+### 🎯 O Problema
+
+Extrações e classificações isoladas não ajudam quando o responsável precisa decidir o próximo passo. Nesta oficina, você reunirá fatos, riscos, lacunas, fontes e providências em um briefing curto, rastreável e pronto para revisão.
+
+> » IA: usar como bloco **List**; preservar o comando e a marcação de validação.
+
+### 🧰 O que você vai usar
+
+- resultados das Oficinas 1, 2 e 3;
+- Claude ou aplicativo de notas;
+- o comando documentado `/brief`, se disponível;
+- caminho de referência `Claude > Plugins > Legal > /brief`, a validar no ambiente utilizado **[PONTO A VALIDAR]**.
+
+> » IA: usar como bloco **Process**; preservar a numeração, o prompt e os breadcrumbs.
+
+### 👐 Mão na massa
+
+1. Reúna a extração contratual, a revisão por playbook e a triagem do NDA.
+2. Abra `Claude > Plugins > Legal > /brief` se o comando estiver habilitado. Caso contrário, use `Claude > Nova conversa`.
+3. Cole apenas os resultados conferidos nas oficinas anteriores.
+4. Execute `/brief` quando disponível ou cole:
+
+> “Produza um briefing de até 300 palavras com as seções Contexto, Achados confirmados, Pontos de atenção, Informações não localizadas e Próximas ações. Para cada achado, indique o documento de origem. Preserve as classificações e declare que o material requer revisão humana. Não acrescente fatos.”
+
+5. Compare o briefing com os resultados anteriores.
+6. Remova qualquer afirmação sem documento de origem.
+7. Acrescente o nome do responsável e o prazo de revisão como campos editáveis.
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o ponto de controle.
+
+> 🏁 **Ponto de controle:** em `Claude > Conversa atual > Briefing > Próximas ações`, confirme se responsabilidade contratual e foro do NDA aparecem como pendências para revisão.
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o critério.
+
+### ✅ Deu certo?
+
+O briefing está pronto se possui cinco seções, permanece abaixo de 300 palavras, indica a origem dos achados e separa fatos confirmados de pendências.
+
+> » IA: usar como bloco **Accordion**; um item por linha.
+
+### 🚑 Se travar
+
+| Problema | O que fazer |
+|---|---|
+| O briefing acrescentou contexto inexistente | Instrua a usar somente os resultados conferidos e excluir inferências sem fonte. |
+| As pendências ficaram escondidas | Exija uma seção autônoma chamada “Informações não localizadas”. |
+| O texto ultrapassou 300 palavras | Solicite uma frase por achado e no máximo três próximas ações. |
+
+> » IA: usar como bloco **Accordion** ou **List**; marcar como **OPCIONAL** e preservar formas de validação.
+
+### 🚀 Quer ir além?
+
+- **OPCIONAL — E-mail:** converta o briefing em mensagem de encaminhamento; valide se fontes e ressalvas permanecem.
+- **OPCIONAL — Checklist:** transforme as próximas ações em lista marcável; valide se cada item possui responsável.
+- **OPCIONAL — Versão executiva:** reduza o briefing a 120 palavras; valide se nenhum risco vermelho ou pendência desapareceu.
+
+> *» IA: ▲▲▲ FIM DA LIÇÃO — "Oficina 4" — encerre esta lição aqui; o que vier a seguir é outra lição. ▲▲▲*
+
+---
+
+# Projeto Final — Dossiê de Entrada Jurídica
+
+> *» IA: ▼▼▼ INÍCIO DA LIÇÃO — "Projeto Final" — todo o conteúdo até o ▲▲▲ FIM correspondente é UMA única lição no Rise; não dividir nem fundir, mesmo que haja blocos de código no meio. ▼▼▼*
+
+> » IA: usar como bloco **Text**; preservar o parágrafo.
+
+### 🎯 A missão
+
+Uma organização fictícia considera contratar a Nuvem Clara Serviços Digitais Ltda. Sua missão é produzir um dossiê de entrada jurídica que permita ao responsável compreender o contrato, o NDA, os critérios aplicados, as pendências e as ações recomendadas. O dossiê deve funcionar de forma autônoma: quem o receber precisa localizar as evidências sem reconstruir todas as oficinas.
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o escopo verbatim.
+
+> 📌 **Escopo autorizado:** utilize apenas o contrato, o NDA e os critérios fictícios fornecidos neste curso. Não acrescente legislação, jurisprudência, cláusulas ou fatos externos.
+
+> » IA: usar como bloco **Process**; preservar a numeração, os breadcrumbs e os modelos. Não traduzir termos de interface.
+
+### 👐 Mão na massa
+
+1. Crie uma conversa nova em `Claude > Nova conversa` para evitar mistura com respostas anteriores.
+2. Cole o contrato, o NDA e os dois conjuntos de critérios fictícios.
+3. Solicite uma tabela de inventário com Documento, Item, Achado, Evidência e Estado da verificação.
+4. Peça a aplicação do miniplaybook ao contrato e dos critérios de triagem ao NDA.
+5. Exija uma lista separada de informações não localizadas.
+6. Solicite um quadro de ações com Prioridade, Ação, Justificativa e Responsável.
+7. Peça um resumo executivo de até 150 palavras, sem novas conclusões.
+8. Confira cada evidência nos textos originais.
+9. Corrija ou exclua qualquer item sem fonte.
+10. Salve o resultado no aplicativo de notas com o título “Dossiê de Entrada Jurídica — Caso Nuvem Clara”.
+
+> » IA: usar como bloco **Statement** ou **Download**; conteúdo verbatim; manter entre aspas triplas.
+
+"""
+Crie um Dossiê de Entrada Jurídica usando exclusivamente os documentos e critérios fictícios fornecidos.
+
+O dossiê deve conter:
+1. inventário dos documentos;
+2. achados com evidência textual;
+3. revisão do contrato segundo o miniplaybook;
+4. triagem do NDA segundo os critérios fornecidos;
+5. informações não localizadas;
+6. quadro de próximas ações com prioridade, justificativa e responsável;
+7. resumo executivo de até 150 palavras.
+
+Não acrescente fatos, normas ou critérios. Use “não localizado” para lacunas. Trate classificações como triagem para revisão humana, não como parecer jurídico.
+"""
+
+> » IA: usar como bloco **Statement**; preservar o emoji e o ponto de controle.
+
+> 🏁 **Ponto de controle:** em `Dossiê > Inventário > Evidências > Pendências > Próximas ações`, confirme se cada achado pode ser rastreado e se toda lacuna possui encaminhamento.
+
+> » IA: usar como bloco **Checklist**; preservar todas as caixas e o título.
+
+### 🏁 Como saber que terminou
+
+- [ ] O dossiê utiliza somente os materiais fictícios do curso.
+- [ ] Contrato e NDA aparecem no inventário.
+- [ ] Cada achado possui evidência textual.
+- [ ] Prazo, renovação e responsabilidade foram comparados ao miniplaybook.
+- [ ] O NDA recebeu um único encaminhamento justificado.
+- [ ] Informações ausentes aparecem como “não localizado”.
+- [ ] Nenhum critério foi inventado.
+- [ ] As próximas ações possuem prioridade e responsável.
+- [ ] O resumo executivo não ultrapassa 150 palavras.
+- [ ] A revisão humana está explicitamente registrada.
+
+> *» IA: ▲▲▲ FIM DA LIÇÃO — "Projeto Final" — encerre esta lição aqui; o que vier a seguir é outra lição. ▲▲▲*
+
+---
+
+> » IA: usar como bloco **List** ou **Accordion**; preservar os dez itens e os termos técnicos.
+
+# A Parte dos Dez — Dez verificações antes de confiar na saída
+
+1. **Fonte:** confirme de qual documento veio cada afirmação.
+2. **Localização:** registre cláusula, seção, página ou trecho correspondente.
+3. **Escopo:** verifique se a resposta permaneceu dentro do material autorizado.
+4. **Lacunas:** procure informações que deveriam estar marcadas como “não localizado”.
+5. **Critérios:** confira se a classificação utiliza apenas o playbook fornecido.
+6. **Citações:** compare toda citação com o texto original.
+7. **Permissões:** confirme se o usuário pode acessar e processar o material.
+8. **Sigilo:** exclua dados pessoais ou confidenciais quando o ambiente não estiver autorizado.
+9. **Encaminhamento:** atribua responsável e prazo aos pontos de atenção.
+10. **Decisão humana:** impeça que triagem ou minuta seja apresentada como decisão jurídica final.
+
+> » IA: usar como bloco **Text**; manter os parágrafos separados e não resumir.
+
+## Conseguiu! E agora?
+
+Você concluiu um fluxo completo: extraiu fatos, aplicou critérios, fez uma triagem, produziu um briefing e montou um dossiê rastreável. O próximo passo é repetir o processo com novos documentos fictícios, reduzindo gradualmente o apoio dos modelos prontos sem retirar as verificações.
+
+Quando a prática migrar para um ambiente institucional, confirme planos, plugins, conectores, permissões e políticas de dados vigentes. Depois, adapte o miniplaybook com acompanhamento do responsável jurídico e documente quem revisa cada tipo de saída. A meta não é produzir respostas mais rápidas a qualquer custo; é produzir trabalho preparatório que possa ser conferido, explicado e corrigido.

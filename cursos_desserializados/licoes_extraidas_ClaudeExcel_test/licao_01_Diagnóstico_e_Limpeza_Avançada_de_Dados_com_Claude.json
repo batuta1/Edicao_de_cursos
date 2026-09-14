@@ -1,0 +1,842 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Diagnóstico e Limpeza Avançada de Dados com Claude",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "Ag2K-tn1Qdp9pcUbpD9QEdnECaolz9yN",
+    "createdAt": "2026-06-24T16:42:09.174Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmqsawu3t002h357pmlqg1xcm",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Diagnóstico e Limpeza Avançada de Dados com Claude",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-06-24T16:43:40.320Z",
+    "items": [
+      {
+        "id": "n8n1lyicsv5t10evlos47if8",
+        "type": "text",
+        "items": [
+          {
+            "id": "m0nqd5qx8b43yk1yre39ygsg",
+            "heading": "Diagnóstico e Limpeza de Dados: o Raio-X que Todo Analista Precisa",
+            "paragraph": "<p>Toda planilha que chega de outra pessoa esconde os mesmos problemas: duplicatas, campos vazios, datas em formatos diferentes, nomes digitados de jeitos diferentes. Nesta lição, você usa o Claude para encontrar esses problemas em segundos e aplica fórmulas do Excel para corrigi-los — do diagnóstico inicial até a limpeza em massa de dezenas de registros.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f21711f6-ce72-4578-add8-13620e4c3d3c"
+      },
+      {
+        "id": "tdfweawn1wnllh3vrxmu4zyd",
+        "type": "text",
+        "items": [
+          {
+            "id": "ee3ol51dctntz9gs29o40rmq",
+            "paragraph": "<p>São habilidades que você vai usar toda vez que receber uma base de dados de origem desconhecida — antes de confiar em qualquer análise feita em cima dela.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "75db277d-9dc6-4b4a-a58d-02273679f94b"
+      },
+      {
+        "id": "akulbiys161ba56rtktou72t",
+        "type": "list",
+        "items": [
+          {
+            "id": "fg7p3fdddhql0h8dn1oay75v",
+            "number": "1",
+            "paragraph": "<p>Diagnosticar problemas em bases de dados usando IA</p>"
+          },
+          {
+            "id": "y7mk9tezie1zabtqhz51wd81",
+            "number": "2",
+            "paragraph": "<p>Limpar e padronizar nomes e textos em massa</p>"
+          },
+          {
+            "id": "f7zaextwahnxsk98u6b20r44",
+            "number": "3",
+            "paragraph": "<p>Validar correções e garantir qualidade dos dados</p>"
+          },
+          {
+            "id": "c7cajs3h4nsrlhp4iubslix7",
+            "number": "4",
+            "paragraph": "<p>Reconhecer os limites das fórmulas do Excel e quando buscar alternativas</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "a4887cb4-0b69-4349-8fe0-e82db382b2b2"
+      },
+      {
+        "id": "cmqsaxu0v002k357p28iya2ue",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0v002l357pc49pfmt8",
+            "paragraph": "<p>🔑 <strong>A regra de ouro:</strong> Não existe resposta errada no Claude — existe prompt mal explicado. Se a resposta vier estranha, o problema quase sempre está na pergunta. Reescreva, adicione mais contexto e tente de novo. É assim que funciona, e é assim que você aprende.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d27855e8-887d-48e0-a579-e40a512746ac"
+      },
+      {
+        "id": "n38pkresuu7kpf018y2b73hy",
+        "type": "text",
+        "items": [
+          {
+            "id": "axv8snp3sp1nzmf9q4g2p5hn",
+            "heading": "O que você precisa ter aberto agora",
+            "paragraph": "<ul><li>Microsoft Excel aberto (preferencialmente a versão 365, pois algumas funções são exclusivas)</li><li>Um navegador acessando claude.ai com uma conta ativa</li><li>Este curso disponível em outra janela ou aba para consulta durante a prática</li><li>Um arquivo novo e vazio no Excel, que pode ser chamado de <strong>treino_claude.xlsx</strong></li></ul>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "2503f329-fadb-4a93-89dc-c70282e3a5c3"
+      },
+      {
+        "id": "cmqsaxu0w002m357pdccu43ip",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmqsaxu0w002n357pd2fro6z5",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "b5a0f9b9-6571-4899-84d1-827a01139427"
+      },
+      {
+        "id": "v7uybmvwkaer8jt5eplw2su1",
+        "type": "text",
+        "items": [
+          {
+            "id": "r8229u8a8za6heoc3uj53l7s",
+            "heading": "Diagnóstico de Dados com Claude",
+            "paragraph": "<p>Imagine receber uma planilha cheia de dados de outra pessoa, sem saber se está tudo correto ou pronto para análise. Antes de começar qualquer trabalho, é fundamental identificar possíveis problemas que podem comprometer os resultados. Com o Claude, você faz esse diagnóstico em segundos, trazendo segurança e agilidade para o seu processo.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "918a62f3-a764-4fec-a675-0a69913bf2cf"
+      },
+      {
+        "id": "cmqsaxu0w002o357pp66bf90n",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0w002p357pclrb6nv5",
+            "paragraph": "<p>Você recebeu uma planilha de outra pessoa. Tem dados, tem colunas, mas você não sabe nem se os dados estão corretos. Antes de fazer qualquer análise, você precisa de um \"raio-X\" da planilha — e o Claude faz isso em segundos, se você pedir do jeito certo.</p><p>Ao final desta oficina, você vai saber pedir ao Claude que analise a estrutura de qualquer base de dados e aponte os problemas antes que eles estraguem sua análise.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "ea6155aa-94ce-4fd6-87df-f5fb9c6a8f3c"
+      },
+      {
+        "id": "vi1vgzhx1qw9d7del3572l6y",
+        "type": "text",
+        "items": [
+          {
+            "id": "xb6k95twmz7ewf6znp4hf4ka",
+            "paragraph": "<p>Para realizar este diagnóstico, certifique-se de ter os seguintes itens disponíveis:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "6d5e7c01-b801-48ad-8bee-44658af760a3"
+      },
+      {
+        "id": "diplwm1zacgd2ojojqpxu2w0",
+        "type": "list",
+        "items": [
+          {
+            "id": "i05bth367tl874wh2mrlwhsz",
+            "number": "1",
+            "paragraph": "<p>Excel (qualquer versão)</p>"
+          },
+          {
+            "id": "hbb4s02hkjb4vn3dipr2qmh4",
+            "number": "2",
+            "paragraph": "<p>Claude (claude.ai)</p>"
+          },
+          {
+            "id": "g52e200xqa9dddyunkvkc7e9",
+            "number": "3",
+            "paragraph": "<p>A planilha de exemplo que você vai montar agora mesmo</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "dd6e2575-5f68-4c64-923b-91f4ba7e77fa"
+      },
+      {
+        "id": "cmqsaxu0w002w357ppp48uca0",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsaxu0w002q357pv3loj2gj",
+            "type": "intro",
+            "title": "Introdução ao Diagnóstico Passo a Passo",
+            "isHidden": false,
+            "description": "<p>Neste exercício, você aprenderá a criar uma planilha de clientes no Excel, identificar problemas de qualidade nos dados com o auxílio do Claude, registrar os problemas encontrados e buscar soluções práticas utilizando fórmulas do Excel.</p>"
+          },
+          {
+            "id": "cmqsaxu0w002r357pp2b0ly5w",
+            "type": "summary",
+            "title": "Resumindo o processo",
+            "isHidden": false,
+            "description": "<p>Você montou uma planilha de exemplo, pediu um diagnóstico ao Claude, registrou os problemas e já buscou a primeira solução prática. Esse ciclo é a base para qualquer análise de dados eficiente.</p>"
+          },
+          {
+            "id": "cmqsaxu0w002s357poygikcyf",
+            "type": "step",
+            "title": "Preparar a planilha de exemplo",
+            "isHidden": false,
+            "description": "<p>Abra o Excel e vá para a planilha em branco do seu arquivo treino_claude.xlsx. Renomeie a aba de baixo para Clientes (clique duas vezes no nome da aba). Digite os dados abaixo, célula por célula, começando em A1:</p><ul><li>ID  Nome            Email                 Data_Cadastro   Receita     Status</li><li>101  ana silva          ana@empresa.com       15/03/2021      45000      Ativo</li><li>102  BRUNO SANTOS  bruno@empresa.com     2021-07-22      28000       ativo</li><li>103   Carlos Lima       carlos@empresa.com     20/11/2020      62000      Ativo</li><li>102  Bruno Santos      bruno@empresa.com     22/07/2021      28000      Ativo</li><li>104                   diana@empresa.com     01/04/2022      15000       Inativo</li><li>105  Eduardo Rocha    eduardo@empresa.com   10/06/2022     R$ 33.000   Ativo</li></ul><p>Não esqueça: Digite exatamente como está acima — com os erros propositais. Eles fazem parte do exercício. Salve o arquivo (Ctrl+S).</p>"
+          },
+          {
+            "id": "cmqsaxu0w002t357p81s02p7p",
+            "type": "step",
+            "title": "Copiar dados para o Claude",
+            "isHidden": false,
+            "description": "<p>Selecione o intervalo A1 até F7 (cabeçalho + 6 linhas de dados). Copie com Ctrl+C. Vá ao Claude e abra uma nova conversa. No campo de mensagem, cole os dados com Ctrl+V e adicione o seguinte texto antes dos dados colados:</p><blockquote>Tenho uma planilha de clientes com os dados abaixo. Faça um diagnóstico completo de qualidade: identifique campos vazios, formatos inconsistentes, duplicatas e qualquer outro problema que possa atrapalhar uma análise. Liste os problemas em ordem de prioridade e explique cada um em uma linha.</blockquote>"
+          },
+          {
+            "id": "cmqsaxu0w002u357punfxdby9",
+            "type": "step",
+            "title": "Enviar e analisar a resposta",
+            "isHidden": false,
+            "description": "<p>Pressione Enter para enviar. Leia a resposta completa do Claude. Volte ao Excel e, na célula H1, escreva Problemas encontrados. Nas células H2, H3, H4... escreva cada problema que o Claude apontou (um por linha).</p>"
+          },
+          {
+            "id": "cmqsaxu0w002v357p8ajq3lzc",
+            "type": "step",
+            "title": "Pedir solução para o Claude",
+            "isHidden": false,
+            "description": "<p>No mesmo chat do Claude (não abra outro), envie esta mensagem:</p><blockquote>Dos problemas que você listou, qual é o mais fácil de corrigir agora mesmo com uma fórmula do Excel? Me dê a fórmula pronta.</blockquote><p>Leia a resposta e anote a fórmula sugerida.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "fec2e0e7-f129-49ec-9a45-663bb5099916"
+      },
+      {
+        "id": "cmqsaxu0x002x357p5ekypc22",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0x002y357pfcrzofp1",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> em claude.ai &gt; nova conversa &gt; campo de mensagem, o prompt e os dados colados estão prontos antes do envio — guarde a referência para comparar com a resposta.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "dab78fde-5a09-4afa-9481-bfc147956beb"
+      },
+      {
+        "id": "cmqsaxu0x002z357p9nk83j08",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0x0030357pik0h85gg",
+            "paragraph": "<p><strong>Dica:</strong> O Claude provavelmente vai identificar pelo menos cinco problemas nessa planilha. Se ele encontrou menos que três, tente enviar o prompt novamente pedindo para ser mais detalhado.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "10583416-025b-4773-8508-7ce91fc6f0f5"
+      },
+      {
+        "id": "cmqsaxu0x0031357py3a1a2ff",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0x0032357pp9a4sqhd",
+            "paragraph": "<p><strong>✅ Deu certo?</strong></p><p>O Claude deve ter listado pelo menos:</p><ul><li>a duplicata no ID 102,</li><li>o campo Nome vazio na linha 5,</li><li>os formatos diferentes de data (DD/MM/AAAA e AAAA-MM-DD),</li><li>a capitalização inconsistente nos nomes</li><li>e o valor de receita com \"R$\" na linha 6.</li></ul><p>Se todos esses aparecerem na resposta, você arrasou.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "d",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "8ca23f7d-d20a-481c-a799-6de5962791cb"
+      },
+      {
+        "id": "fwu59fx9bcjdf32blt9lunb2",
+        "type": "text",
+        "items": [
+          {
+            "id": "kj2e2gmqv0sbuh1tej31mn4a",
+            "heading": "Se travar, veja como resolver os principais obstáculos.",
+            "paragraph": "<p>Enfrentou algum problema durante o diagnóstico? Expanda cada item para encontrar soluções rápidas para os obstáculos mais comuns.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "a2b5c9df-96f2-4996-9d16-0a1dba3bfedd"
+      },
+      {
+        "id": "cmqsaxu0x0033357pqi9jhlzs",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsaxu0x0034357pjjkmmekx",
+            "title": "O Claude respondeu de forma genérica, sem apontar problemas específicos",
+            "description": "<p>Verifique se os dados foram colados corretamente no chat; tente selecionar e copiar a tabela do Excel de novo.</p>"
+          },
+          {
+            "id": "cmqsaxu0x0035357pq3gwabex",
+            "title": "Os dados aparecem bagunçados no Claude (sem colunas)",
+            "description": "<p>Tente copiar a tabela, colar em um arquivo de texto (Notepad), e de lá copiar para o Claude.</p>"
+          },
+          {
+            "id": "cmqsaxu0x0036357p3dca137x",
+            "title": "O Claude disse que não consegue ver a planilha",
+            "description": "<p>Ele não lê arquivos diretamente — precisa que você cole os dados no chat como texto.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "3d2432d9-6139-47b4-b900-cb51591ef813"
+      },
+      {
+        "id": "quid9gmtm02dr47d3zz7yd7i",
+        "type": "text",
+        "items": [
+          {
+            "id": "jpczdyc3r6c58ibxhhb4sb3a",
+            "heading": "Quer ir além?",
+            "paragraph": "<p>Pronto para aprofundar? Explore atividades extras para desafiar seus conhecimentos e ampliar suas habilidades com diagnósticos de dados.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "9275b69a-3855-42c4-b028-08bc0e4a05c1"
+      },
+      {
+        "id": "cmqsaxu0x0037357pdz7xem5t",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsaxu0x0038357pzef37qao",
+            "title": "Amplie a base e repita o diagnóstico",
+            "description": "<p>Adicione mais 10 linhas de dados fictícios à planilha e peça ao Claude para repetir o diagnóstico — veja se ele encontra novos padrões de erro.</p>"
+          },
+          {
+            "id": "cmqsaxu0x0039357pp1mjgtrs",
+            "title": "Peça uma estimativa de impacto",
+            "description": "<p>Pergunte ao Claude quantas linhas da planilha têm algum tipo de problema, para dimensionar o tamanho da limpeza necessária.</p>"
+          },
+          {
+            "id": "cmqsaxu0x003a357pdyudqzje",
+            "title": "Descubra a chave única da base",
+            "description": "<p>Pergunte ao Claude quais colunas seriam boas candidatas a \"chave única\" — um identificador que não se repete em nenhuma linha.</p>"
+          },
+          {
+            "id": "cmqsaxu0x003b357phr3ypy1f",
+            "title": "Entenda por que a chave única importa",
+            "description": "<p>Peça ao Claude para explicar como uma chave única evita duplicatas e erros de cruzamento em análises futuras.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "a105a299-7d0a-42c4-b3e8-ba7b3321bfa9"
+      },
+      {
+        "id": "cmqsaxu0x003c357pq35w9h5j",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmqsaxu0x003d357p4ehtrqbd",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "dcc1902f-0232-4f26-86d2-b820c3df6e46"
+      },
+      {
+        "id": "zluh3wbptlitg48aw439ffb3",
+        "type": "text",
+        "items": [
+          {
+            "id": "oo8azb30nnbw48xrmef6eu5i",
+            "heading": "Limpeza e Padronização em Massa",
+            "paragraph": "<p>Grandes bases de dados quase sempre trazem nomes inconsistentes: maiúsculas, minúsculas, espaços extras e abreviações. Corrigir tudo manualmente é inviável. Aqui, você vai aprender a usar Claude e fórmulas do Excel para limpar e padronizar centenas de nomes em minutos, garantindo qualidade e uniformidade para suas análises.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "3891bab4-94b9-4e99-9172-5f54e85d8822"
+      },
+      {
+        "id": "cmqsaxu0x003e357px6q0bmde",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0x003f357pjqdjrjeo",
+            "paragraph": "<p>Alguém exportou a base de dados do sistema legado e os nomes dos clientes vieram um caos: alguns em CAIXA ALTA, outros em minúsculas, muitos com espaços sobrando no começo ou no final, e alguns com abreviações inconsistentes. Corrigir um por um levaria horas. Com o Claude e três fórmulas do Excel, você faz isso em minutos.</p><p>Ao final desta oficina, você terá uma coluna de nomes limpos e padronizados, e vai saber como empilhar funções de texto no Excel para resolver qualquer variação desse problema.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "2c05db12-63ac-4bee-b7b0-aa366c0319c7"
+      },
+      {
+        "id": "rkp5c6q07sj1eluoubn8vfxh",
+        "type": "text",
+        "items": [
+          {
+            "id": "gzfoert0lpkfj7e549xj7w2i",
+            "paragraph": "<p>Antes de iniciar a atividade, certifique-se de que você possui os seguintes recursos disponíveis:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "2983d9e3-2bfc-48d7-a3fb-dde456892072"
+      },
+      {
+        "id": "l39pkpcrbek5ufahjiwf7k5u",
+        "type": "list",
+        "items": [
+          {
+            "id": "meqyh3eyd6di1b6tv551jzqc",
+            "number": "1",
+            "paragraph": "<p>Excel (qualquer versão)</p>"
+          },
+          {
+            "id": "gqbeyhg6j90e2frjbqrzcypy",
+            "number": "2",
+            "paragraph": "<p>Claude (claude.ai)</p>"
+          },
+          {
+            "id": "ioqvhmo68pf2gbn7df6gsqfy",
+            "number": "3",
+            "paragraph": "<p>A aba Clientes do arquivo treino_claude.xlsx</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "d31b2e8d-c94e-4f9c-a356-8f1dca7c6ea6"
+      },
+      {
+        "id": "cmqsaxu0y003o357pr9nfbp0x",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsaxu0y003g357pgtospe4i",
+            "type": "intro",
+            "title": "Introdução à Limpeza de Nomes no Excel",
+            "isHidden": false,
+            "description": "<p>Neste passo a passo, você aprenderá como limpar e padronizar nomes em uma planilha do Excel, corrigindo problemas comuns como letras maiúsculas/minúsculas inconsistentes e espaços extras. O processo inclui a prática com dados bagunçados, aplicação de fórmulas e validação dos resultados.</p>"
+          },
+          {
+            "id": "cmqsaxu0y003h357p5smijc87",
+            "type": "summary",
+            "title": "Resumo do Processo de Limpeza de Nomes",
+            "isHidden": false,
+            "description": "<p>Você praticou a limpeza em massa, aplicou fórmulas inteligentes e consolidou os resultados. Esse método é escalável para bases muito maiores.</p>"
+          },
+          {
+            "id": "cmqsaxu0y003i357p3k46mqh1",
+            "type": "step",
+            "title": "Ampliar a bagunça para praticar",
+            "isHidden": false,
+            "description": "<p>Na aba Clientes, adicione mais três linhas com dados propositalmente bagunçados (a partir da linha 8):</p><ul><li>106 | FERNANDA LIMA | fernanda@empresa.com | 12/01/2023 | 41000 | Ativo</li><li>107 | joão pedro silva | joao@empresa.com | 2023-05-20 | 19000 | Ativo</li><li>108 | Marcos  Oliveira | marcos@empresa.com | 30/08/2023 | 55000 | Inativo</li></ul><p>Atenção ao digitar: O nome da Fernanda tem espaços extras no começo e no fim. O do Marcos tem dois espaços entre o primeiro e o segundo nome. Isso é proposital.</p>"
+          },
+          {
+            "id": "cmqsaxu0y003j357pjk1bcjxh",
+            "type": "step",
+            "title": "Criar a coluna Nome_Limpo",
+            "isHidden": false,
+            "description": "<p>Clique na célula H1 e escreva <strong>Nome_Limpo</strong>.</p>"
+          },
+          {
+            "id": "cmqsaxu0y003k357pzozo3173",
+            "type": "step",
+            "title": "Pedir a fórmula ao Claude",
+            "isHidden": false,
+            "description": "<p>Vá ao Claude e envie a seguinte mensagem:</p><ul><li>Tenho uma coluna de nomes no Excel com três tipos de problema:<ol><li>Nomes em CAIXA ALTA (ex: \"FERNANDA LIMA\")</li><li>Nomes em minúsculas (ex: \"joão pedro silva\")</li><li>Espaços extras no início, no fim ou entre palavras (ex: \" FERNANDA LIMA \" ou \"Marcos  Oliveira\")</li></ol></li><li>Quero uma fórmula única na coluna H que corrija os três problemas de uma vez e deixe o nome com a primeira letra de cada palavra em maiúscula (ex: \"Fernanda Lima\"). Me explique cada função usada.</li></ul>"
+          },
+          {
+            "id": "cmqsaxu0y003l357p47kxm9ph",
+            "type": "step",
+            "title": "Aplicar a fórmula sugerida",
+            "isHidden": false,
+            "description": "<p>Clique na célula H2 no Excel. Digite a fórmula sugerida pelo Claude. Ela deve ser algo parecido com:</p><ul><li>=PRI.MAIÚSCULA(TIRAR.ESPAÇOS(B2))</li></ul><p>Se o seu Excel estiver em inglês:</p><ul><li>=PROPER(TRIM(B2))</li></ul><p>Pressione Enter e veja o resultado. Copie a fórmula para H3 até H9 (cobrindo todas as linhas com dados).</p>"
+          },
+          {
+            "id": "cmqsaxu0y003m357pr0t5404v",
+            "type": "step",
+            "title": "Validar o resultado",
+            "isHidden": false,
+            "description": "<p>Verifique linha por linha:</p><ul><li>H2 deve mostrar \"Ana Silva\" (não \"ana silva\")</li><li>H3 deve mostrar \"Bruno Santos\"</li><li>H7 deve mostrar \"Fernanda Lima\" (sem os espaços extras)</li><li>H8 deve mostrar \"João Pedro Silva\"</li><li>H9 deve mostrar \"Marcos Oliveira\" (com espaço duplo corrigido)</li></ul>"
+          },
+          {
+            "id": "cmqsaxu0y003n357pfaqv6nwp",
+            "type": "step",
+            "title": "Converter fórmulas em valores",
+            "isHidden": false,
+            "description": "<p>Selecione o intervalo H2:H9. Copie (Ctrl+C). Clique com o botão direito em H2 e escolha \"Colar Especial\" → \"Valores\" (ícone com \"123\" ou apenas texto, dependendo da versão). Isso transforma as fórmulas em texto fixo — agora você pode apagar a coluna B original se quiser, e os nomes limpos continuam lá.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "46aa5ce3-5a70-4040-b8bb-256ad146bc70"
+      },
+      {
+        "id": "cmqsaxu0y003p357prjnugo2j",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0y003q357pjpb6b60y",
+            "paragraph": "<p><strong>🤓 Curiosidade técnica — pode pular sem prejuízo:</strong> Essas funções \"empilhadas\" funcionam de dentro para fora: o Excel primeiro executa a função mais interna, depois passa o resultado para a próxima. É como descascar uma cebola ao contrário — você chega ao resultado de camada em camada.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "9b68b7e5-8ead-4a70-9128-e0f00e8f8f21"
+      },
+      {
+        "id": "cmqsaxu0y003r357ps6on5f59",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0y003s357pumritk7q",
+            "paragraph": "<p><strong>Ponto de controle:</strong> No Excel, na aba <strong>Clientes</strong>, a coluna H (<em>Nome_Limpo</em>) aparece ao lado da coluna B original, permitindo visualizar a comparação entre os nomes antes e depois do processamento.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "b2d18343-a4ce-4e78-a6ae-8978e6b1f89e"
+      },
+      {
+        "id": "cmqsaxu0y003t357phxcvvwff",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0y003u357pay6j89j4",
+            "paragraph": "<p><strong>Dica:</strong> Quando o Claude diz que a fórmula tem limitações, isso não é fracasso — é a informação mais valiosa que você pode ter antes de gastar horas tentando algo que não vai funcionar.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "db84d5e9-63e6-4e69-a185-bf3b3f288dc2"
+      },
+      {
+        "id": "cmqsaxu0y003v357pclaevhjr",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsaxu0y003w357peuurk053",
+            "paragraph": "<p>✅ Deu certo?</p><p>A coluna H deve conter todos os nomes padronizados com a primeira letra de cada palavra em maiúscula e sem espaços extras. Se você também conseguiu converter as fórmulas em valores fixos sem perder os dados, você dominou um processo de limpeza de dados completo.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7b7813c0-2e29-4cf0-a57e-58822b25d810"
+      },
+      {
+        "id": "sybyfp7mb7u0xtbyojeugozl",
+        "type": "text",
+        "items": [
+          {
+            "id": "iejooyiv0wb77holu58c4ez8",
+            "heading": "Se travar, veja como resolver os principais obstáculos.",
+            "paragraph": "<p>Enfrentou algum problema durante a limpeza? Expanda cada item para encontrar soluções rápidas para os obstáculos mais comuns.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "9ffab367-3636-4c36-aa18-114c1480af75"
+      },
+      {
+        "id": "cmqsaxu0y003x357p052xmgvn",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsaxu0y003y357p7mq89z55",
+            "title": "Problema: A fórmula retorna #NOME?",
+            "description": "<p>Tente a versão em inglês: =PROPER(TRIM(B2))</p>"
+          },
+          {
+            "id": "cmqsaxu0y003z357p1d5exrbw",
+            "title": "Problema: Os espaços extras continuam aparecendo",
+            "description": "<p>Verifique se usou TIRAR.ESPAÇOS por fora do PRI.MAIÚSCULA, e não por dentro</p>"
+          },
+          {
+            "id": "cmqsaxu0y0040357p1pn3j3t3",
+            "title": "Problema: O \"Colar Especial → Valores\" não aparece",
+            "description": "<p>Tente via menu: Início → Colar → Colar Especial → Valores</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "50ad7181-aa45-4e19-83ee-53c102bc9ec1"
+      },
+      {
+        "id": "uubxi9q0h4cpwo9cyv32ts31",
+        "type": "text",
+        "items": [
+          {
+            "id": "yj5vl95cx2jvpk9aaq9ua8nv",
+            "heading": "Quer ir além?",
+            "paragraph": "<p>Pronto para avançar? Experimente desafios extras para dominar ainda mais a limpeza de dados em Excel.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d66b7291-d2f7-4407-bd4a-c1d3aebcdd96"
+      },
+      {
+        "id": "cmqsaxu0y0041357pb4oqgeff",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsaxu0y0042357p787gkc1e",
+            "title": "Remover caracteres especiais dos nomes",
+            "description": "<p>Peça ao Claude uma fórmula que também remova caracteres especiais (como acentos) dos nomes, para uso em sistemas que não aceitam acentuação.</p>"
+          },
+          {
+            "id": "cmqsaxu0y0043357prc8absmu",
+            "title": "Usar SUBS (SUBSTITUTE) para trocar abreviações",
+            "description": "<p>Experimente a função SUBS (ou SUBSTITUTE) para trocar abreviações específicas: =SUBS(H2,\"Sr.\",\"Senhor\")</p>"
+          },
+          {
+            "id": "cmqsaxu0y0044357piuyuawd1",
+            "title": "Limpeza de texto em grandes bases com Power Query",
+            "description": "<p>Pergunte ao Claude como usar Power Query para fazer limpeza de texto em bases com mais de 10.000 linhas — ele vai explicar quando vale a pena mudar de ferramenta.</p>"
+          },
+          {
+            "id": "cmqsaxu0y0045357pyoqi39a2",
+            "title": "Compare fórmulas empilhadas com Power Query",
+            "description": "<p>Peça ao Claude para listar vantagens e desvantagens de cada abordagem, para você decidir rapidamente qual usar em cada situação.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "e6ed9782-7ad1-4a1f-8a65-90d84b76cf23"
+      }
+    ]
+  }
+}

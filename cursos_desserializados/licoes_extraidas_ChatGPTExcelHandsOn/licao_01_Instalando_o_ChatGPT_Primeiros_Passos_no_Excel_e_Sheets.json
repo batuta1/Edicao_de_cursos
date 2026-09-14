@@ -1,0 +1,552 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Instalando o ChatGPT: Primeiros Passos no Excel e Sheets",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "-ZIbW7d-d2OuahHyPl1pY-jAoGQhXzvv",
+    "createdAt": "2026-08-03T16:58:48.875Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmsdh4bvc002i3583z5vw35ny",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Instalando o ChatGPT: Primeiros Passos no Excel e Sheets",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-08-03T16:59:29.758Z",
+    "items": [
+      {
+        "id": "as1n45yvhzku757wmpfrufno",
+        "type": "text",
+        "items": [
+          {
+            "id": "tpvhwr846nyprvsrzd528g2b",
+            "heading": "Por que integrar o ChatGPT ao Excel e Google Sheets?",
+            "paragraph": "<p>Toda vez que você copia um trecho da planilha, cola em outra janela do ChatGPT, espera a resposta e traz o resultado de volta na mão, perde tempo e corre o risco de colar no lugar errado. Instalando o ChatGPT dentro do Excel ou do Google Sheets, esse vai-e-vem desaparece: a IA passa a enxergar as células da sua planilha e você pede o que precisa em português, sem escrever fórmula nenhuma. Não é preciso experiência com tecnologia — só seguir o passo a passo e testar direto na sua planilha.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d08f1dc6-4db8-4506-b84f-053f45260b07"
+      },
+      {
+        "id": "wiz3may3gnnjdv6g6tfktozc",
+        "type": "text",
+        "items": [
+          {
+            "id": "tqxalp32wdzszjvlti44i11d",
+            "paragraph": "<p>Nesta lição você instala o ChatGPT como um painel de conversa dentro da sua planilha — no Excel ou no Google Sheets — e confirma que ele está realmente enxergando seus dados antes de seguir para as próximas oficinas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "b6964eb4-b51d-4e13-bdd5-cd89a6dba1f6"
+      },
+      {
+        "id": "lj8x9hhxauqmek4v1sp64u7r",
+        "type": "list",
+        "items": [
+          {
+            "id": "bcmfhldlazhlllo4ekc97kab",
+            "number": "1",
+            "paragraph": "<p>Verificar os pré-requisitos para integração do ChatGPT.</p>"
+          },
+          {
+            "id": "au8pj6e74x4uqn0qez2wex86",
+            "number": "2",
+            "paragraph": "<p>Instalar o suplemento no Excel.</p>"
+          },
+          {
+            "id": "npqilnxayq9fx581rif33ikv",
+            "number": "3",
+            "paragraph": "<p>Instalar o complemento no Google Sheets.</p>"
+          },
+          {
+            "id": "iverns4rhm74fmqn51ggi0iv",
+            "number": "4",
+            "paragraph": "<p>Validar se o ChatGPT está funcionando na planilha.</p>"
+          },
+          {
+            "id": "hhodk7hgnxp1axu1gb5ihuap",
+            "number": "5",
+            "paragraph": "<p>Resolver problemas comuns de instalação e acesso.</p>"
+          },
+          {
+            "id": "ljqlbl1gm2lb20a4lchresn3",
+            "number": "6",
+            "paragraph": "<p>Comparar os fluxos entre Excel e Sheets.</p>"
+          },
+          {
+            "id": "xv7zjgoeilsd47rh46t4tsrv",
+            "number": "7",
+            "paragraph": "<p>Orientações para ambientes corporativos.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "66e1af3c-75ff-4cb2-b24e-09768fc37e15"
+      },
+      {
+        "id": "cmsdh57fj002o3583xl5jjchm",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsdh57fj002p3583ey8fd4hj",
+            "paragraph": "<p><strong>Regra de ouro:</strong> Errar faz parte. Se algo não funcionar de primeira, tente novamente de forma mais clara. Você está aqui para aprender fazendo!</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "9e496257-7939-4652-8b14-bcc4849edea9"
+      },
+      {
+        "id": "qrn5aj90a0lo8jyiy4fxbwbt",
+        "type": "text",
+        "items": [
+          {
+            "id": "ktaey4aymvz1zny6dfszi25h",
+            "heading": "Confira se você tem tudo pronto para começar",
+            "paragraph": "<p>Antes de começar, garanta que você tem todos os itens necessários para instalar e usar o ChatGPT na sua planilha. Expanda cada item para conferir os detalhes.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7bab3a93-59a6-44b9-9454-02ece09fb077"
+      },
+      {
+        "id": "cmsdh57fj002q3583h3a3ml28",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsdh57fj002r35836l4qyzft",
+            "title": "Excel (aplicativo ou web) ou Google Sheets",
+            "description": "<p>Você pode usar tanto o Excel (no aplicativo ou na versão web) quanto o Google Sheets. Escolha o que faz parte do seu dia a dia.</p>"
+          },
+          {
+            "id": "cmsdh57fj002s3583vfnp7vpg",
+            "title": "Conta ativa no ChatGPT",
+            "description": "<p>É necessário ter uma conta ativa no ChatGPT. Qualquer plano já serve para começar, inclusive o gratuito.</p>"
+          },
+          {
+            "id": "cmsdh57fj002t35836zxl5nf9",
+            "title": "Internet",
+            "description": "<p>Uma conexão estável com a internet é essencial para instalar e usar o ChatGPT integrado à planilha.</p>"
+          },
+          {
+            "id": "cmsdh57fj002u3583kj9ce4nr",
+            "title": "Uma planilha em branco para testes",
+            "description": "<p>Abra uma planilha nova, só para experimentar sem medo de alterar dados importantes.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "91618c13-8118-4750-b917-3d37db866690"
+      },
+      {
+        "id": "cmsdh57fk002v358388vkuj8y",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmsdh57fk002w3583at3i59lv",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "3da76b4f-822a-4318-8420-df9d5655b764"
+      },
+      {
+        "id": "cmsdh57fk00313583t9nx2nli",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsdh57fk002x35839feskipx",
+            "type": "intro",
+            "title": "Introdução à Instalação do ChatGPT na Planilha",
+            "isHidden": false,
+            "description": "<p>Vamos instalar o ChatGPT diretamente na sua planilha. Siga as etapas conforme o programa que você utiliza.</p>"
+          },
+          {
+            "id": "cmsdh57fk002y3583i4askk3d",
+            "type": "summary",
+            "title": "Resumo da Instalação do ChatGPT",
+            "isHidden": false,
+            "description": "<p>Pronto! Agora o ChatGPT está instalado na sua planilha. Siga para o próximo passo para validar se tudo está funcionando corretamente.</p>"
+          },
+          {
+            "id": "cmsdh57fk002z3583pkmo4cup",
+            "type": "step",
+            "title": "Instalar o ChatGPT no Excel",
+            "isHidden": false,
+            "description": "<p>Abra o Excel.</p><p>Siga o caminho: Excel &gt; Página Inicial &gt; Suplementos &gt; Microsoft Marketplace.</p><p>Digite \"ChatGPT\" na busca e confirme que é o suplemento oficial da OpenAI.</p><p>Clique em Adicionar (ou Instalar).</p><p>Faça login com sua conta do ChatGPT.</p><p>Confira o caminho: Excel &gt; Página Inicial &gt; barra lateral à direita.</p>"
+          },
+          {
+            "id": "cmsdh57fk00303583th59ef9n",
+            "type": "step",
+            "title": "Instalar o ChatGPT no Google Sheets",
+            "isHidden": false,
+            "description": "<p>Abra o Google Sheets.</p><p>Siga o caminho: Google Sheets &gt; Extensões &gt; Complementos &gt; Google Workspace Marketplace.</p><p>Busque \"ChatGPT\", encontre o complemento oficial e clique em Instalar.</p><p>Aceite as permissões pedidas.</p><p>Faça login com sua conta do ChatGPT.</p><p>Reabra o painel pelo caminho: Google Sheets &gt; Extensões &gt; painel lateral aberto.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "33b78a27-2755-4fcb-97b7-68b64ef867e4"
+      },
+      {
+        "id": "cmsdh57fk003235837oepj0gh",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsdh57fk0033358355988i6h",
+            "paragraph": "Com a barra lateral aberta, digite exatamente este texto e envie:<br>Olá, você consegue ver esta planilha? Descreva em poucas linhas quantas abas existem e qual é o nome de cada uma, sem alterar nada."
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "182c5e76-df96-4e32-838d-f26318638abc"
+      },
+      {
+        "id": "8e28a0eb-5eff-44c1-af8f-beedc92575d9",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "93ea5a02-e557-49eb-96f5-ab8c69e2e973",
+            "type": "MULTIPLE_CHOICE",
+            "title": "O que indica que o ChatGPT está corretamente integrado à sua planilha?",
+            "answers": [
+              {
+                "id": "5e1b7051-f62b-41b6-a4cb-b9ba8c686646",
+                "title": "A barra lateral responde descrevendo as abas da planilha.",
+                "correct": true,
+                "feedback": "Correto: para descrever as abas, o ChatGPT precisa efetivamente ler o conteúdo do arquivo. Uma resposta genérica, sem citar nomes reais de abas, indicaria que a IA só está conversando, sem acesso à planilha."
+              },
+              {
+                "id": "ef083c41-6826-4802-b429-ce78e7102a1d",
+                "title": "O suplemento aparece instalado, mas não responde a comandos.",
+                "correct": false,
+                "feedback": "Aparecer instalado na lista de suplementos só confirma o download — não confirma que a IA está conectada à planilha. O teste real é enviar um pedido e receber uma resposta baseada nos seus dados."
+              },
+              {
+                "id": "09f532f3-bd8e-4e71-88b9-64fa7bf2a66d",
+                "title": "Uma nova aba é criada automaticamente.",
+                "correct": false,
+                "feedback": "A instalação não cria abas por conta própria. Se isso acontecesse sem você pedir, seria motivo de desconfiança, não de confirmação."
+              },
+              {
+                "id": "5b7b830f-aba9-4dd7-bdf2-36e56111de42",
+                "title": "Nenhuma alteração acontece na planilha.",
+                "correct": false,
+                "feedback": "Nesse teste específico você pediu apenas uma descrição, sem alterar nada — então o esperado é mesmo a planilha continuar igual. O sinal de integração é a resposta descrevendo as abas, não a ausência de mudanças."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "efc88047-7708-4159-8101-473c14cf3628"
+      },
+      {
+        "id": "fbaxispmgzl6fgdnxkvnenlp",
+        "type": "text",
+        "items": [
+          {
+            "id": "f0g7ct4ptktqnvms5iyzqr2q",
+            "heading": "Enfrentou algum problema? Veja como resolver os mais comuns:",
+            "paragraph": "<p>Se algo não funcionou como esperado, expanda cada item para ver as soluções para os problemas mais frequentes durante a instalação.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "43110f4e-7a11-4b24-b552-bc58d70a05cd"
+      },
+      {
+        "id": "cmsdh57fk00343583gvcxrbap",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsdh57fk00353583f4gskdyu",
+            "title": "Não encontro \"ChatGPT\" na busca do Marketplace",
+            "description": "<p>Sua conta pode ser corporativa e ter a loja bloqueada — pergunte ao time de TI.</p>"
+          },
+          {
+            "id": "cmsdh57fk00363583vcrf6zx9",
+            "title": "A barra lateral não abre depois de instalado",
+            "description": "<p>Feche e reabra o Excel, ou recarregue a página do Google Sheets.</p>"
+          },
+          {
+            "id": "cmsdh57fk00373583eorq3e9v",
+            "title": "Instalei, mas continua bloqueado",
+            "description": "<p>Em contas de empresa, um administrador precisa liberar o uso pelo caminho Configurações do Workspace &gt; Permissões e funções &gt; ChatGPT for Excel and Google Sheets &gt; Habilitar.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "59170fd4-4b9f-4bba-9575-863062733a8e"
+      },
+      {
+        "id": "cmsdh57fk003835834ffcrld3",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsdh57fk00393583zkr2cqny",
+            "paragraph": "<p>💡 Pense na barra lateral como um colega ao lado, pronto para ajudar: basta dizer o que precisa, sem se preocupar em explicar onde estão os dados.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "bcb093e0-a966-4e1b-870c-0f8f1edc76a4"
+      },
+      {
+        "id": "cmsdh57fk003a3583a8y6ygvp",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmsdh57fk003b3583ejet2n1l",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "e30082c6-1dc5-45b6-ba84-aec0bf72acae"
+      },
+      {
+        "id": "h22mjzjyh7j7b4ejr2vtqi2d",
+        "type": "text",
+        "items": [
+          {
+            "id": "eravvel71bzakayg9092lkqw",
+            "heading": "Desafios Opcionais para Aprofundar o Aprendizado",
+            "paragraph": "<p>Se quiser ir além, experimente os desafios abaixo para comparar plataformas e entender melhor o funcionamento do ChatGPT em diferentes ambientes.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f8f5ef0e-cc32-4ca0-a584-173bbd8a0ece"
+      },
+      {
+        "id": "cmsdh57fk003c3583ht3qmv9f",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsdh57fk003d3583x1ruh6l2",
+            "title": "Instale nos dois e compare fluxos",
+            "description": "<p>Se você usa Excel e Google Sheets no trabalho, instale nos dois e compare os fluxos de instalação.</p>"
+          },
+          {
+            "id": "cmsdh57fk003e3583nzhggbt8",
+            "title": "Teste o histórico de conversa",
+            "description": "<p>Envie a mesma mensagem de teste em ambos ambientes e observe que cada um guarda seu próprio histórico de conversa.</p>"
+          },
+          {
+            "id": "cmsdh57fk003f3583zdwy574b",
+            "title": "Valide em ambiente corporativo",
+            "description": "<p>Se estiver em conta corporativa, pergunte ao administrador de TI se o recurso já está habilitado para seu usuário.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "00e3deab-60cb-4d9d-9fba-d9bc9e4e0c0d"
+      },
+      {
+        "id": "yuzbj1rju79y1kxobt67mxbc",
+        "type": "text",
+        "items": [
+          {
+            "id": "p64kxdd7l0f54xbfwt27ny1m",
+            "paragraph": "<p>Veja as principais diferenças ao instalar a extensão no Excel e no Google Sheets:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "29bd70bd-275f-44f5-9ff4-091cc794eab6"
+      },
+      {
+        "id": "wmfl4pta6e04vlr09qe0bnuw",
+        "type": "list",
+        "items": [
+          {
+            "id": "zj3yhc2amqalgywovptt9oe1",
+            "number": "1",
+            "paragraph": "<p>Caminhos de navegação distintos para acessar o Marketplace.</p>"
+          },
+          {
+            "id": "f9iicvf9y86l00iautnb1wit",
+            "number": "2",
+            "paragraph": "<p>Permissões e bloqueios podem variar em contas corporativas.</p>"
+          },
+          {
+            "id": "ix8ibiqtm775cll4mvsp41j5",
+            "number": "3",
+            "paragraph": "<p>Cada plataforma mantém seu próprio histórico de conversa.</p>"
+          },
+          {
+            "id": "vn3fed8hf5etcur3xahuzr54",
+            "number": "4",
+            "paragraph": "<p>O painel lateral pode ter pequenas diferenças visuais.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "4cdf4063-eb9a-4025-a5ae-c88dd6358305"
+      },
+      {
+        "id": "us6j2v42kn6qd3w4ldah64q4",
+        "type": "text",
+        "items": [
+          {
+            "id": "l5fyuuv57qmc9fvjttydyxui",
+            "paragraph": "<p>Pronto! Com o ChatGPT respondendo dentro da sua planilha, você já tem a base para o resto do curso. Na próxima lição, você vai criar e atualizar uma lista de controle inteira apenas conversando com a barra lateral, sem digitar cabeçalho nem fórmula nenhuma.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "67d2874e-345e-4469-9142-44ba524ddb27"
+      }
+    ]
+  }
+}

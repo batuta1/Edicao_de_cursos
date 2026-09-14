@@ -1,0 +1,41 @@
+/* Configurações globais do corpo do texto */
+body {
+    font-family: "Georgia", serif;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 5%;
+}
+
+/* Títulos */
+h1 {
+    font-family: "Helvetica", sans-serif;
+    text-align: center;
+    color: #1a1a1a;
+    margin-top: 2em;
+    page-break-before: always; /* Força cada # H1 a começar em uma nova página */
+}
+
+h2 {
+    font-family: "Helvetica", sans-serif;
+    color: #333333;
+    margin-top: 1.5em;
+}
+
+/* Parágrafos e Recuos */
+p {
+    text-indent: 1.5em; /* Recuo na primeira linha estilo livro físico */
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* Remove o recuo do primeiro parágrafo após um título */
+h1 + p, h2 + p, h3 + p {
+    text-indent: 0;
+}
+
+/* Blocos de código (Markdown `code`) */
+pre, code {
+    font-family: "Courier New", monospace;
+    background-color: #f4f4f4;
+    font-size: 0.9em;
+}

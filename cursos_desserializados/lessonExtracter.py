@@ -3,10 +3,10 @@ import re
 from pathlib import Path
 
 # Arquivo original do curso
-arquivo_entrada = Path(__file__).parent / "cursoVSCODEtest.json"
+arquivo_entrada = Path(__file__).parent / "cursoClaudeDesignEssentials.json"
 
 # Pasta onde serão salvas as lições separadas
-pasta_saida = Path(__file__).parent / "licoes_extraidas_vscode_test"
+pasta_saida = Path(__file__).parent / "licoes_extraidas_ClaudeDesignEssentials"
 pasta_saida.mkdir(exist_ok=True)
 
 # Carrega o JSON completo

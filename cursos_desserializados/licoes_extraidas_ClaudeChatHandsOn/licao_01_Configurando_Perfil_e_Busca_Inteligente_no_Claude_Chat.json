@@ -1,0 +1,717 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Configurando Perfil e Busca Inteligente no Claude Chat",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "o49VjZx0J-N47-U9qKHVmu04X5EeLJ7u",
+    "createdAt": "2026-08-10T18:22:56.636Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmsnk7fjm002i3581tz8yw3je",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Configurando Perfil e Busca Inteligente no Claude Chat",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-08-10T18:23:32.709Z",
+    "items": [
+      {
+        "id": "apzm82zx92i6dcucu9kbfy7z",
+        "type": "text",
+        "items": [
+          {
+            "id": "ect08ma0g7c4ktk0g1o3t3sw",
+            "heading": "Por que repetir tudo de novo?",
+            "paragraph": "<p>Por padrão, todo chat novo com o Claude é uma folha em branco: ele não sabe quem você é, nem lembra da conversa em que você tratou desse mesmo assunto semanas atrás. Isso gera dois desperdícios de tempo diferentes — reexplicar seu contexto a cada conversa, e rolar dezenas de chats antigos atrás de uma resposta específica. Nesta lição você resolve os dois: primeiro configura um perfil que o Claude carrega automaticamente em qualquer conversa nova, depois aprende a usar a busca semântica para encontrar qualquer chat antigo por ideia, não por palavra exata.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "abdbe19e-4079-4810-a3cc-229b4e48a296"
+      },
+      {
+        "id": "voklbck9g844wuvcoacr31d8",
+        "type": "text",
+        "items": [
+          {
+            "id": "fu9xvj01p36xcpq537spwx99",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d48c4c0d-3879-4d10-8235-f71b2ae86015"
+      },
+      {
+        "id": "uhro55wsiy75j9m45bkry118",
+        "type": "list",
+        "items": [
+          {
+            "id": "dpv9qvhjpnkjto5yorqgzg50",
+            "number": "1",
+            "paragraph": "<p>Configurar o perfil automático do Claude para evitar apresentações repetidas.</p>"
+          },
+          {
+            "id": "n6s297gf6acw6byd2kmtft7h",
+            "number": "2",
+            "paragraph": "<p>Refinar e ajustar instruções personalizadas para respostas mais alinhadas ao seu estilo.</p>"
+          },
+          {
+            "id": "pdmi952iawmad9p8us2aqmtq",
+            "number": "3",
+            "paragraph": "<p>Realizar buscas semânticas para encontrar conversas antigas por ideia, não só por palavra-chave.</p>"
+          },
+          {
+            "id": "e9kk48ok1bgdn93dmkqkchjj",
+            "number": "4",
+            "paragraph": "<p>Solucionar problemas comuns ao configurar perfil e usar a busca.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "59080677-9fd2-4d8c-8b60-c7699d4a0384"
+      },
+      {
+        "id": "cmsnk87er002l3581urd6wana",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsnk87er002m35816wn8xdun",
+            "paragraph": "<p><strong>Regra de ouro:</strong> você não vai quebrar nada. Toda configuração que vamos mexer aqui pode ser reescrita, desativada ou apagada depois — errar uma instrução só significa reescrevê-la. Não existe \"estragar o Claude para sempre\".</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f9a9f808-0447-4bb2-9620-2ae8ecf2d66c"
+      },
+      {
+        "id": "sm9p86tsdvssjib5zxxp1qsx",
+        "type": "text",
+        "items": [
+          {
+            "id": "uctg4sfknflkheuza74kbbq5",
+            "heading": "Chega de se reapresentar!",
+            "paragraph": "<p>Explicar quem você é e como prefere as respostas a cada conversa nova consome um tempo que poderia ir direto para o trabalho. As Custom Instructions resolvem isso de forma permanente: diferente da Memory, que o Claude atualiza sozinho aos poucos, elas ficam carregadas em qualquer chat assim que você as salva — sem espera e sem repetição.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "5b61f7ed-ebf7-49e4-8102-eb6eaf10b75b"
+      },
+      {
+        "id": "cmsnk87es002u35819u7q3xpr",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk87er002n3581se9hct80",
+            "type": "intro",
+            "title": "Introdução à Configuração de Custom Instructions",
+            "isHidden": false,
+            "description": "<p>Vamos configurar o perfil do Claude para que ele saiba quem você é e como prefere as respostas. Siga os passos abaixo:</p>"
+          },
+          {
+            "id": "cmsnk87er002o3581911c7052",
+            "type": "summary",
+            "title": "Resumo da Configuração",
+            "isHidden": false,
+            "description": "<p>Se tudo deu certo, a resposta na conversa nova já reflete o tom ou o público que você definiu — sem que você tenha repetido isso na pergunta — e as instruções aparecem salvas em Settings &gt; Custom Instructions.</p>"
+          },
+          {
+            "id": "cmsnk87es002p35815g65vc6p",
+            "type": "step",
+            "title": "Acesse as configurações",
+            "isHidden": false,
+            "description": "<p>Siga o caminho: 🧭 Claude &gt; ícone de perfil &gt; Settings &gt; Custom Instructions (ou Preferences).</p>"
+          },
+          {
+            "id": "cmsnk87es002q3581gqlczktr",
+            "type": "step",
+            "title": "Preencha o campo \"O que você gostaria que o Claude soubesse sobre você?\"",
+            "isHidden": false,
+            "description": "<p>Escreva algo assim:</p><p>Sou [sua profissão/função]. Trabalho com [seu público-alvo]. Meus objetivos principais são [1 a 3 objetivos]. Minhas restrições de trabalho são [tempo, orçamento, regras da instituição — o que for relevante].</p>"
+          },
+          {
+            "id": "cmsnk87es002r3581d3hi863o",
+            "type": "step",
+            "title": "Preencha o campo \"Como você gostaria que o Claude respondesse?\"",
+            "isHidden": false,
+            "description": "<p>Escreva algo assim:</p><p>Use um tom [formal / casual / técnico — escolha o seu]. Prefiro respostas em [listas / parágrafos / tabelas]. Quando houver mais de um jeito de responder, priorize [o que for mais importante para você: rapidez, profundidade, exemplos práticos...].</p>"
+          },
+          {
+            "id": "cmsnk87es002s3581j0djmnve",
+            "type": "step",
+            "title": "Salve as instruções",
+            "isHidden": false,
+            "description": "<p>Clique em salvar.</p>"
+          },
+          {
+            "id": "cmsnk87es002t358149fvaede",
+            "type": "step",
+            "title": "Teste em uma conversa nova",
+            "isHidden": false,
+            "description": "<p>Abra uma conversa nova e faça uma pergunta qualquer da sua área — sem explicar quem você é.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "9bf0c2a2-e4a6-462d-abd8-a46694598cf1"
+      },
+      {
+        "id": "d2555609-473d-4591-b07a-38af702e4831",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "adb064fa-c67d-4534-bcb5-9199db80d983",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Após configurar as Custom Instructions, você abriu uma conversa nova e fez uma pergunta sem se apresentar. O que você deve observar na resposta do Claude?",
+            "answers": [
+              {
+                "id": "0fe1b399-7d44-437d-b64b-a6263dfd14cf",
+                "title": "O Claude pede para você se apresentar novamente",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "87a3e9c7-fbad-470a-858e-19511d24b25a",
+                "title": "O Claude responde já usando o tom e formato definidos, sem pedir informações extras",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "3f50e66f-344d-4d89-b746-b58ec8332cc7",
+                "title": "O Claude ignora suas preferências e responde de forma genérica",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "44c3c8e9-9a23-4db6-9732-39386c0ac2bd",
+                "title": "O Claude não responde nada",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto: isso mostra que as Custom Instructions estão carregadas. O Claude aplicou o tom e o formato que você definiu sem que fosse preciso repeti-los na pergunta.",
+            "feedbackIncorrect": "Se o Claude pediu para você se apresentar de novo ou ignorou o tom e o formato definidos, as Custom Instructions provavelmente não foram salvas. Volte a Settings > Custom Instructions e confirme."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "702a1a6d-2e6c-4ae0-965b-c07909066f63"
+      },
+      {
+        "id": "h8dtp42xvjb9dtne2ae5mepv",
+        "type": "text",
+        "items": [
+          {
+            "id": "y8xykpc4i0aerawpz8ojztzw",
+            "heading": "Dificuldades comuns ao configurar Custom Instructions",
+            "paragraph": "<p>Encontre abaixo soluções para os problemas mais comuns ao configurar seu perfil no Claude. Expanda cada item para ver o que fazer em cada situação.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "5e736757-442f-474d-a3a4-7f33d7b2e5f3"
+      },
+      {
+        "id": "cmsnk87es002v3581b2ww3cfu",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk87es002w358115h5fzlu",
+            "title": "Não encontro \"Custom Instructions\"",
+            "description": "<p>Procure por \"Preferences\" — o nome pode mudar entre versões.</p>"
+          },
+          {
+            "id": "cmsnk87es002x35813g3fwk5d",
+            "title": "Resposta veio genérica",
+            "description": "<p>Confirme se você clicou em salvar antes de abrir a conversa nova.</p>"
+          },
+          {
+            "id": "cmsnk87es002y3581tm4pe0k4",
+            "title": "Não sei o que escrever sobre mim",
+            "description": "<p>Comece simples: profissão + público + 1 objetivo. Você pode refinar depois.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "40bde5b5-a285-4816-a65e-245ca94e940e"
+      },
+      {
+        "id": "cmsnk87es002z3581l1vr95cy",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsnk87es0030358154e02k13",
+            "paragraph": "<p><strong>Dica:</strong> Instruções específicas funcionam muito mais do que genéricas. \"Sou professora do 6º ano em escola pública, com turmas grandes e pouco recurso\" ensina muito mais do que \"sou professora\".</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "873ac52a-0062-400d-8053-ba6b9114a3ac"
+      },
+      {
+        "id": "bvfsl4wgqwvu3vs39luw67i9",
+        "type": "text",
+        "items": [
+          {
+            "id": "iyh840eqr6re5dafbfuckehb",
+            "heading": "Aprofunde sua prática (opcional)",
+            "paragraph": "<p>Quer ir além? Explore atividades extras para refinar suas Custom Instructions e validar os resultados. Expanda cada item para saber como praticar.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "c8c4015f-3925-4908-b8a9-d331f2bd2cac"
+      },
+      {
+        "id": "cmsnk87es003135816r6mfutq",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk87es003235812pvygoov",
+            "title": "Peça feedback ao Claude",
+            "description": "<p>Pergunte: \"com base no que você sabe sobre mim agora, o que ficou pouco claro nas minhas instruções?\" Valide se você recebe pelo menos uma sugestão concreta de ajuste.</p>"
+          },
+          {
+            "id": "cmsnk87es00333581jz8hokd8",
+            "title": "Especifique ainda mais",
+            "description": "<p>Reescreva uma frase genérica das suas instruções em versão mais específica, com um exemplo concreto. Valide se você consegue apontar a diferença entre a versão antiga e a nova.</p>"
+          },
+          {
+            "id": "cmsnk87es00343581jt2fc3b7",
+            "title": "Compare antes e depois",
+            "description": "<p>Teste a mesma pergunta em uma conversa antes e depois de salvar as instruções. Valide se você identifica pelo menos uma diferença perceptível entre as duas respostas.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "72b5a8ad-dfc4-44ff-ab4a-2a258cc2ecfd"
+      },
+      {
+        "id": "cmsnk87es00353581kgp4s9ec",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmsnk87es00363581ywab7jlt",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "b3f693fc-b1eb-4f36-a9ac-ef28c31a9fbe"
+      },
+      {
+        "id": "wmxt1ubn5bbj2ro3zpxqg6q0",
+        "type": "text",
+        "items": [
+          {
+            "id": "n0ytesdckvi53fdxdshivb82",
+            "heading": "Encontre qualquer conversa, sem perder tempo",
+            "paragraph": "<p>Lembrar em qual chat você discutiu um assunto importante pode ser um desafio. Com a busca semântica do Claude, você encontra conversas antigas por ideia, não só por palavra-chave — economizando tempo e evitando retrabalho.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "94fef691-0307-4518-8c2e-c2a6f44ea5f3"
+      },
+      {
+        "id": "cmsnk87es003f3581eka04q97",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk87es00373581illtwjnk",
+            "type": "intro",
+            "title": "Introdução à Busca Inteligente no Claude",
+            "isHidden": false,
+            "description": "<p>Vamos ativar e usar a busca de chats para encontrar rapidamente conversas antigas.</p>"
+          },
+          {
+            "id": "cmsnk87es00383581fx94d45b",
+            "type": "summary",
+            "title": "Resumo do Processo de Busca",
+            "isHidden": false,
+            "description": "<p>Ao final, você deve conseguir reduzir uma busca ampla a 1 ou 2 resultados relevantes em até três rodadas de refinamento.</p>"
+          },
+          {
+            "id": "cmsnk87es003935811u9dmdlo",
+            "type": "step",
+            "title": "Ative a busca",
+            "isHidden": false,
+            "description": "<p>Siga o caminho: 🧭 Settings &gt; Features (ou Experimental Features) &gt; Search chats (ou Chat search) e ative, se ainda não estiver ativo.</p>"
+          },
+          {
+            "id": "cmsnk87es003a3581rw1i3o2g",
+            "type": "step",
+            "title": "Acesse o campo de busca",
+            "isHidden": false,
+            "description": "<p>Volte para a tela principal e clique no ícone de busca (lupa), geralmente no topo da barra lateral.</p>"
+          },
+          {
+            "id": "cmsnk87es003b3581dtutfzi3",
+            "type": "step",
+            "title": "Faça uma busca ampla",
+            "isHidden": false,
+            "description": "<p>Digite uma busca ampla sobre um tema que você já discutiu — por exemplo, \"planejamento de aula\" ou \"relatório mensal\".</p>"
+          },
+          {
+            "id": "cmsnk87es003c3581huo494ic",
+            "type": "step",
+            "title": "Refine os resultados",
+            "isHidden": false,
+            "description": "<p>Se aparecerem muitos resultados, acrescente um detalhe mais específico (tipo de documento, decisão tomada, época aproximada).</p>"
+          },
+          {
+            "id": "cmsnk87es003d3581zsv36qdg",
+            "type": "step",
+            "title": "Repita o refinamento",
+            "isHidden": false,
+            "description": "<p>Continue refinando até sobrar só uma ou duas conversas que parecem ser exatamente o que você procurava.</p>"
+          },
+          {
+            "id": "cmsnk87es003e35817t60ka3q",
+            "type": "step",
+            "title": "Decida como continuar",
+            "isHidden": false,
+            "description": "<p>Abra a conversa. Decida se vai continuar escrevendo ali mesmo ou copiar o essencial e abrir uma conversa nova.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "a0941e94-6a20-4379-a65a-8086062013e7"
+      },
+      {
+        "id": "14ede1ff-ef30-49cf-bd8f-63addc91d9d0",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "4d857584-541a-4251-8e29-e3c893993353",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você usou a busca do Claude para encontrar uma conversa antiga sobre 'relatório mensal'. Após refinar a busca, restaram duas conversas relevantes. O que fazer a seguir?",
+            "answers": [
+              {
+                "id": "9bce4eae-f95b-4f67-83d1-f684060a60c2",
+                "title": "Ignorar os resultados e começar uma conversa nova do zero",
+                "correct": false,
+                "feedback": "Ignorar os resultados desperdiça o contexto já existente nas conversas antigas, o que pode ser útil para dar continuidade ao trabalho."
+              },
+              {
+                "id": "7f59baa7-f254-423f-b1f6-4fd9f718e72e",
+                "title": "Abrir uma das conversas e decidir se continua nela ou copia o essencial para uma nova",
+                "correct": true,
+                "feedback": "Abrir a conversa encontrada permite aproveitar o contexto já existente, facilitando a continuidade ou a reutilização das informações importantes."
+              },
+              {
+                "id": "c7b2b422-a1b3-4b77-87a2-5ae88206137b",
+                "title": "Apagar todas as conversas antigas",
+                "correct": false,
+                "feedback": "Apagar as conversas antigas pode resultar na perda de informações relevantes e não é uma boa prática sem antes analisar o conteúdo."
+              },
+              {
+                "id": "68de6e06-63a2-41de-a778-d73e61fd9e80",
+                "title": "Tentar buscar por outra palavra-chave sem analisar os resultados",
+                "correct": false,
+                "feedback": "Buscar por outra palavra-chave sem analisar os resultados encontrados pode ser ineficiente e atrasar o processo de encontrar a informação desejada."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "1a9d4783-298f-4cb1-b9f1-28d44d580532"
+      },
+      {
+        "id": "dcpk0up1ejnaefgax4717whd",
+        "type": "text",
+        "items": [
+          {
+            "id": "rup26of0w7ymw2pj9um9984r",
+            "heading": "Soluções para problemas na busca",
+            "paragraph": "<p>Veja como resolver as situações mais comuns ao usar a busca do Claude. Expanda cada item para encontrar a solução adequada.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "b6143fb5-20f5-401c-8126-4c857bc62a79"
+      },
+      {
+        "id": "cmsnk87et003g3581g2gsomp9",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk87et003h3581rb49c4o3",
+            "title": "Não acho a opção de busca",
+            "description": "<p>Confirme que ativou em Settings &gt; Features; em algumas contas o ícone só aparece depois disso.</p>"
+          },
+          {
+            "id": "cmsnk87et003i35816l27zggv",
+            "title": "A busca não retorna nada",
+            "description": "<p>Tente um sinônimo, ou acrescente uma referência de tempo (\"mês passado\", \"no início do ano\").</p>"
+          },
+          {
+            "id": "cmsnk87et003j3581wo4v8lur",
+            "title": "Muitos resultados parecidos",
+            "description": "<p>Adicione um detalhe concreto: um nome de produto, uma decisão, um formato de documento.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "5e36abbd-1c1f-4546-b448-ce5381cc6c9f"
+      },
+      {
+        "id": "cmsnk87et003k3581phua0o6j",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsnk87et003l3581k6uf2ujz",
+            "paragraph": "<p><strong>Curiosidade técnica:</strong> essa busca é \"semântica\" — ela entende ideias, não só palavras. Por isso, uma busca por \"alimentação saudável\" pode encontrar uma conversa sobre \"hábitos alimentares de adolescentes\", mesmo sem nenhuma palavra em comum.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f0aa285d-a110-43b9-8843-ccc061ed3170"
+      },
+      {
+        "id": "nqxs16j8n9b5geufbuvkrtoi",
+        "type": "text",
+        "items": [
+          {
+            "id": "mvys2j7hp9nkb14dfdeqlqnm",
+            "heading": "Aprofunde sua busca (opcional)",
+            "paragraph": "<p>Quer explorar mais? Experimente padrões diferentes de busca e veja como o Claude responde. Expanda cada item para saber como praticar.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "dcad9f85-f76b-41fb-bac1-5871d8b56034"
+      },
+      {
+        "id": "cmsnk87et003m3581jge9h8e7",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk87et003n3581znag9chp",
+            "title": "Busque por diferentes padrões",
+            "description": "<p>Teste buscas por projeto, resultado, tempo, decisão ou artefato. Valide se o padrão escolhido retorna um resultado plausível.</p>"
+          },
+          {
+            "id": "cmsnk87et003o3581z0uakktb",
+            "title": "Use sinônimos",
+            "description": "<p>Busque pela mesma ideia usando duas frases diferentes. Valide se os resultados mudam ou permanecem parecidos.</p>"
+          },
+          {
+            "id": "cmsnk87et003p3581l8wk1se1",
+            "title": "Reconstrua contexto com o Claude",
+            "description": "<p>Se a busca falhar para algum tema, peça ao Claude para reconstruir o contexto a partir de uma descrição sua. Valide se você recebe uma reconstrução plausível do que foi discutido.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "1241ad00-7a36-4e18-b1e7-dcd016293bda"
+      },
+      {
+        "id": "cmsnk87et003q3581ywc41p3e",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmsnk87et003r3581raenxi5e",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "df3bb91d-a5f9-4aec-a445-6cdcf37792da"
+      },
+      {
+        "id": "wulyvrj3ua19csjhf111qycf",
+        "type": "text",
+        "items": [
+          {
+            "id": "up8z0r62xchztazpdd02qf3l",
+            "paragraph": "<p>Nesta lição você resolveu dois desperdícios de tempo: repetir seu contexto a cada conversa nova e procurar manualmente por chats antigos. Na próxima lição, o foco muda de configuração manual para automação: a Memory faz o Claude aprender sobre você sozinho, a partir das conversas que você já teve, e os Projects isolam o contexto de cada frente de trabalho para que elas não se misturem.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "e6161e01-26f1-4d67-81e9-9ba0d1f258fd"
+      }
+    ]
+  }
+}

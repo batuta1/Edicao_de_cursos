@@ -1,0 +1,570 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Instalando e Configurando o Claude Code no VS Code",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "OBRuJuX2jTjcw4BEH-DP3AkEh2Gp0Mrx",
+    "createdAt": "2026-06-24T16:16:48.594Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmqsa08sg002h357pe8oa46ld",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Instalando e Configurando o Claude Code no VS Code",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-06-24T16:19:46.789Z",
+    "items": [
+      {
+        "id": "kjdyj31d2qqzhk8txj2iyyiy",
+        "type": "text",
+        "items": [
+          {
+            "id": "lqrdmmzo228tbuqvjnqmsyvr",
+            "heading": "Preparando o Ambiente: Claude Code no VS Code",
+            "paragraph": "<p>Nesta lição, você vai preparar o seu ambiente para usar o Claude Code no VS Code com inteligência artificial. Dominar o setup inicial é o primeiro passo para transformar sua rotina de programação com IA e abrir portas para automação, revisão e melhoria de código de forma prática e eficiente.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "518626cb-be55-4b56-8833-f8dbc53361ca"
+      },
+      {
+        "id": "hmj8bideeqbmqbl7gr6suy0x",
+        "type": "text",
+        "items": [
+          {
+            "id": "vabcu1v6to1b54nqfnr5j6w1",
+            "paragraph": "<p>Em menos de 20 minutos você vai instalar a extensão, gerar sua chave de API e trocar a primeira mensagem com o Claude — tudo dentro do VS Code, sem sair da tela.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "1388f61c-51f2-4733-8f06-5b41909485d3"
+      },
+      {
+        "id": "emd3h7c3lzp7e4pzasl8dk75",
+        "type": "list",
+        "items": [
+          {
+            "id": "y0jssxhz6gt9wvg48cts13i5",
+            "number": "1",
+            "paragraph": "<p>Instalar a extensão Claude Code</p>"
+          },
+          {
+            "id": "rcepznw95n9m1t5pedgqa70n",
+            "number": "2",
+            "paragraph": "<p>Configurar conta e API Key</p>"
+          },
+          {
+            "id": "gjii1d3gt99zawcu14l8l7ws",
+            "number": "3",
+            "paragraph": "<p>Validar funcionamento da extensão</p>"
+          },
+          {
+            "id": "znyngaroq9jrhgs9a54126e2",
+            "number": "4",
+            "paragraph": "<p>Resolver problemas de instalação</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "06a80d17-eebc-4de2-b3b6-d51d6d593d17"
+      },
+      {
+        "id": "cmqsa111j002k357p8gvzizoz",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa111j002l357pebt964wu",
+            "paragraph": "<p>Este curso é mão na massa do começo ao fim. Não tem enrolação, não tem slides cheios de bullet points e não tem lição de casa chata. Cada oficina apresenta um problema real, você resolve, e — pronto — tem uma vitória concreta no bolso. A teoria aparece só quando é necessária para o próximo passo, e não um segundo antes.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "09476dbc-4530-4315-9bec-9182f875c9ad"
+      },
+      {
+        "id": "lccf2b0ga4esqmrrihg6jltw",
+        "type": "text",
+        "items": [
+          {
+            "id": "lel7lkj2dwhylptjakj71dl1",
+            "paragraph": "<p>Antes de começar, confirme que você tem os seguintes itens disponíveis agora:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "9b056d04-86a0-4390-bee3-7ba1a8ea89cf"
+      },
+      {
+        "id": "pcrjjpraoogc4hnn97p009ky",
+        "type": "list",
+        "items": [
+          {
+            "id": "xq1jqnaen4j4imx6wqv2gek3",
+            "number": "1",
+            "paragraph": "<p>VS Code instalado no seu computador (versão 1.95 ou mais recente)</p>"
+          },
+          {
+            "id": "c00npky4gzd0qezlmifi1xub",
+            "number": "2",
+            "paragraph": "<p>Uma conta gratuita na Anthropic — crie em <a href=\"https://claude.ai\" target=\"_blank\">claude.ai</a></p>"
+          },
+          {
+            "id": "h6lrkfa05o8qdpap9ynllve5",
+            "number": "3",
+            "paragraph": "<p>Acesso ao console da Anthropic em <a href=\"https://console.anthropic.com\" target=\"_blank\">console.anthropic.com</a> (para gerar sua chave de API)</p>"
+          },
+          {
+            "id": "ib2803nzogwa6vg4p4xe8gnr",
+            "number": "4",
+            "paragraph": "<p>Conexão com a internet</p>"
+          },
+          {
+            "id": "ie8niui1e5p2v3g8niepe2xq",
+            "number": "5",
+            "paragraph": "<p>Um arquivo de código qualquer salvo na sua máquina — pode ser Python, JavaScript, ou até um script de um exercício antigo</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "6e4a5070-1037-4dee-afdb-e8e97e0f508e"
+      },
+      {
+        "id": "cmqsa111j002m357p1g19uvd4",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa111j002n357p5b7njoiz",
+            "paragraph": "<p><strong>Regra de ouro do curso:</strong> Errar é parte do processo. Se algo não funcionar na primeira tentativa, vá direto para a seção \"Se travar\" daquela oficina — ela existe exatamente para isso. Código que roda de primeira suspeita de ter sido copiado do gabarito.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "ee06e0a8-12fe-49b0-8e3c-248fb3fca984"
+      },
+      {
+        "id": "utcqlzqts3jn1xzmxqekfo6h",
+        "type": "text",
+        "items": [
+          {
+            "id": "jxtebxpla61gxnibtjq25amf",
+            "heading": "Mapa da Mão na Massa",
+            "paragraph": "<p>Cada oficina deste curso resolve um problema real e entrega uma vitória concreta. Siga a sequência: cada etapa usa o que você aprendeu na anterior, garantindo evolução contínua e prática.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7bf6f167-a096-4524-aaf4-6b70bddd19c2"
+      },
+      {
+        "id": "ye1h5iosviza2d3lmn6xif9q",
+        "type": "text",
+        "items": [
+          {
+            "id": "b6t2uormfxj2d167hvmss3ah",
+            "heading": "Oficinas e Projeto Final com Claude Code",
+            "paragraph": "<ul><li><strong>Oficina 1:</strong> Instalar o Claude Code e confirmar que ele está funcionando. <em>Tempo estimado: 20 minutos.</em></li><li><strong>Oficina 2:</strong> Fazer o Claude entender o seu código e explicá-lo. <em>Tempo estimado: 20 minutos.</em></li><li><strong>Oficina 3:</strong> Pedir ao Claude para melhorar um trecho e revisar antes de aceitar. <em>Tempo estimado: 20 minutos.</em></li><li><strong>Oficina 4:</strong> Usar o Claude para encontrar e corrigir um erro real. <em>Tempo estimado: 20 minutos.</em></li><li><strong>Projeto Final:</strong> Refatorar um módulo completo do zero ao documentado. <em>Tempo estimado: 20 minutos.</em></li></ul>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "8158c5db-424a-4eba-9ce9-b325c9e9b82e"
+      },
+      {
+        "id": "cmqsa111k002o357pxb0598y5",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmqsa111k002p357po6t8jnou",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "ef9edcb1-b09a-4aa2-aa27-70aa1fab5a63"
+      },
+      {
+        "id": "cmqsa111k002q357proacg7rl",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa111k002r357pf0etwl1u",
+            "paragraph": "<h2>🎯 O Problema</h2><p>Você ouviu falar no Claude Code, abriu o VS Code, olhou para a tela... e nada. Nenhum ícone novo, nenhum painel mágico. É porque a extensão ainda não está instalada. Nesta oficina você vai instalar, configurar e trocar a primeira mensagem com o assistente — tudo em menos de 20 minutos.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "subheading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7af5a3e1-3701-4a6c-886e-20c312cd31cd"
+      },
+      {
+        "id": "ffyw0yetzj1njks2aw524i2x",
+        "type": "text",
+        "items": [
+          {
+            "id": "mbz4l3t8qq2l93wn0c0xvyny",
+            "paragraph": "<p>Para realizar a instalação e configuração, é necessário garantir que você tenha os seguintes itens prontos:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "85b2b09b-5da1-4d71-8728-45c53d7bf209"
+      },
+      {
+        "id": "pmhc125axfjacvu1r4teu7b8",
+        "type": "list",
+        "items": [
+          {
+            "id": "nh8py0pw6bof34mp6fqpxw87",
+            "number": "1",
+            "paragraph": "<p>VS Code aberto na sua tela</p>"
+          },
+          {
+            "id": "qxhq2onrugxkonkqpv174nue",
+            "number": "2",
+            "paragraph": "<p>Conta na Anthropic (precisa ter criado em console.anthropic.com)</p>"
+          },
+          {
+            "id": "yfnq0vy6kvmbg1ev274mlpkp",
+            "number": "3",
+            "paragraph": "<p>Conexão com a internet</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "1dba2c4d-0d5a-4ae2-8d2c-9f220dea1327"
+      },
+      {
+        "id": "cmqsa111k002y357pqy1joxgh",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsa111k002s357pdka24dh6",
+            "type": "intro",
+            "title": "Introdução à Instalação e Configuração do Claude Code",
+            "isHidden": false,
+            "description": "<p>Nesta sequência, você vai instalar a extensão Claude Code, gerar sua chave de API e conectar tudo ao VS Code. Siga cada passo com atenção para garantir que tudo funcione perfeitamente.</p>"
+          },
+          {
+            "id": "cmqsa111k002t357pidaypqmc",
+            "type": "summary",
+            "title": "Resumo da Instalação e Configuração",
+            "isHidden": false,
+            "description": "<p>Ao final desses passos, você terá o Claude Code instalado, autenticado e pronto para uso no seu VS Code.</p>"
+          },
+          {
+            "id": "cmqsa111k002u357px78ue3fs",
+            "type": "step",
+            "title": "Instalar a extensão Claude Code no VS Code",
+            "isHidden": false,
+            "description": "<p>1. Abra o VS Code.</p><p>2. Pressione <strong>Ctrl + Shift + X</strong> (Windows/Linux) ou <strong>Cmd + Shift + X</strong> (Mac) para abrir o painel de extensões na lateral esquerda.</p><p>3. No campo de busca no topo do painel, digite: <code>claude code</code></p><p>4. Procure a extensão publicada por <strong>Anthropic Inc.</strong> (o nome do publicador aparece em cinza logo abaixo do nome da extensão).</p><p>5. Clique em <strong>Install</strong> (botão azul).</p><p>6. Aguarde 30 a 60 segundos até o botão mudar para <strong>Uninstall</strong> — isso indica que a instalação terminou.</p><p>7. Se aparecer um botão <strong>Reload Required</strong>, clique nele. Se não aparecer, pressione <strong>Ctrl + Shift + P</strong> (ou <strong>Cmd + Shift + P</strong>), digite <code>Developer: Reload Window</code> e pressione Enter.</p>"
+          },
+          {
+            "id": "cmqsa111k002v357pk77by3fo",
+            "type": "step",
+            "title": "Gerar chave de API no Console Anthropic",
+            "isHidden": false,
+            "description": "<p>8. Abra o navegador e acesse <strong>console.anthropic.com</strong>. Faça login com a sua conta Anthropic.</p><p>9. No menu lateral esquerdo, clique em <strong>API Keys</strong>.</p><p>10. Clique em <strong>Create API Key</strong>.</p><p>11. No campo de nome, escreva algo descritivo. Por exemplo: <code>VS Code - Meu Computador</code></p><p>12. Clique em <strong>Create Key</strong>.</p><p>13. Uma sequência de letras e números vai aparecer — ela começa com <code>sk-ant-</code>. <strong>Copie agora: ela só aparece uma vez.</strong> Se fechar sem copiar, precisará criar outra chave do zero.</p>"
+          },
+          {
+            "id": "cmqsa111k002w357pql8pdvdu",
+            "type": "step",
+            "title": "Conectar o VS Code ao Claude Code",
+            "isHidden": false,
+            "description": "<p>14. Volte ao VS Code. Olhe na barra lateral esquerda — deve ter aparecido um ícone novo. Geralmente é um ícone de raio (⚡) ou um ícone com o logo da Anthropic. Clique nele.</p><p>15. Se uma caixa de diálogo pedir sua chave de API, cole a chave que você copiou no passo 13 e pressione Enter.</p><p>16. Se não aparecer a caixa automaticamente, pressione Ctrl + Shift + P (ou Cmd + Shift + P) e busque:</p><p>Claude Code: Sign In Selecione a opção e cole a chave quando pedido.</p>"
+          },
+          {
+            "id": "cmqsa111k002x357p2qfvogyh",
+            "type": "step",
+            "title": "Primeiro contato com o Claude Code",
+            "isHidden": false,
+            "description": "<p>17. Clique no ícone do Claude Code na barra lateral para abrir o painel de chat.</p><p>18. No campo de texto no fundo do painel, escreva:</p><p>Olá! Quanto é 7 vezes 8?</p><p>19. Pressione Enter ou clique no botão de envio.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "68fb37a3-825c-42bc-a849-2be24c511480"
+      },
+      {
+        "id": "cmqsa111k002z357p9vxodudm",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa111k0030357pg00g00ls",
+            "paragraph": "<ul><li><strong>Onde observar:</strong> VS Code &gt; painel de Extensões (Ctrl/Cmd + Shift + X) &gt; buscar por \"claude code\" &gt; resultado publicado por Anthropic Inc.</li><li><strong>Caminho:</strong> console.anthropic.com &gt; menu lateral esquerdo &gt; API Keys</li></ul>"
+          },
+          {
+            "id": 1,
+            "paragraph": ""
+          }
+        ],
+        "family": "impact",
+        "variant": "d",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "images": false,
+          "columns": 2
+        },
+        "globalBlockId": "10ecc0cb-5480-4a3c-9afc-c511786ccf63"
+      },
+      {
+        "id": "cmqsa111k0031357pyrqao9ne",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa111k0032357p75f1ltxa",
+            "paragraph": "<p>⚠️ <strong>Guarde bem essa chave.</strong> Nunca cole em um arquivo que você vai enviar por e-mail, colocar no Git ou compartilhar. Ela dá acesso à sua conta — trate como senha.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "d",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "b56ae5be-680a-4733-b051-887a6978c6c0"
+      },
+      {
+        "id": "cmqsa111k0033357po54rwm3o",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa111k0034357p3hym7x4e",
+            "paragraph": "<p>✅ Deu certo?</p><p>Se o Claude respondeu \"56\" (ou algo parecido, com alguma explicação simpática), parabéns — a extensão está instalada, autenticada e funcionando. O motor está ligado.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "d",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "09366a3e-ef02-4838-9ae1-fdd49ea5b814"
+      },
+      {
+        "id": "o07zomzwz8s9hdgrcbkx6esc",
+        "type": "text",
+        "items": [
+          {
+            "id": "jav7rqljgg06r031iuoby2s6",
+            "heading": "Enfrentou algum problema? Expanda para ver soluções práticas.",
+            "paragraph": "<p>Veja abaixo soluções para os problemas mais comuns ao instalar e usar o Claude no VS Code.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "73c0aea6-1522-45a4-bf5c-46660295d995"
+      },
+      {
+        "id": "cmqsa111l0035357ps2whrer1",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsa111l0036357pl9n96owu",
+            "title": "Não aparece nenhum ícone do Claude na barra lateral após instalar",
+            "description": "<p><strong>O que fazer:</strong> Feche e reabra o VS Code completamente (não só recarregue a janela).</p>"
+          },
+          {
+            "id": "cmqsa111l0037357pqki6l1ku",
+            "title": "Aparece erro \"Invalid API Key\" ou \"Authentication failed\"",
+            "description": "<p><strong>O que fazer:</strong> Volte ao <a href=\"https://console.anthropic.com\" target=\"_blank\">console.anthropic.com</a>, gere uma chave nova e repita o passo 15.</p>"
+          },
+          {
+            "id": "cmqsa111l0038357pia3563td",
+            "title": "A busca por \"claude code\" no marketplace não retorna nada",
+            "description": "<p><strong>O que fazer:</strong> Verifique se a sua versão do VS Code é 1.95 ou superior em Help → About.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "2b95d1db-e634-4554-8350-39f93ffeacd6"
+      },
+      {
+        "id": "tzcedk21q24x80d3dmp77xa4",
+        "type": "text",
+        "items": [
+          {
+            "id": "ukbgeqexnzc1nn398jqo639e",
+            "heading": "Quer ir além? Desafios extras para explorar",
+            "paragraph": "<p>Você instalou, configurou e fez o primeiro contato. Se quiser ir além do básico, experimente uma destas sugestões — cada uma abre uma camada nova de controle sobre a ferramenta.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "62354535-8432-4ded-a581-97ef291d3a17"
+      },
+      {
+        "id": "cmqsa111l0039357pr1fqcwdh",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsa111l003a357p2tkei9hp",
+            "title": "Gerar uma Segunda Chave de API",
+            "description": "<p>Crie uma nova chave de API com o nome \"Backup\" e armazene-a em um local seguro. Isso garante que você tenha uma alternativa caso precise substituir a chave principal.</p>"
+          },
+          {
+            "id": "cmqsa111l003b357pxn452jto",
+            "title": "Explorar o Painel de Configurações",
+            "description": "<p>Acesse o painel de configurações do Claude Code clicando na engrenagem dentro do painel. Analise as opções disponíveis para personalizar e otimizar sua experiência de uso.</p>"
+          },
+          {
+            "id": "cmqsa111l003c357p49qki5rv",
+            "title": "Pesquisar Extensões da Anthropic no VS Code",
+            "description": "<p>No marketplace do VS Code, procure por outras extensões desenvolvidas pela Anthropic. Veja as funcionalidades que cada uma oferece e avalie como elas podem complementar seu fluxo de trabalho.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "634bb66e-b431-4200-8562-1d487fc1b4cd"
+      },
+      {
+        "id": "g8ygunan87i85jtac6vzs472",
+        "type": "text",
+        "items": [
+          {
+            "id": "ivmneepsjcjoggugqcovbmh2",
+            "paragraph": "<p>Agora que você já está com o Claude Code pronto para uso, na próxima lição você vai aprender a interpretar e aprimorar código real com a ajuda da IA, descobrindo como fazer perguntas que realmente funcionam.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "59136a26-7244-4534-beb0-cb57bd80c0a1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,778 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Cruzamento de Tabelas e Regras de Classificação Inteligentes",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "Ag2K-tn1Qdp9pcUbpD9QEdnECaolz9yN",
+    "createdAt": "2026-06-24T16:42:09.174Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmqsawu3t002i357pr5rs5dgd",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Cruzamento de Tabelas e Regras de Classificação Inteligentes",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-06-24T16:43:10.403Z",
+    "items": [
+      {
+        "id": "yqp425yvjdllb2qz12g8to2n",
+        "type": "text",
+        "items": [
+          {
+            "id": "n44jj9dg06sh2lhv5pc70shn",
+            "heading": "Cruzamento Inteligente de Tabelas e Classificação Automática",
+            "paragraph": "<p>Você tem clientes numa aba e vendas em outra, e o PROCV que tentou ontem devolveu #N/A na metade das células. Ou o gestor pediu uma coluna nova de classificação com três regras diferentes, e empilhar vários SE deixou a fórmula ilegível. Nesta lição, o Claude te ajuda a escolher a função certa para cada situação e a entender por que ela funciona — não só a copiar.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "42234f07-d00f-4813-b607-f0a5fa90a7f6"
+      },
+      {
+        "id": "b4n71em3nq1xq30aqhm6y1dn",
+        "type": "text",
+        "items": [
+          {
+            "id": "l7uj4apmjq7ydjfe0w24qbn4",
+            "paragraph": "<p>Nesta lição, você vai desenvolver habilidades essenciais para trabalhar com grandes volumes de dados no Excel. Veja o que você vai aprender:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "1ab34ceb-3fa5-48fc-b92c-65b666530873"
+      },
+      {
+        "id": "d6v9e0z078i9l9dc6osky3nq",
+        "type": "list",
+        "items": [
+          {
+            "id": "a2yhsr3clpze4xsmgaamrn3w",
+            "number": "1",
+            "paragraph": "<p>Cruzar tabelas de diferentes abas</p>"
+          },
+          {
+            "id": "g69bj4t0i1nx4c8a2r9h5u70",
+            "number": "2",
+            "paragraph": "<p>Aplicar funções PROCV, XLOOKUP e alternativas</p>"
+          },
+          {
+            "id": "igdt4tkjh5sahzbuuabe8pp4",
+            "number": "3",
+            "paragraph": "<p>Tratar exceções e IDs não encontrados</p>"
+          },
+          {
+            "id": "m66bz09lu17rto2lgsrb6oee",
+            "number": "4",
+            "paragraph": "<p>Construir regras de negócio para classificação</p>"
+          },
+          {
+            "id": "j0cr2x68cozfh3049jthb9g0",
+            "number": "5",
+            "paragraph": "<p>Usar fórmulas condicionais (IFS, SE encadeado)</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "da4b9144-71b8-4ccf-b4a4-41a31bf13a66"
+      },
+      {
+        "id": "cmqsay5dm0046357p894zuiy6",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmqsay5dm0047357poo1pt4bk",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "8e3d5a02-6686-437b-9eb5-94edbf20a0b6"
+      },
+      {
+        "id": "kd02s27swkw7k24meorun4ns",
+        "type": "text",
+        "items": [
+          {
+            "id": "he2h0zmwuyfbq5nscn29zn4h",
+            "heading": "Cruzando Tabelas no Excel com Claude",
+            "paragraph": "<p>Juntar dados de clientes e vendas em planilhas separadas costuma gerar dor de cabeça: erros de correspondência, células vazias e fórmulas que não retornam o esperado. Com Claude, você elimina o retrabalho e encontra a solução certa para cada cenário, garantindo cruzamentos precisos e confiáveis.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "dd32258f-149f-4762-8e03-9f926c8c3aa9"
+      },
+      {
+        "id": "cmqsay5dm0048357pqhbmvqj8",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsay5dm0049357pss8c85ty",
+            "paragraph": "<p>Você tem a lista de clientes em uma aba e o registro de vendas em outra. Precisava juntar as duas — e o PROCV que você tentou ontem retornou #N/A em metade das células. Clássico. Hoje você vai resolver isso com o Claude como assistente, e entender de verdade o que está acontecendo por baixo dos panos.</p><p>Ao final desta oficina, você terá cruzado duas tabelas e trazido o nome do cliente para a tabela de vendas — usando a função certa para o seu Excel.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "6d77a3b0-bdf8-4bb9-abd6-479b763bcef5"
+      },
+      {
+        "id": "xrox8nbeih7q6wp3568umae5",
+        "type": "text",
+        "items": [
+          {
+            "id": "ky4m2zy9xvdaewg6h0b01ma2",
+            "paragraph": "<p>Antes de iniciar o exercício, é importante garantir que você possui todos os recursos necessários para acompanhar as atividades propostas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "027a21d2-be08-4fb6-bd3f-0a90887f0a22"
+      },
+      {
+        "id": "s7hlwzsvl2v5cwqt9nu9gayp",
+        "type": "list",
+        "items": [
+          {
+            "id": "b4rvale2m2x7tbz9tobjdhbm",
+            "number": "1",
+            "paragraph": "<p>Excel (versão 2019 ou 365)</p>"
+          },
+          {
+            "id": "jtb2nulstv787t7ur0mxuoeg",
+            "number": "2",
+            "paragraph": "<p>Claude (claude.ai)</p>"
+          },
+          {
+            "id": "c0thxqaj1cwowtesstqrsq4p",
+            "number": "3",
+            "paragraph": "<p>O arquivo treino_claude.xlsx da Oficina 1</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "29e7208d-d684-482b-946d-1c1a9023d260"
+      },
+      {
+        "id": "cmqsay5dm004g357pq2rn0w3b",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsay5dm004a357plxrvpesc",
+            "type": "intro",
+            "title": "Introdução ao Processo",
+            "isHidden": false,
+            "description": "<p>Nesta sequência, você vai criar uma tabela de vendas, pedir ao Claude a fórmula ideal para cruzar dados, aplicar a solução e validar o resultado.</p>"
+          },
+          {
+            "id": "cmqsay5dm004b357p1f4h024u",
+            "type": "summary",
+            "title": "Resumo do Processo",
+            "isHidden": false,
+            "description": "<p>Ao final, você terá cruzado as tabelas com precisão, tratado exceções e compreendido o motivo de eventuais falhas de correspondência.</p>"
+          },
+          {
+            "id": "cmqsay5dm004c357p78ktiftr",
+            "type": "step",
+            "title": "Criar a tabela de vendas",
+            "isHidden": false,
+            "description": "<p>Abra o arquivo treino_claude.xlsx, crie uma nova aba chamada Vendas e digite os dados a partir da célula A1:</p><ul><li>ID_Cliente         Produto             Valor_Venda         Data_Venda</li><li>101                 Consultoria          8500                  15/01/2024</li><li>103               Treinamento         4200                  18/01/2024</li><li>105                Licença             2900                  22/01/2024</li><li>101                Suporte              1500                  05/02/2024</li><li>103                 Consultoria          6800                  10/02/2024</li><li>107                Licença             3300                  14/02/2024</li></ul><p>Na célula E1, escreva Nome_Cliente.</p>"
+          },
+          {
+            "id": "cmqsay5dm004d357pnbcfprri",
+            "type": "step",
+            "title": "Solicitar a fórmula ao Claude",
+            "isHidden": false,
+            "description": "<p>No Claude, envie a seguinte mensagem:</p><p>Tenho duas abas no Excel:<br>Aba \"Clientes\" (colunas A a F): ID, Nome, Email, Data_Cadastro, Receita, Status<br>Aba \"Vendas\" (colunas A a D): ID_Cliente, Produto, Valor_Venda, Data_Venda<br>Quero trazer o Nome do cliente para a coluna E da aba Vendas, cruzando pelo ID. Meu Excel é o Microsoft 365. Qual função usar? Me dê a fórmula pronta para colocar em E2, com tratamento para quando o ID não existir na aba Clientes.</p>"
+          },
+          {
+            "id": "cmqsay5dm004e357p69lnitxj",
+            "type": "step",
+            "title": "Aplicar a fórmula e preencher os dados",
+            "isHidden": false,
+            "description": "<p>Volte ao Excel, clique em E2 e digite a fórmula sugerida pelo Claude. Ela deve ser parecida com:</p><p>=XLOOKUP(A2,Clientes!$A$2:$A$7,Clientes!$B$2:$B$7,\"Não encontrado\")</p><p>Se o Excel não reconhecer XLOOKUP, peça ao Claude a versão com PROCV:</p><p>=IFERROR(PROCV(A2,Clientes!$A$2:$B$7,2,FALSO),\"Não encontrado\")</p><p>Arraste a fórmula até E7 para preencher todas as linhas.</p>"
+          },
+          {
+            "id": "cmqsay5dm004f357pnql2kkp1",
+            "type": "step",
+            "title": "Validar o resultado e tratar exceções",
+            "isHidden": false,
+            "description": "<p>Confira se os nomes aparecem corretamente para os IDs existentes e \"Não encontrado\" para o ID 107. Pergunte ao Claude: Por que o ID 107 retornou \"Não encontrado\"? Isso é um problema de dados ou de fórmula? Leia a explicação para entender o diagnóstico.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "90fa21df-89a1-440c-9562-f9e56f962c8e"
+      },
+      {
+        "id": "cmqsay5dm004h357pbw7usg29",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsay5dm004i357pmhh14id7",
+            "paragraph": "<p><strong>Curiosidade técnica — pode pular sem prejuízo:</strong> O XLOOKUP (ou PROCX em português no Excel 365) é o sucessor moderno do PROCV. A diferença prática mais importante: o XLOOKUP não exige que a coluna que você quer buscar seja a primeira da tabela, e você define exatamente qual coluna quer de retorno — o que elimina aquele número mágico \"2\" ou \"3\" que sempre confundia no PROCV.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "4e5752fe-2493-4c89-b960-d80240e3b163"
+      },
+      {
+        "id": "cmqsay5dm004j357pcilerghl",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsay5dm004k357pgru1d5ov",
+            "paragraph": "<p><strong>Ponto de controle:</strong> Em Excel, na aba <strong>Vendas</strong>, coluna E, os nomes aparecem preenchidos e o ID 107 exibe \"Não encontrado\".</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "20d9985f-3c9e-4101-9f56-8714ae8102ea"
+      },
+      {
+        "id": "cmqsay5dm004l357pk5lxhma5",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsay5dm004m357pq4ejv9el",
+            "paragraph": "<p>✅ Deu certo? A coluna E da aba Vendas deve mostrar:</p><ul><li>\"ana silva\" (ou como você digitou) para o 101,</li><li>\"Carlos Lima\" para o 103,</li><li>\"Eduardo Rocha\" para o 105,</li><li>e \"Não encontrado\" para o 107.</li></ul><p>Se estiver assim, você acabou de dominar busca cruzada entre tabelas.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "86666981-fffa-49e7-a91a-5f5af4358d39"
+      },
+      {
+        "id": "dq32jhkxeg3n37lrgyqi0ppp",
+        "type": "text",
+        "items": [
+          {
+            "id": "d5e8pkarbp2tb2ipy70cqm4u",
+            "heading": "Como resolver obstáculos ao cruzar tabelas no Excel",
+            "paragraph": "<p>Se você encontrar dificuldades ao cruzar tabelas no Excel, veja como solucionar os principais problemas:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "3c2ff980-41d6-455b-8894-ac047cfe1380"
+      },
+      {
+        "id": "cmqsay5dm004n357p5m9fjukq",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsay5dm004o357p9irk6z28",
+            "title": "A fórmula retorna #NOME?",
+            "description": "<p>Verifique se você está usando a versão em português do Excel — experimente PROCX em vez de XLOOKUP.</p>"
+          },
+          {
+            "id": "cmqsay5dm004p357p9t9qv35g",
+            "title": "Todos os resultados mostram \"Não encontrado\"",
+            "description": "<p>Confira se o nome da aba está escrito exatamente igual: Clientes com C maiúsculo.</p>"
+          },
+          {
+            "id": "cmqsay5dm004q357puvk9d5fs",
+            "title": "A fórmula funciona em E2 mas fica errada nas outras linhas",
+            "description": "<p>Certifique-se de que os intervalos da aba Clientes têm o símbolo $ (referência absoluta), como $A$2:$A$7.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "86028f71-b6d5-48e7-8ca6-8774b0e585ed"
+      },
+      {
+        "id": "ubuj2vq06mabgxh3fwoswdr1",
+        "type": "text",
+        "items": [
+          {
+            "id": "gtd4zlhlnvcd34o5ejwpe7l5",
+            "heading": "Desafios Extras: Aprofunde seu Domínio em Cruzamento de Tabelas",
+            "paragraph": "<p>Pronto para ir além? Experimente estes desafios para consolidar e expandir seus conhecimentos em cruzamento de tabelas no Excel.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f369e2f3-6125-4404-804b-619cc1590b2d"
+      },
+      {
+        "id": "cmqsay5dm004r357p4wphwiyv",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsay5dm004s357ps003n2jj",
+            "title": "Adicionar Receita_Cliente",
+            "description": "<p>Adicione uma coluna F chamada Receita_Cliente e traga também a receita total de cada cliente usando a mesma lógica.</p>"
+          },
+          {
+            "id": "cmqsay5dm004t357pwzm85l98",
+            "title": "Calcular total de vendas por cliente",
+            "description": "<p>Peça ao Claude uma fórmula que calcule o total de vendas por cliente usando SOMASE.</p>"
+          },
+          {
+            "id": "cmqsay5dm004u357pwp73kuix",
+            "title": "Comparar funções de busca",
+            "description": "<p>Pergunte ao Claude qual é a diferença entre PROCV, XLOOKUP e ÍNDICE/CORRESP, e quando usar cada um.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "a252f3b0-34f9-430a-bcfb-fef32ec6dc3c"
+      },
+      {
+        "id": "cmqsay5dm004v357potbvb2z3",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmqsay5dm004w357pto813a1v",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "74930910-4901-4893-aa72-5384698dcf9e"
+      },
+      {
+        "id": "k5awse57yuue6sq50nppg6ow",
+        "type": "text",
+        "items": [
+          {
+            "id": "z6d6xe5e7dh9uvcl55xorhzo",
+            "heading": "Classificação Inteligente de Clientes",
+            "paragraph": "<p>Segmentar clientes por regras de negócio é fundamental para priorizar ações e entender o perfil da base. Mas empilhar condições em fórmulas pode ser confuso e propenso a erros. Com Claude, você aprende a estruturar regras claras e aplicar fórmulas condicionais de forma simples e eficiente.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "e07d0ca5-ff83-427b-bbfd-5ac86c7a9f8d"
+      },
+      {
+        "id": "cmqsay5dm004x357pnddgvnfj",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsay5dm004y357psf72kbom",
+            "paragraph": "<p>Seu gestor pediu uma coluna nova: cada cliente deve ser classificado como \"Premium\", \"Padrão\" ou \"Em risco\", seguindo regras que ele definiu em uma reunião. São três condições diferentes, e você não lembra como empilhar vários SE um dentro do outro sem se perder nos parênteses. O Claude vai montar a lógica por você — e você vai entender o que ele fez.</p><p>Ao final desta oficina, você terá uma coluna de classificação funcionando com lógica condicional real, e vai saber pedir ao Claude qualquer variação dessa regra.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "57755311-cf08-463e-b4b2-7b429159c70f"
+      },
+      {
+        "id": "glj99z4xesdfd2tn6yls3qve",
+        "type": "text",
+        "items": [
+          {
+            "id": "b99kinx22fj24kn7wbo41qzr",
+            "paragraph": "<p>Confira abaixo os recursos necessários para realizar esta etapa do treinamento:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "c9f1a21c-007a-4b83-a925-d30190e1f9f8"
+      },
+      {
+        "id": "oonq46ex4rujq9s97186l1uw",
+        "type": "list",
+        "items": [
+          {
+            "id": "oqyplabjrtscpoetrlq1sx1z",
+            "number": "1",
+            "paragraph": "<p>Excel (versão 2019 ou 365)</p>"
+          },
+          {
+            "id": "u8pgh49vjmea99yvv9wus7ju",
+            "number": "2",
+            "paragraph": "<p>Claude (claude.ai)</p>"
+          },
+          {
+            "id": "lwasjbjhqdrt27dqusdo0rqf",
+            "number": "3",
+            "paragraph": "<p>A aba Clientes do arquivo treino_claude.xlsx</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "b45470cc-0092-4578-a9b6-378fd859f179"
+      },
+      {
+        "id": "cmqsay5dn0056357pz0bmowid",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsay5dn004z357polbz59gj",
+            "type": "intro",
+            "title": "Introdução ao Processo de Classificação de Clientes",
+            "isHidden": false,
+            "description": "<p>Você vai definir regras de classificação, pedir ao Claude as fórmulas certas, corrigir dados problemáticos, aplicar as fórmulas e validar os resultados.</p>"
+          },
+          {
+            "id": "cmqsay5dn0050357pajnp1sib",
+            "type": "summary",
+            "title": "Resumo do Processo",
+            "isHidden": false,
+            "description": "<p>Você terá uma coluna de classificação dinâmica, pronta para múltiplas regras e fácil de adaptar conforme novas demandas.</p>"
+          },
+          {
+            "id": "cmqsay5dn0051357put3lgxui",
+            "type": "step",
+            "title": "Definir Regras de Negócio",
+            "isHidden": false,
+            "description": "<p>Antes de tudo, esclareça as regras:</p><ul><li>Receita ≥ 50.000 → Premium</li><li>Receita entre 25.000 e 49.999 → Padrão</li><li>Receita &lt; 25.000 → Em risco</li></ul>"
+          },
+          {
+            "id": "cmqsay5dn0052357pvbeb7bkq",
+            "type": "step",
+            "title": "Pedir Fórmulas ao Claude",
+            "isHidden": false,
+            "description": "<p>No Claude, envie:</p><p>Tenho uma planilha Excel com a coluna E chamada \"Receita\" (valores numéricos, sem texto, sem R$). Quero criar uma coluna G chamada \"Classificação\" com estas regras:<br>Receita maior ou igual a 50000 → \"Premium\"<br>Receita entre 25000 e 49999 → \"Padrão\"<br>Receita menor que 25000 → \"Em risco\"<br>Me dê a fórmula para a célula G2 usando IFS (Excel 365). Depois mostre a mesma lógica usando SE encadeado, para comparar. Explique a diferença de legibilidade entre as duas.</p>"
+          },
+          {
+            "id": "cmqsay5dn0053357pa8zseozx",
+            "type": "step",
+            "title": "Corrigir Valores Problemáticos",
+            "isHidden": false,
+            "description": "<p>Antes de aplicar a fórmula, corrija possíveis erros na coluna E. Por exemplo, se algum valor estiver como \"R$ 33.000\", apague e digite apenas 33000 (número puro, sem R$, sem ponto).</p>"
+          },
+          {
+            "id": "cmqsay5dn0054357pht79bixo",
+            "type": "step",
+            "title": "Aplicar Fórmulas e Validar Resultados",
+            "isHidden": false,
+            "description": "<p>Digite a fórmula IFS sugerida pelo Claude em G2, por exemplo:</p><p>=IFS(E2&gt;=50000,\"Premium\",E2&gt;=25000,\"Padrão\",E2&lt;25000,\"Em risco\")</p><p>Arraste até G7 para preencher todas as linhas. Teste alterando um valor de receita para ver a mudança automática na classificação.</p>"
+          },
+          {
+            "id": "cmqsay5dn0055357pguo0ibrj",
+            "type": "step",
+            "title": "Adicionar Segunda Regra (Status Inativo)",
+            "isHidden": false,
+            "description": "<p>Se o gestor pedir para clientes \"Inativo\" aparecerem como \"Cancelado\", peça ao Claude como adaptar a fórmula. Aplique a versão atualizada em G2 e arraste para as demais linhas.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "e087dbf2-b6c9-4684-aed6-310db2d0f418"
+      },
+      {
+        "id": "cmqsay5dn0057357p8zph7vhs",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsay5dn0058357p8cvha0j0",
+            "paragraph": "<p><strong>Dica:</strong> O IFS é como uma lista de \"se... então...\" escrita em linha reta, sem precisar abrir parêntese dentro de parêntese. Muito mais fácil de ler — e de corrigir quando a regra muda.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "e03ca1b4-5c96-42c9-af50-fa7dea73b543"
+      },
+      {
+        "id": "cmqsay5dn0059357pilo3w2oy",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsay5dn005a357pzfv9v555",
+            "paragraph": "<p><strong>Ponto de controle:</strong> Em Excel, na aba <strong>Clientes</strong>, a coluna <strong>G</strong> (classificação) está preenchida com os dados já corrigidos.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "3191bb0b-005a-477f-be6b-39da5bfb8c86"
+      },
+      {
+        "id": "cmqsay5dn005b357p8pmgywxo",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsay5dn005c357ppfkrr0u2",
+            "paragraph": "<p>✅ Deu certo? A coluna G deve mostrar \"Cancelado\" para Diana (Status = Inativo), e as classificações corretas por receita para os demais. Se o resultado bater, você acabou de aprender a combinar múltiplas condições numa única fórmula — e a fazer isso com a ajuda do Claude de um jeito que você entendeu cada parte.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "6c982481-6bd1-4788-986f-68ff1eba7ec6"
+      },
+      {
+        "id": "t3jwdauk4g7zaw3nbjsfzyis",
+        "type": "text",
+        "items": [
+          {
+            "id": "zsh6mgnup2qg2ibwt6f6sv24",
+            "heading": "Como resolver obstáculos na classificação de clientes no Excel",
+            "paragraph": "<p>Enfrentou algum problema ao usar fórmulas para classificar clientes? Veja abaixo as soluções para os principais obstáculos que podem surgir durante o processo.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f52328b0-a0d4-4bca-8ded-ce8831c830e2"
+      },
+      {
+        "id": "cmqsay5dn005d357p2to0fo6y",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsay5dn005e357p9sg7qrjr",
+            "title": "A fórmula retorna #NOME? no IFS",
+            "description": "<p>Seu Excel pode não suportar a função IFS. Nesse caso, solicite ao Claude a versão da fórmula utilizando SE encadeado.</p>"
+          },
+          {
+            "id": "cmqsay5dn005f357pungjmwur",
+            "title": "Todas as linhas mostram \"Em risco\" mesmo com receitas altas",
+            "description": "<p>Verifique se a coluna E contém apenas números. Para isso, selecione uma célula e observe se ela está alinhada à direita (indicando número) ou à esquerda (indicando texto).</p>"
+          },
+          {
+            "id": "cmqsay5dn005g357poek2wbjt",
+            "title": "A condição de \"Inativo\" não funciona",
+            "description": "<p>Confira a grafia exata na coluna Status. \"Inativo\" com I maiúsculo é diferente de \"inativo\" com i minúsculo.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "27bf5e38-4af4-4e25-ba07-212d4c3882a4"
+      },
+      {
+        "id": "hct1z45bupy401i66b2flz6e",
+        "type": "text",
+        "items": [
+          {
+            "id": "s92wusiz0750tpkry2w36bi8",
+            "heading": "Desafios Extras: Classificação de Clientes",
+            "paragraph": "<p>Quer ir além? Aprofunde sua prática em classificação de clientes com estes desafios extras.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7347bc10-8cc4-4b5c-b010-ac1ac6b589d1"
+      },
+      {
+        "id": "cmqsay5dn005h357pqr06rcjk",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsay5dn005i357p9v59nluy",
+            "title": "Adicionar categoria VIP",
+            "description": "<p>Adicione uma quarta categoria: clientes com receita acima de 100.000 são \"VIP\".</p>"
+          },
+          {
+            "id": "cmqsay5dn005j357pftj7hsxd",
+            "title": "Criar coluna de Ação recomendada",
+            "description": "<p>Peça ao Claude para criar uma coluna de \"Ação recomendada\" usando SWITCH baseado na coluna Classificação.</p>"
+          },
+          {
+            "id": "cmqsay5dn005k357pjcsv3cy6",
+            "title": "Explorar uso do SWITCH",
+            "description": "<p>Pergunte ao Claude quando é melhor usar SWITCH em vez de IFS.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "a1511e64-2420-48fa-be5c-e5772b09f114"
+      }
+    ]
+  }
+}

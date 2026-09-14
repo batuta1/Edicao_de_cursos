@@ -1,0 +1,813 @@
+﻿{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Interpretando, Refatorando e Melhorando Código com IA",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "OBRuJuX2jTjcw4BEH-DP3AkEh2Gp0Mrx",
+    "createdAt": "2026-06-24T16:16:48.594Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmqsa08sg002i357p3b1rsdnt",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Interpretando, Refatorando e Melhorando Código com IA",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-06-24T16:17:50.361Z",
+    "items": [
+      {
+        "id": "gglzq7qil5v4ou51rlhpkqdn",
+        "type": "text",
+        "items": [
+          {
+            "id": "f3ye5d88jnuv281fmq6qscpl",
+            "heading": "Interpretando, Refatorando e Melhorando Código com IA",
+            "paragraph": "<p>Nesta lição você vai fazer duas coisas que parecem simples mas mudam tudo: aprender a formular perguntas que o Claude consegue responder com precisão, e aprender a propor melhorias no código mantendo você — não a IA — no comando de cada decisão.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "84f136b5-d4ed-46f5-ac9a-947eca92b5ab"
+      },
+      {
+        "id": "a12otmr6g1h1tf016i3r5c2x",
+        "type": "text",
+        "items": [
+          {
+            "id": "cxdobptoshq40sha6nfqyc5r",
+            "paragraph": "<p>Você vai trabalhar com um arquivo Python real, testar a diferença entre um prompt vago e um prompt com contexto, e conduzir um ciclo completo de refatoração — do diagnóstico ao diff, com você decidindo o que aceitar.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "283bf597-13c5-4e40-8d41-9e5f4bf2b537"
+      },
+      {
+        "id": "zo4ct0bdrklc2n0thht8hipo",
+        "type": "list",
+        "items": [
+          {
+            "id": "s5hl87jg380qmbe6m6j58ujm",
+            "number": "1",
+            "paragraph": "<p>Usar a IA para explicar código</p>"
+          },
+          {
+            "id": "uk29ji96u3odsc956kbcmdiy",
+            "number": "2",
+            "paragraph": "<p>Formular prompts eficazes</p>"
+          },
+          {
+            "id": "k4jm21h0oh9bvo498uap36j3",
+            "number": "3",
+            "paragraph": "<p>Identificar problemas de legibilidade</p>"
+          },
+          {
+            "id": "o12cgxh3aogmfvazmg4y2nbo",
+            "number": "4",
+            "paragraph": "<p>Refatorar e revisar sugestões</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "7714a454-971c-480c-898c-6206a5b8a993"
+      },
+      {
+        "id": "cmqsa1kgt003d357pivm9ifqb",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmqsa1kgt003e357p046hyo9d",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "91f0e664-8ec9-4202-bc3f-a3a8282bb2b1"
+      },
+      {
+        "id": "cmqsa1kgt003f357pdsphx23r",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa1kgt003g357pjq1jmm1r",
+            "paragraph": "<h2>🎯 O Problema</h2><p>Você tem um arquivo de código na tela. Pode ser algo que você escreveu, algo que você herdou de outra pessoa, ou um exercício de aula que nunca ficou muito claro. A questão é: você quer entender o que aquele código faz — e rápido. Nesta oficina você vai aprender a formular perguntas que realmente funcionam, usando o arquivo aberto como contexto automático.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "4e5e578c-28d7-46d7-b683-3d3664ebd2db"
+      },
+      {
+        "id": "w2agv2dqna26to4hmjq0fx2q",
+        "type": "text",
+        "items": [
+          {
+            "id": "zbxpfkqsg93ad1woqq22i1lc",
+            "paragraph": "<p>Antes de começar, confira se você tem tudo pronto para acompanhar os exercícios:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "1b817662-45ef-4d14-9795-c38bcf8aeb12"
+      },
+      {
+        "id": "a18hp2s41rmnncesl6nj4bnf",
+        "type": "list",
+        "items": [
+          {
+            "id": "qldnsg2yj4dbs6072ecmifvo",
+            "number": "1",
+            "paragraph": "<ul><li>VS Code com Claude Code instalado (Oficina 1 concluída)</li><li>Um arquivo de código aberto no editor — use o seu próprio ou crie o arquivo de exemplo abaixo</li></ul>"
+          },
+          {
+            "id": "d5k34fxmoy02ekdyy4k7ire5",
+            "number": "2",
+            "paragraph": "<p>Se não tiver um arquivo Python à mão, não se preocupe — você vai criar um na primeira etapa.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "3c87cddd-5833-45e1-897d-650323269934"
+      },
+      {
+        "id": "cmqsa1kgt003o357p0xcmu1mt",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsa1kgt003h357p9ggv0mx4",
+            "type": "intro",
+            "title": "Introdução: Interpretando Código com Claude Code",
+            "isHidden": false,
+            "description": "<p>Você vai criar um arquivo Python de exemplo, fazer uma pergunta genérica ao Claude e uma pergunta com contexto real — e comparar as duas respostas. A diferença entre elas é a habilidade central desta oficina.</p>"
+          },
+          {
+            "id": "cmqsa1kgt003i357p9rsvkx2t",
+            "type": "summary",
+            "title": "Resumo: Aprendizado com Claude Code",
+            "isHidden": false,
+            "description": "<p>Você comparou a resposta a um prompt genérico com a resposta a um prompt com contexto — e pediu ao Claude uma correção sem deixar ele tocar no arquivo. Isso é a base de todo o trabalho assistido que vem a seguir.</p>"
+          },
+          {
+            "id": "cmqsa1kgt003j357pl1iwzp7k",
+            "type": "step",
+            "title": "Preparar o arquivo de exemplo",
+            "isHidden": false,
+            "description": "<p>Se você não possui um arquivo de exemplo, siga estes passos para criar um:</p><ol><li>No VS Code, pressione Ctrl + N (ou Cmd + N) para abrir um novo arquivo.</li><li>Pressione Ctrl + Shift + P e busque por <strong>Change Language Mode</strong>. Selecione <strong>Python</strong>.</li><li>Cole o seguinte código no arquivo:</li></ol><pre>def processar_notas(notas):\n    total = 0\n    for n in notas:\n        total = total + n\n    media = total / len(notas)\n    aprovados = []\n    for n in notas:\n        if n >= 6:\n            aprovados.append(n)\n    return media, len(aprovados)\n</pre><ol start=\"4\"><li>Salve o arquivo como <strong>notas.py</strong> em qualquer pasta (Ctrl + S ou Cmd + S).</li></ol>"
+          },
+          {
+            "id": "cmqsa1kgt003k357p8bzmp38k",
+            "type": "step",
+            "title": "Testar um prompt genérico",
+            "isHidden": false,
+            "description": "<p>Abra o painel do Claude Code clicando no ícone na barra lateral. No campo de texto, escreva exatamente:</p><pre>O que esse código faz?</pre><p>Envie e leia a resposta fornecida pelo Claude Code.</p>"
+          },
+          {
+            "id": "cmqsa1kgt003l357pvbf3sb2m",
+            "type": "step",
+            "title": "Refletir sobre a resposta",
+            "isHidden": false,
+            "description": "<p>Perceba: o Claude pode responder de forma genérica, pedir mais detalhes, ou até perguntar qual arquivo deve analisar. Isso acontece porque a pergunta não deu contexto suficiente — não mencionou o arquivo, não nomeou a função, não especificou o que precisa saber. O próximo passo mostra como corrigir isso.</p>"
+          },
+          {
+            "id": "cmqsa1kgt003m357pqkche57s",
+            "type": "step",
+            "title": "Usar um prompt eficaz",
+            "isHidden": false,
+            "description": "<p>No campo de texto do Claude Code, escreva agora:</p><pre>Tenho o arquivo notas.py aberto. Ele contém uma função chamada processar_notas(). Explique o que ela faz, passo a passo, como se eu nunca tivesse visto Python na vida.</pre><p>Envie e compare a resposta com a anterior para perceber a diferença de detalhamento.</p>"
+          },
+          {
+            "id": "cmqsa1kgt003n357peav402lu",
+            "type": "step",
+            "title": "Perguntar sobre riscos e melhorias",
+            "isHidden": false,
+            "description": "<p>Agora, questione sobre possíveis problemas e melhorias:</p><pre>Essa função tem algum problema se eu passar uma lista vazia para ela? O que acontece?</pre><p>Após ler a resposta, pergunte:</p><pre>Como eu poderia corrigir esse problema? Não mexa no arquivo ainda — só me mostre como ficaria o código corrigido.</pre><p>Guarde a sugestão na memória — você vai precisar dela na Oficina 4, que cobre depuração de bugs.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "f32cee70-af6c-4612-8bf6-465a728d142b"
+      },
+      {
+        "id": "cmqsa1kgt003p357p52e7nq9x",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa1kgt003q357p2qchkops",
+            "paragraph": "<p><strong>Dica:</strong> O Claude Code vê automaticamente o conteúdo do arquivo que está aberto e em foco no editor. No entanto, se você não mencionar o arquivo na pergunta, ele pode não saber exatamente para onde olhar — especialmente se houver vários arquivos abertos.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d3461586-3fc2-47ad-94f2-05795330564e"
+      },
+      {
+        "id": "cmqsa1kgt003r357p36et35q8",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa1kgt003s357pian54edq",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> A resposta detalhada aparece em VS Code &gt; painel do Claude Code, com o arquivo <code>notas.py</code> aberto no editor — confirma que o Claude leu o arquivo em foco.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "4a8b9558-e572-4e5c-af05-342e0472c8cf"
+      },
+      {
+        "id": "cmqsa1kgt003t357pdb6f5qpm",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa1kgt003u357p1lh2ebgy",
+            "paragraph": "<p>✅ Deu certo?</p><p>O Claude explicou a função <strong>processar_notas()</strong> com clareza, identificou o risco da lista vazia e sugeriu uma correção — sem tocar no arquivo. Se conseguiu isso, você dominou a habilidade mais importante do curso: perguntar bem.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "90d5b550-13fc-46d9-bc67-6e9be51b4a6c"
+      },
+      {
+        "id": "i86umek72vuwa8odtipo0isx",
+        "type": "text",
+        "items": [
+          {
+            "id": "s50voa7x01e01ddj46ps9042",
+            "heading": "Se travar: Soluções rápidas para problemas comuns",
+            "paragraph": "<p>Enfrentou algum problema? Expanda cada item para ver soluções práticas e continue avançando sem travar.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "5c439c23-3dd6-40f4-83e6-9c1354376129"
+      },
+      {
+        "id": "cmqsa1kgu003v357pmycszi64",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsa1kgu003w357pstxzr02b",
+            "title": "O Claude diz que não vê nenhum arquivo",
+            "description": "<p>Clique uma vez no código dentro do editor para \"focar\" nele, depois volte ao painel e tente de novo.</p>"
+          },
+          {
+            "id": "cmqsa1kgu003x357pv4k408tm",
+            "title": "A resposta veio em inglês",
+            "description": "<p>Adicione ao final do seu prompt: \"Responda em português.\"</p>"
+          },
+          {
+            "id": "cmqsa1kgu003y357pda1f7h04",
+            "title": "O Claude modificou o arquivo sem você pedir",
+            "description": "<p>Clique em \"Undo\" (Ctrl + Z) para desfazer e reenvie o prompt com a instrução \"não mexa no arquivo ainda\".</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "dd9cd926-4da3-4138-a129-85f5001500b9"
+      },
+      {
+        "id": "fet01v0objv7up8zjfzvr0sx",
+        "type": "text",
+        "items": [
+          {
+            "id": "gaezvoksmksi9us7vg5p7oii",
+            "heading": "Quer ir além? Explore recursos avançados",
+            "paragraph": "<p>Para quem quiser experimentar mais possibilidades com o Claude Code, confira as sugestões abaixo e amplie seus horizontes.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "56ae0b15-e2d7-4072-834d-c4114da6edd9"
+      },
+      {
+        "id": "cmqsa1kgu003z357p7lnwjd03",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsa1kgu0040357p0l5ckiud",
+            "title": "Abra dois arquivos ao mesmo tempo",
+            "description": "<p>Use a sintaxe <strong>@nomedoarquivo</strong> no prompt para especificar qual deles o Claude deve analisar.</p>"
+          },
+          {
+            "id": "cmqsa1kgu0041357p2bmzm8d8",
+            "title": "Peça para identificar partes difíceis do código",
+            "description": "<p>Solicite ao Claude que identifique quais partes do código são mais difíceis de entender e por quê.</p>"
+          },
+          {
+            "id": "cmqsa1kgu0042357pewjgw1y2",
+            "title": "Selecione e pergunte sobre um trecho específico",
+            "description": "<p>Selecione apenas duas linhas do código com o mouse e pergunte: \"O que esse trecho faz?\"</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "c913a162-4400-4721-b3ac-3f174c79dd89"
+      },
+      {
+        "id": "cmqsa1kgu0043357pdgt3bx9o",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmqsa1kgu0044357pqxbp0ute",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "45e6075e-8190-480f-bc29-ebea3083c844"
+      },
+      {
+        "id": "taxgv3j5dme7ng92duld6tkj",
+        "type": "text",
+        "items": [
+          {
+            "id": "hlvvl01hm83fmbeogz55xdcg",
+            "heading": "Refatoração Segura com IA: O Ciclo de Melhoria",
+            "paragraph": "<p>Agora que você já sabe como entender código com a IA, é hora de dar o próximo passo: melhorar e refatorar funções de forma segura. Você vai aprender a revisar sugestões, planejar mudanças e aplicar melhorias com o Claude Code como copiloto — sempre mantendo o controle do processo.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d137aa90-ee32-421f-8178-54558d3639f0"
+      },
+      {
+        "id": "cmqsa1kgu0045357p1gg73rel",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa1kgu0046357p5vv2dssh",
+            "paragraph": "<h2>🎯 O Problema</h2><p>Você tem um código que funciona, mas está feio. Variáveis com nomes sem sentido, funções que fazem três coisas ao mesmo tempo, zero comentários. Você sabe que dá para melhorar, mas não sabe exatamente como. E tem medo de mexer e quebrar tudo. Nesta oficina você vai aprender o ciclo seguro de refatoração: o Claude sugere, você revisa e você decide.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "775e51f0-13a9-47fa-8a62-065801e2916e"
+      },
+      {
+        "id": "uac0prgpljhniuuzrmng3qo7",
+        "type": "text",
+        "items": [
+          {
+            "id": "wtor1ll79e7yfovbt1c5mi02",
+            "paragraph": "<p>Antes de iniciar a refatoração do código, é importante garantir que você possui todos os recursos necessários. Confira a lista abaixo para se preparar adequadamente:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "9be1092e-a584-4a43-abf5-c6b2c76168c4"
+      },
+      {
+        "id": "yuvvdvguj8s5mc9tn2e7wcdw",
+        "type": "list",
+        "items": [
+          {
+            "id": "wsabm8qs1cb3x7o687v5b8fc",
+            "number": "1",
+            "paragraph": "<p>VS Code com Claude Code instalado</p>"
+          },
+          {
+            "id": "igqktxyo6bj9vcqcthneha6x",
+            "number": "2",
+            "paragraph": "<p>O arquivo notas.py da Oficina 2 (ou o código de exemplo abaixo, se você não participou da anterior)</p>"
+          },
+          {
+            "id": "tot9okyfuv7ead5jdkk1biqz",
+            "number": "3",
+            "paragraph": "<p>Com esses itens, você está pronto para transformar código confuso em código limpo e bem documentado.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "ebe48d28-4021-4cef-9579-b87947f30c96"
+      },
+      {
+        "id": "cmqsa1kgu004e357py1wm1ekm",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsa1kgu0047357pofgrqf9b",
+            "type": "intro",
+            "title": "Introdução à Refatoração Segura",
+            "isHidden": false,
+            "description": "<p>O segredo da refatoração segura com IA é um protocolo de três etapas: Analisar → Planejar → Executar. Nunca pule direto para o “Executar”. Você vai ver esse ciclo em ação com o arquivo notas.py — e vai entender por que cada etapa existe.</p>"
+          },
+          {
+            "id": "cmqsa1kgu0048357pc7dmgsz1",
+            "type": "summary",
+            "title": "Resumo do Processo de Refatoração Segura",
+            "isHidden": false,
+            "description": "<p>Você passou pelo ciclo Analisar → Planejar → Executar e aceitou mudanças somente depois de revisar o diff. O arquivo notas.py agora tem type hints, docstring e variáveis com nomes que explicam o que fazem — e você entendeu cada alteração antes de confirmar.</p>"
+          },
+          {
+            "id": "cmqsa1kgu0049357pr74sbxys",
+            "type": "step",
+            "title": "Preparando o Arquivo para Refatoração",
+            "isHidden": false,
+            "description": "<p>Certifique-se de que você possui o arquivo <strong>notas.py</strong> da Oficina 2. Caso não tenha, crie-o com o seguinte conteúdo:</p><pre>def processar_notas(notas):\n    total = 0\n    for n in notas:\n        total = total + n\n    media = total / len(notas)\n    aprovados = []\n    for n in notas:\n        if n &gt;= 6:\n            aprovados.append(n)\n    return media, len(aprovados)\n</pre>"
+          },
+          {
+            "id": "cmqsa1kgu004a357pc68wcfx4",
+            "type": "step",
+            "title": "Solicitando Análise do Código",
+            "isHidden": false,
+            "description": "<p>Abra o arquivo <strong>notas.py</strong> no editor e acesse o painel do Claude Code.</p><p>Envie o seguinte prompt:</p><pre>Analise a função processar_notas() no arquivo notas.py. Liste os problemas de legibilidade e organização que você encontrar. Não mexa no código ainda.</pre><p>Leia a lista de problemas apresentada. O Claude provavelmente vai mencionar: nomes de variáveis sem sentido (<code>n</code>, <code>total</code>), ausência de type hints e ausência de docstrings. Guarde esses pontos — eles vão virar o plano do próximo passo.</p>"
+          },
+          {
+            "id": "cmqsa1kgu004b357p5pz7n9ur",
+            "type": "step",
+            "title": "Solicitando o Plano de Refatoração",
+            "isHidden": false,
+            "description": "<p>Envie o prompt:</p><pre>Mostre-me o plano de mudanças que você faria, passo a passo. Liste cada alteração e explique por que ela melhora o código. Ainda não aplique nada.</pre><p>Leia o plano sugerido. Avalie se concorda com todas as mudanças propostas. Caso discorde de alguma, comunique ao Claude, por exemplo:</p><pre>Concordo com tudo, exceto a mudança X. Prossiga sem ela.</pre>"
+          },
+          {
+            "id": "cmqsa1kgu004c357pe4vqm6w1",
+            "type": "step",
+            "title": "Aplicando as Mudanças e Revisando o Diff",
+            "isHidden": false,
+            "description": "<p>Quando estiver satisfeito com o plano, envie:</p><pre>Agora aplique as mudanças. Antes de confirmar, mostre-me o diff.</pre><p>O diff mostrará as diferenças entre o código antigo e o novo, destacando as linhas removidas e adicionadas. Analise cuidadosamente cada alteração. Se concordar, clique em <strong>Accept</strong>. Caso contrário, clique em <strong>Reject</strong> e explique o que deseja mudar.</p>"
+          },
+          {
+            "id": "cmqsa1kgu004d357p3a1eyu7y",
+            "type": "step",
+            "title": "Verificando o Resultado Final",
+            "isHidden": false,
+            "description": "<p>Após aceitar as mudanças, seu arquivo deve estar semelhante a este:</p><pre>def processar_notas(notas: list[float]) -> tuple[float, int]:\n    \"\"\"\n    Calcula a média e conta os aprovados de uma lista de notas.\n\n    Args:\n        notas: Lista de notas numéricas.\n\n    Returns:\n        Uma tupla com (média, número de aprovados).\n    \"\"\"\n    if not notas:\n        return 0.0, 0\n\n    media = sum(notas) / len(notas)\n    aprovados = sum(1 for n in notas if n &gt;= 6)\n\n    return media, aprovados\n</pre><p>Lembre-se de salvar o arquivo (<strong>Ctrl + S</strong> ou <strong>Cmd + S</strong>).</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "54e88865-3fb4-4a92-a4a0-88df80689e5c"
+      },
+      {
+        "id": "cmqsa1kgu004f357pj201ldsq",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa1kgu004g357p2fkhrmc4",
+            "paragraph": "<p><strong>Não esqueça:</strong> \"Type hints\" são anotações que dizem o tipo de dado esperado em cada variável (por exemplo, <em>notas: list[float]</em>). \"Docstring\" é um comentário especial que explica o que a função faz. Você vai ver os dois em ação daqui a pouco.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "2b559b8c-ad5a-42e2-8971-fe033f82a2b4"
+      },
+      {
+        "id": "cmqsa1kgu004h357px6pqb3u7",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa1kgu004i357p2abuk81h",
+            "paragraph": "<p>🧭 <strong>Onde observar:</strong> <code>VS Code &gt; diff viewer</code> — linhas removidas em vermelho (sinal &quot;−&quot;), linhas adicionadas em verde (sinal &quot;+&quot;), com os botões <strong>Accept</strong> e <strong>Reject</strong> visíveis. Leia cada mudança com atenção antes de clicar em Accept.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "0718d09d-25c0-4db5-9b44-4f46152f25fe"
+      },
+      {
+        "id": "cmqsa1kgu004j357pgu349hec",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa1kgu004k357pzapmi3cz",
+            "paragraph": "<p>✅ Deu certo?</p><p>O arquivo <strong>notas.py</strong> agora tem a função com nome de variáveis mais claros, <em>type hints</em> e uma <em>docstring</em> explicando o que ela faz. Se você conseguiu aceitar as mudanças depois de revisar o diff — sem um ataque de pânico — você está pronto para a próxima fase.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7b728369-fce3-4da4-a232-bf325f7b48c9"
+      },
+      {
+        "id": "cmqsa1kgu004l357p8jot5vpu",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqsa1kgu004m357pvfu5qpt9",
+            "paragraph": "<p><strong>Curiosidade técnica (pode pular):</strong> O <code>sum(1 for n in notas if n &gt;= 6)</code> que o Claude provavelmente sugeriu é uma \"generator expression\" — uma forma compacta de contar itens que atendem a uma condição, sem criar uma lista temporária na memória. É mais eficiente, mas equivalente ao loop original.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "17d68b01-544b-4b5a-b74e-291f277f482c"
+      },
+      {
+        "id": "qpgdbqhiz1gdaatreocqd0pn",
+        "type": "text",
+        "items": [
+          {
+            "id": "si776j00jtgrcsrnw5v3l1i1",
+            "heading": "Se travar: Soluções rápidas para refatoração",
+            "paragraph": "<p>Se encontrar algum obstáculo durante a refatoração, expanda os itens abaixo para ver como resolver e seguir em frente.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "0dc3a1c3-b105-43c1-80ff-1dc95054eab2"
+      },
+      {
+        "id": "cmqsa1kgv004n357pyickmmpa",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsa1kgv004o357p5psxdlnc",
+            "title": "O Claude aplicou a mudança sem mostrar o diff",
+            "description": "<p>Use Ctrl + Z para desfazer, e desta vez especifique no prompt: \"mostre o diff antes de confirmar, aguarde minha aprovação\"</p>"
+          },
+          {
+            "id": "cmqsa1kgv004p357pp30ht9d8",
+            "title": "Não sei se devo aceitar ou rejeitar uma mudança",
+            "description": "<p>Pergunte ao Claude: \"Explique essa linha específica em linguagem simples antes de eu aceitar\"</p>"
+          },
+          {
+            "id": "cmqsa1kgv004q357plp8q3xbg",
+            "title": "O arquivo ficou com erro de sintaxe após aceitar",
+            "description": "<p>Veja qual linha está marcada em vermelho, descreva o erro ao Claude e peça que corrija</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "97ae2e61-ec0b-45b4-873f-3533c10efb81"
+      },
+      {
+        "id": "pa66ofjq1n6gnn37glo5hvxc",
+        "type": "text",
+        "items": [
+          {
+            "id": "m721xyajv38x3z0fv6zspa0o",
+            "heading": "Quer ir além? Desafios extras de refatoração",
+            "paragraph": "<p>Para quem quiser aprofundar ainda mais, explore as sugestões abaixo e desafie-se a ir além do básico.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "a4c2d356-6af1-4916-8728-ff10d4a3567c"
+      },
+      {
+        "id": "cmqsa1kgw004r357pag6v0x9z",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqsa1kgw004s357p2rq4u2rc",
+            "title": "Reescreva a função de duas formas diferentes",
+            "description": "<p>Peça ao Claude para reescrever a mesma função de duas formas diferentes e explique qual prefere.</p>"
+          },
+          {
+            "id": "cmqsa1kgw004t357p3ai56bcy",
+            "title": "Adicione e documente uma segunda função",
+            "description": "<p>Adicione uma segunda função ao arquivo (por exemplo, uma que filtre apenas as notas reprovadas) e peça ao Claude para documentá-la também.</p>"
+          },
+          {
+            "id": "cmqsa1kgw004u357peydrm2ge",
+            "title": "Sugira testes unitários para a função",
+            "description": "<p>Pergunte ao Claude quais testes unitários ele criaria para a função — sem precisar aplicá-los agora.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "4b102d37-bea7-4b50-aed4-2f114f197d1b"
+      },
+      {
+        "id": "cmqsa1kgw004v357pn4w8gbfe",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmqsa1kgw004w357pv8x6p9i6",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "a1a2083c-73d5-44da-b58d-9bb81127c99a"
+      },
+      {
+        "id": "hpd3ml2vm7hybu97n0cvygak",
+        "type": "text",
+        "items": [
+          {
+            "id": "rblxllr14q6kdm2284sihz0y",
+            "paragraph": "<p>Você fez o Claude explicar, questionar e sugerir — sem tocar no arquivo sem sua permissão. Na próxima lição, você vai plantar um bug de propósito, ver o código falhar e usar esse ciclo para diagnosticar e corrigir com o Claude ao lado.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "70a3e8b4-1e75-4f74-8cbb-81f6fc990b10"
+      }
+    ]
+  }
+}

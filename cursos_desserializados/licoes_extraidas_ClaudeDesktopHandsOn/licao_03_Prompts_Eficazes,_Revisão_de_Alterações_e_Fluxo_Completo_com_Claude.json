@@ -1,0 +1,496 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Prompts Eficazes, Revisão de Alterações e Fluxo Completo com Claude",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "iWjdYsT1Gm-gjwHPMvkb8NGcQzhThU6c",
+    "createdAt": "2026-06-17T16:26:09.476Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmqia9a23002j357pg4rj9665",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Prompts Eficazes, Revisão de Alterações e Fluxo Completo com Claude",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-06-17T16:27:10.320Z",
+    "items": [
+      {
+        "id": "tfldpn7c3kazsyggfh63w9qn",
+        "type": "text",
+        "items": [
+          {
+            "id": "xlq7r5pl7vefhrenpxu4x6g0",
+            "heading": "Por que dominar prompts e revisão faz toda a diferença?",
+            "paragraph": "<p>\"Corrija erros.\" e \"Corrija os erros gramaticais deste e-mail formal para o reitor, sem mudar o tom.\" são pedidos completamente diferentes — mesmo pedindo a mesma coisa. O primeiro deixa o Claude adivinhando o que você quer; o segundo dá contexto, tarefa e limite suficientes para uma resposta certeira. Nesta lição, você treina esse segundo tipo de pedido — e aprende a revisar com cuidado o que o Claude devolve, antes de aceitar qualquer alteração.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "0056f599-65b8-4516-a3d5-68e4f3ffba06"
+      },
+      {
+        "id": "asyjx8lc186cxljp69b0yva2",
+        "type": "text",
+        "items": [
+          {
+            "id": "guzgq08jo0sb3vtbniqhb3vt",
+            "paragraph": "<p>Nesta lição, você vai descobrir como transformar pedidos genéricos em instruções precisas, revisar alterações propostas pela IA e conduzir um ciclo completo de interação produtiva. Veja o que está por vir:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f0895a63-c837-4a84-9255-f002f330b932"
+      },
+      {
+        "id": "wpsxykc5bif61yjb8g25dvjv",
+        "type": "list",
+        "items": [
+          {
+            "id": "le2ingov6g05cnyfx3v5j9be",
+            "number": "1",
+            "paragraph": "<p>Formular prompts eficazes</p>"
+          },
+          {
+            "id": "lsw2rm21rz3tplihy20dbvc7",
+            "number": "2",
+            "paragraph": "<p>Comparar prompts fracos e fortes</p>"
+          },
+          {
+            "id": "gm7jfn50gve8rdrixj0cyekl",
+            "number": "3",
+            "paragraph": "<p>Revisar alterações com a diff view</p>"
+          },
+          {
+            "id": "o7ju3mp2n3y607bafvfgulmp",
+            "number": "4",
+            "paragraph": "<p>Interromper e redirecionar tarefas</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "3546cb18-672b-4050-82dd-5b12cd65081e"
+      },
+      {
+        "id": "bxt8r1zdcfmxj5hob6xk8de3",
+        "type": "text",
+        "items": [
+          {
+            "id": "zfc6e3pi0n0o8pnkn2qpbthx",
+            "heading": "Prompt Fraco vs. Prompt Forte",
+            "paragraph": "<p>Revise cada flashcard para entender as diferenças entre prompts e os ingredientes de um pedido eficaz.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "fa30f291-fa8b-403b-bdb1-bae3622227cf"
+      },
+      {
+        "id": "kr5kz3gkmy3zod7wld0kc3tr",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "apw9l9bnc8j3i2o30q3zizyv",
+            "back": {
+              "type": "description",
+              "description": "<p>Pedido vago, sem contexto. Claude pode dar resposta genérica ou pedir mais detalhes.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Prompt fraco: \"Corrija erros.\"</p>"
+            }
+          },
+          {
+            "id": "zv17cuqrcp8k8g3ij7kt3ctl",
+            "back": {
+              "type": "description",
+              "description": "<p>Pedido claro, com contexto, tarefa e limite. Gera resposta útil e alinhada ao objetivo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Prompt forte: \"Corrija erros gramaticais deste e-mail formal para o reitor. Não mude o tom.\"</p>"
+            }
+          },
+          {
+            "id": "svp2fo1utx5z59uckec0cijt",
+            "back": {
+              "type": "description",
+              "description": "<p>Use contexto, tarefa, limite e formato para detalhar o que espera da IA.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Fórmula do prompt eficaz</p>"
+            }
+          },
+          {
+            "id": "eco5hu057ms3ehrhgdofft7n",
+            "back": {
+              "type": "description",
+              "description": "<p>\"Não altere o conteúdo nem o tom formal.\" Define o que não deve ser mudado.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Exemplo de limite em prompt</p>"
+            }
+          },
+          {
+            "id": "jxujsum9bkf6op1oq0ipwfvb",
+            "back": {
+              "type": "description",
+              "description": "<p>\"Entregue o texto corrigido completo, sem comentários.\" Especifica como quer a resposta.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Exemplo de formato em prompt</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "0b111bda-273b-45d7-86e8-7d6cd667d21c"
+      },
+      {
+        "id": "cmqiaal0f004d357pm50h8xtd",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqiaal0f0047357p6nampydj",
+            "type": "intro",
+            "title": "Praticando a construção de prompts eficazes",
+            "isHidden": false,
+            "description": "<p>Você vai testar na prática um prompt fraco e um forte, conhecer os quatro ingredientes de um pedido eficaz e treinar reescrevendo três pedidos vagos. Deixe o Claude Desktop aberto na aba Chat para acompanhar os passos.</p>"
+          },
+          {
+            "id": "cmqiaal0f0048357pi5gre6l0",
+            "type": "summary",
+            "title": "Consolidando a prática",
+            "isHidden": false,
+            "description": "<p>Você já treinou a fórmula — contexto, tarefa, limite, formato — em três cenários diferentes. A seguir, você vai aplicar essa mesma lógica para revisar o que o Claude propõe antes de aceitar qualquer alteração.</p>"
+          },
+          {
+            "id": "cmqiaal0f0049357pvm4f5k2c",
+            "type": "step",
+            "title": "Teste um prompt fraco e um forte",
+            "isHidden": false,
+            "description": "<p>Abra o Claude Desktop e, na aba Chat, envie um pedido genérico como \"Melhore meu texto.\" Observe a resposta. Em seguida, envie um prompt forte, detalhando contexto, tarefa, limite e formato, como: \"Reescreva o parágrafo abaixo usando linguagem formal e impessoal, adequada para um relatório acadêmico. Não altere o significado. Não ultrapasse 80 palavras. Parágrafo: 'A gente precisa entender que inteligência artificial não é mágica, ela usa dados pra aprender coisas e responder perguntas.'\" Compare as respostas.</p>"
+          },
+          {
+            "id": "cmqiaal0f004a357povwv0wpw",
+            "type": "step",
+            "title": "Aprenda a fórmula dos prompts eficazes",
+            "isHidden": false,
+            "description": "<p>Um prompt eficaz pode ter até quatro ingredientes: CONTEXTO (o que é o projeto ou texto?), TAREFA (o que você quer que o Claude faça?), LIMITE (o que não deve ser alterado?), FORMATO (como quer a resposta?). Quanto mais ingredientes, melhor o resultado.</p>"
+          },
+          {
+            "id": "cmqiaal0f004b357ps5ln1waq",
+            "type": "step",
+            "title": "Pratique reescrevendo prompts",
+            "isHidden": false,
+            "description": "<p>Para cada cenário abaixo, transforme o prompt fraco em um forte usando a fórmula:</p><ul><li>Cenário A: Fraco: \"Faça um resumo.\" Forte: (escreva usando contexto, tarefa, limite, formato)</li><li>Cenário B: Fraco: \"Explique isso melhor.\" Forte: (aplique a fórmula)</li><li>Cenário C: Fraco: \"Crie uma lista.\" Forte: (aplique a fórmula)</li></ul>"
+          },
+          {
+            "id": "cmqiaal0f004c357p1mwjxjlu",
+            "type": "step",
+            "title": "Adicione exemplos para calibrar",
+            "isHidden": false,
+            "description": "<p>Se o Claude ainda não entender, inclua um exemplo do resultado esperado: \"Quero uma resposta parecida com esta: [exemplo]\". Isso ajuda a IA a alinhar a resposta ao seu objetivo.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "b5190e42-84c7-4022-b587-8a37d8c23930"
+      },
+      {
+        "id": "4c4f2ab8-54c4-4c42-94c6-9f30bd646484",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "372877a7-9251-40c8-850e-62eddd62a594",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Quais elementos estão presentes neste prompt?\n\n\"Este é um relatório para o gerente de projetos. Corrija erros de gramática. Não altere o conteúdo nem o tom. Entregue o texto corrigido completo.\"",
+            "answers": [
+              {
+                "id": "5fd45b18-1465-4cfa-a2bf-21781a7dfb5b",
+                "title": "Apenas tarefa e formato",
+                "correct": false,
+                "feedback": "Incorreto. O prompt também define o contexto (\"relatório para o gerente de projetos\") e um limite (\"não altere o conteúdo nem o tom\") — não é só tarefa e formato."
+              },
+              {
+                "id": "238aa876-846b-4ace-8b67-d0d1489dfea3",
+                "title": "Contexto, tarefa, limite e formato",
+                "correct": true,
+                "feedback": "Correto! O prompt traz contexto (relatório para o gerente de projetos), tarefa (corrigir erros de gramática), limite (não alterar conteúdo nem tom) e formato (entregar o texto corrigido completo)."
+              },
+              {
+                "id": "8116aa21-ae33-4725-bc5b-16bdf3ffd9fd",
+                "title": "Apenas contexto e tarefa",
+                "correct": false,
+                "feedback": "Incorreto. O prompt tem contexto e tarefa, mas também define um limite (\"não altere o tom\") e um formato (\"entregue o texto corrigido completo\") — faltam esses dois nesta opção."
+              },
+              {
+                "id": "77bd16a3-1dc7-497b-be05-3641459425e7",
+                "title": "Apenas tarefa e limite",
+                "correct": false,
+                "feedback": "Incorreto. O prompt tem tarefa e limite, mas também define contexto (\"relatório para o gerente de projetos\") e formato (\"texto corrigido completo\") — faltam esses dois nesta opção."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "fee372ba-a97f-4907-af50-b86608149353"
+      },
+      {
+        "id": "rjcb3oeq3p5pisd0cj2x36dl",
+        "type": "text",
+        "items": [
+          {
+            "id": "xedc9l6iqwz5qytep2sn6qvm",
+            "heading": "Dicas e Soluções para Prompts e Respostas Insatisfatórias",
+            "paragraph": "<p>Enfrentou problemas com respostas genéricas ou dificuldades técnicas? Expanda cada item para ver dicas práticas e soluções rápidas para os desafios mais comuns ao interagir com o Claude Desktop.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7f784c59-8df1-4547-8a63-cae7bd307536"
+      },
+      {
+        "id": "cmqiaal0g004e357pvm86fel9",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqiaal0g004f357pjyihp3pc",
+            "title": "Respostas genéricas mesmo com prompt detalhado",
+            "description": "<p>Adicione um exemplo concreto do resultado esperado logo após a fórmula. Isso ajuda o Claude a entender exatamente o que você deseja.</p>"
+          },
+          {
+            "id": "cmqiaal0g004g357plpj7t43h",
+            "title": "Não encontro o botão \"Stop\" durante a resposta",
+            "description": "<p>Olhe na parte inferior da janela de chat — ele costuma aparecer como um quadrado ou a palavra \"Stop\" enquanto o Claude está respondendo.</p>"
+          },
+          {
+            "id": "cmqiaal0g004h357pnfvxp8rf",
+            "title": "A diff view não aparece e o Claude simplesmente substitui o arquivo",
+            "description": "<p>Verifique se o modo de permissão está em \"Ask\" (não em \"Auto-accept\") — procure essa configuração próxima ao botão de enviar.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "95527df9-a73c-46b1-ad52-958ddd0e9fdc"
+      },
+      {
+        "id": "cmqiaal0g004o357pq5rc1p70",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqiaal0g004i357pfgmm81aa",
+            "type": "intro",
+            "title": "Introdução à Revisão de Alterações e Interrupção de Tarefas",
+            "isHidden": false,
+            "description": "<p>Neste módulo, você aprenderá como revisar alterações utilizando a diff view, aceitar ou rejeitar sugestões, interromper tarefas em andamento e validar o ciclo completo de revisão no Claude Desktop.</p>"
+          },
+          {
+            "id": "cmqiaal0g004j357pnnrcd46v",
+            "type": "summary",
+            "title": "Controle total do fluxo",
+            "isHidden": false,
+            "description": "<p>Revisar antes de aceitar, interromper quando necessário e redirecionar com mais detalhes: esse é o ciclo que transforma o Claude de ferramenta que age sozinha em colaborador que você supervisiona ativamente.</p>"
+          },
+          {
+            "id": "cmqiaal0g004k357p8ib0esff",
+            "type": "step",
+            "title": "Use a diff view para revisar alterações",
+            "isHidden": false,
+            "description": "<p>Na aba Code, após pedir uma alteração, observe a tela de diferenças (diff view). Ela mostra lado a lado o texto original e o proposto, destacando em verde o que foi adicionado e em vermelho o que foi removido.</p>"
+          },
+          {
+            "id": "cmqiaal0g004l357pi1sjrqa0",
+            "type": "step",
+            "title": "Aceite ou rejeite alterações",
+            "isHidden": false,
+            "description": "<p>Se gostar da sugestão, clique em \"Accept\". Se não gostar, clique em \"Reject\" e reformule o prompt com mais detalhes.</p>"
+          },
+          {
+            "id": "cmqiaal0g004m357p3p13g0d0",
+            "type": "step",
+            "title": "Interrompa tarefas em andamento",
+            "isHidden": false,
+            "description": "<p>Se o Claude começar a executar algo fora do esperado, clique no botão \"Stop\" (ou \"Cancel\") durante a resposta. Reformule o pedido para ajustar o escopo.</p>"
+          },
+          {
+            "id": "cmqiaal0g004n357pgbncsqdx",
+            "type": "step",
+            "title": "Valide o ciclo completo",
+            "isHidden": false,
+            "description": "<p>Repita o processo até obter o resultado desejado. Aceitar ou rejeitar alterações e redirecionar a IA são partes fundamentais do fluxo de trabalho.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "cf44002a-80b1-4aee-98aa-f25d27701ede"
+      },
+      {
+        "id": "cmqiaal0g004p357pe40r6oem",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqiaal0g004q357pf6kw7g45",
+            "paragraph": "Você enviou um prompt forte, recebeu uma resposta útil, revisou a visualização de diferenças e praticou a interrupção para redirecionar o Claude. Se conseguiu aceitar ou rejeitar uma alteração na aba Code, completou o ciclo fundamental de uso do aplicativo."
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d330d8f9-5ace-450c-a46b-3e09a4f3a78b"
+      },
+      {
+        "id": "llg7fh2eq943d94mx07ag8ra",
+        "type": "text",
+        "items": [
+          {
+            "id": "ximikfyghcur381lqx8xhmr7",
+            "heading": "Quer Ir Além? – Aprimorando seus Prompts e Fluxos",
+            "paragraph": "<p>Pronto para aprofundar ainda mais? Explore as sugestões abaixo para elevar seu domínio sobre prompts e fluxos de trabalho com o Claude Desktop.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "2359ea06-5af9-4772-9c43-e77b98ff0969"
+      },
+      {
+        "id": "cmqiaal0g004r357pmnsiwaf2",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqiaal0g004s357pzjpzruwd",
+            "title": "Peça avaliação de prompt",
+            "description": "<p>Peça ao Claude na aba Chat que avalie um prompt que você criou e sugira como melhorá-lo.</p>"
+          },
+          {
+            "id": "cmqiaal0g004t357pivjaew9o",
+            "title": "Compare contextos diferentes",
+            "description": "<p>Teste o mesmo prompt com dois tamanhos de contexto (curto e longo) e compare os resultados para ver como o contexto influencia a resposta.</p>"
+          },
+          {
+            "id": "cmqiaal0g004u357pbm0lbt5h",
+            "title": "Monte um repertório de prompts",
+            "description": "<p>Crie um arquivo meus-prompts.md no projeto com os melhores prompts que você descobriu — assim, você terá um repertório pessoal reutilizável.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "6785cbd4-b923-4b49-99f0-64588694b735"
+      }
+    ]
+  }
+}

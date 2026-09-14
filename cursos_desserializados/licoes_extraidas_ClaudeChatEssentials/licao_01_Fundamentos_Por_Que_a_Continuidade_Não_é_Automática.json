@@ -1,0 +1,621 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Fundamentos: Por Que a Continuidade Não é Automática",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "Z8gE8VzC54li0t7wSL6MTTW3PdZXGKuC",
+    "createdAt": "2026-08-10T18:12:33.973Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmsnju33j002i3581bvfyse6w",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Fundamentos: Por Que a Continuidade Não é Automática",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-08-10T18:13:11.391Z",
+    "items": [
+      {
+        "id": "zga5b13ojum2mtqkc7vwyi9x",
+        "type": "text",
+        "items": [
+          {
+            "id": "u2hfi35drxfrs1f9q98guh2y",
+            "heading": "Por que a continuidade não é automática no Claude?",
+            "paragraph": "<p>Cada novo chat que você abre no Claude é uma instância isolada, sem acesso automático ao que foi discutido em conversas anteriores. Essa ausência de memória não é uma falha acidental: decorre da própria arquitetura da ferramenta, e o primeiro passo para usá-la bem é compreender esse comportamento como ponto de partida, não como algo a ser contornado.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "e394b4d6-22c6-4583-aba1-76e873dc6f50"
+      },
+      {
+        "id": "dg3uwzpfcx1ijx1aoebkhekm",
+        "type": "text",
+        "items": [
+          {
+            "id": "dpgcbdz497ughfcn8pzvy8ca",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "04727f2a-e3e9-4c37-bbd8-f37304ab27cb"
+      },
+      {
+        "id": "e5e6y8vrfawn53vgg092piy9",
+        "type": "list",
+        "items": [
+          {
+            "id": "sgrumoxge2zuc6reif2djpta",
+            "number": "1",
+            "paragraph": "<p>Explicar por que o Claude não retém, por padrão, informações de uma conversa para a seguinte.</p>"
+          },
+          {
+            "id": "ji3oxzzuhs2szrfoboopg32f",
+            "number": "2",
+            "paragraph": "<p>Enumerar os quatro mecanismos disponíveis para criar continuidade — Custom Instructions, Chat Search, Memory e Projects — e a natureza de cada um (permanente, manual, automática ou isolada).</p>"
+          },
+          {
+            "id": "jn0tdqt1rjpp7tbyzgvsdcgf",
+            "number": "3",
+            "paragraph": "<p>Diferenciar a memória humana da \"memória\" artificial do Claude, evitando expectativas equivocadas quanto ao seu funcionamento.</p>"
+          },
+          {
+            "id": "zp3famf3s55rv48jo3h3ltqe",
+            "number": "4",
+            "paragraph": "<p>Localizar, nas configurações da própria conta, onde cada um dos quatro mecanismos é gerenciado.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "68b63af6-af16-40b3-bffb-db7b1b1ed55c"
+      },
+      {
+        "id": "fntino7onumi3ker4pyw43w1",
+        "type": "text",
+        "items": [
+          {
+            "id": "ziucmkm3wpytpygo8y5wqvz8",
+            "paragraph": "<p>Pense em um colega que, a cada novo encontro, lê um resumo executivo sobre você antes de conversar — em vez de alguém que viveu o histórico de trabalho ao seu lado. É assim que o Claude parte em cada conversa nova: sem experiência vivida, apenas com o que estiver registrado em texto. Essa arquitetura tem uma vantagem direta de privacidade — nenhuma informação de uma conversa vaza automaticamente para outra.</p><p>Os quatro mecanismos a seguir existem para reduzir essa distância: cada um, à sua maneira, dá ao Claude mais contexto do que uma folha em branco.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "a2212abe-6cd7-4968-8b9e-a9178bec53ab"
+      },
+      {
+        "id": "fluqmiw74oz5cks1o04nn6m0",
+        "type": "text",
+        "items": [
+          {
+            "id": "mk3d18fm19ikqez84xasqm7m",
+            "heading": "Revisão de Conceitos: Memória e Continuidade no Claude",
+            "paragraph": "<p>Revise os principais conceitos sobre como o Claude lida com memória e continuidade, destacando termos essenciais e distinções fundamentais para compreender o funcionamento e as implicações de privacidade.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "2af4c112-4d83-47e7-a8b1-6d0c72c10fe2"
+      },
+      {
+        "id": "efl1j5ah6ouf0fytw8933cnj",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "uhuhq7vqqs0w60n94tsnvlji",
+            "back": {
+              "type": "description",
+              "description": "<p>Ausência de retenção automática de informações entre conversas; cada chat é isolado dos anteriores.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Memória intrínseca no Claude</p>"
+            }
+          },
+          {
+            "id": "ql5jf8jpmxkgpqda7ch9wn51",
+            "back": {
+              "type": "description",
+              "description": "<p>O Claude não armazena dados de um chat para outro por padrão, garantindo privacidade e segurança.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Ausência de retenção automática</p>"
+            }
+          },
+          {
+            "id": "waao8ylxs598vo4bt2c72nry",
+            "back": {
+              "type": "description",
+              "description": "<p>O design sem memória automática protege informações sensíveis e impede acesso não autorizado entre conversas.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Implicações para privacidade</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "ec9c0722-543b-4107-84f8-4a0d7fa68b7c"
+      },
+      {
+        "id": "fqggqytpoc0r31z0cdozibe5",
+        "type": "text",
+        "items": [
+          {
+            "id": "qei44d0yism55usbe97mwlxb",
+            "heading": "Visão geral dos mecanismos de continuidade",
+            "paragraph": "<p>Apesar de não possuir memória automática entre conversas, o Claude oferece quatro mecanismos distintos para criar continuidade. Esses recursos permitem que você personalize, recupere, automatize ou isole informações conforme sua necessidade profissional.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "14b462ea-7803-4dca-95ce-7c79e3c537f6"
+      },
+      {
+        "id": "flioiq0gndn5tmmviyeg7m37",
+        "type": "text",
+        "items": [
+          {
+            "id": "k9x8npfmqca4ryyfd0hqa12y",
+            "heading": "Quatro mecanismos de continuidade no Claude",
+            "paragraph": "<p>Claude oferece quatro mecanismos distintos para garantir a continuidade e personalização das suas interações. Expanda cada item para entender sua função e aplicação.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "5122d050-4939-4e18-8f8f-1017c35f3bb9"
+      },
+      {
+        "id": "cmsnjuvzl002o3581w181mwex",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnjuvzl002p3581kk4sg2cd",
+            "title": "Custom Instructions",
+            "description": "<p>Permite criar um perfil permanente, redigido uma única vez, que será aplicado automaticamente em todas as conversas futuras. Sua natureza é permanente.</p><p></p><p>Ideal para definir preferências e informações que não mudam com frequência.</p>"
+          },
+          {
+            "id": "cmsnjuvzl002q3581bwunqrf8",
+            "title": "Chat Search",
+            "description": "<p>Oferece a possibilidade de buscar manualmente conversas anteriores específicas. Sua natureza é manual.</p><p></p><p>Útil para recuperar informações pontuais de interações passadas.</p>"
+          },
+          {
+            "id": "cmsnjuvzl002r3581dauu6hp7",
+            "title": "Memory",
+            "description": "<p>Funciona de forma automática, inferindo padrões a partir das conversas realizadas e disponibilizando-os em interações futuras. Sua atualização ocorre periodicamente.</p><p></p><p>Facilita a continuidade sem intervenção constante do usuário.</p>"
+          },
+          {
+            "id": "cmsnjuvzl002s3581ejg3ymrx",
+            "title": "Projects",
+            "description": "<p>Cria contextos isolados para diferentes frentes de trabalho, cada um com histórico e instruções próprios. Sua natureza é isolada.</p><p></p><p>Perfeito para separar projetos ou áreas de atuação sem mistura de informações.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "b609fc5e-4cef-4a35-9430-faa566ee9ec2"
+      },
+      {
+        "id": "any4ye6y3vikwhsuafa4f7er",
+        "type": "text",
+        "items": [
+          {
+            "id": "ke0y06eoqvglid2p5q354xow",
+            "heading": "Comparação dos Quatro Mecanismos de Continuidade",
+            "paragraph": "<p>Conheça as principais características dos quatro mecanismos de continuidade disponíveis, suas naturezas, formas de gerenciamento e exemplos práticos de uso.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "a1bbc0ae-1e8b-43a6-8069-004b820e3ca1"
+      },
+      {
+        "id": "cmsnjuvzl002t3581bagp8inl",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnjuvzl002u3581qk1jnf0u",
+            "title": "Custom Instructions",
+            "description": "<p><strong>Natureza:</strong> Permanente. Este mecanismo é gerenciado em Settings, na seção de Custom Instructions ou Preferences. Uma vez configurado, permanece ativo em todas as conversas subsequentes.</p><p></p><p><strong>Exemplo de uso:</strong> Definir seu cargo, área de atuação e preferências de linguagem para que o Claude sempre considere essas informações ao responder.</p>"
+          },
+          {
+            "id": "cmsnjuvzl002v3581zgr6rzki",
+            "title": "Chat Search",
+            "description": "<p><strong>Natureza:</strong> Manual. É ativado em Settings, na área de Features ou Experimental Features. O usuário precisa buscar ativamente por conversas anteriores.</p><p></p><p><strong>Exemplo de uso:</strong> Procurar uma resposta específica dada pelo Claude em um chat antigo para reutilizar informações em um novo contexto.</p>"
+          },
+          {
+            "id": "cmsnjuvzl002w3581sg4wset2",
+            "title": "Memory",
+            "description": "<p><strong>Natureza:</strong> Automática. Gerenciada em Settings &gt; Privacy (ou Data &amp; Privacy), pode ser ativada ou desativada conforme a preferência do usuário. O Claude atualiza a memória periodicamente, sem necessidade de ação manual.</p><p></p><p><strong>Exemplo de uso:</strong> O Claude reconhece padrões de solicitações frequentes e sugere respostas personalizadas com base no histórico recente.</p>"
+          },
+          {
+            "id": "cmsnjuvzl002x3581txu2ncrx",
+            "title": "Projects",
+            "description": "<p><strong>Natureza:</strong> Isolada. Gerenciada na barra lateral, onde é possível criar, acessar e organizar diferentes Projects, cada um com seu próprio histórico e instruções.</p><p></p><p><strong>Exemplo de uso:</strong> Separar tarefas de diferentes clientes ou áreas, mantendo o contexto e as informações organizadas e sem sobreposição.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "52041b53-e77a-4f7b-af5f-f76df43d4096"
+      },
+      {
+        "id": "xd673s4l1hlijtcdtbitamkp",
+        "type": "text",
+        "items": [
+          {
+            "id": "geq32xbxvivv0f8pk0xpnwkl",
+            "heading": "Memória humana vs. memória do Claude",
+            "paragraph": "<p>É importante diferenciar a memória humana da memória artificial do Claude. Compreender essa distinção evita expectativas equivocadas e orienta a forma correta de interagir com a ferramenta.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "ce904bc4-49f9-4360-9dc3-f233e951dc54"
+      },
+      {
+        "id": "e19gsxwl5x3lm30oo0j5igjc",
+        "type": "text",
+        "items": [
+          {
+            "id": "qfvbs60s9o3liy2ir8mjrtn1",
+            "heading": "Principais diferenças entre a memória humana e a memória do Claude",
+            "paragraph": "<p>Conheça como a memória do Claude se diferencia da memória humana em aspectos fundamentais, impactando a forma como interagimos e fornecemos informações.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "25442460-3f1d-4b0e-8250-75eca2bead6c"
+      },
+      {
+        "id": "cmsnjuvzl002y3581ftdnnyub",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnjuvzl002z358104e7wncs",
+            "title": "Continuidade e atualização",
+            "description": "<p>A memória humana é contínua e atualizada em tempo real, enquanto a do Claude depende de atualizações periódicas e não é instantânea.</p><p></p><p>Isso significa que o Claude pode demorar até 48 horas para incorporar novas informações em sua memória automática.</p>"
+          },
+          {
+            "id": "cmsnjuvzl00303581q35xb7ru",
+            "title": "Origem das informações",
+            "description": "<p>A memória humana se baseia em experiências vividas, já a do Claude depende exclusivamente de dados textuais fornecidos pelo usuário ou registrados em conversas salvas.</p><p></p><p>O Claude não \"vive\" experiências, apenas processa textos e instruções explícitas.</p>"
+          },
+          {
+            "id": "cmsnjuvzl0031358192v9m2su",
+            "title": "Dependência de contexto tácito",
+            "description": "<p>Humanos utilizam contexto tácito e conhecimento prévio, mas o Claude só entende o que for explicitamente informado em cada conversa.</p><p></p><p>Por isso, é fundamental ser claro e específico ao fornecer instruções ao Claude.</p>"
+          },
+          {
+            "id": "cmsnjuvzl00323581exz1yn2a",
+            "title": "Implicações para o uso",
+            "description": "<p>Enquanto humanos podem inferir e lembrar de situações passadas, o Claude exige instruções detalhadas e não depende de experiência prévia para operar corretamente.</p><p></p><p>Isso reforça a necessidade de explicitar o contexto sempre que desejar continuidade.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "bafc4152-c112-4345-b900-169ce1efa459"
+      },
+      {
+        "id": "cmsnjuvzl00333581h82e9yz1",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsnjuvzl00343581k59uxzsb",
+            "paragraph": "A continuidade não é um comportamento padrão do Claude — é sempre uma escolha ativa do usuário: o que se registra, o que se busca e o que se isola em cada conversa."
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "718c61e1-0839-48fd-a9a3-30aff7d3dcaf"
+      },
+      {
+        "id": "ex2jq8evwj79tps6hv75uwfj",
+        "type": "text",
+        "items": [
+          {
+            "id": "bjrfqlhizq3k7il7pbcwvz5a",
+            "heading": "Reconhecendo e classificando os mecanismos de continuidade",
+            "paragraph": "<p>Agora é hora de colocar em prática: você irá localizar e classificar os quatro mecanismos de continuidade diretamente na sua conta Claude. Siga o passo a passo para identificar onde cada recurso está e como ele funciona.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "375d09db-a981-4f14-b070-f7c72ad3ba41"
+      },
+      {
+        "id": "cmsnjuvzm003d35813de8tlf4",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnjuvzm003535813mxcpt57",
+            "type": "intro",
+            "title": "Introdução ao Exercício de Localização e Classificação",
+            "isHidden": false,
+            "description": "<p>Neste exercício, você irá navegar pelas configurações do Claude para localizar e classificar os mecanismos de continuidade.</p>"
+          },
+          {
+            "id": "cmsnjuvzm00363581z7ozvc1a",
+            "type": "summary",
+            "title": "Resumo da Atividade",
+            "isHidden": false,
+            "description": "<p>Ao final, você terá identificado e classificado corretamente todos os mecanismos de continuidade disponíveis no Claude.</p>"
+          },
+          {
+            "id": "cmsnjuvzm00373581hg2usrzy",
+            "type": "step",
+            "title": "Acessar Configurações do Claude",
+            "isHidden": false,
+            "description": "<p>Acesse o caminho: 🧭 Claude (claude.ai ou Desktop) &gt; ícone de perfil &gt; Settings.</p>"
+          },
+          {
+            "id": "cmsnjuvzm00383581guvuhrtf",
+            "type": "step",
+            "title": "Verificar Custom Instructions",
+            "isHidden": false,
+            "description": "<p>Localize a seção de Custom Instructions (ou Preferences) e registre, em uma frase, se já existe algum conteúdo preenchido.</p>"
+          },
+          {
+            "id": "cmsnjuvzm00393581w5a00cw3",
+            "type": "step",
+            "title": "Verificar Memory",
+            "isHidden": false,
+            "description": "<p>Localize, em 🧭 Settings &gt; Privacy (ou Data &amp; Privacy), a opção de ativação da Memory e registre se está ativa ou inativa.</p>"
+          },
+          {
+            "id": "cmsnjuvzm003a3581yptwymdl",
+            "type": "step",
+            "title": "Verificar Chat Search",
+            "isHidden": false,
+            "description": "<p>Localize, em 🧭 Settings &gt; Features (ou Experimental Features), a opção de ativação do Chat Search e registre se está ativa ou inativa.</p>"
+          },
+          {
+            "id": "cmsnjuvzm003b3581mvnu8p9c",
+            "type": "step",
+            "title": "Verificar Projects",
+            "isHidden": false,
+            "description": "<p>Localize a área de Projects, na barra lateral, e registre quantos Projects, se algum, já existem na conta.</p>"
+          },
+          {
+            "id": "cmsnjuvzm003c35813fbaqsvq",
+            "type": "step",
+            "title": "Classificar os Mecanismos Localizados",
+            "isHidden": false,
+            "description": "<p>Para cada um dos quatro mecanismos localizados, classifique, com base no texto descritivo, se sua natureza é permanente, manual, automática ou isolada.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "b8c8241f-7c7c-432c-9d7f-8230fdc3beaf"
+      },
+      {
+        "id": "e52bafe1-276f-4809-94d0-098679079d0d",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "2f8630ee-d769-43a5-90c2-6d95fd7bb54a",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual é a natureza do mecanismo Custom Instructions?",
+            "answers": [
+              {
+                "id": "ad6e6750-e9d1-454e-989f-2ed1f7890357",
+                "title": "Manual",
+                "correct": false,
+                "feedback": "Custom Instructions não é manual, pois não depende de uma ação pontual do usuário para cada uso."
+              },
+              {
+                "id": "cc81908d-5a3f-4e18-ac64-40009b5b9011",
+                "title": "Permanente",
+                "correct": true,
+                "feedback": "Custom Instructions é permanente, pois permanece ativo em todas as conversas após ser configurado."
+              },
+              {
+                "id": "64839b37-0c8f-4435-9e01-ee7940608f12",
+                "title": "Automática",
+                "correct": false,
+                "feedback": "Custom Instructions não é automática, pois não é inferida ou atualizada sem intervenção."
+              },
+              {
+                "id": "75797d9c-ef26-4c4c-941f-7e991e4bbcc6",
+                "title": "Isolada",
+                "correct": false,
+                "feedback": "Custom Instructions não é isolada, pois afeta todas as conversas, não apenas contextos separados."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "12a95439-e2c0-4af3-9ca1-0d1b140adfef"
+      },
+      {
+        "id": "cmsnjuvzm003e3581buj0ub7a",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsnjuvzm003f3581yadbc9lg",
+            "paragraph": "<p><strong>Ponto de controle:</strong> Quatro mecanismos foram localizados e classificados, com anotação do estado atual (ativo, inativo ou preenchido) de cada um, em <strong>Settings</strong> e na barra lateral de <strong>Projects</strong>.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7e6e5325-ea8e-4eee-b1e5-a90848fa76d5"
+      },
+      {
+        "id": "cmsnjuvzm003g35812ncanajt",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmsnjuvzm003h3581mc0av940",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "6d97ce68-c58d-4bde-a192-6fb846e3f9a0"
+      },
+      {
+        "id": "ftz1oh6pv0w2ess992nksfl1",
+        "type": "text",
+        "items": [
+          {
+            "id": "ti5badszn91sv4lx5bk324xx",
+            "paragraph": "<p>Na próxima lição, você irá aprofundar o uso das Custom Instructions, aprendendo a configurar seu perfil e preferências para que o Claude reconheça suas necessidades profissionais de forma contínua e personalizada.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "a2656133-fe45-411f-8ab4-589e27b6e062"
+      }
+    ]
+  }
+}

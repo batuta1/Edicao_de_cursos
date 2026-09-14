@@ -1,0 +1,392 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Instalando e Configurando o Claude Desktop com Segurança",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "iWjdYsT1Gm-gjwHPMvkb8NGcQzhThU6c",
+    "createdAt": "2026-06-17T16:26:09.476Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmqia9a23002h357p66oigy1q",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Instalando e Configurando o Claude Desktop com Segurança",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-06-17T16:26:40.286Z",
+    "items": [
+      {
+        "id": "fszf1fa218px1v1hk7kp14tr",
+        "type": "text",
+        "items": [
+          {
+            "id": "xg3wvyohu0f5pgigyvtuit9x",
+            "heading": "Por que instalar o Claude Desktop?",
+            "paragraph": "<p>O Claude Desktop não é apenas uma versão instalável do claude.ai: ele pode interagir com arquivos direto no seu computador, algo que o navegador não faz. Essa capacidade abre caminho para automatizar tarefas reais e ganhar autonomia no dia a dia — mas também exige atenção redobrada com segurança, já que você está dando a uma IA acesso a arquivos locais. É isso que você vai aprender a fazer com cuidado nesta lição: instalar, configurar e já sair com boas práticas de segurança.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "734c0ae1-bc2a-45f6-8b5f-e09968736468"
+      },
+      {
+        "id": "jgx883umxsg0ccs2724myee4",
+        "type": "text",
+        "items": [
+          {
+            "id": "igbt5r9j0rv0incqdqb26rpa",
+            "paragraph": "<p>Nesta lição, você vai se preparar para instalar e configurar o Claude Desktop com segurança. Veja o que será abordado:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "62754417-768f-4fb2-ab4c-dd5135cbf2ff"
+      },
+      {
+        "id": "uiwdj6qpd4160p81sj89i3hh",
+        "type": "list",
+        "items": [
+          {
+            "id": "g0pcwg50hy68hvjv8avtjrnu",
+            "number": "1",
+            "paragraph": "<p>Verificar pré-requisitos essenciais</p>"
+          },
+          {
+            "id": "n9yc7tmhp2l2vcpzodgj6cvf",
+            "number": "2",
+            "paragraph": "<p>Checar compatibilidade do sistema</p>"
+          },
+          {
+            "id": "qfmv4rdukbzaigxha3422sut",
+            "number": "3",
+            "paragraph": "<p>Baixar e instalar o aplicativo</p>"
+          },
+          {
+            "id": "sx3q1n9xukpgzb6p1xwdtnf0",
+            "number": "4",
+            "paragraph": "<p>Autenticar o primeiro acesso</p>"
+          },
+          {
+            "id": "j79tztnbg1ga3t3p5hmk8xdt",
+            "number": "5",
+            "paragraph": "<p>Solucionar problemas comuns de instalação</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "fdf612bd-064d-4341-979a-50568b581c78"
+      },
+      {
+        "id": "cmqia9xul002k357p1keyen54",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqia9xul002l357pm0tnzzie",
+            "paragraph": "<p><strong>Regra de ouro do curso:</strong> você não vai aprender lendo — vai aprender fazendo. Se travar em algum passo, não pule: consulte a seção \"Solucionando Problemas Comuns de Instalação\", mais abaixo nesta lição. Errar aqui é esperado e faz parte do processo.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d0f41943-60dd-4be9-8b0f-3dc021a8641c"
+      },
+      {
+        "id": "tatl1wy2grlj8hav7531l3md",
+        "type": "text",
+        "items": [
+          {
+            "id": "eigw03scakscdhwqouro30h0",
+            "paragraph": "<p>Antes de começar, confira se você tem tudo pronto para seguir com a instalação:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "baeb8550-6139-46d2-aca2-9a935036302f"
+      },
+      {
+        "id": "ahior0dn74zysmipm6hv1wcx",
+        "type": "list",
+        "items": [
+          {
+            "id": "kkvd95hn48dyczink4ejw0qd",
+            "number": "1",
+            "paragraph": "<p>Computador compatível</p>"
+          },
+          {
+            "id": "h4bdizju9505ujavk13dxol1",
+            "number": "2",
+            "paragraph": "<p>Conta Anthropic adequada</p>"
+          },
+          {
+            "id": "h7jr5qjdi152yvt932urdbvb",
+            "number": "3",
+            "paragraph": "<p>Site claude.ai aberto</p>"
+          },
+          {
+            "id": "plwdriq6oy64ma4eupigxp00",
+            "number": "4",
+            "paragraph": "<p>Editor de texto simples</p>"
+          },
+          {
+            "id": "ashzl5u8oby9bf4hzcyi9em0",
+            "number": "5",
+            "paragraph": "<p>Disposição para experimentar</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "48be3f6b-a382-462b-8685-1c92974848a0"
+      },
+      {
+        "id": "cmqia9xum002u357pjqcp2hcn",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqia9xum002m357ptwao5a1b",
+            "type": "intro",
+            "title": "Introdução à Instalação e Configuração do Claude Desktop",
+            "isHidden": false,
+            "description": "<p>Você vai passar por seis etapas, do reconhecimento do seu sistema até a confirmação de que o app está funcionando. Tenha à mão o e-mail da sua conta Anthropic — ele será pedido no meio do processo.</p>"
+          },
+          {
+            "id": "cmqia9xum002n357poi3bq2ah",
+            "type": "summary",
+            "title": "Resumo da Instalação e Configuração",
+            "isHidden": false,
+            "description": "<p>Instalação concluída. Se algo não funcionou como esperado em algum passo, a próxima seção reúne soluções para os problemas mais comuns de instalação.</p>"
+          },
+          {
+            "id": "cmqia9xum002o357pxxuamupv",
+            "type": "step",
+            "title": "Verificar sistema operacional e processador",
+            "isHidden": false,
+            "description": "<p><strong>No Windows:</strong></p><ol><li>Clique no botão Iniciar (o símbolo do Windows no canto inferior esquerdo).</li><li>Digite \"Sobre\" e clique em \"Sobre o seu PC\".</li><li>Procure o campo \"Tipo de sistema\" — anote se aparece x64 ou ARM64.</li><li>Procure também a versão do Windows — deve ser 10 ou 11.</li></ol><p><strong>No macOS:</strong></p><ol><li>Clique no menu da maçã (canto superior esquerdo da tela).</li><li>Clique em \"Sobre este Mac\".</li><li>Procure o campo \"Chip\" (ex.: M1, M2, M3) ou \"Processador\" (ex.: Intel Core).</li><li>Confirme que a versão do macOS é 12 ou superior.</li></ol><p><em>Dica: ARM64 e Apple Silicon (M1/M2/M3) são a mesma família de processador mais recente — só fabricantes diferentes (Microsoft/Qualcomm e Apple, respectivamente). Se você tem um Mac comprado a partir de 2020, provavelmente tem chip Apple Silicon.</em></p>"
+          },
+          {
+            "id": "cmqia9xum002p357pnmplqfen",
+            "type": "step",
+            "title": "Confirmar plano Anthropic",
+            "isHidden": false,
+            "description": "<ol><li>Abra claude.ai no navegador.</li><li>Faça login com seu e-mail e senha.</li><li>Clique no ícone do seu perfil (canto superior direito).</li><li>Procure a seção \"Plano\" ou \"Billing\".</li><li>Confirme que seu plano é Pro, Max, Team ou Enterprise.</li></ol><p><strong>Atenção:</strong> Se o seu plano for gratuito, o app desktop não estará disponível.</p>"
+          },
+          {
+            "id": "cmqia9xum002q357pcgkv1azd",
+            "type": "step",
+            "title": "Baixar o instalador correto",
+            "isHidden": false,
+            "description": "<p>No site claude.ai, localize a opção de baixar o Claude Desktop e escolha o instalador que combina com o que você anotou no passo anterior: x64 ou ARM64 no Windows, Apple Silicon ou Intel no macOS. Baixar a versão errada para o seu processador é a causa mais comum de falha nesta etapa.</p>"
+          },
+          {
+            "id": "cmqia9xum002r357p5uxsjlk3",
+            "type": "step",
+            "title": "Instalar o aplicativo",
+            "isHidden": false,
+            "description": "<p><strong>No Windows:</strong> Dê duplo clique no arquivo baixado e siga as instruções. Se nada acontecer, clique com o botão direito e escolha \"Executar como administrador\".</p><p><strong>No macOS:</strong> Arraste o aplicativo para a pasta Aplicativos. Se necessário, repita o processo.</p>"
+          },
+          {
+            "id": "cmqia9xum002s357phz8x8zdn",
+            "type": "step",
+            "title": "Primeiro acesso e autenticação",
+            "isHidden": false,
+            "description": "<p>Abra o Claude Desktop. Uma tela de login vai aparecer. Digite seu e-mail e senha da conta Anthropic.</p><p>O app vai abrir o seu navegador para uma verificação extra de segurança — confirme lá. Volte para o app. Se tudo correu bem, você verá três abas no topo: Chat, Code e Cowork.</p>"
+          },
+          {
+            "id": "cmqia9xum002t357p3b1o34lo",
+            "type": "step",
+            "title": "Confirmação de sucesso",
+            "isHidden": false,
+            "description": "<p>Se você está logado e vê as abas Chat, Code e Cowork, a instalação foi concluída com sucesso. Teste a aba Chat: se uma caixa de texto aparecer, está tudo funcionando.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "3f957d0e-5d45-4be8-a496-49b50fe57696"
+      },
+      {
+        "id": "q2qi94f3n4i8s81q089q0y4c",
+        "type": "text",
+        "items": [
+          {
+            "id": "v77bi1x05au0ugxjqvrzapiv",
+            "heading": "Solucionando Problemas Comuns de Instalação",
+            "paragraph": "<p>Enfrentou algum obstáculo durante a instalação? Expanda cada item abaixo para ver soluções rápidas para os problemas mais comuns. Siga as instruções para resolver e continuar o processo.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "5ce3f230-c6bd-4073-9309-fa56d3709053"
+      },
+      {
+        "id": "cmqia9xum002v357pmt4f1lpx",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqia9xum002w357pe1pg2yqr",
+            "title": "Duplo clique no instalador e nada acontece",
+            "description": "<p>Clique com o botão direito no arquivo e escolha \"Executar como administrador\" (Windows) ou arraste novamente para Aplicativos (macOS).</p>"
+          },
+          {
+            "id": "cmqia9xum002x357pjzk2cybi",
+            "title": "Login funciona no navegador mas o app fica em loop",
+            "description": "<p>Feche o app, delete a pasta de cache (%APPDATA%\\Claude no Windows ou ~/.cache/Claude no macOS) e abra novamente.</p>"
+          },
+          {
+            "id": "cmqia9xum002y357p155xi6pp",
+            "title": "As abas aparecem mas a aba Code mostra \"Upgrade Required\"",
+            "description": "<p>Seu plano atual não inclui o desktop; verifique o plano na sua conta em claude.ai.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "36a360be-226a-4929-ae3a-ed3423b9eae6"
+      },
+      {
+        "id": "cmqia9xum002z357pdztbhrl3",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmqia9xum0030357pi0nxe6dc",
+            "paragraph": "<ul><li>O Claude Desktop está aberto.</li><li>Você está logado.</li><li>Você consegue ver as abas Chat, Code e Cowork no topo da janela.</li><li>Se você clicar na aba Chat e uma caixa de texto aparecer, está tudo funcionando.</li></ul>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f28c6bf6-70e4-4ff9-a0e6-9ca84729bb09"
+      },
+      {
+        "id": "fa8qnyzmkuzvggym33ff72dy",
+        "type": "text",
+        "items": [
+          {
+            "id": "nj97vav1gscvxnoy09kvdprc",
+            "heading": "Quer Ir Além?",
+            "paragraph": "<p>Se você já concluiu a instalação e quer explorar mais possibilidades, confira as sugestões abaixo. Essas atividades são opcionais e ajudam a aprofundar seu domínio do Claude Desktop.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "c6d392b1-383b-47d2-80d6-cd822f32fabc"
+      },
+      {
+        "id": "cmqia9xun0031357ptp4im3ka",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmqia9xun0032357ppx19cz5x",
+            "title": "Verifique a versão instalada",
+            "description": "<p>Localize a opção \"Sobre\" no menu do app (Help &gt; About) e anote qual versão foi instalada.</p>"
+          },
+          {
+            "id": "cmqia9xun0033357p0vqbj3hu",
+            "title": "Teste o Claude na aba Chat",
+            "description": "<p>Experimente digitar qualquer coisa na aba Chat e veja o Claude responder.</p>"
+          },
+          {
+            "id": "cmqia9xun0034357pi4ujicxp",
+            "title": "Explore as configurações do app",
+            "description": "<p>Procure no menu do app a opção de configurações e explore o que pode ser ajustado.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "6f8b1557-c636-40d4-9abc-c904b611aba1"
+      }
+    ]
+  }
+}

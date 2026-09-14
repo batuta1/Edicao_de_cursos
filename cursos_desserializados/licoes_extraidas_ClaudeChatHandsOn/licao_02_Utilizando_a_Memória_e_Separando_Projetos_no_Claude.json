@@ -1,0 +1,696 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Utilizando a Memória e Separando Projetos no Claude",
+  "lesson": {
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "o49VjZx0J-N47-U9qKHVmu04X5EeLJ7u",
+    "createdAt": "2026-08-10T18:22:56.636Z",
+    "deleted": false,
+    "description": "",
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "id": "cmsnk7fjm002j3581yfd0gy3h",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Utilizando a Memória e Separando Projetos no Claude",
+    "transferredAt": null,
+    "type": "blocks",
+    "updatedAt": "2026-08-10T18:23:57.506Z",
+    "items": [
+      {
+        "id": "erngwr2qafszgtmemptiqlfg",
+        "type": "text",
+        "items": [
+          {
+            "id": "azm5h9omhu411qa2tnfowdr1",
+            "heading": "Mantendo Continuidade e Organização com Claude",
+            "paragraph": "<p>Custom Instructions você escreve uma vez, na mão — mas o que fazer com as informações que só aparecem aos poucos, ao longo de várias conversas? E se você usa o Claude para frentes de trabalho bem diferentes, como evitar que uma acabe contaminando o contexto da outra? Nesta lição você resolve os dois problemas: a Memory faz o Claude aprender sozinho com o tempo, e os Projects isolam cada frente de trabalho em um espaço próprio, com histórico e instruções que não se misturam.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f2ea383e-77bd-45a0-b9c4-9a9c5c0fea41"
+      },
+      {
+        "id": "xyyju2nx7288ywktw7e98hz2",
+        "type": "text",
+        "items": [
+          {
+            "id": "o1djlahu5lm58nkr5hqj7g17",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "18449412-8a9c-419d-8a08-053a1473f75d"
+      },
+      {
+        "id": "k486i1s0l20o3iatz7i7nsk3",
+        "type": "list",
+        "items": [
+          {
+            "id": "lmpfi0t8eqgoc8gk031m8q6y",
+            "number": "1",
+            "paragraph": "<p>Ativar e usar a função Memory</p>"
+          },
+          {
+            "id": "tpl0j5eo47e3mnvg734sf29m",
+            "number": "2",
+            "paragraph": "<p>Aplicar boas práticas de privacidade</p>"
+          },
+          {
+            "id": "kf9chygq33msqioybti8lgfh",
+            "number": "3",
+            "paragraph": "<p>Criar e organizar Projects</p>"
+          },
+          {
+            "id": "vkzb6wy9ib483n5ng0zud3j0",
+            "number": "4",
+            "paragraph": "<p>Diferenciar instruções gerais e específicas de projeto</p>"
+          },
+          {
+            "id": "ex5d6nmflxfrl3w11b8ff0sy",
+            "number": "5",
+            "paragraph": "<p>Solucionar problemas comuns nessas funções</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "paddingTop": 0
+        },
+        "globalBlockId": "3fb54755-a085-4e40-b750-55c5cd8f012c"
+      },
+      {
+        "id": "ovrf6yzcpnyqc24gzolymxsk",
+        "type": "text",
+        "items": [
+          {
+            "id": "iidorh8zywb2kfn4sctyt847",
+            "heading": "O que é a Memory do Claude?",
+            "paragraph": "<p>Custom Instructions você escreve uma vez e ficam prontas. Já a Memory funciona de um jeito diferente: o Claude vai reparando no que você conta ao longo das conversas e passa a lembrar sozinho, sem que você precise escrever nada — com uma única pegadinha: a atualização não é instantânea, leva de 24 a 48 horas para valer em conversas novas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "f57222cb-512b-4c36-8f89-30e540b0b367"
+      },
+      {
+        "id": "cmsnk8qjw004l3581p5zgmphw",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk8qjw004e3581180lt97i",
+            "type": "intro",
+            "title": "Introdução à Ativação da Memory do Claude",
+            "isHidden": false,
+            "description": "<p>Veja como ativar e testar a Memory do Claude para garantir que ele lembre das informações certas sobre você.</p>"
+          },
+          {
+            "id": "cmsnk8qjw004f3581v5ezzsh1",
+            "type": "summary",
+            "title": "Resumo do Processo",
+            "isHidden": false,
+            "description": "<p>Ao final, você deve ter a Memory ativa e Claude lembrando de pelo menos uma das informações fornecidas.</p>"
+          },
+          {
+            "id": "cmsnk8qjw004g3581aqi7dt8k",
+            "type": "step",
+            "title": "Ative a Memory",
+            "isHidden": false,
+            "description": "<p>Siga o caminho: 🧭 Settings &gt; Privacy (ou Data &amp; Privacy) &gt; Memory e ative, se ainda não estiver ativo.</p>"
+          },
+          {
+            "id": "cmsnk8qjw004h35816yjz5k3v",
+            "type": "step",
+            "title": "Compartilhe informações seguras",
+            "isHidden": false,
+            "description": "<p>Em uma conversa, escreva um \"lembre que eu...\" com 2 ou 3 informações genéricas e seguras sobre seu trabalho. Por exemplo:</p><p>Lembre que eu sou coordenador pedagógico, atendo professores do ensino fundamental e prefiro sugestões práticas em vez de teoria longa.</p>"
+          },
+          {
+            "id": "cmsnk8qjw004i3581lkuj0lm2",
+            "type": "step",
+            "title": "Teste a memória",
+            "isHidden": false,
+            "description": "<p>Em seguida (na mesma conversa ou em uma nova), pergunte: \"o que você sabe sobre mim até agora?\"</p>"
+          },
+          {
+            "id": "cmsnk8qjw004j35813hf3i009",
+            "type": "step",
+            "title": "Analise a resposta",
+            "isHidden": false,
+            "description": "<p>Leia a resposta. Ela já reflete o que você disse no passo anterior?</p>"
+          },
+          {
+            "id": "cmsnk8qjw004k3581tw6abs9u",
+            "type": "step",
+            "title": "Aguarde atualização completa",
+            "isHidden": false,
+            "description": "<p>Anote: se alguma informação ainda não apareceu, tudo bem — a atualização completa da Memory pode levar de 24 a 48 horas.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "6fbb8315-f837-4b23-82ff-4e2ed21e3edb"
+      },
+      {
+        "id": "705221f1-62ce-445c-bd74-956b0d226aae",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "92fb113f-c8e3-4121-b194-81c7741af973",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você ativou a Memory e pediu para o Claude repetir o que sabe sobre você. O que deve acontecer para confirmar que está funcionando corretamente?",
+            "answers": [
+              {
+                "id": "4f627ba5-95a8-47b4-b248-9ceb6cf2eabc",
+                "title": "A) Claude repete exatamente tudo que você escreveu, palavra por palavra",
+                "correct": false,
+                "feedback": "Claude pode não repetir exatamente tudo palavra por palavra, mas deve demonstrar que lembra de informações fornecidas."
+              },
+              {
+                "id": "de69a096-b81d-4f81-933b-d06093969b9b",
+                "title": "B) Claude menciona pelo menos uma das informações fornecidas, mostrando que a Memory está ativa",
+                "correct": true,
+                "feedback": "Se Claude menciona pelo menos uma das informações fornecidas, isso indica que a Memory está ativa e funcionando corretamente."
+              },
+              {
+                "id": "fed58155-1bf2-432d-a1cc-eac726d6b58e",
+                "title": "C) Claude responde de forma genérica, sem detalhes sobre você",
+                "correct": false,
+                "feedback": "Uma resposta genérica sem detalhes não demonstra que a Memory está funcionando."
+              },
+              {
+                "id": "2043b663-4cda-4342-8678-67e03ccc6746",
+                "title": "D) Claude diz que não pode lembrar de nada",
+                "correct": false,
+                "feedback": "Se Claude afirma não lembrar de nada, a Memory não está ativa ou não está funcionando corretamente."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "aab8a725-9c7b-4480-a621-381abb043a32"
+      },
+      {
+        "id": "m1ubat51qkmkckmb4rmjh3nw",
+        "type": "text",
+        "items": [
+          {
+            "id": "y3qw6pjb8sui97t39j2xaagb",
+            "heading": "Dúvidas e Cuidados com a Memory",
+            "paragraph": "<p>Explore as situações abaixo para solucionar dúvidas comuns e garantir o uso seguro da Memory.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d4bea039-6d5b-48cf-8c23-8743d7b9e82d"
+      },
+      {
+        "id": "cmsnk8qjw004m3581aqp5bvgt",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk8qjw004n35816djdot6c",
+            "title": "Não encontro \"Memory\" nas configurações",
+            "description": "<p>Procure por \"Privacy\" ou \"Data & Privacy\" — às vezes fica dentro de um submenu.</p>"
+          },
+          {
+            "id": "cmsnk8qjw004o3581mtkfzyza",
+            "title": "A resposta veio vazia ou genérica",
+            "description": "<p>Isso é normal logo após ativar; espere um pouco e repita o teste em uma conversa nova, no dia seguinte.</p>"
+          },
+          {
+            "id": "cmsnk8qjw004p35817aleeg8h",
+            "title": "Fiquei em dúvida se algo é \"seguro\" para contar",
+            "description": "<p>Regra prática: se envolve outra pessoa identificável (nome, diagnóstico, dado pessoal dela), generalize antes de contar ao Claude.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "93de1988-1f61-44fa-9463-365d78ded2e5"
+      },
+      {
+        "id": "cmsnk8qjw004q35813gd5hp3q",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsnk8qjw004r3581dli6sic2",
+            "paragraph": "<strong>⚠️ Cuidado:</strong> nunca conte à Memory nomes completos de alunos ou clientes, diagnósticos de saúde, dados financeiros ou senhas. Prefira sempre descrições genéricas (\"uma turma com alunos de ritmos diferentes\") a informações que identifiquem alguém."
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "0f68aba6-599c-4b3a-86b8-f48de0194ccd"
+      },
+      {
+        "id": "db19rf87knmngwe2og8ybe2d",
+        "type": "text",
+        "items": [
+          {
+            "id": "zk87ekscrwqkcfemcmr4lm2d",
+            "heading": "Aprofunde sua Prática com a Memory (Opcional)",
+            "paragraph": "<p>Quer ir além? Experimente as atividades abaixo para testar e validar o funcionamento da Memory.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "7b662698-dd09-4307-afc0-aded4a99f1ca"
+      },
+      {
+        "id": "cmsnk8qjw004s358114mmsbcc",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk8qjw004t3581qv7zn9ia",
+            "title": "Auditoria completa da Memory",
+            "description": "<p>Peça: \"faça uma auditoria da minha memória — resuma cargo, público, objetivos e preferências, e diga se algo parece desatualizado.\" Valide se a resposta cobre os quatro itens.</p>"
+          },
+          {
+            "id": "cmsnk8qjw004u35812vet3oox",
+            "title": "Simule uma atualização de informação",
+            "description": "<p>Finja que mudou de cargo ou público e peça ao Claude para registrar a atualização. Valide se ele confirma a mudança.</p>"
+          },
+          {
+            "id": "cmsnk8qjw004v3581y6xhruye",
+            "title": "Teste após 24 horas",
+            "description": "<p>No dia seguinte, pergunte novamente \"o que você sabe sobre mim?\" e veja se novas informações aparecem, refletindo o tempo de atualização.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "e1664c70-ee8b-427e-a210-bace82f84286"
+      },
+      {
+        "id": "cmsnk8qjw004w35814hxhdcdy",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmsnk8qjw004x3581bo0s95gr",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "c74358dd-5242-481c-885c-2dbf01dcf5f2"
+      },
+      {
+        "id": "bw2r5ymrz000z3vejjb3uqx7",
+        "type": "text",
+        "items": [
+          {
+            "id": "fwjcgxs1clysq4w56j7pgcrn",
+            "heading": "Organizando Projetos Separados no Claude",
+            "paragraph": "<p>Se você usa o Claude para tarefas muito diferentes — como um projeto educacional de manhã e uma consultoria à tarde — misturar tudo pode gerar confusão de tom, público ou decisões. O recurso Projects cria espaços isolados, cada um com histórico e instruções próprias, para manter tudo organizado.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "a24a3e25-0af9-4ff7-b72a-6d44f26c0c73"
+      },
+      {
+        "id": "cmsnk8qjw00553581lhd6r1nv",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk8qjw004y35817ocnpbgj",
+            "type": "intro",
+            "title": "Introdução ao Uso de Projects no Claude",
+            "isHidden": false,
+            "description": "<p>Veja como criar um Project no Claude e configurar instruções específicas para cada contexto de trabalho.</p>"
+          },
+          {
+            "id": "cmsnk8qjw004z35818hbvjtgk",
+            "type": "summary",
+            "title": "Resumo do Processo de Criação de Projects",
+            "isHidden": false,
+            "description": "<p>Ao final, seu Project deve estar visível em Claude &gt; Projects &gt; [nome do Project criado], com nome, descrição e Project Instructions preenchidos, e uma diferença perceptível na resposta dentro do Project.</p>"
+          },
+          {
+            "id": "cmsnk8qjw00503581qp3ey9fc",
+            "type": "step",
+            "title": "Crie um novo Project",
+            "isHidden": false,
+            "description": "<p>Siga o caminho: 🧭 Claude &gt; barra lateral &gt; [+] &gt; New Project.</p>"
+          },
+          {
+            "id": "cmsnk8qjw005135812u70pxwl",
+            "type": "step",
+            "title": "Dê um nome descritivo",
+            "isHidden": false,
+            "description": "<p>No campo Nome, escreva um título que descreva o resultado, não o processo — por exemplo, \"Currículo de Ciências 2026\" em vez de \"Testando o Claude\".</p>"
+          },
+          {
+            "id": "cmsnk8qjw00523581zzw81nbf",
+            "type": "step",
+            "title": "Escreva a descrição",
+            "isHidden": false,
+            "description": "<p>No campo Descrição, escreva uma frase dizendo o que esse Project vai produzir e para quem.</p>"
+          },
+          {
+            "id": "cmsnk8qjw00533581xzk4kuzg",
+            "type": "step",
+            "title": "Defina as Project Instructions",
+            "isHidden": false,
+            "description": "<p>Siga o caminho: 🧭 Project criado &gt; Project Instructions e escreva, especificamente para essa frente de trabalho:</p><p>\"\"\" Neste projeto, meu papel é [seu papel aqui]. O público é [quem vai usar o resultado]. Os objetivos deste projeto são [2 a 3 objetivos]. Aqui, diferente das minhas instruções gerais, evite [algo que só vale para este contexto]. \"\"\"</p>"
+          },
+          {
+            "id": "cmsnk8qjw00543581lh0nkcwl",
+            "type": "step",
+            "title": "Teste a diferença",
+            "isHidden": false,
+            "description": "<p>Salve e comece uma conversa dentro do Project, com uma pergunta relacionada à finalidade dele. Compare: essa resposta parece diferente do que você receberia numa conversa comum, fora do Project?</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "6f7672c9-01b7-4dbf-b74a-bbcae9212c59"
+      },
+      {
+        "id": "865f9f58-2524-4622-af28-e5c3fbd914dc",
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "a8cbbfca-e2a9-40f6-9618-e26f5ae2177f",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você criou um Project, preencheu as Project Instructions e fez uma pergunta dentro dele. Como saber se está tudo certo?",
+            "answers": [
+              {
+                "id": "c21e8181-3caf-405c-9f54-bc29c7d0b96f",
+                "title": "O Project aparece na lista, mas as respostas são iguais às de conversas comuns",
+                "correct": false,
+                "feedback": "Se as respostas são iguais às de conversas comuns, provavelmente o contexto do Project não está sendo considerado."
+              },
+              {
+                "id": "40530d21-7e70-40af-8e66-21565f7b1aae",
+                "title": "O Project tem nome, descrição e instruções preenchidas, e as respostas dentro dele refletem o contexto específico",
+                "correct": true,
+                "feedback": "Quando o Project está corretamente configurado, as respostas refletem o contexto e as instruções específicas fornecidas."
+              },
+              {
+                "id": "364aa4b3-b88b-4573-b007-caeadce473a7",
+                "title": "O Project não aparece na lista de Projects",
+                "correct": false,
+                "feedback": "Se o Project não aparece na lista, ele pode não ter sido criado corretamente."
+              },
+              {
+                "id": "5a12387a-99b4-4d0c-9a0b-1a1ca2a02eea",
+                "title": "As respostas do Claude ignoram as Project Instructions",
+                "correct": false,
+                "feedback": "Se as respostas ignoram as instruções do Project, algo está errado na configuração."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "8e101074-9e12-46dc-aa4d-9e134f96ec1b"
+      },
+      {
+        "id": "ckykrbdm9m87zvvx2nezbnus",
+        "type": "text",
+        "items": [
+          {
+            "id": "hkargyoeqs6xjlshigsq0qu2",
+            "heading": "Dicas e Soluções para Projects",
+            "paragraph": "<p>Confira as dicas e soluções abaixo para evitar problemas comuns ao usar Projects e garantir melhores resultados.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "80940efd-6b6d-487c-8b3b-a7e040af47c6"
+      },
+      {
+        "id": "cmsnk8qjw005635812fvyh6j9",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk8qjw00573581s4eqbefa",
+            "title": "Não vejo a opção \"New Project\"",
+            "description": "<p>Procure \"Projects\" no menu lateral; confirme se seu plano inclui essa função.</p>"
+          },
+          {
+            "id": "cmsnk8qjw00583581t5eccd68",
+            "title": "A resposta veio igual a uma conversa comum",
+            "description": "<p>Confira se as Project Instructions foram salvas antes de perguntar.</p>"
+          },
+          {
+            "id": "cmsnk8qjw00593581bvef62bm",
+            "title": "Dúvida: o que vai em Custom ou Project Instructions?",
+            "description": "<p>Regra prática: o que vale para VOCÊ em qualquer contexto vai nas Custom Instructions; o que vale só PARA ESSE projeto vai nas Project Instructions.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "124628de-d3b1-415f-a13e-f57b69d95200"
+      },
+      {
+        "id": "cmsnk8qjw005a3581iovnxlah",
+        "type": "text",
+        "items": [
+          {
+            "id": "cmsnk8qjw005b3581pzbvzagy",
+            "paragraph": "<p><strong>Não esqueça:</strong> dê ao Project um nome que descreva o resultado final. Isso facilita encontrar depois — e ajuda o Claude a entender o objetivo só de ler o nome.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "d4958d28-2d56-4e1e-ad16-1335abe9b55c"
+      },
+      {
+        "id": "fju30gpazae75rklrour4uua",
+        "type": "text",
+        "items": [
+          {
+            "id": "uiq7e47m3oegvxec5024594w",
+            "heading": "Aprofunde sua Prática com Projects (Opcional)",
+            "paragraph": "<p>Explore as atividades abaixo para comparar e validar o uso avançado de Projects.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "56bdfe71-6e6a-4237-80df-f57e46cd8643"
+      },
+      {
+        "id": "cmsnk8qjw005c3581g5nfgd6d",
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cmsnk8qjw005d3581n4s15vo7",
+            "title": "Crie um segundo Project",
+            "description": "<p>Crie um segundo Project para uma frente de trabalho bem diferente da primeira. Valide comparando as duas Project Instructions lado a lado.</p>"
+          },
+          {
+            "id": "cmsnk8qjw005e3581n0gnsxpe",
+            "title": "Peça um resumo das Project Instructions",
+            "description": "<p>Dentro do Project, peça ao Claude para resumir as próprias Project Instructions registradas. Valide se o resumo bate com o que você escreveu.</p>"
+          },
+          {
+            "id": "cmsnk8qjw005f3581hdhg7pjd",
+            "title": "Compare respostas dentro e fora do Project",
+            "description": "<p>Faça a mesma pergunta dentro do Project e em uma conversa comum, fora dele. Valide se há pelo menos uma diferença de tom ou conteúdo entre as respostas.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "globalBlockId": "dc95e490-9766-41b2-b4b4-d4cd5fcab9a2"
+      },
+      {
+        "id": "cmsnk8qjw005g3581fxk9w06b",
+        "type": "divider",
+        "items": [
+          {
+            "id": "cmsnk8qjw005h3581asxkczet",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {
+          "v": 2
+        },
+        "globalBlockId": "7c6a3c03-6a2a-4335-94f1-9f6173dcf874"
+      },
+      {
+        "id": "n1vdd1frrr9lao3s3se7ekgi",
+        "type": "text",
+        "items": [
+          {
+            "id": "c7xlmwqdrzr07c7y2khpxt52",
+            "paragraph": "<p>Nesta lição você ativou a Memory com segurança e criou um Project com instruções próprias. Na lição final, você vai reunir os quatro mecanismos — perfil, memória, busca e projetos — em um único fluxo: não é repetir as oficinas em sequência, é decidir você mesmo a ordem que faz sentido para o seu caso real de trabalho.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "settings": {},
+        "globalBlockId": "38cd8448-4236-45e6-8ca3-ee4b75113244"
+      }
+    ]
+  }
+}
