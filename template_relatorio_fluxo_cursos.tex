@@ -1,0 +1,809 @@
+\documentclass[12pt,a4paper]{article}
+
+% -------------------------------------------------
+% PACOTES BÁSICOS
+% -------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{seqsplit}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, shapes.misc}
+
+% -------------------------------------------------
+% CONFIGURAÇÃO DA PÁGINA
+% -------------------------------------------------
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\onehalfspacing
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!45!black,
+    urlcolor=blue!45!black,
+    citecolor=blue!45!black
+}
+
+% -------------------------------------------------
+% CORES E ESTILO
+% -------------------------------------------------
+\definecolor{azulinst}{HTML}{1F4E79}
+\definecolor{cinzaclaro}{HTML}{F2F4F7}
+\definecolor{cinzamedio}{HTML}{D9E2EC}
+\definecolor{verdeproc}{HTML}{2E7D32}
+\definecolor{laranja}{HTML}{EF6C00}
+\definecolor{vermelho}{HTML}{B00020}
+
+\titleformat{\section}
+  {\Large\bfseries\color{azulinst}}
+  {\thesection}{0.8em}{}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{azulinst}}
+  {\thesubsection}{0.8em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Relatório do Fluxo de Criação de Cursos}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% -------------------------------------------------
+% COMANDOS ÚTEIS
+% -------------------------------------------------
+\newcommand{\campo}[1]{\textcolor{azulinst}{\textbf{#1}}}
+
+\newenvironment{caixa}[1]
+{%
+\vspace{0.4cm}
+\noindent
+\begin{tikzpicture}
+\node[draw=azulinst, fill=cinzaclaro, rounded corners, inner sep=10pt, text width=0.95\textwidth] (box)
+\bgroup
+\textbf{#1}\par\medskip
+}
+{%
+\egroup;
+\end{tikzpicture}
+\vspace{0.2cm}
+}
+
+% -------------------------------------------------
+% DADOS DO DOCUMENTO
+% -------------------------------------------------
+\title{\textbf{Relatório do Fluxo de Criação de Cursos}\\
+\large Processo de conversão, geração, revisão e reserialização para Articulate Rise 360}
+\author{\textbf{Responsável:} João e Marina}
+\date{\textbf{Versão:} 1.0 \\ \textbf{Data:} \today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{center}
+\vfill
+\begin{tabular}{ll}
+\toprule
+\textbf{Projeto} & Criação de cursos no Articulate Rise 360 \\
+\textbf{Área demandante} & Inserir área \\
+\textbf{Responsável técnico} & Inserir responsável \\
+\textbf{Ferramentas principais} & Markdown, Articulate Rise 360, SCORM, JSON, Claude Code \\
+\textbf{Status} & Em elaboração / Em validação / Concluído \\
+\bottomrule
+\end{tabular}
+\vfill
+\end{center}
+
+\newpage
+\tableofcontents
+\newpage
+
+% -------------------------------------------------
+\section{Objetivo do Relatório}
+% -------------------------------------------------
+
+Este relatório tem por objetivo documentar a \textit{pipeline} de criação de cursos digitais assistida por modelos de Inteligência Artificial (Large Language Models -- LLMs), descrevendo as etapas, os artefatos produzidos e os mecanismos de controle adotados ao longo do processo.
+
+A \textit{pipeline} inicia-se com a conversão de um plano de aula em um roteiro de conteúdo estruturado por um LLM. Em seguida, o roteiro é utilizado pelo Articulate Rise 360 AI, juntamente com um prompt de instruções, para construir a primeira versão do curso utilizando os componentes da plataforma. Posteriormente, o pacote SCORM é exportado, desserializado e submetido a uma revisão assistida pelo Claude (Anthropic), responsável pelo refinamento do conteúdo e pela preservação da estrutura do projeto.
+
+Este documento também apresenta os pontos de verificação, os ciclos de retrabalho e os procedimentos adotados para garantir a consistência do curso durante todo o fluxo de produção.
+
+A documentação desta \textit{pipeline} destina-se a servir como referência para padronização, reprodução e evolução do processo de criação de cursos da ArcTel.
+
+
+% -------------------------------------------------
+\section{Visão Geral do Fluxo}
+
+\begin{itemize}[leftmargin=*]
+    \item Conversão do plano de aula em roteiro instrucional no formato Markdown.
+    \item Geração da versão inicial do curso no Articulate Rise 360.
+    \item Verificação visual inicial do curso.
+    \item Exportação do pacote SCORM.
+    \item Desserialização do pacote SCORM em arquivos JSON.
+    \item Separação do conteúdo em lições para revisão técnica.
+    \item Análise assistida da estrutura de blocos por LLM.
+    \item Revisão e edição do conteúdo e da estrutura de blocos.
+    \item Reserialização do projeto e geração do pacote SCORM final.
+\end{itemize}
+% -------------------------------------------------
+
+\begin{figure}[h!]
+\centering
+\resizebox{0.95\textwidth}{!}{%
+\begin{tikzpicture}[
+    node distance=1.05cm,
+    etapa/.style={rectangle, rounded corners, draw=azulinst, fill=cinzaclaro, align=center, text width=4.2cm, minimum height=0.9cm},
+    decisao/.style={diamond, draw=laranja, fill=orange!10, align=center, aspect=2.2, text width=3.2cm, inner sep=1pt},
+    fim/.style={rectangle, rounded corners, draw=verdeproc, fill=green!10, align=center, text width=3.5cm, minimum height=0.9cm},
+    seta/.style={-{Latex[length=3mm]}, thick, color=azulinst}
+]
+
+\node[etapa] (e1) {1. Converter plano de aula para roteiro};
+\node[etapa, below=of e1] (e2) {2. Carregar prompt e roteiro no Articulate};
+\node[etapa, below=of e2] (e3) {3. Gerar curso};
+\node[etapa, below=of e3] (e4) {4. Verificação visual mínima};
+\node[etapa, below=of e4] (e5) {5. Gerar SCORM};
+\node[etapa, below=of e5] (e6) {6. Desserializar e separar lições em JSON};
+\node[decisao, below=of e6] (d1) {7. Estrutura de blocos adequada?};
+\node[etapa, right=2.2cm of d1] (e9) {9. Alterar conteúdo sem quebrar estrutura};
+\node[etapa, below=of d1] (e10) {10. Reserializar e gerar novo SCORM};
+\node[fim, below=of e10] (fim) {11. Fim};
+
+\draw[seta] (e1) -- (e2);
+\draw[seta] (e2) -- (e3);
+\draw[seta] (e3) -- (e4);
+\draw[seta] (e4) -- (e5);
+\draw[seta] (e5) -- (e6);
+\draw[seta] (e6) -- (d1);
+\draw[seta] (d1) -- node[right]{Sim} (e10);
+\draw[seta] (e10) -- (fim);
+\draw[seta] (d1) -- node[above]{Não / ajustes} (e9);
+\draw[seta] (e9) |- (e5);
+
+\end{tikzpicture}}
+\caption{Fluxo macro de criação, revisão e reserialização de cursos.}
+\end{figure}
+
+\subsection{Etapa 1 -- Conversão do plano de aula para roteiro}
+
+A primeira etapa da \textit{pipeline} consiste na transformação do plano de aula em um roteiro instrucional estruturado para processamento pelo Articulate Rise 360.
+
+O plano de aula constitui o documento-base do curso, contendo a estrutura pedagógica a ser desenvolvida, incluindo carga horária, público-alvo, objetivos de aprendizagem, organização das oficinas, conteúdos, atividades práticas, formas de avaliação e demais orientações instrucionais.
+
+A conversão é realizada por um modelo de linguagem (LLM), utilizando um \textit{prompt} desenvolvido especificamente para essa finalidade. Esse \textit{prompt} foi construído a partir de técnicas de engenharia de prompts (\textit{prompt engineering}) e refinado iterativamente por meio de sucessivos ciclos de experimentação. Em cada iteração, foram avaliadas diferentes estratégias de instrução com o objetivo de identificar quais produziam melhores resultados quando processadas pela Inteligência Artificial do Articulate Rise 360. O resultado desse processo foi um conjunto de instruções capaz de aumentar a aderência entre o curso gerado e a estrutura pedagógica originalmente definida, explorando de forma mais eficiente os componentes e recursos disponibilizados pela plataforma. 
+
+Como produto dessa etapa, é gerado um roteiro em formato Markdown que reúne dois elementos distintos: o conteúdo instrucional do curso e um conjunto de instruções de montagem destinadas exclusivamente à IA do Articulate Rise 360. Essas instruções, denominadas \textit{cues} de montagem, orientam a ferramenta quanto à organização das lições, seleção dos blocos mais adequados, preservação de elementos específicos e utilização dos recursos disponíveis na plataforma. Embora esse mecanismo aumente significativamente a qualidade dos cursos produzidos, a IA do Articulate Rise 360 não segue integralmente todas as instruções fornecidas, tornando necessárias etapas posteriores de revisão e refinamento da estrutura e do conteúdo.
+
+\begin{longtable}{p{0.25\textwidth}p{0.68\textwidth}}
+\toprule
+\campo{Entrada} &
+Arquivo \texttt{plano\_de\_aula\_xxx.md}, preferencialmente elaborado no formato \textit{Essentials/Hands-on}. \\
+\vspace{0.05cm}
+\campo{Ferramentas} &
+\vspace{0.05cm}
+LLM de propósito geral e \textit{prompt} especializado para conversão do plano de aula em roteiro instrucional estruturado. \\
+\vspace{0.05cm}
+\campo{Ação} &
+\vspace{0.05cm}
+Aplicar o \textit{prompt} de conversão para transformar o plano de aula em um roteiro instrucional compatível com a IA do Articulate Rise 360. \\
+\vspace{0.05cm}
+\campo{Objetivo} &
+\vspace{0.05cm}
+Produzir um roteiro contendo o conteúdo completo do curso e as instruções auxiliares necessárias para orientar a montagem automática no Articulate Rise 360. \\
+\vspace{0.05cm}
+\campo{Saída} &
+\vspace{0.05cm}
+Arquivo \texttt{ROTEIRO\_xxx.md}. \\
+\vspace{0.05cm}
+\campo{Controle mínimo} &
+\vspace{0.05cm}
+Verificar se os objetivos de aprendizagem, oficinas, atividades práticas, entregáveis e \textit{cues} de montagem foram corretamente gerados e preservados. \\
+
+\bottomrule
+\end{longtable}
+
+\subsection{Etapa 2 -- Geração inicial do curso no Articulate Rise 360}
+
+Concluída a geração do roteiro instrucional, inicia-se a etapa de criação do curso no Articulate Rise 360. Nessa fase, o roteiro produzido na etapa anterior é fornecido à Inteligência Artificial da plataforma juntamente com um segundo \textit{prompt}, desenvolvido especificamente para orientar a IA quanto à forma de interpretar o roteiro e utilizar os componentes disponíveis no Rise 360.
+
+Diferentemente do \textit{prompt} utilizado na etapa anterior, cujo objetivo é converter o plano de aula em um roteiro estruturado, o \textit{prompt} do Articulate tem como finalidade orientar a montagem do curso propriamente dita. Suas instruções procuram induzir a IA a selecionar os blocos mais adequados para cada tipo de conteúdo, preservar a organização das lições, respeitar as \textit{cues} de montagem presentes no roteiro e manter, na maior medida possível, a estrutura didática originalmente planejada.
+
+Ao término dessa etapa, obtém-se a primeira versão funcional do curso no ambiente do Articulate Rise 360. Essa versão ainda não é considerada definitiva, pois a IA da plataforma pode interpretar parcialmente algumas instruções ou reorganizar determinados elementos do roteiro, justificando as etapas posteriores de revisão e refinamento da \textit{pipeline}.
+
+\begin{longtable}{p{0.25\textwidth}p{0.68\textwidth}}
+\toprule
+\campo{Entrada} &
+Arquivo \texttt{ROTEIRO\_xxx.md} e \textit{prompt} de geração do curso no Articulate Rise 360. \\
+
+\campo{Ferramenta} &
+Articulate Rise 360 AI. \\
+
+\campo{Ação} &
+Inserir o roteiro e o \textit{prompt} no ambiente de geração do Articulate Rise 360 e executar a criação automática do curso. \\
+
+\campo{Objetivo} &
+Produzir a primeira versão do curso utilizando os blocos, componentes e recursos disponibilizados pela plataforma. \\
+
+\campo{Saída} &
+Primeira versão do curso disponível para inspeção no ambiente do Articulate Rise 360. \\
+
+\campo{Controle mínimo} &
+Verificar se todas as lições foram criadas, se a organização geral do curso foi preservada e se não ocorreram omissões ou reorganizações significativas do conteúdo. \\
+
+\bottomrule
+\end{longtable}
+
+\subsubsection*{Procedimento de criação no Articulate Rise 360}
+
+As Figuras a seguir ilustram o procedimento de criação do curso no Articulate Rise 360.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/Figura2.png}
+    \caption{Tela inicial do Articulate Rise 360 e seleção da opção para criação de um novo curso utilizando Inteligência Artificial (Create with AI).}
+    \label{fig:rise01}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/Figura3.png}
+    %\fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Inserção do \textit{prompt} de geração do curso e do roteiro instrucional produzido na Etapa 1. Para prosseguir com o curso clique "Genarate course details".}
+    \label{fig:rise02}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/Figura4.1.png}
+    \includegraphics[scale=0.4]{figuras/Figura4.2.png}
+    \includegraphics[scale=0.4]{figuras/Figura4.3.png}
+    %\fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Configuração dos parâmetros do curso, com destaque para os objetivos de aprendizagem, carga horária e demais informações apresentadas pelo Articulate Rise 360 antes da geração do conteúdo.
+    É importante ressaltar que esses parâmetros são gerados automaticamente e para prosseguir com a criação do curso clique "Generate course outline".}
+    \label{fig:rise03}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/Figura5.png}
+    \caption{Configuração das lições do curso geradas automaticamente pela AI do Articulate Rise 360. É importante verificar se a quantidade e os temas das lições estão de acordo com o roteiro produzido na Etapa 1. Clique em "Course content options".}
+    \label{fig:rise04}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/Figura3.png}
+    \includegraphics[scale=0.5]{figuras/Figura6.png}
+    %\fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Clique em "Create course draft" para finalizar a criação da primeira versão do curso.}
+    \label{fig:rise05}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figuras/Figura8.1.png}
+    \includegraphics[scale=0.5]{figuras/Figura8.2.png}
+    \caption{Primeira versão do curso gerada automaticamente no ambiente do Articulate Rise 360, para editar manualmente as lições clique em "Edit Content".}
+    \label{fig:rise06}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/Figura9.1.png}
+    \includegraphics[scale=0.4]{figuras/Figura9.2.png}
+    \caption{Primeira versão do curso gerada automaticamente no ambiente do Articulate Rise 360, para editar manualmente as lições clique em "Edit Content".}
+    \label{fig:rise06}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/Figura3.png}
+    \includegraphics[scale=0.4]{figuras/Figura7.png}
+    %\fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Primeira versão do curso gerada automaticamente no ambiente do Articulate Rise 360, para editar manualmente as lições clique em "Edit Content".}
+    \label{fig:rise06}
+\end{figure}
+
+\subsection{Etapa 3 -- Verificação visual inicial}
+
+Após a geração do curso no Articulate Rise 360, realiza-se uma inspeção visual inicial com o objetivo de verificar se a Inteligência Artificial da plataforma interpretou corretamente o roteiro instrucional e as instruções de montagem fornecidas.
+
+Essa etapa não tem como finalidade revisar o conteúdo pedagógico em profundidade, mas identificar erros evidentes decorrentes do processo de geração automática. Durante o desenvolvimento desta \textit{pipeline}, observou-se que a IA do Articulate Rise 360 pode, ocasionalmente, produzir resultados inconsistentes, como interpretar o \textit{prompt} de instruções como parte do conteúdo do curso, gerar o curso em idioma diferente do especificado, omitir seções do roteiro, reorganizar lições de maneira inadequada ou utilizar blocos incompatíveis com as instruções fornecidas.
+
+A identificação precoce dessas inconsistências evita que erros sejam propagados para as etapas subsequentes da \textit{pipeline}, reduzindo retrabalho e garantindo que apenas versões minimamente consistentes sejam exportadas para o pacote SCORM.
+
+\begin{longtable}{p{0.25\textwidth}p{0.68\textwidth}}
+\toprule
+
+\campo{Entrada} &
+Primeira versão do curso gerada no Articulate Rise 360. \\[0.5cm]
+
+\campo{Ferramenta} &
+Articulate Rise 360. \\[0.5cm]
+
+\campo{Ação} &
+Realizar inspeção visual da estrutura geral do curso e verificar a consistência da geração automática. \\[1cm]
+
+\campo{Objetivo} &
+Identificar inconsistências produzidas pela IA antes da exportação do pacote SCORM. \\[1cm]
+
+\campo{Saída} &
+Curso aprovado para exportação ou indicação de necessidade de nova geração do curso. \\[1cm]
+
+\campo{Controle mínimo} &
+Verificar, no mínimo:
+\begin{itemize}[nosep,leftmargin=*]
+    \item idioma do curso;
+    \item título e descrição do curso;
+    \item quantidade e ordem das lições;
+    \item correspondência entre o roteiro e o conteúdo gerado;
+    \item utilização adequada dos blocos do Rise 360;
+    \item existência de atividades, imagens e elementos interativos previstos;
+    \item ausência de trechos do \textit{prompt} ou de instruções internas exibidos ao aluno.
+\end{itemize}
+\\[1cm]
+
+\bottomrule
+\end{longtable}
+
+\subsection{Etapa 4 -- Geração do SCORM}
+
+Após a validação inicial do curso no Articulate Rise 360, realiza-se a exportação do projeto em formato SCORM. Essa etapa transforma o curso criado na plataforma em um pacote técnico no formato \texttt{.zip}, compatível com ambientes virtuais de aprendizagem (LMS) e também manipulável nas etapas posteriores da \textit{pipeline}.
+
+A exportação deve seguir um procedimento padronizado, especialmente quanto à escolha do padrão SCORM, à identificação da versão do curso e ao armazenamento do arquivo exportado em uma pasta específica do projeto. Esse cuidado permite rastrear as versões geradas, evitar substituições indevidas e garantir que o pacote correto seja utilizado nas etapas de desserialização e revisão.
+
+\begin{longtable}{p{0.25\textwidth}p{0.68\textwidth}}
+\toprule
+
+\campo{Entrada} &
+Curso aprovado na validação inicial. \\[0.5cm]
+
+\campo{Ferramenta} &
+Articulate Rise 360. \\[0.5cm]
+
+\campo{Ação} &
+Exportar o curso como pacote SCORM, selecionando o padrão adequado e salvando o arquivo em pasta específica do projeto. \\[1cm]
+
+\campo{Objetivo} &
+Produzir um pacote técnico publicável em LMS e utilizável nas etapas posteriores de desserialização, análise e revisão. \\[1cm]
+
+\campo{Saída} &
+Arquivo \texttt{.zip} contendo o pacote SCORM. \\[0.5cm]
+
+\campo{Controle mínimo} &
+Registrar nome do curso, versão do SCORM, data da exportação, local de salvamento e versão do pacote exportado. \\[0.05cm]
+
+\bottomrule
+\end{longtable}
+
+\subsubsection*{Procedimento de exportação do pacote SCORM}
+
+As figuras a seguir devem documentar os passos de exportação do curso no Articulate Rise 360.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/figura10.png}
+    \caption{Acesso à opção de exportação do curso no Articulate Rise 360 e selecione a opção de exportação para LMS. (Publish --> LMS)}
+    \label{fig:scorm01}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[scale=0.4]{figuras/figura12.png}
+    \caption{Escolha da versão do padrão SCORM a ser utilizada na exportação do curso (SCORM 1.2), clique em Download (canto superior direito).}
+    \label{fig:scorm03}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[scale=0.4]{figuras/figura13.png}
+    \caption{Por padrão, o salvamento do pacote SCORM exportado é feito por meio de uma pasta zip nos downloads, salve em uma pasta específica do projeto.}
+    \label{fig:scorm04}
+\end{figure}
+
+\subsection{Etapa 6 -- Desserialização e separação em lições}
+
+Após a exportação do curso em formato SCORM, o pacote \texttt{.zip} deve ser extraído para permitir o acesso aos arquivos internos gerados pelo Articulate Rise 360. O conteúdo principal do curso não é armazenado em arquivos JSON independentes, mas encontra-se incorporado ao arquivo \texttt{index.html}, localizado na pasta \texttt{scormcontent}.
+
+No interior desse arquivo existe uma função JavaScript responsável por carregar o curso. Essa função possui formato semelhante ao apresentado a seguir:
+
+\begin{verbatim}
+async function __fetchCourse() {
+    return Promise.resolve(deserialize("CONTEUDO_SERIALIZADO"))
+}
+\end{verbatim}
+
+O argumento da função \texttt{deserialize()} consiste em uma longa sequência de caracteres codificada (Base64 ou formato equivalente utilizado pelo Articulate Rise 360), que representa todo o curso serializado. Essa sequência contém a estrutura completa do curso, incluindo lições, blocos, textos, imagens, interações, metadados e demais informações necessárias para reconstrução do projeto.
+
+Atualmente, a localização dessa sequência é realizada manualmente pelo operador. Após localizar a função \texttt{\_\_fetchCourse()}, todo o conteúdo serializado deve ser copiado e inserido em um dos scripts desenvolvidos em Python para esta \textit{pipeline}. Esses scripts têm como única finalidade desserializar o conteúdo do curso e convertê-lo para arquivos JSON legíveis, preservando integralmente sua estrutura original.
+
+Como resultado desse processo, o curso passa a ser representado por um conjunto de arquivos JSON, separados por lição. Essa representação torna o conteúdo acessível para inspeção técnica e edição controlada, sem necessidade de manipular diretamente o conteúdo serializado presente no arquivo \texttt{index.html}.
+
+Os arquivos JSON produzidos nessa etapa constituem a entrada para a etapa seguinte da \textit{pipeline}. Nela, uma LLM — atualmente o Claude Code — recebe as lições juntamente com um \textit{prompt} de revisão desenvolvido especificamente para esse processo. O objetivo dessa revisão é comparar a estrutura e o conteúdo do curso gerado com o roteiro instrucional original, identificar inconsistências produzidas pela IA do Articulate Rise 360 e propor melhorias no conteúdo textual, preservando rigorosamente toda a estrutura técnica do JSON. O \textit{prompt} empregado estabelece restrições explícitas para impedir alterações em identificadores, tipos de blocos, metadados, posições, arrays e demais elementos estruturais do curso. :contentReference[oaicite:0]{index=0}
+
+\begin{longtable}{p{0.25\textwidth}p{0.68\textwidth}}
+\toprule
+
+\campo{Entrada} &
+Pacote SCORM exportado no formato \texttt{.zip}. \\[0.7cm]
+
+\campo{Ferramentas} &
+Editor de texto, scripts em Python para desserialização e Claude Code para revisão assistida. \\[1.4cm]
+
+\campo{Ação} &
+Extrair o pacote SCORM, localizar manualmente a função \texttt{\_\_fetchCourse()}, copiar o conteúdo serializado, desserializá-lo utilizando os scripts em Python e separar o curso em arquivos JSON organizados por lição. \\[2.5cm]
+
+\campo{Objetivo} &
+Transformar o conteúdo serializado do curso em arquivos JSON legíveis e preparados para análise e revisão assistida por LLM. \\[2cm]
+
+\campo{Saída} &
+Arquivos JSON separados por lição e prontos para processamento pela LLM. \\[1.4cm]
+
+\campo{Controle mínimo} &
+Verificar se todas as lições foram corretamente desserializadas, se os arquivos JSON permanecem válidos e se a estrutura do curso foi integralmente preservada. \\[0.7cm]
+
+\bottomrule
+\end{longtable}
+
+\subsubsection*{Procedimento de desserialização do curso}
+
+As figuras a seguir ilustram as etapas necessárias para obtenção dos arquivos JSON utilizados nas etapas posteriores da \textit{pipeline}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/figura14.png}
+    \caption{Estrutura de diretórios do pacote SCORM após a extração do arquivo \texttt{.zip}, destacando a pasta \texttt{scormcontent} com o arquivo \texttt{index}.}
+    \label{fig:desserializacao01}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/figura15.png}
+    \caption{Identificação da função \texttt{\_\_fetchCourse()} e do conteúdo serializado utilizado pelo Articulate Rise 360 para reconstrução do curso. Use \texttt{Ctrl + F} para buscar a função no código. }
+    \label{fig:desserializacao03}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/Figura16.png}
+    \caption{Identificação do arquivo \texttt{desserialize.py} na estrutura de páginas do script python.}
+    \label{fig:desserializacao04}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/figura17.png}
+    \caption{Inserção do conteúdo serializado no script Python responsável pela desserialização do curso.}
+    \label{fig:desserializacao04}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/figura18.png}
+    \includegraphics[scale=0.4]{figuras/figura19.png}
+    \caption{Atenção a sintaxe, é importante retirar os parênteses no final da linha e mudar os nomes para se adequar ao curso a ser desserializado. Depois já está pronto para rodar.}
+    \label{fig:desserializacao05}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/figura20.png}
+    \includegraphics[scale=0.4]{figuras/figura21.png}
+    \caption{Arquivos JSON produzidos após a desserialização, é importante movê-los para dentro da pasta \texttt{cursos_-desserializados}.}
+    \label{fig:desserializacao05}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figuras/figura18.png}
+    \caption{Arquivos JSON produzidos após a desserialização, organizados individualmente por lição e preparados para revisão assistida por LLM.}
+    \label{fig:desserializacao05}
+\end{figure}
+\subsection{Etapa 7 -- Avaliação da estrutura de blocos do Articulate}
+
+\begin{longtable}{p{0.25\textwidth}p{0.68\textwidth}}
+\toprule
+\campo{Entrada} & Arquivos JSON extraídos do SCORM. \\
+\campo{Ação} & Avaliar alterações na estrutura de blocos do Articulate. \\
+\campo{Objetivo} & Verificar se os blocos permanecem tecnicamente íntegros e compatíveis com o Rise 360. \\
+\campo{Saída} & Diagnóstico da estrutura: aprovada, aprovada com ressalvas ou reprovada. \\
+\campo{Controle mínimo} & Não alterar identificadores, tipos de bloco, dependências, metadados ou campos estruturais sensíveis. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Etapa 8 -- Retorno para nova geração de SCORM}
+
+Caso a estrutura seja considerada adequada, o fluxo retorna à etapa de geração do SCORM, permitindo nova exportação a partir da versão ajustada. Caso sejam detectados problemas relevantes, deve-se registrar a inconsistência e retornar à etapa de ajuste controlado.
+
+\subsection{Etapa 9 -- Revisão assistida do conteúdo e edição segura do JSON}
+
+Nesta etapa é realizada a revisão assistida do curso utilizando uma LLM. Até o momento, o processo foi desenvolvido e validado utilizando o Claude Code, embora possa ser adaptado para outros modelos de linguagem que possuam capacidade de compreender documentos extensos e editar arquivos mantendo sua estrutura.
+
+A revisão é realizada utilizando dois artefatos produzidos nas etapas anteriores da \textit{pipeline}: o roteiro instrucional gerado na Etapa 1 e os arquivos JSON produzidos na Etapa 6. O roteiro funciona como referência pedagógica, enquanto os arquivos JSON representam a implementação efetivamente produzida pelo Articulate Rise 360.
+
+O objetivo da revisão é comparar o curso gerado com o roteiro original, identificar divergências introduzidas durante a geração automática e melhorar o conteúdo textual das lições sem alterar a arquitetura técnica do curso. Para isso é utilizado um \textit{prompt} específico de revisão, desenvolvido para orientar a LLM a editar exclusivamente os campos textuais do JSON, preservando rigorosamente todos os elementos estruturais do projeto.
+
+Esse \textit{prompt} estabelece diversas restrições de segurança estrutural, impedindo alterações em identificadores, tipos de bloco, metadados, posições, arrays, configurações internas e demais informações utilizadas pelo Articulate Rise 360 para reconstrução do curso. Dessa forma, a revisão concentra-se apenas na melhoria da qualidade pedagógica do conteúdo, sem comprometer o funcionamento da estrutura técnica posteriormente utilizada na reserialização do curso.
+
+\begin{longtable}{p{0.25\textwidth}p{0.68\textwidth}}
+\toprule
+
+\campo{Entrada} &
+Roteiro instrucional produzido na Etapa 1, arquivos JSON separados por lição e \textit{prompt} de revisão assistida. \\[0.05cm]
+
+\campo{Ferramenta} &
+Claude Code (LLM) e \textit{prompt} de revisão estruturada. \\[0.05cm]
+
+\campo{Ação} &
+Comparar o conteúdo dos arquivos JSON com o roteiro original e revisar exclusivamente os campos textuais permitidos, preservando integralmente a estrutura técnica do curso. \\[0.05cm]
+
+\campo{Objetivo} &
+Melhorar a clareza, profundidade, qualidade instrucional e fidelidade pedagógica do curso, sem modificar a arquitetura técnica do JSON. \\[0.05cm]
+
+\campo{Saída} &
+Arquivos JSON revisados, mantendo compatibilidade integral com o Articulate Rise 360. \\[0.05cm]
+
+\campo{Controle mínimo} &
+Confirmar que não houve alteração em IDs, tipos de bloco, posições, metadados, arrays, configurações internas ou qualquer outro elemento estrutural do curso. As alterações devem restringir-se aos campos textuais autorizados pelo \textit{prompt} de revisão. \\[0.05cm]
+
+\bottomrule
+\end{longtable}
+
+\subsubsection*{Procedimento de revisão assistida}
+
+As figuras a seguir ilustram o procedimento de revisão dos arquivos JSON utilizando uma LLM.
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/etapa9_01_prompt.png}
+    \fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Prompt de revisão utilizado para orientar a edição segura dos arquivos JSON.}
+    \label{fig:revisao01}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/etapa9_02_contexto.png}
+    \fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Envio do roteiro instrucional e dos arquivos JSON como contexto para a revisão assistida.}
+    \label{fig:revisao02}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/etapa9_03_edicao.png}
+    \fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Processo de edição dos campos textuais preservando a estrutura técnica do JSON.}
+    \label{fig:revisao03}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/etapa9_04_relatorio.png}
+    \fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Relatório gerado pela LLM contendo o resumo das alterações e a validação da preservação da estrutura técnica do curso.}
+    \label{fig:revisao04}
+\end{figure}
+
+\subsection{Etapa 10 -- Reserialização do curso e validação}
+
+Após a conclusão da revisão assistida, os arquivos JSON modificados devem ser convertidos novamente para o formato serializado utilizado pelo Articulate Rise 360. Essa etapa constitui o processo inverso da desserialização apresentada na Etapa 6.
+
+A reserialização é realizada por meio de scripts desenvolvidos em Python, responsáveis por reconstruir o conteúdo serializado a partir dos arquivos JSON revisados. Como resultado, é produzido um arquivo texto, denominado \texttt{NomeCurso\_base64\_editado.txt}, contendo a nova representação serializada do curso.
+
+Em seguida, o arquivo \texttt{index.html}, localizado na pasta \texttt{scormcontent}, deve ser aberto em um editor de texto. O conteúdo serializado anteriormente presente como argumento da função \texttt{deserialize()} deve ser integralmente substituído pela nova sequência gerada no arquivo \texttt{NomeCurso\_base64\_editado.txt}, mantendo inalterada a estrutura da função \texttt{\_\_fetchCourse()}.
+
+\begin{verbatim}
+async function __fetchCourse() {
+    return Promise.resolve(deserialize("CONTEUDO_SERIALIZADO_EDITADO"))
+}
+\end{verbatim}
+
+Ou seja, a substituição deve ocorrer apenas no trecho correspondente a \texttt{CONTEUDO\_SERIALIZADO}, sem alterar o nome da função, a chamada \texttt{Promise.resolve()}, a função \texttt{deserialize()} ou a estrutura JavaScript ao redor.
+
+Após a substituição, o arquivo \texttt{index.html} deve ser salvo e executado em um navegador Web. Caso o processo tenha sido realizado corretamente e nenhuma alteração estrutural indevida tenha sido introduzida durante a revisão dos arquivos JSON, o curso será carregado normalmente, já incorporando todas as modificações realizadas pela LLM.
+
+Essa etapa constitui a principal validação da integridade estrutural do curso. Caso o conteúdo não seja carregado corretamente, isso normalmente indica que algum elemento estrutural do JSON foi alterado inadvertidamente durante a etapa de revisão, exigindo nova inspeção dos arquivos modificados.
+
+\begin{longtable}{p{0.25\textwidth}p{0.68\textwidth}}
+\toprule
+
+\campo{Entrada} &
+Arquivos JSON revisados e validados. \\[0.05cm]
+
+\campo{Ferramentas} &
+Scripts em Python para reserialização, editor de texto e navegador Web. \\[0.05cm]
+
+\campo{Ação} &
+Reserializar os arquivos JSON, copiar a nova sequência serializada gerada em \texttt{NomeCurso\_base64\_editado.txt}, substituir o conteúdo presente no argumento da função \texttt{deserialize()} no arquivo \texttt{index.html} e validar o funcionamento do curso em navegador Web. \\[0.05cm]
+
+\campo{Objetivo} &
+Reconstruir o curso utilizando o conteúdo revisado e verificar a preservação da estrutura técnica após a edição assistida por LLM. \\[0.05cm]
+
+\campo{Saída} &
+Arquivo \texttt{NomeCurso\_base64\_editado.txt} e curso atualizado no arquivo \texttt{index.html}. \\[0.05cm]
+
+\campo{Controle mínimo} &
+Verificar se o curso é carregado corretamente no navegador, se todas as lições permanecem acessíveis, se os blocos interativos continuam funcionais e se o conteúdo revisado é exibido corretamente. \\[0.05cm]
+
+\bottomrule
+\end{longtable}
+
+\subsubsection*{Procedimento de reserialização}
+
+As figuras a seguir ilustram as etapas necessárias para reconstrução do curso a partir dos arquivos JSON revisados.
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/etapa10_01_python.png}
+    \fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Execução do script Python responsável pela reserialização dos arquivos JSON.}
+    \label{fig:reserializacao01}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/etapa10_02_base64.png}
+    \fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Arquivo \texttt{NomeCurso\_base64\_editado.txt} produzido após a reserialização.}
+    \label{fig:reserializacao02}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/etapa10_03_index.png}
+    \fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Substituição do conteúdo serializado no argumento da função \texttt{deserialize()} presente no arquivo \texttt{index.html}.}
+    \label{fig:reserializacao03}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    %\includegraphics[width=\textwidth]{figuras/etapa10_04_teste.png}
+    \fbox{\rule{0pt}{7cm}\rule{0.95\textwidth}{0pt}}
+    \caption{Validação do curso atualizado por meio da execução do arquivo \texttt{index.html} em navegador Web.}
+    \label{fig:reserializacao04}
+\end{figure}
+
+\subsubsection*{Critério de sucesso da reserialização}
+
+Considera-se que a reserialização foi bem-sucedida quando o curso é carregado integralmente no navegador, todas as lições permanecem navegáveis, os blocos interativos continuam funcionais e o conteúdo revisado é exibido corretamente. Esse teste valida simultaneamente a etapa de reserialização e a preservação da estrutura técnica durante a revisão assistida.
+
+\subsection{Etapa 11 -- Encerramento}
+
+O processo é encerrado quando o novo pacote SCORM está funcional, validado e identificado com versão, data e responsável. Recomenda-se manter arquivados o plano de aula original, roteiro, prompts utilizados, SCORM inicial, JSON revisado e SCORM final.
+
+% -------------------------------------------------
+\section{Matriz de Artefatos}
+% -------------------------------------------------
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.25}
+
+\begin{tabularx}{\textwidth}{
+>{\ttfamily\raggedright\arraybackslash}p{0.30\textwidth}
+>{\raggedright\arraybackslash}X
+>{\centering\arraybackslash}p{0.10\textwidth}
+}
+\toprule
+\textnormal{\textbf{Artefato}} &
+\textbf{Descrição} &
+\textbf{Etapa} \\
+\midrule
+
+plano\_de\_aula\_xxx.md &
+Plano de aula original contendo a estrutura pedagógica, carga horária, objetivos, conteúdos e organização das oficinas. &
+1 \\
+
+ROTEIRO\_xxx.md &
+Roteiro instrucional estruturado para processamento pelo Articulate Rise 360, contendo o conteúdo do curso e as \textit{cues} de montagem. &
+1--2 \\
+
+promptArticulate.md &
+Prompt utilizado para orientar a IA do Articulate Rise 360 durante a geração inicial do curso. &
+2 \\
+
+Curso no Rise 360 &
+Primeira versão navegável do curso gerada automaticamente pela plataforma. &
+2--4 \\
+
+SCORM\_Inicial.zip &
+Primeiro pacote SCORM exportado pelo Articulate Rise 360. &
+5 \\
+
+Arquivos JSON &
+Curso desserializado e organizado em arquivos JSON separados por lição. &
+6--9 \\
+
+\texttt{\seqsplit{NomeCurso\_base64\_editado.txt}} &
+Conteúdo serializado reconstruído a partir dos arquivos JSON revisados. &
+10 \\
+
+SCORM Final &
+Versão final do curso validada e pronta para distribuição ou publicação em LMS. &
+10 \\
+
+\bottomrule
+\end{tabularx}
+
+\caption{Principais artefatos produzidos ao longo da \textit{pipeline} de criação de cursos.}
+
+\end{table}
+
+% -------------------------------------------------
+\section{Critérios de Qualidade}
+% -------------------------------------------------
+
+\begin{longtable}{p{0.27\textwidth}p{0.63\textwidth}p{0.08\textwidth}}
+\toprule
+\textbf{Critério} & \textbf{Verificação} & \textbf{OK?} \\
+\midrule
+Completude do roteiro & Todas as oficinas, atividades e entregáveis previstos no plano foram preservados. & $\square$ \\
+Coerência instrucional & O curso apresenta progressão lógica, com teoria apenas quando necessária para a prática. & $\square$ \\
+Clareza visual & Títulos, blocos e elementos visuais estão legíveis e bem distribuídos. & $\square$ \\
+Integridade técnica & O JSON foi alterado sem rompimento da estrutura interna do Articulate. & $\square$ \\
+Funcionalidade do SCORM & O pacote abre, navega e registra progresso no ambiente de teste. & $\square$ \\
+Versionamento & Arquivos finais estão nomeados com data, versão e responsável. & $\square$ \\
+\bottomrule
+\end{longtable}
+
+% -------------------------------------------------
+\section{Riscos e Controles}
+% -------------------------------------------------
+
+\begin{longtable}{p{0.30\textwidth}p{0.35\textwidth}p{0.25\textwidth}}
+\toprule
+\textbf{Risco} & \textbf{Impacto} & \textbf{Controle sugerido} \\
+\midrule
+Alteração indevida do JSON estrutural & Curso pode deixar de abrir ou perder blocos. & Editar apenas campos textuais e manter backup. \\
+Prompt inadequado na geração & Curso raso, genérico ou desalinhado ao plano. & Registrar e versionar prompts aprovados. \\
+Verificação visual insuficiente & Problemas passam para o SCORM final. & Usar checklist mínimo por lição. \\
+Perda de rastreabilidade & Dificuldade para auditar versões. & Nomear arquivos com curso, data e versão. \\
+Erro na reserialização & SCORM final pode ficar inválido. & Testar pacote antes da publicação. \\
+\bottomrule
+\end{longtable}
+
+% -------------------------------------------------
+\section{Registro de Versões}
+% -------------------------------------------------
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{p{0.16\textwidth}p{0.18\textwidth}Yp{0.22\textwidth}}
+\toprule
+\textbf{Versão} & \textbf{Data} & \textbf{Alteração} & \textbf{Responsável} \\
+\midrule
+1.0 & \today & Criação inicial do relatório do fluxo. & João Victor  \\
+ & & & \\
+ & & & \\
+\bottomrule
+\end{tabularx}
+\caption{Histórico de versões do documento.}
+\end{table}
+
+% -------------------------------------------------
+\section{Conclusão}
+% -------------------------------------------------
+
+O fluxo proposto permite organizar a produção de cursos digitais de maneira controlada, combinando automação, revisão visual, manipulação técnica do pacote SCORM e preservação da estrutura interna do Articulate Rise 360. A principal cautela do processo está na separação entre conteúdo editável e estrutura técnica, especialmente na etapa de alteração dos arquivos JSON.
+
+\end{document}

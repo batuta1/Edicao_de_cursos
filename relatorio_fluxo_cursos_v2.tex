@@ -1,0 +1,1024 @@
+\documentclass[12pt,a4paper]{article}
+
+% -------------------------------------------------
+% PACOTES BÁSICOS
+% -------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{hyperref}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
+% -------------------------------------------------
+% CONFIGURAÇÃO DA PÁGINA
+% -------------------------------------------------
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,headheight=15pt}
+\onehalfspacing
+\setlength{\emergencystretch}{3em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!45!black,
+    urlcolor=blue!45!black,
+    citecolor=blue!45!black,
+    pdftitle={Relatório do Fluxo de Criação de Cursos, versão 2.0}
+}
+
+% -------------------------------------------------
+% CORES E ESTILO
+% -------------------------------------------------
+\definecolor{azulinst}{HTML}{1F4E79}
+\definecolor{cinzaclaro}{HTML}{F2F4F7}
+\definecolor{cinzamedio}{HTML}{D9E2EC}
+\definecolor{verdeproc}{HTML}{2E7D32}
+\definecolor{laranja}{HTML}{EF6C00}
+\definecolor{vermelho}{HTML}{B00020}
+
+\titleformat{\section}
+  {\Large\bfseries\color{azulinst}}
+  {\thesection}{0.8em}{}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{azulinst}}
+  {\thesubsection}{0.8em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Relatório do Fluxo de Criação de Cursos -- v2.0}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% -------------------------------------------------
+% COMANDOS ÚTEIS
+% -------------------------------------------------
+\newcommand{\campo}[1]{\textcolor{azulinst}{\textbf{#1}}}
+\newcommand{\skill}[1]{\textsf{\textbf{#1}}}
+% nome de arquivo: permite quebra de linha depois de "/", "-" e "_"
+\ExplSyntaxOn
+\tl_new:N \l__arq_tl
+\NewDocumentCommand{\arq}{m}
+  {
+    \tl_set:Nn \l__arq_tl {#1}
+    \tl_replace_all:Nnn \l__arq_tl {/} {/\allowbreak}
+    \tl_replace_all:Nnn \l__arq_tl {-} {-\allowbreak}
+    { \renewcommand{\_}{\textunderscore\allowbreak} \texttt{ \tl_use:N \l__arq_tl } }
+  }
+\ExplSyntaxOff
+\newcommand{\pendente}[1]{\textcolor{vermelho}{\textbf{[#1]}}}
+\newcommand{\flecha}{\ensuremath{\rightarrow}}
+\newcommand{\iniciolicao}{\ensuremath{\blacktriangledown\blacktriangledown\blacktriangledown}}
+\newcommand{\fimlicao}{\ensuremath{\blacktriangle\blacktriangle\blacktriangle}}
+
+% caixa de destaque: \caixa{título}{texto}
+\newcommand{\caixa}[2]{%
+  \par\medskip\noindent
+  {\setlength{\fboxsep}{8pt}%
+  \fcolorbox{azulinst}{cinzaclaro}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+      \textbf{\textcolor{azulinst}{#1}}\par\smallskip #2}}}%
+  \par\medskip}
+
+% ficha de etapa: tabela de duas colunas (campo, descrição)
+\newenvironment{ficha}
+  {\begin{longtable}{@{}L{0.24\textwidth}L{0.72\textwidth}@{}}\toprule}
+  {\bottomrule\end{longtable}}
+
+% -------------------------------------------------
+% DADOS DO DOCUMENTO
+% -------------------------------------------------
+\title{\textbf{Relatório do Fluxo de Criação de Cursos}\\[4pt]
+\large Pipeline baseada em skills: do tema à publicação do curso}
+\author{\textbf{Responsáveis:} João e Marina}
+\date{\textbf{Versão:} 2.0 \\ \textbf{Data:} 27 de setembro de 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{center}
+\vfill
+\begin{tabular}{@{}L{0.30\textwidth}L{0.60\textwidth}@{}}
+\toprule
+\textbf{Projeto} & Criação de cursos no Articulate Rise 360 \\
+\textbf{Área demandante} & \pendente{Inserir área} \\
+\textbf{Responsável técnico} & \pendente{Inserir responsável} \\
+\textbf{Ferramentas principais} & Claude Code (skills \skill{criar-ementa-curso} e \skill{revisar-curso-scorm}), Articulate Rise 360 AI, SCORM 1.2, Markdown, Python \\
+\textbf{Status} & Em validação \\
+\textbf{Versão anterior} & 1.0 -- pipeline manual, resumida no Apêndice A \\
+\bottomrule
+\end{tabular}
+\vfill
+\end{center}
+
+\newpage
+\tableofcontents
+\newpage
+
+% -------------------------------------------------
+\section{Objetivo do Relatório}
+% -------------------------------------------------
+
+Este relatório documenta a \textit{pipeline} de criação de cursos digitais da ArcTel em sua forma atual, na qual o processo é conduzido por duas skills do Claude Code -- \skill{criar-ementa-curso} e \skill{revisar-curso-scorm} -- e pela Inteligência Artificial do Articulate Rise 360.
+
+A versão 1.0 deste relatório descrevia uma \textit{pipeline} de onze etapas executadas, em grande parte, manualmente: conversão do plano de aula por \textit{prompt} avulso, localização do conteúdo serializado no código do pacote SCORM, cópia desse conteúdo para scripts Python, revisão assistida e colagem do resultado de volta no pacote. O conhecimento acumulado nesse período -- \textit{prompts} refinados por experimentação, critérios de auditoria, métrica de tempo pedagógico e travas de preservação da estrutura técnica -- foi consolidado nas duas skills.
+
+Com isso, o trabalho operacional passou a ser executado de forma automatizada e verificável, e a atuação humana concentrou-se nas decisões: escolher o tema, reunir o material-fonte, confirmar os fatos que a skill não pôde verificar, julgar o curso gerado pelo Rise 360 e aprovar a publicação.
+
+O documento descreve as etapas da \textit{pipeline} atual, os artefatos produzidos, os critérios de qualidade e os riscos, e apresenta um caso de aplicação completo. A \textit{pipeline} da versão 1.0 é mantida, de forma resumida, no Apêndice A, como registro histórico.
+
+% -------------------------------------------------
+\section{Evolução do Processo}\label{sec:evolucao}
+% -------------------------------------------------
+
+\subsection{Da pipeline manual às skills}
+
+A \textit{pipeline} passou por três formas de execução. Na primeira, documentada na versão 1.0 deste relatório, cada etapa era conduzida por um \textit{prompt} avulso ou por uma operação manual sobre o pacote SCORM. Na segunda, os \textit{prompts} de cada metade do processo -- criação e revisão -- foram consolidados em \textit{prompts}-mestre executados em sequência. Na terceira, esses \textit{prompts}-mestre, os modelos das trilhas e os critérios de controle foram empacotados em duas skills do Claude Code, acompanhadas de scripts de verificação.
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.20\textwidth}L{0.76\textwidth}@{}}
+\toprule
+\textbf{Período} & \textbf{Forma de execução e artefatos representativos} \\
+\midrule
+\endhead
+Junho e julho de 2026 &
+\textit{Prompts} avulsos e operações manuais sobre o pacote (\textit{pipeline} da versão 1.0). \textit{Prompt} de geração no Rise (\arq{promptArticulate.md}), \textit{prompts} de roteiro Articulate por trilha, regras de revisão (\arq{promptRevisaoPorClaude.md}) e scripts \arq{desserialize.py}, \arq{lessonExtracter.py} e \arq{serialize.py}. \\
+\addlinespace
+Agosto de 2026 &
+Modelos das trilhas e \textit{prompts}-mestre: cada metade do processo passa a ser uma sequência de \textit{prompts} executada na mesma conversa. \arq{Prompt-Modelo-PlanoDeAula-Essentials.md}, \arq{Prompt-Modelo-CursoHandsOn.md}, \arq{Prompt-Mestre-Pipeline-Completo-Curso.md} e \arq{Prompt-Mestre-Pipeline-Revisao-SCORM.md}. \\
+\addlinespace
+Agosto e setembro de 2026 &
+Skills do Claude Code: instruções, modelos, \textit{prompts} e scripts empacotados, com marcos de verificação e travas de segurança. Skill \skill{revisar-curso-scorm} (agosto) e skill \skill{criar-ementa-curso} (setembro). \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Os períodos são aproximados e foram inferidos das datas dos arquivos no repositório do projeto.
+
+\subsection{Correspondência entre a versão 1.0 e a pipeline atual}
+
+A tabela a seguir indica o destino de cada etapa da versão 1.0. A numeração da coluna ``Etapa atual'' refere-se às etapas descritas na Seção~\ref{sec:etapas}.
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.27\textwidth}L{0.55\textwidth}C{0.12\textwidth}@{}}
+\toprule
+\textbf{Etapa da versão 1.0} & \textbf{Situação na pipeline atual} & \textbf{Etapa atual} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+1. Conversão do plano de aula em roteiro &
+Absorvida pela skill \skill{criar-ementa-curso}. O plano de aula deixou de ser insumo externo: as fases 0 a 6 produzem o curso a partir do tema, e a fase 7 gera o roteiro Articulate com o \textit{prompt}-mestre de cada trilha. & 2 \\
+\addlinespace
+2 e 3. Carregar \textit{prompt} e roteiro no Articulate; gerar o curso &
+Mantidas e manuais. Insumos: \arq{promptArticulate.md} e \arq{roteiro-articulate-<trilha>.md}. & 4 \\
+\addlinespace
+4. Verificação visual mínima &
+Mantida, com checklist ampliado: vazamento das instruções para o conteúdo e respeito aos marcadores de lição. & 4 \\
+\addlinespace
+5. Geração do SCORM &
+Mantida (SCORM 1.2). & 4 \\
+\addlinespace
+6. Desserialização e separação em lições &
+Automatizada. O script \arq{scorm\_extrair.py} lê o \arq{.zip} diretamente, detecta o formato do pacote e confere o título do curso; não há mais busca manual pela função \arq{\_\_fetchCourse()} nem cópia do conteúdo serializado. & 5 \\
+\addlinespace
+7. Avaliação da estrutura de blocos &
+Dividida. A adequação da estrutura gerada pelo Rise é julgada na verificação visual; a integridade após a edição é verificada pelo script \arq{validar\_estrutura.py}, que interrompe o processo em caso de divergência. & 4 e 5 \\
+\addlinespace
+8. Retorno para nova geração de SCORM &
+Deixou de ser etapa: os retornos passaram a ser explícitos no fluxo (Figura~\ref{fig:fluxo}). & -- \\
+\addlinespace
+9. Revisão assistida do conteúdo &
+Fase 4 da skill \skill{revisar-curso-scorm}, que segue as regras de \arq{promptRevisaoPorClaude.md}. & 5 \\
+\addlinespace
+10. Reserialização e validação &
+Automatizada. O script \arq{scorm\_reempacotar.py} serializa com verificação de ida e volta e gera um novo \arq{.zip}; o teste visual passou a usar uma simulação de LMS. & 5 \\
+\addlinespace
+11. Encerramento &
+Substituído pela aprovação e publicação, apoiadas no relatório de edição gerado pela skill. & 6 \\
+\addlinespace
+Não existiam na versão 1.0 &
+Definição do tema e coleta do material-fonte; validação das pendências factuais; auditoria crítica e cálculo da carga horária como fases documentadas. & 1, 2 e 3 \\
+\end{longtable}
+\endgroup
+
+\subsection{Correções técnicas em relação à versão 1.0}
+
+Três afirmações da versão 1.0 não correspondem ao comportamento atual dos pacotes e das ferramentas e foram corrigidas nesta versão.
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Local do conteúdo do curso.} A versão 1.0 indicava que o curso serializado fica sempre no arquivo \arq{index.html}, como argumento da função \arq{deserialize()}. Esse é o formato legado. No formato padrão das exportações atuais, o conteúdo fica em \arq{scormcontent/runtime-data.js}, dentro do envelope \arq{\_\_jsonp(...)}. Nos dois formatos, o conteúdo é Base64 puro de um JSON em UTF-8. A skill \skill{revisar-curso-scorm} detecta o formato automaticamente; o pacote do caso de aplicação (Seção~\ref{sec:caso}) usa o formato padrão.
+
+\item \textbf{Teste em navegador.} A versão 1.0 previa abrir o \arq{index.html} diretamente no navegador para validar o curso reserializado. Os pacotes exportados atualmente recusam-se a rodar fora de uma LMS e exibem a mensagem ``Content launched outside of a supported LMS enviroment'' (\textit{sic}) -- comportamento do pacote original, e não defeito da edição. O teste visual passou a ser feito com uma página que simula a API da LMS (\arq{lms\_mock.html}), servida localmente.
+
+\item \textbf{Versão dos \textit{prompts} de montagem.} Os \textit{prompts} que geram os roteiros Articulate existem em duas cópias: na raiz do repositório (\arq{promptEssentialsRoteiroArticulate.md} e \arq{promptHandsOnRoteiroArticulate.md}, de junho de 2026) e dentro da skill \skill{criar-ementa-curso} (\arq{referencias/articulate-essentials.md} e \arq{referencias/articulate-hands-on.md}). As cópias da skill são mais recentes e mais extensas (152 e 120 linhas, contra 137 e 103) e passam a ser as versões de referência. Recomenda-se atualizar ou arquivar as cópias da raiz, para evitar o uso da versão antiga.
+\end{enumerate}
+
+% -------------------------------------------------
+\section{Visão Geral do Fluxo}\label{sec:visao}
+% -------------------------------------------------
+
+A \textit{pipeline} atual tem seis etapas. Duas são executadas por skills do Claude Code; uma, pela Inteligência Artificial do Articulate Rise 360, a partir de instruções fornecidas pela equipe; as demais são ações e decisões humanas.
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}C{0.05\textwidth}L{0.31\textwidth}L{0.17\textwidth}L{0.36\textwidth}@{}}
+\toprule
+\textbf{\#} & \textbf{Etapa} & \textbf{Executor} & \textbf{Produto} \\
+\midrule
+\endhead
+1 & Definição do tema e coleta do material-fonte & Equipe & Objeto base definido e material bruto salvo no repositório \\
+2 & Geração da ementa e dos roteiros & Claude Code (\skill{criar-ementa-curso}) & Pasta do tema: ementa, roteiros, carga horária e roteiros Articulate \\
+3 & Validação das pendências & Equipe & Roteiros com os fatos confirmados ou corrigidos \\
+4 & Geração no Rise 360, verificação visual e exportação & Equipe e Rise 360 AI & Pacote SCORM 1.2 (\arq{.zip}) \\
+5 & Revisão do pacote SCORM & Claude Code (\skill{revisar-curso-scorm}) & Pacote revisado e relatório de edição \\
+6 & Aprovação e publicação & Equipe & Curso publicado na LMS \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=0.65cm,
+    base/.style={rectangle, rounded corners=3pt, align=center, text width=8.2cm,
+                 minimum height=1cm, inner sep=5pt, font=\small},
+    pessoa/.style={base, draw=azulinst, fill=cinzaclaro},
+    skill/.style={base, draw=verdeproc, fill=green!8, line width=1pt},
+    rise/.style={base, draw=laranja, fill=orange!10},
+    decisao/.style={diamond, draw=azulinst, fill=cinzaclaro, align=center,
+                    aspect=3, inner sep=1pt, text width=3.6cm, font=\small},
+    fim/.style={base, draw=verdeproc, fill=green!25, text width=4cm},
+    seta/.style={-{Latex[length=2.5mm]}, thick, color=azulinst},
+    rotulo/.style={font=\footnotesize, color=black}
+]
+\node[pessoa] (e1) {\textbf{1.} Definir o tema e reunir o material-fonte};
+\node[skill, below=of e1] (e2) {\textbf{2.} Skill \textsf{criar-ementa-curso}\\[1pt]
+    {\footnotesize ementa, roteiros, carga horária e roteiros Articulate}};
+\node[pessoa, below=of e2] (e3) {\textbf{3.} Validar as pendências apontadas pela skill};
+\node[rise, below=of e3] (e4) {\textbf{4a.} Gerar o curso no Rise 360 AI\\[1pt]
+    {\footnotesize \texttt{promptArticulate.md} + roteiro Articulate}};
+\node[decisao, below=of e4] (d1) {\textbf{4b.} Verificação visual aprovada?};
+\node[rise, below=of d1] (e5) {\textbf{4c.} Exportar o pacote SCORM 1.2};
+\node[skill, below=of e5] (e6) {\textbf{5.} Skill \textsf{revisar-curso-scorm}\\[1pt]
+    {\footnotesize extrair, revisar, validar e reempacotar}};
+\node[decisao, below=of e6] (d2) {\textbf{6.} Relatório de edição aprovado?};
+\node[fim, below=of d2] (fim) {Publicar na LMS};
+
+\draw[seta] (e1) -- (e2);
+\draw[seta] (e2) -- (e3);
+\draw[seta] (e3) -- (e4);
+\draw[seta] (e4) -- (d1);
+\draw[seta] (d1) -- node[rotulo, right]{Sim} (e5);
+\draw[seta] (e5) -- (e6);
+\draw[seta] (e6) -- (d2);
+\draw[seta] (d2) -- node[rotulo, right]{Sim} (fim);
+
+\coordinate (r1) at ([xshift=0.9cm]e4.east);
+\coordinate (r2) at ([xshift=0.9cm]e6.east);
+\draw[seta] (d1.east) -- node[rotulo, above]{Não} (d1.east -| r1)
+      -- node[rotulo, right, align=left]{gerar de novo\\ou ajustar no Rise} (r1) -- (e4.east);
+\draw[seta] (d2.east) -- node[rotulo, above]{Não} (d2.east -| r2)
+      -- node[rotulo, right, align=left]{nova rodada\\de revisão} (r2) -- (e6.east);
+\end{tikzpicture}
+\caption{Fluxo da \textit{pipeline} atual. Caixas azuis: ações e decisões da equipe; verdes: skills do Claude Code; laranja: Articulate Rise 360.}
+\label{fig:fluxo}
+\end{figure}
+
+O fluxo tem dois retornos. Se a verificação visual reprovar o curso gerado, ele é gerado novamente ou ajustado na própria plataforma antes da exportação, porque a revisão da Etapa 5 corrige texto, mas não altera a estrutura de lições e blocos. Se a leitura do relatório de edição exigir novas correções de texto, executa-se nova rodada da skill de revisão sobre o pacote.
+
+% -------------------------------------------------
+\section{Detalhamento das Etapas}\label{sec:etapas}
+% -------------------------------------------------
+
+\subsection{Etapa 1 -- Definição do tema e coleta do material-fonte}
+
+A \textit{pipeline} começa por uma decisão humana: o tema do curso. Definido o tema, reúne-se o material-fonte -- documentação oficial da ferramenta, centrais de ajuda, manuais, artigos, apostilas e cursos anteriores. O material é salvo como texto bruto no repositório (por exemplo, \arq{Criacao de Cursos/GPT/ConteudoBruto/ConteudoBrutoWordCHATGPT\_OpenAI.txt}) e passa a ser a referência factual de todo o curso.
+
+A qualidade do material-fonte determina o volume de validação posterior. Sem ele, a skill escreve a partir de conhecimento geral, e todo dado factual precisa ser marcado para conferência. Material promocional de terceiros deve ser identificado já nesta etapa: no caso de aplicação (Seção~\ref{sec:caso}), parte relevante do material bruto era texto de venda de um produto externo, e a decisão de não recomendá-lo ficou registrada nos contornos do curso.
+
+Antes de acionar a skill, convém ter definidos os itens que ela confirma na fase inicial:
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{Objeto base} -- tema ou ferramenta do curso. É o único campo obrigatório e também dá nome à pasta do curso.
+\item \textbf{Público-alvo} -- determina exemplos, ritmo e o que pode ser pressuposto.
+\item \textbf{Pré-requisitos e recursos} -- contas em plataformas, software instalado, acesso à internet.
+\item \textbf{Carga horária alvo} -- os modelos base da skill sugerem 60 a 90 minutos por trilha, mas os \textit{prompts}-mestre do Articulate pedem 100 a 130 minutos na trilha Essentials e 90 a 120 minutos na Hands-on. Quando o curso se destina ao Rise, recomenda-se adotar a carga maior desde o início, como no caso de aplicação.
+\item \textbf{Material-fonte} -- sua origem e sua confiabilidade.
+\item \textbf{Natureza autoinstrucional} -- se o aluno faz o curso sozinho, nenhum passo pode depender de explicação em tempo real.
+\end{itemize}
+
+\begin{ficha}
+\campo{Entrada} & Demanda de curso e fontes disponíveis sobre o tema. \\ \addlinespace
+\campo{Executor} & Equipe de produção. \\ \addlinespace
+\campo{Ação} & Definir o objeto base e os contornos do curso; reunir o material-fonte e salvá-lo como texto bruto no repositório. \\ \addlinespace
+\campo{Objetivo} & Fornecer à skill um tema delimitado e uma base factual verificável. \\ \addlinespace
+\campo{Saída} & Objeto base definido e arquivo de material bruto no repositório. \\ \addlinespace
+\campo{Controle mínimo} & Material-fonte identificado por origem (oficial, de terceiros, promocional); ausência de fonte para algum assunto registrada. \\
+\end{ficha}
+
+\subsection{Etapa 2 -- Geração da ementa e dos roteiros}
+
+A skill \skill{criar-ementa-curso} recebe o objeto base e o material-fonte e produz, em uma pasta própria do tema, o curso descrito por inteiro: ementa, roteiros das duas trilhas, carga horária e versões dos roteiros preparadas para o Articulate Rise 360. É acionada no Claude Code -- pelo comando \arq{/criar-ementa-curso} seguido do tema, ou por um pedido em linguagem natural -- e conduz o trabalho em fases, cada uma com arquivo de saída próprio.
+
+\caixa{Princípio de projeto da skill}{Texto de curso gerado de uma só vez sai plausível e raso. Por isso a auditoria crítica é uma fase própria, feita como se outra pessoa tivesse escrito a versão 1.0, e a ementa é escrita por último, a partir de roteiros e tempos já fechados -- para não prometer o que o curso não entrega.}
+
+\subsubsection*{Fases}
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.20\textwidth}L{0.44\textwidth}L{0.30\textwidth}@{}}
+\toprule
+\textbf{Fase} & \textbf{O que faz} & \textbf{Saída} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+0 -- Contornos & Registra objeto base, público, pré-requisitos, recursos, carga horária alvo, material-fonte e natureza autoinstrucional. & \arq{\_processo/00-contornos.md} \\
+\addlinespace
+1 -- Versão 1.0 & Escreve a primeira versão de cada trilha, seguindo a ordem de seções do modelo da trilha. & \arq{\_processo/01-v1-<trilha>.md} \\
+\addlinespace
+2 -- Auditoria crítica & Avalia clareza pedagógica, rigor técnico, engajamento e potencial oculto; termina em matriz de soluções, com uma correção concreta para cada problema. & \arq{\_processo/02-analise-<trilha>.md} \\
+\addlinespace
+3 -- Roteiro final & Executa a matriz de soluções e acrescenta objetivos e habilidades por aula, sugestões de captura de tela e solução de problemas nos pontos críticos. & \arq{roteiros/roteiro-<trilha>.md} \\
+\addlinespace
+4 -- Carga horária & Classifica cada atividade na MET, soma por aula e no total e calcula a proporção teoria/prática. & \arq{carga-horaria/} \\
+\addlinespace
+5 -- Ementa & Consolida identificação, objetivo geral, competências, trilhas, carga horária, avaliação e pendências de validação. & \arq{ementa.md} \\
+\addlinespace
+6 -- Verificação por marcos & Aplica o checklist de marcos (sinal verde ou vermelho por fase) e registra no README o que não foi verificado. & \arq{README.md} \\
+\addlinespace
+7 -- Roteiros Articulate & Acrescenta a camada de montagem para o Rise 360, a partir do roteiro final de cada trilha. & \arq{roteiros/roteiro-articulate-<trilha>.md} \\
+\end{longtable}
+\endgroup
+
+As fases 1 a 4 rodam uma vez para cada trilha e compartilham apenas os contornos. A verificação por marcos tem oito marcos -- sete correspondem às fases de produção (0 a 5 e 7) e um à organização da pasta --, e o sinal vermelho indica qual fase refazer, e não um remendo local.
+
+\subsubsection*{As duas trilhas}
+
+As duas trilhas são o padrão e partem do mesmo objeto base, do mesmo público e do mesmo material-fonte. Não são fundidas em um documento único, porque o registro de cada uma é incompatível com o da outra.
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.24\textwidth}L{0.34\textwidth}L{0.34\textwidth}@{}}
+\toprule
+ & \textbf{Essentials} & \textbf{Hands-on} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Objetivo do aluno & Compreender um assunto & Executar uma tarefa com a ferramenta \\
+Unidade & Módulo & Oficina \\
+Registro & Formal e impessoal & Segunda pessoa, leve \\
+Corpo & Texto descritivo e exercício & Passo a passo numerado e verificação de resultado \\
+Fecho & Módulo de síntese integradora & Projeto Final e ``A Parte dos Dez'' \\
+\end{longtable}
+\endgroup
+
+\subsubsection*{Estrutura da pasta do curso}
+
+\begingroup\small\setstretch{1}
+\begin{verbatim}
+<tema>/
+|-- README.md                           índice da pasta e pendências
+|-- ementa.md                           ementa consolidada
+|-- roteiros/
+|   |-- roteiro-essentials.md           roteiro final, trilha Essentials
+|   |-- roteiro-hands-on.md             roteiro final, trilha Hands-on
+|   |-- roteiro-articulate-essentials.md
+|   \-- roteiro-articulate-hands-on.md
+|-- carga-horaria/
+|   |-- met-tabela.md                   MET aplicada ao curso
+|   |-- carga-horaria-essentials.md
+|   \-- carga-horaria-hands-on.md
+\-- _processo/                          rastro de construção (não entregável)
+    |-- 00-contornos.md
+    |-- 01-v1-essentials.md
+    |-- 01-v1-hands-on.md
+    |-- 02-analise-essentials.md
+    \-- 02-analise-hands-on.md
+\end{verbatim}
+\endgroup
+
+A pasta é criada com nome em minúsculas, palavras separadas por hífen e sem acento. O \arq{\_processo/} não integra a entrega, mas é preservado: é nele que está a justificativa de cada decisão do roteiro.
+
+\subsubsection*{Métrica de Estimativa de Tempo (MET)}
+
+A carga horária é calculada pela MET, uma taxonomia fechada de oito tipos de atividade, cada um com valor fixo para o cálculo. O uso do valor fixo, e não da faixa, torna o total reproduzível por terceiros.
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.30\textwidth}L{0.40\textwidth}C{0.10\textwidth}C{0.12\textwidth}@{}}
+\toprule
+\textbf{Tipo de atividade} & \textbf{Descrição} & \textbf{Minutos} & \textbf{Classe} \\
+\midrule
+\endhead
+Exposição Teórica & Conceitos, comparações, definições & 15 & Teoria \\
+Demonstração Técnica & Prática guiada de ferramenta ou interface & 10 & Prática \\
+Exemplo Aplicado & Caso real, analogia, tabela comparativa & 6 & Teoria \\
+Discussão Orientada & Interpretação de cenários & 8 & Teoria \\
+Setup / Navegação & Interação inicial com a ferramenta & 7 & Prática \\
+Pílula Hands-on & Exercício rápido individual & 6 & Prática \\
+Automação / Workflow & Explicação de processos contínuos & 10 & Prática \\
+Avaliação / Feedback & Correção ou validação de respostas & 4 & Prática \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Regras de aplicação: não se criam categorias novas -- atividade que não se encaixa em nenhum tipo está mal descrita no roteiro; a proporção alvo para iniciantes é de 40\,\% de teoria e 60\,\% de prática; e, se o total estourar a carga horária combinada, o estouro é reportado com proposta de corte, sem reduzir os tempos para fechar a conta. A tabela MET é copiada para a pasta de cada curso, para que os números possam ser conferidos sem a skill.
+
+\subsubsection*{Camada de montagem para o Rise 360 (fase 7)}
+
+O roteiro final ainda não é adequado para a IA do Rise 360. A fase 7 aplica o \textit{prompt}-mestre de cada trilha -- \arq{referencias/articulate-essentials.md} ou \arq{referencias/articulate-hands-on.md}, dentro da skill -- sobre o roteiro final da trilha, usado como material-fonte, e acrescenta três elementos:
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{Caminhos de navegação no lugar de capturas de tela}, no formato \texttt{Aplicativo > Menu > Submenu > Opção}, com pontos de controle onde há resultado a conferir.
+\item \textbf{Anotações de montagem} (\textit{cues}) iniciadas por ``\texttt{» IA:}'' antes de cada bloco, indicando o tipo de bloco do Rise e o que deve ser preservado literalmente -- por exemplo, verificação de conhecimento e lista na trilha Essentials; processo e acordeão na trilha Hands-on.
+\item \textbf{Marcadores de lição} (\iniciolicao{} \textsc{início da lição} e \fimlicao{} \textsc{fim da lição}) em torno de cada módulo ou oficina, para que o Rise não divida nem funda lições.
+\end{itemize}
+
+\begin{ficha}
+\campo{Entrada} & Objeto base, contornos e material-fonte da Etapa 1. \\ \addlinespace
+\campo{Ferramenta} & Claude Code, com a skill \skill{criar-ementa-curso}. \\ \addlinespace
+\campo{Ação} & Executar as fases 0 a 7 da skill, com as fases 1 a 4 repetidas para cada trilha. \\ \addlinespace
+\campo{Objetivo} & Produzir o curso completo em Markdown -- auditado, cronometrado e pronto para montagem no Rise 360. \\ \addlinespace
+\campo{Saída} & Pasta do tema com \arq{README.md}, \arq{ementa.md}, \arq{roteiros/}, \arq{carga-horaria/} e \arq{\_processo/}. \\ \addlinespace
+\campo{Controle mínimo} & Oito marcos com sinal verde; README com as pendências de validação; nenhum nome de arquivo com acento; nenhum trecho das instruções vazado para o conteúdo do curso. \\
+\end{ficha}
+
+\subsection{Etapa 3 -- Validação das pendências}
+
+A skill não confirma fatos que o material-fonte não sustenta: ela os marca. O \arq{README.md} da pasta e a seção ``Pendências de Validação'' da ementa listam os dados factuais que exigem conferência humana -- limites de uso, políticas por plano, disponibilidade de recursos, rótulos de menus --, com a indicação de onde cada afirmação aparece nos roteiros.
+
+\caixa{Quando validar}{Recomenda-se validar as pendências antes da geração no Rise 360: corrigir um fato no roteiro em Markdown custa uma edição de texto; corrigi-lo depois custa nova geração do curso ou nova rodada de revisão do pacote. No mais tardar, a validação é obrigatória antes da publicação (Etapa 6). O caso de aplicação (Seção~\ref{sec:caso}) mostra o efeito de adiá-la.}
+
+\begin{ficha}
+\campo{Entrada} & \arq{README.md} e seção ``Pendências de Validação'' da \arq{ementa.md}. \\ \addlinespace
+\campo{Executor} & Equipe de produção. \\ \addlinespace
+\campo{Ação} & Conferir cada pendência em fonte oficial; corrigir os roteiros, inclusive as versões Articulate, quando o dado estiver desatualizado; registrar a data e a fonte da conferência. \\ \addlinespace
+\campo{Objetivo} & Impedir que o curso apresente como fato um dado não verificado. \\ \addlinespace
+\campo{Saída} & Roteiros corrigidos e pendências marcadas como conferidas. \\ \addlinespace
+\campo{Controle mínimo} & Toda pendência com destino declarado: confirmada, corrigida ou mantida com redação condicional. A correção é aplicada em todas as trilhas e versões em que o dado aparece. \\
+\end{ficha}
+
+\subsection{Etapa 4 -- Geração no Articulate Rise 360 e exportação do SCORM}
+
+Esta etapa permanece manual e é a única executada fora do Claude Code. O curso é gerado pela função de criação com IA do Rise 360 a partir de dois insumos:
+
+\begin{itemize}[leftmargin=*]
+\item o \textit{prompt} de execução \arq{promptArticulate.md}, que instrui a IA da plataforma a converter o conteúdo em lições e blocos sem alterar fatos, ordem ou termos de interface, a executar e remover as anotações ``\texttt{» IA:}'' e a respeitar os marcadores de lição;
+\item o roteiro Articulate da trilha (\arq{roteiro-articulate-essentials.md} ou \arq{roteiro-articulate-hands-on.md}). Na prática do projeto, o roteiro é convertido em PDF antes do envio -- os roteiros Articulate do repositório têm, em geral, uma versão \arq{.pdf} ao lado do \arq{.md}.
+\end{itemize}
+
+Cada trilha resulta em um curso próprio no Rise 360.
+
+\subsubsection*{Procedimento de geração}
+
+\begin{enumerate}[leftmargin=*]
+\item Na tela inicial do Rise 360, escolher a criação de curso com IA (\textit{Create with AI}).
+\item Inserir o \textit{prompt} e o roteiro Articulate da trilha e avançar com \textit{Generate course details}.
+\item Conferir os parâmetros gerados automaticamente -- objetivos de aprendizagem, duração e demais informações -- e avançar com \textit{Generate course outline}.
+\item Conferir se a quantidade e os temas das lições correspondem aos marcadores do roteiro e avançar em \textit{Course content options}.
+\item Concluir com \textit{Create course draft}. Ajustes manuais pontuais são feitos em \textit{Edit Content}.
+\end{enumerate}
+
+\subsubsection*{Verificação visual}
+
+A verificação não revisa o conteúdo pedagógico em profundidade; procura falhas da geração automática. Verificar, no mínimo:
+
+\begin{itemize}[leftmargin=*]
+\item idioma do curso;
+\item título e descrição tratam do tema do conteúdo -- e não de ``Rise 360'', ``fidelidade'' ou ``conversão de roteiros'', sinal de que as instruções vazaram para o curso;
+\item quantidade e ordem das lições em relação aos marcadores do roteiro;
+\item nenhuma linha ``\texttt{» IA:}'' nem marcador de lição visível ao aluno;
+\item blocos compatíveis com as anotações de montagem;
+\item presença das atividades e dos elementos interativos previstos.
+\end{itemize}
+
+\caixa{Regra}{Problemas de estrutura -- lições divididas, fundidas ou ausentes, blocos inadequados -- são resolvidos nesta etapa, gerando o curso novamente ou ajustando-o no Rise. A revisão da Etapa 5 altera apenas texto e não muda a quantidade nem a ordem de lições e blocos.}
+
+\subsubsection*{Procedimento de exportação}
+
+\begin{enumerate}[leftmargin=*]
+\item Acessar \textit{Publish} e escolher a exportação para LMS.
+\item Selecionar o padrão SCORM 1.2 e clicar em \textit{Download}.
+\item Mover o \arq{.zip} da pasta de downloads para a pasta do projeto correspondente (por exemplo, \arq{OpenAI/OPENAI (ChatGPT)/}), mantendo o nome gerado pelo Rise.
+\end{enumerate}
+
+\begin{ficha}
+\campo{Entrada} & \arq{promptArticulate.md} e \arq{roteiro-articulate-<trilha>.md}, com as pendências validadas. \\ \addlinespace
+\campo{Ferramenta} & Articulate Rise 360 (criação com IA). \\ \addlinespace
+\campo{Ação} & Gerar o curso, realizar a verificação visual e exportar o pacote em SCORM 1.2. \\ \addlinespace
+\campo{Objetivo} & Obter um pacote SCORM estruturalmente adequado, já que a estrutura de lições e blocos não é alterada nas etapas seguintes. \\ \addlinespace
+\campo{Saída} & Arquivo \arq{.zip} do pacote SCORM, salvo na pasta do projeto. \\ \addlinespace
+\campo{Controle mínimo} & Checklist de verificação visual atendido; registro do nome do curso, da trilha, da data e do local do pacote. \\
+\end{ficha}
+
+\subsection{Etapa 5 -- Revisão do pacote SCORM}
+
+A skill \skill{revisar-curso-scorm} revisa o texto pedagógico do curso exportado sem tocar na estrutura técnica. O curso inteiro está codificado em Base64 dentro do pacote; a skill extrai esse conteúdo, separa-o em lições, revisa os textos contra o roteiro-fonte, valida que apenas texto mudou e devolve o conteúdo a um novo pacote.
+
+Um erro estrutural nessa operação não se manifesta como mensagem de erro, mas como curso que deixa de abrir na LMS -- ou que abre com o conteúdo trocado. Por isso cada fase tem verificação própria, e os scripts encerram com erro quando algo não confere.
+
+A skill precisa de três informações: o pacote \arq{.zip}, o título exato do curso -- usado como trava de segurança -- e o material-fonte, isto é, o roteiro final da trilha (\arq{roteiros/roteiro-<trilha>.md}) e a ementa. As regras de edição do projeto, em \arq{promptRevisaoPorClaude.md}, prevalecem sobre a skill em caso de conflito.
+
+\subsubsection*{Fases}
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.22\textwidth}L{0.44\textwidth}L{0.28\textwidth}@{}}
+\toprule
+\textbf{Fase} & \textbf{O que faz} & \textbf{Saída} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+1 e 2 -- Extrair e desserializar & \arq{scorm\_extrair.py} identifica o formato do pacote, confere o título esperado e grava o curso em JSON. & \arq{curso<Nome>.json} \\
+\addlinespace
+3 -- Separar em lições & Gera um arquivo por lição, na ordem de posição, com o \arq{lessonExtracter.py} do projeto ou estrutura equivalente. & \arq{licoes\_extraidas\_<Nome>/} \\
+\addlinespace
+4 -- Revisar os textos & Mapeia lições e módulos do roteiro e faz edições pontuais nos campos textuais. Única fase em que o conteúdo muda. & Lições revisadas \\
+\addlinespace
+5 -- Validar & \arq{validar\_estrutura.py} compara cada lição nó a nó com o original e separa alterações de texto (esperadas) de alterações de estrutura (proibidas). & Resultado da validação \\
+\addlinespace
+6 e 7 -- Remontar, serializar e reempacotar & \arq{scorm\_reempacotar.py} funde as lições, serializa com verificação de ida e volta e gera novo \arq{.zip}, trocando apenas o arquivo de conteúdo. & \arq{curso<Nome>\_editado\_base64.txt} e \arq{<pacote>-REVISADO.zip} \\
+\addlinespace
+8 -- Testar em navegador (opcional) & Abre o curso por meio de uma simulação de LMS servida localmente e confere visualmente trechos editados. & Conferência visual \\
+\addlinespace
+9 -- Relatório & Registra material-fonte, mapeamento, alterações lição a lição, validações e pontos de atenção. & \arq{Relatorio\_Edicao\_Licoes.md} \\
+\end{longtable}
+\endgroup
+
+\subsubsection*{O que a revisão corrige}
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.46\textwidth}L{0.48\textwidth}@{}}
+\toprule
+\textbf{Sintoma no curso gerado} & \textbf{Correção} \\
+\midrule
+\endhead
+Abertura genérica (``surge como solução inovadora'') & Analogia concreta presente no roteiro-fonte \\
+Listas de objetivos introduzidas de formas diferentes em cada lição & Fórmula padronizada \\
+Objetivo listado que não corresponde ao módulo & Alinhamento, na ordem, ao roteiro \\
+Fechamento motivacional vazio & Próximos passos concretos do roteiro \\
+Especificidade perdida (``uma conta no serviço necessário'') & Detalhe restaurado da fonte \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsubsection*{Limites e travas}
+
+Limites que não se negociam na edição:
+
+\begin{itemize}[leftmargin=*]
+\item alteram-se apenas campos textuais pedagógicos -- na prática, quase sempre \arq{paragraph};
+\item nunca se alteram \arq{id}, \arq{type}, \arq{family}, \arq{variant}, \arq{position}, \arq{settings}, \arq{metadata} e \arq{globalBlockId}, nem a quantidade ou a ordem de blocos, itens de lista e alternativas de questão;
+\item a alternativa correta de uma questão nunca é trocada: gabarito suspeito é registrado no relatório, com proposta, para decisão humana;
+\item as edições são feitas por substituição pontual de texto, e não por reescrita dos arquivos.
+\end{itemize}
+
+Travas automáticas dos scripts:
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{título esperado} -- a extração aborta sem gravar nada se o título do pacote divergir do informado, o que impede sobrescrever um curso com o conteúdo de outro;
+\item \textbf{ida e volta} -- o Base64 só é gravado se, decodificado, reproduzir exatamente o curso revisado;
+\item \textbf{pacote original intocado} -- a saída é sempre um arquivo novo, e confere-se que nenhuma outra entrada do \arq{.zip} mudou de tamanho;
+\item \textbf{validação estrutural} -- o processo para se houver divergência de estrutura, se a quantidade de lições não conferir ou se um identificador de lição não existir no curso.
+\end{itemize}
+
+\begin{ficha}
+\campo{Entrada} & Pacote SCORM da Etapa 4, título exato do curso, roteiro final da trilha e ementa. \\ \addlinespace
+\campo{Ferramenta} & Claude Code, com a skill \skill{revisar-curso-scorm} e seus scripts Python; regras de \arq{promptRevisaoPorClaude.md}. \\ \addlinespace
+\campo{Ação} & Executar as fases 1 a 9 da skill. \\ \addlinespace
+\campo{Objetivo} & Melhorar clareza, especificidade e fidelidade do texto ao roteiro, sem alterar a arquitetura técnica do curso. \\ \addlinespace
+\campo{Saída} & \arq{<pacote>-REVISADO.zip}, Base64 editado, JSON revisado e \arq{Relatorio\_Edicao\_Licoes.md}. \\ \addlinespace
+\campo{Controle mínimo} & Validação estrutural sem divergência; número de campos alterados igual ao de edições intencionais; verificação de ida e volta bem-sucedida; pacote original intacto. \\
+\end{ficha}
+
+\subsection{Etapa 6 -- Aprovação e publicação}
+
+A última decisão é humana. O relatório de edição é lido antes da publicação: ele declara o que foi alterado, o que não foi verificado e quais pontos exigem decisão, como gabaritos suspeitos e dados pendentes de validação. Por ser gerado por um modelo de linguagem, o próprio relatório pode conter erros e deve ser lido criticamente (Seção~\ref{sec:licoes}).
+
+Checklist de aprovação:
+
+\begin{itemize}[leftmargin=*]
+\item pendências de validação da ementa resolvidas (Etapa 3);
+\item relatório de edição lido e pontos de atenção decididos;
+\item gabaritos sinalizados decididos por quem responde pelo conteúdo;
+\item pacote revisado carregado em ambiente de teste da LMS: abre, navega e registra progresso;
+\item artefatos arquivados conforme a matriz da Seção~\ref{sec:artefatos}.
+\end{itemize}
+
+\begin{ficha}
+\campo{Entrada} & Pacote revisado e relatório de edição. \\ \addlinespace
+\campo{Executor} & Responsável pelo conteúdo do curso. \\ \addlinespace
+\campo{Ação} & Ler o relatório de edição, decidir os pontos de atenção, testar o pacote em ambiente de teste da LMS e publicar. \\ \addlinespace
+\campo{Objetivo} & Publicar somente curso verificado em conteúdo e em funcionamento. \\ \addlinespace
+\campo{Saída} & Curso publicado na LMS e artefatos arquivados. \\ \addlinespace
+\campo{Controle mínimo} & Checklist de aprovação integralmente atendido. \\
+\end{ficha}
+
+% -------------------------------------------------
+\section{Responsabilidades}\label{sec:responsabilidades}
+% -------------------------------------------------
+
+A tabela resume quem executa cada atividade. Nenhuma das skills publica nada: toda saída é arquivo local, e a passagem de uma etapa para a seguinte depende de decisão da equipe.
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.55\textwidth}L{0.39\textwidth}@{}}
+\toprule
+\textbf{Atividade} & \textbf{Executor} \\
+\midrule
+\endhead
+Decidir o tema e reunir o material-fonte & Equipe \\
+Escrever, auditar, cronometrar e consolidar o curso; preparar os roteiros Articulate & Claude Code (\skill{criar-ementa-curso}) \\
+Confirmar os fatos pendentes & Equipe \\
+Montar o curso em lições e blocos & Rise 360 AI, a partir do \textit{prompt} e do roteiro fornecidos pela equipe \\
+Julgar o curso gerado e exportar o SCORM & Equipe \\
+Extrair, revisar o texto, validar e reempacotar & Claude Code (\skill{revisar-curso-scorm}) \\
+Aprovar e publicar & Responsável pelo conteúdo \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+% -------------------------------------------------
+\section{Matriz de Artefatos}\label{sec:artefatos}
+% -------------------------------------------------
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.38\textwidth}L{0.44\textwidth}C{0.12\textwidth}@{}}
+\toprule
+\textbf{Artefato} & \textbf{Descrição} & \textbf{Etapa} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\arq{ConteudoBruto<Tema>.txt} & Material-fonte em texto bruto. & 1 \\
+\addlinespace
+\arq{<tema>/\_processo/} & Contornos, versões 1.0 e auditorias críticas. Não integra a entrega. & 2 \\
+\addlinespace
+\arq{<tema>/roteiros/roteiro-<trilha>.md} & Roteiro final da trilha; referência da revisão. & 2 e 5 \\
+\addlinespace
+\arq{<tema>/carga-horaria/} & MET aplicada e detalhamento do tempo por atividade. & 2 \\
+\addlinespace
+\arq{<tema>/ementa.md} & Documento de decisão sobre o curso, com as pendências de validação. & 2, 3 e 6 \\
+\addlinespace
+\arq{<tema>/README.md} & Índice da pasta e registro do que não foi verificado. & 2 e 3 \\
+\addlinespace
+\arq{<tema>/roteiros/roteiro-articulate-<trilha>.md} (e \arq{.pdf}) & Roteiro com a camada de montagem; insumo do Rise 360. & 2 e 4 \\
+\addlinespace
+\arq{promptArticulate.md} & \textit{Prompt} de execução da IA do Rise 360. & 4 \\
+\addlinespace
+\arq{<pacote>.zip} & Pacote SCORM 1.2 exportado pelo Rise 360. Nunca é modificado. & 4 e 5 \\
+\addlinespace
+\arq{promptRevisaoPorClaude.md} & Regras de edição do projeto; prevalecem sobre a skill de revisão. & 5 \\
+\addlinespace
+\arq{curso<Nome>.json} & Curso desserializado, antes da edição. & 5 \\
+\addlinespace
+\arq{licoes\_extraidas\_<Nome>/} & Lições separadas em JSON, revisadas na fase 4 da skill. & 5 \\
+\addlinespace
+\arq{curso<Nome>\_editado.json} e \arq{curso<Nome>\_editado\_base64.txt} & Curso revisado em JSON e serializado em Base64. & 5 \\
+\addlinespace
+\arq{<pacote>-REVISADO.zip} & Pacote SCORM final. & 5 e 6 \\
+\addlinespace
+\arq{Relatorio\_Edicao\_Licoes.md} & Relatório de edição da skill de revisão. & 5 e 6 \\
+\end{longtable}
+\endgroup
+
+% -------------------------------------------------
+\section{Critérios de Qualidade}
+% -------------------------------------------------
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.26\textwidth}L{0.60\textwidth}C{0.08\textwidth}@{}}
+\toprule
+\textbf{Critério} & \textbf{Verificação} & \textbf{OK?} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Delimitação do tema & Objeto base, público e material-fonte definidos antes de acionar a skill. & $\square$ \\
+Profundidade do roteiro & Auditoria crítica com matriz de soluções executada no roteiro final. & $\square$ \\
+Carga horária reproduzível & Toda atividade classificada na MET; totais da ementa iguais aos da pasta \arq{carga-horaria/}. & $\square$ \\
+Veracidade & Pendências de validação resolvidas antes da publicação. & $\square$ \\
+Fidelidade da geração & Verificação visual aprovada: idioma, lições, blocos e ausência de instruções visíveis. & $\square$ \\
+Integridade técnica & Validação estrutural sem divergência; verificação de ida e volta; pacote original intacto. & $\square$ \\
+Funcionalidade do SCORM & Pacote abre, navega e registra progresso em ambiente de teste da LMS. & $\square$ \\
+Rastreabilidade & Pasta do tema, pacote original, pacote revisado e relatório de edição arquivados. & $\square$ \\
+\end{longtable}
+\endgroup
+
+% -------------------------------------------------
+\section{Riscos e Controles}
+% -------------------------------------------------
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.32\textwidth}L{0.28\textwidth}L{0.34\textwidth}@{}}
+\toprule
+\textbf{Risco} & \textbf{Impacto} & \textbf{Controle} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Instruções do \textit{prompt} vazam para o conteúdo & Curso sobre o assunto errado & Travas nos \textit{prompts}; marco 2 da skill; verificação visual. \\
+\addlinespace
+Fato desatualizado ou sem respaldo no material-fonte & Curso publica informação incorreta & Pendências de validação (Etapa 3); revisão contra o roteiro final; aprovação. \\
+\addlinespace
+Rise 360 não respeita os marcadores de lição & Estrutura do curso diverge do roteiro & Verificação visual; revisão com mapeamento entre lições e módulos. \\
+\addlinespace
+Problema de estrutura descoberto após a exportação & A revisão não corrige estrutura & Corrigir no Rise e exportar novamente. \\
+\addlinespace
+Curso sobrescrito com o conteúdo de outro & Erro silencioso, que pode passar dias despercebido & Trava de título esperado na extração; conferência dos identificadores de lição na validação. \\
+\addlinespace
+Edição acidental de campo estrutural & Curso deixa de abrir ou perde blocos & Validação estrutural nó a nó; edição por substituição pontual. \\
+\addlinespace
+Cópias divergentes dos \textit{prompts} de montagem & Roteiro gerado com versão desatualizada & Cópias da skill como referência; atualização ou arquivamento das cópias da raiz. \\
+\addlinespace
+Skills instaladas apenas no perfil de um usuário, fora do repositório & Processo não reprodutível em outra máquina ou por outra pessoa & Versionar as skills junto ao projeto. \\
+\addlinespace
+Erro no relatório de edição & Decisão tomada sobre informação incorreta & Leitura crítica do relatório na aprovação. \\
+\addlinespace
+Teste em navegador não executado & Problema visual chega à publicação & Teste em ambiente de teste da LMS antes de publicar. \\
+\end{longtable}
+\endgroup
+
+% -------------------------------------------------
+\section{Caso de Aplicação: ChatGPT no Word}\label{sec:caso}
+% -------------------------------------------------
+
+Esta seção documenta um curso que percorreu a \textit{pipeline} atual de ponta a ponta: \textit{ChatGPT no Word}, trilha Essentials. Os horários citados foram obtidos das datas de gravação dos arquivos e são indicativos.
+
+\subsection{Contexto}
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.26\textwidth}L{0.68\textwidth}@{}}
+\toprule
+\textbf{Item} & \textbf{Registro} \\
+\midrule
+\endhead
+Objeto base & ChatGPT aplicado à produção de documentos no Microsoft Word \\
+Público-alvo & Professores universitários, de qualquer área, novatos em inteligência artificial generativa \\
+Natureza & Curto, introdutório, prático e autoinstrucional \\
+Material-fonte & \arq{ConteudoBrutoWordCHATGPT\_OpenAI.txt}: dois blocos da Central de Ajuda da OpenAI, um artigo de terceiros e um guia promocional de um editor externo \\
+Decisão editorial & O produto promocional não estrutura nenhum módulo; ferramentas de terceiros aparecem uma única vez, como categoria, acompanhadas de critérios de avaliação \\
+Carga horária alvo & 100 a 130 minutos (Essentials) e 90 a 120 minutos (Hands-on), adotada desde os contornos para coincidir com os \textit{prompts}-mestre do Articulate \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{Etapa 2 -- Resultado da skill de criação}
+
+A skill \skill{criar-ementa-curso} foi executada em 2 de setembro de 2026. Os catorze arquivos Markdown da pasta \arq{Criacao de Cursos/GPT/chatgpt-no-word/} foram gravados entre 14h19 (contornos) e 14h41 (README) -- cerca de 21 minutos entre o primeiro e o último arquivo.
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.34\textwidth}L{0.19\textwidth}L{0.23\textwidth}L{0.14\textwidth}@{}}
+\toprule
+ & \textbf{Essentials} & \textbf{Hands-on} & \textbf{Total} \\
+\midrule
+\endhead
+Unidades & 6 módulos & 5 oficinas e Projeto Final & -- \\
+Atividades & 16 & 17 & 33 \\
+Duração & 129 min & 113 min & 242 min \\
+Teoria : prática & 38,8 : 61,2 & 26,5 : 73,5 & 33,1 : 66,9 \\
+Soluções na matriz da auditoria & 12 & 10 & 22 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+O curso combinado desviou da proporção alvo (40 : 60) no sentido de mais prática; o desvio foi declarado na ementa e considerado adequado ao público. A ementa registrou oito pendências de validação: sete dados factuais -- inexistência de suplemento oficial da OpenAI para o Word, limites de envio de arquivos, política de uso de conteúdo por plano, retenção, disponibilidade do fluxo de modelos reutilizáveis, recuperação de imagens em PDF e rótulos dos menus do Word -- e a decisão editorial sobre o material promocional.
+
+\subsection{Etapa 4 -- Geração no Rise 360 e exportação}
+
+Em 14 de setembro de 2026, o roteiro Articulate da trilha Essentials foi convertido em PDF às 16h08, e o pacote \arq{chatgpt-word-essentials-scorm12-bMZw5g3l.zip} foi salvo às 16h23. O pacote usa o formato padrão (\arq{scormcontent/runtime-data.js}), tem o título ``ChatGPT Word - Essentials'' e contém quatro lições.
+
+O roteiro trazia seis módulos, cada um cercado por marcadores de lição. O Rise 360 condensou-os em três lições de conteúdo e acrescentou um quiz final de oito questões, sem correspondência direta com um módulo do roteiro:
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.66\textwidth}L{0.28\textwidth}@{}}
+\toprule
+\textbf{Lição no pacote} & \textbf{Módulos do roteiro} \\
+\midrule
+\endhead
+0 -- Preparação e Segurança no Uso do ChatGPT com Word & Módulo 0 \\
+1 -- Caminhos de Integração e Formulação de Instruções Eficazes & Módulos 1, 2 e 3 \\
+2 -- Modelos, Automatização e Responsabilidade na Produção de Documentos & Módulos 4 e 5 \\
+3 -- Quiz & -- \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{Etapa 5 -- Revisão do pacote}
+
+A skill \skill{revisar-curso-scorm} foi executada em seguida: cerca de 8 minutos separam a extração do pacote (16h24) da gravação do pacote revisado (16h31). A referência principal foi o roteiro final da trilha (\arq{roteiro-essentials.md}); a ementa serviu para conferir fatos sujeitos a pendência.
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{Diagnóstico geral}: o texto já estava alinhado ao roteiro, com caminhos de navegação e modelos de \textit{prompt} preservados; as alterações foram pontuais.
+\item \textbf{Alterações}: dois campos, ambos na lição 0. No título do bloco de comparação de planos, ``Free, Go, Plus e Pro'' passou a ``Plus e Pro'', como no roteiro final. Em um item de lista, duas perguntas que haviam sido fundidas foram separadas novamente, e os exemplos do roteiro (nota de rodapé, seção de métodos, declaração de autoria) foram restaurados.
+\item \textbf{Questões}: o curso tem dezesseis questões -- três, três e duas nas lições de conteúdo e oito no quiz, dos tipos múltipla escolha, resposta múltipla, lacuna e associação. Os gabaritos foram conferidos contra o roteiro, e nenhum foi alterado.
+\item \textbf{Validações}: nenhuma divergência estrutural; dois campos alterados, igual ao número de edições intencionais; verificação de ida e volta bem-sucedida; apenas \arq{scormcontent/runtime-data.js} foi substituído, e as outras 76 entradas do pacote mantiveram o tamanho; o pacote original não foi alterado.
+\item \textbf{Não executado}: o teste visual em navegador (fase 8, opcional).
+\item \textbf{Saída}: \arq{chatgpt-word-essentials-scorm12-bMZw5g3l-REVISADO.zip} e \arq{Relatorio\_Edicao\_Licoes.md}.
+\end{itemize}
+
+\subsection{Lições aprendidas}\label{sec:licoes}
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{A divergência factual nasceu na camada de montagem, e não no Rise.} O roteiro final indica ``Plus e Pro''; o roteiro Articulate, gerado na fase 7 da skill de criação, já trazia ``Free, Go, Plus e Pro'', e o Rise apenas reproduziu o dado. A revisão contra o roteiro final -- e não contra o roteiro Articulate -- foi o que detectou a diferença. Recomenda-se incluir no marco 8 da skill a conferência de que os dados factuais do roteiro Articulate coincidem com os do roteiro final.
+
+\item \textbf{O mesmo dado difere entre as trilhas.} O roteiro Hands-on e sua versão Articulate trazem ``Free, Go, Plus, Pro''. Qual das redações está correta só se decide pela validação da pendência correspondente; até lá, as duas trilhas afirmam coisas diferentes, e a correção precisará ser aplicada em ambas.
+
+\item \textbf{Os marcadores de lição não garantem a estrutura.} Seis módulos marcados resultaram em três lições e um quiz. A revisão lidou com o mapeamento entre lições e módulos, mas decisões de estrutura só podem ser tomadas na Etapa 4.
+
+\item \textbf{A validação das pendências ficou para depois.} O relatório de edição ainda recomendava conferir, antes da publicação, a tabela de uso de conteúdo por plano. Não há registro de que as pendências tenham sido conferidas antes da geração no Rise -- o que motiva, nesta versão, a Etapa 3 antes da geração.
+
+\item \textbf{O relatório de edição também exige leitura crítica.} O relatório menciona ``11 questões'' e, na mesma frase, detalha três, três, duas e oito -- dezesseis, número confirmado por contagem nos arquivos das lições. O erro é de redação e não afetou o pacote, mas mostra que a aprovação não pode se apoiar apenas no resumo gerado pela skill.
+\end{enumerate}
+
+% -------------------------------------------------
+\section{Registro de Versões}
+% -------------------------------------------------
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.09\textwidth}L{0.15\textwidth}L{0.53\textwidth}L{0.15\textwidth}@{}}
+\toprule
+\textbf{Versão} & \textbf{Data} & \textbf{Alteração} & \textbf{Responsável} \\
+\midrule
+\endhead
+1.0 & \pendente{inserir data} & Criação inicial do relatório do fluxo (\textit{pipeline} manual). & João Victor \\
+\addlinespace
+2.0 & 27/09/2026 & Reestruturação para a \textit{pipeline} baseada nas skills \skill{criar-ementa-curso} e \skill{revisar-curso-scorm}; \textit{pipeline} manual resumida no Apêndice A; capturas de tela removidas; correções técnicas; inclusão do caso de aplicação ChatGPT no Word. & João Victor \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+% -------------------------------------------------
+\section{Conclusão}
+% -------------------------------------------------
+
+A \textit{pipeline} atual reduz a intervenção manual às decisões que exigem julgamento: o que ensinar, com base em quais fontes, se o curso gerado pelo Rise 360 é aceitável e se pode ser publicado. O trabalho repetitivo e sujeito a erro -- escrever, auditar, cronometrar, preparar os roteiros de montagem, desserializar, validar e reempacotar -- está codificado nas skills, com verificações que interrompem o processo quando algo não confere.
+
+Permanecem como pontos de atenção a IA do Rise 360, que não segue integralmente as instruções de montagem, e a validação factual, que continua humana. A principal cautela segue a mesma da versão 1.0 -- separar o conteúdo editável da estrutura técnica --, agora garantida por verificação automática, e não apenas pela disciplina de quem opera o processo.
+
+% -------------------------------------------------
+% APÊNDICES
+% -------------------------------------------------
+\clearpage
+\phantomsection
+\section*{Apêndice A -- Pipeline Manual da Versão 1.0 (Resumo)}
+\addcontentsline{toc}{section}{Apêndice A -- Pipeline Manual da Versão 1.0 (Resumo)}
+
+Registro resumido da \textit{pipeline} documentada na versão 1.0 deste relatório, anterior às skills. É mantido como referência histórica. As capturas de tela da versão 1.0 foram removidas.
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}C{0.05\textwidth}L{0.28\textwidth}L{0.61\textwidth}@{}}
+\toprule
+\textbf{\#} & \textbf{Etapa} & \textbf{Execução na versão 1.0} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+1 & Conversão do plano de aula em roteiro & LLM de propósito geral com \textit{prompt} de conversão; o plano de aula (\arq{plano\_de\_aula\_xxx.md}) era insumo externo e resultava em \arq{ROTEIRO\_xxx.md}. \\
+\addlinespace
+2 & Carregar \textit{prompt} e roteiro no Articulate & \arq{promptArticulate.md} e roteiro inseridos na criação com IA do Rise 360. \\
+\addlinespace
+3 & Gerar o curso & Rise 360 AI. \\
+\addlinespace
+4 & Verificação visual mínima & Idioma, título, lições, blocos, elementos interativos e ausência de instruções visíveis. \\
+\addlinespace
+5 & Gerar o SCORM & \textit{Publish} \flecha{} LMS \flecha{} SCORM 1.2 \flecha{} \textit{Download}; pacote salvo na pasta do projeto. \\
+\addlinespace
+6 & Desserializar e separar em lições & Localizar manualmente a função \arq{\_\_fetchCourse()} no \arq{index.html}, copiar o conteúdo serializado para o \arq{desserialize.py}, ajustar nomes e sintaxe, executar, separar as lições com o \arq{lessonExtracter.py} e mover os JSON para \arq{cursos\_desserializados/}. \\
+\addlinespace
+7 & Avaliar a estrutura de blocos & Decisão manual: aprovada, aprovada com ressalvas ou reprovada. \\
+\addlinespace
+8 & Retorno & Nova exportação do SCORM a partir da versão ajustada. \\
+\addlinespace
+9 & Revisão assistida & Claude Code com o roteiro, os JSON das lições e o \arq{promptRevisaoPorClaude.md}. \\
+\addlinespace
+10 & Reserializar e validar & \arq{serialize.py} gerava o \arq{NomeCurso\_base64\_editado.txt}; o conteúdo era colado manualmente no argumento de \arq{deserialize()} no \arq{index.html}, e o arquivo era aberto no navegador. \\
+\addlinespace
+11 & Encerramento & Arquivamento de plano de aula, roteiro, \textit{prompts}, SCORM inicial, JSON revisado e SCORM final. \\
+\end{longtable}
+\endgroup
+
+\subsection*{Limitações que motivaram a substituição}
+
+\begin{itemize}[leftmargin=*]
+\item Cópia e colagem manual de cadeias Base64 extensas, sem verificação automática de integridade.
+\item Pressuposição de um único formato de pacote (\arq{index.html}), quando as exportações atuais usam \arq{runtime-data.js}.
+\item Teste final baseado em abrir o \arq{index.html} no navegador, o que não funciona com os pacotes atuais.
+\item Scripts com caminhos fixos de cursos anteriores, com risco de processar o curso errado.
+\item Ausência de trava contra sobrescrever um curso com o conteúdo de outro -- houve caso real, que passou dias despercebido.
+\item Plano de aula e roteiro produzidos fora da \textit{pipeline}, sem auditoria crítica nem cálculo de carga horária documentados.
+\end{itemize}
+
+A skill de revisão continua gerando o arquivo Base64 editado; se necessário, a colagem manual no pacote prevista na versão 1.0 ainda é possível.
+
+\clearpage
+\phantomsection
+\section*{Apêndice B -- Referência Rápida}
+\addcontentsline{toc}{section}{Apêndice B -- Referência Rápida}
+
+\subsection*{Acionamento das skills no Claude Code}
+
+\begingroup\small\setstretch{1}
+\begin{verbatim}
+/criar-ementa-curso <tema do curso>
+/revisar-curso-scorm <pacote .zip do curso>
+\end{verbatim}
+\endgroup
+
+As skills também são acionadas por pedidos em linguagem natural, como ``monta um curso de Excel para professores'' ou ``revisa esse pacote SCORM''.
+
+\subsection*{Scripts da skill de revisão}
+
+A skill executa os comandos abaixo; eles são listados para auditoria ou execução manual. \texttt{<skill>} corresponde à pasta \arq{.claude\textbackslash skills\textbackslash revisar-curso-scorm} do perfil do usuário. Cada comando é digitado em uma única linha; as linhas recuadas são apenas quebras tipográficas.
+
+\begingroup\small\setstretch{1}
+\begin{verbatim}
+python <skill>/scripts/scorm_extrair.py PACOTE.zip --so-inspecionar
+
+python <skill>/scripts/scorm_extrair.py PACOTE.zip
+    --saida curso<Nome>.json --titulo-esperado "Titulo exato"
+
+python <skill>/scripts/validar_estrutura.py curso<Nome>.json
+    licoes_extraidas_<Nome>/
+
+python <skill>/scripts/scorm_reempacotar.py curso<Nome>.json
+    licoes_extraidas_<Nome>/
+    --base64-saida curso<Nome>_editado_base64.txt
+    --json-saida curso<Nome>_editado.json
+    --pacote-original PACOTE.zip
+    --pacote-saida PACOTE-REVISADO.zip
+\end{verbatim}
+\endgroup
+
+\subsection*{Conteúdo das skills}
+
+\begingroup\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}L{0.52\textwidth}L{0.42\textwidth}@{}}
+\toprule
+\textbf{Arquivo} & \textbf{Função} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\multicolumn{2}{@{}l}{\textbf{\skill{criar-ementa-curso}}} \\
+\arq{SKILL.md} & Instruções das fases 0 a 7 e armadilhas conhecidas \\
+\arq{referencias/modelo-essentials.md} & Modelo da trilha Essentials \\
+\arq{referencias/modelo-hands-on.md} & Modelo da trilha Hands-on \\
+\arq{referencias/prompt-analise-critica.md} & Auditoria crítica (fase 2) \\
+\arq{referencias/prompt-reformulacao.md} & Roteiro final (fase 3) \\
+\arq{referencias/prompt-carga-horaria.md} & Cálculo da carga horária (fase 4) \\
+\arq{referencias/tabela-tempo-atividade.md} & Tabela MET \\
+\arq{referencias/modelo-ementa.md} & Modelo da ementa (fase 5) \\
+\arq{referencias/checklist-marcos.md} & Marcos de verificação (fase 6) \\
+\arq{referencias/articulate-essentials.md} & \textit{Prompt}-mestre Articulate, trilha Essentials (fase 7) \\
+\arq{referencias/articulate-hands-on.md} & \textit{Prompt}-mestre Articulate, trilha Hands-on (fase 7) \\
+\addlinespace
+\multicolumn{2}{@{}l}{\textbf{\skill{revisar-curso-scorm}}} \\
+\arq{SKILL.md} & Instruções das fases 1 a 9 e armadilhas conhecidas \\
+\arq{scripts/scorm\_extrair.py} & Extração e desserialização do pacote \\
+\arq{scripts/validar\_estrutura.py} & Validação estrutural nó a nó \\
+\arq{scripts/scorm\_reempacotar.py} & Serialização e reempacotamento \\
+\addlinespace
+\multicolumn{2}{@{}l}{\textbf{Arquivos do projeto usados na pipeline}} \\
+\arq{promptArticulate.md} & \textit{Prompt} de execução inserido no Rise 360 (Etapa 4) \\
+\arq{promptRevisaoPorClaude.md} & Regras de edição lidas pela skill de revisão (Etapa 5) \\
+\arq{lessonExtracter.py} & Separação em lições, quando presente na pasta do curso \\
+\end{longtable}
+\endgroup
+
+\end{document}
