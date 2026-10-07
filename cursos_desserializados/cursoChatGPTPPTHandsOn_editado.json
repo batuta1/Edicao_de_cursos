@@ -1,0 +1,2763 @@
+{
+  "course": {
+    "description": "<div data-editor-id=\"2e694c8d-1a10-42c5-b447-0cc7e9b31550\"><p>Já imaginou montar uma apresentação de slides completa a partir de um texto longo em poucos minutos? Neste curso prático, você vai descobrir como integrar o ChatGPT ao PowerPoint para transformar materiais acadêmicos existentes em apresentações personalizadas para diferentes públicos e situações. Aprenda a instalar e configurar o suplemento, adaptar conteúdos extensos em slides claros e estruturados, ajustar apresentações para contextos variados e garantir a revisão e integridade das informações. Prepare-se para dominar uma ferramenta que otimiza seu tempo e potencializa suas apresentações acadêmicas.</p></div>",
+    "lessons": [
+      {
+        "description": "",
+        "id": "ef7ce01b-0924-46f1-a01f-663299925716",
+        "items": [
+          {
+            "id": "ww8i5m42d86w7w8jf5cxv8n6",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ck5c3g3p71iy5imf7o3440sw",
+                "heading": "Antes de arregaçar as mangas",
+                "paragraph": "<p>Este curso é mão na massa. Você vai instalar o ChatGPT dentro do PowerPoint e passar as próximas duas horas transformando material que já está no seu computador em slides. No fim, vai ter uma aula inteira montada a partir de material que já existia, em duas versões, para dois públicos.</p><p>Esta lição reúne as duas primeiras oficinas. A Oficina 0 leva cinco minutos e descobre se você pode instalar, quem consegue ler o conteúdo dos seus slides e quanto isso consome do seu plano. A Oficina 1 instala o suplemento e dá o primeiro comando numa apresentação vazia. Faça a Oficina 0 primeiro: ela pode te poupar o curso inteiro se a instalação estiver bloqueada na sua instituição.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "4bd7167b-d502-4a5c-9b80-5f871217b272"
+          },
+          {
+            "id": "u5qee11b0aaxg67jnme1gyx0",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "yvjydfcnp16w8shkpvmu2p3p",
+                "paragraph": "<p>O que você precisa ter aberto agora:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "e8c6a95f-cb7d-42a6-9f5a-103126144c8e"
+          },
+          {
+            "id": "czic5r6qzq7afmceiy06cfu1",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "c00xcaf308yk692b79wocowt",
+                "number": "1",
+                "paragraph": "<p>O Microsoft PowerPoint.</p>"
+              },
+              {
+                "id": "beiv85luir2v0118o3z32264",
+                "number": "2",
+                "paragraph": "<p>Um documento seu que possa virar apresentação: um artigo, um capítulo, um plano de ensino.</p>"
+              },
+              {
+                "id": "kkpg3tp22z4vyjlo60tsgm9m",
+                "number": "3",
+                "paragraph": "<p>Uma apresentação sua que já use o tema institucional.</p>"
+              },
+              {
+                "id": "qw63iupjxy78bl46isjasivk",
+                "number": "4",
+                "paragraph": "<p>Uma conta do ChatGPT, conectada no navegador.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "57ecfaaf-939b-4c73-a638-5d6b7d687f38"
+          },
+          {
+            "id": "54a1451b-fe5e-46da-99bf-b64ff763a6d9",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "6069a904-02f8-4df6-8319-245d4da68d91",
+                "paragraph": "<p>🔑 Regra de ouro: o ChatGPT pode editar e apagar coisas nos seus slides — quem diz isso é a própria OpenAI. Você trabalha em cópia. Sempre. A Oficina 0 faz isso com você.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "54873cb9-9def-4dad-80a3-be1d7de68e15"
+          },
+          {
+            "id": "4f678cbe-51da-4b7c-a693-c12e5fddebb7",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "c7605b80-77eb-4342-abd7-6387ff2d3a39",
+                "type": "intro",
+                "title": "Oficina 0 — Cinco minutos antes de instalar",
+                "isHidden": false,
+                "description": "<p>Você está prestes a instalar um programa dentro do PowerPoint da sua universidade e a mandar para ele o conteúdo dos seus slides. Vale cinco minutos para descobrir três coisas: se você tem permissão de instalar, quem consegue ler esse conteúdo, e quanto isso consome do seu plano.</p>"
+              },
+              {
+                "id": "8d8b23be-bc09-4121-839f-d9facdc51bc8",
+                "type": "summary",
+                "title": "O que você resolveu",
+                "isHidden": false,
+                "description": "<p>Você sabe quem lê o que você envia, o que não entra na apresentação, quanto custa cada pedido e se a instalação é possível no seu computador. E tem na pasta os dois arquivos que protegem o seu material: a apresentação de teste e a cópia de trabalho.</p>"
+              },
+              {
+                "id": "f1c23d41-d167-47e2-a430-0d755cb9095d",
+                "type": "step",
+                "title": "Saiba quem lê",
+                "isHidden": false,
+                "description": "<p>O ChatGPT para PowerPoint roda dentro do PowerPoint da Microsoft. Pelos Termos de Serviço do Marketplace de Suplementos, a Microsoft pode ler o conteúdo dos seus arquivos. Somando o processamento da OpenAI, o arquivo passa por duas empresas. E não vai só o slide: a cada pedido, a OpenAI processa o que você digitou, o conteúdo da apresentação, os anexos que você mandou e o contexto de apps conectados, se houver. Uma conta pessoal gratuita e uma conta institucional não tratam esses dados da mesma forma.</p>"
+              },
+              {
+                "id": "1b04db2a-d3a8-4270-8aaa-b7ca5a8e1ba6",
+                "type": "step",
+                "title": "Decida o que não vai entrar",
+                "isHidden": false,
+                "description": "<p>Antes de qualquer pedido, decida o que fica de fora. A lista do que nunca entra está logo abaixo desta sequência e vale para todo arquivo que você abrir com o suplemento.</p>"
+              },
+              {
+                "id": "a34e7913-bf9e-46b8-94e3-628cf729e4a4",
+                "type": "step",
+                "title": "Descubra o que custa",
+                "isHidden": false,
+                "description": "<p>Veja o seu plano em ChatGPT &gt; Menu de perfil &gt; Configurações &gt; Conta e encontre a sua linha na tabela de planos, logo abaixo. Uma mensagem típica consome de 10 a 50 créditos; apresentação grande e edição em várias etapas consomem mais. A cota é a mesma do ChatGPT para Excel e de outros recursos de agente: se você usa os dois suplementos, tudo sai do mesmo saldo. Não planeje a aula de amanhã contando com uma cota que pode acabar hoje.</p>"
+              },
+              {
+                "id": "78593a20-2d0c-47e3-a68f-448cc2c26ccf",
+                "type": "step",
+                "title": "Teste a permissão de instalação",
+                "isHidden": false,
+                "description": "<p>Vá em PowerPoint &gt; Página Inicial (Home) &gt; Suplementos (Add-ins) e pesquise por ChatGPT. Se o seu Office estiver em inglês, os nomes são os que estão entre parênteses. Três coisas podem acontecer agora, e uma quarta só aparece na Oficina 1. Os desfechos e o que fazer em cada um estão logo abaixo desta sequência.</p>"
+              },
+              {
+                "id": "c4d7db2e-708c-473c-9c30-3531c64e0107",
+                "type": "step",
+                "title": "Crie uma apresentação de teste",
+                "isHidden": false,
+                "description": "<p>Crie uma apresentação nova, vazia, e salve como teste-chatgpt.pptx. É nela que você vai dar o primeiro comando na Oficina 1, nunca num arquivo real.</p>"
+              },
+              {
+                "id": "e2573ae4-dbcc-48d5-9656-a8d7e5572d13",
+                "type": "step",
+                "title": "Crie a cópia de trabalho",
+                "isHidden": false,
+                "description": "<p>Abra a apresentação sua que usa o tema institucional, vá em PowerPoint &gt; Arquivo &gt; Salvar como, acrescente -copia-curso ao nome, salve e feche a original. Daqui em diante você trabalha na cópia; o original fica intacto, como garantia.</p>"
+              },
+              {
+                "id": "562c6ee0-b6e0-4d18-be44-cb33dedcfe28",
+                "type": "step",
+                "title": "Responda para si",
+                "isHidden": false,
+                "description": "<p>Antes de usar isso em material oficial: a sua universidade tem norma sobre uso de IA em material didático? Se você usar, precisa declarar, e uma banca, um congresso e um relatório de fomento podem exigir coisas diferentes? O que você vai dizer aos alunos, que têm a mesma ferramenta para os seminários deles?</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "34d2d6d5-e700-4642-8437-b64ee0436d59"
+          },
+          {
+            "id": "y083bgsc6rdad6okcmsfow29",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "kzcjjl05d8scuosqzmmc2dgo",
+                "paragraph": "<p>Nada disto entra numa apresentação que você submete ao suplemento:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "a7e83f31-8812-434e-a015-8b5055efd5c2"
+          },
+          {
+            "id": "ok7ui8nx1q66xr501eutm1aa",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "u1sctp0ytcebok28gxltz7yj",
+                "number": "1",
+                "paragraph": "<p>Nome de aluno associado a nota, frequência ou ocorrência</p>"
+              },
+              {
+                "id": "lyl8iqkjzsbzj93oobtv8nsq",
+                "number": "2",
+                "paragraph": "<p>Resultado de pesquisa ainda não publicado</p>"
+              },
+              {
+                "id": "o29dpmxrcza81x6paxcuds21",
+                "number": "3",
+                "paragraph": "<p>Conteúdo de parecer sigiloso</p>"
+              },
+              {
+                "id": "du625lf85e5337slduzme6mi",
+                "number": "4",
+                "paragraph": "<p>Qualquer coisa coberta por acordo de confidencialidade</p>"
+              },
+              {
+                "id": "tm155l2zhk16kxefrvjb76j9",
+                "number": "5",
+                "paragraph": "<p>Dado pessoal de terceiro coletado em pesquisa</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "e6f31c62-7622-45ea-948b-78e97b30c5b8"
+          },
+          {
+            "id": "ssfx4in6daumh5ovipj1ebkw",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "wqrvxe8c7iwoix9rwxkubtd0",
+                "heading": "Quanto custa: a sua linha na tabela de planos",
+                "paragraph": "<p>O acesso existe em todos os planos, mas não nas mesmas condições:</p><ul><li><strong>Free</strong> e <strong>Go</strong>: uso limitado.</li><li><strong>Plus</strong>, <strong>Pro</strong> e <strong>Business</strong>: sujeito ao limite de uso com agentes de IA do plano.</li><li><strong>Business</strong>, <strong>Enterprise</strong> e <strong>Edu</strong>: debitado do saldo de créditos compartilhado do espaço de trabalho.</li></ul><p>Valores conferidos na documentação oficial em 7 de outubro de 2026. Isso muda com frequência: confira na sua conta.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "fedba92b-ce37-4ce6-ac42-ff37c7d0ee6b"
+          },
+          {
+            "id": "j8v1v5sdpdji4wzj56x5zd8x",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ff064hsquarncub342b2zceh",
+                "heading": "O que aconteceu no passo 4",
+                "paragraph": "<p><strong>A loja abriu e dá para adicionar:</strong> você pode instalar. Siga para a Oficina 1.</p><p><strong>Abriu, mas a adição está bloqueada ou pede autorização:</strong> você precisa do administrador do Microsoft 365. Peça a ele a implantação do suplemento pelo arquivo XML de manifesto e volte quando estiver feita.</p><p><strong>A loja não abre ou o recurso não existe:</strong> a instituição bloqueou. Este curso não vai funcionar no seu computador; veja o aviso abaixo.</p><p><strong>(Na Oficina 1) Instalou, mas a sua conta não tem acesso:</strong> o recurso não está liberado para a sua conta. Confira o plano; se a conta for institucional, peça a habilitação a quem administra o espaço de trabalho do ChatGPT; se nada resolver, pode ser liberação gradual, e vale tentar de novo depois.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "82e7a425-3911-4bd3-9a22-32752264533a"
+          },
+          {
+            "id": "a4623434-d176-4f88-8beb-b6ce88cf4212",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "e43509ed-1dfd-4021-8d4d-0f327bf77ea6",
+                "paragraph": "<p><strong>Dica:</strong> Na universidade, quase sempre são duas pessoas diferentes. Quem cuida do Microsoft 365 libera a instalação do suplemento. Quem administra a conta institucional do ChatGPT libera o uso do recurso. Mandar o pedido para a pessoa errada é o jeito mais comum de esperar uma semana à toa.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "d3840f3d-5d97-4122-b599-36a6c900f8f3"
+          },
+          {
+            "id": "b1531838-085d-423d-b93a-d2b04f68650c",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "e5a498cf-8985-4743-953a-cfd39f8c49b1",
+                "paragraph": "<p><strong>Se a instalação estiver bloqueada.</strong> Sem o suplemento, não há como fazer este curso — ele depende inteiramente da barra lateral dentro do PowerPoint. A alternativa honesta é o curso irmão ChatGPT no Word, cujo fluxo principal é copiar e colar entre o navegador e o documento, e funciona em qualquer ambiente, sem instalar nada. As habilidades de formular instruções são as mesmas, e você pode aplicá-las depois em slides feitos à mão.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "6666069c-07de-4484-96f9-249385420c7a"
+          },
+          {
+            "id": "a0f810bd-e7bf-4e25-b85c-b04852ed240e",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "25792396-282d-4619-afe7-c51075f50241",
+                "paragraph": "<p>🏁 Ponto de controle: Em <strong>Explorador de Arquivos &gt; sua pasta</strong> há três arquivos — a apresentação original, a cópia com sufixo <em>-copia-curso</em>, e <em>teste-chatgpt.pptx</em>. Além disso, você sabe dizer qual dos três desfechos do passo 4 você obteve.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "6d01cec6-5f58-4e2b-92c7-9c505fa96eb5"
+          },
+          {
+            "id": "559148f8-c06a-4051-b315-2d192db31359",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "e18ab315-4305-448a-b90e-d143b644e5de",
+                "paragraph": "<p>⚠️ Cuidado: não pule os passos 5 e 6. As oficinas seguintes editam arquivos de verdade, e o sistema pode apagar conteúdo. A cópia é o que separa \"experimentei\" de \"perdi a aula\".</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "b207cba4-77d6-46ec-aa08-23bd9d31bcab"
+          },
+          {
+            "id": "kryvuxahbcvxoz1whht1knn0",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "f663il7b9s2thy7o2c3odz5u",
+                "heading": "Se travar na Oficina 0",
+                "paragraph": "<p>Abra o problema que apareceu para ver o que fazer:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "ff3df9c5-5126-416e-b451-a5aad2c80e8f"
+          },
+          {
+            "id": "c08a0e48-e79b-4114-85dd-521121e51f9c",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "eff64ff9-ebbc-4d5c-b9c3-f2aef3d36ba0",
+                "title": "Não encontro Suplementos na Página Inicial",
+                "description": "<p>Sua versão do PowerPoint pode ser antiga demais para suportar suplementos do Office. Confira em PowerPoint &gt; Arquivo &gt; Conta.</p>"
+              },
+              {
+                "id": "33b1a49d-bd38-474e-b825-c0c3d8880d6d",
+                "title": "Não sei qual é o meu plano",
+                "description": "<p>Você pode ter duas contas — a institucional e a pessoal. Confira com qual e-mail está conectado.</p>"
+              },
+              {
+                "id": "a54abb21-f969-46f1-ad85-b0d9afec88eb",
+                "title": "A loja abre mas não acha o ChatGPT",
+                "description": "<p>Pode ser bloqueio por política, ou indisponibilidade regional. Trate como o terceiro desfecho do passo 4.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "f2e59b37-b03c-489a-a20f-a34830876eaa"
+          },
+          {
+            "id": "38bbfa89-3b3f-4f36-8b1d-08d673f04089",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "e5213dd8-42db-48c2-aac7-631905697973",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "b9abf85a-b4b0-440e-bfe5-e88c0a388beb"
+          },
+          {
+            "id": "y44pxpkil5o39fte1aokchmy",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "lkoq9g7opz9pz96pl2j0wdkp",
+                "heading": "Oficina 1 — Botar o ChatGPT dentro do PowerPoint",
+                "paragraph": "Você ouviu falar que dá para usar o ChatGPT dentro do PowerPoint, mas não faz ideia de onde isso fica. Nesta oficina você instala, conecta a conta e dá o primeiro comando, numa apresentação vazia, onde não há nada a perder. Vai precisar do PowerPoint aberto, da apresentação teste-chatgpt.pptx criada na Oficina 0 e da sua conta do ChatGPT."
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "7531ac3b-c7d3-402a-91ef-f139fa00b349"
+          },
+          {
+            "id": "12e67a72-b3bb-4c7b-89c4-8bbd486e0596",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "36d05ea7-8936-498c-b854-a435127506a6",
+                "type": "intro",
+                "title": "Instalar, conectar e dar o primeiro comando",
+                "isHidden": false,
+                "description": "<p>Oito passos, todos na apresentação de teste. Ao final, a barra lateral do ChatGPT vai estar aberta e você vai saber onde ficam as Skills.</p>"
+              },
+              {
+                "id": "dc5bc55a-add6-4be0-8b50-829a095e7aa2",
+                "type": "summary",
+                "title": "O que você resolveu",
+                "isHidden": false,
+                "description": "<p>O suplemento está instalado e conectado à conta certa, o primeiro comando funcionou e você sabe onde ficam as Skills. Tudo isso sem arriscar nenhum arquivo real.</p>"
+              },
+              {
+                "id": "6c2a0a30-5b2d-4e4d-bd67-5a9183a2e595",
+                "type": "step",
+                "title": "Abra a apresentação de teste",
+                "isHidden": false,
+                "description": "<p>Abra o arquivo <strong>teste-chatgpt.pptx</strong>. Não abra material real ainda.</p>"
+              },
+              {
+                "id": "21e883ab-539d-432c-ae22-be33b3a22d29",
+                "type": "step",
+                "title": "Acesse os suplementos no PowerPoint",
+                "isHidden": false,
+                "description": "<p>No PowerPoint, vá até <strong>Página Inicial (Home)</strong> e selecione <strong>Suplementos (Add-ins)</strong>.</p>"
+              },
+              {
+                "id": "9abcc55f-c998-4015-a3fc-1e5906c27ae3",
+                "type": "step",
+                "title": "Procure e adicione o ChatGPT",
+                "isHidden": false,
+                "description": "<p>Pesquise por <strong>ChatGPT</strong> na loja de suplementos e clique em <strong>Adicionar</strong> para instalar.</p>"
+              },
+              {
+                "id": "4061aae0-bb11-476a-87ee-25e9062e2bf7",
+                "type": "step",
+                "title": "Abra o ChatGPT na faixa de opções",
+                "isHidden": false,
+                "description": "<p>No PowerPoint, acesse a <strong>faixa de opções</strong> e clique em <strong>ChatGPT</strong>. O suplemento aparecerá como uma barra lateral à direita.</p>"
+              },
+              {
+                "id": "a7a71678-659b-4123-8fb7-1b50203c2065",
+                "type": "step",
+                "title": "Conecte sua conta do ChatGPT",
+                "isHidden": false,
+                "description": "<p>Entre com a sua conta do ChatGPT: aquela que tem o plano que você identificou na Oficina 0.</p>"
+              },
+              {
+                "id": "dbf76d2a-81cc-43af-9023-e30978aa723c",
+                "type": "step",
+                "title": "Dê o primeiro comando",
+                "isHidden": false,
+                "description": "<p>Na apresentação de teste, digite o seguinte comando:<br>Crie um slide de título com o texto \"Teste\" e um subtítulo com a data de hoje.</p>"
+              },
+              {
+                "id": "7eca0049-5f02-4de7-b311-ba643ac09044",
+                "type": "step",
+                "title": "Verifique o resultado",
+                "isHidden": false,
+                "description": "<p>Confira se o slide foi criado conforme solicitado.</p>"
+              },
+              {
+                "id": "ff5d0fa5-f415-4907-aa4a-f6fc2d20224d",
+                "type": "step",
+                "title": "Localize as Skills disponíveis",
+                "isHidden": false,
+                "description": "<p>Vá em PowerPoint &gt; barra lateral do ChatGPT &gt; <strong>símbolo de adição</strong> e veja quais Skills estão disponíveis na sua conta. Você vai voltar a elas depois; por ora, só localize onde ficam.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "c971783b-5612-4e13-a1ba-3d441d83920c"
+          },
+          {
+            "id": "601d03ac-4573-441e-a5f5-21697f8ff9de",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "aca63c89-4d3a-43b1-8d47-8bcd4c1c25c4",
+                "paragraph": "<p><strong>Ponto de controle:</strong> A barra lateral está visível em PowerPoint &gt; faixa de opções &gt; ChatGPT, a apresentação de teste tem o slide que você pediu, e você sabe onde fica o acesso às Skills. Tudo isso aconteceu num arquivo de teste, não no seu material.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "8db22541-1023-4b37-9628-431beaeb9170"
+          },
+          {
+            "id": "34519d09-e92e-4bc4-97f3-9fc1283f156e",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "b01d61ab-5bce-414c-9ce8-af0dcc5e14cb",
+                "paragraph": "<p>⚠️ Cuidado: repare que você só usou a apresentação de teste. Foi de propósito. Da Oficina 2 em diante você trabalha nas cópias, nunca nos originais.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "b0ee59cf-253a-4d29-91a1-3e9de10f1fde"
+          },
+          {
+            "id": "utzzcgwj6l4ouricz2b37n47",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ohi77z3hyesv5nubmuqv2lkm",
+                "heading": "Se travar na Oficina 1",
+                "paragraph": "<p>Cada problema abaixo tem um destinatário diferente. Abra o que apareceu para você:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "eec74eec-802f-456d-a882-d7730ea99e71"
+          },
+          {
+            "id": "4f955112-3ea6-4d95-8d6c-5e8fba976518",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "09b2d3bb-d09c-4e79-a080-e346e277ff06",
+                "title": "\"Não foi possível iniciar este suplemento\"",
+                "description": "<p>Erro conhecido de login unificado (SSO) no Office para Windows. Feche a caixa e tente entrar pelo navegador. Se persistir, não tem conserto do seu lado: abra um chamado para o administrador global do ambiente Microsoft da instituição, pedindo que ele pegue o endereço ACS atual em Portal de administração da OpenAI &gt; Identidade &gt; SSO &gt; Gerenciar SSO, atualize o aplicativo da OpenAI no provedor de identidade e deixe esse endereço como padrão. Copie essa frase no chamado.</p>"
+              },
+              {
+                "id": "26dbe98d-2e68-45fe-a942-68d452f065a3",
+                "title": "Instalou mas não aceita a minha conta",
+                "description": "<p>Primeiro, confira se você está entrando com a conta ChatGPT certa — é comum ter uma pessoal e uma institucional abertas ao mesmo tempo. Se a conta está certa, é o quarto desfecho da Oficina 0: o recurso não foi habilitado no espaço de trabalho do ChatGPT, ou ainda não chegou à sua conta. Peça a quem administra a conta institucional do ChatGPT, não à TI do Office.</p>"
+              },
+              {
+                "id": "dc173b69-af96-4dfe-ab53-8a971621e60c",
+                "title": "A barra lateral abre em branco",
+                "description": "<p>Feche e reabra o PowerPoint. Se continuar, confira a conexão de internet — o suplemento não funciona offline.</p>"
+              },
+              {
+                "id": "55703c2c-7bb9-421c-97ff-6ee92991b34b",
+                "title": "Não achei as Skills",
+                "description": "<p>Nem toda conta tem Skills disponíveis. Depende do plano, do espaço de trabalho e das permissões. Não é falha sua.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "08a9bdf3-3b46-4844-abb6-042ea01e4e7c"
+          },
+          {
+            "id": "75b6d85d-b816-4a43-b22b-a14af5f2759c",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "9e41b452-30c8-4ba7-b0d2-16fa9f3a01cf",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Por que é importante sempre trabalhar em cópias dos seus arquivos ao usar o ChatGPT no PowerPoint?",
+                "answers": [
+                  {
+                    "id": "ceae34ea-95c4-4414-bf48-5a816aa9c5be",
+                    "title": "Porque o ChatGPT pode editar ou apagar conteúdo dos slides originais",
+                    "correct": true,
+                    "feedback": "Esta é a resposta correta. O ChatGPT pode modificar ou excluir conteúdo dos slides originais, então trabalhar em cópias protege seu material original."
+                  },
+                  {
+                    "id": "a0c16757-41a7-4ce2-a093-35283ad84421",
+                    "title": "Porque o ChatGPT não funciona com arquivos originais",
+                    "correct": false,
+                    "feedback": "Incorreto. O suplemento funciona normalmente com arquivos originais, e é justamente por isso que o risco existe: ele pode editar ou apagar conteúdo."
+                  },
+                  {
+                    "id": "09bf8545-4518-403a-9868-c8473081f5e9",
+                    "title": "Porque cópias são mais rápidas de abrir",
+                    "correct": false,
+                    "feedback": "Incorreto. A velocidade de abertura não tem relação com o uso de cópias. O motivo é proteger o original de edições e exclusões feitas pelo sistema."
+                  },
+                  {
+                    "id": "ae1a75e5-18fe-4b39-801f-bf4098971b75",
+                    "title": "Porque o PowerPoint exige arquivos duplicados",
+                    "correct": false,
+                    "feedback": "Incorreto. O PowerPoint não exige duplicar arquivos. Trabalhar em cópia é uma regra deste curso, baseada no aviso da própria OpenAI de que o sistema pode editar e apagar conteúdo."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "be7b415c-a5b7-4005-880e-4d4ba3ecbc64"
+          },
+          {
+            "id": "elkcg9qe3opj5mb2g7tv81ir",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ebzym204wxclyeot5h24yo3f",
+                "paragraph": "<p>Ambiente pronto, suplemento instalado e primeiro comando dado, tudo sem tocar em material real. Na Oficina 2 você pega um texto longo, como aquele artigo de trinta páginas, e transforma numa aula de doze slides com o tema da sua universidade. Deixe à mão a cópia de trabalho e um documento de origem que você decidiu, na Oficina 0, que pode submeter.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "9a405237-f3d4-427b-833e-b9b8e07ef194"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Preparando o Ambiente e Instalando o ChatGPT no PowerPoint",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI",
+        "createdAt": "2026-10-07T16:07:58.220Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 0,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-10-07T16:08:39.607Z"
+      },
+      {
+        "description": "",
+        "id": "6ef57f58-52db-491c-8174-fd155223c43f",
+        "items": [
+          {
+            "id": "wi0prtjj2sossc28y9xsaguj",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "vnrnyjevvhe9xovomlw3yq1p",
+                "heading": "Oficina 2 — De um texto longo para uma aula",
+                "paragraph": "<p>Você tem um artigo de trinta páginas e precisa dar aula sobre ele na quinta-feira. Nesta oficina você transforma o texto em slides e resolve o problema que ninguém avisa: o resultado nem sempre respeita o modelo visual da sua universidade.</p><p>Vai precisar da cópia de trabalho criada na Oficina 0, que já tem o tema institucional, e de um documento de origem, daqueles que você decidiu, na Oficina 0, que pode submeter.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "3befc72b-2f8d-41b4-ba6f-78cbea67ada1"
+          },
+          {
+            "id": "nk63q26vtcn3x48i62mo02ki",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "rmg4l52htnber2yywru7u2l5",
+                "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "c45cf8e4-9ae6-4db0-9f06-9d85e6793d1b"
+          },
+          {
+            "id": "ubp3hu49dxndkwbvsiifc1eu",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "b02ubnezmfvn6y4r3cq2ptws",
+                "number": "1",
+                "paragraph": "<p>Pedir um rascunho declarando os quatro elementos: origem, estrutura, extensão e público.</p>"
+              },
+              {
+                "id": "au0qxuqafqi4mur0gsmln8lj",
+                "number": "2",
+                "paragraph": "<p>Partir de um arquivo com o tema institucional e reaplicar tema e layout quando o resultado sair do modelo.</p>"
+              },
+              {
+                "id": "y2emem822dbqc0ddartlpdeq",
+                "number": "3",
+                "paragraph": "<p>Conferir cada número, data e citação contra o material de origem e corrigir à mão o que estiver errado.</p>"
+              },
+              {
+                "id": "y0le41fbyf1w9ww8gm490btc",
+                "number": "4",
+                "paragraph": "<p>Resolver os problemas mais comuns do primeiro rascunho: número de slides errado, tema perdido, dado inventado e cota consumida.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "7418507a-a32d-4ffb-ade1-fab8d8ce72ee"
+          },
+          {
+            "id": "7ee47e01-51d6-4a8e-82a1-f62a5199b241",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "2d6b234e-b304-4ea8-9d8e-0654c01d5e55",
+                "type": "intro",
+                "title": "Do artigo ao rascunho de doze slides",
+                "isHidden": false,
+                "description": "<p>Sete passos, da cópia de trabalho esvaziada até a conferência dos dados. Você vai pedir, conferir e corrigir, nessa ordem.</p>"
+              },
+              {
+                "id": "53f44ec8-1387-4791-8f2b-0bdf3f966c0a",
+                "type": "summary",
+                "title": "Ponto de controle",
+                "isHidden": false,
+                "description": "<p>Em PowerPoint &gt; Exibir &gt; Modo de Exibição de Estrutura de Tópicos você vê doze slides com a estrutura que pediu. Em PowerPoint &gt; Exibir &gt; Classificação de Slides, todos estão com o tema institucional.</p>"
+              },
+              {
+                "id": "dd36b49c-ac48-4a71-9de5-a24170473dae",
+                "type": "step",
+                "title": "Não comece de uma apresentação em branco",
+                "isHidden": false,
+                "description": "<p>Abra a cópia de trabalho, que já tem o tema institucional, apague os slides de conteúdo e salve como aula-nova.pptx. O arquivo fica vazio, mas com o tema aplicado.</p>"
+              },
+              {
+                "id": "1b20283b-6ef2-4fe5-b6bc-9b5df529acae",
+                "type": "step",
+                "title": "Acessar o ChatGPT no PowerPoint",
+                "isHidden": false,
+                "description": "<p>Abra a barra lateral em PowerPoint &gt; faixa de opções &gt; ChatGPT.</p>"
+              },
+              {
+                "id": "227bc35d-382c-485e-aa47-a2a6172349dd",
+                "type": "step",
+                "title": "Solicitar o rascunho estruturado",
+                "isHidden": false,
+                "description": "<p>Peça o rascunho declarando os quatro elementos: origem, estrutura, extensão e público. Anexe o documento e envie:</p><p>Crie uma apresentação a partir do material anexado. Doze slides: um de abertura, três seções de conteúdo com três slides cada, um de discussão e um de fechamento. Público: alunos de graduação, primeiro contato com o tema. Mantenha o modelo e o estilo desta apresentação.</p>"
+              },
+              {
+                "id": "f044d788-87cc-4550-8308-fa82ee233c30",
+                "type": "step",
+                "title": "Revisar os slides gerados",
+                "isHidden": false,
+                "description": "<p>Espere a geração e percorra os slides no painel de miniaturas. Veja se a estrutura que você pediu foi respeitada.</p>"
+              },
+              {
+                "id": "659b79fb-fbb7-4db5-b2bb-4883c1e34ffe",
+                "type": "step",
+                "title": "Ajustar o tema e layout",
+                "isHidden": false,
+                "description": "<p>Se os slides não seguiram o modelo institucional, o que é uma limitação declarada pelo fabricante, reaplique o tema em PowerPoint &gt; Design &gt; Temas e ajuste os layouts divergentes em PowerPoint &gt; Página Inicial &gt; Layout.</p>"
+              },
+              {
+                "id": "5bc4ea98-a5cc-455b-aba7-17efc8313ad2",
+                "type": "step",
+                "title": "Validar dados e citações",
+                "isHidden": false,
+                "description": "<p>Cada número, data e citação que aparecer nos slides precisa estar no material de origem. Percorra um por um, com o documento aberto ao lado.</p>"
+              },
+              {
+                "id": "2ca9beb3-b9c5-4b36-8089-a237bc3bb1c8",
+                "type": "step",
+                "title": "Corrigir manualmente eventuais erros",
+                "isHidden": false,
+                "description": "<p>Corrija à mão o que estiver errado. Não peça ao sistema para corrigir o que ele inventou: ele pode inventar de novo.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "2aa3c826-3f0d-405a-9ed7-48423973a21f"
+          },
+          {
+            "id": "deaad6f6-8b61-4d17-b6ce-f2901f153f83",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "7f1b00e0-0cad-4405-8f90-fe3992b789c9",
+                "paragraph": "<p><strong>Dica:</strong> Declarar a estrutura (\"um de abertura, três seções com três slides cada\") funciona muito melhor do que só dizer o assunto. É a diferença entre um deck utilizável e uma pilha de tópicos.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "e615785e-f464-425e-9a91-b32eb60510ee"
+          },
+          {
+            "id": "uckianb3vwt5p6biapwiav4x",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "iemjbgq11wjvigxzbncgc95a",
+                "heading": "Se travar",
+                "paragraph": "<p>Abra o problema que apareceu para ver o que fazer:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "7c37f7ee-f394-4a88-bba1-fbd1eaef39ba"
+          },
+          {
+            "id": "a061584d-08d4-4125-9ec2-b035548e8679",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "b80498a9-bd6e-4d00-a4b2-4ebd34008348",
+                "title": "Número de slides incorreto",
+                "description": "<p>Se a apresentação veio com mais ou menos slides do que o solicitado, peça novamente especificando o número exato e oriente o que deve ser cortado ou detalhado.</p>"
+              },
+              {
+                "id": "157ec769-c368-4af7-8b27-2918a721b7cc",
+                "title": "Slides fora do modelo institucional",
+                "description": "<p>Limitação conhecida e declarada pelo fabricante. Reaplique o tema como no passo 5: PowerPoint &gt; Design &gt; Temas, e ajuste os layouts em PowerPoint &gt; Página Inicial &gt; Layout.</p>"
+              },
+              {
+                "id": "35d10e1f-974a-4df4-8531-25dcf6a40ed3",
+                "title": "Dados inventados ou imprecisos",
+                "description": "<p>Acontece e é previsível; é por isso que o passo de conferência dos dados existe. Remova ou corrija à mão, com base no artigo.</p>"
+              },
+              {
+                "id": "e4caa3fc-0c01-44bb-a89c-4f599a542097",
+                "title": "Consumo excessivo da cota",
+                "description": "<p>Se o processo consumir muito da sua cota de uso, divida a solicitação em duas partes: primeiro peça apenas a estrutura dos slides, depois solicite o conteúdo de cada seção.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "2908b71d-b464-4a44-bd26-f9a2555b404d"
+          },
+          {
+            "id": "wjg5883ab9zxorcsl8vrd270",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "xvhjdwhudxa3bonnbot1cjga",
+                "paragraph": "<p>Quer ir além? Os três desafios abaixo são opcionais e usam o mesmo material de origem:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "4b35ab2a-ea84-40d4-8b99-b4d7f3d50b1c"
+          },
+          {
+            "id": "vmz0ed0t0cm80di2rjpnujhk",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "xbrh5x1edbfwkndcklp4o6si",
+                "number": "1",
+                "paragraph": "<p><strong>Dois públicos, dois decks</strong><br>Peça a mesma apresentação para alunos e para colegas da área. Deu certo se: você aponta três slides que existem numa e não na outra.</p>"
+              },
+              {
+                "id": "splygdkupagxma226ax0ndk3",
+                "number": "2",
+                "paragraph": "<p><strong>Sem material de origem</strong><br>Peça a mesma aula só descrevendo o assunto, sem anexar nada, e compare. Deu certo se: você consegue dizer, concretamente, o que a fonte acrescentou.</p>"
+              },
+              {
+                "id": "zelcp57ttqvxqc2hwalc411r",
+                "number": "3",
+                "paragraph": "<p><strong>A aula de cinco minutos</strong><br>Peça a versão de cinco slides do mesmo material. Deu certo se: os cinco slides ainda contam a história inteira.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "75fa6878-77e1-4dc3-8c6d-47753d7a39d9"
+          },
+          {
+            "id": "debq84w2l9lyyfsvs1fdtf3j",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "d4426ywexcd1b99efry0q1bu",
+                "heading": "Antes de mexer no rascunho",
+                "paragraph": "<p>Os doze slides são ponto de partida, não aula pronta. A partir da próxima oficina você vai editar esse material, e cada edição precisa proteger o que já foi conferido. Por isso, antes de seguir, garanta duas coisas: os números e as citações já passaram pela conferência contra o artigo, e a aula-nova.pptx está salva, separada da cópia de trabalho.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "c6307714-bf93-487c-b7c9-f1b8e550dfa6"
+          },
+          {
+            "id": "a18516a7-52b3-47a2-b04c-635c07cda723",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "b5732592-9e4a-48c0-b496-ddb537737d29",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Após gerar slides com o ChatGPT, você percebe que alguns dados não correspondem ao artigo original. O que deve ser feito?",
+                "answers": [
+                  {
+                    "id": "bcfe93b9-55b9-4fe1-a5fa-59a5c773e051",
+                    "title": "Solicitar ao ChatGPT que corrija automaticamente os dados",
+                    "correct": false,
+                    "feedback": "Incorreto. Pedir ao sistema que corrija o que ele inventou abre espaço para uma nova invenção. A correção é feita à mão, com base no material de origem."
+                  },
+                  {
+                    "id": "d6af8003-1f69-4d95-b2ba-6d13ffedf9a9",
+                    "title": "Ignorar as diferenças, pois o sistema é confiável",
+                    "correct": false,
+                    "feedback": "Incorreto. Inventar dados é um comportamento previsível do sistema. Todo número, data e citação precisa ser conferido contra a origem."
+                  },
+                  {
+                    "id": "c1824a1e-b4c0-4685-9704-1210960bc64d",
+                    "title": "Corrigir manualmente os dados nos slides, conferindo com o material de origem",
+                    "correct": true,
+                    "feedback": "Correto. Conferir slide por slide contra o artigo e corrigir à mão garante que a aula diga o que a fonte diz."
+                  },
+                  {
+                    "id": "e72bb113-1676-452f-9a25-46fb83f53cc5",
+                    "title": "Apagar os slides e começar tudo de novo",
+                    "correct": false,
+                    "feedback": "Incorreto. Recomeçar desperdiça o que está certo e pode gerar novos erros. Basta corrigir à mão os dados divergentes."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "43295842-c1d3-413b-a2d1-3c12dc8778c8"
+          },
+          {
+            "id": "99f90a43-590f-4d22-9d6c-3b9c55e3acd7",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "a5e23072-9f42-4e47-806c-cf6aae3dd86f",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "19d77dbb-094e-4814-b964-98795f27d5ed"
+          },
+          {
+            "id": "h92zivv8xrfu9dyiwauk3fip",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "g78gmem1quuiqpikowc7ykwy",
+                "paragraph": "<p>Você tem uma aula de doze slides, com o tema da sua universidade e os dados conferidos contra o artigo. Na Oficina 3, a apresentação já existe e está boa: você vai acrescentar um slide no meio sem mexer no resto, pedindo o plano antes, delimitando a edição em três elementos e conferindo os slides vizinhos. Em seguida, na Oficina 4, vai fazer a segunda versão da mesma apresentação, para outro público.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "3abcc1af-75d9-494e-b82a-34e694316e5a"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Transformando Textos em Apresentações Estruturadas",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI",
+        "createdAt": "2026-10-07T16:07:58.220Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 1,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-10-07T16:08:44.713Z"
+      },
+      {
+        "description": "",
+        "id": "068e42ad-dfec-4d03-b43f-f7b54401212d",
+        "items": [
+          {
+            "id": "eulnqyfturnraxbyd3vocwnn",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ukhpg5w0o9t2nultmkrp8xzs",
+                "heading": "Oficinas 3 e 4 — Mexer sem estragar e trocar de público",
+                "paragraph": "<p>A apresentação já existe e está boa. Você só precisa acrescentar um slide no meio, e não quer que o resto mude. Na Oficina 3 você aprende a delimitar a edição, que é o que separa uma correção de um estrago.</p><p>Depois, a mesma apresentação vai para outro público: uma banca de qualificação, uma reunião de colegiado, uma palestra para o público geral. Mesmo conteúdo, outro leitor, outro tempo, outro nível de detalhe. Na Oficina 4 você faz essa segunda versão, sem perder nenhum número nem o sentido de nenhuma afirmação.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "e91fffce-1254-4ae8-9780-1a5db9de118b"
+          },
+          {
+            "id": "m58rcnrcp8uy2387ihhzqy99",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "l0qmckjmuwk0ed6mp5dwe83z",
+                "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "6dd4fed5-f2a9-4f33-a99c-99e9b4edba40"
+          },
+          {
+            "id": "zrk0ds1xfxvjkjfaqecf9yxn",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "lzeb9chuqi6aldorrqg89sqx",
+                "number": "1",
+                "paragraph": "<p>Pedir o plano antes e delimitar a edição em três elementos: o que alterar, o que preservar e onde.</p>"
+              },
+              {
+                "id": "b84llfxtcj9wgzp9zcppbyxg",
+                "number": "2",
+                "paragraph": "<p>Ajustar a apresentação para outro público, dizendo quem ele é e o que muda por causa dele.</p>"
+              },
+              {
+                "id": "mscf5lbiktuuzqpbyfnexhuh",
+                "number": "3",
+                "paragraph": "<p>Comparar as duas versões lado a lado com a revisão em seis pontos, incluindo números, citações e sentido das afirmações.</p>"
+              },
+              {
+                "id": "mm1onpesxqt14ufxkrs6ujey",
+                "number": "4",
+                "paragraph": "<p>Consultar a narrativa e as lacunas da apresentação e antecipar as perguntas do novo público.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "e4e21f2d-13c0-4e80-a8e0-d944ec68569c"
+          },
+          {
+            "id": "c39b693a-24bc-4552-998f-2e48681fc962",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "f63c8832-78af-43ba-8696-2dde809f9f4a",
+                "type": "intro",
+                "title": "Oficina 3 — Mexer sem estragar",
+                "isHidden": false,
+                "description": "<p>Você vai usar a cópia de trabalho com conteúdo, criada na Oficina 0, e a barra lateral do ChatGPT. Seis passos, e o mais importante é o segundo: pedir o plano antes de autorizar qualquer coisa.</p>"
+              },
+              {
+                "id": "eed0dd1d-03ca-43bf-903b-660d682df33c",
+                "type": "summary",
+                "title": "Ponto de controle",
+                "isHidden": false,
+                "description": "<p>Em PowerPoint &gt; Exibir &gt; Classificação de Slides, o slide novo está na posição que você pediu, e os slides vizinhos estão idênticos. Se quiser certeza, abra o arquivo original em paralelo e compare: ele continua intacto porque você nunca o abriu para edição.</p>"
+              },
+              {
+                "id": "0b8771c0-d9d8-4732-9665-cb8453b86061",
+                "type": "step",
+                "title": "Confirme o arquivo de trabalho",
+                "isHidden": false,
+                "description": "<p>Confirme que você está na cópia, e não no original. Olhe o nome do arquivo na barra de título.</p>"
+              },
+              {
+                "id": "4d152cda-4be2-460c-95c6-1f61fbbeb94c",
+                "type": "step",
+                "title": "Solicite um plano de edição",
+                "isHidden": false,
+                "description": "<p>Peça ao ChatGPT para descrever quais slides ele mudaria e por quê, antes de autorizar qualquer modificação. Use o comando: \"\"\" Antes de editar, descreva quais slides você mudaria e por quê. Não altere nada ainda. \"\"\"</p>"
+              },
+              {
+                "id": "a4d6ee55-bebe-4488-98c0-0147fe1c5c6a",
+                "type": "step",
+                "title": "Revise o plano sugerido",
+                "isHidden": false,
+                "description": "<p>Leia o plano. Se não for o que você quer, corrija agora, antes que a apresentação seja modificada. Custa uma mensagem e evita refazer tudo.</p>"
+              },
+              {
+                "id": "d85da53a-7289-4774-8597-0d961cd9e74b",
+                "type": "step",
+                "title": "Instrua a edição de forma precisa",
+                "isHidden": false,
+                "description": "<p>Peça a edição declarando os três elementos: o que alterar, o que preservar, e onde. Por exemplo: \"\"\" Adicione um slide de limitações metodológicas logo após o slide de resultados. Mantenha o estilo desta apresentação e não altere nenhum outro slide. \"\"\"</p>"
+              },
+              {
+                "id": "44d35a7c-ed90-420f-a81d-d0a781c9f5fc",
+                "type": "step",
+                "title": "Confira os vizinhos",
+                "isHidden": false,
+                "description": "<p>Olhe o slide imediatamente anterior e o imediatamente posterior ao novo. Eles devem estar exatamente como estavam.</p>"
+              },
+              {
+                "id": "150c59b0-cd90-4489-aad9-e8a2f7b74eef",
+                "type": "step",
+                "title": "Ajuste o layout se necessário",
+                "isHidden": false,
+                "description": "<p>Se o novo slide estiver com aparência diferente, reaplique o layout em PowerPoint &gt; Página Inicial &gt; Layout.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "bfe11e31-1905-42b9-ba31-8ab5b768918e"
+          },
+          {
+            "id": "7b394ccf-e852-4d9f-a7e6-0cac685bc34c",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ef5c3897-727a-4c3a-99d9-b0198486af68",
+                "paragraph": "<p><strong>Não esqueça:</strong> pedir o plano antes custa uma mensagem e evita refazer a apresentação inteira. É o hábito mais barato deste curso.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "0e9eefd8-988a-48a9-bd63-525f9dbd7bbc"
+          },
+          {
+            "id": "f97cw7r04mnn8wvk2hm57mie",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "lpnuzm8kgongdwk76nqxifgq",
+                "heading": "Se travar na Oficina 3",
+                "paragraph": "<p>Abra o problema que apareceu para ver o que fazer:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "4558e519-6625-4d8a-9b4e-e84d2243a679"
+          },
+          {
+            "id": "e4a51e70-1d8d-483b-99a6-ead11435c072",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "33dfaf86-4c12-4b69-85da-b11056e9261a",
+                "title": "Mudanças em slides não solicitados",
+                "description": "<p>Desfaça com Ctrl + Z. Refaça o pedido declarando explicitamente: \"não altere nenhum outro slide\".</p>"
+              },
+              {
+                "id": "169b9627-ca49-4120-93c7-fc20f10b1192",
+                "title": "Conteúdo apagado indevidamente",
+                "description": "<p>Volte para o arquivo original, que continua intacto. É exatamente para isso que você trabalha na cópia criada na Oficina 0.</p>"
+              },
+              {
+                "id": "d9f62b85-32d2-4bfa-b632-ec7ae1dbb704",
+                "title": "Slide novo com visual diferente",
+                "description": "<p>Vá em PowerPoint &gt; Página Inicial &gt; Layout e escolha o layout dos demais slides.</p>"
+              },
+              {
+                "id": "49f5bc81-ae0a-4f7f-8fbe-66f9a056796b",
+                "title": "Pedi para mexer num gráfico e não funcionou",
+                "description": "<p>Limitação declarada pelo fabricante: recursos avançados de gráficos, formas e formatação podem ser limitados ou ainda estar em desenvolvimento. Faça à mão.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "515c5a39-a805-4446-8efd-359005210809"
+          },
+          {
+            "id": "fvdolwiuyy6e64bgio53d6tt",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "om37n2fvqjy89jvxh5bu25kb",
+                "heading": "Oficina 4 — Trocar de público",
+                "paragraph": "<p>Parta de uma cópia da apresentação da Oficina 2 ou 3. Duplique de novo em PowerPoint &gt; Arquivo &gt; Salvar como, com um nome que diga o público de destino, por exemplo aula-banca.pptx, e peça o ajuste declarando quem é o novo público e o que muda por causa dele. Veja nas abas dois destinos comuns:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "620aae95-a45b-4880-83b4-510f633fc7e1"
+          },
+          {
+            "id": "76b9e8f7-9666-49b0-8b3f-5ab6aef4fd22",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "c9802ac3-9f1d-4210-ae19-af1ec6fc3a21",
+                "title": "Banca de Qualificação",
+                "description": "<p>Peça: \"\"\" Ajuste esta apresentação para uma banca de qualificação de mestrado. Reduza para quinze slides. Aumente o detalhe metodológico, diminua a contextualização histórica e mantenha todos os números exatamente como estão. Não altere o sentido nem as ressalvas das afirmações. Mantenha o estilo desta apresentação. \"\"\"</p><p></p><p>Percorra o resultado no painel de miniaturas e repare quais slides saíram e se a ordem do argumento mudou. Depois valide com \"\"\" Qual é a narrativa desta apresentação e onde estão as lacunas para uma banca de qualificação? \"\"\" e antecipe a arguição com \"\"\" Que perguntas uma banca de qualificação provavelmente fará sobre esta apresentação? \"\"\"</p>"
+              },
+              {
+                "id": "a5e07c7d-0e10-414e-a08b-3afff5f1376e",
+                "title": "Público Geral",
+                "description": "<p>Para o público leigo, o pedido muda de direção: menos jargão, mais exemplos, mesmo argumento. Diga quem vai assistir e quanto tempo você tem, e mantenha a exigência de preservar todos os números e as ressalvas das afirmações.</p><p></p><p>Ao conferir, procure o que a versão leiga não pode assumir como sabido: todo termo técnico precisa ser explicado ou sair. O argumento principal tem que continuar de pé para quem não é da área.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "tabs",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "543215a0-1996-42c1-bf64-c7616945ce07"
+          },
+          {
+            "id": "f95krif2weesbls48mzquy9m",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "f1i5ts6e9oawcoqdqnd3n2ll",
+                "heading": "Revisão em seis pontos",
+                "paragraph": "<ul><li><strong>Afirmações:</strong> tudo o que está escrito está no material de origem?</li><li><strong>Números:</strong> são os mesmos da versão original?</li><li><strong>Citações:</strong> existem e estão atribuídas a quem disse?</li><li><strong>Sentido:</strong> alguma frase ficou mais forte, mais fraca ou perdeu a ressalva? Um \"sugere\" que virou \"demonstra\" passa batido se você só olhar os números.</li><li><strong>Slides:</strong> algum slide importante sumiu ou mudou de lugar?</li><li><strong>Visual:</strong> o tema institucional continua em todos?</li></ul><p>É a lista da própria OpenAI para conferir antes de usar. Ponto de controle: você tem dois arquivos, com contagens de slides diferentes, todos os números coincidem entre eles, e você escolheu três afirmações da versão nova e confirmou que dizem o mesmo que na original.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "b8be049d-5770-41e3-9cbe-b63453eed4f6"
+          },
+          {
+            "id": "l49u8egmwjerx6dbng3jaihk",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "shpowd0cncc04h9ip7dwj64o",
+                "heading": "Se travar na Oficina 4",
+                "paragraph": "<p>Abra o problema que apareceu para ver o que fazer:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "333d4345-9c0b-4472-b61b-081aa0720bf2"
+          },
+          {
+            "id": "e712ccf9-7144-45e5-9858-8c39cb98bb24",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "d00bd2c1-d8be-4de0-907f-d805f90557f6",
+                "title": "Apresentação ficou genérica demais",
+                "description": "<p>Você não disse o suficiente sobre o público. Diga quem é a banca, o que ela vai cobrar e quanto tempo você tem.</p>"
+              },
+              {
+                "id": "757b4481-8ce6-4964-8745-09f7e9ee1a77",
+                "title": "Conteúdo essencial foi removido",
+                "description": "<p>Diga qual slide precisa voltar e o que cortar no lugar.</p>"
+              },
+              {
+                "id": "4d688a5d-69c4-4ea5-b940-8af5d56eb490",
+                "title": "Número mudou entre versões",
+                "description": "<p>Corrija à mão e reforce no pedido: \"mantenha todos os números exatamente como estão\".</p>"
+              },
+              {
+                "id": "caccf635-1405-42fa-82b0-ce144f3a2278",
+                "title": "Tema visual se perdeu",
+                "description": "<p>Reaplique em PowerPoint &gt; Design &gt; Temas.</p>"
+              },
+              {
+                "id": "596b1d9b-8bca-4208-8881-c0769224d0ea",
+                "title": "Afirmação mudou de sentido",
+                "description": "<p>É mudança de sentido na reescrita. Volte à frase original, corrija à mão e reforce: \"não altere o sentido nem as ressalvas das afirmações\".</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "51f7df43-26ec-40ec-9155-f1cde71bcfaa"
+          },
+          {
+            "id": "8ad8c5f0-bd5b-4dd5-a966-119d29854a55",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "99a0a8ba-1d10-4394-a1df-a7cf19520ae2",
+                "paragraph": "<p><strong>Dica:</strong> ao trocar de público, o risco não é o corte — é o número que se desloca junto com o texto, e a frase que muda de sentido sem mudar de número. Confira sempre os dois arquivos lado a lado.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "106ebe8c-c688-4fb9-8cb3-52557bdd1b18"
+          },
+          {
+            "id": "w4nhzjez88862l37rb27eemj",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "qd2h470jmiay76jcybx0bdsy",
+                "paragraph": "<p>Quer ir além? Os três desafios abaixo são opcionais:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "1e9f1475-5f3a-421d-8575-eea8fa4a0315"
+          },
+          {
+            "id": "o6ua8eelkiw7efjmt84320ot",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "bb89u9iklatceefaq2mquwaf",
+                "number": "1",
+                "paragraph": "<p><strong>Três públicos</strong><br>Faça a terceira versão, para o público leigo. Deu certo se: você consegue dizer o que a versão leiga não pode assumir como sabido.</p>"
+              },
+              {
+                "id": "r8vmgzhjoqr0iimxsf97lg3y",
+                "number": "2",
+                "paragraph": "<p><strong>A versão de emergência</strong><br>Peça a versão de cinco minutos, com cinco slides. Deu certo se: ela ainda sustenta o argumento principal.</p>"
+              },
+              {
+                "id": "bf27tlekemydwniqdoumhfie",
+                "number": "3",
+                "paragraph": "<p><strong>A objeção mais forte</strong><br>Peça: \"se você fosse contra esta apresentação, qual seria a sua objeção mais forte?\". Deu certo se: você tem uma resposta preparada.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "0e5ba140-1b94-424e-8b9b-9f9207e3c794"
+          },
+          {
+            "id": "775675af-4d0e-4215-a7e9-e209959da0c3",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "bc612f73-0c59-439d-90a4-37929235bba4",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Você percebeu que um número importante mudou entre duas versões da apresentação. O que deve ser feito primeiro?",
+                "answers": [
+                  {
+                    "id": "b3911220-f354-467a-874e-e95699392cf6",
+                    "title": "Ignorar, pois pequenas diferenças são normais",
+                    "correct": false,
+                    "feedback": "Incorreto. Número que muda entre versões é exatamente o erro que a revisão em seis pontos existe para pegar. Pequena diferença em dado compromete a credibilidade."
+                  },
+                  {
+                    "id": "cb86fcf8-2f5b-4e71-b273-48ed02d5a738",
+                    "title": "Corrigir manualmente e reforçar que todos os números devem ser mantidos",
+                    "correct": true,
+                    "feedback": "Correto. Corrija à mão com base na origem e reforce no pedido: \"mantenha todos os números exatamente como estão\"."
+                  },
+                  {
+                    "id": "c08d2e57-742f-41a9-914a-3726b195c2b0",
+                    "title": "Solicitar ao ChatGPT para revisar apenas o visual",
+                    "correct": false,
+                    "feedback": "Revisar o visual não resolve discrepâncias nos dados."
+                  },
+                  {
+                    "id": "010f3638-1125-4964-944e-2bb9225e4fcc",
+                    "title": "Apagar a versão nova e começar do zero",
+                    "correct": false,
+                    "feedback": "Incorreto. Recomeçar descarta o que já foi conferido. Basta corrigir à mão o número divergente e reforçar a instrução."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "5104fc6b-d434-4a82-afc1-df8b48b51621"
+          },
+          {
+            "id": "ed3e9352-0923-41bc-b2b7-75e5f110ddd9",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "efc0945d-b87e-4c5b-8797-db41b99a86b2",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "c4c0840d-af29-4196-9b2d-7ca3630f1159"
+          },
+          {
+            "id": "q96o7lal9ioqepjckvk9wd2g",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "y2fm6ggyhnag6sxiaulz20gl",
+                "paragraph": "<p>Você agora tem duas versões da mesma apresentação, com números conferidos, sentido preservado e a arguição antecipada. O próximo passo é o ciclo completo: escolha um material de origem real e produza, a partir dele, uma aula de cinquenta minutos para a graduação e um seminário de vinte minutos para colegas da área. As duas versões saem do material de origem, nunca uma da outra, porque derivar da longa propaga qualquer erro que tenha entrado nela.</p><p>A própria OpenAI resume o bom uso em quatro coisas, e você praticou as quatro: pedido específico, fonte confiável, dizer o que não pode mudar e revisão humana. Se um dia o resultado vier ruim, uma delas faltou.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.141.0"
+              }
+            },
+            "globalBlockId": "fc460d77-8716-488b-a8f7-5a19d2e3af21"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Ajustando, Revisando e Comparando Versões de Apresentações",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI",
+        "createdAt": "2026-10-07T16:07:58.220Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 2,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-10-07T16:08:59.597Z"
+      }
+    ],
+    "title": "ChatGPT PowerPoint - Hands On",
+    "exportSettings": {
+      "completeWith": "reporting",
+      "identifier": "ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI_rise",
+      "resetLearnerData": false,
+      "quizId": null,
+      "storylineId": null,
+      "completionPercentage": 100,
+      "reporting": "passed-incomplete",
+      "updateResumeData": true,
+      "hideLmsUi": false,
+      "title": "ChatGPT PowerPoint - Hands On",
+      "format": "zip",
+      "target": "scorm12",
+      "locales": [],
+      "shareId": "AaJbHjeAx0Srh3qw4Zk9dMcPUEDd6Kjd",
+      "activeLMS": 0,
+      "exportType": "lms",
+      "targetName": "SCORM 1.2",
+      "isTranslated": false,
+      "quizComplete": false,
+      "activeEdition": 0,
+      "loadOnlyInLMS": true,
+      "isRemotePackage": false,
+      "disableCoverPage": false,
+      "enableExitCourse": false,
+      "storylineComplete": false,
+      "localesPackageType": "single",
+      "notifyLearnersOfUpdates": false,
+      "enableTelemetryCollection": true
+    },
+    "lmsOptions": {
+      "enableTelemetryCollection": true,
+      "disableCoverPage": false,
+      "enableExitCourse": false
+    },
+    "id": "ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI",
+    "originalId": null,
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "selectedAuthorId": "",
+    "color": "#152f4d",
+    "navigationMode": "",
+    "sharePassword": "",
+    "shareId": "AaJbHjeAx0Srh3qw4Zk9dMcPUEDd6Kjd",
+    "copyOf": "",
+    "order": "1791391243085",
+    "fonts": null,
+    "media": {
+      "image": {
+        "key": "rise/courses/ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI/gnkU0NrV4Hhf2F23.jpeg",
+        "width": 70,
+        "height": 89,
+        "crushedKey": "wiqwqizP8wsM0u6v51Mz8dnUSS.jpg",
+        "sourcedFrom": "USER",
+        "useCrushedKey": true
+      }
+    },
+    "coverImage": {
+      "media": {
+        "image": {
+          "key": "rise/courses/ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI/4rDiDAegPIcSthgo.jpg",
+          "crushedKey": "stock-image.jpg",
+          "dimensions": {
+            "originalWidth": 1360,
+            "originalHeight": 765
+          },
+          "originalUrl": "stock-image.jpg",
+          "sourcedFrom": "AI",
+          "useCrushedKey": true,
+          "src": ""
+        }
+      }
+    },
+    "jobs": [],
+    "labelSetId": "",
+    "deleted": false,
+    "createdAt": "2026-10-07T15:56:39.709Z",
+    "updatedAt": "2026-10-07T16:40:43.085Z",
+    "markComplete": false,
+    "isDefault": false,
+    "ready": true,
+    "reviewId": "",
+    "headingTypefaceId": "l3OkM5EhWOfcM9t9NRpKxV9u",
+    "bodyTypefaceId": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+    "uiTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+    "sidebarMode": "open",
+    "tenantId": "59833a41-7aa6-40d9-b4a8-439946c15810",
+    "showLessonCount": true,
+    "showNavigationButtons": true,
+    "allowSearch": true,
+    "animateBlockEntrance": true,
+    "transferredAt": null,
+    "allowCopy": false,
+    "enableVideoPlaybackSpeed": null,
+    "jobType": null,
+    "partnerContentId": null,
+    "cardImage": {},
+    "theme": {
+      "colors": [
+        "#152f4d"
+      ],
+      "brandId": "59f64ff4-b18c-4a67-94b3-d3378c1fc409",
+      "themeId": "classic",
+      "coverImage": "",
+      "navigation": true,
+      "showAuthor": true,
+      "allowSearch": true,
+      "colorAccent": "#152f4d",
+      "appliedBrand": {
+        "logoKey": "rise/brands/59833a41-7aa6-40d9-b4a8-439946c15810/59f64ff4-b18c-4a67-94b3-d3378c1fc409/gnkU0NrV4Hhf2F23.jpeg",
+        "colorAccent": "#152f4d",
+        "bodyTypefaceId": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+        "additionalColors": [
+          "#152f4d"
+        ],
+        "headingTypefaceId": "l3OkM5EhWOfcM9t9NRpKxV9u"
+      },
+      "blockCorners": "ROUNDED",
+      "buttonScheme": "LIGHT",
+      "uiTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "coverPageType": "SPLIT_LEFT_IMAGE",
+      "accentContrast": "AUTO",
+      "bodyTypefaceId": "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+      "navigationType": "SIDEBAR",
+      "blockPaddingTop": 30,
+      "coverImageAlpha": 50,
+      "navigationStyle": "LIGHT",
+      "showLessonCount": true,
+      "lessonHeaderSize": "MEDIUM",
+      "buttonInlineStyle": "ROUNDED",
+      "coverImageDefault": "https://cdn.articulate.com/assets/rise/assets/themes/classic/cover-image/5_cities.jpg",
+      "headingTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "lessonHeaderColor": null,
+      "lessonHeaderImage": "",
+      "lessonHeaderStyle": "LIGHT",
+      "sidebarStartsOpen": true,
+      "blockPaddingBottom": 30,
+      "markLessonsComplete": false,
+      "animateBlockEntrance": true,
+      "navigationRestricted": false,
+      "buttonNavigationStyle": "FULL",
+      "showNavigationButtons": true,
+      "compactShowLessonCount": true,
+      "lessonHeaderImageAlpha": 0.6,
+      "lessonHeaderImageColor": "DARK",
+      "enableVideoPlaybackSpeed": true,
+      "customColorLessonHeaderContrast": "AUTO"
+    },
+    "lessonHeaderImage": {},
+    "overlayNavigationImage": {},
+    "type": null,
+    "experiments": {
+      "publishes": {
+        "LMS": {
+          "published_at": "2026-10-07T16:40:44.078Z",
+          "published_by": "aid|0feaf791-84f0-5524-a138-a41d69197057"
+        }
+      }
+    },
+    "settings": {
+      "isAIConceptToCourse": true
+    },
+    "defaultLocaleId": null,
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "blockBackgroundImage": {},
+    "otherTypefaceIds": null,
+    "contentUpdatedAt": "2026-10-07T16:40:39.799Z",
+    "authorType": "standard",
+    "lastPublishedAt": "2026-10-07T16:40:44.078Z",
+    "localizationMetadata": {},
+    "awaitingContent": false,
+    "features": {
+      "rise-rte-fonts": true,
+      "ai-learner-chatbot": true,
+      "rise-audio-release": true,
+      "rise-process-accessibility": true,
+      "rise-matching-accessibility": true,
+      "rise-ai-tutor-required-disclosures": true
+    },
+    "aiTutorConfig": null,
+    "authors": [
+      {
+        "id": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "avatar": "small_1782404657678.jpg",
+        "authorName": "Iaclube Help"
+      }
+    ],
+    "aiLearnerCourseApiKey": null,
+    "aiLearnerSubscriptionId": null,
+    "mondrian": {},
+    "bodyTypeface": "Montserrat",
+    "headingTypeface": "Ubuntu Sans Mono",
+    "uiTypeface": "Lato"
+  },
+  "labelSet": {
+    "iso639Code": "en",
+    "labels": {
+      "exitMessage": "You may now leave this page.",
+      "salutation": "👋 Bye!",
+      "a11yAiScenarioChooseResponse": "Choose a response",
+      "a11yAiScenarioConversation": "Conversation",
+      "a11yAiScenarioConversationComplete": "Conversation complete",
+      "a11yAiScenarioFailedThreshold": "You did not reach the passing threshold.",
+      "a11yAiScenarioGoalAchieved": "achieved",
+      "a11yAiScenarioGoalNotAchieved": "not achieved",
+      "a11yAiScenarioGoalPartial": "partially correct",
+      "a11yAiScenarioPassedThreshold": "You met or exceeded the passing threshold.",
+      "a11yAiScenarioResponseOptions": "Response options",
+      "a11yAiScenarioRetryScenario": "Retry scenario",
+      "a11yAiScenarioSentBy": "Sent by",
+      "a11yAiScenarioStartScenario": "Start scenario",
+      "a11yAiScenarioSubmitResponse": "Submit response",
+      "a11yAiTutorArticulateLogo": "Articulate - open in new tab",
+      "a11yAiTutorAskButton": "Ask AI Tutor",
+      "a11yAiTutorAssistantMessage": "AI Tutor response",
+      "a11yAiTutorChatWindow": "AI Tutor chat window",
+      "a11yAiTutorCloseTipsModal": "Close tips modal",
+      "a11yAiTutorFeedbackDismiss": "Dismiss feedback",
+      "a11yAiTutorFeedbackInput": "Type your feedback",
+      "a11yAiTutorFeedbackSubmit": "Submit feedback",
+      "a11yAiTutorFeedbackWhyUnhelpful": "Why is it unhelpful?",
+      "a11yAiTutorHide": "Hide AI Tutor chat",
+      "a11yAiTutorInput": "Type your message for AI Tutor",
+      "a11yAiTutorSection": "AI Tutor",
+      "a11yAiTutorSeeTips": "See tips for using AI Tutor",
+      "a11yAiTutorSendButton": "Send message to AI Tutor",
+      "a11yAiTutorStartOver": "Return to AI Tutor home screen",
+      "a11yAiTutorThumbsDown": "Rate response as not helpful",
+      "a11yAiTutorThumbsDownSubmitted": "Not helpful, feedback submitted",
+      "a11yAiTutorThumbsUp": "Rate response as helpful",
+      "a11yAiTutorThumbsUpSubmitted": "Helpful, feedback submitted",
+      "a11yAiTutorUserMessage": "User message",
+      "a11yAnswerLive": "Your answer",
+      "a11yAuthorPrefix": "By",
+      "a11yBlockArrowSequence": "Arrow sequence",
+      "a11yBlockChartAxisX": "x-axis",
+      "a11yBlockChartAxisY": "y-axis",
+      "a11yBlockChartBar": "Bar chart",
+      "a11yBlockChartInstructions": "Use arrow keys to navigate data points. Screen reader users may need to switch modes to interact.",
+      "a11yBlockChartLine": "Line chart",
+      "a11yBlockChartPie": "Pie chart",
+      "a11yBlockChartPreposition": "of",
+      "a11yBlockCode": "Custom Interaction",
+      "a11yBlockCodeSnippet": "Code",
+      "a11yBlockEmbed": "Embedded Content",
+      "a11yBlockFlashcardBack": "Back of card",
+      "a11yBlockFlashcardFront": "Front of card",
+      "a11yBlockFlashcardGrid": "Flashcard grid",
+      "a11yBlockFlashcardStack": "Flashcard carousel",
+      "a11yBlockFlashcardStackRoleDescription": "Carousel",
+      "a11yBlockFlashcardStackSlideControls": "Slide controls",
+      "a11yBlockFlashcardStackSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockFlashcardStackSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockFlashcardStackSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockFlashcardStackSlidePreposition": "of",
+      "a11yBlockFlashcardStackSlideRoleDescription": "Slide",
+      "a11yBlockImageCarousel": "Image Carousel",
+      "a11yBlockImageCarouselRoleDescription": "Carousel",
+      "a11yBlockImageCarouselSlideControls": "Slide controls",
+      "a11yBlockImageCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockImageCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockImageCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockImageCarouselSlidePreposition": "of",
+      "a11yBlockImageCarouselSlideRoleDescription": "Slide",
+      "a11yBlockKnowledgeCheck": "Knowledge check",
+      "a11yBlockKnowledgeCheckFIB": "Knowledge check: Fill in the blank",
+      "a11yBlockKnowledgeCheckM": "Knowledge check: Matching",
+      "a11yBlockKnowledgeCheckMC": "Knowledge check: Multiple choice",
+      "a11yBlockKnowledgeCheckMR": "Knowledge check: Multiple response",
+      "a11yBlockProcessCarousel": "Carousel",
+      "a11yBlockProcessRoleDescription": "Carousel",
+      "a11yBlockProcessSlideControls": "Slide controls",
+      "a11yBlockProcessSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockProcessSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockProcessSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockProcessSlideControlsIntroduction": "Introduction",
+      "a11yBlockProcessSlideControlsSummary": "Summary",
+      "a11yBlockProcessSlidePreposition": "of",
+      "a11yBlockProcessSlideRoleDescription": "Slide",
+      "a11yBlockPyramid": "Pyramid diagram",
+      "a11yBlockPyramidBaseLayer": "Base layer",
+      "a11yBlockPyramidTopLayer": "Top layer",
+      "a11yBlockQuoteCarousel": "Quote Carousel",
+      "a11yBlockQuoteCarouselRoleDescription": "Carousel",
+      "a11yBlockQuoteCarouselSlideControls": "Slide controls",
+      "a11yBlockQuoteCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockQuoteCarouselSlidePreposition": "of",
+      "a11yBlockQuoteCarouselSlideRoleDescription": "Slide",
+      "a11yBlockStoryline": "Storyline",
+      "a11yBlockSurveyCharCount": "Character count:",
+      "a11yBlockSurveyConfirmation": "Thanks! Your responses were sent.",
+      "a11yBlockSurveySubmitting": "Submitting survey responses.",
+      "a11yBlockSurveyValidationError": "Please answer all required questions to continue",
+      "a11yBlockTimeline": "Timeline",
+      "a11yBlockVideoSidePanelTablist": "Video details",
+      "a11yCarouselNext": "Next",
+      "a11yCarouselPrevious": "Previous",
+      "a11yCertificateDownloadFailed": "Failed to download certificate",
+      "a11yCorrectLive": "Correct answer",
+      "a11yCoverCourseCompleted": "Course Completed",
+      "a11yCoverCourseLength": "Course Length",
+      "a11yCoverRequirementComplete": "Requirement complete",
+      "a11yCoverRequirementFailed": "Requirement failed",
+      "a11yCoverRequirementIncomplete": "Requirement incomplete",
+      "a11yExcelIcon": "Microsoft Excel spreadsheet",
+      "a11yFileIcon": "File",
+      "a11yGroupAudioPlayer": "Audio player",
+      "a11yGroupScenario": "Interactive scenario",
+      "a11yGroupVideoPlayer": "Video player",
+      "a11yLabeledGraphicBlock": "Labeled graphic",
+      "a11yLabeledGraphicButtonMarker": "Marker",
+      "a11yLabeledGraphicIconArrowDown": "Down arrow",
+      "a11yLabeledGraphicIconArrowDownLeft": "Down left arrow",
+      "a11yLabeledGraphicIconArrowDownRight": "Down right arrow",
+      "a11yLabeledGraphicIconArrowLeft": "Left arrow",
+      "a11yLabeledGraphicIconArrowRight": "Right arrow",
+      "a11yLabeledGraphicIconArrowUp": "Up arrow",
+      "a11yLabeledGraphicIconArrowUpLeft": "Up left arrow",
+      "a11yLabeledGraphicIconArrowUpRight": "Up right arrow",
+      "a11yLabeledGraphicIconCheck": "Check mark",
+      "a11yLabeledGraphicIconDot": "Dot",
+      "a11yLabeledGraphicIconHeart": "Heart",
+      "a11yLabeledGraphicIconInformation": "Information",
+      "a11yLabeledGraphicIconPin": "Map pin",
+      "a11yLabeledGraphicIconPlus": "Plus",
+      "a11yLabeledGraphicIconQuestion": "Question mark",
+      "a11yLabeledGraphicIconX": "X",
+      "a11yLabeledGraphicUnviewed": "Not viewed",
+      "a11yLabeledGraphicViewed": "Viewed",
+      "a11yMatchingColumn1": "Matching column 1",
+      "a11yMatchingColumn2": "Matching column 2",
+      "a11yMatchingItemMatchedWith": "Matched with",
+      "a11yMatchingItemMatchWith": "Match with",
+      "a11yMatchingItemSelectableItem": "Selectable item",
+      "a11yMatchingItemShowLess": "Show less",
+      "a11yMatchingItemShowMore": "Show more",
+      "a11yMediaCaptions": "Captions",
+      "a11yMediaCaptionsOff": "Captions off",
+      "a11yMediaCurrentTime": "Current time",
+      "a11yMediaDownload": "Download",
+      "a11yMediaDuration": "Duration",
+      "a11yMediaErrorVideo": "This video could not be loaded.",
+      "a11yMediaExitFullscreen": "Exit fullscreen",
+      "a11yMediaExitPictureInPicture": "Exit picture-in-picture",
+      "a11yMediaFullscreen": "Fullscreen",
+      "a11yMediaMoreOptions": "More options",
+      "a11yMediaMoreOptionsBack": "Back to more options",
+      "a11yMediaMute": "Mute",
+      "a11yMediaPause": "Pause",
+      "a11yMediaPictureInPicture": "Picture-in-picture",
+      "a11yMediaPlay": "Play",
+      "a11yMediaPlaybackRate": "Playback Rate",
+      "a11yMediaPlaybackRateNormal": "Normal",
+      "a11yMediaPlayVideo": "Play video",
+      "a11yMediaRemainingTime": "Remaining time",
+      "a11yMediaReplay": "Replay",
+      "a11yMediaSeek": "Seek",
+      "a11yMediaSeekDisabled": "Forward seeking is disabled",
+      "a11yMediaUnmute": "Unmute",
+      "a11yMediaVolume": "Volume",
+      "a11yNavigationMenuClose": "Close navigation menu",
+      "a11yNavigationMenuOpen": "Open navigation menu",
+      "a11yNoticeLinkNewTab": "(opens in a new tab)",
+      "a11yPageMarker": "Top of page",
+      "a11yPDFIcon": "PDF file",
+      "a11yPPTIcon": "PowerPoint presentation",
+      "a11yPreposition": "of",
+      "a11yProgressSummaryRequirementCompleted": "Requirement completed, check mark",
+      "a11yProgressSummaryRequirementNotCompleted": "Requirement not completed, empty square",
+      "a11yQuizFailed": "Failed",
+      "a11yQuizFeedback": "Feedback",
+      "a11yQuizPassed": "Passed",
+      "a11yQuizReviewCorrectlyChecked": "Correctly checked",
+      "a11yQuizReviewCorrectlySelected": "Correctly selected",
+      "a11yQuizReviewCorrectlyUnchecked": "Correctly unchecked",
+      "a11yQuizReviewCorrectlyUnselected": "Correctly unselected",
+      "a11yQuizReviewIncorrectlyChecked": "Incorrectly checked",
+      "a11yQuizReviewIncorrectlySelected": "Incorrectly selected",
+      "a11yQuizReviewIncorrectlyUnchecked": "Incorrectly unchecked",
+      "a11yQuizReviewIncorrectlyUnselected": "Incorrectly unselected",
+      "a11yRegionMainLesson": "Lesson content",
+      "a11yRegionMainOverview": "Course overview",
+      "a11yRegionNavLesson": "Navigation menu",
+      "a11yRegionNavOverview": "Table of contents",
+      "a11yRestrictedNav": "This lesson is currently unavailable",
+      "a11yRTFIcon": "Rich Text File",
+      "a11ySearchClose": "Close search menu",
+      "a11ySearchInput": "Search",
+      "a11ySearchInputClear": "clear search term",
+      "a11ySearchOpen": "Open search menu",
+      "a11ySortingCategories": "Categories",
+      "a11ySortingCategoriesComplete": "Categories. Interaction completed.",
+      "a11ySortingCategory": "category",
+      "a11ySortingComplete": "cards correct",
+      "a11ySortingCompleteOf": "of",
+      "a11ySortingCorrect": "Correct",
+      "a11ySortingCurrentItem": "Current item",
+      "a11ySortingIncorrect": "Incorrect. Choose another category.",
+      "a11ySortingNextItem": "Next item",
+      "a11yStatusAdditionalContent": "Additional content has been loaded",
+      "a11yStatusContinued": "Continued",
+      "a11yUnzoomImage": "Unzoom image",
+      "a11yWordIcon": "Microsoft Word document",
+      "a11yZipIcon": "Zip file",
+      "a11yZoomImage": "Zoom image",
+      "aiScenarioChooseResponsePrompt": "Choose the best response…",
+      "aiScenarioContinue": "Continue",
+      "aiScenarioErrorBody": "Please try again in a little while.",
+      "aiScenarioErrorTitle": "Something went wrong",
+      "aiScenarioGoal": "Goal #",
+      "aiScenarioGoals": "Goals",
+      "aiScenarioInvalidBody": "The scenario has validation errors and cannot be played.",
+      "aiScenarioInvalidTitle": "Invalid scenario",
+      "aiScenarioPassing": "Passing",
+      "aiScenarioRetry": "Retry",
+      "aiScenarioSenderCharacter": "Character",
+      "aiScenarioSenderYou": "You",
+      "aiScenarioStart": "Start",
+      "aiScenarioUnavailableBody": "Check back soon — it may still be getting set up.",
+      "aiScenarioUnavailableTitle": "This scenario isn't available yet",
+      "aiScenarioWrapUp": "That's a wrap—see how you did.",
+      "aiScenarioYourScore": "Your score",
+      "aiTutorAcceptableUsePolicyLink": "Acceptable Use Policy",
+      "aiTutorAskButton": "Ask AI Tutor",
+      "aiTutorBlankHeading": "Hey there, need a hand?",
+      "aiTutorBlankPillExplain": "Explain this in simpler terms",
+      "aiTutorBlankPillSearch": "Search course content",
+      "aiTutorBlankPillSummarize": "Summarize this training",
+      "aiTutorDataUseDisclosure": "Prompts are stored and analyzed. The organization that shared this training may receive aggregated or AI-generated insights.",
+      "aiTutorDisabledWhileQuiz": "AI Tutor is disabled while a quiz is in progress.",
+      "aiTutorDisclaimer": "AI isn't perfect—double check important information.",
+      "aiTutorErrorGeneral": "Something went wrong. Try refreshing the page or submitting a new request.",
+      "aiTutorErrorUnavailable": "AI Tutor is currently unavailable.",
+      "aiTutorFeedbackDetailsPlaceholder": "Share additional details (optional)",
+      "aiTutorFeedbackImprovementNote": "Your feedback helps improve this feature.",
+      "aiTutorFeedbackLearnMore": "Learn more",
+      "aiTutorFeedbackPopoverTitle": "Tell us more",
+      "aiTutorFeedbackReasonIncorrect": "Incorrect information",
+      "aiTutorFeedbackReasonNoAnswer": "Didn't answer my question",
+      "aiTutorFeedbackReasonNotHelpful": "Explanation wasn't helpful for me",
+      "aiTutorFeedbackReasonNotRelevant": "Response wasn't relevant",
+      "aiTutorFeedbackReasonOther": "Other",
+      "aiTutorFeedbackSubmit": "Submit",
+      "aiTutorFeedbackThankYou": "Thank you for your feedback",
+      "aiTutorFeedbackToast": "Thanks for your feedback",
+      "aiTutorGeneratingResponse": "Generating response",
+      "aiTutorHideTooltip": "Hide",
+      "aiTutorInputPlaceholder": "Type your message",
+      "aiTutorPrivacyLink": "privacy policy",
+      "aiTutorSeeTips": "See tips",
+      "aiTutorStartOverTooltip": "Start over",
+      "aiTutorTermsLink": "terms of use",
+      "aiTutorTermsPrefix": "By using this service, you agree to the Articulate",
+      "aiTutorTipsGotIt": "Got it",
+      "aiTutorTipsTip1": "AI can make mistakes. Use it as a guide, but verify what matters.",
+      "aiTutorTipsTip2": "Focus on topics covered in the course. Ask specific questions for best results.",
+      "aiTutorTipsTip3": "Don't share personal or sensitive information.",
+      "aiTutorTipsTitle": "What to know",
+      "audioCollapsePlayer": "Collapse audio player",
+      "audioExpandPlayer": "Expand audio player",
+      "audioHideTranscript": "Hide transcript",
+      "audioNoTranscriptAvailable": "No transcript available",
+      "audioPlaySpeed": "Play speed",
+      "audioShowTranscript": "Show transcript",
+      "audioTranscript": "Audio transcript",
+      "bannerButtonDismiss": "Dismiss",
+      "bannerCourseUpdated": "You're viewing the latest version.",
+      "bannerCourseUpdatedEmphasis": "Course updated.",
+      "bannerCourseUpdatedProgressReset": "You're viewing the latest version.",
+      "bannerCourseUpdatedProgressResetEmphasis": "Course updated and learner progress reset.",
+      "blocksClickToFlip": "Click to flip",
+      "blocksPreposition": "of",
+      "certificateDownload": "Download certificate",
+      "certificateDownloadInProgress": "Downloading...",
+      "certificateRetryDownload": "Retry download",
+      "courseCompletionOverdue": "Overdue",
+      "courseExit": "EXIT COURSE",
+      "courseFinish": "Finish",
+      "courseHome": "Home",
+      "courseResume": "RESUME COURSE",
+      "courseSkipToLesson": "SKIP TO LESSON",
+      "courseStart": "START COURSE",
+      "coverCompleteAllLessons": "Complete all lessons in this course",
+      "coverCompleted": "Completed",
+      "coverCompleteLessonsInCourse": "lessons in this course",
+      "coverCompleteLessonsName": "Complete",
+      "coverCompleteLessonsPreposition": "of",
+      "coverCourseRequirements": "Course Requirements",
+      "coverHour": "Hour",
+      "coverHours": "Hours",
+      "coverLesson": "Lesson",
+      "coverLessons": "Lessons",
+      "coverMinute": "Minute",
+      "coverMinutes": "Minutes",
+      "coverNoAttemptsRemaining": "No attempts remaining",
+      "coverPublished": "Published",
+      "coverQuizPercentOrHigher": "% or higher",
+      "coverQuizScoreOf": "Score of",
+      "coverUpdated": "Updated",
+      "curtainLoading": "Your content is loading.",
+      "curtainOffline": "Your computer is offline.",
+      "curtainOfflineReconnecting": "Attempting to reconnect…",
+      "curtainSessionTimedOut": "Your session has timed out.",
+      "curtainSessionTimedOutRefresh": "Refresh",
+      "curtainSessionTimedOutRestart": "Click refresh to restart your session.",
+      "curtainSomethingWrong": "Something went wrong.",
+      "curtainSomethingWrongRefresh": "Refresh",
+      "curtainSomethingWrongTryAgain": "Click to refresh and try again.",
+      "customBlockVideoError": "Video didn't load",
+      "embedLinkGroup": "Embedded web content",
+      "embedPlayerGroup": "Embedded media player",
+      "embedReadMore": "Read more",
+      "embedViewOn": "VIEW ON",
+      "knowledgeCheckCorrectAnswerRequiredBlock": "Requires a correct answer to continue",
+      "knowledgeCheckCorrectAnswerRequiredNav": "Complete previous knowledge checks to unlock this lesson",
+      "knowledgeCheckMaxRetriesReached": "You have reached the maximum amount of retries.",
+      "knowledgeCheckRetriesAttemptsRemaining": "Attempts remaining:",
+      "l10nChooseLanguage": "Choose your course language",
+      "l10nChooseLanguageContinue": "Continue",
+      "labeledGraphicMarkerLabel": "Labeled graphic marker",
+      "lessonComplete": "COMPLETE",
+      "lessonName": "Lesson",
+      "lessonPreposition": "of",
+      "lessonRestricted": "Lessons must be completed in order",
+      "lessonUntitled": "Untitled Lesson",
+      "noResults": "No results for",
+      "numberedDividerGroup": "Numbered divider",
+      "overviewPageTitleSuffix": "Overview",
+      "pauseButtonLabel": "Pause",
+      "playButtonLabel": "Play",
+      "presentationPdfUnsupportedBlock": "This block type is not supported in presentation PDFs.",
+      "processComplete": "Complete",
+      "processLandmark": "Process",
+      "processLessonName": "Lesson",
+      "processNextStep": "NEXT STEP",
+      "processStart": "START",
+      "processStartAgain": "START AGAIN",
+      "processStepName": "Step",
+      "processStepPreposition": "of",
+      "processSwipe": "Swipe to continue",
+      "progressPieClickToComplete": "Click to complete",
+      "progressPieClickToReset": "Click to reset",
+      "progressPieCompleted": "Completed",
+      "progressPieQuizFailed": "Failed",
+      "progressPieUnstarted": "Unstarted",
+      "progressSummary": "Progress Summary",
+      "progressSummaryBackToLearning": "Back to my learning",
+      "progressSummaryCompleted": "Completed:",
+      "progressSummaryCompletionRequirement": "Completion Requirement",
+      "progressSummaryCongratulations": "Congratulations!",
+      "progressSummaryNextUp": "Next up",
+      "progressSummaryNoAttemptsRemaining": "No attempts remaining.",
+      "progressSummaryNoTitle": "(No Title)",
+      "progressSummaryPercentComplete": "% Complete",
+      "progressSummaryPercentCompletion": "% Completion",
+      "progressSummaryQuizRequirement": "Quiz Requirement",
+      "progressSummaryRequirementsMet": "You've met all the requirements.",
+      "progressSummaryScoreOf": "Score of",
+      "progressSummaryScoreOfPreposition": "% on",
+      "progressSummaryStartOver": "Start Over",
+      "progressSummaryViewQuiz": "View quiz",
+      "progressSummaryYouCompleted": "You completed:",
+      "progressSummaryYouScored": "You scored",
+      "quizAcceptableResponses": "Acceptable responses",
+      "quizAnswerPlaceholder": "Type your answer here",
+      "quizContinue": "Continue",
+      "quizCorrect": "Correct",
+      "quizIncorrect": "Incorrect",
+      "quizNext": "NEXT",
+      "quizPassing": "PASSING",
+      "quizQuestion": "Question",
+      "quizRequireAnswer": "Please answer the question to continue",
+      "quizRequirePassingScore": "Must pass quiz before continuing",
+      "quizRestart": "Restart",
+      "quizResults": "Quiz Results",
+      "quizScore": "Your score",
+      "quizSkipAhead": "Skip Ahead to Lesson",
+      "quizStart": "START QUIZ",
+      "quizSubmit": "SUBMIT",
+      "quizTakeAgain": "TAKE AGAIN",
+      "quizTimerElapsed": "Time elapsed",
+      "quizTimerExpired": "Time expired",
+      "quizTimerExpiredAction": "OK",
+      "quizTimerExpiredMessage": "You have reached the time limit for this quiz. Your results will be automatically submitted",
+      "quizTimerHide": "Hide",
+      "quizTimerLimit": "Time limit",
+      "quizTimerMinute": "Minute",
+      "quizTimerMinutePlural": "Minutes",
+      "quizTimerRemaining": "Time left",
+      "quizTimerShow": "Show timer",
+      "quizUntitled": "Untitled Quiz",
+      "result": "result",
+      "results": "results",
+      "scenarioComplete": "Scenario Complete!",
+      "scenarioContinue": "CONTINUE",
+      "scenarioStartOver": "START OVER",
+      "scenarioTryAgain": "TRY AGAIN",
+      "search": "search",
+      "seekSliderLabel": "Seek",
+      "sortingCardsCorrect": "Cards Correct",
+      "sortingLandmark": "Sorting Activity",
+      "sortingReplay": "REPLAY",
+      "surveyConfirmation": "Thanks! Your responses were sent.",
+      "surveyFreeResponseRequired": "Please enter a response",
+      "surveyMultipleChoiceRequired": "Please select an answer",
+      "surveyMultipleResponseRequired": "Please select at least one answer",
+      "surveyPlaceholder": "Share your thoughts",
+      "surveyRatingRequired": "Please select a rating",
+      "surveyRequired": "Required",
+      "surveySubmit": "Submit",
+      "surveySubmitting": "Submitting...",
+      "surveyValidationError": "Please answer all required questions to continue.",
+      "trialBadgePoweredBy": "Powered by",
+      "trialBadgeTooltip": "Purchase to remove badging and watermarks from published content",
+      "videoBlock": "block",
+      "videoBlocks": "blocks",
+      "videoChapterName": "Chapter",
+      "videoChapters": "Chapters",
+      "videoChapterUntitled": "Untitled chapter",
+      "videoChapterWholeVideo": "Whole video",
+      "videoCheckpointAddBlock": "Add a block",
+      "videoCheckpointBookendEnd": "End",
+      "videoCheckpointBookendStart": "Start",
+      "videoCheckpointContinue": "Continue",
+      "videoCheckpointDefaultTitle": "Checkpoint",
+      "videoCheckpointDone": "Done",
+      "videoCheckpointLocked": "Complete the activities above to continue.",
+      "videoCheckpointNew": "New checkpoint",
+      "videoCheckpointNoContent": "No content added to this checkpoint.",
+      "videoCheckpointPausedAt": "Paused at",
+      "videoCheckpointPlaysAfter": "Plays after video",
+      "videoCheckpointPlaysBefore": "Plays before video",
+      "videoCheckpointRequireCorrectAnswer": "A knowledge check here requires a correct answer to continue.",
+      "videoCheckpointRequired": "Require interactions",
+      "videoCheckpointRequiredEmpty": "There are currently no interactive blocks to require.",
+      "videoCheckpointResume": "Resume video",
+      "videoCheckpoints": "Checkpoints",
+      "videoCheckpointStart": "Start video",
+      "videoCheckpointStartDismiss": "Start video",
+      "videoCheckpointUntitled": "Untitled checkpoint",
+      "videoHideTranscript": "Hide transcript",
+      "videoNoChapters": "No chapters yet",
+      "videoNoChaptersMessage": "Add timestamps in the block settings to organize your video.",
+      "videoOutline": "Video outline",
+      "videoOutlineAddChapterAt": "Add chapter at",
+      "videoOutlineChapter": "chapter",
+      "videoOutlineChapters": "chapters",
+      "videoOutlineCheckpoint": "checkpoint",
+      "videoOutlineCheckpoints": "checkpoints",
+      "videoShowLessChapters": "Show less chapters",
+      "videoShowMoreChapters": "Show more chapters",
+      "videoTranscript": "Transcript",
+      "videoTranscriptAutoScroll": "Auto-scroll transcript",
+      "videoViewTranscript": "View transcript"
+    },
+    "id": "VhNWbYblvhwawL6qDtUlbJ0n",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "name": "English",
+    "defaultId": 1,
+    "defaultSet": true,
+    "deleted": false,
+    "createdAt": "2026-06-07T16:36:41.888Z",
+    "updatedAt": "2026-06-07T16:36:41.888Z",
+    "transferredAt": null
+  },
+  "settings": {
+    "completionPercentage": 100,
+    "reporting": "passed-incomplete",
+    "resetLearnerData": false,
+    "loadOnlyInLMS": true,
+    "filename": "chat-gpt-power-point-hands-on-scorm12-y10XXXJi.zip",
+    "coursePackageVersion": "y10XXXJi",
+    "exporterAuthId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "cdnUri": "https://cdn.articulate.com",
+    "courseUpdateCallbackUrl": "https://rise-runtime.360.prod.art-internal.com/publish/course/ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI",
+    "format": "zip",
+    "identifier": "ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI_rise",
+    "isRemotePackage": false,
+    "reviewContentUrl": "https://360.articulate.com/review/content",
+    "s3Metadata": {
+      "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+      "tenant-id": "59833a41-7aa6-40d9-b4a8-439946c15810"
+    },
+    "telemetryUri": "https://metrics.articulate.com",
+    "title": "ChatGPT PowerPoint - Hands On"
+  },
+  "deliveryPolicy": {
+    "status": "resolved",
+    "schemaVersion": 1,
+    "evaluatedAt": "2026-10-07T16:40:43.950Z",
+    "access": "allowed",
+    "protection": "none"
+  },
+  "exportAggregate": {
+    "subscriptionId": "59833a41-7aa6-40d9-b4a8-439946c15810",
+    "exportId": "i82r9CHyjzDkeo9GFIk9uinZnRacJECv",
+    "courseId": "ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI",
+    "courseType": "course",
+    "courseTheme": "classic",
+    "courseCreatedVia": "ai",
+    "courseLessons": {
+      "total": 3,
+      "ai": 3,
+      "blocks": {
+        "total": 3,
+        "ai": 3
+      }
+    },
+    "courseBlocks": {
+      "total": 55,
+      "ai": 55,
+      "text": {
+        "total": 33,
+        "ai": 33
+      },
+      "list": {
+        "total": 6,
+        "ai": 6
+      },
+      "interactive": {
+        "total": 10,
+        "ai": 10
+      },
+      "divider": {
+        "total": 3,
+        "ai": 3
+      },
+      "knowledgeCheck": {
+        "total": 3,
+        "ai": 3
+      }
+    }
+  },
+  "fonts": [
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "odEbaqB-9smJ3djS.woff",
+      "style": "italic",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "400"
+    },
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "LM161uPxEAP6TYht.woff",
+      "style": "normal",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "700"
+    },
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "d3AXvJ6ebo6lNjzY.woff",
+      "style": "normal",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-SemiBold.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "600"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Medium.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "500"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Black.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "900"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Bold.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "700"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Italic.woff",
+      "style": "italic",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Regular.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Light.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "300"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Regular.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "400"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Light.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "300"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Italic.woff",
+      "style": "italic",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "400"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Bold.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "700"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Black.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "900"
+    }
+  ],
+  "partnerContent": []
+}

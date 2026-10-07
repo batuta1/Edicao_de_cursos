@@ -1,0 +1,810 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Preparando o Ambiente e Instalando o ChatGPT no PowerPoint",
+  "lesson": {
+    "description": "",
+    "id": "ef7ce01b-0924-46f1-a01f-663299925716",
+    "items": [
+      {
+        "id": "ww8i5m42d86w7w8jf5cxv8n6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ck5c3g3p71iy5imf7o3440sw",
+            "heading": "Antes de arregaçar as mangas",
+            "paragraph": "<p>Este curso é mão na massa. Você vai instalar o ChatGPT dentro do PowerPoint e passar as próximas duas horas transformando material que já está no seu computador em slides. No fim, vai ter uma aula inteira montada a partir de material que já existia, em duas versões, para dois públicos.</p><p>Esta lição reúne as duas primeiras oficinas. A Oficina 0 leva cinco minutos e descobre se você pode instalar, quem consegue ler o conteúdo dos seus slides e quanto isso consome do seu plano. A Oficina 1 instala o suplemento e dá o primeiro comando numa apresentação vazia. Faça a Oficina 0 primeiro: ela pode te poupar o curso inteiro se a instalação estiver bloqueada na sua instituição.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "4bd7167b-d502-4a5c-9b80-5f871217b272"
+      },
+      {
+        "id": "u5qee11b0aaxg67jnme1gyx0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "yvjydfcnp16w8shkpvmu2p3p",
+            "paragraph": "<p>O que você precisa ter aberto agora:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "e8c6a95f-cb7d-42a6-9f5a-103126144c8e"
+      },
+      {
+        "id": "czic5r6qzq7afmceiy06cfu1",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "c00xcaf308yk692b79wocowt",
+            "number": "1",
+            "paragraph": "<p>O Microsoft PowerPoint.</p>"
+          },
+          {
+            "id": "beiv85luir2v0118o3z32264",
+            "number": "2",
+            "paragraph": "<p>Um documento seu que possa virar apresentação: um artigo, um capítulo, um plano de ensino.</p>"
+          },
+          {
+            "id": "kkpg3tp22z4vyjlo60tsgm9m",
+            "number": "3",
+            "paragraph": "<p>Uma apresentação sua que já use o tema institucional.</p>"
+          },
+          {
+            "id": "qw63iupjxy78bl46isjasivk",
+            "number": "4",
+            "paragraph": "<p>Uma conta do ChatGPT, conectada no navegador.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "57ecfaaf-939b-4c73-a638-5d6b7d687f38"
+      },
+      {
+        "id": "54a1451b-fe5e-46da-99bf-b64ff763a6d9",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "6069a904-02f8-4df6-8319-245d4da68d91",
+            "paragraph": "<p>🔑 Regra de ouro: o ChatGPT pode editar e apagar coisas nos seus slides — quem diz isso é a própria OpenAI. Você trabalha em cópia. Sempre. A Oficina 0 faz isso com você.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "54873cb9-9def-4dad-80a3-be1d7de68e15"
+      },
+      {
+        "id": "4f678cbe-51da-4b7c-a693-c12e5fddebb7",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "c7605b80-77eb-4342-abd7-6387ff2d3a39",
+            "type": "intro",
+            "title": "Oficina 0 — Cinco minutos antes de instalar",
+            "isHidden": false,
+            "description": "<p>Você está prestes a instalar um programa dentro do PowerPoint da sua universidade e a mandar para ele o conteúdo dos seus slides. Vale cinco minutos para descobrir três coisas: se você tem permissão de instalar, quem consegue ler esse conteúdo, e quanto isso consome do seu plano.</p>"
+          },
+          {
+            "id": "8d8b23be-bc09-4121-839f-d9facdc51bc8",
+            "type": "summary",
+            "title": "O que você resolveu",
+            "isHidden": false,
+            "description": "<p>Você sabe quem lê o que você envia, o que não entra na apresentação, quanto custa cada pedido e se a instalação é possível no seu computador. E tem na pasta os dois arquivos que protegem o seu material: a apresentação de teste e a cópia de trabalho.</p>"
+          },
+          {
+            "id": "f1c23d41-d167-47e2-a430-0d755cb9095d",
+            "type": "step",
+            "title": "Saiba quem lê",
+            "isHidden": false,
+            "description": "<p>O ChatGPT para PowerPoint roda dentro do PowerPoint da Microsoft. Pelos Termos de Serviço do Marketplace de Suplementos, a Microsoft pode ler o conteúdo dos seus arquivos. Somando o processamento da OpenAI, o arquivo passa por duas empresas. E não vai só o slide: a cada pedido, a OpenAI processa o que você digitou, o conteúdo da apresentação, os anexos que você mandou e o contexto de apps conectados, se houver. Uma conta pessoal gratuita e uma conta institucional não tratam esses dados da mesma forma.</p>"
+          },
+          {
+            "id": "1b04db2a-d3a8-4270-8aaa-b7ca5a8e1ba6",
+            "type": "step",
+            "title": "Decida o que não vai entrar",
+            "isHidden": false,
+            "description": "<p>Antes de qualquer pedido, decida o que fica de fora. A lista do que nunca entra está logo abaixo desta sequência e vale para todo arquivo que você abrir com o suplemento.</p>"
+          },
+          {
+            "id": "a34e7913-bf9e-46b8-94e3-628cf729e4a4",
+            "type": "step",
+            "title": "Descubra o que custa",
+            "isHidden": false,
+            "description": "<p>Veja o seu plano em ChatGPT &gt; Menu de perfil &gt; Configurações &gt; Conta e encontre a sua linha na tabela de planos, logo abaixo. Uma mensagem típica consome de 10 a 50 créditos; apresentação grande e edição em várias etapas consomem mais. A cota é a mesma do ChatGPT para Excel e de outros recursos de agente: se você usa os dois suplementos, tudo sai do mesmo saldo. Não planeje a aula de amanhã contando com uma cota que pode acabar hoje.</p>"
+          },
+          {
+            "id": "78593a20-2d0c-47e3-a68f-448cc2c26ccf",
+            "type": "step",
+            "title": "Teste a permissão de instalação",
+            "isHidden": false,
+            "description": "<p>Vá em PowerPoint &gt; Página Inicial (Home) &gt; Suplementos (Add-ins) e pesquise por ChatGPT. Se o seu Office estiver em inglês, os nomes são os que estão entre parênteses. Três coisas podem acontecer agora, e uma quarta só aparece na Oficina 1. Os desfechos e o que fazer em cada um estão logo abaixo desta sequência.</p>"
+          },
+          {
+            "id": "c4d7db2e-708c-473c-9c30-3531c64e0107",
+            "type": "step",
+            "title": "Crie uma apresentação de teste",
+            "isHidden": false,
+            "description": "<p>Crie uma apresentação nova, vazia, e salve como teste-chatgpt.pptx. É nela que você vai dar o primeiro comando na Oficina 1, nunca num arquivo real.</p>"
+          },
+          {
+            "id": "e2573ae4-dbcc-48d5-9656-a8d7e5572d13",
+            "type": "step",
+            "title": "Crie a cópia de trabalho",
+            "isHidden": false,
+            "description": "<p>Abra a apresentação sua que usa o tema institucional, vá em PowerPoint &gt; Arquivo &gt; Salvar como, acrescente -copia-curso ao nome, salve e feche a original. Daqui em diante você trabalha na cópia; o original fica intacto, como garantia.</p>"
+          },
+          {
+            "id": "562c6ee0-b6e0-4d18-be44-cb33dedcfe28",
+            "type": "step",
+            "title": "Responda para si",
+            "isHidden": false,
+            "description": "<p>Antes de usar isso em material oficial: a sua universidade tem norma sobre uso de IA em material didático? Se você usar, precisa declarar, e uma banca, um congresso e um relatório de fomento podem exigir coisas diferentes? O que você vai dizer aos alunos, que têm a mesma ferramenta para os seminários deles?</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "34d2d6d5-e700-4642-8437-b64ee0436d59"
+      },
+      {
+        "id": "y083bgsc6rdad6okcmsfow29",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "kzcjjl05d8scuosqzmmc2dgo",
+            "paragraph": "<p>Nada disto entra numa apresentação que você submete ao suplemento:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "a7e83f31-8812-434e-a015-8b5055efd5c2"
+      },
+      {
+        "id": "ok7ui8nx1q66xr501eutm1aa",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "u1sctp0ytcebok28gxltz7yj",
+            "number": "1",
+            "paragraph": "<p>Nome de aluno associado a nota, frequência ou ocorrência</p>"
+          },
+          {
+            "id": "lyl8iqkjzsbzj93oobtv8nsq",
+            "number": "2",
+            "paragraph": "<p>Resultado de pesquisa ainda não publicado</p>"
+          },
+          {
+            "id": "o29dpmxrcza81x6paxcuds21",
+            "number": "3",
+            "paragraph": "<p>Conteúdo de parecer sigiloso</p>"
+          },
+          {
+            "id": "du625lf85e5337slduzme6mi",
+            "number": "4",
+            "paragraph": "<p>Qualquer coisa coberta por acordo de confidencialidade</p>"
+          },
+          {
+            "id": "tm155l2zhk16kxefrvjb76j9",
+            "number": "5",
+            "paragraph": "<p>Dado pessoal de terceiro coletado em pesquisa</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "e6f31c62-7622-45ea-948b-78e97b30c5b8"
+      },
+      {
+        "id": "ssfx4in6daumh5ovipj1ebkw",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wqrvxe8c7iwoix9rwxkubtd0",
+            "heading": "Quanto custa: a sua linha na tabela de planos",
+            "paragraph": "<p>O acesso existe em todos os planos, mas não nas mesmas condições:</p><ul><li><strong>Free</strong> e <strong>Go</strong>: uso limitado.</li><li><strong>Plus</strong>, <strong>Pro</strong> e <strong>Business</strong>: sujeito ao limite de uso com agentes de IA do plano.</li><li><strong>Business</strong>, <strong>Enterprise</strong> e <strong>Edu</strong>: debitado do saldo de créditos compartilhado do espaço de trabalho.</li></ul><p>Valores conferidos na documentação oficial em 7 de outubro de 2026. Isso muda com frequência: confira na sua conta.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "fedba92b-ce37-4ce6-ac42-ff37c7d0ee6b"
+      },
+      {
+        "id": "j8v1v5sdpdji4wzj56x5zd8x",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ff064hsquarncub342b2zceh",
+            "heading": "O que aconteceu no passo 4",
+            "paragraph": "<p><strong>A loja abriu e dá para adicionar:</strong> você pode instalar. Siga para a Oficina 1.</p><p><strong>Abriu, mas a adição está bloqueada ou pede autorização:</strong> você precisa do administrador do Microsoft 365. Peça a ele a implantação do suplemento pelo arquivo XML de manifesto e volte quando estiver feita.</p><p><strong>A loja não abre ou o recurso não existe:</strong> a instituição bloqueou. Este curso não vai funcionar no seu computador; veja o aviso abaixo.</p><p><strong>(Na Oficina 1) Instalou, mas a sua conta não tem acesso:</strong> o recurso não está liberado para a sua conta. Confira o plano; se a conta for institucional, peça a habilitação a quem administra o espaço de trabalho do ChatGPT; se nada resolver, pode ser liberação gradual, e vale tentar de novo depois.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "82e7a425-3911-4bd3-9a22-32752264533a"
+      },
+      {
+        "id": "a4623434-d176-4f88-8beb-b6ce88cf4212",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e43509ed-1dfd-4021-8d4d-0f327bf77ea6",
+            "paragraph": "<p><strong>Dica:</strong> Na universidade, quase sempre são duas pessoas diferentes. Quem cuida do Microsoft 365 libera a instalação do suplemento. Quem administra a conta institucional do ChatGPT libera o uso do recurso. Mandar o pedido para a pessoa errada é o jeito mais comum de esperar uma semana à toa.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "d3840f3d-5d97-4122-b599-36a6c900f8f3"
+      },
+      {
+        "id": "b1531838-085d-423d-b93a-d2b04f68650c",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e5a498cf-8985-4743-953a-cfd39f8c49b1",
+            "paragraph": "<p><strong>Se a instalação estiver bloqueada.</strong> Sem o suplemento, não há como fazer este curso — ele depende inteiramente da barra lateral dentro do PowerPoint. A alternativa honesta é o curso irmão ChatGPT no Word, cujo fluxo principal é copiar e colar entre o navegador e o documento, e funciona em qualquer ambiente, sem instalar nada. As habilidades de formular instruções são as mesmas, e você pode aplicá-las depois em slides feitos à mão.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "6666069c-07de-4484-96f9-249385420c7a"
+      },
+      {
+        "id": "a0f810bd-e7bf-4e25-b85c-b04852ed240e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "25792396-282d-4619-afe7-c51075f50241",
+            "paragraph": "<p>🏁 Ponto de controle: Em <strong>Explorador de Arquivos &gt; sua pasta</strong> há três arquivos — a apresentação original, a cópia com sufixo <em>-copia-curso</em>, e <em>teste-chatgpt.pptx</em>. Além disso, você sabe dizer qual dos três desfechos do passo 4 você obteve.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "6d01cec6-5f58-4e2b-92c7-9c505fa96eb5"
+      },
+      {
+        "id": "559148f8-c06a-4051-b315-2d192db31359",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e18ab315-4305-448a-b90e-d143b644e5de",
+            "paragraph": "<p>⚠️ Cuidado: não pule os passos 5 e 6. As oficinas seguintes editam arquivos de verdade, e o sistema pode apagar conteúdo. A cópia é o que separa \"experimentei\" de \"perdi a aula\".</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "b207cba4-77d6-46ec-aa08-23bd9d31bcab"
+      },
+      {
+        "id": "kryvuxahbcvxoz1whht1knn0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f663il7b9s2thy7o2c3odz5u",
+            "heading": "Se travar na Oficina 0",
+            "paragraph": "<p>Abra o problema que apareceu para ver o que fazer:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "ff3df9c5-5126-416e-b451-a5aad2c80e8f"
+      },
+      {
+        "id": "c08a0e48-e79b-4114-85dd-521121e51f9c",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "eff64ff9-ebbc-4d5c-b9c3-f2aef3d36ba0",
+            "title": "Não encontro Suplementos na Página Inicial",
+            "description": "<p>Sua versão do PowerPoint pode ser antiga demais para suportar suplementos do Office. Confira em PowerPoint &gt; Arquivo &gt; Conta.</p>"
+          },
+          {
+            "id": "33b1a49d-bd38-474e-b825-c0c3d8880d6d",
+            "title": "Não sei qual é o meu plano",
+            "description": "<p>Você pode ter duas contas — a institucional e a pessoal. Confira com qual e-mail está conectado.</p>"
+          },
+          {
+            "id": "a54abb21-f969-46f1-ad85-b0d9afec88eb",
+            "title": "A loja abre mas não acha o ChatGPT",
+            "description": "<p>Pode ser bloqueio por política, ou indisponibilidade regional. Trate como o terceiro desfecho do passo 4.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "f2e59b37-b03c-489a-a20f-a34830876eaa"
+      },
+      {
+        "id": "38bbfa89-3b3f-4f36-8b1d-08d673f04089",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "e5213dd8-42db-48c2-aac7-631905697973",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "b9abf85a-b4b0-440e-bfe5-e88c0a388beb"
+      },
+      {
+        "id": "y44pxpkil5o39fte1aokchmy",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "lkoq9g7opz9pz96pl2j0wdkp",
+            "heading": "Oficina 1 — Botar o ChatGPT dentro do PowerPoint",
+            "paragraph": "Você ouviu falar que dá para usar o ChatGPT dentro do PowerPoint, mas não faz ideia de onde isso fica. Nesta oficina você instala, conecta a conta e dá o primeiro comando, numa apresentação vazia, onde não há nada a perder. Vai precisar do PowerPoint aberto, da apresentação teste-chatgpt.pptx criada na Oficina 0 e da sua conta do ChatGPT."
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "7531ac3b-c7d3-402a-91ef-f139fa00b349"
+      },
+      {
+        "id": "12e67a72-b3bb-4c7b-89c4-8bbd486e0596",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "36d05ea7-8936-498c-b854-a435127506a6",
+            "type": "intro",
+            "title": "Instalar, conectar e dar o primeiro comando",
+            "isHidden": false,
+            "description": "<p>Oito passos, todos na apresentação de teste. Ao final, a barra lateral do ChatGPT vai estar aberta e você vai saber onde ficam as Skills.</p>"
+          },
+          {
+            "id": "dc5bc55a-add6-4be0-8b50-829a095e7aa2",
+            "type": "summary",
+            "title": "O que você resolveu",
+            "isHidden": false,
+            "description": "<p>O suplemento está instalado e conectado à conta certa, o primeiro comando funcionou e você sabe onde ficam as Skills. Tudo isso sem arriscar nenhum arquivo real.</p>"
+          },
+          {
+            "id": "6c2a0a30-5b2d-4e4d-bd67-5a9183a2e595",
+            "type": "step",
+            "title": "Abra a apresentação de teste",
+            "isHidden": false,
+            "description": "<p>Abra o arquivo <strong>teste-chatgpt.pptx</strong>. Não abra material real ainda.</p>"
+          },
+          {
+            "id": "21e883ab-539d-432c-ae22-be33b3a22d29",
+            "type": "step",
+            "title": "Acesse os suplementos no PowerPoint",
+            "isHidden": false,
+            "description": "<p>No PowerPoint, vá até <strong>Página Inicial (Home)</strong> e selecione <strong>Suplementos (Add-ins)</strong>.</p>"
+          },
+          {
+            "id": "9abcc55f-c998-4015-a3fc-1e5906c27ae3",
+            "type": "step",
+            "title": "Procure e adicione o ChatGPT",
+            "isHidden": false,
+            "description": "<p>Pesquise por <strong>ChatGPT</strong> na loja de suplementos e clique em <strong>Adicionar</strong> para instalar.</p>"
+          },
+          {
+            "id": "4061aae0-bb11-476a-87ee-25e9062e2bf7",
+            "type": "step",
+            "title": "Abra o ChatGPT na faixa de opções",
+            "isHidden": false,
+            "description": "<p>No PowerPoint, acesse a <strong>faixa de opções</strong> e clique em <strong>ChatGPT</strong>. O suplemento aparecerá como uma barra lateral à direita.</p>"
+          },
+          {
+            "id": "a7a71678-659b-4123-8fb7-1b50203c2065",
+            "type": "step",
+            "title": "Conecte sua conta do ChatGPT",
+            "isHidden": false,
+            "description": "<p>Entre com a sua conta do ChatGPT: aquela que tem o plano que você identificou na Oficina 0.</p>"
+          },
+          {
+            "id": "dbf76d2a-81cc-43af-9023-e30978aa723c",
+            "type": "step",
+            "title": "Dê o primeiro comando",
+            "isHidden": false,
+            "description": "<p>Na apresentação de teste, digite o seguinte comando:<br>Crie um slide de título com o texto \"Teste\" e um subtítulo com a data de hoje.</p>"
+          },
+          {
+            "id": "7eca0049-5f02-4de7-b311-ba643ac09044",
+            "type": "step",
+            "title": "Verifique o resultado",
+            "isHidden": false,
+            "description": "<p>Confira se o slide foi criado conforme solicitado.</p>"
+          },
+          {
+            "id": "ff5d0fa5-f415-4907-aa4a-f6fc2d20224d",
+            "type": "step",
+            "title": "Localize as Skills disponíveis",
+            "isHidden": false,
+            "description": "<p>Vá em PowerPoint &gt; barra lateral do ChatGPT &gt; <strong>símbolo de adição</strong> e veja quais Skills estão disponíveis na sua conta. Você vai voltar a elas depois; por ora, só localize onde ficam.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "c971783b-5612-4e13-a1ba-3d441d83920c"
+      },
+      {
+        "id": "601d03ac-4573-441e-a5f5-21697f8ff9de",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "aca63c89-4d3a-43b1-8d47-8bcd4c1c25c4",
+            "paragraph": "<p><strong>Ponto de controle:</strong> A barra lateral está visível em PowerPoint &gt; faixa de opções &gt; ChatGPT, a apresentação de teste tem o slide que você pediu, e você sabe onde fica o acesso às Skills. Tudo isso aconteceu num arquivo de teste, não no seu material.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "8db22541-1023-4b37-9628-431beaeb9170"
+      },
+      {
+        "id": "34519d09-e92e-4bc4-97f3-9fc1283f156e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b01d61ab-5bce-414c-9ce8-af0dcc5e14cb",
+            "paragraph": "<p>⚠️ Cuidado: repare que você só usou a apresentação de teste. Foi de propósito. Da Oficina 2 em diante você trabalha nas cópias, nunca nos originais.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "b0ee59cf-253a-4d29-91a1-3e9de10f1fde"
+      },
+      {
+        "id": "utzzcgwj6l4ouricz2b37n47",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ohi77z3hyesv5nubmuqv2lkm",
+            "heading": "Se travar na Oficina 1",
+            "paragraph": "<p>Cada problema abaixo tem um destinatário diferente. Abra o que apareceu para você:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "eec74eec-802f-456d-a882-d7730ea99e71"
+      },
+      {
+        "id": "4f955112-3ea6-4d95-8d6c-5e8fba976518",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "09b2d3bb-d09c-4e79-a080-e346e277ff06",
+            "title": "\"Não foi possível iniciar este suplemento\"",
+            "description": "<p>Erro conhecido de login unificado (SSO) no Office para Windows. Feche a caixa e tente entrar pelo navegador. Se persistir, não tem conserto do seu lado: abra um chamado para o administrador global do ambiente Microsoft da instituição, pedindo que ele pegue o endereço ACS atual em Portal de administração da OpenAI &gt; Identidade &gt; SSO &gt; Gerenciar SSO, atualize o aplicativo da OpenAI no provedor de identidade e deixe esse endereço como padrão. Copie essa frase no chamado.</p>"
+          },
+          {
+            "id": "26dbe98d-2e68-45fe-a942-68d452f065a3",
+            "title": "Instalou mas não aceita a minha conta",
+            "description": "<p>Primeiro, confira se você está entrando com a conta ChatGPT certa — é comum ter uma pessoal e uma institucional abertas ao mesmo tempo. Se a conta está certa, é o quarto desfecho da Oficina 0: o recurso não foi habilitado no espaço de trabalho do ChatGPT, ou ainda não chegou à sua conta. Peça a quem administra a conta institucional do ChatGPT, não à TI do Office.</p>"
+          },
+          {
+            "id": "dc173b69-af96-4dfe-ab53-8a971621e60c",
+            "title": "A barra lateral abre em branco",
+            "description": "<p>Feche e reabra o PowerPoint. Se continuar, confira a conexão de internet — o suplemento não funciona offline.</p>"
+          },
+          {
+            "id": "55703c2c-7bb9-421c-97ff-6ee92991b34b",
+            "title": "Não achei as Skills",
+            "description": "<p>Nem toda conta tem Skills disponíveis. Depende do plano, do espaço de trabalho e das permissões. Não é falha sua.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "08a9bdf3-3b46-4844-abb6-042ea01e4e7c"
+      },
+      {
+        "id": "75b6d85d-b816-4a43-b22b-a14af5f2759c",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "9e41b452-30c8-4ba7-b0d2-16fa9f3a01cf",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Por que é importante sempre trabalhar em cópias dos seus arquivos ao usar o ChatGPT no PowerPoint?",
+            "answers": [
+              {
+                "id": "ceae34ea-95c4-4414-bf48-5a816aa9c5be",
+                "title": "Porque o ChatGPT pode editar ou apagar conteúdo dos slides originais",
+                "correct": true,
+                "feedback": "Esta é a resposta correta. O ChatGPT pode modificar ou excluir conteúdo dos slides originais, então trabalhar em cópias protege seu material original."
+              },
+              {
+                "id": "a0c16757-41a7-4ce2-a093-35283ad84421",
+                "title": "Porque o ChatGPT não funciona com arquivos originais",
+                "correct": false,
+                "feedback": "Incorreto. O suplemento funciona normalmente com arquivos originais, e é justamente por isso que o risco existe: ele pode editar ou apagar conteúdo."
+              },
+              {
+                "id": "09bf8545-4518-403a-9868-c8473081f5e9",
+                "title": "Porque cópias são mais rápidas de abrir",
+                "correct": false,
+                "feedback": "Incorreto. A velocidade de abertura não tem relação com o uso de cópias. O motivo é proteger o original de edições e exclusões feitas pelo sistema."
+              },
+              {
+                "id": "ae1a75e5-18fe-4b39-801f-bf4098971b75",
+                "title": "Porque o PowerPoint exige arquivos duplicados",
+                "correct": false,
+                "feedback": "Incorreto. O PowerPoint não exige duplicar arquivos. Trabalhar em cópia é uma regra deste curso, baseada no aviso da própria OpenAI de que o sistema pode editar e apagar conteúdo."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "be7b415c-a5b7-4005-880e-4d4ba3ecbc64"
+      },
+      {
+        "id": "elkcg9qe3opj5mb2g7tv81ir",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ebzym204wxclyeot5h24yo3f",
+            "paragraph": "<p>Ambiente pronto, suplemento instalado e primeiro comando dado, tudo sem tocar em material real. Na Oficina 2 você pega um texto longo, como aquele artigo de trinta páginas, e transforma numa aula de doze slides com o tema da sua universidade. Deixe à mão a cópia de trabalho e um documento de origem que você decidiu, na Oficina 0, que pode submeter.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.141.0"
+          }
+        },
+        "globalBlockId": "9a405237-f3d4-427b-833e-b9b8e07ef194"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Preparando o Ambiente e Instalando o ChatGPT no PowerPoint",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "ItiYDmh_KQwh6hwIbBpyTUHRIblB_QaI",
+    "createdAt": "2026-10-07T16:07:58.220Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-10-07T16:08:39.607Z"
+  }
+}
