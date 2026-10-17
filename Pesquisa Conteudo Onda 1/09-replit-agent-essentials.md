@@ -8,7 +8,7 @@
 | Tema | Vibe Coding / App Building |
 | Trilhas | T5 — Vibe Coding: do zero ao app (posição 2 de 6; antes vem Vibe Coding - Essentials; depois vem Lovable - Hands On) |
 | Pesquisa feita por | ChatGPT Work |
-| Versão do prompt | 2 (17 de outubro de 2026): inclui as correções da avaliação da pesquisa do NotebookLM |
+| Versão do prompt | 3 (17 de outubro de 2026): correções das avaliações das pesquisas do NotebookLM e do MCP |
 | Arquivo que o ChatGPT deve entregar | `ConteudoBruto_replit-agent-essentials.txt` |
 
 ## Como usar
@@ -16,7 +16,8 @@
 1. Abra o ChatGPT Work e cole **todo** o bloco "Prompt" abaixo, sem alterar nada.
 2. Quando a pesquisa terminar, baixe o arquivo `ConteudoBruto_replit-agent-essentials.txt` e salve em `Pesquisa Conteudo Onda 1/conteudo-bruto/replit-agent-essentials/`.
 3. Abra a seção **MATERIAIS PARA BAIXAR** do arquivo e baixe cada item para a mesma pasta, com o nome sugerido. Esses materiais fazem parte do conteúdo bruto: o .txt sozinho não basta.
-4. Leia a seção **LACUNAS E PONTOS A VERIFICAR** antes de começar a ementa. Tudo o que estiver lá precisa de conferência humana.
+4. Abra a seção **PÁGINAS PARA SALVAR** e salve cada página como PDF na mesma pasta (no navegador: Imprimir > Salvar como PDF), com o nome sugerido. É onde fica o texto oficial completo que o ChatGPT só resume.
+5. Leia a seção **LACUNAS E PONTOS A VERIFICAR** antes de começar a ementa. Tudo o que estiver lá precisa de conferência humana.
 
 ## Prompt
 
@@ -70,6 +71,20 @@ data: ferramentas de IA mudam de nome, de preço e de menu em poucas semanas.
 - O curso não pode inventar funcionalidade. Por isso todo fato precisa de fonte e
   de data.
 
+# REGRA DE PROFUNDIDADE (IMPORTANTE)
+Pesquise na profundidade do público descrito acima, e não na de quem constrói a
+ferramenta.
+- Priorize o que o aluno VÊ e FAZ: onde clicar, o que aparece na tela, o que a
+  ferramenta consegue fazer, em qual plano, que permissão pede, como desfazer e
+  como saber que deu certo.
+- Detalhes internos (arquitetura técnica, protocolos, APIs, SDKs, código,
+  configuração de administrador, solução de problemas de quem desenvolve) entram
+  só na medida necessária para explicar um conceito ao aluno. O que passar disso
+  vai para a seção APÊNDICE TÉCNICO, no fim do arquivo, e não se mistura às
+  demais seções.
+- Não aprofunde o que está na lista "O que NÃO é assunto deste curso".
+- Pelo menos dois terços do arquivo devem tratar do que o aluno vê e faz.
+
 # O QUE PESQUISAR — PARTE GERAL (vale para qualquer curso)
 1. Identidade: o que é a ferramenta (ou o conceito), quem a fabrica, quando foi
    lançada, versão ou geração atual, linha do tempo das mudanças mais
@@ -101,8 +116,10 @@ data: ferramentas de IA mudam de nome, de preço e de menu em poucas semanas.
 12. Material didático que já existe: cursos oficiais, academias, tutoriais,
     webinars e vídeos oficiais. Serve de referência de estrutura e de exemplo,
     não para copiar.
-13. Ideias de exercício: atividades curtas, que o aluno consiga fazer sozinho
-    (de preferência no plano gratuito), cada uma com o resultado que comprova que
+13. Ideias de exercício: comece decompondo a TAREFA OBSERVÁVEL nas ações que ela
+    contém (cada verbo dela é uma ação) e garanta, para CADA ação, um passo a
+    passo oficial e pelo menos uma atividade curta que o aluno consiga fazer
+    sozinho (de preferência no plano gratuito), com o resultado que comprova que
     deu certo.
 
 # O QUE PESQUISAR — FOCO ESPECÍFICO DESTE CURSO
@@ -180,12 +197,16 @@ Neste curso, procure especialmente: Documentação oficial do Replit, guias de b
 5. Para cada nome de menu, botão ou opção, indique de onde ele veio: (interface),
    se você viu na tela; (ajuda pt-BR) ou (ajuda en), se veio da central de ajuda.
    Avise quando a página em português parecer tradução automática.
-6. Transcrição: a seção 15 não pode se limitar a rótulos soltos. Transcreva da
-   documentação oficial, como o texto está, entre aspas e com a fonte: (a) o
-   procedimento completo de cada tarefa que pode virar exercício; (b) a tabela de
-   planos e limites; (c) os requisitos de conta e de sistema; (d) as limitações e
-   avisos oficiais. É material de referência interno da equipe. Fora da seção
-   15, resuma com suas palavras, sempre com a fonte.
+6. Transcrição e páginas para salvar: na seção 15, transcreva entre aspas, com a
+   fonte, os trechos oficiais essenciais que couberem (passos, limites,
+   requisitos, avisos). O que você não puder transcrever por inteiro, resuma
+   fielmente e liste a página na seção PÁGINAS PARA SALVAR: a equipe vai salvá-la
+   como PDF. Nessa seção entram, no mínimo, as páginas oficiais com: (a) o
+   procedimento de cada tarefa que pode virar exercício; (b) planos e limites;
+   (c) requisitos de conta e de sistema; (d) limitações, segurança e
+   privacidade. Para cada página: título, URL, o trecho que importa, prioridade
+   (alta ou média) e nome de arquivo sugerido, sem acento e sem espaço (ex.:
+   ajuda-planos-e-limites.pdf).
 7. Links que o aluno vai abrir ou importar nos exercícios precisam levar direto
    ao conteúdo, ser públicos e não exigir login. Teste cada um e diga o que ele
    devolve (página HTML, PDF, vídeo).
@@ -226,8 +247,9 @@ Ferramenta(s): [nome e versão atual de cada uma]
 11. NOVIDADES RECENTES E RECURSOS INSTÁVEIS
 12. MATERIAL DIDÁTICO EXISTENTE
 13. IDEIAS DE EXERCÍCIO
-    (todas marcadas [SUGESTÃO], cada uma com os links testados e o resultado
-    que comprova que deu certo)
+    (comece pela decomposição da tarefa observável em ações; depois, as
+    atividades, todas marcadas [SUGESTÃO], cada uma com a ação que cobre, os
+    links testados e o resultado que comprova que deu certo)
 14. RESPOSTAS AO FOCO ESPECÍFICO DESTE CURSO
     (um item para cada ponto da lista "FOCO ESPECÍFICO", na mesma numeração)
 15. TRECHOS TRANSCRITOS DA DOCUMENTAÇÃO OFICIAL
@@ -235,23 +257,31 @@ Ferramenta(s): [nome e versão atual de cada uma]
     transcrito entre aspas)
 16. MATERIAIS PARA BAIXAR
     (um item por material, no formato pedido acima, começando com [BAIXAR])
-17. LACUNAS E PONTOS A VERIFICAR
+17. PÁGINAS PARA SALVAR
+    (uma página oficial por item, no formato pedido na regra 6)
+18. LACUNAS E PONTOS A VERIFICAR
     (tudo o que ficou [VERIFICAR] ou NÃO ENCONTRADO, e as contradições entre
     fontes)
-18. FONTES CONSULTADAS
+19. APÊNDICE TÉCNICO
+    (detalhes técnicos além da profundidade do público, conforme a REGRA DE
+    PROFUNDIDADE; se não houver, escreva "sem conteúdo")
+20. FONTES CONSULTADAS
     (lista numerada: título, URL, tipo, data da fonte, data de acesso)
 
 Em todas as seções, cite a fonte de cada informação com o número dela na lista da
-seção 18, entre colchetes (ex.: [12]).
+seção 20, entre colchetes (ex.: [12]).
 
 # ANTES DE ENTREGAR, CONFIRA
+[ ] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+[ ] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é
+    técnico demais está no APÊNDICE TÉCNICO.
 [ ] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está
     marcada [CONFIRMADO].
-[ ] Todo material não-web citado nas seções 1 a 18 está na seção 16.
+[ ] Todo material não-web citado nas seções 1 a 20 está na seção 16.
 [ ] Cada arquivo declarado BAIXADO abre e é do tipo anunciado (nenhuma página
     HTML salva como .pdf).
 [ ] Os links dos exercícios foram testados e levam direto ao conteúdo.
-[ ] A seção 15 traz os quatro blocos de transcrição pedidos na regra 6.
+[ ] A seção 17 lista páginas dos quatro tipos pedidos na regra 6.
 [ ] Cada número está atribuído à fonte que de fato o contém.
 [ ] Nomes de menus e botões indicam a origem: (interface), (ajuda pt-BR) ou
     (ajuda en).

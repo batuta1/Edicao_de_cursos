@@ -1,0 +1,438 @@
+================================================================
+CONTEÚDO BRUTO (COMPLEMENTO) — MCP - Essentials
+Pesquisa realizada em: 17 de outubro de 2026
+================================================================
+
+0. RESUMO EXECUTIVO
+
+[CONFIRMADO] O Claude oferece uma extensão oficial chamada “Filesystem”, publicada pela Anthropic, para listar, ler, criar, editar, mover e pesquisar arquivos apenas nas pastas autorizadas; a lista pública de ferramentas não contém uma ação direta de apagar [1].
+[CONFIRMADO] Extensões locais do Claude Desktop estão disponíveis a todos os usuários do aplicativo; o Desktop funciona em macOS, Windows e Linux beta, respeitados os requisitos de sistema [3][5].
+[CONFIRMADO] No Claude, Google Workspace e Microsoft 365 têm documentação clara de leitura e escrita; o Microsoft 365 exige conta corporativa em um tenant Microsoft Entra e consentimento do administrador [6][8][9].
+[CONFIRMADO] No ChatGPT, a interface atual usa principalmente “Plugins”; a documentação também usa “apps” para as integrações subjacentes e “connectors” em configurações e textos administrativos [17][21][22].
+[VERIFICAR] A documentação pública do ChatGPT consultada não permite reconstruir com segurança a disponibilidade do diretório e de MCP personalizado para cada plano Free, Go, Plus, Pro, Business, Enterprise e Edu; a tabela renderizada perde os símbolos de disponibilidade e nem inclui Free/Go [20].
+[CONFIRMADO] No Claude, as permissões de ferramentas são “Always allow”, “Needs approval” e “Blocked”; no modo manual, a confirmação usa “Allow” ou “Deny” [5][15].
+[CONFIRMADO] No ChatGPT, a confirmação depende do plugin, da ação e da política do workspace; não existe uma dupla de botões documentada como universal para todo conector [19][21].
+[SUGESTÃO] Para aula prática de baixo risco, prefira uma pasta com arquivos fictícios, consulta somente leitura e rascunho de e-mail ou evento sem convidados; termine sempre com revogação ou exclusão do teste.
+[CONFIRMADO] No Brasil, LGPD, ANPD e Governo Digital apontam para finalidade, necessidade, segurança, controle de acesso, revisão humana e uso de dados fictícios ou anonimizados em ferramentas externas não aprovadas [25][26][27][28].
+
+1. LER ARQUIVOS
+
+1a. Arquivos locais no Claude Desktop
+
+Nome e origem
+
+[CONFIRMADO] Nome exato no diretório: Filesystem. Selo: “Anthropic verified”. Publicador: Anthropic. Adicionado ao marketplace em julho de 2026. A descrição diz que ele permite ao Claude ler e escrever no sistema de arquivos local [1].
+[CONFIRMADO] É uma “desktop extension”: executa localmente e fica disponível no Claude Desktop e no Claude Code, não no Claude web ou mobile [4].
+[CONFIRMADO] As extensões do Desktop estão disponíveis para todos os usuários. O chat no Claude Desktop existe em Free, Pro, Max, Team e Enterprise. O aplicativo requer macOS 13 ou superior, Windows 10 ou superior, ou Linux beta em Ubuntu 22.04+/Debian 12+ nas arquiteturas x64 ou arm64 [3][5].
+
+Instalação vista pelo aluno
+
+[CONFIRMADO] 1) Instalar e abrir o Claude Desktop. 2) Ir a Settings > Extensions. 3) Clicar em Browse extensions. 4) Procurar Filesystem. 5) Abrir a ficha, conferir “Made by Anthropic” e o selo, e clicar em Install. 6) Concluir a configuração solicitada. A extensão passa a ficar disponível nas conversas [1][2][3].
+[VERIFICAR] A ajuda geral manda configurar caminhos de arquivos quando aplicável, mas não mostra, em texto, a tela específica do Filesystem para escolher ou trocar pastas. Na prática de aula, conferir se a instalação pede uma ou mais pastas e se a pasta de teste aparece em list_allowed_directories antes de usar [1][2].
+
+O que consegue fazer
+
+[CONFIRMADO] Leitura e inspeção: ler arquivo, texto e mídia; ler vários arquivos; listar diretórios e tamanhos; criar árvore de diretórios; pesquisar arquivos; obter informações do arquivo; listar diretórios permitidos [1].
+[CONFIRMADO] Escrita: criar diretório, gravar arquivo, editar arquivo e mover arquivo [1].
+[CONFIRMADO] Apagar: NÃO ENCONTRADO na lista pública de ferramentas da extensão Filesystem. A ficha não apresenta ferramenta “delete”; não se deve ensinar que ela apaga diretamente sem teste atual da interface [1].
+[CONFIRMADO] O acesso fica limitado aos diretórios explicitamente conectados. No Cowork, leituras e gravações também se restringem às pastas conectadas, e exclusão permanente exige permissão explícita [3][15].
+
+Aprovação e remoção
+
+[CONFIRMADO] Em Claude, ferramentas de conectores podem ser configuradas como Always allow, Needs approval ou Blocked. No modo Manual, uma ação que precisa de aprovação pausa e mostra Allow ou Deny. No modo Auto, o Claude avalia ações; no modo Skip, aprova sem a revisão automática. Exclusão permanente de arquivo continua protegida por permissão explícita no Cowork [5][15].
+[VERIFICAR] A documentação da instalação não descreve textualmente o botão exato de desinstalação da extensão Filesystem. Caminho a validar na versão instalada: Settings > Extensions > Filesystem > opção de remover/desinstalar. A organização também pode retirar extensões do catálogo permitido [2].
+
+Miniensaio seguro
+
+[SUGESTÃO] Crie uma pasta “teste-mcp-arquivos” contendo apenas dois .txt fictícios. Conecte somente essa pasta. Peça: “Liste os arquivos permitidos e resuma os dois textos; não altere nada”. Confirme o sucesso pela lista correta e por uma frase de cada arquivo. Em seguida, desative a extensão na conversa e retire a pasta das permissões. Nunca use Downloads, Documentos ou uma pasta corporativa inteira no primeiro teste.
+
+1b. Arquivos na nuvem
+
+Google Drive — Claude
+
+[CONFIRMADO] Publicador no marketplace: Google; conector verificado pela Anthropic; exige login. O Google Workspace Connector está disponível para todos os usuários do Claude e Claude Desktop, portanto inclui o plano Free. Em Team/Enterprise, um Owner precisa habilitá-lo antes da autenticação individual [6][7].
+[CONFIRMADO] Lê Google Docs, Sheets, Slides, PDFs, imagens e arquivos do Microsoft Office; de documentos do Drive extrai texto, mas não processa imagens incorporadas. Pode pesquisar, obter metadados, ver permissões e mudanças recentes [6].
+[CONFIRMADO] Também pode compartilhar, mover e enviar itens para a lixeira, fazer upload de qualquer tipo de arquivo, criar pastas e salvar arquivos gerados; Google Docs/Sheets/Slides têm conectores separados para criação e edição ao vivo em beta [6].
+[CONFIRMADO] Conexão: em uma conversa, “+” > Connectors > Manage connectors > “+”; ou Customize > Connectors > “+”; abrir Google Drive, revisar recursos, clicar Connect/Install e autenticar com Google [5]. Para anexar um arquivo já conectado: “+” > Add from Google Drive > buscar/colar URL > enviar [6].
+[CONFIRMADO] Desconexão: Customize > Connectors > Google > detalhes > Disconnect; também é possível revogar a conexão na área de conexões da Conta Google [6].
+
+Google Drive — ChatGPT
+
+[CONFIRMADO] O diretório destacado do ChatGPT mostra Google Drive com a descrição “Work with Google Docs, Sheets, and Slides” [18].
+[CONFIRMADO] Conexão básica: Customize > Plugins > procurar Google Drive > instalar > conectar a conta se solicitado. Depois, digitar “@” e o nome do plugin no prompt quando se quiser forçar seu uso [17][18].
+[VERIFICAR] A documentação pública para usuários consultada não publica, na ficha acessível, uma lista estável de operações de leitura, gravação, lixeira e tipos de arquivo, nem o plano mínimo do plugin. Verificar na ficha exibida para a conta antes de gravar a aula [17][18][20].
+[CONFIRMADO] Desinstalar um plugin não equivale necessariamente a revogar a autorização do serviço conectado; conexões MCP/apps precisam ser desconectadas separadamente quando ainda existirem [17][22].
+
+Microsoft OneDrive e SharePoint — Claude
+
+[CONFIRMADO] O conector se chama Microsoft 365, é hospedado pela Anthropic e cobre Outlook, SharePoint, OneDrive e Teams. Está disponível em todos os planos Claude [8][9].
+[CONFIRMADO] Requisito decisivo: conta de trabalho Microsoft 365 vinculada a tenant Microsoft Entra. Contas pessoais @outlook.com, @hotmail.com e equivalentes não funcionam. Um Microsoft Entra Global Administrator precisa dar consentimento uma vez [9].
+[CONFIRMADO] Leitura: pesquisa SharePoint, e-mail e calendário do Outlook, mensagens do Teams e arquivos. O usuário só acessa o que já podia acessar no Microsoft 365 [9].
+[CONFIRMADO] Escrita, quando habilitada pelo administrador: rascunhar/enviar e organizar e-mail, criar/alterar/excluir eventos, criar/atualizar/mover/copiar arquivos e pastas em SharePoint/OneDrive e enviar mensagens no Teams. Excluir arquivo/pasta move para a lixeira, não apaga permanentemente. Anexos não são aceitos nas ferramentas de escrita de e-mail [9].
+[CONFIRMADO] Conexão individual depois da preparação administrativa: Customize > Connectors > Microsoft 365 > Connect > entrar com a conta de trabalho e aceitar permissões. Team/Enterprise exigem também habilitação em Organization settings > Connectors [8][9].
+[CONFIRMADO] Revogação: desconectar no Claude ou revogar no Microsoft Entra. O administrador pode retirar capacidades específicas (e-mail, SharePoint, OneDrive, Teams) e a mudança é imediata [9].
+
+Microsoft OneDrive e SharePoint — ChatGPT
+
+[CONFIRMADO] O diretório destacado mostra SharePoint (“Summarize SharePoint sites and files”), Outlook Email e Teams [18].
+[VERIFICAR] OneDrive não apareceu como ficha destacada independente nas páginas públicas consultadas. Não foi encontrada uma matriz pública que detalhe tipos de arquivo, escrita, exclusão ou plano mínimo para SharePoint/OneDrive no ChatGPT. Verificar a ficha do plugin e a política do workspace [18][20][22].
+
+Dropbox
+
+[CONFIRMADO] Claude: conector Dropbox verificado, publicado pelo Dropbox, exige login e foi adicionado em junho de 2026. Pesquisa, lista, lê/visualiza, cria arquivo e pasta, copia, move, exclui, cria link compartilhado e solicitação de arquivo; respeita as permissões existentes do Dropbox [10]. Conectar pelo diretório geral descrito em [5]; desconectar em Customize > Connectors [5].
+[CONFIRMADO] ChatGPT: Dropbox aparece no diretório destacado com “Access, save and share files” [18].
+[VERIFICAR] Planos mínimos do ChatGPT e do serviço Dropbox, tipos de arquivo e comportamento de exclusão não são discriminados na documentação pública consultada. No Claude, conectores web são oferecidos a todos os usuários, mas recursos podem depender do plano da conta Dropbox [5][10].
+
+Box
+
+[CONFIRMADO] Claude: ficha oficial do marketplace identifica conector Box verificado, publicado pela Box, com login; permite pesquisar e ler conteúdo, extrair metadados e fazer upload de arquivo/versão e criar pasta. A lista pública vista não apresentou exclusão [11].
+[VERIFICAR] ChatGPT: Box não foi encontrado entre os plugins destacados nem em página pública de usuário consultada. Isso não prova inexistência no diretório autenticado; conferir pela busca dentro de Customize > Plugins [17][18].
+[VERIFICAR] O plano mínimo da Box e a disponibilidade regional do conector não foram publicados na ficha consultada.
+
+2. CONSULTAR SERVIÇOS
+
+Regra transversal
+
+[CONFIRMADO] Conectores web do Claude estão disponíveis a todos os usuários e herdam as permissões da conta conectada. Team/Enterprise pode limitar a organização a somente leitura ou bloquear ações. O serviço externo ainda pode exigir um plano próprio [5].
+[VERIFICAR] Para o ChatGPT, disponibilidade depende de plano, configurações do workspace e do próprio plugin; a documentação pública não fornece matriz por plugin/país [17][20][22].
+[VERIFICAR] Disponibilidade no Brasil: as páginas públicas foram acessíveis a partir do Brasil em 17/10/2026, mas nenhuma das fichas consultadas publica uma garantia específica por país. Tratar como “verificar na conta” e considerar restrições do serviço externo e do administrador.
+
+Ficha — Gmail
+
+[CONFIRMADO] Publicador/origem no Claude: Google Workspace; disponível para todos os usuários Claude. No ChatGPT: plugin Gmail destacado no diretório [6][18].
+[CONFIRMADO] Claude lê e pesquisa mensagens, metadados e organização; não lê o conteúdo de anexos. Cria rascunhos, envia, responde, encaminha e gerencia marcadores/threads. Envio, resposta e encaminhamento pedem aprovação por padrão [6].
+[CONFIRMADO] ChatGPT pode pesquisar e contextualizar e-mails, propor limpeza e criar rascunhos; o guia oficial manda esperar aprovação antes de enviar, arquivar ou mover para a lixeira [19].
+[CONFIRMADO] Autenticação: login na conta Google durante Connect/Install; o conector não usa a senha dentro do chat [5][6].
+[CONFIRMADO] Gratuito no lado Claude: sim, no plano Free; a conta Google pode ser pessoal ou Workspace, sujeita às regras da conta. No lado ChatGPT: plano mínimo NÃO ENCONTRADO [6][20].
+
+Ficha — Google Calendar
+
+[CONFIRMADO] Publicador/origem no Claude: Google Workspace; todos os usuários Claude. No ChatGPT: Google Calendar aparece em destaque [6][18].
+[CONFIRMADO] Claude lê eventos e calendários compartilhados; cria, atualiza e exclui eventos; encontra disponibilidade; gerencia convidados, respostas e recorrência [6].
+[CONFIRMADO] ChatGPT descreve o plugin como capaz de gerenciar eventos e agendas, mas a página pública não detalha cada ferramenta nem o plano mínimo [18].
+[CONFIRMADO] Autenticação: login Google; ações no Claude exigem aprovação explícita por padrão [5][6].
+[CONFIRMADO] Gratuito no lado Claude: sim. ChatGPT: NÃO ENCONTRADO por plano [6][20].
+
+Ficha — Notion
+
+[CONFIRMADO] Claude: publicado pela Notion, verificado pela Anthropic, exige login, adicionado em novembro de 2025. Pesquisa e busca páginas; cria, atualiza, move e duplica páginas; cria/atualiza bases; cria e lê comentários; consulta usuários [12].
+[CONFIRMADO] Plano Claude: conectores web para todos os usuários. Gratuidade do Notion depende da conta e do recurso utilizado [5][12].
+[VERIFICAR] ChatGPT: uma ficha pública oficial atual não foi encontrada nas páginas de diretório consultadas. Pesquisar “Notion” no diretório autenticado antes da gravação [17][18].
+[VERIFICAR] Brasil: nenhuma restrição regional foi informada; confirmar na conta. Autenticação apresentada como “Sign-in Required”; o tipo técnico não é especificado na ficha [12].
+
+Ficha — Slack
+
+[CONFIRMADO] Claude: publicado pelo Slack, verificado, login exigido, adicionado em novembro de 2025. Lê/pesquisa mensagens públicas e privadas conforme permissão, canais, threads, arquivos e usuários; envia mensagens; cria, atualiza e lê canvases [13].
+[CONFIRMADO] ChatGPT: Slack aparece no diretório com “Read and manage Slack”; o guia de início mostra instalação pelo catálogo [18].
+[CONFIRMADO] Plano Claude: todos os usuários; plano do Slack pode limitar histórico e recursos. Plano ChatGPT: NÃO ENCONTRADO com segurança [5][13][20].
+[VERIFICAR] Brasil e tipo técnico de autenticação: não discriminados; a ficha informa apenas login obrigatório [13].
+
+Ficha — GitHub
+
+[CONFIRMADO] ChatGPT: plugin destacado para triar pull requests, issues, CI e fluxos de publicação [18].
+[CONFIRMADO] Claude: a ajuda cita GitHub como exemplo de serviço remoto que pode ser conectado e usado em todas as superfícies, mas não foi localizada nesta pesquisa uma ficha oficial individual com a lista atual de ferramentas [4].
+[VERIFICAR] Planos mínimos, ações exatas, gratuidade e disponibilidade brasileira precisam ser verificados nas fichas autenticadas e no plano do GitHub. Não usar como exercício principal para público não programador [17][20].
+
+Ficha — Canva
+
+[CONFIRMADO] Claude Marketplace destaca Canva como conector verificado capaz de pesquisar, criar, preencher e exportar designs [1][10][14].
+[CONFIRMADO] ChatGPT destaca Canva para pesquisar, criar e editar designs [18].
+[VERIFICAR] Publicador, ferramentas granulares, plano mínimo em cada assistente, autenticação e disponibilidade no Brasil devem ser conferidos na ficha exibida para a conta; as páginas públicas consultadas não consolidam esses campos [17][18].
+
+Ficha — Asana
+
+[CONFIRMADO] Asana aparece entre os conectores de produtividade em destaque no diretório do Claude, para coordenar tarefas, projetos e metas [38].
+[VERIFICAR] Não foi localizada uma ficha pública completa no ChatGPT nem uma matriz confiável de planos. Verificar publicador, ações de escrita, autenticação e Brasil antes de incluir em atividade [17][18][38].
+
+Ficha — Microsoft 365
+
+[CONFIRMADO] Publicador/hospedagem do conector Claude: integração hospedada pela Anthropic e verificada pela Microsoft; todos os planos Claude. Lê Outlook, calendário, SharePoint, OneDrive e Teams; ações de escrita dependem de habilitação administrativa. Autenticação delegada por conta corporativa Microsoft Entra [8][9].
+[CONFIRMADO] ChatGPT destaca Outlook Email, Teams e SharePoint como plugins separados [18].
+[VERIFICAR] No ChatGPT, plano mínimo, operações de escrita e autenticação exata devem ser lidos na ficha do plugin e na política do workspace [18][20][22].
+
+Ficha — Econodata, exemplo brasileiro
+
+[CONFIRMADO] A Econodata oferece um MCP para consultar empresas, CNPJ, decisores, contatos, grupos econômicos e saldo, e para marcar/remover tags. Não envia e-mail nem atualiza CRM. Exige chave da conta e consome créditos segundo o modelo da API; é possível usar chave somente leitura e revogá-la [36].
+[CONFIRMADO] Publicador: Econodata. Assistentes citados oficialmente: Claude, Cursor e outras ferramentas compatíveis; ChatGPT não é citado nominalmente na página. Gratuidade: não; depende de conta/créditos. Disponibilidade: produto brasileiro, em português [36].
+
+3. EXECUTAR AÇÕES COM SEGURANÇA
+
+3a. Ações reversíveis e de baixo risco
+
+Ação 1 — criar e apagar um evento de teste no Google Calendar pelo Claude
+
+[SUGESTÃO] Plano: Claude Free ou superior; conta Google conectada. Não incluir convidados, link de reunião nem dados reais.
+[SUGESTÃO] Passo a passo: 1) conectar Google Calendar; 2) manter a ferramenta em Needs approval; 3) pedir “Crie no meu calendário principal um evento chamado Teste MCP — apagar depois, amanhã às 15h, duração de 10 minutos, sem convidados; mostre os dados antes de criar”; 4) conferir título, data, fuso, calendário e ausência de convidados; 5) aprovar somente se estiver correto; 6) abrir o link/evento retornado e conferir [5][6].
+[CONFIRMADO] O conector suporta criar, atualizar e excluir eventos; cada ação exige aprovação explícita por padrão [6].
+[SUGESTÃO] Desfazer: pedir “Exclua somente o evento Teste MCP — apagar depois criado agora”, revisar o alvo e aprovar; conferir que saiu do calendário. Se houver lixeira no calendário usado, esvaziá-la apenas se a política do exercício exigir.
+
+Ação 2 — criar um rascunho de e-mail sem enviar
+
+[SUGESTÃO] Opção A: Claude Free ou superior com Gmail. Opção B: ChatGPT com Gmail, desde que o plugin esteja disponível para a conta. Usar o próprio endereço como destinatário ou deixar o destinatário em branco; nunca usar e-mail de cliente.
+[SUGESTÃO] Passo a passo: 1) conectar Gmail; 2) pedir “Crie um rascunho, não envie, com assunto Teste MCP — excluir, corpo Este é um exercício, sem anexos”; 3) revisar destinatário, assunto, corpo e ação proposta; 4) aprovar apenas “criar rascunho”; 5) abrir Rascunhos no Gmail e conferir [6][19].
+[CONFIRMADO] Claude pode criar/listar rascunhos; o guia do ChatGPT orienta esperar aprovação antes de enviar, arquivar ou mover para a lixeira [6][19].
+[SUGESTÃO] Desfazer: excluir manualmente o rascunho dentro do Gmail. Não pedir “limpe meus rascunhos”, pois o escopo fica amplo demais.
+
+Ação 3 — criar e apagar uma pasta de teste no Google Drive pelo Claude
+
+[SUGESTÃO] Plano: Claude Free ou superior. Passo a passo: conectar Drive; pedir para criar uma pasta vazia “TESTE-MCP-APAGAR”; revisar a ação; aprovar; confirmar pela URL ou busca; depois pedir para mover somente essa pasta para a lixeira e aprovar. O conector suporta criar pastas e enviar arquivos/pastas à lixeira [6].
+[SUGESTÃO] Evitar criar o teste dentro de uma pasta compartilhada, porque permissões herdadas podem tornar o item visível a terceiros.
+
+3b. Telas de aprovação, revogação e registro
+
+Claude
+
+[CONFIRMADO] Permissão por ferramenta em Customize > Connectors > [conector] > Tool permissions: Always allow, Needs approval ou Blocked. As categorias podem separar leitura de gravação/exclusão [5].
+[CONFIRMADO] Modo Manual: o Claude pausa, mostra a solicitação e o usuário escolhe Allow ou Deny. Modo Auto: ações passam por avaliação automática; modo Skip all approvals: não pausa nem executa essa checagem. Para dinheiro, mensagens e arquivos importantes, a própria ajuda recomenda acompanhar e usar aprovação manual [15].
+[CONFIRMADO] Algumas ações Microsoft 365 nunca aceitam Always allow, incluindo enviar/encaminhar e-mail, criar/alterar evento e enviar mensagens do Teams [9].
+[CONFIRMADO] Revogar: Customize > Connectors > desconectar; em custom connector, Remove ou menu de três pontos; revogar também no painel de segurança do serviço externo quando necessário [5][16].
+[CONFIRMADO] Registro visível ao usuário: a conversa mostra solicitações e resultados de ferramentas; no Cowork há indicadores de progresso. NÃO ENCONTRADO um histórico independente e completo de auditoria para usuário pessoal [15].
+
+ChatGPT
+
+[CONFIRMADO] Não há um texto universal de botões para todas as ações de plugins. A política pode ser definida pelo plugin, pela ação, pelas permissões do app e pelo administrador; nem toda ação exige confirmação individual [21][22].
+[CONFIRMADO] No caso oficial de e-mail, o fluxo recomendado termina com perguntas numeradas de sim/não e espera aprovação antes de enviar, arquivar ou mover itens para Trash [19].
+[CONFIRMADO] “Always ask”, “Auto approve” e “Always allow” são opções documentadas para acesso a sites pelo navegador do Work, não uma garantia de que todo plugin de serviço mostre esses mesmos rótulos [21].
+[CONFIRMADO] Em Business, plugins/apps ficam ligados por padrão; em Enterprise/Edu, ficam desligados por padrão até habilitação administrativa. Admins podem limitar apps a leitura ou a ações aprovadas, quando o app suporta isso [21][22].
+[VERIFICAR] Revogação do plugin: abrir o navegador de Plugins e desinstalar. Revogação da conta conectada/app é separada; o caminho exato varia com conta e workspace e deve ser capturado na ficha do plugin [17][22].
+[CONFIRMADO] Registro: a conversa contém respostas e chamadas visíveis; o navegador do Work pode mostrar screenshots e replay. A documentação alerta que isso não constitui histórico administrativo completo nem, por si só, exportação de conformidade [21].
+
+Checklist de ação segura
+
+[SUGESTÃO] Antes: usar conta/pasta de teste; minimizar permissões; deixar escrita em Needs approval; nomear claramente o item de teste; excluir convidados; declarar “não envie/não publique”.
+[SUGESTÃO] Durante: conferir serviço, conta, arquivo/evento/mensagem alvo, destinatários, data, fuso, escopo e verbo da ação. Negar se a tela pedir permissão maior que a tarefa.
+[SUGESTÃO] Depois: confirmar no sistema de origem; desfazer; desconectar o serviço se não será mais usado; revogar também no provedor; registrar o que ficou salvo na conversa.
+
+4. CHATGPT: QUEM PODE USAR
+
+4a. Matriz por plano, baseada somente em documentação para usuários
+
+Plano | Diretório de Plugins/Apps/Connectors | MCP personalizado | Evidência e decisão
+
+Free | [VERIFICAR] NÃO ENCONTRADO por plano | [VERIFICAR] NÃO ENCONTRADO | A página de Plugins afirma uso em Chat e Work, mas a tabela de disponibilidade não inclui Free e não preserva os indicadores visuais [17][20].
+Go | [VERIFICAR] NÃO ENCONTRADO por plano | [VERIFICAR] NÃO ENCONTRADO | Go não aparece na tabela pública de recursos consultada [20].
+Plus | [VERIFICAR] aparece como linha de recurso “Plugins” na tabela, mas o indicador não foi extraído | [VERIFICAR] linha “MCP” também sem indicador legível | Conferir na conta e na ficha antes de publicar [20].
+Pro | [VERIFICAR] mesma limitação da tabela | [VERIFICAR] mesma limitação | Conferir na conta [20].
+Business | [CONFIRMADO] plugins/apps existem e ficam ligados por padrão, sujeitos ao admin | [VERIFICAR] capacidade de criar/adicionar MCP personalizado por usuário não foi discriminada por plano | [21][22].
+Enterprise | [CONFIRMADO] plugins/apps existem, desligados por padrão, dependem do admin | [VERIFICAR] fluxo e função autorizada variam por workspace | [21][22].
+Edu | [CONFIRMADO] plugins/apps existem, desligados por padrão, dependem do admin | [VERIFICAR] fluxo e função autorizada variam por workspace | [21][22].
+
+[VERIFICAR] Por que a resposta é conservadora: a página “Pricing” traz colunas Plus, Pro, Business e Enterprise/Education e linhas Plugins, Connectors e MCP, mas a extração pública de texto perdeu os ícones/valores das células. Atribuir “sim” ou “não” seria inventar. Free e Go nem constam nessa tabela específica [20].
+[SUGESTÃO] Antes de gravar o curso, abrir uma conta real de cada plano ou pedir confirmação escrita ao suporte da OpenAI e guardar screenshots datados do diretório e da opção de MCP personalizado.
+
+4b. Nomenclatura atual
+
+[CONFIRMADO] “Plugins”: nome principal da biblioteca e da guia atual. Caminho documentado: Customize > Plugins. Um plugin pode empacotar skills, servidores MCP e interface [17][18][24].
+[CONFIRMADO] “Apps”: nome usado para a integração subjacente com o serviço, sobretudo em administração, permissões e segurança. A documentação informa que algumas contas podem mostrar Apps em vez de Plugins [22][23].
+[CONFIRMADO] “Connectors”: termo ainda usado em textos, configurações de workspace e para conexões a serviços/MCP. Na tela de início do Work, os itens são apresentados dentro de Plugins [18][22].
+[VERIFICAR] A variação não foi atribuída oficialmente a uma tabela de país ou plano. A documentação menciona conta e rollout; portanto, grave a tela da conta-alvo e diga “procure Plugins; em algumas contas, Apps” [22][23].
+
+5. INTERFACE EM PORTUGUÊS
+
+Fluxo | Nome pt-BR | Nome en | Origem
+
+Claude — abrir conectores | Personalizar > Conectores | Customize > Connectors | [CONFIRMADO] ajuda pt-BR consultada e ajuda en [5][16].
+Claude — retirar conector | Remover / menu de três pontos | Remove / three dots | [CONFIRMADO] ajuda pt-BR e ajuda en [16].
+Claude — administração | Configurações da organização > Conectores | Organization settings > Connectors | [CONFIRMADO] ajuda pt-BR e ajuda en [5][16].
+Claude Desktop — catálogo local | [VERIFICAR] Configurações > Extensões | Settings > Extensions | Só foi confirmada em ajuda en; tradução é provável, não capturada [2][3].
+Claude Desktop — procurar catálogo | Procurar extensões | Browse extensions | [CONFIRMADO] ajuda pt-BR para allowlist; ajuda en para instalação [2].
+Claude — instalar serviço | [VERIFICAR] Conectar / Instalar | Connect / Install | Ajuda en; rótulo pt-BR não capturado [5].
+Claude — permissões de ferramenta | [VERIFICAR] Sempre permitir / Precisa de aprovação / Bloqueado | Always allow / Needs approval / Blocked | Ajuda en; tradução pt-BR não confirmada [5][15].
+Claude — confirmação manual | [VERIFICAR] Permitir / Negar | Allow / Deny | Ajuda en; tradução pt-BR não confirmada [15].
+Claude — modos | [VERIFICAR] Manual / Automático / Ignorar todas as aprovações | Manual / Auto / Skip all approvals | Ajuda en; tradução pt-BR não confirmada [15].
+ChatGPT — biblioteca | [VERIFICAR] Personalizar > Plugins | Customize > Plugins | Ajuda en; não foi localizada versão pt-BR oficial da página [18].
+ChatGPT — nome alternativo | [VERIFICAR] Aplicativos | Apps | Ajuda en diz que algumas contas mostram Apps; tradução não capturada [22][23].
+ChatGPT — selecionar plugin | digitar @ e o nome do plugin | type @ and the plugin name | [CONFIRMADO] ajuda en; símbolo e comportamento independem da tradução [18].
+ChatGPT Work — acesso a site | [VERIFICAR] Sempre perguntar / Aprovar automaticamente / Sempre permitir | Always ask / Auto approve / Always allow | Ajuda en; estes nomes são do navegador Work, não de todo plugin [21].
+
+[VERIFICAR] A Central de Ajuda do Claude oferece páginas em português, mas várias páginas novas de 2026 aparecem primeiro em inglês. O ChatGPT Learn consultado não ofereceu versão pt-BR acessível para as páginas-chave. Capturar os rótulos na interface real em português imediatamente antes da gravação.
+
+6. CONTEXTO BRASILEIRO
+
+6a. Materiais em português para leigos
+
+[CONFIRMADO] Microsoft “MCP for Beginners”, tradução pt-BR: usa a analogia de padrão universal/USB-C para interações de IA. É oficial e gratuito, mas rapidamente entra em arquitetura e código; aproveitar apenas introdução e analogia [29].
+[CONFIRMADO] AWS Prescriptive Guidance em português: chama MCP de “USB-C para aplicações de IA” e apresenta conexão padronizada com fontes e ferramentas. É material oficial, mas de perfil corporativo/técnico [30].
+[VERIFICAR] Pluriza, artigo em português de março de 2026: usa “USB-C da IA” e também a imagem de um carregador universal. Fonte comercial única, adequada como explicação leiga, não como autoridade do protocolo [31].
+[ACESSO RESTRITO] [VERIFICAR] Curso Hotmart “Model Context Protocol — De A a Z e AWS”: português, 12 módulos, compara o MCP à revolução do USB; exige compra/login e avança para construção de servidores, portanto apenas a abertura conceitual se encaixa neste curso [32].
+[SUGESTÃO] Analogia brasileira útil, derivada das fontes: “O assistente é como um profissional que sabe conversar, mas precisa de crachás específicos para entrar no Drive, calendário e e-mail. O MCP padroniza o formato desses crachás; cada serviço ainda decide quais portas abrir.” Não apresentar como citação.
+
+6b. Exemplos no Brasil
+
+[VERIFICAR] Grupo Soma/IAzzas: estudo de caso do fornecedor BIX Tech declara observabilidade em 100% dos servidores MCP e redução superior a 70% em tokens/custos, em projeto de julho a setembro de 2026, no Rio de Janeiro. Há indicação de avaliação verificada no Clutch, mas a narrativa principal continua sendo do fornecedor [33].
+[CONFIRMADO] Senior Sistemas: notícia independente da Baguete em 27/07/2026 e documentação da própria Senior mostram MCPs que permitem a assistentes como ChatGPT e Claude consultar dados e, conforme permissões, executar ações no ERP. O produto exige contratação [34][37].
+[VERIFICAR] Instituição financeira brasileira não identificada: case da Sensedia descreve agente de crédito conectado por MCP, com validação ponta a ponta e entrada em produção em duas semanas. Como o cliente não é nomeado e a única fonte é o fornecedor, manter como exemplo a verificar [35].
+[CONFIRMADO] Econodata: produto brasileiro documenta MCP para consultas de empresas/CNPJ/decisores e alteração de tags, com chave revogável e opção somente leitura [36].
+[VERIFICAR] Órgãos públicos e escolas brasileiras com implantação comprovada de MCP: NÃO ENCONTRADO. Foram pesquisados gov.br, portais de notícias, documentação de fornecedores e busca geral; apareceram guias de IA e projetos/propostas, mas não evidência pública suficiente de implantação operacional em escola ou órgão.
+
+6c. LGPD, ANPD e Governo Digital aplicados a conectores
+
+[CONFIRMADO] A LGPD define “tratamento” de forma ampla, incluindo acesso, uso, processamento, armazenamento, modificação, comunicação, transferência e extração. Conceder a um assistente acesso a arquivos, e-mails ou serviços pode envolver tratamento de dados pessoais [25].
+[CONFIRMADO] Princípios diretamente relevantes: finalidade, adequação, necessidade, transparência, segurança, prevenção e responsabilização/prestação de contas [25].
+[CONFIRMADO] O Radar da ANPD sobre IA generativa discute riscos a direitos, privacidade, dados pessoais e necessidade de governança; foi publicado em 2024 e modificado no portal em 2025 [26].
+[CONFIRMADO] O Guia de Segurança da Informação da ANPD recomenda política de segurança, controle de acesso, autenticação, gestão de vulnerabilidades, backups e resposta a incidentes; embora dirigido a agentes de pequeno porte e não a MCP, seus controles se aplicam ao uso de conectores [27].
+[CONFIRMADO] O Guia de IA Generativa do Governo Digital/Serpro orienta não inserir informações internas, restritas, sigilosas ou dados pessoais em IAG externa não aprovada, usar dados fictícios/anonimizados em testes, preferir soluções institucionais aprovadas e manter revisão humana [28].
+[SUGESTÃO] Tradução operacional para o curso: conceder a menor pasta/conta possível; preferir somente leitura; usar conta de teste; não conectar e-mail institucional sem autorização; evitar dados pessoais e sigilosos; registrar finalidade e responsável; rever permissões; desconectar quando acabar; confirmar se dados copiados para a conversa seguem outra retenção.
+[SUGESTÃO] Isto não é parecer jurídico. Em uso de trabalho, consultar encarregado de dados, segurança/TI e política interna antes de conectar serviços corporativos.
+
+7. IDEIAS DE EXERCÍCIO
+
+Exercício 1 — ler arquivo local sem alterar
+
+[SUGESTÃO] Objetivo prático: comprovar acesso limitado da extensão Filesystem.
+[SUGESTÃO] Plano e ambiente: Claude Free ou superior; Claude Desktop; Windows 10+, macOS 13+ ou Linux compatível; extensão Filesystem oficial [1][3][5].
+[SUGESTÃO] Preparação: criar pasta “teste-mcp-arquivos” com “pedido-ficticio.txt” e “politica-ficticia.txt”; sem nomes, CPFs, e-mails ou dados reais.
+[SUGESTÃO] Passos: instalar Filesystem; autorizar só a pasta de teste; perguntar “Quais diretórios você pode acessar?”; depois “Liste os .txt desta pasta e faça uma tabela com nome e resumo de uma linha. Não escreva nem mova nada.”
+[SUGESTÃO] Resultado que comprova sucesso: o Claude lista apenas a raiz autorizada e os dois nomes, e os resumos correspondem ao texto.
+[SUGESTÃO] Como desfazer: desabilitar o conector na conversa, retirar a pasta da extensão e remover/desinstalar a extensão se não será usada. Excluir manualmente a pasta de teste.
+
+Exercício 2 — consultar serviço em modo leitura
+
+[SUGESTÃO] Opção preferencial: Google Calendar no Claude Free. Plano: Claude Free ou superior e conta Google [6].
+[SUGESTÃO] Passos: conectar Calendar; bloquear ferramentas de escrita ou mantê-las em Needs approval; pedir “Liste apenas meus próximos três eventos, mostrando título, data, hora e calendário. Não altere nada e não convide ninguém.”
+[SUGESTÃO] Resultado que comprova sucesso: três eventos já existentes aparecem com datas coerentes; nenhuma solicitação de escrita é aprovada.
+[SUGESTÃO] Como desfazer: desligar Calendar no menu “+” para a conversa; em Customize > Connectors, desconectar; opcionalmente revogar a conexão na Conta Google.
+
+Exercício 3 — executar ação reversível
+
+[SUGESTÃO] Ação: criar e apagar evento de teste, seguindo a Ação 1 da seção 3a. Plano: Claude Free ou superior e Google Calendar [6].
+[SUGESTÃO] Passos: manter Needs approval; criar evento de 10 minutos “Teste MCP — apagar depois”, sem convidados; revisar antes de Allow; abrir no Calendar; solicitar exclusão só desse evento; revisar e aprovar.
+[SUGESTÃO] Resultado que comprova sucesso: o evento aparece com título/horário corretos e depois deixa de aparecer.
+[SUGESTÃO] Como desfazer: a exclusão é o próprio desfazer; se necessário, restaurar pela lixeira do calendário. Desconectar o conector ao final.
+
+Exercício 4 — rascunho, nunca envio
+
+[SUGESTÃO] Plano: Claude Free + Gmail; ou ChatGPT com Gmail se o plugin estiver disponível para a conta [6][19][20].
+[SUGESTÃO] Passos: pedir um rascunho “Teste MCP — excluir” e escrever explicitamente “não envie”; revisar; aprovar só a criação do rascunho; conferir em Gmail > Rascunhos.
+[SUGESTÃO] Resultado que comprova sucesso: rascunho existe e nenhuma mensagem aparece em Enviados.
+[SUGESTÃO] Como desfazer: excluir manualmente apenas o rascunho de teste; desconectar Gmail e revogar no Google se o exercício terminou.
+
+8. MATERIAIS PARA BAIXAR
+
+[BAIXAR] [CONFIRMADO] BAIXADO E VALIDADO — “Radar Tecnológico: Inteligência Artificial Generativa”, ANPD. Link direto: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf/@@display-file/file . Tipo: PDF, 37 páginas, português. Utilidade: riscos, privacidade e governança de IA. Arquivo salvo/sugerido: anpd-radar-ia-generativa-2024.pdf. Verificação: assinatura %PDF, PDF 1.7, primeira página renderizada corretamente; SHA-256 3864E0F4876A636001365BB49766E130A6FEC193CDA3F7E58D48B6B45ECFAEBD [26].
+
+[BAIXAR] [CONFIRMADO] BAIXADO E VALIDADO — “Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte”, ANPD. Link direto: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-vf.pdf/@@display-file/file . Tipo: PDF, 21 páginas, português. Utilidade: controles de acesso, autenticação, segurança e incidentes. Arquivo salvo/sugerido: anpd-guia-seguranca-informacao-pequeno-porte.pdf. Verificação: assinatura %PDF, PDF 1.7, primeira página renderizada corretamente; SHA-256 B720EA49FC3C99400B8156515DAB17A82A63806B6C21DA34F9FB868AC70E4F04 [27].
+
+[ACESSO RESTRITO] [VERIFICAR] NÃO BAIXADO — Curso “Model Context Protocol — De A a Z e AWS”, Hotmart. URL: https://hotmart.com/pt-br/marketplace/produtos/model-context-protocol-de-a-a-z-e-aws/Y99786895W . Tipo: curso em vídeo, português; exige login/pagamento. Utilidade limitada: analogia USB e introdução; a maior parte é desenvolvimento. Transcrição: NÃO ENCONTRADO. Nome sugerido para registro, se adquirido: hotmart-mcp-de-a-z-e-aws-notas.txt [32].
+
+9. PÁGINAS PARA SALVAR
+
+[CONFIRMADO] Prioridade alta — “Filesystem connector | Claude Marketplace”. URL: https://claude.com/marketplace/connectors/filesystem . Guardar: publicador, data, descrição e lista de ferramentas. Nome: claude-marketplace-filesystem.pdf [1].
+
+[CONFIRMADO] Prioridade alta — “Getting Started with Local MCP Servers on Claude Desktop”. URL: https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop . Guardar: Settings > Extensions, Browse extensions, Install e administração. Nome: claude-ajuda-extensoes-desktop.pdf [2].
+
+[CONFIRMADO] Prioridade alta — “Use connectors to extend Claude's capabilities”. URL: https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities . Guardar: conexão, Tool permissions, todos os planos, desconexão e custom connectors. Nome: claude-ajuda-conectores-permissoes.pdf [5].
+
+[CONFIRMADO] Prioridade alta — “Use Google Workspace connectors”. URL: https://support.claude.com/en/articles/10166901-use-google-workspace-connectors . Guardar: Gmail/Calendar/Drive, leitura/escrita, aprovação, conexão e desconexão. Nome: claude-ajuda-google-workspace.pdf [6].
+
+[CONFIRMADO] Prioridade alta — “Microsoft 365 connector security guide”. URL: https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide . Guardar: requisitos, ferramentas, lixeira, revogação e ações que nunca aceitam Always allow. Nome: claude-microsoft365-seguranca.pdf [9].
+
+[CONFIRMADO] Prioridade alta — “Get started with Claude Cowork”. URL: https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork . Guardar: Manual/Auto/Skip, Allow/Deny e proteção de exclusão. Nome: claude-cowork-aprovacoes.pdf [15].
+
+[CONFIRMADO] Prioridade alta — “Plugins | ChatGPT Learn”. URL: https://learn.chatgpt.com/docs/plugins . Guardar: nomenclatura, superfícies, instalação, desinstalação, exemplos e separação entre plugin e conexão. Nome: chatgpt-learn-plugins.pdf [17].
+
+[CONFIRMADO] Prioridade alta — “Get started with ChatGPT Work”. URL: https://learn.chatgpt.com/docs/get-started-with-work . Guardar: Customize > Plugins, itens destacados e seleção por @. Nome: chatgpt-work-plugins-diretorio.pdf [18].
+
+[CONFIRMADO] Prioridade alta — “Get your email to inbox zero”. URL: https://learn.chatgpt.com/use-cases/manage-your-inbox . Guardar: limites de aprovação e exercício de rascunho. Nome: chatgpt-email-aprovacao.pdf [19].
+
+[CONFIRMADO] Prioridade alta — “Pricing | ChatGPT Learn”. URL: https://learn.chatgpt.com/docs/pricing . Guardar: tabela de feature availability inteira, especialmente Plugins, Connectors e MCP. Nome: chatgpt-planos-plugins-mcp.pdf [20].
+
+[CONFIRMADO] Prioridade alta — “ChatGPT Work Overview”. URL: https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview . Guardar: padrão Business versus Enterprise/Edu, permissões de apps e limites de auditoria. Nome: chatgpt-work-apps-permissoes.pdf [21].
+
+[CONFIRMADO] Prioridade média — “Guia IA Generativa — Governo Digital”. URL: https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/inteligencia-artificial-1/publicacoes/guia-ia-generativa . Guardar: dados protegidos, ferramentas aprovadas e revisão humana. Nome: governo-digital-guia-ia-generativa.pdf [28].
+
+[CONFIRMADO] Prioridade média — “MCP da Econodata — visão de negócio”. URL: https://help.econodata.com.br/pt/article/mcp-da-econodata-visao-de-negocio-1p93xy8/ . Guardar: exemplo brasileiro, somente leitura, créditos e revogação de chave. Nome: econodata-mcp-visao-negocio.pdf [36].
+
+10. LACUNAS E PONTOS A VERIFICAR
+
+[VERIFICAR] Matriz ChatGPT por plano: Free, Go, Plus e Pro não puderam ser confirmados para diretório de Plugins e MCP personalizado. A tabela pública perde símbolos e omite Free/Go [20].
+[VERIFICAR] Obter do suporte OpenAI uma página de usuário com matriz explícita para “adicionar servidor MCP personalizado”; a documentação atual encontrada é de produto/admin ou desenvolvedor, não uma tabela completa por plano.
+[VERIFICAR] Capturar os nomes pt-BR na interface real do Claude e ChatGPT. Grande parte da ajuda nova está somente em inglês; traduções literais não devem virar fatos.
+[VERIFICAR] Filesystem: confirmar a tela exata para escolher/remover pastas e o botão exato de desinstalação. A documentação geral não mostra esses rótulos.
+[VERIFICAR] ChatGPT: confirmar na ficha autenticada os recursos de Google Drive, SharePoint/OneDrive, Dropbox e Box, inclusive escrita, lixeira, tipos de arquivo, plano e país.
+[VERIFICAR] ChatGPT: confirmar os botões exatos de aprovação de Gmail, Calendar e Drive. Não reutilizar os nomes do navegador Work como se fossem universais para plugins [21].
+[VERIFICAR] Notion, Asana, GitHub e Canva: verificar na conta brasileira do aluno o plano mínimo e o escopo de permissões de cada serviço.
+[VERIFICAR] Box: confirmar se a ficha do Claude continua sem ação de exclusão e se existe plugin público no ChatGPT.
+[VERIFICAR] Brasil: buscar evidência independente adicional para Grupo Soma e o banco não identificado da Sensedia [33][35].
+[VERIFICAR] Órgão público/escola com MCP em produção: NÃO ENCONTRADO; repetir pesquisa quando houver registros de contratação, relatório público ou estudo de caso nomeado.
+[VERIFICAR] Fontes com “atualizada há X semanas” devem ser salvas em PDF com data de acesso, pois o site não expõe data absoluta e o conteúdo muda rapidamente.
+
+11. FONTES CONSULTADAS
+
+[1] “Filesystem connector | Claude Marketplace”. Diretório oficial Anthropic. Adicionado em julho de 2026. Acesso em 17/10/2026. https://claude.com/marketplace/connectors/filesystem
+
+[2] “Getting Started with Local MCP Servers on Claude Desktop”. Claude Help Center, oficial. Atualizada há mais de 3 semanas; data absoluta não exibida. Acesso em 17/10/2026. https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop
+
+[3] “Install Claude Desktop”. Claude Help Center, oficial. Atualizada na semana do acesso. Acesso em 17/10/2026. https://support.claude.com/en/articles/10065433-install-claude-desktop
+
+[4] “When to use desktop and web connectors”. Claude Help Center, oficial. Atualizada há mais de 3 semanas; data absoluta não exibida. Acesso em 17/10/2026. https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors
+
+[5] “Use connectors to extend Claude's capabilities”. Claude Help Center, oficial. Atualizada em 17/10/2026 segundo a página. Acesso em 17/10/2026. https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities
+
+[6] “Use Google Workspace connectors”. Claude Help Center, oficial. Atualizada há mais de 2 semanas; data absoluta não exibida. Acesso em 17/10/2026. https://support.claude.com/en/articles/10166901-use-google-workspace-connectors
+
+[7] “Google Drive connector | Claude Marketplace”. Diretório oficial Anthropic; publicado pelo Google. Acesso em 17/10/2026. https://claude.com/marketplace/connectors/google-drive
+
+[8] “Connect to Microsoft 365”. Claude Help Center, oficial. Data absoluta não exibida. Acesso em 17/10/2026. https://support.claude.com/en/articles/15183774-connect-to-microsoft-365
+
+[9] “Microsoft 365 connector security guide”. Claude Help Center, oficial. Atualizada na semana do acesso. Acesso em 17/10/2026. https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide
+
+[10] “Dropbox connector | Claude Marketplace”. Diretório oficial Anthropic; publicado pelo Dropbox; adicionado em junho de 2026. Acesso em 17/10/2026. https://claude.com/marketplace/connectors/dropbox
+
+[11] “Box connector | Claude Marketplace”. Diretório oficial Anthropic; publicado pela Box; adicionado em novembro de 2025. Acesso em 17/10/2026. https://claude.com/marketplace/connectors/box
+
+[12] “Notion connector | Claude Marketplace”. Diretório oficial Anthropic; publicado pela Notion; adicionado em novembro de 2025. Acesso em 17/10/2026. https://claude.com/marketplace/connectors/notion
+
+[13] “Slack connector | Claude Marketplace”. Diretório oficial Anthropic; publicado pelo Slack; adicionado em novembro de 2025. Acesso em 17/10/2026. https://claude.com/marketplace/connectors/slack
+
+[14] “Canva connector | Claude Marketplace”. Diretório oficial Anthropic; ficha pública. Acesso em 17/10/2026. https://claude.com/marketplace/connectors/canva
+
+[15] “Get started with Claude Cowork”. Claude Help Center, oficial. Data absoluta não exibida. Acesso em 17/10/2026. https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
+
+[16] “Get started with custom connectors using remote MCP”. Claude Help Center, oficial, também consultado em versão portuguesa quando disponível. Atualizada há mais de 2 semanas. Acesso em 17/10/2026. https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp
+
+[17] “Plugins”. ChatGPT Learn, OpenAI, documentação para usuários. Conteúdo corrente sem data de publicação visível. Acesso em 17/10/2026. https://learn.chatgpt.com/docs/plugins
+
+[18] “Get started with ChatGPT Work”. ChatGPT Learn, OpenAI, documentação para usuários. Conteúdo corrente sem data de publicação visível. Acesso em 17/10/2026. https://learn.chatgpt.com/docs/get-started-with-work
+
+[19] “Get your email to inbox zero”. ChatGPT Use Cases, OpenAI. Conteúdo corrente sem data de publicação visível. Acesso em 17/10/2026. https://learn.chatgpt.com/use-cases/manage-your-inbox
+
+[20] “Pricing”. ChatGPT Learn, OpenAI, documentação para usuários. Conteúdo corrente em 17/10/2026. https://learn.chatgpt.com/docs/pricing
+
+[21] “ChatGPT Work Overview”. ChatGPT Learn, OpenAI, documentação de produto/admin. Conteúdo corrente sem data de publicação visível. Acesso em 17/10/2026. https://learn.chatgpt.com/docs/enterprise/chatgpt-work-overview
+
+[22] “Apps and connectors”. ChatGPT Learn, OpenAI, documentação de administração. Conteúdo corrente sem data de publicação visível. Acesso em 17/10/2026. https://learn.chatgpt.com/docs/enterprise/apps-and-connectors
+
+[23] “Build plugins”. ChatGPT Learn, OpenAI, documentação para usuários/criadores. Conteúdo corrente sem data de publicação visível. Acesso em 17/10/2026. https://learn.chatgpt.com/docs/build-plugins
+
+[24] “Prompting”. ChatGPT Learn, OpenAI, documentação para usuários. Conteúdo corrente sem data visível. Acesso em 17/10/2026. https://learn.chatgpt.com/docs/prompting
+
+[25] Lei nº 13.709, de 14 de agosto de 2018 — LGPD, texto compilado. Presidência da República, legislação oficial; texto com alterações até 2026. Acesso em 17/10/2026. https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm
+
+[26] “Radar Tecnológico: Inteligência Artificial Generativa”. ANPD, PDF oficial. Criado em 29/11/2024; portal modificado em 23/01/2025. Acesso e download em 17/10/2026. https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf
+
+[27] “Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte”. ANPD, PDF oficial, versão 1.0, outubro de 2021; portal modificado em 23/01/2025. Acesso e download em 17/10/2026. https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-vf.pdf
+
+[28] “Guia IA Generativa”. Secretaria de Governo Digital/Serpro, página oficial do Governo Federal. Página corrente em 2026; data de publicação não visível no conteúdo consultado. Acesso em 17/10/2026. https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/inteligencia-artificial-1/publicacoes/guia-ia-generativa
+
+[29] “Introdução ao Protocolo de Contexto de Modelo (MCP)”. Microsoft MCP for Beginners, tradução pt-BR, repositório oficial Microsoft. Conteúdo corrente em 2026. Acesso em 17/10/2026. https://github.com/microsoft/mcp-for-beginners/blob/main/translations/pt-BR/00-Introduction/README.md
+
+[30] “O que é MCP?”. AWS Prescriptive Guidance em português, documentação oficial AWS. Data não visível. Acesso em 17/10/2026. https://docs.aws.amazon.com/pt_br/prescriptive-guidance/latest/mcp-strategies/what-is-mcp.html
+
+[31] “MCP Explained: Model Context Protocol — USB-C of AI”. Pluriza, artigo comercial/comunitário, 18/03/2026. Acesso em 17/10/2026. https://pluriza.com/pt/blog/mcp-explained-model-context-protocol-usb-c-of-ai
+
+[32] “Model Context Protocol — De A a Z e AWS”. Hotmart/Scoras Academy, página de curso pago, português. Data não visível. Acesso em 17/10/2026. https://hotmart.com/pt-br/marketplace/produtos/model-context-protocol-de-a-a-z-e-aws/Y99786895W
+
+[33] “LLM Cost Reduction and Observability for Grupo Soma”. BIX Tech, estudo de caso de fornecedor; projeto julho-setembro de 2026. Acesso em 17/10/2026. https://bixtech.ai/llm-cost-observability-grupo-soma/
+
+[34] “Senior coloca LLMs dentro do ERP”. Baguete, imprensa de tecnologia, 27/07/2026. Acesso em 17/10/2026. https://www.baguete.com.br/noticias/senior-coloca-llms-dentro-do-erp
+
+[35] “Financial Institution Optimizes Agentic Journey with MCP and Sensedia AI Gateway”. Sensedia, case de fornecedor, cliente não identificado; data não visível. Acesso em 17/10/2026. https://www.sensedia.com/customer-story/financial-institution-optimizes-agentic-journey-with-mcp-and-sensedia-ai-gateway
+
+[36] “MCP da Econodata — visão de negócio”. Central de ajuda oficial Econodata, atualizado em 05/08/2026. Acesso em 17/10/2026. https://help.econodata.com.br/pt/article/mcp-da-econodata-visao-de-negocio-1p93xy8/
+
+[37] “MCPs Senior — Manual do Usuário”. Documentação oficial Senior, manual em construção. Acesso em 17/10/2026. https://documentacao.senior.com.br/mcps/manual-do-usuario/
+
+[38] “Claude Marketplace — Connectors and plugins”. Diretório oficial Anthropic, catálogo corrente. Acesso em 17/10/2026. https://claude.com/marketplace/connectors-plugins
+
+FIM DO ARQUIVO
