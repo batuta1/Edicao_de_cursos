@@ -1,0 +1,734 @@
+================================================================
+CONTEÚDO BRUTO — NotebookLM - Essentials
+Pesquisa realizada em: 17 de outubro de 2026
+Ferramenta(s): Gemini Notebook (nome atual; anteriormente NotebookLM), serviço web e aplicativos móveis vigentes em 17/10/2026
+================================================================
+
+NOTA DE LEITURA
+[CONFIRMADO] Cada afirmação factual está acompanhada de [CONFIRMADO] ou [VERIFICAR] e de um ou mais números que remetem à seção 18. Os nomes NotebookLM e Gemini Notebook aparecem juntos porque a mudança de marca ainda não se refletiu uniformemente em todas as páginas de ajuda e endereços do produto. [1][2]
+
+0. RESUMO EXECUTIVO
+
+[CONFIRMADO] NotebookLM passou a se chamar Gemini Notebook em 16/07/2026; continua sendo o caderno de pesquisa com IA do Google, centrado em fontes escolhidas pelo usuário. [1]
+[CONFIRMADO] Ele aceita documentos, páginas, mídia e conversas do Gemini, responde com citações que levam ao contexto da fonte e gera artefatos de estudo no painel Estúdio. [2][4][5]
+[CONFIRMADO] Serve especialmente a quem precisa estudar, comparar e explicar um conjunto delimitado de materiais: estudantes, pesquisadores, educadores, jornalistas, analistas e profissionais do Direito. [2][31][32]
+[CONFIRMADO] O plano gratuito permite 100 notebooks, 50 fontes por notebook e cotas diárias de chat e gerações; planos pagos ampliam cotas e recursos. [6]
+[CONFIRMADO] Em 2026, o produto ganhou pesquisa agente, tabelas de dados, apresentações, infográficos, vídeos curtos/cinematográficos, relatórios interativos e uma nova lógica de consumo computacional. [7][24][25][26]
+[CONFIRMADO] Alerta 1: “com base nas fontes” reduz, mas não elimina, respostas erradas; toda afirmação importante precisa ser aberta na citação e comparada ao trecho original. [2][10]
+[CONFIRMADO] Alerta 2: uma conta pessoal pode ter conteúdo analisado por humanos se o usuário enviar feedback; documentos pessoais, sigilosos ou protegidos por segredo profissional não devem ser inseridos sem base legal, autorização e controles adequados. [9][34][35]
+[CONFIRMADO] Alerta 3: limites, preços e menus mudaram várias vezes em 2026; o curso deve registrar a data e prever uma revisão humana imediatamente antes da publicação. [6][7][8]
+[VERIFICAR] Os limites fixos por dia publicados na página de upgrade coexistem com uma página nova de “uso baseado em computação”, que descreve janelas de cinco horas e limite semanal; o comportamento real deve ser testado na conta usada para gravar o curso. [6][7]
+[CONFIRMADO] O exercício mais estável no plano gratuito é: criar um notebook, adicionar quatro fontes públicas sobre LGPD, fazer uma pergunta com citações, gerar um relatório de estudo e um Resumo em Áudio em português. [4][6][13]
+
+1. IDENTIDADE E HISTÓRICO
+
+[CONFIRMADO] Definição simples: Gemini Notebook é um assistente de pesquisa e estudo do Google que organiza um conjunto de fontes e usa esse conjunto para responder perguntas, sintetizar conteúdo e criar artefatos. Diferentemente de um chat geral, o núcleo do notebook é o material que o usuário selecionou. [1][2]
+
+[CONFIRMADO] Fabricante: Google. Origem: a ideia que se tornou Project Tailwind começou internamente em meados de 2022; um protótipo foi construído em cerca de seis semanas; o projeto foi apresentado no Google I/O de 2023 e lançado publicamente como NotebookLM em julho de 2023. [1][31]
+
+[CONFIRMADO] Linha do tempo essencial:
+- Julho de 2023: lançamento público inicial do NotebookLM. [31]
+- Junho de 2024: chegada ao Brasil com suporte a sites, Slides e português do Brasil. [32]
+- Setembro de 2024: inclusão de áudio e vídeos públicos do YouTube como fontes. [33]
+- Abril de 2025: Discover Sources passou a recomendar fontes da web para um tema. [20]
+- Abril de 2025: Resumos em Áudio passaram a ser gerados em português brasileiro. [15]
+- Julho de 2025: Video Overviews e um Studio capaz de manter várias saídas do mesmo tipo. [22]
+- Novembro e dezembro de 2025: Deep Research, novos tipos de arquivo, Tabelas de dados e Apresentações de slides. [21][25][26]
+- Março de 2026: Video Overviews cinematográficos, inicialmente para assinantes Ultra, maiores de 18 anos, em inglês. [17]
+- Junho de 2026: pesquisa mais agente, uso de navegador e execução de código em ambiente de nuvem seguro, inicialmente em camadas premium. [23]
+- 16 de julho de 2026: NotebookLM foi renomeado Gemini Notebook. O Google afirmou que o produto independente continuaria existindo e seria integrado mais amplamente ao ecossistema Gemini. [1]
+- Setembro de 2026: anúncio de novas ferramentas de estudo, voz ao vivo em quase 100 idiomas, relatórios de aprendizagem e tipos adicionais de quiz, com implantação gradual. [24]
+- 2 de setembro de 2026: documentação de limites baseados em consumo computacional, com reposição a cada cinco horas até um teto semanal. [7]
+
+[CONFIRMADO] Versão ou geração atual: o serviço é atualizado continuamente e não expõe número de versão ao usuário. O Google anunciou em junho de 2026 uma experiência baseada em Gemini 3.5 e no “secure cloud computer” do Google Antigravity para pesquisa agente. A central de ajuda não permite escolher ou auditar o modelo exato usado em cada saída. [23]
+
+[VERIFICAR] A marca está em transição: artigos recentes dizem Gemini Notebook, enquanto URLs, títulos da Ajuda e partes da interface ainda usam NotebookLM. Para o curso, usar na primeira menção “Gemini Notebook (anteriormente NotebookLM)” e manter “NotebookLM” onde esse for o texto real da tela. [1][2][4]
+
+2. ACESSO, PLANOS E REQUISITOS
+
+[CONFIRMADO] Acesso web: notebook.google.com, com uma Conta Google pessoal, de trabalho ou escolar. No Workspace, o administrador precisa habilitar o serviço para a unidade organizacional ou grupo. O Brasil está entre os países atendidos e português do Brasil é idioma compatível para a interface e várias saídas. [2][8]
+
+[CONFIRMADO] Plataformas: navegador web; aplicativo Android, que requer Android 10 ou posterior; aplicativo para iPhone/iPad disponível no Brasil. A ajuda consultada não mostrou um aplicativo nativo de desktop separado. [18]
+
+[VERIFICAR] Requisito mínimo do iOS/iPadOS: NÃO ENCONTRADO na página de ajuda consultada. Conferir a listagem atual da App Store antes de escrever o roteiro. [18]
+
+[CONFIRMADO] Plano Standard/gratuito, limites publicados na página de upgrade em 17/10/2026: 100 notebooks; 50 fontes por notebook; 50 chats por dia; 3 Resumos em Áudio por dia; 3 Resumos em Vídeo por dia; 10 relatórios, 10 conjuntos de cartões, 10 testes e 10 mapas mentais por dia; 10 Deep Research por mês. [6]
+
+[CONFIRMADO] Google AI Plus: 200 notebooks; 100 fontes; 200 chats/dia; 6 áudios; 6 vídeos; 20 relatórios, cartões, testes e mapas mentais; 3 Deep Research/dia. [6]
+
+[CONFIRMADO] Google AI Pro: 500 notebooks; 300 fontes; 500 chats/dia; 20 áudios; 20 vídeos, mais 2 cinematográficos; 100 relatórios, cartões, testes e mapas mentais; 20 Deep Research/dia. [6]
+
+[CONFIRMADO] Google AI Ultra 20 TB: 500 notebooks; 500 fontes; 2.500 chats/dia; 100 áudios; 100 vídeos, mais 10 cinematográficos; 500 relatórios, cartões, testes e mapas mentais; 75 Deep Research/dia. Google AI Ultra 30 TB: 500 notebooks; 600 fontes; 5.000 chats/dia; 200 áudios; 200 vídeos, mais 20 cinematográficos; 1.000 relatórios, cartões, testes e mapas mentais; 200 Deep Research/dia. [6]
+
+[CONFIRMADO] Para Tabelas de dados, Infográficos e Apresentações, a página de planos usa descrições qualitativas — limitado, mais, alto, maior e máximo — em vez de uma cota numérica pública. [6]
+
+[CONFIRMADO] Preços em dólar encontrados em páginas oficiais vigentes em 2026: Google AI Plus a partir de US$ 9,99/mês; Google AI Pro a partir de US$ 19,99/mês; Google AI Ultra com 5 vezes a franquia a US$ 100/mês e Ultra com 20 vezes a franquia a US$ 200/mês. Ofertas promocionais, impostos, armazenamento e disponibilidade variam por região. [19]
+
+[VERIFICAR] Preço em reais: NÃO ENCONTRADO de modo público e estável. A página Google One aberta com região Brasil exibiu dólares e resultados oficiais divergem sobre armazenamento do AI Plus/Pro. Confirmar no checkout autenticado brasileiro no dia da gravação, sem transformar preço promocional em preço permanente. [19]
+
+[CONFIRMADO] Workspace e Education possuem cotas por edição. A documentação agrupa as edições em Standard, More, Higher, Expanded e Highest. No nível Standard, os limites principais coincidem com o plano pessoal gratuito; camadas superiores chegam a 500 notebooks, 600 fontes, 5.000 chats/dia e 200 Deep Research/dia. O nome comercial da edição contratada determina a coluna aplicável. [8]
+
+[CONFIRMADO] Idade e administração: o serviço principal está disponível em edições Education para usuários de todas as idades, sujeito a políticas mais restritivas para menores; recursos específicos, como Deep Research, certos relatórios/artefatos visuais e vídeo Cinematic, podem exigir 18 anos. O administrador do domínio pode ligar ou desligar o serviço. [2][8][12][17]
+
+[CONFIRMADO] Nova métrica de consumo: desde 02/09/2026, a ajuda também descreve uso “baseado em computação”. Pedidos mais complexos, modelos avançados, recursos mais pesados e conversas longas consomem mais. A capacidade é renovada a cada cinco horas até um limite semanal. Multiplicadores informados: Standard sem multiplicador; AI Plus 2x; AI Pro 4x; Ultra 5x ou 20x, conforme a assinatura. [7]
+
+[VERIFICAR] Contradição operacional: a documentação não explica claramente como as cotas diárias fixas da página de upgrade se combinam com a janela de cinco horas e o teto semanal. A própria interface mostra uma barra de custo esperado para artefatos e pode oferecer “Gerar mais tarde” no web. Testar em cada plano usado pelo curso. [6][7]
+
+3. PRIMEIROS PASSOS (PASSO A PASSO OFICIAL)
+
+[CONFIRMADO] Caminho inicial na interface em português do Brasil:
+1) Acesse notebook.google.com e faça login.
+2) Selecione “Criar novo notebook” (inglês: “Create new notebook”).
+3) Na janela inicial, selecione “Fazer upload de uma fonte” (“Upload a source”).
+4) Escolha arquivo, Google Drive, link, YouTube, áudio, texto colado ou uma opção de pesquisa.
+5) Aguarde a importação e confira o material no painel “Fontes” (“Sources”).
+6) Use o painel “Conversa” (“Chat”) para perguntar ou o painel “Estúdio” (“Studio”) para gerar artefatos.
+Fonte oficial: [3][4]
+
+[CONFIRMADO] Caminho para perguntar somente a algumas fontes: notebook aberto > painel Fontes > marque as caixas das fontes desejadas > painel Conversa > escreva a pergunta > Enviar. A resposta mostra citações; passe o cursor para ver o trecho e clique para abrir o contexto na fonte. [10]
+
+[CONFIRMADO] Caminho para gerar um relatório: notebook aberto > Estúdio > Relatórios > escolha um tipo sugerido, um modelo como perguntas frequentes/guia de estudo/documento de resumo, ou descreva o formato > gerar. Para relatório interativo: Estúdio > Relatórios > Interativo > “Learning Overview”, quando disponível e elegível. [12]
+
+[CONFIRMADO] Caminho para Resumo em Áudio: notebook aberto > Estúdio > Resumo em Áudio (“Audio Overview”) > Personalizar, se necessário > escolha formato, idioma, duração e orientação > Gerar. Formatos atuais: Conversa aprofundada/Deep Dive, Resumo/The Brief, Crítica/Critique e Debate. [13]
+
+[CONFIRMADO] Caminho para Mapa mental: notebook aberto > Estúdio > Mapa mental > gerar. Os nós podem ser expandidos ou recolhidos e, ao selecionar um nó, o usuário pode fazer perguntas sobre ele. [16]
+
+[CONFIRMADO] Caminho para cartões e teste: notebook aberto > Estúdio > Cartões de estudo ou Teste > Personalizar > escolha dificuldade, quantidade e instrução opcional > gerar. Cartões podem ser exportados como CSV. [47]
+
+[CONFIRMADO] Caminho para compartilhar: notebook > “Compartilhar” > informe pessoas > escolha “Leitor” ou “Editor” > enviar. Para link: “Compartilhar” > “Copiar link”. Em conta pessoal, a opção pública permite “qualquer pessoa com uma Conta Google”, quando habilitada. [3][11]
+
+[CONFIRMADO] No celular, é possível criar/abrir notebooks, conversar, ouvir áudio inclusive offline, usar cartões/testes, ver/apresentar infográficos e slides e compartilhar PDF, site, YouTube, áudio ou texto para o aplicativo. Configuração do chat, analytics, notas, mapas mentais, relatórios e tabelas de dados não têm paridade integral com o web. [18]
+
+4. CONCEITOS E GLOSSÁRIO
+
+[CONFIRMADO] Notebook/caderno: contêiner de um tema, com fontes, conversa, notas e artefatos. Analogia: uma pasta de pesquisa que também consegue ler e explicar seu conteúdo. [2][3]
+
+[CONFIRMADO] Fonte/Source: material importado para fundamentar as respostas, como PDF, página, vídeo com legenda ou documento do Drive. Analogia: cada fonte é um livro ou recorte colocado sobre a mesa do pesquisador. [4]
+
+[CONFIRMADO] Grounding/ancoragem: restrição da resposta ao conjunto de fontes selecionadas. Analogia: uma prova com consulta na qual o aluno só pode usar os textos entregues. Isso reduz improviso, mas não garante infalibilidade. [2][10]
+
+[CONFIRMADO] Citação inline: marcador numerado ligado ao trecho usado. Ao passar o cursor, aparece a evidência; ao clicar, abre-se a posição e o contexto na fonte. A citação é um caminho para conferência, não um selo automático de verdade. [10]
+
+[CONFIRMADO] Studio/Estúdio: painel de produção de artefatos derivados das fontes, como áudio, vídeo, mapa mental, relatório, tabela, cartões, teste, slides e infográfico. [3][5]
+
+[CONFIRMADO] Artefato: saída persistente gerada no Estúdio. Pode ser revisada, compartilhada ou, em alguns casos, baixada. Uma resposta de chat é conversa; um relatório ou áudio é um objeto reutilizável. [5][12][13]
+
+[CONFIRMADO] Discover Sources/Pesquisa Rápida: busca dentro do produto que recomenda fontes da web ou do Drive para revisão e importação. O usuário ainda escolhe o que entra no notebook. [4][20]
+
+[CONFIRMADO] Deep Research: agente que navega por muitas páginas e produz um relatório de pesquisa com fontes propostas. É diferente de pesquisar apenas o corpus já carregado e está fora do núcleo deste curso Essentials. [4][21][23]
+
+[CONFIRMADO] Resumo em Áudio/Audio Overview: narrativa em áudio baseada nas fontes, em formatos de um ou dois apresentadores. Não é uma gravação literal das fontes; é uma síntese gerada e pode conter erros. [13]
+
+[CONFIRMADO] Resumo em Vídeo/Video Overview: vídeo gerado a partir das fontes, com formatos Explicador, Curto e, para elegíveis, Cinematográfico. [14][17]
+
+[CONFIRMADO] Nota/Note: texto criado pelo usuário ou salvo de uma resposta. Notas podem aparecer como fontes e fundamentar novas respostas/artefatos; notas legadas do Studio podem ser convertidas em fonte. [11]
+
+[CONFIRMADO] Sincronização: atualização da cópia importada de um arquivo do Google Drive. A importação é uma representação do arquivo, não uma ligação perfeita com todas as suas características; comentários e notas de rodapé não são importados. [4]
+
+[CONFIRMADO] OCR: reconhecimento óptico de caracteres, necessário quando um PDF é apenas uma imagem escaneada. Analogia: transformar uma fotografia de uma página em letras selecionáveis. A ajuda não promete OCR perfeito; arquivos sem texto extraível tendem a produzir pouco ou nenhum conteúdo útil. [4][30]
+
+[CONFIRMADO] Janela de contexto: quantidade de conteúdo que o modelo consegue considerar de uma vez. A interface publica limites por fonte, mas não expõe o tamanho interno da janela nem garante que toda palavra de um corpus enorme influencie igualmente cada resposta. [4]
+
+5. FUNCIONALIDADES
+
+[CONFIRMADO] Tipos de fonte aceitos no web: áudio, texto colado, Google Docs, Google Slides, Google Sheets, imagens, DOCX, TXT, Markdown, PDF, CSV, PPTX, livros elegíveis do Google Play, URLs da web, ePub, vídeos públicos do YouTube com legenda e conversas/contexto do Gemini. [4]
+
+[CONFIRMADO] Limites técnicos por fonte: até 500.000 palavras; arquivo local de até 200 MB; Slides até 100 slides; Sheets até 100.000 tokens. O total de fontes depende do plano: 50 no gratuito, 100 no Plus, 300 no Pro, 500/600 nas camadas Ultra. [4][6]
+
+[CONFIRMADO] Imagens aceitas incluem AVIF, BMP, GIF, HEIC/HEIF, ICO, JP2, JPEG/JPG, PNG, TIFF e WebP, mas a própria ajuda alerta que algumas imagens podem não funcionar bem. [4]
+
+[CONFIRMADO] Sites: a importação de uma URL comum traz apenas o texto HTML daquela página, não imagens, vídeos incorporados, páginas aninhadas nem conteúdo atrás de paywall. Uma URL direta de PDF é tratada como PDF. [4]
+
+[CONFIRMADO] YouTube: só vídeos públicos com legendas; apenas a transcrição é importada. Vídeos com menos de 72 horas podem falhar; vídeo sem fala/legenda não é aceito; conteúdo apagado ou tornado privado pode ser removido do notebook em até 30 dias. Não há limite publicado de duração, mas a legenda continua sujeita ao teto de 500.000 palavras. [4]
+
+[CONFIRMADO] Áudio: o arquivo é transcrito e a transcrição vira fonte. Vários formatos e idiomas, incluindo português, são aceitos. A qualidade depende do áudio, sotaque, ruído e terminologia. [4]
+
+[CONFIRMADO] Google Drive: Docs, Slides e Sheets podem ser atualizados a cada poucos minutos e quando o notebook é aberto; a interface também oferece “Clique para sincronizar com o Google Drive”. Comentários e notas de rodapé ficam de fora. Uma fonte que perdeu permissão pode continuar contando para o limite, embora deixe de fundamentar respostas. [4]
+
+[CONFIRMADO] Pesquisa Rápida: pesquisa Web ou Drive, mostra resultados com resumos e permite revisar e importar. O recurso Discover Sources foi lançado recomendando até dez fontes relevantes, mas a quantidade atual pode variar. [4][20]
+
+[CONFIRMADO] Conversa: perguntas em linguagem natural, seleção de fontes, respostas com trechos e imagens citados, perguntas sugeridas e salvamento da resposta como nota. [10]
+
+[CONFIRMADO] Personalização do chat: Conversa > “Configure Chat”/configurar conversa > estilo “Default”, “Learning Guide” ou “Custom”; comprimento “Default”, “Longer” ou “Shorter”; salvar. Os rótulos em português podem variar durante a transição de marca e devem ser conferidos na conta de gravação. [10]
+
+[CONFIRMADO] Notas: criar nota manual, colar texto, salvar resposta mantendo formatação, tabelas e citações clicáveis, usar nota como fonte e exportar para Google Docs. Alterações feitas no Docs exportado não sincronizam de volta. [10][11]
+
+[CONFIRMADO] Saídas atuais do Estúdio: Notas; Resumos em Áudio; Resumos em Vídeo; Mapas mentais; Relatórios; Tabela de dados; Cartões de estudo; Testes; Apresentações de slides; Infográficos. Relatórios incluem perguntas frequentes, guia de estudo, documento de resumo/briefing, formatos sugeridos e instrução personalizada. [3][5][12]
+
+[CONFIRMADO] Resumo em Áudio: Deep Dive, The Brief, Critique e Debate; idioma selecionável; duração Shorter, Default ou Longer, sendo Longer documentado como inglês; geração pode levar minutos e apresentar falhas. Português do Brasil é compatível. [13][15]
+
+[CONFIRMADO] Modo interativo do áudio: em áudio novo, o ouvinte pode selecionar “Interactive mode” > “Join” e conversar por voz com os apresentadores. A ajuda vigente ainda descreve o modo como disponível em inglês; a voz do usuário não é armazenada nem compartilhada. Links compartilhados não permitem que o destinatário interaja. [13]
+
+[CONFIRMADO] Resumo em Vídeo: “Explainer”, “Short” de aproximadamente 60 segundos e “Cinematic”. Explicador e Curto suportam português do Brasil; Cinematic exige 18+, Ultra, inglês e web/mobile compatível. Estilos visuais incluem Classic, Whiteboard, Watercolor, Retro Print, Heritage, Paper-craft, Kawaii, Anime e instrução personalizada, sujeitos à elegibilidade. [14][17]
+
+[CONFIRMADO] Cartões e testes: quantidade, dificuldade e prompt opcional; explicação de resposta, acompanhamento de progresso, refazer/revisar e exportação de cartões para CSV. [47]
+
+[CONFIRMADO] Mapa mental: representação ramificada, com nós expansíveis; um clique no nó inicia perguntas relacionadas. [16]
+
+[CONFIRMADO] Relatórios: documento estruturado em modelo pronto ou formato livre e, em contas elegíveis, relatório interativo “Learning Overview” com artefatos incorporados. [12]
+
+[CONFIRMADO] Tabela de dados: extrai, estrutura e compara informações das fontes em linhas e colunas; é útil para cronologias, entidades, alegações e evidências, mas exige conferência contra as fontes. [25]
+
+[CONFIRMADO] Apresentações e Infográficos: condensam o corpus em material visual. Podem ser apresentados/baixados conforme o tipo e plano; layouts, imagens e sínteses precisam de revisão humana. [5][26]
+
+[CONFIRMADO] Compartilhamento: “Leitor” tem acesso de leitura aos documentos/notas originais; “Editor” pode adicionar/remover fontes e compartilhar. Em Gmail pessoal, o limite informado é 50 pessoas e não há compartilhamento direto com Google Groups. [3]
+
+[CONFIRMADO] “Visualização da conversa” oculta fontes e artefatos da interface, mas não revoga o acesso subjacente do destinatário. O modo público de conta pessoal permite link para quem tiver Conta Google. Leitores públicos podem ler/perguntar, mas não gerar artefatos ou adicionar fontes. [3][27]
+
+[CONFIRMADO] Analytics: para notebook compartilhado com pelo menos quatro outras pessoas e atividade, mostra uso agregado dos últimos sete dias. A documentação atual diz que personalização de chat e analytics não estão mais restritos a um plano pago. [3][6]
+
+6. CASOS DE USO PARA O PÚBLICO DO CURSO
+
+[CONFIRMADO] Estudante: reunir capítulo, artigo, página oficial e aula com legenda; pedir explicação por nível de dificuldade; abrir cada citação; gerar guia de estudo, cartões, teste e áudio para revisão. Em um caso divulgado pelo Google na Florida State University, estudantes criaram cartões, testes, guias e áudios; a instituição relatou melhora de hábitos e notas entre alguns alunos com desempenho anterior na faixa C. É um relato institucional promovido pelo fornecedor, não uma avaliação independente. [28]
+
+[CONFIRMADO] Pesquisador: manter um notebook por pergunta de pesquisa, importar literatura de acesso aberto, comparar definições e métodos e registrar notas com citações. O produto não substitui revisão bibliográfica sistemática nem verificação em base acadêmica. [2][10][31]
+
+[CONFIRMADO] Professor/coordenador/designer instrucional: carregar plano de ensino, textos e políticas; gerar perguntas frequentes, guia de estudo, mapa mental, áudio e exercícios; compartilhar uma visualização de conversa ou notebook de leitura com a turma. O Google for Education mantém guias editáveis de desenvolvimento profissional e projeto de pesquisa, baixados com este pacote. [8][29]
+
+[CONFIRMADO] Um caso de Oxford divulgado pelo Google registrou, em piloto, 85% dos participantes relatando ganho de produtividade e quase 75% dizendo trabalhar com maior eficácia. Esses números são autorrelatados em estudo de caso do fornecedor e devem ser usados apenas como ilustração, não como prova causal. [46]
+
+[CONFIRMADO] Advogado/assessor jurídico: organizar legislação pública, decisões, peças próprias autorizadas e doutrina licenciada; pedir quadro de teses, divergências, cronologia e trechos citados. O resultado precisa ser conferido no documento oficial e não deve ser tratado como parecer. A recomendação da OAB enfatiza legislação aplicável, confidencialidade/privacidade, ética e comunicação sobre uso de IA. [34]
+
+[VERIFICAR] Caso brasileiro publicado e detalhado de escritório usando especificamente Gemini Notebook/NotebookLM com métricas e metodologia: NÃO ENCONTRADO nas fontes consultadas. O uso jurídico acima é um cenário plausível derivado das funções oficiais e das cautelas da OAB, não um depoimento de cliente. [4][10][34]
+
+[CONFIRMADO] Jornalista: criar um notebook por apuração com documentos públicos, entrevistas transcritas e relatórios; pedir uma linha do tempo, lista de pessoas/organizações, alegações contraditórias e mapa de evidências; clicar em cada citação antes de publicar. A equipe original do produto descreve jornalismo, entrevistas e grandes coleções documentais entre os usos observados. [31]
+
+[VERIFICAR] Caso brasileiro público de redação com protocolo documentado para NotebookLM: NÃO ENCONTRADO. Tratar o cenário como prática recomendada, sem atribuir ganho de produtividade não medido. [31]
+
+[CONFIRMADO] Analista: comparar relatórios, atas, normas e pesquisas; pedir matriz de riscos, decisões pendentes e evidências; gerar tabela de dados e briefing. Não carregar documentos internos classificados em conta pessoal sem autorização e governança. [9][25]
+
+7. BOAS PRÁTICAS E EXEMPLOS DE PROMPTS
+
+[CONFIRMADO] Começar com um objetivo e um corpus pequeno. Nomear o notebook por tema e decisão, conferir o resumo de cada fonte e só depois ampliar. Isso facilita perceber fonte errada, duplicada ou desatualizada. [3][4]
+
+[CONFIRMADO] Selecionar explicitamente as fontes relevantes antes de perguntar. A caixa marcada no painel Fontes define o conjunto usado naquela conversa. [10]
+
+[CONFIRMADO] Pedir estrutura e critério de evidência no prompt: tarefa + escopo + formato + tratamento de divergências + exigência de citações. A configuração “Custom” também permite fixar objetivo/estilo do chat. [10]
+
+[CONFIRMADO] Abrir pelo menos duas citações de toda resposta que orientará decisão, aula, notícia ou petição. A proximidade entre texto e citação facilita a auditoria, mas a frase gerada ainda pode exagerar, inverter ou combinar trechos. [10]
+
+[CONFIRMADO] Separar resumo de interpretação. Primeiro pedir “extraia o que cada fonte afirma”; depois “compare”; por último “proponha hipóteses”. Isso preserva a diferença entre evidência e inferência. [2][10]
+
+[CONFIRMADO] Registrar incerteza: pedir que a resposta use “não encontrado nas fontes” quando o corpus não sustentar uma conclusão, em vez de completar lacunas com conhecimento geral. A central de ajuda reconhece que perguntas fora das fontes podem gerar recusa ou resposta insuficiente. [2]
+
+[CONFIRMADO] Prompts prontos para adaptação:
+- “Explique [tema] para uma pessoa iniciante. Use somente as fontes selecionadas. Para cada afirmação central, inclua uma citação; se as fontes divergirem, apresente as versões separadamente.”
+- “Compare as definições de [conceito] nas fontes A, B e C. Entregue: definição de cada fonte, pontos comuns, divergências e trechos de evidência.”
+- “Crie uma cronologia com data, evento, fonte e grau de certeza. Não preencha datas ausentes.”
+- “Transforme este corpus em um guia de estudo com conceitos-chave, cinco perguntas de autoavaliação e gabarito explicado.”
+- “Liste todas as alegações sobre [assunto] e classifique cada uma como apoiada, contestada ou não comprovada pelas fontes selecionadas.”
+- “Atue como guia de aprendizagem: faça uma pergunta por vez, espere minha resposta, dê uma pista antes do gabarito e cite o trecho que fundamenta a explicação.”
+Os padrões usam capacidades documentadas de seleção de fontes, citações, guia de aprendizagem e artefatos; são exemplos elaborados para esta pesquisa, não transcrições literais do Google. [10][12]
+
+[CONFIRMADO] Prompt para professor: “Com base apenas no plano de ensino e nos textos selecionados, crie um guia de estudo de uma página para [nível]. Separe pré-requisitos, ideias essenciais, três equívocos comuns e perguntas de recuperação. Cite cada item.” [10][12]
+
+[CONFIRMADO] Prompt para Direito: “Monte um quadro com dispositivo, interpretação apresentada, decisão citada, possível conflito e link da evidência. Não ofereça aconselhamento jurídico e marque o que não estiver nas fontes.” A própria ajuda alerta para não buscar aconselhamento jurídico, médico ou financeiro. [3]
+
+[CONFIRMADO] Prompt para jornalismo: “Extraia pessoas, organizações, datas, valores e alegações. Separe fato documentado, fala atribuída e inferência. Mostre a citação de cada linha e destaque contradições.” [10][25]
+
+[CONFIRMADO] Para áudio/vídeo, o campo de personalização deve indicar audiência, foco e o que evitar: “Produza um resumo curto em português do Brasil para iniciantes; enfatize os direitos do titular e não apresente aconselhamento jurídico.” [13][14]
+
+8. SEGURANÇA, PRIVACIDADE E DADOS
+
+[CONFIRMADO] Conta pessoal: o Google informa que dados do notebook não são usados diretamente para treinar os modelos fundamentais, salvo quando o usuário envia feedback. Ao enviar feedback positivo/negativo, o pacote pode incluir prompt, personalizações, fontes, uploads e saídas; pode ser revisado por humanos, desassociado da conta e retido por até três anos. Não incluir informação confidencial ou sensível em feedback. [9]
+
+[CONFIRMADO] Workspace e Education: uploads, consultas e respostas não são revisados por humanos nem usados para treinar/melhorar modelos generativos. Aplicam-se os termos e controles corporativos/educacionais da edição. [2][8][9]
+
+[CONFIRMADO] Quem vê: por padrão, o notebook é do usuário. Pessoas adicionadas como leitor/editor e pessoas alcançadas por link público podem acessar conforme a configuração. “Visualização da conversa” é uma apresentação simplificada, não uma barreira de autorização às fontes subjacentes. [3][27]
+
+[CONFIRMADO] Fontes do Drive preservam dependência de permissão e podem se tornar indisponíveis. Uma cópia importada não carrega comentários/notas de rodapé. É preciso revisar acesso, propriedade e atualização antes de compartilhar. [4]
+
+[CONFIRMADO] Conversas do Gemini usadas como fonte exigem cautela: ao compartilhar um notebook que contenha conversas, colaboradores podem ver o conteúdo importado. A integração dentro do aplicativo Gemini segue também as configurações de atividade e a política dos Apps Gemini. [5]
+
+[CONFIRMADO] LGPD: antes de carregar dados pessoais, definir finalidade, base legal, necessidade, transparência, segurança, retenção e acesso. Aplicar minimização: remover CPF, endereço, contato, prontuário, avaliação individual e outros identificadores quando não forem indispensáveis. [35][36]
+
+[CONFIRMADO] A ANPD alerta que dados pessoais podem aparecer em todo o ciclo da IA generativa — dados de entrada, prompts e saídas — e recomenda controles compatíveis com o risco. Para ensino/pesquisa, anonimização e governança devem ser consideradas, observando que anonimização imperfeita pode permitir reidentificação. [36][37]
+
+[CONFIRMADO] Sigilo profissional na advocacia: não inserir peças, comunicações cliente-advogado, estratégia ou dados sensíveis em conta pessoal sem autorização, avaliação contratual e controles institucionais. A recomendação da OAB exige respeito a confidencialidade, privacidade, deveres éticos e comunicação apropriada sobre IA. [34]
+
+[CONFIRMADO] Medidas operacionais recomendadas:
+- preferir fontes públicas para exercícios;
+- usar Workspace/Education gerenciado para conteúdo institucional autorizado;
+- limitar leitores e editores pelo princípio do menor privilégio;
+- evitar link público para notebook com documento protegido;
+- anonimizar ou pseudonimizar quando possível;
+- não enviar feedback contendo material sensível;
+- revisar e remover fontes quando a finalidade terminar;
+- registrar quem aprovou o uso e a base legal aplicável;
+- conferir termos, política e controles da organização antes de migrar um acervo.
+Essas medidas derivam da documentação do Google, LGPD e guias da ANPD. [3][8][9][35][37][38]
+
+[VERIFICAR] Prazo padrão de retenção do conteúdo de notebook apagado, backups, residência de dados e cobertura específica por região/edição: NÃO ENCONTRADO de forma completa nas páginas públicas consultadas. Para implantação institucional, solicitar documentação contratual e do administrador Workspace. [8][9]
+
+9. LIMITAÇÕES, ERROS COMUNS E SOLUÇÃO DE PROBLEMAS
+
+[CONFIRMADO] Resposta errada apesar de fonte correta: ocorre porque a síntese é probabilística. Solução: reduzir fontes selecionadas, pedir citação por afirmação, abrir o trecho, reformular de modo específico e comparar com o original. [2][10]
+
+[CONFIRMADO] “Não consigo responder”: causas oficiais incluem pergunta pouco clara, informação ausente das fontes e bloqueio de segurança. Solução: indicar a fonte, o recorte e o formato; se o dado não existe, adicionar uma fonte adequada. [2]
+
+[CONFIRMADO] PDF não importa: verificar 200 MB, 500.000 palavras, proteção contra cópia, corrupção e existência de texto selecionável. A FAQ informa que não há limite fixo de páginas, mas tamanho, palavras e proteção se aplicam. [4][30]
+
+[CONFIRMADO] PDF escaneado: se o arquivo contém apenas imagem e o texto não é extraído, aplicar OCR em ferramenta autorizada ou obter uma versão acessível. Depois, conferir números, nomes e tabelas, que são áreas típicas de erro de OCR. [4][30]
+
+[CONFIRMADO] Site incompleto: uma URL comum importa apenas o texto HTML da página; imagens, incorporações e páginas ligadas não vêm juntas. Paywall não é suportado. Solução: usar uma versão pública/licenciada e importar páginas relevantes separadamente. [4]
+
+[CONFIRMADO] YouTube falha: o vídeo precisa ser público e ter legenda; vídeos recém-publicados podem levar até 72 horas; apenas a transcrição entra. Solução: conferir legenda no player, aguardar ou usar uma transcrição obtida legalmente. [4]
+
+[CONFIRMADO] Drive desatualizado: reabrir o notebook e usar “Clique para sincronizar com o Google Drive”. Confirmar a data e lembrar que comentários/notas de rodapé não sincronizam. [4]
+
+[CONFIRMADO] Fonte inacessível ainda ocupa cota: restaurar permissão ou removê-la; a ajuda diz que ela deixa de ser citada, embora possa continuar contando. [4]
+
+[CONFIRMADO] Citação genérica ou ausente: textos muito curtos podem não gerar citações específicas. Ampliar a fonte, fazer pergunta mais precisa ou adicionar uma versão com estrutura textual melhor. [30]
+
+[CONFIRMADO] Áudio/vídeo demora ou apresenta erro: aguardar, conferir cota e barra de custo, reduzir corpus/instrução e tentar novamente. Áudio pode ter falhas; vídeo pode levar mais de 30 minutos. No web, contas elegíveis podem oferecer “Gerar mais tarde”. [7][13][14]
+
+[CONFIRMADO] Aplicativo móvel não mostra um recurso: vários recursos existem apenas no web, entre eles configuração do chat, analytics, notas, mapas mentais, relatórios e tabelas. Usar navegador no computador para o curso principal. [18]
+
+[CONFIRMADO] Limite atingido: cotas diárias geralmente se renovam após 24 horas e mensais após 30 dias na página de planos; a página de computação descreve também reposição a cada cinco horas até limite semanal. Conferir o indicador da própria conta. [6][7]
+
+[VERIFICAR] Leitura de tabelas e imagens dentro de PDF: o produto aceita PDF e imagens, mas não há promessa pública de extração perfeita de layout, gráfico ou célula. Conferir valores no original e preferir CSV/Sheets para dados tabulares críticos. [4][25]
+
+[VERIFICAR] Tamanho da janela de contexto e estratégia de recuperação: NÃO ENCONTRADO. O limite de 500.000 palavras por fonte não significa que o modelo processe simultaneamente e com igual peso todas as palavras de centenas de fontes. [4]
+
+[CONFIRMADO] Notas exportadas para Docs não mantêm sincronização bidirecional; edições feitas depois no arquivo exportado não voltam ao notebook. [11]
+
+[VERIFICAR] Recuperação de nota apagada: uma FAQ anterior dizia que notas excluídas não podiam ser recuperadas, mas o fluxo de notas mudou em 2026. Testar antes de ensinar como regra atual. [11][30]
+
+10. COMPARAÇÃO COM ALTERNATIVAS
+
+[CONFIRMADO] Gemini Notebook/NotebookLM: melhor encaixe quando o objetivo principal é estudar e produzir saídas a partir de um corpus delimitado, com citações que abrem o trecho original e um Estúdio multimodal. [2][5][10]
+
+[CONFIRMADO] ChatGPT Projects: organiza chats, arquivos e instruções de projeto e funciona como assistente geral para análise, redação e outras ferramentas. É mais amplo do que um caderno exclusivamente centrado em fontes; comparar na prática a precisão de citações para o corpus específico. [39]
+
+[CONFIRMADO] Claude Projects: permite instruções e uma base de conhecimento do projeto, com síntese e redação em conversas. Também é uma alternativa de workspace de contexto, mas não replica exatamente o conjunto de Studio e navegação de citação do Gemini Notebook. [40]
+
+[CONFIRMADO] Perplexity: é orientado à pesquisa da web com citações e descoberta de páginas atuais. Gemini Notebook é mais forte quando o pesquisador quer decidir o corpus e permanecer nele; Discover/Deep Research aproximam o produto da busca web, mas o fluxo continua culminando na importação de fontes. [4][20][21]
+
+[VERIFICAR] Comparações de “melhor ferramenta” variam por corpus, plano e data. Uma análise independente da TechRadar e um relato comparativo do Tom’s Guide destacam a experiência ancorada e as saídas do NotebookLM, mas são avaliações editoriais e não substituem teste controlado. [41][42]
+
+[CONFIRMADO] Critério imparcial para decisão: use Notebook/Gemini quando a evidência precisa vir de material selecionado; Perplexity quando o primeiro problema é descobrir páginas atuais; Projects do ChatGPT/Claude quando o trabalho requer conversa e produção geral persistente além do corpus. Para casos críticos, executar o mesmo conjunto de perguntas, medir citações corretas, omissões, tempo e custo. [4][10][39][40]
+
+11. NOVIDADES RECENTES E RECURSOS INSTÁVEIS
+
+[CONFIRMADO] Novembro de 2025: Deep Research e mais tipos de fonte. Dezembro de 2025: Tabelas de dados e apresentações. [21][25][26]
+
+[CONFIRMADO] Março de 2026: Cinematic Video Overviews, recurso premium, 18+, inglês, sujeito a cota. [17]
+
+[CONFIRMADO] Junho/julho de 2026: pesquisa agente com navegador/código em nuvem segura e mudança de nome para Gemini Notebook. Parte da expansão começou em Ultra/Workspace AI Expanded e foi descrita como implantação. [1][23]
+
+[CONFIRMADO] Setembro de 2026: ferramentas de estudo novas, voz ao vivo em quase 100 idiomas, relatórios de aprendizagem interativos, novas formas de quiz e vídeos curtos em 80+ idiomas foram anunciados/implantados. [24]
+
+[CONFIRMADO] Setembro de 2026: limites baseados em computação, barra de custo e geração posterior no web. [7]
+
+[VERIFICAR] Instável: nomes de marca e menus; disponibilidade regional e por idade; voz ao vivo multilíngue; relatórios interativos; agente que navega/executa código; “Gerar mais tarde”; multiplicadores e combinação de cotas. Todas essas telas devem ser rechecadas na conta brasileira usada na produção. [1][7][12][23][24]
+
+[VERIFICAR] Recursos de chat agente que pesquisa a web, executa código e cria arquivos, gráficos ou imagens aparecem como experimentais/premium em documentação recente. Não os tornar requisito do curso Essentials nem confundi-los com o chat básico baseado nas fontes. [10][23]
+
+12. MATERIAL DIDÁTICO EXISTENTE
+
+[CONFIRMADO] Central de Ajuda do Gemini Notebook/NotebookLM: principal referência para acesso, fontes, limites, chat, Studio, compartilhamento, privacidade, Workspace e celular. A tradução para português pode ser automática e conter diferenças de rótulo. [2] a [18]
+
+[CONFIRMADO] Google for Education — “Recursos de IA para educação”: reúne demonstrações, materiais para desenvolvimento profissional e modelos de projeto. Os dois modelos de planilha desta pesquisa vieram dessa página e estão no pacote local. [29]
+
+[CONFIRMADO] Blogs oficiais do Google e Google Labs: úteis para linha do tempo e intenção de design, incluindo Discover Sources, Video Overviews, Deep Research, Tables, Slides, casos universitários e mudança para Gemini Notebook. [1][20] a [29][31][32]
+
+[CONFIRMADO] Vídeo curado pelo Google for Education: “AI Enhanced Research Based Projects 4 Students”, no YouTube, em inglês, com legendas automáticas no player. Serve como referência de uso em projeto investigativo; não tratá-lo como documentação oficial do produto. [29][43]
+
+[CONFIRMADO] Guia de Inteligência Artificial Aplicada para Profissões, do LabTeC/UFSC: material brasileiro em PDF que contextualiza IA em profissões e menciona usos de NotebookLM, útil para exemplos e cautelas. Uma cópia foi baixada. [44]
+
+[CONFIRMADO] Guias da ANPD e texto da LGPD: não ensinam NotebookLM, mas sustentam as partes de privacidade, segurança, pesquisa acadêmica e exercício público. Cópias dos dois guias foram baixadas; a lei permanece como página oficial do Planalto. [35][37][38]
+
+[VERIFICAR] Curso oficial completo e gratuito, autoinstrucional, em português do Brasil, dedicado exclusivamente ao produto atual Gemini Notebook: NÃO ENCONTRADO. A página de recursos para educação e a Ajuda são as referências oficiais mais próximas. [2][29]
+
+13. IDEIAS DE EXERCÍCIO
+
+[CONFIRMADO] Exercício principal — Caderno LGPD, plano gratuito, 20 a 30 minutos.
+Fontes públicas sugeridas:
+1) Lei nº 13.709/2018 — LGPD, Planalto, HTML: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm [35]
+2) Guia orientativo sobre segurança da informação para agentes de tratamento de pequeno porte, ANPD, PDF: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-vf.pdf/@@display-file/file [38]
+   [CORREÇÃO DA EQUIPE, 17/10/2026: o link original, sem "/@@display-file/file", devolve a página HTML do portal gov.br e não o PDF; usar o link acima.]
+3) Guia orientativo Tratamento de dados pessoais para fins acadêmicos, ANPD, PDF: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/web-guia-anpd-tratamento-de-dados-para-fins-academicos.pdf/@@display-file/file [37]
+4) Página “Titular de Dados”, ANPD, HTML: https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados [45]
+Passos: criar “LGPD — revisão”; adicionar as quatro fontes; selecionar todas; perguntar “Compare dado pessoal, dado pessoal sensível e dado anonimizado; cite a lei e explique para iniciantes”; abrir duas citações; Estúdio > Relatórios > Guia de estudo; Estúdio > Resumo em Áudio > português (Brasil) > duração curta/padrão > gerar.
+Evidência de sucesso: quatro fontes aparecem; a resposta contém citações que abrem trechos compatíveis; o guia de estudo é criado; o player de áudio aparece e reproduz em português. [3][4][10][12][13]
+
+[CONFIRMADO] Exercício curto — Auditoria de citação, gratuito, 10 minutos. Carregar uma fonte pública curta, formular uma pergunta factual, abrir três citações e registrar: frase gerada, trecho original, correspondência total/parcial/ausente. Resultado: pequena ficha de verificação, não apenas uma resposta aceita passivamente. [10]
+
+[CONFIRMADO] Exercício curto — Duas fontes em conflito, gratuito, 10 a 15 minutos. Usar duas versões públicas de uma política ou dois textos com perspectivas diferentes; pedir comparação sem conciliação artificial. Resultado: lista de concordâncias, divergências e citação de cada lado. [10]
+
+[CONFIRMADO] Exercício para educadores — Microguia e quiz, gratuito, 15 minutos. Importar plano/tema público sem dados de aluno; gerar guia de estudo e teste de cinco questões; revisar cada gabarito na fonte. Resultado: relatório e teste revisados. [12][47]
+
+[CONFIRMADO] Exercício para Direito — Mapa de norma, gratuito, 15 minutos. Usar apenas LGPD e guia ANPD; pedir quadro com artigo, obrigação, exemplo e evidência; nunca usar documento de cliente. Resultado: quadro com citações abertas e pelo menos uma limitação explicitada. [10][34][35]
+
+[CONFIRMADO] Exercício para jornalismo — Cronologia documental, gratuito, 15 minutos. Usar três comunicados públicos sobre um mesmo evento; pedir cronologia e alegações contraditórias. Resultado: cada evento tem fonte/citação e inferências são separadas. [10]
+
+[VERIFICAR] A duração real de geração de áudio/vídeo varia por demanda, plano e complexidade; não usar uma espera rígida no roteiro. Prever continuidade assíncrona ou um artefato pré-gerado de demonstração. [13][14]
+
+14. RESPOSTAS AO FOCO ESPECÍFICO DESTE CURSO
+
+14.1. Responder “com base nas fontes”, grounding e citações
+
+[CONFIRMADO] O notebook usa as fontes selecionadas como base de recuperação e geração. No produto independente, a resposta é orientada pelo corpus do notebook, em vez de começar como uma conversa geral aberta. Isso permite delimitar o que conta como evidência e repetir a consulta com fontes marcadas/desmarcadas. [2][10]
+
+[CONFIRMADO] As citações inline ligam uma afirmação ao texto ou à imagem que serviu de suporte. O usuário passa o cursor para ver o trecho citado e clica para ir à posição exata/contexto da fonte. Ao salvar a resposta como nota, as citações permanecem clicáveis. [10]
+
+[CONFIRMADO] Diferença de um chat comum: o chat geral pode recorrer a conhecimento do modelo, web, memória e ferramentas; o caderno independente privilegia o corpus explicitamente escolhido. Dentro do aplicativo Gemini, um notebook pode coexistir com busca/web e outras ferramentas, portanto o roteirista deve deixar claro em qual superfície está. [5]
+
+[CONFIRMADO] Grounding não é garantia de correção: o modelo ainda escolhe trechos, resume e relaciona ideias. Pode citar um trecho real que não sustenta toda a frase, omitir qualificação ou resolver divergência indevidamente. A prática obrigatória é clicar, ler o contexto e comparar. [2][10]
+
+14.2. Tipos e limites de fonte; PDFs, paywall e YouTube
+
+[CONFIRMADO] Tipos atuais: áudio; texto colado; Docs; Slides; Sheets; imagens; DOCX; TXT; Markdown; PDF; CSV; PPTX; ePub; certos livros do Google Play; URL da web; YouTube público com legenda; conversas/contexto do Gemini. [4]
+
+[CONFIRMADO] Limite técnico de cada fonte: 500.000 palavras e, para upload local, 200 MB. Slides: até 100 slides. Sheets: até 100.000 tokens. Limite de quantidade por notebook: 50 Standard, 100 Plus, 300 Pro, 500 Ultra 20 TB e 600 Ultra 30 TB. [4][6]
+
+[CONFIRMADO] PDF digitalizado como imagem pode falhar ou produzir extração incompleta; a ajuda aceita PDFs e imagens, mas não garante OCR perfeito. Se não houver texto selecionável, aplicar OCR por meio autorizado e conferir a transcrição. PDFs protegidos contra cópia, acima de 200 MB ou acima de 500.000 palavras podem falhar. [4][30]
+
+[CONFIRMADO] Site com paywall não é suportado. Importar URL não “raspa o site”: entra somente o texto HTML da página, sem imagens, embeds e páginas vinculadas. [4]
+
+[CONFIRMADO] YouTube sem legenda não entra. O vídeo precisa ser público; só a transcrição é importada. Vídeos muito novos podem precisar de até 72 horas. [4]
+
+14.3. Descoberta de fontes dentro do produto
+
+[CONFIRMADO] “Pesquisa Rápida” pesquisa Web ou Drive a partir de uma descrição e devolve fontes candidatas para revisão/importação. O lançamento Discover Sources descrevia até dez recomendações com resumos anotados. Uma recomendação ainda não é fonte do notebook até ser importada. [4][20]
+
+[CONFIRMADO] “Deep Research” é um agente mais longo, para maiores de 18 anos, que pesquisa muitas páginas e cria relatório de várias páginas com fontes propostas. Ele é útil para descoberta ampla, mas não deve ocupar o centro deste Essentials porque há outro curso dedicado à pesquisa profunda. [4][21][23]
+
+[CONFIRMADO] Diferença das fontes enviadas: fonte enviada é escolhida diretamente pelo usuário e já compõe o corpus; resultado de descoberta é sugestão, cuja autoria, data, licença e qualidade ainda precisam ser avaliadas antes da importação. [4][20]
+
+14.4. Todas as saídas do Estúdio e limites
+
+[CONFIRMADO] Painel atual: “Estúdio”/“Studio”. Itens documentados: Notas; Resumos em Áudio; Resumos em Vídeo; Mapas mentais; Relatórios; Tabela de dados; Cartões de estudo; Testes; Apresentações de slides; Infográficos. [3][5]
+
+[CONFIRMADO] “Resumo” pode significar uma resposta/síntese do chat ou um modelo de relatório; “documento de resumo”/briefing, perguntas frequentes e guia de estudo ficam em Relatórios. Linha do tempo não aparece como botão universal separado na lista atual; pode ser formato sugerido ou pedido como relatório/tabela. Não ensinar “Linha do tempo” como menu fixo sem confirmar na conta. [3][12][25]
+
+[CONFIRMADO] Audio Overview/Resumo em Áudio: Deep Dive (dois apresentadores), The Brief (um apresentador, menos de dois minutos), Critique (dois apresentadores avaliando material) e Debate (dois apresentadores). Idioma selecionável, português do Brasil compatível; Shorter/Default/Longer, com Longer documentado para inglês. Modo interativo só em áudio novo e ainda descrito como inglês. [13][15]
+
+[CONFIRMADO] Video Overview/Resumo em Vídeo: Explainer, Short de cerca de 60 segundos e Cinematic. Português do Brasil é compatível com Explainer/Short; Cinematic é 18+, Ultra e inglês. [14][17]
+
+[CONFIRMADO] Mapas mentais: diagrama ramificado e interativo; Cartões/Testes: estudo e autoavaliação configuráveis; Relatórios: documento estruturado ou experiência interativa; Tabela: extração em linhas/colunas; Slides/Infográficos: síntese visual. [12][16][25][26][47]
+
+[CONFIRMADO] Limites diários Standard/Plus/Pro/Ultra20/Ultra30:
+- Áudio: 3 / 6 / 20 / 100 / 200.
+- Vídeo: 3 / 6 / 20 mais 2 Cinematic / 100 mais 10 / 200 mais 20.
+- Relatórios: 10 / 20 / 100 / 500 / 1.000.
+- Cartões: 10 / 20 / 100 / 500 / 1.000.
+- Testes: 10 / 20 / 100 / 500 / 1.000.
+- Mapas mentais: 10 / 20 / 100 / 500 / 1.000.
+- Deep Research: 10/mês / 3/dia / 20/dia / 75/dia / 200/dia.
+- Tabela, Infográfico e Slides: a página só publica níveis qualitativos de capacidade.
+[6]
+
+[VERIFICAR] Esses números coexistem com limites computacionais renovados em janelas de cinco horas e teto semanal. A interface e a assinatura devem prevalecer sobre qualquer tabela congelada no roteiro. [6][7]
+
+14.5. Personalização do chat, notas e conversão
+
+[CONFIRMADO] Conversa > configurar chat: estilo Default, Learning Guide ou Custom; resposta Default, Longer ou Shorter; salvar. A configuração Custom pode definir função/objetivo, tom e comportamento. [10]
+
+[CONFIRMADO] “Save to note” transforma uma resposta em nota mantendo estrutura, tabelas e citações clicáveis. Também é possível criar nota manual ou colar texto. Notas agora podem aparecer no painel Fontes e fundamentar conversa/artefatos. [10][11]
+
+[CONFIRMADO] Para notas legadas no Studio, usar “Convert” ou “Convert all notes to source”. Exportar para Google Docs cria uma cópia sem sincronização de retorno. [11]
+
+14.6. Compartilhamento, público, Workspace e Education
+
+[CONFIRMADO] Leitor: acesso de leitura às fontes/notas originais e uso permitido da conversa. Editor: pode adicionar/remover fontes e compartilhar. Em conta pessoal, até 50 usuários, sem Google Groups. [3]
+
+[CONFIRMADO] Notebook público: link para qualquer pessoa com Conta Google, em conta pessoal elegível. Visualizador público pode ler e perguntar, mas não adicionar fontes ou gerar artefatos. Links individuais de áudio/vídeo também podem ser compartilhados. [13][14][27]
+
+[CONFIRMADO] “Chat view” oculta materiais na apresentação, mas não é revogação de acesso. Não usar esse modo para simular proteção de documento sigiloso. [3][27]
+
+[CONFIRMADO] Compartilhamento público é descrito como recurso de conta pessoal e indisponível/desabilitado em ambientes Workspace Enterprise/Education nas páginas de artefatos. Compartilhamento interno continua sujeito às políticas do domínio. [8][13][14]
+
+[CONFIRMADO] Education: serviço principal para todas as idades em edições compatíveis, com proteções mais rígidas para menores; administrador precisa habilitar. Recursos 18+ ficam indisponíveis para usuários não elegíveis. [2][8]
+
+14.7. Gratuito, pagos, Workspace e aplicativos
+
+[CONFIRMADO] Gratuito/Standard atende ao exercício central: 100 notebooks, 50 fontes por notebook, 50 chats/dia, 3 áudios/dia e 10 relatórios/dia. [6]
+
+[CONFIRMADO] Plus/Pro/Ultra ampliam fontes, chats, artefatos, Deep Research e consumo computacional. O antigo nome NotebookLM Plus foi absorvido pelas camadas Google AI/Workspace; não ensinar “NotebookLM Plus” como produto atual isolado. [6][8][19]
+
+[CONFIRMADO] Workspace aplica cotas por edição e oferece compromissos corporativos: dados não são revisados por humanos nem usados para treinar modelos generativos. [8][9]
+
+[CONFIRMADO] Android requer versão 10+; iOS/iPadOS e Android estão disponíveis no Brasil. Aplicativos têm menos tipos de fonte e recursos que o web; para o curso, usar web como fluxo principal e móvel como complemento. [18]
+
+14.8. Privacidade, LGPD e sigilo profissional
+
+[CONFIRMADO] Conta pessoal: conteúdo não é usado diretamente para treinar modelos fundamentais, exceto quando o usuário envia feedback; o feedback pode anexar todo o contexto relevante e ser revisto por humanos por até três anos após desassociação. [9]
+
+[CONFIRMADO] Workspace/Education: prompts, uploads e respostas não são revisados por humanos nem usados para melhorar modelos generativos. Isso não elimina deveres do controlador nem substitui avaliação jurídica/contratual. [8][9][35]
+
+[CONFIRMADO] Fontes são visíveis a pessoas com quem o notebook é compartilhado conforme papel e link. “Ocultar” a visualização não equivale a remover permissão. [3][27]
+
+[CONFIRMADO] LGPD: aplicar finalidade, adequação, necessidade, transparência, segurança e prevenção; limitar dados ao mínimo; evitar dados sensíveis; definir acesso e retenção; respeitar direitos do titular. [35][37][38]
+
+[CONFIRMADO] Advocacia: segredo profissional e confidencialidade exigem cautela adicional. Preferir material público ou ambiente institucional aprovado; remover identificadores; não inserir estratégia/peça de cliente em conta pessoal; verificar termos, acesso e consentimentos; revisão humana continua obrigatória. [34][35]
+
+14.9. Limitações: erros, sincronização, tabelas/imagens e contexto
+
+[CONFIRMADO] Respostas podem estar erradas mesmo com citações reais. Abrir contexto e confrontar original é parte do fluxo, não etapa opcional. [2][10]
+
+[CONFIRMADO] Drive é atualizado automaticamente em intervalos e ao abrir, mas existe comando manual de sincronização; comentários e notas de rodapé não entram. [4]
+
+[VERIFICAR] Tabelas/imagens dentro de PDF: capacidade existe, mas extração perfeita não é garantida. Números críticos devem ser confrontados com o PDF, e dados estruturados devem preferir Sheets/CSV. [4][25]
+
+[VERIFICAR] Limite interno de contexto e método de seleção dos trechos: NÃO ENCONTRADO. Os tetos de arquivo/fonte não são garantia de lembrança uniforme de todo o acervo. [4]
+
+[CONFIRMADO] Outras limitações: paywall, YouTube sem legenda, URL que importa só HTML, arquivo protegido, recursos móveis incompletos, cotas/consumo e saídas que demoram ou falham. [4][7][13][14][18][30]
+
+14.10. Casos reais por público
+
+[CONFIRMADO] Estudantes: Florida State University, com cartões, testes, guias e áudios; resultados apresentados pelo Google como caso de instituição. [28]
+
+[CONFIRMADO] Educação: página Google for Education oferece guias de desenvolvimento profissional e projeto de pesquisa; Oxford publicou piloto com ganhos autorrelatados de produtividade/eficácia. [29][46]
+
+[VERIFICAR] Advogado brasileiro: NÃO ENCONTRADO caso público específico com metodologia; usar cenário baseado nas funções e cautelas da OAB, sem apresentar como caso real. [34]
+
+[CONFIRMADO] Jornalismo e pesquisa: a história oficial do produto relata uso com entrevistas, documentos, teses e grandes coleções de pesquisa; não apresenta, porém, um estudo brasileiro mensurado. [31]
+
+14.11. Conjunto de 3 a 5 fontes para o exercício
+
+[CONFIRMADO] Conjunto recomendado: LGPD no Planalto; Guia ANPD de segurança da informação; Guia ANPD de dados para fins acadêmicos; página ANPD “Titular de Dados”. São quatro fontes públicas, gratuitas e em português, com mistura de HTML e PDF. Links, passos e evidências de sucesso estão na seção 13. [35][37][38][45]
+
+[CONFIRMADO] Por que funciona didaticamente: tema brasileiro comum aos três públicos; documentos oficiais; termos comparáveis; citações verificáveis; material suficiente para relatório e áudio; nenhuma fonte exige dado pessoal do aluno. [35][37][38][45]
+
+15. TRECHOS TRANSCRITOS DA DOCUMENTAÇÃO OFICIAL
+
+[CONFIRMADO] Os trechos abaixo são excertos curtos, não a reprodução integral das páginas. A data de atualização não aparece em todas as páginas; nesses casos, registra-se “não exibida”.
+
+[CONFIRMADO] Página: O que é o Gemini Notebook?
+URL: https://support.google.com/gemininotebook/answer/16164461?hl=pt-BR
+Atualização: não exibida; acesso em 17/10/2026.
+Trecho: “O Gemini Notebook é um assistente de pesquisa com tecnologia de IA.” [2]
+
+[CONFIRMADO] Página: Criar um notebook no Gemini Notebook
+URL: https://support.google.com/gemininotebook/answer/16206563?hl=pt-BR
+Atualização: não exibida; acesso em 17/10/2026.
+Trechos de interface: “Criar novo notebook”; “Fazer upload de uma fonte”; “Conversa”; “Estúdio”; “Fontes”. [3]
+
+[CONFIRMADO] Página: Adicionar ou descobrir novas fontes para o notebook
+URL: https://support.google.com/gemininotebook/answer/16215270?hl=pt-BR
+Atualização: não exibida; acesso em 17/10/2026.
+Trecho de interface: “Clique para sincronizar com o Google Drive”. [4]
+
+[CONFIRMADO] Página: Learn about NotebookLM
+URL: https://support.google.com/gemininotebook/answer/16179559?hl=en
+Atualização: não exibida; acesso em 17/10/2026.
+Trechos de interface: “Default”; “Learning Guide”; “Custom”; “Longer”; “Shorter”; “Save to note”. [10]
+
+[CONFIRMADO] Página: Generate Audio Overviews in NotebookLM
+URL: https://support.google.com/gemininotebook/answer/16212820?hl=en
+Atualização: não exibida; acesso em 17/10/2026.
+Trechos de interface: “Deep Dive”; “The Brief”; “Critique”; “Debate”; “Interactive mode”; “Join”. [13]
+
+[CONFIRMADO] Página: Generate Video Overviews in NotebookLM
+URL: https://support.google.com/gemininotebook/answer/16454555?hl=en
+Atualização: não exibida; acesso em 17/10/2026.
+Trechos de interface: “Cinematic”; “Explainer”; “Short”; “Generate now”; “Generate later”. [14]
+
+[CONFIRMADO] Observação editorial: os excertos preservam rótulos indispensáveis à navegação. Para o roteiro final, conferir a conta em português, porque algumas páginas em português são traduzidas automaticamente e rótulos podem chegar primeiro em inglês. [2][3]
+
+16. MATERIAIS PARA BAIXAR
+
+[BAIXAR] [CONFIRMADO]
+Título exato: B. Chelette Educator Guidebook Template
+Link de origem: https://edu.google.com/intl/ALL_in/ai-resources-in-education/
+Link do documento: https://docs.google.com/spreadsheets/d/1UkKFO2tIiziDEntbZ_mNM_17lyNlzKCCJVxNjwo1pv4/edit
+Tipo, tamanho e idioma: planilha Google exportada como XLSX; 132.822 bytes; inglês.
+Utilidade: modelo editável de guia para desenvolvimento profissional de educadores, com atividades ligadas a IA/Gemini Notebook; referência para a linguagem e a sequência de uma atividade autoinstrucional.
+Licença/condição: visualização pública; licença de redistribuição NÃO ENCONTRADA. Usar como referência e preservar atribuição; não republicar como próprio.
+Nome sugerido e já baixado: guia-educador-notebooklm-desenvolvimento-profissional.xlsx
+Situação local: BAIXADO na mesma pasta deste arquivo. [29]
+
+[BAIXAR] [CONFIRMADO]
+Título exato: David, Stitt, Educator Guidebook
+Link de origem: https://edu.google.com/intl/ALL_in/ai-resources-in-education/
+Link do documento: https://docs.google.com/spreadsheets/d/1uuqRyzVJMfhNGpUQeWt_8qT_ENDDvYIzeXJcaFowB4Q/edit
+Tipo, tamanho e idioma: planilha Google exportada como XLSX; 136.008 bytes; inglês.
+Utilidade: guia de projeto de pesquisa para estudantes, útil como referência de exercício investigativo e integração de fontes.
+Licença/condição: visualização pública; licença de redistribuição NÃO ENCONTRADA. Usar como referência e preservar atribuição.
+Nome sugerido e já baixado: guia-educador-notebooklm-projetos-pesquisa.xlsx
+Situação local: BAIXADO na mesma pasta deste arquivo. [29]
+
+[BAIXAR] [CONFIRMADO]
+Título exato: Guia de Inteligência Artificial Aplicada para Profissões
+Link direto: https://labtec.ufsc.br/ebooks/PDF/Guia%20de%20Intelig%C3%AAncia%20Artificial%20Aplicada%20para%20Profiss%C3%B5es.pdf
+Tipo, tamanho e idioma: PDF; 9.359.220 bytes; português do Brasil.
+Utilidade: material institucional brasileiro que contextualiza IA em diferentes profissões e oferece exemplos de uso de ferramentas, inclusive NotebookLM; útil para exemplos profissionais e vocabulário acessível.
+Licença/condição: acesso público; licença de reprodução NÃO ENCONTRADA no levantamento. Usar como referência e citar autoria/instituição.
+Nome sugerido e já baixado: guia-ia-aplicada-profissoes.pdf
+Situação local: BAIXADO na mesma pasta deste arquivo. [44]
+
+[BAIXAR] [CONFIRMADO]
+Título exato: Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte
+Página: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte
+Link direto: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-vf.pdf/@@download/file
+Tipo, tamanho e idioma: PDF, 21 páginas, versão 1.0 de outubro de 2021; 366.201 bytes; português do Brasil.
+[CORREÇÃO DA EQUIPE, 17/10/2026: o arquivo baixado originalmente (222.341 bytes) era a página HTML do portal gov.br salva com extensão .pdf, e não o guia. Ele foi substituído pelo PDF real, baixado do link acima.]
+Utilidade: fundamenta minimização, controle de acesso, segurança e resposta a riscos no uso de documentos com dados pessoais.
+Licença/condição: material público oficial. O portal gov.br/ANPD indica licença Creative Commons Atribuição-SemDerivações 3.0 para o conteúdo do site; confirmar se a licença se aplica integralmente ao PDF antes de adaptar. Citação e referência são permitidas nos limites legais.
+Nome sugerido e já baixado: anpd-guia-seguranca-informacao-pequeno-porte.pdf
+Situação local: BAIXADO na mesma pasta deste arquivo. [38]
+
+[BAIXAR] [CONFIRMADO]
+Título exato: Tratamento de dados pessoais para fins acadêmicos — Guia orientativo
+Página/link direto: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/web-guia-anpd-tratamento-de-dados-para-fins-academicos.pdf/@@display-file/file
+Tipo, tamanho e idioma: PDF, 58 páginas, versão 1.0; 607.989 bytes; português do Brasil.
+Utilidade: referência oficial para pesquisas e atividades educacionais que tratem dados pessoais; sustenta o exercício de LGPD e a discussão de base legal, minimização e anonimização.
+Licença/condição: material público oficial. O portal gov.br/ANPD indica licença Creative Commons Atribuição-SemDerivações 3.0; confirmar aplicação ao PDF antes de adaptar.
+Nome sugerido e já baixado: anpd-guia-dados-pessoais-pesquisa-academica.pdf
+Situação local: BAIXADO na mesma pasta deste arquivo. [37]
+
+[BAIXAR] [VERIFICAR]
+Título exato: AI Enhanced Research Based Projects 4 Students
+Página do vídeo: https://www.youtube.com/watch?v=MJsi3_JTKOY
+Tipo, tamanho e idioma: vídeo do YouTube; tamanho não exibido; inglês.
+Utilidade: demonstra um projeto de pesquisa apoiado por IA para estudantes; foi localizado a partir da página de recursos do Google for Education.
+Transcrição/legenda: legendas automáticas em inglês aparecem no player. O endpoint público consultado devolveu arquivo vazio; não foi possível obter uma transcrição baixável válida. Usar a opção “Mostrar transcrição” do YouTube, se disponível, e revisar manualmente.
+Licença/condição: streaming público no YouTube; direitos reservados ao publicador. Download do vídeo não autorizado pelo levantamento. Não redistribuir.
+Nome sugerido para eventual transcrição autorizada: google-education-pesquisa-alunos-transcricao-en.txt
+Situação local: NÃO BAIXADO; requer obtenção manual da transcrição no player e conferência de direitos. [29][43]
+
+[CONFIRMADO] Inventário local do pacote: cinco arquivos não-web foram baixados. A LGPD e a página Titular de Dados são páginas HTML oficiais e, por isso, permanecem como links, não como cópias locais. [35][45]
+
+17. LACUNAS E PONTOS A VERIFICAR
+
+[VERIFICAR] 1) Nome e interface: a marca oficial mudou para Gemini Notebook em 16/07/2026, mas ajuda, URLs e algumas telas ainda usam NotebookLM. Abrir uma conta brasileira imediatamente antes de gravar e registrar os rótulos exatos. [1][2][3]
+
+[VERIFICAR] 2) Limites: a tabela de cotas diárias/mensais e a política nova de uso computacional por janela de cinco horas/teto semanal não explicam claramente a interação entre si. Testar Standard, plano pago usado e Workspace. [6][7]
+
+[VERIFICAR] 3) Preços em reais e promoções: NÃO ENCONTRADO preço público estável em BRL. Consultar o checkout Google One autenticado no Brasil no dia da publicação e registrar preço cheio, impostos, armazenamento e período promocional. [19]
+
+[VERIFICAR] 4) Modelo exato: o Google anunciou Gemini 3.5 e cloud computer em junho de 2026, mas não expõe qual variante atende cada conversa/artefato. Evitar prometer modelo fixo. [23]
+
+[VERIFICAR] 5) iOS/iPadOS mínimo: NÃO ENCONTRADO na ajuda consultada. Conferir App Store brasileira. [18]
+
+[VERIFICAR] 6) Recursos em implantação: voz ao vivo multilíngue, relatórios interativos, novos quizzes, pesquisa agente, código, criação de arquivos e “Gerar mais tarde” podem depender de idade, idioma, região e plano. [7][12][23][24]
+
+[VERIFICAR] 7) Tradução pt-BR: algumas páginas oficiais são traduzidas automaticamente. “Configure Chat”, “Learning Guide”, nomes de formatos de áudio/vídeo e modelos de relatório podem aparecer em inglês ou com tradução diferente. [3][10][13][14]
+
+[VERIFICAR] 8) Linha do tempo: não aparece como botão fixo universal na lista atual do Estúdio. Validar se é modelo sugerido de relatório ou solicitar por prompt/tabela. [3][12][25]
+
+[VERIFICAR] 9) OCR, tabelas e imagens em PDF: não há precisão publicada. Executar teste com PDF digitalizado, PDF com tabela e PDF com gráfico; registrar o que é citado e quais campos se perdem. [4][30]
+
+[VERIFICAR] 10) Contexto: tamanho da janela, recuperação e priorização de trechos são NÃO ENCONTRADO. Não confundir limite de 500.000 palavras por fonte com leitura uniforme de centenas de fontes. [4]
+
+[VERIFICAR] 11) Sincronização Drive: a ajuda descreve atualização automática e botão manual, mas a latência real deve ser demonstrada em conta própria. Confirmar também comportamento ao perder permissão. [4]
+
+[VERIFICAR] 12) Retenção, backups e residência de dados por edição/região: NÃO ENCONTRADO de forma completa. Para uso institucional ou jurídico, consultar documentação contratual e administrador Workspace. [8][9]
+
+[VERIFICAR] 13) Compartilhamento público no Workspace/Education e limites de links de artefato: a documentação aponta foco em contas pessoais, mas as políticas podem variar por domínio. Testar na edição contratada. [8][13][14][27]
+
+[VERIFICAR] 14) Casos reais brasileiros: NÃO ENCONTRADO estudo público mensurado de escritório de advocacia ou redação brasileira usando NotebookLM. Não converter cenários de uso em depoimentos reais. [31][34]
+
+[VERIFICAR] 15) Evidência educacional: casos FSU e Oxford foram publicados pelo Google e usam autorrelato/estudo de caso do fornecedor. Procurar avaliação independente antes de afirmar melhoria causal. [28][46]
+
+[VERIFICAR] 16) Licenças: as duas planilhas Google for Education e o guia UFSC não exibiram licença clara no levantamento. Referenciar sem republicar/adaptar integralmente até conferir. [29][44]
+
+[VERIFICAR] 17) Vídeo educacional: a legenda automática existe no player, mas não foi possível baixar uma transcrição válida; a tentativa produziu arquivo vazio, removido do pacote. Obter manualmente e revisar se a equipe quiser usar. [43]
+
+[VERIFICAR] 18) Material CAPES/educação eventualmente encontrado em busca não pôde ser baixado e não foi incluído, pois acesso e licença não foram validados. Não tratá-lo como parte deste pacote.
+
+[VERIFICAR] 19) Recuperação de nota apagada: documentação antiga dizia não haver recuperação, mas o sistema de notas mudou. Testar antes de afirmar. [11][30]
+
+[VERIFICAR] 20) Valores e cotas têm alta volatilidade. Repetir a checagem de [6], [7], [8] e [19] na semana de publicação do curso.
+
+18. FONTES CONSULTADAS
+
+[1] Google — “NotebookLM is now Gemini Notebook”. Blog oficial do Google. Publicado em 16/07/2026. https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/ Acesso em 17/10/2026.
+
+[2] Google Help — “O que é o Gemini Notebook?” Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16164461?hl=pt-BR Acesso em 17/10/2026.
+
+[3] Google Help — “Criar um notebook no Gemini Notebook”. Central de ajuda oficial, português. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16206563?hl=pt-BR Acesso em 17/10/2026.
+
+[4] Google Help — “Adicionar ou descobrir novas fontes para o notebook”. Central de ajuda oficial, português. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16215270?hl=pt-BR Acesso em 17/10/2026.
+
+[5] Google Help — “Use notebooks in Gemini Apps”. Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/17003757?hl=en Acesso em 17/10/2026.
+
+[6] Google Help — “Upgrade Gemini Notebook”. Central de ajuda oficial, português. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16213268?hl=pt-BR Acesso em 17/10/2026.
+
+[7] Google Help — “Limites de uso baseados em computação no Gemini Notebook”. Central de ajuda oficial, português. Política indicada a partir de 02/09/2026. https://support.google.com/gemininotebook/answer/17670842?hl=pt-BR Acesso em 17/10/2026.
+
+[8] Google Help — “Gemini Notebook for Google Workspace and Education”. Central de ajuda oficial, português. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16337734?hl=pt-BR Acesso em 17/10/2026.
+
+[9] Google Help — “How your data is handled in Gemini Notebook”. Central de ajuda oficial, português. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/17004255?hl=pt-BR Acesso em 17/10/2026.
+
+[10] Google Help — “Learn about NotebookLM chat”. Central de ajuda oficial, inglês. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16179559?hl=en Acesso em 17/10/2026.
+
+[11] Google Help — “Create and manage notes in NotebookLM”. Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16262519?hl=en Acesso em 17/10/2026.
+
+[12] Google Help — “Create reports in NotebookLM”. Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/18323649?hl=en Acesso em 17/10/2026.
+
+[13] Google Help — “Generate Audio Overviews in NotebookLM”. Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16212820?hl=en Acesso em 17/10/2026.
+
+[14] Google Help — “Generate Video Overviews in NotebookLM”. Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16454555?hl=en Acesso em 17/10/2026.
+
+[15] Google Brasil — “NotebookLM agora oferece Resumos em Áudio em português brasileiro”. Blog oficial. Publicado em 29/04/2025. https://blog.google/intl/pt-br/produtos/notebooklm-agora-oferece-resumos-em-audio-em-portugues-brasileiro/ Acesso em 17/10/2026.
+
+[16] Google Help — “Create a mind map in NotebookLM”. Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16212283?hl=en Acesso em 17/10/2026.
+
+[17] Google — “Generate your own Cinematic Video Overviews in NotebookLM”. Blog oficial. Publicado em 04/03/2026. https://blog.google/innovation-and-ai/products/notebooklm/generate-your-own-cinematic-video-overviews-in-notebooklm/ Acesso em 17/10/2026.
+
+[18] Google Help — “Usar o aplicativo NotebookLM”. Central de ajuda oficial, português. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16296687?hl=pt-BR Acesso em 17/10/2026.
+
+[19] Google — “More access, more intelligence: New Google AI subscriptions” e página Google One Plans. Blog/página de planos oficiais. Publicado em 19/05/2026; página de planos continuamente atualizada. https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/ e https://one.google.com/about/plans?gl=BR&hl=pt-BR Acesso em 17/10/2026.
+
+[20] Google Labs — “NotebookLM can now help you discover sources”. Blog oficial. Publicado em 02/04/2025. https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-discover-sources/ Acesso em 17/10/2026.
+
+[21] Google Labs — “NotebookLM adds Deep Research and more source types”. Blog oficial. Publicado em 13/11/2025. https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-deep-research-file-types/ Acesso em 17/10/2026.
+
+[22] Google Labs — “NotebookLM introduces Video Overviews and upgrades Studio”. Blog oficial. Publicado em 29/07/2025. https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-video-overviews-studio-upgrades/ Acesso em 17/10/2026.
+
+[23] Google — “Better research in NotebookLM”. Blog oficial. Publicado em 08/06/2026, atualizado em 16/07/2026. https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/ Acesso em 17/10/2026.
+
+[24] Google — “New study tools in Gemini Notebook”. Blog oficial. Publicado em 15/09/2026. https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/ Acesso em 17/10/2026.
+
+[25] Google Labs — “NotebookLM Data Tables”. Blog oficial. Publicado em 18/12/2025. https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-data-tables/ Acesso em 17/10/2026.
+
+[26] Google Labs — “8 ways to make the most out of Slide Decks in NotebookLM”. Blog oficial. Publicado em 16/12/2025. https://blog.google/innovation-and-ai/models-and-research/google-labs/8-ways-to-make-the-most-out-of-slide-decks-in-notebooklm/ Acesso em 17/10/2026.
+
+[27] Google Help — “Share a public notebook”. Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16322204?hl=en Acesso em 17/10/2026.
+
+[28] Google for Education — “How Florida State University uses NotebookLM”. Estudo de caso oficial do fornecedor. Publicado em 22/06/2026. https://blog.google/products-and-platforms/products/education/florida-state-university-notebooklm/ Acesso em 17/10/2026.
+
+[29] Google for Education — “AI resources for education”. Página oficial de recursos, vídeos e modelos. Atualização contínua. https://edu.google.com/intl/ALL_in/ai-resources-in-education/ Acesso em 17/10/2026.
+
+[30] Google Help — “NotebookLM FAQ”. Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16269187?hl=en Acesso em 17/10/2026.
+
+[31] Google — “The inside story of developing NotebookLM”. Blog oficial. Publicado em 29/07/2025. https://blog.google/innovation-and-ai/products/developing-notebooklm/ Acesso em 17/10/2026.
+
+[32] Google Brasil — “NotebookLM chega ao Brasil e suporta sites, Slides e mais”. Blog oficial. Publicado em 11/06/2024. https://blog.google/intl/pt-br/novidades/tecnologia/notebooklm-chega-ao-brasil-e-suporta-sites-slides-e-mais/ Acesso em 17/10/2026.
+
+[33] Google — “NotebookLM now lets you listen to a conversation about your sources”. Blog oficial sobre fontes de áudio/vídeo. Publicado em 26/09/2024. https://blog.google/innovation-and-ai/products/notebooklm-audio-video-sources/ Acesso em 17/10/2026.
+
+[34] Conselho Federal da OAB — “Confira versão final da recomendação do CFOAB sobre o uso de IA na prática jurídica”. Fonte institucional. Publicado em 13/11/2024. https://www.oab.org.br/noticia/62711/confira-versao-final-da-recomendacao-do-cfoab-sobre-o-uso-de-ia-na-pratica-juridica Acesso em 17/10/2026.
+
+[35] Presidência da República — Lei nº 13.709/2018, Lei Geral de Proteção de Dados Pessoais, texto compilado. Legislação oficial. https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm Acesso em 17/10/2026.
+
+[36] ANPD — “Radar Tecnológico: Inteligência Artificial Generativa”. Relatório técnico oficial em PDF. Data visível no documento a confirmar. https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf Acesso em 17/10/2026.
+
+[37] ANPD — “Tratamento de dados pessoais para fins acadêmicos — Guia orientativo”. Guia oficial, versão 1.0, junho de 2023. https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/web-guia-anpd-tratamento-de-dados-para-fins-academicos.pdf/@@display-file/file Acesso em 17/10/2026.
+
+[38] ANPD — “Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte”. Guia oficial; página modificada em janeiro de 2025. https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte Acesso em 17/10/2026.
+
+[39] OpenAI Help Center — “Projects in ChatGPT”. Documentação oficial de produto, continuamente atualizada. https://help.openai.com/en/articles/10169521-projects-in-chatgpt Acesso em 17/10/2026.
+
+[40] Anthropic Help Center — “What are Projects?”. Documentação oficial de produto, continuamente atualizada. https://support.anthropic.com/en/articles/9517075-what-are-projects Acesso em 17/10/2026.
+
+[41] TechRadar — “NotebookLM review”. Análise editorial independente. Data publicada na página; consultada como fonte secundária. https://www.techradar.com/pro/notebooklm-review Acesso em 17/10/2026.
+
+[42] Tom’s Guide — “I ditched ChatGPT, Perplexity and Claude for NotebookLM research — and didn’t expect these results”. Relato editorial independente. Publicado em 19/02/2026. https://www.tomsguide.com/ai/i-ditched-chatgpt-perplexity-and-claude-for-notebooklm-research-and-didnt-expect-these-results Acesso em 17/10/2026.
+
+[43] YouTube — “AI Enhanced Research Based Projects 4 Students”. Vídeo curado na página do Google for Education; comunidade/terceiro. Data exibida no YouTube não registrada no levantamento. https://www.youtube.com/watch?v=MJsi3_JTKOY Acesso em 17/10/2026.
+
+[44] LabTeC/UFSC — “Guia de Inteligência Artificial Aplicada para Profissões”. E-book/guia institucional em PDF. Data do documento a confirmar. https://labtec.ufsc.br/ebooks/PDF/Guia%20de%20Intelig%C3%AAncia%20Artificial%20Aplicada%20para%20Profiss%C3%B5es.pdf Acesso em 17/10/2026.
+
+[45] ANPD — “Titular de Dados”. Página institucional oficial. Atualização contínua. https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados Acesso em 17/10/2026.
+
+[46] Google for Education — “How Oxford is using Gemini and NotebookLM”. Estudo de caso oficial do fornecedor. Publicado em 21/01/2026. https://blog.google/products-and-platforms/products/education/oxford-gemini-notebooklm/ Acesso em 17/10/2026.
+
+[47] Google Help — “Create flashcards or quizzes in NotebookLM”. Central de ajuda oficial. Data de atualização não exibida. https://support.google.com/gemininotebook/answer/16958963?hl=en Acesso em 17/10/2026.
+
+FIM DO ARQUIVO
+
+
+
