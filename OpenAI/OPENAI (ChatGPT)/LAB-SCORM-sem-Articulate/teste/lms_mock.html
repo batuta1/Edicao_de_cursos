@@ -1,0 +1,75 @@
+<!doctype html>
+<!--
+  LMS simulada (SCORM 1.2) para testar pacotes no navegador sem LMS real.
+  Uso: http://localhost:8765/lms_mock.html?pkg=E0   (pkg = subpasta de teste/ com o pacote extraido)
+  O pacote roda sem nenhuma alteracao, pelo mesmo caminho de uma LMS: scormdriver/indexAPI.html.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>LMS mock</title>
+<style>
+  body { margin: 0; font: 12px monospace; display: flex; flex-direction: column; height: 100vh; }
+  #barra { padding: 4px 8px; background: #222; color: #ddd; }
+  #curso { flex: 1; border: 0; width: 100%; }
+  #log { height: 110px; overflow: auto; background: #111; color: #9f9; padding: 4px 8px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div id="barra"></div>
+<iframe id="curso"></iframe>
+<div id="log"></div>
+<script>
+  const pkg = new URLSearchParams(location.search).get('pkg') || 'E0';
+  const chave = 'lms_mock_' + pkg;
+  const logEl = document.getElementById('log');
+  const log = (m) => { logEl.textContent += m + '\n'; logEl.scrollTop = 1e9; };
+
+  // estado do aluno, persistido para simular retomada (?reset=1 limpa)
+  if (new URLSearchParams(location.search).get('reset')) localStorage.removeItem(chave);
+  const dados = Object.assign({
+    'cmi.core.student_id': 'teste01',
+    'cmi.core.student_name': 'Aluno, Teste',
+    'cmi.core.lesson_status': 'not attempted',
+    'cmi.core.lesson_location': '',
+    'cmi.core.entry': 'ab-initio',
+    'cmi.core.score.raw': '',
+    'cmi.core.credit': 'credit',
+    'cmi.core.lesson_mode': 'normal',
+    'cmi.suspend_data': '',
+    'cmi.launch_data': '',
+  }, JSON.parse(localStorage.getItem(chave) || '{}'));
+
+  const atualizarBarra = () => {
+    document.getElementById('barra').textContent =
+      `pacote: ${pkg} | status: ${dados['cmi.core.lesson_status']} | nota: ${dados['cmi.core.score.raw'] || '-'}` +
+      ` | bookmark: ${dados['cmi.core.lesson_location'] || '-'} | suspend_data: ${dados['cmi.suspend_data'].length} chars`;
+  };
+
+  window.API = {
+    LMSInitialize: () => { log('LMSInitialize'); return 'true'; },
+    LMSFinish: () => { log('LMSFinish'); return 'true'; },
+    LMSGetValue: (k) => (k in dados ? dados[k] : ''),
+    LMSSetValue: (k, v) => {
+      dados[k] = String(v);
+      if (k !== 'cmi.suspend_data' && k !== 'cmi.core.session_time') log(`Set ${k} = ${v}`);
+      atualizarBarra();
+      return 'true';
+    },
+    LMSCommit: () => {
+      dados['cmi.core.entry'] = 'resume';
+      localStorage.setItem(chave, JSON.stringify(dados));
+      return 'true';
+    },
+    LMSGetLastError: () => '0',
+    LMSGetErrorString: () => 'No error',
+    LMSGetDiagnostic: () => '',
+  };
+
+  window.addEventListener('error', (e) => log('ERRO: ' + e.message));
+  atualizarBarra();
+  document.getElementById('curso').src = `${pkg}/scormdriver/indexAPI.html`;
+  log('carregando ' + pkg + '/scormdriver/indexAPI.html');
+</script>
+</body>
+</html>

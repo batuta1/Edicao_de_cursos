@@ -1,0 +1,1696 @@
+{
+  "versao": "trilhas v0.4 · áreas v0.4 · cursos v0.6",
+  "gerado_em": "2026-10-15",
+  "fonte": "cadastro da plataforma de cursos (M1: Carlo Papa e Moises Gabriel)",
+  "areas": [
+    {
+      "id": "geral",
+      "nome": "Geral",
+      "status": "ativa"
+    },
+    {
+      "id": "juridica",
+      "nome": "Jurídica",
+      "status": "piloto_proposto (D4 pendente)"
+    }
+  ],
+  "trilhas": [
+    {
+      "id": "T1",
+      "nome": "Começando com assistentes de IA",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Fundamentos de IA Generativa"
+      ],
+      "trilha_origem": null,
+      "publico": "Qualquer pessoa que ainda não usa IA no dia a dia",
+      "pre_requisito": "Nenhum",
+      "competencia_saida": "Conduzir conversas produtivas com os três grandes assistentes, com arquivos, projetos e verificação de respostas",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-chat-essentials",
+          "curso": "Claude Chat - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "chatgpt-chat-essentials",
+          "curso": "ChatGPT Chat - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "gemini-chat-essentials",
+          "curso": "Gemini Chat - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "claude-chat-hands-on",
+          "curso": "Claude Chat - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "chatgpt-chat-hands-on",
+          "curso": "ChatGPT Chat - Hands On",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "claude-skills-essentials",
+          "curso": "Claude Skills - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 6,
+        "duracao_horas": 18,
+        "prontidao": {
+          "existente": 3,
+          "em_breve": 3,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T2",
+      "nome": "Pesquisa com IA",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Pesquisa com IA",
+        "Pesquisa científica com IA"
+      ],
+      "trilha_origem": null,
+      "publico": "Estudantes, pesquisadores, jornalistas, analistas",
+      "pre_requisito": "T1 ou experiência equivalente",
+      "competencia_saida": "Pesquisar com fontes verificáveis, conduzir deep research e revisão de literatura com rastreabilidade",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "perplexity-essentials",
+          "curso": "Perplexity - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "notebooklm-essentials",
+          "curso": "NotebookLM - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "deep-research-hands-on",
+          "curso": "Deep Research - Hands On",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "checagem-de-fontes-e-citacoes-essentials",
+          "curso": "Checagem de Fontes e Citações - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "revisao-bibliografica-com-ia-hands-on",
+          "curso": "Revisão Bibliográfica com IA - Hands On",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 5,
+        "duracao_horas": 15,
+        "prontidao": {
+          "existente": 0,
+          "em_breve": 5,
+          "novo_contextual": 0,
+          "fecha_na_onda": 2,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T3",
+      "nome": "Agentes e MCP",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Agentes de IA",
+        "MCP"
+      ],
+      "trilha_origem": null,
+      "publico": "Profissionais que querem delegar tarefas de várias etapas; curiosos técnicos",
+      "pre_requisito": "T1",
+      "competencia_saida": "Delegar tarefas a agentes com segurança, conectar assistentes a dados e ferramentas via MCP e coordenar múltiplos agentes",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-cowork-essentials",
+          "curso": "Claude Cowork - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "agentes-de-ia-essentials",
+          "curso": "Agentes de IA - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "mcp-essentials",
+          "curso": "MCP - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "claude-desktop-essentials",
+          "curso": "Claude Desktop - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "claude-desktop-hands-on",
+          "curso": "Claude Desktop - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "mcp-com-chatgpt-hands-on",
+          "curso": "MCP com ChatGPT - Hands On",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 7,
+          "curso_id": "claude-cowork-hands-on",
+          "curso": "Claude Cowork - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 8,
+          "curso_id": "agentes-web-hands-on",
+          "curso": "Agentes Web - Hands On",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 9,
+          "curso_id": "multiagentes-essentials",
+          "curso": "Multiagentes - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 10,
+          "curso_id": "seguranca-em-mcp-essentials",
+          "curso": "Segurança em MCP - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 10,
+        "duracao_horas": 30,
+        "prontidao": {
+          "existente": 4,
+          "em_breve": 6,
+          "novo_contextual": 0,
+          "fecha_na_onda": 2,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T4",
+      "nome": "Programação com IA",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Programação com IA"
+      ],
+      "trilha_origem": null,
+      "publico": "Desenvolvedores e estudantes de computação",
+      "pre_requisito": "Noções de programação",
+      "competencia_saida": "Programar com assistência de IA em IDE e delegar tarefas a agentes de código com revisão e testes",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-code-no-vscode-essentials",
+          "curso": "Claude Code no VSCode - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "cursor-essentials",
+          "curso": "Cursor - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "github-copilot-essentials",
+          "curso": "GitHub Copilot - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "chatgpt-codex-essentials",
+          "curso": "ChatGPT CODEX - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "claude-code-no-vscode-hands-on",
+          "curso": "Claude Code no VSCode - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "chatgpt-codex-hands-on",
+          "curso": "ChatGPT CODEX - Hands On",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 7,
+          "curso_id": "gemini-code-assist-essentials",
+          "curso": "Gemini Code Assist - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 7,
+        "duracao_horas": 21,
+        "prontidao": {
+          "existente": 3,
+          "em_breve": 4,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T5",
+      "nome": "Vibe Coding: do zero ao app",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Vibe Coding / App Building"
+      ],
+      "trilha_origem": null,
+      "publico": "Não programadores com ideias de produto; empreendedores; professores",
+      "pre_requisito": "T1",
+      "competencia_saida": "Construir, publicar e evoluir um aplicativo por linguagem natural, migrando para ferramentas de código quando necessário",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "vibe-coding-essentials",
+          "curso": "Vibe Coding - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "replit-agent-essentials",
+          "curso": "Replit Agent - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "lovable-hands-on",
+          "curso": "Lovable - Hands On",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "bolt-e-v0-essentials",
+          "curso": "Bolt e v0 - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "cursor-essentials",
+          "curso": "Cursor - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "claude-code-no-vscode-essentials",
+          "curso": "Claude Code no VSCode - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 6,
+        "duracao_horas": 18,
+        "prontidao": {
+          "existente": 1,
+          "em_breve": 5,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T6",
+      "nome": "Construindo com MCP (técnica)",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "MCP",
+        "Programação com IA"
+      ],
+      "trilha_origem": null,
+      "publico": "Desenvolvedores e equipes de TI",
+      "pre_requisito": "T3 ou T4",
+      "competencia_saida": "Expor dados e ferramentas próprias via servidores MCP e operá-los com segurança em assistentes e agentes",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "mcp-essentials",
+          "curso": "MCP - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "claude-code-no-vscode-hands-on",
+          "curso": "Claude Code no VSCode - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "construindo-servidores-mcp-hands-on",
+          "curso": "Construindo Servidores MCP - Hands On",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "mcp-com-claude-hands-on",
+          "curso": "MCP com Claude - Hands On",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "seguranca-em-mcp-essentials",
+          "curso": "Segurança em MCP - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "multiagentes-essentials",
+          "curso": "Multiagentes - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 6,
+        "duracao_horas": 18,
+        "prontidao": {
+          "existente": 1,
+          "em_breve": 5,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T7",
+      "nome": "IA aplicada ao trabalho: documentos",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Produtividade com IA",
+        "Idiomas e tradução com IA"
+      ],
+      "trilha_origem": null,
+      "publico": "Profissionais de escritório, gestores, servidores públicos",
+      "pre_requisito": "T1",
+      "competencia_saida": "Criar, revisar e traduzir documentos profissionais com três assistentes diferentes, escolhendo o melhor para cada contexto",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-word-essentials",
+          "curso": "Claude Word - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "chatgpt-word-essentials",
+          "curso": "ChatGPT Word - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "gemini-workspace-essentials",
+          "curso": "Gemini Workspace - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "claude-word-hands-on",
+          "curso": "Claude Word - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "chatgpt-word-hands-on",
+          "curso": "ChatGPT Word - Hands On",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "microsoft-365-copilot-essentials",
+          "curso": "Microsoft 365 Copilot - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 7,
+          "curso_id": "deepl-essentials",
+          "curso": "DeepL - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 7,
+        "duracao_horas": 21,
+        "prontidao": {
+          "existente": 3,
+          "em_breve": 4,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T8",
+      "nome": "IA aplicada ao trabalho: planilhas e dados",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Dados com IA",
+        "Produtividade com IA"
+      ],
+      "trilha_origem": null,
+      "publico": "Analistas, financeiro, planejamento, pesquisadores",
+      "pre_requisito": "Excel básico",
+      "competencia_saida": "Analisar, organizar e interpretar dados em planilhas e fora delas, com verificação dos resultados",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-excel-essentials",
+          "curso": "Claude Excel - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "chatgpt-excel-essentials",
+          "curso": "ChatGPT Excel - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "claude-excel-hands-on",
+          "curso": "Claude Excel - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "chatgpt-excel-hands-on",
+          "curso": "ChatGPT Excel - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "ia-para-analise-de-dados-essentials",
+          "curso": "IA para Análise de Dados - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "dados-com-python-e-ia-hands-on",
+          "curso": "Dados com Python e IA - Hands On",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 6,
+        "duracao_horas": 18,
+        "prontidao": {
+          "existente": 4,
+          "em_breve": 2,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T9",
+      "nome": "IA aplicada ao trabalho: apresentações e reuniões",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Apresentações com IA",
+        "Produtividade com IA"
+      ],
+      "trilha_origem": null,
+      "publico": "Quem apresenta, coordena reuniões ou produz material visual",
+      "pre_requisito": "T1",
+      "competencia_saida": "Produzir apresentações e registros de reunião com IA, do rascunho ao arquivo final",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-power-point-essentials",
+          "curso": "Claude Power Point - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "gamma-essentials",
+          "curso": "Gamma - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "claude-power-point-hands-on",
+          "curso": "Claude Power Point - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "ia-para-reunioes-essentials",
+          "curso": "IA para Reuniões - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "claude-design-essentials",
+          "curso": "Claude Design - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "canva-magic-studio-essentials",
+          "curso": "Canva Magic Studio - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 6,
+        "duracao_horas": 18,
+        "prontidao": {
+          "existente": 3,
+          "em_breve": 3,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T10",
+      "nome": "Automação e agentes com N8N",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Automação",
+        "Agentes de IA"
+      ],
+      "trilha_origem": null,
+      "publico": "Analistas de processos, TI, operações",
+      "pre_requisito": "Noções de APIs ajudam",
+      "competencia_saida": "Construir automações completas com agentes, tratamento de erros e integrações, e comparar com uma segunda plataforma",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "n8n-fundamentos-essentials-1",
+          "curso": "N8N: Fundamentos - Essentials 1",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "n8n-construcao-de-workflows-essentials-2",
+          "curso": "N8N: Construção de Workflows - Essentials 2",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "n8n-dados-expressoes-e-transformacoes-essentials-3",
+          "curso": "N8N: Dados, expressões e transformações - Essentials 3",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "n8n-integracoes-e-apis-essentials-4",
+          "curso": "N8N: Integrações e APIs - Essentials 4",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "n8n-automacao-de-processos-na-pratica-essentials-5",
+          "curso": "N8N: Automação de processos na prática - Essentials 5",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "n8n-agentes-de-ia-essentials-6",
+          "curso": "N8N: Agentes de IA - Essentials 6",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 7,
+          "curso_id": "n8n-automacao-de-processos-hands-on",
+          "curso": "N8N: Automação de Processos - Hands On",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 8,
+          "curso_id": "zapier-essentials",
+          "curso": "Zapier - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 8,
+        "duracao_horas": 24,
+        "prontidao": {
+          "existente": 5,
+          "em_breve": 3,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T11",
+      "nome": "Criação visual e multimídia",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Imagem com IA",
+        "Vídeo com IA",
+        "Áudio e voz"
+      ],
+      "trilha_origem": null,
+      "publico": "Comunicação, marketing, professores, criadores",
+      "pre_requisito": "T1",
+      "competencia_saida": "Produzir imagens, peças gráficas, vídeos curtos e narrações com IA, com consistência visual",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-design-essentials",
+          "curso": "Claude Design - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "imagem-com-ia-essentials",
+          "curso": "Imagem com IA - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "canva-magic-studio-essentials",
+          "curso": "Canva Magic Studio - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "claude-design-hands-on",
+          "curso": "Claude Design - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "midjourney-essentials",
+          "curso": "Midjourney - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "video-com-ia-essentials",
+          "curso": "Vídeo com IA - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 7,
+          "curso_id": "heygen-essentials",
+          "curso": "HeyGen - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 8,
+          "curso_id": "voz-e-audio-com-ia-essentials",
+          "curso": "Voz e Áudio com IA - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 8,
+        "duracao_horas": 24,
+        "prontidao": {
+          "existente": 2,
+          "em_breve": 6,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T12",
+      "nome": "IA para educadores",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Educação com IA"
+      ],
+      "trilha_origem": null,
+      "publico": "Professores, coordenadores, designers instrucionais",
+      "pre_requisito": "T1",
+      "competencia_saida": "Planejar aulas e avaliações com IA, orientar o uso responsável e produzir materiais e cursos digitais",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "notebooklm-essentials",
+          "curso": "NotebookLM - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "educacao-com-ia-planejamento-e-avaliacao-essentials",
+          "curso": "Educação com IA: Planejamento e Avaliação - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "glau-essentials",
+          "curso": "Glau - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "integridade-academica-e-uso-responsavel-essentials",
+          "curso": "Integridade Acadêmica e Uso Responsável - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "claude-power-point-essentials",
+          "curso": "Claude Power Point - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "autoria-de-cursos-com-ia-essentials",
+          "curso": "Autoria de Cursos com IA - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 6,
+        "duracao_horas": 18,
+        "prontidao": {
+          "existente": 1,
+          "em_breve": 5,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T13",
+      "nome": "Personalização: skills, GPTs e navegadores",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Skills e ferramentas",
+        "Navegadores com IA"
+      ],
+      "trilha_origem": null,
+      "publico": "Usuários frequentes que querem ir além do chat",
+      "pre_requisito": "T1",
+      "competencia_saida": "Criar skills e assistentes personalizados e operar navegadores com IA para tarefas recorrentes",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-skills-essentials",
+          "curso": "Claude Skills - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "gpts-e-ferramentas-do-chatgpt-essentials",
+          "curso": "GPTs e Ferramentas do ChatGPT - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "claude-skills-hands-on",
+          "curso": "Claude Skills - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "chatgpt-atlas-essentials",
+          "curso": "ChatGPT Atlas - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "perplexity-comet-essentials",
+          "curso": "Perplexity Comet - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "claude-chrome-essentials",
+          "curso": "Claude Chrome - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 6,
+        "duracao_horas": 18,
+        "prontidao": {
+          "existente": 2,
+          "em_breve": 4,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "T14",
+      "nome": "IA responsável e avaliada",
+      "tipo": "tematica",
+      "area": "geral",
+      "temas_origem": [
+        "Governança e avaliação de IA",
+        "RAG e bases de conhecimento"
+      ],
+      "trilha_origem": null,
+      "publico": "Gestores, TI, pesquisadores com dados sensíveis",
+      "pre_requisito": "T1",
+      "competencia_saida": "Usar IA com privacidade e segurança, montar bases de conhecimento com NotebookLM e Projetos e comparar modelos com critério",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "governanca-de-ia-essentials",
+          "curso": "Governança de IA - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "rag-e-bases-de-conhecimento-essentials",
+          "curso": "RAG e Bases de Conhecimento - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "avaliacao-de-ia-comparando-modelos-essentials",
+          "curso": "Avaliação de IA: Comparando Modelos - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "seguranca-em-mcp-essentials",
+          "curso": "Segurança em MCP - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 4,
+        "duracao_horas": 12,
+        "prontidao": {
+          "existente": 0,
+          "em_breve": 4,
+          "novo_contextual": 0,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 0
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "J1",
+      "nome": "Fundamentos de IA para o jurista",
+      "tipo": "de_area",
+      "area": "juridica",
+      "temas_origem": [
+        "Fundamentos de IA Generativa",
+        "Governança e avaliação de IA"
+      ],
+      "trilha_origem": [
+        "T1"
+      ],
+      "publico": "Todos os perfis jurídicos",
+      "pre_requisito": "Nenhum",
+      "competencia_saida": "Conduzir conversas produtivas com os assistentes, verificar respostas e saber o que pode ou não ser enviado a cada ferramenta",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-chat-essentials",
+          "curso": "Claude Chat - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "chatgpt-chat-essentials",
+          "curso": "ChatGPT Chat - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "gemini-chat-essentials",
+          "curso": "Gemini Chat - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "claude-for-legal-essentials",
+          "curso": "Claude for Legal - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "juridica"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "ia-no-direito-etica-sigilo-e-responsabilidade-essentials",
+          "curso": "IA no Direito: ética, sigilo e responsabilidade - Essentials",
+          "status": "novo_contextual",
+          "onda": null,
+          "area": "juridica"
+        }
+      ],
+      "derivados": {
+        "cursos": 5,
+        "duracao_horas": 15,
+        "prontidao": {
+          "existente": 2,
+          "em_breve": 2,
+          "novo_contextual": 1,
+          "fecha_na_onda": 2,
+          "contextuais_pendentes": 1
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "J2",
+      "nome": "Pesquisa e fundamentação jurídica",
+      "tipo": "de_area",
+      "area": "juridica",
+      "temas_origem": [
+        "Pesquisa com IA"
+      ],
+      "trilha_origem": [
+        "T2"
+      ],
+      "publico": "Advogados, assessores, estudantes, professores",
+      "pre_requisito": "J1",
+      "competencia_saida": "Pesquisar precedentes e doutrina com fontes verificáveis e montar a fundamentação de uma peça com citações conferidas",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "perplexity-essentials",
+          "curso": "Perplexity - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "notebooklm-essentials",
+          "curso": "NotebookLM - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "pesquisa-juridica-com-ia-hands-on",
+          "curso": "Pesquisa jurídica com IA - Hands On",
+          "status": "novo_contextual",
+          "onda": null,
+          "area": "juridica"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "checagem-de-fontes-e-citacoes-essentials",
+          "curso": "Checagem de Fontes e Citações - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "deep-research-hands-on",
+          "curso": "Deep Research - Hands On",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 5,
+        "duracao_horas": 15,
+        "prontidao": {
+          "existente": 0,
+          "em_breve": 4,
+          "novo_contextual": 1,
+          "fecha_na_onda": 2,
+          "contextuais_pendentes": 1
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "J3",
+      "nome": "Redação e análise de documentos jurídicos",
+      "tipo": "de_area",
+      "area": "juridica",
+      "temas_origem": [
+        "Produtividade com IA",
+        "RAG e bases de conhecimento",
+        "Idiomas e tradução com IA"
+      ],
+      "trilha_origem": [
+        "T7",
+        "T14"
+      ],
+      "publico": "Advogados, departamentos jurídicos, assessores",
+      "pre_requisito": "J1",
+      "competencia_saida": "Produzir e revisar peças e contratos com IA e analisar conjuntos de documentos com citação ao trecho",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-word-essentials",
+          "curso": "Claude Word - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "claude-word-hands-on",
+          "curso": "Claude Word - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "redacao-juridica-com-ia-hands-on",
+          "curso": "Redação jurídica com IA - Hands On",
+          "status": "novo_contextual",
+          "onda": null,
+          "area": "juridica"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "claude-for-legal-hands-on",
+          "curso": "Claude for Legal - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "juridica"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "rag-e-bases-de-conhecimento-essentials",
+          "curso": "RAG e Bases de Conhecimento - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "deepl-essentials",
+          "curso": "DeepL - Essentials",
+          "status": "em_breve",
+          "onda": 3,
+          "area": "geral"
+        },
+        {
+          "posicao": 7,
+          "curso_id": "microsoft-365-copilot-essentials",
+          "curso": "Microsoft 365 Copilot - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 7,
+        "duracao_horas": 21,
+        "prontidao": {
+          "existente": 3,
+          "em_breve": 3,
+          "novo_contextual": 1,
+          "fecha_na_onda": 3,
+          "contextuais_pendentes": 1
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "J4",
+      "nome": "Dados, jurimetria e automação do escritório",
+      "tipo": "de_area",
+      "area": "juridica",
+      "temas_origem": [
+        "Dados com IA",
+        "Automação"
+      ],
+      "trilha_origem": [
+        "T8",
+        "T10"
+      ],
+      "publico": "Escritórios médios e grandes, departamentos jurídicos, compliance",
+      "pre_requisito": "J1; Excel básico",
+      "competencia_saida": "Analisar dados processuais, montar indicadores e automatizar prazos, intimações e documentos recorrentes",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "claude-excel-essentials",
+          "curso": "Claude Excel - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "ia-para-analise-de-dados-essentials",
+          "curso": "IA para Análise de Dados - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "jurimetria-com-ia-essentials",
+          "curso": "Jurimetria com IA - Essentials",
+          "status": "novo_contextual",
+          "onda": null,
+          "area": "juridica"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "n8n-fundamentos-essentials-1",
+          "curso": "N8N: Fundamentos - Essentials 1",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "n8n-construcao-de-workflows-essentials-2",
+          "curso": "N8N: Construção de Workflows - Essentials 2",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "automacao-juridica-com-n8n-hands-on",
+          "curso": "Automação jurídica com N8N - Hands On",
+          "status": "novo_contextual",
+          "onda": null,
+          "area": "juridica"
+        }
+      ],
+      "derivados": {
+        "cursos": 6,
+        "duracao_horas": 18,
+        "prontidao": {
+          "existente": 3,
+          "em_breve": 1,
+          "novo_contextual": 2,
+          "fecha_na_onda": 2,
+          "contextuais_pendentes": 2
+        },
+        "status": "parcial"
+      }
+    },
+    {
+      "id": "J5",
+      "nome": "Agentes e assistentes jurídicos",
+      "tipo": "de_area",
+      "area": "juridica",
+      "temas_origem": [
+        "Agentes de IA",
+        "Skills e ferramentas"
+      ],
+      "trilha_origem": [
+        "T3",
+        "T13"
+      ],
+      "publico": "Escritórios e departamentos que atendem volume",
+      "pre_requisito": "J1; J3 recomendada",
+      "competencia_saida": "Configurar assistentes e agentes que triam casos, organizam atendimentos e executam tarefas de várias etapas com supervisão",
+      "sequencia": [
+        {
+          "posicao": 1,
+          "curso_id": "agentes-de-ia-essentials",
+          "curso": "Agentes de IA - Essentials",
+          "status": "em_breve",
+          "onda": 1,
+          "area": "geral"
+        },
+        {
+          "posicao": 2,
+          "curso_id": "claude-cowork-essentials",
+          "curso": "Claude Cowork - Essentials",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 3,
+          "curso_id": "claude-for-legal-hands-on",
+          "curso": "Claude for Legal - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "juridica"
+        },
+        {
+          "posicao": 4,
+          "curso_id": "gpts-e-ferramentas-do-chatgpt-essentials",
+          "curso": "GPTs e Ferramentas do ChatGPT - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        },
+        {
+          "posicao": 5,
+          "curso_id": "claude-skills-hands-on",
+          "curso": "Claude Skills - Hands On",
+          "status": "existente",
+          "onda": null,
+          "area": "geral"
+        },
+        {
+          "posicao": 6,
+          "curso_id": "skills-e-assistentes-juridicos-hands-on",
+          "curso": "Skills e assistentes jurídicos - Hands On",
+          "status": "novo_contextual",
+          "onda": null,
+          "area": "juridica"
+        },
+        {
+          "posicao": 7,
+          "curso_id": "seguranca-em-mcp-essentials",
+          "curso": "Segurança em MCP - Essentials",
+          "status": "em_breve",
+          "onda": 2,
+          "area": "geral"
+        }
+      ],
+      "derivados": {
+        "cursos": 7,
+        "duracao_horas": 21,
+        "prontidao": {
+          "existente": 3,
+          "em_breve": 3,
+          "novo_contextual": 1,
+          "fecha_na_onda": 2,
+          "contextuais_pendentes": 1
+        },
+        "status": "parcial"
+      }
+    }
+  ],
+  "perfis": [
+    {
+      "id": "P1",
+      "nome": "Estudante e pesquisador",
+      "area": "geral",
+      "percurso": [
+        "T1",
+        "T2",
+        "T8",
+        "T14"
+      ],
+      "leva": "Pesquisa com fontes, revisão bibliográfica, dados e uso responsável"
+    },
+    {
+      "id": "P2",
+      "nome": "Professor",
+      "area": "geral",
+      "percurso": [
+        "T1",
+        "T12",
+        "T9",
+        "T11"
+      ],
+      "leva": "Planejamento, avaliação, materiais, apresentações e integridade acadêmica"
+    },
+    {
+      "id": "P3",
+      "nome": "Profissional de escritório",
+      "area": "geral",
+      "percurso": [
+        "T1",
+        "T7",
+        "T8",
+        "T9",
+        "T3"
+      ],
+      "leva": "Documentos, planilhas, apresentações, reuniões e primeiros agentes"
+    },
+    {
+      "id": "P4",
+      "nome": "Desenvolvedor",
+      "area": "geral",
+      "percurso": [
+        "T4",
+        "T6",
+        "T3",
+        "T5"
+      ],
+      "leva": "Código assistido, servidores MCP, agentes e multiagentes"
+    },
+    {
+      "id": "P5",
+      "nome": "Empreendedor e criador de produto",
+      "area": "geral",
+      "percurso": [
+        "T1",
+        "T5",
+        "T10",
+        "T3"
+      ],
+      "leva": "Do protótipo ao app, automação e agentes de negócio"
+    },
+    {
+      "id": "P6",
+      "nome": "Comunicação e marketing",
+      "area": "geral",
+      "percurso": [
+        "T1",
+        "T11",
+        "T9",
+        "T13"
+      ],
+      "leva": "Imagem, vídeo, áudio, apresentações e assistentes personalizados"
+    },
+    {
+      "id": "P7",
+      "nome": "Gestor e TI",
+      "area": "geral",
+      "percurso": [
+        "T1",
+        "T14",
+        "T3",
+        "T10"
+      ],
+      "leva": "Governança, bases de conhecimento, agentes com segurança e automação"
+    },
+    {
+      "id": "PJ1",
+      "nome": "Advogado(a) autônomo(a) ou de escritório pequeno",
+      "area": "juridica",
+      "precisa": "Produtividade individual: pesquisa, peças, contratos, atendimento",
+      "percurso": [
+        "J1",
+        "J2",
+        "J3",
+        "J5"
+      ]
+    },
+    {
+      "id": "PJ2",
+      "nome": "Advogado(a) de escritório médio ou grande",
+      "area": "juridica",
+      "precisa": "Volume: análise de documentos, padronização, automação de fluxos",
+      "percurso": [
+        "J1",
+        "J3",
+        "J4",
+        "J5"
+      ]
+    },
+    {
+      "id": "PJ3",
+      "nome": "Departamento jurídico corporativo",
+      "area": "juridica",
+      "precisa": "Contratos, compliance, LGPD, relatórios para a diretoria",
+      "percurso": [
+        "J1",
+        "J3",
+        "J4",
+        "T9"
+      ]
+    },
+    {
+      "id": "PJ4",
+      "nome": "Servidor(a) do Judiciário, assessor(a), analista",
+      "area": "juridica",
+      "precisa": "Triagem, minutas, pesquisa de precedentes, dentro das regras do CNJ",
+      "percurso": [
+        "J1",
+        "J2",
+        "J3"
+      ]
+    },
+    {
+      "id": "PJ5",
+      "nome": "Estudante de Direito e candidato(a) à OAB",
+      "area": "juridica",
+      "precisa": "Estudo com fontes, resumos, simulados, integridade acadêmica",
+      "percurso": [
+        "J1",
+        "J2",
+        "T12"
+      ]
+    },
+    {
+      "id": "PJ6",
+      "nome": "Professor(a) de Direito",
+      "area": "juridica",
+      "precisa": "Planejamento de aulas, casos, avaliação e uso responsável em sala",
+      "percurso": [
+        "J1",
+        "T12",
+        "J2"
+      ]
+    },
+    {
+      "id": "PJ7",
+      "nome": "Compliance, privacidade e DPO",
+      "area": "juridica",
+      "precisa": "Políticas de uso de IA, LGPD, governança, avaliação de fornecedores",
+      "percurso": [
+        "J1",
+        "T14",
+        "J4"
+      ]
+    }
+  ]
+}

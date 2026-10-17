@@ -1,0 +1,44 @@
+{
+  "chave": "html/html/cdn",
+  "origem": {
+    "curso": "nenhum — montado a partir do esquema do player (scormcontent/lib/rise/f81f670e.js, BlockHTML / MediaSandboxRecord)",
+    "licao": null,
+    "bloco_id": null
+  },
+  "formato_id": {
+    "bloco": "uuid",
+    "globalBlockId": "uuid",
+    "item": "uuid"
+  },
+  "campos_texto_item": [],
+  "campos_obrigatorios": [
+    "media"
+  ],
+  "settings_ajustaveis": {
+    "autoResize": "bool",
+    "hasCustomCompletion": "bool",
+    "height": "number",
+    "width": ["0", "1", "2"]
+  },
+  "bloco": {
+    "type": "html",
+    "family": "html",
+    "variant": "cdn",
+    "settings": {
+      "autoResize": true,
+      "hasCustomCompletion": false,
+      "height": 40,
+      "width": "1"
+    },
+    "metadata": {}
+  },
+  "item_exemplo": {
+    "id": "{{ID}}",
+    "media": {
+      "sandbox": {
+        "src": "{{PASTA_EM_ASSETS}}",
+        "srcName": "{{NOME}}"
+      }
+    }
+  }
+}

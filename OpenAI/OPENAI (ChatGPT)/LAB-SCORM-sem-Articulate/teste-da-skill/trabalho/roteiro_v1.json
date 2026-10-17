@@ -1,0 +1,54 @@
+{
+  "licao": 0,
+  "posicao": 15,
+  "blocos": [
+    {
+      "modelo": "divider-continue-continue.json",
+      "itens": [{"title": "Continue"}]
+    },
+    {
+      "modelo": "text-text-heading-paragraph.json",
+      "itens": [
+        {
+          "heading": "Confira sua preparação",
+          "paragraph": "<p>Antes das próximas oficinas, três itens precisam estar resolvidos. Abra cada um para conferir:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "interactive-interactive-accordion.json",
+      "itens": [
+        {
+          "title": "Plano identificado",
+          "description": "<p>Você sabe o nome do seu plano (Free, Go, Plus, Pro, Business, Enterprise ou Edu)?</p><p></p><p>Confira em ChatGPT &gt; Menu de perfil &gt; Configurações &gt; Conta. É o plano que define o que acontece com o texto que você cola.</p>"
+        },
+        {
+          "title": "Cópia de trabalho salva",
+          "description": "<p>Na pasta do documento existem dois arquivos: o original e a cópia com o sufixo -copia-curso?</p><p></p><p>É a cópia que recebe os testes das próximas lições; o original fica fechado e intacto.</p>"
+        },
+        {
+          "title": "Normas institucionais",
+          "description": "<p>Você sabe se a sua universidade tem norma sobre uso de IA e se o uso precisa ser declarado?</p><p></p><p>Responda antes de usar o ChatGPT em documento oficial.</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+      "itens": [
+        {
+          "title": "Nas próximas lições você vai substituir parágrafos e remontar seções do seu documento com ajuda do ChatGPT. Em qual arquivo esses testes devem ser feitos?",
+          "answers": [
+            {"title": "No documento original, para ver o resultado final direto.", "correct": false,
+             "feedback": "Não. O original fica fechado e intacto: se um experimento der errado, ele continua preservado na pasta."},
+            {"title": "Na cópia de trabalho com o sufixo -copia-curso.", "correct": true,
+             "feedback": "Correto. A cópia recebe os testes. É ela que separa \"experimentei\" de \"estraguei\"."},
+            {"title": "Em um documento novo e em branco, sem relação com o original.", "correct": false,
+             "feedback": "Não. O curso trabalha sobre o seu documento de verdade, por meio de uma cópia dele, e não sobre um arquivo em branco."},
+            {"title": "Em qualquer um, desde que o arquivo esteja salvo na mesma pasta.", "correct": false,
+             "feedback": "Não. Estar na mesma pasta não protege nada: os testes vão para a cópia com o sufixo -copia-curso, e o original fica fechado."}
+          ]
+        }
+      ]
+    }
+  ]
+}

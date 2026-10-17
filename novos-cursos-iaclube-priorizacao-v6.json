@@ -1,0 +1,1798 @@
+{
+  "versao": "priorização v0.6",
+  "gerado_em": "2026-10-17",
+  "fonte": "novos-cursos-iaclube-priorizacao-v6.docx (Equipe IAClube.com, 15 out 2026)",
+  "ondas": [
+    {
+      "onda": 1,
+      "criterio_score": ">= 89",
+      "prazo": "abrir no ciclo de 12 semanas ou logo após",
+      "total_cursos": 9
+    },
+    {
+      "onda": 2,
+      "criterio_score": "84 a 88",
+      "prazo": "trimestre seguinte",
+      "total_cursos": 19
+    },
+    {
+      "onda": 3,
+      "criterio_score": "< 84",
+      "prazo": "conforme capacidade e confirmação de demanda",
+      "total_cursos": 24
+    }
+  ],
+  "cursos_propostos": [
+    {
+      "id": "notebooklm-essentials",
+      "curso": "NotebookLM - Essentials",
+      "status": "proposto",
+      "onda": 1,
+      "ranking": 1,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "NotebookLM"
+      ],
+      "tema": "Pesquisa com IA",
+      "linha_prioritaria": "Pesquisa com IA",
+      "competencia": "Pesquisa e estudo sobre fontes próprias",
+      "tarefa_observavel": "Montar um caderno com fontes, gerar resumo, guia de estudo e Audio Overview e responder perguntas com citações.",
+      "base_confiavel": "Central de ajuda e guias oficiais do Google",
+      "score": 98,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 18,
+        "lacuna": 20,
+        "esforco": 10
+      },
+      "observacao": "Nenhum curso atual cobre pesquisa; aderência forte ao público educacional."
+    },
+    {
+      "id": "mcp-essentials",
+      "curso": "MCP - Essentials",
+      "status": "proposto",
+      "onda": 1,
+      "ranking": 2,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude",
+        "ChatGPT"
+      ],
+      "tema": "MCP",
+      "linha_prioritaria": "MCP",
+      "competencia": "Conectar assistentes a ferramentas e dados via Model Context Protocol",
+      "tarefa_observavel": "Instalar e usar conectores MCP em Claude e ChatGPT para ler arquivos, consultar serviços e executar ações com segurança.",
+      "base_confiavel": "Documentação do protocolo; docs de Claude e OpenAI",
+      "score": 97,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 20,
+        "esforco": 7
+      },
+      "observacao": "Claude Desktop ensina o app; MCP como competência nomeada não existe na oferta."
+    },
+    {
+      "id": "perplexity-essentials",
+      "curso": "Perplexity - Essentials",
+      "status": "proposto",
+      "onda": 1,
+      "ranking": 3,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Perplexity"
+      ],
+      "tema": "Pesquisa com IA",
+      "linha_prioritaria": "Pesquisa com IA",
+      "competencia": "Pesquisar com fontes verificáveis",
+      "tarefa_observavel": "Formular perguntas, usar modos de busca, comparar fontes e produzir uma síntese citada.",
+      "base_confiavel": "Centro de ajuda e guias da Perplexity",
+      "score": 95,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 10
+      },
+      "observacao": "Porta de entrada da linha de pesquisa."
+    },
+    {
+      "id": "agentes-de-ia-essentials",
+      "curso": "Agentes de IA - Essentials",
+      "status": "proposto",
+      "onda": 1,
+      "ranking": 4,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "ChatGPT (modo agente)",
+        "Claude Cowork",
+        "Manus"
+      ],
+      "tema": "Agentes de IA",
+      "linha_prioritaria": "Agentes de IA",
+      "competencia": "Delegar tarefas de várias etapas a agentes",
+      "tarefa_observavel": "Definir uma tarefa, acompanhar a execução de um agente, revisar resultados e identificar limites e riscos.",
+      "base_confiavel": "Docs de OpenAI, Anthropic e Manus",
+      "score": 92,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 7
+      },
+      "observacao": "Claude Cowork cobre uma ferramenta; a competência transversal de agentes ainda não é nomeada."
+    },
+    {
+      "id": "vibe-coding-essentials",
+      "curso": "Vibe Coding - Essentials",
+      "status": "proposto",
+      "onda": 1,
+      "ranking": 5,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Lovable"
+      ],
+      "tema": "Vibe Coding / App Building",
+      "linha_prioritaria": "Vibe Coding",
+      "competencia": "Construir aplicações por linguagem natural",
+      "tarefa_observavel": "Criar, publicar e iterar um aplicativo web simples com banco de dados e autenticação.",
+      "base_confiavel": "Documentação e tutoriais oficiais da Lovable",
+      "score": 92,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 7
+      },
+      "observacao": "Maior demanda potencial; público sem experiência em código."
+    },
+    {
+      "id": "cursor-essentials",
+      "curso": "Cursor - Essentials",
+      "status": "proposto",
+      "onda": 1,
+      "ranking": 6,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Cursor"
+      ],
+      "tema": "Programação com IA",
+      "linha_prioritaria": "Vibe Coding",
+      "competencia": "Programar com assistência de IA em IDE",
+      "tarefa_observavel": "Usar chat, edição inline e agente para implementar uma funcionalidade com testes.",
+      "base_confiavel": "Documentação da Cursor",
+      "score": 89,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Competência já coberta por Claude Code no VSCode; entra pela popularidade da ferramenta."
+    },
+    {
+      "id": "gemini-workspace-essentials",
+      "curso": "Gemini Workspace - Essentials",
+      "status": "proposto",
+      "onda": 1,
+      "ranking": 7,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Gemini"
+      ],
+      "tema": "Produtividade com IA",
+      "linha_prioritaria": "IA aplicada ao trabalho",
+      "competencia": "Produzir documentos, planilhas e e-mails com IA",
+      "tarefa_observavel": "Redigir, resumir e analisar em Docs, Sheets e Gmail com Gemini.",
+      "base_confiavel": "Centro de aprendizagem do Google Workspace",
+      "score": 89,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Fecha o trio ChatGPT / Claude / Gemini nas competências já cobertas."
+    },
+    {
+      "id": "n8n-agentes-de-ia-essentials-6",
+      "curso": "N8N: Agentes de IA - Essentials 6",
+      "status": "proposto",
+      "onda": 1,
+      "ranking": 8,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "n8n"
+      ],
+      "tema": "Automação",
+      "linha_prioritaria": "Agentes de IA",
+      "competencia": "Construir agentes com ferramentas e memória em workflows",
+      "tarefa_observavel": "Criar um agente que recebe mensagens, consulta fontes e executa ações via workflows.",
+      "base_confiavel": "Documentação e academia do n8n",
+      "score": 89,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Continua a numeração da série N8N; fecha a trilha de automação e agentes."
+    },
+    {
+      "id": "replit-agent-essentials",
+      "curso": "Replit Agent - Essentials",
+      "status": "proposto",
+      "onda": 1,
+      "ranking": 9,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Replit"
+      ],
+      "tema": "Vibe Coding / App Building",
+      "linha_prioritaria": "Vibe Coding",
+      "competencia": "Construir e publicar apps com agente",
+      "tarefa_observavel": "Criar um app com banco de dados e publicá-lo a partir de uma descrição.",
+      "base_confiavel": "Documentação e cursos da Replit",
+      "score": 89,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": null
+    },
+    {
+      "id": "checagem-de-fontes-e-citacoes-essentials",
+      "curso": "Checagem de Fontes e Citações - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 10,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Scite",
+        "Perplexity"
+      ],
+      "tema": "Pesquisa científica com IA",
+      "linha_prioritaria": "Pesquisa com IA",
+      "competencia": "Verificar afirmações e citações",
+      "tarefa_observavel": "Checar se uma citação existe, o que a fonte diz e se apoia ou contesta a afirmação.",
+      "base_confiavel": "Guias da Scite e da Perplexity",
+      "score": 87,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 15,
+        "base": 12,
+        "lacuna": 20,
+        "esforco": 10
+      },
+      "observacao": "Combate direto a alucinações; curto."
+    },
+    {
+      "id": "revisao-bibliografica-com-ia-hands-on",
+      "curso": "Revisão Bibliográfica com IA - Hands On",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 11,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Elicit",
+        "Consensus",
+        "Semantic Scholar"
+      ],
+      "tema": "Pesquisa científica com IA",
+      "linha_prioritaria": "Pesquisa com IA",
+      "competencia": "Conduzir revisão de literatura assistida",
+      "tarefa_observavel": "Definir pergunta, buscar, triar, extrair dados de artigos e organizar a síntese com rastreabilidade.",
+      "base_confiavel": "Guias oficiais das ferramentas",
+      "score": 87,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 15,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 7
+      },
+      "observacao": null
+    },
+    {
+      "id": "imagem-com-ia-essentials",
+      "curso": "Imagem com IA - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 12,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "ChatGPT Images",
+        "Google Pics"
+      ],
+      "tema": "Imagem com IA",
+      "linha_prioritaria": null,
+      "competencia": "Gerar e editar imagens para uso profissional",
+      "tarefa_observavel": "Produzir imagens para um material didático ou de comunicação, com edição e consistência.",
+      "base_confiavel": "Docs da OpenAI e do Google",
+      "score": 87,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 10
+      },
+      "observacao": "Claude Design cobre materiais visuais, não geração de imagem."
+    },
+    {
+      "id": "agentes-web-hands-on",
+      "curso": "Agentes Web - Hands On",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 13,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Perplexity Comet",
+        "ChatGPT Atlas"
+      ],
+      "tema": "Navegadores com IA",
+      "linha_prioritaria": "Agentes de IA",
+      "competencia": "Delegar tarefas no navegador a um agente",
+      "tarefa_observavel": "Executar uma tarefa real (pesquisa comparativa, preenchimento, compra simulada) com supervisão e limites.",
+      "base_confiavel": "Docs da Perplexity e da OpenAI",
+      "score": 86,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 12,
+        "lacuna": 20,
+        "esforco": 4
+      },
+      "observacao": "Base documental em formação. Pré-requisito: Agentes de IA - Essentials. Comet ainda não está publicado no catálogo do site (origem \"notas\" na IAClube 200); Atlas está — ancorar a primeira versão no Atlas."
+    },
+    {
+      "id": "construindo-servidores-mcp-hands-on",
+      "curso": "Construindo Servidores MCP - Hands On",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 14,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude Code"
+      ],
+      "tema": "MCP",
+      "linha_prioritaria": "MCP",
+      "competencia": "Expor dados e ferramentas próprias via MCP",
+      "tarefa_observavel": "Construir e publicar um servidor MCP simples e conectá-lo a um assistente.",
+      "base_confiavel": "Documentação do protocolo e SDKs",
+      "score": 86,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 4
+      },
+      "observacao": "Público técnico."
+    },
+    {
+      "id": "multiagentes-essentials",
+      "curso": "Multiagentes - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 15,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude Code",
+        "n8n"
+      ],
+      "tema": "Agentes de IA",
+      "linha_prioritaria": "Agentes de IA",
+      "competencia": "Coordenar vários agentes em uma tarefa",
+      "tarefa_observavel": "Dividir um problema em subagentes, orquestrar e consolidar resultados.",
+      "base_confiavel": "Docs da Anthropic e do n8n",
+      "score": 86,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 12,
+        "lacuna": 20,
+        "esforco": 4
+      },
+      "observacao": null
+    },
+    {
+      "id": "ia-para-reunioes-essentials",
+      "curso": "IA para Reuniões - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 16,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Otter.ai",
+        "Fireflies.ai",
+        "Microsoft 365 Copilot"
+      ],
+      "tema": "Produtividade com IA",
+      "linha_prioritaria": "IA aplicada ao trabalho",
+      "competencia": "Registrar e aproveitar reuniões com IA",
+      "tarefa_observavel": "Transcrever, resumir, extrair ações e compartilhar o registro de uma reunião.",
+      "base_confiavel": "Centros de ajuda das ferramentas",
+      "score": 86,
+      "pontuacao": {
+        "demanda": 26,
+        "ferramenta": 15,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 10
+      },
+      "observacao": null
+    },
+    {
+      "id": "deep-research-hands-on",
+      "curso": "Deep Research - Hands On",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 17,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "ChatGPT",
+        "Gemini",
+        "Perplexity"
+      ],
+      "tema": "Pesquisa com IA",
+      "linha_prioritaria": "Pesquisa com IA",
+      "competencia": "Conduzir pesquisas profundas e avaliá-las",
+      "tarefa_observavel": "Produzir um relatório com deep research e auditar fontes, lacunas e erros.",
+      "base_confiavel": "Docs dos três fornecedores",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Pré-requisito: Perplexity - Essentials ou NotebookLM - Essentials."
+    },
+    {
+      "id": "ia-para-analise-de-dados-essentials",
+      "curso": "IA para Análise de Dados - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 18,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "ChatGPT",
+        "Julius AI"
+      ],
+      "tema": "Dados com IA",
+      "linha_prioritaria": "IA aplicada ao trabalho",
+      "competencia": "Analisar e visualizar dados com IA",
+      "tarefa_observavel": "Carregar uma base, explorar, gerar gráficos e interpretar resultados com verificação.",
+      "base_confiavel": "Docs da OpenAI e da Julius",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Complementa os quatro cursos de Excel existentes com análise fora da planilha."
+    },
+    {
+      "id": "lovable-hands-on",
+      "curso": "Lovable - Hands On",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 19,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Lovable"
+      ],
+      "tema": "Vibe Coding / App Building",
+      "linha_prioritaria": "Vibe Coding",
+      "competencia": "Evoluir um app com integrações",
+      "tarefa_observavel": "Adicionar autenticação, banco, integrações e publicação a um app existente.",
+      "base_confiavel": "Documentação da Lovable",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Pré-requisito: Vibe Coding - Essentials."
+    },
+    {
+      "id": "mcp-com-chatgpt-hands-on",
+      "curso": "MCP com ChatGPT - Hands On",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 20,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "ChatGPT"
+      ],
+      "tema": "MCP",
+      "linha_prioritaria": "MCP",
+      "competencia": "Operar conectores e apps no ChatGPT",
+      "tarefa_observavel": "Configurar conectores, usar apps e executar um fluxo com dados externos.",
+      "base_confiavel": "Central de ajuda da OpenAI",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Pré-requisito: MCP - Essentials."
+    },
+    {
+      "id": "microsoft-365-copilot-essentials",
+      "curso": "Microsoft 365 Copilot - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 21,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Microsoft 365 Copilot"
+      ],
+      "tema": "Produtividade com IA",
+      "linha_prioritaria": "IA aplicada ao trabalho",
+      "competencia": "Produzir com IA no Microsoft 365",
+      "tarefa_observavel": "Redigir no Word, analisar no Excel, criar no PowerPoint e resumir no Teams.",
+      "base_confiavel": "Microsoft Learn",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 15,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Terceira ferramenta nas competências de documentos, planilhas e apresentações."
+    },
+    {
+      "id": "seguranca-em-mcp-essentials",
+      "curso": "Segurança em MCP - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 22,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude",
+        "ChatGPT"
+      ],
+      "tema": "MCP",
+      "linha_prioritaria": "MCP",
+      "competencia": "Avaliar riscos de conectores e permissões",
+      "tarefa_observavel": "Analisar permissões, injeção de prompt e vazamento de dados em um cenário real e definir salvaguardas.",
+      "base_confiavel": "Docs do protocolo; guias de segurança dos fornecedores",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": null
+    },
+    {
+      "id": "canva-magic-studio-essentials",
+      "curso": "Canva Magic Studio - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 23,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Canva Magic Studio"
+      ],
+      "tema": "Imagem com IA",
+      "linha_prioritaria": null,
+      "competencia": "Produzir materiais visuais com IA",
+      "tarefa_observavel": "Criar um conjunto de peças (aula, post, apresentação) com os recursos Magic.",
+      "base_confiavel": "Canva Design School",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 10
+      },
+      "observacao": null
+    },
+    {
+      "id": "chatgpt-chat-essentials",
+      "curso": "ChatGPT Chat - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 24,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "ChatGPT"
+      ],
+      "tema": "Fundamentos de IA Generativa",
+      "linha_prioritaria": null,
+      "competencia": "Uso de assistente de IA para tarefas gerais",
+      "tarefa_observavel": "Conduzir conversas produtivas, usar memória, projetos, busca, voz e imagem; comparar com Claude Chat.",
+      "base_confiavel": "Central de ajuda da OpenAI",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 10
+      },
+      "observacao": "Simetria com Claude Chat; porta de entrada da ferramenta mais usada."
+    },
+    {
+      "id": "gemini-chat-essentials",
+      "curso": "Gemini Chat - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 25,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Gemini"
+      ],
+      "tema": "Fundamentos de IA Generativa",
+      "linha_prioritaria": null,
+      "competencia": "Uso de assistente de IA para tarefas gerais",
+      "tarefa_observavel": "Usar Gemini para pesquisa, redação, imagem e análise de arquivos; integrar com o Google.",
+      "base_confiavel": "Central de ajuda do Google",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 10
+      },
+      "observacao": "Simetria com Claude Chat e ChatGPT Chat."
+    },
+    {
+      "id": "gpts-e-ferramentas-do-chatgpt-essentials",
+      "curso": "GPTs e Ferramentas do ChatGPT - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 26,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "ChatGPT"
+      ],
+      "tema": "Skills e ferramentas",
+      "linha_prioritaria": null,
+      "competencia": "Configurar assistentes personalizados e ferramentas",
+      "tarefa_observavel": "Criar um GPT com instruções, conhecimento e ações; usar ferramentas nativas.",
+      "base_confiavel": "Central de ajuda da OpenAI",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 10
+      },
+      "observacao": "Par de Claude Skills, que já existe."
+    },
+    {
+      "id": "zapier-essentials",
+      "curso": "Zapier - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 27,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Zapier"
+      ],
+      "tema": "Automação",
+      "linha_prioritaria": null,
+      "competencia": "Automatizar tarefas entre aplicativos",
+      "tarefa_observavel": "Criar automações com gatilhos, ações e um passo de IA.",
+      "base_confiavel": "Zapier Learn",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 10
+      },
+      "observacao": "Segunda ferramenta de automação ao lado da série N8N."
+    },
+    {
+      "id": "video-com-ia-essentials",
+      "curso": "Vídeo com IA - Essentials",
+      "status": "proposto",
+      "onda": 2,
+      "ranking": 28,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Google Flow",
+        "Sora",
+        "Runway"
+      ],
+      "tema": "Vídeo com IA",
+      "linha_prioritaria": null,
+      "competencia": "Produzir vídeos curtos com IA",
+      "tarefa_observavel": "Roteirizar, gerar e montar um vídeo curto para fins educacionais ou de comunicação.",
+      "base_confiavel": "Docs do Google, OpenAI e Runway",
+      "score": 84,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 7
+      },
+      "observacao": null
+    },
+    {
+      "id": "chatgpt-codex-hands-on",
+      "curso": "ChatGPT CODEX - Hands On",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 29,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Codex"
+      ],
+      "tema": "Programação com IA",
+      "linha_prioritaria": "Vibe Coding",
+      "competencia": "Delegar e revisar tarefas de programação em repositório real",
+      "tarefa_observavel": "Configurar o Codex em um repositório, delegar uma tarefa com testes e integrar o resultado.",
+      "base_confiavel": "Documentação da OpenAI",
+      "score": 83,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 6,
+        "esforco": 7
+      },
+      "observacao": "Completa o par Essentials / Hands On já iniciado."
+    },
+    {
+      "id": "mcp-com-claude-hands-on",
+      "curso": "MCP com Claude - Hands On",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 30,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "MCP",
+      "linha_prioritaria": "MCP",
+      "competencia": "Operar fluxos de trabalho com conectores MCP",
+      "tarefa_observavel": "Combinar conectores (arquivos, web, serviços) para executar um fluxo real de trabalho.",
+      "base_confiavel": "Documentação da Anthropic",
+      "score": 83,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 6,
+        "esforco": 7
+      },
+      "observacao": "Muito próximo de Claude Desktop - Hands On: preferir atualizar aquele curso e só abrir este se a demanda justificar."
+    },
+    {
+      "id": "gamma-essentials",
+      "curso": "Gamma - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 31,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Gamma"
+      ],
+      "tema": "Apresentações com IA",
+      "linha_prioritaria": "IA aplicada ao trabalho",
+      "competencia": "Criar apresentações e documentos visuais com IA",
+      "tarefa_observavel": "Transformar um texto-base em apresentação, ajustar estrutura, estilo e exportar.",
+      "base_confiavel": "Guias oficiais da Gamma",
+      "score": 83,
+      "pontuacao": {
+        "demanda": 26,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 12,
+        "esforco": 10
+      },
+      "observacao": "Competência já coberta por Claude Power Point; entra como segunda ferramenta."
+    },
+    {
+      "id": "chatgpt-word-hands-on",
+      "curso": "ChatGPT Word - Hands On",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 32,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "ChatGPT"
+      ],
+      "tema": "Produtividade com IA",
+      "linha_prioritaria": "IA aplicada ao trabalho",
+      "competencia": "Produzir e revisar documentos complexos com IA",
+      "tarefa_observavel": "Elaborar um documento longo com estrutura, revisão e padronização de estilo.",
+      "base_confiavel": "Docs da OpenAI",
+      "score": 82,
+      "pontuacao": {
+        "demanda": 26,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 6,
+        "esforco": 10
+      },
+      "observacao": "Completa o par; único Essentials de Word sem Hands On."
+    },
+    {
+      "id": "chatgpt-atlas-essentials",
+      "curso": "ChatGPT Atlas - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 33,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "ChatGPT Atlas"
+      ],
+      "tema": "Navegadores com IA",
+      "linha_prioritaria": null,
+      "competencia": "Navegar e pesquisar com assistente integrado",
+      "tarefa_observavel": "Usar o navegador para resumir, comparar e organizar informação de várias abas e delegar tarefas simples.",
+      "base_confiavel": "Docs da OpenAI",
+      "score": 81,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 12,
+        "lacuna": 20,
+        "esforco": 7
+      },
+      "observacao": "Padrão de nome do catálogo (ferramenta + nível)."
+    },
+    {
+      "id": "github-copilot-essentials",
+      "curso": "GitHub Copilot - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 34,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "GitHub Copilot"
+      ],
+      "tema": "Programação com IA",
+      "linha_prioritaria": null,
+      "competencia": "Programar com assistência no editor",
+      "tarefa_observavel": "Usar sugestões, chat e modo agente para implementar e revisar código.",
+      "base_confiavel": "GitHub Docs e GitHub Skills",
+      "score": 81,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": null
+    },
+    {
+      "id": "perplexity-comet-essentials",
+      "curso": "Perplexity Comet - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 35,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Perplexity Comet"
+      ],
+      "tema": "Navegadores com IA",
+      "linha_prioritaria": null,
+      "competencia": "Navegar e pesquisar com assistente integrado",
+      "tarefa_observavel": "Usar o Comet para pesquisa com fontes, organização de abas e tarefas assistidas.",
+      "base_confiavel": "Docs da Perplexity",
+      "score": 81,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 12,
+        "lacuna": 20,
+        "esforco": 7
+      },
+      "observacao": "Alternativa ou complemento a ChatGPT Atlas - Essentials; abrir primeiro o Atlas, já publicado no catálogo; Comet depende de confirmação no Lote 1."
+    },
+    {
+      "id": "rag-e-bases-de-conhecimento-essentials",
+      "curso": "RAG e Bases de Conhecimento - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 36,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "NotebookLM",
+        "Claude (Projetos)",
+        "ChatGPT (Projetos)"
+      ],
+      "tema": "RAG e bases de conhecimento",
+      "linha_prioritaria": null,
+      "competencia": "Montar uma base de conhecimento consultável",
+      "tarefa_observavel": "Organizar documentos, indexar e responder perguntas com citações em ferramentas de uso direto.",
+      "base_confiavel": "Docs do Google, Anthropic e OpenAI",
+      "score": 81,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 4
+      },
+      "observacao": "Na v0.5 perdeu a âncora AnythingLLM (modelo local, fora do catálogo por D1) e ganhou Projetos de Claude e ChatGPT."
+    },
+    {
+      "id": "voz-e-audio-com-ia-essentials",
+      "curso": "Voz e Áudio com IA - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 37,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "ElevenLabs",
+        "Suno"
+      ],
+      "tema": "Áudio e voz",
+      "linha_prioritaria": null,
+      "competencia": "Produzir voz e música com IA",
+      "tarefa_observavel": "Narrar um texto, dublar um trecho e criar uma trilha para um material.",
+      "base_confiavel": "Docs da ElevenLabs e da Suno",
+      "score": 80,
+      "pontuacao": {
+        "demanda": 15,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 10
+      },
+      "observacao": null
+    },
+    {
+      "id": "educacao-com-ia-planejamento-e-avaliacao-essentials",
+      "curso": "Educação com IA: Planejamento e Avaliação - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 38,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Khanmigo",
+        "MagicSchool AI",
+        "Teachy"
+      ],
+      "tema": "Educação com IA",
+      "linha_prioritaria": null,
+      "competencia": "Planejar aulas e avaliações com IA",
+      "tarefa_observavel": "Produzir plano de aula, atividades diferenciadas e rubrica com IA e revisar criticamente.",
+      "base_confiavel": "Guias das ferramentas",
+      "score": 79,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 15,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 7
+      },
+      "observacao": "Teachy dá o recorte brasileiro."
+    },
+    {
+      "id": "deepl-essentials",
+      "curso": "DeepL - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 39,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "DeepL"
+      ],
+      "tema": "Idiomas e tradução com IA",
+      "linha_prioritaria": null,
+      "competencia": "Traduzir e revisar textos com IA",
+      "tarefa_observavel": "Traduzir um documento mantendo terminologia e estilo; revisar com glossário.",
+      "base_confiavel": "Centro de ajuda da DeepL",
+      "score": 77,
+      "pontuacao": {
+        "demanda": 15,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 10
+      },
+      "observacao": null
+    },
+    {
+      "id": "gemini-code-assist-essentials",
+      "curso": "Gemini Code Assist - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 40,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Gemini Code Assist"
+      ],
+      "tema": "Programação com IA",
+      "linha_prioritaria": null,
+      "competencia": "Programar com assistência de IA (Google)",
+      "tarefa_observavel": "Implementar e explicar código com o assistente em IDE.",
+      "base_confiavel": "Docs do Google",
+      "score": 76,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 15,
+        "base": 20,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": null
+    },
+    {
+      "id": "integridade-academica-e-uso-responsavel-essentials",
+      "curso": "Integridade Acadêmica e Uso Responsável - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 41,
+      "nivel": "Essentials",
+      "ferramenta": [],
+      "tema": "Educação com IA",
+      "linha_prioritaria": null,
+      "competencia": "Orientar o uso de IA em contexto acadêmico",
+      "tarefa_observavel": "Elaborar diretrizes de uso, declaração de IA e atividades resistentes a uso indevido.",
+      "base_confiavel": "Diretrizes institucionais e guias de boas práticas",
+      "score": 75,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 15,
+        "base": 8,
+        "lacuna": 20,
+        "esforco": 10
+      },
+      "observacao": null
+    },
+    {
+      "id": "chatgpt-chat-hands-on",
+      "curso": "ChatGPT Chat - Hands On",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 42,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "ChatGPT"
+      ],
+      "tema": "Fundamentos de IA Generativa",
+      "linha_prioritaria": null,
+      "competencia": "Fluxos de trabalho avançados com assistente",
+      "tarefa_observavel": "Resolver um caso completo combinando projetos, arquivos, busca e análise de dados.",
+      "base_confiavel": "Central de ajuda da OpenAI",
+      "score": 75,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 6,
+        "esforco": 7
+      },
+      "observacao": "Após ChatGPT Chat - Essentials."
+    },
+    {
+      "id": "n8n-automacao-de-processos-hands-on",
+      "curso": "N8N: Automação de Processos - Hands On",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 43,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "n8n"
+      ],
+      "tema": "Automação",
+      "linha_prioritaria": null,
+      "competencia": "Construir uma automação completa com agente e tratamento de erros",
+      "tarefa_observavel": "Entregar um workflow em produção com monitoramento, tratamento de falhas e documentação.",
+      "base_confiavel": "Documentação do n8n",
+      "score": 75,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 20,
+        "lacuna": 6,
+        "esforco": 7
+      },
+      "observacao": "Primeiro Hands On da série N8N, hoje só com Essentials."
+    },
+    {
+      "id": "glau-essentials",
+      "curso": "Glau - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 44,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Glau"
+      ],
+      "tema": "Educação com IA",
+      "linha_prioritaria": null,
+      "competencia": "Avaliar redações com apoio de IA",
+      "tarefa_observavel": "Submeter redações do ENEM, interpretar o feedback por competência e orientar a reescrita.",
+      "base_confiavel": "Guias do produto; matriz de competências do ENEM",
+      "score": 74,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 10,
+        "base": 12,
+        "lacuna": 20,
+        "esforco": 10
+      },
+      "observacao": "Nova na v0.3: Glau entrou no bloco E da IAClube 200 após a leitura do site; produto brasileiro, forte aderência a professores e estudantes."
+    },
+    {
+      "id": "bolt-e-v0-essentials",
+      "curso": "Bolt e v0 - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 45,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Bolt",
+        "v0"
+      ],
+      "tema": "Vibe Coding / App Building",
+      "linha_prioritaria": "Vibe Coding",
+      "competencia": "Gerar interfaces e apps rapidamente",
+      "tarefa_observavel": "Criar um protótipo funcional e exportar o código.",
+      "base_confiavel": "Docs da StackBlitz e da Vercel",
+      "score": 73,
+      "pontuacao": {
+        "demanda": 30,
+        "ferramenta": 15,
+        "base": 15,
+        "lacuna": 6,
+        "esforco": 7
+      },
+      "observacao": "Variante da linha; abrir após Lovable e Replit."
+    },
+    {
+      "id": "claude-chrome-essentials",
+      "curso": "Claude Chrome - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 46,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude (extensão para Chrome)"
+      ],
+      "tema": "Navegadores com IA",
+      "linha_prioritaria": null,
+      "competencia": "Usar assistente agêntico no navegador",
+      "tarefa_observavel": "Delegar tarefas de navegação ao Claude com permissões controladas.",
+      "base_confiavel": "Documentação da Anthropic",
+      "score": 73,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 12,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Verificar disponibilidade geral do produto antes de abrir."
+    },
+    {
+      "id": "dados-com-python-e-ia-hands-on",
+      "curso": "Dados com Python e IA - Hands On",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 47,
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude Code",
+        "Codex"
+      ],
+      "tema": "Dados com IA",
+      "linha_prioritaria": null,
+      "competencia": "Analisar dados com código gerado por IA",
+      "tarefa_observavel": "Conduzir uma análise reprodutível em Python com agente de código e validar resultados.",
+      "base_confiavel": "Docs da Anthropic e OpenAI",
+      "score": 73,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 12,
+        "esforco": 4
+      },
+      "observacao": null
+    },
+    {
+      "id": "heygen-essentials",
+      "curso": "HeyGen - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 48,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "HeyGen"
+      ],
+      "tema": "Vídeo com IA",
+      "linha_prioritaria": null,
+      "competencia": "Produzir vídeo com avatar e tradução",
+      "tarefa_observavel": "Gravar uma aula curta com avatar e traduzi-la para outro idioma.",
+      "base_confiavel": "Centro de ajuda da HeyGen",
+      "score": 72,
+      "pontuacao": {
+        "demanda": 15,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 12,
+        "esforco": 10
+      },
+      "observacao": null
+    },
+    {
+      "id": "midjourney-essentials",
+      "curso": "Midjourney - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 49,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Midjourney"
+      ],
+      "tema": "Imagem com IA",
+      "linha_prioritaria": null,
+      "competencia": "Dominar prompts e parâmetros de imagem",
+      "tarefa_observavel": "Produzir uma série coerente de imagens com estilo definido.",
+      "base_confiavel": "Documentação da Midjourney",
+      "score": 69,
+      "pontuacao": {
+        "demanda": 15,
+        "ferramenta": 20,
+        "base": 15,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": null
+    },
+    {
+      "id": "governanca-de-ia-essentials",
+      "curso": "Governança de IA - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 50,
+      "nivel": "Essentials",
+      "ferramenta": [],
+      "tema": "Governança e avaliação de IA",
+      "linha_prioritaria": null,
+      "competencia": "Usar IA com privacidade, segurança e ética",
+      "tarefa_observavel": "Classificar dados, escolher configurações de privacidade e redigir uma política de uso para um grupo.",
+      "base_confiavel": "Políticas dos fornecedores; LGPD",
+      "score": 68,
+      "pontuacao": {
+        "demanda": 22,
+        "ferramenta": 15,
+        "base": 12,
+        "lacuna": 12,
+        "esforco": 7
+      },
+      "observacao": "Lacuna reduzida de 20 para 12 na v0.6: a competência passou a ser nomeada por Claude for Legal - Essentials, no contexto jurídico; o curso geral continua necessário."
+    },
+    {
+      "id": "avaliacao-de-ia-comparando-modelos-essentials",
+      "curso": "Avaliação de IA: Comparando Modelos - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 51,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "LM Arena",
+        "Artificial Analysis"
+      ],
+      "tema": "Governança e avaliação de IA",
+      "linha_prioritaria": null,
+      "competencia": "Comparar modelos e reconhecer limites",
+      "tarefa_observavel": "Testar a mesma tarefa em modelos diferentes, ler benchmarks e documentar critérios de escolha.",
+      "base_confiavel": "Sites das iniciativas; relatórios dos laboratórios",
+      "score": 67,
+      "pontuacao": {
+        "demanda": 15,
+        "ferramenta": 10,
+        "base": 12,
+        "lacuna": 20,
+        "esforco": 10
+      },
+      "observacao": null
+    },
+    {
+      "id": "autoria-de-cursos-com-ia-essentials",
+      "curso": "Autoria de Cursos com IA - Essentials",
+      "status": "proposto",
+      "onda": 3,
+      "ranking": 52,
+      "nivel": "Essentials",
+      "ferramenta": [
+        "CourseBox",
+        "Articulate 360"
+      ],
+      "tema": "Educação com IA",
+      "linha_prioritaria": null,
+      "competencia": "Produzir um curso digital com apoio de IA",
+      "tarefa_observavel": "Estruturar módulos, gerar atividades e publicar um curso curto.",
+      "base_confiavel": "Docs dos fornecedores",
+      "score": 67,
+      "pontuacao": {
+        "demanda": 15,
+        "ferramenta": 10,
+        "base": 15,
+        "lacuna": 20,
+        "esforco": 7
+      },
+      "observacao": "Atributo Autoria aprovado em D2 (8 out 2026). CourseBox e Articulate 360 ainda não estão publicados no catálogo (origem \"notas\"); abrir após a entrada confirmada no Lote 4."
+    }
+  ],
+  "cursos_existentes": [
+    {
+      "id": "claude-chat-essentials",
+      "curso": "Claude Chat - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Fundamentos de IA Generativa",
+      "competencia": "Uso de assistente de IA para tarefas gerais",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; registrar competência"
+    },
+    {
+      "id": "claude-chat-hands-on",
+      "curso": "Claude Chat - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Fundamentos de IA Generativa",
+      "competencia": "Uso de assistente de IA para tarefas gerais",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; registrar competência"
+    },
+    {
+      "id": "claude-desktop-essentials",
+      "curso": "Claude Desktop - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": [
+        "MCP",
+        "Produtividade com IA"
+      ],
+      "competencia": "Uso do app com conectores e ferramentas locais",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "atualizar: nomear MCP explicitamente no Hands On"
+    },
+    {
+      "id": "claude-desktop-hands-on",
+      "curso": "Claude Desktop - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": [
+        "MCP",
+        "Produtividade com IA"
+      ],
+      "competencia": "Uso do app com conectores e ferramentas locais",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "atualizar: nomear MCP explicitamente no Hands On"
+    },
+    {
+      "id": "claude-cowork-essentials",
+      "curso": "Claude Cowork - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Agentes de IA",
+      "competencia": "Delegação de tarefas de arquivos e processos a agente",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; posicionar no tema Agentes"
+    },
+    {
+      "id": "claude-cowork-hands-on",
+      "curso": "Claude Cowork - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Agentes de IA",
+      "competencia": "Delegação de tarefas de arquivos e processos a agente",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; posicionar no tema Agentes"
+    },
+    {
+      "id": "claude-code-no-vscode-essentials",
+      "curso": "Claude Code no VSCode - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude Code"
+      ],
+      "tema": "Programação com IA",
+      "competencia": "Programação assistida e agentes de código",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "atualizar: módulo de MCP e subagentes no Hands On"
+    },
+    {
+      "id": "claude-code-no-vscode-hands-on",
+      "curso": "Claude Code no VSCode - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude Code"
+      ],
+      "tema": "Programação com IA",
+      "competencia": "Programação assistida e agentes de código",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "atualizar: módulo de MCP e subagentes no Hands On"
+    },
+    {
+      "id": "claude-skills-essentials",
+      "curso": "Claude Skills - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Skills e ferramentas",
+      "competencia": "Criação e uso de skills reutilizáveis",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "claude-skills-hands-on",
+      "curso": "Claude Skills - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Skills e ferramentas",
+      "competencia": "Criação e uso de skills reutilizáveis",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "claude-word-essentials",
+      "curso": "Claude Word - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Produtividade com IA",
+      "competencia": "Criação e edição de textos assistidos por IA",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "claude-word-hands-on",
+      "curso": "Claude Word - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Produtividade com IA",
+      "competencia": "Criação e edição de textos assistidos por IA",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "claude-excel-essentials",
+      "curso": "Claude Excel - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Dados com IA",
+      "competencia": "Análise de dados assistida por IA",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "claude-excel-hands-on",
+      "curso": "Claude Excel - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Dados com IA",
+      "competencia": "Análise de dados assistida por IA",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "claude-power-point-essentials",
+      "curso": "Claude Power Point - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Apresentações com IA",
+      "competencia": "Criação de apresentações assistida por IA",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "claude-power-point-hands-on",
+      "curso": "Claude Power Point - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Apresentações com IA",
+      "competencia": "Criação de apresentações assistida por IA",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "claude-design-essentials",
+      "curso": "Claude Design - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Imagem com IA",
+      "competencia": "Criação de materiais visuais",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; confirmar superfície atual do produto"
+    },
+    {
+      "id": "claude-design-hands-on",
+      "curso": "Claude Design - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": "Imagem com IA",
+      "competencia": "Criação de materiais visuais",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; confirmar superfície atual do produto"
+    },
+    {
+      "id": "chatgpt-word-essentials",
+      "curso": "ChatGPT Word - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "ChatGPT"
+      ],
+      "tema": "Produtividade com IA",
+      "competencia": "Criação e edição de textos assistidos por IA",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; abrir Hands On (proposto)"
+    },
+    {
+      "id": "chatgpt-excel-essentials",
+      "curso": "ChatGPT Excel - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "ChatGPT"
+      ],
+      "tema": "Dados com IA",
+      "competencia": "Análise de dados assistida por IA",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "chatgpt-excel-hands-on",
+      "curso": "ChatGPT Excel - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "ChatGPT"
+      ],
+      "tema": "Dados com IA",
+      "competencia": "Análise de dados assistida por IA",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "chatgpt-codex-essentials",
+      "curso": "ChatGPT CODEX - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Codex"
+      ],
+      "tema": "Programação com IA",
+      "competencia": "Delegação de tarefas de programação a agente",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; abrir Hands On (proposto)"
+    },
+    {
+      "id": "n8n-fundamentos-essentials-1",
+      "curso": "N8N: Fundamentos - Essentials 1",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "n8n"
+      ],
+      "tema": "Automação",
+      "competencia": "Automação de processos",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "n8n-construcao-de-workflows-essentials-2",
+      "curso": "N8N: Construção de Workflows - Essentials 2",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "n8n"
+      ],
+      "tema": "Automação",
+      "competencia": "Construção de workflows",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "n8n-dados-expressoes-e-transformacoes-essentials-3",
+      "curso": "N8N: Dados, expressões e transformações - Essentials 3",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "n8n"
+      ],
+      "tema": "Automação",
+      "competencia": "Transformação de dados em workflows",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "n8n-integracoes-e-apis-essentials-4",
+      "curso": "N8N: Integrações e APIs - Essentials 4",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "n8n"
+      ],
+      "tema": "Automação",
+      "competencia": "Integração de sistemas",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter"
+    },
+    {
+      "id": "n8n-automacao-de-processos-na-pratica-essentials-5",
+      "curso": "N8N: Automação de processos na prática - Essentials 5",
+      "status": "existente",
+      "onda": null,
+      "area": "Geral",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "n8n"
+      ],
+      "tema": "Automação",
+      "competencia": "Automação ponta a ponta",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; encadear com Essentials 6 (proposto)"
+    },
+    {
+      "id": "claude-for-legal-essentials",
+      "curso": "Claude for Legal - Essentials",
+      "status": "existente",
+      "onda": null,
+      "area": "Jurídica",
+      "nivel": "Essentials",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": [
+        "Fundamentos de IA Generativa",
+        "Governança"
+      ],
+      "competencia": "Explicar o ecossistema Claude for Legal e avaliar uma situação de uso por evidência, permissão, risco e supervisão humana",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; cadastrar com area = Jurídica; entra na trilha J1"
+    },
+    {
+      "id": "claude-for-legal-hands-on",
+      "curso": "Claude for Legal - Hands On",
+      "status": "existente",
+      "onda": null,
+      "area": "Jurídica",
+      "nivel": "Hands On",
+      "ferramenta": [
+        "Claude"
+      ],
+      "tema": [
+        "Produtividade com IA",
+        "RAG"
+      ],
+      "competencia": "Executar um fluxo jurídico introdutório com materiais fictícios: extração, revisão por playbook, triagem de NDA, briefing e dossiê",
+      "tarefa_observavel": null,
+      "decisao_sugerida": "manter; cadastrar com area = Jurídica; entra nas trilhas J3 e J5"
+    }
+  ]
+}
