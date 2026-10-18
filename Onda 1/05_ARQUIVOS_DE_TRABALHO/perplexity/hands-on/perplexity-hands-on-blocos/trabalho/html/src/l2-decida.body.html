@@ -1,0 +1,59 @@
+<!--titulo: Manter, trocar ou retirar?-->
+<style>
+  .caso { margin: 0 0 10px; }
+  .caso strong { color: var(--azul); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Manter, trocar ou retirar?</h1>
+  <p class="sub">Toda ficha de auditoria termina numa decisão. Treine antes da ficha real: para cada citação abaixo, decida o que fazer com a frase que ela sustenta.</p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="casos"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Ficha de auditoria, dica de fonte primária e "Se travar" da Oficina 3 (roteiro Hands-on).
+  var CASOS = [
+    ['A frase diz que o art. 20 garante a revisão de decisões automatizadas. A citação leva ao texto compilado da LGPD no planalto.gov.br, e o Ctrl+F acha o trecho.', 'manter',
+     'A página existe, é o documento original e tem o trecho: a citação sustenta a frase.'],
+    ['A citação leva ao blog de um escritório que comenta o art. 20. O trecho está lá, mas é a explicação do blog, não a lei.', 'trocar',
+     'Blog é fonte secundária: bom para contexto, fraco para afirmação decisiva. Troque pela lei no Planalto.'],
+    ['A página citada abre, mas o Ctrl+F não acha nenhuma palavra da frase. Você pediu no Thread uma fonte primária e nenhuma veio.', 'retirar',
+     'Se a página não tem a frase e a fonte primária não veio, a frase sai.'],
+    ['A Perplexity informou órgão julgador, relator e data de um acórdão, citando uma notícia sobre o caso, não o portal do tribunal.', 'trocar',
+     'Notícia é fonte secundária. Exija o domínio oficial e confira você mesmo no portal do tribunal.']
+  ];
+  var ROTULOS = { manter: 'Manter', trocar: 'Trocar', retirar: 'Retirar' };
+  var certos = {}, concluido = false, grid = document.getElementById('casos');
+  CASOS.forEach(function (u, i) {
+    var card = document.createElement('div'); card.className = 'item';
+    var p = document.createElement('p'); p.className = 'caso';
+    var n = document.createElement('strong'); n.textContent = 'Citação ' + (i + 1) + '. ';
+    p.appendChild(n); p.appendChild(document.createTextNode(u[0]));
+    var ops = document.createElement('div'); ops.className = 'opcoes'; ops.setAttribute('role', 'group'); ops.setAttribute('aria-label', 'Decisão para a citação ' + (i + 1));
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    Object.keys(ROTULOS).forEach(function (c) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn';
+      b.textContent = ROTULOS[c]; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(ops.children, function (x) { x.classList.remove('sel'); x.setAttribute('aria-pressed', 'false'); });
+        b.classList.add('sel'); b.setAttribute('aria-pressed', 'true');
+        var ok = c === u[1]; certos[i] = ok;
+        card.className = 'item ' + (ok ? 'certo' : 'errado');
+        fb.className = 'feedback ' + (ok ? 'ok' : 'erro');
+        fb.textContent = ok ? 'Correto. ' + u[2] : 'Ainda não. Pergunte-se: a página tem o trecho? É o documento original?';
+        atualizar();
+      });
+      ops.appendChild(b);
+    });
+    card.appendChild(p); card.appendChild(ops); card.appendChild(fb); grid.appendChild(card);
+  });
+  function atualizar() {
+    var n = 0; for (var k in certos) if (certos[k]) n++;
+    document.getElementById('barra').style.width = (100 * n / CASOS.length) + '%';
+    if (n === CASOS.length && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Quatro de quatro. Agora faça o mesmo com as duas citações reais da sua resposta da Oficina 2.';
+    }
+  }
+</script>

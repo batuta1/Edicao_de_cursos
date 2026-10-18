@@ -1,0 +1,43 @@
+{
+  "licao": 1,
+  "posicao": 16,
+  "blocos": [
+    {
+      "modelo": "html-html-inline.json",
+      "settings": {
+        "width": "1"
+      },
+      "itens": [
+        {
+          "srcdoc": "@arquivo:../html/l2-decida.html"
+        }
+      ]
+    },
+    {
+      "modelo": "text-text-heading-paragraph.json",
+      "itens": [
+        {
+          "heading": "Se travar na Oficina 3",
+          "paragraph": "<p>Abra o problema que apareceu para você e veja o que fazer:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "interactive-interactive-accordion.json",
+      "itens": [
+        {
+          "title": "A página citada não tem a frase",
+          "description": "<p>Peça no Thread uma fonte primária para aquela frase. Se não vier, retire a frase.</p>"
+        },
+        {
+          "title": "O link do TJPR não abre",
+          "description": "<p>Busque o número 0033052-89.2025.8.16.0001 em <strong>portal.tjpr.jus.br &gt; Jurisprudência</strong>.</p>"
+        },
+        {
+          "title": "A Perplexity trouxe os dados de uma notícia, não do portal",
+          "description": "<p>Isso é fonte secundária. Exija o domínio oficial e confira você mesmo.</p>"
+        }
+      ]
+    }
+  ]
+}

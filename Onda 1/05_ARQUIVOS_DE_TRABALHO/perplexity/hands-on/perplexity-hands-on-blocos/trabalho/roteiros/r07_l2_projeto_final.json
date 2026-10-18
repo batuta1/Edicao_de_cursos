@@ -1,0 +1,105 @@
+{
+  "licao": 2,
+  "posicao": 16,
+  "blocos": [
+    {
+      "modelo": "divider-continue-continue.json",
+      "itens": [
+        {
+          "title": "Continue"
+        }
+      ]
+    },
+    {
+      "modelo": "text-text-heading-paragraph.json",
+      "itens": [
+        {
+          "heading": "Projeto Final — O dossiê citado do seu tema",
+          "paragraph": "<p>Escolha um tema real da sua área — um conceito para o TCC, uma afirmação para checar, um mercado para comparar, uma tese jurídica — e entregue, sem roteiro, um dossiê de pesquisa: pergunta pesquisável, fontes conferidas e uma síntese curta que você assinaria.</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "text-text-paragraph.json",
+      "itens": [
+        {
+          "paragraph": "<p>Desta vez, sem passo a passo detalhado. Siga os seis passos:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "list-list-numbered.json",
+      "itens": [
+        {
+          "paragraph": "<p>Passe o tema no semáforo. Se não for verde, minimize (rótulos no lugar de nomes, só a tese).</p>"
+        },
+        {
+          "paragraph": "<p>Escreva a pergunta pesquisável com as cinco partes e as três exigências. Use, se quiser, um dos pontos de partida abaixo.</p>"
+        },
+        {
+          "paragraph": "<p>Escolha o nível de busca e escreva por quê, numa linha.</p>"
+        },
+        {
+          "paragraph": "<p>Audite duas citações com a ficha da Oficina 3. No perfil jurídico, prove a existência de pelo menos uma decisão no portal do tribunal (o TJ do seu estado está em <strong>cnj.jus.br/poder-judiciario/tribunais</strong>).</p>"
+        },
+        {
+          "paragraph": "<p>Escreva uma síntese de 100 a 150 palavras com \"Limites desta síntese\".</p>"
+        },
+        {
+          "paragraph": "<p>Decida se compartilha, e anote o motivo.</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "text-text-heading-paragraph.json",
+      "itens": [
+        {
+          "heading": "Pontos de partida por perfil",
+          "paragraph": "<p>Abra a aba do seu perfil, copie o modelo e troque o que está entre colchetes:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "interactive-interactive-tabs.json",
+      "itens": [
+        {
+          "title": "Estudante ou pesquisador",
+          "description": "<p>\"\"\"<br>Compare três explicações publicadas desde [ano] sobre [tema].<br>Priorize revisões e artigos de acesso aberto. Para cada conclusão, autor, data, URL e<br>uma frase sobre como a fonte a sustenta. Separe fatos, divergências e lacunas.<br>\"\"\"</p>"
+        },
+        {
+          "title": "Jornalista",
+          "description": "<p>\"\"\"<br>Compare a fonte oficial [URL A] com a reportagem [URL B]. Liste<br>coincidências, divergências, data e escopo. Termine com duas perguntas que ainda<br>precisam de apuração.<br>\"\"\"</p>"
+        },
+        {
+          "title": "Analista",
+          "description": "<p>\"\"\"<br>Compare [tema] em [organização A] e [organização B] usando só relatórios<br>públicos oficiais desde [ano]. Mesmos critérios para as duas. Tabela afirmação |<br>fonte | data | trecho.<br>\"\"\"</p>"
+        },
+        {
+          "title": "Jurídico",
+          "description": "<p>\"\"\"<br>Localize decisões públicas do [tribunal] sobre [tese], entre [datas]. Use<br>apenas [domínio oficial]. Para cada decisão: número, órgão julgador, relator, data,<br>URL do inteiro teor e trecho curto. Campo ausente na página oficial: NÃO ENCONTRADO.<br>\"\"\"</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "html-html-inline.json",
+      "settings": {
+        "width": "0",
+        "hasCustomCompletion": true
+      },
+      "itens": [
+        {
+          "srcdoc": "@arquivo:../html/l3-dossie.html"
+        }
+      ]
+    },
+    {
+      "modelo": "divider-continue-continue.json",
+      "itens": [
+        {
+          "title": "Continue",
+          "type": "completeBlock"
+        }
+      ]
+    }
+  ]
+}
