@@ -1,0 +1,3446 @@
+{
+  "course": {
+    "description": "Precisa organizar, estudar e compartilhar informações de documentos públicos de forma eficiente e confiável? Este curso prático mostra como transformar materiais oficiais em cadernos inteligentes usando o NotebookLM/Gemini Notebook. Aprenda a reunir fontes, conferir respostas da IA, gerar resumos e testes, e compartilhar conteúdos de forma segura e adequada ao seu contexto profissional ou acadêmico. Desenvolva autonomia e confiança para usar a tecnologia a favor dos seus estudos, trabalho ou projetos.",
+    "lessons": [
+      {
+        "description": "",
+        "id": "2bb868b4-0852-40f7-a243-7d5b5d738b2a",
+        "items": [
+          {
+            "id": "xfngz4i6ui18tm7f67ux3rzq",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "c57dckqomqhsx7pirc7b14oi",
+                "heading": "Junte tudo num notebook",
+                "paragraph": "<p>Este curso é mão na massa. Você vai abrir o NotebookLM, colocar documentos dentro dele e fazer a ferramenta trabalhar para você — conferindo tudo, porque a IA resume, mas quem assina é você. Basta o plano gratuito e uma Conta Google.</p><p>O primeiro problema é de estudante: a prova de amanhã é sobre LGPD e o material está espalhado — uma lei no site do Planalto, dois guias em PDF da ANPD, uma página sobre direitos do titular. Nesta lição, você decide o que pode subir, junta tudo num lugar só e confere se a ferramenta leu direito.</p><p>📌 <strong>Não esqueça:</strong> em julho de 2026, o NotebookLM passou a se chamar Gemini Notebook. A tela pode mostrar um nome ou outro. É o mesmo produto, no mesmo endereço.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "26db9111-7738-4c91-9187-8dc9d08f95a5"
+          },
+          {
+            "id": "ipwpyyko20jsfg4ekb14wnwk",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "m4q1owywn7son6qq3gojpnqh",
+                "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "15ac4ec8-cbd2-4d54-87bf-fa81c7095160"
+          },
+          {
+            "id": "lq75ot5b4wxy030diydt83uk",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "kiz85vd7fhm2j5p5axzd0yul",
+                "number": "1",
+                "paragraph": "<p>Decidir, pelo semáforo, se um documento pode subir para o notebook.</p>"
+              },
+              {
+                "id": "qmjckx3npd1qj94s9jnf87ae",
+                "number": "2",
+                "paragraph": "<p>Baixar e conferir os PDFs do Kit LGPD antes de enviar.</p>"
+              },
+              {
+                "id": "e4qj37yfdk9p0gcnkj39ll0b",
+                "number": "3",
+                "paragraph": "<p>Criar o notebook e dar a ele o nome do tema.</p>"
+              },
+              {
+                "id": "ke4mq7uhteamny105ey12f06",
+                "number": "4",
+                "paragraph": "<p>Adicionar fontes por arquivo e por link e conferir se cada uma foi lida.</p>"
+              },
+              {
+                "id": "i4ixcpnbkgdihtwu5svh145w",
+                "number": "5",
+                "paragraph": "<p>Resolver os problemas mais comuns de importação.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "4ea24906-dc2f-4da5-a26c-0ba94d574d01"
+          },
+          {
+            "type": "html",
+            "family": "html",
+            "variant": "inline",
+            "settings": {
+              "autoResize": true,
+              "hasCustomCompletion": false,
+              "height": 40,
+              "width": "0"
+            },
+            "metadata": {},
+            "id": "5db05536-4c8f-40ba-94d3-bf4d8a28f4d3",
+            "globalBlockId": "05ad1ab3-97d3-4575-8a3f-ff6479fca1b4",
+            "items": [
+              {
+                "id": "741a6a7e-fdd8-4c9d-bb9e-7c826f88cf1c",
+                "srcdoc": "<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Mapa da mão na massa</title>\n<style>\n  :root {\n    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;\n    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;\n    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;\n    --aviso: #8a5a00; --aviso-claro: #fdf3e1;\n    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;\n  }\n  * { box-sizing: border-box; }\n  html, body { margin: 0; padding: 0; background: transparent; }\n  body { font-family: \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }\n  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }\n  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }\n  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }\n  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }\n  .sub { margin: 0 0 18px; color: var(--suave); }\n  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }\n  button { font: inherit; }\n  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }\n  .btn:hover { background: var(--azul-claro); }\n  .btn[aria-pressed=\"true\"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }\n  .btn:disabled { opacity: .45; cursor: default; }\n  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }\n  .btn.principal:hover { background: var(--azul-2); }\n  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }\n  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }\n  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }\n  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }\n  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }\n  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }\n  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }\n  .feedback:empty { display: none; }\n  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }\n  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }\n  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }\n  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }\n  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }\n  .final:empty { display: none; }\n  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }\n  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }\n  .saida { white-space: pre-wrap; font-family: Consolas, \"Courier New\", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }\n  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }\n\n</style>\n</head>\n<body>\n<style>\n  .trilha { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }\n  .etapa { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 12px 14px; cursor: pointer; text-align: left; width: 100%; color: var(--tinta); }\n  .etapa:hover { border-color: var(--azul-2); }\n  .etapa[aria-expanded=\"true\"] { border-color: var(--azul); background: var(--azul-claro); }\n  .etapa .n { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #fff; font-weight: 700; font-size: 14px; }\n  .etapa .nome { font-weight: 700; color: var(--azul); display: block; }\n  .etapa .prob { font-size: 13.5px; color: var(--suave); display: block; }\n  .etapa .min { font-weight: 700; color: var(--azul-2); font-size: 14px; white-space: nowrap; }\n  .etapa .lic { display: inline-block; margin-top: 4px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ok); }\n  .detalhe { grid-column: 2 / -1; font-size: 14px; color: var(--azul); margin-top: 4px; }\n  .detalhe[hidden] { display: none; }\n  .total { display: flex; justify-content: space-between; margin-top: 12px; padding: 10px 14px; border-radius: 12px; background: var(--azul); color: #fff; font-weight: 700; }\n</style>\n<section class=\"card\" aria-labelledby=\"t\">\n  <span class=\"rotulo\">Mapa</span>\n  <h1 id=\"t\">O mapa da mão na massa</h1>\n  <p class=\"sub\">As oficinas usam o mesmo notebook, em sequência: cada uma entrega uma pequena vitória, e o Projeto Final junta todas num tema seu. Clique numa etapa para ver o que você vai entregar.</p>\n  <ol class=\"trilha\" id=\"trilha\"></ol>\n  <div class=\"total\"><span>Total</span><span>115 min</span></div>\n</section>\n\n<script>\n  // Tabela \"O Mapa da Mão na Massa\" do roteiro Hands-on; entregas tiradas dos pontos de controle de cada oficina.\n  var ROT = ['0', '1', '2', '3', '4', 'PF', '10'];\n  var ETAPAS = [\n    { n: 'Antes de Arregaçar as Mangas', p: '\"Posso subir qualquer documento?\"', m: 13, l: 'Lição 1', e: 'Conta conferida, Kit LGPD à mão e o semáforo para decidir o que sobe.' },\n    { n: 'Oficina 1 — Junte tudo num notebook', p: 'Tenho documentos demais e nenhum lugar para juntá-los', m: 20, l: 'Lição 1', e: 'Notebook \"LGPD — revisão\" com quatro fontes marcadas e conferidas.' },\n    { n: 'Oficina 2 — Pergunte e confira a citação', p: 'Preciso de resposta rápida, mas que eu consiga conferir', m: 20, l: 'Lição 2', e: 'Ficha com três citações conferidas e uma nota salva.' },\n    { n: 'Oficina 3 — Gere guia de estudo, resumo e teste', p: 'Quero estudar (ou dar aula) sem reler tudo', m: 20, l: 'Lição 2', e: 'Guia de estudo, documento de resumo e teste, com um item de cada conferido.' },\n    { n: 'Oficina 4 — Ouça suas fontes e mostre para alguém', p: 'Quero ouvir o conteúdo e mostrar para outra pessoa', m: 20, l: 'Lição 3', e: 'Resumo em Áudio em português, mapa mental e decisão de compartilhamento anotada.' },\n    { n: 'Projeto Final — O kit de estudo do seu tema', p: 'Repetir tudo sozinho, num tema seu', m: 16, l: 'Lição 3', e: 'Notebook novo num tema seu, com fontes verdes, pergunta-chave conferida e um artefato revisado.' },\n    { n: 'A Parte dos Dez', p: 'Hábitos para levar', m: 6, l: 'Lição 3', e: 'Dez hábitos que deixam qualquer notebook confiável.' }\n  ];\n  var lista = document.getElementById('trilha');\n  ETAPAS.forEach(function (x, i) {\n    var li = document.createElement('li');\n    var b = document.createElement('button'); b.type = 'button'; b.className = 'etapa'; b.setAttribute('aria-expanded', 'false');\n    b.setAttribute('aria-controls', 'd' + i);\n    b.innerHTML = '<span class=\"n\">' + ROT[i] + '</span><span><span class=\"nome\"></span><span class=\"prob\"></span><span class=\"lic\"></span></span><span class=\"min\"></span><span class=\"detalhe\" hidden></span>';\n    b.querySelector('.nome').textContent = x.n;\n    b.querySelector('.prob').textContent = x.p;\n    b.querySelector('.lic').textContent = x.l;\n    b.querySelector('.min').textContent = x.m + ' min';\n    var d = b.querySelector('.detalhe'); d.id = 'd' + i; d.textContent = 'Você sai com: ' + x.e;\n    b.addEventListener('click', function () {\n      var aberto = b.getAttribute('aria-expanded') === 'true';\n      b.setAttribute('aria-expanded', aberto ? 'false' : 'true'); d.hidden = aberto;\n    });\n    li.appendChild(b); lista.appendChild(li);\n  });\n</script>\n\n</body>\n</html>\n"
+              }
+            ]
+          },
+          {
+            "id": "hcrl2whp5gsu21ra4qpk8rmy",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "cc9cos0nr38s0flhnfsr6gt6",
+                "heading": "Antes do upload: o semáforo",
+                "paragraph": "<p>Tudo o que você sobe vai para os servidores do Google. Então a pergunta vem <strong>antes</strong> do upload: posso subir isto? O semáforo responde em segundos — e, neste curso, tudo é verde.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "5bbe861c-e00f-415d-a79b-b29c8b617bbc"
+          },
+          {
+            "id": "rf9igulud6v8ppoi0cn81hso",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "i96zgn682j3v9j7jvbj2bv9u",
+                "heading": "As três cores do semáforo",
+                "paragraph": "<p>Abra cada cor para ver o que entra nela e o que fazer:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "3057fa7f-c937-4a53-a7d5-242476e056bb"
+          },
+          {
+            "id": "36f462f3-7414-4f16-8fa7-1e3242888331",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "b34c2ffc-94bc-4b23-bfa1-e9445c42dbba",
+                "title": "Verde: pode subir",
+                "description": "<p>Lei, guia de órgão público, artigo de acesso aberto, material que você mesmo publicou. Pode subir em qualquer conta, pessoal ou institucional.</p><p></p><p><strong>Exemplo:</strong> a LGPD no site do Planalto, um guia da ANPD, um artigo científico de acesso aberto.</p>"
+              },
+              {
+                "id": "81eba569-7fb1-4717-af26-1f4f34d41c11",
+                "title": "Amarelo: só na conta da instituição",
+                "description": "<p>Documento interno sem dado pessoal — ata, procedimento, plano de ensino. Só na conta da instituição, e só se ela autorizou.</p><p></p><p><strong>Exemplo:</strong> ata de reunião sem nomes de alunos, plano de curso interno.</p>"
+              },
+              {
+                "id": "c79e06fa-6575-468c-8f50-78b0be991c61",
+                "title": "Vermelho: não sobe",
+                "description": "<p>Nome e nota de aluno, peça de cliente, prontuário, fonte jornalística, qualquer coisa sob sigilo. Não sobe sem base legal, ambiente aprovado e dados removidos antes. Em conta pessoal, nunca.</p><p></p><p>⚠️ <strong>Cuidado com o \"joinha\":</strong> em conta pessoal, avaliar uma resposta (positivo ou negativo) pode enviar suas fontes ao Google, onde podem ser lidas por pessoas e guardadas por até três anos. Em conta Workspace/Education, o Google diz que nada disso é revisado nem usado para treinar modelos — mas a LGPD continua valendo.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "55525c71-d5bb-4b54-82c9-fec4e2b9300f"
+          },
+          {
+            "type": "html",
+            "family": "html",
+            "variant": "inline",
+            "settings": {
+              "autoResize": true,
+              "hasCustomCompletion": false,
+              "height": 40,
+              "width": "1"
+            },
+            "metadata": {},
+            "id": "497be591-0687-4587-8ea4-0b0e87b40da5",
+            "globalBlockId": "d6f3d8c0-b747-450b-af70-7772812d43cd",
+            "items": [
+              {
+                "id": "9373cafd-453e-49ec-a261-d28bba05bc59",
+                "srcdoc": "<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Semáforo das fontes</title>\n<style>\n  :root {\n    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;\n    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;\n    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;\n    --aviso: #8a5a00; --aviso-claro: #fdf3e1;\n    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;\n  }\n  * { box-sizing: border-box; }\n  html, body { margin: 0; padding: 0; background: transparent; }\n  body { font-family: \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }\n  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }\n  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }\n  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }\n  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }\n  .sub { margin: 0 0 18px; color: var(--suave); }\n  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }\n  button { font: inherit; }\n  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }\n  .btn:hover { background: var(--azul-claro); }\n  .btn[aria-pressed=\"true\"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }\n  .btn:disabled { opacity: .45; cursor: default; }\n  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }\n  .btn.principal:hover { background: var(--azul-2); }\n  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }\n  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }\n  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }\n  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }\n  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }\n  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }\n  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }\n  .feedback:empty { display: none; }\n  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }\n  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }\n  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }\n  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }\n  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }\n  .final:empty { display: none; }\n  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }\n  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }\n  .saida { white-space: pre-wrap; font-family: Consolas, \"Courier New\", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }\n  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }\n\n</style>\n</head>\n<body>\n<style>\n  .niv button[data-n=\"verde\"][aria-pressed=\"true\"] { background: var(--verde); border-color: var(--verde); }\n  .niv button[data-n=\"amarelo\"][aria-pressed=\"true\"] { background: var(--amarelo); border-color: var(--amarelo); }\n  .niv button[data-n=\"vermelho\"][aria-pressed=\"true\"] { background: var(--vermelho); border-color: var(--vermelho); }\n  .item p.f { margin: 0 0 10px; font-weight: 600; color: var(--azul); }\n  .placar { font-weight: 700; color: var(--azul); }\n</style>\n<section class=\"card\" aria-labelledby=\"t\">\n  <span class=\"rotulo\">Atividade</span>\n  <h1 id=\"t\">Semáforo: posso subir isto?</h1>\n  <p class=\"sub\">Para cada documento, escolha verde, amarelo ou vermelho. Você recebe a correção na hora e pode tentar de novo.</p>\n  <p class=\"placar\" id=\"placar\" aria-live=\"polite\"></p>\n  <div class=\"barra\" aria-hidden=\"true\"><span id=\"barra\"></span></div>\n  <div class=\"grid\" id=\"lista\"></div>\n  <div class=\"final\" id=\"final\" role=\"status\" aria-live=\"polite\"></div>\n</section>\n\n<script>\n  // Exemplos e condutas: tabela do semáforo do roteiro Hands-on (\"Antes de Arregaçar as Mangas\").\n  var FONTES = [\n    { t: 'A LGPD no site do Planalto', n: 'verde', p: 'Lei publicada em portal oficial: sobe em qualquer conta.' },\n    { t: 'Ata de reunião do departamento, sem nomes nem dados pessoais', n: 'amarelo', p: 'Documento interno sem dado pessoal: só na conta da instituição, se ela autorizou.' },\n    { t: 'Planilha com nome e nota de cada aluno da turma', n: 'vermelho', p: 'Nome e nota de aluno: não sobe sem base legal, ambiente aprovado e dados removidos antes. Em conta pessoal, nunca.' },\n    { t: 'Artigo que você mesmo publicou numa revista de acesso aberto', n: 'verde', p: 'Material que você mesmo publicou, de acesso aberto: verde.' },\n    { t: 'Plano de ensino interno da sua escola', n: 'amarelo', p: 'Documento interno: só na conta da instituição, com autorização.' },\n    { t: 'Prontuário de um paciente', n: 'vermelho', p: 'Prontuário é vermelho: dado pessoal sensível, não sobe.' },\n    { t: 'Guia da ANPD baixado do portal gov.br', n: 'verde', p: 'Guia de órgão público: verde, como todo o Kit LGPD.' }\n  ];\n  var NOMES = { verde: 'Verde', amarelo: 'Amarelo', vermelho: 'Vermelho' };\n  var certos = {}, concluido = false;\n  var lista = document.getElementById('lista');\n\n  FONTES.forEach(function (f, i) {\n    var c = document.createElement('div'); c.className = 'item';\n    var titulo = document.createElement('p'); titulo.className = 'f'; titulo.id = 'f' + i; titulo.textContent = f.t;\n    var g = document.createElement('div'); g.className = 'opcoes niv'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'f' + i);\n    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');\n    ['verde', 'amarelo', 'vermelho'].forEach(function (n) {\n      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = NOMES[n];\n      b.setAttribute('data-n', n); b.setAttribute('aria-pressed', 'false');\n      b.addEventListener('click', function () {\n        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });\n        if (n === f.n) {\n          certos[i] = true; c.className = 'item certo';\n          fb.textContent = 'Correto. ' + f.p; fb.className = 'feedback ok';\n        } else {\n          delete certos[i]; c.className = 'item errado';\n          fb.textContent = 'Não é ' + NOMES[n].toLowerCase() + '. Pergunte: é público? É interno? Tem nome, nota, dado de cliente ou sigilo?';\n          fb.className = 'feedback erro';\n        }\n        placar();\n      });\n      g.appendChild(b);\n    });\n    c.appendChild(titulo); c.appendChild(g); c.appendChild(fb); lista.appendChild(c);\n  });\n\n  function placar() {\n    var n = Object.keys(certos).length;\n    document.getElementById('placar').textContent = n + ' de ' + FONTES.length + ' classificadas corretamente';\n    document.getElementById('barra').style.width = (100 * n / FONTES.length) + '%';\n    if (n === FONTES.length && !concluido) {\n      concluido = true;\n      document.getElementById('final').textContent = 'Tudo classificado. No curso, só entra verde — e o Kit LGPD é todo verde.';\n      window.parent.postMessage({ type: 'complete' }, '*');\n    }\n  }\n  placar();\n</script>\n\n</body>\n</html>\n"
+              }
+            ]
+          },
+          {
+            "id": "514281ac-e553-4e74-8424-818015d1ec77",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "75cae0a8-3c5e-4fa2-bc98-2bc0c620783b",
+                "type": "MULTIPLE_RESPONSE",
+                "title": "Três documentos chegaram para o seu notebook: (1) um guia oficial da ANPD publicado no site do governo; (2) um plano de ensino interno, sem dados pessoais; (3) um relatório com nomes e notas de alunos. Quais cores do semáforo aparecem nesse conjunto? Marque todas.",
+                "answers": [
+                  {
+                    "id": "ff2310c3-8a62-4df8-916f-d8e20af9a20e",
+                    "title": "A) Verde",
+                    "correct": true
+                  },
+                  {
+                    "id": "2a653aa9-92a6-4f31-81b2-4ca886e0cf57",
+                    "title": "B) Amarelo",
+                    "correct": true
+                  },
+                  {
+                    "id": "1ee0d217-4685-423c-94d7-5d9882193158",
+                    "title": "C) Vermelho",
+                    "correct": true
+                  },
+                  {
+                    "id": "51fcd07b-4390-46cc-890d-986ed5275058",
+                    "title": "D) Nenhuma das anteriores",
+                    "correct": false
+                  }
+                ],
+                "correct": "A) Verde",
+                "corrects": [
+                  "A) Verde",
+                  "B) Amarelo",
+                  "C) Vermelho"
+                ],
+                "feedbackType": "CORRECT_INCORRECT",
+                "feedbackCorrect": "Parabéns! Você classificou corretamente cada situação de acordo com os critérios do semáforo: documentos públicos (Verde), documentos internos sem dados pessoais (Amarelo) e documentos com dados pessoais (Vermelho).",
+                "feedbackIncorrect": "Revise os critérios do semáforo: documentos públicos são Verde, documentos internos sem dados pessoais são Amarelo, e documentos com dados pessoais são Vermelho."
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple response",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "fa7221db-1fbb-430c-868b-530c49513b95"
+          },
+          {
+            "id": "lgj9tvfsrff1czvblqus9xs8",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "kmuml6t0cua7nqym462apnho",
+                "heading": "Kit LGPD: os quatro documentos",
+                "paragraph": "<p>São quatro documentos públicos e oficiais — tudo verde. As fontes 1 e 4 entram como link; as 2 e 3 você baixa e envia como arquivo:</p><ul><li><strong>Fonte 1 — Lei nº 13.709/2018, LGPD (Planalto).</strong> Link: <a href=\"https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm\" target=\"_blank\">https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm</a></li><li><strong>Fonte 2 — Guia ANPD: Segurança da Informação para Agentes de Pequeno Porte (21 p.).</strong> Baixar PDF e enviar: <a href=\"https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-vf.pdf/@@download/file\" target=\"_blank\">baixar o guia de segurança</a></li><li><strong>Fonte 3 — Guia ANPD: Tratamento de dados pessoais para fins acadêmicos (58 p.).</strong> Baixar PDF e enviar: <a href=\"https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/web-guia-anpd-tratamento-de-dados-para-fins-academicos.pdf/@@display-file/file\" target=\"_blank\">baixar o guia para fins acadêmicos</a></li><li><strong>Fonte 4 — ANPD: Titular de Dados.</strong> Link: <a href=\"https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados\" target=\"_blank\">https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados</a></li></ul>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "7ec1a81e-4405-4430-a71e-c69e5b0159b2"
+          },
+          {
+            "id": "jk8vg2m72zpgo4h2tfgqq0d3",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "yp0867vnhihcepy9uqk23afg",
+                "paragraph": "<p>Antes de começar, deixe aberto:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "e1517e2f-c117-4242-be98-a765167933c6"
+          },
+          {
+            "id": "hmb8wzo8nzubljj07tpoziwz",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "ndhen6y9qpl6dvuhqkhqhpne",
+                "number": "1",
+                "paragraph": "<p>Um computador com internet (o celular serve só para ouvir o áudio no fim).</p>"
+              },
+              {
+                "id": "tkuj9ubuv1t2vbej5xuyvnbh",
+                "number": "2",
+                "paragraph": "<p>O navegador em <strong>notebook.google.com</strong>, já com sua Conta Google — confira a conta ativa no avatar, no canto superior direito.</p>"
+              },
+              {
+                "id": "jx9gh5bebhdeemfm595k2z12",
+                "number": "3",
+                "paragraph": "<p>Uma pasta no computador para baixar os dois PDFs.</p>"
+              },
+              {
+                "id": "shccovsev36pdjm790ybfaqx",
+                "number": "4",
+                "paragraph": "<p>Os quatro endereços do Kit LGPD, logo acima.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "c3f36429-630b-4833-923e-087b0fa9af7a"
+          },
+          {
+            "id": "a3332688-4678-46d7-b33c-cd271f2dd127",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "f259fb4a-eccd-40c9-8c36-dc9d9160a9eb",
+                "paragraph": "<p>🔑 <strong>Regra de ouro:</strong> a citação mostra de onde a resposta veio, não prova que ela está certa. Clicou, leu, comparou — só então use.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "2aec5f59-dfa2-4543-b9de-dbd5abd2509f"
+          },
+          {
+            "id": "ashlj1cjxfjlanhtd61fexu7",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "jlurydrxpm6ysmxgt7doany7",
+                "heading": "Mão na massa: monte o notebook",
+                "paragraph": "<p>Antes do primeiro passo, confira se em notebook.google.com aparece o botão \"Criar novo notebook\" (não clique ainda). Se a tela disser que o serviço não está disponível e você usa conta da escola ou da empresa, é o administrador que precisa liberar. Enquanto isso, use uma conta pessoal — o curso só usa documentos públicos.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "26b4b31b-a8b0-49a1-958b-9b386ac3d860"
+          },
+          {
+            "id": "6e90c721-0739-4aab-b1de-124ddb067dfa",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "79052c1b-1dfd-4760-b9d4-8a3645ad4f06",
+                "type": "intro",
+                "title": "Oficina 1 — Junte tudo num notebook (20 min)",
+                "isHidden": false,
+                "description": "<p>Quatro fontes, dois caminhos de entrada (arquivo e link) e uma conferência no fim. Deixe o Kit LGPD aberto ao lado.</p>"
+              },
+              {
+                "id": "38ed7a41-b517-4c6e-929f-36957426f4f1",
+                "type": "summary",
+                "title": "Pequena vitória",
+                "isHidden": false,
+                "description": "<p>Seu notebook \"LGPD — revisão\" está montado e conferido. É ele que você vai usar em todas as próximas oficinas.</p>"
+              },
+              {
+                "id": "6405d07c-365a-47df-9d98-6158c89b228f",
+                "type": "step",
+                "title": "Baixe e confira os PDFs",
+                "isHidden": false,
+                "description": "<p>Baixe os PDFs 2 e 3 do Kit LGPD. Abra cada um: o guia de segurança tem 21 páginas; o de fins acadêmicos, 58. Se abrir uma página de site, o download falhou — use o link de novo.</p>"
+              },
+              {
+                "id": "ac5c4c4f-6af4-4035-b824-b0950e41a832",
+                "type": "step",
+                "title": "Crie o notebook",
+                "isHidden": false,
+                "description": "<p>Vá a <strong>notebook.google.com &gt; Criar novo notebook</strong>.</p>"
+              },
+              {
+                "id": "13edfbcf-59a8-4ba4-9e1f-dfada3c701d0",
+                "type": "step",
+                "title": "Envie o primeiro PDF",
+                "isHidden": false,
+                "description": "<p>Na janela que abre (\"Fazer upload de uma fonte\"), escolha enviar arquivo do computador e selecione o guia de segurança (PDF 2).</p>"
+              },
+              {
+                "id": "03e3ed7f-ec83-4348-a0ff-e4bd8edc29f2",
+                "type": "step",
+                "title": "Adicione o primeiro link",
+                "isHidden": false,
+                "description": "<p>Em <strong>Fontes &gt; adicionar fonte &gt; site/link</strong>, cole o endereço da LGPD. Espere as duas fontes aparecerem no painel Fontes, cada uma com a caixinha marcada.</p>"
+              },
+              {
+                "id": "347bc315-4d2e-44bf-a431-635b2712e974",
+                "type": "step",
+                "title": "Agora sozinho",
+                "isHidden": false,
+                "description": "<p>Adicione o PDF 3 (fins acadêmicos) e o link da página \"Titular de Dados\", pelo mesmo caminho. Depois clique no título do notebook, no topo, e renomeie para \"LGPD — revisão\".</p>"
+              },
+              {
+                "id": "dea129d0-bfed-4af3-9937-462006f21f8d",
+                "type": "step",
+                "title": "Confira o que a ferramenta leu",
+                "isHidden": false,
+                "description": "<p>Em Conversa, cole e envie: <em>Liste as fontes deste notebook. Para cada uma, informe título, tipo de documento, órgão responsável e, em uma frase, o tema central. Inclua uma citação por fonte.</em></p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "6746255f-8612-46a8-83f3-6d3c9cca8f4e"
+          },
+          {
+            "id": "3df72e11-6aa9-4115-a680-b94940f1befc",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "45fe2caf-397c-4fb9-b9ed-3349be91d18f",
+                "paragraph": "<p>🤓 <strong>Curiosidade técnica:</strong> quando você cola o link de um site, a ferramenta copia só o texto daquela página. Imagens, vídeos e páginas ligadas a ela ficam de fora — e conteúdo de assinatura (paywall) não entra.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "d127141c-b729-491b-b8af-2483ec9bdcc1"
+          },
+          {
+            "id": "69b4bbd7-3a0c-4eec-9fa5-96158c002091",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "f64ab1ad-03c6-406d-bb6e-a1bbc9ce740c",
+                "type": "MULTIPLE_RESPONSE",
+                "title": "Você colou o link de uma página como fonte. O que fica de fora do notebook? Marque todas.",
+                "answers": [
+                  {
+                    "id": "46f4fbae-ba68-4a10-b094-a4a4cc830433",
+                    "title": "Texto da página",
+                    "correct": false
+                  },
+                  {
+                    "id": "2b6f5a28-5009-4a1c-829a-ba59ff79e77b",
+                    "title": "Imagens da página",
+                    "correct": true
+                  },
+                  {
+                    "id": "d0474515-4d75-4841-b165-23f0c0b590f9",
+                    "title": "Vídeos incorporados",
+                    "correct": true
+                  },
+                  {
+                    "id": "0f302098-f43c-400c-8257-3110d29b8a4a",
+                    "title": "Conteúdo protegido por assinatura",
+                    "correct": true
+                  }
+                ],
+                "correct": "Imagens da página",
+                "corrects": [
+                  "Imagens da página",
+                  "Vídeos incorporados",
+                  "Conteúdo protegido por assinatura"
+                ],
+                "feedbackType": "CORRECT_INCORRECT",
+                "feedbackCorrect": "Você acertou! Imagens, vídeos incorporados e conteúdo protegido por assinatura não são importados ao adicionar um link como fonte.",
+                "feedbackIncorrect": "Resposta incorreta. Apenas o texto da página é importado; imagens, vídeos incorporados e conteúdo protegido por assinatura não são importados."
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple response",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "7d429a33-7081-40cb-89a8-455fcd4b4765"
+          },
+          {
+            "id": "tst3649kb8ry0tutd931dved",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ow1dx33i206cdyaf6qvg651w",
+                "heading": "Deu certo?",
+                "paragraph": "<p>Confira o resultado antes de seguir. Se algo travou, a causa quase sempre é uma das três abaixo.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "a71cbe0b-32c7-4e59-8c2c-eccb2d31c180"
+          },
+          {
+            "id": "xl6xmaz4688qlczln3q2pb42",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "i81bstkme8t0soeicjdviqd8",
+                "heading": "Se travar",
+                "paragraph": "<p>Abra o problema que apareceu para você:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "329f7b06-f3dd-4e32-a2fb-90b7a6f0531c"
+          },
+          {
+            "id": "fee58519-4982-40d9-b7a7-59b270a26752",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "fa3175c1-ae7b-4c63-a652-3ba271510352",
+                "title": "O \"PDF\" baixado abre como site",
+                "description": "<p>Era a página do portal, não o arquivo. Use o link direto do Kit LGPD e confira o número de páginas: 21 no guia de segurança, 58 no de fins acadêmicos.</p>"
+              },
+              {
+                "id": "cf3764d3-856f-4553-86e3-e576cb193f54",
+                "title": "O PDF não sobe",
+                "description": "<p>Veja se o arquivo passa de 200 MB ou é protegido contra cópia.</p><p></p><p>Se for escaneado (só imagem), passe por um OCR autorizado ou procure outra versão: sem texto selecionável, a ferramenta não tem o que ler.</p>"
+              },
+              {
+                "id": "51bbd870-904b-49ab-b923-458137d15b3e",
+                "title": "O link entrou pela metade",
+                "description": "<p>É normal: só o texto daquela página entra.</p><p></p><p>Se o conteúdo de que você precisa está em outras páginas, importe cada uma separadamente.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "62a5d113-6cca-49fa-b967-d917dadf4e77"
+          },
+          {
+            "id": "1ef86dd3-3b21-4c91-9e05-65f0c87510c0",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "9fa578dc-4fd3-4332-8c43-d6e9103ed6af",
+                "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> em notebook.google.com &gt; LGPD — revisão &gt; Fontes, quatro fontes aparecem com caixas marcadas, e a resposta da Conversa lista as quatro, cada uma com um número de citação que abre o documento certo.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "a347cf6d-e347-47be-9aef-8393e826cec4"
+          },
+          {
+            "id": "bb4da51d-2db1-4192-882e-faff0be6bfab",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "1ef12562-4f84-40d1-8895-e8b32c10212d",
+                "type": "MULTIPLE_RESPONSE",
+                "title": "Quais sinais mostram que a Oficina 1 deu certo? Marque todas.",
+                "answers": [
+                  {
+                    "id": "0f272a80-35c4-4ddb-8d2e-365de09b537a",
+                    "title": "Todas as fontes aparecem com caixas marcadas",
+                    "correct": true
+                  },
+                  {
+                    "id": "86b91e75-6df5-4221-9646-b9587b0e2269",
+                    "title": "O notebook está nomeado de acordo com o tema",
+                    "correct": true
+                  },
+                  {
+                    "id": "6ae743a5-dc2a-48d1-8434-6296bb5ab4b6",
+                    "title": "A resposta da Conversa lista as quatro fontes com citações",
+                    "correct": true
+                  },
+                  {
+                    "id": "97be7f88-b21e-4e04-bf7c-c1ad30e49dbc",
+                    "title": "Apenas PDFs foram adicionados",
+                    "correct": false
+                  },
+                  {
+                    "id": "08fd404e-af2b-4154-a323-46862ccbdc6c",
+                    "title": "Os links abrem os documentos corretos",
+                    "correct": true
+                  }
+                ],
+                "correct": "Todas as fontes aparecem com caixas marcadas",
+                "corrects": [
+                  "Todas as fontes aparecem com caixas marcadas",
+                  "O notebook está nomeado de acordo com o tema",
+                  "A resposta da Conversa lista as quatro fontes com citações",
+                  "Os links abrem os documentos corretos"
+                ],
+                "feedbackType": "CORRECT_INCORRECT",
+                "feedbackCorrect": "Parabéns! Você selecionou todas as condições corretas que confirmam o upload e organização adequados das fontes.",
+                "feedbackIncorrect": "Algumas opções selecionadas estão incorretas. Lembre-se de que links também são fontes válidas, e todas as condições corretas devem ser marcadas."
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple response",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "c0ad7bc6-c217-427a-b590-a2ea82b53977"
+          },
+          {
+            "id": "cc9c5a3a-74a1-4553-a587-4bc2fbd3917e",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "7a1bebf7-33a1-4800-bc48-58a72f6048f7",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "2e53306b-3541-495b-8f75-0f839b8012cf"
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "heading paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "afjwm4isft2kfyfypjpdwx60",
+            "globalBlockId": "4f671cfd-9a31-45b5-8e0f-ee713461c28a",
+            "items": [
+              {
+                "id": "i4tmzfcaj270mpekb2etvpdg",
+                "heading": "Quer ir além? (opcional)",
+                "paragraph": "<p>Desafios para quem terminou e quer mais. Nenhum é obrigatório. Abra cada um:</p>"
+              }
+            ]
+          },
+          {
+            "type": "interactive",
+            "family": "interactive",
+            "variant": "accordion",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "1fccb193-3e6c-4e32-86e3-a70f6ebc36a1",
+            "globalBlockId": "9712330e-0f07-48e5-a6be-c88edb8e92ae",
+            "items": [
+              {
+                "id": "df7bbca7-e4aa-492d-aaec-9f68d738ce7a",
+                "title": "Desafio 1 — Um vídeo do YouTube",
+                "description": "<p>Adicione um vídeo público do YouTube <strong>com legenda</strong> sobre LGPD.</p><p></p><p><strong>Validação:</strong> ele aparece em Fontes. Se for recusado, confira a legenda e se tem mais de 72 horas.</p>"
+              },
+              {
+                "id": "9ea27b4a-084d-4a04-afd8-42537eda595c",
+                "title": "Desafio 2 — A busca interna de fontes",
+                "description": "<p>Teste a busca interna de fontes (\"Pesquisa Rápida\") descrevendo \"direitos do titular LGPD\".</p><p></p><p><strong>Validação:</strong> aparecem sugestões — e você <strong>não</strong> importa nenhuma sem checar autoria e data.</p>"
+              },
+              {
+                "id": "fdaec54f-80db-4522-be49-947cfd9e8074",
+                "title": "Desafio 3 — O resumo automático da fonte",
+                "description": "<p>Abra uma fonte e leia o resumo automático que a ferramenta fez dela.</p><p></p><p><strong>Validação:</strong> você aponta uma informação do resumo e acha a mesma no documento.</p>"
+              }
+            ]
+          },
+          {
+            "id": "n5o118v0vm0yxwpkd2mshu08",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "lqengbde2uli2nz89wgzf9nz",
+                "paragraph": "<p>Próximo passo: com o notebook montado, você vai fazer perguntas de verdade e conferir cada resposta trecho por trecho — e depois pedir ao Estúdio um guia, um resumo e um teste.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "2c13c5cf-f6b7-498f-b112-92babf21659f"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Selecionando e Organizando Documentos Públicos no NotebookLM",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "6Vtgzgg_6zp3GfBDoawlc6q2PA0WPOlZ",
+        "createdAt": "2026-10-17T22:03:41.210Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 0,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-10-17T22:04:08.048Z"
+      },
+      {
+        "description": "",
+        "id": "ca3fcec6-41d1-4465-b157-915dc2018b54",
+        "items": [
+          {
+            "id": "n1k56dbtjcv7v3ys964ep7xe",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "jqadsjl7ei3s4pc5ccq2x4pg",
+                "heading": "Conferindo Respostas e Criando Conteúdos com IA",
+                "paragraph": "<p>Agora você é advogada, e um cliente perguntou por mensagem qual a diferença entre dado pessoal, dado sensível e dado anonimizado. Você quer responder rápido — mas não pode errar. Na primeira parte desta lição, você pergunta à ferramenta e confere a resposta trecho por trecho.</p><p>Na segunda, você vira professor: precisa, para amanhã, de um resumo, um guia de estudo e um teste rápido sobre LGPD para a turma, sem reler 80 páginas. O Estúdio faz o rascunho — e você revisa.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "325a6cdc-a957-4d41-a008-e6217dd692c5"
+          },
+          {
+            "id": "q28hckqv94btwoxl1vxw1o40",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "qlwswpn9ztaza6tmktq3jjg3",
+                "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "7f2f6d07-00cf-4b42-9db2-0a34531cbef1"
+          },
+          {
+            "id": "iu7q4itcesfr8k14khv3fufh",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "tbzk28qwktn101q3at374hhs",
+                "number": "1",
+                "paragraph": "<p>Fazer uma pergunta que peça definição, exemplo e citação.</p>"
+              },
+              {
+                "id": "vng3n1mpzycgf4i3g1gmv9el",
+                "number": "2",
+                "paragraph": "<p>Abrir citações e conferir se a frase bate com o trecho.</p>"
+              },
+              {
+                "id": "if9d3p4ia7mw28epv53u57f5",
+                "number": "3",
+                "paragraph": "<p>Separar o que está na fonte do que a ferramenta resumiu ou interpretou.</p>"
+              },
+              {
+                "id": "bxk5gh7o5h0lry7ycgj36zum",
+                "number": "4",
+                "paragraph": "<p>Gerar guia de estudo, documento de resumo e teste no Estúdio.</p>"
+              },
+              {
+                "id": "v3hem2gae4uz8p4er5zkqv3v",
+                "number": "5",
+                "paragraph": "<p>Revisar um item de cada artefato contra a fonte antes de usar.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "34fdd948-802f-45a9-b560-707504ccb43d"
+          },
+          {
+            "id": "v8rn4qihine2o41ui146kx7d",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "gpkdoszfu2fzw7ugns50plia",
+                "heading": "Oficina 2 — Pergunte e confira a citação",
+                "paragraph": "<p>Você vai usar o notebook \"LGPD — revisão\" e um bloco de notas (papel ou arquivo) para a ficha de conferência. Primeiro, veja o que faz uma pergunta ser fácil de conferir.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "db8f7c63-4878-44b0-822f-435db18b850e"
+          },
+          {
+            "id": "sa51nd05lwjn0hw8w7up4u18",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "rk3zfa3tn6kl1lpe9shsusd4",
+                "heading": "O que pedir na pergunta",
+                "paragraph": "<p>Clique em cada cartão para ver por que cada pedido ajuda na conferência:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "7176c5fc-e701-4a80-8518-133ab72d6737"
+          },
+          {
+            "id": "n4wxu61xeq6zwoywju6j6drh",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "z4ctzloahw0p0vk9gm3tg8nr",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Uma definição clara é fácil de comparar com o texto da lei — e mostra na hora se a ferramenta acrescentou ou cortou algo.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Peça a definição</p>"
+                }
+              },
+              {
+                "id": "z1aq3u9bxcqsyaen735sml7a",
+                "back": {
+                  "type": "description",
+                  "description": "<p>O exemplo deixa a resposta compreensível para o cliente e revela se o conceito foi bem entendido.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Peça um exemplo</p>"
+                }
+              },
+              {
+                "id": "a48nxyql6o0nbwt10bb80nai",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Com o trecho citado, você clica e lê o original. Sem ele, não há o que conferir.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Peça a citação do trecho</p>"
+                }
+              }
+            ],
+            "family": "flashcard",
+            "variant": "flashcard",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "85a5a098-77dd-419a-b8b8-a47cae4b3c52"
+          },
+          {
+            "id": "617c3f4c-3b51-4da3-aa8b-84d1d5df4dac",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "dc51e006-7e56-483d-8151-ce99b80975d4",
+                "type": "intro",
+                "title": "Oficina 2 — Pergunte e confira (20 min)",
+                "isHidden": false,
+                "description": "<p>Uma pergunta, três citações conferidas, uma comparação com fonte única e uma nota salva.</p>"
+              },
+              {
+                "id": "a544fa81-74a7-4f10-a3ae-949210673890",
+                "type": "summary",
+                "title": "Pequena vitória",
+                "isHidden": false,
+                "description": "<p>🏁 Você tem uma ficha com três citações conferidas e uma diferença anotada; em notebook.google.com &gt; LGPD — revisão, a nota salva aparece com as citações clicáveis.</p>"
+              },
+              {
+                "id": "c05e4952-15fa-46ec-816e-bacea72d3050",
+                "type": "step",
+                "title": "Abra o notebook",
+                "isHidden": false,
+                "description": "<p>Em notebook.google.com, abra o \"LGPD — revisão\" e confira se as quatro fontes estão marcadas.</p>"
+              },
+              {
+                "id": "287eab39-6698-4395-afe8-f951cc2eb94e",
+                "type": "step",
+                "title": "Envie a pergunta",
+                "isHidden": false,
+                "description": "<p>Em <strong>Conversa</strong>, cole e envie: <em>Compare dado pessoal, dado pessoal sensível e dado anonimizado. Para cada conceito, apresente a definição legal, um exemplo e a citação do trecho da lei. Explique para iniciantes. Se as fontes divergirem, mostre as versões separadamente.</em></p>"
+              },
+              {
+                "id": "49e32e44-7767-4a98-a7d1-aee14d72e7ff",
+                "type": "step",
+                "title": "Passe o cursor e clique",
+                "isHidden": false,
+                "description": "<p>Passe o cursor sobre o primeiro número de citação e leia o trecho que aparece. Depois clique: a fonte abre no ponto exato. A frase da resposta diz o mesmo que o trecho? Diz mais? Diz menos?</p>"
+              },
+              {
+                "id": "b4308dff-813d-409a-a77a-c9a4d49d47a9",
+                "type": "step",
+                "title": "Agora sozinho: a ficha",
+                "isHidden": false,
+                "description": "<p>Abra mais duas citações e preencha uma linha da ficha para cada uma:</p><p>Citação nº | Frase gerada | Trecho original | Bate? (total / parcial / não)</p>"
+              },
+              {
+                "id": "c623b6c3-3022-47d3-b2ed-8f72db554fa4",
+                "type": "step",
+                "title": "Pergunte com uma fonte só",
+                "isHidden": false,
+                "description": "<p>Em Fontes, desmarque tudo menos a LGPD e reenvie a mesma pergunta. Anote uma diferença entre as duas respostas.</p>"
+              },
+              {
+                "id": "d7cd88a9-2e22-4889-99db-1f62e4815aed",
+                "type": "step",
+                "title": "Salve a melhor resposta",
+                "isHidden": false,
+                "description": "<p>Salve a melhor resposta em <strong>Conversa &gt; [resposta] &gt; Save to note</strong>. O rótulo pode aparecer traduzido na sua tela.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "41dc57a5-b1b1-45ad-be9d-252c2ba842af"
+          },
+          {
+            "id": "9c9bcc2c-660d-40b3-9e1a-dc0e44334b12",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "b56621ba-1c02-4c54-a31c-d41f6539cd54",
+                "paragraph": "<p>💡 <strong>Dica:</strong> peça sempre \"se não estiver nas fontes, escreva 'não encontrado nas fontes'\". Assim a ferramenta não tapa buraco com conhecimento geral.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "ef5b0cab-c974-4ef5-ae61-6ab09d9ba875"
+          },
+          {
+            "id": "cz2p7e2r8ujhmg1f3vzvoeuf",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "a1tghzw00lhm209ggtu8il1v",
+                "heading": "Conferir de verdade — e o que fazer se travar",
+                "paragraph": "<p>Abra cada item para ver como comparar e o que fazer quando a resposta não colabora:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "678d8cc3-bbc3-42d9-a8b9-2a4b82741abe"
+          },
+          {
+            "id": "952fee78-7418-4e95-9296-0ce61cf73247",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "4a0c8a4f-3a0c-4c27-9057-107d84ed3769",
+                "title": "Como comparar frase e fonte",
+                "description": "<p>Leia a frase gerada e o trecho original lado a lado. Dizem a mesma coisa? A frase acrescenta algo, corta uma ressalva ou generaliza?</p><p></p><p>Marque na ficha: <strong>total</strong> (o trecho sustenta a frase inteira), <strong>parcial</strong> (sustenta só uma parte) ou <strong>não</strong> (o trecho não sustenta a frase).</p>"
+              },
+              {
+                "id": "895f3307-a942-4a67-b862-5d22b4e90daf",
+                "title": "Não aparece citação específica",
+                "description": "<p>A pergunta está ampla demais ou o trecho é curto demais. Faça uma pergunta mais precisa.</p><p></p><p>Se a resposta veio errada mas a fonte está certa, marque menos fontes, peça uma citação por frase e reformule de forma mais específica.</p>"
+              },
+              {
+                "id": "1f9e323a-c49e-47af-b7c5-c039ca71c9a3",
+                "title": "Evidência ou opinião?",
+                "description": "<p>Evidência é o que está no trecho citado. Resumo e interpretação são o que a ferramenta fez com ele. Para separar, peça nesta ordem: primeiro extrair o que cada fonte diz, depois comparar, por último interpretar.</p><p></p><p>E peça \"não encontrado nas fontes\" para o que não estiver lá.</p>"
+              },
+              {
+                "id": "fb3bdc9d-5980-446e-9924-a791f06716c5",
+                "title": "\"Não consigo responder\"",
+                "description": "<p>Diga qual fonte, qual recorte e qual formato você quer.</p><p></p><p>Se a informação não existe nas fontes, falta fonte: adicione uma que trate do assunto.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "f3a0d888-b155-4735-9cd6-505e3d0929cb"
+          },
+          {
+            "type": "html",
+            "family": "html",
+            "variant": "inline",
+            "settings": {
+              "autoResize": true,
+              "hasCustomCompletion": true,
+              "height": 40,
+              "width": "1"
+            },
+            "metadata": {},
+            "id": "8e3cfd88-dc95-4d82-a9e9-ba4dc93d6545",
+            "globalBlockId": "b24e9f12-2576-49fc-a8a3-3bd2e5b47178",
+            "items": [
+              {
+                "id": "b738caa8-278f-4582-a4db-6a3c2cf4fbb8",
+                "srcdoc": "<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Audite esta citação</title>\n<style>\n  :root {\n    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;\n    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;\n    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;\n    --aviso: #8a5a00; --aviso-claro: #fdf3e1;\n    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;\n  }\n  * { box-sizing: border-box; }\n  html, body { margin: 0; padding: 0; background: transparent; }\n  body { font-family: \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }\n  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }\n  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }\n  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }\n  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }\n  .sub { margin: 0 0 18px; color: var(--suave); }\n  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }\n  button { font: inherit; }\n  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }\n  .btn:hover { background: var(--azul-claro); }\n  .btn[aria-pressed=\"true\"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }\n  .btn:disabled { opacity: .45; cursor: default; }\n  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }\n  .btn.principal:hover { background: var(--azul-2); }\n  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }\n  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }\n  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }\n  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }\n  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }\n  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }\n  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }\n  .feedback:empty { display: none; }\n  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }\n  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }\n  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }\n  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }\n  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }\n  .final:empty { display: none; }\n  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }\n  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }\n  .saida { white-space: pre-wrap; font-family: Consolas, \"Courier New\", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }\n  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }\n\n</style>\n</head>\n<body>\n<style>\n  .par { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 10px; }\n  .lado { border-radius: 12px; padding: 10px 12px; font-size: 14px; }\n  .lado small { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; color: var(--suave); }\n  .gerada { background: var(--azul-claro); }\n  .original { background: var(--areia); border-left: 4px solid var(--azul-2); }\n  .caso { margin-bottom: 12px; }\n  .caso h2 { font-size: 14px; }\n  .placar { font-weight: 700; color: var(--azul); margin: 0; }\n</style>\n<section class=\"card\" aria-labelledby=\"t\">\n  <span class=\"rotulo\">Atividade</span>\n  <h1 id=\"t\">Audite esta citação</h1>\n  <p class=\"sub\">Compare a frase gerada com o trecho que a citação abre e marque na ficha se bate: total, parcial ou não.</p>\n  <p class=\"placar\" id=\"placar\" aria-live=\"polite\"></p>\n  <div class=\"barra\" aria-hidden=\"true\"><span id=\"barra\"></span></div>\n  <div id=\"casos\"></div>\n  <p class=\"nota\">Trechos da Lei nº 13.709/2018 (texto compilado do Planalto). As frases geradas são exemplos criados para o exercício.</p>\n  <div class=\"final\" id=\"final\" role=\"status\" aria-live=\"polite\"></div>\n</section>\n\n<script>\n  // Ficha 'Bate? (total / parcial / não)': Oficina 2 do roteiro Hands-on. Trechos: LGPD, art. 5º, I e II, e art. 11, caput.\n  var CASOS = [\n    { gerada: 'Dado pessoal é a informação relacionada a pessoa natural identificada ou identificável.',\n      ref: 'Art. 5º, I', original: 'dado pessoal: informação relacionada a pessoa natural identificada ou identificável;',\n      resp: 'total', explica: 'O trecho sustenta a frase inteira, sem acréscimo nem omissão.' },\n    { gerada: 'Dado pessoal sensível é aquele sobre a saúde ou a religião de uma pessoa.',\n      ref: 'Art. 5º, II', original: 'dado pessoal sensível: dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural;',\n      resp: 'parcial', explica: 'Saúde e religião estão no trecho, mas a frase reduz a definição a dois exemplos e omite as demais categorias e a condição \"quando vinculado a uma pessoa natural\".' },\n    { gerada: 'A LGPD proíbe o tratamento de dados pessoais sensíveis.',\n      ref: 'Art. 11, caput', original: 'O tratamento de dados pessoais sensíveis somente poderá ocorrer nas seguintes hipóteses:',\n      resp: 'não', explica: 'O trecho não sustenta a frase: ele estabelece hipóteses em que o tratamento pode ocorrer. A citação existe, mas a afirmação não pode ser usada.' }\n  ];\n  var DICA = {\n    total: 'O trecho sustenta mesmo a frase inteira? Procure algo que a frase acrescentou ou deixou de fora.',\n    parcial: 'Releia: o trecho sustenta parte da frase, ou diz outra coisa?',\n    'não': 'Há alguma parte da frase que o trecho sustenta?'\n  };\n  var certos = {}, concluido = false, caixa = document.getElementById('casos');\n\n  CASOS.forEach(function (c, i) {\n    var d = document.createElement('div'); d.className = 'item caso';\n    d.innerHTML = '<h2 id=\"c' + i + '\">Citação ' + (i + 1) + '</h2>';\n    var par = document.createElement('div'); par.className = 'par';\n    var a = document.createElement('div'); a.className = 'lado gerada';\n    a.innerHTML = '<small>Frase gerada</small>'; a.appendChild(document.createTextNode(c.gerada));\n    var b = document.createElement('div'); b.className = 'lado original';\n    b.innerHTML = '<small>Trecho original — ' + c.ref + '</small>'; b.appendChild(document.createTextNode('\"' + c.original + '\"'));\n    par.appendChild(a); par.appendChild(b);\n    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'c' + i);\n    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');\n    ['total', 'parcial', 'não'].forEach(function (op) {\n      var bt = document.createElement('button'); bt.type = 'button'; bt.className = 'btn';\n      bt.textContent = op.charAt(0).toUpperCase() + op.slice(1); bt.setAttribute('aria-pressed', 'false');\n      bt.addEventListener('click', function () {\n        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === bt ? 'true' : 'false'); });\n        if (op === c.resp) { certos[i] = true; d.className = 'item caso certo'; fb.textContent = 'Correto. ' + c.explica; fb.className = 'feedback ok'; }\n        else { delete certos[i]; d.className = 'item caso errado'; fb.textContent = 'Ainda não. ' + DICA[op]; fb.className = 'feedback erro'; }\n        atualizar();\n      });\n      g.appendChild(bt);\n    });\n    d.appendChild(par); d.appendChild(g); d.appendChild(fb); caixa.appendChild(d);\n  });\n\n  function atualizar() {\n    var n = Object.keys(certos).length;\n    document.getElementById('placar').textContent = n + ' de ' + CASOS.length + ' citações conferidas';\n    document.getElementById('barra').style.width = (100 * n / CASOS.length) + '%';\n    if (n === CASOS.length && !concluido) {\n      concluido = true;\n      document.getElementById('final').textContent = 'Ficha conferida. Uma citação real pode não sustentar a frase: clicou, leu, comparou — só então use. Você já pode continuar.';\n      window.parent.postMessage({ type: 'complete' }, '*');\n    }\n  }\n  atualizar();\n</script>\n\n</body>\n</html>\n"
+              }
+            ]
+          },
+          {
+            "type": "divider",
+            "family": "continue",
+            "variant": "continue",
+            "settings": {
+              "v": 2
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "e04a54fc-401e-4b9d-ae84-7349a8a4d433",
+            "globalBlockId": "994283cd-7475-448c-bf50-0f115d412b7b",
+            "items": [
+              {
+                "id": "2c0f47a1-6f8e-4023-bf86-095ee9c73a73",
+                "type": "completeBlock",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ]
+          },
+          {
+            "id": "298997e7-2c28-4527-800e-c16966199a00",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "3af9fec8-3e58-4a38-8d87-e9085d8fe6f5",
+                "type": "MULTIPLE_CHOICE",
+                "title": "A resposta da ferramenta veio sem citação específica para a frase que você quer mandar ao cliente. O que fazer primeiro?",
+                "answers": [
+                  {
+                    "id": "6eb8012a-5c2f-4c8c-9f67-3819849c110b",
+                    "title": "Reformular a pergunta pedindo citação por frase",
+                    "correct": true,
+                    "feedback": "Correto. Pedir uma citação por frase (e, se preciso, marcar menos fontes) devolve o caminho para conferir."
+                  },
+                  {
+                    "id": "556e0497-51e2-4575-b1cf-ca42feaab751",
+                    "title": "Aceitar a resposta como está",
+                    "correct": false,
+                    "feedback": "Não. Sem citação, você não tem como conferir o que vai mandar ao cliente."
+                  },
+                  {
+                    "id": "fbda9c39-c4d1-4d84-96b4-aeaddd252e02",
+                    "title": "Compartilhar a resposta imediatamente",
+                    "correct": false,
+                    "feedback": "Não. Resposta não conferida não vai para o cliente — nem para ninguém."
+                  },
+                  {
+                    "id": "396a12dc-0413-47f7-98ac-7b8c4a8542bd",
+                    "title": "Ignorar e tentar outra fonte",
+                    "correct": false,
+                    "feedback": "Não. Trocar de fonte pode ajudar depois; primeiro, ajuste a pergunta para obter a citação."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "1b6d4a0f-68e1-4fdf-b4ad-1152f7e94e0a"
+          },
+          {
+            "id": "w2csfpm8612y09neje8ynngy",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ibwso8jyhp671zvp3jkds8oc",
+                "heading": "Oficina 3 — Gere guia de estudo, resumo e teste",
+                "paragraph": "<p>O painel Estúdio cria rascunhos de material de estudo a partir das fontes. Rascunho: antes de entregar para a turma, você confere pelo menos um item de cada artefato.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "e6a881b2-904b-4d37-bd78-68d2c6c08bef"
+          },
+          {
+            "id": "57941b9b-828b-4cfa-b583-12f14c461d48",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "8a12f15d-76be-4094-b3bb-f5d644e3e8fb",
+                "type": "intro",
+                "title": "Oficina 3 — Guia, resumo e teste (20 min)",
+                "isHidden": false,
+                "description": "<p>Três artefatos do Estúdio e duas conferências: uma afirmação do guia e um gabarito do teste.</p>"
+              },
+              {
+                "id": "ac590966-e73d-4abf-8aa9-e045585a12a9",
+                "type": "summary",
+                "title": "Pequena vitória",
+                "isHidden": false,
+                "description": "<p>🏁 Em notebook.google.com &gt; LGPD — revisão &gt; Estúdio, aparecem o guia de estudo, o documento de resumo e o teste; você conferiu uma afirmação do guia e um gabarito do teste.</p>"
+              },
+              {
+                "id": "c3ec37ed-3ee8-4e2a-ba8f-a9b0c8f1f3a2",
+                "type": "step",
+                "title": "Abra os Relatórios",
+                "isHidden": false,
+                "description": "<p>Abra <strong>notebook.google.com &gt; LGPD — revisão &gt; Estúdio &gt; Relatórios</strong>. Repare nos modelos prontos: Documento de resumo, Guia de estudo, Perguntas frequentes.</p>"
+              },
+              {
+                "id": "940fbbaa-c1cd-4c56-9877-960b147d7adc",
+                "type": "step",
+                "title": "Gere guia, resumo e teste",
+                "isHidden": false,
+                "description": "<p>Em Estúdio &gt; Relatórios &gt; Guia de estudo, gere o guia. Em Estúdio &gt; Relatórios &gt; Documento de resumo, gere o documento — esse é o \"resumo\" do material. Agora sozinho: em Estúdio &gt; Teste &gt; Personalizar, escolha 5 questões e dificuldade média, e gere.</p>"
+              },
+              {
+                "id": "69f68acc-3a58-41b7-a91d-2eb4b6741149",
+                "type": "step",
+                "title": "Confira o guia e o teste",
+                "isHidden": false,
+                "description": "<p>Abra o guia, escolha uma afirmação e clique na citação dela para conferir na fonte. Depois responda o teste e, em uma questão, confira o gabarito na fonte citada.</p>"
+              },
+              {
+                "id": "21a316f7-aafd-40c3-a0c9-ee9dd0b52afe",
+                "type": "step",
+                "title": "Se travar",
+                "isHidden": false,
+                "description": "<p>Não acha \"Guia de estudo\"? Ele fica dentro de Relatórios. Procurou \"Linha do tempo\"? Não é botão fixo: peça em Relatórios com formato personalizado ou na Conversa. Apareceu aviso de limite? No gratuito são 10 relatórios e 10 testes por dia (consulta de 17/10/2026): espere a renovação e não regenere à toa.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "fb23a872-90c5-4469-a7cc-0f838e6d2331"
+          },
+          {
+            "id": "a9479eb3-8991-441d-a1fd-909d170a96bf",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "4019cb68-6ecf-4e18-b9ed-c824c35cd271",
+                "paragraph": "<p>⚠️ <strong>Cuidado:</strong> artefato também é síntese de IA. Antes de entregar para a turma, revise contra as fontes.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "4089bf0a-7d93-4dd5-8bd0-4a3744ba5fe8"
+          },
+          {
+            "id": "56189076-4fbc-4c16-90a8-8b11c8ab36e4",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "da194282-cc38-4c2b-8e0d-c843ae6a3048",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Você gerou no Estúdio um guia de estudo para a turma de amanhã. O que fazer antes de distribuir?",
+                "answers": [
+                  {
+                    "id": "88dfc360-d2c2-460d-9d61-b541454566c6",
+                    "title": "Revisar itens do guia contra as fontes citadas",
+                    "correct": true,
+                    "feedback": "Correto. O guia é síntese de IA: confira afirmações na fonte citada antes de entregar."
+                  },
+                  {
+                    "id": "6db1f83e-3fbc-473a-9838-25cd5447a62a",
+                    "title": "Compartilhar imediatamente",
+                    "correct": false,
+                    "feedback": "Não. Compartilhar sem revisar passa adiante qualquer erro da síntese."
+                  },
+                  {
+                    "id": "e4d9089b-d31c-47e1-9b2b-b13735401549",
+                    "title": "Confiar sem checar",
+                    "correct": false,
+                    "feedback": "Não. Artefato do Estúdio também pode errar; a citação é o caminho para conferir."
+                  },
+                  {
+                    "id": "928928e8-4005-4dee-a669-b91cce63ecc4",
+                    "title": "Usar como está",
+                    "correct": false,
+                    "feedback": "Não. Usar como está significa assinar algo que você não conferiu."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "d1fb5633-954e-4b5e-806a-4afc39c7232f"
+          },
+          {
+            "id": "1a894db2-29f5-4628-9512-0b1de0c9e500",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "0e806092-4cb5-4f00-bf40-1419fd14527c",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "72c37b7c-cc07-4093-9b22-bb187e63454e"
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "heading paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "srn5ttj03k6yt3o12189omy7",
+            "globalBlockId": "afcb383b-e548-4c2e-8622-7f4bc5e10be5",
+            "items": [
+              {
+                "id": "nzeli2wqiaokhnnkt6dnmp6v",
+                "heading": "Quer ir além? (opcional)",
+                "paragraph": "<p>Desafios para quem terminou e quer mais. Nenhum é obrigatório. Abra cada um:</p>"
+              }
+            ]
+          },
+          {
+            "type": "interactive",
+            "family": "interactive",
+            "variant": "accordion",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "60ce6feb-9c93-4f9d-a332-81554bb20786",
+            "globalBlockId": "0a16f055-213b-4caa-a7d7-5c5e8c840a14",
+            "items": [
+              {
+                "id": "099a0e40-83ec-4ce0-96db-5f40fb1cd947",
+                "title": "Oficina 2 — Seja testado pela ferramenta",
+                "description": "<p>Em <strong>Conversa &gt; Configure Chat &gt; Learning Guide</strong>, peça para ser testado sobre o assunto.</p><p></p><p><strong>Validação:</strong> a ferramenta faz uma pergunta por vez e dá pista antes do gabarito.</p>"
+              },
+              {
+                "id": "bb6bd5d4-e787-4c98-b777-123304be15e8",
+                "title": "Oficina 2 — Curta × longa",
+                "description": "<p>Peça uma resposta \"Shorter\" e outra \"Longer\" na mesma configuração.</p><p></p><p><strong>Validação:</strong> você aponta o que a curta cortou.</p>"
+              },
+              {
+                "id": "ee14ddaa-2b5a-4337-8939-4da7045634cf",
+                "title": "Oficina 2 — A nota como fonte",
+                "description": "<p>Use sua nota salva como fonte e pergunte algo sobre ela.</p><p></p><p><strong>Validação:</strong> a nova resposta cita a nota.</p>"
+              },
+              {
+                "id": "ac7dcb51-a25b-4e3b-8a1f-e613417546a6",
+                "title": "Oficina 3 — Cartões em CSV",
+                "description": "<p>Em <strong>Estúdio &gt; Cartões de estudo</strong>, gere 10 cartões e exporte em CSV.</p><p></p><p><strong>Validação:</strong> o arquivo CSV abre numa planilha.</p>"
+              },
+              {
+                "id": "5eaa9fff-e837-414a-8d5b-f3dc6da3800f",
+                "title": "Oficina 3 — Um formato próprio",
+                "description": "<p>Em <strong>Estúdio &gt; Relatórios</strong>, descreva um formato próprio: \"quadro com artigo, obrigação e exemplo\".</p><p></p><p><strong>Validação:</strong> o relatório sai em tabela, com citações.</p>"
+              },
+              {
+                "id": "cbad671b-ba22-4f4f-bb1f-2dcb8b1381ec",
+                "title": "Oficina 3 — Perguntas frequentes",
+                "description": "<p>Em <strong>Estúdio &gt; Relatórios &gt; Perguntas frequentes</strong>, gere e marque uma resposta que você reescreveria.</p><p></p><p><strong>Validação:</strong> você justifica com o trecho da fonte.</p>"
+              }
+            ]
+          },
+          {
+            "id": "zrhekzcykhq74sricb1xkxz1",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "q5kzjbnfs2bls11snkmi2xw0",
+                "paragraph": "<p>Próximo passo: ouvir suas fontes em áudio, montar um mapa mental e compartilhar o notebook do jeito seguro — e depois repetir tudo sozinho, num tema seu.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "f4ea11ac-c7d1-4981-bc75-61f41ca6b1af"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Conferindo Respostas e Criando Conteúdos com IA",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "6Vtgzgg_6zp3GfBDoawlc6q2PA0WPOlZ",
+        "createdAt": "2026-10-17T22:03:41.210Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 1,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-10-17T22:04:18.044Z"
+      },
+      {
+        "description": "",
+        "id": "5a4bfed4-a129-4dbd-88a3-bb337239420d",
+        "items": [
+          {
+            "id": "l5xqq3j6opi8qp5anmra0si1",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "b8kvq7hmbt0wazkas5mb3ktx",
+                "heading": "Compartilhando e Aplicando o Notebook Inteligente",
+                "paragraph": "<p>Agora você é jornalista: passa uma hora por dia no trânsito e precisa que uma colega da redação consulte o mesmo material sem bagunçar suas fontes. Nesta lição, você gera um áudio em português, monta um mapa mental e compartilha do jeito seguro. No fim, ficam os dez hábitos que deixam qualquer notebook confiável.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "ab707bc7-114e-43ff-ae6b-ff9c2ebabe56"
+          },
+          {
+            "id": "edugkcmqtx3ex3mcw862ih31",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "y8oiw3xnadmr5nav5nik76jr",
+                "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "97058812-83d1-4b89-9efa-71e19f649195"
+          },
+          {
+            "id": "ddh68qaamu33qzvv8lgyu6p9",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "hpclrtdsvhvsg515t09ag2nz",
+                "number": "1",
+                "paragraph": "<p>Escolher entre compartilhar por pessoa, por link ou só a conversa — sabendo o que cada um expõe.</p>"
+              },
+              {
+                "id": "jrn7vsazrp89boq96yf8kno8",
+                "number": "2",
+                "paragraph": "<p>Dar o papel de Leitor a quem só precisa consultar.</p>"
+              },
+              {
+                "id": "ozmu8do8ym5otcydjnp7l5mi",
+                "number": "3",
+                "paragraph": "<p>Gerar um Resumo em Áudio em português e um mapa mental a partir das fontes.</p>"
+              },
+              {
+                "id": "e9yutgjp5qjl5uhas4ffsam8",
+                "number": "4",
+                "paragraph": "<p>Adotar os dez hábitos que deixam o notebook confiável.</p>"
+              },
+              {
+                "id": "cwwjlqdglwxwpviq4ncgzesx",
+                "number": "5",
+                "paragraph": "<p>Repetir o fluxo sozinho, num tema do seu trabalho ou estudo.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "b861ac00-13bd-4c20-9fe5-34d1e855b16f"
+          },
+          {
+            "id": "kzph96g9k9fl1eb7r26jcnsa",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "fwa3qdlgcr29ykzmpzujoqqw",
+                "heading": "Compartilhar sem expor",
+                "paragraph": "<p>Compartilhar ajuda a colega a consultar o mesmo material — mas cada opção abre uma porta diferente. A regra é dar o mínimo de acesso a quem precisa: Leitor, por pessoa. E, antes de tudo, lembre do semáforo: fonte vermelha nem deveria estar no notebook.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "3178144a-48af-4b35-995b-3107cc91424d"
+          },
+          {
+            "id": "zn3hkqcfpe3atqrm61j7qd9e",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "p316lam73ytpxfa6uz7eksx3",
+                "heading": "Opções e cuidados ao compartilhar",
+                "paragraph": "<p>Abra cada item antes de clicar em Compartilhar:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "2902f2e0-231a-4dfa-aafc-425362d67858"
+          },
+          {
+            "id": "1adb483e-a39c-49e1-a63a-42d5508480fe",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "45ba74ad-db09-4426-8303-a3d29a8971c8",
+                "title": "Opções de compartilhamento",
+                "description": "<p><strong>Por pessoa:</strong> você digita o e-mail e escolhe o papel — é o jeito de controlar quem acessa. <strong>Por link:</strong> em conta pessoal, qualquer pessoa com Conta Google que tenha o link pode entrar. <strong>Só a conversa:</strong> esconde as fontes da tela, mas não tira o acesso a elas.</p><p></p><p>Para documento protegido, \"só a conversa\" não protege nada.</p>"
+              },
+              {
+                "id": "89c003e3-cbd3-4d6c-ac51-c3eca83db6b8",
+                "title": "Papéis de acesso",
+                "description": "<p><strong>Leitor</strong> lê e pergunta, mas não mexe nas fontes. <strong>Editor</strong> pode adicionar e remover fontes e compartilhar.</p><p></p><p>Para quem só vai consultar, Leitor.</p>"
+              },
+              {
+                "id": "ba67a392-c185-4511-af80-1ab6372f4f2d",
+                "title": "Riscos e limitações",
+                "description": "<p>Link aberto e \"só a conversa\" não protegem fonte sensível. E, em conta pessoal, o \"joinha\" de feedback pode enviar suas fontes ao Google.</p><p></p><p>Se houver material vermelho no notebook, nenhuma opção de compartilhamento resolve: ele não deveria ter subido.</p>"
+              },
+              {
+                "id": "de0a6461-3fff-4840-85e7-3892c7529a34",
+                "title": "Dicas para decidir compartilhar",
+                "description": "<p>Antes de enviar, responda: com quem, em qual papel e por quê. Se não houver motivo para compartilhar, não compartilhe — \"não compartilhar\" também é uma decisão válida.</p><p></p><p>Anote a decisão: ela faz parte do ponto de controle da oficina.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "77b45882-cff5-4dba-8f31-1fe848acfaf1"
+          },
+          {
+            "id": "c0721a42-6b88-4d9c-9193-6e9ad208be06",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "0e58df8b-a3bc-49ed-85fc-74bf6de3ddfb",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Uma colega da redação vai consultar o seu notebook e fazer perguntas, mas não deve mexer nas fontes. Qual papel você escolhe?",
+                "answers": [
+                  {
+                    "id": "758a43ab-c17a-45ff-8869-6c6e7b3b5bcc",
+                    "title": "Editor",
+                    "correct": false,
+                    "feedback": "Não. Editor pode adicionar e remover fontes — justamente o que você quer evitar."
+                  },
+                  {
+                    "id": "cb55118c-34a0-409c-bbe5-af39364a4a60",
+                    "title": "Leitor",
+                    "correct": true,
+                    "feedback": "Correto. Leitor lê e pergunta, mas não mexe nas fontes. Compartilhe por pessoa, digitando o e-mail dela."
+                  },
+                  {
+                    "id": "aad71dca-0c4f-42ba-aced-2d3756eaf017",
+                    "title": "Link público sem restrição",
+                    "correct": false,
+                    "feedback": "Não. Link aberto não controla quem entra."
+                  },
+                  {
+                    "id": "fdf25cbe-00d8-417c-a7d6-8fec2a4961a4",
+                    "title": "Só conversa",
+                    "correct": false,
+                    "feedback": "Não. \"Só a conversa\" esconde as fontes da tela, mas não tira o acesso a elas."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "46a9a487-7c44-413d-b79c-37a1f24da9a9"
+          },
+          {
+            "id": "mi6zjqsbk6y3odlqykwmrlez",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "uczo29eanlpajxdrqnynnldh",
+                "heading": "Oficina 4 — Ouça suas fontes e mostre para alguém",
+                "paragraph": "<p>Você vai gerar um Resumo em Áudio em português, montar um mapa mental e decidir o compartilhamento. Precisa do notebook \"LGPD — revisão\", de fones de ouvido e do e-mail de alguém com quem possa compartilhar — ou só da decisão de não compartilhar.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "30021a73-51d2-434d-8325-2f684d9346e7"
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "pmeh6cxedkg5mi6dr3azfobx",
+            "globalBlockId": "f12085cb-8272-4aed-a976-1ee31fb588a2",
+            "items": [
+              {
+                "id": "r1z1ugew6el1xgy0dycbya1o",
+                "paragraph": "<p>Mão na massa (20 min):</p>"
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "family": "list",
+            "variant": "numbered",
+            "settings": {
+              "paddingTop": 0
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "ee8vszx120lejkp9erma2o2p",
+            "globalBlockId": "6e8ce9b5-68c6-476e-877b-940df70be422",
+            "items": [
+              {
+                "id": "bjlyspronaof6hkrt1y2z5c8",
+                "number": "1",
+                "paragraph": "<p>Abra <strong>notebook.google.com &gt; LGPD — revisão &gt; Estúdio &gt; Resumo em Áudio &gt; Personalizar</strong>.</p>"
+              },
+              {
+                "id": "iltclbbfhpcnkylnizubik9y",
+                "number": "2",
+                "paragraph": "<p>Escolha o formato Resumo (<em>The Brief</em>, um apresentador, menos de dois minutos), o idioma Português (Brasil), e cole na orientação: <em>Produza um resumo curto em português do Brasil para iniciantes. Enfatize os direitos do titular de dados. Não apresente aconselhamento jurídico.</em></p>"
+              },
+              {
+                "id": "b9jlszzv0qkmtkzxpcro151z",
+                "number": "3",
+                "paragraph": "<p>Clique em <strong>Gerar</strong>. Não fique esperando: a geração leva alguns minutos.</p>"
+              },
+              {
+                "id": "ive9nk5c6p40xja1tiuz90mo",
+                "number": "4",
+                "paragraph": "<p>Enquanto isso, gere o mapa em <strong>Estúdio &gt; Mapa mental</strong>. Clique num nó para abrir os ramos e depois para fazer uma pergunta sobre ele.</p>"
+              },
+              {
+                "id": "ynmftww2zbwlkpnnm61feaq5",
+                "number": "5",
+                "paragraph": "<p>Volte ao áudio e ouça os primeiros trinta segundos.</p>"
+              },
+              {
+                "id": "or99rw7f4jsmgkcqv8q1rwyd",
+                "number": "6",
+                "paragraph": "<p><strong>Agora sozinho:</strong> em <strong>Compartilhar</strong>, digite o e-mail de quem vai consultar e escolha <strong>Leitor</strong> (lê e pergunta, mas não mexe nas fontes). Se não tiver com quem compartilhar, abra a janela, observe as opções e feche sem enviar.</p>"
+              },
+              {
+                "id": "myy15mbxd3ipzd0o68ek73ge",
+                "number": "7",
+                "paragraph": "<p>Anote sua decisão: com quem, em qual papel e por quê.</p>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "family": "impact",
+            "variant": "b",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "c5427427-1ee6-4ea8-a4be-7a462cfbb38f",
+            "globalBlockId": "c4005606-c4c3-400e-9801-6b606b9f7fd0",
+            "items": [
+              {
+                "id": "3b590f0d-bcda-4ad6-afa7-366956afb0e9",
+                "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> em notebook.google.com &gt; LGPD — revisão &gt; Estúdio, o player do áudio toca em português e o mapa mental abre com ramos; sua decisão de compartilhamento (Leitor, para quem e por quê — ou \"não compartilhar\") está anotada.</p>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "heading paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "r64c0c1r6i9z2inxpznt90ym",
+            "globalBlockId": "f5f31002-1039-41b7-ad74-631f42c342fa",
+            "items": [
+              {
+                "id": "om657q6e4jhr379snxmpj736",
+                "heading": "Se travar",
+                "paragraph": "<p>Abra o problema que apareceu para você:</p>"
+              }
+            ]
+          },
+          {
+            "type": "interactive",
+            "family": "interactive",
+            "variant": "accordion",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "d3cbbe22-5a37-4c11-af78-d641f1bb03eb",
+            "globalBlockId": "1a69cdb3-8ac7-442a-ac34-e5ee35386e6e",
+            "items": [
+              {
+                "id": "8f8436cf-624b-49f3-83ea-081cf8bb613b",
+                "title": "O áudio está demorando ou deu erro",
+                "description": "<p>Espere, reduza a orientação e tente de novo mais tarde.</p><p></p><p>Se aparecer a opção \"Gerar mais tarde\", use-a.</p>"
+              },
+              {
+                "id": "65897d3a-4287-44b5-b279-596c56686ff1",
+                "title": "Saiu em inglês",
+                "description": "<p>O idioma não foi escolhido em Personalizar.</p><p></p><p>Gere de novo com Português (Brasil).</p>"
+              },
+              {
+                "id": "ed84b087-2315-4469-8843-322b8ec9daaf",
+                "title": "Não acho o mapa mental no celular",
+                "description": "<p>Mapa mental, relatórios e configuração do chat só existem completos no navegador do computador.</p><p></p><p>Use o celular para ouvir o áudio.</p>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "heading paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "aulga1axk2r73lbmd9vwdpx9",
+            "globalBlockId": "280b0710-04c1-4c67-99c9-9b6a7f7c450b",
+            "items": [
+              {
+                "id": "dyljs87cx6zqvhzpgqizx0yl",
+                "heading": "Quer ir além? (opcional)",
+                "paragraph": "<p>Desafios para quem terminou e quer mais. Nenhum é obrigatório. Abra cada um:</p>"
+              }
+            ]
+          },
+          {
+            "type": "interactive",
+            "family": "interactive",
+            "variant": "accordion",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "74de6b8e-d56f-4b6f-9cd3-c81cbd244dd4",
+            "globalBlockId": "52d91f63-bc6a-49be-a5ad-1c4bd6dda533",
+            "items": [
+              {
+                "id": "37a5e968-39ef-4203-8447-b1e0f6c4d8e9",
+                "title": "Desafio 1 — Um áudio em Debate",
+                "description": "<p>Gere um áudio no formato Debate.</p><p></p><p><strong>Validação:</strong> você identifica as duas posições e confere uma delas na fonte.</p>"
+              },
+              {
+                "id": "18ff6e47-1ded-4a62-9770-922cdbcc8bb0",
+                "title": "Desafio 2 — Ouvir offline",
+                "description": "<p>Instale o aplicativo no celular e baixe o áudio para ouvir offline.</p><p></p><p><strong>Validação:</strong> o áudio toca com o modo avião ligado.</p>"
+              },
+              {
+                "id": "50104c9a-7f8b-450b-96a0-7bf8db70d0b5",
+                "title": "Desafio 3 — Um Resumo em Vídeo",
+                "description": "<p>Gere um Resumo em Vídeo no formato Explicador ou Curto, em português.</p><p></p><p><strong>Validação:</strong> o vídeo aparece no Estúdio. O formato Cinematic é pago, 18+ e em inglês — não é para este curso.</p>"
+              }
+            ]
+          },
+          {
+            "id": "b5qltk6hu50v5d0vo4gx0ve6",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "v85bmtb5f47c9pw87o1973q6",
+                "heading": "Para que serve cada artefato no dia a dia",
+                "paragraph": "<p>Clique em cada cartão para ver um uso real do que você produziu nas oficinas:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "decdb4d2-6b3a-44b0-9737-ee0bb2a4f5ba"
+          },
+          {
+            "id": "l9m5uo3ckpn97da6kerwasbm",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "bh981lrmz624cgoa7ciiosf8",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Guia de estudo, documento de resumo e teste para revisar antes da prova ou da reunião — conferindo o gabarito na fonte.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<strong>Estudo individual</strong>"
+                }
+              },
+              {
+                "id": "f8ov6e7ivytocl6ziu2y3dhx",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Guia e mapa mental para a turma, revisados contra as fontes antes de entrar na sala.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<strong>Ensino</strong>"
+                }
+              },
+              {
+                "id": "y4ab6m4luc1ws171ex41c2ty",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Resumo em Áudio para ouvir no trânsito. Dispare a geração e vá fazer outra coisa: ela leva alguns minutos.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<strong>Comunicação</strong>"
+                }
+              },
+              {
+                "id": "ax0ih5q5au95s783tbyhhidv",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Relatório com formato próprio — por exemplo, um quadro com artigo, obrigação e exemplo — para reuniões e decisões.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<strong>Análise profissional</strong>"
+                }
+              }
+            ],
+            "family": "flashcard",
+            "variant": "flashcard",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "44dabcbf-08f7-4dea-8c05-307231480b25"
+          },
+          {
+            "id": "e67c94fd-d51b-4209-91b4-ca5ba4eb47f5",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "aab19f5d-a294-458c-8d32-9ce02767a65a",
+                "paragraph": "<p>⚠️ <strong>Cuidado:</strong> o áudio é uma conversa gerada por IA, não uma leitura das fontes. Pode errar. E no gratuito são só 3 áudios por dia.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "7ca4fcd3-bef8-4ecf-a5c9-d4fbc34d2f61"
+          },
+          {
+            "type": "divider",
+            "family": "continue",
+            "variant": "continue",
+            "settings": {
+              "v": 2
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "9d72db98-288d-463b-ad1d-c88d2def4565",
+            "globalBlockId": "7e654e35-7c6d-46e7-9ec1-6ae1b888f8b5",
+            "items": [
+              {
+                "id": "21434596-6f7a-4de2-a636-1f01348f3624",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "heading paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "ftyj7nq6ogku9ydv5l7zj2sk",
+            "globalBlockId": "f29f18d9-7cbe-468c-928c-182d30e8ebf4",
+            "items": [
+              {
+                "id": "re6xpw0pc473mcqtl1ih1ew1",
+                "heading": "Projeto Final — O kit de estudo do seu tema",
+                "paragraph": "<p>Chega de LGPD. Escolha um tema real do seu trabalho ou estudo e monte, do zero e sem roteiro passo a passo, um kit de estudo verificado: notebook com fontes verdes, uma pergunta-chave conferida e um artefato pronto para usar ou compartilhar.</p><p>Sugestões por perfil (sempre material público):</p>"
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "family": "list",
+            "variant": "numbered",
+            "settings": {
+              "paddingTop": 0
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "l9goxsbubp01ep0i4lx1abkt",
+            "globalBlockId": "cabba0dd-4222-4045-b8d5-3bfc24c11254",
+            "items": [
+              {
+                "id": "efg4cp79d6zz1wrtgcjkgwfq",
+                "number": "1",
+                "paragraph": "<p><strong>Estudante:</strong> um capítulo ou artigo de acesso aberto + a página oficial do assunto.</p>"
+              },
+              {
+                "id": "dafnyv79upzql8exuw8u6r4i",
+                "number": "2",
+                "paragraph": "<p><strong>Educador:</strong> o documento curricular oficial do tema + dois textos públicos que você usa em aula.</p>"
+              },
+              {
+                "id": "uqcvf965usip43pnh1dhfmsa",
+                "number": "3",
+                "paragraph": "<p><strong>Direito:</strong> uma lei no portal do Planalto + um guia de órgão público sobre ela.</p>"
+              },
+              {
+                "id": "vcz7g9too4ghrgkm94ee92ud",
+                "number": "4",
+                "paragraph": "<p><strong>Jornalismo/Análise:</strong> três comunicados oficiais públicos sobre o mesmo fato.</p>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "bzsn876xrq781tc8wpzwlqhb",
+            "globalBlockId": "bcfb39d7-d8de-4950-babf-d7bf1a15f39c",
+            "items": [
+              {
+                "id": "bhg0kyvvfxdwtgv540t0sebr",
+                "paragraph": "<p>Sem tempo para achar fontes? Use o Kit LGPD com um recorte novo do seu perfil. Mão na massa (16 min):</p>"
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "family": "list",
+            "variant": "numbered",
+            "settings": {
+              "paddingTop": 0
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "qk2o89h55510j67qowcfe4k1",
+            "globalBlockId": "3096b765-e479-459c-8b4a-812aec966486",
+            "items": [
+              {
+                "id": "f0rrs7704iym6z6syhkocg13",
+                "number": "1",
+                "paragraph": "<p>Passe cada fonte pelo semáforo. Só verde entra.</p>"
+              },
+              {
+                "id": "d9fa2ed53vpr9yw0ibge9q8y",
+                "number": "2",
+                "paragraph": "<p>Crie um notebook novo em <strong>notebook.google.com &gt; Criar novo notebook</strong>, com nome de tema e objetivo (ex.: \"CDC — devolução de produtos\").</p>"
+              },
+              {
+                "id": "octg0ozbvdrlmzwauk1h94hn",
+                "number": "3",
+                "paragraph": "<p>Adicione de três a quatro fontes e envie o prompt de conferência do corpus da Oficina 1.</p>"
+              },
+              {
+                "id": "osp1wq1192dymdm7ej25f81c",
+                "number": "4",
+                "paragraph": "<p>Faça sua pergunta-chave pedindo citação por afirmação e \"não encontrado nas fontes\" quando faltar.</p>"
+              },
+              {
+                "id": "rs09xqbq4fy1rcjygir238qo",
+                "number": "5",
+                "paragraph": "<p>Abra duas citações e preencha a ficha da Oficina 2.</p>"
+              },
+              {
+                "id": "i4wcj9zv7i3p4u9jjq2a3e64",
+                "number": "6",
+                "paragraph": "<p>Gere no <strong>Estúdio</strong> um artefato que sirva ao seu perfil (guia, teste, cartões, áudio ou relatório personalizado) e revise um item contra a fonte.</p>"
+              },
+              {
+                "id": "uctjxipsfxaxci62re6mv7xl",
+                "number": "7",
+                "paragraph": "<p>Decida o compartilhamento em <strong>Compartilhar</strong>: ninguém, ou Leitor para quem precisa.</p>"
+              }
+            ]
+          },
+          {
+            "type": "html",
+            "family": "html",
+            "variant": "inline",
+            "settings": {
+              "autoResize": true,
+              "hasCustomCompletion": true,
+              "height": 40,
+              "width": "0"
+            },
+            "metadata": {},
+            "id": "d1dd1df6-75e8-406d-9e16-108e09a41dbc",
+            "globalBlockId": "e18c5572-5b42-4f12-b3bd-45a5e98c8a1b",
+            "items": [
+              {
+                "id": "626659be-0677-4218-b93a-10674a412a67",
+                "srcdoc": "<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Projeto Final concluído?</title>\n<style>\n  :root {\n    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;\n    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;\n    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;\n    --aviso: #8a5a00; --aviso-claro: #fdf3e1;\n    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;\n  }\n  * { box-sizing: border-box; }\n  html, body { margin: 0; padding: 0; background: transparent; }\n  body { font-family: \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }\n  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }\n  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }\n  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }\n  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }\n  .sub { margin: 0 0 18px; color: var(--suave); }\n  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }\n  button { font: inherit; }\n  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }\n  .btn:hover { background: var(--azul-claro); }\n  .btn[aria-pressed=\"true\"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }\n  .btn:disabled { opacity: .45; cursor: default; }\n  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }\n  .btn.principal:hover { background: var(--azul-2); }\n  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }\n  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }\n  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }\n  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }\n  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }\n  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }\n  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }\n  .feedback:empty { display: none; }\n  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }\n  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }\n  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }\n  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }\n  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }\n  .final:empty { display: none; }\n  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }\n  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }\n  .saida { white-space: pre-wrap; font-family: Consolas, \"Courier New\", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }\n  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }\n\n</style>\n</head>\n<body>\n<style>\n  .chk { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }\n  .chk input { width: 20px; height: 20px; margin: 1px 0 0; flex: 0 0 auto; accent-color: var(--azul); }\n  .chk.feito { border-color: var(--ok); background: var(--ok-claro); }\n  .placar { font-weight: 700; color: var(--azul); margin: 0; }\n</style>\n<section class=\"card\" aria-labelledby=\"t\">\n  <span class=\"rotulo\">🏁 Como saber que terminou</span>\n  <h1 id=\"t\">Seu kit de estudo está pronto?</h1>\n  <p class=\"sub\">Marque cada item só depois de conferir na sua tela. O Continue libera quando todos estiverem marcados.</p>\n  <p class=\"placar\" id=\"placar\" aria-live=\"polite\"></p>\n  <div class=\"barra\" aria-hidden=\"true\"><span id=\"barra\"></span></div>\n  <div id=\"lista\"></div>\n  <div class=\"feedback info\">Travou em algum item? Volte à oficina correspondente: fontes na Oficina 1, ficha de citação na Oficina 2, artefatos na Oficina 3, compartilhamento na Oficina 4.</div>\n  <div class=\"final\" id=\"final\" role=\"status\" aria-live=\"polite\"></div>\n</section>\n\n<script>\n  // Itens: \"Como saber que terminou\" do Projeto Final, roteiro Hands-on.\n  var ITENS = [\n    'Todas as fontes passaram pelo semáforo e são verdes.',\n    'O notebook tem nome de tema e de três a quatro fontes lidas corretamente.',\n    'A pergunta-chave foi respondida com citações, e duas foram conferidas na ficha.',\n    'Um artefato foi gerado e um item dele foi revisado na fonte.',\n    'A decisão de compartilhamento está anotada (com quem, papel, motivo).'\n  ];\n  var FINAL = 'Kit de estudo pronto: num tema seu, do zero, e conferido. Você já pode continuar.';\n</script>\n<script>\n  // Lógica comum de checklist que trava o Continue (hasCustomCompletion).\n  (function () {\n    var marcados = {}, concluido = false, lista = document.getElementById('lista');\n    ITENS.forEach(function (txt, i) {\n      var l = document.createElement('label'); l.className = 'chk';\n      var c = document.createElement('input'); c.type = 'checkbox';\n      var s = document.createElement('span'); s.textContent = txt;\n      c.addEventListener('change', function () {\n        if (c.checked) { marcados[i] = true; l.classList.add('feito'); } else { delete marcados[i]; l.classList.remove('feito'); }\n        atualizar();\n      });\n      l.appendChild(c); l.appendChild(s); lista.appendChild(l);\n    });\n    function atualizar() {\n      var n = Object.keys(marcados).length;\n      document.getElementById('placar').textContent = n + ' de ' + ITENS.length + ' itens conferidos';\n      document.getElementById('barra').style.width = (100 * n / ITENS.length) + '%';\n      if (n === ITENS.length && !concluido) {\n        concluido = true;\n        document.getElementById('final').textContent = FINAL;\n        window.parent.postMessage({ type: 'complete' }, '*');\n      }\n    }\n    atualizar();\n  })();\n</script>\n\n</body>\n</html>\n"
+              }
+            ]
+          },
+          {
+            "type": "divider",
+            "family": "continue",
+            "variant": "continue",
+            "settings": {
+              "v": 2
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "e661e988-e890-45a0-8bd7-93050e8ba9cd",
+            "globalBlockId": "48637a61-984a-4bf2-9fa9-c4a46b865f02",
+            "items": [
+              {
+                "id": "33142d07-ebf0-4e30-a42e-c601ecfc57d2",
+                "type": "completeBlock",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ]
+          },
+          {
+            "id": "obsvjmjzsgn4jt1iy8913buo",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "czuotfb57e284a3393lye5io",
+                "heading": "A Parte dos Dez: hábitos que deixam o notebook confiável",
+                "paragraph": "<p>Dez hábitos para levar depois do curso. Eles resumem tudo o que você praticou nas oficinas.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "ad4fbb83-32c8-41ee-ba44-2f5575c70814"
+          },
+          {
+            "id": "qb626suh72vybmeemn1yomsf",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "cp8sjdijkeqyq0g1qlz7q8dq",
+                "paragraph": "<p>Os dez hábitos:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "3cf14e81-88e2-4ce1-bc27-55dd840c7a00"
+          },
+          {
+            "id": "efi8qjbjtgwerlui9p41basz",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "tq4sdtnxrd7igefeedxgson0",
+                "number": "1",
+                "paragraph": "<p><strong>Um notebook por tema ou por decisão.</strong> Misturar assuntos confunde as respostas.</p>"
+              },
+              {
+                "id": "mo0u9jz4bu96v8n4jp8lwwxt",
+                "number": "2",
+                "paragraph": "<p><strong>Comece com poucas fontes.</strong> Três a cinco boas valem mais que cinquenta duvidosas.</p>"
+              },
+              {
+                "id": "fmeeyby0zpx3qqu07pt7oib1",
+                "number": "3",
+                "paragraph": "<p><strong>Semáforo antes do upload.</strong> Vermelho não sobe em conta pessoal. Nunca.</p>"
+              },
+              {
+                "id": "psr1ebqb1eu32fqbipsi0mz0",
+                "number": "4",
+                "paragraph": "<p><strong>Clique em pelo menos duas citações</strong> de toda resposta que você vai usar de verdade.</p>"
+              },
+              {
+                "id": "i4uc1ovt7l96wb2anvmmedz0",
+                "number": "5",
+                "paragraph": "<p><strong>Peça \"não encontrado nas fontes\".</strong> É sua proteção contra a resposta que tapa buraco.</p>"
+              },
+              {
+                "id": "zwunipeevzj2yjg63s2q2ibz",
+                "number": "6",
+                "paragraph": "<p><strong>Desmarque fontes para afinar a pergunta.</strong> Uma fonte por vez revela quem disse o quê.</p>"
+              },
+              {
+                "id": "hahv6iblq9bfozfpj71e84gw",
+                "number": "7",
+                "paragraph": "<p><strong>Extraia, depois compare, depois interprete.</strong> Nessa ordem, você separa evidência de opinião.</p>"
+              },
+              {
+                "id": "zu0ostm0xuz28g29qmzs624e",
+                "number": "8",
+                "paragraph": "<p><strong>Dispare o áudio e vá fazer outra coisa.</strong> Ele demora; o celular toca offline depois.</p>"
+              },
+              {
+                "id": "hwx1uepfsm0iq7x1odivs7cg",
+                "number": "9",
+                "paragraph": "<p><strong>Compartilhe como Leitor e por pessoa.</strong> Link público e \"só a conversa\" não protegem fonte sensível.</p>"
+              },
+              {
+                "id": "ej90d1gjs2z03iv81lcthvws",
+                "number": "10",
+                "paragraph": "<p><strong>Confira o nome e os limites de vez em quando.</strong> A ferramenta mudou de nome, de botão e de cota várias vezes em 2026.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "94e2e68d-f837-4e4c-8f16-e68d284e9f9d"
+          },
+          {
+            "id": "254bcc98-c0de-4632-b982-d77c64a67098",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "9724678a-515d-4cfe-9ef5-77c65d632786",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Qual destes hábitos atrapalha a confiabilidade do notebook?",
+                "answers": [
+                  {
+                    "id": "29a5726e-327b-409e-a4cf-d370a2b09185",
+                    "title": "Misturar vários temas num só notebook",
+                    "correct": true,
+                    "feedback": "Correto. Misturar assuntos confunde as respostas: um notebook por tema ou por decisão."
+                  },
+                  {
+                    "id": "ac6fefd1-4628-447d-b9dd-941e2735e1c2",
+                    "title": "Conferir citações em todas as respostas importantes",
+                    "correct": false,
+                    "feedback": "Não. Clicar em pelo menos duas citações de toda resposta que você vai usar é um dos dez hábitos."
+                  },
+                  {
+                    "id": "7443fff8-1052-468e-aa54-a5bffa21fa81",
+                    "title": "Usar poucas fontes, mas de qualidade",
+                    "correct": false,
+                    "feedback": "Não. Três a cinco boas fontes valem mais que cinquenta duvidosas."
+                  },
+                  {
+                    "id": "5a3a680a-0473-4a94-a74c-6868f7718b96",
+                    "title": "Compartilhar como Leitor e por pessoa",
+                    "correct": false,
+                    "feedback": "Não. Leitor e por pessoa é o jeito seguro de compartilhar."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "c2c2d750-93ef-4cbf-9f6c-5c0841ca3926"
+          },
+          {
+            "id": "10474ea6-8705-4e49-a2f7-2eab3cb6e9e2",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "6a63ca10-d7bc-47bd-8b6f-9dcadbfe6635",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "5f5ff920-d6f3-435c-91ea-f52d899103ec"
+          },
+          {
+            "id": "mggh3mijhhuo60j6r7wzb98p",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "o61fcd7dzya7wepcy9ktzaxh",
+                "paragraph": "<p>Você saiu de uma pilha de documentos e chegou a um notebook que você sabe conferir. Isso é o que separa quem usa IA de quem confia cegamente nela.</p><p>Para continuar: abra um notebook para o próximo trabalho, prova ou caso, e mantenha o hábito da ficha de citação. Quando o desafio for achar fontes novas na web, o próximo passo é o curso <em>Deep Research - Hands On</em>; para verificação acadêmica a fundo, <em>Checagem de Fontes e Citações - Essentials</em>.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.144.0"
+              }
+            },
+            "globalBlockId": "b552a116-082f-4144-baa5-0f2021fd9cab"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Compartilhando e Aplicando o Notebook Inteligente",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "6Vtgzgg_6zp3GfBDoawlc6q2PA0WPOlZ",
+        "createdAt": "2026-10-17T22:03:41.210Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 2,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-10-17T22:04:28.059Z"
+      }
+    ],
+    "title": "NotebookLM - Hands On",
+    "exportSettings": {
+      "completeWith": "reporting",
+      "identifier": "6Vtgzgg_6zp3GfBDoawlc6q2PA0WPOlZ_rise",
+      "resetLearnerData": false,
+      "quizId": null,
+      "storylineId": null,
+      "completionPercentage": 100,
+      "reporting": "passed-incomplete",
+      "updateResumeData": true,
+      "hideLmsUi": false,
+      "title": "NotebookLM - Hands On",
+      "format": "zip",
+      "target": "scorm12",
+      "locales": [],
+      "shareId": "HyHxLXPLKha_1lKFCgllxCGk98oBT0zR",
+      "activeLMS": 0,
+      "exportType": "lms",
+      "targetName": "SCORM 1.2",
+      "isTranslated": false,
+      "quizComplete": false,
+      "activeEdition": 0,
+      "loadOnlyInLMS": true,
+      "isRemotePackage": false,
+      "disableCoverPage": false,
+      "enableExitCourse": false,
+      "storylineComplete": false,
+      "localesPackageType": "single",
+      "notifyLearnersOfUpdates": false,
+      "enableTelemetryCollection": true
+    },
+    "lmsOptions": {
+      "enableTelemetryCollection": true,
+      "disableCoverPage": false,
+      "enableExitCourse": false
+    },
+    "id": "6Vtgzgg_6zp3GfBDoawlc6q2PA0WPOlZ",
+    "originalId": null,
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "selectedAuthorId": "",
+    "color": "#152f4d",
+    "navigationMode": "",
+    "sharePassword": "",
+    "shareId": "HyHxLXPLKha_1lKFCgllxCGk98oBT0zR",
+    "copyOf": "",
+    "order": "1792292463136",
+    "fonts": null,
+    "media": {
+      "image": {
+        "key": "rise/courses/6Vtgzgg_6zp3GfBDoawlc6q2PA0WPOlZ/gnkU0NrV4Hhf2F23.jpeg",
+        "width": 70,
+        "height": 89,
+        "crushedKey": "wiqwqizP8wsM0u6v51Mz8dnUSS.jpg",
+        "sourcedFrom": "USER",
+        "useCrushedKey": true
+      }
+    },
+    "coverImage": {
+      "media": {
+        "image": {
+          "key": "32_abstract.jpg",
+          "src": "32_abstract.jpg",
+          "crushedKey": "32_abstract.jpg",
+          "useCrushedKey": true
+        }
+      }
+    },
+    "jobs": [],
+    "labelSetId": "",
+    "deleted": false,
+    "createdAt": "2026-10-17T22:03:01.277Z",
+    "updatedAt": "2026-10-18T03:01:03.136Z",
+    "markComplete": false,
+    "isDefault": false,
+    "ready": true,
+    "reviewId": "",
+    "headingTypefaceId": "l3OkM5EhWOfcM9t9NRpKxV9u",
+    "bodyTypefaceId": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+    "uiTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+    "sidebarMode": "open",
+    "tenantId": "59833a41-7aa6-40d9-b4a8-439946c15810",
+    "showLessonCount": true,
+    "showNavigationButtons": true,
+    "allowSearch": true,
+    "animateBlockEntrance": true,
+    "transferredAt": null,
+    "allowCopy": false,
+    "enableVideoPlaybackSpeed": null,
+    "jobType": null,
+    "partnerContentId": null,
+    "cardImage": null,
+    "theme": {
+      "colors": [
+        "#152f4d"
+      ],
+      "brandId": "59f64ff4-b18c-4a67-94b3-d3378c1fc409",
+      "themeId": "classic",
+      "coverImage": "32_abstract.jpg",
+      "navigation": true,
+      "showAuthor": true,
+      "allowSearch": true,
+      "colorAccent": "#152f4d",
+      "appliedBrand": {
+        "logoKey": "rise/brands/59833a41-7aa6-40d9-b4a8-439946c15810/59f64ff4-b18c-4a67-94b3-d3378c1fc409/gnkU0NrV4Hhf2F23.jpeg",
+        "colorAccent": "#152f4d",
+        "bodyTypefaceId": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+        "additionalColors": [
+          "#152f4d"
+        ],
+        "headingTypefaceId": "l3OkM5EhWOfcM9t9NRpKxV9u"
+      },
+      "blockCorners": "ROUNDED",
+      "buttonScheme": "LIGHT",
+      "uiTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "coverPageType": "SPLIT_LEFT_IMAGE",
+      "accentContrast": "AUTO",
+      "bodyTypefaceId": "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+      "navigationType": "SIDEBAR",
+      "blockPaddingTop": 30,
+      "coverImageAlpha": 50,
+      "navigationStyle": "LIGHT",
+      "showLessonCount": true,
+      "lessonHeaderSize": "MEDIUM",
+      "buttonInlineStyle": "ROUNDED",
+      "coverImageDefault": "https://cdn.articulate.com/assets/rise/assets/themes/classic/cover-image/32_abstract.jpg",
+      "headingTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "lessonHeaderColor": null,
+      "lessonHeaderImage": "",
+      "lessonHeaderStyle": "LIGHT",
+      "sidebarStartsOpen": true,
+      "blockPaddingBottom": 30,
+      "markLessonsComplete": false,
+      "animateBlockEntrance": true,
+      "navigationRestricted": false,
+      "buttonNavigationStyle": "FULL",
+      "showNavigationButtons": true,
+      "compactShowLessonCount": true,
+      "lessonHeaderImageAlpha": 0.6,
+      "lessonHeaderImageColor": "DARK",
+      "enableVideoPlaybackSpeed": true,
+      "customColorLessonHeaderContrast": "AUTO"
+    },
+    "lessonHeaderImage": {},
+    "overlayNavigationImage": {},
+    "type": null,
+    "experiments": {
+      "publishes": {
+        "LMS": {
+          "published_at": "2026-10-18T03:01:05.369Z",
+          "published_by": "aid|0feaf791-84f0-5524-a138-a41d69197057"
+        }
+      }
+    },
+    "settings": {
+      "isAIConceptToCourse": true
+    },
+    "defaultLocaleId": null,
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "blockBackgroundImage": {},
+    "otherTypefaceIds": null,
+    "contentUpdatedAt": "2026-10-18T03:00:59.278Z",
+    "authorType": "standard",
+    "lastPublishedAt": "2026-10-18T03:01:05.369Z",
+    "localizationMetadata": {},
+    "awaitingContent": false,
+    "features": {
+      "rise-rte-fonts": true,
+      "ai-learner-chatbot": true,
+      "rise-audio-release": true,
+      "rise-process-accessibility": true,
+      "rise-matching-accessibility": true,
+      "rise-ai-tutor-required-disclosures": true
+    },
+    "aiTutorConfig": null,
+    "authors": [
+      {
+        "id": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "avatar": "small_1782404657678.jpg",
+        "authorName": "Iaclube Help"
+      }
+    ],
+    "aiLearnerCourseApiKey": null,
+    "aiLearnerSubscriptionId": null,
+    "mondrian": {},
+    "bodyTypeface": "Montserrat",
+    "headingTypeface": "Ubuntu Sans Mono",
+    "uiTypeface": "Lato"
+  },
+  "labelSet": {
+    "iso639Code": "en",
+    "labels": {
+      "exitMessage": "You may now leave this page.",
+      "salutation": "👋 Bye!",
+      "a11yAiScenarioChooseResponse": "Choose a response",
+      "a11yAiScenarioConversation": "Conversation",
+      "a11yAiScenarioConversationComplete": "Conversation complete",
+      "a11yAiScenarioFailedThreshold": "You did not reach the passing threshold.",
+      "a11yAiScenarioGoalAchieved": "achieved",
+      "a11yAiScenarioGoalNotAchieved": "not achieved",
+      "a11yAiScenarioGoalPartial": "partially correct",
+      "a11yAiScenarioPassedThreshold": "You met or exceeded the passing threshold.",
+      "a11yAiScenarioResponseOptions": "Response options",
+      "a11yAiScenarioRetryScenario": "Retry scenario",
+      "a11yAiScenarioSentBy": "Sent by",
+      "a11yAiScenarioStartScenario": "Start scenario",
+      "a11yAiScenarioSubmitResponse": "Submit response",
+      "a11yAiTutorArticulateLogo": "Articulate - open in new tab",
+      "a11yAiTutorAskButton": "Ask AI Tutor",
+      "a11yAiTutorAssistantMessage": "AI Tutor response",
+      "a11yAiTutorChatWindow": "AI Tutor chat window",
+      "a11yAiTutorCloseTipsModal": "Close tips modal",
+      "a11yAiTutorFeedbackDismiss": "Dismiss feedback",
+      "a11yAiTutorFeedbackInput": "Type your feedback",
+      "a11yAiTutorFeedbackSubmit": "Submit feedback",
+      "a11yAiTutorFeedbackWhyUnhelpful": "Why is it unhelpful?",
+      "a11yAiTutorHide": "Hide AI Tutor chat",
+      "a11yAiTutorInput": "Type your message for AI Tutor",
+      "a11yAiTutorSection": "AI Tutor",
+      "a11yAiTutorSeeTips": "See tips for using AI Tutor",
+      "a11yAiTutorSendButton": "Send message to AI Tutor",
+      "a11yAiTutorStartOver": "Return to AI Tutor home screen",
+      "a11yAiTutorThumbsDown": "Rate response as not helpful",
+      "a11yAiTutorThumbsDownSubmitted": "Not helpful, feedback submitted",
+      "a11yAiTutorThumbsUp": "Rate response as helpful",
+      "a11yAiTutorThumbsUpSubmitted": "Helpful, feedback submitted",
+      "a11yAiTutorUserMessage": "User message",
+      "a11yAnswerLive": "Your answer",
+      "a11yAuthorPrefix": "By",
+      "a11yBlockArrowSequence": "Arrow sequence",
+      "a11yBlockChartAxisX": "x-axis",
+      "a11yBlockChartAxisY": "y-axis",
+      "a11yBlockChartBar": "Bar chart",
+      "a11yBlockChartInstructions": "Use arrow keys to navigate data points. Screen reader users may need to switch modes to interact.",
+      "a11yBlockChartLine": "Line chart",
+      "a11yBlockChartPie": "Pie chart",
+      "a11yBlockChartPreposition": "of",
+      "a11yBlockCode": "Custom Interaction",
+      "a11yBlockCodeSnippet": "Code",
+      "a11yBlockEmbed": "Embedded Content",
+      "a11yBlockFlashcardBack": "Back of card",
+      "a11yBlockFlashcardFront": "Front of card",
+      "a11yBlockFlashcardGrid": "Flashcard grid",
+      "a11yBlockFlashcardStack": "Flashcard carousel",
+      "a11yBlockFlashcardStackRoleDescription": "Carousel",
+      "a11yBlockFlashcardStackSlideControls": "Slide controls",
+      "a11yBlockFlashcardStackSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockFlashcardStackSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockFlashcardStackSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockFlashcardStackSlidePreposition": "of",
+      "a11yBlockFlashcardStackSlideRoleDescription": "Slide",
+      "a11yBlockImageCarousel": "Image Carousel",
+      "a11yBlockImageCarouselRoleDescription": "Carousel",
+      "a11yBlockImageCarouselSlideControls": "Slide controls",
+      "a11yBlockImageCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockImageCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockImageCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockImageCarouselSlidePreposition": "of",
+      "a11yBlockImageCarouselSlideRoleDescription": "Slide",
+      "a11yBlockKnowledgeCheck": "Knowledge check",
+      "a11yBlockKnowledgeCheckFIB": "Knowledge check: Fill in the blank",
+      "a11yBlockKnowledgeCheckM": "Knowledge check: Matching",
+      "a11yBlockKnowledgeCheckMC": "Knowledge check: Multiple choice",
+      "a11yBlockKnowledgeCheckMR": "Knowledge check: Multiple response",
+      "a11yBlockProcessCarousel": "Carousel",
+      "a11yBlockProcessRoleDescription": "Carousel",
+      "a11yBlockProcessSlideControls": "Slide controls",
+      "a11yBlockProcessSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockProcessSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockProcessSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockProcessSlideControlsIntroduction": "Introduction",
+      "a11yBlockProcessSlideControlsSummary": "Summary",
+      "a11yBlockProcessSlidePreposition": "of",
+      "a11yBlockProcessSlideRoleDescription": "Slide",
+      "a11yBlockQuoteCarousel": "Quote Carousel",
+      "a11yBlockQuoteCarouselRoleDescription": "Carousel",
+      "a11yBlockQuoteCarouselSlideControls": "Slide controls",
+      "a11yBlockQuoteCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockQuoteCarouselSlidePreposition": "of",
+      "a11yBlockQuoteCarouselSlideRoleDescription": "Slide",
+      "a11yBlockStoryline": "Storyline",
+      "a11yBlockSurveyCharCount": "Character count:",
+      "a11yBlockSurveyConfirmation": "Thanks! Your responses were sent.",
+      "a11yBlockSurveySubmitting": "Submitting survey responses.",
+      "a11yBlockSurveyValidationError": "Please answer all required questions to continue",
+      "a11yBlockTimeline": "Timeline",
+      "a11yBlockVideoSidePanelTablist": "Video details",
+      "a11yCarouselNext": "Next",
+      "a11yCarouselPrevious": "Previous",
+      "a11yCertificateDownloadFailed": "Failed to download certificate",
+      "a11yCorrectLive": "Correct answer",
+      "a11yCoverCourseCompleted": "Course Completed",
+      "a11yCoverCourseLength": "Course Length",
+      "a11yCoverRequirementComplete": "Requirement complete",
+      "a11yCoverRequirementFailed": "Requirement failed",
+      "a11yCoverRequirementIncomplete": "Requirement incomplete",
+      "a11yExcelIcon": "Microsoft Excel spreadsheet",
+      "a11yFileIcon": "File",
+      "a11yGroupAudioPlayer": "Audio player",
+      "a11yGroupScenario": "Interactive scenario",
+      "a11yGroupVideoPlayer": "Video player",
+      "a11yLabeledGraphicBlock": "Labeled graphic",
+      "a11yLabeledGraphicButtonMarker": "Marker",
+      "a11yLabeledGraphicIconArrowDown": "Down arrow",
+      "a11yLabeledGraphicIconArrowDownLeft": "Down left arrow",
+      "a11yLabeledGraphicIconArrowDownRight": "Down right arrow",
+      "a11yLabeledGraphicIconArrowLeft": "Left arrow",
+      "a11yLabeledGraphicIconArrowRight": "Right arrow",
+      "a11yLabeledGraphicIconArrowUp": "Up arrow",
+      "a11yLabeledGraphicIconArrowUpLeft": "Up left arrow",
+      "a11yLabeledGraphicIconArrowUpRight": "Up right arrow",
+      "a11yLabeledGraphicIconCheck": "Check mark",
+      "a11yLabeledGraphicIconDot": "Dot",
+      "a11yLabeledGraphicIconHeart": "Heart",
+      "a11yLabeledGraphicIconInformation": "Information",
+      "a11yLabeledGraphicIconPin": "Map pin",
+      "a11yLabeledGraphicIconPlus": "Plus",
+      "a11yLabeledGraphicIconQuestion": "Question mark",
+      "a11yLabeledGraphicIconX": "X",
+      "a11yLabeledGraphicUnviewed": "Not viewed",
+      "a11yLabeledGraphicViewed": "Viewed",
+      "a11yMatchingColumn1": "Matching column 1",
+      "a11yMatchingColumn2": "Matching column 2",
+      "a11yMatchingItemMatchedWith": "Matched with",
+      "a11yMatchingItemMatchWith": "Match with",
+      "a11yMatchingItemSelectableItem": "Selectable item",
+      "a11yMatchingItemShowLess": "Show less",
+      "a11yMatchingItemShowMore": "Show more",
+      "a11yMediaCaptions": "Captions",
+      "a11yMediaCaptionsOff": "Captions off",
+      "a11yMediaCurrentTime": "Current time",
+      "a11yMediaDownload": "Download",
+      "a11yMediaDuration": "Duration",
+      "a11yMediaErrorVideo": "This video could not be loaded.",
+      "a11yMediaExitFullscreen": "Exit fullscreen",
+      "a11yMediaExitPictureInPicture": "Exit picture-in-picture",
+      "a11yMediaFullscreen": "Fullscreen",
+      "a11yMediaMoreOptions": "More options",
+      "a11yMediaMoreOptionsBack": "Back to more options",
+      "a11yMediaMute": "Mute",
+      "a11yMediaPause": "Pause",
+      "a11yMediaPictureInPicture": "Picture-in-picture",
+      "a11yMediaPlay": "Play",
+      "a11yMediaPlaybackRate": "Playback Rate",
+      "a11yMediaPlaybackRateNormal": "Normal",
+      "a11yMediaPlayVideo": "Play video",
+      "a11yMediaRemainingTime": "Remaining time",
+      "a11yMediaReplay": "Replay",
+      "a11yMediaSeek": "Seek",
+      "a11yMediaSeekDisabled": "Forward seeking is disabled",
+      "a11yMediaUnmute": "Unmute",
+      "a11yMediaVolume": "Volume",
+      "a11yNavigationMenuClose": "Close navigation menu",
+      "a11yNavigationMenuOpen": "Open navigation menu",
+      "a11yNoticeLinkNewTab": "(opens in a new tab)",
+      "a11yPageMarker": "Top of page",
+      "a11yPDFIcon": "PDF file",
+      "a11yPPTIcon": "PowerPoint presentation",
+      "a11yPreposition": "of",
+      "a11yProgressSummaryRequirementCompleted": "Requirement completed, check mark",
+      "a11yProgressSummaryRequirementNotCompleted": "Requirement not completed, empty square",
+      "a11yQuizFailed": "Failed",
+      "a11yQuizFeedback": "Feedback",
+      "a11yQuizPassed": "Passed",
+      "a11yQuizReviewCorrectlyChecked": "Correctly checked",
+      "a11yQuizReviewCorrectlySelected": "Correctly selected",
+      "a11yQuizReviewCorrectlyUnchecked": "Correctly unchecked",
+      "a11yQuizReviewCorrectlyUnselected": "Correctly unselected",
+      "a11yQuizReviewIncorrectlyChecked": "Incorrectly checked",
+      "a11yQuizReviewIncorrectlySelected": "Incorrectly selected",
+      "a11yQuizReviewIncorrectlyUnchecked": "Incorrectly unchecked",
+      "a11yQuizReviewIncorrectlyUnselected": "Incorrectly unselected",
+      "a11yRegionMainLesson": "Lesson content",
+      "a11yRegionMainOverview": "Course overview",
+      "a11yRegionNavLesson": "Navigation menu",
+      "a11yRegionNavOverview": "Table of contents",
+      "a11yRestrictedNav": "This lesson is currently unavailable",
+      "a11yRTFIcon": "Rich Text File",
+      "a11ySearchClose": "Close search menu",
+      "a11ySearchInput": "Search",
+      "a11ySearchInputClear": "clear search term",
+      "a11ySearchOpen": "Open search menu",
+      "a11ySortingCategories": "Categories",
+      "a11ySortingCategoriesComplete": "Categories. Interaction completed.",
+      "a11ySortingCategory": "category",
+      "a11ySortingComplete": "cards correct",
+      "a11ySortingCompleteOf": "of",
+      "a11ySortingCorrect": "Correct",
+      "a11ySortingCurrentItem": "Current item",
+      "a11ySortingIncorrect": "Incorrect. Choose another category.",
+      "a11ySortingNextItem": "Next item",
+      "a11yStatusAdditionalContent": "Additional content has been loaded",
+      "a11yStatusContinued": "Continued",
+      "a11yUnzoomImage": "Unzoom image",
+      "a11yWordIcon": "Microsoft Word document",
+      "a11yZipIcon": "Zip file",
+      "a11yZoomImage": "Zoom image",
+      "aiScenarioChooseResponsePrompt": "Choose the best response…",
+      "aiScenarioContinue": "Continue",
+      "aiScenarioErrorBody": "Please try again in a little while.",
+      "aiScenarioErrorTitle": "Something went wrong",
+      "aiScenarioGoal": "Goal #",
+      "aiScenarioGoals": "Goals",
+      "aiScenarioInvalidBody": "The scenario has validation errors and cannot be played.",
+      "aiScenarioInvalidTitle": "Invalid scenario",
+      "aiScenarioPassing": "Passing",
+      "aiScenarioRetry": "Retry",
+      "aiScenarioSenderCharacter": "Character",
+      "aiScenarioSenderYou": "You",
+      "aiScenarioStart": "Start",
+      "aiScenarioUnavailableBody": "Check back soon — it may still be getting set up.",
+      "aiScenarioUnavailableTitle": "This scenario isn't available yet",
+      "aiScenarioWrapUp": "That's a wrap—see how you did.",
+      "aiScenarioYourScore": "Your score",
+      "aiTutorAcceptableUsePolicyLink": "Acceptable Use Policy",
+      "aiTutorAskButton": "Ask AI Tutor",
+      "aiTutorBlankHeading": "Hey there, need a hand?",
+      "aiTutorBlankPillExplain": "Explain this in simpler terms",
+      "aiTutorBlankPillSearch": "Search course content",
+      "aiTutorBlankPillSummarize": "Summarize this training",
+      "aiTutorDataUseDisclosure": "Prompts are stored and analyzed. The organization that shared this training may receive aggregated or AI-generated insights.",
+      "aiTutorDisabledWhileQuiz": "AI Tutor is disabled while a quiz is in progress.",
+      "aiTutorDisclaimer": "AI isn't perfect—double check important information.",
+      "aiTutorErrorGeneral": "Something went wrong. Try refreshing the page or submitting a new request.",
+      "aiTutorErrorUnavailable": "AI Tutor is currently unavailable.",
+      "aiTutorFeedbackDetailsPlaceholder": "Share additional details (optional)",
+      "aiTutorFeedbackImprovementNote": "Your feedback helps improve this feature.",
+      "aiTutorFeedbackLearnMore": "Learn more",
+      "aiTutorFeedbackPopoverTitle": "Tell us more",
+      "aiTutorFeedbackReasonIncorrect": "Incorrect information",
+      "aiTutorFeedbackReasonNoAnswer": "Didn't answer my question",
+      "aiTutorFeedbackReasonNotHelpful": "Explanation wasn't helpful for me",
+      "aiTutorFeedbackReasonNotRelevant": "Response wasn't relevant",
+      "aiTutorFeedbackReasonOther": "Other",
+      "aiTutorFeedbackSubmit": "Submit",
+      "aiTutorFeedbackThankYou": "Thank you for your feedback",
+      "aiTutorFeedbackToast": "Thanks for your feedback",
+      "aiTutorGeneratingResponse": "Generating response",
+      "aiTutorHideTooltip": "Hide",
+      "aiTutorInputPlaceholder": "Type your message",
+      "aiTutorPrivacyLink": "privacy policy",
+      "aiTutorSeeTips": "See tips",
+      "aiTutorStartOverTooltip": "Start over",
+      "aiTutorTermsLink": "terms of use",
+      "aiTutorTermsPrefix": "By using this service, you agree to the Articulate",
+      "aiTutorTipsGotIt": "Got it",
+      "aiTutorTipsTip1": "AI can make mistakes. Use it as a guide, but verify what matters.",
+      "aiTutorTipsTip2": "Focus on topics covered in the course. Ask specific questions for best results.",
+      "aiTutorTipsTip3": "Don't share personal or sensitive information.",
+      "aiTutorTipsTitle": "What to know",
+      "audioCollapsePlayer": "Collapse audio player",
+      "audioExpandPlayer": "Expand audio player",
+      "audioHideTranscript": "Hide transcript",
+      "audioNoTranscriptAvailable": "No transcript available",
+      "audioPlaySpeed": "Play speed",
+      "audioShowTranscript": "Show transcript",
+      "audioTranscript": "Audio transcript",
+      "bannerButtonDismiss": "Dismiss",
+      "bannerCourseUpdated": "You're viewing the latest version.",
+      "bannerCourseUpdatedEmphasis": "Course updated.",
+      "bannerCourseUpdatedProgressReset": "You're viewing the latest version.",
+      "bannerCourseUpdatedProgressResetEmphasis": "Course updated and learner progress reset.",
+      "blocksClickToFlip": "Click to flip",
+      "blocksPreposition": "of",
+      "certificateDownload": "Download certificate",
+      "certificateDownloadInProgress": "Downloading...",
+      "certificateRetryDownload": "Retry download",
+      "courseCompletionOverdue": "Overdue",
+      "courseExit": "EXIT COURSE",
+      "courseFinish": "Finish",
+      "courseHome": "Home",
+      "courseResume": "RESUME COURSE",
+      "courseSkipToLesson": "SKIP TO LESSON",
+      "courseStart": "START COURSE",
+      "coverCompleteAllLessons": "Complete all lessons in this course",
+      "coverCompleted": "Completed",
+      "coverCompleteLessonsInCourse": "lessons in this course",
+      "coverCompleteLessonsName": "Complete",
+      "coverCompleteLessonsPreposition": "of",
+      "coverCourseRequirements": "Course Requirements",
+      "coverHour": "Hour",
+      "coverHours": "Hours",
+      "coverLesson": "Lesson",
+      "coverLessons": "Lessons",
+      "coverMinute": "Minute",
+      "coverMinutes": "Minutes",
+      "coverNoAttemptsRemaining": "No attempts remaining",
+      "coverPublished": "Published",
+      "coverQuizPercentOrHigher": "% or higher",
+      "coverQuizScoreOf": "Score of",
+      "coverUpdated": "Updated",
+      "curtainLoading": "Your content is loading.",
+      "curtainOffline": "Your computer is offline.",
+      "curtainOfflineReconnecting": "Attempting to reconnect…",
+      "curtainSessionTimedOut": "Your session has timed out.",
+      "curtainSessionTimedOutRefresh": "Refresh",
+      "curtainSessionTimedOutRestart": "Click refresh to restart your session.",
+      "curtainSomethingWrong": "Something went wrong.",
+      "curtainSomethingWrongRefresh": "Refresh",
+      "curtainSomethingWrongTryAgain": "Click to refresh and try again.",
+      "customBlockVideoError": "Video didn't load",
+      "embedLinkGroup": "Embedded web content",
+      "embedPlayerGroup": "Embedded media player",
+      "embedReadMore": "Read more",
+      "embedViewOn": "VIEW ON",
+      "knowledgeCheckCorrectAnswerRequiredBlock": "Requires a correct answer to continue",
+      "knowledgeCheckCorrectAnswerRequiredNav": "Complete previous knowledge checks to unlock this lesson",
+      "knowledgeCheckMaxRetriesReached": "You have reached the maximum amount of retries.",
+      "knowledgeCheckRetriesAttemptsRemaining": "Attempts remaining:",
+      "l10nChooseLanguage": "Choose your course language",
+      "l10nChooseLanguageContinue": "Continue",
+      "labeledGraphicMarkerLabel": "Labeled graphic marker",
+      "lessonComplete": "COMPLETE",
+      "lessonName": "Lesson",
+      "lessonPreposition": "of",
+      "lessonRestricted": "Lessons must be completed in order",
+      "lessonUntitled": "Untitled Lesson",
+      "noResults": "No results for",
+      "numberedDividerGroup": "Numbered divider",
+      "overviewPageTitleSuffix": "Overview",
+      "pauseButtonLabel": "Pause",
+      "playButtonLabel": "Play",
+      "presentationPdfUnsupportedBlock": "This block type is not supported in presentation PDFs.",
+      "processComplete": "Complete",
+      "processLandmark": "Process",
+      "processLessonName": "Lesson",
+      "processNextStep": "NEXT STEP",
+      "processStart": "START",
+      "processStartAgain": "START AGAIN",
+      "processStepName": "Step",
+      "processStepPreposition": "of",
+      "processSwipe": "Swipe to continue",
+      "progressPieClickToComplete": "Click to complete",
+      "progressPieClickToReset": "Click to reset",
+      "progressPieCompleted": "Completed",
+      "progressPieQuizFailed": "Failed",
+      "progressPieUnstarted": "Unstarted",
+      "progressSummary": "Progress Summary",
+      "progressSummaryBackToLearning": "Back to my learning",
+      "progressSummaryCompleted": "Completed:",
+      "progressSummaryCompletionRequirement": "Completion Requirement",
+      "progressSummaryCongratulations": "Congratulations!",
+      "progressSummaryNextUp": "Next up",
+      "progressSummaryNoAttemptsRemaining": "No attempts remaining.",
+      "progressSummaryNoTitle": "(No Title)",
+      "progressSummaryPercentComplete": "% Complete",
+      "progressSummaryPercentCompletion": "% Completion",
+      "progressSummaryQuizRequirement": "Quiz Requirement",
+      "progressSummaryRequirementsMet": "You've met all the requirements.",
+      "progressSummaryScoreOf": "Score of",
+      "progressSummaryScoreOfPreposition": "% on",
+      "progressSummaryStartOver": "Start Over",
+      "progressSummaryViewQuiz": "View quiz",
+      "progressSummaryYouCompleted": "You completed:",
+      "progressSummaryYouScored": "You scored",
+      "quizAcceptableResponses": "Acceptable responses",
+      "quizAnswerPlaceholder": "Type your answer here",
+      "quizContinue": "Continue",
+      "quizCorrect": "Correct",
+      "quizIncorrect": "Incorrect",
+      "quizNext": "NEXT",
+      "quizPassing": "PASSING",
+      "quizQuestion": "Question",
+      "quizRequireAnswer": "Please answer the question to continue",
+      "quizRequirePassingScore": "Must pass quiz before continuing",
+      "quizRestart": "Restart",
+      "quizResults": "Quiz Results",
+      "quizScore": "Your score",
+      "quizSkipAhead": "Skip Ahead to Lesson",
+      "quizStart": "START QUIZ",
+      "quizSubmit": "SUBMIT",
+      "quizTakeAgain": "TAKE AGAIN",
+      "quizTimerElapsed": "Time elapsed",
+      "quizTimerExpired": "Time expired",
+      "quizTimerExpiredAction": "OK",
+      "quizTimerExpiredMessage": "You have reached the time limit for this quiz. Your results will be automatically submitted",
+      "quizTimerHide": "Hide",
+      "quizTimerLimit": "Time limit",
+      "quizTimerMinute": "Minute",
+      "quizTimerMinutePlural": "Minutes",
+      "quizTimerRemaining": "Time left",
+      "quizTimerShow": "Show timer",
+      "quizUntitled": "Untitled Quiz",
+      "result": "result",
+      "results": "results",
+      "scenarioComplete": "Scenario Complete!",
+      "scenarioContinue": "CONTINUE",
+      "scenarioStartOver": "START OVER",
+      "scenarioTryAgain": "TRY AGAIN",
+      "search": "search",
+      "seekSliderLabel": "Seek",
+      "sortingCardsCorrect": "Cards Correct",
+      "sortingLandmark": "Sorting Activity",
+      "sortingReplay": "REPLAY",
+      "surveyConfirmation": "Thanks! Your responses were sent.",
+      "surveyFreeResponseRequired": "Please enter a response",
+      "surveyMultipleChoiceRequired": "Please select an answer",
+      "surveyMultipleResponseRequired": "Please select at least one answer",
+      "surveyPlaceholder": "Share your thoughts",
+      "surveyRatingRequired": "Please select a rating",
+      "surveyRequired": "Required",
+      "surveySubmit": "Submit",
+      "surveySubmitting": "Submitting...",
+      "surveyValidationError": "Please answer all required questions to continue.",
+      "trialBadgePoweredBy": "Powered by",
+      "trialBadgeTooltip": "Purchase to remove badging and watermarks from published content",
+      "videoBlock": "block",
+      "videoBlocks": "blocks",
+      "videoChapterName": "Chapter",
+      "videoChapters": "Chapters",
+      "videoChapterUntitled": "Untitled chapter",
+      "videoChapterWholeVideo": "Whole video",
+      "videoCheckpointAddBlock": "Add a block",
+      "videoCheckpointBookendEnd": "End",
+      "videoCheckpointBookendStart": "Start",
+      "videoCheckpointContinue": "Continue",
+      "videoCheckpointDefaultTitle": "Checkpoint",
+      "videoCheckpointDone": "Done",
+      "videoCheckpointLocked": "Complete the activities above to continue.",
+      "videoCheckpointNew": "New checkpoint",
+      "videoCheckpointNoContent": "No content added to this checkpoint.",
+      "videoCheckpointPausedAt": "Paused at",
+      "videoCheckpointPlaysAfter": "Plays after video",
+      "videoCheckpointPlaysBefore": "Plays before video",
+      "videoCheckpointRequireCorrectAnswer": "A knowledge check here requires a correct answer to continue.",
+      "videoCheckpointRequired": "Require interactions",
+      "videoCheckpointRequiredEmpty": "There are currently no interactive blocks to require.",
+      "videoCheckpointResume": "Resume video",
+      "videoCheckpoints": "Checkpoints",
+      "videoCheckpointStart": "Start video",
+      "videoCheckpointStartDismiss": "Start video",
+      "videoCheckpointUntitled": "Untitled checkpoint",
+      "videoHideTranscript": "Hide transcript",
+      "videoNoChapters": "No chapters yet",
+      "videoNoChaptersMessage": "Add timestamps in the block settings to organize your video.",
+      "videoOutline": "Video outline",
+      "videoOutlineAddChapterAt": "Add chapter at",
+      "videoOutlineChapter": "chapter",
+      "videoOutlineChapters": "chapters",
+      "videoOutlineCheckpoint": "checkpoint",
+      "videoOutlineCheckpoints": "checkpoints",
+      "videoShowLessChapters": "Show less chapters",
+      "videoShowMoreChapters": "Show more chapters",
+      "videoTranscript": "Transcript",
+      "videoTranscriptAutoScroll": "Auto-scroll transcript",
+      "videoViewTranscript": "View transcript"
+    },
+    "id": "VhNWbYblvhwawL6qDtUlbJ0n",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "name": "English",
+    "defaultId": 1,
+    "defaultSet": true,
+    "deleted": false,
+    "createdAt": "2026-06-07T16:36:41.888Z",
+    "updatedAt": "2026-06-07T16:36:41.888Z",
+    "transferredAt": null
+  },
+  "settings": {
+    "completionPercentage": 100,
+    "reporting": "passed-incomplete",
+    "resetLearnerData": false,
+    "loadOnlyInLMS": true,
+    "filename": "notebook-lm-hands-on-scorm12-NaTJYg5H.zip",
+    "coursePackageVersion": "NaTJYg5H",
+    "exporterAuthId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "cdnUri": "https://cdn.articulate.com",
+    "courseUpdateCallbackUrl": "https://rise-runtime.360.prod.art-internal.com/publish/course/6Vtgzgg_6zp3GfBDoawlc6q2PA0WPOlZ",
+    "format": "zip",
+    "identifier": "6Vtgzgg_6zp3GfBDoawlc6q2PA0WPOlZ_rise",
+    "isRemotePackage": false,
+    "reviewContentUrl": "https://360.articulate.com/review/content",
+    "s3Metadata": {
+      "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+      "tenant-id": "59833a41-7aa6-40d9-b4a8-439946c15810"
+    },
+    "telemetryUri": "https://metrics.articulate.com",
+    "title": "NotebookLM - Hands On"
+  },
+  "deliveryPolicy": {
+    "status": "resolved",
+    "schemaVersion": 1,
+    "evaluatedAt": "2026-10-18T03:01:05.206Z",
+    "access": "allowed",
+    "protection": "none"
+  },
+  "exportAggregate": {
+    "subscriptionId": "59833a41-7aa6-40d9-b4a8-439946c15810",
+    "exportId": "3d4nbnjwHtRZoAn9S8k_lniKNjl3TN61",
+    "courseId": "6Vtgzgg_6zp3GfBDoawlc6q2PA0WPOlZ",
+    "courseType": "course",
+    "courseTheme": "classic",
+    "courseCreatedVia": "ai",
+    "courseLessons": {
+      "total": 3,
+      "ai": 3,
+      "blocks": {
+        "total": 3,
+        "ai": 3
+      }
+    },
+    "courseBlocks": {
+      "total": 56,
+      "ai": 56,
+      "text": {
+        "total": 32,
+        "ai": 32
+      },
+      "list": {
+        "total": 5,
+        "ai": 5
+      },
+      "interactive": {
+        "total": 9,
+        "ai": 9
+      },
+      "knowledgeCheck": {
+        "total": 7,
+        "ai": 7
+      },
+      "divider": {
+        "total": 3,
+        "ai": 3
+      }
+    }
+  },
+  "fonts": [
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "odEbaqB-9smJ3djS.woff",
+      "style": "italic",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "400"
+    },
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "LM161uPxEAP6TYht.woff",
+      "style": "normal",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "700"
+    },
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "d3AXvJ6ebo6lNjzY.woff",
+      "style": "normal",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-SemiBold.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "600"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Medium.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "500"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Black.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "900"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Bold.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "700"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Italic.woff",
+      "style": "italic",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Regular.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Light.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "300"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Regular.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "400"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Light.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "300"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Italic.woff",
+      "style": "italic",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "400"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Bold.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "700"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Black.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "900"
+    }
+  ],
+  "partnerContent": []
+}

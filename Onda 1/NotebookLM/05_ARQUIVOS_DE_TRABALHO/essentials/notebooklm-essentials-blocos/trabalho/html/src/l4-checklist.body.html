@@ -1,0 +1,58 @@
+<!--titulo: Checklist do Caderno LGPD-->
+<style>
+  .chk { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }
+  .chk input { width: 20px; height: 20px; margin: 1px 0 0; flex: 0 0 auto; accent-color: var(--azul); }
+  .chk.feito { border-color: var(--ok); background: var(--ok-claro); }
+  .placar { font-weight: 700; color: var(--azul); margin: 0; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Ponto de controle</span>
+  <h1 id="t">Seu Caderno LGPD está pronto?</h1>
+  <p class="sub">Marque cada item só depois de conferir na sua tela. O Continue libera quando todos estiverem marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="feedback info">Algo não bateu? Volte aos problemas comuns ao importar fontes, acima: PDF que abre como página, PDF que não é citado, site incompleto.</div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Itens: passos e critério de êxito do Módulo 3 do roteiro.
+  var ITENS = [
+    'Abri os PDFs das fontes 2 e 3 e confirmei que têm 21 e 58 páginas (são os guias, não a página do portal).',
+    'Criei o notebook em notebook.google.com > Criar novo notebook.',
+    'Importei os dois PDFs como arquivo do computador.',
+    'Importei a LGPD e a página "Titular de Dados" como link de site.',
+    'Renomeei o notebook para "LGPD — revisão".',
+    'No painel Fontes, aparecem quatro fontes com as caixas de seleção marcadas.',
+    'Enviei o prompt de conferência do corpus: a resposta trouxe quatro itens, cada um com uma citação que abre a fonte correspondente.'
+  ];
+  var FINAL = 'Corpus montado e conferido. É sobre ele que você vai consultar, auditar e produzir nas próximas lições. Você já pode continuar.';
+</script>
+<script>
+  // Lógica comum de checklist que trava o Continue (hasCustomCompletion).
+  (function () {
+    var marcados = {}, concluido = false, lista = document.getElementById('lista');
+    ITENS.forEach(function (txt, i) {
+      var l = document.createElement('label'); l.className = 'chk';
+      var c = document.createElement('input'); c.type = 'checkbox';
+      var s = document.createElement('span'); s.textContent = txt;
+      c.addEventListener('change', function () {
+        if (c.checked) { marcados[i] = true; l.classList.add('feito'); } else { delete marcados[i]; l.classList.remove('feito'); }
+        atualizar();
+      });
+      l.appendChild(c); l.appendChild(s); lista.appendChild(l);
+    });
+    function atualizar() {
+      var n = Object.keys(marcados).length;
+      document.getElementById('placar').textContent = n + ' de ' + ITENS.length + ' itens conferidos';
+      document.getElementById('barra').style.width = (100 * n / ITENS.length) + '%';
+      if (n === ITENS.length && !concluido) {
+        concluido = true;
+        document.getElementById('final').textContent = FINAL;
+        window.parent.postMessage({ type: 'complete' }, '*');
+      }
+    }
+    atualizar();
+  })();
+</script>

@@ -1,0 +1,57 @@
+<!--titulo: Critérios de avaliação-->
+<style>
+  .chk { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }
+  .chk input { width: 20px; height: 20px; margin: 1px 0 0; flex: 0 0 auto; accent-color: var(--azul); }
+  .chk.feito { border-color: var(--ok); background: var(--ok-claro); }
+  .placar { font-weight: 700; color: var(--azul); margin: 0; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Autoavaliação</span>
+  <h1 id="t">Critérios da atividade integradora</h1>
+  <p class="sub">Depois de fazer a atividade, confira cada critério no seu Caderno LGPD e marque o que foi atendido. O Continue libera quando todos estiverem marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <p class="nota">Extensão opcional (fora da carga horária): repita o fluxo com um tema próprio, usando três fontes de nível verde avaliadas pela ficha de decisão.</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Critérios de avaliação do Módulo 6 do roteiro.
+  var ITENS = [
+    'O Caderno LGPD contém as quatro fontes.',
+    'Foi feita ao menos uma pergunta ancorada, com citações auditadas na ficha.',
+    'O documento de resumo e o guia de estudo foram gerados, e uma afirmação foi conferida.',
+    'O Resumo em Áudio foi gerado em português.',
+    'O artefato do perfil foi gerado.',
+    'A decisão de compartilhamento foi registrada com justificativa.'
+  ];
+  var FINAL = 'Fluxo completo: decidir, reunir, perguntar, conferir e produzir. Você já pode continuar.';
+</script>
+<script>
+  // Lógica comum de checklist que trava o Continue (hasCustomCompletion).
+  (function () {
+    var marcados = {}, concluido = false, lista = document.getElementById('lista');
+    ITENS.forEach(function (txt, i) {
+      var l = document.createElement('label'); l.className = 'chk';
+      var c = document.createElement('input'); c.type = 'checkbox';
+      var s = document.createElement('span'); s.textContent = txt;
+      c.addEventListener('change', function () {
+        if (c.checked) { marcados[i] = true; l.classList.add('feito'); } else { delete marcados[i]; l.classList.remove('feito'); }
+        atualizar();
+      });
+      l.appendChild(c); l.appendChild(s); lista.appendChild(l);
+    });
+    function atualizar() {
+      var n = Object.keys(marcados).length;
+      document.getElementById('placar').textContent = n + ' de ' + ITENS.length + ' critérios atendidos';
+      document.getElementById('barra').style.width = (100 * n / ITENS.length) + '%';
+      if (n === ITENS.length && !concluido) {
+        concluido = true;
+        document.getElementById('final').textContent = FINAL;
+        window.parent.postMessage({ type: 'complete' }, '*');
+      }
+    }
+    atualizar();
+  })();
+</script>

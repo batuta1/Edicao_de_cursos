@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa do Estúdio</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+    --aviso: #8a5a00; --aviso-claro: #fdf3e1;
+    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }
+  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }
+  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }
+  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }
+  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }
+  button { font: inherit; }
+  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }
+  .btn:hover { background: var(--azul-claro); }
+  .btn[aria-pressed="true"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .btn.principal:hover { background: var(--azul-2); }
+  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }
+  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }
+  .feedback:empty { display: none; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }
+  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }
+  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }
+  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }
+  .final:empty { display: none; }
+  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }
+  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }
+  .saida { white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+</style>
+</head>
+<body>
+<style>
+  .estudio { background: #fff; border: 1px solid var(--linha); border-radius: 16px; padding: 14px; }
+  .estudio > h2 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--suave); }
+  .blocos { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .tile { text-align: left; background: var(--areia); border: 1.5px solid var(--linha); border-radius: 12px; padding: 10px 12px; cursor: pointer; color: var(--tinta); font-size: 14px; font-weight: 600; min-height: 52px; }
+  .tile:hover { border-color: var(--azul-2); }
+  .tile[aria-pressed="true"] { border-color: var(--azul); background: var(--azul-claro); }
+  .tile .tag { display: block; margin-top: 4px; font-size: 11px; font-weight: 700; color: var(--ok); text-transform: uppercase; letter-spacing: .06em; }
+  .tile .tag.fora { color: var(--suave); }
+  .relatorios { grid-column: 1 / -1; border: 2px solid var(--azul); border-radius: 14px; padding: 10px; background: #fff; }
+  .relatorios > p { margin: 0 0 8px; font-weight: 700; color: var(--azul); font-size: 14px; }
+  .detalhe { margin-top: 12px; background: var(--azul-claro); color: var(--azul); border-radius: 12px; padding: 12px 14px; min-height: 60px; }
+  .detalhe strong { display: block; margin-bottom: 2px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mapa</span>
+  <h1 id="t">O que fica onde no Estúdio</h1>
+  <p class="sub">Documento de resumo, Guia de estudo e Perguntas frequentes não são botões soltos: ficam dentro de Relatórios. Clique em cada item para ver os detalhes.</p>
+  <div class="estudio">
+    <h2>Estúdio</h2>
+    <div class="blocos" id="blocos">
+      <div class="relatorios">
+        <p>Relatórios</p>
+        <div class="blocos" id="rel"></div>
+      </div>
+    </div>
+  </div>
+  <div class="detalhe" id="detalhe" role="status" aria-live="polite"><strong>Clique num item.</strong>"Usado no curso" marca o que você vai gerar nas atividades.</div>
+  <p class="nota">Esquema, não captura de tela: a ordem e a aparência reais podem variar. Lista e limites segundo a ajuda oficial consultada em 17/10/2026. No plano gratuito, por dia: 3 Resumos em Áudio, 3 Resumos em Vídeo e 10 unidades de relatórios, cartões, testes e mapas mentais.</p>
+</section>
+
+<script>
+  // Conteúdo: Módulo 5 do roteiro.
+  var REL = [
+    { n: 'Documento de resumo', tag: 'usado no curso', d: 'Modelo de relatório (briefing). É o "resumo" exigido como produto neste curso — não confundir com uma resposta resumida da conversa. Caminho: Estúdio > Relatórios > Documento de resumo.' },
+    { n: 'Guia de estudo', tag: 'usado no curso', d: 'Modelo de relatório para revisar o conteúdo das fontes. Se não o encontrar, procure dentro de Relatórios. Caminho: Estúdio > Relatórios > Guia de estudo.' },
+    { n: 'Perguntas frequentes', d: 'Modelo de relatório que organiza o conteúdo em perguntas e respostas.' },
+    { n: 'Formato próprio', d: 'Além dos modelos prontos e dos formatos sugeridos conforme o conteúdo, você pode descrever um formato. É o caminho para uma linha do tempo, que não tem botão fixo.' }
+  ];
+  var OUT = [
+    { n: 'Resumo em Áudio', tag: 'usado no curso', d: 'Narrativa gerada a partir das fontes, não leitura literal. Formatos: Conversa aprofundada, Resumo (The Brief, um apresentador, menos de dois minutos), Crítica e Debate. Escolha Português (Brasil) em Personalizar.' },
+    { n: 'Resumo em Vídeo', tag: 'opcional', fora: true, d: 'Explicador e Curto aceitam português. O Cinematográfico exige plano Ultra, 18 anos ou mais e inglês, e não faz parte do curso.' },
+    { n: 'Mapa mental', d: 'Temas em ramos expansíveis; selecionar um nó gera perguntas sobre ele.' },
+    { n: 'Cartões de estudo', tag: 'perfil estudante', d: 'Configurados em quantidade e dificuldade, com instrução opcional. Podem ser exportados em CSV.' },
+    { n: 'Testes', tag: 'perfil estudante', d: 'Configurados em quantidade e dificuldade, com instrução opcional, e permitem acompanhar o progresso.' },
+    { n: 'Tabela de dados', tag: 'Direito e jornalismo', d: 'Uma das opções de artefato para os perfis de Direito e jornalismo/análise na atividade integradora.' },
+    { n: 'Apresentações de slides', d: 'Artefato listado pela ajuda oficial; não é usado nas atividades deste curso.' },
+    { n: 'Infográficos', d: 'Artefato listado pela ajuda oficial; não é usado nas atividades deste curso.' }
+  ];
+  var todos = [];
+  function tile(o, onde) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'tile'; b.setAttribute('aria-pressed', 'false');
+    b.textContent = o.n;
+    if (o.tag) { var s = document.createElement('span'); s.className = 'tag' + (o.fora ? ' fora' : ''); s.textContent = o.tag; b.appendChild(s); }
+    b.addEventListener('click', function () {
+      todos.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var d = document.getElementById('detalhe'); d.innerHTML = '';
+      var st = document.createElement('strong'); st.textContent = o.n; d.appendChild(st); d.appendChild(document.createTextNode(o.d));
+    });
+    todos.push(b); onde.appendChild(b);
+  }
+  REL.forEach(function (o) { tile(o, document.getElementById('rel')); });
+  OUT.forEach(function (o) { tile(o, document.getElementById('blocos')); });
+</script>
+
+</body>
+</html>

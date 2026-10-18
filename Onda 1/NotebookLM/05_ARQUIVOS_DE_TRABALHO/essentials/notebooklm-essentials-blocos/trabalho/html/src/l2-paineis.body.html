@@ -1,0 +1,72 @@
+<!--titulo: Os três painéis-->
+<style>
+  .tela { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin-bottom: 14px; }
+  .painel { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 12px; min-height: 190px; }
+  .painel h2 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--suave); display: flex; justify-content: space-between; align-items: center; }
+  .ponto { width: 26px; height: 26px; border-radius: 50%; border: 0; background: var(--azul); color: #fff; font-weight: 700; font-size: 13px; cursor: pointer; flex: 0 0 auto; }
+  .ponto[aria-pressed="true"] { background: #f0b45a; color: var(--azul); }
+  .fonte { display: flex; gap: 8px; align-items: center; font-size: 13px; padding: 6px 0; border-bottom: 1px solid var(--azul-claro); }
+  .fonte span.cx { width: 16px; height: 16px; border-radius: 4px; background: var(--azul); flex: 0 0 auto; display: grid; place-items: center; color: #fff; font-size: 11px; }
+  .msg { font-size: 13px; border-radius: 10px; padding: 8px 10px; margin: 6px 0; }
+  .msg.eu { background: var(--azul-claro); }
+  .msg.ia { background: var(--areia); }
+  .cit { display: inline-block; min-width: 20px; padding: 0 5px; border-radius: 6px; background: var(--azul); color: #fff; font-size: 11px; font-weight: 700; border: 0; cursor: pointer; }
+  .estudio { display: flex; flex-wrap: wrap; gap: 6px; }
+  .estudio span { font-size: 12px; border: 1px solid var(--linha); border-radius: 999px; padding: 4px 9px; background: var(--areia); }
+  .explica { background: var(--azul-claro); color: var(--azul); border-radius: 12px; padding: 12px 14px; min-height: 64px; }
+  .explica strong { display: block; margin-bottom: 2px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Explore</span>
+  <h1 id="t">Os três painéis e a citação</h1>
+  <p class="sub">Clique nos números e na citação [1] para ver o papel de cada parte do notebook.</p>
+
+  <div class="tela">
+    <div class="painel">
+      <h2>Fontes <button class="ponto" type="button" data-p="fontes" aria-pressed="false" aria-label="Painel Fontes">1</button></h2>
+      <div class="fonte"><span class="cx" aria-hidden="true">✓</span> LGPD — texto compilado</div>
+      <div class="fonte"><span class="cx" aria-hidden="true">✓</span> Guia ANPD — segurança</div>
+      <div class="fonte"><span class="cx" aria-hidden="true">✓</span> Guia ANPD — fins acadêmicos</div>
+      <div class="fonte"><span class="cx" aria-hidden="true">✓</span> Titular de Dados</div>
+      <p style="margin:8px 0 0"><button class="ponto" type="button" data-p="caixa" aria-pressed="false" aria-label="Caixa de seleção">2</button></p>
+    </div>
+    <div class="painel">
+      <h2>Conversa <button class="ponto" type="button" data-p="conversa" aria-pressed="false" aria-label="Painel Conversa">3</button></h2>
+      <div class="msg eu">O que é dado pessoal?</div>
+      <div class="msg ia">Dado pessoal é a informação relacionada a pessoa natural identificada ou identificável <button class="cit" type="button" data-p="citacao" aria-pressed="false" aria-label="Citação 1">1</button>.</div>
+    </div>
+    <div class="painel">
+      <h2>Estúdio <button class="ponto" type="button" data-p="estudio" aria-pressed="false" aria-label="Painel Estúdio">4</button></h2>
+      <div class="estudio">
+        <span>Resumo em Áudio</span><span>Relatórios</span><span>Mapa mental</span><span>Cartões de estudo</span><span>Teste</span><span>…</span>
+      </div>
+      <p style="margin:10px 0 0"><button class="ponto" type="button" data-p="artefato" aria-pressed="false" aria-label="Resposta ou artefato">5</button></p>
+    </div>
+  </div>
+
+  <div class="explica" id="explica" role="status" aria-live="polite"><strong>Comece pelo 1.</strong>Cada número explica uma parte da tela.</div>
+  <p class="nota">Esquema ilustrativo, não uma captura da tela: a disposição real pode variar. Caminho: notebook.google.com &gt; [notebook aberto] &gt; Fontes | Conversa | Estúdio.</p>
+</section>
+
+<script>
+  // Textos do Módulo 1 do roteiro (painéis, citação, artefato).
+  var T = {
+    fontes: ['Fontes (Sources)', 'Lista os materiais que você importou para o notebook. É o "material entregue" da prova com consulta.'],
+    caixa: ['Caixa de seleção', 'Cada fonte tem a sua. Só as marcadas participam da resposta: desmarcar uma fonte estreita a consulta.'],
+    conversa: ['Conversa (Chat)', 'Recebe perguntas em linguagem natural. A resposta é produzida a partir das fontes marcadas e vem com citações numeradas.'],
+    citacao: ['Citação [1]', 'Passe o cursor sobre o número para ver o trecho usado; clique para abrir a fonte na posição correspondente. Aqui, o trecho seria o art. 5º, I, da LGPD. A citação é o caminho para conferir, não um selo de veracidade.'],
+    estudio: ['Estúdio (Studio)', 'Produz artefatos: relatórios, guias de estudo, Resumos em Áudio, mapas mentais, cartões de estudo, testes e outros.'],
+    artefato: ['Resposta × artefato', 'A resposta da conversa é efêmera e conversacional. O artefato é um objeto salvo no notebook, que você reutiliza — e também precisa revisar.']
+  };
+  var botoes = document.querySelectorAll('[data-p]');
+  botoes.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var k = b.getAttribute('data-p');
+      botoes.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var e = document.getElementById('explica');
+      e.innerHTML = '';
+      var s = document.createElement('strong'); s.textContent = T[k][0];
+      e.appendChild(s); e.appendChild(document.createTextNode(T[k][1]));
+    });
+  });
+</script>
