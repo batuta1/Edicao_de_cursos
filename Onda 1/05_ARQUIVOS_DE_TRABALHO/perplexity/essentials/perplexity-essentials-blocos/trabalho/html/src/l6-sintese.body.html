@@ -1,0 +1,59 @@
+<!--titulo: Confira sua síntese-->
+<style>
+  textarea { min-height: 170px; resize: vertical; line-height: 1.45; }
+  .medidas { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin: 12px 0 16px; }
+  .medida { background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 10px 12px; font-size: 14px; }
+  .medida strong { display: block; font-size: 20px; color: var(--azul); }
+  .medida.ok { border-color: var(--ok); background: var(--ok-claro); }
+  .medida.ok strong { color: var(--ok); }
+  .medida.alerta { border-color: var(--aviso); background: var(--aviso-claro); }
+  .medida.alerta strong { color: var(--aviso); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Verificação</span>
+  <h1 id="t">Confira sua síntese citada</h1>
+  <p class="sub">Cole aqui a versão final da sua síntese sobre o art. 20 da LGPD. A tela conta as palavras e procura a seção de limites; o resto você confere e marca. Nada do que você cola sai desta página.</p>
+  <label for="texto" class="nota" style="display:block;margin:0 0 6px">Sua síntese (parágrafos separados por linha em branco)</label>
+  <textarea id="texto" placeholder="Cole a síntese aqui…"></textarea>
+  <div class="medidas" aria-live="polite">
+    <div class="medida" id="mPal"><strong id="nPal">0</strong>palavras (meta: 150 a 200)</div>
+    <div class="medida" id="mPar"><strong id="nPar">0</strong>parágrafos com marca de citação</div>
+    <div class="medida" id="mLim"><strong id="nLim">não</strong>seção “Limites desta síntese”</div>
+  </div>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <p class="nota">A contagem é aproximada e só reconhece citações no formato [1] ou com link. Quem decide se cada citação sustenta a frase é a ficha de auditoria.</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Critério de êxito e quatro regras da síntese citada: Módulo 5 do roteiro.
+  var LIM = /limites desta s[ií]ntese/i;
+  function medir() {
+    var t = document.getElementById('texto').value;
+    var corte = t.search(LIM);
+    var corpo = corte >= 0 ? t.slice(0, corte) : t;
+    var palavras = (t.match(/[A-Za-zÀ-ÿ0-9]+(?:[-'][A-Za-zÀ-ÿ0-9]+)*/g) || []).length;
+    var pars = corpo.split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+    var comCit = pars.filter(function (p) { return /\[\d+\]|https?:|www\./i.test(p); }).length;
+    document.getElementById('nPal').textContent = palavras;
+    document.getElementById('mPal').className = 'medida ' + (palavras === 0 ? '' : (palavras >= 150 && palavras <= 200 ? 'ok' : 'alerta'));
+    document.getElementById('nPar').textContent = comCit + ' de ' + pars.length;
+    document.getElementById('mPar').className = 'medida ' + (pars.length === 0 ? '' : (comCit === pars.length ? 'ok' : 'alerta'));
+    document.getElementById('nLim').textContent = corte >= 0 ? 'sim' : 'não';
+    document.getElementById('mLim').className = 'medida ' + (t.trim() === '' ? '' : (corte >= 0 ? 'ok' : 'alerta'));
+  }
+  document.getElementById('texto').addEventListener('input', medir);
+  medir();
+  checklist([
+    'A síntese tem entre 150 e 200 palavras.',
+    'Todo parágrafo tem pelo menos uma citação, logo depois da frase que ela sustenta, conferida na ficha de auditoria.',
+    'Fato, inferência e divergência estão separados.',
+    'As afirmações se apoiam em fonte primária (a lei, a orientação oficial).',
+    'A afirmação sobre o art. 20 foi confirmada no texto compilado da LGPD, no Planalto.',
+    'A seção “Limites desta síntese” declara o que não foi possível confirmar, o recorte de período e as fontes não acessadas.'
+  ], 'lista', 'placar', 'barra', 'critérios atendidos', function () {
+    concluir('final', 'Síntese citada auditada: a Perplexity redigiu o rascunho; a auditoria e a versão final são suas. Você já pode continuar.');
+  });
+</script>

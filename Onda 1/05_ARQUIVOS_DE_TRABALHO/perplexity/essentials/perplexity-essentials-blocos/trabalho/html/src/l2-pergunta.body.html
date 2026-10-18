@@ -1,0 +1,82 @@
+<!--titulo: Monte sua pergunta pesquisável-->
+<style>
+  .el h2 { display: flex; gap: 8px; align-items: center; }
+  .el h2 .n { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #fff; font-size: 12px; flex: 0 0 auto; }
+  .el .opcoes .btn { text-align: left; border-radius: 12px; }
+  .el .opcoes .btn.nao { border-style: dashed; color: var(--suave); border-color: var(--linha); }
+  .el .opcoes .btn.nao[aria-pressed="true"] { background: var(--erro-claro); color: var(--erro); border-color: var(--erro); }
+  .medidor { font-weight: 700; color: var(--azul); margin: 16px 0 4px; }
+  .lista-el { display: grid; gap: 10px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Laboratório</span>
+  <h1 id="t">Monte sua pergunta pesquisável</h1>
+  <p class="sub">Comece pela pergunta vaga — “A LGPD fala de inteligência artificial?” — e acrescente os elementos. Escolha uma opção em cada um, ou deixe um de fora para ver o que se perde. A pergunta se monta abaixo.</p>
+  <div class="lista-el" id="elementos"></div>
+  <p class="medidor" id="medidor" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <pre class="saida" id="saida"></pre>
+  <div class="feedback" id="alerta" role="status" aria-live="polite"></div>
+  <div class="opcoes" style="margin-top:10px"><button type="button" class="btn principal" id="copiar">Copiar pergunta</button></div>
+  <div class="feedback" id="msgCopia" role="status" aria-live="polite"></div>
+  <p class="nota">Exemplos com o tema-âncora do curso (art. 20 da LGPD), a partir do prompt-base e da pergunta pesquisável da lição.</p>
+</section>
+
+<script>
+  // Elementos da pergunta (ajuda oficial + três exigências do curso): Módulo 1 do roteiro.
+  var EL = [
+    { nome: 'Instrução e contexto', falta: 'Sem instrução, a ferramenta não sabe se deve explicar, comparar ou listar, nem para quem.',
+      op: ['Explique, para uma pessoa iniciante, o que o art. 20 da LGPD garante ao titular diante de decisões tomadas unicamente por tratamento automatizado.',
+           'Liste, para preparar uma aula, os direitos que o art. 20 da LGPD dá ao titular diante de decisões automatizadas.'] },
+    { nome: 'Fontes aceitas', falta: 'Sem fontes aceitas, qualquer blog ou notícia pode sustentar a resposta.',
+      op: ['Priorize planalto.gov.br e gov.br/anpd.',
+           'Use apenas planalto.gov.br e gov.br/anpd; avise se não houver evidência nesses domínios.'] },
+    { nome: 'Recorte', falta: 'Sem recorte, a busca pode misturar versões antigas da lei ou outros países.',
+      op: ['Considere a legislação brasileira em vigor, no texto compilado.'] },
+    { nome: 'Exigência de citação', falta: 'Sem pedir fonte e trecho, você perde o caminho para conferir cada afirmação.',
+      op: ['Para cada afirmação, indique a fonte e um trecho curto.',
+           'Para cada afirmação, indique a fonte, a data e um trecho curto que a sustente.'] },
+    { nome: 'Fato, inferência e lacuna', falta: 'Sem essa separação, o que não foi confirmado se mistura com o que a lei diz.',
+      op: ['Separe o que a lei diz, o que a ANPD orienta e o que não foi possível confirmar.'] },
+    { nome: 'Formato', falta: 'Sem formato, a resposta pode vir longa, em tópicos soltos ou em outro idioma.',
+      op: ['Até 200 palavras.', 'Até 200 palavras, em português do Brasil.'] }
+  ];
+  var esc = EL.map(function () { return -1; });
+  var caixa = document.getElementById('elementos');
+
+  EL.forEach(function (e, i) {
+    var d = document.createElement('div'); d.className = 'item el';
+    d.innerHTML = '<h2 id="e' + i + '"><span class="n">' + (i + 1) + '</span>' + e.nome + '</h2>';
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'e' + i);
+    e.op.concat([null]).forEach(function (txt, k) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn' + (txt === null ? ' nao' : '');
+      b.textContent = txt === null ? 'Deixar de fora' : txt;
+      b.setAttribute('data-k', txt === null ? -1 : k);
+      b.addEventListener('click', function () { esc[i] = txt === null ? -1 : k; marcar(g, b); montar(); });
+      g.appendChild(b);
+    });
+    d.appendChild(g); caixa.appendChild(d);
+    marcar(g, g.querySelector('[data-k="-1"]'));
+  });
+
+  function marcar(g, b) { g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); }
+  function montar() {
+    var partes = [], faltas = [];
+    EL.forEach(function (e, i) { if (esc[i] >= 0) partes.push(e.op[esc[i]]); else faltas.push(e.nome); });
+    document.getElementById('saida').textContent = partes.length ? partes.join(' ') : 'A LGPD fala de inteligência artificial?';
+    var n = partes.length;
+    document.getElementById('medidor').textContent = n + ' de ' + EL.length + ' elementos';
+    document.getElementById('barra').style.width = (100 * n / EL.length) + '%';
+    var a = document.getElementById('alerta');
+    if (faltas.length) {
+      var primeiro = EL.filter(function (e) { return e.nome === faltas[0]; })[0];
+      a.textContent = 'Faltando: ' + faltas.join(', ') + '. ' + primeiro.falta;
+      a.className = 'feedback aviso';
+    } else {
+      a.textContent = 'Pergunta pesquisável: instrução e contexto, fontes aceitas, recorte, citação com trecho, separação entre fato e lacuna, e formato.';
+      a.className = 'feedback ok';
+    }
+  }
+  ligarCopia('copiar', 'saida', 'msgCopia', 'Pergunta');
+  montar();
+</script>

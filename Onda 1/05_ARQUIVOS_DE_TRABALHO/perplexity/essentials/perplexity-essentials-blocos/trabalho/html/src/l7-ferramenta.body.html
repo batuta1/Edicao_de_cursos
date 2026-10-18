@@ -1,0 +1,33 @@
+<!--titulo: Qual ferramenta serve melhor?-->
+<style>
+  .item .opcoes .btn { font-size: 13px; padding: 6px 12px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Prática</span>
+  <h1 id="t">Qual ferramenta serve melhor?</h1>
+  <p class="sub">Para cada situação, escolha a ferramenta indicada. Você recebe a correção na hora.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Tabela de escolha da ferramenta: Módulo 6 do roteiro.
+  classificador({
+    casos: [
+      { t: 'Você vai começar a estudar um tema que não conhece e precisa de vocabulário e de fontes candidatas.', r: 'perplexity', p: 'Mapear um tema novo é o forte da Perplexity, na busca padrão ou na Pesquisa Pro.' },
+      { t: 'Você precisa citar, num recurso, o acórdão que a IA indicou.', r: 'oficial', p: 'Decisão e norma só se citam a partir do repositório oficial do tribunal ou do órgão, depois da pista da IA.' },
+      { t: 'Uma revisão de literatura acadêmica que outra pessoa precisa conseguir reproduzir.', r: 'base', p: 'Corpus reproduzível para revisão acadêmica: base especializada, como PubMed ou SciELO.' },
+      { t: 'Você já reuniu e conferiu um conjunto fechado de documentos e quer estudá-los a fundo.', r: 'notebook', p: 'Estudo a fundo de documentos já reunidos: NotebookLM, tema do próximo curso da trilha.' },
+      { t: 'Você precisa de um relatório longo de pesquisa profunda sobre um tema amplo.', r: 'deep', p: 'Relatório longo: Research (Deep Research), tema do curso Deep Research - Hands On.' },
+      { t: 'Você quer varrer a web com controle fino de operadores, como site: e AND/OR.', r: 'buscador', p: 'Cobertura ampla e controle fino de operadores: buscador tradicional.' }
+    ],
+    opcoes: { perplexity: 'Perplexity', buscador: 'Buscador tradicional', base: 'Base especializada', oficial: 'Repositório oficial', notebook: 'NotebookLM', deep: 'Deep Research' },
+    dicaErro: 'Pergunte-se: é para explorar, para citar, para reproduzir, para estudar o que já reuni ou para um relatório longo?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'situações resolvidas',
+    aoConcluir: function () {
+      document.getElementById('final').textContent = 'O fluxo é complementar: a Perplexity indica pistas; a base oficial ou acadêmica confirma; a leitura humana conclui.';
+    }
+  });
+</script>

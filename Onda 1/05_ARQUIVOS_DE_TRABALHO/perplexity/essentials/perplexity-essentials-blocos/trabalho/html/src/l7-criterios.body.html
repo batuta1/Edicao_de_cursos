@@ -1,0 +1,24 @@
+<!--titulo: Critérios da atividade integradora-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Autoavaliação</span>
+  <h1 id="t">Critérios da atividade integradora</h1>
+  <p class="sub">Depois de fazer a atividade com o tema do seu perfil, confira cada critério e marque o que foi atendido. Cada critério não atendido aponta a etapa do fluxo a refazer. O Continue libera quando todos estiverem marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Critérios de avaliação do Módulo 6 do roteiro.
+  checklist([
+    'Proteger — o tema foi classificado no semáforo e a ficha de avaliação foi preenchida.',
+    'Formular — a pergunta contém instrução, recorte, fontes aceitas e formato.',
+    'Buscar — o nível de busca foi escolhido e justificado.',
+    'Conferir — duas citações (ou uma decisão, no perfil jurídico) foram conferidas no original.',
+    'Sintetizar — a síntese tem citação por parágrafo e a seção “Limites desta síntese”.',
+    'Compartilhar — a decisão de compartilhar, ou não, foi registrada com justificativa.'
+  ], 'lista', 'placar', 'barra', 'critérios atendidos', function () {
+    concluir('final', 'Fluxo completo: proteger, formular, buscar, conferir e sintetizar. Você já pode continuar.');
+  });
+</script>

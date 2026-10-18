@@ -1,0 +1,74 @@
+<!--titulo: Como o motor de respostas monta a resposta-->
+<style>
+  .fluxo { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin: 4px 0 14px; }
+  .etapa { position: relative; text-align: left; background: #fff; border: 1.5px solid var(--linha); border-radius: 14px; padding: 12px 12px 12px 48px; cursor: pointer; min-height: 72px; transition: border-color .15s ease, opacity .2s ease; }
+  .etapa .n { position: absolute; left: 12px; top: 12px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #fff; font-weight: 700; font-size: 13px; }
+  .etapa strong { display: block; color: var(--azul); }
+  .etapa span.r { font-size: 13px; color: var(--suave); }
+  .etapa[aria-pressed="true"] { border-color: var(--azul); box-shadow: inset 0 0 0 1px var(--azul); }
+  .etapa.pulada { opacity: .35; border-style: dashed; }
+  .painel { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px 16px; }
+  .painel h2 { margin-bottom: 8px; }
+  .painel p { margin: 0 0 8px; }
+  .risco { background: var(--aviso-claro); color: var(--aviso); border-radius: 10px; padding: 8px 12px; font-size: 14px; }
+  .alterna { margin: 0 0 14px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Infográfico</span>
+  <h1 id="t">Como o motor de respostas monta a resposta</h1>
+  <p class="sub">Clique em cada etapa para ver o que acontece e onde o post-it pode ir parar na frase errada.</p>
+  <div class="opcoes alterna">
+    <button type="button" class="btn" id="chatbot" aria-pressed="false">Comparar com um chatbot sem busca</button>
+  </div>
+  <div class="fluxo" id="fluxo" role="group" aria-label="Etapas do motor de respostas"></div>
+  <div class="painel" id="painel" aria-live="polite"></div>
+  <p class="nota">Fonte: lição “Entendendo o Motor de Respostas com Citações”. Esquema didático, não é a tela da ferramenta.</p>
+</section>
+
+<script>
+  // Quatro etapas e riscos: Módulo 1 do roteiro (funcionamento, analogia do post-it, falhas de citação).
+  var ETAPAS = [
+    { nome: 'Interpretar', resumo: 'a pergunta vira buscas',
+      texto: 'A ferramenta interpreta a pergunta em linguagem natural e formula buscas na web.',
+      risco: 'Pergunta vaga gera buscas vagas: sem instrução, recorte e fontes aceitas, a ferramenta decide sozinha o que procurar.' },
+    { nome: 'Recuperar', resumo: 'páginas pertinentes',
+      texto: 'Recupera as páginas mais pertinentes. É daí que vem o nome geração aumentada por recuperação: o modelo escreve depois de receber documentos, e não só a partir do que memorizou.',
+      risco: 'As páginas recuperadas podem ser fracas, antigas ou circulares. A resposta herda a qualidade delas.' },
+    { nome: 'Redigir', resumo: 'o modelo escreve',
+      texto: 'Um modelo de linguagem, programa treinado para produzir frases plausíveis, redige a síntese a partir das páginas.',
+      risco: 'O resumo pode exagerar ou omitir uma ressalva que estava na página.' },
+    { nome: 'Citar', resumo: 'o post-it na frase',
+      texto: 'A resposta exibe números de citação que levam às páginas usadas: são os post-its do resumo.',
+      risco: 'O post-it pode estar colado na frase errada. No teste do Tow Center, a Perplexity errou a atribuição em 37% dos casos.' }
+  ];
+  var CHATBOT = 'Um chatbot sem busca pula as etapas 1 e 2: responde com o que aprendeu no treinamento. Por isso pode desconhecer fatos recentes ou inventar referências, e não deixa trilha para conferir.';
+  var atual = 0, modoChatbot = false, fluxo = document.getElementById('fluxo'), botoes = [];
+
+  ETAPAS.forEach(function (e, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'etapa';
+    b.innerHTML = '<span class="n">' + (i + 1) + '</span><strong>' + e.nome + '</strong><span class="r">' + e.resumo + '</span>';
+    b.addEventListener('click', function () { atual = i; mostrar(); });
+    fluxo.appendChild(b); botoes.push(b);
+  });
+
+  function mostrar() {
+    botoes.forEach(function (b, i) {
+      b.setAttribute('aria-pressed', i === atual ? 'true' : 'false');
+      b.classList.toggle('pulada', modoChatbot && i < 2);
+    });
+    var e = ETAPAS[atual], p = document.getElementById('painel');
+    if (modoChatbot && atual < 2) {
+      p.innerHTML = '<h2>' + (atual + 1) + '. ' + e.nome + ' — o chatbot sem busca não faz</h2><p>' + CHATBOT + '</p>';
+    } else {
+      p.innerHTML = '<h2>' + (atual + 1) + '. ' + e.nome + '</h2><p>' + e.texto + '</p><div class="risco"><strong>Onde pode falhar:</strong> ' + e.risco + '</div>' +
+        (modoChatbot ? '<p style="margin-top:8px">' + CHATBOT + '</p>' : '');
+    }
+  }
+  document.getElementById('chatbot').addEventListener('click', function () {
+    modoChatbot = !modoChatbot;
+    this.setAttribute('aria-pressed', modoChatbot ? 'true' : 'false');
+    this.textContent = modoChatbot ? 'Voltar ao motor de respostas' : 'Comparar com um chatbot sem busca';
+    mostrar();
+  });
+  mostrar();
+</script>

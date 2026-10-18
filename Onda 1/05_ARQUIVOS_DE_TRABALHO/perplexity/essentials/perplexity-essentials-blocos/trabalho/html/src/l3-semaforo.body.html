@@ -1,0 +1,37 @@
+<!--titulo: Semáforo da pergunta-->
+<style>
+  .opcoes button[data-k="verde"][aria-pressed="true"] { background: var(--verde); border-color: var(--verde); }
+  .opcoes button[data-k="amarelo"][aria-pressed="true"] { background: var(--amarelo); border-color: var(--amarelo); }
+  .opcoes button[data-k="vermelho"][aria-pressed="true"] { background: var(--vermelho); border-color: var(--vermelho); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Semáforo: classifique antes de perguntar</h1>
+  <p class="sub">Para cada conteúdo, decida se ele pode entrar na pergunta ou no upload. Você recebe a correção na hora e pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Exemplos e condutas: tabela do semáforo e texto do Módulo 2 do roteiro.
+  classificador({
+    casos: [
+      { t: 'Texto compilado da LGPD, no portal do Planalto', r: 'verde', p: 'Lei publicada: pode entrar na pergunta ou no upload.' },
+      { t: 'Ementa de uma decisão pública do STJ', r: 'verde', p: 'Decisão pública: pode entrar.' },
+      { t: 'Rascunho do seu próprio artigo, sem dados pessoais', r: 'amarelo', p: 'Rascunho próprio: só minimizado e em conta autorizada pela instituição.' },
+      { t: 'Planilha com dados agregados de atendimentos, sem nomes', r: 'amarelo', p: 'Dado agregado: só minimizado e em conta autorizada pela instituição.' },
+      { t: 'Petição de um cliente, com nome completo e CPF', r: 'vermelho', p: 'Peça de cliente com dados pessoais: não entra sem base legal, ambiente aprovado e anonimização prévia.' },
+      { t: 'Estratégia processual de um caso em andamento', r: 'vermelho', p: 'Estratégia processual: não entra. Pergunte só pela tese, sem a estratégia.' },
+      { t: 'Relato de uma fonte jornalística que pediu sigilo', r: 'vermelho', p: 'Fonte jornalística protegida: não entra.' },
+      { t: 'Artigo científico de acesso aberto', r: 'verde', p: 'Material de acesso aberto: pode entrar.' }
+    ],
+    opcoes: { verde: 'Verde', amarelo: 'Amarelo', vermelho: 'Vermelho' },
+    dicaErro: 'Pergunte-se: é público? É interno, mas sem dado pessoal? Identifica alguém, é sigiloso ou estratégico?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'classificados corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Todos classificados. Lembre: navegação anônima não muda a cor — a pergunta continua indo para os servidores. Você já pode continuar.');
+    }
+  });
+</script>
