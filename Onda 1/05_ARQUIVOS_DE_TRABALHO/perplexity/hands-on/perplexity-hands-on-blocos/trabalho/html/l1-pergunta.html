@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monte sua pergunta pesquisável</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+    --aviso: #8a5a00; --aviso-claro: #fdf3e1;
+    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }
+  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }
+  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }
+  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }
+  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }
+  button { font: inherit; }
+  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }
+  .btn:hover { background: var(--azul-claro); }
+  .btn[aria-pressed="true"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .btn.principal:hover { background: var(--azul-2); }
+  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }
+  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }
+  .feedback:empty { display: none; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }
+  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }
+  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }
+  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }
+  .final:empty { display: none; }
+  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }
+  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }
+  .saida { white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+</style>
+</head>
+<body>
+<style>
+  .campos { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin-bottom: 16px; }
+  .campo label { display: block; font-size: 13px; font-weight: 700; color: var(--azul); margin-bottom: 4px; }
+  .campo small { display: block; font-size: 12px; color: var(--suave); margin-bottom: 4px; }
+  .campo input { width: 100%; font: inherit; font-size: 14px; padding: 8px 10px; border: 1px solid var(--linha); border-radius: 10px; background: #fff; color: var(--tinta); }
+  .partes { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
+  .partes li { font-size: 12.5px; padding: 4px 10px; border-radius: 999px; background: #fff; border: 1px solid var(--linha); color: var(--suave); }
+  .partes li.ok { background: var(--ok-claro); border-color: var(--ok); color: var(--ok); font-weight: 600; }
+  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Ferramenta</span>
+  <h1 id="t">Monte sua pergunta pesquisável</h1>
+  <p class="sub">Use no passo 6: reescreva "Banco pode usar meus dados para negar crédito?". Preencha os campos e a pergunta se forma no molde. As etiquetas acendem conforme cada parte entra. Nada do que você digita aqui sai desta página.</p>
+  <div class="campos" id="campos"></div>
+  <ul class="partes" id="partes" aria-label="Partes presentes na pergunta"></ul>
+  <pre class="saida" id="saida" aria-live="polite" tabindex="0"></pre>
+  <div class="acoes">
+    <button type="button" class="btn principal" id="copiar">Copiar pergunta</button>
+    <button type="button" class="btn" id="exemplo">Ver o exemplo do art. 20</button>
+    <button type="button" class="btn" id="limpar">Limpar</button>
+  </div>
+  <div class="feedback" id="msg" role="status" aria-live="polite"></div>
+  <p class="nota">Antes de enviar, passe o texto no semáforo: nada de nome, CPF ou caso real.</p>
+</section>
+<script>
+  // Molde da pergunta pesquisável e passos 3 e 6 da Oficina 1 (roteiro Hands-on).
+  var CAMPOS = [
+    ['instrucao', 'Instrução', 'O verbo: explique, liste, compare…', 'Explique'],
+    ['tema', 'Tema (com as palavras-chave)', 'O assunto, com os termos técnicos', 'o que o art. 20 da LGPD garante a quem teve um pedido negado por decisão tomada unicamente por sistema automatizado'],
+    ['publico', 'Público', 'Para quem é a resposta', 'uma pessoa iniciante'],
+    ['contexto', 'Contexto', 'Para quê você precisa', 'entender que direito eu tenho'],
+    ['insumo', 'Insumo (opcional)', 'Dados que você fornece — só verde', 'pedido de cartão negado pelo app do banco em dez segundos'],
+    ['recorte', 'Recorte', 'País, período', 'Brasil, lei em vigor'],
+    ['fontes', 'Fontes aceitas', 'Sites a priorizar', 'planalto.gov.br e gov.br/anpd'],
+    ['formato', 'Formato', 'Tamanho, idioma, tabela…', 'até 200 palavras, em português do Brasil']
+  ];
+  var PARTES = [
+    ['Instrução', ['instrucao']], ['Contexto', ['publico', 'contexto']], ['Insumo', ['insumo']],
+    ['Palavras-chave', ['tema']], ['Formato', ['formato']], ['Fontes aceitas', ['fontes']],
+    ['Recorte', ['recorte']], ['O que não foi possível confirmar', []]
+  ];
+  var el = {}, box = document.getElementById('campos');
+  CAMPOS.forEach(function (c) {
+    var d = document.createElement('div'); d.className = 'campo';
+    var l = document.createElement('label'); l.setAttribute('for', 'f-' + c[0]); l.textContent = c[1];
+    var s = document.createElement('small'); s.textContent = c[2];
+    var i = document.createElement('input'); i.id = 'f-' + c[0]; i.type = 'text'; i.autocomplete = 'off';
+    i.addEventListener('input', montar);
+    d.appendChild(l); d.appendChild(s); d.appendChild(i); box.appendChild(d); el[c[0]] = i;
+  });
+  function v(k, padrao) { var t = el[k].value.trim(); return t || padrao; }
+  function montar() {
+    var linha1 = v('instrucao', '[Instrução]') + ' ' + v('tema', '[tema]') + ' para ' + v('publico', '[público]') +
+      '. Contexto: ' + v('contexto', '[para quê]') + '. Recorte: ' + v('recorte', '[país, período]') + '.';
+    var linhas = [linha1];
+    if (el.insumo.value.trim()) linhas.push('Insumo: ' + el.insumo.value.trim() + '.');
+    linhas.push('Fontes: priorize ' + v('fontes', '[sites]') + '. Para cada afirmação, fonte, data e trecho curto.');
+    linhas.push('Separe: fatos | divergências | o que não foi possível confirmar. Formato: ' + v('formato', '[tamanho]') + '.');
+    document.getElementById('saida').textContent = linhas.join('\n');
+    var ul = document.getElementById('partes'); ul.innerHTML = '';
+    PARTES.forEach(function (p) {
+      var li = document.createElement('li'); li.textContent = p[0];
+      var ok = p[1].length === 0 || p[1].some(function (k) { return el[k].value.trim(); });
+      if (ok) li.className = 'ok';
+      ul.appendChild(li);
+    });
+  }
+  function aviso(t, tipo) { var m = document.getElementById('msg'); m.className = 'feedback ' + tipo; m.textContent = t; }
+  document.getElementById('exemplo').addEventListener('click', function () {
+    CAMPOS.forEach(function (c) { el[c[0]].value = c[3]; }); montar();
+    aviso('Este é o caso do art. 20. Agora limpe e monte a sua versão de "Banco pode usar meus dados para negar crédito?".', 'info');
+  });
+  document.getElementById('limpar').addEventListener('click', function () {
+    CAMPOS.forEach(function (c) { el[c[0]].value = ''; }); montar(); aviso('', 'info');
+  });
+  document.getElementById('copiar').addEventListener('click', function () {
+    var texto = document.getElementById('saida').textContent;
+    if (texto.indexOf('[') !== -1) { aviso('Ainda há partes entre colchetes. Preencha antes de copiar.', 'aviso'); return; }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('saida'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+      aviso(ok ? 'Copiada. Cole numa pesquisa nova da Perplexity.' : 'O texto está selecionado: use Ctrl+C para copiar.', ok ? 'ok' : 'info');
+    }
+    try {
+      navigator.clipboard.writeText(texto).then(function () { aviso('Copiada. Cole numa pesquisa nova da Perplexity.', 'ok'); }, fallback);
+    } catch (e) { fallback(); }
+  });
+  montar();
+</script>
+
+</body>
+</html>
