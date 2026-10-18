@@ -1,0 +1,930 @@
+================================================================
+CONTEÚDO BRUTO — Vibe Coding - Essentials
+Pesquisa realizada em: 18 de outubro de 2026
+Ferramenta(s): Lovable, serviço web de atualização contínua, sem número público de versão; modos atuais Chat, Plan e Build
+================================================================
+
+0. RESUMO EXECUTIVO
+   [CONFIRMADO] Vibe coding é uma forma de criar software descrevendo o resultado em linguagem natural e aceitando grande parte do código produzido por IA; o termo foi popularizado por Andrej Karpathy em fevereiro de 2025. [53][34][35]
+   [CONFIRMADO] Lovable é uma plataforma para criar e publicar aplicações web full-stack por conversa, com interface, lógica, banco de dados, autenticação e hospedagem. [3][7][31]
+   [CONFIRMADO] O fluxo introdutório atual é descrever o app, gerar no modo Build, testar na prévia, iterar em mudanças pequenas e publicar um snapshot. [3][16][20]
+   [CONFIRMADO] O backend padrão atual é Lovable Cloud, baseado na fundação open source do Supabase; conectar um projeto Supabase próprio continua sendo uma alternativa. [7][10]
+   [CONFIRMADO] O plano Free inclui 5 build credits por dia, até 30 por mês, além de franquias mensais de Cloud e AI; créditos e preços são variáveis e podem mudar. [4][5][6]
+   [VERIFICAR] Um app pequeno com login, banco e publicação pode caber no gratuito, mas não há garantia: o custo de cada geração varia, e hospedagem, IA e conectores compartilham limites. [4][6]
+   [CONFIRMADO] Alerta 1: a prévia não é a publicação; depois de alterar o projeto, é preciso usar Publish > Publish changes para atualizar o site público. [3][11]
+   [CONFIRMADO] Alerta 2: a interface do navegador é inspecionável; chaves secretas devem ficar em Secrets e operações sensíveis no servidor, com RLS no banco. [25][26][27]
+   [CONFIRMADO] Alerta 3: a varredura do Lovable ajuda, mas não substitui uma revisão de segurança; há incidentes documentados envolvendo exposição de projetos e dados em apps gerados. [25][43][44]
+   [SUGESTÃO] Para este curso, a experiência mais segura é um app pessoal de tarefas com dados fictícios: primeiro a interface, depois autenticação, banco, teste por dois usuários fictícios e publicação.
+
+1. IDENTIDADE E HISTÓRICO
+
+1.1 Vibe coding
+
+[CONFIRMADO] Andrej Karpathy publicou em fevereiro de 2025 a descrição que popularizou “vibe coding”: trabalhar com modelos de linguagem, pedir mudanças em linguagem natural, aceitar sugestões e, em alguns momentos, deixar de acompanhar o código em detalhe. A data pode aparecer como 2 ou 3 de fevereiro conforme o fuso da plataforma; o mês e o ano são inequívocos. [53][35]
+
+[CONFIRMADO] Collins escolheu “vibe coding” como Word of the Year de 2025 e o descreveu como uso de IA orientada por linguagem natural para auxiliar a escrita de código. [34]
+
+[CONFIRMADO] Uma distinção didática recorrente é que programação assistida por IA ainda pressupõe que a pessoa revise e compreenda o código, enquanto vibe coding, no sentido estrito, admite aceitar saídas sem exame cuidadoso. [35][36]
+
+[CONFIRMADO] Pesquisas acadêmicas recentes tratam vibe coding como prática emergente e registram benefícios de velocidade e acessibilidade, junto com riscos de qualidade, segurança, dívida técnica e dificuldade de manutenção. [36][37]
+
+1.2 Lovable
+
+[CONFIRMADO] A história pública da empresa começa com o projeto open source GPT Engineer em 2023. A experiência comercial apareceu como gptengineer.app e depois foi rebatizada como Lovable; o produto Lovable foi lançado publicamente em 18 de novembro de 2024. O projeto open source GPT Engineer continuou existindo separadamente. [30][31]
+
+[CONFIRMADO] A Lovable foi fundada em Estocolmo por Anton Osika e Fabian Hedin. A documentação a descreve como plataforma para criar aplicações web full-stack por linguagem natural. [29][31]
+
+[CONFIRMADO] A Lovable é um serviço de atualização contínua, sem número de versão estável exibido ao usuário. Desde 2026, os modos visíveis documentados são Chat, Plan e Build; Build era chamado Agent mode em documentação anterior. [14][15][16]
+
+[CONFIRMADO] Apps novos usam atualmente TanStack Start; projetos antigos podem continuar em React com Vite. Essa distinção é técnica e não muda o fluxo inicial do aluno. [29]
+
+1.3 Linha do tempo útil ao curso
+
+- [CONFIRMADO] 2023: GPT Engineer open source e origem da empresa. [30][31]
+- [CONFIRMADO] 18/11/2024: lançamento público do Lovable. [31]
+- [CONFIRMADO] Fevereiro de 2025: Karpathy populariza o termo “vibe coding”. [53][35]
+- [CONFIRMADO] Setembro de 2025: Lovable Cloud e Lovable AI passam a integrar o produto. [31]
+- [CONFIRMADO] Abril de 2026: a empresa corrige um incidente que permitia a usuários autenticados acessar histórico de chat e código-fonte de certos projetos públicos por meio do link do projeto. [44]
+- [CONFIRMADO] 2026: cobrança unificada passa a reunir build, Cloud, AI e conectores em um saldo; páginas de preço e créditos devem ser reconferidas perto da publicação do curso. [4][6][49]
+
+2. ACESSO, PLANOS E REQUISITOS
+
+2.1 Conta e acesso
+
+[CONFIRMADO] Qualquer pessoa com e-mail pode criar conta gratuita. A documentação exige 18 anos ou autorização de responsável. Métodos documentados: Email/password, Google, GitHub, Apple e, nos planos aplicáveis, SSO. [2]
+
+[CONFIRMADO] Ao criar a conta, o usuário recebe automaticamente um personal workspace gratuito. Caminhos documentados em inglês: Account settings > Account > Login methods (ajuda en) para métodos de login e Workspace settings (ajuda en) para configurações do espaço. [2]
+
+[CONFIRMADO] O uso principal é no navegador e não exige instalação. Há aplicativos nativos documentados para Windows e macOS, além de apps para iOS 15 ou posterior e Android 9 ou posterior; a própria documentação apresenta o celular como complemento, não substituto integral do desktop. [3][32][33]
+
+[VERIFICAR] A página de preços possui versão pt-BR e prompts podem ser escritos em português, mas a central de ajuda consultada está majoritariamente em inglês. NÃO ENCONTRADO: confirmação oficial de que todos os rótulos da interface web estão traduzidos para pt-BR. Por isso, os nomes abaixo são preservados em inglês e marcados como “ajuda en”. [3][4]
+
+[VERIFICAR] Acesso a partir do Brasil foi confirmado pela abertura pública do site, da página pt-BR e dos documentos; NÃO ENCONTRADO: uma matriz oficial de países suportados. Links de lojas brasileiras não foram usados como fonte de requisitos porque a documentação oficial já fornece os mínimos de sistema. [4][32][33]
+
+2.2 Planos em 18/10/2026
+
+[CONFIRMADO] Free: US$ 0; 5 build credits por dia, com teto de 30 por mês; 20 Cloud credits por mês; 4 AI credits por mês; 1 connector credit por mês; projetos privados no workspace; publicação com endereço lovable.app; sincronização GitHub. [4][5][6]
+
+[CONFIRMADO] Pro: a página consultada mostra o nível inicial de 100 créditos mensais por US$ 25/mês ou US$ 250/ano, equivalente anunciado de US$ 21/mês; inclui domínio próprio, editor de código e download do código, além de mais controles. [4][5]
+
+[CONFIRMADO] Business: nível inicial de 100 créditos por US$ 50/mês ou US$ 500/ano; acrescenta controles corporativos, inclusive exclusão de treinamento por padrão. [4][5][28]
+
+[CONFIRMADO] Enterprise: preço sob consulta, com recursos e controles empresariais adicionais. [5]
+
+[CONFIRMADO] Estudantes e professores com e-mail acadêmico elegível podem obter 50% de desconto no Pro 100 mensal por até 12 meses. A elegibilidade deve ser verificada no momento da matrícula. [5]
+
+[CONFIRMADO] Créditos de build não são sempre inteiros: o custo depende da complexidade. Exemplos atuais da página de preços: mudar a cor de um botão pode custar 0,50; remover o rodapé, 0,90; adicionar autenticação, 1,20; gerar landing page com imagens, 1,70 crédito. [4]
+
+[CONFIRMADO] Plan custa 1 crédito por mensagem, além de eventuais custos de subagentes. Build tem custo variável. Chat usa uma franquia separada documentada como temporária e sujeita a mudança. [6][14][15][16]
+
+[VERIFICAR] Preços em reais: NÃO ENCONTRADO na página oficial consultada; os valores eram exibidos em dólares. Tributos, câmbio e preço final no Brasil devem ser conferidos no checkout. [4]
+
+2.3 O exercício completo cabe no gratuito?
+
+[CONFIRMADO] Os recursos básicos necessários existem no Free: criação do app, Lovable Cloud, autenticação, banco, endereço lovable.app e GitHub sync. [5][7][9][11][13]
+
+[VERIFICAR] É plausível concluir um protótipo pequeno no Free, sobretudo com prompts curtos e poucas iterações, mas a fabricante não promete que qualquer exercício completo caberá nos 30 build credits mensais. A geração varia de custo; Cloud, AI e conectores têm franquias próprias; tráfego e uso do backend podem consumir saldo. [4][6]
+
+[SUGESTÃO] O roteiro deve incluir uma rota de baixo consumo: uma só página principal, autenticação por e-mail/senha, uma tabela, sem integrações externas, sem imagens geradas e no máximo quatro ciclos de alteração. O aluno deve conferir More > Usage (ajuda en) antes de cada etapa grande.
+
+3. PRIMEIROS PASSOS (passo a passo oficial)
+
+3.1 Criar a conta e iniciar o projeto
+
+1. [CONFIRMADO] Abra https://lovable.dev e use Sign up ou Log in (ajuda en). Escolha Email/password, Google, GitHub ou Apple. Resultado esperado: o personal workspace aparece. [2]
+2. [CONFIRMADO] Na tela inicial, descreva o app no campo de prompt. A documentação aceita prompts em qualquer idioma. [3]
+3. [CONFIRMADO] No seletor ao lado da caixa de entrada, escolha Build (ajuda en). Build executa alterações; Chat conversa sem modificar código; Plan prepara um plano para aprovação. [14][15][16]
+4. [CONFIRMADO] Envie uma descrição específica. O editor mostra a conversa à esquerda e a prévia à direita. Resultado esperado: a primeira versão navegável aparece. [3]
+
+[SUGESTÃO] Primeiro prompt de baixo risco: “Crie uma página simples chamada Minhas Tarefas, com cabeçalho, lista vazia e botão Nova tarefa. Ainda não adicione login nem banco de dados.”
+
+3.2 Testar a primeira versão
+
+1. [CONFIRMADO] Use a prévia para clicar nos elementos e conferir o fluxo. A barra permite alternar a visualização de dispositivo, inclusive Mobile view (ajuda en). [3][24]
+2. [CONFIRMADO] Para um teste mais sistemático, peça ao Lovable para testar um fluxo; o browser testing pode clicar, preencher campos, capturar telas e examinar logs e rede. [24]
+3. [SUGESTÃO] Registre o resultado em linguagem simples: “Funcionou”, “Onde falhou”, “O que eu esperava” e “O que aconteceu”. Isso prepara um bom prompt de correção.
+
+3.3 Iterar em mudança pequena
+
+1. [CONFIRMADO] A documentação recomenda uma mudança por vez e revisão do resultado antes da próxima. [3][20][21]
+2. [CONFIRMADO] Selecione Chat (ajuda en) para esclarecer uma ideia sem alterar o código; use Plan (ajuda en) para uma mudança maior; use Build (ajuda en) quando quiser executar. [14][15][16]
+3. [SUGESTÃO] Prompt: “Na página principal, troque apenas o texto do botão ‘Nova tarefa’ para ‘Adicionar tarefa’. Não altere cores nem layout.”
+4. [CONFIRMADO] Para editar texto diretamente, use Preview toolbar > Select elements (ajuda en), clique no texto e edite; a ferramenta também documenta Draw annotation e Add comment. [18]
+
+3.4 Adicionar banco de dados e autenticação
+
+1. [CONFIRMADO] Peça em Build: “Add email and password authentication and require users to sign in before viewing their tasks.” O Lovable pode ativar Lovable Cloud automaticamente ou solicitar aprovação quando o recurso exige backend. [7][9]
+2. [CONFIRMADO] Se nenhuma opção for especificada, a documentação informa que a autenticação gerada pode incluir e-mail/senha, Google e Sign in with Lovable. Para manter o exercício simples, especifique e-mail/senha. [9]
+3. [CONFIRMADO] Peça para criar uma tabela de tarefas associada ao usuário e regras RLS para que cada usuário leia e altere apenas seus próprios registros. O Lovable gera tabelas e políticas a partir do prompt. [8][9][25][26]
+4. [CONFIRMADO] Confira More > Cloud > Database (ajuda en). A tabela deve aparecer; a área permite visualizar e editar linhas, adicionar linha, excluir e exportar CSV. [8]
+5. [CONFIRMADO] Confira More > Cloud > Users (ajuda en). A área lista usuários e oferece Add user e Auth settings (ajuda en). [9]
+6. [SUGESTÃO] Crie duas contas fictícias e confirme que cada uma vê apenas suas próprias tarefas. Use e-mails de teste controlados pelo aluno e nunca dados reais de estudantes.
+
+3.5 Histórico e reversão
+
+1. [CONFIRMADO] Abra History (ajuda en) pela barra superior ou pelo menu da caixa de chat, em Project > History (ajuda en). Cada alteração de código fica registrada automaticamente. [17]
+2. [CONFIRMADO] Escolha uma versão e use Revert (ajuda en). Bookmarks (ajuda en) pode guardar marcos. [17]
+3. [CONFIRMADO] Revert restaura o código, não desfaz dados já alterados no banco. Funções de borda podem ser republicadas. A conversa é preservada. [17]
+
+3.6 Publicar
+
+1. [CONFIRMADO] Clique em Publish (ajuda en), no canto superior direito, próximo de Share. [3][11]
+2. [CONFIRMADO] Revise o endereço sugerido no domínio lovable.app e clique novamente em Publish (ajuda en). O sistema executa uma varredura rápida de segurança. [11]
+3. [CONFIRMADO] Abra o URL público em janela anônima. Resultado esperado: a tela de login aparece e o app funciona após autenticação. [11]
+4. [CONFIRMADO] Depois de qualquer mudança, a versão pública não é atualizada sozinha; use Publish > Publish changes (ajuda en). [3][11]
+5. [CONFIRMADO] Domínio próprio exige plano pago e projeto já publicado. Caminhos documentados: Project > Settings > Domains; Publish > Add domain; ou Workspace settings > Workspace domains (ajuda en). [12]
+
+3.7 GitHub opcional
+
+[CONFIRMADO] A integração com github.com existe em todos os planos e sincroniza alterações em duas direções, com um projeto ligado a um repositório e uma branch ativa. O aluno não precisa do GitHub para realizar o exercício. [13]
+
+[CONFIRMADO] O download direto de código pelo editor ou por Project settings > Git (ajuda en) exige plano pago; isso é diferente de GitHub sync, que está no Free. [5][13]
+
+4. CONCEITOS E GLOSSÁRIO
+
+4.1 Vibe coding
+[CONFIRMADO] Construção de software por conversa com IA, dando maior peso à intenção e ao resultado visível do que à escrita manual e à revisão linha a linha do código. No uso estrito do termo, pode envolver aceitar código sem compreendê-lo completamente. [33][35]
+[SUGESTÃO] Analogia: pedir a uma equipe de obra para construir a partir de descrições e inspeções frequentes, sem você assentar cada tijolo. A velocidade aumenta, mas a inspeção continua necessária.
+
+4.2 Front-end
+[CONFIRMADO] Parte que roda e aparece no navegador: telas, botões, formulários e interação. [26][29]
+[SUGESTÃO] Analogia: o salão de uma loja, onde o cliente vê e toca nos produtos.
+
+4.3 Back-end
+[CONFIRMADO] Parte de servidor que executa regras, protege segredos e conversa com banco e serviços externos. No Lovable Cloud, inclui banco, autenticação, armazenamento e Edge Functions. [7][26][27]
+[SUGESTÃO] Analogia: o estoque e a administração da loja, fora do alcance direto do cliente.
+
+4.4 Banco de dados
+[CONFIRMADO] Estrutura persistente que guarda registros do app. O Lovable Cloud usa PostgreSQL e permite criar tabelas por prompt. [7][8]
+[SUGESTÃO] Analogia: um conjunto de fichários organizados; cada tabela é um fichário, cada linha é uma ficha e cada coluna é um campo da ficha.
+
+4.5 Autenticação
+[CONFIRMADO] Processo de verificar quem é o usuário. A área Users e Auth settings gerencia usuários e opções de entrada. [9]
+[SUGESTÃO] Analogia: a catraca que confere a identidade antes de liberar a entrada.
+
+4.6 Autorização e RLS
+[CONFIRMADO] Autorização decide o que um usuário autenticado pode fazer. Row Level Security, ou RLS, é a camada do PostgreSQL que restringe quais linhas cada usuário pode ler ou alterar. [25][26]
+[SUGESTÃO] Analogia: autenticação entrega o crachá; RLS determina quais gavetas aquele crachá abre.
+
+4.7 Publicação ou deploy
+[CONFIRMADO] Processo de colocar um snapshot do projeto em um endereço público. Mudanças posteriores precisam ser publicadas novamente. [3][11]
+[SUGESTÃO] Analogia: a prévia é o ensaio; Publish abre as portas ao público.
+
+4.8 Domínio
+[CONFIRMADO] Nome usado para acessar um site. Lovable oferece um subdomínio gratuito terminado em lovable.app; domínios próprios são recurso pago. [11][12]
+[SUGESTÃO] Analogia: o endereço da loja. lovable.app é uma sala em um endereço fornecido; domínio próprio é uma placa com seu nome.
+
+4.9 Repositório
+[CONFIRMADO] Espaço versionado onde o código é guardado. Lovable pode sincronizar o projeto com um repositório GitHub. [13]
+[SUGESTÃO] Analogia: uma pasta com histórico de cada revisão, não apenas o arquivo mais recente.
+
+4.10 API
+[CONFIRMADO] Interface pela qual sistemas trocam pedidos e respostas. Integrações externas devem ser chamadas pelo servidor quando envolvem credenciais. [26][27]
+[SUGESTÃO] Analogia: um balcão de pedidos com formulário e regras: você pede no formato combinado e recebe uma resposta.
+
+4.11 Segredo e variável de ambiente
+[CONFIRMADO] Um secret é um valor sensível, como chave de API. Lovable guarda Secrets criptografados e os injeta em funções de servidor; o valor não deve aparecer no navegador. [27]
+[SUGESTÃO] Analogia: a senha do cofre fica na área restrita, não escrita na vitrine. Variável de ambiente é uma etiqueta de configuração que muda entre ambientes sem ser gravada no código.
+
+4.12 Prompt, conhecimento e contexto
+[CONFIRMADO] Prompt é a instrução enviada ao modelo. Project knowledge e Workspace knowledge guardam instruções persistentes em texto; o limite documentado de Workspace knowledge é 10.000 caracteres. [19][20]
+[SUGESTÃO] Analogia: prompt é o pedido de hoje; Knowledge é o manual permanente da equipe.
+
+4.13 No-code, low-code, IA assistida e vibe coding
+
+[CONFIRMADO] No-code normalmente monta soluções por componentes visuais sem exigir escrita de código; low-code mistura configuração visual e algum código. Vibe coding usa linguagem natural para gerar ou alterar software. Programação assistida por IA mantém o programador no controle e na revisão consciente do código. [35][36]
+
+[SUGESTÃO] A fronteira não é absoluta: Lovable oferece conversa, edição visual e acesso ao código. Para o curso, “vibe coding” descreve o método de trabalho; “no-code/low-code” descreve principalmente o tipo de interface de construção.
+
+5. FUNCIONALIDADES
+
+5.1 Modos de trabalho
+
+- [CONFIRMADO] Chat (ajuda en): conversa, esclarece e investiga sem alterar o código. Usa a franquia de chat vigente. [14]
+- [CONFIRMADO] Plan (ajuda en): pesquisa o projeto, propõe um plano estruturado e espera aprovação antes de construir. Custa 1 crédito por mensagem, mais subagentes quando usados. [15]
+- [CONFIRMADO] Build (ajuda en): implementa mudanças de ponta a ponta, mostra tarefas e resume diffs. O custo varia com a complexidade. Era chamado Agent mode. [16]
+
+5.2 Prévia e edição visual
+
+[CONFIRMADO] Preview toolbar (ajuda en) oferece Select elements, edição de texto inline, Draw annotation e Add comment. Está em todos os planos. A documentação registra franquia de 100 edições de texto inline por conta, renovada em 24 horas, com teto de workspace; depois disso pode haver cobrança de créditos. [18]
+
+5.3 Conhecimento persistente
+
+[CONFIRMADO] Project settings > Knowledge (ajuda en) guarda decisões de um projeto. Workspace settings > Knowledge (ajuda en) define instruções compartilhadas do workspace e requer papel administrativo ou de proprietário. [19]
+
+5.4 Histórico
+
+[CONFIRMADO] History, Revert e Bookmarks (ajuda en) permitem consultar versões de código e voltar a um marco. O histórico também indica versão publicada. Reversão não recupera dados apagados do banco. [17]
+
+5.5 Lovable Cloud
+
+[CONFIRMADO] Backend integrado que oferece PostgreSQL, autenticação, armazenamento, realtime, funções de servidor, secrets, logs e uso. Caminho: More > Cloud (ajuda en). Abas documentadas incluem Database, Users, Storage, Secrets, Jobs, Edge functions, SQL editor, Logs, Usage e Advanced settings. [7][8][9][27]
+
+5.6 Supabase próprio
+
+[CONFIRMADO] Disponível em todos os planos para quem quer um painel, faturamento e propriedade diretos no Supabase ou já tem projeto existente. Não existe migração de um clique entre Lovable Cloud e Supabase próprio; a documentação recomenda decidir cedo. [10]
+
+5.7 Testes
+
+[CONFIRMADO] Lovable documenta browser testing, testes de front-end e testes de Edge Functions. O navegador remoto pode interagir com a interface, tirar capturas e observar console e rede. [24]
+
+5.8 Publicação e domínio
+
+[CONFIRMADO] Publish cria endereço [subdomain].lovable.app em todos os planos e executa quick security scan. Custom domain é pago. [11][12]
+
+5.9 GitHub e código
+
+[CONFIRMADO] GitHub sync está em todos os planos e é bidirecional. Editor e download direto do código estão em planos pagos. Uma conexão admite um projeto, um repositório e uma branch ativa. [5][13]
+
+5.10 Segurança e privacidade
+
+[CONFIRMADO] Quick scan ocorre na publicação e verifica problemas como políticas RLS, dependências vulneráveis e exposição de MCP. Deep scan amplia a análise de lógica, acesso e entrada. Há opção de bloquear publicação por problema crítico, mas ela pode estar desativada e achados podem ser ignorados. [25][28]
+
+5.11 Recursos fora do escopo prático deste curso
+
+[CONFIRMADO] Integrações avançadas, pagamentos, envio de e-mail, MCP, código manual e migração para hospedagem externa existem no ecossistema, mas não são necessários para a tarefa introdutória. [1][22][29]
+[SUGESTÃO] Cite-os apenas como continuidade possível; não ensine configuração neste curso.
+
+6. CASOS DE USO PARA O PÚBLICO DO CURSO
+
+6.1 Pessoa não programadora / empreendedora — Plinq, Brasil
+
+[CONFIRMADO] Em história publicada pela própria Lovable, Sabrine Matos é apresentada como fundadora não técnica e profissional de growth que criou o Plinq, app de segurança para mulheres. A matéria relata 10 mil usuários em três meses, mais de 200 situações e R$ 2,2 milhões de ARR. É fonte da fabricante, não auditoria independente; números são alegações do caso. [38]
+
+6.2 Especialista de domínio / empreendedor — Elora
+
+[CONFIRMADO] Em caso da fabricante, Tom, apresentado como especialista em saúde sem experiência de programação, construiu o Elora em cerca de um mês e obteve dois clientes pagantes. É fonte da Lovable e anterior às mudanças de Cloud e créditos de 2026. [39]
+
+6.3 Empreendedor brasileiro — plataforma educacional
+
+[VERIFICAR] A galeria oficial de vídeos apresenta Rafael e uma plataforma educacional construída em 90 dias, com alegações de faturamento e clientes no Brasil. A fonte é promocional da fabricante, em vídeo; a transcrição pública para download não foi encontrada. [40]
+
+6.4 Professores
+
+NÃO ENCONTRADO: caso brasileiro, independente, publicado e verificável de um professor criando no Lovable um app com banco, login e resultado mensurado. Foram consultados blog oficial, vídeos, templates, busca acadêmica e comunidade. Há relatos comunitários de apps para professores, mas sem evidência suficiente para tratá-los como caso confirmado.
+
+6.5 Cenários hipotéticos, não casos reais
+
+- [SUGESTÃO] Professor cria registro privado de leituras usando apenas dados fictícios.
+- [SUGESTÃO] Empreendedor cria catálogo com área autenticada para administrar itens.
+- [SUGESTÃO] Pessoa sem programação cria lista pessoal de tarefas com login.
+
+7. BOAS PRÁTICAS E EXEMPLOS DE PROMPTS
+
+7.1 Práticas publicadas pela Lovable
+
+[CONFIRMADO] Antes de construir, a documentação recomenda responder quatro perguntas: o que será criado, para quem, por que e qual é a ação principal. Também recomenda mapear a jornada do usuário, definir direção visual e trabalhar por componentes ou mudanças pequenas. [20][21]
+
+[CONFIRMADO] Para mudanças maiores, use Plan; execute um prompt por vez; confira o resultado; registre decisões duradouras em Knowledge. [15][19][20][22]
+
+[CONFIRMADO] Para erro, descreva o que acontece, onde, o esperado e o observado; inclua captura ou mensagem de erro. A documentação recomenda tentar correção limitada, investigar a causa em Plan e usar Revert quando necessário. Há franquia documentada de tentativas de correção gratuitas que se renova em 24 horas, sujeita a mudança. [21]
+
+[CONFIRMADO] O guia oficial sugere construir e testar em etapas separadas para reduzir mudanças inesperadas. [24]
+
+7.2 Modelo de requisitos simples
+
+[SUGESTÃO] Preencha antes do primeiro prompt:
+Nome: Minhas Tarefas.
+Pessoa usuária: uma pessoa que quer organizar afazeres próprios.
+Problema: anotar, concluir e remover tarefas.
+Ação principal: adicionar uma tarefa.
+Telas: login e lista de tarefas.
+Dados: título, concluída sim/não, dono e data de criação.
+Regra de acesso: cada conta vê apenas seus registros.
+Fora do escopo: colaboração, anexos, pagamentos, notificações e dados reais.
+Visual: simples, alto contraste, legível no celular.
+Critérios de pronto: criar conta, entrar, criar tarefa, concluir, sair, entrar com outra conta e não ver dados da primeira.
+
+7.3 Exemplos publicados pela fabricante
+
+[CONFIRMADO] A Prompt Library contém exemplos para autenticação, quadro de tarefas, revisão de segurança e publicação. Ela orienta executar um prompt por vez e revisar o resultado. [22]
+
+[CONFIRMADO] Exemplo curto transcrito da biblioteca: “Review my app's security. Check the authentication flow and whether my API routes are secure.” [22]
+
+7.4 Prompts escritos para este curso
+
+[SUGESTÃO] Construção inicial: “Crie um aplicativo web chamado Minhas Tarefas. Por enquanto, faça só a interface: cabeçalho, lista vazia, campo de título, botão Adicionar e estado vazio. Use visual simples, responsivo e em português do Brasil. Não adicione banco nem login ainda.”
+
+[SUGESTÃO] Planejamento do backend: “Use Plan. Analise o app e proponha a menor alteração possível para adicionar autenticação por e-mail e senha e uma tabela de tarefas. Cada usuário deve acessar apenas suas próprias tarefas. Inclua RLS e descreva como testar com duas contas. Não implemente até eu aprovar.”
+
+[SUGESTÃO] Implementação: “Aplique o plano aprovado. Adicione login por e-mail e senha, logout e uma tabela tasks com title, completed, user_id e created_at. Crie políticas RLS para que cada usuário só possa ler, criar, atualizar e excluir as próprias tarefas.”
+
+[SUGESTÃO] Correção: “Ao clicar em Adicionar, nada aparece na lista. Isso ocorre na página principal após login. Eu esperava uma nova tarefa com o título digitado. Investigue a causa primeiro e altere apenas o necessário.”
+
+[SUGESTÃO] Verificação: “Teste o fluxo de criar conta, entrar, adicionar uma tarefa, marcar como concluída e sair. Depois, use outra conta de teste e confirme que ela não vê a tarefa da primeira. Relate cada passo e qualquer falha; não altere o app durante o teste.”
+
+8. SEGURANÇA, PRIVACIDADE E DADOS
+
+8.1 Princípio básico
+
+[CONFIRMADO] Tudo que vai ao front-end pode ser inspecionado e manipulado pelo usuário. Portanto, segredos e validações sensíveis devem ficar no servidor. [26][27]
+
+[CONFIRMADO] Secrets são armazenados criptografados e disponibilizados às Edge Functions, não ao navegador; o valor deixa de ser visível após o envio. Caminho: More > Cloud > Secrets (ajuda en). [27]
+
+8.2 Banco e RLS
+
+[CONFIRMADO] RLS restringe linhas no PostgreSQL. Política ausente ou ampla pode expor registros entre usuários, mesmo quando a tela parece esconder esses dados. A Lovable recomenda políticas por usuário e autenticação no servidor. [25][26]
+
+[SUGESTÃO] Teste mínimo: dois usuários fictícios. A conta B não deve ler, editar nem excluir a tarefa da conta A. O teste deve ser feito na aplicação publicada e, se possível, confirmado pela varredura.
+
+8.3 Varredura da Lovable
+
+[CONFIRMADO] A publicação dispara quick security scan. Ele verifica RLS, dependências e exposição de MCP; deep scan acrescenta análise mais ampla de regras e entrada. A documentação afirma expressamente que essas ferramentas não substituem revisão completa. [25]
+
+[CONFIRMADO] A configuração de privacidade pode bloquear publicação com achados críticos, mas a opção não está necessariamente ativada em todos os workspaces e um usuário autorizado pode ignorar o alerta. Resultado “sem achados” não prova ausência de vulnerabilidade. [28]
+
+8.4 Incidentes e pesquisas
+
+[CONFIRMADO] A Lovable divulgou que, entre 3 de fevereiro e 20 de abril de 2026, um problema permitiu que qualquer usuário autenticado com o link de certos projetos públicos acessasse histórico de chat e código-fonte; a empresa informou correção em duas horas após a notificação, e que projetos privados e Lovable Cloud não foram afetados. [44]
+
+[VERIFICAR] Reportagem independente de maio de 2026 sobre pesquisa da RedAccess relatou centenas de milhares de ativos públicos em serviços de vibe coding e milhares com conteúdo corporativo sensível. O conjunto incluía Lovable, Base44, Replit e Netlify; não é correto atribuir todo o total à Lovable. [43]
+
+[CONFIRMADO] Artigos acadêmicos de 2026 sintetizam falhas recorrentes em apps vibe-coded: autenticação e autorização inadequadas, secrets expostos, dependências e código sem revisão. [36][37]
+
+8.5 Dados do cliente e treinamento
+
+[CONFIRMADO] Desde 9 de setembro de 2026, dados de clientes Free e Pro podem ser usados para treinar modelos da Lovable; há opt-out em Account settings > Preferences > AI model training (ajuda en). Business e Enterprise ficam excluídos por padrão. Dados de usuários finais guardados em banco e storage do app não são usados para esse treinamento, segundo a documentação. [28]
+
+[CONFIRMADO] No Brasil, a documentação registra uso limitado de identificadores publicitários pseudonimizados mediante consentimento. A política de privacidade deve ser lida para bases legais, fornecedores, transferências e direitos. [28][47]
+
+8.6 LGPD e dados pessoais
+
+[CONFIRMADO] A LGPD regula o tratamento de dados pessoais no Brasil e inclui princípios como finalidade, necessidade, segurança, prevenção e responsabilização. A ANPD orienta agentes de pequeno porte a adotar medidas técnicas e administrativas de segurança. [45][46]
+
+[SUGESTÃO] Para o curso, use apenas dados fictícios. Não peça nome real, CPF, endereço, dados de saúde, dados de crianças, notas escolares ou credenciais reais. Um protótipo educacional não deve virar sistema de produção sem análise de base legal, transparência, contratos, retenção, atendimento de direitos e segurança.
+
+[SUGESTÃO] Checklist mínimo antes de publicar: nenhum secret no prompt ou tela; RLS por usuário; teste com duas contas; scan revisado; política de privacidade adequada se houver coleta real; remoção de dados de teste; revisão do compartilhamento do projeto; plano de backup e resposta a incidente.
+
+9. LIMITAÇÕES, ERROS COMUNS E SOLUÇÃO DE PROBLEMAS
+
+9.1 Limites do método
+
+[CONFIRMADO] Estudos e relatos especializados associam vibe coding a rapidez de prototipação, mas também a código difícil de compreender, dívida técnica, falhas de segurança e manutenção custosa quando o criador aceita resultados sem revisão. [35][36][37][42]
+
+[SUGESTÃO] Vibe coding não basta sozinho quando o app processa dinheiro, saúde, educação sensível, decisões de alto impacto, grandes volumes ou regras regulatórias. Nesses casos, são necessárias revisão profissional, testes, observabilidade, gestão de mudanças e governança.
+
+9.2 Custos e dependência
+
+[CONFIRMADO] Build tem custo variável, e um saldo pode abranger build, Cloud, AI e conectores. Um app pequeno pode ficar na franquia; tráfego, armazenamento ou IA podem aumentar consumo. [4][6][49]
+
+[CONFIRMADO] É possível sincronizar com GitHub, mas migrar Lovable Cloud para Supabase próprio não tem botão de migração de um clique. [10][13]
+
+[SUGESTÃO] Dependência diminui quando o projeto está sincronizado no GitHub, decisões estão documentadas, dados têm exportação e o proprietário entende os serviços externos. Isso não elimina custo de migração.
+
+9.3 Erros frequentes e resposta
+
+- A mudança não aparece no site público. [CONFIRMADO] Causa provável: foi atualizada só a prévia. Solução: Publish > Publish changes (ajuda en). [3][11]
+- Outro usuário vê dados indevidos. [CONFIRMADO] Trate como incidente; interrompa a publicação, revise RLS e autenticação, faça scan e teste com contas separadas. [25][26]
+- Chave apareceu no navegador. [CONFIRMADO] Remova-a, revogue e gere outra no serviço de origem; armazene a substituta em Secrets e use servidor. [26][27]
+- Prompt grande alterou várias partes. [CONFIRMADO] Reverta pelo History e refaça em mudanças menores; Revert não recupera dados do banco. [17][20][21]
+- Login não funciona. [SUGESTÃO] Verifique More > Cloud > Users e Auth settings (ajuda en), copie a mensagem exata, informe fluxo, esperado e observado e peça investigação antes da correção.
+- Créditos acabaram. [CONFIRMADO] Confira Usage, aguarde renovação aplicável ou avalie plano pago; os diferentes tipos de franquia têm regras próprias. [4][6][7]
+- Exclusão acidental no banco. [CONFIRMADO] Delete rows é irreversível pela interface e Revert de código não restaura os dados. [8][17]
+
+9.4 Quando pedir ajuda humana
+
+[SUGESTÃO] Procure profissional qualificado antes de produção quando houver dados pessoais reais, pagamento, prontuário, aluno menor de idade, integração corporativa, exigência de disponibilidade, incidente ou comportamento que não seja compreendido pelo proprietário.
+
+10. COMPARAÇÃO COM ALTERNATIVAS
+
+10.1 Lovable e no-code/low-code tradicional
+
+[CONFIRMADO] Lovable parte de linguagem natural e gera uma aplicação web com código, prévia, backend e publicação. No-code tradicional parte principalmente de componentes e fluxos configurados visualmente. [3][7][35]
+[SUGESTÃO] Lovable tende a ser mais natural para descrever uma ideia; um construtor visual tende a tornar regras e componentes mais explícitos. A escolha depende do quanto o usuário precisa compreender e controlar.
+
+10.2 Lovable e programação assistida em editor
+
+[CONFIRMADO] Lovable reúne conversa, prévia, backend e hospedagem em uma interface. Ferramentas de assistência em editor pressupõem trabalho direto no repositório e mais conhecimento técnico. [29][35][42]
+[SUGESTÃO] Para o primeiro curso sem pré-requisito de programação, a interface integrada reduz barreiras. Para manutenção complexa, revisão profissional em código pode se tornar necessária.
+
+10.3 Lovable, Replit Agent, Bolt e v0
+
+[CONFIRMADO] Comparações independentes de 2026 descrevem Lovable como forte em geração de aplicações web e interface integrada; Replit oferece ambiente de desenvolvimento e infraestrutura mais amplos. Bolt e v0 também transformam prompts em interfaces ou apps, com diferenças de ecossistema e deploy. [41][42]
+[SUGESTÃO] Este curso deve apenas situar essas alternativas. Replit Agent, Bolt e v0 têm cursos próprios; não inclua tutoriais comparativos nem declare vencedor geral.
+
+10.4 Portabilidade
+
+[CONFIRMADO] GitHub sync permite manter o código em repositório externo, mas backend, dados, secrets, domínio e operação ainda exigem planejamento para migração. [10][13]
+[SUGESTÃO] “Tenho o código” não significa “posso trocar de plataforma sem trabalho”.
+
+11. NOVIDADES RECENTES E RECURSOS INSTÁVEIS
+
+- [CONFIRMADO] Lovable passou a usar cobrança unificada para build, Cloud, AI e conectores em 2026. [49]
+- [CONFIRMADO] As páginas atuais mostram Chat, Plan e Build; Build substituiu o nome Agent mode na documentação. [14][15][16]
+- [CONFIRMADO] Preview toolbar substituiu a experiência anterior chamada Visual edits e reúne seleção, texto, desenho e comentários. [18]
+- [CONFIRMADO] Desde 09/09/2026, a regra de treinamento para Free e Pro mudou para participação com possibilidade de opt-out; Business e Enterprise seguem excluídos por padrão. [28]
+- [VERIFICAR] A Lovable anunciou uma oferta temporária de Chat gratuito até 31/10/2026. Ela expira pouco depois desta pesquisa e não deve virar promessa duradoura no curso. [50]
+- [CONFIRMADO] Apps novos usam TanStack Start; projetos anteriores podem conservar React/Vite. [29]
+- [CONFIRMADO] Apps desktop e mobile são documentados como disponíveis, mas menus e capacidades podem não coincidir com a versão web. [32][33]
+- [VERIFICAR] Limites de edições inline, free fixes, créditos e preços mudam com frequência. Reconferir as fontes [4], [5], [6], [18] e [21] imediatamente antes da gravação ou publicação.
+
+12. MATERIAL DIDÁTICO EXISTENTE
+
+[CONFIRMADO] Lovable Academy é gratuita e oferece catálogo de vídeos e trilha guiada. Assistir ao catálogo não exige conta; participar de lições pode exigir login. [30]
+
+[CONFIRMADO] A documentação oficial contém Quick start, prompting, debugging, segurança, Cloud, autenticação e publicação. É a principal referência de procedimentos e está listada por página na seção 17. [1][3][20][21][25]
+
+[CONFIRMADO] Prompt Library reúne exemplos por tarefa e ressalta diferenças de plano para recursos como pagamentos e envio de e-mail. [22]
+
+[CONFIRMADO] A página Lovable Videos reúne histórias e demonstrações oficiais. Download direto de transcrição: NÃO ENCONTRADO. [40]
+
+[VERIFICAR] Playlists antigas no YouTube podem mostrar nomes e fluxos anteriores a Cloud, Chat/Plan/Build e à cobrança unificada. Use apenas como complemento histórico e reconfirme cada tela na documentação atual. [30]
+
+[SUGESTÃO] Para a equipe de design instrucional, a melhor sequência de consulta é: Quick start; modos; Cloud/auth/database; prompting; publish; security; pricing. Isso é uma organização proposta, não uma ementa.
+
+13. IDEIAS DE EXERCÍCIO
+
+13.1 Decomposição da tarefa observável
+
+Ação 1 — Criar uma aplicação web simples.
+Passo oficial: escrever a descrição, escolher Build, enviar e conferir a prévia. [3][16]
+Atividade [SUGESTÃO]: gerar a interface “Minhas Tarefas” sem backend.
+Comprovação [SUGESTÃO]: a prévia exibe título, estado vazio, campo e botão; o botão pode ainda não persistir dados.
+
+Ação 2 — Adicionar banco de dados.
+Passo oficial: pedir a tabela; abrir More > Cloud > Database (ajuda en); inspecionar tabelas e linhas. [7][8]
+Atividade [SUGESTÃO]: criar tasks com title, completed, user_id e created_at.
+Comprovação [SUGESTÃO]: uma tarefa criada pela interface aparece como linha na tabela.
+
+Ação 3 — Adicionar autenticação e controle de acesso.
+Passo oficial: pedir autenticação; conferir More > Cloud > Users e Auth settings (ajuda en); solicitar RLS. [9][25]
+Atividade [SUGESTÃO]: criar duas contas fictícias e uma tarefa em cada uma.
+Comprovação [SUGESTÃO]: cada conta vê apenas seu registro; o scan não apresenta achado crítico de RLS não resolvido.
+
+Ação 4 — Publicar.
+Passo oficial: Publish > Publish; abrir o subdomínio lovable.app; após mudanças, Publish > Publish changes (ajuda en). [3][11]
+Atividade [SUGESTÃO]: publicar e abrir o endereço em janela anônima.
+Comprovação [SUGESTÃO]: o URL público retorna página HTML e mostra a tela de login.
+
+Ação 5 — Iterar.
+Passo oficial: pedir uma mudança pequena; testar; consultar History; usar Revert se necessário. [17][20][21]
+Atividade [SUGESTÃO]: acrescentar filtro “Todas, pendentes, concluídas” sem mudar autenticação ou dados.
+Comprovação [SUGESTÃO]: filtro funciona na prévia e, depois de Publish changes, no URL público.
+
+13.2 Exercício integrado recomendado
+
+[SUGESTÃO] App: Minhas Tarefas Pessoais.
+Pré-condição: conta Lovable e dois endereços de teste controlados pelo aluno; nenhum dado real.
+Etapas: gerar interface; testar; planejar backend; aprovar; criar auth e tabela; revisar RLS; criar duas contas; testar isolamento; rodar revisão de segurança; publicar; fazer uma alteração pequena; publicar mudanças.
+Resultado verificável: URL lovable.app público, login funcional, persistência após recarregar, isolamento entre contas e versão atualizada depois de Publish changes.
+Plano: tentativa desenhada para Free; [VERIFICAR] conclusão gratuita não é garantida por causa do custo variável e limites mensais. [4][6]
+Links públicos testados: https://lovable.dev devolveu página HTML; https://docs.lovable.dev/introduction/getting-started devolveu página HTML; nenhum exige login para leitura. Criar e publicar o projeto exige conta.
+
+13.3 Outras ideias simples
+
+1. [SUGESTÃO] Diário de leitura: login, livros próprios, páginas e status. Evitar dados de alunos.
+2. [SUGESTÃO] Catálogo pessoal: login, itens com nome, descrição e status ativo. Sem pagamentos.
+3. [SUGESTÃO] Reserva fictícia de recursos de sala: login e itens; usar nomes genéricos e não coletar dados de menores.
+4. [SUGESTÃO] Cadastro demonstrativo de alunos fictícios: nome inventado, turma genérica e status; deixar explícito que não é sistema escolar real.
+5. [SUGESTÃO] Lista de ideias de produto: login, ideia, problema, público e estágio.
+
+13.4 Links e materiais do exercício
+
+[CONFIRMADO] Documentação Quick start: https://docs.lovable.dev/introduction/getting-started — testado em 18/10/2026; retorna página HTML pública. [3]
+[CONFIRMADO] Cloud: https://docs.lovable.dev/features/cloud — testado; página HTML pública. [7]
+[CONFIRMADO] Database: https://docs.lovable.dev/features/database — testado; página HTML pública. [8]
+[CONFIRMADO] Authentication: https://docs.lovable.dev/features/authentication — testado; página HTML pública. [9]
+[CONFIRMADO] Publish: https://docs.lovable.dev/features/publish — testado; página HTML pública. [11]
+[CONFIRMADO] Security: https://docs.lovable.dev/features/security — testado; página HTML pública. [25]
+
+14. RESPOSTAS AO FOCO ESPECÍFICO DESTE CURSO
+
+1. [CONFIRMADO] Origem: Karpathy, fevereiro de 2025. Evolução: o termo entrou no vocabulário amplo e foi Word of the Year 2025 da Collins. Limites: falta de compreensão, segurança, qualidade e manutenção. Vibe coding é um método orientado por linguagem natural; no-code/low-code descreve interfaces de construção; IA assistida mantém revisão consciente pelo programador. [53][34][35][36][37]
+
+2. [CONFIRMADO] Glossário coberto na seção 4: front-end, back-end, banco, autenticação, deploy, domínio, repositório, API, secrets e variáveis de ambiente. [7][8][9][11][13][26][27] [SUGESTÃO] Analogias foram elaboradas para este material e não são citações das fontes.
+
+3. [CONFIRMADO] Lovable é plataforma de construção full-stack por conversa. Fluxo: descrever, Build, testar, iterar e publicar. Modos atuais: Chat, Plan e Build. Preview toolbar faz edição visual; Knowledge guarda instruções; History registra versões e Revert volta o código. [3][14][15][16][17][18][19]
+
+4. [CONFIRMADO] Padrão atual: Lovable Cloud, baseado no Supabase open source e sem conta Supabase separada. Supabase próprio é alternativa. Passo a passo introdutório: pedir auth e tabela, aprovar Cloud quando solicitado, verificar More > Cloud > Database e Users, testar RLS. Não há migração de um clique entre os dois. [7][8][9][10]
+
+5. [CONFIRMADO] Publicação: Publish, endereço lovable.app, snapshot e Publish changes para atualizações. Domínio próprio é pago. GitHub sync está em todos os planos; download direto/editor é pago. [5][11][12][13]
+
+6. [CONFIRMADO] Free: 5 build credits/dia até 30/mês, 20 Cloud/mês, 4 AI/mês e 1 connector/mês. Recursos do exercício existem no Free. [4][5][6] [VERIFICAR] O exercício inteiro não é garantido sem pagamento porque o gasto de build varia e o uso de Cloud consome franquia.
+
+7. [CONFIRMADO] Riscos principais: segredo no front-end, RLS ausente ou ampla, dependência vulnerável, lógica de autorização incorreta e dados pessoais reais. Lovable oferece quick e deep scans, mas não garante segurança. O incidente oficial de abril de 2026 e reportagem independente confirmam que exposição é risco real. LGPD e guia da ANPD fundamentam minimização e medidas de segurança. [25][26][27][43][44][45][46]
+
+8. [CONFIRMADO] Boas práticas oficiais: definir usuário, problema, motivo e ação central; mapear jornada; usar Plan; um prompt por vez; mudanças pequenas; contexto de erro; History/Revert. [15][17][20][21][22] [SUGESTÃO] O modelo de requisitos e prompts completos desta pesquisa estão na seção 7.
+
+9. [CONFIRMADO] Limitações documentadas e estudadas: consumo variável, franquias de backend, necessidade de republicar, reversão que não restaura dados, migração sem um clique e riscos de código sem revisão. [4][6][10][17][36][37] [SUGESTÃO] Produção sensível exige revisão profissional e plano de operação.
+
+10. [SUGESTÃO] Cinco ideias: tarefas pessoais, diário de leitura, catálogo, reserva fictícia e cadastro demonstrativo com dados inventados. Casos reais: Plinq, Elora e vídeo de plataforma educacional, todos da fabricante; caso real brasileiro independente de professor foi NÃO ENCONTRADO. [38][39][40]
+
+15. TRECHOS TRANSCRITOS DA DOCUMENTAÇÃO OFICIAL
+
+1. Getting started with Lovable
+URL: https://docs.lovable.dev/introduction/getting-started
+Data de atualização: não visível; acesso em 18/10/2026.
+Trecho: “Click Publish in the top right of the editor.” [3]
+
+2. Connect your Lovable project to Supabase
+URL: https://docs.lovable.dev/integrations/supabase
+Data de atualização: não visível; acesso em 18/10/2026.
+Trecho: “Do I need Supabase? No.” [10]
+
+3. Project history and version control
+URL: https://docs.lovable.dev/features/projects/history
+Data de atualização: não visível; acesso em 18/10/2026.
+Trecho: “Reverting restores your project's code only.” [17]
+
+4. Security in Lovable
+URL: https://docs.lovable.dev/features/security
+Data de atualização: não visível; acesso em 18/10/2026.
+Trecho: “These tools support secure application development, but they do not replace a thorough security review.” [25]
+
+5. Data opt-out and AI model training
+URL: https://docs.lovable.dev/features/business/data-opt-out
+Data de atualização indicada no conteúdo: 09/09/2026; acesso em 18/10/2026.
+Trecho: “End user data stored in your app's database or storage is not used for model training.” [28]
+
+6. Secrets
+URL: https://docs.lovable.dev/features/secrets
+Data de atualização: não visível; acesso em 18/10/2026.
+Trecho: “Secrets are encrypted and securely stored.” [27]
+
+Nota: os demais procedimentos foram resumidos para evitar transcrição excessiva. As páginas completas que devem ser preservadas estão na seção 17.
+
+16. MATERIAIS PARA BAIXAR
+
+1. [BAIXAR] Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte
+Link direto: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-vf.pdf/@@download/file
+Tipo, tamanho e idioma: PDF, 366.201 bytes, 21 páginas, português.
+Utilidade: referência institucional brasileira para segurança da informação e LGPD em operações de pequeno porte.
+Licença/condição: publicação pública da ANPD; licença específica não identificada no arquivo consultado.
+Nome: guia-anpd-seguranca-pequeno-porte.pdf
+Estado: BAIXADO e validado; começa por %PDF, abre corretamente e exibe o guia da ANPD. [46]
+
+2. [BAIXAR] Vibe Coding in Practice: Understanding Its Practices, Benefits, and Challenges
+Link direto: https://kblincoe.github.io/publications/2026_ICSE_SEIP_vibe-coding.pdf
+Tipo, tamanho e idioma: PDF, 729.485 bytes, 12 páginas, inglês.
+Utilidade: estudo acadêmico sobre práticas, benefícios e desafios relatados por usuários de vibe coding.
+Licença/condição: CC BY 4.0 indicada no documento.
+Nome: vibe-coding-in-practice-icse-2026.pdf
+Estado: BAIXADO e validado; começa por %PDF e as páginas renderizam corretamente. [37]
+
+3. [BAIXAR] Vibe Coding: A State-of-the-Art Review
+Link direto: https://arxiv.org/pdf/2608.20446
+Tipo, tamanho e idioma: PDF, 725.488 bytes, 18 páginas, inglês.
+Utilidade: revisão recente de conceitos, ferramentas, benefícios, riscos e agenda de pesquisa.
+Licença/condição: disponibilizado no arXiv; licença específica deve ser conferida na ficha do trabalho antes de redistribuir além do uso de pesquisa.
+Nome: vibe-coding-state-of-the-art-review-2026.pdf
+Estado: BAIXADO e validado; começa por %PDF e o conteúdo correto foi conferido visualmente. [36]
+
+4. [BAIXAR] Lovable Documentation
+Link: https://docs.lovable.dev/
+Tipo e idioma: conjunto de páginas HTML, inglês; tamanho não aplicável.
+Utilidade: documentação oficial atual.
+Licença/condição: consulta pública; direitos da fabricante.
+Nome sugerido: lovable-documentacao-oficial.pdf
+Estado: NÃO BAIXADO como arquivo único porque não foi encontrado PDF oficial consolidado. As páginas essenciais estão individualizadas na seção 17. [1]
+
+5. [BAIXAR] Prompting best practices
+Link: https://docs.lovable.dev/prompting/prompting-one
+Tipo e idioma: página HTML, inglês.
+Utilidade: guia oficial de definição do app e iteração.
+Licença/condição: consulta pública; direitos da fabricante.
+Nome sugerido: lovable-guia-prompting.pdf
+Estado: NÃO BAIXADO como arquivo oficial; salvar como PDF pelo navegador conforme seção 17. [20]
+
+6. [BAIXAR] Lovable pricing
+Link: https://lovable.dev/pt-br/pricing
+Tipo e idioma: página HTML dinâmica, português do Brasil.
+Utilidade: preços, limites e exemplos de custo vigentes.
+Licença/condição: consulta pública; conteúdo sujeito a mudança.
+Nome sugerido: lovable-planos-precos-2026-10-18.pdf
+Estado: NÃO BAIXADO como arquivo oficial; salvar como PDF pelo navegador conforme seção 17. [4]
+
+7. [BAIXAR] Lovable Blog
+Link: https://lovable.dev/blog
+Tipo e idioma: índice de páginas HTML, inglês.
+Utilidade: histórico, anúncios, incidentes e novidades.
+Licença/condição: consulta pública; direitos da fabricante.
+Nome sugerido: lovable-blog-indice-2026-10-18.pdf
+Estado: NÃO BAIXADO como arquivo único; artigos críticos estão na seção 17. [51]
+
+8. [BAIXAR] Lovable Videos
+Link: https://lovable.dev/videos
+Tipo e idioma: catálogo web de vídeos, principalmente inglês; duração e tamanho variam.
+Utilidade: demonstrações e casos publicados pela fabricante.
+Transcrição/legenda: transcrição pública para download NÃO ENCONTRADO; verificar player de cada item.
+Licença/condição: visualização pública; direitos da fabricante.
+Nome sugerido: lovable-video-[titulo]-transcricao.txt
+Estado: NÃO BAIXADO; não foi encontrado arquivo de vídeo ou transcrição oficial diretamente reutilizável. [40]
+
+9. [BAIXAR] Lovable Academy
+Link: https://academy.lovable.app
+Tipo e idioma: curso web e vídeos, inglês.
+Utilidade: referência oficial de progressão didática.
+Transcrição/legenda: download direto NÃO ENCONTRADO.
+Licença/condição: catálogo público; lições podem exigir login.
+Nome sugerido: lovable-academy-transcricao-[licao].txt
+Estado: NÃO BAIXADO; conteúdo estruturado como plataforma web, não arquivo. [30]
+
+17. PÁGINAS PARA SALVAR
+
+1. Título: Create an account
+URL: https://docs.lovable.dev/introduction/create-an-account
+Trecho que importa: métodos de cadastro, idade, personal workspace e caminhos de login.
+Prioridade: alta
+Nome: lovable-criar-conta.pdf [2]
+
+2. Título: Getting started with Lovable
+URL: https://docs.lovable.dev/introduction/getting-started
+Trecho que importa: primeiro prompt, Build, prévia, teste, Publish e Publish changes.
+Prioridade: alta
+Nome: lovable-primeiros-passos.pdf [3]
+
+3. Título: Pricing
+URL: https://lovable.dev/pt-br/pricing
+Trecho que importa: limites Free, níveis pagos e exemplos de consumo.
+Prioridade: alta
+Nome: lovable-planos-precos-2026-10-18.pdf [4]
+
+4. Título: Subscription plans
+URL: https://docs.lovable.dev/introduction/subscription-plans
+Trecho que importa: Free, Pro, Business, Enterprise, GitHub, domínio, código e desconto acadêmico.
+Prioridade: alta
+Nome: lovable-planos-recursos.pdf [5]
+
+5. Título: Credits and usage
+URL: https://docs.lovable.dev/introduction/credits-and-usage
+Trecho que importa: saldo, franquias, renovação e avisos de temporariedade.
+Prioridade: alta
+Nome: lovable-creditos-uso.pdf [6]
+
+6. Título: Lovable Cloud
+URL: https://docs.lovable.dev/features/cloud
+Trecho que importa: ativação, recursos e caminhos do painel Cloud.
+Prioridade: alta
+Nome: lovable-cloud.pdf [7]
+
+7. Título: Database
+URL: https://docs.lovable.dev/features/database
+Trecho que importa: criar tabela, abrir Database, editar linhas, exportar e excluir.
+Prioridade: alta
+Nome: lovable-banco-dados.pdf [8]
+
+8. Título: Authentication
+URL: https://docs.lovable.dev/features/authentication
+Trecho que importa: adicionar login, provedores padrão, Users e Auth settings.
+Prioridade: alta
+Nome: lovable-autenticacao.pdf [9]
+
+9. Título: Supabase integration
+URL: https://docs.lovable.dev/integrations/supabase
+Trecho que importa: Cloud padrão, escolha do Supabase próprio e ausência de migração de um clique.
+Prioridade: média
+Nome: lovable-supabase.pdf [10]
+
+10. Título: Publish your app
+URL: https://docs.lovable.dev/features/publish
+Trecho que importa: Publish, URL, snapshot, scan e atualização da versão publicada.
+Prioridade: alta
+Nome: lovable-publicacao.pdf [11]
+
+11. Título: Custom domain
+URL: https://docs.lovable.dev/features/custom-domain
+Trecho que importa: exigência de plano pago e caminhos de Domains.
+Prioridade: média
+Nome: lovable-dominio-proprio.pdf [12]
+
+12. Título: GitHub integration
+URL: https://docs.lovable.dev/integrations/github
+Trecho que importa: disponibilidade, sincronização bidirecional, repositório e branch.
+Prioridade: média
+Nome: lovable-github.pdf [13]
+
+13. Título: Chat mode
+URL: https://docs.lovable.dev/features/chat-mode
+Trecho que importa: função de Chat e comparação com Plan e Build.
+Prioridade: alta
+Nome: lovable-modo-chat.pdf [14]
+
+14. Título: Plan mode
+URL: https://docs.lovable.dev/features/plan-mode
+Trecho que importa: elaboração e aprovação de plano, custo e ausência de alteração imediata.
+Prioridade: alta
+Nome: lovable-modo-plan.pdf [15]
+
+15. Título: Build mode
+URL: https://docs.lovable.dev/features/agent-mode
+Trecho que importa: execução, tarefas, diffs e mudança de nome de Agent para Build.
+Prioridade: alta
+Nome: lovable-modo-build.pdf [16]
+
+16. Título: Project history and version control
+URL: https://docs.lovable.dev/features/projects/history
+Trecho que importa: History, Revert, Bookmarks e limite da reversão de dados.
+Prioridade: alta
+Nome: lovable-historico-reversao.pdf [17]
+
+17. Título: Preview toolbar
+URL: https://docs.lovable.dev/features/preview-toolbar
+Trecho que importa: seleção, texto inline, desenho, comentários e limites.
+Prioridade: média
+Nome: lovable-edicao-visual.pdf [18]
+
+18. Título: Knowledge
+URL: https://docs.lovable.dev/features/knowledge
+Trecho que importa: conhecimento de projeto e workspace, caminhos e limite.
+Prioridade: média
+Nome: lovable-knowledge.pdf [19]
+
+19. Título: Prompting best practices
+URL: https://docs.lovable.dev/prompting/prompting-one
+Trecho que importa: definição do app, jornada, direção visual e mudanças pequenas.
+Prioridade: alta
+Nome: lovable-guia-prompting.pdf [20]
+
+20. Título: From idea to app
+URL: https://docs.lovable.dev/tips-tricks/from-idea-to-app
+Trecho que importa: um usuário, uma ação, um resultado e ciclos pequenos.
+Prioridade: alta
+Nome: lovable-da-ideia-ao-app.pdf [21]
+
+21. Título: Prompt library
+URL: https://docs.lovable.dev/prompting/prompting-library
+Trecho que importa: prompts oficiais de auth, tarefas, segurança e publicação.
+Prioridade: média
+Nome: lovable-biblioteca-prompts.pdf [22]
+
+22. Título: Debugging
+URL: https://docs.lovable.dev/prompting/prompting-debugging
+Trecho que importa: descrição de erro, tentativas, Plan e Revert.
+Prioridade: alta
+Nome: lovable-depuracao.pdf [23]
+
+23. Título: Browser testing
+URL: https://docs.lovable.dev/features/browser-testing
+Trecho que importa: teste de fluxo, capturas, logs e recomendação de separar build e teste.
+Prioridade: média
+Nome: lovable-teste-navegador.pdf [24]
+
+24. Título: Security in Lovable
+URL: https://docs.lovable.dev/features/security
+Trecho que importa: quick scan, deep scan, itens verificados e limite da ferramenta.
+Prioridade: alta
+Nome: lovable-seguranca.pdf [25]
+
+25. Título: Security best practices
+URL: https://docs.lovable.dev/tips-tricks/security-best-practices
+Trecho que importa: front-end inspecionável, servidor, autenticação e RLS.
+Prioridade: alta
+Nome: lovable-boas-praticas-seguranca.pdf [26]
+
+26. Título: Secrets
+URL: https://docs.lovable.dev/features/secrets
+Trecho que importa: armazenamento, Edge Functions e impossibilidade de rever o valor.
+Prioridade: alta
+Nome: lovable-secrets.pdf [27]
+
+27. Título: Data opt-out and AI model training
+URL: https://docs.lovable.dev/features/business/data-opt-out
+Trecho que importa: treinamento por plano, opt-out, dados finais do app e regra do Brasil.
+Prioridade: alta
+Nome: lovable-dados-treinamento.pdf [28]
+
+28. Título: Privacy and security settings
+URL: https://docs.lovable.dev/features/privacy-and-security-settings
+Trecho que importa: compartilhamento, bloqueio de publicação e possibilidade de ignorar achados.
+Prioridade: alta
+Nome: lovable-privacidade-configuracoes.pdf [52]
+
+29. Título: Frequently asked questions
+URL: https://docs.lovable.dev/introduction/faq
+Trecho que importa: empresa, escopo web e stack atual/legada.
+Prioridade: média
+Nome: lovable-faq.pdf [29]
+
+30. Título: Privacy Policy
+URL: https://lovable.dev/privacy
+Trecho que importa: coleta, finalidades, fornecedores, transferências e direitos.
+Prioridade: alta
+Nome: lovable-politica-privacidade-2026-10-18.pdf [47]
+
+31. Título: Terms and Conditions
+URL: https://lovable.dev/terms
+Trecho que importa: responsabilidades, uso aceitável, propriedade e limitações.
+Prioridade: alta
+Nome: lovable-termos-2026-10-18.pdf [48]
+
+32. Título: Our response to the April 2026 incident
+URL: https://lovable.dev/blog/our-response-to-the-april-2026-incident
+Trecho que importa: escopo, período, correção e medidas relatadas.
+Prioridade: alta
+Nome: lovable-incidente-abril-2026.pdf [44]
+
+18. LACUNAS E PONTOS A VERIFICAR
+
+1. [VERIFICAR] Idioma da interface: a página de preços existe em pt-BR, mas a ajuda usada para menus é em inglês. NÃO ENCONTRADO: confirmação de todos os rótulos em português. Conferir visualmente antes de redigir o roteiro.
+2. [VERIFICAR] Preços em reais, impostos e forma de cobrança no Brasil: NÃO ENCONTRADO em página oficial pública. Conferir checkout.
+3. [VERIFICAR] Plano gratuito: recursos existem, mas NÃO ENCONTRADO compromisso oficial de que app com banco, login e todas as iterações sempre cabe no Free.
+4. [VERIFICAR] Data exata do post original de Karpathy: 2 ou 3 de fevereiro de 2025 conforme fuso; usar apenas “fevereiro de 2025” no curso.
+5. [VERIFICAR] Casos reais: os exemplos encontrados são sobretudo promocionais da fabricante. NÃO ENCONTRADO caso brasileiro independente e suficientemente documentado de professor.
+6. [VERIFICAR] Vídeos oficiais: transcrição ou legenda para download NÃO ENCONTRADO na página pública consultada.
+7. [VERIFICAR] Lovable Academy: catálogo público, mas lições podem exigir login. Download de transcrição NÃO ENCONTRADO.
+8. [VERIFICAR] Oferta de Chat grátis até 31/10/2026 é temporária e pode já estar encerrada quando o curso for publicado.
+9. [VERIFICAR] Limites de edições inline, free fixes, créditos, planos e preços são explicitamente mutáveis; refazer conferência final.
+10. [VERIFICAR] Disponibilidade por país: serviço e página pt-BR abriram no Brasil; matriz oficial de países NÃO ENCONTRADA.
+11. [VERIFICAR] Apps de loja no Brasil: requisitos constam na documentação, mas a presença e a versão nas lojas brasileiras devem ser confirmadas no dia da gravação.
+12. [VERIFICAR] Reportagem RedAccess reúne várias plataformas; números agregados não podem ser atribuídos somente à Lovable.
+13. [VERIFICAR] Licença do PDF no arXiv e do guia ANPD: uso como fonte é público, mas licença específica de redistribuição deve ser confirmada antes de republicar os arquivos.
+14. [VERIFICAR] Privacy Policy e Terms podem mudar sem acompanhar a documentação; salvar cópia datada antes de fechar o curso.
+
+19. APÊNDICE TÉCNICO
+
+[CONFIRMADO] Lovable Cloud usa a fundação open source do Supabase e PostgreSQL. Inclui autenticação, storage, realtime e Edge Functions. [7][8]
+
+[CONFIRMADO] Apps novos são documentados com TanStack Start; projetos mais antigos podem usar React e Vite. [29]
+
+[CONFIRMADO] RLS é aplicada no banco e deve usar a identidade autenticada para filtrar operações por linha. Uma condição apenas visual no front-end não substitui a política. [25][26]
+
+[CONFIRMADO] Secrets são injetados no ambiente de Edge Functions; nunca devem ser incorporados ao bundle do navegador. [27]
+
+[CONFIRMADO] GitHub sync é bidirecional, mas trabalha com um repositório e uma branch ativa por projeto. Mudanças externas podem voltar ao Lovable. [13]
+
+[CONFIRMADO] Revert opera sobre código; não é backup de banco. Migração Lovable Cloud/Supabase próprio não é de um clique. [10][17]
+
+[SUGESTÃO] Para produção, exigir pipeline de testes, revisão de dependências, logs, backup, restauração testada, rotação de credenciais, política de retenção e processo de incidentes. Esses temas excedem o nível Essentials.
+
+20. FONTES CONSULTADAS
+
+[1] Lovable Documentation — LLM index. https://docs.lovable.dev/llms.txt. Documentação oficial/índice. Data da fonte não visível. Acesso: 18/10/2026.
+[2] Create an account. https://docs.lovable.dev/introduction/create-an-account. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[3] Getting started with Lovable. https://docs.lovable.dev/introduction/getting-started. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[4] Preços do Lovable. https://lovable.dev/pt-br/pricing. Página oficial de preços em pt-BR. Conteúdo corrente, data editorial não visível. Acesso: 18/10/2026.
+[5] Subscription plans. https://docs.lovable.dev/introduction/subscription-plans. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[6] Credits and usage. https://docs.lovable.dev/introduction/credits-and-usage. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[7] Lovable Cloud. https://docs.lovable.dev/features/cloud. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[8] Database. https://docs.lovable.dev/features/database. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[9] Authentication. https://docs.lovable.dev/features/authentication. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[10] Supabase integration. https://docs.lovable.dev/integrations/supabase. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[11] Publish your app. https://docs.lovable.dev/features/publish. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[12] Custom domain. https://docs.lovable.dev/features/custom-domain. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[13] GitHub integration. https://docs.lovable.dev/integrations/github. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[14] Chat mode. https://docs.lovable.dev/features/chat-mode. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[15] Plan mode. https://docs.lovable.dev/features/plan-mode. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[16] Build mode. https://docs.lovable.dev/features/agent-mode. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[17] Project history and version control. https://docs.lovable.dev/features/projects/history. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[18] Preview toolbar. https://docs.lovable.dev/features/preview-toolbar. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[19] Knowledge. https://docs.lovable.dev/features/knowledge. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[20] Prompting best practices. https://docs.lovable.dev/prompting/prompting-one. Guia oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[21] From idea to app. https://docs.lovable.dev/tips-tricks/from-idea-to-app. Guia oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[22] Prompt library. https://docs.lovable.dev/prompting/prompting-library. Biblioteca oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[23] Debugging. https://docs.lovable.dev/prompting/prompting-debugging. Guia oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[24] Browser testing. https://docs.lovable.dev/features/browser-testing. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[25] Security in Lovable. https://docs.lovable.dev/features/security. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[26] Security best practices. https://docs.lovable.dev/tips-tricks/security-best-practices. Guia oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[27] Secrets. https://docs.lovable.dev/features/secrets. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[28] Data opt-out and AI model training. https://docs.lovable.dev/features/business/data-opt-out. Documentação oficial. Regra vigente desde 09/09/2026. Acesso: 18/10/2026.
+[29] Frequently asked questions. https://docs.lovable.dev/introduction/faq. FAQ oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[30] Video tutorials / Lovable Academy. https://docs.lovable.dev/introduction/video-tutorials. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[31] GPT Engineer and the history of Lovable. https://lovable.dev/en/gpt-engineer. História oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[32] Lovable desktop app. https://docs.lovable.dev/integrations/desktop-app. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[33] Lovable mobile app. https://docs.lovable.dev/integrations/lovable-mobile-app. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[34] Collins Word of the Year 2025. https://www.collinsdictionary.com/us/woty. Dicionário/imprensa institucional. 2025. Acesso: 18/10/2026.
+[35] Vibe Coding: A Beginner's Guide. https://realpython.com/ref/ai-coding-glossary/vibe-coding/. Referência didática independente. Data visível não registrada. Acesso: 18/10/2026.
+[36] Vibe Coding: A State-of-the-Art Review. https://arxiv.org/abs/2608.20446. Artigo acadêmico/arXiv, 2026. Acesso: 18/10/2026.
+[37] Vibe Coding in Practice: Understanding Its Practices, Benefits, and Challenges. https://kblincoe.github.io/publications/2026_ICSE_SEIP_vibe-coding.pdf. Artigo acadêmico ICSE-SEIP, 2026. Acesso: 18/10/2026.
+[38] How Sabrine Matos built Plinq. https://lovable.dev/blog/how-sabrine-matos-built-plinq. Caso oficial/promocional. 18/09/2025. Acesso: 18/10/2026.
+[39] From idea to full-blown product in a month. https://lovable.dev/blog/2025-01-30-from-idea-to-full-blown-product-in-a-month. Caso oficial/promocional. 29/01/2025. Acesso: 18/10/2026.
+[40] Lovable Videos. https://lovable.dev/videos. Galeria oficial de vídeos e casos. Data do índice não visível. Acesso: 18/10/2026.
+[41] Lovable vs. Bolt. https://zapier.com/blog/lovable-vs-bolt/. Comparação independente. 2026. Acesso: 18/10/2026.
+[42] Lovable review. https://www.techradar.com/pro/software-services/lovable-review. Imprensa de tecnologia independente. 02/07/2026. Acesso: 18/10/2026.
+[43] Vibe coding tools may be exposing company secrets. https://www.axios.com/2026/05/07/loveable-replit-vibe-coding-privacy. Imprensa independente, 07/05/2026. Acesso: 18/10/2026.
+[44] Our response to the April 2026 incident. https://lovable.dev/blog/our-response-to-the-april-2026-incident. Comunicado oficial de incidente, 22/04/2026. Acesso: 18/10/2026.
+[45] Lei nº 13.709/2018 — Lei Geral de Proteção de Dados Pessoais. https://planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm. Legislação oficial brasileira, 14/08/2018, texto compilado. Acesso: 18/10/2026.
+[46] Guia Orientativo sobre Segurança da Informação para Agentes de Tratamento de Pequeno Porte. https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-sobre-seguranca-da-informacao-para-agentes-de-tratamento-de-pequeno-porte. Guia institucional ANPD. Data visível não registrada. Acesso: 18/10/2026.
+[47] Privacy Policy. https://lovable.dev/privacy. Política oficial. Versão corrente consultada em 18/10/2026; data de atualização deve ser confirmada na cópia salva. Acesso: 18/10/2026.
+[48] Terms and Conditions. https://lovable.dev/terms. Termos oficiais. Versão indicada em 28/08/2026. Acesso: 18/10/2026.
+[49] Simplifying billing. https://lovable.dev/blog/simplifying-billing. Anúncio oficial, 13/06/2026. Acesso: 18/10/2026.
+[50] Chat for free. https://lovable.dev/blog/chat-for-free. Anúncio oficial temporário, 2026. Acesso: 18/10/2026.
+[51] Lovable Blog. https://lovable.dev/blog. Índice oficial de notícias. Conteúdo corrente. Acesso: 18/10/2026.
+[52] Privacy and security settings. https://docs.lovable.dev/features/privacy-and-security-settings. Documentação oficial. Data da fonte não visível. Acesso: 18/10/2026.
+[53] Post original de Andrej Karpathy sobre vibe coding. https://x.com/karpathy/status/1886192184808149383. Rede social/fonte primária. Fevereiro de 2025; dia depende do fuso. Acesso: 18/10/2026.
+
+# ANTES DE ENTREGAR, CONFIRA
+[SIM] O arquivo usa exatamente o cabeçalho, os títulos e a numeração pedidos.
+[SIM] Todos os pontos do FOCO ESPECÍFICO e todos os materiais de "procure
+    especialmente" foram respondidos ou estão como NÃO ENCONTRADO.
+[SIM] Todo [CONFIRMADO] está dito literalmente na fonte citada.
+[SIM] Nenhum exercício depende de instrutor, e o curso não foi dividido em blocos
+    de tempo.
+[SIM] A seção 17 tem um item por página, com URL, prioridade e nome de arquivo.
+[SIM] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+[SIM] Os casos de uso são reais, e cada público sem caso real está como NÃO
+    ENCONTRADO.
+[SIM] As fontes estão em pt-BR ou inglês (outro idioma só quando era a única
+    fonte), e as lojas e ofertas são as do Brasil.
+[SIM] Nenhum endereço é de ambiente de teste (dev., hml., staging., qa.).
+[SIM] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é
+    técnico demais está no APÊNDICE TÉCNICO.
+[SIM] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está
+    marcada [CONFIRMADO].
+[SIM] Todo material não-web citado nas seções 1 a 20 está na seção 16.
+[SIM] Cada arquivo declarado BAIXADO abre e é do tipo anunciado (nenhuma página
+    HTML salva como .pdf).
+[SIM] Os links dos exercícios foram testados e levam direto ao conteúdo.
+[SIM] A seção 17 lista páginas dos quatro tipos pedidos na regra 6.
+[SIM] Cada número está atribuído à fonte que de fato o contém.
+[SIM] Nomes de menus e botões indicam a origem: (interface), (ajuda pt-BR) ou
+    (ajuda en).

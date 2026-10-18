@@ -1,0 +1,96 @@
+{
+  "licao": 2,
+  "posicao": 16,
+  "blocos": [
+    {
+      "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+      "itens": [
+        {
+          "title": "Análise de cenários — Cenário B: conectar o e-mail institucional para “organizar a caixa de entrada”. Qual é a cor do semáforo?",
+          "answers": [
+            {
+              "title": "Verde",
+              "correct": false,
+              "feedback": "Não. E-mail institucional envolve dados de terceiros e da instituição; não é fonte pública nem fictícia."
+            },
+            {
+              "title": "Amarelo",
+              "correct": false,
+              "feedback": "Não. Amarelo é para conta pessoal própria. Conta de trabalho é Vermelho."
+            },
+            {
+              "title": "Vermelho",
+              "correct": true,
+              "feedback": "Correto. Conta de trabalho com dados de terceiros: não conectar sem autorização da instituição."
+            },
+            {
+              "title": "Não se aplica",
+              "correct": false,
+              "feedback": "Não. Todo uso de conector pode ser classificado pelo semáforo; este é Vermelho."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+      "itens": [
+        {
+          "title": "Análise de cenários — Cenário C: criar, na própria agenda pessoal, um evento de teste sem convidados, com aprovação manual. Qual é a cor do semáforo?",
+          "answers": [
+            {
+              "title": "Verde",
+              "correct": false,
+              "feedback": "Não. Há escrita numa conta pessoal real; Verde é só leitura de fonte pública ou dados fictícios."
+            },
+            {
+              "title": "Amarelo",
+              "correct": true,
+              "feedback": "Correto. Conta pessoal própria, com escrita: executar com Needs approval, conferir e apagar ao final."
+            },
+            {
+              "title": "Vermelho",
+              "correct": false,
+              "feedback": "Não. É a sua própria conta pessoal, sem dados de terceiros nem sigilo profissional."
+            },
+            {
+              "title": "Não se aplica",
+              "correct": false,
+              "feedback": "Não. Todo uso de conector pode ser classificado pelo semáforo; este é Amarelo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+      "itens": [
+        {
+          "title": "Análise de cenários — Cenário D: instalar um conector cuja página pede que se cole a senha do serviço na conversa. Qual é a cor do semáforo?",
+          "answers": [
+            {
+              "title": "Verde",
+              "correct": false,
+              "feedback": "Não. Pedido de senha na conversa é sinal de alerta, qualquer que seja o serviço."
+            },
+            {
+              "title": "Amarelo",
+              "correct": false,
+              "feedback": "Não. Não é questão de aprovar a escrita: o conector nem deve ser instalado."
+            },
+            {
+              "title": "Vermelho",
+              "correct": true,
+              "feedback": "Correto. Não instalar: autenticação legítima ocorre por login no próprio serviço, nunca por senha na conversa."
+            },
+            {
+              "title": "Não se aplica",
+              "correct": false,
+              "feedback": "Não. O cenário é classificável, e é Vermelho: não instalar."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

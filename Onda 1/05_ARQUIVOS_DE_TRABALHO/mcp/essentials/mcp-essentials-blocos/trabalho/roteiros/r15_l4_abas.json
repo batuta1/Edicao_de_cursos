@@ -1,0 +1,27 @@
+{
+  "licao": 4,
+  "posicao": 5,
+  "blocos": [
+    {
+      "modelo": "text-text-paragraph.json",
+      "itens": [
+        {
+          "paragraph": "<p>Compare os dois caminhos, lado a lado:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "interactive-interactive-tabs.json",
+      "itens": [
+        {
+          "title": "Caminho local — Filesystem",
+          "description": "<p><strong>Onde roda:</strong> no computador, pelo Claude Desktop. <strong>Onde está disponível:</strong> somente no Claude Desktop.</p><p></p><p><strong>O que lê:</strong> arquivos das pastas autorizadas. <strong>Ferramentas de escrita:</strong> criar pasta, gravar, editar, mover. <strong>Como restringir:</strong> autorizar uma única pasta.</p>"
+        },
+        {
+          "title": "Caminho remoto — Google Drive",
+          "description": "<p><strong>Onde roda:</strong> na nuvem, a partir da conta Claude. <strong>Onde está disponível:</strong> navegador, aplicativo e celular.</p><p></p><p><strong>O que lê:</strong> Docs, Sheets, Slides, PDFs e arquivos do Office do Drive. <strong>Ferramentas de escrita:</strong> compartilhar, mover, enviar para a lixeira, upload. <strong>Como restringir:</strong> Tool permissions em Needs approval ou Blocked; pasta não compartilhada.</p>"
+        }
+      ]
+    }
+  ]
+}

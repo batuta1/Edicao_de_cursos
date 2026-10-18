@@ -1,0 +1,102 @@
+<!--titulo: Registro de verificação-->
+<style>
+  .campo p.r { margin: 0 0 8px; font-weight: 600; color: var(--azul); }
+  .campo input[type=text] { font: inherit; width: 100%; padding: 7px 10px; border: 1.5px solid var(--linha); border-radius: 10px; margin-top: 8px; }
+  ul.avisos { margin: 0; padding-left: 18px; }
+  ul.avisos li + li { margin-top: 6px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mão na massa</span>
+  <h1 id="t">Monte o seu registro de verificação</h1>
+  <p class="sub">Com o Claude aberto no navegador, marque o que você encontrou. O registro se monta sozinho, e os avisos mostram o que fazer nos próximos módulos.</p>
+
+  <div class="grid" id="campos"></div>
+
+  <div class="feedback info" id="avisos" role="status" aria-live="polite"></div>
+
+  <h2 style="margin-top:18px">Seu registro</h2>
+  <pre class="saida" id="saida"></pre>
+  <div class="opcoes" style="margin-top:10px">
+    <button type="button" class="btn principal" id="copiar">Copiar registro</button>
+  </div>
+  <div class="feedback" id="msgCopia" role="status" aria-live="polite"></div>
+  <p class="nota">O e-mail fica como [e-mail] de propósito: preencha depois de copiar, no seu próprio arquivo. Nada do que você marca aqui é enviado.</p>
+</section>
+
+<script>
+  // Campos e avisos: Módulo 0 do roteiro (registro de verificação, requisitos e tabela de problemas).
+  var CAMPOS = [
+    { id: 'plano', rotulo: 'Plano da conta Claude', opcoes: ['Free', 'Pro', 'Max', 'Team', 'Enterprise'] },
+    { id: 'conector', rotulo: 'Conectores personalizados já instalados', opcoes: ['nenhum', 'já tenho um'] },
+    { id: 'desktop', rotulo: 'Claude Desktop', opcoes: ['instalado', 'instalarei no Módulo 4', 'não poderei instalar'] },
+    { id: 'so', rotulo: 'Sistema operacional', opcoes: ['Windows', 'macOS', 'Linux'], texto: 'versão (ex.: 11, 14.5, Ubuntu 24.04)' },
+    { id: 'google', rotulo: 'Conta Google para os exercícios', opcoes: ['pessoal', 'de trabalho ou escola'] },
+    { id: 'gpt', rotulo: 'No ChatGPT, a área aparece como', opcoes: ['Plugins', 'Apps', 'não aparece'] },
+    { id: 'mcp', rotulo: 'Opção "Add custom MCP server"', opcoes: ['sim', 'não', 'não verifiquei'] }
+  ];
+  var esc = {}, versao = '';
+  var area = document.getElementById('campos');
+
+  CAMPOS.forEach(function (c) {
+    var d = document.createElement('div'); d.className = 'item campo';
+    var p = document.createElement('p'); p.className = 'r'; p.id = 'r-' + c.id; p.textContent = c.rotulo;
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'r-' + c.id);
+    c.opcoes.forEach(function (o) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = o; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        esc[c.id] = o; atualizar();
+      });
+      g.appendChild(b);
+    });
+    d.appendChild(p); d.appendChild(g);
+    if (c.texto) {
+      var i = document.createElement('input'); i.type = 'text'; i.placeholder = c.texto; i.setAttribute('aria-label', 'Versão do sistema operacional');
+      i.addEventListener('input', function () { versao = i.value.trim(); atualizar(); });
+      d.appendChild(i);
+    }
+    area.appendChild(d);
+  });
+
+  function v(id) { return esc[id] || '[ ]'; }
+
+  function atualizar() {
+    var ch = esc.gpt === 'não aparece' ? 'não aparece' : v('gpt');
+    document.getElementById('saida').textContent =
+      'Conta Claude: [e-mail] — plano: ' + v('plano') + '\n' +
+      'Conectores personalizados já instalados: ' + (esc.conector === 'já tenho um' ? '[qual?]' : v('conector')) + '\n' +
+      'Claude Desktop: ' + v('desktop') + '\n' +
+      'Sistema operacional: ' + v('so') + ' — versão: ' + (versao || '[ ]') + '\n' +
+      'Conta Google para os exercícios: ' + v('google') + ' — e-mail: [ ]\n' +
+      'ChatGPT: a área aparece como ' + ch + '; opção "Add custom MCP server": ' + v('mcp');
+
+    var a = [];
+    if (esc.plano === 'Free' && esc.conector === 'já tenho um') a.push('Plano Free com a vaga ocupada: no Módulo 3 você vai remover esse conector em Claude > Personalizar > Conectores > ⋯ > Remover.');
+    if (esc.plano === 'Team' || esc.plano === 'Enterprise') a.push('Conta Team/Enterprise: se os conectores não aparecerem, a organização pode tê-los bloqueado. Use uma conta pessoal; a habilitação cabe ao proprietário da organização.');
+    if (esc.desktop === 'não poderei instalar') a.push('Sem Claude Desktop: no Módulo 4 você segue a alternativa pelo navegador, com o conector Google Drive.');
+    if (esc.so === 'macOS') a.push('macOS: o Claude Desktop pede macOS 13 ou posterior (a confirmar na ajuda oficial).');
+    if (esc.so === 'Linux') a.push('Linux: o Claude Desktop está em beta, para Ubuntu 22.04+ ou Debian 12+.');
+    if (esc.so === 'Windows') a.push('Windows: o Claude Desktop pede Windows 10 ou posterior.');
+    if (esc.google === 'de trabalho ou escola') a.push('Troque por uma Conta Google pessoal: contas de trabalho ou escola envolvem dados institucionais e podem ter os conectores bloqueados.');
+    if (esc.gpt === 'não aparece' || esc.mcp === 'não') a.push('ChatGPT sem a opção: registre "indisponível" e faça todas as atividades no Claude. Não contrate plano por causa do curso.');
+    var box = document.getElementById('avisos');
+    box.innerHTML = '';
+    if (a.length) {
+      var ul = document.createElement('ul'); ul.className = 'avisos';
+      a.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+      box.appendChild(ul);
+    }
+  }
+
+  document.getElementById('copiar').addEventListener('click', function () {
+    var txt = document.getElementById('saida').textContent, msg = document.getElementById('msgCopia');
+    function ok() { msg.textContent = 'Registro copiado. Cole num arquivo de texto e complete o e-mail.'; msg.className = 'feedback ok'; }
+    function manual() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('saida'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      msg.textContent = 'Texto selecionado: use Ctrl+C (ou Cmd+C) para copiar.'; msg.className = 'feedback info';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(ok, manual); else manual();
+  });
+  atualizar();
+</script>

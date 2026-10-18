@@ -8,7 +8,7 @@
 | Tema | Vibe Coding / App Building |
 | Trilhas | T5 — Vibe Coding: do zero ao app (posição 2 de 6; antes vem Vibe Coding - Essentials; depois vem Lovable - Hands On) |
 | Pesquisa feita por | ChatGPT Work |
-| Versão do prompt | 3 (17 de outubro de 2026): correções das avaliações das pesquisas do NotebookLM e do MCP |
+| Versão do prompt | 5 (18 de outubro de 2026): correções das avaliações das pesquisas do NotebookLM, do MCP, da Perplexity e de Agentes de IA |
 | Arquivo que o ChatGPT deve entregar | `ConteudoBruto_replit-agent-essentials.txt` |
 
 ## Como usar
@@ -31,7 +31,7 @@ transcrever, organizar e referenciar a matéria-prima. Prefira material demais a
 material de menos: a equipe corta depois, mas não consegue usar o que você não
 trouxe.
 
-Data de hoje: 17 de outubro de 2026. Tudo o que você encontrar precisa ser confrontado com esta
+Data de hoje: 18 de outubro de 2026. Tudo o que você encontrar precisa ser confrontado com esta
 data: ferramentas de IA mudam de nome, de preço e de menu em poucas semanas.
 
 # O CURSO QUE SERÁ CRIADO COM ESTA PESQUISA
@@ -102,7 +102,12 @@ ferramenta.
    confiável.
 5. Funcionalidades: lista completa, cada uma com o que faz, onde fica na
    interface, em qual plano está disponível e suas limitações.
-6. Casos de uso reais para o público do curso, de preferência brasileiros.
+6. Casos de uso reais e publicados para o público do curso, de preferência
+   brasileiros, cada um com quem usou, para quê, resultado relatado e se a fonte
+   é independente ou da própria fabricante. Se não encontrar caso real para
+   algum público, escreva NÃO ENCONTRADO para esse público. Cenários hipotéticos
+   podem vir depois, separados e marcados [SUGESTÃO], mas não substituem os
+   casos reais.
 7. Boas práticas e exemplos de prompts publicados pela fabricante.
 8. Segurança, privacidade e dados: uso dos dados para treinamento, retenção,
    permissões, riscos conhecidos, cuidados com dados pessoais (LGPD) e com
@@ -120,9 +125,12 @@ ferramenta.
     contém (cada verbo dela é uma ação) e garanta, para CADA ação, um passo a
     passo oficial e pelo menos uma atividade curta que o aluno consiga fazer
     sozinho (de preferência no plano gratuito), com o resultado que comprova que
-    deu certo.
+    deu certo. Prefira materiais de exercício públicos, gratuitos e em português
+    do Brasil.
 
 # O QUE PESQUISAR — FOCO ESPECÍFICO DESTE CURSO
+Responda a TODOS os pontos abaixo, na mesma numeração. O que não encontrar fica
+como NÃO ENCONTRADO, dizendo onde procurou; nenhum ponto pode ser pulado.
 1. Replit: o que é, empresa, como evoluiu de editor de código online para plataforma de criação de apps com agente; público atual.
 2. Replit Agent: versão atual, como funciona, níveis de autonomia ou esforço, modo de planejamento, testes automáticos do app, tarefas longas — com os nomes atuais dos modos na interface.
 3. Fluxo de trabalho: descrição → plano → construção → checkpoints → reversão; diferença entre Agent e Assistant (se ainda existirem separados).
@@ -141,8 +149,14 @@ ferramenta.
   (2) imprensa de tecnologia e publicações acadêmicas ou institucionais
   confiáveis; (3) comunidade (fóruns oficiais, Reddit, YouTube, blogs), sempre
   marcada como tal.
-- Quando a central de ajuda tiver versão em português, use-a e registre também o
-  nome em inglês dos menus e recursos.
+- Idioma das fontes, nesta ordem: páginas oficiais em português do Brasil;
+  páginas oficiais em inglês. Só use páginas em outros idiomas (espanhol,
+  francês, chinês etc.) quando forem a única fonte, e diga isso. Registre sempre
+  o nome em pt-BR e em inglês dos menus e recursos.
+- Use lojas e sites do Brasil: apps.apple.com/br, play.google.com com gl=BR,
+  preços e ofertas para o Brasil.
+- Nunca cite endereços de ambientes de teste (subdomínios como dev., hml.,
+  staging., qa.); procure a página pública equivalente.
 - Para cada fonte, registre: título, URL, tipo, data de publicação ou de
   atualização (se visível) e data de acesso.
 - Seja imparcial: quando comparar ferramentas de empresas diferentes (inclusive da
@@ -173,19 +187,22 @@ de download direto (no gov.br, o endereço terminado em "/@@download/file" ou
 e explique o motivo.
 Todo material que não é página da web e que aparece em QUALQUER seção, inclusive
 na lista de fontes, precisa estar também em MATERIAIS PARA BAIXAR.
-Neste curso, procure especialmente: Documentação oficial do Replit, guias de boas práticas do Agent, página de preços, blog oficial, cursos gratuitos sobre o Replit Agent (oficiais ou de parceiros, como DeepLearning.AI — confirmar), indicando os vídeos para baixar a transcrição.
+Neste curso, procure especialmente os materiais abaixo; cada um deve aparecer em
+MATERIAIS PARA BAIXAR ou como NÃO ENCONTRADO: Documentação oficial do Replit, guias de boas práticas do Agent, página de preços, blog oficial, cursos gratuitos sobre o Replit Agent (oficiais ou de parceiros, como DeepLearning.AI — confirmar), indicando os vídeos para baixar a transcrição.
 
 # REGRAS
 1. Não invente nada. Se não encontrar uma informação, escreva "NÃO ENCONTRADO" e
-   diga onde procurou.
+   diga onde procurou. Não marque um NÃO ENCONTRADO com [CONFIRMADO].
 2. Use três marcações, e só estas:
-   - [CONFIRMADO]: fato sustentado por fonte oficial ou por duas fontes
-     independentes que concordam.
+   - [CONFIRMADO]: fato que a fonte citada diz LITERALMENTE (fonte oficial ou
+     duas fontes independentes que concordam). Se é uma conclusão sua a partir
+     das fontes, não é [CONFIRMADO]: use [VERIFICAR] ou [SUGESTÃO].
    - [VERIFICAR]: uma só fonte não oficial, fonte antiga, ou fontes que se
      contradizem (nesse caso, registre as versões divergentes).
    - [SUGESTÃO]: tudo o que for elaboração sua, como prompts de exemplo que você
      escreveu, ideias de exercício, recomendações, boas práticas que você
-     deduziu, critérios de escolha, julgamentos comparativos e cenários de uso
+     deduziu, critérios de escolha, julgamentos comparativos (ex.: "melhor
+     para"), afirmações sobre o que o aluno deve aprender e cenários de uso
      hipotéticos.
    Nunca marque uma elaboração sua como [CONFIRMADO], mesmo que ela se apoie em
    fontes: a equipe precisa saber o que é fato e o que é proposta sua.
@@ -211,15 +228,19 @@ Neste curso, procure especialmente: Documentação oficial do Replit, guias de b
    ao conteúdo, ser públicos e não exigir login. Teste cada um e diga o que ele
    devolve (página HTML, PDF, vídeo).
 8. Diferencie sempre o que vale para o plano gratuito e o que exige plano pago.
-9. Não escreva ementa, plano de aula, módulos nem objetivos de aprendizagem: isso
-   é trabalho da equipe.
+9. Não escreva ementa, plano de aula, módulos, objetivos de aprendizagem nem
+   divisão do curso em blocos de tempo: isso é trabalho da equipe.
 10. Escreva em português do Brasil. Mantenha em inglês os nomes de recursos e
     menus que só existem em inglês, sem traduzir.
+11. O curso é AUTOINSTRUCIONAL: não há instrutor, aula ao vivo nem gravação por
+    turma. Não escreva para "o instrutor" e não proponha exercício que dependa
+    de alguém além do aluno.
 
 # FORMATO DE ENTREGA
 Entregue UM arquivo de texto puro (.txt), em UTF-8, chamado
 ConteudoBruto_replit-agent-essentials.txt, para download. Não use Markdown nem tabelas complexas: use
-os separadores e a estrutura abaixo.
+os separadores e a estrutura abaixo. Use exatamente este cabeçalho e estes
+títulos e numeração de seções; não renomeie, não junte nem crie seções.
 
 ================================================================
 CONTEÚDO BRUTO — Replit Agent - Essentials
@@ -258,7 +279,8 @@ Ferramenta(s): [nome e versão atual de cada uma]
 16. MATERIAIS PARA BAIXAR
     (um item por material, no formato pedido acima, começando com [BAIXAR])
 17. PÁGINAS PARA SALVAR
-    (uma página oficial por item, no formato pedido na regra 6)
+    (UM ITEM POR PÁGINA, cada um com título, URL, trecho que importa,
+    prioridade e nome de arquivo sugerido; não agrupe várias páginas num item)
 18. LACUNAS E PONTOS A VERIFICAR
     (tudo o que ficou [VERIFICAR] ou NÃO ENCONTRADO, e as contradições entre
     fontes)
@@ -272,7 +294,22 @@ Em todas as seções, cite a fonte de cada informação com o número dela na li
 seção 20, entre colchetes (ex.: [12]).
 
 # ANTES DE ENTREGAR, CONFIRA
+Copie esta checklist no fim do arquivo, como está, e responda SIM ou NÃO a cada
+item, sem usar as marcações [CONFIRMADO], [VERIFICAR] ou [SUGESTÃO], que valem só
+para o conteúdo. Não troque por uma checklist sua.
+[ ] O arquivo usa exatamente o cabeçalho, os títulos e a numeração pedidos.
+[ ] Todos os pontos do FOCO ESPECÍFICO e todos os materiais de "procure
+    especialmente" foram respondidos ou estão como NÃO ENCONTRADO.
+[ ] Todo [CONFIRMADO] está dito literalmente na fonte citada.
+[ ] Nenhum exercício depende de instrutor, e o curso não foi dividido em blocos
+    de tempo.
+[ ] A seção 17 tem um item por página, com URL, prioridade e nome de arquivo.
 [ ] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+[ ] Os casos de uso são reais, e cada público sem caso real está como NÃO
+    ENCONTRADO.
+[ ] As fontes estão em pt-BR ou inglês (outro idioma só quando era a única
+    fonte), e as lojas e ofertas são as do Brasil.
+[ ] Nenhum endereço é de ambiente de teste (dev., hml., staging., qa.).
 [ ] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é
     técnico demais está no APÊNDICE TÉCNICO.
 [ ] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está

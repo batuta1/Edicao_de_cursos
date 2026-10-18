@@ -1,0 +1,32 @@
+{
+  "licao": 0,
+  "posicao": 18,
+  "blocos": [
+    {
+      "modelo": "text-text-heading-paragraph.json",
+      "itens": [
+        {
+          "heading": "🚀 Quer ir além?",
+          "paragraph": "<p>Três desafios opcionais para quem terminou. Abra cada um para ver o desafio e como validar:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "interactive-interactive-accordion.json",
+      "itens": [
+        {
+          "title": "Uma segunda pergunta",
+          "description": "<p>Faça uma segunda pergunta sobre outro tema da documentação e confira se a URL também é oficial.</p><p></p><p><strong>Validação:</strong> a URL abre num dos três domínios oficiais.</p>"
+        },
+        {
+          "title": "A mesma pergunta no ChatGPT",
+          "description": "<p>Repita a mesma pergunta no ChatGPT com o plugin e compare as duas respostas: o servidor é o mesmo.</p><p></p><p><strong>Validação:</strong> as duas respostas mostram chamada de ferramenta e URL oficial.</p>"
+        },
+        {
+          "title": "Com e sem o conector",
+          "description": "<p>Peça ao Claude \"Responda a mesma pergunta sem usar o conector\" e compare.</p><p></p><p><strong>Validação:</strong> você aponta qual das duas respostas traz fonte conferível.</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "licao": 1,
+  "posicao": 10,
+  "blocos": [
+    {
+      "modelo": "text-text-heading-paragraph.json",
+      "itens": [
+        {
+          "heading": "🚀 Quer ir além?",
+          "paragraph": "<p>Três desafios opcionais para quem terminou. Abra cada um para ver o desafio e como validar:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "interactive-interactive-accordion.json",
+      "itens": [
+        {
+          "title": "Prazo em dias",
+          "description": "<p>Peça \"Quais arquivos desta pasta mencionam prazo em dias?\".</p><p></p><p><strong>Validação:</strong> a resposta aponta só politica-ficticia.txt, e você confere abrindo os arquivos.</p>"
+        },
+        {
+          "title": "Um terceiro arquivo",
+          "description": "<p>Crie um terceiro arquivo fictício e peça uma comparação entre os três, sem alterar nenhum.</p><p></p><p><strong>Validação:</strong> a pasta continua com três arquivos, sem nenhum novo.</p>"
+        },
+        {
+          "title": "As ferramentas que gravam",
+          "description": "<p>Pergunte ao Claude quais ferramentas da extensão gravam ou movem arquivos.</p><p></p><p><strong>Validação:</strong> a lista bate com a ficha da extensão.</p>"
+        }
+      ]
+    }
+  ]
+}

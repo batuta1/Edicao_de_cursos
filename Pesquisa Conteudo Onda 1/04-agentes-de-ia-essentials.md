@@ -8,7 +8,7 @@
 | Tema | Agentes de IA |
 | Trilhas | T3 — Agentes e MCP (posição 2 de 10; antes vem Claude Cowork - Essentials; depois vem MCP - Essentials)<br>J5 — Agentes e assistentes jurídicos (posição 1 de 7; é o primeiro curso da trilha; depois vem Claude Cowork - Essentials) |
 | Pesquisa feita por | ChatGPT Work |
-| Versão do prompt | 3 (17 de outubro de 2026): correções das avaliações das pesquisas do NotebookLM e do MCP |
+| Versão do prompt | 4 (17 de outubro de 2026): correções das avaliações das pesquisas do NotebookLM, do MCP e da Perplexity |
 | Arquivo que o ChatGPT deve entregar | `ConteudoBruto_agentes-de-ia-essentials.txt` |
 
 ## Como usar
@@ -106,7 +106,12 @@ ferramenta.
    confiável.
 5. Funcionalidades: lista completa, cada uma com o que faz, onde fica na
    interface, em qual plano está disponível e suas limitações.
-6. Casos de uso reais para o público do curso, de preferência brasileiros.
+6. Casos de uso reais e publicados para o público do curso, de preferência
+   brasileiros, cada um com quem usou, para quê, resultado relatado e se a fonte
+   é independente ou da própria fabricante. Se não encontrar caso real para
+   algum público, escreva NÃO ENCONTRADO para esse público. Cenários hipotéticos
+   podem vir depois, separados e marcados [SUGESTÃO], mas não substituem os
+   casos reais.
 7. Boas práticas e exemplos de prompts publicados pela fabricante.
 8. Segurança, privacidade e dados: uso dos dados para treinamento, retenção,
    permissões, riscos conhecidos, cuidados com dados pessoais (LGPD) e com
@@ -145,8 +150,14 @@ ferramenta.
   (2) imprensa de tecnologia e publicações acadêmicas ou institucionais
   confiáveis; (3) comunidade (fóruns oficiais, Reddit, YouTube, blogs), sempre
   marcada como tal.
-- Quando a central de ajuda tiver versão em português, use-a e registre também o
-  nome em inglês dos menus e recursos.
+- Idioma das fontes, nesta ordem: páginas oficiais em português do Brasil;
+  páginas oficiais em inglês. Só use páginas em outros idiomas (espanhol,
+  francês, chinês etc.) quando forem a única fonte, e diga isso. Registre sempre
+  o nome em pt-BR e em inglês dos menus e recursos.
+- Use lojas e sites do Brasil: apps.apple.com/br, play.google.com com gl=BR,
+  preços e ofertas para o Brasil.
+- Nunca cite endereços de ambientes de teste (subdomínios como dev., hml.,
+  staging., qa.); procure a página pública equivalente.
 - Para cada fonte, registre: título, URL, tipo, data de publicação ou de
   atualização (se visível) e data de acesso.
 - Seja imparcial: quando comparar ferramentas de empresas diferentes (inclusive da
@@ -181,7 +192,7 @@ Neste curso, procure especialmente: Guias oficiais sobre agentes publicados em P
 
 # REGRAS
 1. Não invente nada. Se não encontrar uma informação, escreva "NÃO ENCONTRADO" e
-   diga onde procurou.
+   diga onde procurou. Não marque um NÃO ENCONTRADO com [CONFIRMADO].
 2. Use três marcações, e só estas:
    - [CONFIRMADO]: fato sustentado por fonte oficial ou por duas fontes
      independentes que concordam.
@@ -276,7 +287,15 @@ Em todas as seções, cite a fonte de cada informação com o número dela na li
 seção 20, entre colchetes (ex.: [12]).
 
 # ANTES DE ENTREGAR, CONFIRA
+Responda a esta checklist no fim do arquivo, marcando cada item com SIM ou NÃO,
+sem usar as marcações [CONFIRMADO], [VERIFICAR] ou [SUGESTÃO], que valem só para
+o conteúdo.
 [ ] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+[ ] Os casos de uso são reais, e cada público sem caso real está como NÃO
+    ENCONTRADO.
+[ ] As fontes estão em pt-BR ou inglês (outro idioma só quando era a única
+    fonte), e as lojas e ofertas são as do Brasil.
+[ ] Nenhum endereço é de ambiente de teste (dev., hml., staging., qa.).
 [ ] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é
     técnico demais está no APÊNDICE TÉCNICO.
 [ ] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está

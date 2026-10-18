@@ -1,7 +1,7 @@
 {
   "numero_da_licao": 2,
   "position_original": 1,
-  "title": "Understanding MCP: Foundations and Architecture",
+  "title": "O que é o MCP: um padrão comum entre assistentes e serviços",
   "lesson": {
     "description": "",
     "id": "a78af5ba-e370-47c7-8933-86a8293123d8",
@@ -13,8 +13,8 @@
         "items": [
           {
             "id": "b8lr8dsk098d2tb3t93inq78",
-            "heading": "Why MCP Matters: The Foundation of Secure AI Integration",
-            "paragraph": "<p>Connecting AI assistants like Claude and ChatGPT to external services is a powerful way to automate tasks and access information. However, each new integration brings complexity and potential security risks. The Model Context Protocol (MCP) was created to address these challenges, offering a standardized way for AI assistants to connect safely and efficiently to a wide range of services. Understanding why MCP is needed sets the stage for secure, scalable AI integration in your daily workflows.</p>"
+            "heading": "O problema que o MCP resolve",
+            "paragraph": "<p>Um assistente de IA, como o Claude ou o ChatGPT, sabe redigir, resumir e responder perguntas, mas, sozinho, não enxerga a sua agenda, os seus arquivos ou os sistemas que você usa. Para isso é preciso uma integração: um meio técnico pelo qual o assistente consulta ou altera um serviço externo. Esta lição explica o padrão que tornou essas integrações comuns entre assistentes de fabricantes diferentes — e o que ele não garante.</p>"
           }
         ],
         "family": "text",
@@ -35,7 +35,7 @@
         "items": [
           {
             "id": "k8qugv3zt6syfl2mwncz3t0o",
-            "paragraph": "<p>By the end of this lesson, you will be able to achieve the following learning objectives:</p>"
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
           }
         ],
         "family": "text",
@@ -59,27 +59,27 @@
           {
             "id": "kuz9usow0d1q87x71t964w0u",
             "number": "1",
-            "paragraph": "<p>Explain the integration problem that MCP solves and understand what it does not guarantee.</p>"
+            "paragraph": "<p>Explicar o problema de integração que o MCP resolve e o que ele não garante.</p>"
           },
           {
             "id": "qgdf1voy4sff36xud6ji557d",
             "number": "2",
-            "paragraph": "<p>Distinguish between host, client, and server roles, as well as identify tools, resources, and prompts.</p>"
+            "paragraph": "<p>Distinguir host, client e servidor, e tools, resources e prompts.</p>"
           },
           {
             "id": "i3rpmrxlq63xwdlfqccnmsw1",
             "number": "3",
-            "paragraph": "<p>Differentiate between local and remote servers.</p>"
+            "paragraph": "<p>Diferenciar servidor local de servidor remoto.</p>"
           },
           {
             "id": "a1rwkxoi2vwp0nqxep0ze901",
             "number": "4",
-            "paragraph": "<p>Distinguish MCP from APIs, connectors, plugins, skills, and automation orchestrators.</p>"
+            "paragraph": "<p>Distinguir MCP de API, conector, plugin, skill e orquestradores de automação.</p>"
           },
           {
             "id": "plss9bytb77oiidmmzf5csx1",
             "number": "5",
-            "paragraph": "<p>Identify common, practical use cases for MCP.</p>"
+            "paragraph": "<p>Reconhecer os três usos mais frequentes para quem não programa: consultar, ler e agir.</p>"
           }
         ],
         "family": "list",
@@ -100,7 +100,7 @@
         "items": [
           {
             "id": "sz4l5i1089pnes57mggqx3j9",
-            "paragraph": "<p>Before MCP, every AI assistant needed to be individually integrated with each external service. This meant that if there were five assistants and ten services, developers had to build fifty separate integrations—a problem known as the \"N × M\" challenge. This approach was inefficient, time-consuming, and made it difficult to scale or maintain secure connections. As more assistants and services appeared, the complexity and risk of errors or security gaps increased dramatically.</p>"
+            "paragraph": "<p>Até 2024, cada fabricante de assistente precisava construir uma integração própria para cada serviço. Com cinco assistentes e dez serviços, seriam cinquenta integrações diferentes — e o esforço cresce a cada assistente ou serviço novo. A literatura técnica chama esse problema de “N × M”. O Model Context Protocol (MCP) é a resposta: um protocolo, isto é, um conjunto de regras públicas de comunicação, assim como o protocolo que permite a qualquer navegador abrir qualquer site. Foi anunciado pela Anthropic em 25/11/2024 e, em 09/12/2025, doado à Agentic AI Foundation, dirigida pela Linux Foundation e cofundada por Anthropic, Block e OpenAI. OpenAI, Google e Microsoft documentam sua adoção.</p>"
           }
         ],
         "family": "text",
@@ -121,7 +121,7 @@
         "items": [
           {
             "id": "8df3d046-879d-4b96-9135-a55871476e73",
-            "paragraph": "MCP is an open protocol—like a universal USB-C plug—that allows any AI assistant to connect with any compatible service, regardless of the manufacturer. It is not an app, a model, or owned by a single company."
+            "paragraph": "MCP não é um aplicativo, não é um modelo de IA e não pertence a um único fabricante. A documentação da Anthropic o compara a uma porta USB-C: um formato comum de tomada que permite ligar muitos aparelhos a muitos acessórios."
           }
         ],
         "family": "impact",
@@ -142,8 +142,8 @@
         "items": [
           {
             "id": "y0nd2f5qtev1ix29wnvj29b2",
-            "heading": "MCP Standardization and Its Boundaries",
-            "paragraph": "<p>Explore what MCP standardizes and its boundaries by expanding each section below.</p>"
+            "heading": "Tomada e crachá: o que o MCP padroniza",
+            "paragraph": "<p>A analogia da tomada é útil, mas incompleta. Abra cada item para ver o que o protocolo resolve e o que continua nas mãos do serviço e do usuário:</p>"
           }
         ],
         "family": "text",
@@ -173,23 +173,23 @@
         "items": [
           {
             "id": "6f642834-2098-4092-8cf4-f2effd83ba92",
-            "title": "What MCP Standardizes",
-            "description": "<p>MCP defines a common format for connecting AI assistants to external services. It acts as the \"plug\" that ensures different assistants and services can communicate using the same set of rules.</p><p></p><p>This standardization makes it easier for new assistants and services to work together without custom integrations for each combination.</p>"
+            "title": "O que o MCP padroniza",
+            "description": "<p>O MCP define um formato comum para que assistentes descubram e usem ferramentas e dados de serviços externos. É a tomada: qualquer assistente compatível se liga a qualquer servidor compatível, sem uma integração sob medida para cada combinação.</p><p></p><p>Na prática, um mesmo servidor pode atender ao Claude e ao ChatGPT — você verá isso no Módulo 3.</p>"
           },
           {
             "id": "5a26cb04-f221-4b72-a8af-e8948cacc07c",
-            "title": "What MCP Does Not Guarantee",
-            "description": "<p>While MCP standardizes the connection, it does not guarantee the quality of the data, the truthfulness of responses, or the security of the server.</p><p></p><p>Each service and user must still decide what information is shared and what actions are permitted, so careful configuration and review are essential.</p>"
+            "title": "O que o MCP não garante",
+            "description": "<p>O MCP padroniza a conexão, mas não garante a qualidade dos dados, a veracidade da resposta do modelo nem a segurança do servidor.</p><p></p><p>Por isso, mesmo com o conector funcionando, continua sendo preciso conferir a origem da resposta e avaliar quem publica o servidor.</p>"
           },
           {
             "id": "c6575424-af53-45e6-b444-60cb9a7f524b",
-            "title": "The \"Plug and Badge\" Analogy",
-            "description": "<p>The plug analogy explains how MCP connects assistants and services, but it is incomplete. The badge (or \"crachá\") represents the permissions granted—what doors the assistant can open.</p><p></p><p>MCP standardizes the badge format, but each service decides what access to grant, and each user decides what permissions to accept. Security depends on both the plug and the badge.</p>"
+            "title": "A analogia da tomada e do crachá",
+            "description": "<p>A tomada padroniza a ligação; o crachá define quais portas se abrem. O MCP padroniza o formato do crachá, mas cada serviço decide o que libera, e cada usuário decide o que aceita conceder.</p><p></p><p>Essa dupla — tomada e crachá — volta em todos os módulos seguintes.</p>"
           },
           {
             "id": "d3afe739-2930-410f-9f5b-e960bf72d935",
-            "title": "The Role of User Approval and Permissions",
-            "description": "<p>Even with MCP, users and services must actively manage permissions. Just because a connection is possible does not mean all actions are allowed.</p><p></p><p>Most security measures involve checking what the badge allows, ensuring that only approved actions and data are accessible to the assistant.</p>"
+            "title": "Onde ficam os cuidados de segurança",
+            "description": "<p>Uma conexão possível não significa que todas as ações estejam liberadas. O serviço aplica suas próprias permissões, e o host — o aplicativo de IA — aplica as aprovações que você configurar.</p><p></p><p>A maior parte dos cuidados de segurança consiste em verificar o que o crachá permite, tema do Módulo 2.</p>"
           }
         ],
         "family": "interactive",
@@ -210,8 +210,8 @@
         "items": [
           {
             "id": "rz9yyimrigiuhfklt2bf0p45",
-            "heading": "MCP and Related Technologies",
-            "paragraph": "<p>Explore how MCP compares to other integration technologies and understand its unique role in the ecosystem. Expand each tab to learn more about APIs, MCP, connectors/plugins, skills, and automation orchestrators.</p>"
+            "heading": "MCP e conceitos vizinhos",
+            "paragraph": "<p>MCP costuma ser confundido com API, plugin, skill e ferramentas de automação. Abra cada aba para ver o que é cada um e como se relaciona com o MCP:</p>"
           }
         ],
         "family": "text",
@@ -242,27 +242,27 @@
           {
             "id": "cf59eb14-e2b6-4366-b5ca-76c5f2166906",
             "title": "API",
-            "description": "<p>An API is a custom interface provided by a service for programs to interact with it. APIs are unique to each service and often require custom code for every integration.</p><p></p><p>With MCP, the server typically calls the API behind the scenes, but MCP itself does not replace the API. Instead, it provides a standard way for assistants to discover and use these APIs through a common protocol.</p>"
+            "description": "<p>Interface própria de um serviço, feita para programas. Cada serviço tem a sua.</p><p></p><p>Relação com o MCP: o servidor MCP normalmente chama a API do serviço por trás. O MCP não substitui a API; ele padroniza a forma como o assistente chega até ela.</p>"
           },
           {
             "id": "b9d20a82-6e4c-4fd4-b8d1-f5f0f66788c9",
             "title": "MCP",
-            "description": "<p>MCP is a protocol that allows AI assistants to find and use tools and data from various services. It is designed to be open and vendor-neutral, making integrations simpler and more scalable.</p><p></p><p>Unlike APIs, MCP is not tied to a single service or company. It acts as a universal connector, enabling assistants and services to work together with minimal custom development.</p>"
+            "description": "<p>Protocolo comum para que assistentes de IA descubram e usem ferramentas e dados.</p><p></p><p>É aberto e não pertence a um fabricante: o mesmo servidor pode servir a assistentes diferentes.</p>"
           },
           {
             "id": "eee4a0cb-b6dd-47ac-bf51-5797b4e31871",
-            "title": "Connector/Plugin/App/Extension",
-            "description": "<p>These are the commercial names for MCP servers as they appear in different products. For example, Claude calls them connectors, ChatGPT uses plugins or apps, and Claude Desktop uses extensions.</p><p></p><p>While these terms are often used interchangeably, not all plugins or extensions are MCP servers. Some may bundle additional features or skills, so it's important to check their capabilities.</p>"
+            "title": "Conector, Plugin, App, Extensão",
+            "description": "<p>Nomes comerciais do servidor MCP instalado no produto: conector no Claude, plugin ou app no ChatGPT, extensão no Claude Desktop.</p><p></p><p>Cuidado: no ChatGPT, um plugin pode reunir servidor MCP e skills. “Plugin” não é sinônimo de MCP.</p>"
           },
           {
             "id": "f2ce83a2-d92e-4a94-a980-20bd6a942a98",
             "title": "Skill",
-            "description": "<p>A skill is a set of instructions that teaches an assistant how to perform a specific task or procedure. Skills can be combined with MCP to enhance functionality.</p><p></p><p>However, skills alone do not access live systems or data—they provide guidance or templates for actions the assistant can take when connected to the right tools.</p>"
+            "description": "<p>Conjunto de instruções que ensina ao assistente um procedimento.</p><p></p><p>Uma skill não acessa sistemas vivos por conta própria; pode ser combinada com um conector MCP, que é quem dá o acesso.</p>"
           },
           {
             "id": "0d83a9cb-97cc-4c9b-9bc3-d9b7c93932aa",
-            "title": "Automation Orchestrator (Zapier/n8n)",
-            "description": "<p>Automation orchestrators like Zapier or n8n allow users to create workflows with triggers and actions across multiple services. They often provide their own interfaces for connecting tools.</p><p></p><p>These platforms can offer MCP servers, enabling AI assistants to trigger automations as part of a broader workflow, complementing the direct connections MCP provides.</p>"
+            "title": "Zapier e n8n",
+            "description": "<p>Orquestradores de automação, com gatilhos e passos fixos definidos por você.</p><p></p><p>São complementares ao MCP: ambos oferecem servidores MCP para que assistentes acionem as automações que você já montou.</p>"
           }
         ],
         "family": "interactive",
@@ -283,8 +283,8 @@
         "items": [
           {
             "id": "q2aox1ac6ppi5rizkm7no04j",
-            "heading": "Key Roles and Concepts in MCP",
-            "paragraph": "<p>Review each flashcard to reinforce your understanding of key roles and concepts in MCP.</p>"
+            "heading": "Os papéis e os recursos de um servidor",
+            "paragraph": "<p>A arquitetura do MCP envolve três papéis, e um servidor pode oferecer três tipos de recurso. Vire cada cartão:</p>"
           }
         ],
         "family": "text",
@@ -309,55 +309,55 @@
             "id": "fz8iem2nwie0qbthuzoo8m86",
             "back": {
               "type": "description",
-              "description": "<p>The AI application the user interacts with, such as Claude or ChatGPT.</p>"
+              "description": "<p>O aplicativo de IA que você usa: Claude, Claude Desktop, ChatGPT.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<strong>Host</strong>"
+              "description": "<strong>Host (anfitrião)</strong>"
             }
           },
           {
             "id": "ldrikm3hmdfpgpkee6he800h",
             "back": {
               "type": "description",
-              "description": "<p>The internal component of the host that manages connections to MCP servers, invisible to the user.</p>"
+              "description": "<p>Peça interna do host que mantém a ligação com cada servidor. Para o usuário, é invisível.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<strong>Client</strong>"
+              "description": "<strong>Client (cliente)</strong>"
             }
           },
           {
             "id": "k9h8qd61wfosxix53qpewzn7",
             "back": {
               "type": "description",
-              "description": "<p>The program that provides tools, resources, or prompts to the assistant, like Google Calendar or Drive.</p>"
+              "description": "<p>O programa que oferece capacidades ao assistente — por exemplo, o servidor do Google Calendar, que sabe listar e criar eventos.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<strong>Server</strong>"
+              "description": "<strong>Servidor MCP</strong>"
             }
           },
           {
             "id": "a8zcrn45b0c80najqle3kb2r",
             "back": {
               "type": "description",
-              "description": "<p>Executable actions offered by a server, such as \"create event\" or \"search document.\"</p>"
+              "description": "<p>Ações executáveis, como “buscar documento” ou “criar evento”. São as mais comuns e pedem atenção: algumas só leem, outras alteram dados.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<strong>Tools</strong>"
+              "description": "<strong>Tools (ferramentas)</strong>"
             }
           },
           {
             "id": "utz4yh6hxn0gl8frapqkc346",
             "back": {
               "type": "description",
-              "description": "<p>Data or content that the assistant can read from a server, like files or calendar entries.</p>"
+              "description": "<p>Conteúdos que o assistente pode ler. O terceiro tipo são os prompts: modelos prontos de pedido oferecidos pelo servidor.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<strong>Resources</strong>"
+              "description": "<strong>Resources (recursos)</strong>"
             }
           }
         ],
@@ -379,8 +379,8 @@
         "items": [
           {
             "id": "pvint3e6pw9qa7ov8bflezzd",
-            "heading": "Differences Between Local and Remote Servers",
-            "paragraph": "<p>Explore the differences between local and remote servers by expanding each section below.</p>"
+            "heading": "Servidor local e servidor remoto",
+            "paragraph": "<p>Onde o servidor roda muda o que ele alcança e onde ele aparece. Essa distinção será decisiva no Módulo 4:</p>"
           }
         ],
         "family": "text",
@@ -410,13 +410,13 @@
         "items": [
           {
             "id": "304a128d-6b87-4118-980c-7da08c140083",
-            "title": "Local Servers",
-            "description": "<p>Local servers run directly on your computer, such as extensions in Claude Desktop. They access files and folders on your device and are only available when using the desktop app.</p><p></p><p>Local servers avoid sending data to third-party servers but may increase risk if a malicious extension is installed. They are not accessible from the browser or mobile app.</p>"
+            "title": "Servidor local",
+            "description": "<p>Executado no próprio computador. No Claude, são as extensões locais, que existem apenas no Claude Desktop e acessam recursos da máquina, como pastas autorizadas.</p><p></p><p>Não aparecem no Claude pelo navegador nem no celular.</p>"
           },
           {
             "id": "7cae8cdc-759d-4e52-843d-d8d43f02b16c",
-            "title": "Remote Servers",
-            "description": "<p>Remote servers are hosted on the internet and accessed via a public URL. Examples include Google Drive or Calendar connectors, which work across devices and platforms.</p><p></p><p>Remote servers depend on the connected service and account permissions. They are convenient but require trust in the external service to handle your data securely.</p>"
+            "title": "Servidor remoto",
+            "description": "<p>Hospedado na internet e acessado por endereço (URL). No Claude, os conectores remotos são chamados a partir da nuvem da Anthropic e funcionam no navegador, no aplicativo e no celular — é o caso do Google Calendar e do Google Drive.</p><p></p><p>Dependem do serviço e da conta conectada.</p>"
           }
         ],
         "family": "interactive",
@@ -437,7 +437,7 @@
         "items": [
           {
             "id": "ot66ixebrpnbbzm674zypjl9",
-            "paragraph": "<p>MCP offers several practical applications that can help non-programmers streamline their daily tasks. Below are three common ways you might use MCP in your work:</p>"
+            "paragraph": "<p>Para quem não programa, os usos mais frequentes se organizam em três verbos, que correspondem aos Módulos 3 a 5, em ordem crescente de risco:</p>"
           }
         ],
         "family": "text",
@@ -461,17 +461,17 @@
           {
             "id": "ygn7ealiqbbua025gg4tf34y",
             "number": "1",
-            "paragraph": "<p><strong>Consult Services and Documentation:</strong> Use AI assistants to check project tasks, calendars, or company documentation.</p>"
+            "paragraph": "<p><strong>Consultar:</strong> documentação, agenda, tarefas de um projeto.</p>"
           },
           {
             "id": "b9eaowc9ufjh33dsn4qh0q42",
             "number": "2",
-            "paragraph": "<p><strong>Read Files and Folders:</strong> Access and review files from your computer or cloud storage without manual downloads.</p>"
+            "paragraph": "<p><strong>Ler:</strong> arquivos de uma pasta, documentos de um repositório.</p>"
           },
           {
             "id": "wunji7nqfhr1znk8k0d3hy99",
             "number": "3",
-            "paragraph": "<p><strong>Act on Your Behalf:</strong> Create events, draft emails, or move files directly through the assistant, streamlining routine tasks.</p>"
+            "paragraph": "<p><strong>Agir:</strong> criar um evento, redigir um rascunho de e-mail, mover um arquivo.</p>"
           }
         ],
         "family": "list",
@@ -492,7 +492,7 @@
         "items": [
           {
             "id": "409df0d4-472a-4621-9fc7-30f7f5519481",
-            "paragraph": "<p>🧭 You can explore available connectors in Claude by navigating to <strong>Personalizar &gt; Conectores &gt; +</strong>. Open each connector’s profile to review the publisher, verification badge, and list of available tools.</p>"
+            "paragraph": "<p>🧭 Os conectores disponíveis podem ser explorados, sem instalação, em <strong>Claude &gt; Personalizar &gt; Conectores &gt; +</strong>. Abra a ficha de cada conector para ler o publicador, o selo de verificação e a lista de ferramentas.</p>"
           }
         ],
         "family": "impact",
@@ -514,31 +514,31 @@
           {
             "id": "f1794df7-afaa-4875-8936-646ba8022db2",
             "type": "MULTIPLE_CHOICE",
-            "title": "A colleague says, \"I installed the MCP connector for Google Drive, so now Claude can do anything in my Drive.\" Which statement is correct?",
+            "title": "Um colega afirma: “Instalei o MCP do Google Drive, então agora o Claude pode fazer qualquer coisa no meu Drive”. Qual alternativa está correta?",
             "answers": [
               {
                 "id": "bd4bbd73-3100-4997-806e-b40fe2f6f321",
-                "title": "This is correct: MCP gives full access to the connected service.",
+                "title": "Está correto: o MCP concede acesso total ao serviço conectado.",
                 "correct": false,
-                "feedback": "This is incorrect. MCP does not automatically grant full access; permissions depend on the tools, account settings, and approvals."
+                "feedback": "Não. O protocolo não concede permissão automaticamente: o serviço aplica suas permissões e o host aplica as aprovações."
               },
               {
                 "id": "c9b9a121-4958-49ad-9bde-e78f7472cb66",
-                "title": "This is incorrect: MCP standardizes the connection, but what the assistant can do depends on the tools offered, account permissions, and configured approvals.",
+                "title": "Está incorreto: o MCP padroniza a ligação, mas o que o assistente pode fazer depende das ferramentas oferecidas, das permissões da conta e das aprovações configuradas.",
                 "correct": true,
-                "feedback": "This is correct. MCP standardizes the connection, but access is determined by the service, permissions, and approvals."
+                "feedback": "Correto. É a distinção entre tomada e crachá: o protocolo padroniza a ligação; o serviço aplica suas próprias permissões e o host aplica as aprovações."
               },
               {
                 "id": "cddf99e1-97e8-4a02-b733-d0c975728449",
-                "title": "This is incorrect: MCP only works with Anthropic services.",
+                "title": "Está incorreto: o MCP só funciona com serviços da Anthropic.",
                 "correct": false,
-                "feedback": "This is incorrect. MCP can connect to various services, not just Anthropic services."
+                "feedback": "Não. O colega está errado, mas não por isso: o MCP é aberto e funciona com serviços de vários fabricantes."
               },
               {
                 "id": "54f8f3a1-fab2-4425-9dae-7a9ae8308af5",
-                "title": "This is correct, as long as you have a paid plan.",
+                "title": "Está correto, desde que o plano seja pago.",
                 "correct": false,
-                "feedback": "This is incorrect. Having a paid plan does not automatically grant full access; permissions and approvals still apply."
+                "feedback": "Não. O plano não muda o que o crachá permite: as permissões do serviço e as aprovações valem em qualquer plano."
               }
             ],
             "feedbackType": "CHOICE"
@@ -562,7 +562,7 @@
         "items": [
           {
             "id": "022244cc-c2ea-408a-821b-0917f5d17ea0",
-            "paragraph": "<p>Success criteria: Two correct answers are required to pass this knowledge check.</p>"
+            "paragraph": "<p><strong>Critério de êxito:</strong> duas respostas corretas.</p>"
           }
         ],
         "family": "impact",
@@ -583,7 +583,7 @@
         "items": [
           {
             "id": "ec98634f-79f0-4674-b3e0-c71983cd0b6b",
-            "paragraph": "<ol><li>Não há conectores ativos nesta conversa.</li></ol>"
+            "paragraph": "<p><strong>Mão na massa — prompt-base para listar os conectores ativos.</strong> Neste momento nenhum conector foi instalado, e a resposta esperada é que não há conectores ativos. O mesmo pedido será repetido nos Módulos 3, 4 e 5.</p><p>Liste os conectores que estão ativos nesta conversa. Para cada um, informe:</p><ol><li>o nome do conector e quem o publica;</li><li>as ferramentas disponíveis;</li><li>se cada ferramenta apenas lê ou também altera dados.</li></ol><p>Não execute nenhuma ferramenta.</p>"
           }
         ],
         "family": "impact",
@@ -602,7 +602,7 @@
       "isGeneratingAIContent": false,
       "isRequiredForCompletion": true
     },
-    "title": "Understanding MCP: Foundations and Architecture",
+    "title": "O que é o MCP: um padrão comum entre assistentes e serviços",
     "type": "blocks",
     "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
     "courseId": "A6GxuiVLrHaIYJQ0N2rtL7ZCDLnK5DG_",

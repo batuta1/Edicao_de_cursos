@@ -15,6 +15,7 @@ A pasta é organizada **primeiro por etapa, depois por tema**. Cada curso novo g
 | Tema | Etapa |
 |---|---|
 | `notebooklm` (Essentials e Hands-on) | ✅ Finalizado — `01_FINALIZADO_subir-na-LMS/notebooklm/` |
-| `mcp` (Essentials) | ⏳ Na fila — `04_NAO_REVISADO/mcp/` |
+| `mcp` (Essentials) | ✅ Finalizado — `01_FINALIZADO_subir-na-LMS/mcp/` (v3; veja os pontos de atenção no relatório) |
+| `mcp` (Hands-on) | ✅ Finalizado — `01_FINALIZADO_subir-na-LMS/mcp/` (v2; veja os pontos de atenção no relatório) |
 
 Quando um curso muda de etapa, mova só a subpasta do tema. Antes de publicar, veja a seção "Pontos de atenção" de cada relatório completo.

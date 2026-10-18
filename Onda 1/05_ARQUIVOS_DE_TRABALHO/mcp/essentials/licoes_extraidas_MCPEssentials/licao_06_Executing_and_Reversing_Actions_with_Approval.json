@@ -1,7 +1,7 @@
 {
   "numero_da_licao": 6,
   "position_original": 5,
-  "title": "Executing and Reversing Actions with Approval",
+  "title": "Executar ações com aprovação e desfazer",
   "lesson": {
     "description": "",
     "id": "d93e051e-fca9-4170-be1d-25dd746133bf",
@@ -13,8 +13,8 @@
         "items": [
           {
             "id": "qv4ekua39u0q6uepdhf5sw5k",
-            "heading": "Taking Action Safely: How to Execute and Undo Changes with MCP Connectors",
-            "paragraph": "<p>When you allow an AI assistant to make changes—like creating calendar events or sending emails—you're unlocking powerful automation, but also introducing real risks. This lesson focuses on how to execute actions safely with MCP connectors, emphasizing the need for manual approval and the ability to reverse changes. You'll learn how to maintain control, prevent mistakes, and ensure that every action can be undone if needed.</p>"
+            "heading": "Agir com uma porta que pede confirmação",
+            "paragraph": "<p>Executar uma ação por meio de um conector significa permitir que o assistente altere algo no serviço: criar um evento, redigir um e-mail, mover um arquivo. É o uso mais útil e o mais arriscado. Nesta lição você aplica um método de quatro tempos a uma ação pequena e reversível na própria agenda e, ao final, devolve o crachá.</p>"
           }
         ],
         "family": "text",
@@ -35,7 +35,7 @@
         "items": [
           {
             "id": "sjayomnylhbf9h68txp8x122",
-            "paragraph": "<p>In this lesson, you'll develop advanced skills for safely executing and reversing actions using MCP connectors. By following a structured approach, you can minimize risk and maintain full control over your data and services.</p>"
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
           }
         ],
         "family": "text",
@@ -59,27 +59,27 @@
           {
             "id": "vwertttha3kyyl34j93a3vqp",
             "number": "1",
-            "paragraph": "<p>Apply the prepare–review–verify–undo method</p>"
+            "paragraph": "<p>Aplicar o método preparar–revisar–conferir–desfazer a uma ação de escrita.</p>"
           },
           {
             "id": "mybjvaq47coznoagj7g37nok",
             "number": "2",
-            "paragraph": "<p>Configure manual approval for writing tools</p>"
+            "paragraph": "<p>Configurar aprovação manual para as ferramentas de escrita de um conector.</p>"
           },
           {
             "id": "orsmi9p6ocevqc8yi1ade6aj",
             "number": "3",
-            "paragraph": "<p>Execute, verify, and undo a Google Calendar action</p>"
+            "paragraph": "<p>Executar, conferir e desfazer uma ação reversível no Google Calendar.</p>"
           },
           {
             "id": "x8mjqio9eo3kiwhkbrlgf6o1",
             "number": "4",
-            "paragraph": "<p>Disconnect and revoke connector access</p>"
+            "paragraph": "<p>Desconectar um conector e revogar o acesso no serviço de origem.</p>"
           },
           {
             "id": "gr588l67paxhg3qyak7y06jd",
             "number": "5",
-            "paragraph": "<p>Troubleshoot action execution and reversal issues</p>"
+            "paragraph": "<p>Resolver os problemas mais comuns ao executar e desfazer ações.</p>"
           }
         ],
         "family": "list",
@@ -100,8 +100,8 @@
         "items": [
           {
             "id": "wn4dpkvnuxzelr4uc2c5x69y",
-            "heading": "The Four Steps of Safe Action Execution",
-            "paragraph": "<p>Explore each step of the recommended method for executing actions with MCP connectors. Understanding and applying these steps will help you prevent mistakes and maintain control over every change your assistant makes.</p><p>Expand each tab to see what to do, why it matters, and what to watch out for at every stage.</p>"
+            "heading": "O método em quatro tempos",
+            "paragraph": "<p>Abra cada aba na ordem. O método vale para qualquer conector com ferramentas de escrita, não só para a agenda.</p>"
           }
         ],
         "family": "text",
@@ -131,23 +131,23 @@
         "items": [
           {
             "id": "54c76407-468e-42bb-b7cc-3632f06388e8",
-            "title": "Prepare",
-            "description": "<p>Before taking any action, set up a personal account and create a test item with a unique, unmistakable name. Make sure the connector's writing tools are set to Needs approval. This ensures that no changes happen without your explicit consent.</p><p></p><p>Preparation reduces the risk of accidental changes to real data and keeps your test actions clearly separated from important information.</p>"
+            "title": "Preparar",
+            "description": "<p>Conta pessoal, item de teste com nome inconfundível e ferramentas de escrita em Needs approval.</p><p></p><p>O nome inconfundível (por exemplo, “Teste MCP — apagar depois”) evita que o pedido de exclusão atinja um item real.</p>"
           },
           {
             "id": "6eb7c22f-e98e-4b94-8e5a-34726477468f",
-            "title": "Review",
-            "description": "<p>Carefully review all details before approving any action. Double-check the service, account, target, date, time zone, recipients, and the specific action being requested. Only select Allow if everything is correct.</p><p></p><p>This step is critical for catching errors before they happen, preventing unintended consequences like sending emails to the wrong people or scheduling events at the wrong time.</p>"
+            "title": "Revisar",
+            "description": "<p>Antes de selecionar Allow, confira serviço, conta, alvo, data, fuso, destinatários e o verbo da ação.</p><p></p><p>É o último momento em que um erro não custa nada. Se algo não bater, selecione Deny e refaça o pedido.</p>"
           },
           {
             "id": "9885c0c9-deaf-4b05-b917-5ee3d671ea8a",
-            "title": "Verify",
-            "description": "<p>After the action is executed, open the source service (like Google Calendar) and confirm that the result matches your expectations. Look for the test item and check that all details are correct.</p><p></p><p>Verification ensures that the assistant performed the action as intended and helps you spot any discrepancies immediately.</p>"
+            "title": "Conferir",
+            "description": "<p>Abra o serviço de origem e verifique o resultado.</p><p></p><p>A resposta do assistente diz o que ele acredita ter feito; o serviço mostra o que de fato aconteceu.</p>"
           },
           {
             "id": "3cb85278-31d4-4947-bd10-c2d7bfaa9ddc",
-            "title": "Undo",
-            "description": "<p>Once you've confirmed the action, remove the test item and disconnect the connector. Revoke access in the original service to fully close the loop.</p><p></p><p>Undoing actions and revoking access protects your account and ensures that no lingering permissions or test data remain after your exercise.</p>"
+            "title": "Desfazer",
+            "description": "<p>Remova o item de teste e, ao final, desconecte o conector e revogue o acesso.</p><p></p><p>Desfazer só é possível quando a ação é reversível — por isso o teste não tem convidados nem envio de e-mail.</p>"
           }
         ],
         "family": "interactive",
@@ -168,8 +168,8 @@
         "items": [
           {
             "id": "npl5ihu66nsde9bc21ag8gne",
-            "heading": "Manual Approval—Why and How",
-            "paragraph": "<p>Review each flashcard to understand why manual approval is essential for safe action execution, and how to apply it in practice.</p>"
+            "heading": "Aprovação manual",
+            "paragraph": "<p>Vire cada cartão para revisar por que a aprovação manual é a principal proteção nas ações de escrita:</p>"
           }
         ],
         "family": "text",
@@ -194,44 +194,44 @@
             "id": "no5mbfm68fey9ma9c9ni50ox",
             "back": {
               "type": "description",
-              "description": "<p>Requires you to explicitly allow each writing action before it happens, adding a layer of safety.</p>"
+              "description": "<p>A conversa pausa antes da ação e mostra a solicitação com Allow e Deny. Nada é gravado sem o seu clique.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Manual approval (Needs approval)</p>"
+              "description": "<p>Needs approval</p>"
             }
           },
           {
             "id": "n5as8p53bgc06qje9djy490u",
             "back": {
               "type": "description",
-              "description": "<p>Prevents accidental or unauthorized changes, especially for actions that can’t be easily undone.</p>"
+              "description": "<p>A aprovação é o momento de revisar: depois da execução, algumas ações não têm volta.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Why approval is critical</p>"
+              "description": "<p>Por que aprovar</p>"
             }
           },
           {
             "id": "b2333hp4mprw93dk9k43b1zs",
             "back": {
               "type": "description",
-              "description": "<p>Sending emails, creating or deleting events, and any operation that modifies data should always require approval.</p>"
+              "description": "<p>Criar, alterar e excluir eventos; enviar, responder e encaminhar e-mails; mover ou compartilhar arquivos.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Actions needing approval</p>"
+              "description": "<p>O que deve pedir aprovação</p>"
             }
           },
           {
             "id": "amrd0bo9x6ouryo4m34dveyy",
             "back": {
               "type": "description",
-              "description": "<p>Irreversible changes, like sending invitations or deleting important data, can occur without your knowledge if approval is not required.</p>"
+              "description": "<p>Com a ferramenta em Always allow, um pedido ambíguo ou uma instrução maliciosa pode virar ação sem que você veja antes.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Risks without approval</p>"
+              "description": "<p>Sem aprovação</p>"
             }
           }
         ],
@@ -274,8 +274,8 @@
         "items": [
           {
             "id": "kl7fgaixhfcnvo0cw3iim6dj",
-            "heading": "Google Calendar Connector—Capabilities, Limits, and Best Practices",
-            "paragraph": "<p>Explore the features and safeguards of the Google Calendar connector. Each section highlights what you can do, what to avoid, and how to stay secure when using this tool.</p><p>Expand each item to learn more about safe, reversible actions.</p>"
+            "heading": "O conector Google Calendar",
+            "paragraph": "<p>Parte dos conectores do Google Workspace, o Google Calendar está disponível a todos os usuários do Claude, inclusive no plano gratuito. Abra cada item:</p>"
           }
         ],
         "family": "text",
@@ -305,23 +305,23 @@
         "items": [
           {
             "id": "24729047-0a70-40d0-802c-ed4b70a59e64",
-            "title": "Capabilities",
-            "description": "<p>The Google Calendar connector lets you read, create, edit, and delete events, including setting up recurring events and adding guests. It can find free times and manage multiple calendars.</p><p></p><p>These features make it a powerful tool for automating your schedule, but also require careful control to avoid mistakes.</p>"
+            "title": "O que ele faz",
+            "description": "<p>Lê eventos e calendários, encontra horários livres e cria, altera e exclui eventos, com convidados e recorrência.</p><p></p><p>Conexão: <strong>Claude &gt; Personalizar &gt; Conectores &gt; + &gt; Google Calendar &gt; Connect</strong>, com login na Conta Google — o conector nunca recebe a senha pela conversa.</p>"
           },
           {
             "id": "bbaaf707-5e97-46a0-b25f-3c52a9d97dff",
-            "title": "Approval Defaults",
-            "description": "<p>By default, actions that create, edit, or delete events require manual approval. This means you must review and confirm each change before it happens.</p><p></p><p>Approval settings help prevent accidental changes and ensure you stay in control of your calendar data.</p>"
+            "title": "Aprovação por padrão",
+            "description": "<p>Segundo a ajuda oficial, as ações exigem aprovação explícita por padrão.</p><p></p><p>Mesmo assim, revise <strong>Tool permissions</strong> antes de usar e mantenha criação, alteração e exclusão em Needs approval.</p>"
           },
           {
             "id": "425112c9-e0be-4a56-bc70-59a3d559c33e",
-            "title": "Limits and Cautions",
-            "description": "<p>Never include guests or send invitations in test actions. If you add guests, they will receive emails that cannot be undone by deleting the event. For learning, always create events without guests and avoid sending real invitations.</p><p></p><p>This approach keeps your tests safe and prevents unwanted notifications to others.</p>"
+            "title": "A ação de teste — e o Gmail",
+            "description": "<p>A ação de teste é um evento de dez minutos, no calendário principal, chamado “Teste MCP — apagar depois”, sem convidados, sem link de reunião e sem dados reais. Sem convidados porque um convite envia e-mail a terceiros, e esse efeito não se desfaz ao apagar o evento.</p><p></p><p>O mesmo vale para o Gmail: o conector do Claude pode criar rascunhos, enviar, responder e encaminhar — envio, resposta e encaminhamento pedem aprovação por padrão —, mas a ação de aprendizagem é apenas o rascunho. No ChatGPT, o plugin do Gmail, quando disponível, segue a mesma lógica; os botões de aprovação variam conforme o plugin e a política do espaço de trabalho.</p>"
           },
           {
             "id": "8cc707cc-1ae8-4975-a83f-0f8a946bf854",
-            "title": "Disconnecting and Revoking",
-            "description": "<p>After finishing your test, disconnect the connector in Claude and revoke its access in your Google Account settings. This ensures no lingering permissions remain.</p><p></p><p>Properly closing out access is a key step in maintaining your privacy and security after using connectors.</p>"
+            "title": "Devolver o crachá",
+            "description": "<p>No Claude, desconecte em <strong>Claude &gt; Personalizar &gt; Conectores &gt; [conector] &gt; Disconnect</strong>; conectores personalizados saem em <strong>⋯ &gt; Remover</strong>. Revogue também na área de conexões de terceiros da Conta Google [conferir o caminho].</p><p></p><p>No ChatGPT, desinstalar um plugin não equivale necessariamente a revogar a conexão com o serviço; verifique as duas coisas. O registro do que foi feito é a própria conversa: para contas pessoais, não foi encontrado histórico de auditoria independente.</p>"
           }
         ],
         "family": "interactive",
@@ -342,7 +342,7 @@
         "items": [
           {
             "id": "c53a8ffa-b91a-432f-b39b-df1eccf7cb23",
-            "paragraph": "<p><strong>Atenção:</strong> Convite e e-mail enviados não podem ser desfeitos. Apagar o evento não cancela o aviso já enviado aos convidados. Nos exercícios, crie eventos sem convidados e mantenha os e-mails apenas em rascunho.</p>"
+            "paragraph": "<p>⚠️ Convite e e-mail enviado não têm volta: apagar o evento não cancela o aviso já enviado aos convidados. Nos exercícios, eventos sem convidados e e-mails apenas em rascunho.</p>"
           }
         ],
         "family": "impact",
@@ -373,65 +373,65 @@
           {
             "id": "c6be8b58-b08d-450b-98de-dc771cd27842",
             "type": "intro",
-            "title": "Introduction to Creating, Verifying, and Undoing a Calendar Event",
+            "title": "Consultar, criar, conferir e apagar um evento de teste (6 min)",
             "isHidden": false,
-            "description": "<p>In this guided practice, you'll safely create, verify, and undo a test event in Google Calendar using MCP connectors. Follow each step carefully to ensure all actions are reversible and secure.</p>"
+            "description": "<p>Você vai aplicar os quatro tempos a uma ação reversível na própria agenda. Use a Conta Google pessoal e o prompt-base que aparece logo depois desta atividade.</p>"
           },
           {
             "id": "8528f9db-0da2-47b4-8408-ad8002891341",
             "type": "summary",
-            "title": "Summary: Safe and Controlled Calendar Management",
+            "title": "Ponto de controle",
             "isHidden": false,
-            "description": "<p>By following these steps, you ensure that every action is deliberate, reversible, and fully under your control.</p>"
+            "description": "<p>🏁 No Google Calendar, o evento “Teste MCP — apagar depois” aparece no dia seguinte às 15h, sem convidados, e deixa de aparecer após a exclusão.</p>"
           },
           {
             "id": "325ac360-64b6-4769-b5cd-8f784bc6ec5b",
             "type": "step",
-            "title": "Connect Google Calendar",
+            "title": "Conecte o Google Calendar",
             "isHidden": false,
-            "description": "<p>Connect the Google Calendar connector in Claude using your personal Google account. Navigate to Claude &gt; Personalizar &gt; Conectores &gt; + &gt; Google Calendar &gt; Connect and complete the login process.</p>"
+            "description": "<p>Em <strong>Claude &gt; Personalizar &gt; Conectores &gt; + &gt; Google Calendar &gt; Connect</strong>, conecte com a Conta Google pessoal.</p>"
           },
           {
             "id": "da2f39a8-2c4e-4e38-bef5-4556ea45fc3f",
             "type": "step",
-            "title": "Set Approval for Writing Tools",
+            "title": "Mantenha a escrita em Needs approval",
             "isHidden": false,
-            "description": "<p>Go to Claude &gt; Personalizar &gt; Conectores &gt; Google Calendar &gt; Tool permissions. Set all tools that create, edit, or delete events to Needs approval.</p>"
+            "description": "<p>Em <strong>Claude &gt; Personalizar &gt; Conectores &gt; Google Calendar &gt; Tool permissions</strong>, mantenha em Needs approval as ferramentas que criam, alteram ou excluem eventos.</p>"
           },
           {
             "id": "c477f028-e2f3-4dde-b472-634e35121d15",
             "type": "step",
-            "title": "List Upcoming Events",
+            "title": "Consulte os próximos eventos",
             "isHidden": false,
-            "description": "<p>Start a new conversation and activate the connector. Ask: \"Liste apenas meus próximos três eventos, com título, data, horário e calendário. Não altere nada.\" Confirm that no approval is requested for this read-only action.</p>"
+            "description": "<p>Em nova conversa, com o conector ligado em <strong>Conversa &gt; + &gt; Conectores</strong>, peça: “Liste apenas meus próximos três eventos, com título, data, horário e calendário. Não altere nada.” Nenhuma aprovação de escrita deve aparecer nessa consulta.</p>"
           },
           {
             "id": "6445d70c-0e01-47a7-9272-47b4c8ebcae1",
             "type": "step",
-            "title": "Request Test Event Creation",
+            "title": "Peça o evento de teste",
             "isHidden": false,
-            "description": "<p>Ask: \"Crie no meu calendário principal um evento chamado 'Teste MCP — apagar depois', amanhã às 15h, com duração de 10 minutos, sem convidados e sem link de reunião.\" Review the approval request and confirm only if all details are correct.</p>"
+            "description": "<p>Com o prompt-base, peça: “Crie no meu calendário principal um evento chamado ‘Teste MCP — apagar depois’, amanhã às 15h, com duração de 10 minutos, sem convidados e sem link de reunião.” Na solicitação de aprovação, confira título, data, horário, fuso, calendário e ausência de convidados; selecione Allow somente se tudo estiver correto.</p>"
           },
           {
             "id": "b92f7b89-769f-4971-9e4d-1be874f21d60",
             "type": "step",
-            "title": "Verify Event in Google Calendar",
+            "title": "Confira no Google Calendar",
             "isHidden": false,
-            "description": "<p>Open Google Calendar and check that the event \"Teste MCP — apagar depois\" appears at the correct time, with no guests.</p>"
+            "description": "<p>Abra o Google Calendar e localize o evento “Teste MCP — apagar depois”.</p>"
           },
           {
             "id": "58ef596e-fc02-4c5b-8f05-2133467d8bfa",
             "type": "step",
-            "title": "Request Event Deletion",
+            "title": "Peça a exclusão",
             "isHidden": false,
-            "description": "<p>Ask: \"Exclua somente o evento 'Teste MCP — apagar depois' criado agora.\" Review the approval request and confirm only if the correct event is targeted.</p>"
+            "description": "<p>Peça: “Exclua somente o evento ‘Teste MCP — apagar depois’ criado agora.” Confira o alvo e selecione Allow.</p>"
           },
           {
             "id": "ee5ed352-8d3a-447d-84ea-1cc24a66df06",
             "type": "step",
-            "title": "Confirm Deletion",
+            "title": "Confirme que o evento sumiu",
             "isHidden": false,
-            "description": "<p>Check Google Calendar to ensure the test event has been removed. This completes the safe execution and reversal process.</p>"
+            "description": "<p>Confirme no Google Calendar que o evento desapareceu. Anote quais etapas pediram aprovação.</p>"
           }
         ],
         "family": "interactive-fullscreen",
@@ -452,7 +452,7 @@
         "items": [
           {
             "id": "c54f4f9b-75fc-4d3f-86f6-21b2159af8ad",
-            "paragraph": "<p>Use somente o conector <strong>[nome]</strong>. Quero <strong>[ação]</strong> com estes dados: <strong>[campos]</strong>. Antes de executar, mostre exatamente:</p><ul><li>a ferramenta que será usada,</li><li>os campos que serão gravados</li><li>e o que mudará no serviço.</li></ul><p>Não inclua convidados, destinatários ou anexos que eu não tenha pedido. Só execute depois da minha aprovação. Depois, informe o que foi feito e como desfazer.</p>"
+            "paragraph": "<p><strong>Mão na massa — prompt-base para ação revisável:</strong></p><p>Use somente o conector [nome]. Quero [ação] com estes dados: [campos]. Antes de executar, mostre exatamente:</p><ul><li>a ferramenta que será usada;</li><li>os campos que serão gravados;</li><li>o que mudará no serviço.</li></ul><p>Não inclua convidados, destinatários ou anexos que eu não tenha pedido. Só execute depois da minha aprovação. Depois, informe o que foi feito e como desfazer.</p>"
           }
         ],
         "family": "impact",
@@ -473,8 +473,8 @@
         "items": [
           {
             "id": "hqdhecwwpd6xvee0o5i4c70r",
-            "heading": "Troubleshooting Action Execution and Reversal",
-            "paragraph": "<p>Encountering issues? Expand each scenario for solutions to common problems with executing or undoing actions. These tips will help you quickly resolve obstacles and keep your workflow on track.</p><p>Review each section to find practical fixes for typical challenges.</p>"
+            "heading": "Solução de problemas",
+            "paragraph": "<p>Abra o item que corresponde à situação:</p>"
           }
         ],
         "family": "text",
@@ -504,28 +504,28 @@
         "items": [
           {
             "id": "6bd45103-ada9-42cb-aafe-f2a15dd0b5bd",
-            "title": "Event created without approval",
-            "description": "<p>If an event is created without asking for approval, the tool permission is likely set to Always allow. Adjust the setting to Needs approval before proceeding.</p><p></p><p>This ensures that all future actions require your explicit confirmation.</p>"
+            "title": "O evento foi criado sem pedir aprovação",
+            "description": "<p>Causa provável: a ferramenta está em Always allow.</p><p></p><p>Ajuste <strong>Tool permissions</strong> para Needs approval antes de prosseguir.</p>"
           },
           {
             "id": "cc77c2eb-86e6-4a60-b2bb-ac05290615e0",
-            "title": "Wrong time zone or event details",
-            "description": "<p>If the event appears at the wrong time or with incorrect details, check the time zone settings in your account and calendar. Deny the approval and repeat the request, specifying the correct time zone if needed.</p><p></p><p>Always double-check details before approving any action.</p>"
+            "title": "Horário diferente do pedido",
+            "description": "<p>Causa provável: fuso horário da conta ou da agenda.</p><p></p><p>Confira o fuso na solicitação de aprovação; selecione Deny e repita o pedido informando o fuso.</p>"
           },
           {
             "id": "6ab771d9-f50b-428e-b8e4-efec45c58428",
-            "title": "Connector not available in account",
-            "description": "<p>If the Google Calendar connector does not appear, your account may be restricted by an administrator or not supported. Use a personal Google account to ensure compatibility.</p><p></p><p>Account limitations can prevent connector access, so verify your account type if issues persist.</p>"
+            "title": "O conector Google não aparece",
+            "description": "<p>Causa provável: conta Workspace bloqueada pelo administrador.</p><p></p><p>Use uma Conta Google pessoal.</p>"
           },
           {
             "id": "c9e0840e-0e1e-4d53-bd4e-8e1bf630c9ef",
-            "title": "Accidental deletion of the wrong event",
-            "description": "<p>If another event is deleted by mistake, the request may have been ambiguous. Always specify the exact title of the test event and restore it from the Google Calendar trash if possible.</p><p></p><p>Clear, specific requests help prevent accidental data loss.</p>"
+            "title": "A exclusão atingiu outro evento",
+            "description": "<p>Causa provável: pedido ambíguo.</p><p></p><p>Cite sempre o título exato do item de teste. Restaure o evento pela lixeira do Google Calendar, se disponível.</p>"
           },
           {
             "id": "2e340018-c063-4872-8b20-37408fa3d785",
-            "title": "No approval button in ChatGPT",
-            "description": "<p>If you do not see an approval button in ChatGPT, the plugin or workspace policy may not support manual approvals. Do not proceed with writing actions in this environment; use Claude for exercises requiring approval.</p><p></p><p>Always verify that approval controls are available before executing sensitive actions.</p>"
+            "title": "O ChatGPT não mostra botão de aprovação",
+            "description": "<p>Causa provável: a política varia por plugin e espaço de trabalho.</p><p></p><p>Não prossiga com ação de escrita; faça o exercício no Claude.</p>"
           }
         ],
         "family": "interactive",
@@ -546,8 +546,8 @@
         "items": [
           {
             "id": "g14j3obpgejid2jnuvxetq1o",
-            "heading": "Key Terms and Reminders for Safe Action Execution",
-            "paragraph": "<p>Review these flashcards to reinforce essential terminology and best practices for executing and reversing actions safely.</p>"
+            "heading": "Termos para revisar",
+            "paragraph": "<p>Vire cada cartão:</p>"
           }
         ],
         "family": "text",
@@ -572,18 +572,18 @@
             "id": "km3srztvv0kh5ttkgq0r5gvt",
             "back": {
               "type": "description",
-              "description": "<p>A permission setting that requires your confirmation before any writing action is performed by the assistant.</p>"
+              "description": "<p>Os botões da solicitação de aprovação. Allow executa a ação exatamente como mostrada; Deny cancela e permite refazer o pedido.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Needs approval</p>"
+              "description": "<p>Allow e Deny</p>"
             }
           },
           {
             "id": "pqyequ8u20sjaciywcyk8fcr",
             "back": {
               "type": "description",
-              "description": "<p>Settings that control which actions a connector can perform, such as reading, writing, or deleting data.</p>"
+              "description": "<p>Onde se define, ferramenta por ferramenta, se ela roda em Always allow, Needs approval ou Blocked.</p>"
             },
             "front": {
               "type": "description",
@@ -594,33 +594,33 @@
             "id": "bz7i8eskm0q1j1po5sbyn8rh",
             "back": {
               "type": "description",
-              "description": "<p>Reversible actions can be undone (like deleting a test event); irreversible actions, like sending emails, cannot be taken back.</p>"
+              "description": "<p>Apagar um evento de teste desfaz a criação. Convite enviado e e-mail enviado não têm volta.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Reversible vs. irreversible actions</p>"
+              "description": "<p>Reversível × irreversível</p>"
             }
           },
           {
             "id": "ql49vyu93lblcct7avzutzqh",
             "back": {
               "type": "description",
-              "description": "<p>Steps to remove a connector from Claude and revoke its permissions in the original service for full security.</p>"
+              "description": "<p>Desconectar remove o conector do Claude; revogar retira o acesso no serviço de origem. Faça os dois.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Disconnecting and revoking access</p>"
+              "description": "<p>Desconectar e revogar</p>"
             }
           },
           {
             "id": "drgfjda0bnoskh8rtburw56n",
             "back": {
               "type": "description",
-              "description": "<p>An event created with the correct title, time, no guests, and properly deleted after approval and verification.</p>"
+              "description": "<p>Evento criado com título e horário corretos, sem convidados, conferido no Google Calendar e apagado depois, com aprovação em cada escrita.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Successful test event</p>"
+              "description": "<p>Teste bem-sucedido</p>"
             }
           }
         ],
@@ -643,31 +643,31 @@
           {
             "id": "45df610a-c6f7-4527-91cb-30c6d146041a",
             "type": "MULTIPLE_CHOICE",
-            "title": "What is the correct order for the safe execution method?",
+            "title": "Qual é a ordem correta do método para executar uma ação com segurança?",
             "answers": [
               {
                 "id": "17f0d15e-cc0e-459d-aff0-af332682257e",
-                "title": "Prepare, Review, Verify, Undo",
+                "title": "Preparar, revisar, conferir, desfazer",
                 "correct": true,
-                "feedback": "Correct! Following this order ensures every action is safe and reversible."
+                "feedback": "Correto. Prepara-se o teste, revisa-se antes do Allow, confere-se no serviço de origem e só então se desfaz."
               },
               {
                 "id": "40d52c21-e32e-4718-a62e-583d88665140",
-                "title": "Review, Prepare, Undo, Verify",
+                "title": "Revisar, preparar, desfazer, conferir",
                 "correct": false,
-                "feedback": "Not quite. The process starts with preparation, not review."
+                "feedback": "Não. Sem preparar antes, não há item de teste nem aprovação configurada para revisar."
               },
               {
                 "id": "4ff5aefb-1e0e-42d7-8485-a95b5f92e26d",
-                "title": "Prepare, Verify, Review, Undo",
+                "title": "Preparar, conferir, revisar, desfazer",
                 "correct": false,
-                "feedback": "Not quite. Verification comes after review and approval."
+                "feedback": "Não. A revisão vem antes do Allow; conferir é verificar no serviço depois da execução."
               },
               {
                 "id": "7c0f6803-b227-4621-b3ba-01713f327f88",
-                "title": "Review, Prepare, Verify, Undo",
+                "title": "Revisar, preparar, conferir, desfazer",
                 "correct": false,
-                "feedback": "Not quite. Preparation always comes first."
+                "feedback": "Não. A preparação vem sempre primeiro: conta pessoal, item de teste e escrita em Needs approval."
               }
             ],
             "feedbackType": "CHOICE"
@@ -691,7 +691,7 @@
         "items": [
           {
             "id": "aa885463-9e14-4994-b455-794f6756896a",
-            "paragraph": "<h2>Success Criteria for Action Execution and Reversal</h2><ul><li>The event is created and visible with the correct title, time, and no guests.</li><li>Approval was required and correctly reviewed.</li><li>The event is deleted and no longer visible after removal.</li><li>All steps are documented and all relevant approvals were observed.</li></ul>"
+            "paragraph": "<h2>Critério de êxito</h2><ul><li>(a) A consulta trouxe eventos existentes e nenhuma aprovação de escrita foi solicitada nela.</li><li>(b) O evento de teste apareceu no Google Calendar com título e horário corretos e sem convidados.</li><li>(c) Depois da exclusão, o evento deixou de aparecer.</li><li>(d) Você registrou quais etapas pediram aprovação.</li></ul>"
           }
         ],
         "family": "impact",
@@ -710,7 +710,7 @@
       "isGeneratingAIContent": false,
       "isRequiredForCompletion": true
     },
-    "title": "Executing and Reversing Actions with Approval",
+    "title": "Executar ações com aprovação e desfazer",
     "type": "blocks",
     "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
     "courseId": "A6GxuiVLrHaIYJQ0N2rtL7ZCDLnK5DG_",
