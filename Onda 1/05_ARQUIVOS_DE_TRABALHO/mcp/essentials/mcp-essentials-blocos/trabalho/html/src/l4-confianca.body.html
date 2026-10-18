@@ -1,0 +1,63 @@
+<!--titulo: Dá para confiar nesta resposta?-->
+<style>
+  .resp { font-style: italic; margin: 0 0 10px; }
+  .meta { margin: 0 0 10px; padding: 0; list-style: none; font-size: 14px; }
+  .meta li { padding: 4px 0; border-top: 1px dashed var(--linha); }
+  .meta b { color: var(--suave); font-weight: 600; }
+  .placar { font-weight: 700; color: var(--azul); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Dá para confiar nesta resposta?</h1>
+  <p class="sub">Quatro respostas recebidas depois do pedido “use somente o conector OpenAI Docs”. Para cada uma, olhe o bloco de chamada de ferramenta e a URL devolvida e decida. As respostas são simuladas.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Critérios: Módulo 3 do roteiro (bloco de chamada de ferramenta, URL e domínios oficiais).
+  var CASOS = [
+    { r: 'Resume três cuidados de segurança para servidores MCP e cita a página de origem.', tool: 'sim — uma ferramenta do conector OpenAI Docs', url: 'developers.openai.com/…', ok: true,
+      fb: 'Chamada do conector registrada e URL em domínio oficial. Ainda assim, abra a URL antes de usar.' },
+    { r: 'Explica com segurança o mesmo tema, em tom confiante e bem detalhado.', tool: 'não aparece', url: 'um blog pessoal', ok: false,
+      fb: 'Sem bloco de chamada de ferramenta, a resposta pode ter vindo do conhecimento geral do modelo. Ligue o conector na conversa e repita com “use somente o conector”.' },
+    { r: 'Traz uma página sobre privacidade de plugins.', tool: 'sim — uma ferramenta do conector OpenAI Docs', url: 'openai-docs-ajuda.exemplo.com/…', ok: false,
+      fb: 'O domínio não é um dos oficiais (developers.openai.com, platform.openai.com, learn.chatgpt.com). Peça a fonte exata e confira.' },
+    { r: 'Lista três recomendações sobre servidores MCP personalizados.', tool: 'sim — uma ferramenta do conector OpenAI Docs', url: 'platform.openai.com/…', ok: true,
+      fb: 'Chamada registrada e domínio oficial. Abra a URL para confirmar que o conteúdo bate com o resumo.' }
+  ];
+  var certos = {}, concluido = false, lista = document.getElementById('lista');
+  CASOS.forEach(function (c, i) {
+    var d = document.createElement('div'); d.className = 'item';
+    var h = document.createElement('h2'); h.id = 'c' + i; h.textContent = 'Resposta ' + (i + 1);
+    var p = document.createElement('p'); p.className = 'resp'; p.textContent = '“' + c.r + '”';
+    var ul = document.createElement('ul'); ul.className = 'meta';
+    [['Chamada de ferramenta: ', c.tool], ['URL devolvida: ', c.url]].forEach(function (m) {
+      var li = document.createElement('li'); var b = document.createElement('b'); b.textContent = m[0]; li.appendChild(b); li.appendChild(document.createTextNode(m[1])); ul.appendChild(li);
+    });
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'c' + i);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    [['Pode usar', true], ['Conferir de novo', false]].forEach(function (op) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = op[0]; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        if (op[1] === c.ok) { certos[i] = true; d.className = 'item certo'; fb.className = 'feedback ok'; fb.textContent = 'Correto. ' + c.fb; }
+        else { delete certos[i]; d.className = 'item errado'; fb.className = 'feedback erro'; fb.textContent = 'Não. ' + c.fb; }
+        placar();
+      });
+      g.appendChild(b);
+    });
+    d.appendChild(h); d.appendChild(p); d.appendChild(ul); d.appendChild(g); d.appendChild(fb); lista.appendChild(d);
+  });
+  function placar() {
+    var n = Object.keys(certos).length;
+    document.getElementById('placar').textContent = n + ' de ' + CASOS.length + ' decisões corretas';
+    if (n === CASOS.length && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Regra prática: sem chamada de ferramenta ou com domínio estranho, não use a resposta até conferir a origem.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+  placar();
+</script>

@@ -1,0 +1,32 @@
+{
+  "licao": 1,
+  "posicao": 19,
+  "blocos": [
+    {
+      "modelo": "text-text-heading-paragraph.json",
+      "itens": [
+        {
+          "heading": "🚀 Quer ir além?",
+          "paragraph": "<p>Faça estes desafios antes da Parte C, com os conectores ainda ligados. Abra cada um para ver o desafio e como validar:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "interactive-interactive-accordion.json",
+      "itens": [
+        {
+          "title": "Mova o evento de teste",
+          "description": "<p>Peça ao Claude para mover o evento de teste para outro horário, revise a aprovação e depois apague.</p><p></p><p><strong>Validação:</strong> o evento aparece no novo horário e depois some.</p>"
+        },
+        {
+          "title": "A Parte B no ChatGPT",
+          "description": "<p>Se o seu ChatGPT tiver o plugin do Gmail, faça a Parte B por lá (@Gmail) e compare como cada um pede confirmação.</p><p></p><p><strong>Validação:</strong> o rascunho existe e Enviados continua sem nada novo.</p>"
+        },
+        {
+          "title": "O relatório da conversa",
+          "description": "<p>Peça ao Claude um relatório do que foi feito na conversa: conector, ferramenta, argumentos e se houve escrita.</p><p></p><p><strong>Validação:</strong> o relatório bate com os blocos de chamada de ferramenta.</p>"
+        }
+      ]
+    }
+  ]
+}

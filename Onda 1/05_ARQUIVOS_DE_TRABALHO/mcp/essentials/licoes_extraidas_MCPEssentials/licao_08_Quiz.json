@@ -3,34 +3,34 @@
   "position_original": 7,
   "title": "Quiz",
   "lesson": {
-    "description": "Test your understanding of the Model Context Protocol (MCP), including how AI assistants connect to external services, files, and workflows, and how to tell the difference between local file access and cloud access. Explore key safety practices like setting folder permissions, spotting prompt injection or tool poisoning risks, and reviewing connector permissions before allowing actions.",
+    "description": "Verifique o que você aprendeu sobre o Model Context Protocol (MCP): o que ele padroniza, como conectar e conferir um serviço, a diferença entre leitura local e na nuvem, os riscos de segurança e as permissões que mantêm cada ação sob o seu controle.",
     "id": "8pOM6aAN87zYcq4h-ovsjX6RJZM91kC-",
     "items": [
       {
         "answers": [
           {
             "id": "9a4e164f-10eb-445b-a4cc-324c96491ab6",
-            "title": "Create a recurring event with guests so you can fully test invitations and then delete it afterward.",
+            "title": "Criar um evento recorrente com convidados para testar os convites e apagá-lo depois.",
             "correct": false,
-            "feedback": "This reflects a plausible test of connector features, but it ignores an important limit: guest invitations and related emails cannot be undone simply by deleting the event."
+            "feedback": "Não. Convites e os e-mails enviados aos convidados não se desfazem ao apagar o evento."
           },
           {
             "id": "83991f1d-3f2e-444d-bfe2-10eac8a363e6",
-            "title": "Connect the calendar, allow writing tools to stay always enabled, and rely on later verification to catch mistakes.",
+            "title": "Conectar a agenda, deixar as ferramentas de escrita em Always allow e confiar na conferência posterior para pegar erros.",
             "correct": false,
-            "feedback": "Verification is important, but leaving writing tools always enabled removes the manual approval safeguard that helps prevent errors before they happen."
+            "feedback": "Não. Conferir é importante, mas Always allow elimina a revisão antes da ação — o momento em que o erro ainda não custa nada."
           },
           {
             "id": "1ea5cca5-8636-4720-9211-daf7a6548ebc",
-            "title": "List the next three calendar events because read-only actions are the main way to test event creation controls.",
+            "title": "Listar os próximos três eventos, já que ações de leitura são a principal forma de testar os controles de criação.",
             "correct": false,
-            "feedback": "Listing events is a valid read-only capability, but it does not demonstrate the safe control needed for writing actions such as creating and undoing changes."
+            "feedback": "Não. Listar eventos é leitura; não exercita a aprovação, a conferência e o desfazer de uma ação de escrita."
           },
           {
             "id": "1777cb5c-4ebf-4e15-a3dd-763458b1accc",
-            "title": "Create a test event without guests, review the approval request, verify it in Google Calendar, and then delete it.",
+            "title": "Criar um evento de teste sem convidados, revisar a solicitação de aprovação, conferi-lo no Google Calendar e depois apagá-lo.",
             "correct": true,
-            "feedback": "This action uses the connector's event-creation capability while respecting the need for manual approval, verification, and safe reversal."
+            "feedback": "Correto. É o método preparar–revisar–conferir–desfazer aplicado a uma ação reversível."
           }
         ],
         "correct": "1777cb5c-4ebf-4e15-a3dd-763458b1accc",
@@ -38,7 +38,7 @@
           "1777cb5c-4ebf-4e15-a3dd-763458b1accc"
         ],
         "id": "48774a90-7693-4328-8191-1e202a4eaee7",
-        "title": "You are testing the Google Calendar connector to understand what it can do while keeping the test safe and reversible. Which action best shows proper control of the connector's capabilities and limits?",
+        "title": "Você está testando o conector Google Calendar para entender o que ele faz, mantendo o teste seguro e reversível. Qual ação demonstra melhor o controle adequado do conector?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -54,27 +54,27 @@
         "answers": [
           {
             "id": "c4504e5d-91d3-4f24-9fc6-e3c4a7656889",
-            "title": "Expand connector permissions across related tools to reduce repeated approval steps.",
+            "title": "Ampliar as permissões do conector para reduzir pedidos de aprovação repetidos.",
             "correct": false,
-            "feedback": "This sounds efficient, but broader permissions increase access beyond what may be necessary. Security best practice emphasizes controlled access rather than wider default access."
+            "feedback": "Não. Parece eficiente, mas amplia o acesso além do necessário: é o excesso de escopo."
           },
           {
             "id": "fc89c9b3-003a-4846-9e8c-04c87ddc30bb",
-            "title": "Keep existing connector access in place so recurring workflows continue without interruption.",
+            "title": "Manter os acessos existentes para que fluxos recorrentes não sejam interrompidos.",
             "correct": false,
-            "feedback": "This may sound practical for convenience, but it prioritizes continuity over security. Leaving access in place when it is no longer needed increases the chance of unnecessary exposure to tools and data."
+            "feedback": "Não. Acesso que já não é necessário continua expondo dados sem nenhum benefício."
           },
           {
             "id": "558e1179-5918-4dce-ac4b-eb682f886d73",
-            "title": "Focus on organizing connector names clearly so approved services are easier to identify later.",
+            "title": "Dar nomes claros aos conectores para identificar com facilidade os serviços aprovados.",
             "correct": false,
-            "feedback": "Clear naming can help administration, but it does not directly address the main security control in the question. Data safety depends more on managing and revoking access than on labeling connectors."
+            "feedback": "Não. Nomes claros ajudam a organizar, mas não limitam o que o conector alcança."
           },
           {
             "id": "85a7b5e6-d426-4ee0-94a6-2f84256016a5",
-            "title": "Regularly review permissions and revoke connector access when it is no longer needed.",
+            "title": "Revisar as permissões periodicamente e revogar o acesso de conectores que não são mais necessários.",
             "correct": true,
-            "feedback": "This is correct because limiting access to only what is needed and removing unused access reduces the risk of unnecessary data exposure."
+            "feedback": "Correto. Menor acesso suficiente e devolução do crachá reduzem a exposição desnecessária."
           }
         ],
         "correct": "85a7b5e6-d426-4ee0-94a6-2f84256016a5",
@@ -82,7 +82,7 @@
           "85a7b5e6-d426-4ee0-94a6-2f84256016a5"
         ],
         "id": "5c85e87e-4b94-493e-b893-9b7d9247f29d",
-        "title": "Which action best supports data safety when using MCP connectors with AI assistants?",
+        "title": "Qual prática mais contribui para a segurança dos dados ao usar conectores MCP?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -98,27 +98,27 @@
         "answers": [
           {
             "id": "079d3df2-8381-4fa7-894a-20560cc208fa",
-            "matchTitle": "Read-only access to public sources with no writing tools enabled",
-            "title": "Looking up public documentation through a remote connector"
+            "matchTitle": "Somente leitura de fonte pública, sem ferramentas de escrita",
+            "title": "Consultar documentação pública por um conector remoto"
           },
           {
             "id": "ee9be91d-0f35-4650-92ae-1de417357376",
-            "matchTitle": "Access limited to a single local folder, with only the file permissions needed for analysis",
-            "title": "Analyzing files stored in one project folder"
+            "matchTitle": "Acesso a uma única pasta local, só com as permissões necessárias para a análise",
+            "title": "Analisar arquivos de uma pasta de projeto"
           },
           {
             "id": "e05baa0b-fe70-4c51-8126-6351d88c272a",
-            "matchTitle": "Calendar access restricted to what is needed for agenda preparation, using read-only access if no edits are required",
-            "title": "Preparing a weekly agenda using a calendar connector"
+            "matchTitle": "Acesso à agenda limitado ao necessário, só leitura se não houver edição",
+            "title": "Preparar a pauta da semana com um conector de agenda"
           },
           {
             "id": "6fe4c5cc-538b-4583-9cfc-927dfcdaecee",
-            "matchTitle": "Allow message draft creation, but require approval for any send action",
-            "title": "Drafting emails without allowing them to be sent automatically"
+            "matchTitle": "Criação de rascunhos liberada; envio em Needs approval",
+            "title": "Redigir e-mails sem permitir envio automático"
           }
         ],
         "id": "f38f254b-a7aa-410f-8265-013f351de38b",
-        "title": "Match each task scenario to the permission setup that best follows the minimum necessary access principle. Focus on what level of reading, writing, or approval is justified for the task—not on what would be most convenient.",
+        "title": "Associe cada tarefa à configuração de permissões que segue o princípio do menor acesso necessário. Pense no que a tarefa justifica, não no que seria mais cômodo.",
         "type": "MATCHING",
         "metadata": {
           "createdVia": "ai",
@@ -128,34 +128,34 @@
           }
         },
         "globalBlockId": "267f90aa-667f-4c65-bda5-5a24c4252abf",
-        "feedbackCorrect": "Correct. Each match applies least-privilege access by granting only the permissions needed for the stated task. Secure planning means narrowing scope, blocking unnecessary writing, and adding approval when an action could create greater risk.",
-        "feedbackIncorrect": "Incorrect. The best matches are based on minimum necessary access, not maximum convenience. If a task only needs reading, writing should be blocked; if writing is needed, it should be limited and sometimes set to require approval."
+        "feedbackCorrect": "Correto. Cada associação concede só o acesso que a tarefa exige: leitura quando basta ler; escrita limitada e com aprovação quando ela é necessária.",
+        "feedbackIncorrect": "Incorreto. As associações seguem o menor acesso necessário, não a maior conveniência. Se a tarefa só lê, a escrita fica bloqueada; se precisa escrever, a escrita é limitada e passa por aprovação."
       },
       {
         "answers": [
           {
             "id": "5a2e184f-c784-447c-8175-506494174be9",
-            "title": "A private framework that trains AI assistants using only internal datasets",
+            "title": "Uma estrutura privada que treina assistentes de IA apenas com dados internos.",
             "correct": false,
-            "feedback": "This may sound plausible because AI systems often use internal data and proprietary frameworks, but it does not describe MCP’s role. MCP is about standardized interaction with external tools and resources, not a private training method."
+            "feedback": "Não. O MCP não trata de treinamento de modelos; ele padroniza a conexão com ferramentas e dados externos."
           },
           {
             "id": "9c9e0fb4-9cd9-47ad-a189-f073be13aa10",
-            "title": "An automation tool that stores completed workflows inside the AI assistant itself",
+            "title": "Uma ferramenta de automação que guarda fluxos prontos dentro do próprio assistente.",
             "correct": false,
-            "feedback": "This option sounds believable because workflow automation is related to MCP’s use cases, but MCP does not mean storing workflows inside the assistant. Its purpose is to enable interaction with external workflows and resources."
+            "feedback": "Não. Fluxos de automação são papel de orquestradores como Zapier e n8n; o MCP é o protocolo que os liga ao assistente."
           },
           {
             "id": "f9b72c26-3f2e-4610-822b-e6af079a929e",
-            "title": "A security policy that replaces user approval when AI tools access business systems",
+            "title": "Uma política de segurança que substitui a aprovação do usuário quando a IA acessa sistemas.",
             "correct": false,
-            "feedback": "This choice is relevant because security and access control are associated with AI integrations, but MCP is not a policy that removes approval steps. It is a protocol for structured interaction, not a governance rule."
+            "feedback": "Não. O MCP não dispensa aprovações: a especificação diz que o consentimento cabe ao host, ao servidor e ao usuário."
           },
           {
             "id": "cc0fbd43-d09d-4712-869c-c24ed28ff529",
-            "title": "An open standard that enables AI assistants to interact with external services, files, and workflows",
+            "title": "Um padrão aberto que permite a assistentes de IA interagir com serviços, arquivos e fluxos de trabalho externos.",
             "correct": true,
-            "feedback": "This correctly defines MCP and captures its foundational purpose."
+            "feedback": "Correto. É um protocolo aberto que padroniza a ligação — a tomada — entre assistentes e serviços."
           }
         ],
         "correct": "cc0fbd43-d09d-4712-869c-c24ed28ff529",
@@ -163,7 +163,7 @@
           "cc0fbd43-d09d-4712-869c-c24ed28ff529"
         ],
         "id": "a7fecbdb-6655-49e4-810a-925e0bca82cb",
-        "title": "What best describes the Model Context Protocol (MCP)?",
+        "title": "Qual alternativa descreve melhor o Model Context Protocol (MCP)?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -179,27 +179,27 @@
         "answers": [
           {
             "id": "dae25a97-bd4b-4880-b040-6d0f242b3f10",
-            "matchTitle": "Used to view information in files or folders without changing the stored data",
-            "title": "Reading tools"
+            "matchTitle": "Servem para ver informações de arquivos e pastas sem alterar os dados armazenados",
+            "title": "Ferramentas de leitura"
           },
           {
             "id": "fd7d4204-2abd-44d1-9b5a-5fddbbe593da",
-            "matchTitle": "Used to make changes that can affect the contents, location, or existence of files and folders",
-            "title": "Writing tools"
+            "matchTitle": "Servem para fazer mudanças que afetam o conteúdo, o local ou a existência de arquivos e pastas",
+            "title": "Ferramentas de escrita"
           },
           {
             "id": "7353ef02-6978-4a8b-afcb-52f6c045a098",
-            "matchTitle": "A read-only action that helps inspect what is present before any approval for changes is considered",
-            "title": "List or summarize file contents"
+            "matchTitle": "Ação somente leitura, útil para inspecionar antes de qualquer aprovação de mudança",
+            "title": "Listar ou resumir o conteúdo de arquivos"
           },
           {
             "id": "3ea1d0e2-ab10-4fd5-a47d-3ce5f0c7fb60",
-            "matchTitle": "A set of actions that should be restricted because they can produce unauthorized changes",
-            "title": "Create, edit, move, or delete items"
+            "matchTitle": "Ações que devem ficar restritas, porque podem produzir mudanças não autorizadas",
+            "title": "Criar, editar, mover ou apagar itens"
           }
         ],
         "id": "f6aa961e-de3c-48e6-b517-9badac8092e6",
-        "title": "Match each file connector tool or action category with the outcome it most directly enables during file access. Focus on how the tool affects data: whether it allows safe inspection or makes a change that could alter files or folders.",
+        "title": "Associe cada categoria de ferramenta ou ação de um conector de arquivos ao efeito que ela produz. Pense se ela apenas mostra a informação ou se pode alterar arquivos e pastas.",
         "type": "MATCHING",
         "metadata": {
           "createdVia": "ai",
@@ -209,34 +209,34 @@
           }
         },
         "globalBlockId": "12c8db06-2287-4d9c-8a13-b5dfb4acf93a",
-        "feedbackCorrect": "Correct. Reading-related actions are used to inspect files and folders without altering them, while writing-related actions can create, modify, move, or remove data. That distinction is essential for deciding which tools are safe to allow during secure file access.",
-        "feedbackIncorrect": "Incorrect. The key distinction is whether the tool only reveals information or can change data. Reading tools support viewing, listing, or summarizing, while writing tools enable actions such as creating, editing, moving, or deleting files or folders."
+        "feedbackCorrect": "Correto. Ações de leitura inspecionam arquivos e pastas sem alterá-los; ações de escrita podem criar, modificar, mover ou remover dados. É essa distinção que orienta o que liberar.",
+        "feedbackIncorrect": "Incorreto. A pergunta-chave é se a ferramenta só mostra a informação ou se pode mudar os dados. Ler, listar e resumir são leitura; criar, editar, mover e apagar são escrita."
       },
       {
         "answers": [
           {
             "id": "7ad58c65-1563-4870-855b-7144acde9c05",
-            "title": "Local access works directly on your computer, while cloud access uses remote servers to reach files stored online.",
+            "title": "O acesso local funciona no próprio computador; o acesso pela nuvem usa servidores remotos para chegar a arquivos armazenados online.",
             "correct": true,
-            "feedback": "This accurately states the key difference between local and cloud access."
+            "feedback": "Correto. A extensão Filesystem roda no computador, pelo Claude Desktop; o conector Google Drive acessa a nuvem a partir da conta Claude."
           },
           {
             "id": "99d11f9d-947a-4ca8-9917-9289a846dd92",
-            "title": "Local access and cloud access both work the same way, but cloud access offers faster file summaries.",
+            "title": "Os dois funcionam da mesma forma, mas o acesso pela nuvem resume arquivos mais rápido.",
             "correct": false,
-            "feedback": "This is plausible because both connectors can help read files, but the key difference is not that they work the same way. They differ in whether access happens on the local machine or through remote online services."
+            "feedback": "Não. A diferença está em onde o acesso acontece, não na velocidade dos resumos."
           },
           {
             "id": "7c5e6838-0bf9-4536-a4a3-383aa2c79e85",
-            "title": "Local access is used in the browser, while cloud access is limited to desktop applications.",
+            "title": "O acesso local é usado no navegador; o acesso pela nuvem só funciona em aplicativos de desktop.",
             "correct": false,
-            "feedback": "This may seem believable because access methods can vary by platform, but the local-versus-cloud distinction is about where files are accessed from, not simply which app is used."
+            "feedback": "Não. É o contrário: a extensão local existe só no Claude Desktop, e o conector de nuvem funciona no navegador, no aplicativo e no celular."
           },
           {
             "id": "3fa588fd-3fd0-4032-a17e-db1202a557ba",
-            "title": "Local access requires remote servers, while cloud access reads files only from your computer.",
+            "title": "O acesso local exige servidores remotos; o acesso pela nuvem lê arquivos só do computador.",
             "correct": false,
-            "feedback": "This option sounds plausible because it mentions both local and cloud access, but it reverses where each type operates. Local access is tied to the user’s computer, while cloud access depends on remote online systems."
+            "feedback": "Não. A alternativa inverte os papéis: local é o computador; nuvem é o serviço online."
           }
         ],
         "correct": "7ad58c65-1563-4870-855b-7144acde9c05",
@@ -244,7 +244,7 @@
           "7ad58c65-1563-4870-855b-7144acde9c05"
         ],
         "id": "24986095-33e6-46f5-8ea3-f51471bcdc4c",
-        "title": "Which statement correctly distinguishes local file access from cloud file access when using connectors?",
+        "title": "Qual afirmação distingue corretamente o acesso local a arquivos do acesso pela nuvem?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -260,27 +260,27 @@
         "answers": [
           {
             "id": "47b7d495-3b47-4aec-90a3-32390273691d",
-            "title": "Open the connector URL in a browser to confirm the server is publicly accessible.",
+            "title": "Abrir a URL do conector no navegador para confirmar que o servidor é público.",
             "correct": false,
-            "feedback": "Directly opening the MCP server URL is not the correct authenticity check. MCP servers may not respond normally in a browser, and authenticity should be confirmed through the returned source URL and tool call block."
+            "feedback": "Não. A URL do servidor mostra erro 405 no navegador e não diz nada sobre a resposta recebida."
           },
           {
             "id": "a05591f3-826d-40af-ab9e-faec465dc82b",
-            "title": "Ask the assistant to summarize the source again and provide more background details.",
+            "title": "Pedir ao assistente que resuma a fonte de novo, com mais detalhes.",
             "correct": false,
-            "feedback": "Requesting a fuller summary may add context, but it does not prove the connector was used or that the source is official. Verification requires checking evidence in the tool call block and the returned domain."
+            "feedback": "Não. Um resumo mais longo não prova que o conector foi chamado nem que a fonte é oficial."
           },
           {
             "id": "76812b00-8dbc-4a4f-8a4c-4ac7616f43a8",
-            "title": "Check whether the response sounds detailed and matches general expectations.",
+            "title": "Verificar se a resposta parece detalhada e coerente com o esperado.",
             "correct": false,
-            "feedback": "A response can sound convincing while still being based on model knowledge or fabricated details. Authenticity requires evidence of tool use and source validation, not confidence in the wording."
+            "feedback": "Não. Uma resposta pode soar convincente e vir do conhecimento geral do modelo."
           },
           {
             "id": "ae4b3901-8ca3-4ac7-bcd2-1a56f2d77085",
-            "title": "Review the tool call block and confirm the returned URL uses an official domain.",
+            "title": "Conferir o bloco de chamada de ferramenta e se a URL devolvida pertence a um domínio oficial.",
             "correct": true,
-            "feedback": "This is the strongest verification method because it confirms both that the connector tool was actually used and that the source points to an official site."
+            "feedback": "Correto. O bloco mostra que a ferramenta foi de fato chamada, e a URL mostra de onde veio a informação."
           }
         ],
         "correct": "ae4b3901-8ca3-4ac7-bcd2-1a56f2d77085",
@@ -288,7 +288,7 @@
           "ae4b3901-8ca3-4ac7-bcd2-1a56f2d77085"
         ],
         "id": "879db044-d5ec-4c61-abc7-508bf5bc5b15",
-        "title": "After an MCP connector returns an answer, which action best verifies that the response is authentic and came from the intended service?",
+        "title": "Depois que um conector MCP devolve uma resposta, qual ação comprova melhor que ela veio do serviço pretendido?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -304,27 +304,27 @@
         "answers": [
           {
             "id": "51dd167f-1de3-428d-9f56-d7486b390302",
-            "title": "Yellow, because any remote connector requires moderate risk classification.",
+            "title": "Amarelo, porque todo conector remoto tem risco moderado.",
             "correct": false,
-            "feedback": "This sounds plausible because remote access can increase exposure, but risk classification depends on the data, permissions, and context together. A read-only connection to public documentation is still considered low risk."
+            "feedback": "Não. A cor depende dos dados e das permissões, não de o conector ser remoto. Leitura de fonte pública é verde."
           },
           {
             "id": "e2a2451b-f93c-4b89-9fc7-8261bda31c4a",
-            "title": "Green, because the connector is limited to reading public information.",
+            "title": "Verde, porque o conector se limita a ler informação pública.",
             "correct": true,
-            "feedback": "This is correct because reading public documentation with read-only access is a low-risk scenario in the traffic light model."
+            "feedback": "Correto. Fonte pública e só leitura: é o semáforo verde."
           },
           {
             "id": "1b0a9d4b-21a2-43dc-85fb-698c33755d20",
-            "title": "Yellow, because documentation tasks usually need approval-ready writing permissions.",
+            "title": "Amarelo, porque tarefas de documentação costumam exigir escrita com aprovação.",
             "correct": false,
-            "feedback": "This mixes a relevant task type with an incorrect permission assumption. A connector used only to read public documentation does not need writing permissions, so that does not justify a yellow classification."
+            "feedback": "Não. Consultar documentação não exige escrita; sem escrita e sem dados pessoais, é verde."
           },
           {
             "id": "d2d32841-74b9-463c-8cc0-84f3fae5be77",
-            "title": "Red, because connector use should be treated as high risk during initial planning.",
+            "title": "Vermelho, porque todo uso de conector deve ser tratado como alto risco no planejamento.",
             "correct": false,
-            "feedback": "This includes a related planning idea, but it applies it incorrectly. Initial planning should assess actual data sensitivity and permissions, not automatically assign the highest risk level."
+            "feedback": "Não. O planejamento avalia os dados e as permissões reais; vermelho é para conta de trabalho, dados de terceiros ou sigilosos."
           }
         ],
         "correct": "e2a2451b-f93c-4b89-9fc7-8261bda31c4a",
@@ -332,7 +332,7 @@
           "e2a2451b-f93c-4b89-9fc7-8261bda31c4a"
         ],
         "id": "b4941f6c-1ec4-4f57-9352-eef6a44dfa40",
-        "title": "You are completing a secure connection plan for a connector that will read public documentation only. Which risk classification best fits this scenario?",
+        "title": "Você está preenchendo o plano de conexão de um conector que só vai ler documentação pública. Qual cor do semáforo se aplica?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -348,27 +348,27 @@
         "answers": [
           {
             "id": "5b511ed7-8979-43fd-b3f1-af179b4c99db",
-            "title": "All Claude plans support MCP connectors, and the Free plan allows unlimited custom connectors.",
+            "title": "Todos os planos permitem conectores MCP, e o Free permite conectores personalizados ilimitados.",
             "correct": false,
-            "feedback": "This option includes the correct idea that all plans support MCP connectors, but it fails because it misstates the Free plan limit. The Free plan allows one custom connector, not unlimited connectors."
+            "feedback": "Não. Todos os planos permitem conectores, mas o Free limita a um conector personalizado."
           },
           {
             "id": "e1a3d4fa-1909-423a-bb74-9115f2957a84",
-            "title": "Only Pro, Max, Team, and Enterprise support MCP connectors, while Free supports desktop extensions only.",
+            "title": "Só Pro, Max, Team e Enterprise permitem conectores MCP; o Free permite apenas extensões de desktop.",
             "correct": false,
-            "feedback": "This choice sounds plausible because desktop extensions are available to users, but it incorrectly excludes the Free plan from MCP connector support. The key distinction is that Free also supports MCP connectors, though it is limited to one custom connector."
+            "feedback": "Não. O Free também permite conectores MCP, com limite de um conector personalizado."
           },
           {
             "id": "fbbb263a-8d7f-43f2-aace-255b7b3f8825",
-            "title": "Free, Pro, and Max support MCP connectors, while Team and Enterprise require organizational activation first.",
+            "title": "Free, Pro e Max permitem conectores; Team e Enterprise exigem antes a ativação pela organização.",
             "correct": false,
-            "feedback": "This distractor may seem believable because organizational settings can affect feature availability in some cases, but the plan description itself is incorrect. Team and Enterprise are still Claude plans that support MCP connectors; organizational restrictions do not change the underlying plan support statement being tested here."
+            "feedback": "Não. Team e Enterprise também permitem conectores. A organização pode bloqueá-los, mas isso é uma política da conta, não uma regra do plano."
           },
           {
             "id": "721c8ae1-bbf2-469f-b2a3-7cf6ae5869ed",
-            "title": "All Claude plans support MCP connectors, and the Free plan allows one custom connector.",
+            "title": "Todos os planos permitem conectores MCP, e o Free permite um conector personalizado.",
             "correct": true,
-            "feedback": "This accurately states that Free, Pro, Max, Team, and Enterprise all support MCP connectors, with the Free plan limited to one custom connector."
+            "feedback": "Correto. Free, Pro, Max, Team e Enterprise permitem conectores; o Free tem uma vaga de conector personalizado."
           }
         ],
         "correct": "721c8ae1-bbf2-469f-b2a3-7cf6ae5869ed",
@@ -376,7 +376,7 @@
           "721c8ae1-bbf2-469f-b2a3-7cf6ae5869ed"
         ],
         "id": "ca424ec4-366f-4057-89d7-b835130feb29",
-        "title": "Which Claude account plan description correctly identifies MCP connector support?",
+        "title": "Qual descrição dos planos do Claude está correta quanto aos conectores MCP?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -392,27 +392,27 @@
         "answers": [
           {
             "id": "8597c82d-3a81-4f8c-b8e7-3e5a0dbef9b1",
-            "title": "MCP is the custom interface for one service, while an API lets any assistant connect through the same shared format.",
+            "title": "MCP é a interface própria de um serviço; API é o formato comum que qualquer assistente usa para se conectar.",
             "correct": false,
-            "feedback": "This reverses the roles of MCP and APIs. APIs are typically unique to each service, whereas MCP provides the shared connection pattern across compatible services."
+            "feedback": "Não. A alternativa inverte os papéis: a API é própria de cada serviço; o MCP é o formato comum."
           },
           {
             "id": "5c6427b9-7fcc-4dd0-a247-0363ffce16ab",
-            "title": "MCP is a standard protocol that lets assistants use a common connection pattern, while an API is a service-specific interface that still exists behind the scenes.",
+            "title": "MCP é um protocolo padrão que dá aos assistentes uma forma comum de conexão; API é a interface própria de um serviço, que continua existindo por trás.",
             "correct": true,
-            "feedback": "This correctly identifies MCP as a standard connection protocol and APIs as unique interfaces provided by individual services."
+            "feedback": "Correto. O servidor MCP normalmente chama a API do serviço por trás; o MCP não a substitui."
           },
           {
             "id": "1edbd22d-ac37-4129-9844-c96ed28e160a",
-            "title": "MCP replaces the need for APIs by giving assistants direct access to each service without any underlying service interface.",
+            "title": "MCP substitui as APIs, dando aos assistentes acesso direto a cada serviço sem interface intermediária.",
             "correct": false,
-            "feedback": "This is incorrect because MCP does not replace APIs. Services still rely on their own interfaces, and MCP provides a standard way for assistants to work with them."
+            "feedback": "Não. O MCP não substitui a API: os serviços continuam usando suas interfaces, e o MCP padroniza como o assistente chega a elas."
           },
           {
             "id": "ea9b6a78-a765-4cb5-b630-cf195a61e326",
-            "title": "MCP is mainly a workflow builder for multi-step automations, while an API is a permissions system for assistant access.",
+            "title": "MCP é um construtor de automações em várias etapas; API é um sistema de permissões para assistentes.",
             "correct": false,
-            "feedback": "This confuses MCP with automation orchestrators and mislabels APIs as permissions systems. MCP is a protocol for standardized connections, not a workflow builder."
+            "feedback": "Não. Automações em várias etapas são papel de orquestradores como Zapier e n8n, e API não é sistema de permissões."
           }
         ],
         "correct": "5c6427b9-7fcc-4dd0-a247-0363ffce16ab",
@@ -420,7 +420,7 @@
           "5c6427b9-7fcc-4dd0-a247-0363ffce16ab"
         ],
         "id": "c5da25e7-96a5-4cd7-87d2-665236b7592a",
-        "title": "Which statement best distinguishes MCP from an API in AI integrations?",
+        "title": "Qual afirmação distingue melhor MCP de API?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -436,27 +436,27 @@
         "answers": [
           {
             "id": "3e6fc688-602c-4b82-a31c-50046dfc59e0",
-            "title": "Use the calendar for the weekly agenda, confirm the connector name, grant full calendar editing access, and review revocation steps later if needed.",
+            "title": "Usar a agenda para a pauta da semana, confirmar o nome do conector, conceder edição total da agenda e ver depois, se precisar, como revogar.",
             "correct": false,
-            "feedback": "This option includes a valid purpose and mentions the connector, but it fails to apply minimum necessary access because full editing access exceeds the task need. It also postpones the disconnect and revocation plan instead of defining it in advance."
+            "feedback": "Não. Edição total excede o que a tarefa exige, e a forma de desfazer deve ser definida antes de conectar."
           },
           {
             "id": "e8d2c920-ef61-4531-ad58-c1c686b5f44c",
-            "title": "Use the calendar for the weekly agenda, choose the connector with the most automation features, grant broad tool access, and keep the connection available for future convenience.",
+            "title": "Usar a agenda para a pauta da semana, escolher o conector com mais recursos de automação, conceder acesso amplo e manter a conexão para uso futuro.",
             "correct": false,
-            "feedback": "This option sounds practical, but it replaces the framework’s security questions with convenience-based decisions. Feature richness and future convenience do not substitute for publisher trust, minimum access, and planned revocation."
+            "feedback": "Não. Recursos e conveniência não substituem a ficha do conector, o menor acesso e a revogação planejada."
           },
           {
             "id": "bed6c079-bd9e-4ff5-a06c-5de27f69177b",
-            "title": "Use the calendar for the weekly agenda, test whether the connector works first, classify the situation by color, and connect before deciding what permissions are necessary.",
+            "title": "Usar a agenda para a pauta da semana, testar primeiro se o conector funciona, classificar pela cor e conectar antes de decidir as permissões.",
             "correct": false,
-            "feedback": "This option uses related security ideas such as testing and risk classification, but it applies them in the wrong sequence and leaves minimum necessary access undefined at the decision point. The four-question framework requires permissions planning before connecting."
+            "feedback": "Não. As permissões são decididas antes de conectar, não depois."
           },
           {
             "id": "62870da9-8244-48ca-93c2-82a786ee7e41",
-            "title": "Use the calendar only to prepare the weekly agenda, confirm the connector’s trusted publisher and verification, grant read-only calendar access, and define how access will be disconnected and revoked after use.",
+            "title": "Usar a agenda só para preparar a pauta da semana, confirmar o publicador e o selo do conector, conceder leitura da agenda e definir como desconectar e revogar depois do uso.",
             "correct": true,
-            "feedback": "This option correctly includes all four framework questions: purpose, connector and publisher, minimum necessary access, and how access will be removed afterward."
+            "feedback": "Correto. A opção responde às quatro perguntas: finalidade, conector e publicador, menor acesso e como desfazer."
           }
         ],
         "correct": "62870da9-8244-48ca-93c2-82a786ee7e41",
@@ -464,7 +464,7 @@
           "62870da9-8244-48ca-93c2-82a786ee7e41"
         ],
         "id": "6cd568b8-c145-4016-957a-1e9c938f720f",
-        "title": "You are planning to connect an AI assistant to a calendar tool to prepare a weekly agenda. Which option best applies the four-question decision framework for secure connector planning?",
+        "title": "Você vai conectar um assistente à agenda para preparar a pauta da semana. Qual opção aplica melhor as quatro perguntas de decisão?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -480,15 +480,15 @@
         "answers": [
           {
             "id": "9730bb35-0e1e-45bd-8637-14843e772f14",
-            "title": "True",
+            "title": "Verdadeiro",
             "correct": true,
-            "feedback": "Correct. Embedded instructions in a file are treated as file content, not valid commands. The assistant should ignore them rather than execute them."
+            "feedback": "Correto. Conteúdo lido por um conector é dado, não ordem; uma instrução não se torna legítima por estar no documento."
           },
           {
             "id": "13714a1b-5a81-477d-8d70-bada6794b392",
-            "title": "False",
+            "title": "Falso",
             "correct": false,
-            "feedback": "Incorrect. The lesson states that content read through a connector is considered data, not an instruction to follow. If a file contains directions for the assistant, those directions should be ignored, not executed."
+            "feedback": "Incorreto. Conteúdo lido por um conector é dado, não ordem. Se um arquivo traz instruções ao assistente, elas devem ser mostradas a você, não executadas."
           }
         ],
         "correct": "9730bb35-0e1e-45bd-8637-14843e772f14",
@@ -496,7 +496,7 @@
           "9730bb35-0e1e-45bd-8637-14843e772f14"
         ],
         "id": "68b12ea4-9813-4575-8f19-687845b8cbe9",
-        "title": "Instructions embedded inside a file should be treated as data and not executed by the assistant.",
+        "title": "Instruções embutidas em um arquivo devem ser tratadas como dado e não executadas pelo assistente.",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -512,27 +512,27 @@
         "answers": [
           {
             "id": "800dee31-0eed-4917-8234-85d79a45ff06",
-            "title": "Set the search tool to Needs approval, the update tool to Always allow, and the unused tool to Blocked.",
+            "title": "Pesquisa em Needs approval, atualização em Always allow e a não usada em Blocked.",
             "correct": false,
-            "feedback": "This option correctly blocks the unnecessary tool, but it misapplies the higher-risk setting by allowing a modifying tool to run without confirmation while adding unnecessary friction to the read-only tool."
+            "feedback": "Não. Bloquear a ferramenta não usada está certo, mas a atualização altera dados e não deve rodar sem confirmação."
           },
           {
             "id": "c42c42ba-d70a-454c-99ed-09365243bff8",
-            "title": "Set the search tool to Always allow, the update tool to Needs approval, and the unused tool to Blocked.",
+            "title": "Pesquisa em Always allow, atualização em Needs approval e a não usada em Blocked.",
             "correct": true,
-            "feedback": "This configuration matches best practices by allowing low-risk read-only activity, requiring confirmation for changes, and removing unnecessary access."
+            "feedback": "Correto. Leitura liberada, escrita com aprovação e o que não faz parte da tarefa bloqueado."
           },
           {
             "id": "6428375e-18c8-4a7b-ba1a-88276dfe452d",
-            "title": "Set the search tool to Always allow, the update tool to Blocked, and the unused tool to Needs approval.",
+            "title": "Pesquisa em Always allow, atualização em Blocked e a não usada em Needs approval.",
             "correct": false,
-            "feedback": "This option correctly allows the read-only tool, but it prevents a needed modifying tool from being used and keeps an unnecessary tool available, which does not align with the task requirements."
+            "feedback": "Não. A atualização é necessária para a tarefa e ficaria impedida, enquanto a ferramenta sem uso continua disponível."
           },
           {
             "id": "0e2b101a-b89c-4002-9f5a-564d5403fd9b",
-            "title": "Set the search tool to Blocked, the update tool to Needs approval, and the unused tool to Always allow.",
+            "title": "Pesquisa em Blocked, atualização em Needs approval e a não usada em Always allow.",
             "correct": false,
-            "feedback": "This option correctly requires approval for the modifying tool, but it disables the useful low-risk tool and grants unnecessary access to a tool that is not needed for the task."
+            "feedback": "Não. Bloqueia a ferramenta útil e de baixo risco e libera, sem aprovação, uma ferramenta que a tarefa nem usa."
           }
         ],
         "correct": "c42c42ba-d70a-454c-99ed-09365243bff8",
@@ -540,7 +540,7 @@
           "c42c42ba-d70a-454c-99ed-09365243bff8"
         ],
         "id": "d1c195ff-c5c0-4432-8e2a-4e57b5a4ac68",
-        "title": "You are configuring tool permissions for a Claude connector that includes one read-only search tool, one tool that updates records, and one tool your task does not require. Which permission setup is the safest and most appropriate?",
+        "title": "Você está configurando as Tool permissions de um conector com três ferramentas: uma de pesquisa, só de leitura; uma que atualiza registros; e uma que a tarefa não usa. Qual configuração é a mais adequada?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -556,27 +556,27 @@
         "answers": [
           {
             "id": "04d1f9c7-19d8-4e80-a24c-3b1cad7f10a5",
-            "title": "The main problem is that once assistants connect to services, MCP guarantees safe access and accurate results across all of them.",
+            "title": "O problema é que, quando os assistentes se conectam, o MCP garante acesso seguro e resultados corretos em todos os serviços.",
             "correct": false,
-            "feedback": "This choice refers to important boundaries of MCP, but it incorrectly treats guarantees about security and accuracy as the integration problem MCP solves. MCP standardizes connection, not trustworthiness, permissions, or response quality."
+            "feedback": "Não. O MCP padroniza a conexão, mas não garante a segurança do servidor, as permissões nem a veracidade das respostas."
           },
           {
             "id": "5adc4222-cca1-4516-b136-5a637bf8a34e",
-            "title": "The main problem is that MCP replaces service APIs so developers no longer need services to expose interfaces.",
+            "title": "O problema é que o MCP substitui as APIs, e os serviços deixam de precisar oferecer interfaces.",
             "correct": false,
-            "feedback": "This includes a related idea about APIs, but MCP does not replace APIs. Services still use APIs behind the scenes; MCP standardizes how assistants discover and use them."
+            "feedback": "Não. O MCP não substitui as APIs; os servidores MCP normalmente as chamam por trás."
           },
           {
             "id": "6e21a15b-8f14-4209-9067-c36c5ecbf651",
-            "title": "The main problem is that assistants cannot use any service unless they are built by the same vendor.",
+            "title": "O problema é que um assistente só consegue usar serviços do mesmo fabricante.",
             "correct": false,
-            "feedback": "This sounds plausible because MCP is vendor-neutral, but the issue is not that assistants and services must come from the same company. The central problem is the growing number of custom integrations required across many assistants and services."
+            "feedback": "Não. O problema não é exclusividade de fabricante, e sim a quantidade de integrações sob medida."
           },
           {
             "id": "132cc294-0276-4578-84c6-99df33b0f245",
-            "title": "Without a shared protocol, the team would need many separate assistant-to-service integrations, which becomes hard to scale and maintain.",
+            "title": "Sem um protocolo comum, seriam necessárias muitas integrações separadas entre assistentes e serviços, difíceis de escalar e de manter.",
             "correct": true,
-            "feedback": "This correctly describes the N × M challenge that MCP addresses by standardizing how assistants connect to services."
+            "feedback": "Correto. É o problema “N × M”: cinco assistentes e dez serviços exigiriam cinquenta integrações diferentes."
           }
         ],
         "correct": "132cc294-0276-4578-84c6-99df33b0f245",
@@ -584,7 +584,7 @@
           "132cc294-0276-4578-84c6-99df33b0f245"
         ],
         "id": "9ddcc2e2-1ef3-4a43-9748-816342f858c5",
-        "title": "A team uses five AI assistants and ten external services. Which statement best explains the integration problem MCP is designed to solve?",
+        "title": "Uma equipe usa cinco assistentes de IA e dez serviços externos. Qual afirmação explica o problema de integração que o MCP resolve?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -600,27 +600,27 @@
         "answers": [
           {
             "id": "f491e3e6-b746-48cd-b09f-1d78b16bc820",
-            "title": "Data exfiltration",
+            "title": "Exfiltração",
             "correct": false,
-            "feedback": "Data exfiltration is the unauthorized transfer of data to an external destination; it can result from prompt injection, but it is not the primary risk shown in the scenario itself."
+            "feedback": "Não. A exfiltração seria a consequência, se a instrução fosse seguida; o risco mostrado no cenário é a instrução escondida no conteúdo."
           },
           {
             "id": "7c89e836-4c3f-431b-9863-01e7bab26fae",
-            "title": "Excessive scope",
+            "title": "Excesso de escopo",
             "correct": false,
-            "feedback": "Excessive scope means granting broader access than necessary for a task, such as access to an entire inbox when only one message is needed."
+            "feedback": "Não. Excesso de escopo é conceder mais acesso do que a tarefa exige, como toda a caixa de e-mail para achar uma mensagem."
           },
           {
             "id": "533aeb0d-cb6d-446c-9ae4-35d4740b0f14",
-            "title": "Indirect prompt injection",
+            "title": "Prompt injection indireta",
             "correct": true,
-            "feedback": "This is indirect prompt injection because the assistant encounters hidden instructions inside external content and may be influenced to act against the user’s intent."
+            "feedback": "Correto. Uma instrução disfarçada dentro de conteúdo que o assistente lê tenta fazê-lo agir contra a intenção do usuário."
           },
           {
             "id": "913289d0-2d83-4a02-a792-3c204eac3901",
             "title": "Tool poisoning",
             "correct": false,
-            "feedback": "Tool poisoning involves manipulating a tool’s name or description to mislead the assistant, not placing hidden instructions inside content the assistant reads."
+            "feedback": "Não. Tool poisoning é a manipulação do nome ou da descrição de uma ferramenta, não de um conteúdo lido."
           }
         ],
         "correct": "533aeb0d-cb6d-446c-9ae4-35d4740b0f14",
@@ -628,7 +628,7 @@
           "533aeb0d-cb6d-446c-9ae4-35d4740b0f14"
         ],
         "id": "1f116cae-2eaf-4ae5-86f7-65b39665076e",
-        "title": "A connector reads an email that contains hidden text instructing the assistant to ignore the user and send the message contents to an external site. Which security risk does this scenario illustrate?",
+        "title": "Um conector lê um e-mail com um texto escondido que manda o assistente ignorar o usuário e enviar o conteúdo da mensagem a um site externo. Que risco esse cenário ilustra?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -644,15 +644,15 @@
         "answers": [
           {
             "id": "f376a222-04b3-4abd-9df5-bcba8b1789a9",
-            "title": "False",
+            "title": "Falso",
             "correct": false,
-            "feedback": "Incorrect. This statement is true. The lesson lists acting on the user's behalf—such as creating events, drafting emails, or moving files—as a practical MCP use case, provided the assistant has access to the right tools and permissions."
+            "feedback": "Incorreto. Agir é um dos três usos do MCP — criar um evento, redigir um rascunho, mover um arquivo —, desde que o serviço ofereça a ferramenta e você conceda a permissão."
           },
           {
             "id": "7688c435-0539-436e-944e-b2741d20e6f7",
-            "title": "True",
+            "title": "Verdadeiro",
             "correct": true,
-            "feedback": "Correct. The material explains that MCP can let AI assistants act on a user's behalf, including tasks such as creating events or moving files, when the connected service offers those tools and the necessary permissions are granted."
+            "feedback": "Correto. Agir é um dos três usos do MCP, sempre limitado pelas ferramentas oferecidas e pelas permissões concedidas."
           }
         ],
         "correct": "7688c435-0539-436e-944e-b2741d20e6f7",
@@ -660,7 +660,7 @@
           "7688c435-0539-436e-944e-b2741d20e6f7"
         ],
         "id": "5b09b88c-6625-44c8-abf7-c2a9cd64d111",
-        "title": "MCP can enable an AI assistant to create events or move files on a user's behalf when the connected tools and permissions allow it.",
+        "title": "O MCP pode permitir que um assistente crie eventos ou mova arquivos em nome do usuário, quando as ferramentas conectadas e as permissões permitem.",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -676,27 +676,27 @@
         "answers": [
           {
             "id": "e73bb843-498f-4b0d-a05d-b1c87f06d9f4",
-            "title": "Open the MCP URL in a browser, confirm the page loads, then add the connector and query it in any existing conversation.",
+            "title": "Abrir a URL do MCP no navegador, confirmar que a página carrega, adicionar o conector e consultá-lo em qualquer conversa já aberta.",
             "correct": false,
-            "feedback": "Opening the MCP URL in a browser is not the required setup step, and connector use still depends on activating it within a conversation."
+            "feedback": "Não. A URL mostra erro 405 no navegador, e o conector precisa ser ligado na conversa."
           },
           {
             "id": "d04ad833-bab4-464b-9096-1bcfc1b5136c",
-            "title": "Remove any old custom connector if needed, add the connector with the MCP URL, start a new conversation, and activate the connector in that conversation before querying.",
+            "title": "Remover o conector personalizado antigo, se necessário, adicionar o conector com a URL do MCP, abrir uma nova conversa e ligar o conector nela antes de consultar.",
             "correct": true,
-            "feedback": "This is the correct sequence for setting up and using the connector in Claude."
+            "feedback": "Correto. É a sequência do Módulo 3: liberar a vaga, adicionar, abrir a conversa e ligar o conector."
           },
           {
             "id": "57ad13f0-225e-4496-af36-fa463e4a5b99",
-            "title": "Start a new conversation first, ask the assistant to use OpenAI Docs, and the connector will be created automatically from the request.",
+            "title": "Abrir uma nova conversa, pedir ao assistente que use o OpenAI Docs e o conector será criado automaticamente.",
             "correct": false,
-            "feedback": "A connector must be added in settings before it can be activated and used in a conversation."
+            "feedback": "Não. O conector precisa ser adicionado em Personalizar > Conectores antes de ser ligado numa conversa."
           },
           {
             "id": "120741b0-a903-4c4e-be97-5fbe99a3563b",
-            "title": "Add the connector in Claude, enter a token when prompted, and the connector will remain active for all future conversations automatically.",
+            "title": "Adicionar o conector, informar um token quando solicitado e ele ficará ativo em todas as conversas futuras.",
             "correct": false,
-            "feedback": "The OpenAI Docs connector does not require authentication, and activation is required separately in each new conversation."
+            "feedback": "Não. O OpenAI Docs não exige autenticação, e o conector precisa ser ligado em cada conversa."
           }
         ],
         "correct": "d04ad833-bab4-464b-9096-1bcfc1b5136c",
@@ -704,7 +704,7 @@
           "d04ad833-bab4-464b-9096-1bcfc1b5136c"
         ],
         "id": "2f5f8a1c-412b-43a4-8bea-845af2641359",
-        "title": "In Claude, what sequence best completes the process of connecting and using a new remote MCP connector for a query?",
+        "title": "No Claude, qual sequência completa corretamente a conexão e o uso de um novo conector remoto para uma consulta?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -720,15 +720,15 @@
         "answers": [
           {
             "id": "0b9b3559-677b-4e54-baac-44d810b9cb0a",
-            "title": "False",
+            "title": "Falso",
             "correct": false,
-            "feedback": "Incorrect. Manual approval is important because it requires you to explicitly approve writing actions before they happen, helping prevent unauthorized or accidental changes."
+            "feedback": "Incorreto. Com Needs approval, cada ação de escrita só acontece depois do seu Allow, o que permite revisar e evitar erros."
           },
           {
             "id": "d2733d2d-35b7-4d3b-af4a-c6585bc4ca0d",
-            "title": "True",
+            "title": "Verdadeiro",
             "correct": true,
-            "feedback": "Correct. Manual approval adds a safety step by requiring explicit confirmation before writing actions occur, which helps prevent unauthorized or accidental changes."
+            "feedback": "Correto. A aprovação manual cria o momento de revisão antes de qualquer ação de escrita."
           }
         ],
         "correct": "d2733d2d-35b7-4d3b-af4a-c6585bc4ca0d",
@@ -736,7 +736,7 @@
           "d2733d2d-35b7-4d3b-af4a-c6585bc4ca0d"
         ],
         "id": "ce483afc-d3b8-459d-a947-c56b96890d84",
-        "title": "Manual approval helps prevent unauthorized or accidental changes when an assistant performs writing actions.",
+        "title": "A aprovação manual ajuda a evitar alterações acidentais ou não autorizadas quando o assistente executa ações de escrita.",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -752,15 +752,15 @@
         "answers": [
           {
             "id": "511cb19e-9711-4af8-80a1-071cf115f056",
-            "title": "prepare–review–verify–undo"
+            "title": "conferir"
           },
           {
             "id": "523b0fd5-6774-4474-8b0f-dd648aa79bef",
-            "title": "prepare-review-verify-undo"
+            "title": "verificar"
           }
         ],
         "id": "ab85d417-7a9b-4f04-89a0-a8ebc1c82f63",
-        "title": "The method that ensures safe action execution is __________.",
+        "title": "O método para executar ações com segurança tem quatro tempos: preparar, revisar, __________ e desfazer.",
         "type": "FILL_IN_THE_BLANK",
         "metadata": {
           "createdVia": "ai",
@@ -770,34 +770,34 @@
           }
         },
         "globalBlockId": "049949ce-63e4-4fa8-b76f-96411520cad9",
-        "feedbackCorrect": "Correct. The prepare–review–verify–undo method is the structured process taught in the lesson for executing actions safely and keeping them reversible.",
-        "feedbackIncorrect": "Incorrect. The lesson states that safe action execution is ensured by the prepare–review–verify–undo method, which helps you control changes and reverse them if needed."
+        "feedbackCorrect": "Correto. Preparar, revisar, conferir e desfazer: depois da execução, abra o serviço de origem e verifique o resultado.",
+        "feedbackIncorrect": "Incorreto. A resposta é “conferir”: preparar, revisar, conferir no serviço de origem e desfazer ao final."
       },
       {
         "answers": [
           {
             "id": "60e262ff-7faa-4e6c-8663-66814a802279",
-            "title": "Connect the account first and begin summarizing files before reviewing which directories are available.",
+            "title": "Conectar a conta e começar a resumir arquivos antes de verificar quais diretórios estão disponíveis.",
             "correct": false,
-            "feedback": "Starting file work before checking accessible directories skips the verification step that prevents unintended exposure."
+            "feedback": "Não. Pular a pergunta “Quais diretórios você pode acessar?” elimina a conferência que evita exposição indevida."
           },
           {
             "id": "011b3153-693e-4ad7-9e03-b9a1144a5cb7",
-            "title": "Authorize a shared project folder and verify that teammates can also open the same files.",
+            "title": "Autorizar uma pasta compartilhada do projeto e confirmar que os colegas também abrem os arquivos.",
             "correct": false,
-            "feedback": "This focuses on collaboration rather than least-privilege access. Shared folders are not the safest choice for controlled testing or restricted file access."
+            "feedback": "Não. Pasta compartilhada envolve dados de terceiros e amplia o acesso além do teste."
           },
           {
             "id": "0185b788-0ad6-490d-a633-c44c43e04a1a",
-            "title": "Authorize only the dedicated test folder and confirm that it is the only accessible directory.",
+            "title": "Autorizar só a pasta de teste e confirmar que ela é o único diretório acessível.",
             "correct": true,
-            "feedback": "This follows the secure practice of limiting access to one specific folder and verifying that no other directories are exposed."
+            "feedback": "Correto. Uma única pasta autorizada e a conferência de que nada mais aparece."
           },
           {
             "id": "413985f2-85f2-4918-b8e0-84427263805a",
-            "title": "Authorize the main work documents folder and confirm that the needed files appear there.",
+            "title": "Autorizar a pasta principal de documentos de trabalho e confirmar que os arquivos necessários aparecem.",
             "correct": false,
-            "feedback": "This includes a verification step, but it grants access too broadly. A main documents folder can expose unrelated or sensitive files beyond the task."
+            "feedback": "Não. Há conferência, mas o acesso é amplo demais e expõe arquivos sensíveis que nada têm a ver com a tarefa."
           }
         ],
         "correct": "0185b788-0ad6-490d-a633-c44c43e04a1a",
@@ -805,7 +805,7 @@
           "0185b788-0ad6-490d-a633-c44c43e04a1a"
         ],
         "id": "475eeee4-e837-4e04-88c4-5c4ce22df745",
-        "title": "You are setting up a file connector for a practice task with sensitive data nearby. Which action best follows secure folder permission setup and verification?",
+        "title": "Você vai configurar um conector de arquivos para uma atividade prática, com dados sensíveis em pastas próximas. Qual ação segue a configuração segura?",
         "type": "MULTIPLE_CHOICE",
         "metadata": {
           "createdVia": "ai",
@@ -821,11 +821,11 @@
         "answers": [
           {
             "id": "76aa2ab0-bf00-496a-ab8f-cdd913597850",
-            "title": "Windows 10+"
+            "title": "10"
           }
         ],
         "id": "2d20e22f-edd1-4182-807e-09b1a5c44376",
-        "title": "Claude Desktop requires macOS 13+, __________, or Linux (Ubuntu 22.04+/Debian 12+).",
+        "title": "O Claude Desktop requer macOS 13 ou posterior, Windows __________ ou posterior, ou Linux (Ubuntu 22.04+/Debian 12+).",
         "type": "FILL_IN_THE_BLANK",
         "metadata": {
           "createdVia": "ai",
@@ -835,18 +835,18 @@
           }
         },
         "globalBlockId": "2b5b52e5-270c-4f3f-a937-768cd107ad86",
-        "feedbackCorrect": "Correct. Windows 10+ is one of the supported operating system requirements for Claude Desktop, along with macOS 13+ and Linux distributions Ubuntu 22.04+ or Debian 12+.",
-        "feedbackIncorrect": "Incorrect. The missing requirement is Windows 10+, which is listed as one of the supported operating systems for Claude Desktop."
+        "feedbackCorrect": "Correto. Windows 10 ou posterior é um dos sistemas suportados pelo Claude Desktop.",
+        "feedbackIncorrect": "Incorreto. A resposta é 10: o Claude Desktop roda em Windows 10 ou posterior."
       },
       {
         "answers": [
           {
             "id": "1670ce56-ed66-41d8-ad82-d98f707430ad",
-            "title": "official login screen"
+            "title": "login"
           }
         ],
         "id": "01c63748-dcd9-44ec-b8f8-ef4b6abaf668",
-        "title": "A legitimate connector should always authenticate through the service’s __________ rather than asking for credentials in the chat.",
+        "title": "Um conector legítimo se autentica pela tela de __________ do próprio serviço, e nunca pedindo credenciais na conversa.",
         "type": "FILL_IN_THE_BLANK",
         "metadata": {
           "createdVia": "ai",
@@ -856,8 +856,8 @@
           }
         },
         "globalBlockId": "031b0893-777c-4415-830a-b1568c088c26",
-        "feedbackCorrect": "Correct. Legitimate connectors authenticate through the service’s official login screen, which helps protect passwords, tokens, and API keys from being exposed in chat.",
-        "feedbackIncorrect": "Incorrect. The correct answer is \"official login screen\" because trustworthy connectors use the service’s official authentication flow instead of asking users to paste credentials into the conversation."
+        "feedbackCorrect": "Correto. A autenticação legítima ocorre por login na tela do próprio serviço.",
+        "feedbackIncorrect": "Incorreto. A resposta é “login”: a autenticação legítima ocorre na tela de login do próprio serviço. Pedido de senha, token ou chave na conversa é sinal de alerta."
       }
     ],
     "settings": {

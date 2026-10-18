@@ -1,7 +1,7 @@
 {
   "numero_da_licao": 7,
   "position_original": 6,
-  "title": "Integrated Synthesis and Secure Planning",
+  "title": "Síntese e Aplicação Integrada",
   "lesson": {
     "description": "",
     "id": "d2720991-424c-4d7c-9f9c-b0db2d378370",
@@ -13,8 +13,8 @@
         "items": [
           {
             "id": "iy2w4qhcxopijb24mw57xeop",
-            "heading": "Bringing It All Together: Secure Planning for AI Assistant Integrations",
-            "paragraph": "<p>Throughout this course, you’ve learned how to connect, configure, and control AI assistants using the Model Context Protocol (MCP). Now, it’s time to synthesize these skills into a structured approach for real-world scenarios. Secure planning is essential—not just for technical success, but for protecting your data, your organization, and your peace of mind. This lesson will show you how to make confident, well-justified decisions when integrating AI assistants with external tools and data.</p>"
+            "heading": "Decidir cada conexão",
+            "paragraph": "<p>Os módulos anteriores percorreram as três ações que o MCP torna possíveis — consultar, ler e agir — em ordem crescente de risco. A competência que o curso pretende consolidar não é instalar o maior número de conectores, mas decidir cada conexão. Nesta lição você aplica essa decisão a um caso do seu perfil profissional e devolve os acessos concedidos durante o curso.</p>"
           }
         ],
         "family": "text",
@@ -35,7 +35,7 @@
         "items": [
           {
             "id": "c2d4dvj35sm139nz1s26cl8o",
-            "paragraph": "<p>In this final lesson, you’ll focus on applying everything you’ve learned to real or hypothetical situations. The following objectives will guide your progress:</p>"
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
           }
         ],
         "family": "text",
@@ -59,22 +59,22 @@
           {
             "id": "swy7m8txvf7g0idivdjfw8mk",
             "number": "1",
-            "paragraph": "<p>Apply the four-question decision framework</p>"
+            "paragraph": "<p>Aplicar as quatro perguntas de decisão — finalidade, conector, menor acesso e desfazer — a um caso próprio.</p>"
           },
           {
             "id": "njsc70ilcwr4lpqn7zfee6a8",
             "number": "2",
-            "paragraph": "<p>Develop a secure connection plan</p>"
+            "paragraph": "<p>Elaborar um plano de conexão segura com permissões e classificação de risco justificadas.</p>"
           },
           {
             "id": "ufbkc8nfjfvwuy6711h6qguj",
             "number": "3",
-            "paragraph": "<p>Properly disconnect and revoke accesses</p>"
+            "paragraph": "<p>Desconectar os conectores do curso e revogar os acessos concedidos.</p>"
           },
           {
             "id": "o2nxowff9pgsyqx94fmmmxvf",
             "number": "4",
-            "paragraph": "<p>Integrate risk assessment and permissions</p>"
+            "paragraph": "<p>Escolher o caminho e as permissões iniciais de acordo com a necessidade e o semáforo.</p>"
           }
         ],
         "family": "list",
@@ -95,8 +95,8 @@
         "items": [
           {
             "id": "pr8z0of6xlx9y38czv2dk5ha",
-            "heading": "The Four-Question Framework for Secure Connector Use",
-            "paragraph": "<p>Explore the four essential questions that guide safe and effective connector planning. Expand each section to understand how to apply them in practice.</p>"
+            "heading": "As quatro perguntas de decisão",
+            "paragraph": "<p>As quatro perguntas retomam a dupla tomada e crachá. Abra cada uma:</p>"
           }
         ],
         "family": "text",
@@ -126,23 +126,23 @@
         "items": [
           {
             "id": "5bea351e-9c00-40fe-9ba3-c19693473a06",
-            "title": "What is the purpose of the connection?",
-            "description": "<p>Clearly define what you want the AI assistant to accomplish. Is it to look up documentation, analyze files, or automate a task? A specific purpose helps you avoid unnecessary access and keeps your integration focused.</p><p></p><p>For example, if your goal is to prepare a weekly agenda, only connect the calendar tool needed for that task.</p>"
+            "title": "1. O que se pretende fazer? (finalidade)",
+            "description": "<p>Descreva a finalidade em uma frase verificável: consultar documentação, analisar arquivos, preparar a agenda da semana.</p><p></p><p>Uma finalidade precisa é o que permite dizer, depois, qual acesso é suficiente.</p>"
           },
           {
             "id": "aa35c15e-d657-4ed4-ac96-174c2ba19f4b",
-            "title": "Which connector will be used, and who publishes it?",
-            "description": "<p>Identify the exact connector and its publisher. Check if it’s officially verified and whether it comes from a trusted source. This is the “badge” part of the plug and badge analogy—knowing who is behind the tool is as important as the tool itself.</p><p></p><p>For instance, always prefer connectors published by reputable organizations or those with a verification seal.</p>"
+            "title": "2. Qual conector faz isso, e quem o publica? (ficha do conector)",
+            "description": "<p>Abra a ficha do conector e registre publicador, selo de verificação e ferramentas de leitura e de escrita.</p><p></p><p>Saber quem está por trás do crachá é tão importante quanto saber o que ele abre.</p>"
           },
           {
             "id": "77816b82-5b3b-4d42-89be-bc135168283f",
-            "title": "What is the minimum necessary access (local/remote, permissions)?",
-            "description": "<p>Grant only the access needed for the task—nothing more. Decide if the connector should be local or remote, and specify which folders, files, or services it can reach. This is the principle of least privilege in action.</p><p></p><p>For example, if you only need to read files, block writing permissions and restrict access to a single folder.</p>"
+            "title": "3. Qual o menor acesso suficiente?",
+            "description": "<p>Local ou remoto; quais pastas; quais ferramentas. Se a tarefa só lê, a escrita fica em Blocked; se precisa escrever, fica em Needs approval.</p><p></p><p>Exemplo: para analisar arquivos, uma única pasta autorizada e escrita negada.</p>"
           },
           {
             "id": "a53a7d58-0b4f-4993-a89b-e65393917c5c",
-            "title": "How will you disconnect and undo access?",
-            "description": "<p>Plan in advance how you will disconnect the connector and revoke any permissions once the task is complete. This ensures you can always “return the badge” and maintain control over your data.</p><p></p><p>For example, after finishing your project, disconnect the connector in Claude and revoke access in your Google Account.</p>"
+            "title": "4. Como se desfaz? (desconexão e revogação)",
+            "description": "<p>Antes de conectar, defina onde desconectar no Claude e onde revogar no serviço de origem.</p><p></p><p>Exemplo: ao fim do projeto, desconectar em Claude &gt; Personalizar &gt; Conectores e revogar o acesso na Conta Google.</p>"
           }
         ],
         "family": "interactive",
@@ -163,8 +163,8 @@
         "items": [
           {
             "id": "lypa8f40j1gy6pwc9b0abp2w",
-            "heading": "Applying Risk Classification and Permissions Justification",
-            "paragraph": "<p>Expand each tab to see how to operationalize risk classification and permissions justification in your planning process. These tools help you match security controls to the sensitivity of your data and the needs of your task.</p>"
+            "heading": "Do semáforo às permissões",
+            "paragraph": "<p>Abra cada aba para ver como a classificação de risco e as permissões se combinam:</p>"
           }
         ],
         "family": "text",
@@ -194,18 +194,18 @@
         "items": [
           {
             "id": "47a2556a-11e9-463c-a240-6f7d027a84c1",
-            "title": "Risk Classification",
-            "description": "<p>Risk classification uses the traffic light (semáforo) system: green for low risk, yellow for moderate risk, and red for high risk. Classify each connector scenario based on the type of data, required permissions, and organizational policy.</p><p></p><p>For example, reading public documentation with a remote connector is green, while accessing sensitive company systems without approval is red. Always justify your classification with specific details about the data and actions involved.</p>"
+            "title": "Classificar o risco",
+            "description": "<p>Verde: fonte pública ou dados fictícios, só leitura. Amarelo: conta pessoal própria, com escrita. Vermelho: conta de trabalho, dados de terceiros, dados sensíveis ou sigilo profissional.</p><p></p><p>Justifique a cor pelos dados envolvidos, não pela conveniência.</p>"
           },
           {
             "id": "3c5b6ceb-7285-44df-96aa-7be7b6a5313a",
-            "title": "Permissions Justification",
-            "description": "<p>Permissions should always be matched to the minimum necessary for the task. If only reading is needed, block writing tools. If writing is required, set it to Needs approval and document why.</p><p></p><p>For example, if you need to draft emails but not send them, configure the connector to allow drafts only and require approval for sending. This reduces risk and aligns with best practices.</p>"
+            "title": "Justificar as permissões",
+            "description": "<p>Para cada ferramenta de escrita, registre se fica em Needs approval ou Blocked e por quê.</p><p></p><p>Exemplo: para redigir respostas de e-mail, o Gmail cria rascunhos, e o envio fica em Needs approval.</p>"
           },
           {
             "id": "977605af-8549-489d-93e6-d37c83605f41",
-            "title": "Example Scenarios",
-            "description": "<p>Let’s apply these principles to common cases: For documentation lookup, use a public, read-only connector (green). For file analysis, use a local extension with access to a single folder (yellow). For scheduling, connect Google Calendar with approval required for writing (yellow). For email drafting, allow drafts but block sending unless explicitly approved (yellow).</p><p></p><p>Each scenario should include a clear purpose, a trusted connector, least-privilege permissions, and a plan for disconnecting and revoking access.</p>"
+            "title": "Síntese da decisão",
+            "description": "<p><strong>Consultar documentação pública:</strong> conector remoto público, sem login; leitura; verde. <strong>Analisar arquivos que não podem ir para servidor de terceiros:</strong> extensão local (Claude Desktop), uma pasta; leitura, escrita negada; amarelo. <strong>Consultar a própria agenda:</strong> Google Calendar; leitura em Always allow, escrita em Needs approval; amarelo. <strong>Redigir respostas de e-mail:</strong> Gmail, somente rascunho; envio em Needs approval; amarelo. <strong>Acessar sistema da empresa:</strong> conector aprovado pela organização; permissões definidas pela TI e pelo encarregado de dados; vermelho sem autorização.</p><p></p><p>Um bom plano traz finalidade clara, conector confiável, menor acesso e forma de desfazer.</p>"
           }
         ],
         "family": "interactive",
@@ -226,8 +226,8 @@
         "items": [
           {
             "id": "ge6k0risjx5csa6p4ed2xfgi",
-            "heading": "Key Concepts for Secure Planning",
-            "paragraph": "<p>Review each flashcard to reinforce the core principles of secure planning and integration. These concepts will help you make safe, effective decisions in any scenario.</p>"
+            "heading": "Princípios para revisar",
+            "paragraph": "<p>Vire cada cartão:</p>"
           }
         ],
         "family": "text",
@@ -252,55 +252,55 @@
             "id": "coc3gxjresnp1e4hxukpdq49",
             "back": {
               "type": "description",
-              "description": "<p>Always start with a clear, specific goal for your integration to avoid unnecessary access and risk.</p>"
+              "description": "<p>Comece pela frase que diz o que o assistente deve fazer. Sem ela, não há como medir o acesso necessário.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Purpose-driven connector use</p>"
+              "description": "<p>Finalidade antes do conector</p>"
             }
           },
           {
             "id": "ve43hh02kmk4hqkjngb8dzq0",
             "back": {
               "type": "description",
-              "description": "<p>Choose connectors from trusted, verified publishers to ensure legitimacy and reduce security risks.</p>"
+              "description": "<p>Diretório e registro são mecanismos de descoberta, não garantia de segurança. Confira quem publica e o que as ferramentas fazem.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Connector publisher and verification</p>"
+              "description": "<p>Publicador e selo</p>"
             }
           },
           {
             "id": "s77a79ckw7qa7jb82gzu521g",
             "back": {
               "type": "description",
-              "description": "<p>Grant only the minimum permissions needed for the task, limiting exposure and potential damage.</p>"
+              "description": "<p>Só as pastas e ferramentas que a tarefa exige; escrita em Needs approval ou Blocked.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Least-privilege access principle</p>"
+              "description": "<p>Menor acesso suficiente</p>"
             }
           },
           {
             "id": "srjcdxma88shth1c209i7p8m",
             "back": {
               "type": "description",
-              "description": "<p>Always plan to disconnect connectors and revoke permissions when they are no longer needed.</p>"
+              "description": "<p>Desconectar no Claude e revogar no serviço de origem quando o acesso deixar de ser necessário.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Disconnecting and revoking access</p>"
+              "description": "<p>Devolver o crachá</p>"
             }
           },
           {
             "id": "mv7o8r8vai8q72g4v74lzw3x",
             "back": {
               "type": "description",
-              "description": "<p>Test new integrations with non-sensitive data to minimize risk during setup and troubleshooting.</p>"
+              "description": "<p>O primeiro uso de qualquer conector novo é feito com dados fictícios ou públicos.</p>"
             },
             "front": {
               "type": "description",
-              "description": "<p>Using fictitious or public data</p>"
+              "description": "<p>Primeiro teste com dados fictícios</p>"
             }
           }
         ],
@@ -332,51 +332,51 @@
           {
             "id": "3315b36e-c53b-4014-a5b1-038bba5a0a0e",
             "type": "intro",
-            "title": "Introduction to Developing a Secure Connection Plan",
+            "title": "Atividade integradora (10 min)",
             "isHidden": false,
-            "description": "<p>Creating a secure connection plan is essential when integrating connectors into your workflow. This process ensures that each integration is purposeful, secure, and compliant with organizational standards. Follow these steps to develop a robust and secure connection plan.</p>"
+            "description": "<p>Você vai escolher um caso do seu trabalho, preencher o plano de conexão segura sem instalar nada e, por fim, devolver os acessos concedidos durante o curso.</p>"
           },
           {
             "id": "571e3ca7-6b4a-48e0-98c7-9bc14607a260",
             "type": "summary",
-            "title": "Summary: Secure Planning Complete",
+            "title": "Ponto de controle",
             "isHidden": false,
-            "description": "<p>By following these steps, you ensure that every integration is intentional, justified, and reversible—protecting both your data and your organization.</p>"
+            "description": "<p>🏁 Em <strong>Claude &gt; Personalizar &gt; Conectores</strong>, nenhum conector do curso permanece ativo sem justificativa registrada no plano.</p>"
           },
           {
             "id": "60994f0a-afb7-4b4f-959c-641a279f4e48",
             "type": "step",
-            "title": "Identify a Relevant Scenario",
+            "title": "Escolha um caso",
             "isHidden": false,
-            "description": "<p>Choose a real or hypothetical professional situation where using a connector would save time or improve workflow. This could be anything from automating calendar events to analyzing files.</p>"
+            "description": "<p>Escolha um caso do seu perfil profissional em que um conector MCP pouparia trabalho — por exemplo, consultar tarefas de um projeto, localizar cláusulas num repositório de modelos, preparar a agenda da semana.</p>"
           },
           {
             "id": "34825041-fccb-4215-8dc7-6b146d2ce5f6",
             "type": "step",
-            "title": "Research the Connector Profile",
+            "title": "Abra a ficha do conector",
             "isHidden": false,
-            "description": "<p>Without installing, review the connector’s official profile in Claude or your assistant. Note the publisher, verification status, and available tools.</p>"
+            "description": "<p>Em <strong>Claude &gt; Personalizar &gt; Conectores &gt; +</strong>, abra a ficha do conector correspondente, sem instalá-lo. Anote publicador, selo e ferramentas.</p>"
           },
           {
             "id": "21a89d81-3bfa-48c8-b7d9-b4fa9ffe7ec8",
             "type": "step",
-            "title": "Complete the Secure Connection Plan",
+            "title": "Preencha o plano",
             "isHidden": false,
-            "description": "<p>Fill out the secure connection plan template, ensuring you address purpose, connector details, permissions, data types, and risk classification.</p>"
+            "description": "<p>Preencha o plano de conexão segura que aparece logo depois desta atividade.</p>"
           },
           {
             "id": "e6081ff8-17bf-4128-b8ad-9309c824acd7",
             "type": "step",
-            "title": "Justify Permissions and Risk Level",
+            "title": "Justifique permissões e semáforo",
             "isHidden": false,
-            "description": "<p>For each permission granted, provide a clear justification based on the data involved and the task’s needs. Use the traffic light system to classify risk.</p>"
+            "description": "<p>Para cada ferramenta de escrita, defina Needs approval ou Blocked; justifique a cor do semáforo pelos dados envolvidos.</p>"
           },
           {
             "id": "352d4fca-d74d-4593-8254-7dfb411ffbe3",
             "type": "step",
-            "title": "Plan for Disconnection and Revocation",
+            "title": "Devolva os acessos do curso",
             "isHidden": false,
-            "description": "<p>Document how you will disconnect the connector and revoke any granted access after the task is complete. This ensures ongoing security and compliance.</p>"
+            "description": "<p>Em <strong>Claude &gt; Personalizar &gt; Conectores</strong>, desconecte Google Calendar e Google Drive (se usado) e remova o OpenAI Docs em <strong>⋯ &gt; Remover</strong>, salvo decisão registrada de mantê-los. Em <strong>Claude Desktop &gt; Settings &gt; Extensions &gt; Filesystem</strong>, desative ou remova a extensão [conferir o rótulo]. Revogue o acesso na área de conexões de terceiros da Conta Google e apague a pasta teste-mcp-arquivos.</p>"
           }
         ],
         "family": "interactive-fullscreen",
@@ -397,7 +397,7 @@
         "items": [
           {
             "id": "7058eacd-e866-48ed-b5dc-dfd97041b5c3",
-            "paragraph": "<p><strong>Plano de conexão — [nome do caso]</strong></p><ul><li><strong>Finalidade:</strong> [o que preciso que o assistente faça]</li><li><strong>Conector:</strong> [nome] — <strong>publicador:</strong> [ ] — <strong>selo:</strong> [sim | não] — <strong>local ou remoto:</strong> [ ]</li><li><strong>Ferramentas de leitura necessárias:</strong> [ ]</li><li><strong>Ferramentas de escrita necessárias:</strong> [nenhuma | quais] — <strong>configuração:</strong> [Needs approval | Blocked]</li><li><strong>Conta a usar:</strong> [pessoal | teste | institucional autorizada]</li><li><strong>Dados envolvidos:</strong> [fictícios | públicos | pessoais | de terceiros | sigilosos]</li><li><strong>Semáforo:</strong> [verde | amarelo | vermelho] — <strong>justificativa:</strong> [ ]</li><li><strong>Primeiro teste (com dados fictícios):</strong> [ ]</li><li><strong>Como desfazer e revogar:</strong> [ ]</li><li><strong>Decisão:</strong> [conectar | não conectar | consultar a organização antes]</li></ul>"
+            "paragraph": "<p><strong>Mão na massa — plano de conexão segura</strong> (copie e preencha):</p><p><strong>Plano de conexão — [nome do caso]</strong></p><ul><li><strong>Finalidade:</strong> [o que preciso que o assistente faça]</li><li><strong>Conector:</strong> [nome] — <strong>publicador:</strong> [ ] — <strong>selo:</strong> [sim | não] — <strong>local ou remoto:</strong> [ ]</li><li><strong>Ferramentas de leitura necessárias:</strong> [ ]</li><li><strong>Ferramentas de escrita necessárias:</strong> [nenhuma | quais] — <strong>configuração:</strong> [Needs approval | Blocked]</li><li><strong>Conta a usar:</strong> [pessoal | teste | institucional autorizada]</li><li><strong>Dados envolvidos:</strong> [fictícios | públicos | pessoais | de terceiros | sigilosos]</li><li><strong>Semáforo:</strong> [verde | amarelo | vermelho] — <strong>justificativa:</strong> [ ]</li><li><strong>Primeiro teste (com dados fictícios):</strong> [ ]</li><li><strong>Como desfazer e revogar:</strong> [ ]</li><li><strong>Decisão:</strong> [conectar | não conectar | consultar a organização antes]</li></ul>"
           }
         ],
         "family": "impact",
@@ -418,8 +418,8 @@
         "items": [
           {
             "id": "v86b8efpmbd67pje3jpxwkmb",
-            "heading": "Properly Disconnecting and Revoking Access",
-            "paragraph": "<p>After completing your activities, it’s essential to disconnect and revoke any accesses granted during the course. Expand each section for step-by-step instructions.</p>"
+            "heading": "Devolver os acessos do curso",
+            "paragraph": "<p>Abra cada item e confira, um por um, o que precisa ser desfeito:</p>"
           }
         ],
         "family": "text",
@@ -449,23 +449,23 @@
         "items": [
           {
             "id": "9bd09022-1f5e-46ee-962e-1f0aa6b106d5",
-            "title": "Disconnecting Connectors in Claude",
-            "description": "<p>Go to Claude &gt; Personalizar &gt; Conectores. Disconnect Google Calendar and Google Drive (if used) and remove the OpenAI Docs connector via ⋯ &gt; Remover, unless you have a documented reason to keep them.</p><p></p><p>This step ensures that no unnecessary access remains after your project is complete.</p>"
+            "title": "Conectores no Claude",
+            "description": "<p>Em <strong>Claude &gt; Personalizar &gt; Conectores</strong>, desconecte Google Calendar e Google Drive (se usado) e remova o OpenAI Docs em <strong>⋯ &gt; Remover</strong>, salvo decisão registrada de mantê-los.</p><p></p><p>Conector que fica precisa de justificativa no plano.</p>"
           },
           {
             "id": "4bd12e83-56d3-41c1-b565-1c858acde5b3",
-            "title": "Removing Extensions in Claude Desktop",
-            "description": "<p>In Claude Desktop, navigate to Settings &gt; Extensions &gt; Filesystem and deactivate or remove the extension as appropriate.</p><p></p><p>Removing unused extensions reduces the risk of accidental data exposure.</p>"
+            "title": "Extensão no Claude Desktop",
+            "description": "<p>Em <strong>Claude Desktop &gt; Settings &gt; Extensions &gt; Filesystem</strong>, desative ou remova a extensão [conferir o rótulo].</p><p></p><p>Extensão local sem uso é um acesso à máquina que continua aberto.</p>"
           },
           {
             "id": "c83d750a-48bc-4013-a52f-1da23ab02795",
-            "title": "Revoking Access in Google Account",
-            "description": "<p>Go to your Google Account’s third-party connections area and revoke access for any connectors used during the course.</p><p></p><p>This step is critical for ensuring that no lingering permissions remain after disconnecting connectors in Claude.</p>"
+            "title": "Acesso na Conta Google",
+            "description": "<p>Na área de conexões de terceiros da Conta Google, revogue o acesso concedido ao Claude [conferir o caminho].</p><p></p><p>Desconectar no Claude não basta: a revogação no serviço de origem fecha o acesso de vez.</p>"
           },
           {
             "id": "67ca77fd-a6a7-483d-ac30-abc631037517",
-            "title": "Cleaning Up Test Folders and Data",
-            "description": "<p>Delete any test folders or files created during your exercises, such as the \"teste-mcp-arquivos\" folder.</p><p></p><p>Cleaning up test data helps maintain a tidy and secure environment.</p>"
+            "title": "Pasta e dados de teste",
+            "description": "<p>Apague a pasta teste-mcp-arquivos e confira que o evento “Teste MCP — apagar depois” não ficou na agenda.</p><p></p><p>Assim o curso termina sem resíduos.</p>"
           }
         ],
         "family": "interactive",
@@ -487,31 +487,31 @@
           {
             "id": "543b8b1e-eb0e-47e4-aa44-83e9a1b6aed3",
             "type": "MULTIPLE_CHOICE",
-            "title": "You want to automate weekly agenda preparation using your calendar. Which risk classification and permissions should you apply?",
+            "title": "Você quer conectar um assistente à sua agenda pessoal para preparar a pauta da semana. Qual classificação de risco e quais permissões aplicar?",
             "answers": [
               {
                 "id": "342b9e57-5147-42ae-a370-3e3478256796",
-                "title": "Green; read-only access to calendar",
-                "correct": true,
-                "feedback": "This scenario involves low-risk, read-only access to public or personal calendar data, which is appropriate for automating agenda preparation."
+                "title": "Verde; acesso somente leitura à agenda.",
+                "correct": false,
+                "feedback": "Não. Ler só a agenda é mesmo o menor acesso, mas a cor depende dos dados: a agenda pessoal tem dados pessoais. Verde é para fonte pública ou dados fictícios."
               },
               {
                 "id": "9a217e26-4d87-46ae-af05-8bfa0465ee34",
-                "title": "Yellow; full access to all files",
+                "title": "Amarelo; acesso total a todos os arquivos.",
                 "correct": false,
-                "feedback": "Full access to all files is unnecessary for this task and increases risk."
+                "feedback": "Não. A tarefa envolve a agenda, não arquivos; acesso total é excesso de escopo."
               },
               {
                 "id": "24d26e51-fbe8-4e70-80b6-23ed319b2294",
-                "title": "Red; unrestricted access to company systems",
+                "title": "Vermelho; acesso irrestrito aos sistemas da empresa.",
                 "correct": false,
-                "feedback": "Unrestricted access to company systems is high risk and not justified for this scenario."
+                "feedback": "Não. Sistemas da empresa não fazem parte da tarefa, e acesso irrestrito nunca é o menor acesso suficiente."
               },
               {
                 "id": "281162c8-5dfb-49ac-9af3-197dfbedae9c",
-                "title": "Yellow; write access without approval",
-                "correct": false,
-                "feedback": "Write access without approval is not appropriate for automating agenda preparation and increases risk."
+                "title": "Amarelo; leitura liberada e escrita em Needs approval.",
+                "correct": true,
+                "feedback": "Correto. Agenda pessoal é amarelo: a leitura pode ficar liberada, e qualquer criação ou alteração passa por aprovação — como na síntese da decisão."
               }
             ],
             "feedbackType": "CHOICE"
@@ -535,7 +535,7 @@
         "items": [
           {
             "id": "331f8891-367f-4316-b3cd-1617cafef4ec",
-            "paragraph": "<ul><li>Purpose described in a verifiable sentence</li><li>Connector profile consulted (publisher and tools recorded)</li><li>Writing tools and permission settings identified</li><li>Risk classification justified with data context</li><li>First test uses fictitious or public data</li><li>All course connectors disconnected or maintenance justified, and access revoked in Google Account</li></ul>"
+            "paragraph": "<p><strong>Critérios de avaliação do plano:</strong></p><ul><li>A finalidade está descrita em uma frase verificável.</li><li>A ficha do conector foi consultada (publicador e ferramentas registrados).</li><li>As ferramentas de escrita estão identificadas e com configuração definida.</li><li>O semáforo está justificado pelos dados envolvidos.</li><li>O primeiro teste usa dados fictícios ou públicos.</li><li>Os conectores do curso foram desconectados ou a manutenção foi justificada, e o acesso foi revogado na Conta Google.</li></ul>"
           }
         ],
         "family": "impact",
@@ -582,7 +582,7 @@
         "items": [
           {
             "id": "gjntttgt5n7mimremnfzzgr7",
-            "paragraph": "<p>Congratulations on completing the course! You’ve learned that secure AI assistant integration is not just about connecting tools—it’s about intentional planning, risk justification, and diligent revocation of access. By applying the frameworks and best practices from this course, you’re ready to safely leverage AI in your workflows. For further learning, explore advanced MCP courses and the official documentation to deepen your expertise and stay up to date with evolving standards.</p>"
+            "paragraph": "<p>O curso apresentou o Model Context Protocol como padrão aberto que liga assistentes de IA a ferramentas e dados externos e percorreu, em ordem crescente de risco, as três ações que ele torna possíveis: consultar um serviço, ler arquivos e executar ações com aprovação humana, sempre com a possibilidade de desfazer e de revogar. Pratique com conectores de risco verde e amarelo, em conta pessoal e com itens de teste, e revise periodicamente em Claude &gt; Personalizar &gt; Conectores quais acessos continuam necessários.</p><p>Para aprofundar, os cursos seguintes das trilhas tratam de usos específicos (Claude Desktop - Essentials, MCP com ChatGPT - Hands On, Claude Desktop - Hands On), de segurança (Segurança em MCP - Essentials) e de construção de servidores (Construindo Servidores MCP - Hands On, Claude Code no VSCode - Hands On). Em inglês, a documentação oficial em modelcontextprotocol.io, o curso de MCP da Hugging Face e os cursos da Anthropic Academy oferecem continuidade técnica; condições de acesso e de certificação devem ser conferidas em cada plataforma.</p>"
           }
         ],
         "family": "text",
@@ -622,7 +622,7 @@
       "isGeneratingAIContent": false,
       "isRequiredForCompletion": true
     },
-    "title": "Integrated Synthesis and Secure Planning",
+    "title": "Síntese e Aplicação Integrada",
     "type": "blocks",
     "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
     "courseId": "A6GxuiVLrHaIYJQ0N2rtL7ZCDLnK5DG_",

@@ -1,0 +1,58 @@
+<!--titulo: Preparar, revisar, conferir, desfazer-->
+<style>
+  .chk { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  .chk input { width: 20px; height: 20px; margin-top: 2px; flex: none; }
+  .chk small { display: block; color: var(--suave); margin-top: 2px; }
+  .lista { display: grid; gap: 10px; }
+  .fase { margin: 14px 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--azul-2); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Checklist</span>
+  <h1 id="t">Preparar, revisar, conferir, desfazer</h1>
+  <p class="sub">Confira no Google Calendar, no Gmail e no Claude e marque cada item. O Continue abaixo libera quando todos estiverem marcados.</p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Ponto de controle e Parte C da Oficina 4 (roteiro Hands-on).
+  var GRUPOS = [
+    ['Parte A — o evento de teste', [
+      ['O evento apareceu com os dados certos e sem convidados', 'Título "Teste MCP — apagar depois", amanhã às 15h, 10 minutos, sem link de reunião.'],
+      ['O evento sumiu do Google Calendar', 'Excluído pelo Claude, com a aprovação conferida.']]],
+    ['Parte B — o rascunho', [
+      ['O rascunho apareceu em Gmail > Rascunhos', 'Assunto "Teste MCP — excluir", endereçado a você mesmo.'],
+      ['Gmail > Enviados não tem nada novo', 'A ação aprovada foi criar rascunho, não enviar.'],
+      ['Apaguei o rascunho dentro do Gmail', 'Você mesmo, sem o assistente.']]],
+    ['Parte C — devolva os crachás', [
+      ['Google Calendar aparece desconectado', 'Claude > Personalizar > Conectores > Google Calendar > Disconnect.'],
+      ['Gmail aparece desconectado', 'Claude > Personalizar > Conectores > Gmail > Disconnect.'],
+      ['Removi o acesso do Claude na Conta Google, se ainda aparecia', 'Na área de conexões com apps de terceiros (caminho a conferir).']]]
+  ];
+  var total = 0, marcados = 0, concluido = false, raiz = document.getElementById('lista');
+  GRUPOS.forEach(function (g) {
+    var h = document.createElement('p'); h.className = 'fase'; h.textContent = g[0]; raiz.appendChild(h);
+    var box = document.createElement('div'); box.className = 'lista'; raiz.appendChild(box);
+    g[1].forEach(function (it) {
+      total++;
+      var d = document.createElement('div'); d.className = 'item';
+      var l = document.createElement('label'); l.className = 'chk';
+      var c = document.createElement('input'); c.type = 'checkbox';
+      var s = document.createElement('span'); s.textContent = it[0];
+      var sm = document.createElement('small'); sm.textContent = it[1]; s.appendChild(sm);
+      c.addEventListener('change', function () {
+        d.className = c.checked ? 'item certo' : 'item';
+        marcados += c.checked ? 1 : -1; atualizar();
+      });
+      l.appendChild(c); l.appendChild(s); d.appendChild(l); box.appendChild(d);
+    });
+  });
+  function atualizar() {
+    document.getElementById('barra').style.width = (100 * marcados / total) + '%';
+    if (marcados === total && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Ritual completo: você preparou, revisou, conferiu e desfez — e devolveu os crachás.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+</script>

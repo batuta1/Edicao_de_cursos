@@ -1,0 +1,46 @@
+<!--titulo: Síntese da decisão-->
+<style>
+  .res { margin-top: 14px; background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 16px; }
+  .res dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 14px; }
+  .res dt { font-weight: 600; color: var(--suave); }
+  .res dd { margin: 0; }
+  .sem { display: inline-block; font-weight: 700; color: #fff; padding: 3px 12px; border-radius: 999px; }
+  .sem.verde { background: var(--verde); } .sem.amarelo { background: var(--amarelo); } .sem.vermelho { background: var(--vermelho); }
+  .res:empty { display: none; }
+  @media (max-width: 480px) { .res dl { grid-template-columns: 1fr; } }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Consulta rápida</span>
+  <h1 id="t">Síntese da decisão</h1>
+  <p class="sub">Escolha uma necessidade para ver o caminho sugerido, as permissões iniciais e a cor do semáforo. Use como ponto de partida do seu plano de conexão.</p>
+  <div class="opcoes" id="ops" role="group" aria-label="Necessidades"></div>
+  <div class="res" id="res" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Tabela "síntese da decisão" do Módulo 6 do roteiro, sem acréscimos.
+  var CASOS = [
+    { n: 'Consultar documentação pública', c: 'Conector remoto público, sem login', p: 'Leitura', s: 'verde', t: 'Verde' },
+    { n: 'Analisar arquivos que não podem ir para servidor de terceiros', c: 'Extensão local (Claude Desktop), uma pasta', p: 'Leitura; escrita negada', s: 'amarelo', t: 'Amarelo' },
+    { n: 'Consultar a própria agenda', c: 'Google Calendar', p: 'Leitura em Always allow; escrita em Needs approval', s: 'amarelo', t: 'Amarelo' },
+    { n: 'Redigir respostas de e-mail', c: 'Gmail, somente rascunho', p: 'Envio em Needs approval', s: 'amarelo', t: 'Amarelo' },
+    { n: 'Acessar sistema da empresa', c: 'Conector aprovado pela organização', p: 'Definidas pela TI e pelo encarregado de dados', s: 'vermelho', t: 'Vermelho sem autorização' }
+  ];
+  var ops = document.getElementById('ops'), res = document.getElementById('res');
+  CASOS.forEach(function (c) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = c.n; b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', function () {
+      ops.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      res.innerHTML = '';
+      var dl = document.createElement('dl');
+      [['Necessidade', c.n], ['Caminho sugerido', c.c], ['Permissões iniciais', c.p]].forEach(function (r) {
+        var dt = document.createElement('dt'); dt.textContent = r[0]; var dd = document.createElement('dd'); dd.textContent = r[1];
+        dl.appendChild(dt); dl.appendChild(dd);
+      });
+      var dt = document.createElement('dt'); dt.textContent = 'Semáforo';
+      var dd = document.createElement('dd'); var s = document.createElement('span'); s.className = 'sem ' + c.s; s.textContent = c.t; dd.appendChild(s);
+      dl.appendChild(dt); dl.appendChild(dd); res.appendChild(dl);
+    });
+    ops.appendChild(b);
+  });
+</script>

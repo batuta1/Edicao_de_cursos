@@ -1,7 +1,7 @@
 {
   "numero_da_licao": 4,
   "position_original": 3,
-  "title": "Connecting and Querying Services with MCP",
+  "title": "Primeira conexão: consultar um serviço",
   "lesson": {
     "description": "",
     "id": "87ce5c26-6062-46dd-952f-d66dfdafe9ed",
@@ -13,8 +13,8 @@
         "items": [
           {
             "id": "lr81n0w0q7uady30r8akgspl",
-            "heading": "Your First MCP Connection: Bringing AI and External Services Together",
-            "paragraph": "<p>Welcome to the hands-on turning point of your MCP journey! In this lesson, you'll move from understanding concepts and security to actually connecting your AI assistant to a real external service using the Model Context Protocol. This practical experience will show you how to safely unlock powerful automation and data access—while always verifying the source of information for trust and safety. Get ready to put your knowledge into action and see the promise of MCP in practice.</p>"
+            "heading": "Primeira conexão, em condição de risco verde",
+            "paragraph": "<p>Chegou a hora de ligar o primeiro conector. O escolhido é o OpenAI Docs MCP, servidor oficial e público da OpenAI que pesquisa e devolve páginas da documentação da própria OpenAI. Ele reúne as condições do semáforo verde e ainda demonstra, na prática, a promessa do protocolo: o mesmo servidor serve a assistentes de fabricantes diferentes.</p>"
           }
         ],
         "family": "text",
@@ -35,7 +35,7 @@
         "items": [
           {
             "id": "q5u1yv4dbhtq99ocyc6qlfo5",
-            "paragraph": "<p>In this lesson, you'll develop the essential skills needed to connect your AI assistant to external services using MCP. By the end, you'll be able to confidently perform each step and troubleshoot common issues.</p>"
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
           }
         ],
         "family": "text",
@@ -59,27 +59,27 @@
           {
             "id": "nejo9lirdqpdhedoqowlurl1",
             "number": "1",
-            "paragraph": "<p>Add a custom remote connector</p>"
+            "paragraph": "<p>Adicionar um conector remoto personalizado no Claude a partir de uma URL.</p>"
           },
           {
             "id": "jcwymixu4mol3xmpmcm8l1l2",
             "number": "2",
-            "paragraph": "<p>Activate and query the connector</p>"
+            "paragraph": "<p>Ativar o conector numa conversa e formular uma consulta restrita a ele.</p>"
           },
           {
             "id": "yx3yhnnj6mfawuomgfvw69ms",
             "number": "3",
-            "paragraph": "<p>Verify response sources</p>"
+            "paragraph": "<p>Conferir a origem da resposta pelo bloco de chamada de ferramenta e pela URL devolvida.</p>"
           },
           {
             "id": "ywlwtw2devsqo6cmnq3u7glo",
             "number": "4",
-            "paragraph": "<p>Recognize ChatGPT equivalent process</p>"
+            "paragraph": "<p>Reconhecer o fluxo equivalente no ChatGPT e decidir se ele está disponível na conta.</p>"
           },
           {
             "id": "i5fmobl3rwn1uyn71wrgoqil",
             "number": "5",
-            "paragraph": "<p>Troubleshoot connector workflow</p>"
+            "paragraph": "<p>Resolver os problemas mais comuns da primeira conexão.</p>"
           }
         ],
         "family": "list",
@@ -100,7 +100,7 @@
         "items": [
           {
             "id": "gygto8dps3hn1slo14l94kua",
-            "paragraph": "<p>To ensure your first MCP integration is both safe and practical, we'll start with the OpenAI Docs MCP connector. This public, read-only connector doesn't require login, never receives personal data, and works with both Claude and ChatGPT. It's the ideal 'green light' scenario—low risk, easy to reverse, and perfect for learning. By using this connector, you'll see firsthand how MCP enables secure, cross-platform connections without exposing sensitive information.</p>"
+            "paragraph": "<p>Por que este conector: não exige login, é somente leitura, não recebe dados pessoais e funciona tanto no Claude quanto no ChatGPT. O endereço é <strong>https://developers.openai.com/mcp</strong>. Se você abrir esse endereço diretamente no navegador, verá um erro (código 405). Isso é esperado: servidores MCP não respondem a uma visita comum de página, apenas a mensagens do protocolo enviadas pelo assistente.</p>"
           }
         ],
         "family": "text",
@@ -121,8 +121,8 @@
         "items": [
           {
             "id": "bfrawbh76ia68o41di6jipfe",
-            "heading": "Steps to Add and Activate a Remote Connector",
-            "paragraph": "<p>Expand each section below to learn the key steps for connecting and activating a remote MCP connector in Claude and ChatGPT. Each step is designed to ensure a smooth, secure setup process.</p>"
+            "heading": "Como adicionar e ativar o conector",
+            "paragraph": "<p>Abra cada item para ver o caminho no Claude e, se a sua conta permitir, no ChatGPT:</p>"
           }
         ],
         "family": "text",
@@ -152,23 +152,23 @@
         "items": [
           {
             "id": "cdd987b5-78f4-4e52-9973-d4cb339ad6d4",
-            "title": "Preparing Claude",
-            "description": "<p>Before adding a new connector, check if you already have a custom connector installed. If so, remove it by navigating to Claude &gt; Personalizar &gt; Conectores &gt; ⋯ &gt; Remover. This ensures you have an available slot for the new connector.</p><p></p><p>Clearing old connectors prevents conflicts and makes the setup process seamless.</p>"
+            "title": "Liberar a vaga no Claude",
+            "description": "<p>No plano gratuito há uma única vaga de conector personalizado. Se você já tem um, remova-o em <strong>Claude &gt; Personalizar &gt; Conectores &gt; ⋯ &gt; Remover</strong>.</p><p></p><p>Você identificou essa situação no registro de verificação do Módulo 0.</p>"
           },
           {
             "id": "400cf7b4-da77-4878-88f4-1ee0ea71a79b",
-            "title": "Adding the OpenAI Docs Connector",
-            "description": "<p>Go to Claude &gt; Personalizar &gt; Conectores &gt; + &gt; Add custom connector. Enter a name (e.g., OpenAI Docs) and the URL: https://developers.openai.com/mcp. Continue without authentication and confirm your choices.</p><p></p><p>This step officially registers the connector, making it available for use in conversations.</p>"
+            "title": "Adicionar o OpenAI Docs",
+            "description": "<p>Siga <strong>Claude &gt; Personalizar &gt; Conectores &gt; + &gt; Add custom connector</strong> (adicionar conector personalizado [conferir]). Informe o nome e a URL do servidor, selecione continuar, conclua a autenticação, se houver — neste caso, não há —, revise e confirme.</p><p></p><p>Nome: OpenAI Docs. URL: https://developers.openai.com/mcp.</p>"
           },
           {
             "id": "3926a666-d476-40e5-9476-4f098be7cb9c",
-            "title": "Activating the Connector in a Conversation",
-            "description": "<p>To use the connector, open a new conversation in Claude. Then go to Conversa &gt; + &gt; Conectores and switch on \"OpenAI Docs.\" The connector must be activated for each conversation where you want to use it.</p><p></p><p>Activating the connector ensures your queries are routed through the correct service.</p>"
+            "title": "Ligar o conector em cada conversa",
+            "description": "<p>O conector não fica ativo automaticamente em todas as conversas. Em cada conversa, abra <strong>Conversa &gt; + &gt; Conectores</strong> e ligue o interruptor “OpenAI Docs”.</p><p></p><p>Se esquecer esse passo, o Claude responde sem chamar o conector.</p>"
           },
           {
             "id": "ad3c7361-ea9f-417c-b075-f723fa7bb597",
-            "title": "Using the Connector in ChatGPT",
-            "description": "<p>In ChatGPT, check if the option to add a custom MCP server is available in your account. If so, go to ChatGPT &gt; Plugins (or Apps) &gt; + &gt; Add custom MCP server. Enter the name, server URL, and confirm there is no authentication required.</p><p></p><p>After installation, start a new chat, type @ and select the plugin. Only proceed if this feature is present in your account.</p>"
+            "title": "O fluxo equivalente no ChatGPT",
+            "description": "<p>Só siga este caminho se a opção existir na sua conta, como verificado no Módulo 0: <strong>ChatGPT &gt; Plugins (ou Apps) &gt; + &gt; Add custom MCP server</strong>. Informe nome, Server URL e autenticação (nenhuma); leia o aviso de risco; selecione <strong>I understand and want to continue</strong> e, depois, <strong>Create as a plugin</strong>; instale o plugin; abra um novo chat, digite <strong>@</strong> e escolha o plugin.</p><p></p><p>Tutoriais anteriores a 2026 que mandam ativar um “modo de desenvolvedor” descrevem uma interface que não é mais a principal.</p>"
           }
         ],
         "family": "interactive",
@@ -199,65 +199,65 @@
           {
             "id": "d477a942-b892-4cde-a3af-5665c799f5a3",
             "type": "intro",
-            "title": "Getting Ready",
+            "title": "Primeira consulta com o OpenAI Docs (6 min)",
             "isHidden": false,
-            "description": "<p>Before you begin, make sure you have access to Claude and that any previous custom connector is removed. This ensures a clean setup for your first MCP connection.</p>"
+            "description": "<p>Você vai adicionar o conector, fazer uma consulta restrita a ele e conferir de onde veio a resposta. O prompt-base desta consulta aparece logo depois da atividade.</p>"
           },
           {
             "id": "0d7e15b3-b980-4499-b6ea-f167ee3d2bf6",
             "type": "summary",
-            "title": "Successful Connection",
+            "title": "Ponto de controle",
             "isHidden": false,
-            "description": "<p>If you see a tool call from OpenAI Docs, the URL opens to an official domain, and no writing tools are present, you've successfully completed your first MCP connector query!</p>"
+            "description": "<p>🏁 Na resposta, o bloco de chamada de ferramenta mostra uma ferramenta do OpenAI Docs, e a URL devolvida abre em developers.openai.com, platform.openai.com ou learn.chatgpt.com. Nenhuma ferramenta de escrita foi usada.</p>"
           },
           {
             "id": "33e84c62-b516-4ca7-a182-857a33a8a4cc",
             "type": "step",
-            "title": "Remove Existing Connector",
+            "title": "Libere a vaga",
             "isHidden": false,
-            "description": "<p>If you already have a custom connector, remove it by going to Claude &gt; Personalizar &gt; Conectores &gt; ⋯ &gt; Remover. This step is necessary on the free plan, which allows only one custom connector at a time.</p>"
+            "description": "<p>Acesse <strong>Claude &gt; Personalizar &gt; Conectores</strong>. No plano gratuito, se já houver um conector personalizado, remova-o em <strong>⋯ &gt; Remover</strong>.</p>"
           },
           {
             "id": "d7ecf4b6-5e09-48e4-b9dc-c62bee607d98",
             "type": "step",
-            "title": "Add OpenAI Docs MCP",
+            "title": "Adicione o OpenAI Docs",
             "isHidden": false,
-            "description": "<p>Navigate to Claude &gt; Personalizar &gt; Conectores &gt; + &gt; Add custom connector. Enter the name \"OpenAI Docs\" and the URL https://developers.openai.com/mcp. Continue without authentication and confirm the addition.</p>"
+            "description": "<p>Selecione <strong>+ &gt; Add custom connector</strong>; nome: <strong>OpenAI Docs</strong>; URL: <strong>https://developers.openai.com/mcp</strong>. Continue sem autenticação e confirme.</p>"
           },
           {
             "id": "74186cf3-01dc-417b-821f-ccefa34d1b82",
             "type": "step",
-            "title": "Activate Connector in Conversation",
+            "title": "Ligue o conector na conversa",
             "isHidden": false,
-            "description": "<p>Start a new conversation in Claude. Go to Conversa &gt; + &gt; Conectores and enable \"OpenAI Docs.\" This step is required for each new conversation where you want to use the connector.</p>"
+            "description": "<p>Abra uma nova conversa e, em <strong>Conversa &gt; + &gt; Conectores</strong>, ligue “OpenAI Docs”.</p>"
           },
           {
             "id": "6b617475-08f5-4f2f-866d-2ad413d4c5a4",
             "type": "step",
-            "title": "Send Restricted Prompt",
+            "title": "Envie a consulta restrita",
             "isHidden": false,
-            "description": "<p>Send the following prompt: \"Use somente o conector OpenAI Docs. Não use pesquisa na web nem conhecimento geral. Encontre a página oficial que explica segurança e privacidade de plugins ou de servidores MCP. Responda com: título da página, URL e três cuidados recomendados. Informe qual ferramenta do conector foi chamada.\"</p>"
+            "description": "<p>Envie: “Use somente o conector OpenAI Docs. Não use pesquisa na web nem conhecimento geral. Encontre a página oficial que explica segurança e privacidade de plugins ou de servidores MCP. Responda com: título da página, URL e três cuidados recomendados. Informe qual ferramenta do conector foi chamada.”</p>"
           },
           {
             "id": "58cbb4cf-0142-47bc-aed9-2e23fb059ede",
             "type": "step",
-            "title": "Verify Tool Call Block",
+            "title": "Confira a chamada de ferramenta",
             "isHidden": false,
-            "description": "<p>Expand the tool call block in the assistant's response. Check which tool was used and what arguments were passed. This helps confirm the connector was actually used.</p>"
+            "description": "<p>Expanda o bloco de chamada de ferramenta na resposta e confira o nome da ferramenta usada e os argumentos enviados.</p>"
           },
           {
             "id": "baeb4fd1-fd5e-4beb-a1c8-5271db333c1f",
             "type": "step",
-            "title": "Confirm Returned URL",
+            "title": "Abra a URL devolvida",
             "isHidden": false,
-            "description": "<p>Open the URL provided in the response. Make sure it leads to an official domain such as developers.openai.com, platform.openai.com, or learn.chatgpt.com. This step verifies the authenticity of the information.</p>"
+            "description": "<p>Abra a URL da resposta e confirme o domínio: developers.openai.com, platform.openai.com ou learn.chatgpt.com.</p>"
           },
           {
             "id": "74607584-d74a-4089-ad70-6c9225512303",
             "type": "step",
-            "title": "List and Check Tools",
+            "title": "Liste os conectores ativos",
             "isHidden": false,
-            "description": "<p>Send the prompt from Módulo 1 to list connectors and classify tools. Confirm that all tools are read-only and no writing tools are enabled.</p>"
+            "description": "<p>Envie o prompt-base do Módulo 1 (listar conectores e classificar ferramentas) e anote se as ferramentas do OpenAI Docs são todas de leitura.</p>"
           }
         ],
         "family": "interactive-fullscreen",
@@ -278,7 +278,7 @@
         "items": [
           {
             "id": "c2a4bfe0-32dd-4125-b61e-7fc8b3febfdf",
-            "paragraph": "<p>Use somente o conector [nome do conector]. Não utilize pesquisa na web nem conhecimento geral. Encontre [o que se procura]. Responda com:</p><ul><li>Título da página</li><li>URL</li><li>Três pontos principais</li></ul><p>Informe qual ferramenta do conector foi chamada. Se o conector não encontrar a informação, diga isso claramente.</p>"
+            "paragraph": "<p><strong>Mão na massa — prompt-base para consulta restrita a um conector:</strong></p><p>Use somente o conector [nome do conector]. Não use pesquisa na web nem conhecimento geral. Encontre [o que se procura]. Responda com:</p><ul><li>título da página;</li><li>URL;</li><li>[três pontos principais].</li></ul><p>Informe qual ferramenta do conector foi chamada. Se o conector não encontrar a informação, diga isso claramente.</p>"
           }
         ],
         "family": "impact",
@@ -299,8 +299,8 @@
         "items": [
           {
             "id": "axby00pdsnbyfnwjlcxdh3pt",
-            "heading": "Verifying the Source—Tool Call Blocks and URLs",
-            "paragraph": "<p>Expand each tab to learn how to confirm the authenticity of connector responses. Understanding these checks is essential for trusting the information your AI assistant provides.</p>"
+            "heading": "Duas regras para confiar na resposta",
+            "paragraph": "<p>Sem instrução explícita, a resposta pode misturar conhecimento geral do modelo com o resultado do conector. E o conector padroniza a ligação, não a veracidade (Módulo 1). Abra cada aba:</p>"
           }
         ],
         "family": "text",
@@ -330,18 +330,18 @@
         "items": [
           {
             "id": "e466bbdc-e662-4749-bf09-267c05310710",
-            "title": "What is a Tool Call Block?",
-            "description": "<p>A tool call block is a section in the assistant's response that records which connector tool was used, what arguments were passed, and what was returned. You can find it directly below the main response in Claude after sending a connector-based query.</p><p></p><p>This block is your main evidence that the assistant used the connector as instructed, rather than relying on general model knowledge. Always expand and review this block to verify the process.</p>"
+            "title": "O bloco de chamada de ferramenta",
+            "description": "<p>Ao responder usando um conector, o Claude exibe um bloco que registra a chamada de ferramenta: qual ferramenta foi usada, com quais argumentos e o que retornou.</p><p></p><p>Esse bloco é o seu principal instrumento de conferência. Expanda-o sempre que a resposta depender do conector.</p>"
           },
           {
             "id": "46ecf264-b2ca-4efe-8e43-0a5901706d7c",
-            "title": "How to Use URLs for Verification",
-            "description": "<p>After receiving a response, check the URL provided by the connector. Official OpenAI Docs results should link to domains like developers.openai.com, platform.openai.com, or learn.chatgpt.com.</p><p></p><p>Opening the URL and confirming the domain ensures the information is sourced from the intended service, not fabricated by the model. Never trust a result without this verification step.</p>"
+            "title": "A URL devolvida",
+            "description": "<p>Abra a URL que veio na resposta e confira o domínio. No OpenAI Docs, os domínios oficiais são developers.openai.com, platform.openai.com e learn.chatgpt.com.</p><p></p><p>Uma URL que não abre, ou que leva a outro domínio, é motivo para desconfiar da resposta.</p>"
           },
           {
             "id": "b8d9af29-0dfa-47a8-b5e3-d7c6d5e329f4",
-            "title": "What to Do if the Source is Unclear",
-            "description": "<p>If the tool call block is missing or the URL doesn't match an official domain, ask the assistant to clarify which tool was used and to provide the exact source. You can also repeat your query, explicitly prohibiting general knowledge use.</p><p></p><p>When in doubt, do not rely on the response. Always confirm the provenance of the data before taking action or sharing results.</p>"
+            "title": "Quando a origem não está clara",
+            "description": "<p>Se não houver bloco de chamada de ferramenta ou a URL não bater, peça ao assistente o nome da ferramenta chamada e a fonte exata. Depois, repita o pedido com “use somente o conector”, proibindo conhecimento geral.</p><p></p><p>Até conseguir conferir a origem, não use a resposta.</p>"
           }
         ],
         "family": "interactive",
@@ -362,8 +362,8 @@
         "items": [
           {
             "id": "htzrikqry9ifdcvggp8y0l8i",
-            "heading": "Troubleshooting Common Connector Issues",
-            "paragraph": "<p>Explore each section for solutions to common problems you might encounter when adding or using a connector. These quick fixes will help you stay on track during your first MCP integration.</p>"
+            "heading": "Solução de problemas",
+            "paragraph": "<p>Abra o item que corresponde à situação:</p>"
           }
         ],
         "family": "text",
@@ -393,33 +393,33 @@
         "items": [
           {
             "id": "32089e2a-8f85-4628-9e70-3d8590005f27",
-            "title": "Cannot Add Connector (Slot Full)",
-            "description": "<p>If you can't add a new connector in Claude, your custom connector slot may be occupied. Remove the previous connector in Claude &gt; Personalizar &gt; Conectores &gt; ⋯ &gt; Remover, then try again.</p><p></p><p>This is a common limitation on the free plan.</p>"
+            "title": "Não consigo adicionar o conector no plano gratuito",
+            "description": "<p>Causa provável: a vaga do conector personalizado está ocupada.</p><p></p><p>Remova o conector anterior em <strong>Claude &gt; Personalizar &gt; Conectores &gt; ⋯ &gt; Remover</strong> e tente de novo.</p>"
           },
           {
             "id": "24887734-63a8-478a-aca2-53d8b3ed079d",
-            "title": "Error 405 When Opening URL",
-            "description": "<p>Seeing a 405 error when opening the connector URL in your browser is normal. MCP servers only respond to protocol messages from the assistant, not direct browser visits.</p><p></p><p>No action is needed—this is expected behavior.</p>"
+            "title": "Ao abrir a URL no navegador aparece erro 405",
+            "description": "<p>Comportamento normal de servidor MCP.</p><p></p><p>Nada a fazer: o endereço é para o assistente, não para o navegador.</p>"
           },
           {
             "id": "2f767eee-97e5-49d4-9129-ff8e77509c60",
-            "title": "Connector Not Activated in Conversation",
-            "description": "<p>If Claude responds without using the connector, it may not be activated for that conversation. Go to Conversa &gt; + &gt; Conectores and switch on \"OpenAI Docs.\" Then, repeat your request with the instruction to use only the connector.</p><p></p><p>Activation is required for each new conversation.</p>"
+            "title": "O Claude responde sem chamar o conector",
+            "description": "<p>Causa provável: o conector está desligado nesta conversa.</p><p></p><p>Em <strong>Conversa &gt; + &gt; Conectores</strong>, ligue “OpenAI Docs” e repita o pedido com “use somente o conector”.</p>"
           },
           {
             "id": "65efc61b-26cd-4295-83a3-8e0934e46c13",
-            "title": "\"No Tools Listed\" or Connection Failure",
-            "description": "<p>If you see \"Nenhuma ferramenta listada\" or experience a connection failure, check that the URL ends with /mcp and contains no spaces. Remove and re-add the connector if needed.</p><p></p><p>Typos or incomplete URLs are common causes of this issue.</p>"
+            "title": "“Nenhuma ferramenta listada” ou falha de conexão",
+            "description": "<p>Causa provável: URL incompleta ou digitada errada.</p><p></p><p>Confira se a URL termina em /mcp, sem espaços. Remova o conector e adicione de novo.</p>"
           },
           {
             "id": "d9400f17-35f7-4c59-bdba-efa8e5bdc0b0",
-            "title": "Response Seems Fabricated",
-            "description": "<p>If the response appears invented or mixes general knowledge, ask the assistant to specify the tool and URL used. Repeat your request, explicitly prohibiting general knowledge.</p><p></p><p>This ensures only connector-sourced information is returned.</p>"
+            "title": "A resposta parece inventada",
+            "description": "<p>Causa provável: o modelo usou conhecimento geral.</p><p></p><p>Peça o nome da ferramenta chamada e a URL; repita o pedido proibindo conhecimento geral.</p>"
           },
           {
             "id": "c397ea8e-3b04-429a-b3d8-7b81172d5417",
-            "title": "Prompts for Tokens or Passwords",
-            "description": "<p>If the assistant or connector requests a token or password, do not paste any credentials. Double-check the URL; the OpenAI Docs connector does not require authentication.</p><p></p><p>Never share sensitive information in chat.</p>"
+            "title": "O formulário pede token ou senha",
+            "description": "<p>Causa provável: conector errado ou fluxo diferente.</p><p></p><p>Não cole credencial. Confira a URL: o OpenAI Docs não exige autenticação.</p>"
           }
         ],
         "family": "interactive",
@@ -440,8 +440,8 @@
         "items": [
           {
             "id": "d7uicwh6ghv02qarf69qblli",
-            "heading": "Key Terms and Interface Reminders",
-            "paragraph": "<p>Review each flashcard to reinforce your understanding of essential terms and interface elements for successful MCP connector use.</p>"
+            "heading": "Termos da primeira conexão",
+            "paragraph": "<p>Vire cada cartão para revisar:</p>"
           }
         ],
         "family": "text",
@@ -466,55 +466,55 @@
             "id": "j6kxr6w0vbkyd6qgd1m1tbvn",
             "back": {
               "type": "description",
-              "description": "The single space available for a custom connector in Claude's free plan—remove old connectors before adding a new one."
+              "description": "No plano gratuito do Claude, há uma única vaga. Remova o conector anterior antes de adicionar outro."
             },
             "front": {
               "type": "description",
-              "description": "<b>Connector slot</b>"
+              "description": "<b>Vaga de conector personalizado</b>"
             }
           },
           {
             "id": "t5t64e9subqo60ymivjxlxs4",
             "back": {
               "type": "description",
-              "description": "A section in the assistant's response showing which connector tool was used and what data was returned."
+              "description": "Parte da resposta que mostra qual ferramenta do conector foi usada, com quais argumentos e o que retornou."
             },
             "front": {
               "type": "description",
-              "description": "<b>Tool call block</b>"
+              "description": "<b>Bloco de chamada de ferramenta</b>"
             }
           },
           {
             "id": "d1di6jdm09h612ka0seltohs",
             "back": {
               "type": "description",
-              "description": "The address for the OpenAI Docs MCP connector: https://developers.openai.com/mcp"
+              "description": "https://developers.openai.com/mcp — endereço para o assistente; no navegador, mostra erro 405."
             },
             "front": {
               "type": "description",
-              "description": "<b>Official connector URL</b>"
+              "description": "<b>URL do OpenAI Docs MCP</b>"
             }
           },
           {
             "id": "y7fbixnw4mlf6qlqv7dpnlbf",
             "back": {
               "type": "description",
-              "description": "Official domains for OpenAI Docs results: developers.openai.com, platform.openai.com, or learn.chatgpt.com."
+              "description": "developers.openai.com, platform.openai.com ou learn.chatgpt.com."
             },
             "front": {
               "type": "description",
-              "description": "<b>Trusted result domains</b>"
+              "description": "<b>Domínios oficiais da resposta</b>"
             }
           },
           {
             "id": "sq4eqqcy5po731tauvi0muwe",
             "back": {
               "type": "description",
-              "description": "A low-risk, read-only connector setup that requires no login and is safe for first-time use."
+              "description": "Conector público, sem login, só de leitura e sem dados pessoais: adequado para a primeira conexão."
             },
             "front": {
               "type": "description",
-              "description": "<b>Green light scenario</b>"
+              "description": "<b>Cenário verde</b>"
             }
           }
         ],
@@ -537,31 +537,31 @@
           {
             "id": "ddc28cd1-e1c9-496a-b6ca-e585d7ca531d",
             "type": "MULTIPLE_CHOICE",
-            "title": "What should you do before adding a new custom connector in Claude?",
+            "title": "Você está no plano gratuito do Claude e já tem um conector personalizado instalado. O que fazer antes de adicionar o OpenAI Docs?",
             "answers": [
               {
                 "id": "b1d6359f-c41e-4166-85fc-e8adaa9e0829",
-                "title": "Remove any existing custom connector",
+                "title": "Remover o conector personalizado existente.",
                 "correct": true,
-                "feedback": "You must remove any existing custom connector to free up the slot."
+                "feedback": "Correto. O plano gratuito tem uma única vaga de conector personalizado; é preciso liberá-la em Claude > Personalizar > Conectores > ⋯ > Remover."
               },
               {
                 "id": "af73b54f-e4b9-4511-ba35-5ddfe48e9642",
-                "title": "Log out and log back in",
+                "title": "Sair da conta e entrar de novo.",
                 "correct": false,
-                "feedback": "Logging out is not required for this process."
+                "feedback": "Não. Sair e entrar não libera a vaga: o conector antigo continua instalado."
               },
               {
                 "id": "3566cd37-8113-443d-a1ec-563cd5b67486",
-                "title": "Open the connector URL in your browser",
+                "title": "Abrir a URL do conector no navegador.",
                 "correct": false,
-                "feedback": "Opening the URL in your browser is not necessary and may show an error."
+                "feedback": "Não. A URL é para o assistente; no navegador, mostra erro 405, e isso não libera a vaga."
               },
               {
                 "id": "0aeaaa82-25ee-4c56-977f-5ae8c100b71e",
-                "title": "Enable all connectors at once",
+                "title": "Ativar todos os conectores de uma vez.",
                 "correct": false,
-                "feedback": "Only one custom connector can be enabled at a time on the free plan."
+                "feedback": "Não. Ligar conectores numa conversa não cria vaga nova: no plano gratuito, só cabe um conector personalizado."
               }
             ],
             "feedbackType": "CHOICE"
@@ -585,7 +585,7 @@
         "items": [
           {
             "id": "f384963b-54df-46c8-9389-5a1b3a02620f",
-            "paragraph": "<ul><li>(a) A resposta deve exibir pelo menos uma chamada de ferramenta do conector OpenAI Docs.</li><li>(b) A URL devolvida deve abrir corretamente e pertencer a um dos domínios oficiais listados.</li><li>(c) O participante deve registrar que nenhuma ferramenta de escrita foi utilizada.</li><li>(d) Se o ChatGPT foi utilizado, o mesmo resultado deve ser obtido com @OpenAI Docs, ou a indisponibilidade deve ser registrada.</li></ul>"
+            "paragraph": "<p><strong>Critério de êxito:</strong></p><ul><li>(a) a resposta exibe ao menos uma chamada de ferramenta do conector OpenAI Docs;</li><li>(b) a URL devolvida abre e pertence a um dos domínios oficiais listados;</li><li>(c) você registra que nenhuma ferramenta de escrita foi usada;</li><li>(d) se usou o ChatGPT, obteve o mesmo resultado com @OpenAI Docs — ou registrou a indisponibilidade.</li></ul>"
           }
         ],
         "family": "impact",
@@ -604,7 +604,7 @@
       "isGeneratingAIContent": false,
       "isRequiredForCompletion": true
     },
-    "title": "Connecting and Querying Services with MCP",
+    "title": "Primeira conexão: consultar um serviço",
     "type": "blocks",
     "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
     "courseId": "A6GxuiVLrHaIYJQ0N2rtL7ZCDLnK5DG_",
