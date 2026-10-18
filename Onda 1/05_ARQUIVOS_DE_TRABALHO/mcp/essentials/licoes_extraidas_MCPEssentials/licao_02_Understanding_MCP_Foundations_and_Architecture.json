@@ -1,0 +1,629 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Understanding MCP: Foundations and Architecture",
+  "lesson": {
+    "description": "",
+    "id": "a78af5ba-e370-47c7-8933-86a8293123d8",
+    "items": [
+      {
+        "id": "mup4kjmqg4sw0px5p1qeiu9l",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b8lr8dsk098d2tb3t93inq78",
+            "heading": "Why MCP Matters: The Foundation of Secure AI Integration",
+            "paragraph": "<p>Connecting AI assistants like Claude and ChatGPT to external services is a powerful way to automate tasks and access information. However, each new integration brings complexity and potential security risks. The Model Context Protocol (MCP) was created to address these challenges, offering a standardized way for AI assistants to connect safely and efficiently to a wide range of services. Understanding why MCP is needed sets the stage for secure, scalable AI integration in your daily workflows.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "7eec5988-642b-4412-978d-5cac18a3a6ef"
+      },
+      {
+        "id": "qhlz60nv82015zu08she78qh",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "k8qugv3zt6syfl2mwncz3t0o",
+            "paragraph": "<p>By the end of this lesson, you will be able to achieve the following learning objectives:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "44a09d21-27a7-43ea-904d-6cb02ac79820"
+      },
+      {
+        "id": "cwezs00gdfa0d0e8hlcrydny",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "kuz9usow0d1q87x71t964w0u",
+            "number": "1",
+            "paragraph": "<p>Explain the integration problem that MCP solves and understand what it does not guarantee.</p>"
+          },
+          {
+            "id": "qgdf1voy4sff36xud6ji557d",
+            "number": "2",
+            "paragraph": "<p>Distinguish between host, client, and server roles, as well as identify tools, resources, and prompts.</p>"
+          },
+          {
+            "id": "i3rpmrxlq63xwdlfqccnmsw1",
+            "number": "3",
+            "paragraph": "<p>Differentiate between local and remote servers.</p>"
+          },
+          {
+            "id": "a1rwkxoi2vwp0nqxep0ze901",
+            "number": "4",
+            "paragraph": "<p>Distinguish MCP from APIs, connectors, plugins, skills, and automation orchestrators.</p>"
+          },
+          {
+            "id": "plss9bytb77oiidmmzf5csx1",
+            "number": "5",
+            "paragraph": "<p>Identify common, practical use cases for MCP.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "13c869a0-aeff-4067-ad7a-ad6f3e8ee261"
+      },
+      {
+        "id": "ljvdbbksdrfg821ivdaswdxq",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "sz4l5i1089pnes57mggqx3j9",
+            "paragraph": "<p>Before MCP, every AI assistant needed to be individually integrated with each external service. This meant that if there were five assistants and ten services, developers had to build fifty separate integrations—a problem known as the \"N × M\" challenge. This approach was inefficient, time-consuming, and made it difficult to scale or maintain secure connections. As more assistants and services appeared, the complexity and risk of errors or security gaps increased dramatically.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "850ece8f-0dbd-4773-9163-f634eb87db1b"
+      },
+      {
+        "id": "798d3f4c-7507-4e86-97ec-e55a02a6401e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "8df3d046-879d-4b96-9135-a55871476e73",
+            "paragraph": "MCP is an open protocol—like a universal USB-C plug—that allows any AI assistant to connect with any compatible service, regardless of the manufacturer. It is not an app, a model, or owned by a single company."
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "9ccda59b-a849-435f-ba5c-b2a6f8d5b14c"
+      },
+      {
+        "id": "e2bdfzzn6frg29pppndlcihj",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "y0nd2f5qtev1ix29wnvj29b2",
+            "heading": "MCP Standardization and Its Boundaries",
+            "paragraph": "<p>Explore what MCP standardizes and its boundaries by expanding each section below.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "e69b9146-41d8-4b45-a57d-15a3b2fd687d"
+      },
+      {
+        "id": "dc1a23de-7d94-48b0-a70c-d26f5fc4ad40",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "6f642834-2098-4092-8cf4-f2effd83ba92",
+            "title": "What MCP Standardizes",
+            "description": "<p>MCP defines a common format for connecting AI assistants to external services. It acts as the \"plug\" that ensures different assistants and services can communicate using the same set of rules.</p><p></p><p>This standardization makes it easier for new assistants and services to work together without custom integrations for each combination.</p>"
+          },
+          {
+            "id": "5a26cb04-f221-4b72-a8af-e8948cacc07c",
+            "title": "What MCP Does Not Guarantee",
+            "description": "<p>While MCP standardizes the connection, it does not guarantee the quality of the data, the truthfulness of responses, or the security of the server.</p><p></p><p>Each service and user must still decide what information is shared and what actions are permitted, so careful configuration and review are essential.</p>"
+          },
+          {
+            "id": "c6575424-af53-45e6-b444-60cb9a7f524b",
+            "title": "The \"Plug and Badge\" Analogy",
+            "description": "<p>The plug analogy explains how MCP connects assistants and services, but it is incomplete. The badge (or \"crachá\") represents the permissions granted—what doors the assistant can open.</p><p></p><p>MCP standardizes the badge format, but each service decides what access to grant, and each user decides what permissions to accept. Security depends on both the plug and the badge.</p>"
+          },
+          {
+            "id": "d3afe739-2930-410f-9f5b-e960bf72d935",
+            "title": "The Role of User Approval and Permissions",
+            "description": "<p>Even with MCP, users and services must actively manage permissions. Just because a connection is possible does not mean all actions are allowed.</p><p></p><p>Most security measures involve checking what the badge allows, ensuring that only approved actions and data are accessible to the assistant.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "0cbeb801-5044-47f8-98a2-804b94834627"
+      },
+      {
+        "id": "krnknk3oafhv6wxaqsmn88iy",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rz9yyimrigiuhfklt2bf0p45",
+            "heading": "MCP and Related Technologies",
+            "paragraph": "<p>Explore how MCP compares to other integration technologies and understand its unique role in the ecosystem. Expand each tab to learn more about APIs, MCP, connectors/plugins, skills, and automation orchestrators.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "a4fc1715-6bcc-4a23-91c8-5ad2cff0aeed"
+      },
+      {
+        "id": "c2175bc0-95e8-40cc-aac4-48f4167c64b7",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cf59eb14-e2b6-4366-b5ca-76c5f2166906",
+            "title": "API",
+            "description": "<p>An API is a custom interface provided by a service for programs to interact with it. APIs are unique to each service and often require custom code for every integration.</p><p></p><p>With MCP, the server typically calls the API behind the scenes, but MCP itself does not replace the API. Instead, it provides a standard way for assistants to discover and use these APIs through a common protocol.</p>"
+          },
+          {
+            "id": "b9d20a82-6e4c-4fd4-b8d1-f5f0f66788c9",
+            "title": "MCP",
+            "description": "<p>MCP is a protocol that allows AI assistants to find and use tools and data from various services. It is designed to be open and vendor-neutral, making integrations simpler and more scalable.</p><p></p><p>Unlike APIs, MCP is not tied to a single service or company. It acts as a universal connector, enabling assistants and services to work together with minimal custom development.</p>"
+          },
+          {
+            "id": "eee4a0cb-b6dd-47ac-bf51-5797b4e31871",
+            "title": "Connector/Plugin/App/Extension",
+            "description": "<p>These are the commercial names for MCP servers as they appear in different products. For example, Claude calls them connectors, ChatGPT uses plugins or apps, and Claude Desktop uses extensions.</p><p></p><p>While these terms are often used interchangeably, not all plugins or extensions are MCP servers. Some may bundle additional features or skills, so it's important to check their capabilities.</p>"
+          },
+          {
+            "id": "f2ce83a2-d92e-4a94-a980-20bd6a942a98",
+            "title": "Skill",
+            "description": "<p>A skill is a set of instructions that teaches an assistant how to perform a specific task or procedure. Skills can be combined with MCP to enhance functionality.</p><p></p><p>However, skills alone do not access live systems or data—they provide guidance or templates for actions the assistant can take when connected to the right tools.</p>"
+          },
+          {
+            "id": "0d83a9cb-97cc-4c9b-9bc3-d9b7c93932aa",
+            "title": "Automation Orchestrator (Zapier/n8n)",
+            "description": "<p>Automation orchestrators like Zapier or n8n allow users to create workflows with triggers and actions across multiple services. They often provide their own interfaces for connecting tools.</p><p></p><p>These platforms can offer MCP servers, enabling AI assistants to trigger automations as part of a broader workflow, complementing the direct connections MCP provides.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "181337db-f762-4a13-8abb-eaa322dcc187"
+      },
+      {
+        "id": "o05kjipcs77zedibsma3ctts",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "q2aox1ac6ppi5rizkm7no04j",
+            "heading": "Key Roles and Concepts in MCP",
+            "paragraph": "<p>Review each flashcard to reinforce your understanding of key roles and concepts in MCP.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "b96bc603-bbad-4f29-a239-bc4c5edf705d"
+      },
+      {
+        "id": "gv0qjmki3pyivd2cb2jndmnc",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "fz8iem2nwie0qbthuzoo8m86",
+            "back": {
+              "type": "description",
+              "description": "<p>The AI application the user interacts with, such as Claude or ChatGPT.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Host</strong>"
+            }
+          },
+          {
+            "id": "ldrikm3hmdfpgpkee6he800h",
+            "back": {
+              "type": "description",
+              "description": "<p>The internal component of the host that manages connections to MCP servers, invisible to the user.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Client</strong>"
+            }
+          },
+          {
+            "id": "k9h8qd61wfosxix53qpewzn7",
+            "back": {
+              "type": "description",
+              "description": "<p>The program that provides tools, resources, or prompts to the assistant, like Google Calendar or Drive.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Server</strong>"
+            }
+          },
+          {
+            "id": "a8zcrn45b0c80najqle3kb2r",
+            "back": {
+              "type": "description",
+              "description": "<p>Executable actions offered by a server, such as \"create event\" or \"search document.\"</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Tools</strong>"
+            }
+          },
+          {
+            "id": "utz4yh6hxn0gl8frapqkc346",
+            "back": {
+              "type": "description",
+              "description": "<p>Data or content that the assistant can read from a server, like files or calendar entries.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Resources</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "64c1e4cc-dd5b-441d-8b12-f6dcdefe33b0"
+      },
+      {
+        "id": "gu36y7di2vkeimy6xwq89ba4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pvint3e6pw9qa7ov8bflezzd",
+            "heading": "Differences Between Local and Remote Servers",
+            "paragraph": "<p>Explore the differences between local and remote servers by expanding each section below.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "a3b51fc7-dcf6-4ab2-a745-d8ed0f4fadbb"
+      },
+      {
+        "id": "65be24a7-8c19-4bb5-b2df-a11233bc478a",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "304a128d-6b87-4118-980c-7da08c140083",
+            "title": "Local Servers",
+            "description": "<p>Local servers run directly on your computer, such as extensions in Claude Desktop. They access files and folders on your device and are only available when using the desktop app.</p><p></p><p>Local servers avoid sending data to third-party servers but may increase risk if a malicious extension is installed. They are not accessible from the browser or mobile app.</p>"
+          },
+          {
+            "id": "7cae8cdc-759d-4e52-843d-d8d43f02b16c",
+            "title": "Remote Servers",
+            "description": "<p>Remote servers are hosted on the internet and accessed via a public URL. Examples include Google Drive or Calendar connectors, which work across devices and platforms.</p><p></p><p>Remote servers depend on the connected service and account permissions. They are convenient but require trust in the external service to handle your data securely.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "30a4a915-5770-41f1-9dca-a36fa24cfd90"
+      },
+      {
+        "id": "it9tjtg7pxmqdu7tijsjynzd",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ot66ixebrpnbbzm674zypjl9",
+            "paragraph": "<p>MCP offers several practical applications that can help non-programmers streamline their daily tasks. Below are three common ways you might use MCP in your work:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "3b69159f-7421-414d-97d5-6d6ac4f0e78e"
+      },
+      {
+        "id": "mp3rg4cr0t6327bacgg1ew78",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "ygn7ealiqbbua025gg4tf34y",
+            "number": "1",
+            "paragraph": "<p><strong>Consult Services and Documentation:</strong> Use AI assistants to check project tasks, calendars, or company documentation.</p>"
+          },
+          {
+            "id": "b9eaowc9ufjh33dsn4qh0q42",
+            "number": "2",
+            "paragraph": "<p><strong>Read Files and Folders:</strong> Access and review files from your computer or cloud storage without manual downloads.</p>"
+          },
+          {
+            "id": "wunji7nqfhr1znk8k0d3hy99",
+            "number": "3",
+            "paragraph": "<p><strong>Act on Your Behalf:</strong> Create events, draft emails, or move files directly through the assistant, streamlining routine tasks.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "6bd5d447-91d5-4b2d-bc88-91b8bf62191a"
+      },
+      {
+        "id": "ff5df767-bf4b-4b01-a7e5-739c0e854d68",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "409df0d4-472a-4621-9fc7-30f7f5519481",
+            "paragraph": "<p>🧭 You can explore available connectors in Claude by navigating to <strong>Personalizar &gt; Conectores &gt; +</strong>. Open each connector’s profile to review the publisher, verification badge, and list of available tools.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "dcff9272-5c6b-4a49-805b-14332dcda579"
+      },
+      {
+        "id": "5937b68a-82a4-46e9-bbed-2a60ebcfba4d",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "f1794df7-afaa-4875-8936-646ba8022db2",
+            "type": "MULTIPLE_CHOICE",
+            "title": "A colleague says, \"I installed the MCP connector for Google Drive, so now Claude can do anything in my Drive.\" Which statement is correct?",
+            "answers": [
+              {
+                "id": "bd4bbd73-3100-4997-806e-b40fe2f6f321",
+                "title": "This is correct: MCP gives full access to the connected service.",
+                "correct": false,
+                "feedback": "This is incorrect. MCP does not automatically grant full access; permissions depend on the tools, account settings, and approvals."
+              },
+              {
+                "id": "c9b9a121-4958-49ad-9bde-e78f7472cb66",
+                "title": "This is incorrect: MCP standardizes the connection, but what the assistant can do depends on the tools offered, account permissions, and configured approvals.",
+                "correct": true,
+                "feedback": "This is correct. MCP standardizes the connection, but access is determined by the service, permissions, and approvals."
+              },
+              {
+                "id": "cddf99e1-97e8-4a02-b733-d0c975728449",
+                "title": "This is incorrect: MCP only works with Anthropic services.",
+                "correct": false,
+                "feedback": "This is incorrect. MCP can connect to various services, not just Anthropic services."
+              },
+              {
+                "id": "54f8f3a1-fab2-4425-9dae-7a9ae8308af5",
+                "title": "This is correct, as long as you have a paid plan.",
+                "correct": false,
+                "feedback": "This is incorrect. Having a paid plan does not automatically grant full access; permissions and approvals still apply."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "ae3890b6-b509-4d7f-a2c5-6e2eb1d4c5db"
+      },
+      {
+        "id": "263cbcfb-e2f5-427f-a6d1-ffdbc6991afc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "022244cc-c2ea-408a-821b-0917f5d17ea0",
+            "paragraph": "<p>Success criteria: Two correct answers are required to pass this knowledge check.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "6b2d1903-d2cf-4fc2-9ab9-1c730c25f700"
+      },
+      {
+        "id": "b678de18-3ce0-41b8-809c-902766109178",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ec98634f-79f0-4674-b3e0-c71983cd0b6b",
+            "paragraph": "<ol><li>Não há conectores ativos nesta conversa.</li></ol>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "9da30d42-18c2-4fc0-b127-f428271f2aac"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Understanding MCP: Foundations and Architecture",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "A6GxuiVLrHaIYJQ0N2rtL7ZCDLnK5DG_",
+    "createdAt": "2026-10-18T18:35:35.031Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-10-18T18:36:16.833Z"
+  }
+}

@@ -1,7 +1,7 @@
 # Relatório de edição — NotebookLM - Hands On (fase A: revisão de texto)
 
-Data: 18/10/2026 · Entrada: `03_VERSOES_ANTIGAS/original-articulate/notebooklm-hands-on-scorm12-Iwwx9t04.zip` (não modificado)
-Saída: `notebooklm-hands-on-scorm12-Iwwx9t04-REVISADO-faseA.zip` (cópias em `03_VERSOES_ANTIGAS/fase-A-so-texto/` e `05_ARQUIVOS_DE_TRABALHO/hands-on/`)
+Data: 18/10/2026 · Entrada: `03_VERSOES_ANTIGAS/notebooklm/original-articulate/notebooklm-hands-on-scorm12-Iwwx9t04.zip` (não modificado)
+Saída: `notebooklm-hands-on-scorm12-Iwwx9t04-REVISADO-faseA.zip` (cópias em `03_VERSOES_ANTIGAS/notebooklm/fase-A-so-texto/` e `05_ARQUIVOS_DE_TRABALHO/notebooklm/hands-on/`)
 (versão intermediária, sem blocos novos; a fase B está em `Relatorio_HandsOn_Revisao_e_Insercao.md`)
 
 ## Material-fonte e mapeamento

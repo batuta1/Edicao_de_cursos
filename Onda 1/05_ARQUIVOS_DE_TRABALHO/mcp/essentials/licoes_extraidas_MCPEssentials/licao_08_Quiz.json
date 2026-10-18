@@ -1,0 +1,894 @@
+{
+  "numero_da_licao": 8,
+  "position_original": 7,
+  "title": "Quiz",
+  "lesson": {
+    "description": "Test your understanding of the Model Context Protocol (MCP), including how AI assistants connect to external services, files, and workflows, and how to tell the difference between local file access and cloud access. Explore key safety practices like setting folder permissions, spotting prompt injection or tool poisoning risks, and reviewing connector permissions before allowing actions.",
+    "id": "8pOM6aAN87zYcq4h-ovsjX6RJZM91kC-",
+    "items": [
+      {
+        "answers": [
+          {
+            "id": "9a4e164f-10eb-445b-a4cc-324c96491ab6",
+            "title": "Create a recurring event with guests so you can fully test invitations and then delete it afterward.",
+            "correct": false,
+            "feedback": "This reflects a plausible test of connector features, but it ignores an important limit: guest invitations and related emails cannot be undone simply by deleting the event."
+          },
+          {
+            "id": "83991f1d-3f2e-444d-bfe2-10eac8a363e6",
+            "title": "Connect the calendar, allow writing tools to stay always enabled, and rely on later verification to catch mistakes.",
+            "correct": false,
+            "feedback": "Verification is important, but leaving writing tools always enabled removes the manual approval safeguard that helps prevent errors before they happen."
+          },
+          {
+            "id": "1ea5cca5-8636-4720-9211-daf7a6548ebc",
+            "title": "List the next three calendar events because read-only actions are the main way to test event creation controls.",
+            "correct": false,
+            "feedback": "Listing events is a valid read-only capability, but it does not demonstrate the safe control needed for writing actions such as creating and undoing changes."
+          },
+          {
+            "id": "1777cb5c-4ebf-4e15-a3dd-763458b1accc",
+            "title": "Create a test event without guests, review the approval request, verify it in Google Calendar, and then delete it.",
+            "correct": true,
+            "feedback": "This action uses the connector's event-creation capability while respecting the need for manual approval, verification, and safe reversal."
+          }
+        ],
+        "correct": "1777cb5c-4ebf-4e15-a3dd-763458b1accc",
+        "corrects": [
+          "1777cb5c-4ebf-4e15-a3dd-763458b1accc"
+        ],
+        "id": "48774a90-7693-4328-8191-1e202a4eaee7",
+        "title": "You are testing the Google Calendar connector to understand what it can do while keeping the test safe and reversible. Which action best shows proper control of the connector's capabilities and limits?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "ebb2c3b0-3f29-49ee-95d9-90384e0c92f1"
+      },
+      {
+        "answers": [
+          {
+            "id": "c4504e5d-91d3-4f24-9fc6-e3c4a7656889",
+            "title": "Expand connector permissions across related tools to reduce repeated approval steps.",
+            "correct": false,
+            "feedback": "This sounds efficient, but broader permissions increase access beyond what may be necessary. Security best practice emphasizes controlled access rather than wider default access."
+          },
+          {
+            "id": "fc89c9b3-003a-4846-9e8c-04c87ddc30bb",
+            "title": "Keep existing connector access in place so recurring workflows continue without interruption.",
+            "correct": false,
+            "feedback": "This may sound practical for convenience, but it prioritizes continuity over security. Leaving access in place when it is no longer needed increases the chance of unnecessary exposure to tools and data."
+          },
+          {
+            "id": "558e1179-5918-4dce-ac4b-eb682f886d73",
+            "title": "Focus on organizing connector names clearly so approved services are easier to identify later.",
+            "correct": false,
+            "feedback": "Clear naming can help administration, but it does not directly address the main security control in the question. Data safety depends more on managing and revoking access than on labeling connectors."
+          },
+          {
+            "id": "85a7b5e6-d426-4ee0-94a6-2f84256016a5",
+            "title": "Regularly review permissions and revoke connector access when it is no longer needed.",
+            "correct": true,
+            "feedback": "This is correct because limiting access to only what is needed and removing unused access reduces the risk of unnecessary data exposure."
+          }
+        ],
+        "correct": "85a7b5e6-d426-4ee0-94a6-2f84256016a5",
+        "corrects": [
+          "85a7b5e6-d426-4ee0-94a6-2f84256016a5"
+        ],
+        "id": "5c85e87e-4b94-493e-b893-9b7d9247f29d",
+        "title": "Which action best supports data safety when using MCP connectors with AI assistants?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "2f75277d-bf17-49bd-8c97-a154b56b6680"
+      },
+      {
+        "answers": [
+          {
+            "id": "079d3df2-8381-4fa7-894a-20560cc208fa",
+            "matchTitle": "Read-only access to public sources with no writing tools enabled",
+            "title": "Looking up public documentation through a remote connector"
+          },
+          {
+            "id": "ee9be91d-0f35-4650-92ae-1de417357376",
+            "matchTitle": "Access limited to a single local folder, with only the file permissions needed for analysis",
+            "title": "Analyzing files stored in one project folder"
+          },
+          {
+            "id": "e05baa0b-fe70-4c51-8126-6351d88c272a",
+            "matchTitle": "Calendar access restricted to what is needed for agenda preparation, using read-only access if no edits are required",
+            "title": "Preparing a weekly agenda using a calendar connector"
+          },
+          {
+            "id": "6fe4c5cc-538b-4583-9cfc-927dfcdaecee",
+            "matchTitle": "Allow message draft creation, but require approval for any send action",
+            "title": "Drafting emails without allowing them to be sent automatically"
+          }
+        ],
+        "id": "f38f254b-a7aa-410f-8265-013f351de38b",
+        "title": "Match each task scenario to the permission setup that best follows the minimum necessary access principle. Focus on what level of reading, writing, or approval is justified for the task—not on what would be most convenient.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "267f90aa-667f-4c65-bda5-5a24c4252abf",
+        "feedbackCorrect": "Correct. Each match applies least-privilege access by granting only the permissions needed for the stated task. Secure planning means narrowing scope, blocking unnecessary writing, and adding approval when an action could create greater risk.",
+        "feedbackIncorrect": "Incorrect. The best matches are based on minimum necessary access, not maximum convenience. If a task only needs reading, writing should be blocked; if writing is needed, it should be limited and sometimes set to require approval."
+      },
+      {
+        "answers": [
+          {
+            "id": "5a2e184f-c784-447c-8175-506494174be9",
+            "title": "A private framework that trains AI assistants using only internal datasets",
+            "correct": false,
+            "feedback": "This may sound plausible because AI systems often use internal data and proprietary frameworks, but it does not describe MCP’s role. MCP is about standardized interaction with external tools and resources, not a private training method."
+          },
+          {
+            "id": "9c9e0fb4-9cd9-47ad-a189-f073be13aa10",
+            "title": "An automation tool that stores completed workflows inside the AI assistant itself",
+            "correct": false,
+            "feedback": "This option sounds believable because workflow automation is related to MCP’s use cases, but MCP does not mean storing workflows inside the assistant. Its purpose is to enable interaction with external workflows and resources."
+          },
+          {
+            "id": "f9b72c26-3f2e-4610-822b-e6af079a929e",
+            "title": "A security policy that replaces user approval when AI tools access business systems",
+            "correct": false,
+            "feedback": "This choice is relevant because security and access control are associated with AI integrations, but MCP is not a policy that removes approval steps. It is a protocol for structured interaction, not a governance rule."
+          },
+          {
+            "id": "cc0fbd43-d09d-4712-869c-c24ed28ff529",
+            "title": "An open standard that enables AI assistants to interact with external services, files, and workflows",
+            "correct": true,
+            "feedback": "This correctly defines MCP and captures its foundational purpose."
+          }
+        ],
+        "correct": "cc0fbd43-d09d-4712-869c-c24ed28ff529",
+        "corrects": [
+          "cc0fbd43-d09d-4712-869c-c24ed28ff529"
+        ],
+        "id": "a7fecbdb-6655-49e4-810a-925e0bca82cb",
+        "title": "What best describes the Model Context Protocol (MCP)?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "6fbd5bc8-faed-44b3-a03a-e79612791dc7"
+      },
+      {
+        "answers": [
+          {
+            "id": "dae25a97-bd4b-4880-b040-6d0f242b3f10",
+            "matchTitle": "Used to view information in files or folders without changing the stored data",
+            "title": "Reading tools"
+          },
+          {
+            "id": "fd7d4204-2abd-44d1-9b5a-5fddbbe593da",
+            "matchTitle": "Used to make changes that can affect the contents, location, or existence of files and folders",
+            "title": "Writing tools"
+          },
+          {
+            "id": "7353ef02-6978-4a8b-afcb-52f6c045a098",
+            "matchTitle": "A read-only action that helps inspect what is present before any approval for changes is considered",
+            "title": "List or summarize file contents"
+          },
+          {
+            "id": "3ea1d0e2-ab10-4fd5-a47d-3ce5f0c7fb60",
+            "matchTitle": "A set of actions that should be restricted because they can produce unauthorized changes",
+            "title": "Create, edit, move, or delete items"
+          }
+        ],
+        "id": "f6aa961e-de3c-48e6-b517-9badac8092e6",
+        "title": "Match each file connector tool or action category with the outcome it most directly enables during file access. Focus on how the tool affects data: whether it allows safe inspection or makes a change that could alter files or folders.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "12c8db06-2287-4d9c-8a13-b5dfb4acf93a",
+        "feedbackCorrect": "Correct. Reading-related actions are used to inspect files and folders without altering them, while writing-related actions can create, modify, move, or remove data. That distinction is essential for deciding which tools are safe to allow during secure file access.",
+        "feedbackIncorrect": "Incorrect. The key distinction is whether the tool only reveals information or can change data. Reading tools support viewing, listing, or summarizing, while writing tools enable actions such as creating, editing, moving, or deleting files or folders."
+      },
+      {
+        "answers": [
+          {
+            "id": "7ad58c65-1563-4870-855b-7144acde9c05",
+            "title": "Local access works directly on your computer, while cloud access uses remote servers to reach files stored online.",
+            "correct": true,
+            "feedback": "This accurately states the key difference between local and cloud access."
+          },
+          {
+            "id": "99d11f9d-947a-4ca8-9917-9289a846dd92",
+            "title": "Local access and cloud access both work the same way, but cloud access offers faster file summaries.",
+            "correct": false,
+            "feedback": "This is plausible because both connectors can help read files, but the key difference is not that they work the same way. They differ in whether access happens on the local machine or through remote online services."
+          },
+          {
+            "id": "7c5e6838-0bf9-4536-a4a3-383aa2c79e85",
+            "title": "Local access is used in the browser, while cloud access is limited to desktop applications.",
+            "correct": false,
+            "feedback": "This may seem believable because access methods can vary by platform, but the local-versus-cloud distinction is about where files are accessed from, not simply which app is used."
+          },
+          {
+            "id": "3fa588fd-3fd0-4032-a17e-db1202a557ba",
+            "title": "Local access requires remote servers, while cloud access reads files only from your computer.",
+            "correct": false,
+            "feedback": "This option sounds plausible because it mentions both local and cloud access, but it reverses where each type operates. Local access is tied to the user’s computer, while cloud access depends on remote online systems."
+          }
+        ],
+        "correct": "7ad58c65-1563-4870-855b-7144acde9c05",
+        "corrects": [
+          "7ad58c65-1563-4870-855b-7144acde9c05"
+        ],
+        "id": "24986095-33e6-46f5-8ea3-f51471bcdc4c",
+        "title": "Which statement correctly distinguishes local file access from cloud file access when using connectors?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "e0dfe145-3fc6-4e96-a756-7b883e604fd2"
+      },
+      {
+        "answers": [
+          {
+            "id": "47b7d495-3b47-4aec-90a3-32390273691d",
+            "title": "Open the connector URL in a browser to confirm the server is publicly accessible.",
+            "correct": false,
+            "feedback": "Directly opening the MCP server URL is not the correct authenticity check. MCP servers may not respond normally in a browser, and authenticity should be confirmed through the returned source URL and tool call block."
+          },
+          {
+            "id": "a05591f3-826d-40af-ab9e-faec465dc82b",
+            "title": "Ask the assistant to summarize the source again and provide more background details.",
+            "correct": false,
+            "feedback": "Requesting a fuller summary may add context, but it does not prove the connector was used or that the source is official. Verification requires checking evidence in the tool call block and the returned domain."
+          },
+          {
+            "id": "76812b00-8dbc-4a4f-8a4c-4ac7616f43a8",
+            "title": "Check whether the response sounds detailed and matches general expectations.",
+            "correct": false,
+            "feedback": "A response can sound convincing while still being based on model knowledge or fabricated details. Authenticity requires evidence of tool use and source validation, not confidence in the wording."
+          },
+          {
+            "id": "ae4b3901-8ca3-4ac7-bcd2-1a56f2d77085",
+            "title": "Review the tool call block and confirm the returned URL uses an official domain.",
+            "correct": true,
+            "feedback": "This is the strongest verification method because it confirms both that the connector tool was actually used and that the source points to an official site."
+          }
+        ],
+        "correct": "ae4b3901-8ca3-4ac7-bcd2-1a56f2d77085",
+        "corrects": [
+          "ae4b3901-8ca3-4ac7-bcd2-1a56f2d77085"
+        ],
+        "id": "879db044-d5ec-4c61-abc7-508bf5bc5b15",
+        "title": "After an MCP connector returns an answer, which action best verifies that the response is authentic and came from the intended service?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "ce6ebbc4-d320-4948-bb82-6a80b0c0d4ec"
+      },
+      {
+        "answers": [
+          {
+            "id": "51dd167f-1de3-428d-9f56-d7486b390302",
+            "title": "Yellow, because any remote connector requires moderate risk classification.",
+            "correct": false,
+            "feedback": "This sounds plausible because remote access can increase exposure, but risk classification depends on the data, permissions, and context together. A read-only connection to public documentation is still considered low risk."
+          },
+          {
+            "id": "e2a2451b-f93c-4b89-9fc7-8261bda31c4a",
+            "title": "Green, because the connector is limited to reading public information.",
+            "correct": true,
+            "feedback": "This is correct because reading public documentation with read-only access is a low-risk scenario in the traffic light model."
+          },
+          {
+            "id": "1b0a9d4b-21a2-43dc-85fb-698c33755d20",
+            "title": "Yellow, because documentation tasks usually need approval-ready writing permissions.",
+            "correct": false,
+            "feedback": "This mixes a relevant task type with an incorrect permission assumption. A connector used only to read public documentation does not need writing permissions, so that does not justify a yellow classification."
+          },
+          {
+            "id": "d2d32841-74b9-463c-8cc0-84f3fae5be77",
+            "title": "Red, because connector use should be treated as high risk during initial planning.",
+            "correct": false,
+            "feedback": "This includes a related planning idea, but it applies it incorrectly. Initial planning should assess actual data sensitivity and permissions, not automatically assign the highest risk level."
+          }
+        ],
+        "correct": "e2a2451b-f93c-4b89-9fc7-8261bda31c4a",
+        "corrects": [
+          "e2a2451b-f93c-4b89-9fc7-8261bda31c4a"
+        ],
+        "id": "b4941f6c-1ec4-4f57-9352-eef6a44dfa40",
+        "title": "You are completing a secure connection plan for a connector that will read public documentation only. Which risk classification best fits this scenario?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "beb63106-1ee4-4311-8ada-4be4fdd8782e"
+      },
+      {
+        "answers": [
+          {
+            "id": "5b511ed7-8979-43fd-b3f1-af179b4c99db",
+            "title": "All Claude plans support MCP connectors, and the Free plan allows unlimited custom connectors.",
+            "correct": false,
+            "feedback": "This option includes the correct idea that all plans support MCP connectors, but it fails because it misstates the Free plan limit. The Free plan allows one custom connector, not unlimited connectors."
+          },
+          {
+            "id": "e1a3d4fa-1909-423a-bb74-9115f2957a84",
+            "title": "Only Pro, Max, Team, and Enterprise support MCP connectors, while Free supports desktop extensions only.",
+            "correct": false,
+            "feedback": "This choice sounds plausible because desktop extensions are available to users, but it incorrectly excludes the Free plan from MCP connector support. The key distinction is that Free also supports MCP connectors, though it is limited to one custom connector."
+          },
+          {
+            "id": "fbbb263a-8d7f-43f2-aace-255b7b3f8825",
+            "title": "Free, Pro, and Max support MCP connectors, while Team and Enterprise require organizational activation first.",
+            "correct": false,
+            "feedback": "This distractor may seem believable because organizational settings can affect feature availability in some cases, but the plan description itself is incorrect. Team and Enterprise are still Claude plans that support MCP connectors; organizational restrictions do not change the underlying plan support statement being tested here."
+          },
+          {
+            "id": "721c8ae1-bbf2-469f-b2a3-7cf6ae5869ed",
+            "title": "All Claude plans support MCP connectors, and the Free plan allows one custom connector.",
+            "correct": true,
+            "feedback": "This accurately states that Free, Pro, Max, Team, and Enterprise all support MCP connectors, with the Free plan limited to one custom connector."
+          }
+        ],
+        "correct": "721c8ae1-bbf2-469f-b2a3-7cf6ae5869ed",
+        "corrects": [
+          "721c8ae1-bbf2-469f-b2a3-7cf6ae5869ed"
+        ],
+        "id": "ca424ec4-366f-4057-89d7-b835130feb29",
+        "title": "Which Claude account plan description correctly identifies MCP connector support?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "078c4729-1fdc-46f3-9f90-3e7cd943356d"
+      },
+      {
+        "answers": [
+          {
+            "id": "8597c82d-3a81-4f8c-b8e7-3e5a0dbef9b1",
+            "title": "MCP is the custom interface for one service, while an API lets any assistant connect through the same shared format.",
+            "correct": false,
+            "feedback": "This reverses the roles of MCP and APIs. APIs are typically unique to each service, whereas MCP provides the shared connection pattern across compatible services."
+          },
+          {
+            "id": "5c6427b9-7fcc-4dd0-a247-0363ffce16ab",
+            "title": "MCP is a standard protocol that lets assistants use a common connection pattern, while an API is a service-specific interface that still exists behind the scenes.",
+            "correct": true,
+            "feedback": "This correctly identifies MCP as a standard connection protocol and APIs as unique interfaces provided by individual services."
+          },
+          {
+            "id": "1edbd22d-ac37-4129-9844-c96ed28e160a",
+            "title": "MCP replaces the need for APIs by giving assistants direct access to each service without any underlying service interface.",
+            "correct": false,
+            "feedback": "This is incorrect because MCP does not replace APIs. Services still rely on their own interfaces, and MCP provides a standard way for assistants to work with them."
+          },
+          {
+            "id": "ea9b6a78-a765-4cb5-b630-cf195a61e326",
+            "title": "MCP is mainly a workflow builder for multi-step automations, while an API is a permissions system for assistant access.",
+            "correct": false,
+            "feedback": "This confuses MCP with automation orchestrators and mislabels APIs as permissions systems. MCP is a protocol for standardized connections, not a workflow builder."
+          }
+        ],
+        "correct": "5c6427b9-7fcc-4dd0-a247-0363ffce16ab",
+        "corrects": [
+          "5c6427b9-7fcc-4dd0-a247-0363ffce16ab"
+        ],
+        "id": "c5da25e7-96a5-4cd7-87d2-665236b7592a",
+        "title": "Which statement best distinguishes MCP from an API in AI integrations?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "77b4dc78-d006-43a6-b6c3-cc47c4b405a0"
+      },
+      {
+        "answers": [
+          {
+            "id": "3e6fc688-602c-4b82-a31c-50046dfc59e0",
+            "title": "Use the calendar for the weekly agenda, confirm the connector name, grant full calendar editing access, and review revocation steps later if needed.",
+            "correct": false,
+            "feedback": "This option includes a valid purpose and mentions the connector, but it fails to apply minimum necessary access because full editing access exceeds the task need. It also postpones the disconnect and revocation plan instead of defining it in advance."
+          },
+          {
+            "id": "e8d2c920-ef61-4531-ad58-c1c686b5f44c",
+            "title": "Use the calendar for the weekly agenda, choose the connector with the most automation features, grant broad tool access, and keep the connection available for future convenience.",
+            "correct": false,
+            "feedback": "This option sounds practical, but it replaces the framework’s security questions with convenience-based decisions. Feature richness and future convenience do not substitute for publisher trust, minimum access, and planned revocation."
+          },
+          {
+            "id": "bed6c079-bd9e-4ff5-a06c-5de27f69177b",
+            "title": "Use the calendar for the weekly agenda, test whether the connector works first, classify the situation by color, and connect before deciding what permissions are necessary.",
+            "correct": false,
+            "feedback": "This option uses related security ideas such as testing and risk classification, but it applies them in the wrong sequence and leaves minimum necessary access undefined at the decision point. The four-question framework requires permissions planning before connecting."
+          },
+          {
+            "id": "62870da9-8244-48ca-93c2-82a786ee7e41",
+            "title": "Use the calendar only to prepare the weekly agenda, confirm the connector’s trusted publisher and verification, grant read-only calendar access, and define how access will be disconnected and revoked after use.",
+            "correct": true,
+            "feedback": "This option correctly includes all four framework questions: purpose, connector and publisher, minimum necessary access, and how access will be removed afterward."
+          }
+        ],
+        "correct": "62870da9-8244-48ca-93c2-82a786ee7e41",
+        "corrects": [
+          "62870da9-8244-48ca-93c2-82a786ee7e41"
+        ],
+        "id": "6cd568b8-c145-4016-957a-1e9c938f720f",
+        "title": "You are planning to connect an AI assistant to a calendar tool to prepare a weekly agenda. Which option best applies the four-question decision framework for secure connector planning?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "220c9b91-d4b5-479a-b52d-510edeea1de4"
+      },
+      {
+        "answers": [
+          {
+            "id": "9730bb35-0e1e-45bd-8637-14843e772f14",
+            "title": "True",
+            "correct": true,
+            "feedback": "Correct. Embedded instructions in a file are treated as file content, not valid commands. The assistant should ignore them rather than execute them."
+          },
+          {
+            "id": "13714a1b-5a81-477d-8d70-bada6794b392",
+            "title": "False",
+            "correct": false,
+            "feedback": "Incorrect. The lesson states that content read through a connector is considered data, not an instruction to follow. If a file contains directions for the assistant, those directions should be ignored, not executed."
+          }
+        ],
+        "correct": "9730bb35-0e1e-45bd-8637-14843e772f14",
+        "corrects": [
+          "9730bb35-0e1e-45bd-8637-14843e772f14"
+        ],
+        "id": "68b12ea4-9813-4575-8f19-687845b8cbe9",
+        "title": "Instructions embedded inside a file should be treated as data and not executed by the assistant.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "854c426d-66f6-4d6c-be13-2c555e4997a2"
+      },
+      {
+        "answers": [
+          {
+            "id": "800dee31-0eed-4917-8234-85d79a45ff06",
+            "title": "Set the search tool to Needs approval, the update tool to Always allow, and the unused tool to Blocked.",
+            "correct": false,
+            "feedback": "This option correctly blocks the unnecessary tool, but it misapplies the higher-risk setting by allowing a modifying tool to run without confirmation while adding unnecessary friction to the read-only tool."
+          },
+          {
+            "id": "c42c42ba-d70a-454c-99ed-09365243bff8",
+            "title": "Set the search tool to Always allow, the update tool to Needs approval, and the unused tool to Blocked.",
+            "correct": true,
+            "feedback": "This configuration matches best practices by allowing low-risk read-only activity, requiring confirmation for changes, and removing unnecessary access."
+          },
+          {
+            "id": "6428375e-18c8-4a7b-ba1a-88276dfe452d",
+            "title": "Set the search tool to Always allow, the update tool to Blocked, and the unused tool to Needs approval.",
+            "correct": false,
+            "feedback": "This option correctly allows the read-only tool, but it prevents a needed modifying tool from being used and keeps an unnecessary tool available, which does not align with the task requirements."
+          },
+          {
+            "id": "0e2b101a-b89c-4002-9f5a-564d5403fd9b",
+            "title": "Set the search tool to Blocked, the update tool to Needs approval, and the unused tool to Always allow.",
+            "correct": false,
+            "feedback": "This option correctly requires approval for the modifying tool, but it disables the useful low-risk tool and grants unnecessary access to a tool that is not needed for the task."
+          }
+        ],
+        "correct": "c42c42ba-d70a-454c-99ed-09365243bff8",
+        "corrects": [
+          "c42c42ba-d70a-454c-99ed-09365243bff8"
+        ],
+        "id": "d1c195ff-c5c0-4432-8e2a-4e57b5a4ac68",
+        "title": "You are configuring tool permissions for a Claude connector that includes one read-only search tool, one tool that updates records, and one tool your task does not require. Which permission setup is the safest and most appropriate?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "c532fed3-3d2d-41c3-b7e5-907ff5dcf3f4"
+      },
+      {
+        "answers": [
+          {
+            "id": "04d1f9c7-19d8-4e80-a24c-3b1cad7f10a5",
+            "title": "The main problem is that once assistants connect to services, MCP guarantees safe access and accurate results across all of them.",
+            "correct": false,
+            "feedback": "This choice refers to important boundaries of MCP, but it incorrectly treats guarantees about security and accuracy as the integration problem MCP solves. MCP standardizes connection, not trustworthiness, permissions, or response quality."
+          },
+          {
+            "id": "5adc4222-cca1-4516-b136-5a637bf8a34e",
+            "title": "The main problem is that MCP replaces service APIs so developers no longer need services to expose interfaces.",
+            "correct": false,
+            "feedback": "This includes a related idea about APIs, but MCP does not replace APIs. Services still use APIs behind the scenes; MCP standardizes how assistants discover and use them."
+          },
+          {
+            "id": "6e21a15b-8f14-4209-9067-c36c5ecbf651",
+            "title": "The main problem is that assistants cannot use any service unless they are built by the same vendor.",
+            "correct": false,
+            "feedback": "This sounds plausible because MCP is vendor-neutral, but the issue is not that assistants and services must come from the same company. The central problem is the growing number of custom integrations required across many assistants and services."
+          },
+          {
+            "id": "132cc294-0276-4578-84c6-99df33b0f245",
+            "title": "Without a shared protocol, the team would need many separate assistant-to-service integrations, which becomes hard to scale and maintain.",
+            "correct": true,
+            "feedback": "This correctly describes the N × M challenge that MCP addresses by standardizing how assistants connect to services."
+          }
+        ],
+        "correct": "132cc294-0276-4578-84c6-99df33b0f245",
+        "corrects": [
+          "132cc294-0276-4578-84c6-99df33b0f245"
+        ],
+        "id": "9ddcc2e2-1ef3-4a43-9748-816342f858c5",
+        "title": "A team uses five AI assistants and ten external services. Which statement best explains the integration problem MCP is designed to solve?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "6e1e13e7-8dae-46a4-948d-d2ccd871d62f"
+      },
+      {
+        "answers": [
+          {
+            "id": "f491e3e6-b746-48cd-b09f-1d78b16bc820",
+            "title": "Data exfiltration",
+            "correct": false,
+            "feedback": "Data exfiltration is the unauthorized transfer of data to an external destination; it can result from prompt injection, but it is not the primary risk shown in the scenario itself."
+          },
+          {
+            "id": "7c89e836-4c3f-431b-9863-01e7bab26fae",
+            "title": "Excessive scope",
+            "correct": false,
+            "feedback": "Excessive scope means granting broader access than necessary for a task, such as access to an entire inbox when only one message is needed."
+          },
+          {
+            "id": "533aeb0d-cb6d-446c-9ae4-35d4740b0f14",
+            "title": "Indirect prompt injection",
+            "correct": true,
+            "feedback": "This is indirect prompt injection because the assistant encounters hidden instructions inside external content and may be influenced to act against the user’s intent."
+          },
+          {
+            "id": "913289d0-2d83-4a02-a792-3c204eac3901",
+            "title": "Tool poisoning",
+            "correct": false,
+            "feedback": "Tool poisoning involves manipulating a tool’s name or description to mislead the assistant, not placing hidden instructions inside content the assistant reads."
+          }
+        ],
+        "correct": "533aeb0d-cb6d-446c-9ae4-35d4740b0f14",
+        "corrects": [
+          "533aeb0d-cb6d-446c-9ae4-35d4740b0f14"
+        ],
+        "id": "1f116cae-2eaf-4ae5-86f7-65b39665076e",
+        "title": "A connector reads an email that contains hidden text instructing the assistant to ignore the user and send the message contents to an external site. Which security risk does this scenario illustrate?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "da57c60b-e904-4099-852d-cb663ddd79ca"
+      },
+      {
+        "answers": [
+          {
+            "id": "f376a222-04b3-4abd-9df5-bcba8b1789a9",
+            "title": "False",
+            "correct": false,
+            "feedback": "Incorrect. This statement is true. The lesson lists acting on the user's behalf—such as creating events, drafting emails, or moving files—as a practical MCP use case, provided the assistant has access to the right tools and permissions."
+          },
+          {
+            "id": "7688c435-0539-436e-944e-b2741d20e6f7",
+            "title": "True",
+            "correct": true,
+            "feedback": "Correct. The material explains that MCP can let AI assistants act on a user's behalf, including tasks such as creating events or moving files, when the connected service offers those tools and the necessary permissions are granted."
+          }
+        ],
+        "correct": "7688c435-0539-436e-944e-b2741d20e6f7",
+        "corrects": [
+          "7688c435-0539-436e-944e-b2741d20e6f7"
+        ],
+        "id": "5b09b88c-6625-44c8-abf7-c2a9cd64d111",
+        "title": "MCP can enable an AI assistant to create events or move files on a user's behalf when the connected tools and permissions allow it.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "0a17d7c6-a86c-4adc-8152-87a056b8f067"
+      },
+      {
+        "answers": [
+          {
+            "id": "e73bb843-498f-4b0d-a05d-b1c87f06d9f4",
+            "title": "Open the MCP URL in a browser, confirm the page loads, then add the connector and query it in any existing conversation.",
+            "correct": false,
+            "feedback": "Opening the MCP URL in a browser is not the required setup step, and connector use still depends on activating it within a conversation."
+          },
+          {
+            "id": "d04ad833-bab4-464b-9096-1bcfc1b5136c",
+            "title": "Remove any old custom connector if needed, add the connector with the MCP URL, start a new conversation, and activate the connector in that conversation before querying.",
+            "correct": true,
+            "feedback": "This is the correct sequence for setting up and using the connector in Claude."
+          },
+          {
+            "id": "57ad13f0-225e-4496-af36-fa463e4a5b99",
+            "title": "Start a new conversation first, ask the assistant to use OpenAI Docs, and the connector will be created automatically from the request.",
+            "correct": false,
+            "feedback": "A connector must be added in settings before it can be activated and used in a conversation."
+          },
+          {
+            "id": "120741b0-a903-4c4e-be97-5fbe99a3563b",
+            "title": "Add the connector in Claude, enter a token when prompted, and the connector will remain active for all future conversations automatically.",
+            "correct": false,
+            "feedback": "The OpenAI Docs connector does not require authentication, and activation is required separately in each new conversation."
+          }
+        ],
+        "correct": "d04ad833-bab4-464b-9096-1bcfc1b5136c",
+        "corrects": [
+          "d04ad833-bab4-464b-9096-1bcfc1b5136c"
+        ],
+        "id": "2f5f8a1c-412b-43a4-8bea-845af2641359",
+        "title": "In Claude, what sequence best completes the process of connecting and using a new remote MCP connector for a query?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "22afa0c6-3ba8-45e5-9762-35b4f04fe6c6"
+      },
+      {
+        "answers": [
+          {
+            "id": "0b9b3559-677b-4e54-baac-44d810b9cb0a",
+            "title": "False",
+            "correct": false,
+            "feedback": "Incorrect. Manual approval is important because it requires you to explicitly approve writing actions before they happen, helping prevent unauthorized or accidental changes."
+          },
+          {
+            "id": "d2733d2d-35b7-4d3b-af4a-c6585bc4ca0d",
+            "title": "True",
+            "correct": true,
+            "feedback": "Correct. Manual approval adds a safety step by requiring explicit confirmation before writing actions occur, which helps prevent unauthorized or accidental changes."
+          }
+        ],
+        "correct": "d2733d2d-35b7-4d3b-af4a-c6585bc4ca0d",
+        "corrects": [
+          "d2733d2d-35b7-4d3b-af4a-c6585bc4ca0d"
+        ],
+        "id": "ce483afc-d3b8-459d-a947-c56b96890d84",
+        "title": "Manual approval helps prevent unauthorized or accidental changes when an assistant performs writing actions.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "d612a851-4228-477b-b3a8-89046aede2ff"
+      },
+      {
+        "answers": [
+          {
+            "id": "511cb19e-9711-4af8-80a1-071cf115f056",
+            "title": "prepare–review–verify–undo"
+          },
+          {
+            "id": "523b0fd5-6774-4474-8b0f-dd648aa79bef",
+            "title": "prepare-review-verify-undo"
+          }
+        ],
+        "id": "ab85d417-7a9b-4f04-89a0-a8ebc1c82f63",
+        "title": "The method that ensures safe action execution is __________.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "049949ce-63e4-4fa8-b76f-96411520cad9",
+        "feedbackCorrect": "Correct. The prepare–review–verify–undo method is the structured process taught in the lesson for executing actions safely and keeping them reversible.",
+        "feedbackIncorrect": "Incorrect. The lesson states that safe action execution is ensured by the prepare–review–verify–undo method, which helps you control changes and reverse them if needed."
+      },
+      {
+        "answers": [
+          {
+            "id": "60e262ff-7faa-4e6c-8663-66814a802279",
+            "title": "Connect the account first and begin summarizing files before reviewing which directories are available.",
+            "correct": false,
+            "feedback": "Starting file work before checking accessible directories skips the verification step that prevents unintended exposure."
+          },
+          {
+            "id": "011b3153-693e-4ad7-9e03-b9a1144a5cb7",
+            "title": "Authorize a shared project folder and verify that teammates can also open the same files.",
+            "correct": false,
+            "feedback": "This focuses on collaboration rather than least-privilege access. Shared folders are not the safest choice for controlled testing or restricted file access."
+          },
+          {
+            "id": "0185b788-0ad6-490d-a633-c44c43e04a1a",
+            "title": "Authorize only the dedicated test folder and confirm that it is the only accessible directory.",
+            "correct": true,
+            "feedback": "This follows the secure practice of limiting access to one specific folder and verifying that no other directories are exposed."
+          },
+          {
+            "id": "413985f2-85f2-4918-b8e0-84427263805a",
+            "title": "Authorize the main work documents folder and confirm that the needed files appear there.",
+            "correct": false,
+            "feedback": "This includes a verification step, but it grants access too broadly. A main documents folder can expose unrelated or sensitive files beyond the task."
+          }
+        ],
+        "correct": "0185b788-0ad6-490d-a633-c44c43e04a1a",
+        "corrects": [
+          "0185b788-0ad6-490d-a633-c44c43e04a1a"
+        ],
+        "id": "475eeee4-e837-4e04-88c4-5c4ce22df745",
+        "title": "You are setting up a file connector for a practice task with sensitive data nearby. Which action best follows secure folder permission setup and verification?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "e171c99e-58d1-4e59-afea-e5992b5425cc"
+      },
+      {
+        "answers": [
+          {
+            "id": "76aa2ab0-bf00-496a-ab8f-cdd913597850",
+            "title": "Windows 10+"
+          }
+        ],
+        "id": "2d20e22f-edd1-4182-807e-09b1a5c44376",
+        "title": "Claude Desktop requires macOS 13+, __________, or Linux (Ubuntu 22.04+/Debian 12+).",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "2b5b52e5-270c-4f3f-a937-768cd107ad86",
+        "feedbackCorrect": "Correct. Windows 10+ is one of the supported operating system requirements for Claude Desktop, along with macOS 13+ and Linux distributions Ubuntu 22.04+ or Debian 12+.",
+        "feedbackIncorrect": "Incorrect. The missing requirement is Windows 10+, which is listed as one of the supported operating systems for Claude Desktop."
+      },
+      {
+        "answers": [
+          {
+            "id": "1670ce56-ed66-41d8-ad82-d98f707430ad",
+            "title": "official login screen"
+          }
+        ],
+        "id": "01c63748-dcd9-44ec-b8f8-ef4b6abaf668",
+        "title": "A legitimate connector should always authenticate through the service’s __________ rather than asking for credentials in the chat.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "031b0893-777c-4415-830a-b1568c088c26",
+        "feedbackCorrect": "Correct. Legitimate connectors authenticate through the service’s official login screen, which helps protect passwords, tokens, and API keys from being exposed in chat.",
+        "feedbackIncorrect": "Incorrect. The correct answer is \"official login screen\" because trustworthy connectors use the service’s official authentication flow instead of asking users to paste credentials into the conversation."
+      }
+    ],
+    "settings": {
+      "passingScore": 80,
+      "retryCount": -1,
+      "revealAnswers": "all",
+      "shuffleAnswerChoices": false,
+      "randomizeQuestionOrder": false
+    },
+    "title": "Quiz",
+    "type": "quiz",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "A6GxuiVLrHaIYJQ0N2rtL7ZCDLnK5DG_",
+    "createdAt": "2026-10-18T18:38:04.191Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Quiz",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": null,
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 7,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-10-18T18:38:04.191Z"
+  }
+}

@@ -3,9 +3,9 @@
 Data: 18/10/2026 · Grau de liberdade: moderado (plano completo aprovado) · Curso **não publicado** com alunos.
 
 **Pacote final para a LMS:**
-`01_FINALIZADO_subir-na-LMS/notebooklm-hands-on-scorm12-Iwwx9t04-FINAL-com-blocos-v1.zip`
-(cópia idêntica de `05_ARQUIVOS_DE_TRABALHO/hands-on/blocos/saidas/notebooklm-hands-on-scorm12-Iwwx9t04-REVISADO-v1.zip`).
-O `.zip` original do Articulate está em `03_VERSOES_ANTIGAS/original-articulate/` e não foi modificado.
+`01_FINALIZADO_subir-na-LMS/notebooklm/notebooklm-hands-on-scorm12-Iwwx9t04-FINAL-com-blocos-v1.zip`
+(cópia idêntica de `05_ARQUIVOS_DE_TRABALHO/notebooklm/hands-on/blocos/saidas/notebooklm-hands-on-scorm12-Iwwx9t04-REVISADO-v1.zip`).
+O `.zip` original do Articulate está em `03_VERSOES_ANTIGAS/notebooklm/original-articulate/` e não foi modificado.
 
 ---
 
@@ -21,7 +21,7 @@ Roteiro: `Pesquisa Conteudo Onda 1/Ementa Completa/notebooklm-essentials/roteiro
 
 ## 2. Fase A — revisão de texto
 
-Detalhes em `02_RELATORIOS/Relatorio_HandsOn_Fase_A_Revisao_de_Texto.md`. Resumo: 3 lições, **176 campos**;
+Detalhes em `02_RELATORIOS/notebooklm/Relatorio_HandsOn_Fase_A_Revisao_de_Texto.md`. Resumo: 3 lições, **176 campos**;
 Kit LGPD restaurado com links (lição 1), dez hábitos com o texto completo, tom "mão na massa" do roteiro;
 enunciado da múltipla resposta da lição 1 reescrito para combinar com o gabarito (que não foi alterado).
 6 edições em `feedbackCorrect`/`feedbackIncorrect` foram reprovadas pelo validador e desfeitas.
@@ -44,7 +44,7 @@ enunciado da múltipla resposta da lição 1 reescrito para combinar com o gabar
 (e não process), porque o process ainda não foi testado como inserção.
 
 **Arquivos:** HTML embutidos (inline), sem pastas anexadas. Fonte em
-`05_ARQUIVOS_DE_TRABALHO/hands-on/blocos/trabalho/html/src/` (o semáforo, a auditoria e o checklist foram
+`05_ARQUIVOS_DE_TRABALHO/notebooklm/hands-on/blocos/trabalho/html/src/` (o semáforo, a auditoria e o checklist foram
 adaptados dos HTML já testados no Essentials); roteiros em `.../trabalho/roteiros/`, gerados por `gerar_roteiros.py`.
 
 ## 4. Validações
@@ -90,4 +90,4 @@ Articulate e já estavam no pacote original; a correção usa `answers[].correct
 
 ## 7. Entregável
 
-`Onda 1/NotebookLM/01_FINALIZADO_subir-na-LMS/notebooklm-hands-on-scorm12-Iwwx9t04-FINAL-com-blocos-v1.zip`
+`Onda 1/NotebookLM/01_FINALIZADO_subir-na-LMS/notebooklm/notebooklm-hands-on-scorm12-Iwwx9t04-FINAL-com-blocos-v1.zip`

@@ -1,7 +1,7 @@
 # Relatório de edição — NotebookLM - Essentials (fase A: revisão de texto)
 
 Data: 17/10/2026 · Pacote de entrada: `notebooklm-essentials-scorm12-eKTseo8Q.zip` (não modificado)
-Saída: `notebooklm-essentials-scorm12-eKTseo8Q-REVISADO.zip` (hoje em `03_VERSOES_ANTIGAS/fase-A-so-texto/`; versão intermediária, sem os blocos novos da fase B)
+Saída: `notebooklm-essentials-scorm12-eKTseo8Q-REVISADO.zip` (hoje em `03_VERSOES_ANTIGAS/notebooklm/fase-A-so-texto/`; versão intermediária, sem os blocos novos da fase B)
 
 ## Material-fonte e mapeamento
 

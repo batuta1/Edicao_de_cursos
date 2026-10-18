@@ -1,0 +1,479 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Getting Ready: Access and Environment Verification",
+  "lesson": {
+    "description": "",
+    "id": "748c475c-6d54-41dd-933f-82c93b3c86a8",
+    "items": [
+      {
+        "id": "b1o04mtz1wkc3py1enqyly0i",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qx91m0zny19djuupwoepknuf",
+            "heading": "Preparing for Secure AI Assistant Integration",
+            "paragraph": "<p>Before you can safely connect AI assistants like Claude or ChatGPT to your tools and data, it’s essential to ensure your environment and accounts are properly set up. A secure and smooth setup is the foundation for leveraging connectors responsibly, protecting your information, and making the most of what the Model Context Protocol (MCP) has to offer. This lesson will guide you through the critical steps to verify your readiness for secure AI integration.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "a8728740-8efa-494c-bfb7-a1f04e83d4ca"
+      },
+      {
+        "id": "ypw0ex7rt0f7ven778k2jqyx",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f2qp4vb3wh3b10w4ttk1g8i4",
+            "paragraph": "<p>Get ready to start your MCP journey by understanding exactly what you’ll accomplish in this lesson. Here are the learning objectives you’ll achieve:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "cc0f5db5-a875-4cf6-ae44-feee21d66ae6"
+      },
+      {
+        "id": "frv2ccbsyg8wrh63zyaafn6n",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "vu3nsm9yu4ryhdnir66pb0ox",
+            "number": "1",
+            "paragraph": "<p>Identify Claude Account Plan</p>"
+          },
+          {
+            "id": "jvsv44qkuuc0ubj4neeuu53f",
+            "number": "2",
+            "paragraph": "<p>Verify Claude Desktop Requirements</p>"
+          },
+          {
+            "id": "x9ljjck9ebn5ssajbri2o9si",
+            "number": "3",
+            "paragraph": "<p>Recognize ChatGPT MCP Support</p>"
+          },
+          {
+            "id": "xmtxplcefvh2bhcfaa2za77a",
+            "number": "4",
+            "paragraph": "<p>Understand Prerequisite Accounts and Devices</p>"
+          },
+          {
+            "id": "y7pmygjax1halib39wmddjtn",
+            "number": "5",
+            "paragraph": "<p>Complete Readiness Checklist</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "472dcfe0-32b8-4ff9-a24a-8861d3fa779f"
+      },
+      {
+        "id": "e42c336a-0dd5-480a-87eb-08ce3ea709aa",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "457b3758-050e-4341-a0f8-cc12c2f72403",
+            "paragraph": "<p><strong>Requisito técnico:</strong> internet ativa e conta Claude em qualquer plano. Diferentemente de outros recursos do Claude, os conectores MCP estão disponíveis também no plano gratuito, com o limite de um conector personalizado; os conectores do Google Workspace e as extensões do Claude Desktop estão disponíveis a todos os usuários. No ChatGPT, a disponibilidade de Plugins e de servidor MCP personalizado varia por plano e por conta e não foi confirmada para todos os planos; por isso, o ChatGPT é utilizado apenas como variação.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "a9a1da32-d490-48c9-8e1b-3a59975048af"
+      },
+      {
+        "id": "e3d88c1a-9b53-44fc-bda3-4dabbfb2c971",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "a08b368e-ed3a-4fb1-a40f-2ea76e37d2da",
+            "paragraph": "<p>📌 Planos, requisitos e rótulos de interface foram extraídos da documentação oficial da Anthropic, da OpenAI e do projeto MCP consultada em 17/10/2026. A ajuda mais recente está, em grande parte, apenas em inglês; os rótulos são apresentados em inglês com a tradução provável entre parênteses. Itens marcados com [conferir] devem ser validados antes da publicação.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "68c141f4-fc3d-467a-aa6d-41c97bf9ce75"
+      },
+      {
+        "id": "kbc52x2c9hybx3a7xpwend59",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ytaoo8crkh85vbi5jgmzdlo0",
+            "heading": "Required Accounts and Resources",
+            "paragraph": "<p>Explore each section below to review the required accounts and resources for this course. Expand each item for details and tips to ensure you’re ready to proceed.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "4a02c9ad-54b0-4b8d-a839-27033fbe4beb"
+      },
+      {
+        "id": "dbd2541d-6f6a-443a-aab0-2151c1fcdb9d",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "5fa254da-4536-4dfd-8041-fbb8b3b25087",
+            "title": "Claude Account (Plans and Slots)",
+            "description": "<p>You’ll need a Claude account—any plan will work, including Free, Pro, Max, Team, or Enterprise. The free plan allows one custom connector; if you already have one installed, you’ll need to remove it before adding another. Google Workspace connectors and Claude Desktop extensions are available to all users.</p>"
+          },
+          {
+            "id": "c0c4ad1a-1515-4f23-9c7a-9973197946f4",
+            "title": "Claude Desktop (System Requirements)",
+            "description": "<p>Claude Desktop is required for certain modules and is available for macOS 13 or later, Windows 10 or later, and Linux (Ubuntu 22.04+ or Debian 12+, beta). Make sure your system meets these requirements before proceeding. If you’re on a corporate device, installation may require IT approval; a web alternative is available if needed.</p>"
+          },
+          {
+            "id": "e5d41a9d-3691-4613-a866-0761f19de58b",
+            "title": "Personal Google Account (Usage Guidance)",
+            "description": "<p>A personal Google account is needed for exercises involving Google Workspace connectors. Avoid using work or school accounts, as organizational policies may restrict connector access. Using a personal account ensures full functionality and avoids data privacy issues.</p>"
+          },
+          {
+            "id": "27f0ad5a-6b48-4ecf-87f8-281d537f2329",
+            "title": "ChatGPT Account (Plugin/MCP Availability)",
+            "description": "<p>ChatGPT’s support for Plugins or custom MCP servers varies by plan, region, and account. Some accounts show these features as \"Plugins\" or \"Apps\". If unavailable, simply note this and complete all activities using Claude—no paid plan is required for this course.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "decd3a45-c7e5-4dd8-b77e-ecd01fa5cae5"
+      },
+      {
+        "id": "32c5b3a9-d74d-40fc-b7c4-263093db71a4",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "58a02719-f756-4544-86b3-add955730020",
+            "type": "intro",
+            "title": "Prepare for MCP Integration",
+            "isHidden": false,
+            "description": "<p>Begin by preparing your accounts and devices for MCP integration. This process will help you confirm that you have everything needed for the course exercises.</p>"
+          },
+          {
+            "id": "05591354-9012-4a83-bf21-2532cbf46e39",
+            "type": "summary",
+            "title": "Confirm Your Readiness",
+            "isHidden": false,
+            "description": "<p>Once you’ve completed these steps, you’ll have a clear record of your readiness and can confidently proceed to the next lesson.</p>"
+          },
+          {
+            "id": "1cafa190-cb90-4b31-af83-0fb381c575ee",
+            "type": "step",
+            "title": "Log Into Claude and Check Connector Slot",
+            "isHidden": false,
+            "description": "<p>Abrir o Claude no navegador e entrar com a conta escolhida.</p><p>Acessar Claude &gt; Personalizar &gt; Conectores (Customize &gt; Connectors) e verificar se já existe algum conector personalizado. No plano gratuito, havendo um, será necessário removê-lo no Módulo 3.</p>"
+          },
+          {
+            "id": "007e70ef-2f3d-4d0b-8cd7-884dafe10e6d",
+            "type": "step",
+            "title": "Verify OS and Claude Desktop Feasibility",
+            "isHidden": false,
+            "description": "<p>Verificar o sistema operacional do computador e decidir se o Claude Desktop será instalado.</p>"
+          },
+          {
+            "id": "61e6c7c7-4de9-44a5-a82d-7d10b7ed81da",
+            "type": "step",
+            "title": "(Optional) Check ChatGPT for MCP Server Support",
+            "isHidden": false,
+            "description": "<p>Opcional: abrir ChatGPT &gt; Plugins (ou Apps) e verificar se o botão + oferece a opção Add custom MCP server.</p>"
+          },
+          {
+            "id": "25700e83-c8cc-4893-a7ac-77f16c97874f",
+            "type": "step",
+            "title": "Fill Out Verification Record",
+            "isHidden": false,
+            "description": "<p>Preencher o registro de verificação da subseção Mão na massa.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "e0de3af8-402f-491e-95c4-34b4fa3fc271"
+      },
+      {
+        "id": "0dda966d-34d0-4a66-873d-ad8937f08a2d",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "66e5fdae-7b1c-4602-8ed1-91fc8db76859",
+            "paragraph": "<table border=\"1\" cellpadding=\"4\" cellspacing=\"0\">\n  <tr>\n    <th>Situação</th>\n    <th>Causa provável</th>\n    <th>Procedimento</th>\n  </tr>\n  <tr>\n    <td>Personalizar não aparece na barra lateral</td>\n    <td>Interface em transição ou idioma</td>\n    <td>Procurar \"Customize\" ou o ícone de configurações; os nomes do diretório unificado mudaram em 2026</td>\n  </tr>\n  <tr>\n    <td>Conta Team/Enterprise sem conectores</td>\n    <td>Bloqueio pela organização</td>\n    <td>Utilizar conta pessoal; a habilitação cabe ao proprietário da organização</td>\n  </tr>\n  <tr>\n    <td>ChatGPT sem Plugins nem Apps</td>\n    <td>Plano, região ou implantação</td>\n    <td>Registrar \"indisponível\" e seguir o curso no Claude</td>\n  </tr>\n  <tr>\n    <td>Computador sem permissão de instalação</td>\n    <td>Política corporativa</td>\n    <td>Seguir a alternativa web do Módulo 4</td>\n  </tr>\n</table>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "707dc9a5-e669-4893-982d-20d0c6e73177"
+      },
+      {
+        "id": "ebx207hka1uuolvomzo8ff1g",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zcgi25nwncp7npxcf10xh6vv",
+            "heading": "MCP Setup & Troubleshooting Flashcards",
+            "paragraph": "<p>Review each flashcard to reinforce your understanding of key terms and concepts essential for MCP setup and troubleshooting.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "970b1706-fdc5-44a4-b5c4-d7683d6136d4"
+      },
+      {
+        "id": "w9aa41ezlazbcv063omhjgmj",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "tixc6libxmhe47tbjktpl08q",
+            "back": {
+              "type": "description",
+              "description": "<p>Claude offers Free, Pro, Max, Team, and Enterprise plans. All support MCP connectors, but the free plan allows only one custom connector.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Claude Account Plans</strong>"
+            }
+          },
+          {
+            "id": "m35vkqdrpjdp0gutijedbabr",
+            "back": {
+              "type": "description",
+              "description": "<p>A connector slot is the space available to add a custom connector in Claude. Free plans allow one; check availability before proceeding.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Connector Slot</strong>"
+            }
+          },
+          {
+            "id": "i7i5f6rjo7gsdjqswxv75g4g",
+            "back": {
+              "type": "description",
+              "description": "<p>Claude Desktop requires macOS 13+, Windows 10+, or Linux (Ubuntu 22.04+/Debian 12+). Installation may need IT approval on work devices.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Claude Desktop Requirements</strong>"
+            }
+          },
+          {
+            "id": "g54mq75cvene5fn9ty39c51x",
+            "back": {
+              "type": "description",
+              "description": "<p>ChatGPT may show Plugins or Apps, and only some accounts allow adding a custom MCP server. Availability depends on plan and rollout.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>ChatGPT Plugins/Apps vs. MCP Server</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "3e28f4eb-38bb-47d6-a7b8-bd517942088c"
+      },
+      {
+        "id": "b2fffcfc-8e58-4a3b-a6a0-e2429c0c7b51",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "c2fc1db3-8770-46f6-ac86-ab664162fc23",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Which Claude account plans allow you to use MCP connectors?",
+            "answers": [
+              {
+                "id": "9a80a971-b13a-4e1f-a852-164e26a90208",
+                "title": "Only Pro and Max",
+                "correct": false,
+                "feedback": "Incorrect. All plans, including Free, support MCP connectors."
+              },
+              {
+                "id": "58b979b2-aae5-4580-96ca-09b5d231f91b",
+                "title": "Only Team and Enterprise",
+                "correct": false,
+                "feedback": "Incorrect. All plans, including Free, support MCP connectors."
+              },
+              {
+                "id": "f3acbf4b-bf9c-450f-945e-86b29bdb46cb",
+                "title": "All plans, including Free",
+                "correct": true,
+                "feedback": "Correct! All Claude plans support MCP connectors, but the Free plan allows only one custom connector."
+              },
+              {
+                "id": "8486acb4-7805-4b22-af8d-303c38cec2d5",
+                "title": "Only Free and Pro",
+                "correct": false,
+                "feedback": "Incorrect. All plans, including Free, support MCP connectors."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "45062d49-ea5e-4481-829b-a0efe29abe72"
+      },
+      {
+        "id": "b26b4168-435c-4110-b762-fccc4b06e30f",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "906a55bd-a7d7-4bce-a6d4-9d34e7a5668e",
+            "paragraph": "<ul><li>Conta Claude: [e-mail] — plano: [Free | Pro | Max | Team | Enterprise]</li><li>Conectores personalizados já instalados: [nenhum | quais]</li><li>Claude Desktop: [instalado | instalarei no Módulo 4 | não poderei instalar]</li><li>Sistema operacional: [Windows | macOS | Linux] — versão: [ ]</li><li>Conta Google para os exercícios: [pessoal] — e-mail: [ ]</li><li>ChatGPT: a área aparece como [Plugins | Apps | não aparece]; opção \"Add custom MCP server\": [sim | não]</li></ul>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "ed731aab-f5a1-45f5-83f5-a480a9a69203"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Getting Ready: Access and Environment Verification",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "A6GxuiVLrHaIYJQ0N2rtL7ZCDLnK5DG_",
+    "createdAt": "2026-10-18T18:35:35.031Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-10-18T18:36:01.966Z"
+  }
+}

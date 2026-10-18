@@ -4,9 +4,9 @@ Data: 17–18/10/2026 · Grau de liberdade: moderado (plano completo aprovado, i
 Curso **não publicado** com alunos: inserções em qualquer posição.
 
 **Pacote final para a LMS:**
-`01_FINALIZADO_subir-na-LMS/notebooklm-essentials-scorm12-eKTseo8Q-FINAL-com-blocos-v2.zip` (cópia idêntica de `05_ARQUIVOS_DE_TRABALHO/essentials/notebooklm-essentials-blocos/saidas/notebooklm-essentials-scorm12-eKTseo8Q-REVISADO-v2.zip`). Atenção: o `-REVISADO.zip` em `03_VERSOES_ANTIGAS/fase-A-so-texto/` é só a fase A, sem os blocos novos.
+`01_FINALIZADO_subir-na-LMS/notebooklm/notebooklm-essentials-scorm12-eKTseo8Q-FINAL-com-blocos-v2.zip` (cópia idêntica de `05_ARQUIVOS_DE_TRABALHO/notebooklm/essentials/notebooklm-essentials-blocos/saidas/notebooklm-essentials-scorm12-eKTseo8Q-REVISADO-v2.zip`). Atenção: o `-REVISADO.zip` em `03_VERSOES_ANTIGAS/notebooklm/fase-A-so-texto/` é só a fase A, sem os blocos novos.
 
-O `.zip` original do Articulate (`03_VERSOES_ANTIGAS/original-articulate/notebooklm-essentials-scorm12-eKTseo8Q.zip`) não foi modificado.
+O `.zip` original do Articulate (`03_VERSOES_ANTIGAS/notebooklm/original-articulate/notebooklm-essentials-scorm12-eKTseo8Q.zip`) não foi modificado.
 
 ---
 
@@ -27,7 +27,7 @@ Roteiro: `Pesquisa Conteudo Onda 1/Ementa Completa/notebooklm-essentials/roteiro
 
 ## 2. Fase A — revisão de texto
 
-Detalhes em `02_RELATORIOS/Relatorio_Essentials_Fase_A_Revisao_de_Texto.md`. Resumo:
+Detalhes em `02_RELATORIOS/notebooklm/Relatorio_Essentials_Fase_A_Revisao_de_Texto.md`. Resumo:
 
 - 8 lições editadas, **362 campos de texto** (description 145, feedback 86, paragraph 71, title 44, heading 16).
 - Correções de conteúdo importantes: endereços do Kit LGPD restaurados (lição 4); prompts "Mão na massa" das
@@ -64,7 +64,7 @@ Detalhes em `02_RELATORIOS/Relatorio_Essentials_Fase_A_Revisao_de_Texto.md`. Res
   só vale dentro de accordion e abas). Removidos na v2; nenhum outro bloco de texto do curso tinha o problema.
 
 **Arquivos HTML** (embutidos no JSON, variante inline; nenhuma pasta anexada):
-fonte em `05_ARQUIVOS_DE_TRABALHO/essentials/notebooklm-essentials-blocos/trabalho/html/src/` (CSS comum em `comum.css`, montagem por `build.py`),
+fonte em `05_ARQUIVOS_DE_TRABALHO/notebooklm/essentials/notebooklm-essentials-blocos/trabalho/html/src/` (CSS comum em `comum.css`, montagem por `build.py`),
 roteiros em `trabalho/roteiros/` (gerados por `gerar_roteiros.py`). Todos autocontidos, sem recursos externos,
 cor do tema `#152f4d`, fontes do sistema, `aria-live` nos feedbacks.
 
@@ -117,4 +117,4 @@ cor do tema `#152f4d`, fontes do sistema, `aria-live` nos feedbacks.
 
 ## 7. Entregável
 
-`Onda 1/NotebookLM/01_FINALIZADO_subir-na-LMS/notebooklm-essentials-scorm12-eKTseo8Q-FINAL-com-blocos-v2.zip`
+`Onda 1/NotebookLM/01_FINALIZADO_subir-na-LMS/notebooklm/notebooklm-essentials-scorm12-eKTseo8Q-FINAL-com-blocos-v2.zip`
