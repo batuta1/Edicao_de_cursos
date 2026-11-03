@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checklist da revisão em seis pontos</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<section class="check" aria-labelledby="titulo">
+  <header class="topo">
+    <img src="revisao.svg" alt="" class="ilustra" width="72" height="72">
+    <div>
+      <span class="rotulo">Ferramenta</span>
+      <h1 id="titulo">Checklist da revisão em seis pontos</h1>
+      <p class="sub">Use com a apresentação reescrita aberta ao lado da fonte. Marque cada ponto depois de conferir.</p>
+    </div>
+  </header>
+
+  <div class="progresso" aria-hidden="true"><div class="barra" id="barra"></div></div>
+  <p class="contagem" id="contagem" role="status" aria-live="polite">0 de 6 pontos conferidos</p>
+
+  <ul class="itens" id="itens">
+    <!-- perguntas tiradas do accordion "Refinar e revisar: os seis pontos" (Lição 2) -->
+    <li><label><input type="checkbox"><span><strong>Afirmações factuais</strong>Toda afirmação está no material de origem?</span></label></li>
+    <li><label><input type="checkbox"><span><strong>Números e indicadores</strong>Cada número confere com a origem e é o mesmo nas duas versões?</span></label></li>
+    <li><label><input type="checkbox"><span><strong>Citações</strong>A citação existe, está correta e atribuída a quem a disse?</span></label></li>
+    <li><label><input type="checkbox"><span><strong>Mudanças de sentido na reescrita</strong>A afirmação reescrita diz o mesmo que a original, com a mesma força e as mesmas ressalvas?</span></label></li>
+    <li><label><input type="checkbox"><span><strong>Slides removidos, deslocados ou alterados</strong>Saiu algum slide que deveria ficar? A ordem do argumento mudou?</span></label></li>
+    <li><label><input type="checkbox"><span><strong>Aderência ao modelo visual</strong>O tema institucional continua aplicado a todos os slides?</span></label></li>
+  </ul>
+
+  <div class="final" id="final" hidden>
+    Revisão completa. Lembre: nenhuma conferência de números detecta mudanças de sentido — o ponto 4 é o que mais exige atenção.
+  </div>
+  <button type="button" class="recomecar" id="recomecar">Recomeçar</button>
+</section>
+<script src="script.js"></script>
+</body>
+</html>

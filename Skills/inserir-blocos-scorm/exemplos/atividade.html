@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monte o ciclo</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #5a6775; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; }
+  .ativ {
+    padding: 26px 22px 24px; border-radius: 18px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%);
+    border: 1px solid var(--linha);
+  }
+  .rotulo {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px;
+  }
+  h1 { margin: 12px 0 4px; font-size: 24px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); font-size: 15px; }
+
+  .trilha { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  .vaga {
+    min-height: 58px; border-radius: 12px; border: 2px dashed var(--linha);
+    display: flex; align-items: center; gap: 10px; padding: 10px 12px; color: var(--suave); font-size: 14px;
+    background: #fff;
+  }
+  .vaga .n { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+             background: var(--azul-claro); color: var(--azul-2); font-weight: 700; font-size: 13px; flex: 0 0 auto; }
+  .vaga.cheia { border-style: solid; border-color: var(--azul-2); color: var(--azul); font-weight: 700; }
+  .vaga.cheia .n { background: var(--azul); color: #fff; }
+  .vaga.cheia { animation: encaixa .3s ease; }
+
+  .opcoes { display: flex; flex-wrap: wrap; gap: 10px; }
+  .opcoes button {
+    font: inherit; font-size: 15px; font-weight: 600; color: var(--azul);
+    background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px;
+    padding: 9px 16px; cursor: pointer; transition: background .15s ease, transform .15s ease;
+  }
+  .opcoes button:hover { background: var(--azul-claro); }
+  .opcoes button:focus-visible { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes button:disabled { opacity: .35; cursor: default; background: #fff; }
+  .opcoes button.errou { animation: treme .35s ease; border-color: var(--erro); color: var(--erro); }
+
+  .feedback { margin-top: 16px; min-height: 22px; font-size: 14.5px; border-radius: 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 12px 14px; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 14px 16px; font-weight: 600; }
+
+  @keyframes treme { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+  @keyframes encaixa { from { transform: scale(.96); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .vaga.cheia, .opcoes button.errou { animation: none; } }
+</style>
+</head>
+<body>
+<section class="ativ" aria-labelledby="titulo">
+  <span class="rotulo">Atividade</span>
+  <h1 id="titulo">Monte o ciclo</h1>
+  <p class="sub">Clique nas etapas na ordem em que acontecem. Atenção: uma das opções não é uma etapa.</p>
+
+  <ol class="trilha" aria-label="Ordem montada">
+    <li class="vaga"><span class="n">1</span><span class="txt">?</span></li>
+    <li class="vaga"><span class="n">2</span><span class="txt">?</span></li>
+    <li class="vaga"><span class="n">3</span><span class="txt">?</span></li>
+    <li class="vaga"><span class="n">4</span><span class="txt">?</span></li>
+  </ol>
+
+  <div class="opcoes" role="group" aria-label="Etapas disponíveis">
+    <button type="button" data-etapa="refinar">Refinar</button>
+    <button type="button" data-etapa="criar">Criar</button>
+    <button type="button" data-etapa="revisar">Revisar (5ª etapa)</button>
+    <button type="button" data-etapa="entender">Entender</button>
+    <button type="button" data-etapa="editar">Editar</button>
+  </div>
+
+  <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Ordem e dicas tiradas do texto da Lição 3 ("Um ciclo, não procedimentos isolados").
+  var ORDEM = ['criar', 'editar', 'entender', 'refinar'];
+  var NOMES = { criar: 'Criar', editar: 'Editar', entender: 'Entender', refinar: 'Refinar' };
+  var DICAS = {
+    criar: 'O ciclo começa pelo rascunho, criado a partir do material de origem.',
+    editar: 'Depois do rascunho, edita-se de forma delimitada o que não corresponde ao pretendido.',
+    entender: 'Antes de refinar, consulta-se a apresentação quanto à narrativa e às lacunas.',
+    refinar: 'Por último, refina-se para o público específico.'
+  };
+  var passo = 0, concluido = false;
+  var vagas = document.querySelectorAll('.vaga');
+  var fb = document.getElementById('feedback');
+
+  function mostrar(msg, tipo) { fb.textContent = msg; fb.className = 'feedback ' + tipo; }
+
+  function avisarConclusao() {
+    // O sandbox do Rise escuta esta mensagem e marca o bloco como concluido
+    // (settings.hasCustomCompletion = true no JSON do bloco).
+    if (concluido) return;
+    concluido = true;
+    window.parent.postMessage({ type: 'complete' }, '*');
+  }
+
+  document.querySelectorAll('.opcoes button').forEach(function (bt) {
+    bt.addEventListener('click', function () {
+      var etapa = bt.getAttribute('data-etapa');
+      bt.classList.remove('errou');
+      if (etapa === 'revisar') {
+        void bt.offsetWidth; bt.classList.add('errou');
+        mostrar('A revisão não é uma quinta etapa acrescentada ao fim: ela acompanha todas as outras.', 'erro');
+        return;
+      }
+      if (etapa !== ORDEM[passo]) {
+        void bt.offsetWidth; bt.classList.add('errou');
+        mostrar('Ainda não. ' + DICAS[ORDEM[passo]], 'erro');
+        return;
+      }
+      var vaga = vagas[passo];
+      vaga.classList.add('cheia');
+      vaga.querySelector('.txt').textContent = NOMES[etapa];
+      bt.disabled = true;
+      passo++;
+      if (passo < ORDEM.length) {
+        mostrar('Isso. Qual vem depois?', 'ok');
+      } else {
+        document.querySelector('[data-etapa="revisar"]').disabled = true;
+        mostrar('Ciclo completo: criar, editar, entender e refinar — com a revisão acompanhando cada etapa. Você já pode continuar a lição.', 'ok');
+        avisarConclusao();
+      }
+    });
+  });
+</script>
+</body>
+</html>
