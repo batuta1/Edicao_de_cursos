@@ -1,0 +1,855 @@
+================================================================
+CONTEÚDO BRUTO — Cursor - Essentials
+Pesquisa realizada em: 3 de novembro de 2026 (o prompt indica 18/10/2026 como "data de hoje"; a coleta foi feita em 03/11/2026 e todas as datas de acesso abaixo são 03/11/2026)
+Ferramenta(s): Cursor (Anysphere, hoje subsidiária da SpaceX/SpaceXAI). Versão do aplicativo desktop mais recente nas notas de versão: 3.27 (outubro de 2026). Interface "Agents Window" lançada com o Cursor 3 (2 de abril de 2026). Modelos próprios atuais: Grok 4.7, Grok 4.6, Grok 4.5 e Composer 2.5. Cursor CLI ("agent"), app iOS (beta público desde 29/06/2026) e Origin (hospedagem de código, beta desde 17/08/2026).
+================================================================
+
+Convenções deste arquivo
+- Números entre colchetes, como [11], remetem à lista da seção 20.
+- (ajuda en) = nome de menu/botão tirado da documentação/central de ajuda oficial em inglês. (interface) = visto na tela. Nesta pesquisa NÃO houve acesso à interface do aplicativo instalado: todos os nomes de menus vêm de (ajuda en). Não existe central de ajuda oficial em pt-BR: o endereço cursor.com/pt-BR/help/... devolve o mesmo texto em inglês [2].
+- A documentação oficial do Cursor oferece cada página também em Markdown (acrescentando ".md" ao endereço). Os trechos transcritos foram tirados dessas versões.
+
+----------------------------------------------------------------
+0. RESUMO EXECUTIVO
+----------------------------------------------------------------
+O Cursor é um editor de código (IDE) com IA embutida, derivado do VS Code, fabricado pela Anysphere. Hoje ele se apresenta como "a coding agent for building ambitious software" [11][72]: o centro do produto é o Agent, um assistente que lê o projeto, edita vários arquivos, roda comandos no terminal e testes. Serve a desenvolvedores e a quem já programa um pouco (inclusive quem vem de Lovable/Replit), porque o aluno descreve a tarefa em linguagem natural e revisa o resultado em "diffs".
+O que mudou recentemente (abril a outubro de 2026): Cursor 3 com a Agents Window (abr/2026); compra da Anysphere pela SpaceX por US$ 60 bi (concluída em ago/2026); novo modelo comercial "The X Subscription" (Free, Plus US$ 8, Premium US$ 30, Super US$ 100, Ultra US$ 200), lançado em 12/10/2026, que junta Cursor, Grok e X [26][54]; modelos próprios Grok 4.x e Composer 2.5; Origin (hospedagem de código); app para iPhone.
+TRÊS ALERTAS PARA QUEM VAI CRIAR O CURSO:
+1) A "edição inline" (Cmd+K / Ctrl+K) FOI APOSENTADA em 26/10/2026. Hoje Cmd/Ctrl+K apenas abre o painel do Agent com o trecho selecionado [5][22][53]. A tarefa observável do curso ("usar chat, edição inline e agente") precisa ser reescrita pela equipe; ver seções 5, 11 e 13.
+2) Planos e preços mudaram em 12/10/2026 e continuam instáveis: o plano gratuito (Free) e o Plus (US$ 8) NÃO dão acesso a modelos de terceiros (Claude, GPT, Gemini), a Cloud Agents nem ao Bugbot; isso só a partir do Premium (US$ 30) [30]. O desconto estudantil foi encerrado para novas adesões em 25/06/2026 [28]. Não há preço oficial em reais.
+3) Dependência de fornecedores em movimento: a OpenAI anunciou em 28/08/2026 que vai encerrar o fornecimento de modelos ao Cursor (data proposta: 12/11/2026) [58][59]. Lista de modelos, nomes de planos e nomes de menus podem mudar antes de o curso ir ao ar. Além disso, a interface do Cursor não tem tradução oficial para o português (Agent/Chat em inglês) [66].
+
+----------------------------------------------------------------
+1. IDENTIDADE E HISTÓRICO
+----------------------------------------------------------------
+1.1 O que é
+- [CONFIRMADO] Abertura da documentação oficial: "Cursor is a coding agent for building ambitious software." [72 - página cursor.com/docs]
+- [CONFIRMADO] O Agent "is Cursor's AI assistant. It can search your codebase, edit files, and run terminal commands." [3]
+- [CONFIRMADO] O Cursor usa os mesmos atalhos padrão do VS Code e importa extensões, temas, configurações e atalhos do VS Code [4][22]. A documentação de busca diz que o Cursor suporta "multi-root workspaces" com link para a documentação do VS Code [51].
+- [VERIFICAR] "Fork" (derivação) do VS Code: a ajuda oficial não usa a palavra "fork" nas páginas lidas; fontes independentes afirmam que é um fork do VS Code (Built In, 13/05/2026 [56]; Alura, 20/11/2025 [65]).
+
+1.2 Fabricante
+- [VERIFICAR] Anysphere, Inc., fundada em 2022 por Michael Truell, Sualeh Asif, Arvid Lunnemark e Aman Sanger (Lunnemark saiu em out/2025) [55 - Wikipedia, fonte não oficial; dado coerente com a imprensa]. Fonte primária da fabricante não encontrada.
+- [CONFIRMADO] O endereço de chave de assinatura do repositório Linux oficial ainda se chama "anysphere.asc" [1], ou seja, o nome Anysphere segue aparecendo em endereços técnicos.
+
+1.3 Mudança de dono (SpaceX/xAI) — linha do tempo
+- [VERIFICAR] 21/04/2026: acordo de parceria de computação com opção de compra da Cursor pela SpaceX por US$ 60 bilhões (fontes: Wikipedia [55]; Fortune 22/04/2026 [60]).
+- [VERIFICAR] 16/06/2026: SpaceX exerce a opção (The National, 16/06/2026 [61]; Wikipedia [55]).
+- [VERIFICAR] 14/08/2026: aquisição concluída; a Cursor passa a ser subsidiária integral da SpaceX, dentro da divisão SpaceXAI (a xAI foi absorvida pela SpaceX em fev/2026) [55]. Uma fonte secundária fala em 15/08; a maioria diz 14/08.
+- [CONFIRMADO] A documentação atual do Cursor se refere ao fabricante dos modelos Grok como "SpaceXAI" / "SpaceXSI" e diz que Grok 4.7, 4.6 e 4.5 foram "Jointly trained by Cursor and SpaceXAI" [30].
+- Nome do produto: continua "Cursor". Não houve troca de marca do editor. Houve, sim, mudança comercial: a assinatura nova se chama "The X Subscription" e é cobrada em grok.com, não mais em cursor.com [26][27].
+
+1.4 Linha do tempo de produto (mudanças mais importantes)
+- [VERIFICAR] Out/2023: rodada seed de US$ 8 mi (OpenAI Startup Fund) [55]. Lançamento público do editor em 2023 (guia em pt-BR, não oficial).
+- [VERIFICAR] Jun-jul/2025: mudança de preços do plano Pro (de pedidos para créditos), com reclamações e reembolsos [55][56].
+- [VERIFICAR] Out/2025: Cursor 2.0, com agentes em paralelo [55].
+- [CONFIRMADO] 02/04/2026: "Agents Window is generally available with Cursor 3, released on April 2, 2026." [12]
+- [CONFIRMADO] 25/06/2026: fim de novas adesões ao desconto estudantil [28].
+- [VERIFICAR] 29/06/2026: app Cursor para iOS em beta público, planos pagos, exige iOS 26 [63][64].
+- [VERIFICAR] 17/08/2026: Origin (hospedagem de código/git) em beta para planos pagos [62].
+- [VERIFICAR] 28/08/2026: OpenAI anuncia que vai encerrar o contrato de modelos com o Cursor; data proposta 12/11/2026 [58][59].
+- [CONFIRMADO] 23/09/2026: Rollouts e Security Review (planos Teams e Enterprise) [47].
+- [CONFIRMADO] 06/10/2026: Remote control para agentes locais pelo app iOS [47].
+- [CONFIRMADO] 12/10/2026: lançamento da The X Subscription (Grok, Grok Bot, Cursor e X Premium em um plano) [54].
+- [CONFIRMADO] 20/10/2026: Agent SDK [47].
+- [CONFIRMADO] (ajuda oficial + fórum oficial, resposta de funcionário) 26/10/2026: Cmd+K (edição inline e geração de comandos no terminal) aposentado: "Cmd+K, including generating commands in the terminal, was retired today" (Colin, fórum oficial, 26/10/2026) [53]. A central de ajuda confirma: "Cmd + K used to open inline edit, which has been replaced by this workflow." [5]
+- [CONFIRMADO] Versão mais recente nas notas de versão em 03/11/2026: 3.27 [47].
+
+----------------------------------------------------------------
+2. ACESSO, PLANOS E REQUISITOS
+----------------------------------------------------------------
+2.1 Conta
+- [CONFIRMADO] É preciso uma conta Cursor: "A Cursor account. Sign up free at cursor.com if you don't have one." [2]
+- [CONFIRMADO] Novos clientes já começam na The X Subscription; quem assinava antes continua no plano "legacy" [26][27].
+- [CONFIRMADO] Gerenciamento da assinatura nova: grok.com/dashboard/billing; planos antigos: cursor.com/dashboard/billing [26].
+
+2.2 Planos atuais (The X Subscription) — fonte com data: página de ajuda e docs acessadas em 03/11/2026; anúncio de 12/10/2026 [54]
+[CONFIRMADO] Tabela oficial [26][30]:
+  Free ........ US$ 0 ............ uso "Limited"
+  Plus ........ US$ 8/mês ........ uso "Base"
+  Premium ..... US$ 30/mês ....... "4x Plus" (4 vezes o uso incluído do Plus)
+  Super ....... US$ 100/mês ...... "15x Plus"
+  Ultra ....... US$ 200/mês ...... "50x Plus"
+  Teams ....... US$ 30, 100 ou 200 por assento/mês, uso conforme o nível do assento
+  Enterprise .. sob consulta, uso "Pooled"
+- [CONFIRMADO] Anual: US$ 80/ano (Plus), US$ 300/ano (Premium), US$ 1.000/ano (Super), US$ 2.000/ano (Ultra). "Prices exclude tax." [26]
+- [CONFIRMADO] O que cada plano libera no Cursor [30]:
+  Free: "Agent and Chat with limited usage." A ajuda acrescenta: "You can use Agent, Chat, and Tab completions with Cursor models (Grok and Composer), along with standard X." [26]
+  Plus: Agent com os modelos próprios (Grok 4.7, 4.6, 4.5 e Composer 2.5) "at fixed settings: Fast is off, effort is medium"; "No Auto, Cloud Agents, Automations, Bugbot, Origin, third-party models, or your own API keys." [30]
+  Premium: tudo do Plus com 4x o uso; acrescenta Cloud Agents, Automations, Origin, Bugbot, modelos de terceiros a preço de API e Grok Bot [30].
+  Super: 15x o uso do Plus e prioridade em horários de pico. Ultra: 50x o uso do Plus e acesso antecipado [30].
+- [CONFIRMADO] Modelos de terceiros (Claude, GPT, Gemini) não entram no pacote incluído; no Premium e acima são pagos "at API list price from the first request, paid from your prepaid credit" [30]. Free e Plus não incluem modelos de terceiros [30][31].
+- [CONFIRMADO] Uso incluído: um "pool" semanal, compartilhado entre Cursor e Grok (editor, CLI, Cloud Agents, Grok Bot, apps Grok); "It refreshes weekly" [30]. Uso não utilizado não acumula [29].
+- [CONFIRMADO] Ao acabar o pool semanal: esperar a renovação, usar crédito pré-pago (top-ups, com "Auto Top-up" opcional) ou fazer upgrade; "Requests are never downgraded in quality or speed." [30]. Crédito pré-pago expira 365 dias após a compra [29].
+- [CONFIRMADO] Limite de gasto: "monthly additional usage limit", gerenciado em "Additional usage credits" em grok.com/dashboard/billing (ajuda en) [30].
+- NÃO ENCONTRADO: quantidade numérica de uso do plano Free (a fonte diz apenas "Limited"). Procurado em [26][29][30] e na página de preços.
+- NÃO ENCONTRADO: preço oficial em reais. A página de preços e o anúncio da xAI mostram só dólares e dizem que o plano chega "to everyone globally" [54]. Procurado em cursor.com/pricing, ajuda de billing e x.ai/news/x-subscription.
+- [SUGESTÃO] Conversão aproximada para o aluno brasileiro deve ser feita pela equipe na data de publicação, lembrando que cartões brasileiros em compras internacionais pagam IOF e que "Prices exclude tax".
+
+2.3 Planos antigos ("legacy") ainda ativos para quem já assinava
+- [CONFIRMADO] Hobby (grátis), Start (só Índia, ₹649/mês), Pro (US$ 20/mês), Pro+ (US$ 60/mês), Ultra (US$ 200/mês), Teams Standard (US$ 40/usuário/mês), Teams Premium (US$ 120/usuário/mês). Têm dois pools mensais (Cursor Models e Other Models) e "on-demand usage" [26][73].
+- [CONFIRMADO] Trocar do plano antigo para a The X Subscription é opcional e permanente: "The switch is permanent. It can't be undone, and Support can't undo it for you." [27]
+
+2.4 Plano estudantil
+- [CONFIRMADO] "Cursor discontinued new sign-ups for the legacy student discount on June 25, 2026." [28]
+- [CONFIRMADO] Hoje: graduandos podem obter créditos/descontos em eventos presenciais e on-line "starting this fall"; mestrandos, doutorandos, pesquisadores e educadores podem pedir créditos por formulário [28].
+- NÃO ENCONTRADO: se esses eventos/créditos valem para o Brasil. A página não lista países [28]. Há registro de evento comunitário "Cursor além do Código - Curitiba" na plataforma Luma [76] (comunidade, sem conteúdo verificável).
+
+2.5 Disponibilidade no Brasil e em português
+- [CONFIRMADO] Modelos de alguns provedores podem não aparecer em certas regiões; a ajuda recomenda usar Auto, outro modelo ou chave própria [34]. A ajuda não cita o Brasil como região restrita.
+- [CONFIRMADO] Não há documentação oficial em pt-BR: cursor.com/pt-BR/help/getting-started/install.md devolve texto em inglês (acesso 03/11/2026).
+- [VERIFICAR] Interface: dá para instalar o pacote de idioma do VS Code (Command Palette > "Configure Display Language"), mas os painéis próprios do Cursor (Agent/Chat, Settings) continuam majoritariamente em inglês; há pedido aberto de localização pt-BR no fórum oficial [66][79]. Fonte: fórum (comunidade), não confirmado em documentação.
+- [VERIFICAR] Estimativa de terceiros (TheirStack) aponta o Brasil entre os países com maior uso; número não oficial [77].
+
+2.6 Plataformas e requisitos de sistema
+- [CONFIRMADO] macOS 12 (Monterey) ou superior, instalador .dmg, Apple Silicon e Intel; Windows 10 ou superior, instalador .exe; Linux via apt (Debian/Ubuntu, recomendado), dnf (RHEL/Fedora) ou AppImage [1].
+- [CONFIRMADO] "The apt and yum packages are preferred over AppImage. They provide desktop icons, automatic updates, and CLI tools." [1]
+- [CONFIRMADO] Também há: Cloud Agents pelo navegador em cursor.com/agents [3]; CLI no terminal [42]; app iOS [47].
+- [VERIFICAR] App iOS exige iOS 26.0+ e planos pagos (fontes de imprensa) [63][64]. Não há app Android citado na documentação (NÃO ENCONTRADO; procurado em [47] e na ajuda "mobile-app").
+- NÃO ENCONTRADO: requisitos mínimos de memória RAM/processador. Procurado em [1][2] e em cursor.com/download.
+
+----------------------------------------------------------------
+3. PRIMEIROS PASSOS (passo a passo oficial)
+----------------------------------------------------------------
+3.1 Instalar [CONFIRMADO] [2] (ajuda en)
+ 1. Ir a cursor.com/download.
+ 2. Clicar no botão de download do seu sistema.
+ 3. Abrir o arquivo baixado.
+ 4. Mac: arrastar o Cursor para a pasta Applications. Windows: rodar o instalador e seguir os passos. Linux: instalar via apt ou dnf, ou extrair o AppImage e executar.
+ 5. Abrir o Cursor pelo menu de aplicativos ou área de trabalho.
+ 6. Entrar (sign in) com a conta Cursor quando for pedido.
+ "Get Cursor running on your machine in under five minutes." [2]
+
+3.2 Importar configurações do VS Code [CONFIRMADO] [4] (ajuda en)
+ 1. Abrir Cursor Settings: Mac Cmd+Shift+J; Windows/Linux Ctrl+Shift+J.
+ 2. Ir a General > Account.
+ 3. Em "VS Code Import", clicar em "Import".
+ Isso traz extensões, temas, configurações e atalhos. Alternativa: exportar um perfil no VS Code e importar manualmente [4].
+ Atenção: o Cursor usa o registro Open VSX, não o Marketplace da Microsoft; nem toda extensão existe lá [4][45].
+
+3.3 Abrir um projeto [CONFIRMADO] [3] (ajuda en)
+ 1. Abrir o Cursor.
+ 2. Clicar em File > Open Folder.
+ 3. Selecionar a pasta do projeto.
+
+3.4 Primeiro uso do Agent [CONFIRMADO] [3][5] (ajuda en)
+ 1. Abrir o painel do Agent: Mac Cmd+I; Windows/Linux Ctrl+I.
+ 2. Digitar o pedido (exemplo oficial: "Add a dark mode toggle to the settings page.").
+ 3. Enviar (Return). O Agent explora o código, edita arquivos e mostra as mudanças.
+ 4. Acompanhar as edições na "diff view" e rejeitar o que não quiser.
+
+3.5 Roteiro do Quickstart oficial [CONFIRMADO] [1]
+ a) Instalar e entrar; escolher uma pasta e começar por uma tarefa pequena.
+ b) Pedir ao Agent (Cmd I) que explique o projeto. Prompt oficial: "Explain this codebase. Point me to the main entry points, key modules, and anything I should read before making changes."
+ c) Fazer uma mudança pequena. Prompt oficial: "Suggest three small, safe improvements in this codebase. Explain the tradeoffs and wait for me to choose one."
+ d) Revisar o diff e pedir que o Cursor rode as verificações do projeto ("tests, the type checker, linting, or a local build").
+ e) Para mudanças maiores, usar Plan Mode (Shift+Tab no campo do Agent).
+ Observação: o Quickstart só mostra atalhos de Mac (Cmd). Equivalentes Windows/Linux usam Ctrl [3][22].
+
+3.6 Duas "caras" do Cursor 3 [CONFIRMADO] [12]
+- Editor clássico (IDE) e "Agents Window" (janela centrada em agentes). Para abrir a Agents Window no editor: Cmd+Shift+P > "Open Agents Window". Para voltar: Cmd+Shift+P > "Open IDE" (ajuda en). "You can switch back to the editor anytime, or have both open simultaneously."
+- [SUGESTÃO] Para um curso Essentials, convém padronizar em UMA das duas interfaces (provavelmente o editor clássico, mais próximo do que o aluno de VS Code conhece) e citar a outra só como alternativa.
+
+----------------------------------------------------------------
+4. CONCEITOS E GLOSSÁRIO
+----------------------------------------------------------------
+(Definições simples em [SUGESTÃO] quando são redação nossa; analogias oficiais marcadas [CONFIRMADO] com fonte.)
+- IDE (Integrated Development Environment / ambiente de desenvolvimento integrado): [SUGESTÃO] programa que junta num só lugar o editor de texto do código, o explorador de pastas, o terminal e ferramentas de teste e versão. Analogia: a "bancada de trabalho" do programador.
+- Editor com "IA nativa": [SUGESTÃO] editor em que a IA não é um complemento instalado depois, mas faz parte do produto (autocompletar, chat e agente integrados ao editor, ao terminal e ao git).
+- VS Code / fork: [SUGESTÃO] VS Code é o editor gratuito da Microsoft; "fork" é uma cópia do código-fonte que outra empresa passa a desenvolver por conta própria. Por isso o Cursor "parece" o VS Code e aceita boa parte de suas extensões [4][45].
+- Agent (agente): [CONFIRMADO] "Agent is Cursor's AI assistant. It searches your codebase, edits multiple files, runs terminal commands, and fixes errors on its own." [5] Analogia oficial: "Think of agents like fast junior developers who need clear direction, who also can easily forget things, so they require oversight." [50 - capítulo Agents do Learn]
+- Modelo (model / LLM): [CONFIRMADO] analogia oficial: "Think of these models like extremely powerful text autocomplete." [50 - How AI models work]
+- Token: [CONFIRMADO] "You can think of tokens like the 'words' that AI models actually understand." [50 - Tokens & pricing]
+- Contexto / janela de contexto (context window): [CONFIRMADO] "Every chat shares a fixed context window with the model." Quando enche, o Cursor resume partes antigas da conversa [15]. Analogia oficial: "Think of the context like a long list, where the AI model keeps a working memory for the conversation." [50 - Context]
+- Anel de contexto (context ring): [CONFIRMADO] indicador ao lado do campo de prompt que mostra o quanto a janela está cheia; clicar abre o detalhamento (System prompt, Tools, Rules, Skills, MCP, Subagents, Summarized conversation, Conversation) [15].
+- Tab: [CONFIRMADO] "Tab is Cursor's AI-powered autocomplete. It suggests code as you type" [6].
+- Modos do Agent: Agent, Ask, Plan, Debug [CONFIRMADO] [5] (ver seção 5).
+- Diff / diff view: [SUGESTÃO] tela que mostra lado a lado (ou em linhas verdes e vermelhas) o que foi acrescentado e o que foi removido no código. [CONFIRMADO] "The diff view shows changes made by the agent." [1]
+- Checkpoint: [CONFIRMADO] "Checkpoints save snapshots of your codebase during an Agent session." São locais e separados do Git [11]. [SUGESTÃO] Analogia: "ponto de salvamento" de videogame.
+- @ mention (menção com @): [CONFIRMADO] digitar @ no chat para anexar arquivos, pastas, terminais, chats anteriores, diffs do git ou o navegador ao pedido [19].
+- Rules (regras): [CONFIRMADO] "Rules give Agent persistent instructions for your project." [24] Analogia oficial: "You can think of them as always-included instructions that shape how the agent works with your code." [50 - Customizing agents]
+- AGENTS.md / CLAUDE.md: [CONFIRMADO] arquivos Markdown na raiz do projeto com instruções que o Cursor lê automaticamente [24].
+- .cursorignore: [CONFIRMADO] arquivo que bloqueia o acesso do Agent/Tab/@ a arquivos e pastas [20][21].
+- Privacy Mode: [CONFIRMADO] "Privacy Mode ensures your code is never used for training by Cursor or other AI model providers." [32]
+- Run Mode / Auto-review / Allowlist / Sandbox: [CONFIRMADO] modos que decidem quando o Agent pode executar comandos sem pedir aprovação [18] (ver seção 8).
+- Cloud Agents (antes "Background Agents"): [CONFIRMADO] agentes que rodam em máquinas virtuais na nuvem, "so you can close your laptop and check the result later" [40].
+- Bugbot: [CONFIRMADO] "Bugbot reviews your pull requests and catches bugs, security issues, and code quality problems." [38]
+- Pull request (PR): [SUGESTÃO] pedido para juntar ("mesclar") as alterações de um ramo ao código principal, com espaço para revisão e comentários.
+- Commit / Git: [SUGESTÃO] Git é o sistema que guarda o histórico de versões do código; um commit é um "registro fotográfico" de um conjunto de mudanças com uma mensagem.
+- MCP (Model Context Protocol): [CONFIRMADO] forma de conectar ferramentas externas; "All MCP connections need your approval." [17] (aprofundamento fica no curso MCP - Essentials).
+- Subagente (subagent): [CONFIRMADO] agente especializado que o Agent cria para pesquisa, comandos ou navegador, "Each subagent runs in its own context window" [5].
+- Skill: [CONFIRMADO] instruções reutilizáveis chamadas com "/" no chat; podem virar "Custom Mode" [15].
+- Auto / Cursor Router: [CONFIRMADO] "Auto balances intelligence, cost, and reliability through Cursor Router." Nos planos individuais existe só o modo "Cost" (o antigo Auto) [26]. Observação: o plano Plus não inclui Auto [30].
+- Pool semanal de uso: [CONFIRMADO] cota incluída no plano, renovada toda semana e compartilhada com o Grok [30].
+- TDD (Test-Driven Development / desenvolvimento guiado por testes): [CONFIRMADO] o Learn oficial descreve o ciclo: escrever testes primeiro, confirmar que falham, fazer commit dos testes, pedir o código, fazer commit do código [48]. [SUGESTÃO] Analogia: escrever o gabarito da prova antes de resolver a prova.
+- Teste unitário: [SUGESTÃO] pequeno programa que verifica automaticamente se uma função devolve o resultado esperado; "passou" (verde) ou "falhou" (vermelho).
+- Linter / type checker: [CONFIRMADO] no Learn: "Linting catches style and pattern violations"; "Type checking catches structural errors" [49].
+- Prompt injection / alucinação: [CONFIRMADO] "AI can behave unexpectedly due to prompt injection, hallucinations, and other issues." [17]
+- Worktree: [CONFIRMADO] cópia isolada do repositório Git para cada agente trabalhar sem misturar mudanças [12].
+- Origin: [CONFIRMADO] hospedagem de código/git do próprio Cursor (planos Premium e acima) [30]. Fora do escopo do Essentials.
+
+----------------------------------------------------------------
+5. FUNCIONALIDADES
+----------------------------------------------------------------
+(Para cada uma: o que faz / onde fica / plano / limitações. Nomes (ajuda en).)
+
+5.1 Tab (autocompletar)
+- [CONFIRMADO] Sugere código enquanto se digita, com base em edições recentes, código ao redor e erros do linter. Aceitar tudo: Tab. Rejeitar: Esc ou continuar digitando. Aceitar palavra a palavra: Mac Cmd+Seta direita; Win/Linux Ctrl+Seta direita. Sugestões aparecem em cinza [6].
+- [CONFIRMADO] Edita várias linhas, adiciona imports e sugere edições coordenadas; após aceitar, apertar Tab de novo leva ao próximo ponto de edição ("jump-in-file"); pode sugerir edições em outro arquivo ("portal window" no rodapé) [6].
+- [CONFIRMADO] Ligar/desligar: clicar no indicador "Tab" no canto inferior direito (Snooze, Disable globally, Disable for specific extensions) ou Cursor Settings > Tab [6].
+- Plano: [CONFIRMADO] Free inclui "Tab completions" [26]. NÃO ENCONTRADO: limite numérico de sugestões no Free.
+- [CONFIRMADO] Regras (Rules) não se aplicam ao Tab [24].
+
+5.2 Edição inline (Cmd+K / Ctrl+K) — APOSENTADA
+- [CONFIRMADO] "Select the code, then press Cmd + L or Cmd + K on Mac (Ctrl + L or Ctrl + K on Windows/Linux). Agent opens with those lines referenced in the input, ready for your instructions. Cmd + K used to open inline edit, which has been replaced by this workflow." [5]
+- [CONFIRMADO] (fórum oficial, resposta de funcionário da Cursor) Data: 26/10/2026. A mensagem exibida é "Cmd+K Has Been Retired. Select code and press Cmd+L to add it to Agent." Motivo dado: "Use of Cmd+K had dropped a long way from its peak as more of this kind of work moved into Agent, and keeping a second inline system maintained alongside Agent was no longer something we could justify, so it was folded into Agent." (Colin, 28/10/2026) [53]
+- [CONFIRMADO] Dica do mesmo funcionário para pedidos rápidos: escolher modelo mais leve, "Composer 2.5 with Fast on, Grok 4.7 with effort on Low and Fast on" [53]. Observação: no plano Plus o Fast fica desligado [30].
+- [VERIFICAR] Reação da comunidade: muitos usuários pedem a volta do recurso [53]; a decisão pode ser revista. Monitorar antes de gravar o curso.
+- Tabela de atalhos oficial atual: "Cmd L or Cmd K: Add selection to new chat"; "Cmd Shift L: Add selection to Chat" [23].
+
+5.3 Agent (chat/agente) e seus modos
+- [CONFIRMADO] Abrir: Cmd+I (Mac) / Ctrl+I (Win/Linux). Também Cmd/Ctrl+L ou K com código selecionado [5][22].
+- [CONFIRMADO] Modos atuais e para que servem [5]:
+  Agent: construir funcionalidades, refatorar, corrigir bugs — edita arquivos: sim.
+  Ask: entender código, explorar arquitetura — edita: não (somente leitura).
+  Plan: funcionalidades complexas em que se quer revisar a abordagem antes — edita: sim, após aprovar o plano.
+  Debug: bugs difíceis que precisam de evidência em tempo de execução — edita: sim.
+- [CONFIRMADO] Trocar de modo: Shift+Tab (alterna) ou menu suspenso de modos no painel; menu de modos: Cmd+. / Ctrl+. [5][22]. "Each mode uses its own context, so switching modes starts a fresh context window." [5]
+- [CONFIRMADO] No editor e na CLI também funcionam comandos "/ask ..." e "/plan ..." (correção registrada nas notas de versão) [47].
+- [CONFIRMADO] Ferramentas do Agent: buscar arquivos e pastas, Web (pesquisa na web), Fetch Rules, ler arquivos (inclusive imagens), editar arquivos, rodar comandos de terminal, Browser (controlar navegador), gerar imagens, fazer perguntas de esclarecimento. "There is no limit on the number of tool calls Agent can make during a task." [11]
+- [CONFIRMADO] Interromper: botão "Stop" [5]; atalho "Cmd Shift Backspace: Cancel generation" [23].
+- [CONFIRMADO] Fila de mensagens: Enter enfileira; Cmd+Enter envia na hora [11]. "Steer" (corrigir o rumo sem interromper): "Send now" ou Enter duas vezes, em implantação [11].
+- [CONFIRMADO] Side chats: "/side" ou "/btw" para tirar uma dúvida paralela sem atrapalhar a conversa principal [11].
+- [CONFIRMADO] "/goal" para um objetivo de longa duração — "rolling out" (instável) [11].
+- [CONFIRMADO] Entrada por imagem (arrastar ou colar com Cmd+V) e por voz (ícone de microfone) [15].
+- Plano: [CONFIRMADO] Agent e Chat existem no Free "with limited usage" [30].
+
+5.4 Plan Mode
+- [CONFIRMADO] Passo a passo [8]: abrir o Agent (Cmd/Ctrl+I) > Shift+Tab até "Plan" > digitar o pedido > Return > o Agent pesquisa e pode fazer perguntas > revisar o plano (abre como arquivo virtual editável) > clicar "Build" para começar a codar.
+- [CONFIRMADO] Planos ficam na pasta pessoal; "Save to workspace" move para o projeto [8].
+- [CONFIRMADO] Recomeçar: botão "Revert" no canto inferior direito de uma mensagem anterior > "Confirm"; refinar o plano e rodar de novo [8].
+
+5.5 Ask Mode
+- [CONFIRMADO] Modo somente leitura; exemplos oficiais de perguntas: "How does the authentication flow work?", "What does this function do?", "Where is the database connection configured?" [7].
+
+5.6 Debug Mode
+- [CONFIRMADO] O agente levanta hipóteses, adiciona logs, pede que você reproduza o bug, analisa os logs, faz uma correção pequena e remove a instrumentação [16].
+
+5.7 Escolha de modelo
+- [CONFIRMADO] Seletor de modelo no topo do campo de chat; Cmd+/ (Ctrl+/) alterna modelos; padrão em Cursor Settings > Models [15][31].
+- [CONFIRMADO] Modelos próprios: Grok 4.7 ("flagship"), Grok 4.6, Grok 4.5 e Composer 2.5 ("fast, cost-efficient model") [31]. Free e Plus: só esses [31].
+- [CONFIRMADO] Premium e acima: modelos de terceiros (OpenAI, Anthropic, Google), cobrados a preço de API [31]. "Cursor charges at these published API rates with no markup." [31]
+- [VERIFICAR] Modelos OpenAI podem sair do Cursor (proposta: 12/11/2026) [58][59]. A tabela de preços de 03/11/2026 ainda lista modelos GPT [30].
+- [CONFIRMADO] Preços por milhão de tokens (para uso além do pool): Grok 4.7 US$ 2 entrada / US$ 6 saída; Composer 2.5 US$ 0,50 / US$ 2,50; Composer 2.5 Fast US$ 3 / US$ 15 [30].
+
+5.8 Contexto com @
+- [CONFIRMADO] Itens atuais [19]: Files & Folders (@auth.ts, @src/components/), @Terminals, @Chats, Git diffs (@Commit (Diff of Working State), @Branch (Diff with Main)), @Browser.
+- [CONFIRMADO] "If you're not sure which files matter, skip it — Agent finds relevant files through its own search." [19]
+- Web: [CONFIRMADO] a busca na web é uma ferramenta do Agent ("Generate search queries and perform web searches") [11]; @Web aparece citado na documentação de privacidade como serviço separado [35]. NÃO ENCONTRADO: @Web como item da lista atual de @ mentions [19].
+- Documentação indexada (@Docs): NÃO ENCONTRADO na documentação atual (procurado em [15][19] e no sitemap [72]). Um artigo brasileiro de nov/2025 ainda descreve @Docs [65], o que sugere que o recurso foi retirado ou renomeado. [VERIFICAR] na interface.
+
+5.9 Checkpoints e reversão
+- [CONFIRMADO] "Hover over a previous message and click Restore Checkpoint in the bottom right to roll back all changes Agent made after that point. Restoring reverts files only; it does not remove messages from the conversation." [5]
+- [CONFIRMADO] Também é possível clicar num checkpoint na linha do tempo do chat para pré-visualizar [11]. "Checkpoints are stored locally and separate from Git. Only use them for undoing Agent changes; use Git for permanent version control." [11]
+
+5.10 Revisão de alterações (diffs) e Agent Review
+- [CONFIRMADO] As edições do Agent são aplicadas enquanto ele trabalha; revisar na diff view e rejeitar o que não quiser [3][5].
+- [CONFIRMADO] Atalhos: "Cmd Return with suggested changes: Accept all changes"; "Cmd Shift Backspace with suggested changes: Reject all changes" [23].
+- [CONFIRMADO] Aba Changes com escopo "Last Agent Turn" (mostra só a última rodada do agente) [47 - versão 3.22].
+- [CONFIRMADO] Agent Review: revisão automática do código local. Configurar em Cursor Settings > Agents > Agent Review; a partir da 3.11, em Git & PRs > Pull Requests. Rodar: automático, comando "/agent-review" ou pela aba Source Control. Profundidade "Quick" (rápida, barata) ou "Deep" (lenta, cara) [13].
+- [CONFIRMADO] No Learn: "After the agent finishes a task, click Review then Find Issues to run a dedicated code review." [49]
+
+5.11 Terminal integrado
+- [CONFIRMADO] O Agent roda comandos (instalar dependências, rodar testes, ver build) conforme o Run Mode configurado em Cursor Settings > Agents > Approvals & Execution [10]. Ver seção 8.
+- [CONFIRMADO] O Cursor define CI=1 nos comandos do Agent; isso pode mudar o comportamento de alguns projetos [46].
+- [CONFIRMADO] A geração de comando com Cmd+K dentro do terminal foi aposentada em 26/10/2026; substituto: Agent (Cmd+I) [53].
+
+5.12 Navegador integrado (Browser)
+- [CONFIRMADO] O Agent controla um navegador para tirar screenshots, testar aplicativos e verificar mudanças visuais [11].
+
+5.13 Regras (Rules), AGENTS.md — ver seção 14, item 4.
+
+5.14 Git
+- [CONFIRMADO] Mensagem de commit gerada por IA: preparar (stage) as mudanças e clicar no ícone de brilho ("sparkle") no campo de mensagem de commit [44].
+- [CONFIRMADO] Conflitos de merge: botão "Resolve in Chat" [44].
+- [CONFIRMADO] Atribuição "Made with Cursor" ligada por padrão; desligar em Cursor Settings > Agent > Attribution (a partir da 3.11: Cursor Settings > Git & PRs > Attribution) [44].
+
+5.15 Cloud Agents, Bugbot, CLI — ver seção 14, item 5.
+
+5.16 Outros recursos (fora do escopo Essentials, só para delimitar)
+- Agents Window, worktrees, agentes em paralelo, Projects (coordenador que divide trabalho) [11][12]; Skills, Subagents, Hooks, Plugins, MCP [72]; Automations; Origin; Grok Bot; Agent SDK [47][72].
+
+----------------------------------------------------------------
+6. CASOS DE USO PARA O PÚBLICO DO CURSO
+----------------------------------------------------------------
+6.1 Desenvolvedores e estudantes de computação no Brasil
+- NÃO ENCONTRADO: caso publicado de empresa ou desenvolvedor brasileiro com resultado relatado. Procurado em buscas por "Cursor" + Nubank, iFood, Mercado Livre, Stone; "Cursor caso de uso empresa brasileira"; páginas de clientes do Cursor. Só foram encontrados: artigo explicativo da Alura (não é caso de uso) [65], anúncio de evento comunitário em Curitiba sem conteúdo [76], e estimativas de uso de terceiros [77].
+6.2 Desenvolvedores (internacional, fonte independente)
+- [VERIFICAR] Built In (13/05/2026): a consultoria Fusion Collective testou Cursor, Claude Code, Codex e Copilot por seis meses em um ciclo de TDD (planejar, escrever testes, escrever código, rodar testes). Sobre o Cursor: útil para trocar de modelo dentro da IDE, mas "doesn't outperform anyone on any single dimension"; os autores dizem que não o usariam regularmente [56]. Fonte independente, uma só.
+- [VERIFICAR] Pesquisa Stack Overflow 2026 (via Visual Studio Magazine, 06/10/2026): entre 12.255 respondentes da pergunta sobre agentes/assistentes de código, Cursor aparece com 25,5% de uso (Claude Code 65,5%; OpenAI Codex 29,5%) [57]. Página original da Stack Overflow não acessada.
+6.3 Não programadores vindos de Lovable/Replit (trilha Vibe Coding)
+- NÃO ENCONTRADO: caso real publicado de não programador que migrou de Lovable/Replit para o Cursor com resultado relatado. Procurado em buscas gerais e na central de ajuda; a ajuda oficial tem a página "What is vibe coding?" [help/ai-features/vibe-coding] (explicativa, não é caso).
+6.4 Cenários hipotéticos
+- [SUGESTÃO] Estudante de computação usa Ask para entender um projeto herdado e Plan para planejar uma funcionalidade de trabalho de faculdade, com testes.
+- [SUGESTÃO] Pessoa que fez um app no Lovable exporta o código para o GitHub, abre a pasta no Cursor e pede ao Agent que explique a estrutura e adicione um teste para um cálculo do app.
+
+----------------------------------------------------------------
+7. BOAS PRÁTICAS E EXEMPLOS DE PROMPTS
+----------------------------------------------------------------
+7.1 Publicados pela fabricante (texto original em inglês) [CONFIRMADO]
+- Entender o projeto: "Explain this codebase. Point me to the main entry points, key modules, and anything I should read before making changes." [1]
+- Mudança segura: "Suggest three small, safe improvements in this codebase. Explain the tradeoffs and wait for me to choose one." [1]
+- Exemplo de pedido ao Agent: "Add a login form to the homepage with email and password fields." [5]
+- Ask: "How does the authentication flow work?" / "What does this function do?" [7]
+- Revisão: "Review the changes I've made to the discount code feature. Look for bugs, missing error handling, and anything that doesn't match our patterns in [arquivo]" [49]
+- Testes: "Write integration tests for the discount code API endpoint and e2e tests for the checkout discount flow. Look at our existing test patterns and match them." [49]
+- Outros prompts de teste do Learn: "What edge cases aren't covered by our current tests for the discount feature?"; "Write regression tests for the bug we fixed in PaymentService.ts." [49]
+- TDD, passo 1: "Write tests for a discountCode() function that: - Returns the discounted price when given a valid code - Throws InvalidCodeError for expired codes - Applies fixed-amount discounts correctly (e.g., "10OFF" = $10 off) - Never returns a negative price (floor at $0) Follow the test patterns in [arquivo]. Do NOT write the function yet." [48]
+- TDD, passo 2: "Make all tests in [arquivo de teste] pass. Follow the service patterns in [arquivo]. Do NOT modify the tests." [48]
+- Exploração com subagente: "use a subagent to find all the places we validate user input." [51]
+7.2 Boas práticas oficiais [CONFIRMADO]
+- "Be specific in your prompts: include expected behavior and constraints"; usar Plan mode antes em tarefas que tocam muitos arquivos; "Start a new chat when you finish a feature or switch tasks"; criar regras para padrões repetidos; usar @ para contexto dirigido [46].
+- "Good first tasks are low risk, like improving some copywriting or fixing small UI issues." [1]
+- Quando o agente erra o rumo, voltar ao plano: "Revert the changes, refine the plan to be more specific about what you need, and run it again." [14]
+- Dar ao agente formas de se verificar: testes, checagem de tipos, linters, navegador/MCP [48][49].
+- "Passing tests don't guarantee the code works correctly. It's possible the tests are checking the wrong behavior." [49]
+- Commits pequenos e semânticos, para facilitar revisão [49].
+- Regras: manter abaixo de 500 linhas, começar pequeno, versionar no git [24].
+- Modelo: "Faster models work well for quick edits and routine tasks"; "More capable models are better for complex reasoning and multi-file refactoring" [15].
+7.3 Prompts em português escritos por nós
+- [SUGESTÃO] Ask: "Explique, em português e para alguém iniciante, o que faz o arquivo @gilded_rose.py. Liste as regras de negócio que você encontrou."
+- [SUGESTÃO] Plan: "Quero adicionar suporte a itens 'Conjured' conforme @GildedRoseRequirements_pt-BR.md. Antes de codar, faça um plano com os arquivos que vai mudar e os testes que vai criar."
+- [SUGESTÃO] TDD: "Escreva testes unitários para itens 'Conjured' (a qualidade cai duas vezes mais rápido; nunca fica negativa). Siga o padrão de @tests/test_gilded_rose.py. NÃO implemente a funcionalidade ainda. Rode os testes e confirme que falham."
+- [SUGESTÃO] Implementação: "Faça todos os testes passarem sem alterar os testes. Rode 'python -m unittest' ao final e me mostre o resultado."
+- [SUGESTÃO] Revisão: "Revise as mudanças deste chat. Há casos de borda sem teste?"
+
+----------------------------------------------------------------
+8. SEGURANÇA, PRIVACIDADE E DADOS
+----------------------------------------------------------------
+8.1 Privacy Mode
+- [CONFIRMADO] Ativar: Cursor Settings (Cmd/Ctrl+Shift+J) > General > Privacy Mode (ajuda en) [32].
+- [CONFIRMADO] "Privacy Mode ensures your code is never used for training by Cursor or other AI model providers." [32]
+- [CONFIRMADO] Em times, Privacy Mode vem ligado por padrão e pode ser imposto pelo administrador [32]; "Privacy Mode is on by default for Enterprise teams." [35]
+- NÃO ENCONTRADO: se Privacy Mode vem ligado ou desligado por padrão em contas individuais/gratuitas. Procurado em [32][35][36][37]. A página de segurança diz que o modo está disponível "on both free and Pro plans" [37].
+- [CONFIRMADO] Com Privacy Mode desligado, o Cursor pode usar e armazenar dados do código, prompts e ações para melhorar a IA e treinar modelos (página Data Use, atualizada em 03/09/2026) [36].
+8.2 Para onde vai o código / retenção
+- [CONFIRMADO] "When you use AI features, Cursor sends prompts and code context to model providers like OpenAI, Anthropic, and Google." [32]
+- [CONFIRMADO] Acordos de "zero data retention" (ZDR) com provedores; exceções: uso de chave de API própria e modelos que exigem retenção (ex.: Claude Fable 5 e 5.1), que pedem aprovação [32][35].
+- [CONFIRMADO] "Cloud Agents are the only feature that requires Cursor to store code." Cópias criptografadas, temporárias, apagadas ao fim [35].
+- [CONFIRMADO] Busca local: Instant Grep "builds and queries its index on your machine" [51].
+- [VERIFICAR] Governança do código hospedado no Origin ainda não está clara (críticas na imprensa) [62].
+- [CONFIRMADO] Privacy Mode do editor não cobre o Grok Bot, que "runs on a separate product surface with its own data flows" [32].
+8.3 Certificações
+- [CONFIRMADO] "AIUC-1, ISO/IEC 27001:2022, and ISO/IEC 42001:2023 certifications, along with a SOC 2 Type II attestation" (página Security, atualizada em 25/08/2026) [37]. Relatórios sob pedido em trust.cursor.com [33].
+- [CONFIRMADO] "Cursor does not use or maintain any infrastructure in China." [37]
+8.4 Execução de comandos no terminal (riscos e lista de permissões)
+- [CONFIRMADO] Onde: Cursor Settings > Agents > Approvals & Execution (ajuda en) [10][18]. Modos (Cursor 3.6+): "Auto-review" (padrão), "Allowlist", "Run Everything" [10].
+  Auto-review: comandos da lista rodam; o resto roda no sandbox quando possível; o que sobrar passa por um classificador de IA [10][18].
+  Allowlist: só comandos da lista rodam sem aprovação [10].
+  Run Everything: tudo roda sem aprovação; "Use Auto-review instead if you want most calls to run without prompting." [10]
+- [CONFIRMADO] "Auto-review is not a security boundary" — o classificador pode errar [18].
+- [CONFIRMADO] Antes da 3.5 os modos eram "Run in Sandbox", "Ask Every Time" e "Run Everything"; "Ask Every Time" foi descontinuado [10].
+- [CONFIRMADO] Para ver cada comando antes de rodar: Allowlist com a lista vazia (dica de funcionário no fórum) [53].
+- CONTRADIÇÃO [VERIFICAR]: a página Agent Security diz "By default, terminal commands need your approval" [17], enquanto a ajuda do terminal diz que o padrão é Auto-review, em que parte dos comandos roda sem perguntar [10].
+- [CONFIRMADO] "Agents can modify workspace files without approval, except for configuration files. Changes save immediately to disk. Always use version control so you can revert changes." [17]
+- [CONFIRMADO] MCP: cada conexão e cada chamada de ferramenta exigem aprovação, salvo lista de pré-aprovação [17].
+- [CONFIRMADO] Workspace trust vem desligado por padrão; "For untrusted repos, use a basic text editor instead." [17]
+8.5 Arquivos de exclusão (.cursorignore)
+- [CONFIRMADO] Criar .cursorignore na raiz, com sintaxe de .gitignore [20][21]. O Cursor já ignora por padrão arquivos .env, .git/ e lock files, além do que estiver no .gitignore [20].
+- [CONFIRMADO] Limitação: "Terminal commands and MCP tools run outside of Cursor's file access controls, so they may still be able to read ignored files." [20] E: "complete protection isn't guaranteed due to LLM unpredictability." [21]
+8.6 Extensões
+- [CONFIRMADO] Extensões vêm do Open VSX via proxy do Cursor com análise automática de malware; "Treat extension IDs like dependencies: install from publishers you trust." [45]
+8.7 LGPD e dados sigilosos
+- [CONFIRMADO] Para planos individuais o DPA (acordo de processamento de dados) não se aplica; vale a Política de Privacidade [32]. Residência de dados só nos EUA (opção Enterprise) [34].
+- NÃO ENCONTRADO: menção à LGPD na documentação do Cursor. Procurado em [32][35][36][37].
+- [SUGESTÃO] Orientar o aluno a não abrir no Cursor projetos com dados pessoais reais, a manter .env fora do contexto, a ligar o Privacy Mode e a usar o git antes de pedir mudanças.
+
+----------------------------------------------------------------
+9. LIMITAÇÕES, ERROS COMUNS E SOLUÇÃO DE PROBLEMAS
+----------------------------------------------------------------
+- [CONFIRMADO] Agent não "vê" arquivos: conferir .cursorignore e .gitignore; reindexar ("Reindex" na paleta de comandos); anexar com @ [46].
+- [CONFIRMADO] Desfazer: "Restore Checkpoint" [46].
+- [CONFIRMADO] Erro "Agent Execution Timed Out": o extension host não iniciou em 60 s; exportar logs em Cmd/Ctrl+Shift+P > "Developer: Export Logs..." [46].
+- [CONFIRMADO] CI=1 nos comandos do Agent pode alterar o comportamento de projetos [46].
+- [CONFIRMADO] Temas de shell pesados (Powerlevel10k) podem truncar a saída do terminal [74].
+- [CONFIRMADO] Fim do pool semanal: notificação no editor; aguardar, pagar créditos ou subir de plano [29].
+- [CONFIRMADO] "Model not available": restrição regional do provedor; usar Auto ou outro modelo [31]. Observação: Auto não existe no Plus [30].
+- [CONFIRMADO] "Move to Cloud" não leva alterações não commitadas [41].
+- [CONFIRMADO] Regras não aplicam: conferir tipo da regra e descrição; regras não valem para Tab nem para Bugbot [24].
+- [CONFIRMADO] Arquivos .md dentro de .cursor/rules são ignorados; regras de projeto precisam de extensão .mdc [25].
+- [CONFIRMADO] Atrás de VPN/firewall a CLI precisa liberar *.cursor.sh e *.cursorapi.com [43].
+- [VERIFICAR] Fórum (comunidade): após o fim do Cmd+K, usuários relatam que o Agent é mais lento para edições pequenas [53].
+- [VERIFICAR] Built In: em teste de seis meses, interface com "UI clutter" que atrapalha o ciclo de TDD [56].
+- [CONFIRMADO] Limitação de segurança importante: "Restricted mode breaks AI features." (workspace trust) [17].
+
+----------------------------------------------------------------
+10. COMPARAÇÃO COM ALTERNATIVAS
+----------------------------------------------------------------
+Fatos com fonte:
+- [VERIFICAR] Built In, 13/05/2026, teste de seis meses (fonte independente, única): Cursor é o único dos quatro que é uma IDE completa (fork do VS Code) com troca de modelos; Claude Code mais forte em planejamento e contexto do projeto; Codex melhor em refatorações autônomas em nuvem; GitHub Copilot melhor para empresas já no GitHub Enterprise [56].
+- [VERIFICAR] Stack Overflow Developer Survey 2026 (via Visual Studio Magazine): uso entre quem usa agentes — Claude Code 65,5%, Codex 29,5%, Cursor 25,5% [57].
+- [CONFIRMADO] O próprio Cursor lê CLAUDE.md "the same way it reads AGENTS.md", para compatibilidade com projetos que usam Claude Code [24].
+- [CONFIRMADO] Planos gratuito e Plus do Cursor não incluem modelos de terceiros (Claude, GPT, Gemini) [30]; isso o diferencia de ferramentas presas a um só fornecedor e, ao mesmo tempo, encarece o acesso a esses modelos.
+- [VERIFICAR] Mudança de cenário: após a compra pela SpaceX, a OpenAI anunciou o fim do fornecimento de modelos ao Cursor [58][59].
+Conclusões nossas:
+- [SUGESTÃO] Fronteira com os outros cursos da trilha: o Cursor é um editor completo (IDE própria); Claude Code e Codex são agentes que rodam em terminal/extensão/nuvem; GitHub Copilot é extensão dentro do VS Code e de outras IDEs. Basta um quadro comparativo simples, sem aprofundar os concorrentes.
+- [SUGESTÃO] Não usar comparações de sites com conflito de interesse (ex.: nxcode.io, que declara publicar o próprio produto) como base.
+
+----------------------------------------------------------------
+11. NOVIDADES RECENTES E RECURSOS INSTÁVEIS
+----------------------------------------------------------------
+Últimos 12 meses (nov/2025 a nov/2026):
+- [CONFIRMADO] Cursor 3 e Agents Window (02/04/2026) [12].
+- [CONFIRMADO] Fim do Cmd+K / edição inline (26/10/2026) [5][53]. INSTÁVEL: há forte pressão da comunidade para voltar [53].
+- [CONFIRMADO] The X Subscription (12/10/2026) e novos planos [26][54]. INSTÁVEL: planos recém-lançados.
+- [CONFIRMADO] Fim do desconto estudantil para novas adesões (25/06/2026) [28].
+- [CONFIRMADO] Modos de execução renomeados na 3.5/3.6 (Auto-review, Allowlist, Run Everything) [10].
+- [CONFIRMADO] Configurações mudando de lugar na 3.11 (Agent Review e Attribution foram para "Git & PRs") [13][44]. Isso mostra que caminhos de menu mudam com frequência.
+- [CONFIRMADO] Recursos ainda "rolling out" ou beta: "/goal" [11]; "steer" na Agents Window [11]; Environments API em beta [47]; Origin em beta [62]; Cursor Router "will launch for Teams and Enterprise" [26].
+- [CONFIRMADO] Modelos próprios Grok 4.7/4.6/4.5 e Composer 2.5 [30].
+- [VERIFICAR] Saída dos modelos OpenAI (data proposta 12/11/2026) [58][59].
+- [CONFIRMADO] Max Mode só existe nos planos antigos baseados em pedidos [26 - página Max Mode].
+- [CONFIRMADO] Arquivo .cursorrules "is legacy and will be deprecated" [24].
+- [CONFIRMADO] Ritmo de atualização: as notas de versão listam várias versões por semana (ex.: 3.20 a 3.27 entre setembro e outubro de 2026) [47].
+- [SUGESTÃO] Reconferir, na semana da gravação: atalhos (Cmd/Ctrl+K, L, I), nomes dos modos, caminho "Approvals & Execution", planos/preços e lista de modelos.
+
+----------------------------------------------------------------
+12. MATERIAL DIDÁTICO EXISTENTE
+----------------------------------------------------------------
+- [CONFIRMADO] Curso oficial "Cursor Learn" (cursor.com/learn), título da página "Learn Cursor — Official Tutorials", em inglês, gratuito, sem login para ler. Capítulos, na ordem do site: How AI models work; Hallucinations & limitations; Tokens & pricing; Context; Tool calling; Agents; Working with agents; Understanding your codebase; Developing features (creating-features); Finding & fixing bugs; Reviewing & testing code; Customizing agents; Putting it together [50]. Os 13 capítulos foram baixados em .md (seção 16). Os capítulos Developing features e Reviewing and testing code são os mais ligados à tarefa observável (TDD com agente).
+- [CONFIRMADO] Documentação (cursor.com/docs) e Central de ajuda (cursor.com/help), só em inglês [72].
+- [CONFIRMADO] Changelog/notas de versão: cursor.com/changelog e cursor.com/docs/release-notes [47].
+- [CONFIRMADO] Fórum oficial da comunidade: forum.cursor.com [53].
+- [CONFIRMADO] Canal oficial no YouTube: youtube.com/@cursor_ai (página responde com título "Cursor - YouTube"; acesso 03/11/2026) [71]. Lista de vídeos e existência de legendas: NÃO VERIFICADO.
+- [CONFIRMADO] Vídeos curtos embutidos na documentação (MP4): fila de mensagens, Plan Mode na CLI, Agent Review (ver seção 16).
+- Material em pt-BR (não oficial): artigo da Alura "Cursor: conheça o editor de código com IA..." (20/11/2025), útil como referência de linguagem, mas DESATUALIZADO (cita Cmd+K, Composer, @Docs, .cursorrules, plano Hobby) [65].
+- [SUGESTÃO] Usar o Learn como referência de sequência (conceitos > agentes > entender código > construir > testar/revisar > personalizar), sem copiar.
+
+----------------------------------------------------------------
+13. IDEIAS DE EXERCÍCIO
+----------------------------------------------------------------
+13.1 Decomposição da tarefa observável
+Tarefa: "Usar chat, edição inline e agente para implementar uma funcionalidade com testes."
+Ações (verbos):
+ A1. Usar o chat para entender o código (hoje: Agent em modo Ask) — passo a passo oficial: [7] (seção 3.4/5.5).
+ A2. Fazer edição inline — ATENÇÃO: recurso aposentado em 26/10/2026 [5][53]. Equivalentes atuais: (a) Tab, para edições no próprio arquivo [6]; (b) selecionar código + Cmd/Ctrl+L (ou K) para enviar o trecho ao Agent e pedir uma edição localizada [5]. [SUGESTÃO] A equipe deve decidir como reescrever esta parte da tarefa (ex.: "editar um trecho selecionado com o Agent").
+ A3. Usar o agente para implementar (Agent e, de preferência, Plan) — passo a passo oficial: [8][5].
+ A4. Escrever testes (pedir ao agente) — fonte oficial: [48][49].
+ A5. Rodar testes e confirmar o resultado — o Agent roda comandos no terminal conforme o Run Mode [10]; o Quickstart orienta pedir "the checks your project already uses" [1].
+ A6. Revisar e desfazer (diff, Restore Checkpoint) — [5][11].
+
+13.2 Projetos públicos testados para os exercícios (todos responderam HTTP 200 em 03/11/2026, licença MIT, sem login)
+ P1. Gilded Rose Refactoring Kata (Emily Bache) — https://github.com/emilybache/GildedRose-Refactoring-Kata (página HTML do GitHub). Versões Python (pasta python/, testes com "python -m unittest") e JavaScript com Jest (pasta js-jest/, "npm test"). Download direto do projeto inteiro: https://github.com/emilybache/GildedRose-Refactoring-Kata/archive/refs/heads/main.zip (devolve arquivo ZIP, 872 arquivos). Requisitos OFICIAIS EM PT-BR: https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/main/GildedRoseRequirements_pt-BR.md (página HTML). A funcionalidade a implementar é o item "Conjurado" (Conjured), que perde qualidade duas vezes mais rápido. Atenção: o teste inicial vem propositalmente falhando (espera o nome "fixme").
+ P2. Theatrical Players Refactoring Kata (Emily Bache, a partir do livro Refactoring de Martin Fowler) — https://github.com/emilybache/Theatrical-Players-Refactoring-Kata (HTML). Pastas python/ (pytest, approval tests) e javascript/. Funcionalidades sugeridas pelo próprio README: imprimir o extrato em HTML ou acrescentar novos tipos de peça ("history", "pastoral"). ZIP: https://github.com/emilybache/Theatrical-Players-Refactoring-Kata/archive/refs/heads/main.zip (devolve ZIP, 308 arquivos). Requisitos só em inglês.
+ P3. NÃO ENCONTRADO um terceiro projeto em pt-BR com testes já configurados. [SUGESTÃO] Alternativa: o próprio Gilded Rose em JavaScript conta como segunda linguagem.
+ Observação: os exercícios exigem Python 3 ou Node.js instalados; o curso não ensina a instalá-los (pré-requisito "noções de programação"). [SUGESTÃO] a equipe pode indicar que o aluno peça ao Agent para verificar/instalar dependências.
+
+13.3 Atividades [todas SUGESTÃO]
+ E1 (A1 – chat/Ask). Abrir a pasta python/ do Gilded Rose (File > Open Folder), abrir o Agent (Ctrl/Cmd+I), mudar para Ask (Shift+Tab) e pedir: "Explique em português as regras do método update_quality." Prova de que deu certo: a resposta cita Aged Brie, Sulfuras, Backstage passes e o limite de qualidade 50, e nenhum arquivo aparece como alterado.
+ E2 (A2 – edição localizada, substituto da edição inline). Selecionar o teste test_foo, apertar Ctrl/Cmd+L e pedir "Corrija este teste para esperar o nome 'foo'". Rodar "python -m unittest". Prova: 1 teste, OK. Variante com Tab: começar a digitar um novo teste e aceitar a sugestão com Tab.
+ E3 (A3 – Plan). Em Plan, pedir o plano para itens Conjured com base em @GildedRoseRequirements_pt-BR.md; ler o plano e clicar "Build" só depois de revisar. Prova: um plano com arquivos e testes listados, editável antes da construção.
+ E4 (A4/A5 – TDD). Pedir: testes para Conjured, sem implementar; rodar e ver falhar (vermelho). Depois: "faça os testes passarem sem alterar os testes". Prova: saída do terminal com todos os testes OK; diff mostrando mudança em gilded_rose.py e não nos testes.
+ E5 (A6 – revisar e desfazer). Pedir uma mudança qualquer, olhar o diff, usar Restore Checkpoint numa mensagem anterior e conferir que o arquivo voltou. Prova: o arquivo volta ao estado anterior; a conversa continua visível.
+ E6 (segurança). Conferir Cursor Settings > Agents > Approvals & Execution e Privacy Mode; criar .cursorignore com ".env". Prova: o Agent informa que não consegue ler o arquivo ignorado via @.
+ E7 (variação JS). Repetir E4 em js-jest/ com "npm install" e "npm test".
+ Plano: as atividades usam Agent/Chat/Tab, disponíveis no Free com uso limitado [26][30]; volume de uso do Free NÃO ENCONTRADO — [VERIFICAR] se cabe uma sequência de exercícios dentro do limite semanal gratuito.
+
+----------------------------------------------------------------
+14. RESPOSTAS AO FOCO ESPECÍFICO DESTE CURSO
+----------------------------------------------------------------
+1. O que é o Cursor, Anysphere, relação com o VS Code, IDE e "IA nativa"
+ - [CONFIRMADO] "Cursor is a coding agent for building ambitious software." [72]. Fabricante: Anysphere (fundada em 2022) [55], desde ago/2026 parte da SpaceX/SpaceXAI [55] [VERIFICAR datas].
+ - [CONFIRMADO] Compatível com VS Code: importa extensões, temas, configurações e atalhos; mesmos atalhos padrão; pode rodar ao lado do VS Code [4]. Usa Open VSX em vez do Marketplace da Microsoft [45].
+ - [VERIFICAR] É um fork do VS Code (imprensa independente [56][65]; a ajuda oficial lida não usa o termo).
+ - IDE e "IA nativa": definições na seção 4 [SUGESTÃO].
+2. Instalação por sistema, requisitos, importação do VS Code, login, primeiro projeto
+ - [CONFIRMADO] Seções 2.6, 3.1 a 3.4 [1][2][3][4].
+3. Recursos centrais com nomes e atalhos atuais
+ - Tab: Tab aceita; Esc rejeita; Ctrl/Cmd+Seta direita aceita palavra [6].
+ - Edição inline: aposentada em 26/10/2026; Ctrl/Cmd+K ou L com seleção abre o Agent com o trecho [5][53].
+ - Chat/agente: Ctrl/Cmd+I; modos Agent, Ask, Plan, Debug; Shift+Tab alterna; Ctrl/Cmd+. abre menu de modos [5][22].
+ - Modelo: seletor no topo do campo; Ctrl/Cmd+/ alterna [15].
+ - Contexto @: arquivos, pastas, @Terminals, @Chats, @Commit, @Branch, @Browser [19]. Web: ferramenta de busca do Agent [11]. Documentação (@Docs): NÃO ENCONTRADO na documentação atual.
+ - Checkpoints: "Restore Checkpoint" [5][11].
+ - Diffs: diff view; Ctrl/Cmd+Enter aceita tudo; Ctrl/Cmd+Shift+Backspace rejeita tudo [23]; aba Changes; Agent Review [13].
+ - Terminal: Agent roda comandos conforme Approvals & Execution [10].
+ - Observação: a tabela de atalhos da documentação de referência só mostra teclas de Mac [23]; a ajuda dá Mac e Windows/Linux [22].
+4. Regras, AGENTS.md, memórias e documentação indexada
+ - [CONFIRMADO] Regras de projeto: Ctrl/Cmd+Shift+P > "New Cursor Rule" > nome > instruções em Markdown > tipo (Always Apply, Apply Intelligently, Apply to Specific Files, Apply Manually) > salvar em .cursor/rules/ (arquivos .mdc) [24][25].
+ - [CONFIRMADO] Regras de usuário: "Customize" na barra lateral > "Rules" [24].
+ - [CONFIRMADO] AGENTS.md na raiz é lido automaticamente; CLAUDE.md também, sempre aplicado [24].
+ - [CONFIRMADO] Regras de time (Teams/Enterprise) com precedência Team > Project > User [24].
+ - [CONFIRMADO] .cursorrules é legado e será descontinuado [24].
+ - Memórias (Memories): NÃO ENCONTRADO como recurso na documentação atual (procurado em [24][25][11][72]; a doc só diz que "Large language models don't retain memory between completions. Rules provide persistent, reusable context" [25]). O Agent pode buscar em conversas passadas ("Conversation search") [5].
+ - Documentação indexada: NÃO ENCONTRADO na documentação atual; existe indexação do próprio código do projeto ("Codebase indexing", busca semântica, comando "Reindex") [46][47].
+5. Agentes na nuvem, Bugbot, CLI — o que existe e em qual plano
+ - [CONFIRMADO] Cloud Agents (antigos Background Agents): rodam em VM na nuvem, abrem PR, anexam vídeo/screenshots; iniciar pelo botão "Cloud" ao lado do campo do agente, em cursor.com/agents, ou mencionando @Cursor no Slack/GitHub/Linear [40][41]. Plano: Premium ou superior (não no Free nem no Plus) [30]. Correção automática de CI: Teams e Enterprise [41].
+ - [CONFIRMADO] Bugbot: revisão automática de pull requests; configurar em cursor.com/dashboard > Integrations; acionar manualmente comentando "cursor review" ou "bugbot run"; regras em .cursor/BUGBOT.md [38]. Cobrança por uso desde a mudança de maio/2026 [39]. Plano: Premium ou superior [30].
+ - [CONFIRMADO] CLI: instalar com "curl https://cursor.com/install -fsS | bash" (macOS/Linux/WSL) ou "irm 'https://cursor.com/install?win32=true' | iex" (PowerShell); comando "agent"; modos Agent, Plan, Ask; modo não interativo "-p" [42][43]. Plano: NÃO ENCONTRADO restrição explícita de plano para a CLI; o pool de uso é compartilhado com a CLI [30].
+ - [CONFIRMADO] Agent Review (revisão local, dentro do editor) [13]. Plano: NÃO ENCONTRADO.
+6. Testes com o agente e TDD
+ - [CONFIRMADO] Fluxo oficial de TDD em 5 passos e prompts (seção 7.1) [48]. "Be explicit you're doing TDD, so it doesn't create mock functions for code that doesn't exist yet." [48]
+ - [CONFIRMADO] O Agent pode "write tests" e rodar comandos de terminal [5][10]; pedir ao fim "tests, the type checker, linting, or a local build" [1].
+ - [CONFIRMADO] Alerta oficial: testes que passam não garantem código correto [49].
+7. Planos, preços, cobrança por uso, limites, plano estudantil
+ - Seção 2.2 a 2.4 [26][28][29][30]. Estudantil: encerrado para novas adesões em 25/06/2026; validade para o Brasil NÃO ENCONTRADO.
+8. Privacidade e segurança
+ - Seção 8 [10][17][18][20][21][32][35][36][37].
+9. Comparação independente com Claude Code, GitHub Copilot e Codex
+ - Seção 10 [56][57]. Apenas uma fonte independente com metodologia descrita (Built In) — [VERIFICAR].
+10. Projetos públicos para o exercício
+ - Seção 13.2: Gilded Rose (Python e JS/Jest, requisitos em pt-BR) e Theatrical Players (Python e JS). Terceiro projeto em pt-BR: NÃO ENCONTRADO.
+
+----------------------------------------------------------------
+15. TRECHOS TRANSCRITOS DA DOCUMENTAÇÃO OFICIAL
+----------------------------------------------------------------
+(Datas de atualização das páginas da documentação não são exibidas, salvo indicação; acesso em 03/11/2026.)
+
+T1. "Download and install Cursor" — https://cursor.com/help/getting-started/install
+"1. Go to cursor.com/download
+2. Click the download button for your operating system
+3. Open the downloaded file
+4. Follow the install steps for your OS:
+   - Mac: Drag Cursor into your Applications folder
+   - Windows: Run the installer and follow the prompts
+   - Linux: Install via your package manager (apt or dnf) if available, or extract the AppImage/archive and run it
+5. Open Cursor from your applications menu or desktop
+6. Sign in with your Cursor account when prompted"
+
+T2. "Quickstart" — https://cursor.com/docs/get-started/quickstart
+"macOS 12 (Monterey) and later / Native installer (.dmg) / Apple Silicon and Intel support"
+"Windows 10 and later / Native installer (.exe)"
+"When it finishes, review the diff and ask Cursor to run the checks your project already uses. That can mean tests, the type checker, linting, or a local build."
+
+T3. "Migrate from VS Code" — https://cursor.com/help/getting-started/migrate-vscode
+"1. Open Cursor Settings: Mac: Press Cmd + Shift + J / Windows/Linux: Press Ctrl + Shift + J
+2. Go to General > Account
+3. Under VS Code Import, click the Import button
+This brings over your extensions, themes, settings, and keybindings."
+
+T4. "Agent mode" — https://cursor.com/help/ai-features/agent
+"Select the code, then press Cmd + L or Cmd + K on Mac (Ctrl + L or Ctrl + K on Windows/Linux). Agent opens with those lines referenced in the input, ready for your instructions. Cmd + K used to open inline edit, which has been replaced by this workflow."
+"Hover over a previous message and click Restore Checkpoint in the bottom right to roll back all changes Agent made after that point. Restoring reverts files only; it does not remove messages from the conversation."
+"Press Shift + Tab to cycle through modes / Click the mode picker dropdown in the Agent panel"
+
+T5. "Tab completion" — https://cursor.com/help/ai-features/tab
+"Accept the full suggestion: Press Tab / Reject: Press Escape or keep typing / Accept word-by-word: Mac: Press Cmd + Arrow Right / Windows/Linux: Press Ctrl + Arrow Right"
+
+T6. "Plan mode" — https://cursor.com/help/ai-features/plan-mode
+"5. Review the plan Agent creates. It opens as a virtual file you can read and edit.
+6. When you're happy with the plan, click Build to start coding."
+
+T7. "Terminal integration" — https://cursor.com/help/ai-features/terminal
+"Configure this in Cursor Settings > Agents > Approvals & Execution. In Cursor 3.6 and above, choose Auto-review (the default), Allowlist, or Run Everything"
+
+T8. "Agent Security" — https://cursor.com/docs/agent/security
+"Agents can modify workspace files without approval, except for configuration files. Changes save immediately to disk. Always use version control so you can revert changes."
+
+T9. "Run Modes" — https://cursor.com/docs/agent/security/run-modes
+"The classifier can make mistakes. It can allow a call you would have blocked, or block a call you would have allowed."
+
+T10. "Ignore files" — https://cursor.com/help/customization/ignore-files
+"Cursor already ignores .env files, .git/, and lock files by default."
+"Ignored files are blocked from Agent. Terminal commands and MCP tools run outside of Cursor's file access controls, so they may still be able to read ignored files."
+
+T11. "Privacy and data" — https://cursor.com/help/security-and-privacy/privacy
+"1. Open Cursor Settings: Mac: Press Cmd + Shift + J / Windows/Linux: Press Ctrl + Shift + J
+2. Click General in the sidebar
+3. Toggle Privacy Mode on"
+
+T12. "Pricing and plans" — https://cursor.com/help/account-and-billing/pricing
+"Free gives you access to Cursor's core features with limited usage. You can use Agent, Chat, and Tab completions with Cursor models (Grok and Composer), along with standard X."
+
+T13. "Models & Pricing" — https://cursor.com/docs/models-and-pricing
+"Plus. Agent with Cursor's own models (Grok 4.7, Grok 4.6, Grok 4.5, and Composer 2.5) at fixed settings: Fast is off, effort is medium, and Grok 4.7 uses the 256k context window. [...] No Auto, Cloud Agents, Automations, Bugbot, Origin, third-party models, or your own API keys."
+"Each paid plan includes one pool of usage for Cursor models. [...] It refreshes weekly, so one heavy day doesn't use up your month."
+
+T14. "Student discount" — https://cursor.com/help/account-and-billing/student-discount
+"Cursor discontinued new sign-ups for the legacy student discount on June 25, 2026."
+
+T15. "Rules" — https://cursor.com/help/customization/rules
+"2. Type "New Cursor Rule" and select it [...] 5. Choose when the rule applies from the type dropdown: Always Apply [...] Apply Intelligently [...] Apply to Specific Files [...] Apply Manually [...] 6. Save the file. It's stored in .cursor/rules/ in your project."
+"Rules only apply to Agent (Chat). They do not apply to Tab completion or Bugbot PR reviews."
+
+T16. "Developing features" (Learn) — https://cursor.com/learn/creating-features
+"1. Write tests first. Ask the agent to write tests based on the expected inputs and outputs. Be explicit you're doing TDD, so it doesn't create mock functions for code that doesn't exist yet.
+2. Confirm the tests fail. Tell the agent to run the tests and verify they fail. You're not trying to write feature code at this point.
+3. Commit the tests. [...]
+4. Ask the agent to write code. Tell it to make all tests pass without modifying the tests. Keep iterating until everything passes.
+5. Commit the code. Review the output, confirm it behaves as expected, and commit."
+
+T17. "Reviewing and testing code" (Learn) — https://cursor.com/learn/reviewing-testing
+"Passing tests don't guarantee the code works correctly. It's possible the tests are checking the wrong behavior."
+
+T18. Fórum oficial, resposta de funcionário (Colin), 26/10/2026 — https://forum.cursor.com/t/cmd-k-has-been-retired-from-terminal/176251
+"Cmd+K, including generating commands in the terminal, was retired today [...] The closest replacement is Agent. Press Cmd+I, describe what you want"
+
+----------------------------------------------------------------
+16. MATERIAIS PARA BAIXAR
+----------------------------------------------------------------
+(Arquivos já salvos em Pesquisa Conteudo Onda 1/conteudo-bruto/cursor-essentials/; todos conferidos: texto UTF-8/ASCII ou ZIP válido com assinatura "PK".)
+
+[BAIXAR] BAIXADO — Documentação oficial do Cursor: índice completo (sitemap "llms.txt")
+ Link: https://cursor.com/llms.txt | Tipo: texto puro, 27 KB | Idioma: inglês
+ Utilidade: lista todas as páginas atuais da documentação e da ajuda; serve para conferir nomes de recursos.
+ Licença: não informada. Arquivo: cursor-docs-sitemap-llms-2026-11-03.txt
+
+[BAIXAR] BAIXADO — Changelog oficial (Release notes)
+ Link: https://cursor.com/docs/release-notes.md (versão web: https://cursor.com/changelog) | Tipo: Markdown, 458 KB | Idioma: inglês
+ Utilidade: histórico de mudanças até a versão 3.27; registra mudanças de menus e atalhos.
+ Licença: não informada. Arquivo: cursor-release-notes-changelog-2026-11-03.md
+
+[BAIXAR] BAIXADO — Página de preços e modelos (Models & Pricing)
+ Link: https://cursor.com/docs/models-and-pricing.md | Tipo: Markdown, 54 KB | Idioma: inglês
+ Utilidade: planos, o que cada um libera, preço de cada modelo por milhão de tokens.
+ Licença: não informada. Arquivo: cursor-models-and-pricing-2026-11-03.md
+ Observação: a página comercial cursor.com/pricing (HTML) deve também ser salva em PDF (seção 17).
+
+[BAIXAR] BAIXADO — Quickstart oficial
+ Link: https://cursor.com/docs/get-started/quickstart.md | Markdown, 4 KB | inglês | Arquivo: cursor-quickstart-2026-11-03.md
+
+[BAIXAR] BAIXADO — Curso oficial "Cursor Learn" (13 capítulos)
+ Link: https://cursor.com/learn (cada capítulo em https://cursor.com/learn/<capitulo>.md) | Markdown, 3 a 10 KB cada | inglês
+ Utilidade: referência de sequência didática, analogias oficiais e fluxo de TDD.
+ Licença: não informada; usar como referência, não copiar.
+ Arquivos: cursor-learn-how-ai-models-work.md, cursor-learn-hallucination-limitations.md, cursor-learn-tokens-pricing.md, cursor-learn-context.md, cursor-learn-tool-calling.md, cursor-learn-agents.md, cursor-learn-working-with-agents.md, cursor-learn-understanding-your-codebase.md, cursor-learn-creating-features.md, cursor-learn-finding-fixing-bugs.md, cursor-learn-reviewing-testing.md, cursor-learn-customizing-agents.md, cursor-learn-putting-it-together.md
+
+[BAIXAR] BAIXADO — Projeto de exercício Gilded Rose (todas as linguagens)
+ Link: https://github.com/emilybache/GildedRose-Refactoring-Kata/archive/refs/heads/main.zip | ZIP, 1,3 MB, 872 arquivos | inglês (requisitos também em pt-BR)
+ Utilidade: base pública com testes prontos para o exercício de implementar funcionalidade com testes.
+ Licença: MIT. Arquivo: gilded-rose-refactoring-kata-main.zip
+
+[BAIXAR] BAIXADO — Requisitos do Gilded Rose em português
+ Link: https://raw.githubusercontent.com/emilybache/GildedRose-Refactoring-Kata/main/GildedRoseRequirements_pt-BR.md | Markdown, 3 KB | pt-BR
+ Utilidade: enunciado em português da funcionalidade "Conjured". Licença: MIT. Arquivo: gilded-rose-requisitos-pt-br.md
+
+[BAIXAR] BAIXADO — Projeto de exercício Theatrical Players
+ Link: https://github.com/emilybache/Theatrical-Players-Refactoring-Kata/archive/refs/heads/main.zip | ZIP, 520 KB, 308 arquivos | inglês
+ Licença: MIT. Arquivo: theatrical-players-refactoring-kata-main.zip
+
+[BAIXAR] NÃO BAIXADO — Vídeo oficial: fila de mensagens do Agent
+ Link: https://cursor.com/docs-static/images/agent/planning/agent-queue.mp4 | MP4 | sem áudio narrado conhecido
+ Utilidade: mostra a fila de mensagens. Arquivo sugerido: cursor-video-agent-queue.mp4. Motivo: não baixado nesta rodada; transcrição não disponível.
+
+[BAIXAR] NÃO BAIXADO — Vídeo oficial: Agent Review
+ Link: https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/changelog/changelog-2-1-1.mp4 | MP4
+ Utilidade: mostra a revisão de alterações. Arquivo sugerido: cursor-video-agent-review.mp4. Transcrição: não disponível.
+
+[BAIXAR] NÃO BAIXADO — Vídeo oficial: Plan Mode na CLI
+ Link: https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/uploads/plan-mode.mp4 | MP4
+ Arquivo sugerido: cursor-video-cli-plan-mode.mp4. Transcrição: não disponível.
+
+[BAIXAR] NÃO BAIXADO — Canal oficial no YouTube
+ Link: https://www.youtube.com/@cursor_ai | vídeos | inglês
+ Utilidade: demonstrações oficiais. Transcrição: VERIFICAR vídeo a vídeo (o YouTube costuma oferecer legenda automática). Não foi feita lista de vídeos nesta pesquisa.
+
+[BAIXAR] [ACESSO RESTRITO] — Relatório SOC 2 Type II, relatório de pentest e certificados ISO
+ Link: https://trust.cursor.com | PDF (presumido) | inglês
+ Utilidade: comprovar certificações citadas na seção 8. Para obter: pedir acesso no Trust Center; "You'll typically receive access within one business day" [33]. Arquivo sugerido: cursor-soc2-type2.pdf. NÃO BAIXADO.
+
+[BAIXAR] NÃO BAIXADO — Política de segurança / Data Use / Privacy Policy / DPA
+ Links: https://cursor.com/security ; https://cursor.com/data-use ; https://cursor.com/privacy ; https://cursor.com/terms/dpa | páginas HTML (salvar como PDF, seção 17).
+
+Guia de atalhos em PDF: NÃO ENCONTRADO (procurado na documentação, no sitemap [72] e na ajuda de atalhos [22][23]; só existem páginas HTML).
+Curso/trilha oficial em vídeo com certificado: NÃO ENCONTRADO (o Cursor Learn é texto).
+
+----------------------------------------------------------------
+17. PÁGINAS PARA SALVAR
+----------------------------------------------------------------
+P01 | Download and install Cursor | https://cursor.com/help/getting-started/install | Trecho: passos 1 a 6 de instalação | Prioridade: alta | ajuda-instalar-cursor.pdf
+P02 | Quickstart | https://cursor.com/docs/get-started/quickstart | Trecho: requisitos por sistema e primeiro uso | alta | docs-quickstart.pdf
+P03 | Your first project | https://cursor.com/help/getting-started/first-project | Trecho: File > Open Folder; abrir Agent | alta | ajuda-primeiro-projeto.pdf
+P04 | Migrate from VS Code | https://cursor.com/help/getting-started/migrate-vscode | Trecho: General > Account > VS Code Import | média | ajuda-migrar-vscode.pdf
+P05 | Agent mode | https://cursor.com/help/ai-features/agent | Trecho: modos, Cmd+K substituído, Restore Checkpoint | alta | ajuda-agent-modos.pdf
+P06 | Tab completion | https://cursor.com/help/ai-features/tab | Trecho: aceitar/rejeitar sugestões | alta | ajuda-tab-autocompletar.pdf
+P07 | Ask mode | https://cursor.com/help/ai-features/ask-mode | Trecho: passos e exemplos | alta | ajuda-ask-mode.pdf
+P08 | Plan mode | https://cursor.com/help/ai-features/plan-mode | Trecho: passos, Build, Revert | alta | ajuda-plan-mode.pdf
+P09 | Prompting agents (@ mentions, modelos, contexto) | https://cursor.com/docs/agent/prompting | Trecho: @ mentions, context ring, troca de modelo | alta | docs-prompting-agents.pdf
+P10 | Cursor Agent overview (ferramentas e checkpoints) | https://cursor.com/docs/agent/overview | Trecho: Tools; Checkpoints | alta | docs-agent-overview.pdf
+P11 | Keyboard shortcuts (ajuda) | https://cursor.com/help/customization/keyboard-shortcuts | Trecho: tabela Mac e Windows/Linux | alta | ajuda-atalhos-teclado.pdf
+P12 | Keyboard Shortcuts (referência) | https://cursor.com/docs/reference/keyboard-shortcuts | Trecho: tabelas Chat e Code Selection | média | docs-atalhos-referencia.pdf
+P13 | Developing features (Learn – TDD) | https://cursor.com/learn/creating-features | Trecho: Test-driven development with agents | alta | learn-desenvolvendo-features-tdd.pdf
+P14 | Reviewing and testing code (Learn) | https://cursor.com/learn/reviewing-testing | Trecho: Let agents write your tests; Common failure pattern | alta | learn-revisao-e-testes.pdf
+P15 | Agent Review | https://cursor.com/docs/agent/agent-review | Trecho: três formas de iniciar; Quick/Deep | média | docs-agent-review.pdf
+P16 | Pricing and plans (ajuda) | https://cursor.com/help/account-and-billing/pricing | Trecho: tabela de planos, Free, legacy | alta | ajuda-planos-e-precos.pdf
+P17 | Página comercial de preços | https://cursor.com/pricing | Trecho: comparação completa de planos | alta | pagina-precos-cursor.pdf
+P18 | Models & Pricing | https://cursor.com/docs/models-and-pricing | Trecho: Plans; Included usage; Top-ups | alta | docs-modelos-e-precos.pdf
+P19 | Usage and limits | https://cursor.com/help/models-and-usage/usage-limits | Trecho: pool semanal, o que acontece no limite | alta | ajuda-uso-e-limites.pdf
+P20 | What is The X Subscription? | https://cursor.com/help/the-x-subscription/overview | Trecho: como funciona; troca permanente | alta | ajuda-x-subscription.pdf
+P21 | Student discount | https://cursor.com/help/account-and-billing/student-discount | Trecho: fim em 25/06/2026 | média | ajuda-desconto-estudante.pdf
+P22 | Available models | https://cursor.com/help/models-and-usage/available-models | Trecho: modelos por plano | média | ajuda-modelos-disponiveis.pdf
+P23 | Regions and model availability | https://cursor.com/help/security-and-privacy/regions | Trecho: restrições regionais | média | ajuda-regioes-modelos.pdf
+P24 | Privacy and data | https://cursor.com/help/security-and-privacy/privacy | Trecho: ativar Privacy Mode; treino; ZDR | alta | ajuda-privacidade.pdf
+P25 | Data Use | https://cursor.com/data-use | Trecho: o que acontece com Privacy Mode ligado/desligado (atualizada 03/09/2026) | alta | politica-uso-de-dados.pdf
+P26 | Security | https://cursor.com/security | Trecho: certificações (atualizada 25/08/2026) | alta | politica-seguranca.pdf
+P27 | Privacy and Data Governance | https://cursor.com/docs/enterprise/privacy-and-data-governance | Trecho: dois fluxos de dados; Cloud Agents armazenam código | média | docs-governanca-dados.pdf
+P28 | Agent Security | https://cursor.com/docs/agent/security | Trecho: edição sem aprovação; workspace trust | alta | docs-seguranca-agent.pdf
+P29 | Run Modes | https://cursor.com/docs/agent/security/run-modes | Trecho: Auto-review, Allowlist, Run Everything | alta | docs-run-modes.pdf
+P30 | Terminal integration | https://cursor.com/help/ai-features/terminal | Trecho: Approvals & Execution | alta | ajuda-terminal.pdf
+P31 | Ignore files | https://cursor.com/help/customization/ignore-files | Trecho: .cursorignore e limitação | alta | ajuda-cursorignore.pdf
+P32 | Rules (ajuda) | https://cursor.com/help/customization/rules | Trecho: criar regra, AGENTS.md, CLAUDE.md | alta | ajuda-regras.pdf
+P33 | Rules (docs) | https://cursor.com/docs/rules | Trecho: tipos de regra, .mdc | média | docs-regras.pdf
+P34 | Bugbot (ajuda) | https://cursor.com/help/ai-features/bugbot | Trecho: configurar e acionar | média | ajuda-bugbot.pdf
+P35 | Cloud Agents (ajuda) | https://cursor.com/help/ai-features/cloud-agents | Trecho: o que fazem; Move to Cloud | média | ajuda-cloud-agents.pdf
+P36 | CLI (ajuda) | https://cursor.com/help/integrations/cli | Trecho: instalação Windows/macOS | média | ajuda-cli.pdf
+P37 | Agent troubleshooting | https://cursor.com/help/troubleshooting/agent-issues | Trecho: Agent não vê arquivos; desfazer; timeout | alta | ajuda-problemas-agent.pdf
+P38 | Extensions | https://cursor.com/help/customization/extensions | Trecho: Open VSX e riscos | média | ajuda-extensoes.pdf
+P39 | Fórum: "Cmd+K Has Been Retired" | https://forum.cursor.com/t/cmd-k-has-been-retired-from-terminal/176251 | Trecho: respostas do funcionário Colin (26 e 28/10/2026) | alta | forum-cmdk-aposentado.pdf
+P40 | Anúncio The X Subscription (xAI) | https://x.ai/news/x-subscription | Trecho: planos e preços, 12/10/2026 | média | anuncio-x-subscription.pdf
+P41 | Git (ajuda) | https://cursor.com/help/integrations/git | Trecho: mensagem de commit, Resolve in Chat, Attribution | média | ajuda-git.pdf
+P42 | Requisitos Gilded Rose pt-BR | https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/main/GildedRoseRequirements_pt-BR.md | Trecho: item Conjurado | alta | exercicio-gilded-rose-requisitos.pdf
+
+----------------------------------------------------------------
+18. LACUNAS E PONTOS A VERIFICAR
+----------------------------------------------------------------
+Contradições entre fontes
+- Padrão de execução no terminal: "By default, terminal commands need your approval" [17] x "Auto-review (the default)" [10].
+- Data de conclusão da compra pela SpaceX: 14/08/2026 (maioria) x 15/08/2026 (uma fonte) [55].
+- Data do Origin: 17/08/2026 (maioria) x 11/08/2026 (uma fonte) [62].
+- Fork do VS Code: afirmado pela imprensa [56][65], não encontrado nas páginas oficiais lidas.
+- Atalhos: a tabela de referência só traz teclas de Mac [23]; a ajuda traz Mac e Windows/Linux [22].
+[VERIFICAR]
+- Fim do Cmd+K pode ser revertido (pressão da comunidade) [53].
+- Saída dos modelos OpenAI do Cursor (data proposta 12/11/2026) [58][59].
+- Datas do histórico da empresa (fontes não oficiais) [55][60][61].
+- App iOS: requisitos e disponibilidade na App Store Brasil (não testado; a busca em apps.apple.com/br devolveu erro 404) [63][64].
+- Interface em pt-BR: só pacote de idioma do VS Code; painéis do Cursor em inglês (fórum) [66][79].
+- Pesquisas de uso (Stack Overflow 2026) só via imprensa [57].
+- Comparação independente: uma só fonte com método descrito [56].
+- Nomes de menus: todos vêm da ajuda em inglês; nenhum foi conferido na interface. Conferir "Approvals & Execution" (às vezes escrito "Execution and Approvals" pelo funcionário no fórum [53]).
+- @Docs e @Web: retirados ou renomeados? Conferir na interface.
+NÃO ENCONTRADO
+- Limite numérico do plano Free (procurado em [26][29][30]).
+- Preço oficial em reais (procurado em cursor.com/pricing, [26], [54]).
+- Validade de créditos estudantis para o Brasil [28].
+- Padrão do Privacy Mode em contas individuais [32][36][37].
+- Menção à LGPD [32][35][36][37].
+- Requisitos de RAM/CPU [1][2].
+- Recurso "Memories" e documentação indexada na documentação atual [24][25][72].
+- Caso de uso real brasileiro, para desenvolvedores e para não programadores (buscas descritas na seção 6).
+- Terceiro projeto de exercício em pt-BR com testes.
+- Guia de atalhos em PDF; curso oficial em vídeo.
+- Plano exigido para a CLI e para o Agent Review.
+- App Android.
+
+----------------------------------------------------------------
+19. APÊNDICE TÉCNICO
+----------------------------------------------------------------
+- Instalação Linux (Debian/Ubuntu), comandos oficiais [1]: adicionar a chave GPG (curl -fsSL https://downloads.cursor.com/keys/anysphere.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/cursor.gpg), adicionar o repositório https://downloads.cursor.com/aptrepo stable main, depois "sudo apt update" e "sudo apt install cursor". RHEL/Fedora: repositório https://downloads.cursor.com/yumrepo e "sudo dnf install cursor". AppImage: "chmod +x Cursor-*.AppImage" e executar.
+- Regras de projeto: arquivos .mdc com frontmatter (description, globs, alwaysApply) em .cursor/rules/ [25].
+- Auto-review: lê ~/.cursor/permissions.json e <projeto>/.cursor/permissions.json com "allow_instructions" e "block_instructions" em linguagem natural; o classificador usa "Gemini 3.5 Flash Lite" com Haiku de reserva [18].
+- Sandbox: comandos rodam com limites de arquivo e rede; configuração via sandbox.json [18][74].
+- Variável CURSOR_AGENT para detectar quando o shell é aberto pelo Agent [74].
+- Workspace trust: "security.workspace.trust.enabled": true no settings.json do usuário [17].
+- .cursorignore: sintaxe .gitignore; opção Cursor Settings > Indexing > Ignore Files > Hierarchical Cursor Ignore; lista global vazia por padrão [21].
+- CLI: autenticação com "agent login" ou variável CURSOR_API_KEY; "agent update"; modo não interativo "agent -p"; "&" envia tarefa a um Cloud Agent [42][43].
+- Subagentes personalizados: arquivos Markdown em .cursor/agents/ [5]. Hooks em .cursor/hooks.json [41].
+- Bugbot: limites de regra de 30.000 caracteres por regra e 100.000 por revisão; "bugbot run verbose=true" para diagnóstico [38].
+- Cursor Router (Teams/Enterprise): modos Cost, Balance, Intelligence; Cursor Token Rate de US$ 0,25 por milhão de tokens em certos casos [26][29].
+- Agent SDK, Origin, Grok Bot, Self-Hosted Machines, APIs administrativas: existem (ver sitemap [72]), fora do escopo.
+
+----------------------------------------------------------------
+20. FONTES CONSULTADAS
+----------------------------------------------------------------
+(Data de acesso de todas: 03/11/2026. "s/d" = sem data visível na página.)
+[1] Quickstart — https://cursor.com/docs/get-started/quickstart — documentação oficial — s/d
+[2] Download and install Cursor — https://cursor.com/help/getting-started/install — ajuda oficial — s/d
+[3] Your first project — https://cursor.com/help/getting-started/first-project — ajuda oficial — s/d
+[4] Migrate from VS Code — https://cursor.com/help/getting-started/migrate-vscode — ajuda oficial — s/d
+[5] Agent mode — https://cursor.com/help/ai-features/agent — ajuda oficial — s/d
+[6] Tab completion — https://cursor.com/help/ai-features/tab — ajuda oficial — s/d
+[7] Ask mode — https://cursor.com/help/ai-features/ask-mode — ajuda oficial — s/d
+[8] Plan mode — https://cursor.com/help/ai-features/plan-mode — ajuda oficial — s/d
+[9] Debug mode — https://cursor.com/help/ai-features/debug-mode — ajuda oficial — s/d
+[10] Terminal integration — https://cursor.com/help/ai-features/terminal — ajuda oficial — s/d (cita Cursor 3.6)
+[11] Cursor Agent (overview) — https://cursor.com/docs/agent/overview — documentação oficial — s/d
+[12] Agents Window — https://cursor.com/docs/agent/agents-window — documentação oficial — s/d (cita 02/04/2026)
+[13] Agent Review — https://cursor.com/docs/agent/agent-review — documentação oficial — s/d
+[14] Plan Mode — https://cursor.com/docs/agent/plan-mode — documentação oficial — s/d
+[15] Prompting agents — https://cursor.com/docs/agent/prompting — documentação oficial — s/d
+[16] Debug Mode — https://cursor.com/docs/agent/debug-mode — documentação oficial — s/d
+[17] Agent Security — https://cursor.com/docs/agent/security — documentação oficial — s/d
+[18] Run Modes — https://cursor.com/docs/agent/security/run-modes — documentação oficial — s/d
+[19] @ mentions and context — https://cursor.com/help/customization/context — ajuda oficial — s/d
+[20] Ignore files — https://cursor.com/help/customization/ignore-files — ajuda oficial — s/d
+[21] Ignore file (referência) — https://cursor.com/docs/reference/ignore-file — documentação oficial — s/d
+[22] Keyboard shortcuts — https://cursor.com/help/customization/keyboard-shortcuts — ajuda oficial — s/d
+[23] Keyboard Shortcuts (referência) — https://cursor.com/docs/reference/keyboard-shortcuts — documentação oficial — s/d
+[24] Rules (ajuda) — https://cursor.com/help/customization/rules — ajuda oficial — s/d
+[25] Rules (docs) — https://cursor.com/docs/rules — documentação oficial — s/d
+[26] Pricing and plans — https://cursor.com/help/account-and-billing/pricing — ajuda oficial — s/d; inclui página Max Mode https://cursor.com/help/ai-features/max-mode
+[27] What is The X Subscription? — https://cursor.com/help/the-x-subscription/overview — ajuda oficial — s/d
+[28] Student discount — https://cursor.com/help/account-and-billing/student-discount — ajuda oficial — s/d (cita 25/06/2026)
+[29] Usage and limits — https://cursor.com/help/models-and-usage/usage-limits — ajuda oficial — s/d
+[30] Models & Pricing — https://cursor.com/docs/models-and-pricing — documentação oficial — s/d
+[31] Available models — https://cursor.com/help/models-and-usage/available-models — ajuda oficial — s/d
+[32] Privacy and data — https://cursor.com/help/security-and-privacy/privacy — ajuda oficial — s/d
+[33] Security and compliance documents — https://cursor.com/help/security-and-privacy/compliance — ajuda oficial — s/d
+[34] Regions and model availability — https://cursor.com/help/security-and-privacy/regions — ajuda oficial — s/d
+[35] Privacy and Data Governance — https://cursor.com/docs/enterprise/privacy-and-data-governance — documentação oficial — s/d
+[36] Data Use — https://cursor.com/data-use — política oficial — atualizada em 03/09/2026
+[37] Security — https://cursor.com/security — política oficial — atualizada em 25/08/2026
+[38] Bugbot (ajuda) — https://cursor.com/help/ai-features/bugbot — ajuda oficial — s/d
+[39] Bugbot (docs) — https://cursor.com/docs/bugbot — documentação oficial — s/d
+[40] What are background agents? — https://cursor.com/help/ai-features/background-agents — ajuda oficial — s/d
+[41] Cloud Agents (ajuda) — https://cursor.com/help/ai-features/cloud-agents — ajuda oficial — s/d
+[42] Cursor CLI — https://cursor.com/docs/cli/overview — documentação oficial — s/d
+[43] CLI (ajuda) — https://cursor.com/help/integrations/cli — ajuda oficial — s/d
+[44] Git (ajuda) — https://cursor.com/help/integrations/git — ajuda oficial — s/d
+[45] Extensions — https://cursor.com/help/customization/extensions — ajuda oficial — s/d
+[46] Agent troubleshooting — https://cursor.com/help/troubleshooting/agent-issues — ajuda oficial — s/d
+[47] Release notes / Changelog — https://cursor.com/docs/release-notes e https://cursor.com/changelog — oficial — entradas até 3.27 (out/2026)
+[48] Developing features (Learn) — https://cursor.com/learn/creating-features — curso oficial — s/d
+[49] Reviewing and testing code (Learn) — https://cursor.com/learn/reviewing-testing — curso oficial — s/d
+[50] Cursor Learn (índice e capítulos) — https://cursor.com/learn — curso oficial — s/d
+[51] Search (Instant Grep) — https://cursor.com/docs/agent/tools/search — documentação oficial — s/d
+[52] Composer 2.5 — https://cursor.com/docs/models/cursor-composer-2-5 — documentação oficial — s/d
+[53] "Cmd+K Has Been Retired" from terminal? — https://forum.cursor.com/t/cmd-k-has-been-retired-from-terminal/176251 — fórum oficial (comunidade + respostas de funcionário) — 26 a 28/10/2026
+[54] The X Subscription — https://x.ai/news/x-subscription — anúncio oficial xAI/SpaceXAI — 12/10/2026
+[55] Cursor (company) / Cursor (code editor) — https://en.wikipedia.org/wiki/Cursor_(company) e https://en.wikipedia.org/wiki/Cursor_(code_editor) — enciclopédia (comunidade) — s/d
+[56] Claude Code vs. Codex vs. Cursor vs. GitHub Copilot: Which AI Coding Tool Is Best? — https://builtin.com/articles/claude-code-codex-cursor-github-copilot-comparison — imprensa de tecnologia — 13/05/2026
+[57] Stack Overflow 2026 survey: VS Code leads, Visual Studio takes third — https://visualstudiomagazine.com/articles/2026/10/06/stack-overflow-2026-survey-vs-code-leads-visual-studio-takes-third.aspx — imprensa — 06/10/2026 (via resultado de busca)
+[58] Our decision on Cursor following its acquisition by SpaceX — https://openai.com/blog/our-decision-on-cursor-following-its-acquisition-by-spacex — blog oficial OpenAI — ago/2026 (via resultado de busca; página não aberta)
+[59] OpenAI to Cut Cursor Off From Its Models After SpaceX Acquisition — https://www.channelinsider.com/ai/news-openai-cursor-model-access-spacex-acquisition/ — imprensa — ago/2026 (via resultado de busca)
+[60] SpaceX strikes $60 billion deal for Cursor — https://www.fortune.com/2026/04/22/spacex-strikes-60-billion-deal-cursor/ — imprensa — 22/04/2026 (via resultado de busca)
+[61] Cursor CEO on SpaceX acquisition — https://www.thenationalnews.com/future/technology/2026/06/16/cursor-ceo-spacex-elon-musk-aquisition/ — imprensa — 16/06/2026 (via resultado de busca)
+[62] Cursor Expands Beyond Its AI Editor With Origin Code Hosting — https://www.eweek.com/news/cursor-origin-ai-agent-code-hosting/ — imprensa — ago/2026 (via resultado de busca)
+[63] Cursor, agora da SpaceX, ganha app para iOS e iPadOS — https://macmagazine.com.br/post/2026/06/30/cursor-agora-da-spacex-ganha-app-para-ios-e-ipados/ — imprensa brasileira — 30/06/2026 (via resultado de busca)
+[64] Cursor releases its iOS app — https://www.testingcatalog.com/cursor-releases-its-ios-app-for-vibe-coding-on-the-go/ — imprensa — jun/2026 (via resultado de busca)
+[65] Cursor: conheça o editor de código com IA que está redefinindo a programação — https://www.alura.com.br/artigos/cursor — blog educacional brasileiro (comunidade) — 20/11/2025
+[66] Feature request: native Portuguese (Brazil) UI localization — https://forum.cursor.com/t/feature-request-native-portuguese-brazil-ui-localization/169990 — fórum (comunidade) — 2026 (via resultado de busca)
+[67] GildedRose-Refactoring-Kata — https://github.com/emilybache/GildedRose-Refactoring-Kata — repositório público (MIT) — último push 21/08/2026
+[68] Theatrical-Players-Refactoring-Kata — https://github.com/emilybache/Theatrical-Players-Refactoring-Kata — repositório público (MIT) — último push 26/08/2026
+[69] GildedRoseRequirements_pt-BR.md — https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/main/GildedRoseRequirements_pt-BR.md — repositório público — s/d
+[70] Cursor 3 (DataCamp) — https://www.datacamp.com/blog/cursor-3 — blog educacional — 2026 (via resultado de busca)
+[71] Cursor - YouTube — https://www.youtube.com/@cursor_ai — canal oficial — s/d
+[72] Sitemap da documentação (llms.txt) e página inicial da documentação — https://cursor.com/llms.txt ; https://cursor.com/docs — oficial — s/d
+[73] Legacy Cursor plans — https://cursor.com/docs/account/pricing/legacy-cursor-plans — documentação oficial — s/d
+[74] Terminal (docs) — https://cursor.com/docs/agent/tools/terminal — documentação oficial — s/d
+[75] Cloud Agent best practices — https://cursor.com/docs/cloud-agent/best-practices — documentação oficial — s/d (consultada, não citada no texto)
+[76] Cursor além do Código - Curitiba — https://luma.com/cursor-umd5?locale=pt — página de evento (comunidade) — s/d (via resultado de busca)
+[77] TheirStack: empresas que usam Cursor no Brasil — https://theirstack.com/en/technology/cursor/br — dados de terceiros — s/d (via resultado de busca)
+[78] Cursor Trust Center — https://trust.cursor.com — portal oficial — s/d
+[79] How to set the language of the software interface — https://forum.cursor.com/t/how-to-set-the-language-of-the-software-interface/164137 — fórum (comunidade) — 2026 (via resultado de busca)
+
+----------------------------------------------------------------
+CHECKLIST
+----------------------------------------------------------------
+[SIM] O arquivo usa exatamente o cabeçalho, os títulos e a numeração pedidos.
+[SIM] Todos os pontos do FOCO ESPECÍFICO e todos os materiais de "procure especialmente" foram respondidos ou estão como NÃO ENCONTRADO.
+[SIM] Todo [CONFIRMADO] está dito literalmente na fonte citada.
+[SIM] Nenhum exercício depende de instrutor, e o curso não foi dividido em blocos de tempo.
+[SIM] A seção 17 tem um item por página, com URL, prioridade e nome de arquivo.
+[SIM] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+[SIM] Os casos de uso são reais, e cada público sem caso real está como NÃO ENCONTRADO.
+[SIM] As fontes estão em pt-BR ou inglês (outro idioma só quando era a única fonte), e as lojas e ofertas são as do Brasil.
+[SIM] Nenhum endereço é de ambiente de teste (dev., hml., staging., qa.).
+[SIM] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é técnico demais está no APÊNDICE TÉCNICO.
+[SIM] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está marcada [CONFIRMADO].
+[SIM] Todo material não-web citado nas seções 1 a 20 está na seção 16.
+[SIM] Cada arquivo declarado BAIXADO abre e é do tipo anunciado (nenhuma página HTML salva como .pdf).
+[SIM] Os links dos exercícios foram testados e levam direto ao conteúdo.
+[SIM] A seção 17 lista páginas dos quatro tipos pedidos na regra 6.
+[SIM] Cada número está atribuído à fonte que de fato o contém.
+[SIM] Nomes de menus e botões indicam a origem: (interface), (ajuda pt-BR) ou (ajuda en).
+Observação sobre a checklist: a loja da Apple no Brasil não pôde ser conferida (erro 404 na busca), e alguns itens da seção 1 usam Wikipedia/imprensa porque não há fonte oficial da fabricante sobre a aquisição; esses itens estão marcados [VERIFICAR].
