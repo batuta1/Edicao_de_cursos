@@ -23,6 +23,12 @@ Confirme com o usuário (ou infira do pedido, se estiver claro):
 - **Onde está o material-fonte** (roteiro/plano de aula que originou o curso). Ele é a referência
   principal da revisão; sem ele você só consegue melhorar o texto "no vácuo".
 
+**Onde guardar.** No repositório `Edicao_de_cursos`, siga a skill `organizar-pasta-de-cursos`: o pacote
+de entrada já está em `Cursos/<Empresa>/<curso>/scorm/vN/`, e o pacote **revisado é uma versão nova**.
+Rode `versao_do_pacote.py` da skill no `.zip` gerado para saber se vira `v(N+1)` ou se é igual a uma
+que já existe (então vai em `copias/`), e atualize o `scorm/LEIAME.md`. O `curso*.json` e as pastas
+`licoes_extraidas_*` são **trabalho**: ficam fora de `Cursos/` e não vão para a principal.
+
 Se o projeto tiver um documento de regras de edição (neste projeto:
 `promptRevisaoPorClaude.md`), **leia-o antes de editar** — ele manda em caso de conflito com esta skill.
 
