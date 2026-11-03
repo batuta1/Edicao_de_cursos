@@ -1,0 +1,32 @@
+# Arquivos temporários e de sistema: não devem subir para o repositório.
+
+# Office (Word, Excel, PowerPoint): arquivo de bloqueio criado enquanto o documento está aberto
+~$*
+# LibreOffice / OpenOffice: bloqueio
+.~lock.*#
+# Cópias de recuperação e de segurança do Office
+*.tmp
+~*.tmp
+*.wbk
+*.xlk
+*.asd
+*.bak
+# Arquivos que o Office cria ao salvar ou recuperar
+~WRL*.tmp
+~WRD*.tmp
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editores
+*.swp
+*.swo
+*~
+
+# Python (há scripts na pasta)
+__pycache__/
+*.pyc
