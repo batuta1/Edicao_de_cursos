@@ -1,0 +1,224 @@
+COMPILADO: CHATGPT FOR POWERPOINT
+==================================
+
+Fonte principal: artigo oficial “ChatGPT for PowerPoint”, da Central de Ajuda da OpenAI
+Endereço: https://help.openai.com/en/articles/20001242-chatgpt-for-powerpoint
+Consulta realizada em: 7 de outubro de 2026
+
+Nota editorial
+--------------
+Este material é uma síntese detalhada, em português, redigida com palavras próprias. Ele preserva o sentido e a organização geral da documentação oficial, mas não reproduz integralmente o texto original. Nomes de menus, produtos e controles de interface foram mantidos quando necessário para tornar as instruções utilizáveis.
+
+
+1. VISÃO GERAL
+---------------
+
+O ChatGPT for PowerPoint é uma experiência de inteligência artificial integrada ao Microsoft PowerPoint. Ele aparece em uma barra lateral dentro do aplicativo e permite trabalhar na apresentação sem precisar sair do PowerPoint.
+
+Seu objetivo é ajudar na criação, edição, compreensão e melhoria de apresentações, procurando preservar a estrutura editável dos slides. Isso significa que o resultado não é pensado apenas como uma imagem ou arquivo fechado: textos, formas e outros componentes devem continuar manipuláveis no PowerPoint, dentro dos limites atuais do produto.
+
+Entre os usos descritos pela OpenAI estão:
+
+- criar um primeiro rascunho com base em materiais fornecidos;
+- acrescentar slides a uma apresentação existente;
+- revisar ou reescrever slides já prontos;
+- analisar a narrativa, a estrutura e as lacunas de um conjunto de slides;
+- adaptar a apresentação a um público específico;
+- melhorar clareza, concisão e acabamento geral.
+
+
+2. PARA QUEM E PARA QUAIS TIPOS DE TRABALHO
+--------------------------------------------
+
+A ferramenta é especialmente indicada para atividades em que apresentações são frequentes ou centrais. A documentação cita exemplos como atualizações para conselhos de administração, revisões de negócios, apresentações de estratégia e outros materiais executivos.
+
+Ela pode transformar notas, documentos, planilhas e outras fontes em uma estrutura de apresentação. Também pode apoiar trabalhos mais pontuais, como inserir ou revisar slides, reduzir um material longo, tornar a comunicação mais adequada para clientes ou equipes internas e antecipar perguntas que o público provavelmente faria.
+
+Quando disponíveis, Skills, modelos de apresentação e aplicativos conectados permitem repetir fluxos de trabalho, aplicar orientações de estilo e aproveitar dados de outras fontes autorizadas.
+
+
+3. INSTALAÇÃO PELO PRÓPRIO USUÁRIO
+------------------------------------
+
+O suplemento é distribuído pelo Microsoft Marketplace. O procedimento indicado é:
+
+1. Abrir o Microsoft PowerPoint.
+2. Acessar a guia “Página Inicial” (Home).
+3. Abrir a área de “Suplementos” (Add-ins).
+4. Pesquisar por “ChatGPT”.
+5. Adicionar o suplemento e, em seguida, abri-lo pela faixa de opções do PowerPoint.
+6. Entrar com uma conta do ChatGPT que tenha acesso ao recurso.
+
+O simples aparecimento do suplemento na loja ou no aplicativo não garante que toda conta possa utilizá-lo da mesma forma. O acesso efetivo pode depender do plano do ChatGPT, das regras do espaço de trabalho, da liberação gradual do produto e das configurações administrativas da organização.
+
+
+4. IMPLANTAÇÃO EM ORGANIZAÇÕES
+----------------------------------
+
+Caso a empresa bloqueie o acesso ao Microsoft Store para suplementos, um administrador do Microsoft 365 pode fazer a implantação interna usando o arquivo de manifesto XML fornecido pela OpenAI.
+
+No centro de administração do Microsoft 365, o fluxo resumido é:
+
+1. acessar “Integrated apps”;
+2. escolher “Deploy Add-in”;
+3. selecionar “Upload custom apps”;
+4. enviar o arquivo de manifesto XML;
+5. atribuir o suplemento aos usuários ou grupos apropriados.
+
+Em ambientes que usam controle de acesso baseado em funções (RBAC), pode ser necessária uma liberação administrativa adicional.
+
+
+5. COMO OBTER RESULTADOS MELHORES
+---------------------------------
+
+A qualidade tende a melhorar quando o pedido informa claramente:
+
+- o que deve ser alterado;
+- o que precisa permanecer intacto;
+- em qual ponto da apresentação a mudança deve ocorrer;
+- qual é o público-alvo;
+- quais arquivos, notas ou dados devem servir de base;
+- qual estilo visual ou estrutura deve ser preservado.
+
+Para mudanças maiores, a OpenAI recomenda pedir primeiro um plano. Assim, o usuário pode avaliar quais slides seriam modificados e a justificativa para cada mudança antes que o conteúdo seja efetivamente alterado.
+
+Exemplos de pedidos, aqui adaptados em português:
+
+- montar uma atualização de dez slides para o conselho a partir de notas e indicadores;
+- inserir um slide de riscos depois da visão geral do mercado, mantendo o restante intacto;
+- tornar o material mais conciso e adequado a executivos;
+- transformar um memorando em cinco slides;
+- alinhar alguns slides ao padrão visual da organização;
+- explicar qual história a apresentação conta e onde há lacunas.
+
+
+6. REVISÃO HUMANA CONTINUA NECESSÁRIA
+---------------------------------------
+
+O ChatGPT pode cometer erros tanto na geração de conteúdo quanto em alterações e exclusões dentro da apresentação. Por isso, a documentação recomenda conferir o resultado antes de compartilhar o arquivo ou tomar decisões com base nele.
+
+Devem receber atenção especial:
+
+- afirmações factuais;
+- números e indicadores;
+- citações, quando houver;
+- mudanças de sentido introduzidas durante a reescrita;
+- slides removidos, deslocados ou alterados;
+- aderência ao modelo visual esperado.
+
+Para apresentações importantes, é prudente duplicar o arquivo antes de realizar alterações extensas. Isso preserva uma versão anterior que pode ser recuperada caso o resultado não seja satisfatório.
+
+
+7. LIMITAÇÕES ATUAIS
+------------------------
+
+7.1. Fidelidade a modelos e identidade visual
+
+O produto procura trabalhar dentro do modelo de apresentação existente, mas nem sempre os slides gerados ou modificados reproduzem perfeitamente o estilo desejado. Pode haver diferenças de formatação, composição ou hierarquia visual.
+
+7.2. Edições avançadas
+
+Algumas operações mais sofisticadas ainda podem ser limitadas ou estar em desenvolvimento. A OpenAI menciona recursos avançados relacionados a gráficos, formas, formatação e gerenciamento de slides.
+
+7.3. Correção e completude
+
+As respostas e edições podem ser incompletas ou incorretas. A ferramenta deve ser tratada como apoio à produção, não como substituta da revisão editorial, visual e factual.
+
+
+8. PLUGINS, SKILLS E APLICATIVOS CONECTADOS
+-------------------------------------------
+
+Onde houver suporte, o ChatGPT for PowerPoint pode usar plugins. Na terminologia apresentada pela OpenAI, um plugin pode reunir Skills, aplicativos e outras capacidades de fluxo de trabalho.
+
+Skills funcionam como roteiros reutilizáveis. Elas podem registrar etapas de trabalho, regras de estilo, expectativas de formatação e estruturas de saída. Com isso, o usuário não precisa reconstruir todas as instruções em cada solicitação.
+
+Aplicativos conectam o ChatGPT a arquivos, sistemas e fontes de dados aprovados. O objetivo é permitir que a apresentação seja criada ou ajustada com mais contexto. Entretanto, só aparecem no PowerPoint os aplicativos compatíveis com essa superfície e permitidos pelas configurações administrativas, pelas permissões do usuário e pelos direitos de acesso à fonte de dados.
+
+Para usar esses recursos, o usuário abre o ChatGPT no PowerPoint, clica no símbolo “+” para acessar Skills e aplicativos, seleciona uma Skill ou a chama com “@” no pedido. Se um aplicativo esperado não estiver disponível, a recomendação é verificar com o administrador do espaço de trabalho se ele foi habilitado.
+
+
+9. CONTROLES PARA ADMINISTRADORES
+---------------------------------
+
+Administradores podem habilitar o ChatGPT for PowerPoint nas configurações do espaço de trabalho. Onde houver suporte, também podem liberar o recurso de aplicativos e controlar o acesso a aplicativos específicos.
+
+A disponibilidade final para cada pessoa pode resultar da combinação de:
+
+- direitos associados ao plano ou à conta do usuário;
+- configurações definidas pelo administrador;
+- permissões do usuário;
+- autorizações da fonte de dados conectada;
+- estágio de disponibilização do recurso.
+
+
+10. DISPONIBILIDADE, PLANOS E CONSUMO
+-------------------------------------
+
+No momento em que a fonte foi consultada, a página informava disponibilidade global para usuários dos planos Free, Go, Plus, Pro, Business, Enterprise, ChatGPT Edu e K-12.
+
+Segundo a mesma página:
+
+- Free e Go oferecem acesso com uso limitado;
+- Plus, Pro e Business oferecem acesso sujeito ao limite de uso agêntico do plano;
+- nos planos Business, Enterprise e Edu, o consumo passa a utilizar o conjunto de créditos do espaço de trabalho quando a precificação flexível estiver em vigor.
+
+Os limites de uso agêntico são compartilhados com outros recursos agênticos quando a precificação correspondente entra em vigor. A documentação afirma ainda que o PowerPoint utiliza as mesmas tarifas baseadas em tokens aplicadas ao ChatGPT for Excel/Sheets.
+
+Como referência aproximada, a página informa que uma tarefa típica no PowerPoint usando GPT-5.5 pode consumir de 10 a 50 créditos por mensagem. Esse valor não é uma garantia: apresentações maiores, alterações em várias etapas e pedidos complexos fundamentados em materiais de origem podem consumir mais.
+
+Planos, limites, modelos, créditos e datas de vigência podem mudar. Antes de estimar custos ou planejar uma implantação, convém conferir novamente a documentação oficial de créditos e a tabela de tarifas aplicável ao plano.
+
+
+11. SEGURANÇA E ADMINISTRAÇÃO EMPRESARIAL
+-----------------------------------------
+
+O ChatGPT for PowerPoint foi projetado para trabalhar com controles empresariais no nível do espaço de trabalho. Isso inclui aplicação de políticas, acesso delimitado a arquivos e fontes autorizadas e tratamento seguro do estado do produto quando necessário.
+
+A cobertura de logs corporativos e de conformidade depende da configuração e do suporte disponível no espaço de trabalho. Para saber quais eventos podem ser consultados pela organização, administradores devem verificar a documentação da Compliance API.
+
+Recursos como residência de dados na União Europeia, residência de inferência na UE e Enterprise Key Management dependem da implantação vigente e da configuração do espaço de trabalho. A OpenAI orienta que administradores confirmem os controles exibidos em seu ambiente ou consultem o representante da empresa.
+
+
+12. PRIVACIDADE E TRATAMENTO DE DADOS
+-------------------------------------
+
+Como o suplemento funciona dentro do Microsoft PowerPoint, o uso do PowerPoint continua sujeito aos contratos e termos firmados com a Microsoft. A documentação da OpenAI destaca que, conforme os termos do Microsoft Add-in Marketplace, a Microsoft pode ter capacidade de ler o conteúdo dos arquivos do PowerPoint.
+
+Para atender a um pedido, o ChatGPT processa o texto enviado pelo usuário, o conteúdo da apresentação disponibilizado ao sistema, anexos e contexto relevante proveniente de conexões autorizadas. O tratamento desses dados segue as regras do plano e do espaço de trabalho do ChatGPT, além dos termos da Microsoft aplicáveis ao suplemento.
+
+Em organizações, isso torna importante confirmar previamente as políticas internas sobre informações confidenciais, permissões de aplicativos conectados, retenção, conformidade e compartilhamento de arquivos.
+
+
+13. CONEXÃO COM OUTROS SISTEMAS
+--------------------------------
+
+O suplemento pode acessar outros aplicativos ou sistemas internos somente onde o recurso de aplicativos for suportado e autorizado. A disponibilidade depende do plano, das configurações administrativas, das permissões individuais e dos direitos de acesso à fonte conectada.
+
+Portanto, um aplicativo disponível na conta geral do ChatGPT pode não aparecer necessariamente dentro do PowerPoint. A superfície do PowerPoint, as regras do administrador e as permissões da fonte precisam permitir seu uso.
+
+
+14. OBSERVAÇÃO SOBRE ERRO DE SSO EM SUPLEMENTOS DO OFFICE
+--------------------------------------------------------
+
+O artigo inclui uma pergunta frequente sobre a mensagem de que um suplemento não pôde ser iniciado durante o login único (SSO). Embora a pergunta da página se refira nominalmente ao suplemento do Excel, a orientação aparece no artigo do PowerPoint e trata do redirecionamento de autenticação em suplementos do Office no Windows.
+
+O problema pode ocorrer quando um endereço antigo de retorno do SSO redireciona para o endpoint atual da OpenAI. O login pelo navegador pode funcionar, enquanto o suplemento do Office no Windows não conclui corretamente o redirecionamento.
+
+A correção indicada exige a atuação de um administrador global do ambiente Microsoft. Em resumo, ele deve obter o endereço ACS atual no Portal de Administração da OpenAI, na área Identity > SSO > Manage SSO, e atualizar o aplicativo empresarial da OpenAI no provedor de identidade, tornando o novo endereço o padrão.
+
+
+15. CONCLUSÃO PRÁTICA
+------------------------
+
+O ChatGPT for PowerPoint leva a assistência do ChatGPT para dentro do fluxo normal de edição do PowerPoint. Seu valor principal está em transformar materiais de origem em rascunhos, acelerar revisões, adaptar a narrativa para diferentes públicos e analisar a coerência de uma apresentação, mantendo os slides editáveis.
+
+O melhor uso combina instruções específicas, fontes confiáveis, preservação explícita do que não deve mudar e revisão humana. Em cenários corporativos, também é essencial considerar implantação administrativa, permissões, políticas de dados, controles de conformidade e consumo de créditos.
+
+
+REFERÊNCIA
+----------
+
+OpenAI Help Center. “ChatGPT for PowerPoint”.
+https://help.openai.com/en/articles/20001242-chatgpt-for-powerpoint
+
+Como recursos e condições de uso podem mudar, consulte a página oficial para confirmar informações atuais antes de instalar, contratar ou implantar o suplemento em uma organização.
