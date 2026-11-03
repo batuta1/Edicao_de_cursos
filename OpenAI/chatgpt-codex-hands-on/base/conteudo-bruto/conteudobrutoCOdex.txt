@@ -1,0 +1,444 @@
+tualização em 3 de junho de 2025: O Codex já está disponível para usuários do ChatGPT Plus. Agora, os usuários podem permitir que o Codex acesse a internet durante a execução de tarefas. Consulte o registro de alterações⁠(abre em uma nova janela) e a documentação⁠(abre em uma nova janela) para ver mais detalhes.
+
+Hoje, lançamos uma prévia para pesquisa do Codex, um agente de engenharia de software na nuvem que pode trabalhar em várias tarefas ao mesmo tempo. O Codex executa tarefas para você como programar recursos, responder perguntas sobre sua base de código, corrigir erros e propor pull requests para revisão; cada tarefa é executada de forma independente em um ambiente de teste próprio, pré-configurado com seu repositório.
+
+O Codex roda com o codex-1, uma versão do OpenAI o3 otimizada para engenharia de software. Ele foi treinado com aprendizagem por reforço em tarefas reais de programação em diversos ambientes, de forma a gerar código muito parecido com o estilo e as preferências humanas de PR, seguindo instruções com precisão e executando testes iterativos até conseguir um resultado correto. Estamos iniciando hoje o lançamento do Codex para usuários do ChatGPT Pro, Enterprise e Team, e em breve também para usuários Plus e Edu.
+
+Como funciona o Codex
+Você já pode acessar o Codex pela barra lateral do ChatGPT e atribuir novas tarefas de programação. Basta digitar um prompt e clicar em "Gerar código". Para perguntar algo ao Codex sobre sua base de código, clique em “Perguntar”. Cada tarefa é processada de forma independente em um ambiente separado e isolado, pré-carregado com sua base de código. O Codex lê e edita arquivos e ainda executa comandos, como estruturas de teste, analisadores de código (linters) e verificadores de tipos. As tarefas geralmente levam de 1 a 30 minutos, dependendo da complexidade, e você pode acompanhar o progresso em tempo real.
+
+Ao concluir uma tarefa, o Codex implementa as alterações no ambiente dele. Ele oferece evidências verificáveis de suas ações em citações de logs de terminal e resultados de testes, permitindo que você acompanhe cada passo da execução da tarefa. Você pode analisar os resultados, solicitar novas revisões, abrir uma pull request do GitHub ou integrar as alterações diretamente ao seu ambiente local. No produto, você pode configurar o ambiente do Codex em paralelo ao seu ambiente real de desenvolvimento com o máximo possível de semelhança.
+
+O Codex pode ser orientado por arquivos AGENTS.md colocados em seu repositório. Esses arquivos de texto, assim como um README.md, informam ao Codex como navegar pela sua base de código, que comandos usar nos testes e como seguir os padrões do seu projeto. Assim como desenvolvedores humanos, o desempenho dos agentes Codex melhora com ambientes de desenvolvimento definidos, configurações de teste confiáveis e documentação clara. 
+
+Em avaliações de programação e benchmarks internos, o codex-1 apresenta desempenho sólido mesmo sem arquivos AGENTS.md ou estruturas básicas personalizadas.
+
+
+Criar agentes seguros e confiáveis
+Estamos lançando o Codex como prévia para pesquisa, seguindo nossa estratégia de implementação iterativa. Priorizamos segurança e transparência no design do Codex, para que os usuários possam verificar os resultados. Essa proteção fica cada vez mais importante conforme os modelos de IA passam a gerenciar tarefas mais complexas de forma independente e surgem novas questões de segurança. Os usuários podem conferir o trabalho do Codex com citações, logs de terminal e resultados de teste. Se houver incertezas ou falhas nos testes, o agente do Codex relata explicitamente essas questões, permitindo que os usuários tomem decisões esclarecidas sobre como proceder. Continua sendo essencial que os usuários revisem e validem manualmente qualquer código gerado pelos agentes antes da integração e execução.
+
+Alinhamento com preferências humanas
+Um dos principais objetivos do treinamento do codex-1 foi alinhar os resultados às preferências e aos padrões humanos de programação. Em relação ao OpenAI o3, o codex-1 produz patches mais limpos com uniformidade, prontos para revisão humana imediata e integração aos fluxos de trabalho padrão.
+
+
+Prevenção contra abusos
+É cada vez mais importante evitar a aplicação mal-intencionada de engenharia de software baseada em IA, como desenvolvimento de malwares. Ao mesmo tempo, é importante que as proteções não impeçam indevidamente aplicações legítimas e benéficas, que podem envolver técnicas usadas às vezes para desenvolvimento de malware, como engenharia de kernels de nível inferior.
+
+Para equilibrar segurança e utilidade, o Codex foi treinado para identificar e recusar corretamente solicitações que possam gerar softwares mal-intencionados, mas distinguir e aceitar tarefas legítimas. Também melhoramos nossas estruturas de políticas e incorporamos avaliações rigorosas de segurança para reforçar esses limites com eficácia. Publicamos um adendo ao Cartão do Sistema do o3⁠ que demonstra essas avaliações.
+
+Execução segura
+O agente do Codex opera totalmente inserido num ambiente em nuvem seguro e isolado. Durante a execução da tarefa, o acesso à internet é desabilitado, limitando a interação do agente apenas ao código fornecido explicitamente pelos repositórios do GitHub e às dependências pré-instaladas configuradas pelo usuário com um script de configuração. O agente não tem acesso a sites, APIs ou outros serviços externos.
+
+Casos de uso iniciais
+Equipes técnicas da OpenAI começaram a incluir o Codex em seu kit de ferramentas cotidiano. Ele é usado com mais frequência pelos engenheiros da OpenAI para executar tarefas repetitivas com escopo bem definido e que podem gerar distração do objetivo principal, como refatorar, renomear e escrever testes. Também é útil para gerar código personalizado para novos recursos, acionar componentes, corrigir erros e esboçar documentação. As equipes estão criando novos hábitos com ele: triagem de novos problemas, planejamento de tarefas no começo do dia e delegação de tarefas em segundo plano para dar sequência ao trabalho. Com a redução de mudanças de contexto e lembretes para tarefas esquecidas, o Codex ajuda os programadores a acelerar as entregas e manter o foco no mais importante.
+
+Com a aproximação do lançamento, também estamos trabalhando com um pequeno grupo de testadores externos para entender melhor o desempenho do Codex em diversas bases de código, processos de desenvolvimento e equipes.
+
+A Cisco⁠(abre em uma nova janela) está explorando como o Codex pode ajudar suas equipes de engenharia a concretizar ideias ambiciosas com mais rapidez. Parceira de design desde o início, a Cisco está ajudando a definir o futuro do Codex, avaliando seu uso em casos práticos em todo o portfólio de produtos e oferecendo feedback para a equipe da OpenAI.
+A Temporal⁠(abre em uma nova janela) usa o Codex para acelerar o desenvolvimento de recursos, depurar erros, programar e executar testes e refatorar grandes bases de código. Isso também ajuda a manter o foco, executando tarefas complexas em segundo plano enquanto os desenvolvedores mantêm o fluxo e aceleram as iterações.
+A Superhuman⁠(abre em uma nova janela) usa o Codex para acelerar pequenas tarefas repetitivas, como melhorar a cobertura de testes e resolver problemas de integração. Ele também ajuda a acelerar as entregas, permitindo que os gerentes de produto realizem pequenas alterações no código, com um desenvolvedor sendo chamado somente para a revisão.
+A Kodiak⁠(abre em uma nova janela) está usando o Codex para gerar ferramentas de depuração, melhorar a cobertura dos testes e refatorar código, acelerando o desenvolvimento do Kodiak Driver, sua ferramenta de direção autônoma. O Codex também se tornou uma ferramenta de referência importante que esclarece partes desconhecidas do sistema para os desenvolvedores, mostrando o contexto relevante e as últimas alterações.
+Considerando os aprendizados dos primeiros testadores, recomendamos atribuir tarefas com escopo bem definido a vários agentes simultâneos e experimentar diversos tipos de tarefas e prompts para explorar melhor a capacidade do modelo.
+
+Atualizações do Codex CLI
+No mês passado, lançamos o Codex CLI, um agente de programação leve e de código aberto que é executado no seu terminal. Ele apresenta a potência de modelos como o o3 e o o4-mini para seu fluxo de trabalho local, podendo ser usado facilmente com esses recursos para a aceleração de tarefas. 
+
+Hoje, também estamos lançando uma versão menor do codex-1, uma versão do o4-mini feita especificamente para ser usada no Codex CLI. Esse novo modelo funciona com fluxos de trabalho mais rápidos na CLI e é otimizado para perguntas e respostas e edição de código de baixa latência, mantendo as mesmas vantagens em termos de obediência às instruções e estilo. Ele já está disponível como modelo padrão no Codex CLI e na API, como codex-mini-latest. O instantâneo associado será atualizado regularmente, à medida que continuamos aprimorando o modelo Codex-mini.
+
+Também estamos facilitando a conexão de sua conta de desenvolvedor com o Codex CLI. Em vez de gerar e configurar manualmente um token de API, você já pode iniciar uma sessão com sua conta do ChatGPT e selecionar a organização da API que deseja usar. Nós geramos e configuramos a chave API automaticamente para você. Usuários do Plus e do Pro que iniciarem sessão no Codex CLI com o ChatGPT também podem começar a resgatar US$ 5 e US$ 50, respectivamente, em créditos de API pelos próximos 30 dias.
+
+Disponibilidade, preços e limitações do Codex
+Estamos lançando hoje o Codex para usuários globais do ChatGPT Pro, Enterprise e Team hoje, e em breve também para usuários Plus e Edu. Os usuários terão acesso amplo sem custo adicional pelas próximas semanas para poderem explorar as possibilidades do Codex. Em seguida, ofereceremos acesso limitado e preços flexíveis para compra de uso adicional sob demanda. Planejamos expandir o acesso para usuários Plus e Edu em breve.
+
+Para desenvolvedores que usam o codex-mini-latest, o modelo está disponível na API Responses, com preço de US$ 1,50 por 1 milhão de tokens de entrada e US$ 6 por 1 milhão de tokens de saída, com desconto de 75% para cache de prompt.
+
+O Codex ainda está nos primeiros estágios de desenvolvimento. Como prévia para pesquisa, ele ainda não tem recursos como entrada de imagens para trabalho de frontend e nem permite corrigir o agente durante o a execução da tarefa. Além disso, é preciso acostumar-se com o fato de que delegar o trabalho a um agente remoto demora mais do que a edição interativa. Com a tempo, a interação com os agentes do Codex ficará cada vez mais parecida com uma colaboração assíncrona com colegas. Conforme a capacidade do modelo se desenvolve, acreditamos que os agentes poderão executar tarefas mais complexas por períodos mais longos.
+
+O que vem a seguir
+Imaginamos um futuro em que os desenvolvedores executarão o trabalho que desejam dominar e delegarão o restante aos agentes, acelerando suas entregas e sua produtividade com a IA. Para isso, estamos criando um conjunto de ferramentas Codex com suporte para colaboração em tempo real e delegação assíncrona. 
+
+A integração de ferramentas de IA, como o Codex CLI e outras, está se tornando um padrão do setor, ajudando os desenvolvedores a programar mais rápido. Acreditamos, no entanto, que o fluxo de trabalho assíncrono com vários agentes do Codex no ChatGPT pode se tornar a forma padrão de produzir código de alta qualidade.
+
+Imaginamos que as duas formas de interação (integração em tempo real e delegação de tarefas) possam convergir. Os desenvolvedores vão colaborar com agentes de IA em seus IDEs e com ferramentas comuns para fazer perguntas, receber sugestões e delegar tarefas mais longas, tudo no mesmo fluxo de trabalho unificado.
+
+Para o futuro, pretendemos apresentar mais fluxos de trabalho interativo e flexíveis para agentes. Logo, os desenvolvedores poderão oferecer orientação durante as tarefas, colaborar em estratégias de implementação e receber atualizações proativas de progresso. Também prevemos uma melhor integração com as ferramentas que você já usa: hoje, o Codex se conecta ao GitHub, e logo você poderá atribuir tarefas pelo Codex CLI, ChatGPT Desktop e até mesmo seu rastreador de problemas ou sistema de CI.
+
+A engenharia de software é um dos primeiros setores a perceber ganhos consideráveis de produtividade com a IA, o que abre novas possibilidades para profissionais independentes e pequenas equipes. Estamos otimistas com esses ganhos, mas também estamos colaborando com parceiros para entender melhor as consequências da adoção generalizada de agentes nos fluxos de trabalho dos desenvolvedores, no desenvolvimento de habilidades das pessoas, em níveis de habilidade e em regiões diferentes. 
+
+Estamos só no começo, e será um prazer ver o que você pode fazer com o Codex.
+
+OpenAI
+Language
+português
+Brasil
+Login
+Pesquisar artigos...
+All Collections
+Codex
+Usando o Codex com seu plano ChatGPT
+Esta página foi traduzida automaticamente. Veja o artigo original em inglês.
+Usando o Codex com seu plano ChatGPT
+Como acessar e começar a usar o Codex
+
+Atualizado: ontem
+Este artigo aborda o Codex, o agente de programação da OpenAI. Se você tem interesse no ChatGPT Work, uma experiência separada do ChatGPT para pesquisas mais longas e tarefas com entregáveis, consulte ChatGPT Work e Codex; para detalhes técnicos do Codex, consulte a página do Codex em nosso site para desenvolvedores. O Codex está incluído nos planos do ChatGPT.
+
+Para informações sobre recursos do ChatGPT, como Sora, ChatGPT Imagens ou modo voz, consulte outros artigos em nossa Central de Ajuda.
+
+Saiba mais sobre ChatGPT Modo Voz — incluindo a Voz comum do Chat e a Voz no Work e no Codex para desktop.
+
+O que é o Codex?
+O Codex é um agente de AI que ajuda você a escrever, revisar e entregar código.
+
+Primeiros passos
+Como conectar o Codex à sua conta do ChatGPT
+Para começar a usar o Codex com seu plano do ChatGPT:
+
+Entre com sua conta do ChatGPT.
+
+O Codex está incluído nos planos do ChatGPT, incluindo Free e Go. Os limites de uso variam conforme o plano.
+
+Para mais informações, incluindo opções de maior uso para indivíduos e planos de créditos do Codex para usuários empresariais, acessechatgpt.com/pricing.
+
+Inicie seu cliente Codex preferido e siga as instruções para entrar com o ChatGPT:
+
+Aplicativo para desktop do ChatGPT (modo Codex)
+
+CLI do Codex
+
+Extensão Codex para IDE
+
+Codex na web
+
+Siga as etapas de configuração exibidas no cliente selecionado.
+
+Quais termos regem seu uso do Codex?
+Quando você entra no Codex usando uma conta existente do ChatGPT, osTermos de Uso e aPolítica de Privacidade do ChatGPT — ou ocontrato de serviços online correspondente para usuários da API da OpenAI e do ChatGPT Enterprise, Education ou Business — se aplicam aos dados compartilhados entre o Codex e o ChatGPT.
+
+Configuração e controles empresariais
+Padrões de modelo para o Codex
+Administradores e proprietários de workspace podem configurar o modelo inicial, o nível de raciocínio, a velocidade e o comportamento de novo chat para o Codex em Configurações do workspace → Modelos (abrir Modelos). Essas configurações definem a experiência inicial de um membro; elas não disponibilizam modelos indisponíveis nem substituem requisitos obrigatórios do workspace.
+
+Quando mais de uma configuração se aplica, os controles obrigatórios têm prioridade: requisitos gerenciados em requirements.toml substituem os padrões iniciais do workspace, e os padrões iniciais do workspace substituem a escolha inicial local de um membro. Os membros só podem sair de um padrão inicial quando o modelo continua disponível para eles e nenhum requisito obrigatório impede a alteração.
+
+Configuração
+Para ver um guia detalhado sobre como configurar seu workspace com o Codex, consulte nosso
+
+guia aqui:Guia do administrador Enterprise
+
+Plugins
+O Diretório de Plugins fica visível nos planos do ChatGPT. A possibilidade de um membro instalar ou usar um plugin depende do plano, das configurações do workspace, da função, da superfície e de quaisquer permissões de app exigidas pelo plugin. Para workspaces Business e Enterprise/Edu, administradores e proprietários gerenciam a instalação de plugins em Configurações do workspace > Plugins e o acesso aos apps subjacentes em Configurações do workspace > Apps.
+
+Um plugin pode incluir habilidades, apps e modelos de app. Se um plugin exigir um app, esse app deverá estar habilitado para a função do membro antes que o Codex possa usar o recurso baseado no app. As configurações de apps existentes continuam em vigor, incluindo acesso por função, controles de ação, configurações de aprovação, configurações de sincronização, restrições de domínio e autenticação do provedor.
+
+Os controles de plugins do workspace podem definir se um plugin fica Disponível ou Instalado para funções elegíveis. Instalado instala o plugin por padrão para essa função; Disponível permite que os membros o instalem por conta própria. Esses controles se aplicam ao ChatGPT na web, ChatGPT para dispositivos móveis, ChatGPT para desktop e Codex quando o plugin está disponível nessa superfície. Os administradores não definem uma alternância separada de app ou plugin por superfície.
+
+Alguns plugins locais ou específicos do Codex podem ser utilizáveis somente no Codex. Se um plugin foi criado localmente, talvez ele precise ser carregado, importado ou disponibilizado por um administrador antes de poder ser usado pelo workspace mais amplo.
+
+Sites no Codex
+Sites está disponível em planos pagos do ChatGPT, exceto Free e Go, nas regiões com suporte. No momento, Sites não está disponível no Espaço Econômico Europeu, na Suíça nem no Reino Unido. Administradores de workspace controlam se os membros podem criar Sites ou publicá-los publicamente.
+
+Onde Sites estiver disponível no Codex, descreva o que você quer criar, revise a prévia gerada e use os controles de compartilhamento disponíveis. Para ver o fluxo completo de criação e implantação, consulte o guia do desenvolvedor do Codex Sites.
+
+Administradores de workspace podem controlar a criação de Sites e a publicação pública por meio das configurações disponíveis em seu plano.
+
+Os controles disponíveis dependem do plano e da configuração do workspace. Se você não encontrar o controle esperado, entre em contato com o Suporte da OpenAI.
+
+Modo de desenvolvedor para uso do Browser e navegador no app
+O modo de desenvolvedor funciona com o uso do Browser no Chrome e com o navegador no app do Codex. Ele dá ao Codex acesso controlado ao Chrome DevTools Protocol (CDP) para depuração mais profunda do navegador, como inspecionar a saída do console, o tráfego de rede, o estado da página e o desempenho do JavaScript.
+
+Você pode habilitar o recurso localmente no aplicativo para desktop do ChatGPT abrindo Configurações > Navegador e ativando Habilitar acesso total ao CDP em Modo de desenvolvedor. O acesso total ao CDP permite que o Codex inspecione e controle partes internas sensíveis do navegador que podem colocar seus dados em risco, e o Codex pede aprovação explícita antes de usar o acesso total ao CDP para inspecionar um site.
+
+Administradores/proprietários podem desativar o recurso para seu workspace acessando Políticas e configurações emconfigurações do Codex na nuvem e definindo browser_use_full_cdp_access como false. Desabilitar o uso do Browser como um todo também desabilitará o CDP.
+
+Para detalhes de configuração e aprovação, consulteModo de desenvolvedor. Observe que administradores/proprietários primeiro precisarão habilitar onavegador no app antes de habilitar o modo de desenvolvedor.
+
+RBAC (controle de acesso baseado em função)
+O acesso ao Codex pode ser concedido a funções de usuário específicas. Para mais informações sobre como configurar o RBAC, consulte nosso guia aqui:RBAC
+
+API de Compliance
+O uso do Codex, incluindo clientes locais como a CLI e a extensão para IDE, bem como o uso na web ou delegado na nuvem, está disponível naAPI de Compliance. Essa superfície de logs abrange clientes Codex com suporte, separada dos endpoints específicos de tarefas na nuvem.
+
+Limites de uso por plano
+O uso do Codex, ChatGPT Work, ChatGPT para Excel e Workspace Agents sai do mesmo pool de uso agentivo e créditos quando esses recursos estão disponíveis no seu plano. A quantidade usada por uma tarefa do Codex varia conforme o tamanho e a complexidade do trabalho, o modelo e onde a tarefa é executada. Scripts pequenos podem usar apenas uma fração da sua franquia, enquanto bases de código maiores, tarefas longas e sessões prolongadas usam mais.
+
+O ChatGPT Modo Voz no Work e no Codex para desktop usa esse mesmo pool agentivo compartilhado para o trabalho de tarefas. O tempo de Voz conectada é medido separadamente onde a precificação flexível se aplica. A Voz comum do Chat usa limites separados e não consome o uso do Codex.
+
+Se você estiver se aproximando do seu limite do Codex ou já o tiver atingido, verifique a página de uso do Codex ou o banner de limite para ver as opções disponíveis no seu plano. Alguns usuários Plus e Pro podem adicionar créditos para continuar usando o Codex; outros usuários talvez precisem fazer upgrade ou aguardar a redefinição do limite.
+
+Para ver a lista completa de limites, taxas e opções de créditos do Codex, consulte apágina de preços no site de desenvolvedores da OpenAI.
+
+Contexto e controles de dados
+Alguns recursos do Codex podem torná-lo mais útil ao permitir que ele se lembre do contexto, continue o trabalho ao longo do tempo e se conecte às ferramentas que você escolher usar. Eles incluem Memórias, Tarefas agendadas, o navegador integrado do Codex e Uso do computador. Para saber mais sobre esses e outros recursos, incluindo como gerenciar os dados que eles armazenam e com os quais interagem, consulte nosso centro de desenvolvedores.
+
+Gravar e reproduzir
+Gravar e reproduzir está disponível no app para desktop do ChatGPT ao usar o Codex no macOS para usuários qualificados. Ele permite que você demonstre um fluxo de trabalho uma vez e o transforme em uma habilidade reutilizável. Ele é útil para fluxos de trabalho estáveis e repetíveis que são mais fáceis de mostrar do que de descrever.
+
+Gravar e reproduzir exige que o Uso do computador esteja disponível e habilitado, e a disponibilidade inicial exclui a União Europeia, a Suíça e o Reino Unido. Durante a gravação, o Codex observa as ações e o conteúdo das janelas necessários para aprender o fluxo de trabalho. Mantenha as gravações focadas na tarefa e evite inserir segredos ou dados sensíveis durante a gravação.
+
+Para saber mais, consulte oguia Gravar e reproduzir.
+
+Controles de dados
+Seus controles de dados de treinamento do ChatGPT se aplicam ao conteúdo processado pelo Codex, incluindo capturas de tela feitas pelo Uso do computador. Fluxos de trabalho locais são executados no seu dispositivo; tarefas na nuvem são executadas em ambientes gerenciados pela OpenAI. Serviços conectados podem estar disponíveis em superfícies compatíveis do ChatGPT e do Codex, e você pode desconectá-los a qualquer momento.
+
+Perguntas frequentes
+Qual modelo a CLI do Codex ou a extensão para IDE usa?
+O modelo que o Codex usa por padrão depende da sua versão da CLI ou da extensão para IDE e da configuração. Confira adocumentação do Codex para ver os modelos disponíveis e como configurar modelos diferentes.
+
+A OpenAI treina com meu uso do Codex?
+Business, Enterprise e Edu
+Por padrão, a OpenAI não usa entradas nem saídas de nossos produtos para usuários empresariais, incluindo ChatGPT Business, ChatGPT Enterprise e a API, para melhorar nossos modelos. No entanto, os proprietários de organizações da API podem optar por compartilhar dados da API com a OpenAI. Essa configuração não está disponível para determinadas organizações, incluindo Enterprise e clientes com zero retenção de dados ativada.
+
+Saiba mais sobrecomo compartilhar feedback, dados de avaliação e ajuste fino, e entradas e saídas da API com a OpenAI.
+
+Pro e Plus
+As conversas podem ser usadas para melhorar modelos, a menos que você desative o treinamento emcontroles de dados do ChatGPT. Para mais informações, consultecomo seus dados são usados para melhorar o desempenho dos modelos.
+
+Posso executar o Codex na minha IDE?
+Sim, a extensão Codex para VS Code é compatível com a maioria dos forks do VS Code. Para outras IDEs, você também pode executar a CLI do Codex no terminal da IDE.
+
+Como as permissões de workspace se aplicam ao Codex no aplicativo para desktop do ChatGPT?
+Sim. Workspaces gerenciados podem controlar separadamente o uso local do Codex e as tarefas do Codex na nuvem. O Codex Local abrange a CLI, a extensão para IDE e os fluxos de trabalho no desktop, enquanto o Codex Cloud abrange tarefas delegadas na nuvem. O Remote Control também pode exigir habilitação no workspace ou permissão de RBAC, e o dispositivo deve permitir descoberta e controle nas configurações do ChatGPT para desktop.
+
+Para ver um guia detalhado sobre como configurar seu workspace com o Codex, consulte nosso guia aqui:Guia do administrador Enterprise
+
+Onde posso encontrar ajuda para solucionar problemas do Codex no aplicativo para desktop do ChatGPT?
+Consulte nosso guia da plataforma se tiver problemas ao usar o Codex no aplicativo para desktop do ChatGPT. Se precisar de mais ajuda, entre em contato conosco.
+
+Como posso obter acesso ao Codex Enterprise Analytics?
+O acesso ao Codex Enterprise Analytics está disponível para workspaces Enterprise com o Codex habilitado. Para usar a API do Codex Enterprise Analytics, use uma chave de API da organização que tenha acesso ao Codex Enterprise Analytics. Se sua solicitação de API for rejeitada porque a chave não tem acesso, peça ao administrador do seu workspace ou da organização que forneça uma chave com acesso ao Codex Enterprise Analytics.
+
+Para detalhes de configuração e acesso à API, consulte nossadocumentação da API.
+
+Os limites de taxa relacionados ao ChatGPT para upload de arquivos, limites de imagens e limites de voz se aplicam ao Codex?
+Uploads de arquivos, geração de imagens ou voz no ChatGPT têm limites de uso, períodos de redefinição e banners separados. Por exemplo, se você vir banners como “50 imagens no último dia”, “redefine em 720 horas”, atingir limites de voz ou vir banners de limite de upload ao enviar arquivos no ChatGPT, esses limites não se aplicam ao Codex.
+
+Para detalhes sobre limites de imagens, vídeos e voz, consultelimites de geração de imagens e vídeos elimites de uso de voz. Para informações sobre limites e solução de problemas de upload de arquivos do ChatGPT, consultePerguntas frequentes sobre uploads de arquivos. Para informações sobre o status de vários serviços do ChatGPT, incluindo uploads de arquivos, consulte apágina de status da OpenAI.
+
+O ChatGPT Modo Voz usado dentro do Work ou do Codex no desktop é medido separadamente, enquanto as tarefas iniciadas por Voz usam o mesmo pool agentivo compartilhado que o Work e o Codex. Saiba mais.
+
+Como funcionam os convites por indicação do Codex e as redefinições acumuladas?
+Usuários elegíveis podem ver convites de indicação do Codex no menu do perfil. Usuários de planos pessoais podem ver Convidar um amigo, e membros elegíveis de workspaces Business podem ver Convidar um colega de trabalho. A caixa de diálogo do convite mostra detalhes da oferta atual, como a recompensa vigente, limites de convites, expiração e quaisquer requisitos aplicáveis ao destinatário.
+
+Em algumas promoções Plus e Pro, uma indicação bem-sucedida pode adicionar uma redefinição acumulada do limite de taxa do Codex. Para usar uma redefinição acumulada, abra o menu do perfil e selecione o resumo de uso que mostra a contagem de redefinições disponíveis, como 1 redefinição disponível.
+
+As recompensas por indicação variam de acordo com a oferta e o plano. Para detalhes atuais sobre recompensa, limite e elegibilidade, consulteConvide amigos e colegas de trabalho ePromoções de indicação do Codex.
+
+Como posso criar instruções de projeto no Codex?
+Use /init no aplicativo para desktop do ChatGPT enquanto usa o Codex para gerar um scaffold AGENTS.md para o projeto atual. Isso usa o mesmo fluxo de inicialização da CLI do Codex. Para outros comandos, consulte Comandos do app.
+
+O que acontece se eu atingir um limite de uso enquanto o Codex está trabalhando?
+Se você atingir um limite de uso durante uma rodada ativa, o Codex pode continuar trabalhando nessa rodada, sujeito a limites de uso justo. Após essa rodada, verifique a página de uso do Codex ou o banner de limite para ver as opções disponíveis no seu plano, como adicionar créditos, aplicar uma redefinição disponível, fazer upgrade ou aguardar a redefinição do limite.
+
+Para mais detalhes, consultelimites de uso do Codex.
+
+The Next Era of
+Knowledge Work
+How Codex is helping people navigate
+the complexity of modern work
+June 2, 20265M >6x >3x
+Codex weekly
+active users
+Growth in Codex weekly
+active users since the
+desktop app launched
+Knowledge workers
+are now adopting Codex
+>3x faster than developers
+Data Analysis, Research, Knowledge Artifacts
+Codex’s fastest-growth task types for knowledge workers
+Knowledge Work in the
+Modern World
+Knowledge work dominates advanced economies. More than 40 percent of US labor, roughly 72
+million people, works primarily with information: analysis, code, documents, designs, systems,
+decisions, and communication. This is a recent historical development. In 1850, approximately 60
+percent of Americans worked in agriculture. By 1970, that had fallen to about 4 percent even as
+output soared. Manufacturing absorbed much of the displaced labor and peaked around 26
+percent of US employment in 1960, then receded with globalization and robotics.
+Knowledge work filled the space. Peter Drucker coined the term in 1959 to describe occupations
+whose primary inputs and outputs are symbols rather than crops or manufactured goods. The
+category now includes software, engineering, science, management, education, healthcare, law,
+finance, design, marketing, journalism, consulting, and much of public administration.
+2The result is a strange abundance. Modern workers can produce documents, messages,
+dashboards, models, and presentations faster than ever. Yet they spend a remarkable share of their
+time looking for context, reconciling conflicting versions, waiting for responses, and moving
+information across systems. A McKinsey Global Institute study found that the average knowledge
+worker spends roughly 28 percent of the workweek managing email and nearly 20 percent of it
+looking for internal information or tracking down colleagues who can help with specific tasks.
+This is the inheritance of piecemeal digitization. Email made correspondence instantaneous.
+Documents became collaborative. Spreadsheets, dashboards, ticketing systems, CRMs, knowledge
+bases, chat tools, and SaaS applications captured more work. Each solved a local problem but gave
+us fragmented tools. The information we need now hides in inboxes, folders, chats, comments,
+permissions, dashboards, tickets, meetings, and our own memory. The office became digital
+without becoming integrated.
+Three frictions now define the daily cost of knowledge work:
+● First, search is the cost of finding the relevant inputs across sprawling, untransparent
+systems: the right file, clause, file path, precedent, dataset, message, or expert are all
+needles in obscure haystacks.
+● Second, coordination is the cost of moving information and decisions through teams, tools
+and formats, while navigating an organization’s divergent and shifting incentives.
+● And third, approval and verification are the costs of getting work accepted and ensuring
+that it survives contact with reality. In engineering, that means tests, reviews, deployments,
+and ongoing monitoring. In law or consulting, it means partner review, client acceptance,
+and defensible reasoning. In science, it requires experiments, replication, and evidence.
+These frictions explain why computers invaded the office long before they increased its
+productivity. Robert Solow captured this when he observed that the computer age was visible
+everywhere except in the productivity statistics. Erik Brynjolfsson later gave that puzzle a name, the
+productivity paradox, and developed the deeper theory that information technology produces large
+gains only when organizations redesign processes, skills, management structures, and workflows
+around the tasks that the technology has made cheap. Electricity followed the same pattern. Large
+gains arrived only after factories stopped treating electric power as a substitute for steam engines
+and rebuilt floorplans around distributed electric motors at each machine. That took decades.
+Knowledge work is still waiting for its factory redesign. Previous generations of workplace software
+lowered the cost of producing intermediate artifacts, but did not reduce the attention required to
+consume them. Email made correspondence cheap, then multiplied correspondence. Docs made
+drafting cheap, then multiplied drafts and review cycles. The result is an excess of documents and
+tools, and ever scarcer time and attention.
+3Codex is that redesign. Factories put electric motors next to each machine, and Codex places AI
+closer to each problem to be solved. Large organizations were built around the heavy cost of
+producing and moving artifacts: secretary pools, cross-functional teams, pyramids of clerks, long
+chains of review. Codex puts more agency in the hands of the people with the greatest need. It
+dissolves the bottlenecks before, during and after artifact production. It can find the inputs,
+coordinate the workflow, produce the deliverables, check their quality and chase down the
+necessary approvals. Codex brings a new way of work to teams in fragmented digital organizations.
+Companies can now build faster, with fewer delays and administrative burden, so their people can
+focus on the most impactful tasks.
+GroundVue – founded by Travis Hoppe, Ann Lewis, and
+Shannon Arvizu – offers a glimpse of how Codex is
+expanding beyond software into knowledge work. The
+company helps governments learn from one another by
+making public meetings searchable and comparable at
+scale. Across roughly 90,000 government bodies, critical
+information is scattered across videos, websites, and local
+platforms. GroundVue uses Codex to find hard-to-reach
+public sources and build systems that continuously collect
+and organize them. Tasks that once took days or weeks now take minutes, allowing a
+small team to perform work that previously would have required large groups of
+technologists and researchers. In effect, Codex helps turn fragmented public
+information into usable institutional knowledge.
+Beyond Software: How Agentic Tools Untangle Knowledge Work
+Codex now has more than 5 million weekly active users, up more than 6x since the launch of the
+desktop app in February. While it began as a tool for software development, faster growth is
+increasingly coming from a broader category: knowledge work.
+Data scientists use Codex to clean datasets, build models, and automate analysis. Finance teams
+use it to reconcile information, build forecasts, and generate reports. Designers use it to prototype
+products and create assets. Marketers use it to analyze campaigns, produce content, and
+synthesize customer feedback.
+4Knowledge workers now represent about 20 percent of Codex users and are adopting it more than
+3 times as fast as developers. This includes roles that span product and project management,
+design, research and academia. Personal users represent more than 5 percent of Codex users and
+are growing more than 4 times as fast as developers, with substantial use in hobbies and creative
+work, education and self-learning, personal finance, and entertainment.
+The task mix among knowledge workers is the most revealing piece of the data. Each week, 72
+percent of these users produce artifacts: text documents such as reports, memos, and contracts;
+multimedia assets such as images, audio, and video; and, increasingly, PDFs and spreadsheets. The
+next categories are less obvious: engineering operations at 47 percent, code implementation at 46
+percent, and research at 41 percent. The boundary between software work and knowledge work has
+blurred, because AI enables people to reach beyond their formal role and build what their goal
+requires. Developers use Codex for knowledge artifacts; knowledge workers use it for code and
+engineering operations. A product manager builds the dashboard rather than commissioning it
+from another team. A researcher writes the dataset-cleaning script herself instead of routing it
+through engineering. A designer ships the prototype without a developer in the loop. An executive
+constructs an internal tool that reconciles files and produces a weekly report. Codex gives the
+person closest to the work a way to build the missing tool without waiting for a formal software
+roadmap to authorize and deliver it.
+5The most consequential shift in behavior that our data show is toward parallel tasks. Roughly 50
+percent of users now have more than one Codex task running simultaneously at some point during
+the day, up from less than one third in mid-April. The shift from sequential to parallel use is what
+lets a single knowledge worker operate at the scale of a small team: one turn to inspect a dataset,
+another to draft a script, another to assemble a report, another to check an application. The user
+becomes the orchestrator of workstreams rather than executing a single task at a time.
+Modern knowledge work is beset by imperfect tools, scattered context, time-consuming handoffs,
+and artifacts that must be assembled, revised, and approved. Codex gives people a way to operate
+efficiently inside that fragmentation, to turn scattered, local knowledge into shared, working
+systems, and converting individual effort into parallel, reviewable streams of work.
+6Proaction shows how Codex helps small teams perform
+work that once required larger organizations. The
+company helps fleets manage vehicles and equipment
+whose data is scattered across telematics systems,
+maintenance platforms, spreadsheets, and institutional
+memory. Using Codex, co-founder Colin Knudsen turns
+customer conversations into customized proposals,
+workflow prototypes, and working demos tailored to each
+prospect's operations. Instead of relying on generic sales
+pitches, Proaction can quickly build and validate solutions before a contract is signed.
+Codex effectively connects customer discovery, sales, and product development,
+helping a five-person startup move faster and compete well above its size.
+7Where Codex Is Growing Fastest
+The fastest growing task types for knowledge workers are: Data Analysis (110% growth week over
+week); Research (+37%), and Knowledge Artifacts (+36%):
+Among the fastest growing task types, a few are notable: within Knowledge Artifacts, users are
+most commonly working with text documents (Google Docs, Word docs, reports, memos,
+contracts) and multimedia assets (images, audio, and video). We see more than 50 percent growth
+in users working with PDFs and spreadsheets. In Research, we commonly see searches of the web
+and internal knowledge, with substantial growth in market research: into companies, industries,
+competitors, market size and position. Data labeling dominates Data Analysis, with the majority of
+usage and the fastest growth rate among tasks. Finally, we see more than 40 percent growth in a
+variety of other tasks: drafting messages, building and designing products, understanding
+contracts, regulations, and policies, and hiring and interviewing.
+8Mathematics professor Taiyo Inoue uses Codex to
+automate one of the least rewarding and most
+time-consuming parts of teaching: maintaining course
+information in a learning management system. By
+helping him generate scripts that update assignments,
+calendars, materials, and announcements in Canvas,
+Codex handles work that previously consumed hours of
+manual effort each week. Inoue estimates the workflow
+saves him four to five hours weekly. Instead of spending
+that time on administrative upkeep, he has redesigned
+his classes around collaborative problem-solving, giving students at California State
+University more opportunities to work through mathematics together and in person.
+Codex helps turn routine academic administration into time and energy that Inoue
+reinvests in teaching.
+9Policy for the Agentic Era
+Countries and organizations that give people access to these tools and teach them to build and
+delegate responsibly will see the most productivity gains. Codex is an early example of that future:
+not a replacement for knowledge workers, but a way for people closest to the work to operate with
+more agency and capacity to solve hard problems. The points below are intended to start a
+conversation with policymakers: as agentic tools move from software into the broader work of
+public agencies, schools, startups, nonprofits, research labs, and business.
+1. Modernize workflows and measure what works
+Public agencies should use agents to reduce administrative backlogs, improve software systems,
+search and reconcile records, support scientific research, and deliver public services faster. Success
+should be measured in outcomes that serve people and they easily understand: shorter wait times,
+fewer forms, faster permitting, better benefits delivery, lower administrative costs, and more
+responsive government. The benefits of agentic AI should not be limited to the largest firms and
+policy should support broad access for schools, startups, small businesses, nonprofits, researchers,
+and government.
+2. Make AI fluency a core workforce skill
+Governments should treat AI fluency as basic economic infrastructure. That means funding
+hands-on AI training through schools, community colleges, public agencies, libraries, and employer
+partnerships. Employers should be encouraged to support training through grants, tax incentives,
+procurement, and partnerships to give workers paid time to learn these tools on real workflows.
+3. Put workers at the center of AI adoption
+The people closest to the work often know best where AI can make a job better, safer, and more
+productive. A nurse knows which forms end up slowing care, a caseworker knows where benefits
+delivery breaks down, a machinist knows which handoffs lead to errors, and a teacher knows how
+much administrative work reduces their time with students. Governments should support
+worker-led AI adoption through small-business grants, public-sector innovation funds, technical
+assistance, and formal channels for workers and managers to shape how AI is used. The
+highest-return uses will often be local and specific: a small tool for a clinic, a lab, a local government
+office, a small manufacturer, or a nonprofit that helps people remove dangerous, repetitive,
+administrative, or exhausting work and focus on higher-value tasks.
+104. Update public procurement around jobs to be done
+Governments should update procurement so agencies can buy AI tools that solve operational
+problems, not merely purchase software licenses. Public-sector pilots should require privacy,
+security, auditability, and human oversight. Agencies should also be empowered to test tools in
+secure sandboxes and scale what measurably reduces backlogs, improves quality, or lowers
+administrative burden.
+Luke Xing used Codex to build a desktop app that helps
+compensate for major and variable hearing loss in his
+left ear. By describing the problem in plain language to
+Codex, he created a tool that tests hearing across
+frequencies and adjusts audio output for different
+devices, helping restore balance to music, calls, and
+everyday listening. The app is not a medical device, but
+a personal solution to a highly specific challenge that
+commercial software has not addressed. Luke’s
+experience illustrates a broader shift: people no longer
+need to wait for someone else to build the tools they need. Increasingly, they can
+build those tools themselves.
+11
+
+
+
