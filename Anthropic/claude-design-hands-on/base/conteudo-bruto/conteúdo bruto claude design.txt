@@ -1,0 +1,2105 @@
+conteúdo bruto claude design
+
+Claude Design lets you create designs, interactive prototypes, presentations, and more by having a conversation with Claude. This guide walks you through creating your first project, iterating on designs, and getting the most out of the tool.
+
+Claude Design is now available in beta to Pro, Max, Team, and Enterprise plans. This capability is default off for Enterprise plans. You can use it on the web at claude.ai/design or from the sidebar in Claude Desktop.
+
+This guide assumes your organization’s design system has already been set up, so everything you create will automatically use your brand’s colors, typography, and component patterns. If you’re a design lead who needs to set up or modify the design system itself, see Set up your design system in Claude Design.
+
+ 
+
+ 
+
+How Claude Design works
+Claude Design has two main areas: a chat interface on the left and a canvas on the right. You describe what you want in the chat, and Claude generates a working design on the canvas. From there, you iterate—refining through conversation, inline comments, and directly on the canvas until it’s right.
+
+ 
+
+The typical flow is:
+
+Create a project.
+
+Attach or import the design system you want Claude to build with.
+
+Add any relevant context (screenshots, a codebase).
+
+Describe what you want to build.
+
+Review what Claude generates on the canvas.
+
+Refine through chat, edit directly on the canvas, or leave inline comments.
+
+Export or share when you’re happy with the result.
+
+ 
+
+Move between Claude Design and Claude Code
+You can move between working in Claude Design and Claude Code while keeping your work synced. Use /design-sync to pull in your design system, so everything you build in Claude Design starts from your existing components. When a design is ready to become software, you can hand it off to Claude Code, which continues from your existing work instead of starting over from a screenshot.
+
+ 
+
+If you prefer to work from Claude Code, connect the Claude Design MCP server to create and edit designs without leaving your terminal:
+
+ 
+
+Add the server:
+​claude mcp add --scope user --transport http claude-design https://api.anthropic.com/v1/design/mcp
+
+   2. Run /design-login to sign in.
+
+ 
+
+Once you're connected, you can import a design into your codebase, export your code as a live prototype, or let Claude build the whole thing from start to finish.
+
+ 
+
+Create a new project
+When you create a project, it automatically inherits your organization’s design system. You don’t need to upload brand assets or configure anything—your brand colors, fonts, and components are already in place.
+
+ 
+
+Attach or import your design system
+Bring in one or several design systems from a GitHub repo, design files, raw uploads, or your local codebase using the /design-sync command in Claude Code. Claude builds with your real design system components, checks its own output against your design system, and makes corrections before you see them. 
+
+ 
+
+For larger teams, the Claude Design Admin custom role lets an admin approve a standard system and lock down edits, so the work always matches your company guidelines.
+
+ 
+
+Add context to your project
+The more context you give Claude, the better your output will be. You can attach reference material at any point during a project.
+
+Screenshots, images, or existing assets: Upload screenshots of existing designs, competitor products, wireframes, or visual inspiration. You can also attach an existing slide deck or document with a design style you want to replicate. Useful for “make it look like this” requests.
+
+Codebases and existing design files: Link a code repository so Claude understands your existing components, architecture, and styling patterns. This makes prototypes more production-ready from the start. Import also supports multiple ways to upload existing product design work.
+
+ 
+
+Write effective prompts
+You don’t need to be a designer to get great results. Be specific about what you’re building, who it’s for, and what matters most.
+
+ 
+
+A good prompt includes the goal (what you’re building), the layout (how things should be arranged), the content (what information to display), and the audience (who will use it). Claude will also ask clarifying questions if it needs more information.
+
+ 
+
+Here are some examples of prompts that work well:
+
+“Create a dashboard showing monthly revenue with filters for region and product line.”
+
+“Design a mobile app onboarding flow with 4 screens that walks users through our core features.”
+
+“Build a landing page for our new API product with a hero section, code examples, and pricing.”
+
+“Create a form for collecting customer feedback with conditional questions based on category.”
+
+“Design an internal tool for our ops team to review and approve content submissions.”
+
+ 
+
+ 
+
+Refine your design
+The first generation is a starting point. The real value comes from iterating.
+
+ 
+
+Using chat
+Chat is best for broad changes that affect the overall design:
+
+“Make the color scheme darker and more minimal.”
+
+“Rearrange the dashboard so metrics are in the top row and the chart is below.”
+
+“Add a settings panel on the right side.”
+
+“Show me 2–3 alternative layouts for this page.”
+
+You can also ask Claude to explain its design decisions, suggest improvements, or review the design for accessibility.
+
+ 
+
+Using inline comments
+Inline comments let you click directly on a specific part of the canvas and request a targeted change. This is faster than describing the location in chat.
+
+ 
+
+Examples of good inline comments:
+
+“Make this button padding larger.”
+
+“Change this to a dropdown instead of radio buttons.”
+
+“Use the primary brand color here.”
+
+“Make this section collapsible.”
+
+Note: If your comments aren’t being picked up, paste the feedback directly into the chat instead. This is a known workaround for an intermittent issue where comments can disappear before Claude reads them.
+
+ 
+
+Edit directly on the canvas
+Use rich layout controls for quick visual and aesthetic shifts, specifically to drag, resize, and align elements directly.
+
+ 
+
+When to use chat vs. comments vs. edit directly
+Use comments for targeted, component-level changes (“fix this button,” “adjust this spacing”). Use chat for structural changes, new sections, or anything that requires explanation or context. Edit directly for quick visual and aesthetic changes.
+
+ 
+
+Manage versions and revisions
+If you want to explore a different direction without losing your current work, tell Claude: “Save what we have and try a completely different approach.” Claude will save your current project and confirm where it’s saved, so you can reference earlier iterations in the conversation easily.
+
+ 
+
+ 
+
+Export and share
+Once your design is ready, you can share it with colleagues or export it for use elsewhere. The right format depends on your use case—whether you’re getting stakeholder feedback, handing off to engineering, or presenting to a group.
+
+ 
+
+Use the “Export” button in the upper right corner when viewing your project to choose from the following export formats.
+
+Download as .zip
+
+Export as PDF
+
+Export as PPTX
+
+Send to Canva
+
+Export as standalone HTML
+
+Send to the tools you already use, including Adobe, Base44, Canva, Gamma, Lovable, Miro, Replit, Vercel, and Wix, with more destinations coming soon.
+
+Handoff to Claude Code
+
+Send to local coding agent
+
+Send to Claude Code Web
+
+
+ 
+
+You can also share projects within your organization using a shareable link. Sharing options include view-only, comment, and edit access.
+
+ 
+
+ 
+
+Usage and pricing
+Claude Design counts toward the same usage limits as the rest of Claude. Design activity draws from the shared pool you use for chat, Claude Code, and Cowork, so there's no separate Claude Design allowance to track. Complex projects with large codebases or many iterations consume more usage.
+
+ 
+
+If you reach your usage limits, Claude Design is unavailable until your limits reset. If you've enabled usage credits, you can keep working after reaching your included limits. Learn more about how usage and length limits work.
+
+ 
+
+Note: Claude Design previously had its own weekly allowance, separate from your other usage limits. All Claude Design activity now counts toward your plan's shared limits.
+
+ 
+
+ 
+
+Tips for best results
+Import a complete design system. Import a complete design system that includes your styles, fonts, and components.
+
+Start simple, then layer in complexity. Begin with the core layout and content, then add interactions, edge cases, and polish. Claude responds well to incremental requests.
+
+Be specific in your feedback. “This doesn’t look right” is hard to act on. “Tighten the spacing between form fields to 8px” gives Claude exactly what it needs.
+
+Reference your design system. If you know a component exists in your brand’s system, mention it by name: “Use the Primary Button component” or “Apply the Card layout pattern.”
+
+Think about responsiveness early. Mention whether your design needs to work on mobile, tablet, and desktop, or just one of those.
+
+Ask for variations. If you’re unsure about a direction, ask Claude to show you 2–3 options. Comparing alternatives is much faster than guessing.
+
+Ask Claude for feedback. Claude can review your design for accessibility, contrast ratios, information hierarchy, and general usability. Treat it as a design collaborator, not just a generator.
+
+ 
+
+ 
+
+Known limitations
+Claude Design is now available in beta. A few things to be aware of:
+
+Comment persistence: Inline comments occasionally don't appear on the page, but you can still see them by opening the comments view.
+
+Large codebases: Consider linking very large repositories from Claude Code to avoid lag or browser issues. To sync a design system, use /design-sync from Claude Code.
+
+Chat errors: If you hit a "chat upstream error," try starting a new chat tab within the same project.
+
+Availability: Claude Design is available on web and desktop only.
+
+Multi-person editing: Two or more people editing a design project at the same time is still basic and may not work reliably.
+
+Design system import: Design system import is only as good as its source. A messy codebase or an incomplete file will show up in the output.
+
+Creating a design system allows Claude Design to produce outputs that fit your specifications. It extracts reusable components, colors, typography, and patterns from the assets you provide—codebases, slide decks, or other design references—and uses them as the foundation for every project created within your account.
+
+Claude Design is now available in beta to Pro, Max, Team, and Enterprise plans. This capability is default off for Enterprise plans.
+
+This guide is for the designer or brand owner who will set up the design system. You only need to do this once; after setup, all team members’ projects automatically use it (for Team and Enterprise plans).
+
+ 
+
+Prerequisites
+Permissions granted by your organization admin for design system setup.
+
+At least one of the following as source material:
+
+ A codebase with your design system or component library
+
+ A slide deck or document that reflects your visual identity
+
+ Brand guideline assets (logos, color palettes, typography specs)
+
+ 
+
+ 
+
+Step 1: Create or switch to your organization
+To set up your organization’s design system:
+
+Open Claude Design.
+
+In the lower-left corner of the project picker, click the current organization name.
+
+Select your organization, or create a new one.
+
+You’ll be redirected to the onboarding flow. Complete it.
+
+ 
+
+Step 2: Upload your brand and product assets
+During onboarding (or afterward from your organization settings), upload the assets that define your brand and product. Claude will analyze them and extract a reusable design system.
+
+ 
+
+What to upload:
+
+Codebases: If your design system lives in code (for example, a React component library), you can link or upload the repository. Claude will read the components and styles.
+
+Prototypes: Screenshots, web flows, and existing design files. 
+
+Slide decks or documents: Even a well-designed PowerPoint or PDF that reflects your brand can work. Claude extracts colors, layout patterns, and typographic choices.
+
+Individual assets: Logos, color palette files, typography specimens.
+
+You only need one source to get started, but providing multiple gives Claude more to work with.
+
+ 
+
+Step 3: Review the generated design system
+After uploading, Claude generates a design system (UI kit) for your organization. This typically includes:
+
+Color palette: Primary, secondary, and accent colors extracted from your assets.
+
+Typography: Font families, sizes, and weights.
+
+Components: Buttons, cards, navigation elements, and other reusable UI patterns.
+
+Layout patterns: Spacing, grid systems, and page structures.
+
+To validate your design system, create a test project and see if the output matches your brand expectations. Try prompts like:
+
+“Create a landing page for [your product].”
+
+“Design a dashboard showing [relevant metrics].”
+
+“Make a presentation about [a topic your team commonly presents on].”
+
+ 
+
+Step 4: Make it available to your team
+Once you’re satisfied with the design system quality, make sure the “Published” toggle is switched on. After publishing, any projects created from the Claude Design homescreen while in your organization will use your design system instead of the default.
+
+ 
+
+
+ 
+
+ 
+
+Tips for best results
+Include real examples, not just specs. A finished landing page or marketing site tells Claude more about your brand’s feel than a color palette alone.
+
+Iterate. If the first extraction doesn’t capture your brand well, try uploading additional or different assets.
+
+ 
+
+Updating your design system
+Brands evolve. When your design system changes, you can update it within Claude Design. From your Claude Design organization settings, click the “Open” button next to the design system you want to edit. Click the “Remix” button in the upper right corner to open the chat interface on the left side of the window. From here, you can work with Claude to change your design system.
+
+Using Claude Design for presentations and slide decks
+Claude Design by Anthropic Labs (claude.ai/design) lets you create polished presentations and slide decks directly through conversation. This capability has become one of the most popular use cases internally at Anthropic, enabling teams to build professional decks in minutes rather than hours.
+Category
+Professional
+Product
+Claude Design
+Reading time
+2
+min
+Share
+Copy link
+Why use Claude Design for presentations
+Speed and Efficiency
+Creating a presentation from scratch typically involves wrestling with slide templates, formatting, and layout decisions. Claude Design handles all of this instantly. You describe what you need in plain language, and Claude generates a complete deck ready to present—no design skills required.
+
+Brand Consistency
+If your organization has set up a design system in Claude Design, your slides automatically apply your brand's colors, typography, and visual style. This ensures consistent branding across all presentations without manual tweaking, and eliminates the "this looks different from our other materials" problem.
+
+Interactive and Dynamic
+Claude Design presentations are generated as interactive HTML rendered in the canvas, offering capabilities beyond static slide software. You can iterate, refine, and customize slides in real-time within the conversation, seeing changes instantly. 
+
+Real-World Applications
+Teams at Anthropic are using Claude Design presentations for:
+
+Meeting prep decks with customer-specific branding
+All-hands and company-wide presentations
+Co-branded partner proposals
+Executive readouts and quarterly reviews
+Board presentations and investor updates
+Creating a presentation
+Getting Started
+To create a presentation, simply describe what you need in your prompt. Be specific about your audience, key messages, and any organizational context that should influence the design.
+
+Example Prompts
+Here are some prompts that work well:
+
+"Create a 10-slide deck about Q1 results with sections for revenue, product updates, and team highlights"
+"Build a 15-slide executive overview of our product roadmap for the board"
+"Generate a meeting prep deck for my customer call covering use cases, competitive positioning, and next steps"
+"Make a 5-slide partner proposal deck that's co-branded with our partner's logo and colors"
+"Create an all-hands presentation covering Q2 OKRs, hiring plans, and culture updates"
+Customizing your deck
+Once Claude generates your initial presentation, you can edit it to match your exact needs.
+
+Editing Individual Slides
+You can request changes to specific slides by referencing them clearly in your message. For example: "On slide 3, change the headline to 'Market Opportunity' and rewrite the bullet points to focus on TAM."
+
+Adding and Removing Slides
+Need more slides? Just ask. You can request entirely new slides with specific content, or ask Claude to expand a section into multiple slides for better pacing.
+
+Charts and Visualizations
+Claude Design can incorporate data visualizations directly into your slides. Describe the data you want to visualize and Claude will generate appropriate charts. 
+
+A benefit of presenting in HTML (vs. PPT) is that Claude Design can also create animations to storytell across your slides. 
+
+Images and Embedded Content
+You can ask Claude to include images, logos, and other visual elements in your slides. If you're using a design system with approved imagery, Claude will pull from those assets automatically.
+
+Sharing & collaboration
+You can share your presentation with colleagues through the standard Claude sharing mechanism. The options are:
+
+“Private”
+“Anyone in your organization with the link can view”
+“Anyone in your organization with the link can comment” — default
+“Anyone in your organization with the link can edit”
+When multiple users have access, they can both chat with the agent together in a group chat-style interface.
+
+Export & download options 
+Slides are exportable in the following ways: 
+
+Export as standalone HTML - best for interactivity and animations 
+Export as PPTX 
+Export as PDF 
+Download project as .zip
+Send to Canva 
+Hand off to Claude Code 
+Have questions about Claude Design presentations? Reach out to your Design Team or try building a deck yourself – most people find the workflow intuitive once they create their first one.
+
+Creating a presentation
+
+
+Using Claude Design for prototypes and UX
+Claude Design by Anthropic Labs is a powerful tool for product designers and product managers who need to move fast from concept to working prototype. This guide covers workflows specific to product work – rapid prototyping, connecting your codebase for production-aware designs, iterating on features with real components, and handing off to engineering through Claude Code.
+Category
+Professional
+Product
+Claude Design
+Reading time
+5
+min
+Share
+Copy link
+Using Claude Design for prototypes and UX
+Claude Design by Anthropic Labs is a powerful tool for product designers and product managers who need to move fast from concept to working prototype. This guide covers workflows specific to product work – rapid prototyping, connecting your codebase for production-aware designs, iterating on features with real components, and handing off to engineering through Claude Code.
+
+Product design workflows
+Rapid feature prototyping
+The most common product use case: you have a feature idea and need to make it tangible before committing engineering resources. Claude Design lets you go from concept to interactive prototype in a single conversation.
+
+Example prompts for feature prototyping:
+
+"Design a new settings page for our SaaS app with sections for account, billing, notifications, and integrations. Include a sidebar nav and make each section expandable."
+"Create an onboarding flow for a new user — 5 screens that walk them through connecting their data source, configuring their first dashboard, and inviting teammates."
+"Prototype a search experience with filters, faceted results, and a detail panel that slides in from the right when you click a result."
+"Build an approval workflow UI where managers can review, comment on, and approve or reject submitted requests in a queue."
+Design reviews and stakeholder alignment
+Before committing to a direction, you often need to get feedback from stakeholders who think better when they can see and interact with something. Claude Design is fast enough that you can generate 2–3 alternative approaches and present them side by side.
+
+Example prompts:
+
+"Show me three different layouts for a user profile page — one card-based, one with a left sidebar, and one with a top tab navigation."
+"Create two versions of this checkout flow — one single-page and one multi-step wizard — so I can compare them in a design review."
+User flow mapping
+You can use Claude Design to prototype complete user flows, not just individual screens. Walk Claude through the journey and it will generate each screen in context.
+
+Example prompt:
+
+"Map out the flow for a user who wants to upgrade from a free plan to a paid plan. Start from the dashboard where they see the upgrade prompt, through the plan comparison page, payment form, confirmation, and the updated dashboard with premium features unlocked."
+Internal tools and admin panels
+Product teams often need internal tools quickly — admin dashboards, content moderation panels, ops workflows. These are great candidates for Claude Design because speed matters more than pixel perfection.
+
+Example prompts:
+
+"Design an admin panel for managing user accounts — searchable table with filters for plan type and status, with a detail drawer that shows account history and lets you modify permissions."
+"Create a content moderation queue where reviewers can see flagged items, view context, and take action (approve, reject, escalate) with keyboard shortcuts."
+Connecting your codebase
+For product teams, connecting your codebase to Claude Design is where the tool gets significantly more useful. Instead of generic prototypes, Claude generates designs using your actual components, styling, and architecture.
+
+Why It matters for product work
+Prototypes use your real components: When Claude can see your component library, it designs with the buttons, cards, modals, and layouts that already exist in your codebase. No more "this looks great but we don't have that component" during handoff.
+
+Architectural consistency: Claude analyzes your styling patterns (CSS modules, Tailwind, styled-components, etc.), spacing scale, color system, and layout conventions. New designs stay aligned with what's already shipped.
+
+Faster handoff: Since the prototype is already built with your real patterns, the gap between "prototype" and "shippable code" shrinks dramatically.
+
+How to connect a codebase
+Claude Design allows you to both import from Github and attach via local directories via the Import button.  
+
+Once linked, your codebase becomes part of the project context. You can reference specific components by name in your prompts — "use the ProductCard component" or "follow the same layout pattern as the settings page."
+
+What Claude understands from your code
+Claude analyzes your linked codebase to understand:
+
+Component structure — Your UI building blocks and how they compose together
+Styling and theming — Your color system, spacing scale, typography, and CSS approach
+Framework patterns — State management, hooks, data flow, and other conventions
+File organization — How you name and structure components and directories
+Performance considerations
+Linking very large repositories can cause lag or browser stability issues. If your codebase is a monorepo or if you’re working on a codebase with more than 100 people actively contributing, we recommend linking the specific package or directory that contains the relevant components rather than the entire repo.
+
+We’ve also noticed that Chrome doesn’t handle attaching huge file trees well. You can avoid this by attaching folders within your repo, such that you do not include the .git folder, node_modules/ folder, etc., which may contain very large numbers of files.
+
+Hand off to Claude Code
+When a prototype is ready for implementation, Claude Design can hand off to Claude Code – preserving the design intent, component choices, and architectural decisions so engineers can build on your work instead of reinterpreting it.
+
+Click “Export” and “Hand off to Claude Code” to get started. By default, we bundle the project’s design files, chat, and a README which tells the model to interpret the designs for download, and give you a prompt you can paste into local Claude Code (or coding agent of your choice) that includes the bundle’s URL. 
+
+
+You’ll also have an option to hand off to Claude Code Web. 
+
+
+This handoff is especially valuable when your codebase is linked, because Claude Code already understands the components and patterns the prototype was built with. As one design lead put it: "Including design intent in Claude Code handoffs has made the jump from prototype to production seamless."
+
+Tips for a clean handoff
+Name things clearly in the prototype. If you've referred to components by specific names during the design conversation, those names carry through to the handoff.
+Document decisions in the chat. When you make a design decision during iteration ("we went with tabs instead of a sidebar because users need to see all sections at once"), that reasoning becomes context for implementation.
+Flag edge cases. Before handing off, ask Claude to show how the design handles empty states, error states, loading states, and different data volumes. This gives engineering a more complete picture.
+Example: End-to-end product design workflow
+Here's how a product team might use Claude Design from idea to implementation:
+
+PM writes a prompt describing a new feature — e.g., a notification center with preferences, filtering, and bulk actions
+Claude generates an initial prototype using the org's design system and linked codebase components
+Designer iterates using inline comments and chat — adjusts layout, refines interactions, ensures accessibility
+PM shares the prototype with the team via a link for async design review
+Team discusses and iterates — Claude generates alternative approaches for the parts that aren't working
+Design lead validates that the prototype uses real components and patterns correctly
+Handoff to Claude Code — the prototype, design decisions, and codebase context transfer to engineering
+Engineer uses Claude Code to implement the feature, starting from the prototype rather than from scratch
+Have questions about Claude Design prototypes? Reach out to your Design Team or try building a prototype yourself – most people find the workflow intuitive once they create their first one.
+
+In the fall of 2025, I was the only product designer on Claude Code for VS Code, working with two engineers to reimagine everything Claude Code does for a friendly interface outside the terminal. We shipped the beta at the end of September, Opus 4.5 arrived in November, and the Claude Code team started shipping fast and aggressively. The engineers were shipping far more than before, while I was still delivering at the pace I always had. I needed to find a way to catch up.
+
+Claude Code runs in the terminal, where everything is text-based, and my first attempt treated it that way: I copied output into Claude, added screenshots, and asked, "Here's a feature we want to add. Why don't you design it?" The results weren't good. For a month or so, as a side project, I kept looking for ways to improve Claude’s design output.
+
+Giving Claude an HTML playground
+Eventually I stumbled onto the answer: Claude is really good with HTML. We think of HTML as the format for websites, but it's also a rich, interactive visual medium: anything you can make in a slide deck, a video file, or a PDF, you can make in a web page. So I prompted Claude to make HTML, and gave it a split-view interface where you could chat on the left and see the output on the right.
+
+That was useful, but product design is driven by applying knowledge of the product and brand you work on, so as a next step I spent a while distilling the essence of Anthropic's brand (the fonts, colors, assets, and principles our products use) into prompts. This way, when I type my prompt into the tool, the output is compliant with the Anthropic brand guide.
+
+I put all that into a small internal prototype and shared it with the team. Product designers picked it up immediately for interactive prototypes. Making a click-through prototype in traditional design tools means mocking up every state of every screen and wiring them together by hand. Here, you hand Claude your assets and say: make it work. Every artifact it delivers has a link you can share the way you'd share a doc.
+
+How Claude Design became a medium for visual work
+I first realized how compelling Claude Design was at an idea pitch session during an Anthropic Labs team offsite: every person there threw together slides using it, often in the middle of the meeting before their turn to present. That session convinced the Labs team to staff it, and Claude Design went from a side project to a real project.
+
+We stopped describing it as a tool for product mockups. Claude Design became a tool for producing any kind of visual communication: slide decks, landing pages, one-pagers you print as a PDF, emails, animations, visuals to share on social media. I think of it as one click above product design: you collaborate with Claude on visuals whose main job is communication and ideation. 
+
+As models get better at vision, so does the range and quality of work Claude Design can do. Our latest Opus-class model, Claude Opus 5, is better than previous Opus models at reading the charts, diagrams, and screenshots, making it powerful when paired with Claude Design for creating presentation-worthy decks and memos.
+
+What Claude Design is not meant to do
+Claude Design doesn't have an image model and isn’t built for image generation, so it's a poor fit for logo design—though that hasn’t stopped people from trying. The better approach here is to bring in the logo and assets you already have. The rest of the product works the same way: Claude creates options and starting points so you don’t have to stare at a blank canvas, and you choose what's good on its own, or as a combination of multiple versions. 
+
+And if you're shipping production software, stick with Claude Code. Claude Code is for coding; Claude Design is for the other parts of the design work: early ideation, collaboration, or getting buy-in on a direction before anyone commits to building it. The two work together round-trip, so you can sync a prototype you started in Claude Code to Claude Design for iteration and editing on the canvas, or hand off a prototype you’re ready to build from Claude Design to Claude Code. As models get better at building production software, the work that matters most moves earlier in the process: having good ideas, getting everyone aligned, and collecting feedback while an idea is still early. 
+
+How I use Claude Design in my daily work
+I use Claude Design every day for what you’d call bread-and-butter design work: wireframing early ideas, or generating 15 versions of a flow to collect feedback from colleagues. Some recent examples from my own work:
+
+The Claude Design intro animation. The animation that plays when you sign up for Claude Design was made in the tool itself, but not directly: I'm not an animator, so I first had Claude Design build me a bespoke video editor, then used that editor to make the animation.
+
+A subway-times app with adjustable animation controls for dialing in the physics of the motion. 
+
+Instagram-style color controls. I asked Claude to let me tweak an app's color scheme with sliders and presets rather than describing colors in words. 
+
+A redesign of Claude Design itself. Two teammates, Helen and Andrew, and I have been riffing on a new design for the editor, inside the tool. We won't ship it as-is, but it's how we explore what the product could become.
+
+Best practices for using Claude Design
+Do the thinking before you prompt. The best and most efficient way to get output that matches your vision, is to tell Claude what you need up front. I spend a lot of time writing prompts before I design. Sometimes I dictate them in Claude Design with the voice button. Other times I type them in the Notes app on my phone from the couch, or record a voice note on a walk and paste the transcript later. Whichever method of communicating you prefer, figure out what you want while you're away from the computer, so Claude can execute your exact vision when you sit down.
+Tell Claude what it should look like. Left undirected, Claude picks one of its favorite aesthetics. You'd probably recognize them. Head that off by specifying fonts and colors, or providing a moodboard of images for inspiration, or asking Claude to brainstorm font-and-color pairings and going back and forth until a pairing feels right. 
+Turn recurring work into a design system. Upload your brand files and assets such as logos, slide decks, screenshots, typography specs, and anything else you reuse, and Claude will analyze them and generate a design system. This way, each artifact you make afterward starts from your choices, rather than a blank slate.
+Ask for ten options, then remix. Most of them won't be good, and that's fine; one or two will be. Then say, "I like option B and a little of option D. Give me five riffs that smoosh those together." 
+Sketch what you can't describe. If you have a layout in your head and no words for it, draw it on paper and upload a photo.
+Point and talk. Instead of writing a paragraph identifying which element you mean, click on it and speak. You need to have dictation enabled on your device, then select “comment” and click into the comment box. Your words will appear in the comment box as if you are typing.
+Wireframe first when fidelity doesn't matter. Asking for wireframes is much faster, and it keeps Claude focused on the higher-level structure of a design instead of the visuals. This is a great way to try many different ideas quickly.
+Make the last mile manual. Use the direct editing tools (rearrange, delete, edit text, resize, change colors) for final touches instead of prompting for them. Direct edits use no tokens, and small calls like sizing and alignment are better eyeballed anyway.
+Give Claude your real context. If you're designing a feature for an existing app or website, connect GitHub: Claude will fetch your components and existing screens and use them as a starting point, and with a few tries it can recreate your existing designs with pretty high fidelity. Web search and MCP connections work in Claude Design too, whenever the design depends on outside information.
+Keep working alongside Claude. You don’t have to wait for Claude to deliver a finished result before prompting new changes or tasks. You can queue up multiple messages at once, or keep talking while Claude is still working on the previous turn.
+Make it alive
+There's a Bret Victor talk every designer should watch at some point, called Stop Drawing Dead Fish. From the blurb: "Everything we draw should be alive by default."
+
+I'd encourage designers, in Claude Design or any other tool, to think about how to make their creations alive. My favorite Claude Design creations are the ones that don't fit into existing boxes: docs with interactive simulations, slide decks that talk to you, diagrams that are also videos, designs that are also their own editors. Code, specifically HTML, is an amazing medium for creativity, and it's finally somewhat easy for designers to create with.
+
+Claude Design took its current shape because people at Anthropic kept finding uses I hadn't planned for; it is now available in beta on Claude Pro, Max, Team, and Enterprise plans. Try it and take it somewhere we haven't thought of yet.
+
+This article was written by Nate Parrott, a product designer at Anthropic, and expresses his opinions, usage patterns, and advice on Claude Design.
+
+
+Claude Design has only been out for a few days and there are already a ton of general walkthroughs and tutorials. This week I used it on a real UX/UI project to see what's possible specifically for the type of product work we're doing (what it does well and where it breaks). Here's what I tested:
+
+🔶 Generating a Design System from Scratch
+🔶 Using an Existing Design System
+🔶 Creating Wireframe Flows
+🔶 UX Logic and Planning
+🔶 Making a High-Fidelity App Prototype (with animations)
+🔶 Handing it off to Claude Code for implementation
+
+In this guide, I'll show you exactly how you can do these things too and how it's fitting into my product design workflow.
+
+
+A Very Quick Rundown
+Claude Design is currently in Research Preview Beta. You need a paid plan. Even the basic Pro plan will do. But keep in mind that as of right now, usage is independent from your Claude account and has its own usage limits that are capped at a certain amount each day and then reset.
+
+The foundation for everything in Claude Design is a Design System. That's what makes it so powerful for UX and UI designers. You can ask it to generate a design system if you don't have one — you only need your brand or style guide to get started, or even just some snapshots or visual inspiration for Claude to set up a design system for you.
+
+If you have an existing design system even better, you can upload your assets and getting started right away.
+
+Setting Up My Design System
+I started with my design system. If you already have a GitHub repository set up with your components, you can link it. If you have it locally on your computer, you can just upload a folder with a bunch of assets. And what I really love is that it plays nice with Figma — so you can export a FIG file if you have a style guide in there, or components and a brand guide, and upload that. You can also choose to use an existing open source design system for your project.
+
+
+I uploaded some assets and a design system I had for a project I was working on. I also had a bunch of other code-related files I wanted to reference, so I included those too.
+
+💡A couple of tips: If you want to save some credits and you don't already have some design system assets, you could generate this in something like Google Stitch first because this can definitely suck up a lot of tokens. Claude Design current uses And the other tip is to change the model for some of the simple tasks and tweaks so you're not totally draining your usage.
+
+I went ahead and continued to generation. It said it was going to take about 5 minutes, and then it started setting up the design system. There is a nice progress list that it creates so you can see what it's doing, what it has uploaded, and all the files it read. Then it builds those foundational files with CSS tokens.
+
+
+Reviewing the Draft Design System
+This is where things get quite fun. It makes a draft design system for you, and you get to review all the components. Mine was still missing the fonts — I didn't upload all of them, so it rendered some substitute web fonts.
+
+It pulled up my color palette, and I approved each of these as I went. This one needed work — it definitely wasn't accessible. So I told it that needed work, asked it to make sure these colors were accessible, and submitted that. Then it shows you the foreground and the surface to make sure that's all good. Looked good to me.
+
+
+Fonts looked good. Spacing, everything — pretty nice. It makes a typography scale. Very good. Word mark. Beautiful spacing scale. Love it. The buttons looked good. And now I had two colors that pass accessibility.
+
+
+And I love this motion. I gave it a description of how I wanted the motion to feel for the animations — and Claude design is actually pretty impressive with it's animations.
+
+
+Now I can continue to design with this design system and apply it to my projects. When I come back to the home screen, I could see my other design systems too.
+
+Starting a New Project: Wireframes
+Now it's time to create my first project and I want to start out with wireframes. I'm building a news and journaling app that helps you form an opinion and take a stance on the topics you curate by guiding you to write down your thoughts about it. So next, I'll paste the prompt in. Starting with the onboarding flow.
+
+Here's the part that I really love — for every design I make, Claude Design actually onboards me to make sure it understands the UX of what I'm trying to create and asks me some more important questions.
+
+
+Some of my answers to the questions it asked include:
+
+It's a private journal fused with a curated feed.
+I want short onboarding, and I definitely want to know the topics of interest
+. I'd like three different directions for these wireframes — an editorial magazine-like feel, maybe also gallery, and notebook.
+I want users to kind of pick a stance on the topic.
+And this is important, it specifically asks about the paywall and business model UX, which I think is one of the most signigicant and important differences about Claude Design. I did a video all about how to design intentional and effective conversion points through paywalls, subscriptions and upgrade screens and this was exactly the type of logic that I love to see in the UI.
+
+You can also decide exactly what 'tweaks' you want to be able to control and toggle in the UI, just like you can in Figma with variant controls.
+
+This is specifically what I think makes Claude Design stand out right now above Google Stitch and even Replit and some of the other builders like Lovable that generate designs — it's considering the UX a lot more rather than just generation first and then tweaking in hindsight.
+
+If you have any other constraints — like certain APIs I wanted to use, or specific conditionals or logic flows you want your developers to take into consideration —you can type that here too.
+
+Reviewing the Wireframes
+Okay, this is what it's come up with. We have three distinct styles and ways to begin the onboarding. There's the editorial flow, the gallery style, and the notebook style. These are all really great, and I kind of love the first one just because it's sort of a mix of modern with a more handwritten notebook style. It prompts you and helps you write about a topic and think deeper about it.
+
+
+I opened up the tweaks. I wanted to isolate the editorial version and zoom into it to see if there was anything I wanted to change. But this is a great simple onboarding.
+
+
+There are a few other things you can do at the top. You can comment on something — like, "Is this progress indicator clear enough?" — and send that to Claude. By asking that, it sends the question to Claude, which helps create some variance if you want to tweak it. You can also edit a few basic things directly here — spacing, opacity, margins, or you can draw on the design and ask it to change something.
+
+Going High-Fidelity
+Let's say you want to take this design system, apply it to the wireframes, and create a high-fidelity mobile flow.
+
+You can click into your design system and see that it's published and set to default. From there, click the button to have it create a new design using this design system.
+
+
+It opens up another window in Claude Design, and the design system gets attached automatically. This time, you can click high fidelity and name the project, then hit create.
+
+
+You can start with a sketch if you want to, but since I had those wireframes already, I attached them. I referenced another project — the wireframes — and just said: create me the final high-fidelity mobile app for this news + art opinion journal.
+
+Then it digs into the design system you created, uses those styles, and asks some questions again that you answer before it goes through. I selected a bunch of options that sounded good for the UX I had in mind. Again, I love this because you don't have to think of everything from scratch — it prompts you, and that really helps get the creative juices flowing.
+
+What resulted is a beautiful-looking mobile app. I really think it's quite refined. There is the first Issue, which is kind of like your own personal digest of news you've curated. Then there was the journal, where you can add entries, an index of different things, and an archive library. This is really cool. The next flow I'll probably work on is entering the journal entries and more things that were brought up in the onboarding.
+
+
+But that's it — a complete app prototype.
+
+Taking It a Step Further: Handing Off to Claude Code
+Some of you might be thinking — well, how is this any different from Claude Code?
+
+Well, really it's not all that different. This really is just a visual layer on top of Claude Code. If you've already connected your Claude to the Figma MCP, for example, you can do this kind of inside of Figma — but then again, you've got to come back into Claude Code to make it communicate back and forth with your design system. So this is just kind of containing all of that in Claude and skipping the Figma step.
+
+
+Now, if you actually want to turn this into something real, you can export it and hand it off to Claude Code. There are a few different ways to export. Click on Claude Code and copy the command it gives you, and I'd also recommend downloading the zip file as well as a backup.
+
+
+🔖 Just to note: Claude Design doesn't currently work on the desktop app, so you have to use it in browser. But if you're using the desktop app for Claude Code, you can switch over there. That's what I'm doing.
+
+Over in Claude Code, open your project, paste in the prompt you just copied from Claude Design, and upload the zip file too just in case there are any issues. Once you click upload, it's fully implemented inside of Claude Code.
+
+
+And here we have it — fully implemented inside of Claude Code.
+
+
+Why This Workflow Is Great for UX/UI Designers
+This is awesome — to go from a bunch of ideas, to having the UX fleshed out, to having wireframes created for me, to final high-fidelity designs, and then handing it off to Claude Code. That's a pretty great workflow for UX and UI designers.
+
+I'm going to keep experimenting with this because I also want to integrate Cowork into it to automate things like research and other aspects of the product design process. And I can't wait to do my next live session with my students inside my product design course. If you're interested in that, come check it out.
+
+I'm excited to see how it continues to evolve in my workflow. So if you want to follow along, make sure you follow me and leave a comment, and share this post so other UX and UI designers can benefit from it too!
+
+Thanks for reading.
+
+A follow-up to Getting Started with Claude Design– what designers, marketers, and indie builders have actually learned after seven days of pushing the tool to its limits.
+
+ — -
+
+It’s been a week since Anthropic Labs dropped Claude Design on April 17, and the design community has been busy. Pizza brands shipped in 30 minutes. Investor decks built in eight. Landing pages live in production by morning. Figma’s stock dropped 7% on launch day, and people are still arguing on X about what that means.
+
+But the real story isn’t the headlines, it’s the patterns. The little workflow shifts that separate people who ship from people who burn through their weekly allowance in 30 minutes and rage-quit. After reading every hands-on review, every X thread, every Substack teardown, and every community gist I could find, here’s the distilled playbook.
+
+If the first post was what Claude Design is, this one is how to actually use it well.
+
+ — -
+
+1. The single biggest realization: the Tweaks panel is not the chat
+Never open a boring tab again.
+
+Muzli fills every new tab with the best design work from around the web.
+Loved by 800k+ creatives.
+
+Get Muzli — it’s free
+Most people use Claude Design like a chatbot. They type, regenerate, type, regenerate. Then they wonder where their weekly allowance went.
+
+Here’s the secret veterans like Anthropic’s own Austin Lau have been demoing on launch day: the Tweaks panel doesn’t burn chat tokens.
+
+Bali retreat website hero section with a sunset ocean view, luxury villa and infinity pool, large headline “Find your peace in Bali,” navigation menu, and a UI popup suggesting design tweaks.
+Sliders for typography scale, color temperature, spacing density, and section ordering live in a side panel that adjusts the design without round-tripping through the model. Reorder hero sections. Swap variant cards. Tighten density. None of it costs you a chat turn.
+
+The rule: Use chat for structural and conceptual changes (“add a testimonial section,” “make it feel editorial instead of corporate”). Use Tweaks for everything else. If you can move a slider to fix it, never type it.
+
+ — -
+
+Branding Mockups - Macbook Pro
+Branding Mockups - Macbook Pro
+
+ads via Muzli
+2. Density beats brevity in your first prompt
+The instinct from regular Claude chat , start vague, refine through conversation , is the wrong instinct here.
+
+The pattern showing up across every walkthrough (Tom’s Guide, Peter Yang’s 16-minute everything-build, the Techsy 7-prompt teardown) is the same: dense, single-paragraph prompts that name the audience, the content, and the visual feel land usable first drafts roughly two-thirds of the time. Vague prompts land usable drafts roughly never.
+
+A good first prompt looks like this:
+
+ “Design a 10-slide investor pitch deck for a pre-seed B2B fintech selling fraud detection to SMB lenders. Audience is sector-focused VCs at the early-stage stage. Tone: confident but not aggressive. Visual feel: editorial, restrained, type-led, no stock photos, no purple gradients. Use a serif display face with a geometric sans for body. Include problem, solution, market, traction, team, ask.”
+
+Compare that to “make me a pitch deck” and you can see why density matters. Opus 4.7, the model under Claude Design , was specifically tuned to follow concrete specs and to need less hand-holding than 4.6. Use that. Front-load everything.
+
+ — -
+
+3. Kill the “AI slop” aesthetic before it lands
+Design comparison graphic with bold headline “Kill the ‘AI slop’ aesthetic before it lands,” showing a generic light dashboard with purple gradients and standard UI patterns versus a refined dark dashboard with distinctive typography, cohesive palette, and purpose-built components, plus bullet points highlighting common design clichés versus better practices.
+Without explicit constraints, Claude Design drifts toward what the community has named AI slop: Inter or Roboto, white-to-purple gradients, evenly-spaced cards, that vaguely-Linear-vaguely-Stripe SaaS feel.
+
+The fix is documented directly in Anthropic’s own frontend-aesthetics cookbook. Drop something like this into your first prompt or your project’s CLAUDE.md / DESIGN.md:
+
+“Avoid generic AI-generated aesthetics: overused fonts (Inter, Roboto, Arial, system fonts), clichéd color schemes (especially purple gradients on white or dark backgrounds), predictable layouts, cookie-cutter components. Make distinctive, context-specific choices. Pick one decisive font and use it confidently. Commit to a cohesive aesthetic with dominant colors and sharp accents rather than timid evenly-distributed palettes.”
+
+Two follow-up tricks the community has converged on:
+
+Specify a concrete alternative, not a negative. “Don’t use cream backgrounds” tends to push the model to a different default. “Use pale silver-gray tones deepening into blue-gray, with 4px corner radius and a square angular sans-serif” actually works.
+Reference cultural aesthetics, not other websites. “Solarpunk,” “Swiss editorial,” “Japanese minimalism,” “early-2000s zine” gives the model a richer space to work in than “make it look like Linear.”
+Opus 4.7 has its own house style it falls back to (warm cream backgrounds, Fraunces-style serifs, terracotta accents), beautiful for hospitality and editorial, wrong for fintech and dashboards. Override it explicitly.
+
+ — -
+
+4. Build your brand kit on day one, and treat it as the foundation
+Design system setup screen with the heading “Your design system is ready,” showing published and default status, a “Use this system” section with a “New design” button, and a checklist of brand elements including colors, components, iconography, logos, spacing, and typography.
+Every serious user who’s reviewed the tool independently arrived at the same conclusion: the brand kit is the highest-leverage thing you’ll do, and your first session should be dedicated to it.
+
+Point Claude Design at your GitHub repo, your live site, or your existing slide deck. Let it explore the codebase, read your CSS files, identify your brand signatures (one reviewer’s heartbeat ECG motif from itbroke.dev got identified and turned into a live canvas component automatically). Let it generate the SKILL.md, the UI kit, the component patterns.
+
+This will eat a chunk of your weekly allowance. That’s fine. It’s the most durable output you’ll make, every future project pulls from it, and the consistency it gives you across landing pages, decks, and emails is what makes Claude Design feel like a design system rather than a prompt-to-HTML toy.
+
+A pro tip from Claudia + AI’s starter guide: if your assets are scattered, ask Cowork (Anthropic’s desktop product) to “produce a full design system document covering fonts, colors, graphical styles, component patterns, voice, and layout conventions, with anything missing flagged” first. Use the resulting clean DESIGN.md as input to Claude Design’s onboarding instead of feeding it raw assets. Coherent input, coherent output.
+
+ — -
+
+5. Watch the weekly allowance, and know its quirks
+This is the #2 community complaint after AI slop, and it’s worth understanding properly:
+
+It’s a separate meter from regular Claude chat. Burning your design allowance doesn’t affect your chat allowance and vice versa.
+It’s per-user, not pooled. Teams cannot share. Admins can’t redistribute leftover budget from a coworker.
+Weekly, not daily. Resets every seven days. There’s no dramatic warning when you hit the limit, the session just continues on paid overage credits if you have them enabled.
+Promotional credit gets consumed first. Anthropic shipped paying users a one-time credit at launch (roughly equivalent to a typical $20 prompt, expiring 2026–07–17). Spend it on experiments. Save the recurring weekly allowance for production work.
+Real number from the wild: Josua Golden posted on X that two full design sessions burned through 58% of his weekly Pro limit. Plan accordingly. Treat each session as a planned production run, not an open sandbox.
+
+ — -
+
+6. The comment-paste workaround (and why you’ll need it)
+This is the single most-cited known bug, documented in the official help center and confirmed by basically every reviewer: inline comments occasionally vanish before Claude reads them.
+
+The workaround is dumb but reliable: if a comment doesn’t get picked up after a beat, copy the text and paste it into the chat panel. Always works.
+
+John Voorhees at MacStories went further and observed that “comment-on-element covered 95% of what I needed” once you adapt to it. The pattern that works:
+
+Inline comments for targeted, component-level tweaks. “This button text should be white.” “Add 8px padding here.” “Change this card to a horizontal layout.” Click the element, comment, done.
+Chat for structural changes, new sections, aesthetic shifts, or anything that requires explanation. “Save what we have and try a completely different approach” is a real command, Claude saves your current version and explores a new direction without losing the original.
+ — -
+
+7. The /packages/ui pro-tip nobody talks about
+Surfaced in ADPList community threads and quietly powerful: when you link a codebase, point Claude Design at the `/packages/ui` subdirectory if your repo is a monorepo, not the root.
+
+Claude Design’s design-system extraction works by reading actual code — colors, typography tokens, component patterns. Pointing it at the root of a 50-package monorepo means it spends tokens spelunking through unrelated services. Pointing it directly at your UI package gives it exactly the surface area it needs and produces a noticeably tighter, more brand-accurate kit.
+
+ — -
+
+8. Use the “show me three variations” command, always
+Three dashboard UI styles side by side for a product called Northwind: a minimal light layout with large typography and imagery, a dark analytics-focused interface with detailed charts and data, and a colorful modular dashboard with card-based metrics and visual highlights.
+Two-thirds of reviewers independently called this out. When you’re not sure what you want, and most of the time you aren’t, don’t refine in a straight line. Ask for variations.
+
+“Show me three versions of this dashboard: one editorial and type-led, one dense and data-forward, one playful with strong color blocks.”
+
+Claude keeps each version accessible. You can mix pieces from different variants. You learn what you actually want by comparing, and comparison is exponentially faster than guessing-and-iterating.
+
+Same logic applies inside a single design: “Give me 3+ atomic variations of the hero section” is a documented pattern in Claude Design’s own system prompt. The product is built to explore, not converge. Use that.
+
+ — -
+
+9. Know what to skip Claude Design for
+Honest constraints from a week of community testing:
+
+No native image generation. Claude Design renders SVG and HTML drawings, not Nano Banana or Midjourney output. SVGs are great for icons, diagrams, and brand illustrations. They’re terrible for photographic realism. The community fix is the “Unsplash swap” prompt, generate the layout with placeholder SVG, then swap in real Unsplash imagery via prompt.
+Video is weak. The feature exists and will produce a passable launch teaser. It’s nowhere near Veo or Runway. Don’t use it for assets that matter.
+No real multiplayer. Figma’s killer feature, multiple designers in the same file in real time, isn’t here. Team plans add workspace-level sharing, not co-editing. If your workflow is two designers in a file together, stay in Figma.
+No public API yet. As of launch, you can’t script generation, automate variant production, or embed Claude Design output programmatically. That’s coming “in the coming weeks” per Anthropic, but it’s not here yet.
+Production handoff for mature design systems. Claude Design is a brilliant starting point. For anything landing in a 50-screen production system with strict component governance, the source of truth still lives in Figma.
+Tom Warren’s rule of thumb that’s emerging across reviewers: Claude Design for speed and intent. Figma for systems and source-of-truth. They coexist.
+
+ — -
+
+10. The handoff to Claude Code is the actual superpower
+If you take only one thing from this whole post, take this. The export options that get the most launch-week ink, PDF, PPTX, Canva , are useful but not new. Lots of tools do those.
+
+The handoff to Claude Code is genuinely new. When you press “Hand off to Claude Code,” it doesn’t just dump HTML. It packages the design with the intent, component choices, and architectural decisions preserved as context. Claude Code then builds on top of the design instead of reinterpreting it.
+
+Austin Lau’s launch-day workflow — recreate a live page in Claude Design, A/B test copy and layout in the Tweaks panel, hand off the winning variant to Claude Code, ship — is the single most production-ready demo of the tool I’ve seen. Marketing teams replacing the “designer + frontend dev + 2-week sprint” loop with “marketer + Claude Design + Claude Code + same afternoon” is happening right now, in production, at companies like Mercury and Datadog according to launch coverage.
+
+This is the loop that makes Claude Design more than a prototype tool. It’s the design layer that finally talks fluently to the build layer.
+
+ — -
+
+11. Small workflow hacks worth stealing
+A grab bag from the community gists, X threads, and Substack teardowns:
+
+Edit your previous message instead of sending a new one. Same trick that works in regular Claude chat works here. Going back and editing a prompt replaces the old exchange instead of stacking it. Massive token savings on long iteration sessions.
+Speak your prompts, don’t type them. Voice-dictated prompts are naturally denser than typed ones. You’ll give Claude more context per turn, which means fewer back-and-forth corrections.
+Use “scrap this and try the elegant version, knowing what you know now” when a design is stuck in a mediocre place. Forcing a clean restart from accumulated context beats trying to push a bad version into a good one.
+Generate speaker notes from a generated deck. Once a pitch deck is built, ask Claude Design to extract delivery-ready speaker notes for each slide. Free deliverable, almost nobody does it.
+Always plan to rewrite the copy. Claude writes serviceable placeholder copy. Ship it as-is and you ship AI slop. The marketing-team consensus from Stack & Scale’s playbook: rewrite every word before publishing.
+Compact view triggers save errors on certain layouts. Switch to full view if a save fails. Documented bug, easy fix.
+Large codebases cause browser lag. Don’t link your entire enterprise monorepo. Link the UI package or a representative subset.
+ — -
+
+What actually changed this week
+The interesting thing about Claude Design’s first week isn’t that designers love it or hate it. It’s that it surfaced a different question altogether: what is design for now?
+
+When a non-designer running a plant nursery in Sri Lanka can produce a launch-ready brand kit and pitch deck in an afternoon, the ground shifts. Not because designers go away, every reviewer who actually shipped something noted that taste, judgment, and rewriting the AI’s mediocre defaults was where the real work lived. But because the bottleneck moved.
+
+Tool fluency mattered for a decade. It mattered less this week than last.
+
+The designers having fun with Claude Design, the ones publishing the best work, the ones whose threads keep getting screenshotted, aren’t the ones who memorized Figma shortcuts. They’re the ones who can describe what they want with enough specificity and taste that the model can actually execute.
+
+That’s a different skill. It’s also a more interesting one.
+
+ — -
+
+What’s coming, what to watch
+A few things on the watch list as Claude Design moves from preview to product:
+
+The custom integrations / API surface Anthropic flagged for “the coming weeks.” Once you can script this, the workflow story changes substantially.
+Export fidelity across PDF, PPTX, and Canva. HTML export is solid. The others have been spottier in community testing, fonts substitute on PPTX, individual slide export to Canva isn’t there yet.
+Whether Figma ships its competitive answer. They acquired Diagram, they have Make, and there’s clearly an integration story coming. Whatever they ship will have the design-system-source-of-truth advantage.
+Whether the weekly allowance gets reworked. The volume of complaints suggests pricing tweaks are likely.
+This is a genuine version-one product. It shows in places. But the trajectory is right, the loop is real, and the design-to-code handoff is the first one that actually feels like it works.
+
+The week-one verdict from the community is roughly: worth using now, worth planning your workflow around within a quarter, and a meaningful piece of how design happens in 2026.
+
+Skip the hype. Pick three of the patterns above. Try them tomorrow. One that sticks is worth more than ten you bookmarked.
+
+ — -
+
+Found this useful? The first post in this series, Getting Started with Claude Design, covers the fundamentals, the dual-canvas interface, and where Claude Design sits in the broader Vibe Design movement. Read it first if you haven’t.
+
+Table of Contents
+What Claude Design is and who it’s for
+How to get access to Claude Design
+The Claude Design interface: context, chat and canvas
+How to set up a design system in Claude Design
+How to create your first design in Claude Design
+Editing and refining your design
+Using your design system and connecting your tools
+Other Claude Design modes: slide decks, wireframes and animations
+How to export and hand off your design
+How to get better results from Claude Design
+What Claude Design can’t do yet
+Conclusion and next steps
+FAQs
+You’ve got an idea for a landing page or a deck. Normally, that means an hour of nudging boxes around in Figma or Canva before it looks at least presentable. Claude Design skips that part. You describe what you want, and it builds a decent, clickable first draft.
+
+This Claude Design guide takes you from zero to a finished, on-brand design: getting in, building, refining and exporting. No prior design experience required
+
+What Claude Design is and who it’s for
+So what is it? Claude Design is Anthropic’s conversational design tool, currently powered by Claude Opus 4.8. You describe what you want to design in chat, Claude builds it on a live canvas, and you refine by talking to it. Claude writes real code under the hood. Your prototypes are clickable and exportable from the very first draft, not static images.
+
+The tool can be used to handle a wide range of work: landing pages, microsites, slide decks, social graphics, wireframes and short animations, all from a plain description. Most other tools start you from a blank file and leave the building to you. Claude Design hands you a working first draft to react to instead, which is a much faster way.
+
+Think of a marketing manager who needs a proposal deck by tomorrow but has no designer on hand, or a business owner who wants a landing page for a new offer without the back-and-forth of an agency. That’s the gap Claude Design fills, and it’s especially useful for mid-career professionals upskilling into design-adjacent work for the first time, who need practical results without a steep learning curve.
+
+How to get access to Claude Design
+🔷 Step 01 – Find the homepage
+Go to https://claude.ai/design, or open the Claude desktop app and select Design in the sidebar.
+
+🔷 Step 02 – Check your plan
+Claude Design is included with Pro, Max, Team and Enterprise, but not the free tier. On Enterprise, it stays off until an admin switches it on.
+
+🔷 Step 03 – Mind your usage
+It runs on a token-heavy model and draws on your plan’s limits, so big projects burn through them fast. If you hit the ceiling, you can turn on extra usage in your account settings to keep going, or upgrade your plan.
+
+💡 A pro tip: Before you start, have your logo, brand colours (as hex codes) and a one-line brief ready to go.
+
+Claude Design
+The homepage opens with a question: “What will you design today?” There are two ways to begin.
+
+The quickest is the prompt box at the top. Describe what you want to create, use the “+” button to upload documents, and set three things right there before you send it:
+
+Design system: the brand your design follows (here it shows the Tribe Academy Design System).
+Template: a starting layout, or None to begin fresh.
+Model: the Claude model in use (currently Claude Opus 4.8).
+There are five types of Templates to choose from:
+
+Prototype: clickable screens for a web or app product. This is the one we’ll use for the example portfolio landing page later in this guide.
+Slides: presentations and pitch decks, good for client decks and webinars.
+Document: text-led, page-based pieces like resumes and PDFs.
+Wireframe: lo-fi screens and flows for mapping an idea before you polish it.
+Animation: short looping videos, like a moving social post or a display screen.
+For a clean slate, click “…or start a blank project” instead.
+
+Claude design
+A design system you saw in the prompt box (here, the Tribe Academy Design System) is a saved set of your brand’s fonts, colours and components, so whatever Claude outputs is on-brand from the start. Don’t worry if you haven’t built one yet. We’ll set that up later in this guide.
+
+Lastly is your recent works, sitting under the Projects, Design systems and Templates tabs.
+
+The Claude Design interface: context, chat and canvas
+This is the standard interface that you will be working with. The left is where you work with Claude. The right is your live canvas, the working area that shows your design and updates as Claude builds it. You can see every page and version by zooming in and out, which makes it easy to compare design directions.
+
+Claude Design interface
+On the left, Start with context is where you give Claude resources to work on. Designs based on real examples and samples turn out better, so you give Claude something to work from. There are four options:
+
+Design system: your brand’s fonts, colours and components.
+Screenshot: an image of a layout you want to match.
+Codebase: styles pulled from an existing site.
+Figma: a Figma file to import from.
+Below that sits the Chat, where you describe what you want. The model picker sits here too (Currently Opus 4.8).
+
+On the right, the canvas shows your design live. A bar across the top names the file and tracks its pages, so a multi-slide carousel shows all its pages at a glance. Your refining tools sit up there as well: Mark up, Comments, Edit and Tweaks, Zoom function, Present and Share. More on those next, though the tool order can change depending on design type.
+
+How to set up a design system in Claude Design
+This is the step that pays off the most, and we highly recommend you complete it first before starting any design work. Once you have set up your design system, all your projects will automatically come out on-brand. No more pasting hex codes and font names over and over again.
+
+Here’s how, using our own Tribe Academy as the example:
+
+add design system
+🔷 Step 01 – Click on “Create design system” under the Design system tab.
+Two options appear: Create here (connect Figma or GitHub, or upload assets) and Create using Claude Code (best fidelity, if you have React components). Beginners should choose Create here. It needs no code, and the results are still strong.
+
+setup design system
+🔷 Step 02 – Describe your brand
+On the setup form, add a company name and blurb, like “Tribe Academy specialises in practical, industry-led education in artificial intelligence, digital marketing, automation, data, and other high-demand digital skills.”
+
+🔷 Step 03 – Attach what you have (all optional)
+Link a GitHub repository, drag a code folder, drop a Figma .fig file or add fonts, logos and assets. No code or Figma file? Your logo plus a note on style is good enough.
+
+🔷 Step 04 – Add any other notes, then continue
+For example: “clean blue-and-white look, Avenir for type, warm but professional voice.” Then click Continue to generation.
+
+🔷 Step 05 – Review the result
+In 5 to 10 minutes Claude returns a draft style guide of fonts, colours, type, spacing and components. Mark what’s right, or ask it to fix anything off, then publish and set it as default.
+
+claude design logo
+claude design branding
+claude design button
+claude design 
+💡 A pro tip: if you have an existing Figma or Canva page of the brand’s marketing collateral or website design, be sure to add it. Claude learns far more from seeing your brand in use than from a colour swatch and text descriptions.
+
+How to create your first design in Claude Design
+Here’s the part you came for: making a complete design, step by step. For this blog, we will use a portfolio landing page as an example.
+
+🔷 Step 01 – Start a new design
+Choose Product Prototype. Two options, “Hi-fi (High fidelity) design” and “Interactive prototype” are already pre-selected for you. We’ll keep this first run simple, just a prompt, so you can see the basic flow. You’ll add context as you refine, which is where output quality really jumps.
+
+🔷 Step 02 – Write a clear first prompt
+Be specific about the goal. For example, “Build a portfolio site for a freelance content designer. Clean and modern, with a hero, work samples and a contact section.”
+
+🔷 Step 03 – Answer Claude’s direction questions
+It’ll ask about the look, the design’s main job, what to include or leave out, and the format. You can ask Claude to create several output options to choose from.
+
+quick question claude design
+🔷 Step 04 – Start generating
+Click “Continue”, then wait. A build usually takes about 5 to 10 minutes, while more complex designs or large code repositories may take longer.
+
+🔷 Step 05 – Note your comments
+Check the output, jot down what’s working and what isn’t, so your next instruction is sharp. That first result is a rough draft, not the final version.
+
+The real gains come from the refining you do next, so save your detail for that stage instead of cramming it all into the first prompt. It’s much easier to react to something on the canvas than to imagine every detail upfront.
+
+Editing and refining your design
+There are three ways to refine your design, each made for a different set of tasks.
+
+edit design - claude design
+Mark up (start here as it’s the easiest way): point at an element and type what you want changed, in plain language. For example: “Centre this hero and tighten the headline.” It’s the fastest way to make a change, and the one you’ll use most.
+
+Chat (also beginner-friendly): for big, structural changes across the whole design. For example: “Make the whole page darker and more minimal.” Type it in the chat box on the left.
+
+Edit: opens a panel for hands-on control of whatever you’ve selected. It has four tabs:
+
+Simple (beginner-friendly): the everyday controls, which adapt to what you’ve selected. On text you get typography (font, size, colour, weight, alignment and spacing); on any element, appearance (background, radius, opacity and border). There’s also a toolbar to add text, shapes and lines.
+Tweaks (beginner-friendly): quick sliders Claude builds for the design, like the accent colour. The easiest way to nudge the look without digging through settings.
+Pro (when you’re confident): full layout control. A layer tree of the page (header, sections, footer), plus sizing, position, layout (block, flex, grid), padding and margin. Powerful, but skip it until you’re comfortable with layouts.
+Code (advanced): edit the raw CSS directly, one declaration per line. Only worth it if you’re comfortable with code.
+claude design
+claude design
+claude design
+Beginners, stick to this: make most changes with Mark up and Chat, then use Edit > Simple and Edit > Tweaks for quick visual adjustments. Save Pro and Code for when you’re confident in your skills, since they bring finer control.
+
+Using your design system and connecting your tools
+By following the steps in the section above, you will be able to get a pretty good design draft. Here are more ways you can utilise to really bring out the best of your designs with the newly published design system.
+
+Treat each project like a brief and feed it what you’ve got:
+
+Drop in screenshots of designs you want to match.
+Add competitor examples for the look you’re after.
+Upload documents (DOCX, PPTX, XLSX), and Claude extracts their content and structure.
+claude design
+A social post we made by drafting on Claude Design and refining on Figma
+
+Moreover, you can connect a tool so Claude works from live content. Just click on the “+” icon in the Chat box and select “Manage Connectors”. One of the most popular choices: connect Google Drive, then point Claude at a brief you’ve saved as a Google Doc. Claude pulls the real content straight in, so you skip the copy-paste and the design reflects what’s actually going live.
+
+claude design file
+Other Claude Design modes: slide decks, wireframes and animations
+Claude Design isn’t just for images and web pages. Each mode opens with a quick question and a couple of ways to start, and your design system stays attached throughout.
+
+Slide decks
+Slide desks (“what’s the presentation about?”): start from an uploaded document, pasted notes, or an existing deck. Know the two toggles before you generate: one optimises for Google Slides by sticking to Google Fonts, the other adds speaker notes to each slide. Export as a PPTX or send it to Canva, which makes it handy for client decks and webinars.
+
+Wireframes
+Wireframes (“what are we wireframing?”): lo-fi and fast. Add a screenshot or paste rough notes, and Claude blocks out the layout. It’s great for testing an idea early, though if you already have a clear concept and a design system, you can skip straight to a high-fidelity prototype.
+
+Animations
+Animation (“what’s the story?”): set the direction with a storyboard, image assets or a pasted script, and Claude turns it into a short looping video, like a moving menu screen for an in-store display.
+
+✨ Read more: 8 Best Nano Banana Prompts for Stunning AI Images & Videos
+claude design
+claude design
+claude design
+You don’t have to start from scratch each time, either. Start from template covers slides, animations and more, and you can save a brief that worked and reuse it later.
+
+How to export and hand off your design
+When it’s ready, export it however the job needs:
+
+Standalone HTML for a working prototype.
+PDF or PowerPoint for presentations.
+Project archive for zipped files.
+A handoff straight to Claude Code, plus exports to Canva, Vercel and other tools for further refinement.
+claude design handle
+
+Sharing is just as easy. Send a link set to view, comment or edit, available only to people you choose.
+
+claude design
+Know when to hand off from Claude Design to a specialist tool. Take the export into Figma, Canva or PowerPoint for the final polish, exact sizing, animations or speaker notes. Either way, you turn up with something real your developer or stakeholder can act on, instead of a flat brief they have to decode.
+
+How to get better results from Claude Design
+Nine habits that get you better results, faster:
+
+1. Give context first
+Show Claude a finished page, screenshot or asset rather than a bare list of colours. It learns your brand by seeing it used, so the first draft lands much closer to what you want.
+
+2. Be specific in your feedback
+“This looks off” is hard to act on; “tighten the spacing between form fields to 8px” gives Claude exactly what it needs. Name the element, the change and the amount where you can.
+
+3. Work in small steps
+Start with the core layout, then layer in interactions and polish, changing one thing at a time. That way you can see what each change did and undo a single tweak rather than the lot.
+
+4. Use the 80/20 rule
+Get the hero, headline and main call to action right before fussing over padding and footer links. Spend your effort where a visitor looks first.
+
+5. Reference your design system by name
+Call out components like “use the primary button” or “apply the card layout”. It keeps output consistent with everything else your team makes.
+
+6. Think about responsiveness early
+Say whether the design needs to work on mobile, tablet and desktop, or just one. Deciding upfront saves a rebuild later.
+
+7. Ask for variations, then fix rather than regenerate
+Ask Claude for two or three options to compare, then use Mark up on the one element you want changed. A full regenerate burns usage fastest and often affects parts you liked.
+
+8. Keep a playbook
+Save the prompts that worked, along with your design system, so you’re not starting cold each time. It becomes a reusable, on-brand kit anyone on the team can pick up.
+
+9. Review with Claude, but stay in the driving seat
+Ask it to check accessibility, contrast and hierarchy, then make the final calls yourself. It can sound confident while getting a detail wrong.
+
+Get these in early, and they add up, easily saving you hours per week across projects.
+
+What Claude Design can’t do yet
+The feature is still in beta, so design around these few limitations:
+
+Not pixel-perfect. For precise, layered work and big component libraries, Figma is still stronger.
+Basic multi-person editing. Two people in the same project at once may not work smoothly yet.
+Shared usage limits. Heavy projects burn through your Claude usage, and Design pauses at your limit unless you’ve enabled usage credits.
+Import is only as good as its source. A messy codebase or incomplete file shows up in the output.
+Web and desktop only. No mobile app, and very large codebases are best linked from Claude Code.
+Conclusion and next steps
+It comes down to three steps: set up your design system, prompt and refine, then export. Do them in that order, and you can take an idea to a shareable first draft in an afternoon.
+
+Although Claude does the design work, the context, brand identity and design judgement behind them are still yours, and they’re what make the final design genuinely good. If you want to use Claude Design and other AI tools with real confidence, explore Tribe Academy’s GenAI courses and build those skills properly.
+
+🌟 (SCTP) Advanced Certificate in Generative AI for Digital Marketing Specialist
+
+🌟 (SCTP) Advanced Certificate in Generative AI for Business Growth & Innovation
+
+For now, open Claude Design, set up your first system, and ship something today.
+
+Ready to Begin
+Your Learning Journey?
+Explore our range of SCTP Generative AI courses and find the programme that aligns with your career goals. Here at Tribe Academy, we equip you with the skills to thrive in the modern workplace.
+
+Explore Programmes
+FAQs
+Is Claude Design free?
+No. It’s included with paid Claude plans (Pro, Max, Team and Enterprise), not the free tier. There’s no separate Claude Design price right now.
+
+Can Claude Design replace Figma or Canva?
+Not entirely. It’s effective for generating new designs and on-brand drafts fast. For pixel-level work, complex layered files and final polish, Figma and Canva are still stronger. Most teams use them together: Claude Design for the first draft, then specialist tools for the final stretch.
+
+Does Claude Design actually write code?
+Yes. The output is live HTML, so prototypes are clickable and exportable, and you can hand them to Claude Code or a developer to build a production-ready site.
+
+How do I get better output with Claude Design?
+Set up a design system once, give specific feedback, and change one thing at a time. Those three habits do most of the work.
+
+Where’s the official Claude Design documentation if I want to explore further on my own?
+In the Claude Help Centre, under ‘Get started with Claude Design’.
+
+What we're doing today
+This is a hands-on class — the live walkthrough from my Claude Foundations: Design session at Master Claw 2026. We're going to explore a new tool from Anthropic called Claude Design.
+
+A few things to know before we start:
+
+You access it through claude.ai — the web version. Once you're logged in, click Design in the left sidebar.
+The Claude.ai sidebar with the Design option circled — found below Customize and above More
+It's not available in the mobile app yet.
+It's a research preview feature. That means it's new and still evolving — what you see in your account today may look slightly different next week.
+You don't need to be a designer for this. You don't need to know any code. You do need to be willing to give Claude direct feedback when its first attempt isn't right — because that's most of the skill we'll be practicing.
+
+What we're going to build
+We're going to design a landing page (a homepage) for a fake brand called CircleBack.
+
+CircleBack — "The only email reply tool that respects how busy you are."
+
+CircleBack auto-replies to your stale email threads so you don't have to. The product runs on three escalation rules:
+
+Anything older than 72 hours → "Circling back on this!"
+Anything older than 7 days → "Just bumping this to the top of your inbox"
+Anything older than 14 days → "Is this still on your radar?"
+CircleBack also has a CRM integration that logs every fake follow-up as real outreach activity, so reps can hit their activity goals while doing approximately nothing.
+
+Pricing tiers: Solo Circler · Team Circler · Enterprise Circle of Life
+
+It's a parody, obviously. But the goal of this class isn't comedy — it's to show you how to take any product description, no matter how serious or silly, and turn it into a real, on-brand landing page using Claude Design.
+
+Download the brand guide before we start: Circleback_Brand_Guide_green.pdf (opens in a new tab). This is the design system we'll be loading into Claude in Step 1. Save it somewhere you can find it.
+
+Step 1: Set up the design system
+In Claude Design, every project starts with a design system — your brand's colors, type, voice, and components, all defined once and reused everywhere. You only set it up once per brand. From then on, every page or asset you generate will be on-brand by default. That is the same idea behind a well-run AI-ready digital asset management system: lock the brand truth once, in one place, and every asset your team or their AI touches afterward inherits it automatically.
+
+You can have multiple design systems saved in your account (one per client, one per product), and pick which one a project uses. Today we're going to create one for CircleBack.
+
+Here's how to set it up:
+
+At the top center of Claude Design, click "Create a design system". You'll land on a screen titled Set up your design system.
+In the "Company name and blurb" field, paste this:
+Copy
+CircleBack — "The only email reply tool that respects how busy you are." Auto-replies "circling back on this!" to any email older than 72 hours. Auto-replies "just bumping this to the top of your inbox" to any email older than 7 days. Auto-replies "is this still on your radar?" to anything older than 14 days. Has a CRM integration so it logs every fake follow-up as outreach activity. Pricing: Solo Circler, Team Circler, Enterprise Circle of Life.
+Skip the GitHub, code folder, and .fig file fields — we don't need them today. Those are for teams that already have a frontend codebase or a Figma file Claude can mine for style.
+Under "Add fonts, logos and assets," upload the brand guide you downloaded — Circleback_Brand_Guide_green.pdf. This file is the full brand spec: colors, typography, voice rules, components, and a "don't do this" list. Claude Design will use it as the source of truth for everything that follows.
+Leave "Any other notes?" blank for now. The brand guide already covers everything Claude needs.
+The Set up your design system screen with the CircleBack description filled in and the brand guide PDF uploaded
+Your screen should look something like this — CircleBack description in the top field, brand guide PDF uploaded under "Add fonts, logos and assets."
+Now click Generate. You'll see this confirmation screen:
+
+Claude Design's confirmation screen — It will take about 5 minutes to generate your design system. You can step away. Keep the tab open in the background.
+Claude takes about 5 minutes to build your design system. You can step away — just keep the tab open.
+Important — read before you click Generate
+Do not close this tab while it's building.
+If you click off this tab, close the window, or refresh the page during generation, you will lose all your work — the description, the upload, the whole setup — and you'll have to start over from scratch. Open a different tab if you need to do something else for those five minutes. Just leave this one running quietly in the background until it's done.
+
+Hit Generate and let it run. Behind the scenes, Claude is taking the description and the brand guide and turning them into a full visual system that every later prompt will reference.
+
+While you wait, open the brand guide and read it through. Pay extra attention to two parts:
+
+The cardinal rule: the design plays it 100% straight, the copy carries the comedy. If the visual design winks at the viewer, the joke dies in 10 seconds.
+The "Don't do this" list. Every item there is a trap Claude can fall into if you don't catch it.
+These are the rules you'll be using to evaluate everything you generate today. If you don't know them, you can't enforce them.
+
+Step 2: Review what Claude built
+While Claude is still finishing your design system, it'll surface a review screen showing you everything it's built so far — typography, colors, spacing, components, brand voice — and ask you to weigh in. Your feedback shapes the rest of the build.
+
+Claude Design's review screen with the heading 'Updating design system…', a missing brand fonts warning, and the Type section expanded showing a CIRCLING//BACK display sample with Looks good and Needs work buttons
+The review screen — Claude shows you each piece it's built and asks for a thumbs up or specific feedback before locking it in.
+Claude organizes the design system into five groups with 19 sections total. Here's everything you'll be reviewing:
+
+Type
+Display type
+Heading scale
+Body, caption, eyebrow
+Type pairing in use
+Colors
+Core palette
+Neutral scale
+Color usage rules
+Spacing
+Spacing scale
+Borders & radius
+Elevation = borders
+Motion tokens
+Components
+Buttons
+Form inputs
+Metric cards
+Status badges
+Data table
+Cadence component
+Brand
+Logo lockups
+Iconography
+Voice — sound vs don't
+How to review each one:
+
+Click a section to expand it. You'll see Claude's actual interpretation — a typography sample, a color swatch grid, a button mockup, a "voice — sound vs don't" matrix, and so on.
+Compare it against the brand guide you uploaded. Does it follow the rules?
+If Claude nailed it, click Looks good.
+If something's off, click Needs work… and describe exactly what to change. Be specific. "Make it better" gets you nothing useful. "The display font should feel more editorial — try a serif with personality instead of Courier" gets you a real revision.
+You may also see a "Missing brand fonts" warning at the top of the screen. That's Claude letting you know it can't extract actual font files from your PDF, so it's rendering type with the closest web font substitutes. If you have the licensed font files, click Upload fonts to give them to Claude. If you don't, ignore the warning — the substitutes are fine for today, and the rest of the system will still be on-brand.
+
+Once you've gone through every section, your design system is locked in and ready to use.
+
+Step 3: Start a new design
+Once every section is reviewed, you'll see a "Your design system is ready" panel at the top of the screen. This is your green light to start building.
+
+The 'Your design system is ready' confirmation panel — with Published and Default checkboxes both checked, and a New design button on the right
+The "ready" panel — leave Published and Default checked, then click New design.
+Two checkboxes show up here. Both should already be checked, and you can leave them that way:
+
+Published — makes the design system available for use across your team's projects.
+Default — sets it as the system new projects pull from automatically.
+Now click New design. From here on, every page or asset you create will use the CircleBack design system automatically — colors, typography, components, voice. You won't have to remind Claude what brand you're working in. It already knows.
+
+Step 4: Create the homepage prototype
+You'll land on a new project setup screen. Fill it in like this:
+
+Project type: Prototype — the tab you start on. The other tabs (Slide deck, From template, Other) are for different deliverables; Prototype is the right choice for a single landing page.
+Project name: CircleBack Homepage
+Design system: Circleback Design System should already be selected as the default — that's the one you built in Steps 1–3.
+Fidelity: click High fidelity (the colorful card on the right, not the wireframe on the left). This tells Claude to generate a polished, production-ready page rather than a low-fidelity sketch.
+The New prototype setup screen — Prototype tab selected at the top, Project name field, Design system dropdown showing Circleback Design System as Default, and High fidelity selected with a blue outline
+Your setup screen should look like this — Prototype tab, your project name, Circleback Design System auto-selected, and High fidelity highlighted in blue.
+Click Create, and you're in.
+
+Step 5: Send the build prompt
+Now we hand Claude the actual build prompt — a detailed brief that spells out exactly what to make, section by section, with specific layout principles, motion rules, and a list of things to avoid. The longer and more specific the prompt, the better the output.
+
+Copy this and paste it into Claude's chat input on your CircleBack Homepage project:
+
+Copy
+# Circleback Homepage // Build Prompt
+
+**Mission:** Ship the production marketing homepage for Circleback. Long-scroll, fully interactive, brutalist. Brand system is loaded. Honor it strictly.
+
+**Reader:** A head of sales who just spent 45 minutes guilty about their unanswered inbox. They should land on this page and feel relief, not pressure.
+
+---
+
+## Layout principles
+
+- Asymmetric, left-aligned, max-width 1280px with 80px gutters.
+- Visible 1px vertical grid lines at the page margins in `#222`.
+- Section padding: 128px vertical on desktop, 64px on mobile.
+- 0px border-radius. Everywhere. No exceptions.
+- Hairline borders only. No drop shadows.
+- Sticky terminal-style nav that fades in after 600px scroll.
+
+---
+
+## Sections (in order)
+
+**01 // HERO**
+Massive Courier New display headline: `STOP FORGETTING / TO FOLLOW UP.` Subhead in Helvetica: `Three perfectly-timed nudges. Then it lets it rest.` One primary CTA, lime background, no border-radius: `→ Start circling back`. Beneath the CTA, an animated terminal line with a blinking lime cursor that types-and-deletes through real follow-up phrases on a 2.5s loop: `circling back on this...`, `just bumping this to the top...`, `is this still on your radar?`.
+
+**02 // THE PROBLEM**
+A single brutal stat rendered massive: `73% of pipeline dies in the silence.` Below it in smaller mono: `// Source: every salesperson, ever.` A 3px lime accent rule running down the left margin of this section.
+
+**03 // HOW IT WORKS**
+Three numbered steps in a horizontal three-column grid. Each step in a bordered card: `01_CONNECT` (your inbox), `02_CONFIGURE` (your cadence), `03_WALK_AWAY`. Each card gets a custom geometric SVG icon drawn in code. Lime numbers, white labels.
+
+**04 // THE CADENCE** *(scroll-triggered animation)*
+Build a horizontal SVG timeline that draws itself as the section scrolls into view. Three lime dot markers positioned at 72h / 7d / 14d. As each marker activates, a small follow-up email preview card slides in from the right with real draft copy in Circleback voice. Use `IntersectionObserver` with a 0.3 threshold. Sharp 150ms transitions, no spring physics.
+
+**05 // FEATURES**
+Four-column grid: Smart Cadence, Tone Matching, CRM Logging, Polite Auto-Pause. Each card has a custom geometric SVG icon drawn in code (do NOT use icon libraries), a one-sentence description, and a small `// see how` link that expands an inline detail block on click.
+
+**06 // TRY IT** *(the showcase moment — use `window.claude.complete`)*
+Interactive widget titled `// GENERATE A FOLLOW-UP`. Two inputs: recipient name, days since last contact. One `// EXECUTE` button. On click, call `window.claude.complete` with a system prompt that produces a Circleback-voice follow-up email (warm, dry, considerate, under 80 words, no exclamation marks) and stream the response into a terminal-style output panel with a blinking lime cursor while generating. This is the killer demo. Make it work flawlessly.
+
+**07 // PRICING**
+Three tiers in horizontal cards: Solo Circler ($19/mo), Team Circler ($49/seat), Enterprise Circle of Life (Contact us). Working monthly/annual toggle that smoothly count-up-animates the prices on switch. Middle tier highlighted with a 2px lime border. Each tier lists three features in mono.
+
+**08 // SOCIAL PROOF**
+One large dry pull-quote from a fictional Head of Sales: *"I haven't manually written 'just bumping this' in eight months. I am free."* Below it, a strip of six fictional B2B company names rendered as monospace text in lime, no actual logos.
+
+So, is Figma dead yet?
+
+I spent a few days with Anthropic’s new tool, Claude Design, to figure out that answer.
+
+And the thing is, Claude Design isn’t really trying to be Figma. Or Lovable, for that matter. It's more just… a design workspace, where iteration feels more like whiteboarding than prompt engineering.
+
+I’m pleasantly surprised. The good stuff is genuinely good: a canvas that asks you questions, generates multiple design options, gives you sliders to tweak instead of re-prompting, lets you annotate directly, and bundles everything up for your coding agent of choice when you're ready to build.
+
+But it’s also an early product, with a lot of cruft. Claude Design is best at helping you figure out what a product could look like. It's much less useful once your designs need to live inside real, changing applications. (But no worries, I'll cover how to work through that at the end.)
+
+What Claude Design is
+Claude Design is a browser-based tool from Anthropic Labs for generating and iterating on visual work with Claude. They position it for prototypes, product concepts, decks, one-pagers, and marketing assets rather than app generation alone.
+
+You can start from a prompt, upload assets, bring in documents, capture an existing website, or feed it codebase context. Claude then generates a visual project you can refine through chat, annotations, comments, direct edits, and even generated controls. Then, you export it or hand it off to your actual coding agent.
+
+Claude Design is completely different from Claude Code.
+
+Claude Code is the agentic coding system that reads your local codebases, makes cross-file changes, runs tests, and delivers committed code.
+Claude Design is a separate visual surface that produces a handoff bundle when you're ready to implement. (Design is actually a separate app that’s not bundled the Claude desktop app, which I found a bit disappointing for workflow.)
+Put simply, Claude Code is focused on devs, and Claude Design is focused on designers.
+
+Prompting with designers in mind
+My favorite thing about Claude Design is that it doesn't make every interaction feel like prompt engineering.
+
+In my testing, I told it things as simple as “make me a new homepage” or “redesign the blog hero” and that was enough for it to get going.
+
+Because after your simple prompt, it asks you questions. A lot of questions. This is more than just a quick question tool in the prompt window. Claude Design uses the entire canvas to give you a taste exam.
+
+Claude Design interface showing a browser window with a blog layout redesign project, featuring a workspace with configuration questions, layout options, and project settings.
+It’s a little thing, but I find the expanded interface, and the knowledge that there will always be lots of clarifications, where I have space to doodle my thoughts or select multiple answers to the same questions, to be very freeing.
+
+And I found that the questions were very relevant to what we were designing, too.
+
+This fits my design workflow. I don’t always know what I want when I’m starting at a text-heavy chat thread and a blank canvas. Instead of trying to describe the perfect result and know about all my context beforehand, I get to lean on the AI to do what it does best: go figure out the mundane things for me and just ask me about questions of taste.
+
+And sometimes you just need the tool to show you a few directions, ask what feels right, and help you narrow the space. It’s less “type prompt, receive UI” and more like a guided creative process.
+
+Tweaks instead of re-prompting
+Another really interesting idea in Claude Design is the Tweaks panel.
+
+When Claude generates a design, it also generates custom controls for that design: sliders, toggles, and adjustable parameters that let you change parts of the result without asking the model to regenerate everything. (If you’ve ever worked on video games, it’s a lot like building your own custom tooling to make assets.)
+
+Claude Design interface displaying a prompt field and a series of clarifying questions in the canvas area. Claude Design interface showcasing the Tweaks panel with sliders and toggle controls for adjusting design parameters. Claude Design interface showing a UI hero section with a sidebar highlighting spacing and intensity adjustment sliders. A design workspace featuring a scratchpad area with handwritten annotations, arrows, and circles overlaid on the UI. Claude Design screen showing a UI component with comment pins and annotation bubbles indicating visual feedback. A CSS-style property panel in Claude Design showing specific controls like tracking, text size, and layout settings for a selected element. A comparison view in Claude Design showing four distinct layout variations of a landing page displayed side-by-side on the canvas. A setup interface for a design system in Claude Design showing configured brand typography, color palettes, and spacing values.
+I found this to be a genuinely cool interaction model. Most AI design tools make every refinement conversational. Want more spacing? Prompt the model. Want a darker background? Prompt the model. Want the hero to feel more editorial and less SaaS-y?
+
+Fred Armisen as a Venezuelan official in a Parks and Recreation scene, looking serious and holding a microphone, with a text overlay that reads "BELIEVE IT OR NOT, PROMPT THE MODEL.
+Design, and especially design with AI, is about taste and restraint. Usually AI models go overboard (or don’t do enough) of whatever it is you tell them to do. So, being able to play with a slider that tweaks spacing or intensity in realtime if super helpful.
+
+That said, the feature as it is today is still pretty buggy. Nobody has figured out how to do great generative UI yet, and Anthropic is no exception. Sometimes tweaks are mutually exclusive, and not all permutations actually react to your intent. And I often wanted more tuning parameters and less drastically different options.
+
+But the product idea is strong: AI design tools should give designers tweakable ranges instead of hard answers.
+
+Visual feedback makes Claude Design feel designer-native
+Another thing AI design tools should let designers do is communicate visually with the model.
+
+Claude Design’s scratchpad feature is a nice example here. It's a lightweight drawing surface available to you even when the agent is working (thanks to Claude Design’s tabbed workflow), then send your doodles to the agent as context.
+
+Claude Design interface featuring a chat panel on the left and a whiteboard-style canvas on the right, with a hand-drawn sticky note being added to the workspace.
+Sometimes you don't want to describe a layout in paragraphs. You want to draw an arrow, circle an area, sketch a rough shape, and say, "more like this." For that, Design also lets you annotate and comment directly on the project.
+
+A user’s browser window showing a design collaboration tool where a rectangular comment box is attached to a website header, displaying the text "comments stick to elements" alongside a "Comment" button and a "Send to Claude" button.
+In these ways, Claude Design feels genuinely designer-oriented. Instead of focusing on ways to type, it gives you ways to point.
+
+Edit mode doesn't quite give designers enough control
+Now, for the big one. As designers, we want to get our hands dirty and move things around ourselves on the page.
+
+Here, I have to say, I’m both pleased and pretty disappointed.
+
+On the one hand, Claude Design’s edit mode feels way more designer-oriented than most AI coding tools, using language like “tracking” instead of arbitrary CSS values that only devs know.
+
+Interface showing a Claude Design project with a blog-style layout, side-panel property editors, and a post titled How to Build Agent-Native Applications.
+Plus, it limits what you can do by the element selected. If you select a simple sentence, you get font-related options. If you select a grid, you get layout options. Just because all options are available in code all the time doesn’t mean Claude Design shows you a massive panel of unrelated controls, like other tools. It shows the ones that you actually need.
+
+All that said, what you can actually edit on the page is pretty limited. You can’t just grab elements and freely move them around like you would in Figma or Builder. For anything bigger than borders, colors, font options, and margins, you’re back to talking to the AI.
+
+There’s a tension here. Claude Design has this great visual surface, but it’s not a flexible design canvas in the way you’d expect. You get *some *direct control, but not enough to get real design work done without resorting to a game of AI telephone.
+
+Multiple design options are great, but the canvas gets in the way
+The last really cool thing I appreciated about Claude Design is that it can generate multiple options per prompt turn and then lay them out on the same canvas for you to compare.
+
+Sure, it takes the AI much longer to do (and uses way more tokens), but often, designing is about thinking outside the box, and I found it super helpful to tell the model to generate 4 vastly different-looking things for me to bounce ideas around.
+
+Claude AI interface showing a web design workspace with a "tweaks" panel in the bottom right corner offering toggles for "all four" or "one full-bleed" design layouts.
+That said, the feature is currently buggy. When you get multiple design options generated, the canvas mode changes to a more traditional “pan around the page” design mode, and you can’t scroll or easily interact with the static-ish mocks it presents. (The tweak option in the bottom right of my screenshot was not working.)
+
+Hopefully, this gets fixed soon, because as it is, the feature isn’t super usable.
+
+Claude Design feels early when you need production-level fidelity
+There’s several other rough edges in Claude Design, especially given it’s such a new product.
+
+Figma support is one of the biggest examples. In my testing, I couldn’t work with the Figma MCP or individual Figma frames. I had to upload and entire .fig file, which is really awkward when I just wanted to bring over one flow, frame, or component state and then had to create a whole new file instead.
+
+History and branching is another gap. There’s no way to go back in the AI chat history, which means that if the AI messes up your design, you’re stuck with it. Plus, I found that sometimes switching between commenting, annotating, editing, and other modes sometimes auto-sent things to the model before I was ready.
+
+Overall, I felt a big lack of fine-grained control. It’s a frustrating tool once you’re ready to refine the design. **And, crucially, there’s no export to Figma. **This means you’re stuck with whatever you make.
+
+Claude Design breaks for team workflows
+Claude Design is a fast tool for design exploration and a genuinely innovative way for designers to work with AI. Other than the actual AI generations, which take minutes, clicking around the interface lets you hop between ideas quickly and narrow down the sometimes overwhelming space of design.
+
+But it starts to fall apart is when you use it as part of a team working on an ongoing application.
+
+Let me explain what I mean.
+
+Fast, but not persistent
+Claude Design feels so lightweight because no part of it is your real app. Even though it can reference your code, it can’t run it. It doesn’t sync your latest production code. It doesn’t preserve any relationship with your app as it changes.
+
+If you’re doing a one-off concept, that’s not a problem. But it breaks over time.
+
+Imagine you use Claude Design to explore a new marketing page, hand it off to your engineers, and then the site changes a bit over the next few months.
+
+When you next come back to that same part of the product, you can’t just open up your old Claude Design project, because it won’t be a real representation of your app. You have to start fresh: new project, re-add context, generate from scratch again.
+
+The problem here is that most product design isn’t net-new ideation. It’s returning to a surface that already exists, understanding what changed, making another iteration, and getting that change reviewed.
+
+Context isn't continuity
+The “start from scratch” wouldn’t be such a big problem if there were reliable ways to get your current application state into Claude Design in the first place.
+
+For this, Claude Design has several options, in addition to screenshots and your own prompt engineering:
+
+Figma import.
+Custom design system.
+Code import.
+We already talked about some of the frustrations of the Figma import not being fine-grained enough and not having roundtrip back to Figma. But a bigger point is just… you’re adding another tool to a workflow that ideally wouldn’t need it.
+
+Because if Claude Design *knew *your codebase and design system perfectly, you could use its AI to start from scratch without messing around in Figma.
+
+So, let’s look at the design system features, which a lot of designers are really hyped about.
+
+The setup flow is really straightforward, and Claude generates a basic design system references your brand’s typography, colors, and even spacing values. This part was easy to do.
+
+The Builder.io Design System interface in a web browser showing a file list of various font files and a selected CSS stylesheet named colors_and_type.css, with a sidebar for comments and a bottom section for uploading project assets.
+And in my testing, its generations produced something that looked directionally related to the product I gave it as context.
+
+But there's a big difference between approximating a design system and working from the real one. The output doesn’t use our real code components. It has no 1:1 relationship with the existing implementation our team already worked hard on.
+
+The fidelity was maybe 50%-75% at best: close enough to feel relevant at a glance, but not close enough to trust as a production representation.
+
+And unfortunately, it’s the same with importing your code repository. Claude uses the code as context, but it doesn’t actually work inside your repo or run your app to look at the rendered state. It’s just glancing through the files to get the vibe.
+
+Handoffs are ugly
+Because the code Claude Design generates doesn’t use your team’s stack, design tokens, or real components, it’s just a prototype.
+
+And that’s fine. Anthropic has said that Claude Design is meant to export to Claude Code, which can read a codebase, work in a real repo, make changes across files, run tests, and deliver code.
+
+But realistically, Claude Code is hard for designers to use. It’s powerful, but it’s a developer-oriented tool. It asks you to deal with local repos, dependency installation, environment variables, app preview servers, Git branches, commits, pull requests, syncing, and merge conflicts.
+
+And if all that doesn’t scare you, then it makes way more sense just to start there anyway. Claude Design is an extra step that, frankly, sits in a really awkward middle spot between Figma and Claude Code.
+
+You might as well stick to Figma.
+
+Of course, most designers on a bigger team would want to use Claude Design and then hand off to engineers, much like you would from Figma.
+
+This is fine, in theory, but no one really saved any time. Your engineers now have to recreate your implementation from scratch, which may divert from the existing design system in subtle ways. You’re back to all the existing problems with design handoffs.
+
+A better design handoff exists
+We’ve thought about designers, AI, and handoffs and awful lot, and we’ve designed common workflows right into our product.
+
+Claude Design is strong when you want to explore what should exist. Builder is stronger when you need to safely change what already exists.
+
+Builder connects to your team’s repo one time (devs can set this up), and then anyone on your team can access their own branches with a live preview, a visual editor, and AI (Claude, GPT, whatever you like) that can see and manipulate your real app inside a safe sandbox.
+
+Any changes you make use your real design tokens and real code components. And you can test them out against real data in your application.
+
+When you’re done, you can tag in the proper team for review, and they can continue work on the same branch, making sure that you’re prototyping effort—the tokens, time, and taste you put in—don’t go to waste. No more design fidelity loss.
+
+This also makes it far easier to make small design tweaks that would otherwise be backlogged for eternity. You might be browsing your team’s marketing site and notice a button that needs to move 2px to the left. Great. Just open the editor, move the button, and hit submit.
+
+Your engineers always get final say, so you’ll never break production. You’re free to play around without worrying about jumping between a bunch of different tools. And if you do still want to roundtrip with Figma, that’s completely supported.
+
+You can still use Claude Design with Builder
+If you still want to use Claude Design, but you’re interested in Builder, we also support importing your Claude Design projects at any phase of your workflow.
+
+If you want to...	Use...
+Explore visual directions quickly
+
+Claude Design
+
+Create a prototype, concept, or deck
+
+Claude Design
+
+Implement locally with a coding agent
+
+Claude Code
+
+Keep iterating on the current app without local setup
+
+Builder
+
+Work from real components and design-system code
+
+Builder
+
+Turn a Claude Design concept into ongoing app work
+
+Claude Design to Builder
+
+Claude Design is a hint at the future of design workflows
+Claude Design is genuinely innovative. It makes AI feel less like a blank chat box and more like a creative partner: one that can ask questions, generate options, expose sliders, accept annotations, and turn rough intent into something visual.
+
+But the closer you get to production, the more the workflow depends on handoff: to a coding agent, to the repo, and to the team's review process.
+
+Builder takes a different path. Instead of making a better artifact to hand off, it gives designers a visual way to work in the existing app, with the repo, preview, branch, and PR flow already handled.
+
+Claude Design is for exploring what should exist. Builder is for safely changing what already exists.
+
+Anthropic released Claude Design in April 2026 as a research preview. In their own words:
+
+Claude Design is a new Anthropic Labs product that lets you collaborate with Claude to create polished visual work like designs, prototypes, slides, one-pagers, and more.
+
+Since it landed, I’ve been using it to build presentations.
+
+The first time I built a deck, I went straight into Claude Design and got good results. One thing I noticed, though, was that working on the content in Claude Design felt slow. Every time I adjusted the text, Claude Design had to do more than just edit words: the text has to fit the slide and get rendered, so each small change took longer than it would in plain text. So the next time I tried something different: I wrote the content first as markdown in a regular Claude chat, where iterating on text is fast, and only then took that markdown into Claude Design.
+
+What Claude Design is
+Claude Design is a separate Anthropic Labs product, available to Pro, Max, Team, and Enterprise subscribers. When it launched in April 2026, it was powered by Claude Opus 4.7. It now has a model selector, so you can pick which model to use, including Opus 4.8. It has two panes: a chat on the left and a live canvas on the right. You describe what you want, Claude builds a first version, and you refine from there through conversation, inline comments, direct edits, or sliders that Claude generates when you want to dial something in.
+
+You can start from multiple sources: a simple prompt, other files like PDFs, markdown, or images, or elements grabbed from a live site with the web capture tool. You can start a brand-free design or use a custom design system that you or your organization defined. Once you’re happy with the results, you can export to Canva, PDF, PPTX, standalone HTML, or an internal share URL.
+
+The workflow
+Two-step workflow for building presentations with Claude Design: draft the content first, then design the slide deck
+
+I’ve been experimenting with different workflows to figure out which one gives the best results. Here’s the one that works best for me.
+
+First I write a draft myself: what are the topics I want to present, and how do I want to organize the content? Then I bring that into a regular Claude chat and we iterate on it slide by slide, adding examples, sharpening each point, until the content feels kind of ready. The draft starts from me, and Claude helps me work it into shape.
+
+Once the structure feels solid, I ask Claude to turn it into a clean markdown outline: one section per slide, with the content underneath. I read it end to end before moving on. If a slide isn’t pulling its weight I cut it, and if a section is out of order I fix it in the markdown first. Editing text is faster than editing slides. At this stage I don’t focus much on layout. I want to focus on pure content, since for me visualizing the design in markdown is much harder, and that’s what Claude Design is for.
+
+Once the content feels ready, I take that markdown into Claude Design. Here I try to use each tool for a different job. The content is already decided, so in Design I’m not rewriting the message, I’m focused on how it looks: the layout, the structure, whether something should be one slide or split into two.
+
+💡 Tip: give Claude Design a standing rules doc.
+
+There’s no official CLAUDE.md feature in Claude Design, but you can get most of the way there. Add a rules file to your project as context and Claude treats it as a standing instruction for that project. It isn’t documented and it isn’t reloaded as strictly as a CLAUDE.md in Claude Code. Even with that caveat, it’s been one of the most useful things for working more efficiently with Claude Design.
+
+My first rule: the content is already defined, so Claude Design shouldn’t change the copy on its own. If it wants to adjust wording, it asks me first. That keeps it doing what it does best, layout and design, and leaves the content to me.
+
+The handoff prompt itself is short. Something close to: “Build a presentation deck from this outline, one slide per section, using the existing design system.” Claude Design generates the first pass based on that.
+
+From there I refine from both sides. In Design I move slide by slide, using direct edits for small tweaks and inline comments for bigger ones. When something needs to change across the whole deck, the chat handles it in one round: tighten the body copy, move every chart to the right, use the secondary brand color for accents. And if the content itself needs to change, I go back to Claude chat rather than rewriting it in Design.
+
+When the deck is ready, I export. PPTX if it’s going to someone who needs editable slides, PDF if it’s read-only, or the internal share URL for a quick review from a teammate first.
+
+A few caveats
+Claude Design is still in research preview, so the exports aren’t all equally clean. Exporting to PDF, for example, sometimes messes up images or elements like cards, with the styling coming out wrong. PPTX usually opens fine in PowerPoint and Keynote, but complex layouts can drift on the way out. A final pass after exporting is needed.
+
+Editing small style details can be painful. Something as simple as making a few words bold takes longer than it should. You can edit directly in the slide, but it’s far more complicated than selecting the text and clicking a button in a traditional editor, so I often end up describing the change to the chat instead. The UX could be improved here.
+
+The design system inheritance works best when your organization actually has one configured in Claude Design. Without it, you’ll spend more time in Design dialing in colors and fonts by hand.
+
+Takeaways
+The main thing I took from this is to think first and design second. Claude Design gives great results, but they’re only as good as the content you bring it. So I get the content right first, and let Design do what it’s good at.
+
+Anthropic just launched Claude Design — a new visual creation tool built directly into Claude. It lets you design presentations, posters, and other visual assets using AI, all within the Claude interface. If you’ve been looking for a way to create presentations with Claude, this is the most native option yet.
+
+But here’s the thing: Claude Design is brand new, and it comes with some real limitations — especially if you need editable PowerPoint files, custom branded templates, or fast turnaround. That’s where SlideSpeak comes in as a powerful alternative.
+
+In this guide, we’ll walk through exactly how to use Claude Design to create presentations, then show you how SlideSpeak delivers a faster, more customizable experience — especially for professional and branded decks.
+
+What Is Claude Design?
+Claude Design is a new feature from Anthropic Labs that adds visual design capabilities directly into the Claude interface. Instead of just generating text, Claude can now create visual outputs — including presentations, infographics, and design layouts — rendered as HTML files you can view, share, and export.
+
+It’s part of Anthropic’s push to make Claude more than a chatbot. Design sits alongside Code and Artifacts in Claude’s sidebar, giving you a dedicated space for visual creation.
+
+How to Create a Presentation with Claude Design (Step-by-Step)
+Here’s exactly how to find and use Claude Design to build a presentation from scratch.
+
+Step 1: Open Claude Design
+Log into claude.ai and look at the left sidebar. You’ll see a list of options: Chats, Projects, Artifacts, Code, and — the new one — Design. Click on it.
+
+Claude sidebar showing the new Design option alongside Chats, Projects, Artifacts, and Code
+Find Claude Design in the left sidebar — click “Design” to get started
+Step 2: Create a New Presentation
+Once you’re in the Design section, click “Create new presentation” (or describe what you want in the prompt field). Tell Claude what your presentation should be about — for example, “A presentation about Prague” or “Q2 sales report for the marketing team.”
+
+Claude will start working on your request. But before it builds anything, it will ask you a series of clarifying questions.
+
+Step 3: Answer Claude’s Questions
+This is where Claude Design differs from most AI presentation tools. Instead of immediately generating slides, Claude asks you detailed questions about your presentation:
+
+What’s the angle? — Travel guide, historical overview, business pitch, etc.
+Who’s the audience? — Students, colleagues, prospective visitors, etc.
+How long should the talk be? — A slider from 3 to 30 minutes
+Tone? — Warm and narrative, crisp and editorial, academic, playful
+Visual direction? — Editorial, moody, minimalist, etc.
+Claude Design asking clarifying questions about the presentation including angle, audience, duration, tone, and visual direction
+Claude Design asks detailed questions before building your presentation — helpful, but time-consuming
+This questionnaire approach ensures Claude understands exactly what you want. The downside? It takes quite some time. Between answering questions, waiting for Claude to process, and the actual generation, you’re looking at several minutes before you see any slides.
+
+Want something faster? SlideSpeak generates complete, editable presentations in under a minute — skip ahead to the SlideSpeak section if speed matters to you.
+
+Step 4: Wait for Generation
+After answering all the questions, Claude starts building your presentation. It creates an HTML-based slide deck with custom typography, layouts, and styling. You can watch the progress in the left panel as Claude works through each step.
+
+The generation process is thorough but slow — expect to wait a few minutes for a full deck. Claude Design builds each slide as a self-contained HTML file with embedded CSS, which means the visual quality can be quite high.
+
+Step 5: Review and Tweak
+Once generated, you can view your presentation in the Design Files panel. Claude Design includes editing tools like Comment, Edit, Draw, and a Tweaks button that lets you ask Claude to make adjustments — like changing colors, adding sliders, or modifying the layout.
+
+Claude Design finished presentation showing a Prague travel guide with custom typography and editorial layout
+A finished Claude Design presentation — beautiful HTML output with custom typography
+Claude Design Tweaks dialog allowing you to ask Claude to add sliders or options to the presentation
+The Tweaks feature lets you ask Claude to modify your presentation after generation
+Claude Design: What You Should Know
+Claude Design is impressive for a first release, but there are some important limitations to be aware of:
+
+HTML output only — Presentations are rendered as HTML files, not PowerPoint (.pptx) or Google Slides. You can’t open them in your usual presentation software without conversion.
+Limited editability — While the Tweaks and Edit tools exist, you’re mostly working through Claude to make changes. There’s no drag-and-drop slide editor.
+No custom templates — You can’t upload your company’s branded PowerPoint template and have Claude Design use it. The visual direction is determined by Claude’s design choices.
+Slow generation — The question-and-answer flow plus generation time means you’re waiting several minutes for a complete deck.
+No real-time collaboration — You can share the output, but there’s no collaborative editing like Google Slides or SlideSpeak.
+For quick, beautiful one-off visual presentations, Claude Design works well. But for professional workflows that require branded templates, editable PowerPoint output, and fast iteration — you’ll want something purpose-built.
+
+Want to stay inside Claude but still create on-brand slides? SlideSpeak now offers a Brand Context MCP server that gives Claude (and any other AI agent) direct access to your logos, colors, fonts, and approved slide layouts — so anything Claude generates follows your brand guidelines automatically. More on that below.
+
+SlideSpeak: A Faster, More Customizable Alternative
+SlideSpeak is a dedicated AI presentation generator that’s built specifically for creating professional slide decks. It’s powered by Claude (among other models) and is designed to solve the exact problems that Claude Design struggles with: speed, editability, and brand consistency.
+
+Here’s what makes SlideSpeak different:
+
+Custom Branded Templates
+This is SlideSpeak’s killer feature. You can upload your own branded PowerPoint template and SlideSpeak will generate presentations that match your company’s exact design system — your fonts, colors, layouts, and logo placements. Every slide looks like it was designed by your marketing team.
+
+Claude Design doesn’t support custom templates at all. If brand consistency matters to your organization, this alone makes SlideSpeak the better choice.
+
+Brand Context MCP — Bring Your Brand Into Claude (and Any AI Agent)
+If you’d rather keep building inside Claude, Claude Code, Cursor, or Codex, SlideSpeak now offers a Brand Context MCP server called SlideSpeak Onbrand. It exposes your real brand — logos, colors, fonts, imagery, icons, and approved slide layouts — as a Model Context Protocol endpoint that any AI agent can read.
+
+Once you connect the MCP, Claude can fetch your brand kit on demand and generate slides that comply with your brand guidelines — no manual styling, no off-brand colors, no generic fonts picked by the model. It’s the missing piece that lets Claude Design (and every other agent) actually produce work that looks like it belongs to your company.
+
+One endpoint, governed by you, read by every agent on your team. Learn more about SlideSpeak Onbrand →
+
+Fully Editable PowerPoint Output
+SlideSpeak generates real .pptx files — not HTML. Every element is fully editable in PowerPoint or Google Slides. Move text boxes, resize images, change fonts, add animations — it’s a real presentation file, not a screenshot or static render.
+
+SlideSpeak generated presentation showing The Urban Shift: Americas Cities Today with professional layout, data visualizations, and editable slides
+SlideSpeak generates fully editable presentations with professional layouts and data visualizations
+AI Assistant for Real-Time Editing
+SlideSpeak includes an AI assistant called Charles that helps you edit your slides after generation. Need to add an image, make text more concise, or suggest a better title? Just ask. You can also change templates, adjust branding, modify layouts, and add speaker notes — all within the editor.
+
+SlideSpeak AI Assistant Charles offering suggestions like Add a suitable image, Make the text more concise, and Suggest a more engaging title
+SlideSpeak’s AI assistant helps you refine slides with quick suggestions and custom prompts
+Speed
+SlideSpeak generates a complete presentation in under 60 seconds. No lengthy questionnaires, no multi-minute wait times. Type your topic, pick a template (or upload your own), and get a finished deck almost immediately.
+
+Claude Design vs. SlideSpeak: Side-by-Side Comparison
+Feature	Claude Design	SlideSpeak
+Output format	HTML	PowerPoint (.pptx)
+Custom branded templates	Not supported	Full support — upload your own
+Editability	Limited (via Claude prompts)	Fully editable in PowerPoint/Google Slides
+Generation speed	Several minutes	Under 60 seconds
+AI editing assistant	Tweaks button	Full AI assistant (Charles)
+Download as PowerPoint	No (HTML export)	Yes — native .pptx
+Brand consistency	AI-chosen styling	Matches your exact brand guidelines
+Brand context for AI agents (MCP)	Not available	Yes, via SlideSpeak Onbrand
+Pricing	Requires Claude Pro/Max	Free tier available
+When to Use Which
+Use Claude Design when:
+
+You want a visually unique, editorial-style presentation
+You’re already in Claude and want to stay in one tool
+You don’t need PowerPoint format output
+You have time for the question-and-answer flow
+Use SlideSpeak when:
+
+You need editable PowerPoint files
+You have a branded template that must be used
+Speed matters — you need a deck in under a minute
+You want pixel-perfect control over every element
+You’re building presentations for a team or client
+Use SlideSpeak Onbrand when:
+
+You want to keep building presentations inside Claude, Claude Code, Cursor, or Codex
+Your slides have to follow company brand guidelines (logos, colors, fonts, approved layouts)
+You want every AI agent on your team pulling from one governed brand source instead of guessing
+Final Thoughts
+Claude Design is an exciting first step from Anthropic into visual creation. The presentations it generates are genuinely beautiful — the typography, layout choices, and attention to visual hierarchy are impressive. But for most professional use cases, the HTML-only output, lack of template support, and slow generation time make it hard to recommend over a purpose-built tool.
+
+SlideSpeak fills that gap. It’s faster, produces fully editable PowerPoint files, supports custom branded templates, and includes an AI assistant for post-generation editing. If you’re creating presentations regularly — for work, school, or clients — it’s the more practical choice. And if you’d rather stay inside Claude, SlideSpeak Onbrand connects your brand guidelines to Claude Design itself, so the decks it generates actually look like your company made them.
+
+Try both and see which fits your workflow. Claude Design is free to experiment with if you have a Claude account, and SlideSpeak offers a free tier to get started. Want to compare more options first? See our roundup of the best Claude Design alternatives.
+
+**09 // FOOTER CTA**
+Quiet repeat of the primary CTA. Below that, a terminal-style footer that looks like an active CLI session: lime `$` prompt, a fake `circleback --status` command, and output showing made-up live stats (`47,281 follow-ups sent this week / 0 awkward conversations`). At the very bottom, a metadata row in Courier 8pt: DOCUMENT / BUILD / DEPLOYED / VERSION.
+
+---
+
+## Motion spec
+
+- All transitions: 150ms `cubic-bezier(0.4, 0, 0.2, 1)`.
+- No spring physics. No bounce. No fade delays over 200ms.
+- Cuts beat fades for state changes.
+- Scroll-triggered animations via `IntersectionObserver`, threshold 0.3.
+
+---
+
+## Do NOT
+
+- Use any color outside the brand palette (`#0A0A0A`, `#F5F5F5`, `#D4FF00`, `#FF2E92`, `#9A9A9A`).
+- Use any rounded corners or drop shadows.
+- Use stock illustrations or images of people.
+- Use any icon library. Draw every icon as inline SVG.
+- Use Inter, Roboto, or any Google Font. Courier New for display, Helvetica for body. Period.
+- Add "Powered by AI" badges, sparkle icons, or any ✨ emoji anywhere.
+
+---
+
+## Done looks like
+
+A homepage that a brutalist front-end studio in Berlin would ship for a real YC company in 2026. It should feel like it was built by the same people who built linear.app or vercel.com, except they're selling deeply earnest follow-up software with a completely straight face.
+Hit send. Claude will start building — this first generation usually takes a few minutes. While you wait, scroll through the prompt and notice how specific it is. Notice how many constraints it sets. Notice how it ends with a clear "done looks like" picture, not a vague aspiration. That specificity is what gets you a polished page instead of a generic SaaS template.
+
+Step 6: Edit the page just by prompting
+Claude will spend a few minutes building. When it's done, you'll see your homepage rendered live — the brutalist hero, the 73% stat, the cadence timeline, the Try-It generator, all of it.
+
+Now the magic move. To edit anything on this page, you just keep talking. No code editor. No design inspector. No hunting for the right CSS variable. You stay in the chat.
+
+Type this into the chat input:
+
+Copy
+let's include a really cool motion graphic of a pie chart that shows the 73% statistic.
+Hit send. Claude will find the Problem section, design an animated pie chart that visualizes the 73% stat, and slot it into the layout. You'll watch the page update in place — the new graphic appears, animates in, and just works.
+
+The result of the iteration prompt — Claude's chat panel on the left explaining the redesign, the rendered Problem section on the right with the headline 73% OF PIPELINE DIES IN THE SILENCE next to a brutalist circular pie chart in lime green showing the 73% / 27% split
+The result — Claude redesigns the Problem section into a two-column layout, with a brutalist motion-graphic pie chart that draws itself on scroll. One sentence of input, full visualization out.
+Notice how casual that prompt is compared to the build prompt. You don't need a 700-word brief to iterate. Once the design system and the page exist, Claude has all the context it needs. Conversational requests are enough.
+
+And you don't stop at one edit. Keep going. Try this next:
+
+Copy
+awesome, now let's include a full mockup on this page of what the product looks like and show it working.
+Claude will design a working product mockup — an inbox view of CircleBack actively drafting, sending, and tracking follow-ups — and embed it somewhere in the page. Each prompt you send builds on the last. The page evolves through conversation, one move at a time.
+
+The product mockup section Claude generates — a full inbox UI for CircleBack with a workspace sidebar, four sample email threads (Marcus Chen, Priya Sharma, Jakub Kowalski, Elena Voss), and a detail view showing a Q3 partnership memo with a queued 72h / 7d / 14d cadence of follow-up replies and a Queue The Cadence CTA in lime
+The product mockup Claude designs — a fully rendered inbox showing CircleBack working: sample threads, a queued cadence of follow-ups, the whole product made visible. From a single sentence of prompt input.
+And you don't have to limit yourself to adding things to one section at a time. You can reshape the whole design with a single, broad prompt. Try this:
+
+Copy
+this is all a little hard to read, let's fix that.
+Claude will audit the entire page — type sizes, line lengths, contrast, hierarchy, spacing — and rework all of it together. Not a patch on one section. A real pass across the whole design. That's the kind of move that would take a designer a half-day. You get it back in a minute.
+
+Claude's chat response to the readability prompt — Plan: improve readability with bigger body text, increased line-height, more contrast on muted text. Then Editing x7. Then a final summary noting body copy bumped to 16px with looser leading, muted text contrast lifted from #9A to #B8, feature card and mockup type scaled up, hero subhead increased — closing with 'Verified clean — readability pass landed.'
+Claude's response — a plan, seven edits across the whole page, then a verifier check. "Readability pass landed" in roughly the time it takes to refill a coffee.
+This is the loop you'll spend most of your time in: look at the page → describe what to change → watch it ship. Same pattern for any edit you'll ever make:
+
+"The hero feels too corporate. Make it weirder."
+"Replace the third pricing tier with a free trial card."
+"Add a real interactive ROI calculator below the features."
+"The cadence timeline animation feels janky. Use a softer ease and slow it down."
+Specificity helps, but you don't have to be precious about it. Try things. If you don't like what comes back, tell Claude what's wrong and ask for another pass. The page is yours to shape.
+
+Step 7: The on-canvas tools
+Chatting isn't your only way to refine the design. At the top of the canvas, you'll find four direct-manipulation tools. Use them when pointing at something is faster than describing it.
+
+Tweaks
+Change what you want. The all-purpose adjustment tool. Drop a quick instruction and Claude applies it without making you spin up a new prompt thread.
+
+Comment
+Click an element and leave a comment. Good for queuing up todos, tagging things you want to revisit, or leaving notes for a collaborator. Comments stay attached to the element they're on, even as the design evolves around them.
+
+Edit
+Basic edits. Typo fixes, copy swaps, quick text changes — no need to spin up a new prompt for any of it. Click in, change the words, done.
+
+Draw
+Circle things. When you want to point at something and say "this here — fix this" instead of describing it in words, sketch directly on the canvas. Claude reads your annotation and acts on it.
+
+You'll move between chat and these tools fluidly. Big conceptual changes still live best in chat — they need the long-form context. Spot fixes, focused tweaks, and pointed visual feedback live on the canvas. Use whichever is faster for the move you're trying to make.
+
+Step 8: Share, export, or hand off
+Once your homepage is in good shape, click Share in the top right. The panel that opens does a lot more than just copy a link.
+
+Claude Design's share menu — Access dropdown set to 'Teammates can comment', a Copy link button, the visibility note 'Only you can see this design', then a list of options: Duplicate project, Duplicate as template, Download project as .zip, Export as PDF, Export as PPTX, Send to Canva, Export as standalone HTML, Handoff to Claude Code
+The Share menu — collaboration controls up top, copy and export paths below.
+Access & collaboration
+Teammates can comment — the access dropdown. Control who can see the design and what they can do: view, comment, or edit.
+Copy link — share the live design directly. Anyone with access can open it in their browser, leave comments, and follow along.
+Reuse the work
+Duplicate project — make an independent copy of this design. Good when you want to fork the work and try a different direction without losing the original.
+Duplicate as template — save this project as a reusable starting point for future designs.
+Export
+Download project as .zip — the full project files, archived for offline use.
+Export as PDF — a flat document version. Good for emails, handouts, and prints.
+Export as PPTX — drop it into PowerPoint or Google Slides.
+Send to Canva — open the design in Canva for further editing with their tools.
+Export as standalone HTML — a production-ready single HTML file. Put it on a server and ship.
+Handoff to Claude Code — push the design into a real codebase via Claude Code. The cleanest path from prototype to production app or marketing site (more on this below).
+A closer look at "Handoff to Claude Code"
+This one deserves its own moment. From my own experience, this is the single best way to get a design out of Claude Design and into something you can actually ship.
+
+The two products are built to complement each other. Claude Design is the UI-driven space for visual work — fast iteration, conversational edits, on-canvas tools. Claude Code is built for actually constructing software — reading and writing files, refactoring, plugging into an existing codebase. (I rebuilt the entire Masset marketing site this way — here's how that went.) The handoff stitches them together.
+
+The Handoff to Claude Code dialog — two tabs (Send to local coding agent, Send to Claude Code Web), a terminal-style prompt that says 'Fetch this design file, read its readme, and implement the relevant aspects of the design' with an Anthropic API URL referencing the Circleback Homepage file, a Copy command button, an option to download as zip instead, and an optional notes field
+The handoff dialog — a ready-to-paste command that points Claude Code at your live design file.
+Click Handoff to Claude Code and you get a pre-built command, ready to copy. The command does two important things:
+
+References your design as an online file. Your CircleBack project lives at a URL on Anthropic's API. The command points Claude Code straight at it. No manual export. No copy-pasting frames.
+Tells Claude Code exactly what to do with it. The prompt is something like "Fetch this design file, read its readme, and implement the relevant aspects of the design." Enough context to start building the real version in your codebase, with the design as the source of truth.
+Two delivery paths: Send to local coding agent (your terminal Claude Code session) or Send to Claude Code Web. There's also a Download zip instead toggle if you'd rather drop the project bundle into your agent's chat manually, plus an optional notes field for any extra implementation guidance.
+
+The result: Claude Code reads the design, follows the structure, and produces real code in your project. The prototype you built in five minutes becomes a real shipped page — without anyone hand-converting frames into components.
+
+For most class demos, you'll use Copy link. When it's time to ship something real, Export as standalone HTML or Handoff to Claude Code are usually the right answer. Everything else is there when you need it.
+
+Step 9: See it live
+Here's the homepage we just built, exported from Claude Design as a single self-contained HTML file and embedded directly into this article. Scroll through it. The brutalist hero, the 73% pie chart you prompted into existence, the cadence timeline that draws itself on scroll, the pricing toggle, the terminal footer — all of it is in the iframe below, live and working.
+
+
+Open in a new tab →
+
+One caveat: the Try-It generator in section 06 calls Claude's API at window.claude.complete, which is a Claude Design runtime helper. Outside the design tool, that section won't actually generate follow-up text — but the rest of the page works exactly as it did inside Claude Design.
+
+That's the whole arc of the class right there. The page started as a one-line product description. Then a brand guide. Then a build prompt. Then three conversational iterations. Now it's a working webpage you can share, host, or hand off to engineering. Total time from blank canvas to this iframe: under an hour.
+
+Now go play
+That's the class. Hope it helped.
+
+The best way to actually get good at Claude Design — same as anything else in AI — is to just use it. Open it up. Start a project. Try prompts that are too vague. Try ones that are over-specified. Click every tool in the toolbar and see what it does. And when you don't know what's possible, ask Claude directly. Type "what can you do here?" and let it tell you.
+
+Most of what you need to know is on the other side of an hour of playing around.
+
+Have fun. Build something weird.
+
+— Ben
+
+Key Takeaways
+Claude landing page design lives inside Claude.ai. Click Design in the left sidebar (web only, research preview) to start.
+To build a landing page with Claude, set up a design system once from your brand guide, then generate pages that come out on-brand by default.
+No code and no Figma are required. You edit the page by prompting in plain language and with the on-canvas tools.
+A full, on-brand landing page takes under an hour, and you can export it as standalone HTML or hand it off to Claude Code to ship.
+
+Claude Design: o que é e o que promete
+Claude Design - interface de geração de componentes
+
+O Claude Design é a interface do Claude voltada para geração de componentes e sistemas visuais. Você descreve o que quer — um botão com variantes, um menu, um modal — e ele entrega algo visualmente coerente em minutos.
+
+É uma ferramenta nova. E como toda ferramenta nova, há um abismo entre o que parece capaz de fazer e o que realmente entrega quando testado num fluxo de trabalho real. Mas já se mostra com grande potencial.
+
+Claude Design - exemplo de componente gerado
+
+A configuração que faz sentido
+O Claude Design aceita que você importe um arquivo Figma como referência. Ele tenta extrair cores, tipografia, raio de canto e componentes. O problema é que ele não traz o melhor dos resultados: adicionou estilos de fonte que não existiam no sistema original, ignorou 80% das variantes de botão e nomeou incorretamente alguns estados (chamou “erro” de “perigo”, por exemplo).
+
+A melhor estratégia não é pedir para ele construir do zero — é usá-lo como acelerador de visualização. Descreva o que você quer, itere visualmente ali, e só então passe para o Figma via Claude Code. Não tente fazer o Claude Design substituir o Figma como ambiente de produção.
+
+O que ainda não funciona
+Variáveis Figma não são respeitadas. Os componentes gerados chegam com hexadecimais brutos, sem conexão com as variáveis criadas. Auto-layout com “hug” não é aplicado corretamente em variantes com conteúdo longo. Componentes atômicos reutilizáveis raramente são gerados de forma que se encaixem em estruturas maiores.
+
+O Claude Design saiu há pouco tempo. Hoje ele tem o nível de um designer júnior fazendo seu primeiro Design System. Útil, mas ainda peca nos resultados finais.
+
+O que surpreendeu (para o bem e para o mal)
+Positivo: Componentes de menu com caixa de seleção, radio button e estados diferentes saíram estruturalmente corretos — o tipo de coisa que exigiria coordenação entre vários componentes atômicos.
+
+Negativo: O consumo de tokens foi assustador. Em alguns poucos testes, quase 60% do plano foi usado. Este tipo de uso descontrolado pode acarretar problemas futuros na conta da empresa.
+
+Resumo prático: Por enquanto o Claude Design tem o nível de um designer júnior em termos de design system. É útil para acelerar a fase de exploração — mas não para substituir o trabalho de construção real, de ponta a ponta.
+
+Fluxo de trabalho Figma + Claude Code
+Diferente do Claude Design, o fluxo via Figma MCP + Claude Code é mais trabalhoso de configurar — mas entrega resultados muito mais próximos de produção quando o setup está correto.
+
+A diferença central: aqui a IA conhece seus tokens e seus componentes antes de gerar qualquer coisa. Isso muda tudo.
+
+1 – Conectar o Figma MCP
+
+Em Customizar Claude Code → Conectores, pesquise “Figma” e conecte. Autorize o acesso no navegador quando solicitado.
+
+Figma MCP - conectores no Claude Code
+
+Figma MCP - autorização de acesso
+
+2 – Instalar as Figma Skills
+
+Baixe o pacote de skills do GitHub e importe no Claude. As mais importantes são “apply design system” e “audit design system”.
+
+https://www.figma.com/community/skills
+
+Figma Skills - pacote de skills para Claude
+
+3 – Treinar a IA nos tokens
+
+Cole o link do quadro de variáveis do Figma e peça ao Claude para estudar os tokens e gerar uma skill reutilizável sobre quando cada variável deve ser usada. Inclua nome, valor claro/escuro e uma linha descritiva de uso.
+
+Claude Code - treinamento nos tokens do Figma
+
+Prompt Claude:
+
+<—LINK FIGMA—>
+
+Por favor, estude este frame do Figma, que contém todos os nossos design tokens e variáveis do Figma dentro do nosso design system.
+
+Torne-se um especialista nos tokens e em quando eles são utilizados.
+
+Após obter um entendimento completo, construa uma skill do Claude sobre quando cada variável deve ou não deve ser usada.
+
+NÃO foque em nenhum componente, estritamente nas variáveis/tokens dentro desse frame do Figma.
+
+ 
+
+4 – Treinar a IA nos componentes por grupos
+
+Separe os componentes em grupos (form elements, navigation, data display) e treine grupo por grupo. Enviar tudo de uma vez causa alucinações.
+
+<—LINK FIGMA—>
+
+Acima está o nosso design system, mais especificamente a página de <—BOTÕES—> dentro do Figma.
+
+Chegue a um entendimento profundo sobre os componentes de <—BOTÕES—>, suas variantes e propriedades nos seguintes agrupamentos:
+
+Após dominar os componentes, construa uma skill do Claude sobre quais componentes de <—BOTÕES—> estão no design system e quando eles devem ou não devem ser usados.
+
+NÃO documente variáveis, design tokens ou outro tipo de componente, pois estes estarão dentro de outra Skill.
+
+Após isso, pode-se unificar todas as skills em apenas uma, se achar necessário.
+
+5 – Gerar localmente antes de enviar ao Figma
+
+Peça sempre o componente em HTML/React (ou outra tecnologia utilizada na stack) primeiro. Só depois de aprovar o resultado, envie para o Figma. Isso economiza tokens e evita retrabalho.
+
+Como usar no dia a dia
+Use referências visuais externas (Mobbin, Dribbble, prints de produtos que admira) para alimentar a IA antes de gerar. “Construa um modal” dá resultado genérico. “Construa um modal parecido com esses dois exemplos, usando nossos componentes e tokens etc.” dá um resultado que chega perto do que você quer.
+
+Dica de produtividade: Enquanto o Claude gera — e ele leva alguns minutos — faça outra coisa. Revise designs, responda mensagens, planeje o próximo sprint. A IA deve aumentar sua eficiência total, não te dar 10 minutos para olhar para uma tela.
+
+Depois de enviar para o Figma, use a skill do próprio Figma de auditoria (audit-design-system): peça ao Claude para “audite a conformidade deste componente com o nosso design system”. Ela retorna um relatório detalhado de onde o design não segue o sistema — variáveis de espaçamento incorretas, textos que deveriam ser componentes, sombras não aplicadas.
+
+Figma - auditoria de design system com Claude
+
+Vale a pena? Comparativo de tempo
+Comparativo de tempo - IA vs processo manual no design system
+
+Conclusão: a IA amplifica quem já sabe o que está fazendo
+O título que promete “IA construiu meu design system em 5 minutos” é clickbait. Mas isso não significa que a IA não tem papel — o papel é diferente do que a maioria imagina.
+
+Componentes simples como botões ainda são mais rápidos de fazer à mão. Tokens de design e variáveis Figma precisam de conhecimento humano do produto — a IA não sabe o que está faltando porque você também não sabe, e ela não vai adivinhar.
+
+Onde a IA brilha de verdade é em elementos complexos: modais com múltiplas variantes, layouts de dados, listas e auditorias com skills. Com o setup certo, ela poupa horas de trabalho que antes exigiam um designer sênior.
+
+Vale mencionar o Claude Design: a ferramenta ainda parece crua, com uma experiência que deixa espaço para crescer — mas a jornada é promissora. A IA está avançando em ritmo acelerado, e em alguns meses podemos ver saltos significativos nessa frente.
+
+A IA não substitui o designer. Ela multiplica quem já tem a base — e por enquanto, só multiplica quem já sabe o que está fazendo.
+
+Hey friends - most Claude Design tutorials tell you to pick a template, name it, and start prompting, which is exactly why your slides come out generic (and why you burn time and tokens trying to save them).
+
+The fix is 10 to 15 minutes of prep. Get three simple files ready before you prompt, and every deck comes out polished, on-brand, and better every time you give it feedback. Let's get into it! 😁
+
+Watch it in action
+
+Resources
+awesome-design-md on GitHub (free DESIGN.md files from major brands, I use Stripe's in the video)
+Beginner Resources for Claude Design (every prompt from this tutorial, ready to copy)
+My free Cowork Toolkit (the same carry-forward idea applied to Claude Cowork, in a 7-email series)
+The 3 inputs that fix Claude Design
+Instead of prompting blind, you prepare three files first, and each one feeds the next:
+
+A DESIGN.md file: a plain-text rulebook for how your design looks and feels.
+A design system: that DESIGN.md file rebuilt into something native to Claude Design.
+A reusable template: a pre-built deck, in your style, that every new presentation starts from.
+All three are reusable across every future deck. And even though we're focused on slides, the same workflow applies to social carousels, newsletters, and any other design.
+
+
+Input #1: Your DESIGN.md file
+A DESIGN.md file is just a text file that spells out the rules for a design: the exact colors, fonts, spacing, and how things like buttons and cards get styled. It works in any AI tool, so Claude Design can take it and turn it into its own native format.
+
+You don't need to write one from scratch. Grab a public one from the awesome-design-md GitHub repo (linked above), then clean it up so it's safe to use. Paste it into ChatGPT (or any chatbot) with this prompt:
+
+"Remove the proprietary and licensed content from this design file and replace them using your own judgment. Keep everything else exactly as-is, including all layout rules, spacing, type scales, component patterns, and design principles, since those aren't proprietary and are the whole reason we're using this file. Then rename it to the Subtle Gradient Design System."
+The reason you clean it: Claude Design won't copy a real brand's guidelines directly, so you need a version that's still detailed but safe to use.
+
+
+Input #2: Your design system
+A design system is that DESIGN.md file rebuilt into a format Claude Design can actually use. Same colors, fonts, and logos, just optimized for the tool. Once it's built, everything you ask Claude Design to make comes out consistent and on-brand without you re-explaining your look every time.
+
+To build it:
+
+Start a new chat, pick the latest Opus model (great output without Fable's token cost), set effort to Max, and click "Create Design System."
+Give it a short name and description, then scroll to the bottom and upload your cleaned DESIGN.md file.
+This takes 10 to 20 minutes while Claude Design reads your file and generates real mockups to review. When it's done, you can change anything with the "Feedback" button in plain English.
+
+💡
+Optional but worth it: upload a few extras to customize the system further, like a voice principles file so the copy sounds like you, plus your logo and the icons you reuse. After that, every future design pulls them in automatically.
+
+Input #3: Your reusable template
+A template is a pre-built deck in your style that every new presentation starts from: title slide, section dividers, a two-column layout, and so on.
+
+The difference between them is simple: the design system controls how everything looks (colors, fonts, logos), and the template controls how a deck is laid out (which slides and in what order). Use them together and every new deck starts on-brand and pre-structured instead of from a blank canvas.
+
+Once your design system looks right, ask Claude Design to build the template:
+
+"Go ahead and build a slide deck template for workshops and trainings. You pick the number of slides."
+Then refine it with feedback, since every future deck references this template.
+
+
+Generate your first slide deck
+Back on the homepage, select your design system, select the matching template, attach your talking points, and send it off:
+
+"Turn the attached talking points into a workshop deck, and ask me anything you need before you build."
+Claude Design pauses to ask a few questions before it builds. Take your time here, because a few minutes answering carefully saves you hours later. If you're not sure how to answer, pick "Decide for me." Then hit Continue and it generates your first version.
+
+
+Feedback that carries forward
+Your v1 already looks good because of the prep. To push it further, there are two kinds of feedback.
+
+The first kind applies to this deck AND every future deck in the project. Give the feedback and have Claude Design save it:
+
+"Review my feedback below and in addition to making the edits, create a CLAUDE.md file you'll read for all future slide decks. As for the feedback: Make the eyebrow labels more prominent, wrap them in a rectangular container and the icons should all have a transparent background."
+A CLAUDE.md file is where Claude Design stores your standing instructions for a project, and it reads that file before every new design. So every time you give feedback, it saves that feedback and applies it to all future decks, and your corrections compound over time. The trick: for your next presentation, stay in the same project and start a new chat so it still loads the project's CLAUDE.md.
+
+The second kind is surgical, slide-level changes:
+
+Edit lets you select an element and change it yourself, like font size, color, or bold.
+Annotate lets you draw on a slide and describe a change, like adding contrast to separate two elements.
+Tweaks create a switch for a decision that shows up across the whole deck, like "toggle my logo" or "show slide numbers."
+Use Edit and Annotate to fix one thing in one place, and use Tweaks when a single decision touches every slide and you want to flip between options before committing.
+
+
+Export your finished deck
+When the deck's done, click "Share," and under the Export tab you've got a bunch of options. I like the standalone HTML file because of how versatile it is: double-click to open it in any browser, and anyone you send it to can open it in theirs.
+
+The HTML export also unlocks more advanced options. For example, you can have Claude Design add a presenter-view button that opens your speaker notes in a separate window, which is pretty great for live talks.
+
+Key Takeaways
+Claude Design is an experimental AI-powered design workspace from Anthropic, built on Claude Opus 4.7.
+The tool is built for rapid ideation and early-stage prototyping, not final production design. 
+A standout capability lets the tool ingest a company’s codebase and design files to apply brand guidelines automatically. 
+Users can iterate through conversation, direct edits, and comments, then export to PDF, PPTX, Canva, or Claude Code workflows. 
+Claude Design is a complement to tools like Figma and Canva, not a replacement for them. 
+Most design tools are built for designers. That’s been the assumption for decades, and it’s created a bottleneck that marketers, product managers, and content teams know well: you have an idea, but getting it into a visual form means waiting on someone else’s schedule. 
+
+Claude Design is Anthropic’s attempt to change that. Launched in April 2026, the AI-powered design workspace lets you turn a natural language prompt into a polished mockup, prototype, slide deck, or one-pager. No design background required. For user experience (UX) teams and the non-designers who work alongside them, the implications are worth paying attention to. 
+
+What Is Claude Design?
+On April 17, 2026, Anthropic rolled out Claude Design as an experimental AI-powered design workspace. The tool runs on Claude Opus 4.7 and targets two audiences: professional designers who want to move faster during early-stage work, and non-designers who need to turn ideas into visual assets without going through a full design cycle. 
+
+The outputs it can produce include prototypes, slide decks, mockups, and one-pagers. All of it is driven by natural language prompts, meaning you describe what you want and the tool builds a working draft. 
+
+
+Iteration happens through conversation. You can refine outputs by typing follow-up instructions, making direct edits, leaving comments, or adjusting built-in controls. When you’re ready to move the work downstream, export options include PDF, PPTX, Canva, and Claude Code workflows. 
+
+Anthropic is positioning this as a complement to existing design tools, not a replacement. The pitch is efficiency at the ideation stage, not a takeover of the production workflow. 
+
+How Claude Design Fits Into a UX Workflow
+UX work has always had a front-loaded bottleneck. The ideation phase, where teams explore directions before committing to a concept, is time-intensive and resource-heavy. A designer has to be involved from the start, even when the work is exploratory and could change completely by the next round. 
+
+A typical UX workflow.
+Source 
+
+Claude Design targets that specific problem. The ability to generate a working mockup or wireframe-level prototype from a prompt shortens the gap between having an idea and being able to react to something concrete. Teams can evaluate directions earlier, kill weak concepts faster, and give designers cleaner briefs when they do get involved. 
+
+The ability for Claude Design to operate at any point during the UX workflow means design teams can focus more on optimizing their product for real user needs. 
+
+That’s the practical value. Not replacing the designer, but moving the starting line. 
+
+The Brand Consistency Feature
+The most notable capability in Claude Design for teams working at scale is its ability to ingest a company’s codebase and design files to automatically apply brand guidelines to all outputs. 
+
+For anyone managing campaigns across multiple channels or coordinating between an in-house team and external agencies, visual consistency is a constant problem. Guidelines get interpreted differently. Templates drift. New team members make judgment calls. 
+
+Claude Design in acton.
+Source 
+
+Claude Design’s ingestion feature gives the tool a reference point so that outputs stay on-brand from the first draft. That matters most during ideation, when speed tends to come at the cost of consistency. 
+
+What It Means for Non-Designers
+Marketing teams, product managers, and founders regularly need to communicate visual ideas without a designer in the room. A competitive analysis needs a one-pager. A product pitch needs a slide. A new campaign concept needs something more than a paragraph in a doc. 
+
+Claude Design lowers the barrier for producing those assets. You don’t need to know how to use Figma. You describe what you need, refine it through conversation, and export something usable. That’s a real change in how quickly a non-designer can get an idea out of their head and in front of other people. 
+
+The caveat worth noting: Claude Design does consume tokens at a meaningful rate. For teams working within usage limits, it’s worth being selective about where you deploy it. Early-stage ideation and internal presentations are good candidates. Final client-facing deliverables probably aren’t, at least not without a designer’s review. 
+
+Where Claude Design Fits in the Broader AI Design Space 
+AI design tools have been proliferating fast. Canva has added generative features. Adobe has Firefly. Figma has integrated AI into its core workflow. Claude Design is entering a crowded category. 
+
+What sets it apart is the conversational interface and the brand ingestion capability. Most AI design tools work from templates or style presets. Claude Design works from a description, and can theoretically hold the logic of your brand in memory for a session. That’s a different kind of flexibility. 
+
+The Claude design interface.
+Source 
+
+The broader signal here is Anthropic’s push into enterprise productivity. Claude Design is part of a larger pattern: AI moving beyond text generation into the full range of knowledge work, including design, code, and creative assets. For UX practitioners and the teams they work with, that shift is going to keep accelerating. 
+
+How to Start Using AI Design Tools in Your Workflow 
+If you want to test Claude Design or similar tools in a practical context, here’s a straightforward approach: 
+
+Start with low-stakes assets. Internal presentations, early-round mockups, and concept sketches are good starting points. These are outputs that benefit from speed and don’t require production polish.
+Feed in your brand guidelines upfront. If the tool supports file ingestion, use it. Starting with your brand reference reduces back-and-forth in the iteration phase. 
+Treat outputs as drafts, not finals. AI design tools produce starting points. Plan for a designer review before anything goes to a client or ships publicly. 
+Test it as a brief-writing tool. Even if you don’t use the visual output directly, generating a mockup can help you communicate to a designer exactly what you’re looking for. That alone can cut revision cycles. 
+Track time saved in the ideation phase. The value is in speed, not in replacing human judgment. Measure it there. 
+FAQs
+What is Claude Design?
+Claude Design is an AI-powered design workspace from Anthropic. It runs on Claude Opus 4.7 and lets users create mockups, prototypes, slide decks, and one-pagers through natural language prompts. Outputs can be exported to PDF, PPTX, Canva, and Claude Code workflows. 
+
+Who is Claude Design built for?
+Does Claude Design replace Figma or Canva?
+What can Claude Design export?
+What is the main limitation of Claude Design?
+Conclusion
+AI design tools are no longer a future consideration. Claude Design is live, and it’s targeting one of the most persistent inefficiencies in creative work: the time between having an idea and being able to react to it visually. 
+
+For UX teams, the case for testing it is straightforward. If it shortens ideation cycles and helps non-designers communicate more clearly, it earns its place in the workflow. For the rest of us, it’s another signal that the tools available to knowledge workers are changing faster than most teams are adapting. 
+
+Want to understand how AI tools fit into a broader digital marketing strategy? My guide to AI in marketing is a good place to start. You can also consult with the NP Digital team to figure out which emerging tools are worth prioritizing for your specific goals. 

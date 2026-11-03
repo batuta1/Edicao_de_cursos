@@ -1,0 +1,3490 @@
+Fiz uma busca ampla e atualizada até **13 de agosto de 2026** em documentação da Anthropic, Claude Help Center, Claude Code, Claude Platform/API, repositório oficial no GitHub, especificação aberta Agent Skills e materiais independentes, incluindo pesquisas acadêmicas recentes.
+
+A conclusão mais importante é esta: **Skills se tornaram uma das peças centrais da arquitetura de agentes da Anthropic**. O conceito começou como “Claude Skills”, mas evoluiu para **Agent Skills**, um padrão aberto e relativamente simples para empacotar conhecimento, procedimentos, scripts e recursos que um agente pode descobrir e carregar sob demanda. A própria Anthropic afirma que hoje usa **centenas de Skills internamente** no desenvolvimento do Claude Code. ([Claude][1])
+
+## O que exatamente é uma Skill
+
+Uma Skill não é simplesmente um prompt salvo.
+
+Formalmente, uma Agent Skill é uma **pasta autocontida** cujo ponto de entrada é um arquivo `SKILL.md`. Essa pasta pode conter instruções em Markdown, scripts Python/JavaScript/Shell, templates, exemplos, dados, documentação, imagens e outros recursos. Claude examina as Skills disponíveis, identifica qual é pertinente para a tarefa e só então carrega o conteúdo necessário. ([Claude Platform][2])
+
+Uma estrutura típica seria:
+
+```text
+minha-skill/
+│
+├── SKILL.md
+├── references/
+│   ├── manual.md
+│   └── exemplos.md
+├── scripts/
+│   └── validar.py
+├── templates/
+│   └── modelo.docx
+└── assets/
+    └── logo.png
+```
+
+O mínimo necessário é algo como:
+
+```markdown
+---
+name: document-review
+description: Reviews documents according to a defined procedure. Use when the user asks to inspect, validate, or review a document.
+---
+
+# Document Review
+
+Follow this procedure:
+
+1. Identify the type of document.
+2. Read the relevant reference material.
+3. Apply the validation criteria.
+4. Report inconsistencies.
+5. Produce the final result in the required format.
+```
+
+O `name` e, principalmente, o `description` são extremamente importantes porque fazem parte do mecanismo de descoberta. Claude usa os metadados para decidir se aquela Skill é pertinente ao pedido atual. ([Claude Platform][3])
+
+## A grande ideia: Progressive Disclosure
+
+Este provavelmente é o conceito arquitetural mais importante das Skills.
+
+A Anthropic chama de **progressive disclosure** o processo pelo qual Claude recebe apenas a quantidade de informação de que precisa naquele momento. Em vez de colocar 30 páginas de regras dentro do prompt de sistema, Claude recebe inicialmente apenas os metadados das Skills disponíveis. A Anthropic estima aproximadamente **100 tokens por Skill** nessa primeira etapa. ([Claude][4])
+
+Quando uma Skill parece relevante, o `SKILL.md` completo é carregado. A Anthropic recomenda que essa parte permaneça relativamente compacta, normalmente abaixo de aproximadamente 5 mil tokens. Arquivos adicionais, referências e scripts permanecem fora do contexto até que sejam necessários. ([Claude][4])
+
+Então, conceitualmente:
+
+```text
+Pedido do usuário
+       ↓
+Metadados das Skills
+       ↓
+Claude identifica uma possível Skill
+       ↓
+Carrega SKILL.md
+       ↓
+Executa as instruções
+       ↓
+Se necessário:
+   ├── lê references/
+   ├── abre templates/
+   ├── usa assets/
+   └── executa scripts/
+```
+
+Essa é uma das diferenças fundamentais entre Skill e simplesmente colocar tudo em `CLAUDE.md`.
+
+## Skills não são apenas Markdown
+
+A Anthropic enfatiza isso explicitamente. Segundo a equipe do Claude Code, uma concepção errada comum é pensar que Skill é “só um arquivo Markdown”. Na prática, a pasta pode funcionar quase como um pequeno pacote de software para o agente: documentação + regras + scripts + templates + dados + configuração. ([Claude][5])
+
+Isso permite, por exemplo:
+
+```text
+Skill: gerar-relatorio
+
+SKILL.md
+    ↓
+Claude entende o procedimento
+
+references/
+    ↓
+normas, critérios, exemplos
+
+templates/
+    ↓
+modelo institucional
+
+scripts/
+    ↓
+validação e processamento determinístico
+
+assets/
+    ↓
+logos e recursos visuais
+```
+
+Aqui está uma mudança conceitual importante: você deixa de pedir ao modelo para “inventar como fazer” toda vez e passa a lhe entregar uma **procedura operacional reutilizável**.
+
+## Onde as Skills funcionam atualmente
+
+Hoje elas aparecem em praticamente todo o ecossistema Claude: Claude.ai, Claude Code, Claude API, Cowork e Managed Agents. A documentação atual também informa disponibilidade de Skills para **Free, Pro, Max, Team e Enterprise**, desde que a execução de código necessária esteja habilitada. ([Claude Help Center][6])
+
+No Claude.ai, o usuário pode ir a `Customize > Skills`, criar ou fazer upload de uma pasta compactada em ZIP. Skills próprias ficam privadas à conta, enquanto Team e Enterprise oferecem mecanismos de compartilhamento e distribuição organizacional. ([Claude Help Center][7])
+
+Desde maio de 2026, a Anthropic também possui um **diretório unificado** para Skills, Connectors e Plugins, em vez de manter esses mecanismos completamente separados na interface. ([Claude Help Center][8])
+
+No Claude Code, o sistema é mais poderoso.
+
+Uma Skill pessoal pode ficar em:
+
+```text
+~/.claude/skills/<skill-name>/SKILL.md
+```
+
+Uma Skill de projeto:
+
+```text
+.claude/skills/<skill-name>/SKILL.md
+```
+
+E uma Skill distribuída por plugin:
+
+```text
+<plugin>/skills/<skill-name>/SKILL.md
+```
+
+Há ainda Skills gerenciadas pela organização. O Claude Code resolve conflitos entre essas fontes e suporta Skills específicas de subdiretórios, o que é especialmente interessante para monorepos. ([Claude Platform Docs][9])
+
+## Custom Commands e Skills praticamente convergiram
+
+Esse é um ponto que muitos tutoriais antigos não deixam claro.
+
+No Claude Code atual, o antigo mecanismo de **custom slash commands** foi incorporado ao sistema de Skills. Um arquivo como:
+
+```text
+.claude/commands/deploy.md
+```
+
+continua funcionando, mas:
+
+```text
+.claude/skills/deploy/SKILL.md
+```
+
+oferece uma estrutura mais poderosa. Se ambos tiverem o mesmo nome, a Skill prevalece. ([Claude Platform Docs][9])
+
+Isso mostra a direção arquitetural escolhida pela Anthropic: Skills estão se tornando o mecanismo geral para **procedimentos reutilizáveis**.
+
+## Controle sobre quando uma Skill roda
+
+Por padrão, tanto Claude quanto o usuário podem invocar uma Skill. No Claude Code, porém, existem controles adicionais.
+
+Por exemplo:
+
+```yaml
+---
+name: deploy
+description: Deploy the application to production
+disable-model-invocation: true
+---
+```
+
+faz com que somente o usuário possa iniciar aquela Skill. Isso é importante para tarefas com efeitos colaterais, como deploy, commit, publicação ou envio de mensagens. A própria Anthropic recomenda esse padrão para impedir que o modelo decida sozinho realizar uma operação sensível. ([Claude Platform Docs][9])
+
+Existe também:
+
+```yaml
+user-invocable: false
+```
+
+para o inverso: Claude pode usar o conhecimento automaticamente, mas a Skill não precisa aparecer como um comando útil para o usuário. ([Claude Platform Docs][9])
+
+## Skills podem criar subagentes
+
+Esse é um recurso particularmente interessante do Claude Code.
+
+Você pode colocar:
+
+```yaml
+context: fork
+agent: Explore
+```
+
+e aquela Skill será executada em um **contexto separado**, como um subagente. ([Claude Platform Docs][9])
+
+Exemplo conceitual:
+
+```text
+Usuário
+   ↓
+Claude principal
+   ↓
+Skill "deep-research"
+   ↓
+Subagent Explore
+   ├── procura arquivos
+   ├── analisa código
+   ├── pesquisa referências
+   └── retorna resultado
+   ↓
+Claude principal
+```
+
+Isso mostra por que Skill e subagent não são concorrentes. Uma Skill pode simplesmente fornecer conhecimento ao agente principal, ou pode ser configurada para criar seu próprio contexto de execução. ([Claude Platform Docs][9])
+
+## Skill × Prompt × CLAUDE.md × Project × MCP × Subagent × Plugin
+
+A própria Anthropic publicou uma explicação específica porque essa distinção estava causando bastante confusão. ([Claude][4])
+
+**Prompt** é instrução momentânea: “analise este documento”.
+
+**CLAUDE.md** é contexto que deve estar disponível constantemente naquele projeto: arquitetura do repositório, regras gerais, padrões de código etc.
+
+**Skill** é conhecimento ou procedimento especializado carregado sob demanda: “como revisar um contrato”, “como gerar determinado relatório”, “como trabalhar com esta biblioteca”.
+
+**Project** organiza contexto persistente relacionado a um determinado conjunto de trabalho.
+
+**MCP** fornece acesso a sistemas e ferramentas externas. Uma boa simplificação é: o MCP dá a Claude a ferramenta; a Skill ensina Claude **como usar aquela ferramenta dentro de um processo**. A Anthropic inclusive recomenda combiná-los. ([Claude][10])
+
+**Subagent** fornece isolamento de contexto e execução delegada.
+
+**Plugin** é uma unidade de distribuição maior, que pode empacotar Skills, hooks, agentes e servidores MCP.
+
+Uma arquitetura madura poderia ser:
+
+```text
+PLUGIN
+│
+├── Skills
+│   ├── processo-a
+│   ├── processo-b
+│   └── processo-c
+│
+├── Subagents
+│
+├── Hooks
+│
+└── MCP Servers
+```
+
+## O padrão aberto Agent Skills
+
+Outro desenvolvimento importante ocorreu depois do lançamento original.
+
+Skills foram lançadas pela Anthropic em **16 de outubro de 2025** como recurso do Claude. Posteriormente, a estrutura foi publicada como um **padrão aberto chamado Agent Skills**. O próprio repositório oficial hoje diferencia “implementação de Skills da Anthropic” da especificação aberta Agent Skills. ([Claude][1])
+
+Claude Code segue esse padrão, mas acrescenta extensões próprias, como controle de invocação, execução em subagente e injeção dinâmica de contexto. ([Claude][11])
+
+Isso significa que, em princípio, uma Skill bem escrita pode ser portátil entre diferentes agentes que implementem a especificação Agent Skills. É justamente por isso que hoje existem repositórios comunitários divulgando Skills compatíveis não apenas com Claude Code, mas também com Codex, Gemini CLI, Cursor e outros ambientes. ([GitHub][12])
+
+A parte realmente portável, portanto, deve ser diferenciada das extensões específicas do Claude Code.
+
+## As Skills oficiais da Anthropic
+
+A Anthropic mantém um repositório público `anthropics/skills`, que considero uma das melhores fontes para estudar como uma Skill deve ser construída. ([GitHub][13])
+
+Ali existem exemplos envolvendo desenvolvimento, design, comunicação empresarial, geração de documentos e várias outras tarefas. O repositório inclui inclusive as Skills utilizadas como referência para os sistemas de criação/manipulação de:
+
+```text
+docx
+pdf
+pptx
+xlsx
+```
+
+Essas quatro são disponibilizadas para estudo, embora a Anthropic esclareça que são **source-available, mas não open source**. Muitas das outras Skills do repositório usam Apache 2.0. ([GitHub][13])
+
+No repositório também aparecem exemplos como `frontend-design`, `mcp-builder`, `webapp-testing`, `brand-guidelines`, `internal-comms`, `doc-coauthoring`, `skill-creator`, `theme-factory`, `canvas-design`, `algorithmic-art`, entre outros. ([GitHub][13])
+
+## As quatro Skills de documentos são especialmente importantes
+
+Claude possui Skills mantidas pela Anthropic para:
+
+| Skill  | Função                                |
+| ------ | ------------------------------------- |
+| `pptx` | criar/editar apresentações PowerPoint |
+| `xlsx` | criar/analisar planilhas Excel        |
+| `docx` | criar/editar documentos Word          |
+| `pdf`  | gerar/processar documentos PDF        |
+
+A documentação da API também expõe essas Skills como capacidades pré-construídas da Anthropic. ([Claude Platform][14])
+
+Isso é bastante revelador sobre a filosofia das Skills: até tarefas que parecem “capacidades nativas” do Claude são, em parte, implementadas como pacotes especializados que orientam o modelo.
+
+## Skill Creator
+
+Uma das ferramentas mais interessantes é a **`skill-creator`**, criada pela própria Anthropic para ajudar Claude a criar Skills.
+
+Ela recebeu uma atualização importante em **3 de março de 2026**. Hoje não serve apenas para produzir um `SKILL.md`: também ajuda a criar avaliações, executar benchmarks, comparar versões da Skill e melhorar a descrição responsável pelo triggering. ([Claude][15])
+
+A Anthropic divide Skills em dois grandes grupos.
+
+**Capability uplift skills** ensinam Claude a fazer algo que o modelo base ainda não consegue realizar de forma suficientemente confiável.
+
+**Encoded preference skills** não necessariamente aumentam a inteligência do modelo; elas codificam o processo desejado por uma pessoa ou organização. Por exemplo, uma sequência específica para revisar NDAs ou preparar relatórios semanais. ([Claude][15])
+
+Essa distinção é muito útil. Uma Skill do primeiro tipo pode eventualmente ficar obsoleta conforme os modelos melhoram. Uma Skill que codifica um processo institucional tende a permanecer relevante, porque o objetivo é reproduzir **a forma específica de trabalhar da organização**. ([Claude][15])
+
+## Anthropic já usa centenas de Skills internamente
+
+Em junho de 2026, a equipe do Claude Code revelou que usa **centenas de Skills ativas internamente** e que Skills se tornaram um dos mecanismos de extensão mais utilizados do Claude Code. ([Claude][5])
+
+Ao analisar essa biblioteca interna, a Anthropic identificou nove famílias recorrentes de Skills:
+
+* referência de bibliotecas/APIs; verificação de produtos; coleta e análise de dados; processos de negócio e automação de equipes; scaffolding/templates de código; qualidade e revisão de código; CI/CD e deploy; runbooks; operações de infraestrutura. ([Claude][5])
+
+O ponto talvez mais interessante do artigo é que a Anthropic percebeu que Skills excessivamente abrangentes funcionam pior. As melhores tendem a resolver uma responsabilidade coerente.
+
+## Boas práticas que aparecem repetidamente na documentação da Anthropic
+
+A recomendação mais repetida é: **não ensine ao Claude aquilo que ele já sabe**. O contexto é um recurso limitado. A Skill deve conter o conhecimento específico, as regras, os erros recorrentes, as peculiaridades e o procedimento que realmente acrescentam algo ao modelo. ([Claude Platform][3])
+
+Outro padrão importante é colocar detalhes em arquivos separados. Em vez de transformar `SKILL.md` em um manual de 40 páginas:
+
+```text
+SKILL.md
+    → procedimento principal
+
+references/api.md
+    → API detalhada
+
+references/rules.md
+    → regras
+
+examples/
+    → exemplos
+
+scripts/
+    → operações determinísticas
+```
+
+Assim, a própria arquitetura de arquivos participa do progressive disclosure. ([Claude Platform][3])
+
+A Anthropic também recomenda enfatizar os chamados **“gotchas”**: situações nas quais Claude tende a errar. Para a equipe do Claude Code, esse tipo de informação é particularmente valioso porque complementa aquilo que o modelo já sabe. ([Claude][5])
+
+## Testar triggering é tão importante quanto testar a resposta
+
+Esse é outro ponto que aparece fortemente nos materiais mais novos.
+
+Há dois problemas separados:
+
+```text
+1. Claude escolheu a Skill correta?
+2. Depois de escolhê-la, executou corretamente?
+```
+
+Uma Skill pode ser excelente e ainda ser inútil se a descrição não fizer Claude acioná-la quando necessário.
+
+Da mesma forma, uma descrição excessivamente genérica pode causar falsos positivos:
+
+```yaml
+description: Helps analyze files
+```
+
+é muito pior que algo como:
+
+```yaml
+description: Analyzes monthly sales CSV files, calculates regional
+performance metrics, identifies anomalies, and produces the standard
+sales review. Use when the user asks to analyze monthly sales data.
+```
+
+A atualização do `skill-creator` passou justamente a avaliar falsos positivos e falsos negativos do triggering e sugerir melhorias na descrição. A Anthropic relata melhora no triggering em cinco de seis Skills públicas de criação de documentos após aplicar esse processo. ([Claude][15])
+
+## Evals e benchmarking
+
+Skills estão adquirindo práticas cada vez mais próximas de desenvolvimento de software.
+
+O `skill-creator` agora pode testar uma Skill com um conjunto de prompts, medir taxa de sucesso, tempo e consumo de tokens e fazer comparação A/B entre duas versões — ou entre **Claude com Skill versus Claude sem Skill**. Os testes podem ser executados em agentes independentes para evitar contaminação de contexto. ([Claude][15])
+
+Isso permite responder empiricamente:
+
+```text
+Claude sem Skill: 62% de sucesso
+Claude + Skill v1: 81%
+Claude + Skill v2: 94%
+```
+
+Em outras palavras, a tendência é tratar `SKILL.md` menos como “prompt artesanal” e mais como um **artefato versionável e testável**.
+
+## Skills e memória
+
+Skills não devem ser confundidas diretamente com memória.
+
+O objetivo principal é encapsular **conhecimento procedural e contexto especializado**, não armazenar tudo que aconteceu com o usuário.
+
+Entretanto, uma Skill do Claude Code pode incluir scripts e arquivos de dados e, portanto, pode ser projetada para manter estado persistente. A própria Anthropic descreve padrões internos utilizando arquivos de log, JSON ou SQLite para Skills que precisam reter informações entre execuções. Isso torna possível criar formas limitadas e deliberadas de “memória da Skill”. ([Claude][5])
+
+Portanto:
+
+```text
+Skill tradicional
+→ "como fazer"
+
+Skill + armazenamento persistente
+→ "como fazer" + "o que aconteceu anteriormente"
+```
+
+## Skills + MCP é uma combinação particularmente poderosa
+
+MCP e Skills resolvem problemas diferentes.
+
+Imagine um MCP do Jira. O MCP pode oferecer:
+
+```text
+search_issues()
+create_issue()
+update_issue()
+add_comment()
+```
+
+Mas isso não explica ao Claude como sua organização trabalha.
+
+Uma Skill poderia dizer:
+
+```text
+Quando abrir um bug:
+1. Verifique duplicidades.
+2. Classifique a severidade segundo nossa matriz.
+3. Use nosso template.
+4. Defina a equipe responsável.
+5. Inclua evidências.
+6. Adicione as labels apropriadas.
+```
+
+Assim:
+
+```text
+MCP = capacidade de interagir com o Jira
+Skill = conhecimento sobre como sua organização usa o Jira
+```
+
+A Anthropic publicou material especificamente defendendo essa complementaridade. ([Claude][10])
+
+## O ecossistema externo cresceu muito
+
+Fora da Anthropic, há hoje um ecossistema bastante grande de Skills. Um exemplo é o repositório comunitário `VoltAgent/awesome-agent-skills`, que anuncia mais de mil Skills compatíveis com ambientes como Claude Code, Codex, Gemini CLI e Cursor. Existem também diversos diretórios e marketplaces independentes. ([GitHub][12])
+
+Isso reforça a ideia de que `SKILL.md` está deixando de ser exclusivamente uma funcionalidade Claude e começando a funcionar como um formato de distribuição de procedimentos para agentes.
+
+Mas existe um enorme problema de **qualidade**.
+
+Um preprint publicado em **9 de agosto de 2026** analisou **138.133 arquivos `SKILL.md` públicos** em 20.556 repositórios. Os autores encontraram pelo menos um defeito detectável em **91,8%** das Skills analisadas. Os problemas mais frequentes não eram ataques sofisticados, mas descrições ruins para roteamento, instruções infladas ou pouco acionáveis e má organização dos recursos. ([arXiv][16])
+
+É importante tratar esse resultado como pesquisa recente/preprint, não como verdade definitiva, mas a escala do levantamento é interessante.
+
+## Segurança é provavelmente o maior problema do ecossistema
+
+Esse ponto merece bastante atenção.
+
+Uma Skill pode carregar:
+
+```text
+instruções
+scripts executáveis
+comandos shell
+dependências
+URLs
+templates
+ferramentas
+permissões
+```
+
+Então instalar uma Skill desconhecida não é equivalente a copiar um prompt encontrado na internet.
+
+A própria Anthropic adverte que Skills maliciosas podem introduzir vulnerabilidades, tentar exfiltrar dados ou induzir Claude a realizar operações indesejadas. ([Claude][17])
+
+Uma pesquisa acadêmica publicada em janeiro de 2026 coletou **42.447 Skills** de dois marketplaces e analisou 31.132. Segundo os autores, **26,1%** apresentavam pelo menos um padrão de vulnerabilidade; Skills contendo scripts executáveis apresentaram probabilidade maior de problemas que Skills compostas apenas por instruções. Novamente, é um estudo acadêmico sobre ecossistemas públicos, não sobre o repositório oficial da Anthropic. ([arXiv][18])
+
+A recomendação prática é bastante simples:
+
+```text
+SKILL.md de terceiros deve ser tratado quase como código de terceiros.
+```
+
+Leia o `SKILL.md`, examine `scripts/`, procure downloads externos, comandos shell, manipulação de credenciais, acesso à rede e permissões antes de instalar.
+
+A preocupação é suficientemente séria para que, em **6 de agosto de 2026**, a Anthropic tenha introduzido em beta no Enterprise uma função de **security scanning para Skills e plugins de terceiros**. ([Claude Help Center][19])
+
+## Um ponto muito interessante da pesquisa acadêmica
+
+Um estudo de fevereiro de 2026 analisou mais de **40 mil Skills públicas** e concluiu que o conteúdo está fortemente concentrado em engenharia de software, embora retrieval e criação de conteúdo também representem partes relevantes da utilização. Os autores encontraram ainda bastante redundância entre Skills publicadas, ou seja, diversas Skills diferentes tentando resolver praticamente a mesma coisa. ([arXiv][20])
+
+Um survey acadêmico de maio de 2026 propõe pensar o ciclo de vida das Skills em quatro fases:
+
+```text
+representation
+      ↓
+acquisition
+      ↓
+retrieval
+      ↓
+evolution
+```
+
+Ou seja: como representar uma habilidade, como criá-la/adquiri-la, como decidir quando recuperá-la e como atualizá-la com o tempo. ([arXiv][21])
+
+Isso é interessante porque transforma Skills em um problema de arquitetura de agentes, e não simplesmente de engenharia de prompt.
+
+## O que considero a interpretação correta de Skills
+
+Depois de cruzar os materiais oficiais e externos, eu resumiria uma Skill como:
+
+> **uma unidade modular, versionável e reutilizável de conhecimento procedural destinada a ensinar um agente a executar uma categoria de tarefas de forma consistente.**
+
+Ela fica em algum lugar entre:
+
+```text
+prompt
+     ↓
+procedimento
+     ↓
+documentação
+     ↓
+mini-software para agentes
+```
+
+Quanto mais simples a tarefa, mais a Skill se parece com documentação.
+
+Quanto mais sofisticada, mais ela começa a parecer um pacote de software:
+
+```text
+metadata
+instructions
+references
+scripts
+templates
+assets
+tests
+evals
+permissions
+hooks
+subagents
+```
+
+E essa parece claramente ser a direção em que a Anthropic está levando o conceito. Essa última conclusão é uma inferência minha a partir da evolução oficial do Claude Code, do Skill Creator e da forma como a própria Anthropic descreve o uso interno de centenas de Skills. ([Claude][15])
+
+## Fontes que considero mais importantes para estudar
+
+* **Documentação oficial “Agent Skills” da Claude Platform** — melhor ponto de partida para entender arquitetura e progressive disclosure. ([Claude Platform][2])
+* **“Extend Claude with Skills”, documentação do Claude Code** — é a fonte mais técnica; cobre frontmatter, argumentos, permissões, subagentes, hooks, localização das Skills e triggering. ([Claude][11])
+* **“Skill authoring best practices”** — provavelmente o melhor material oficial sobre como escrever uma boa Skill. ([Claude Platform][3])
+* **“Lessons from building Claude Code: How we use skills”** — extremamente valioso porque explica o que a Anthropic aprendeu após utilizar centenas delas internamente. ([Claude][5])
+* **“Improving skill-creator: Test, measure, and refine Agent Skills”** — essencial para entender evals, benchmarks e otimização de triggering. ([Claude][15])
+* **“Skills explained”** — boa comparação oficial entre Skills, prompts, Projects, MCP e subagents. ([Claude][4])
+* **Repositório oficial `anthropics/skills`** — melhor lugar para desmontar Skills reais e estudar sua implementação. ([GitHub][13])
+* **Help Center: criação e utilização de custom Skills** — útil para Claude.ai e distribuição para organizações. ([Claude Help Center][7])
+* **VoltAgent/awesome-agent-skills** — uma boa porta de entrada para o ecossistema comunitário, mas deve ser tratado como material de terceiros. ([GitHub][12])
+* **Pesquisas acadêmicas de 2026** — úteis para entender segurança, reutilização, qualidade e evolução do ecossistema em escala. ([arXiv][18])
+
+O que eu faria como próximo passo é **entrar no repositório oficial `anthropics/skills` e dissecar 5–10 Skills reais**, mostrando arquivo por arquivo o que a Anthropic faz: estrutura do `SKILL.md`, frontmatter, descriptions, scripts, references, assets, progressive disclosure, evals e padrões que se repetem. Isso nos daria material muito mais concreto do que apenas documentação conceitual.
+
+Também posso montar depois um **“Guia completo de Claude Skills”**, organizado como material de estudo/curso, indo de Skill básica → Skill com scripts → Skill + MCP → Skill + subagent → Skill + hooks → testes/evals → distribuição via plugin.
+
+Como esse ecossistema está mudando rapidamente, posso também acompanhar as atualizações de Agent Skills e avisar quando a Anthropic publicar mudanças relevantes.
+
+Agent Skills
+Agent Skills are modular capabilities that extend Claude's functionality. Each Skill packages instructions, metadata, and optional resources (scripts, templates) that Claude uses automatically when relevant.
+For how zero data retention (ZDR) applies to this feature, see API and data retention.
+
+Why use Skills
+Skills are reusable, filesystem-based resources that give Claude domain-specific expertise: workflows, context, and best practices that turn a general-purpose agent into a specialist. Unlike prompts (conversation-level instructions for one-off tasks), Skills load on demand, so you don't have to repeat the same guidance across conversations.
+
+Key benefits:
+
+Specialize Claude: Tailor capabilities for domain-specific tasks
+Reduce repetition: Create once, use automatically
+Compose capabilities: Combine Skills for complex, multistep tasks
+For more on the architecture and real-world applications of Agent Skills, see the engineering blog post Equipping agents for the real world with Agent Skills.
+
+Using Skills
+Anthropic provides pre-built Agent Skills for common document tasks (PowerPoint, Excel, Word, PDF), and you can create your own custom Skills. Both work the same way: once a Skill is available in your environment, Claude uses it automatically when relevant to your request.
+
+Pre-built Agent Skills are available on claude.ai, the Claude API, Claude Platform on AWS, and Microsoft Foundry. On Microsoft Foundry, Agent Skills require a Hosted on Anthropic deployment. See Available Skills for the complete list.
+
+Custom Skills let you package domain expertise and organizational knowledge. They're available across Claude's products: create them in Claude Code, upload them through the Claude API, or add them in claude.ai settings. On Claude Platform on AWS and Microsoft Foundry, upload custom Skills through the Skills API.
+
+Get started:
+
+For pre-built Agent Skills: See the quickstart tutorial to start using PowerPoint, Excel, Word, and PDF Skills in the API
+For custom Skills: See the Agent Skills Cookbook to learn how to create your own Skills
+How Skills work
+Skills use Claude's VM environment to provide capabilities beyond what's possible with prompts alone. Claude operates in a virtual machine with filesystem access, allowing Skills to exist as directories containing instructions, executable code, and reference materials, organized like an onboarding guide you'd create for a new team member.
+
+This filesystem-based architecture enables progressive disclosure: Claude loads information in stages as needed, rather than consuming context upfront.
+
+Skills can contain three types of content, each loaded at a different time:
+
+Level 1: Metadata (always loaded)
+The Skill's YAML frontmatter provides discovery information:
+
+---
+name: pdf-processing
+description: Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.
+---
+Claude loads this metadata at startup and includes it in the system prompt. The description is what Claude matches your request against when determining whether to trigger the Skill, so it must say both what the Skill does and when to use it. This lightweight approach means you can install many Skills without context penalty: until a Skill is triggered, only its name and description occupy context.
+
+Level 2: Instructions (loaded when triggered)
+The main body of SKILL.md contains procedural knowledge: workflows, best practices, and guidance:
+
+# PDF Processing
+
+## Quick start
+
+Use pdfplumber to extract text from PDFs:
+
+```python
+import pdfplumber
+
+with pdfplumber.open("document.pdf") as pdf:
+    text = pdf.pages[0].extract_text()
+```
+
+For advanced form filling, see [FORMS.md](FORMS.md).
+When you request something that matches a Skill's description, Claude reads SKILL.md from the filesystem using bash. Only then does this content enter the context window.
+
+Level 3: Resources and code (loaded as needed)
+Skills can bundle additional materials:
+
+pdf-processing/
+├── SKILL.md (main instructions)
+├── FORMS.md (form-filling guide)
+├── REFERENCE.md (detailed API reference)
+└── scripts/
+    └── fill_form.py (utility script)
+Instructions: Additional markdown files (FORMS.md, REFERENCE.md) containing specialized guidance and workflows
+
+Code: Executable scripts (fill_form.py, validate.py) that Claude runs using bash, providing deterministic operations without loading their code into context
+
+Resources: Reference materials such as database schemas, API documentation, templates, or examples
+
+Claude accesses these files only when referenced. The filesystem model means each content type has different strengths: instructions for flexible guidance, code for reliability, resources for factual lookup.
+
+Level	When loaded	Token cost	Content
+Level 1: Metadata	Always (at startup)	~100 tokens per Skill	name and description from YAML frontmatter
+Level 2: Instructions	When Skill is triggered	Under 5k tokens	SKILL.md body with instructions and guidance
+Level 3+: Resources	As needed	None until accessed	Bundled files. Reference files load into context when read. Scripts run through bash, and only their output enters context
+Progressive disclosure ensures only relevant content occupies the context window at any given time.
+
+The Skills architecture
+Skills run in a code execution environment where Claude has filesystem access, bash commands, and code execution capabilities. Skills exist as directories on a virtual machine, and Claude interacts with them using the same bash commands you'd use to navigate files on your computer.
+
+Agent Skills Architecture - showing how Skills integrate with the agent's configuration and virtual machine
+
+How Claude accesses Skill content:
+
+When a Skill is triggered, Claude uses bash to read SKILL.md from the filesystem, bringing its instructions into the context window. If those instructions reference other files (such as FORMS.md or a database schema), Claude reads those files too using additional bash commands. When instructions mention executable scripts, Claude runs them through bash and receives only the output (the script code itself never enters context).
+
+What this architecture enables:
+
+On-demand file access: Claude reads only the files each task needs. A Skill can include dozens of reference files, but if your task only needs the sales schema, that's the one file Claude loads. The rest stay on the filesystem and cost zero tokens.
+Efficient script execution: When Claude runs validate_form.py, the script's code never loads into the context window. Only its output (such as "Validation passed" or a specific error message) consumes tokens, which makes scripts far more efficient than having Claude generate equivalent code on the fly.
+No practical limit on bundled content: Files don't consume context until accessed, so Skills can include comprehensive API documentation, large datasets, or extensive examples. There's no context penalty for bundled content that isn't used.
+Example: Loading a PDF processing Skill
+Here's how Claude loads and uses the custom pdf-processing Skill from the earlier examples (not the pre-built pdf Skill):
+
+Startup: System prompt includes: pdf-processing - Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.
+User request: "Extract the text from this PDF and summarize it"
+Claude invokes: bash: cat pdf-processing/SKILL.md → Instructions loaded into context
+Claude determines: Form filling is not needed, so FORMS.md is not read
+Claude executes: Uses instructions from SKILL.md to complete the task
+Skills loading into context window - showing the progressive loading of skill metadata and content
+
+Where Skills work
+Skills are available across Claude's agent products:
+
+Claude Platform on AWS and Microsoft Foundry inherit the same Skills behavior as the Claude API in all following sections.
+
+Claude API
+The Claude API supports both pre-built Agent Skills and custom Skills. Both work identically: specify the relevant skill_id in the container parameter along with the code execution tool.
+
+Prerequisites: Using Skills through the API requires the code execution tool, whose container Skills run in, and one beta header:
+
+skills-2025-10-02 - Enables Skills functionality
+Add a second header, files-api-2025-04-14, when you use the Files API to upload input files to the container or download files a Skill produces.
+
+Use pre-built Agent Skills by referencing their skill_id (pptx, xlsx, docx, or pdf), or create and upload your own through the Skills API (/v1/skills endpoints). Custom Skills are shared workspace-wide: all workspace members can access them.
+
+Skills on the API run in a sandboxed container with no network access and no runtime package installation. See Limitations and constraints for details.
+
+To learn more, see Using Agent Skills with the API.
+
+Claude Code
+Claude Code supports custom Skills. The pre-built document Skills (PowerPoint, Excel, Word, PDF) are not available in Claude Code, though the open-source Claude API skill comes bundled with it. See the full list of built-in commands and Skills that ship with Claude Code.
+
+Custom Skills: Create Skills as directories with SKILL.md files. Claude discovers and uses them automatically.
+
+Custom Skills in Claude Code are filesystem-based and don't require API uploads: place them in ~/.claude/skills/ (personal) or .claude/skills/ (project).
+
+To learn more, see Use Skills in Claude Code.
+
+claude.ai
+claude.ai supports both pre-built Agent Skills and custom Skills.
+
+Pre-built Agent Skills: These Skills are active when you create documents. Claude uses them with no setup required.
+
+Custom Skills: Upload your own Skills as zip files through Settings > Features. Available on Pro, Max, Team, and Enterprise plans with code execution enabled. Custom Skills are individual to each user. They are not shared organization-wide and cannot be centrally managed by admins.
+
+To learn more about using Skills in claude.ai, see the following resources in the Claude Help Center:
+
+What are Skills?
+Using Skills in Claude
+How to create custom Skills
+Teach Claude your way of working using Skills
+Skill structure
+Every Skill requires a SKILL.md file with YAML frontmatter:
+
+---
+name: your-skill-name
+description: Brief description of what this Skill does and when to use it
+---
+
+# Your Skill Name
+
+## Instructions
+[Clear, step-by-step guidance for Claude to follow]
+
+## Examples
+[Concrete examples of using this Skill]
+Required fields: name and description
+
+Field requirements:
+
+name:
+
+Maximum 64 characters
+Must contain only lowercase letters, numbers, and hyphens
+Cannot contain XML tags
+Cannot contain reserved words: "anthropic", "claude"
+description:
+
+Must be non-empty
+Maximum 1024 characters
+Cannot contain XML tags
+The description must include both what the Skill does and when Claude should use it. For complete authoring guidance, see Skill authoring best practices.
+
+Security considerations
+Use Skills only from trusted sources: those you created yourself or obtained from Anthropic. Skills give Claude new capabilities through instructions and code, which also means a malicious Skill can direct Claude to invoke tools or execute code in ways that don't match the Skill's stated purpose.
+
+If you must use a Skill from an untrusted or unknown source, exercise extreme caution and thoroughly audit it before use. Depending on what access Claude has when executing the Skill, malicious Skills could lead to data exfiltration, unauthorized system access, or other security risks.
+
+Key security considerations:
+
+Audit thoroughly: Review all files bundled in the Skill: SKILL.md, scripts, images, and other resources. Look for unusual patterns such as unexpected network calls, file access patterns, or operations that don't match the Skill's stated purpose
+External sources are risky: Skills that fetch data from external URLs pose particular risk, as fetched content may contain malicious instructions. Even trustworthy Skills can be compromised if their external dependencies change over time
+Tool misuse: Malicious Skills can invoke tools (file operations, bash commands, code execution) in harmful ways
+Data exposure: Skills with access to sensitive data could be designed to leak information to external systems
+Treat like installing software: Be especially careful when integrating Skills into production systems with access to sensitive data or critical operations
+For organization-scale governance, vetting, and deployment guidance, see Skills for enterprise.
+
+Available Skills
+Pre-built Agent Skills
+The following pre-built Agent Skills are available for immediate use:
+
+PowerPoint (pptx): Create presentations, edit slides, analyze presentation content
+Excel (xlsx): Create spreadsheets, analyze data, generate reports with charts
+Word (docx): Create documents, edit content, format text
+PDF (pdf): Generate formatted PDF documents and reports
+These Skills are available on the Claude API, Claude Platform on AWS, Microsoft Foundry, and claude.ai. See the quickstart tutorial to start using them in the API.
+
+Open-source Skills
+Anthropic also publishes open-source Skills in the skills repository:
+
+Claude API skill: Provides Claude with up-to-date API reference material, SDK documentation, and best practices for eight programming languages. Bundled with Claude Code and also available for installation from the skills repository.
+Custom Skills examples
+For complete examples of custom Skills, see the Skills cookbook.
+
+Data retention
+Agent Skills is not covered by ZDR arrangements. Skill definitions and execution data are retained according to Anthropic's standard data retention policy.
+
+For ZDR eligibility across all features, see API and data retention.
+
+Limitations and constraints
+Claude Platform on AWS and Microsoft Foundry follow the same limitations as the Claude API in the following subsections.
+
+Cross-surface availability
+Custom Skills do not sync across surfaces. Skills uploaded to one surface are not automatically available on others:
+
+Skills uploaded to claude.ai must be separately uploaded to the API
+Skills uploaded through the API are not available on claude.ai
+Claude Code Skills are filesystem-based and separate from both claude.ai and API
+Manage and upload Skills separately for each surface where you want to use them.
+
+Sharing scope
+Skills have different sharing models depending on where you use them:
+
+claude.ai: Individual user only. Each team member must upload separately.
+Claude API: Workspace-wide. All workspace members can access uploaded Skills.
+Claude Code: Personal (~/.claude/skills/) or project-based (.claude/skills/). Can also be shared through Claude Code Plugins.
+claude.ai does not support centralized admin management or org-wide distribution of custom Skills.
+
+Runtime environment constraints
+The exact runtime environment available to your Skill depends on the product surface where you use it.
+
+claude.ai:
+Varying network access: Depending on user/admin settings, Skills may have full, partial, or no network access. For more details, see the Create and Edit Files support article.
+Claude API:
+No network access: Skills cannot make external API calls or access the internet.
+No runtime package installation: Only pre-installed packages are available. You cannot install new packages during execution.
+Pre-configured dependencies only: Check the Code execution tool documentation for the list of available packages.
+Claude Code:
+Full network access: Skills have the same network access as any other program on the user's computer.
+Global package installation discouraged: Skills should only install packages locally to avoid interfering with the user's computer.
+Plan your Skills to work within these constraints.
+
+Get started with Agent Skills in the API
+Learn how to use Agent Skills to create documents with the Claude API in under 10 minutes.
+This tutorial shows you how to use Agent Skills to create a PowerPoint presentation. You'll learn how to enable Skills, make a request, and access the generated file.
+
+Prerequisites
+A Claude API key or a logged-in ant CLI
+A client SDK for your language, or curl and jq
+Basic familiarity with making API requests
+Agent Skills overview
+Pre-built Agent Skills extend Claude's capabilities with specialized expertise for tasks such as creating documents, analyzing data, and processing files. Anthropic provides the following pre-built Agent Skills in the API:
+
+PowerPoint (pptx): Create and edit presentations
+Excel (xlsx): Create and analyze spreadsheets
+Word (docx): Create and edit documents
+PDF (pdf): Generate PDF documents
+To create custom Skills, see the Agent Skills Cookbook for examples of building your own Skills with domain-specific expertise.
+
+Step 1: List available Skills
+First, check what Skills are available. Use the Skills API to list all Anthropic-managed Skills. Each language tab is an excerpt from one continuous script, with any imports and client setup at the top:
+
+# List Anthropic-managed Skills
+ant beta:skills list --source anthropic
+You see the following Skills: pptx, xlsx, docx, and pdf.
+
+This API returns each Skill's metadata: its name and description. Claude loads this metadata at startup to determine which Skills are available. This is the first level of progressive disclosure, where Claude discovers Skills without loading their full instructions yet.
+
+Step 2: Create a presentation
+Use the PowerPoint Skill to create a presentation about renewable energy. Specify Skills using the container parameter in the Messages API:
+
+# Create a message with the PowerPoint Skill
+response = client.beta.messages.create(
+    model="claude-opus-5",
+    max_tokens=16000,
+    betas=["skills-2025-10-02"],
+    container={
+        "skills": [{"type": "anthropic", "skill_id": "pptx", "version": "latest"}]
+    },
+    messages=[
+        {
+            "role": "user",
+            "content": "Create a presentation about renewable energy with 5 slides",
+        }
+    ],
+    tools=[{"type": "code_execution_20260521", "name": "code_execution"}],
+)
+
+print(f"stop_reason={response.stop_reason}, blocks={len(response.content)}")
+The request includes the following parts:
+
+model: A model that supports the code execution tool
+container.skills: Specifies which Skills Claude can use
+type: "anthropic": Indicates this is an Anthropic-managed Skill
+skill_id: "pptx": The PowerPoint Skill identifier
+version: "latest": The Skill version set to the most recently published
+tools: Enables code execution (required for Skills)
+Beta header: skills-2025-10-02
+The examples on this page use the code_execution_20260521 tool version, which is generally available and needs only the skills-2025-10-02 beta header. The Step 3 code parses the result types that current tool versions return. Skills also work with older code execution tool versions such as code_execution_20250825: any current code execution tool version satisfies the Skills requirement. If you use a different version, keep its tool type and any beta header consistent with the code execution tool page, and always include skills-2025-10-02.
+
+When you make this request, Claude automatically matches your task to the relevant Skill. Because you asked for a presentation, Claude determines the PowerPoint Skill is relevant and loads its full instructions: the second level of progressive disclosure. Then Claude runs the Skill's code to create your presentation.
+
+Step 3: Download the created file
+The presentation was created in the code execution container and saved as a file. The Step 2 response includes a file reference with a file ID. Extract the file ID and download the file with the Files API. The example saves it to your system temp directory:
+
+# Extract the file ID. The code execution tool runs the Skill's code through
+# its Bash sub-tool, and generated files appear as bash_code_execution_output
+# items inside the bash_code_execution_tool_result block.
+file_id = None
+for block in response.content:
+    if block.type == "bash_code_execution_tool_result":
+        if block.content.type == "bash_code_execution_result":
+            for output in block.content.content:
+                file_id = output.file_id
+
+if file_id:
+    # Download the file and save it
+    output_path = Path(tempfile.gettempdir()) / "renewable_energy.pptx"
+    file_content = client.beta.files.download(file_id=file_id)
+    file_content.write_to_file(output_path)
+    print(f"Presentation saved to {output_path}")
+For complete details on working with generated files, see Retrieve generated files in the code execution tool documentation.
+
+Try more examples
+Try these variations:
+
+Create a spreadsheet
+response = client.beta.messages.create(
+    model="claude-opus-5",
+    max_tokens=16000,
+    betas=["skills-2025-10-02"],
+    container={
+        "skills": [{"type": "anthropic", "skill_id": "xlsx", "version": "latest"}]
+    },
+    messages=[
+        {
+            "role": "user",
+            "content": "Create a quarterly sales tracking spreadsheet with sample data",
+        }
+    ],
+    tools=[{"type": "code_execution_20260521", "name": "code_execution"}],
+)
+Create a Word document
+response = client.beta.messages.create(
+    model="claude-opus-5",
+    max_tokens=16000,
+    betas=["skills-2025-10-02"],
+    container={
+        "skills": [{"type": "anthropic", "skill_id": "docx", "version": "latest"}]
+    },
+    messages=[
+        {
+            "role": "user",
+            "content": "Write a 2-page report on the benefits of renewable energy",
+        }
+    ],
+    tools=[{"type": "code_execution_20260521", "name": "code_execution"}],
+)
+Generate a PDF
+response = client.beta.messages.create(
+    model="claude-opus-5",
+    max_tokens=16000,
+    betas=["skills-2025-10-02"],
+    container={
+        "skills": [{"type": "anthropic", "skill_id": "pdf", "version": "latest"}]
+    },
+    messages=[
+        {
+            "role": "user",
+            "content": "Generate a PDF invoice template",
+        }
+    ],
+    tools=[{"type": "code_execution_20260521", "name": "code_execution"}],
+
+)
+
+
+Create, manage, and share skills to extend Claude’s capabilities in Claude Code. Includes custom commands and bundled skills.
+
+Skills extend what Claude can do. Create a SKILL.md file with instructions, and Claude adds it to its toolkit. Claude uses skills when relevant, or you can invoke one directly with /skill-name.
+Create a skill when you keep pasting the same instructions, checklist, or multi-step procedure into chat, or when a section of CLAUDE.md has grown into a procedure rather than a fact. Unlike CLAUDE.md content, a skill’s body loads only when it’s used, so long reference material costs almost nothing until you need it.
+For built-in commands like /help and /compact, and bundled skills like /debug and /code-review, see the commands reference.
+Custom commands have been merged into skills. A file at .claude/commands/deploy.md and a skill at .claude/skills/deploy/SKILL.md both create /deploy and work the same way. Your existing .claude/commands/ files keep working. Skills add optional features: a directory for supporting files, frontmatter to control whether you or Claude invokes them, and the ability for Claude to load them automatically when relevant.
+Claude Code skills follow the Agent Skills open standard, which works across multiple AI tools. Claude Code extends the standard with additional features like invocation control, subagent execution, and dynamic context injection. See Using skill frontmatter outside Claude Code for which frontmatter fields are part of the standard and which are Claude Code extensions.
+​
+Bundled skills
+Claude Code includes a set of bundled skills, such as /doctor, /code-review, /batch, /debug, /loop, and /claude-api. Bundled skills are prompt-based: they give Claude detailed instructions and let it orchestrate the work using its tools. Most built-in commands instead execute fixed logic directly.
+You invoke a bundled skill the same way as any other skill, by typing / followed by the skill name. Claude invokes some bundled skills automatically when relevant; others, including /verify, run only when you invoke them, which keeps you in control of when these longer-running checks spend time and tokens.
+Bundled skills are available in every session. To turn them off, use the disableBundledSkills setting, which disables every bundled skill except /doctor.
+The /doctor setup checkup stays typable when disableBundledSkills is on, in Claude Code v2.1.205 and later. To hide it, set the DISABLE_DOCTOR_COMMAND environment variable or a skillOverrides entry of "doctor": "off". Before v2.1.205, /doctor was a built-in command rather than a bundled skill.
+Bundled skills are listed alongside built-in commands in the commands reference, marked Skill in the Purpose column.
+​
+Run and verify your app
+Three bundled skills work together to launch your app and confirm changes against the running app instead of just tests:
+Skill	Purpose
+/run	Launch and drive your app to see a change working
+/verify	Build and run your app to confirm a code change does what it should, without falling back to tests or type checks
+/run-skill-generator	Teach /run and /verify how to build and launch your project
+All three skills require Claude Code v2.1.145 or later. Check your version with claude --version or the /status command.
+/run and /verify work without setup. They infer the launch from your project type (CLI, server, TUI, browser-driven) and from what’s in your README, package.json, or Makefile. That inference gets unreliable for projects that need anything beyond a standard launch: a database, an env file, a graphical session, a multi-step build.
+/run-skill-generator records the recipe instead. It gets your app running from a clean environment, captures what worked (the install commands, the env vars, the launch script), and commits it as a per-project skill at .claude/skills/run-<name>/. After that, /run, /verify, and any other agent in the repo follow the recorded recipe instead of rediscovering it. Run /run-skill-generator once per project, and again if the build or launch process changes.
+/verify can also record its own recipe. When it has to build and drive your app without a recorded recipe, it writes what worked to .claude/skills/verify/SKILL.md at the repo root, or in the touched package directory in a monorepo, so later runs and other agents follow the same steps. At the repo root, the recorded skill replaces the bundled /verify. This requires Claude Code v2.1.200 or later.
+Claude edits the recorded file only when it steered a run wrong, such as a command that failed or a missing step, so you can commit the file without per-session diffs. Before v2.1.205, the bundled skill told Claude to fold in anything a run learned, which caused frequent merge conflicts.
+​
+Getting started
+​
+Create your first skill
+This example creates a skill that summarizes the uncommitted changes in your git repository and flags anything risky. It pulls the live diff into the prompt before Claude reads it, so the response is grounded in your actual working tree rather than what Claude can guess from open files. Claude loads the skill automatically when you ask about your changes, or you can invoke it directly with /summarize-changes.
+1
+Create the skill directory
+
+Create a directory for the skill in your personal skills folder. Personal skills are available across all your projects.
+mkdir -p ~/.claude/skills/summarize-changes
+2
+Write SKILL.md
+
+Every skill needs a SKILL.md file with two parts: YAML frontmatter between --- markers that tells Claude when to use the skill, and markdown content with the instructions Claude follows when the skill runs. The directory name becomes the command you type, and the description helps Claude decide when to load the skill automatically.
+Save this to ~/.claude/skills/summarize-changes/SKILL.md:
+---
+description: Summarizes uncommitted changes and flags anything risky. Use when the user asks what changed, wants a commit message, or asks to review their diff.
+---
+
+## Current changes
+
+!`git diff HEAD`
+
+## Instructions
+
+Summarize the changes above in two or three bullet points, then list any risks you notice such as missing error handling, hardcoded values, or tests that need updating. If the diff is empty, say there are no uncommitted changes.
+The !`git diff HEAD` line uses dynamic context injection: Claude Code runs the command and replaces the line with its output before Claude sees the skill content, so the instructions arrive with the current diff already inlined.
+3
+Test the skill
+
+Open a git project, make a small edit to any file, and start Claude Code by running claude. You can test the skill two ways.
+Let Claude invoke it automatically by asking something that matches the description:
+What did I change?
+Or invoke it directly with the skill name:
+/summarize-changes
+Either way, Claude should respond with a short summary of your edit and a list of risks.
+​
+Where skills live
+Where you store a skill determines who can use it:
+Location	Path	Applies to
+Enterprise	See managed settings	All users in your organization
+Personal	~/.claude/skills/<skill-name>/SKILL.md	All your projects
+Project	.claude/skills/<skill-name>/SKILL.md	This project only
+Plugin	<plugin>/skills/<skill-name>/SKILL.md	Where plugin is enabled
+When skills share the same name, Claude Code resolves the conflict by source:
+Across levels, enterprise overrides personal, and personal overrides project.
+For example, with a deploy skill in both ~/.claude/skills/ and your project’s .claude/skills/, /deploy runs the personal one.
+A skill at any of these levels also overrides a bundled skill with the same name.
+For example, a code-review skill in your project’s .claude/skills/ replaces the bundled /code-review.
+Plugin skills use a plugin-name:skill-name namespace, so they can’t conflict with other levels.
+For example, my-plugin/skills/deploy/SKILL.md becomes /my-plugin:deploy and loads alongside a deploy skill in your project’s .claude/skills/.
+If you have files in .claude/commands/, those work the same way, but if a skill and a command share the same name, the skill takes precedence.
+For example, with both .claude/commands/deploy.md and .claude/skills/deploy/SKILL.md, /deploy runs the skill.
+A skill or command from any of these sources overrides a skill synced from your claude.ai account with the same name.
+For example, with a deploy skill enabled on claude.ai and another in your project’s .claude/skills/, /deploy runs the project one.
+Skills also load from nested .claude/skills/ directories below your working directory. When Claude reads or edits a file in a subdirectory, skills from that subdirectory’s .claude/skills/ become available. This lets a monorepo package provide its own skills that apply when working on that package, even if the session started at the repo root.
+If a nested skill shares a name with another skill, both stay available. For example, with a deploy skill at the project root and another in apps/web/.claude/skills/:
+The nested one appears under a directory-qualified name, apps/web:deploy.
+Its description says which directory it applies to.
+Claude picks the variant that matches the files it is working on.
+Typing /deploy runs the project-root skill. Type the qualified name /apps/web:deploy to run the nested variant explicitly.
+When you or Claude invoke the unqualified name, the project-root skill loads, and Claude Code appends a list of the directory-qualified variants to its content with an instruction to also invoke any variant whose directory holds the files Claude is working on. A nested skill therefore still applies to work in its directory when only the unqualified name is invoked.
+The folder name synced is reserved in the enterprise, personal, and project skills locations, in any capitalization. Claude Code downloads the skills you enable on claude.ai into ~/.claude/skills/synced/ when CLAUDE_CODE_SYNC_SKILLS is set in non-interactive mode, and skips a skill you author at that name.
+A <skill-name> entry in the enterprise, personal, or project locations can be a symlink to a directory elsewhere on disk. Claude Code follows the symlink and reads SKILL.md from the target directory, and if the same target is reachable from more than one location, Claude Code loads the skill once. Plugin skills handle symlinks differently; see Share files within a marketplace with symlinks.
+Add a .claude-plugin/plugin.json to a skill folder and it loads as a plugin named <name>@skills-dir, so it can bundle agents, hooks, and MCP servers. In a project’s .claude/skills/, this requires accepting the workspace trust dialog first.
+​
+Live change detection
+Claude Code watches skill directories for file changes. When you add, edit, or remove a skill under ~/.claude/skills/, the project .claude/skills/, or a .claude/skills/ inside an --add-dir directory, Claude Code picks up the change within the current session, without a restart. If you create a top-level skills directory that didn’t exist when the session started, restart Claude Code so it can watch the new directory.
+Live change detection covers SKILL.md text only. For a skill folder that is also a plugin, changes to hooks/, .mcp.json, agents/, and output-styles/ need /reload-plugins to take effect.
+​
+Discovery from parent and nested directories
+Project skills load from .claude/skills/ in the directory where you start Claude Code and in every parent directory up to the repository root. Starting Claude in a subdirectory still picks up skills defined at the root. To load skills from a directory outside that path at startup, pass it with --add-dir. Claude Code reads .claude/skills/ inside each added directory alongside the project skills.
+Skills in nested .claude/skills/ directories below your starting directory aren’t loaded at startup. They load the first time Claude reads or edits a file inside that subdirectory, and stay available for the rest of the session. For example, after Claude edits a file under packages/frontend/, skills in packages/frontend/.claude/skills/ become available. Until then, those skills don’t appear in autocomplete and can’t be invoked by name.
+Each skill is a directory with SKILL.md as the entrypoint:
+my-skill/
+├── SKILL.md           # Main instructions (required)
+├── template.md        # Template for Claude to fill in
+├── examples/
+│   └── sample.md      # Example output showing expected format
+└── scripts/
+    └── validate.sh    # Script Claude can execute
+The SKILL.md contains the main instructions and is required. Other files are optional and let you build more powerful skills: templates for Claude to fill in, example outputs showing the expected format, scripts Claude can execute, or detailed reference documentation. Reference these files from your SKILL.md so Claude knows what they contain and when to load them. See Add supporting files for more details.
+Files in .claude/commands/ support the same frontmatter. Skills are recommended since they support additional features like supporting files.
+​
+Skills from additional directories
+The --add-dir flag and /add-dir command grant file access rather than configuration discovery, but skills are an exception: .claude/skills/ within an added directory is loaded automatically. This exception applies only to --add-dir and /add-dir. The permissions.additionalDirectories setting in settings.json grants file access only and does not load skills. See Live change detection for how edits are picked up during a session.
+Other .claude/ configuration such as commands and output styles is not loaded from additional directories. See the exceptions table for the complete list of what is and isn’t loaded, and the recommended ways to share configuration across projects.
+CLAUDE.md files from --add-dir directories are not loaded by default. To load them, set CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1. See Load from additional directories.
+​
+Skills in Cowork and cloud sessions
+Cowork sessions and cloud sessions, including routines, don’t read ~/.claude/skills/ on your machine. Both interactive and scheduled Cowork sessions load the skills enabled for your claude.ai account, synced at session start; manage them from Customize in the Desktop app sidebar or from the skills settings on claude.ai. Cloud sessions additionally load project skills committed to the cloned repository’s .claude/skills/.
+If a skill exists only in ~/.claude/skills/ on your machine, Claude Code reports that the skill was not found when a routine invokes it, because each routine run starts as a fresh remote session. To make a personal skill available in these sessions:
+For Cowork and cloud sessions, enable the skill for your claude.ai account.
+For cloud sessions, you can instead commit the skill to the repository’s .claude/skills/, or ship it in a plugin declared in the repository’s .claude/settings.json. Repo-declared plugins install at session start; plugins enabled only in your user settings don’t transfer.
+Desktop scheduled tasks are different: they run locally on your machine and load skills from the same locations as any other local session.
+​
+Skills synced from claude.ai
+This section applies to you if you enabled skills for your claude.ai account. In Cowork and cloud sessions, Claude Code loads those skills without any setup on your machine. In any other session on your machine, Claude Code loads them only after you turn syncing on with CLAUDE_CODE_SYNC_SKILLS in a non-interactive run, as Where synced skills load describes.
+Claude Code downloads a synced skill from your account rather than reading a file you wrote on the machine where the session runs, so it applies rules to synced skills that don’t apply to the skills you store in the skills locations.
+​
+Where synced skills load
+In a Cowork or cloud session, Claude Code loads the skills enabled for your claude.ai account, and Skills in Cowork and cloud sessions says how to choose which skills those sessions get.
+In any other session on your machine, Claude Code loads them only after you download them once in a non-interactive run:
+1
+Enable the skills for your claude.ai account
+
+Enable each skill you want for your claude.ai account, as Skills in Cowork and cloud sessions describes. Claude Code downloads only the skills you enabled, and it needs your claude.ai sign-in to download them.
+2
+Run Claude Code in non-interactive mode with syncing turned on
+
+Claude Code downloads synced skills only when you run it in non-interactive mode with the -p flag and set CLAUDE_CODE_SYNC_SKILLS to 1. The prompt you pass doesn’t affect the download.
+CLAUDE_CODE_SYNC_SKILLS=1 claude -p "List the skills you have available"
+Claude Code downloads the skills into ~/.claude/skills/synced/, answers the prompt, and exits like any other non-interactive run. The downloaded skills stay on disk after it exits, so you don’t need to keep the run open. Claude Code downloads skills only during a run with CLAUDE_CODE_SYNC_SKILLS set, so after you enable or change a skill on claude.ai, run the command again. To change how long the run waits for the sync before it answers the prompt, set CLAUDE_CODE_SYNC_SKILLS_WAIT_TIMEOUT_MS.
+3
+Confirm the skills load in a local session
+
+Start an interactive session, without CLAUDE_CODE_SYNC_SKILLS set, and run /skills. The menu lists the downloaded skills under claude.ai sync. Every local session you start afterwards loads them from ~/.claude/skills/synced/ too.
+​
+When a synced skill name matches another command
+Claude Code skips a synced skill whose name matches any other command, and that other command runs. The other command can be a built-in command, a bundled skill, a skill at any local level, a plugin skill, a file in .claude/commands/, or an MCP prompt. Claude Code also reserves the names of its own built-in commands and bundled skills even when they’re unavailable in your session, for example after you turn bundled skills off, so it skips a synced skill with one of those names too.
+Claude Code labels synced skills so you can tell where they came from. The /skills menu and /context group synced skills under claude.ai sync, and the / command menu marks them as coming from claude.ai.
+When it compares names, Claude Code ignores case, spacing, and invisible characters, and treats compatibility forms such as fullwidth letters and dash variants as their plain equivalents, so a synced Commit can’t load beside a local commit. A name that differs only by a look-alike letter from another alphabet counts as a different name, and the claude.ai sync label is how you tell the two apart.
+​
+How Claude Code handles the frontmatter of a synced skill
+Claude Code applies two rules to a synced skill’s frontmatter:
+Claude Code honors the frontmatter in every kind of session, so an allowed-tools grant goes through the normal permission flow.
+Claude Code sanitizes the display text the skill supplies, such as its description. It removes control characters, and in text that reaches Claude, such as the description, it also escapes angle brackets so the text can’t imitate Claude Code’s internal formatting.
+​
+How Claude Code handles the body of a synced skill
+What Claude Code does with a synced skill’s body depends on where the session runs:
+In a cloud session, the body keeps the behavior a local skill has, because the session runs in an isolated container.
+In a Cowork session on your desktop, the body keeps the behavior a local skill has, except that Claude Code replaces every ! command line with the disableSkillShellExecution placeholder, as it does for every skill you supply there.
+In any other session on your machine, Claude Code doesn’t run ! commands, doesn’t attach the files that @ references name the way it does for a local skill, and doesn’t substitute the ${CLAUDE_PROJECT_DIR} and ${CLAUDE_SESSION_ID} placeholders, so the @ references and both placeholders reach Claude as literal text. A ! command line reaches Claude as literal text too, or as that placeholder when disableSkillShellExecution is on.
+​
+Configure skills
+Skills are configured through YAML frontmatter at the top of SKILL.md and the markdown content that follows.
+​
+Types of skill content
+Skill files can contain any instructions, but thinking about how you want to invoke them helps guide what to include:
+Reference content adds knowledge Claude applies to your current work. Conventions, patterns, style guides, domain knowledge. This content runs inline so Claude can use it alongside your conversation context.
+---
+name: api-conventions
+description: API design patterns for this codebase
+---
+
+When writing API endpoints:
+- Use RESTful naming conventions
+- Return consistent error formats
+- Include request validation
+Task content gives Claude step-by-step instructions for a specific action, like deployments, commits, or code generation. These are often actions you want to invoke directly with /skill-name rather than letting Claude decide when to run them. Add disable-model-invocation: true to prevent Claude from triggering it automatically. The example below adds context: fork, which runs the skill in its own subagent context; see Run skills in a subagent.
+---
+name: deploy
+description: Deploy the application to production
+context: fork
+disable-model-invocation: true
+---
+
+Deploy the application:
+1. Run the test suite
+2. Build the application
+3. Push to the deployment target
+Keep the body itself concise. Once a skill loads, its content stays in context across turns, so every line is a recurring token cost. State what to do rather than narrating how or why, and apply the same conciseness test you would for CLAUDE.md content.
+​
+Frontmatter reference
+Beyond the markdown content, you can configure skill behavior using YAML frontmatter fields between --- markers at the top of your SKILL.md file:
+---
+name: my-skill
+description: What this skill does
+disable-model-invocation: true
+allowed-tools: Read Grep
+---
+
+Your skill instructions here...
+All fields are optional. Only description is recommended so Claude knows when to use the skill.
+Boolean fields accept yes, no, on, off, 1, and 0 in any letter case, in addition to true and false. Before v2.1.218, Claude Code recognized only true and false.
+Field	Required	Description
+name	No	Display name shown in skill listings. Defaults to the directory name. See How a skill gets its command name for how the field interacts with the name you type to invoke the skill.
+description	Recommended	What the skill does and when to use it. Claude uses this to decide when to apply the skill. If omitted, uses the first paragraph of markdown content. Put the key use case first: the combined description and when_to_use text is truncated at 1,536 characters in the skill listing to reduce context usage.
+when_to_use	No	Additional context for when Claude should invoke the skill, such as trigger phrases or example requests. Appended to description in the skill listing and counts toward the 1,536-character cap.
+argument-hint	No	Hint shown during autocomplete to indicate expected arguments. Example: [issue-number] or [filename] [format].
+arguments	No	Named positional arguments for $name substitution in the skill content. Accepts a space-separated string or a YAML list. Names map to argument positions in order.
+disable-model-invocation	No	Set to true to prevent Claude from automatically loading this skill. Use for workflows you want to trigger manually with /name. Also prevents the skill from being preloaded into subagents. As of v2.1.196, also prevents the skill from running when a scheduled task fires with the skill as its prompt. Default: false.
+user-invocable	No	Set to false to hide from the / menu. Use for background knowledge users shouldn’t invoke directly. Default: true.
+allowed-tools	No	Tools Claude can use without asking permission during the turn that invokes this skill. The grant clears when you send your next message. Accepts a space- or comma-separated string, or a YAML list. See Pre-approve tools for a skill.
+disallowed-tools	No	Tools removed from Claude’s available pool while this skill is active. Use for autonomous skills that should never call certain tools, such as AskUserQuestion for a background loop. Accepts a space- or comma-separated string, or a YAML list. The restriction clears when you send your next message. Like deny rules, the field can’t remove EndConversation while any other tool remains.
+model	No	Model to use when this skill is active. The override applies for the rest of the current turn and is not saved to settings; the session model resumes on your next prompt. Accepts the same values as /model, or inherit to keep the active model. A value excluded by your organization’s availableModels allowlist is not used and the session keeps its current model. With context: fork, the value sets the forked subagent’s model instead, and an excluded value follows the same rules as a subagent model override.
+effort	No	Effort level when this skill is active. Overrides the session effort level. Default: inherits from session. Options: low, medium, high, xhigh, max; available levels depend on the model.
+context	No	Set to fork to run in a forked subagent context. See Run skills in a subagent.
+agent	No	Which subagent type to use when context: fork is set.
+background	No	Only applies with context: fork. Set to false to wait for the forked subagent’s result in the turn that invoked the skill, instead of running it in the background. Default: true. Requires Claude Code v2.1.218 or later.
+hooks	No	Hooks scoped to this skill’s lifecycle. See Hooks in skills and agents for configuration format.
+paths	No	Glob patterns that limit when this skill is activated. Accepts a comma-separated string or a YAML list. When set, Claude loads the skill automatically only when working with files matching the patterns. Uses the same format as path-specific rules.
+shell	No	Shell to use for !`command` and ```! blocks in this skill. Accepts bash (default) or powershell. Setting powershell runs inline shell commands via PowerShell when the PowerShell tool is enabled: it’s on by default on Windows without Git Bash, and CLAUDE_CODE_USE_POWERSHELL_TOOL=1 enables it elsewhere.
+metadata	No	Free-form YAML map for your own key-value data, such as entitlement or catalog fields, read by your own tooling from SKILL.md. Claude Code doesn’t act on its contents, and drops a value that isn’t a map. Don’t reuse frontmatter field names such as paths as keys.
+license	No	License covering the skill. Part of the Agent Skills spec; see Using skill frontmatter outside Claude Code. Claude Code accepts the field but doesn’t act on it.
+compatibility	No	Environment requirements for the skill, such as intended products or system prerequisites, as defined by the Agent Skills spec; see Using skill frontmatter outside Claude Code. Accepts a string of up to 500 characters. Claude Code accepts the field but doesn’t act on it.
+​
+Using skill frontmatter outside Claude Code
+Claude Code accepts every field in the table above. Outside Claude Code, you can use only the fields in the Agent Skills spec:
+Distribution path	Frontmatter fields you can use
+Claude Code skills at any level, including plugin skills	Every field in the table above
+claude.ai skill uploads, the Skills API, and packaging with package_skill.py from anthropics/skills	name, description, license, compatibility, metadata, allowed-tools
+When you enable a personal skill for Cowork and cloud sessions, including routines, you upload it to claude.ai, so the same rules apply.
+If you include any field the spec doesn’t allow, packaging or upload fails with a hard error instead of ignoring the field:
+Unexpected key(s) in SKILL.md frontmatter: argument-hint. Allowed properties are: allowed-tools, compatibility, description, license, metadata, name
+Restricting frontmatter to the spec’s six fields avoids the unexpected-key error above. The Agent Skills spec and the Skills API requirements define everything else those paths validate. Claude Code-only body features, such as dynamic context injection, don’t function in claude.ai chat or through the API. Claude Code accepts all six fields, so frontmatter that follows the spec loads in Claude Code without changes.
+​
+How a skill gets its command name
+The command you type to invoke a skill comes from where the skill file lives and, for plugin skills, also from the frontmatter name field. In a personal or project skill, name sets only the display label shown in skill listings, and the command still comes from the directory or file name. In a plugin skill, name sets the last segment of the command and the plugin prefix stays in place.
+The table below shows where the command name comes from for each layout:
+Skill location	Command name source	Example
+Skill directory under ~/.claude/skills/ or .claude/skills/	Directory name	.claude/skills/deploy-staging/SKILL.md → /deploy-staging
+Nested .claude/skills/ directory, when the name clashes with another skill	Subdirectory path relative to the working directory, then the skill directory name	apps/web/.claude/skills/deploy/SKILL.md → /apps/web:deploy
+File under .claude/commands/	File name without extension	.claude/commands/deploy.md → /deploy
+Plugin skills/ subdirectory	Frontmatter name or the directory name, namespaced by plugin	my-plugin/skills/review/SKILL.md → /my-plugin:review, or /my-plugin:fancy with name: fancy
+Plugin root SKILL.md	Frontmatter name, with the plugin directory name as a fallback	my-plugin/SKILL.md with name: review → /my-plugin:review. See Path behavior rules
+In a plugin skill, the frontmatter name replaces the directory name in the last segment of the command, so my-plugin/skills/review/SKILL.md with name: fancy becomes /my-plugin:fancy. The bare /fancy also invokes the skill unless another command already uses that name. Before v2.1.216, the frontmatter name replaced the whole command name, so the menu showed /fancy without the plugin prefix and /my-plugin:fancy didn’t autocomplete.
+In non-interactive sessions, Claude Code doesn’t reserve the names help and feedback for their terminal-only built-in commands, so a plugin skill with one of those names keeps its bare command there. Claude Code still reserves the name of every other terminal-only built-in, such as /login, even though the command can’t run in those sessions. In those sessions Claude Code also skips a synced skill named help or feedback, because it skips a synced skill whose name matches any built-in command whether or not that command can run. From v2.1.216 through v2.1.220, help and feedback were reserved too, so a plugin skill with one of those names was invocable only by its namespaced command in non-interactive sessions.
+For a plugin-root SKILL.md, there is no skill directory to take the name from, so name supplies the whole final segment. Without a name field, Claude Code falls back to the plugin’s directory name.
+​
+Available string substitutions
+Skills support string substitution for dynamic values in the skill content:
+Variable	Description
+$ARGUMENTS	All arguments passed when invoking the skill. If $ARGUMENTS is not present in the content, arguments are appended as ARGUMENTS: <value>.
+$ARGUMENTS[N]	Access a specific argument by 0-based index, such as $ARGUMENTS[0] for the first argument.
+$N	Shorthand for $ARGUMENTS[N], such as $0 for the first argument or $1 for the second.
+$name	Named argument declared in the arguments frontmatter list. Names map to positions in order, so with arguments: [issue, branch] the placeholder $issue expands to the first argument and $branch to the second.
+${CLAUDE_SESSION_ID}	The current session ID. Useful for logging, creating session-specific files, or correlating skill output with sessions.
+${CLAUDE_EFFORT}	The current effort level: low, medium, high, xhigh, or max. Ultracode is not a distinct level and reports as xhigh. Use this to adapt skill instructions to the active effort setting.
+${CLAUDE_SKILL_DIR}	The directory containing the skill’s SKILL.md file. For plugin skills, this is the skill’s subdirectory within the plugin, not the plugin root. Use this in bash injection commands to reference scripts or files bundled with the skill, regardless of the current working directory.
+${CLAUDE_PROJECT_DIR}	The project root directory. This is the same path hooks and MCP servers receive as CLAUDE_PROJECT_DIR. Use this to reference project-local scripts or files, such as ${CLAUDE_PROJECT_DIR}/.claude/hooks/helper.sh, independent of where the skill is installed.
+${CLAUDE_PLUGIN_ROOT}	The plugin’s installation directory. Substituted only in plugin skills. Use this to reference scripts or files bundled anywhere in the plugin, including resources shared between the plugin’s skills. See plugin environment variables.
+${CLAUDE_PLUGIN_DATA}	The plugin’s persistent data directory, which survives plugin updates. Substituted only in plugin skills. Use this to reference installed dependencies, generated files, or caches that must outlive an update.
+Claude Code substitutes ${CLAUDE_SKILL_DIR} and ${CLAUDE_PROJECT_DIR} in two places: the skill’s markdown content, and Bash rules in the allowed-tools frontmatter. In a plugin skill, Claude Code substitutes ${CLAUDE_PLUGIN_ROOT} and ${CLAUDE_PLUGIN_DATA} in the same two places. Using the same variable in both places lets a skill run a bundled script without a permission prompt. The following skill shows the pattern:
+---
+name: render-chart
+description: Render a chart from a CSV file
+allowed-tools: Bash(${CLAUDE_SKILL_DIR}/scripts/render.sh *)
+---
+
+Run `${CLAUDE_SKILL_DIR}/scripts/render.sh <csv-file>` to render the chart.
+If this skill is installed at ~/.claude/skills/render-chart/, both occurrences of ${CLAUDE_SKILL_DIR} expand to that directory. The allowed-tools rule then matches the exact command the skill body tells Claude to run, so the script runs without prompting.
+The ${CLAUDE_PROJECT_DIR} substitution requires Claude Code v2.1.196 or later.
+Indexed arguments use shell-style quoting, so wrap multi-word values in quotes to pass them as a single argument. For example, /my-skill "hello world" second makes $0 expand to hello world and $1 to second. The $ARGUMENTS placeholder always expands to the full argument string as typed.
+An indexed placeholder with no corresponding argument, such as $2 when only one argument was passed, stays in the content unchanged. A named placeholder from the arguments frontmatter with no matching argument expands to an empty string.
+To include a literal $ before a digit, ARGUMENTS, or a declared argument name, such as $1.00 in prose, escape it with a backslash: \$1.00. A backslash before any other $ is left unchanged. Only a single backslash directly before the token escapes it. A doubled backslash such as \\$1 leaves both backslashes in place, and $1 still expands to the argument value. The backslash escape covers only these argument placeholders. A backslash doesn’t prevent substitution of a ${CLAUDE_*} variable where the variable applies.
+Example using substitutions:
+---
+name: session-logger
+description: Log activity for this session
+---
+
+Log the following to logs/${CLAUDE_SESSION_ID}.log:
+
+$ARGUMENTS
+​
+Add supporting files
+Skills can include multiple files in their directory. This keeps SKILL.md focused on the essentials while letting Claude access detailed reference material only when needed. Large reference docs, API specifications, or example collections don’t need to load into context every time the skill runs.
+my-skill/
+├── SKILL.md (required - overview and navigation)
+├── reference.md (detailed API docs - loaded when needed)
+├── examples.md (usage examples - loaded when needed)
+└── scripts/
+    └── helper.py (utility script - executed, not loaded)
+Reference supporting files from SKILL.md so Claude knows what each file contains and when to load it:
+## Additional resources
+
+- For complete API details, see [reference.md](reference.md)
+- For usage examples, see [examples.md](examples.md)
+Keep SKILL.md under 500 lines. Move detailed reference material to separate files.
+​
+Control who invokes a skill
+By default, both you and Claude can invoke any skill. You can type /skill-name to invoke it directly, and Claude can load it automatically when relevant to your conversation. Two frontmatter fields let you restrict this:
+disable-model-invocation: true: Only you can invoke the skill. Use this for workflows with side effects or that you want to control timing, like /commit, /deploy, or /send-slack-message. You don’t want Claude deciding to deploy because your code looks ready.
+user-invocable: false: Only Claude can invoke the skill. Use this for background knowledge that isn’t actionable as a command. A legacy-system-context skill explains how an old system works. Claude should know this when relevant, but /legacy-system-context isn’t a meaningful action for users to take.
+This example creates a deploy skill that only you can trigger. If you set disable-model-invocation: true, Claude can’t run the skill automatically:
+---
+name: deploy
+description: Deploy the application to production
+disable-model-invocation: true
+---
+
+Deploy $ARGUMENTS to production:
+
+1. Run the test suite
+2. Build the application
+3. Push to the deployment target
+4. Verify the deployment succeeded
+If Claude tries anyway, Claude Code blocks the call and instructs it not to reproduce the deploy steps another way, so expect Claude to suggest running /deploy yourself.
+Here’s how the two fields affect invocation and context loading:
+Frontmatter	You can invoke	Claude can invoke	When loaded into context
+(default)	Yes	Yes	Description always in context, full skill loads when invoked
+disable-model-invocation: true	Yes	No	Description not in context, full skill loads when you invoke
+user-invocable: false	No	Yes	Description always in context, full skill loads when invoked
+In a regular session, skill descriptions are loaded into context so Claude knows what’s available, but full skill content only loads when invoked. Subagents with preloaded skills work differently: the full skill content is injected at startup.
+​
+Skill content lifecycle
+When you or Claude invoke a skill, the rendered SKILL.md content enters the conversation as a single message and stays there for the rest of the session. This persistence applies to the skill’s instructions, not its permissions: an allowed-tools grant clears when you send your next message. Claude Code does not re-read the skill file on later turns, so write guidance that should apply throughout a task as standing instructions rather than one-time steps.
+When Claude re-invokes a skill whose rendered content is identical to the copy already in context, Claude Code adds a short note that the skill is already loaded rather than a second copy of the content. When the rendered content differs, because the arguments changed or a dynamic context command produced new output, Claude Code appends the full content again.
+Auto-compaction carries invoked skills forward within a token budget. When the conversation is summarized to free context, Claude Code re-attaches the most recent invocation of each skill after the summary, keeping the first 5,000 tokens of each. Re-attached skills share a combined budget of 25,000 tokens. Claude Code fills this budget starting from the most recently invoked skill, so older skills can be dropped entirely after compaction if you have invoked many in one session.
+If a skill seems to stop influencing behavior after the first response, the content is usually still present and the model is choosing other tools or approaches. Strengthen the skill’s description and instructions so the model keeps preferring it, or use hooks to enforce behavior deterministically. If the skill is large or you invoked several others after it, re-invoke it after compaction to restore the full content.
+​
+Pre-approve tools for a skill
+The allowed-tools field grants permission for the listed tools during the turn that invokes the skill, so Claude can use them without prompting you for approval. The grant clears when you send your next message, even though the skill content stays in context; invoking the skill again re-applies it for that turn. It does not restrict which tools are available: every tool remains callable, and your permission settings still govern tools that are not listed. To pre-approve tools for the whole session rather than a single turn, add allow rules to those permission settings instead.
+For skills checked into a project’s .claude/skills/ directory, allowed-tools takes effect after you accept the workspace trust dialog for that folder, the same as permission rules in .claude/settings.json. Review project skills before trusting a repository, since a skill can grant itself broad tool access.
+This skill lets Claude run git commands without per-use approval whenever you invoke it:
+---
+name: commit
+description: Stage and commit the current changes
+disable-model-invocation: true
+allowed-tools: Bash(git add *) Bash(git commit *) Bash(git status *)
+---
+To remove tools from Claude’s available pool while a skill is active, list them in disallowed-tools in the skill’s frontmatter. The restriction clears when you send your next message. Like deny rules, the field can’t remove EndConversation while any other tool remains. To block tools across all skills and prompts, add deny rules in your permission settings.
+​
+Pass arguments to skills
+Both you and Claude can pass arguments when invoking a skill. Arguments are available via the $ARGUMENTS placeholder.
+This skill fixes a GitHub issue by number. The $ARGUMENTS placeholder gets replaced with whatever follows the skill name:
+---
+name: fix-issue
+description: Fix a GitHub issue
+disable-model-invocation: true
+---
+
+Fix GitHub issue $ARGUMENTS following our coding standards.
+
+1. Read the issue description
+2. Understand the requirements
+3. Implement the fix
+4. Write tests
+5. Create a commit
+When you run /fix-issue 123, Claude receives “Fix GitHub issue 123 following our coding standards…”
+If you invoke a skill with arguments but the skill doesn’t include $ARGUMENTS, Claude Code appends ARGUMENTS: <your input> to the end of the skill content so Claude still sees what you typed.
+You can also stack several skills at the start of one message. Typing /write-tests /fix-issue 123 loads both skills and passes the trailing text 123 as $ARGUMENTS to each of them. Before v2.1.199, only the first skill loaded and received /fix-issue 123 as literal argument text.
+Claude Code expands the first skill plus up to five more stacked after it. Expansion stops at the first token that isn’t an inline user-invocable skill, so a skill that runs as a forked subagent, such as /code-review, or one whose arguments may themselves start with a slash command, such as /loop, also ends the run there. That token and everything after it become the argument text for every expanded skill. /code-review runs as a forked subagent from v2.1.218; on earlier versions it ran inline and stacked.
+To access individual arguments by position, use $ARGUMENTS[N] or the shorter $N:
+---
+name: migrate-component
+description: Migrate a component from one framework to another
+---
+
+Migrate the $ARGUMENTS[0] component from $ARGUMENTS[1] to $ARGUMENTS[2].
+Preserve all existing behavior and tests.
+Running /migrate-component SearchBar React Vue replaces $ARGUMENTS[0] with SearchBar, $ARGUMENTS[1] with React, and $ARGUMENTS[2] with Vue. The same skill using the $N shorthand:
+---
+name: migrate-component
+description: Migrate a component from one framework to another
+---
+
+Migrate the $0 component from $1 to $2.
+Preserve all existing behavior and tests.
+​
+Advanced patterns
+​
+Inject dynamic context
+The !`<command>` syntax runs shell commands before the skill content is sent to Claude. The command output replaces the placeholder, so Claude receives actual data, not the command itself. Claude Code doesn’t run these commands on your machine when the skill is synced from your claude.ai account.
+This skill summarizes a pull request by fetching live PR data with the GitHub CLI. The !`gh pr diff` and other commands run first, and their output gets inserted into the prompt:
+---
+name: pr-summary
+description: Summarize changes in a pull request
+context: fork
+agent: Explore
+allowed-tools: Bash(gh *)
+---
+
+## Pull request context
+- PR diff: !`gh pr diff`
+- PR comments: !`gh pr view --comments`
+- Changed files: !`gh pr diff --name-only`
+
+## Your task
+Summarize this pull request...
+Substitution runs once over the original file. Command output is inserted as plain text and is not re-scanned for further !`<command>` placeholders, so a command cannot emit a placeholder for a later pass to expand.
+The inline form is only recognized when ! appears at the start of a line or immediately after whitespace. If ! follows another character, as in KEY=!`cmd`, the placeholder is left as literal text and the command does not run.
+For multi-line commands, use a fenced code block opened with ```! instead of the inline form:
+## Environment
+```!
+node --version
+npm --version
+git status --short
+```
+To disable this behavior for skills and custom commands from user, project, plugin, or additional-directory sources, set "disableSkillShellExecution": true in settings. Each command is replaced with [shell command execution disabled by policy] instead of being run. Bundled and managed skills are not affected. This setting is most useful in managed settings, where users cannot override it.
+Claude Code never runs these commands on your machine when they appear in skills synced from your claude.ai account, regardless of this setting. How Claude Code handles the body of a synced skill says what Claude receives in place of the command in each kind of session.
+To request deeper reasoning when a skill runs, include ultrathink anywhere in the skill content. See Use ultrathink for one-off deep reasoning.
+​
+How injected commands run
+Claude Code picks the tool that runs a skill’s injected commands from the shell key in the skill’s frontmatter and your environment. Every combination runs the commands through the Bash tool or the PowerShell tool, except one that fails the invocation outright:
+shell: powershell, with the PowerShell tool enabled: the commands run through the PowerShell tool.
+shell: bash when bash isn’t available: the invocation fails before any command runs. This happens on Windows without Git Bash. Claude Code shows Skill <name> requires bash (`shell: bash` in frontmatter) but Git Bash was not found.
+Any other combination: the commands run through the Bash tool when bash is available. When it isn’t, they run through the PowerShell tool.
+Either tool runs the commands the same way it runs Claude’s own shell commands. They share the working directory, timeout, and output handling:
+Working directory: Claude Code runs each command in the session shell’s current working directory. That directory moves when Claude runs cd. Use ${CLAUDE_SKILL_DIR} or ${CLAUDE_PROJECT_DIR} in paths that must resolve the same way every time.
+stderr: with the default bash shell, Claude Code merges stderr into stdout. Anything the command writes to stderr appears in the injected text.
+Timeout: each command runs under the Bash tool’s default 2-minute timeout. When the Bash tool moves a timed-out command to the background, the skill still renders. The injected text reports the move and names the background task and the file collecting the command’s output. When the command is one the Bash tool never auto-backgrounds, Claude Code kills it at the timeout. That failure aborts the invocation.
+Output size: output past the Bash tool’s inline ceiling arrives as a file path plus a short preview, not truncated text. Output limits covers the ceiling and which variable adjusts which boundary.
+The PowerShell tool applies the same timeout, backgrounding, and output-ceiling behavior to the commands it runs. See the PowerShell tool section for its specifics.
+​
+When an injected command fails
+A failed command aborts the entire skill invocation, not just its own placeholder. Claude never sees the skill content for that invocation. The abort shows Shell command failed for pattern "...". The error message includes the command’s output under [stderr].
+With the default bash shell, any non-zero exit code counts as a failure. One carveout applies: Claude Code treats exit code 1 from search and comparison commands as a normal result and injects their output. Exit codes of 2 or higher fail even for those commands.
+Which commands get the carveout depends on the shell:
+Default bash shell: the commands listed under Output limits
+shell: powershell, when the PowerShell tool is enabled: a different set that includes grep and git diff but not find or diff
+With the default bash shell, append || true to any other command you expect to exit non-zero. A check script that exits 1 when it finds problems is one example.
+Injected commands never prompt for permission. When a command’s permission check returns anything other than allow, Claude Code aborts the invocation. This includes a rule that would normally ask you. The abort shows Shell command permission check failed for pattern "...".
+To keep a command from aborting at the default permission prompt, pre-approve it with allowed-tools. A matching ask or deny rule still aborts the invocation regardless of allowed-tools. See Manage permissions.
+​
+Run skills in a subagent
+Add context: fork to your frontmatter when you want a skill to run in isolation. The skill content becomes the prompt that drives the subagent. It won’t have access to your conversation history.
+The forked subagent runs in the background: you keep working while it runs, and its result arrives in your conversation when it completes. Set background: false in the frontmatter to instead wait for the result in the turn that invoked the skill. Before v2.1.218, forked skills always blocked the turn until they finished.
+Claude Code also waits for the result, even when the skill doesn’t set background: false, in cases like these:
+In non-interactive mode, with the -p flag or the Agent SDK
+When you set CLAUDE_CODE_DISABLE_BACKGROUND_TASKS to 1, which also turns off all other background task features
+When you invoke a forked skill while an earlier invocation of the same skill is still running
+When a scheduled task fires with the skill as its prompt
+A backgrounded fork also runs with the narrower tool set that applies to background subagents: the skill’s subagent is a regular agent type, so the exemption for subagents that fork the conversation doesn’t cover it. If your skill’s steps depend on a tool outside that set, set background: false to keep the full tool set.
+A forked skill that runs in the background applies its edits outside your session’s checkpoints, so /rewind doesn’t undo them; use git to revert them.
+context: fork only makes sense for skills with explicit instructions. If your skill contains guidelines like “use these API conventions” without a task, the subagent receives the guidelines but no actionable prompt, and returns without meaningful output.
+Skills and subagents work together in two directions:
+Approach	System prompt	Task	Also loads
+Skill with context: fork	From agent type	SKILL.md content	CLAUDE.md, except when the agent is Explore or Plan
+Subagent with skills field	Subagent’s markdown body	Claude’s delegation message	Preloaded skills + CLAUDE.md
+With context: fork, you write the task in your skill and pick an agent type to execute it. The built-in Explore and Plan agents skip CLAUDE.md and git status to keep their context small, so a forked skill using agent: Explore sees only the SKILL.md content and the agent’s own system prompt. For the inverse, where you define a custom subagent that uses skills as reference material, see Subagents.
+​
+Example: Research skill using Explore agent
+This skill runs research in a forked Explore agent. The skill content becomes the task, and the agent provides read-only tools optimized for codebase exploration:
+---
+name: deep-research
+description: Research a topic thoroughly
+context: fork
+agent: Explore
+---
+
+Research $ARGUMENTS thoroughly:
+
+1. Find relevant files using Glob and Grep
+2. Read and analyze the code
+3. Summarize findings with specific file references
+When this skill runs:
+A new isolated context is created
+The subagent receives the skill content as its prompt (“Research $ARGUMENTS thoroughly…”)
+The agent field determines the execution environment (model, tools, and permissions)
+The subagent summarizes its results and returns them to your main conversation when it finishes
+The agent field specifies which subagent configuration to use. Options include built-in agents (Explore, Plan, general-purpose) or any custom subagent from .claude/agents/. If omitted, uses general-purpose.
+​
+Restrict Claude’s skill access
+By default, Claude can invoke any skill that doesn’t have disable-model-invocation: true set. Skills that define allowed-tools grant Claude access to those tools without per-use approval during the turn that invokes the skill; the grant clears when you send your next message. Your permission settings still govern baseline approval behavior for all other tools. A few built-in commands are also available through the Skill tool, including /init and /security-review. Other built-in commands such as /compact are not.
+Three ways to control which skills Claude can invoke:
+Disable all skills by denying the Skill tool in /permissions:
+# Add to deny rules:
+Skill
+Allow or deny specific skills using permission rules:
+# Allow only specific skills
+Skill(commit)
+Skill(review-pr *)
+
+# Deny specific skills
+Skill(deploy *)
+Permission syntax: Skill(name) for exact match, Skill(name *) for prefix match with any arguments.
+Hide individual skills by adding disable-model-invocation: true to their frontmatter. This removes the skill from Claude’s context entirely.
+The user-invocable field only controls menu visibility, not Skill tool access. Use disable-model-invocation: true to block programmatic invocation.
+​
+Override skill visibility from settings
+The skillOverrides setting controls skill visibility from your settings instead of the skill’s own frontmatter. Use it for skills whose SKILL.md you don’t want to edit, such as ones checked into a shared project repo. The /skills menu writes it for you: highlight a skill and press Space to cycle states, then Enter to save to .claude/settings.local.json.
+Each key is a skill name and each value is one of four states:
+Value	Listed to Claude	In / menu
+"on"	Name and description	Yes
+"name-only"	Name only	Yes
+"user-invocable-only"	Hidden	Yes
+"off"	Hidden	Hidden
+The /skills menu labels the "user-invocable-only" state user-only.
+As of v2.1.199, "off" also hides the skill from the command lists advertised to Remote Control clients and to Agent SDK callers, in addition to the terminal / menu. Invoking a hidden skill by its full name still returns the skillOverrides error instead of running it.
+A skill that is absent from skillOverrides is treated as "on". The example below collapses one skill to its name and turns another off entirely:
+{
+  "skillOverrides": {
+    "legacy-context": "name-only",
+    "deploy": "off"
+  }
+}
+Plugin skills are not affected by skillOverrides. Manage those through /plugin instead.
+​
+Evaluate and iterate on a skill
+Seeing a skill trigger tells you Claude found it, not that it did what you intended. To know a skill is working, measure two things separately: whether Claude invokes it on the prompts it should, and whether the output matches what you expect when it does.
+The check for both is a baseline comparison. Collect a few realistic prompts, run each one in a fresh session with the skill available and again with it disabled, and compare the results. A fresh session matters because leftover context from authoring the skill will mask gaps in the written instructions.
+​
+Run evals with skill-creator
+The skill-creator plugin automates the comparison loop inside Claude Code. Install it from the official marketplace:
+/plugin install skill-creator@claude-plugins-official
+If the install fails, match the message Claude Code reports:
+Marketplace "claude-plugins-official" not found: add the marketplace with /plugin marketplace add anthropics/claude-plugins-official, then retry the install.
+The plugin is not found in the marketplace: check the plugin name. Claude Code refreshes a stale marketplace catalog and retries before reporting this, so if you turned off marketplace auto-update, refresh manually with /plugin marketplace update claude-plugins-official and retry the install.
+If the install summary reports Run /reload-plugins to activate., run that command to make the plugin’s skills available in the current session. Then ask Claude to evaluate an existing skill, for example evaluate my summarize-changes skill with skill-creator. The plugin walks you through writing test cases and runs the loop:
+Test cases: stores prompts, input files, and expected behavior in evals/evals.json inside the skill directory
+Isolated runs: spawns a subagent per test case so each run starts with a clean context, and records token count and duration
+Grading: checks each assertion against the output and writes pass or fail with evidence to grading.json
+Benchmark: aggregates pass rate, time, and tokens for with-skill versus without-skill into benchmark.json so you can compare the pass-rate improvement against the token and time overhead
+Version comparison: runs a blind A/B between two versions of the skill so you can confirm an edit is an improvement before committing it
+Description tuning: generates should-trigger and should-not-trigger prompts, measures the hit rate, and proposes description edits when the skill activates on the wrong requests
+Review viewer: opens an HTML report where you inspect each output and record qualitative feedback that the next iteration reads
+For the eval file format and the full iteration workflow, see Evaluating skill output quality on agentskills.io. For background on the benchmark and comparison modes, see the skill-creator announcement.
+​
+Share skills
+Skills can be distributed at different scopes depending on your audience:
+Project skills: Commit .claude/skills/ to version control
+Plugins: Create a skills/ directory in your plugin
+Managed: Deploy organization-wide through managed settings
+​
+Generate visual output
+Skills can bundle and run scripts in any language, giving Claude capabilities beyond what’s possible in a single prompt. One powerful pattern is generating visual output: interactive HTML files that open in your browser for exploring data, debugging, or creating reports.
+This example creates a codebase explorer: an interactive tree view where you can expand and collapse directories, see file sizes at a glance, and identify file types by color.
+Create the Skill directory:
+mkdir -p ~/.claude/skills/codebase-visualizer/scripts
+Save this to ~/.claude/skills/codebase-visualizer/SKILL.md. The description tells Claude when to activate this Skill, and the instructions tell Claude to run the bundled script. The script path uses ${CLAUDE_SKILL_DIR} so it resolves correctly whether the skill is installed at the personal, project, or plugin level:
+---
+name: codebase-visualizer
+description: Generate an interactive collapsible tree visualization of your codebase. Use when exploring a new repo, understanding project structure, or identifying large files.
+allowed-tools: Bash(python3 *)
+---
+
+# Codebase Visualizer
+
+Generate an interactive HTML tree view that shows your project's file structure with collapsible directories.
+
+## Usage
+
+Run the visualization script from your project root:
+
+```bash
+python3 ${CLAUDE_SKILL_DIR}/scripts/visualize.py .
+```
+
+This creates `codebase-map.html` in the current directory and opens it in your default browser.
+
+## What the visualization shows
+
+- **Collapsible directories**: Click folders to expand/collapse
+- **File sizes**: Displayed next to each file
+- **Colors**: Different colors for different file types
+- **Directory totals**: Shows aggregate size of each folder
+Save this to ~/.claude/skills/codebase-visualizer/scripts/visualize.py. This script scans a directory tree and generates a self-contained HTML file with:
+A summary sidebar showing file count, directory count, total size, and number of file types
+A bar chart breaking down the codebase by file type (top 8 by size)
+A collapsible tree where you can expand and collapse directories, with color-coded file type indicators
+The script requires Python 3 but uses only built-in libraries, so there are no packages to install:
+#!/usr/bin/env python3
+"""Generate an interactive collapsible tree visualization of a codebase."""
+
+import json
+import sys
+import webbrowser
+from html import escape
+from pathlib import Path
+from collections import Counter
+
+IGNORE = {'.git', 'node_modules', '__pycache__', '.venv', 'venv', 'dist', 'build'}
+
+def scan(path: Path, stats: dict) -> dict:
+    result = {"name": path.name, "children": [], "size": 0}
+    try:
+        for item in sorted(path.iterdir()):
+            if item.name in IGNORE or item.name.startswith('.'):
+                continue
+            if item.is_file():
+                size = item.stat().st_size
+                ext = item.suffix.lower() or '(no ext)'
+                result["children"].append({"name": item.name, "size": size, "ext": ext})
+                result["size"] += size
+                stats["files"] += 1
+                stats["extensions"][ext] += 1
+                stats["ext_sizes"][ext] += size
+            elif item.is_dir():
+                stats["dirs"] += 1
+                child = scan(item, stats)
+                if child["children"]:
+                    result["children"].append(child)
+                    result["size"] += child["size"]
+    except PermissionError:
+        pass
+    return result
+
+def generate_html(data: dict, stats: dict, output: Path) -> None:
+    ext_sizes = stats["ext_sizes"]
+    total_size = sum(ext_sizes.values()) or 1
+    sorted_exts = sorted(ext_sizes.items(), key=lambda x: -x[1])[:8]
+    colors = {
+        '.js': '#f7df1e', '.ts': '#3178c6', '.py': '#3776ab', '.go': '#00add8',
+        '.rs': '#dea584', '.rb': '#cc342d', '.css': '#264de4', '.html': '#e34c26',
+        '.json': '#6b7280', '.md': '#083fa1', '.yaml': '#cb171e', '.yml': '#cb171e',
+        '.mdx': '#083fa1', '.tsx': '#3178c6', '.jsx': '#61dafb', '.sh': '#4eaa25',
+    }
+    lang_bars = "".join(
+        f'<div class="bar-row"><span class="bar-label">{ext}</span>'
+        f'<div class="bar" style="width:{(size/total_size)*100}%;background:{colors.get(ext,"#6b7280")}"></div>'
+        f'<span class="bar-pct">{(size/total_size)*100:.1f}%</span></div>'
+        for ext, size in sorted_exts
+    )
+    def fmt(b):
+        if b < 1024: return f"{b} B"
+        if b < 1048576: return f"{b/1024:.1f} KB"
+        return f"{b/1048576:.1f} MB"
+
+    html = f'''<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8"><title>Codebase Explorer</title>
+  <style>
+    body {{ font: 14px/1.5 system-ui, sans-serif; margin: 0; background: #1a1a2e; color: #eee; }}
+    .container {{ display: flex; height: 100vh; }}
+    .sidebar {{ width: 280px; background: #252542; padding: 20px; border-right: 1px solid #3d3d5c; overflow-y: auto; flex-shrink: 0; }}
+    .main {{ flex: 1; padding: 20px; overflow-y: auto; }}
+    h1 {{ margin: 0 0 10px 0; font-size: 18px; }}
+    h2 {{ margin: 20px 0 10px 0; font-size: 14px; color: #888; text-transform: uppercase; }}
+    .stat {{ display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #3d3d5c; }}
+    .stat-value {{ font-weight: bold; }}
+    .bar-row {{ display: flex; align-items: center; margin: 6px 0; }}
+    .bar-label {{ width: 55px; font-size: 12px; color: #aaa; }}
+    .bar {{ height: 18px; border-radius: 3px; }}
+    .bar-pct {{ margin-left: 8px; font-size: 12px; color: #666; }}
+    .tree {{ list-style: none; padding-left: 20px; }}
+    details {{ cursor: pointer; }}
+    summary {{ padding: 4px 8px; border-radius: 4px; }}
+    summary:hover {{ background: #2d2d44; }}
+    .folder {{ color: #ffd700; }}
+    .file {{ display: flex; align-items: center; padding: 4px 8px; border-radius: 4px; }}
+    .file:hover {{ background: #2d2d44; }}
+    .size {{ color: #888; margin-left: auto; font-size: 12px; }}
+    .dot {{ width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }}
+  </style>
+</head><body>
+  <div class="container">
+    <div class="sidebar">
+      <h1>📊 Summary</h1>
+      <div class="stat"><span>Files</span><span class="stat-value">{stats["files"]:,}</span></div>
+      <div class="stat"><span>Directories</span><span class="stat-value">{stats["dirs"]:,}</span></div>
+      <div class="stat"><span>Total size</span><span class="stat-value">{fmt(data["size"])}</span></div>
+      <div class="stat"><span>File types</span><span class="stat-value">{len(stats["extensions"])}</span></div>
+      <h2>By file type</h2>
+      {lang_bars}
+    </div>
+    <div class="main">
+      <h1>📁 {escape(data["name"])}</h1>
+      <ul class="tree" id="root"></ul>
+    </div>
+  </div>
+  <script>
+    const data = {json.dumps(data)};
+    const colors = {json.dumps(colors)};
+    function fmt(b) {{ if (b < 1024) return b + ' B'; if (b < 1048576) return (b/1024).toFixed(1) + ' KB'; return (b/1048576).toFixed(1) + ' MB'; }}
+    function esc(s) {{ return s.replace(/[&<>"']/g, c => ({{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}}[c])); }}
+    function render(node, parent) {{
+      if (node.children) {{
+        const det = document.createElement('details');
+        det.open = parent === document.getElementById('root');
+        det.innerHTML = `<summary><span class="folder">📁 ${{esc(node.name)}}</span><span class="size">${{fmt(node.size)}}</span></summary>`;
+        const ul = document.createElement('ul'); ul.className = 'tree';
+        node.children.sort((a,b) => (b.children?1:0)-(a.children?1:0) || a.name.localeCompare(b.name));
+        node.children.forEach(c => render(c, ul));
+        det.appendChild(ul);
+        const li = document.createElement('li'); li.appendChild(det); parent.appendChild(li);
+      }} else {{
+        const li = document.createElement('li'); li.className = 'file';
+        li.innerHTML = `<span class="dot" style="background:${{colors[node.ext]||'#6b7280'}}"></span>${{esc(node.name)}}<span class="size">${{fmt(node.size)}}</span>`;
+        parent.appendChild(li);
+      }}
+    }}
+    data.children.forEach(c => render(c, document.getElementById('root')));
+  </script>
+</body></html>'''
+    output.write_text(html)
+
+if __name__ == '__main__':
+    target = Path(sys.argv[1] if len(sys.argv) > 1 else '.').resolve()
+    stats = {"files": 0, "dirs": 0, "extensions": Counter(), "ext_sizes": Counter()}
+    data = scan(target, stats)
+    out = Path('codebase-map.html')
+    generate_html(data, stats, out)
+    print(f'Generated {out.absolute()}')
+    webbrowser.open(f'file://{out.absolute()}')
+See all 133 lines
+To test, open Claude Code in any project and ask “Visualize this codebase.” Claude runs the script, which prints the generated file’s path, such as Generated /path/to/codebase-map.html, and opens it in your browser. If you work in a headless environment where no browser opens, the printed path confirms the script succeeded.
+This pattern works for any visual output: dependency graphs, test coverage reports, API documentation, or database schema visualizations. The bundled script does the work while Claude handles orchestration.
+​
+Troubleshooting
+​
+Skill not triggering
+If Claude doesn’t use your skill when expected:
+Check the description includes keywords users would naturally say
+Verify the skill appears in What skills are available?
+Try rephrasing your request to match the description more closely
+Invoke it directly with /skill-name if the skill is user-invocable
+If the frontmatter YAML is malformed, Claude Code loads the skill body with empty metadata, so /skill-name still works but Claude has no description to match against. Run with --debug to see the parse error.
+​
+Skill triggers too often
+If Claude uses your skill when you don’t want it:
+Make the description more specific
+Add disable-model-invocation: true if you only want manual invocation
+​
+Skill descriptions are cut short
+Claude Code loads a listing of skill names and descriptions into context so Claude knows what’s available. The listing always contains every skill name, but if you have many skills, Claude Code shortens descriptions to fit the listing’s character budget, which can strip the keywords Claude needs to match your request. The budget scales at 1% of the model’s context window. When the listing overflows, Claude Code drops descriptions starting with the skills you invoke least, so the skills you use most keep their full text.
+Run /doctor for an estimate of the listing’s context cost and its biggest contributors. When the listing exceeds its budget, Claude Code also writes a warning to the debug log, visible with --debug.
+The Skills row in /context reports the size of the listing after the budget is applied, so it matches what the model receives. Before v2.1.196, the row counted the full text of every description and could show a value several times larger than the configured budget.
+To raise the budget, set the skillListingBudgetFraction setting (e.g. 0.02 = 2%) or the SLASH_COMMAND_TOOL_CHAR_BUDGET environment variable to a fixed character count. To free budget for other skills, set low-priority entries to "name-only" in skillOverrides so they list without a description. You can also trim the description and when_to_use text at the source: put the key use case first, since each entry’s combined text is capped at 1,536 characters regardless of budget. The cap is configurable with skillListingMaxDescChars.
+​
+Related resources
+Debug your configuration: diagnose why a skill isn’t appearing or triggering
+Evaluating skill output quality: the eval file format and iteration workflow on agentskills.io
+Skill authoring best practices: writing guidance that applies across Claude products
+Subagents: delegate tasks to specialized agents
+Plugins: package and distribute skills with other extensions
+Hooks: automate workflows around tool events
+Memory: manage CLAUDE.md files for persistent context
+Commands: reference for built-in commands and bundled skills
+Permissions: control tool and skill access
+Claude Tag skills: project skills committed to a repo also load when that repo is used in a Claude Tag channel
+
+Introduction to Claude Skills
+Learn how to use Claude's Skills feature to create professional documents, analyze data, and automate business workflows with Excel, PowerPoint, and PDF generation.
+
+See it in action: The Skills you'll learn about power Claude's file creation capabilities! Check out Claude Creates Files(opens in new tab) to see how these Skills enable Claude to create and edit documents directly in Claude.ai.
+
+Table of Contents
+Setup & Installation
+Understanding Skills
+Discovering Available Skills
+Quick Start: Excel
+Quick Start: PowerPoint
+Quick Start: PDF
+Troubleshooting
+1. Setup & Installation
+Prerequisites
+Before starting, make sure you have:
+
+Python 3.8 or higher
+An Anthropic API key from console.anthropic.com(opens in new tab)
+Environment Setup (First Time Only)
+If you haven't set up your environment yet, follow these steps:
+
+Step 1: Create Virtual Environment
+# Navigate to the skills directory
+cd /path/to/claude-cookbooks/skills
+# Create virtual environment
+python -m venv venv
+# Activate it
+source venv/bin/activate  # On macOS/Linux
+# OR
+venv\Scripts\activate     # On Windows
+Step 2: Install Dependencies
+# With venv activated, install requirements
+pip install -r requirements.txt
+Step 3: Select Kernel in VSCode/Jupyter
+In VSCode:
+
+Open this notebook
+Click the kernel picker in the top-right (e.g., "Python 3.11.x")
+Select "Python Environments..."
+Choose the ./venv/bin/python interpreter
+In Jupyter:
+
+From the Kernel menu → Change Kernel
+Select the kernel matching your venv
+Step 4: Configure API Key
+# Copy the example file
+cp .env.example .env
+# Edit .env and add your API key:
+# ANTHROPIC_API_KEY=sk-ant-api03-...
+Quick Installation Check
+Run the cell below to verify your environment is set up correctly:
+
+If you see any ❌ or ⚠️ warnings above, please complete the setup steps before continuing.
+
+If anthropic SDK version is too old (needs 0.71.0 or later):
+
+pip install anthropic>=0.71.0
+Then restart the Jupyter kernel to pick up the new version.
+
+API Configuration
+Now let's load the API key and configure the client:
+
+API Configuration
+⚠️ Important: Create a .env file in the skills directory:
+
+# Copy the example file
+cp ../.env.example ../.env
+Then edit ../.env to add your Anthropic API key.
+
+import os
+import sys
+from pathlib import Path
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path.cwd().parent))
+from anthropic import Anthropic
+from dotenv import load_dotenv
+# Import our file utilities
+from file_utils import (
+    download_all_files,
+    extract_file_ids,
+    get_file_info,
+    print_download_summary,
+)
+# Load environment variables from parent directory
+load_dotenv(Path.cwd().parent / ".env")
+API_KEY = os.getenv("ANTHROPIC_API_KEY")
+MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+if not API_KEY:
+    raise ValueError(
+        "ANTHROPIC_API_KEY not found. Copy ../.env.example to ../.env and add your API key."
+    )
+# Initialize client
+# Note: We'll add beta headers per-request when using Skills
+client = Anthropic(api_key=API_KEY)
+# Create outputs directory if it doesn't exist
+OUTPUT_DIR = Path.cwd().parent / "outputs"
+OUTPUT_DIR.mkdir(exist_ok=True)
+print("✓ API key loaded")
+print(f"✓ Using model: {MODEL}")
+print(f"✓ Output directory: {OUTPUT_DIR}")
+print("\n📝 Note: Beta headers will be added per-request when using Skills")
+Test Connection
+Let's verify our API connection works:
+
+# Simple test to verify API connection
+test_response = client.messages.create(
+    model=MODEL,
+    max_tokens=100,
+    messages=[
+        {
+            "role": "user",
+            "content": "Say 'Connection successful!' if you can read this.",
+        }
+    ],
+)
+print("API Test Response:")
+print(test_response.content[0].text)
+print(
+    f"\n✓ Token usage: {test_response.usage.input_tokens} in, {test_response.usage.output_tokens} out"
+)
+2. Understanding Skills
+What are Skills?
+Skills are organized packages of instructions, executable code, and resources that give Claude specialized capabilities for specific tasks. Think of them as "expertise packages" that Claude can discover and load dynamically.
+
+📖 Read our engineering blog post on Equipping agents for the real world with Skills(opens in new tab)
+
+Why Skills Matter
+After learning about MCPs (Model Context Protocol) and tools, you might wonder why Skills are important:
+
+Skills are higher-level than individual tools - they combine instructions, code, and resources
+Skills are composable - multiple skills work together seamlessly
+Skills are efficient - progressive disclosure means you only pay for what you use
+Skills include proven code - helper scripts that work reliably, saving time and reducing errors
+Key Benefits
+Expert-level Performance: Deliver professional results without the learning curve
+Proven Helper Scripts: Skills contain tested, working code that Claude can use immediately
+Organizational Knowledge: Package company workflows and best practices
+Cost Efficiency: Progressive disclosure minimizes token usage
+Reliability: Pre-tested scripts mean fewer errors and consistent results
+Time Savings: Claude uses existing solutions instead of generating code from scratch
+Composable: Multiple skills work together for complex workflows
+Progressive Disclosure Architecture
+Skills use a three-tier loading model:
+
+Progressive Disclosure - How Skills Load
+
+Metadata (name: 64 chars, description: 1024 chars): Claude sees skill name and description
+Full Instructions (<5k tokens): Loaded when skill is relevant
+Linked Files: Additional resources loaded only if needed
+Progressive Disclosure Stages
+
+This keeps operations efficient while providing deep expertise on demand. Initially, Claude sees just the metadata from the YAML frontmatter of SKILL.md. Only when a skill is relevant does Claude load the full contents, including any helper scripts and resources.
+
+Skill Types
+Type	Description	Example
+Anthropic-Managed	Pre-built skills maintained by Anthropic	xlsx, pptx, pdf, docx
+Custom	User-defined skills for specific workflows	Brand guidelines, financial models
+Skills Conceptual Overview
+Skills Conceptual Diagram
+
+This diagram illustrates:
+
+Skill Directory Structure: How Skills are organized with SKILL.md and supporting files
+YAML Frontmatter: The metadata that Claude sees initially
+Progressive Loading: How Skills are discovered and loaded on-demand
+Composability: Multiple Skills working together in a single request
+How Skills Work with Code Execution
+Skills require the code execution tool to be enabled. Here's the typical workflow:
+
+# Use client.beta.messages.create() for Skills support
+response = client.beta.messages.create(
+    model="claude-sonnet-4-6",
+    max_tokens=4096,
+    container={
+        "skills": [
+            {"type": "anthropic", "skill_id": "xlsx", "version": "latest"}
+        ]
+    },
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+    messages=[{"role": "user", "content": "Create an Excel file..."}],
+    # Use betas parameter instead of extra_headers
+    betas=["code-execution-2025-08-25", "files-api-2025-04-14", "skills-2025-10-02"]
+)
+What happens:
+
+Claude receives your request with the xlsx skill loaded
+Claude uses code execution to create the file
+The response includes a file_id for the created file
+You use the Files API to download the file
+Important: Beta API
+
+Use client.beta.messages.create() (not client.messages.create())
+The container parameter is only available in the beta API
+Use the betas parameter to enable beta features:
+code-execution-2025-08-25 - Enables code execution
+files-api-2025-04-14 - Required for downloading files
+skills-2025-10-02 - Enables Skills feature
+⚠️ Note: When using Skills, you MUST include the code_execution tool in your request.
+
+Token Usage Optimization
+Skills dramatically reduce token usage compared to providing instructions in prompts:
+
+Approach	Token Cost	Performance
+Manual instructions	5,000-10,000 tokens/request	Variable quality
+Skills (metadata only)	Minimal (just name/description)	Expert-level
+Skills (full load)	~5,000 tokens when skill is used	Expert-level
+The Big Win: You can pack multiple skills into your prompt without bloating it. Each skill only costs you the metadata (name + description) until you actually use it.
+
+Example: Creating an Excel file with formatting
+
+Without Skills: ~8,000 tokens to explain all Excel features upfront
+With Skills: Minimal metadata overhead initially, ~5,000 tokens only when Excel skill is invoked
+Key Insight: The 98% savings applies to the initial context. Once you use a skill, the full instructions are loaded.
+Additional Benefits:
+
+Skills contain helper scripts that are known to work, improving reliability
+Claude saves time by using proven code patterns instead of generating from scratch
+You get more consistent, professional results
+⏱️ Expected Generation Times
+⚠️ IMPORTANT: Document generation with Skills requires code execution and file creation, which takes time. Be patient and let cells complete.
+
+Observed generation times:
+
+Excel files: ~2 minutes (with charts and formatting)
+PowerPoint presentations: ~1-2 minutes (simple 2-slide presentations with charts)
+PDF documents: ~40-60 seconds (simple documents)
+What to expect:
+
+The cell will show [*] while running
+You may see "Executing..." status for 1-2 minutes
+Do not interrupt the cell - let it complete fully
+💡 Recommendations:
+
+Start simple: Begin with minimal examples to verify your setup
+Gradually increase complexity: Add features incrementally
+Be patient: Operations typically take 40 seconds to 2 minutes
+Note: Very complex documents may take longer - keep examples focused
+3. Discovering Available Skills
+List All Built-in Skills
+Let's discover what Anthropic-managed skills are available:
+
+# List all available Anthropic skills
+# Note: Skills API requires the skills beta header
+client_with_skills_beta = Anthropic(
+    api_key=API_KEY, default_headers={"anthropic-beta": "skills-2025-10-02"}
+)
+skills_response = client_with_skills_beta.beta.skills.list(source="anthropic")
+print("Available Anthropic-Managed Skills:")
+print("=" * 80)
+for skill in skills_response.data:
+    print(f"\n📦 Skill ID: {skill.id}")
+    print(f"   Title: {skill.display_title}")
+    print(f"   Latest Version: {skill.latest_version}")
+    print(f"   Created: {skill.created_at}")
+    # Get version details
+    try:
+        version_info = client_with_skills_beta.beta.skills.versions.retrieve(
+            skill_id=skill.id, version=skill.latest_version
+        )
+        print(f"   Name: {version_info.name}")
+        print(f"   Description: {version_info.description}")
+    except Exception as e:
+        print(f"   (Unable to fetch version details: {e})")
+print(f"\n\n✓ Found {len(skills_response.data)} Anthropic-managed skills")
+Understanding Skill Metadata
+Each skill has:
+
+skill_id: Unique identifier (e.g., "xlsx", "pptx")
+version: Version number or "latest"
+name: Human-readable name
+description: What the skill does
+directory: Skill's folder structure
+Versioning Strategy
+Use "latest" for Anthropic skills (recommended)
+Anthropic updates skills automatically
+Pin specific versions for production stability
+Custom skills use epoch timestamps for versions
+Example: Monthly Budget Spreadsheet
+We'll start with two examples - a simple one-liner and a detailed request.
+
+Simple Example (1-2 lines)
+First, let's see how Skills work with a minimal prompt:
+
+# Simple prompt - Skills handle the complexity
+prompt = "Create a quarterly sales report Excel file with revenue data and a chart"
+Detailed Example
+For more control, you can provide specific requirements:
+
+Income and expense categories
+Formulas for totals
+Basic formatting
+Example: Monthly Budget Spreadsheet
+We'll create a simple budget spreadsheet with:
+
+Income and expense categories
+Formulas for totals
+Basic formatting
+⏱️ Note: Excel generation typically takes 1-2 minutes (with charts and formatting). The cell will show [*] while running - be patient!
+
+# Create an Excel budget spreadsheet
+excel_response = client.beta.messages.create(  # Note: Using beta.messages for Skills support
+    model=MODEL,
+    max_tokens=4096,
+    container={"skills": [{"type": "anthropic", "skill_id": "xlsx", "version": "latest"}]},
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+    messages=[
+        {
+            "role": "user",
+            "content": """Create a monthly budget Excel spreadsheet with the following:
+Income:
+- Salary: $5,000
+- Freelance: $1,200
+- Investments: $300
+Expenses:
+- Rent: $1,500
+- Utilities: $200
+- Groceries: $600
+- Transportation: $300
+- Entertainment: $400
+- Savings: $1,000
+Include:
+1. Formulas to calculate total income and total expenses
+2. A formula for net savings (income - expenses)
+3. Format currency values properly
+4. Add a simple column chart showing income vs expenses
+5. Use professional formatting with headers
+""",
+        }
+    ],
+    # Use betas parameter for beta features
+    betas=["code-execution-2025-08-25", "files-api-2025-04-14", "skills-2025-10-02"],
+)
+print("Excel Response:")
+print("=" * 80)
+for content in excel_response.content:
+    if content.type == "text":
+        print(content.text)
+    elif content.type == "tool_use":
+        print(f"\n🔧 Tool: {content.name}")
+        if hasattr(content, "input"):
+            print(f"   Input preview: {str(content.input)[:200]}...")
+print("\n\n📊 Token Usage:")
+print(f"   Input: {excel_response.usage.input_tokens}")
+print(f"   Output: {excel_response.usage.output_tokens}")
+Download the Excel File
+Now let's extract the file_id and download the generated Excel file:
+
+# Extract file IDs from the response
+file_ids = extract_file_ids(excel_response)
+if file_ids:
+    print(f"✓ Found {len(file_ids)} file(s)\n")
+    # Download all files
+    results = download_all_files(
+        client, excel_response, output_dir=str(OUTPUT_DIR), prefix="budget_"
+    )
+    # Print summary
+    print_download_summary(results)
+    # Show file details
+    for file_id in file_ids:
+        info = get_file_info(client, file_id)
+        if info:
+            print("\n📄 File Details:")
+            print(f"   Filename: {info['filename']}")
+            print(f"   Size: {info['size'] / 1024:.1f} KB")
+            print(f"   Created: {info['created_at']}")
+else:
+    print("❌ No files found in response")
+    print("\nDebug: Response content types:")
+    for i, content in enumerate(excel_response.content):
+        print(f"  {i}. {content.type}")
+✨ What just happened?
+
+Claude used the xlsx skill to create a professional Excel file
+The skill handled all Excel-specific formatting and formulas
+The file was created in Claude's code execution environment
+We extracted the file_id from the response
+We downloaded the file using the Files API
+The file is now saved in outputs/budget_*.xlsx
+Open the file in Excel to see the results!
+
+5. Quick Start: PowerPoint
+Now let's create a PowerPoint presentation using the pptx skill.
+
+Example: Revenue Presentation
+Simple Example (1 line)
+# Minimal prompt - let Skills handle the details
+prompt = "Create an executive summary presentation with 3 slides about Q3 results"
+Detailed Example
+Note: This is intentionally kept simple (2 slides, 1 chart) to minimize generation time and demonstrate the core functionality.
+
+Example: Simple Revenue Presentation
+Note: This is intentionally kept simple (2 slides, 1 chart) to minimize generation time and demonstrate the core functionality.
+
+# Create a PowerPoint presentation
+pptx_response = client.beta.messages.create(
+    model=MODEL,
+    max_tokens=4096,
+    container={"skills": [{"type": "anthropic", "skill_id": "pptx", "version": "latest"}]},
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+    messages=[
+        {
+            "role": "user",
+            "content": """Create a simple 2-slide PowerPoint presentation:
+Slide 1: Title slide
+- Title: "Q3 2025 Results"
+- Subtitle: "Acme Corporation"
+Slide 2: Revenue Overview
+- Title: "Quarterly Revenue"
+- Add a simple column chart showing:
+  - Q1: $12M
+  - Q2: $13M
+  - Q3: $14M
+Use clean, professional formatting.
+""",
+        }
+    ],
+    betas=["code-execution-2025-08-25", "files-api-2025-04-14", "skills-2025-10-02"],
+)
+print("PowerPoint Response:")
+print("=" * 80)
+for content in pptx_response.content:
+    if content.type == "text":
+        print(content.text)
+print("\n\n📊 Token Usage:")
+print(f"   Input: {pptx_response.usage.input_tokens}")
+print(f"   Output: {pptx_response.usage.output_tokens}")
+Download the PowerPoint File
+# Download the PowerPoint file
+file_ids = extract_file_ids(pptx_response)
+if file_ids:
+    results = download_all_files(
+        client, pptx_response, output_dir=str(OUTPUT_DIR), prefix="q3_review_"
+    )
+    print_download_summary(results)
+    print("\n✅ Open the presentation in PowerPoint or Google Slides to view!")
+else:
+    print("❌ No files found in response")
+⏱️ Note: PDF generation typically takes 1-2 minutes for simple documents. The cell will show [*] while running - be patient!
+
+Example: PDF Documents
+Simple Example (1 line)
+# Quick PDF generation
+prompt = "Create a professional invoice PDF for $500 consulting services"
+Detailed Example: Receipt
+Note: This is intentionally kept simple to ensure clean formatting.
+
+Example: Simple Receipt
+Note: This is intentionally kept simple to ensure clean formatting.
+
+# Create a PDF receipt
+pdf_response = client.beta.messages.create(
+    model=MODEL,
+    max_tokens=4096,
+    container={"skills": [{"type": "anthropic", "skill_id": "pdf", "version": "latest"}]},
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+    messages=[
+        {
+            "role": "user",
+            "content": """Create a simple receipt PDF:
+RECEIPT
+Acme Corporation
+Date: January 15, 2025
+Receipt #: RCT-2025-001
+Customer: Jane Smith
+Items:
+- Product A: $50.00
+- Product B: $75.00
+- Product C: $25.00
+Subtotal: $150.00
+Tax (8%): $12.00
+Total: $162.00
+Thank you for your business!
+Use simple, clean formatting with clear sections.
+""",
+        }
+    ],
+    betas=["code-execution-2025-08-25", "files-api-2025-04-14", "skills-2025-10-02"],
+)
+print("PDF Response:")
+print("=" * 80)
+for content in pdf_response.content:
+    if content.type == "text":
+        print(content.text)
+print("\n\n📊 Token Usage:")
+print(f"   Input: {pdf_response.usage.input_tokens}")
+print(f"   Output: {pdf_response.usage.output_tokens}")
+Download and Verify the PDF
+# Download the PDF file
+file_ids = extract_file_ids(pdf_response)
+if file_ids:
+    results = download_all_files(
+        client, pdf_response, output_dir=str(OUTPUT_DIR), prefix="receipt_"
+    )
+    print_download_summary(results)
+    # Verify PDF integrity
+    for result in results:
+        if result["success"]:
+            file_path = result["output_path"]
+            file_size = result["size"]
+            # Basic PDF validation
+            with open(file_path, "rb") as f:
+                header = f.read(5)
+                if header == b"%PDF-":
+                    print(f"\n✅ PDF file is valid: {file_path}")
+                    print(f"   File size: {file_size / 1024:.1f} KB")
+                else:
+                    print(f"\n⚠️ File may not be a valid PDF: {file_path}")
+else:
+    print("❌ No files found in response")
+7. Troubleshooting
+Common Issues and Solutions
+Issue 1: API Key Not Found
+Error:
+
+ValueError: ANTHROPIC_API_KEY not found
+Solution:
+
+Ensure .env file exists in the parent directory
+Check that ANTHROPIC_API_KEY=sk-ant-api03-... is set
+Restart the Jupyter kernel after creating/editing .env
+Issue 2: Container Parameter Not Recognized
+Error:
+
+TypeError: Messages.create() got an unexpected keyword argument 'container'
+Solution:
+Use client.beta.messages.create() instead of client.messages.create():
+
+# ✅ Correct - use beta.messages
+response = client.beta.messages.create(
+    model=MODEL,
+    container={"skills": [...]},
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+    messages=[...],
+    betas=["code-execution-2025-08-25", "files-api-2025-04-14", "skills-2025-10-02"]
+)
+# ❌ Incorrect - regular messages doesn't support container
+response = client.messages.create(
+    model=MODEL,
+    container={"skills": [...]},  # Error!
+    messages=[...]
+)
+Issue 3: Skills Beta Requires Code Execution Tool
+Error:
+
+BadRequestError: Skills beta requires the code_execution tool to be included in the request.
+Solution:
+When using Skills, you MUST include the code_execution tool:
+
+# ✅ Correct
+response = client.beta.messages.create(
+    model=MODEL,
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+    messages=[...],
+    betas=["...", "skills-2025-10-02"]
+)
+# ❌ Incorrect - missing code_execution tool
+response = client.beta.messages.create(
+    model=MODEL,
+    messages=[...],
+    betas=["...", "skills-2025-10-02"]
+)
+Issue 4: No Files Found in Response
+Error:
+
+❌ No files found in response
+Solution:
+
+Check that code execution tool is included in the request
+Verify the skill was loaded (check response content)
+Ensure the task actually requires file creation
+Look for error messages in the response text
+Issue 5: File Download Failed
+Error:
+
+Error retrieving file: File not found
+Solution:
+
+Files may have a limited lifetime on Anthropic's servers
+Download files immediately after creation
+Check file_id is correctly extracted from response
+Verify Files API beta is included in betas list
+Token Optimization Tips
+Use "latest" version for Anthropic skills - automatically optimized
+Batch operations - Create multiple files in one conversation when possible
+Reuse containers - Use container.id from previous responses to avoid reloading skills
+Be specific - Clear instructions mean fewer iterations
+API Rate Limiting
+If you encounter rate limits:
+
+Implement exponential backoff for retries
+Use batch processing for multiple files
+Consider upgrading your API tier for higher limits
+Next Steps
+🎉 Congratulations! You've learned the basics of Claude Skills.
+
+See Skills in Action
+Check out the official announcement to see how these Skills power Claude's file creation capabilities:
+
+Claude Creates Files(opens in new tab) - See how Skills enable Claude to create and edit Excel, PowerPoint, and PDF files directly
+Continue Learning:
+Notebook 2: Financial Applications(opens in new tab) - Real-world business use cases with financial data
+Notebook 3: Custom Skills Development(opens in new tab) - Build your own specialized skills
+Support Articles:
+📚 Teach Claude your way of working using Skills(opens in new tab) - User guide for working with Skills
+🛠️ How to create a skill with Claude through conversation(opens in new tab) - Interactive skill creation guide
+Resources:
+Claude API Documentation(opens in new tab)
+Skills Documentation(opens in new tab)
+Skills Best Practices(opens in new tab)
+Files API Documentation(opens in new tab)
+Claude Support(opens in new tab)
+Try These Experiments:
+Start with simple one-line prompts to see Skills in action
+Modify the budget example to include more categories
+Create a presentation with your own data
+Generate a PDF report combining text and tables
+Use multiple skills together in a single request
+
+
+Skill authoring best practices
+Learn how to write effective Skills that Claude can discover and use successfully.
+Good Skills are concise, well-structured, and tested with real usage. This guide provides practical authoring decisions to help you write Skills that Claude can discover and use effectively.
+
+For conceptual background on how Skills work, see the Skills overview.
+
+Core principles
+Concise is key
+The context window is a public good. Your Skill shares the context window with everything else Claude needs to know, including:
+
+The system prompt
+Conversation history
+Other Skills' metadata
+Your actual request
+Not every token in your Skill has an immediate cost. At startup, only the metadata (name and description) from all Skills is pre-loaded. Claude reads SKILL.md only when the Skill becomes relevant, and reads additional files only as needed. However, being concise in SKILL.md still matters: once Claude loads it, every token competes with conversation history and other context.
+
+Default assumption: Claude is already very smart
+
+Only add context Claude doesn't already have. Challenge each piece of information:
+
+"Does Claude really need this explanation?"
+"Can I assume Claude knows this?"
+"Does this paragraph justify its token cost?"
+Good example: Concise (approximately 50 tokens):
+
+## Extract PDF text
+
+Use pdfplumber for text extraction:
+
+```python
+import pdfplumber
+
+with pdfplumber.open("file.pdf") as pdf:
+    text = pdf.pages[0].extract_text()
+```
+Bad example: Too verbose (approximately 150 tokens):
+
+## Extract PDF text
+
+PDF (Portable Document Format) files are a common file format that contains
+text, images, and other content. To extract text from a PDF, you'll need to
+use a library. There are many libraries available for PDF processing, but
+pdfplumber is recommended because it's easy to use and handles most cases well.
+First, you'll need to install it using pip. Then you can use the code below...
+The concise version assumes Claude already has information about PDFs and how libraries work.
+
+Set appropriate degrees of freedom
+Match the level of specificity to the task's fragility and variability.
+
+High freedom (text-based instructions):
+
+Use when:
+
+Multiple approaches are valid
+Decisions depend on context
+Heuristics guide the approach
+Example:
+
+## Code review process
+
+1. Analyze the code structure and organization
+2. Check for potential bugs or edge cases
+3. Suggest improvements for readability and maintainability
+4. Verify adherence to project conventions
+Medium freedom (pseudocode or scripts with parameters):
+
+Use when:
+
+A preferred pattern exists
+Some variation is acceptable
+Configuration affects behavior
+Example:
+
+## Generate report
+
+Use this template and customize as needed:
+
+```python
+def generate_report(data, format="markdown", include_charts=True):
+    # Process data
+    # Generate output in specified format
+    # Optionally include visualizations
+```
+Low freedom (specific scripts, few or no parameters):
+
+Use when:
+
+Operations are fragile and error-prone
+Consistency is critical
+A specific sequence must be followed
+Example:
+
+## Database migration
+
+Run exactly this script:
+
+```bash
+python scripts/migrate.py --verify --backup
+```
+
+Do not modify the command or add additional flags.
+Analogy: Think of Claude as a robot exploring a path:
+
+Narrow bridge with cliffs on both sides: There's only one safe way forward. Provide specific guardrails and exact instructions (low freedom). Example: database migrations that must run in exact sequence.
+Open field with no hazards: Many paths lead to success. Give general direction and trust Claude to find the best route (high freedom). Example: code reviews where context determines the best approach.
+Test with all models you plan to use
+Skills act as additions to models, so effectiveness depends on the underlying model. Test your Skill with all the models you plan to use it with.
+
+Testing considerations by model:
+
+Claude Haiku (fast, economical): Does the Skill provide enough guidance?
+Claude Sonnet (balanced): Is the Skill clear and efficient?
+Claude Opus (powerful reasoning): Does the Skill avoid over-explaining?
+What works perfectly for Opus might need more detail for Haiku. If you plan to use your Skill across multiple models, aim for instructions that work well with all of them.
+
+Skill structure
+YAML Frontmatter: The SKILL.md frontmatter requires two fields:
+
+name:
+
+Maximum 64 characters
+Must contain only lowercase letters, numbers, and hyphens
+Cannot contain XML tags
+Cannot contain reserved words: "anthropic", "claude"
+description:
+
+Must be non-empty
+Maximum 1,024 characters
+Cannot contain XML tags
+Should describe what the Skill does and when to use it
+For complete Skill structure details, see the Skills overview.
+
+Naming conventions
+Use consistent naming patterns to make Skills easier to reference and discuss. Consider using gerund form (verb + -ing) for Skill names, as this clearly describes the activity or capability the Skill provides.
+
+Remember that the name field must use lowercase letters, numbers, and hyphens only.
+
+Good naming examples (gerund form):
+
+processing-pdfs
+analyzing-spreadsheets
+managing-databases
+testing-code
+writing-documentation
+Acceptable alternatives:
+
+Noun phrases: pdf-processing, spreadsheet-analysis
+Action-oriented: process-pdfs, analyze-spreadsheets
+Avoid:
+
+Vague names: helper, utils, tools
+Overly generic: documents, data, files
+Reserved words: anthropic-helper, claude-tools
+Inconsistent patterns within your skill collection
+Consistent naming makes it easier to:
+
+Reference Skills in documentation and conversations
+Understand what a Skill does at a glance
+Organize and search through multiple Skills
+Maintain a professional, cohesive skill library
+Writing effective descriptions
+The description field enables Skill discovery and should include both what the Skill does and when to use it.
+
+Always write in third person. The description is injected into the system prompt, and inconsistent point-of-view can cause discovery problems.
+
+Good: "Processes Excel files and generates reports"
+Avoid: "I can help you process Excel files"
+Avoid: "You can use this to process Excel files"
+Be specific and include key terms. Include both what the Skill does and specific triggers/contexts for when to use it.
+
+Each Skill has exactly one description field. The description is critical for skill selection: Claude uses it to choose the right Skill from potentially 100+ available Skills. Your description must provide enough detail for Claude to know when to select this Skill, while the rest of SKILL.md provides the implementation details.
+
+Effective examples:
+
+PDF Processing skill:
+
+description: Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.
+Excel Analysis skill:
+
+description: Analyze Excel spreadsheets, create pivot tables, generate charts. Use when analyzing Excel files, spreadsheets, tabular data, or .xlsx files.
+Git Commit Helper skill:
+
+description: Generate descriptive commit messages by analyzing git diffs. Use when the user asks for help writing commit messages or reviewing staged changes.
+Avoid vague descriptions like these:
+
+description: Helps with documents
+description: Processes data
+description: Does stuff with files
+Progressive disclosure patterns
+SKILL.md serves as an overview that points Claude to detailed materials as needed, like a table of contents in an onboarding guide. For an explanation of how progressive disclosure works, see How Skills work in the overview.
+
+Practical guidance:
+
+Keep SKILL.md body under 500 lines for optimal performance
+Split content into separate files when approaching this limit
+Use the following patterns to organize instructions, code, and resources effectively
+Visual overview: From simple to complex
+A basic Skill starts with just a SKILL.md file containing metadata and instructions:
+
+Simple SKILL.md file showing YAML frontmatter and markdown body
+
+As your Skill grows, you can bundle additional content that Claude loads only when needed:
+
+Bundling additional reference files like reference.md and forms.md.
+
+The complete Skill directory structure might look like this:
+
+pdf/
+├── SKILL.md              # Main instructions (loaded when triggered)
+├── FORMS.md              # Form-filling guide (loaded as needed)
+├── reference.md          # API reference (loaded as needed)
+├── examples.md           # Usage examples (loaded as needed)
+└── scripts/
+    ├── analyze_form.py   # Utility script (executed, not loaded)
+    ├── fill_form.py      # Form filling script
+    └── validate.py       # Validation script
+Pattern 1: High-level guide with references
+---
+name: pdf-processing
+description: Extracts text and tables from PDF files, fills forms, and merges documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.
+---
+
+# PDF Processing
+
+## Quick start
+
+Extract text with pdfplumber:
+```python
+import pdfplumber
+with pdfplumber.open("file.pdf") as pdf:
+    text = pdf.pages[0].extract_text()
+```
+
+## Advanced features
+
+**Form filling**: See [FORMS.md](FORMS.md) for complete guide
+**API reference**: See [REFERENCE.md](REFERENCE.md) for all methods
+**Examples**: See [EXAMPLES.md](EXAMPLES.md) for common patterns
+Claude loads FORMS.md, REFERENCE.md, or EXAMPLES.md only when needed.
+
+Pattern 2: Domain-specific organization
+For Skills with multiple domains, organize content by domain to avoid loading irrelevant context. When a user asks about sales metrics, Claude only needs to read sales-related schemas, not finance or marketing data. This keeps token usage low and context focused.
+
+bigquery-skill/
+├── SKILL.md (overview and navigation)
+└── reference/
+    ├── finance.md (revenue, billing metrics)
+    ├── sales.md (opportunities, pipeline)
+    ├── product.md (API usage, features)
+    └── marketing.md (campaigns, attribution)
+SKILL.md
+# BigQuery Data Analysis
+
+## Available datasets
+
+**Finance**: Revenue, ARR, billing → See [reference/finance.md](reference/finance.md)
+**Sales**: Opportunities, pipeline, accounts → See [reference/sales.md](reference/sales.md)
+**Product**: API usage, features, adoption → See [reference/product.md](reference/product.md)
+**Marketing**: Campaigns, attribution, email → See [reference/marketing.md](reference/marketing.md)
+
+## Quick search
+
+Find specific metrics using grep:
+
+```bash
+grep -i "revenue" reference/finance.md
+grep -i "pipeline" reference/sales.md
+grep -i "api usage" reference/product.md
+```
+Pattern 3: Conditional details
+Show basic content, link to advanced content:
+
+# DOCX Processing
+
+## Creating documents
+
+Use docx-js for new documents. See [DOCX-JS.md](DOCX-JS.md).
+
+## Editing documents
+
+For simple edits, modify the XML directly.
+
+**For tracked changes**: See [REDLINING.md](REDLINING.md)
+**For OOXML details**: See [OOXML.md](OOXML.md)
+Claude reads REDLINING.md or OOXML.md only when the user needs those features.
+
+Avoid deeply nested references
+Claude may partially read files when they're referenced from other referenced files. When encountering nested references, Claude might use commands like head -100 to preview content rather than reading entire files, resulting in incomplete information.
+
+Keep references one level deep from SKILL.md. All reference files should link directly from SKILL.md to ensure Claude reads complete files when needed.
+
+Bad example: Too deep:
+
+# SKILL.md
+See [advanced.md](advanced.md)...
+
+# advanced.md
+See [details.md](details.md)...
+
+# details.md
+Here's the actual information...
+Good example: One level deep:
+
+# SKILL.md
+
+**Basic usage**: [instructions in SKILL.md]
+**Advanced features**: See [advanced.md](advanced.md)
+**API reference**: See [reference.md](reference.md)
+**Examples**: See [examples.md](examples.md)
+Structure longer reference files with table of contents
+For reference files longer than 100 lines, include a table of contents at the top. This ensures Claude can see the full scope of available information even when previewing with partial reads.
+
+Example:
+
+# API Reference
+
+## Contents
+- Authentication and setup
+- Core methods (create, read, update, delete)
+- Advanced features (batch operations, webhooks)
+- Error handling patterns
+- Code examples
+
+## Authentication and setup
+...
+
+## Core methods
+...
+Claude can then read the complete file or jump to specific sections as needed.
+
+For details on how this filesystem-based architecture enables progressive disclosure, see the Runtime environment section later in this guide.
+
+Workflows and feedback loops
+Use workflows for complex tasks
+Break complex operations into clear, sequential steps. For particularly complex workflows, provide a checklist that Claude can copy into its response and check off as it progresses.
+
+Example 1: Research synthesis workflow (for Skills without code):
+
+## Research synthesis workflow
+
+Copy this checklist and track your progress:
+
+```
+Research Progress:
+- [ ] Step 1: Read all source documents
+- [ ] Step 2: Identify key themes
+- [ ] Step 3: Cross-reference claims
+- [ ] Step 4: Create structured summary
+- [ ] Step 5: Verify citations
+```
+
+**Step 1: Read all source documents**
+
+Review each document in the `sources/` directory. Note the main arguments and supporting evidence.
+
+**Step 2: Identify key themes**
+
+Look for patterns across sources. What themes appear repeatedly? Where do sources agree or disagree?
+
+**Step 3: Cross-reference claims**
+
+For each major claim, verify it appears in the source material. Note which source supports each point.
+
+**Step 4: Create structured summary**
+
+Organize findings by theme. Include:
+- Main claim
+- Supporting evidence from sources
+- Conflicting viewpoints (if any)
+
+**Step 5: Verify citations**
+
+Check that every claim references the correct source document. If citations are incomplete, return to Step 3.
+This example shows how workflows apply to analysis tasks that don't require code. The checklist pattern works for any complex, multistep process.
+
+Example 2: PDF form filling workflow (for Skills with code):
+
+## PDF form filling workflow
+
+Copy this checklist and check off items as you complete them:
+
+```
+Task Progress:
+- [ ] Step 1: Analyze the form (run analyze_form.py)
+- [ ] Step 2: Create field mapping (edit fields.json)
+- [ ] Step 3: Validate mapping (run validate_fields.py)
+- [ ] Step 4: Fill the form (run fill_form.py)
+- [ ] Step 5: Verify output (run verify_output.py)
+```
+
+**Step 1: Analyze the form**
+
+Run: `python scripts/analyze_form.py input.pdf`
+
+This extracts form fields and their locations, saving to `fields.json`.
+
+**Step 2: Create field mapping**
+
+Edit `fields.json` to add values for each field.
+
+**Step 3: Validate mapping**
+
+Run: `python scripts/validate_fields.py fields.json`
+
+Fix any validation errors before continuing.
+
+**Step 4: Fill the form**
+
+Run: `python scripts/fill_form.py input.pdf fields.json output.pdf`
+
+**Step 5: Verify output**
+
+Run: `python scripts/verify_output.py output.pdf`
+
+If verification fails, return to Step 2.
+Clear steps prevent Claude from skipping critical validation. The checklist helps both Claude and you track progress through multistep workflows.
+
+Implement feedback loops
+Common pattern: Run validator → fix errors → repeat
+
+This pattern greatly improves output quality.
+
+Example 1: Style guide compliance (for Skills without code):
+
+## Content review process
+
+1. Draft your content following the guidelines in STYLE_GUIDE.md
+2. Review against the checklist:
+   - Check terminology consistency
+   - Verify examples follow the standard format
+   - Confirm all required sections are present
+3. If issues found:
+   - Note each issue with specific section reference
+   - Revise the content
+   - Review the checklist again
+4. Only proceed when all requirements are met
+5. Finalize and save the document
+This shows the validation loop pattern using reference documents instead of scripts. The "validator" is STYLE_GUIDE.md, and Claude performs the check by reading and comparing.
+
+Example 2: Document editing process (for Skills with code):
+
+## Document editing process
+
+1. Make your edits to `word/document.xml`
+2. **Validate immediately**: `python ooxml/scripts/validate.py unpacked_dir/`
+3. If validation fails:
+   - Review the error message carefully
+   - Fix the issues in the XML
+   - Run validation again
+4. **Only proceed when validation passes**
+5. Rebuild: `python ooxml/scripts/pack.py unpacked_dir/ output.docx`
+6. Test the output document
+The validation loop catches errors early.
+
+Content guidelines
+Avoid time-sensitive information
+Don't include information that will become outdated:
+
+Bad example: Time-sensitive (will become wrong):
+
+If you're doing this before August 2025, use the old API.
+After August 2025, use the new API.
+Good example (use "old patterns" section):
+
+## Current method
+
+Use the v2 API endpoint: `api.example.com/v2/messages`
+
+## Old patterns
+
+<details>
+<summary>Legacy v1 API (deprecated 2025-08)</summary>
+
+The v1 API used: `api.example.com/v1/messages`
+
+This endpoint is no longer supported.
+</details>
+The old patterns section provides historical context without cluttering the main content.
+
+Use consistent terminology
+Choose one term and use it throughout the Skill:
+
+Good - Consistent:
+
+Always "API endpoint"
+Always "field"
+Always "extract"
+Bad - Inconsistent:
+
+Mix "API endpoint", "URL", "API route", "path"
+Mix "field", "box", "element", "control"
+Mix "extract", "pull", "get", "retrieve"
+Consistency helps Claude parse and follow instructions.
+
+Common patterns
+Template pattern
+Provide templates for output format. Match the level of strictness to your needs.
+
+For strict requirements (such as API responses or data formats):
+
+## Report structure
+
+ALWAYS use this exact template structure:
+
+```markdown
+# [Analysis Title]
+
+## Executive summary
+[One-paragraph overview of key findings]
+
+## Key findings
+- Finding 1 with supporting data
+- Finding 2 with supporting data
+- Finding 3 with supporting data
+
+## Recommendations
+1. Specific actionable recommendation
+2. Specific actionable recommendation
+```
+For flexible guidance (when adaptation is useful):
+
+## Report structure
+
+Here is a sensible default format, but use your best judgment based on the analysis:
+
+```markdown
+# [Analysis Title]
+
+## Executive summary
+[Overview]
+
+## Key findings
+[Adapt sections based on what you discover]
+
+## Recommendations
+[Tailor to the specific context]
+```
+
+Adjust sections as needed for the specific analysis type.
+Examples pattern
+For Skills where output quality depends on seeing examples, provide input/output pairs just like in regular prompting:
+
+## Commit message format
+
+Generate commit messages following these examples:
+
+**Example 1:**
+Input: Added user authentication with JWT tokens
+Output:
+```
+feat(auth): implement JWT-based authentication
+
+Add login endpoint and token validation middleware
+```
+
+**Example 2:**
+Input: Fixed bug where dates displayed incorrectly in reports
+Output:
+```
+fix(reports): correct date formatting in timezone conversion
+
+Use UTC timestamps consistently across report generation
+```
+
+**Example 3:**
+Input: Updated dependencies and refactored error handling
+Output:
+```
+chore: update dependencies and refactor error handling
+
+- Upgrade lodash to 4.17.21
+- Standardize error response format across endpoints
+```
+
+Follow this style: type(scope): brief description, then detailed explanation.
+Examples convey the desired style and level of detail to Claude more clearly than descriptions alone.
+
+Conditional workflow pattern
+Guide Claude through decision points:
+
+## Document modification workflow
+
+1. Determine the modification type:
+
+   **Creating new content?** → Follow "Creation workflow" below
+   **Editing existing content?** → Follow "Editing workflow" below
+
+2. Creation workflow:
+   - Use docx-js library
+   - Build document from scratch
+   - Export to .docx format
+
+3. Editing workflow:
+   - Unpack existing document
+   - Modify XML directly
+   - Validate after each change
+   - Repack when complete
+If workflows become large or complicated with many steps, consider pushing them into separate files and tell Claude to read the appropriate file based on the task at hand.
+
+Evaluation and iteration
+Build evaluations first
+Create evaluations BEFORE writing extensive documentation. This ensures your Skill solves real problems rather than documenting imagined ones.
+
+Evaluation-driven development:
+
+Identify gaps: Run Claude on representative tasks without a Skill. Document specific failures or missing context
+Create evaluations: Build three scenarios that test these gaps
+Establish baseline: Measure Claude's performance without the Skill
+Write minimal instructions: Create just enough content to address the gaps and pass evaluations
+Iterate: Execute evaluations, compare against baseline, and refine
+This approach ensures you're solving actual problems rather than anticipating requirements that may never materialize.
+
+Evaluation structure:
+
+{
+  "skills": ["pdf-processing"],
+  "query": "Extract all text from this PDF file and save it to output.txt",
+  "files": ["test-files/document.pdf"],
+  "expected_behavior": [
+    "Successfully reads the PDF file using an appropriate PDF processing library or command-line tool",
+    "Extracts text content from all pages in the document without missing any pages",
+    "Saves the extracted text to a file named output.txt in a clear, readable format"
+  ]
+}
+This example demonstrates a data-driven evaluation with a simple testing rubric. There is not currently a built-in way to run these evaluations. Users can create their own evaluation system. Evaluations are your source of truth for measuring Skill effectiveness.
+
+Develop Skills iteratively with Claude
+The most effective Skill development process involves Claude itself. Work with one instance of Claude ("Claude A") to create a Skill that is used by other instances ("Claude B"). Claude A helps you design and refine instructions, while Claude B tests them in real tasks. This works because Claude models understand both how to write effective agent instructions and what information agents need.
+
+Creating a new Skill:
+
+Complete a task without a Skill: Work through a problem with Claude A using normal prompting. As you work, you'll naturally provide context, explain preferences, and share procedural knowledge. Notice what information you repeatedly provide.
+
+Identify the reusable pattern: After completing the task, identify what context you provided that would be useful for similar future tasks.
+
+Example: If you worked through a BigQuery analysis, you might have provided table names, field definitions, filtering rules (such as "always exclude test accounts"), and common query patterns.
+
+Ask Claude A to create a Skill: "Create a Skill that captures this BigQuery analysis pattern we just used. Include the table schemas, naming conventions, and the rule about filtering test accounts."
+
+Claude models understand the Skill format and structure natively. You don't need special system prompts or a "writing skills" skill to get Claude to help create Skills. Simply ask Claude to create a Skill and it generates properly structured SKILL.md content with appropriate frontmatter and body content.
+
+Review for conciseness: Check that Claude A hasn't added unnecessary explanations. Ask: "Remove the explanation about what win rate means - Claude already knows that."
+
+Improve information architecture: Ask Claude A to organize the content more effectively. For example: "Organize this so the table schema is in a separate reference file. We might add more tables later."
+
+Test on similar tasks: Use the Skill with Claude B (a fresh instance with the Skill loaded) on related use cases. Observe whether Claude B finds the right information, applies rules correctly, and handles the task successfully.
+
+Iterate based on observation: If Claude B struggles or misses something, return to Claude A with specifics: "When Claude used this Skill, it forgot to filter by date for Q4. Should we add a section about date filtering patterns?"
+
+Iterating on existing Skills:
+
+The same hierarchical pattern continues when improving Skills. You alternate between:
+
+Working with Claude A (the expert who helps refine the Skill)
+Testing with Claude B (the agent using the Skill to perform real work)
+Observing Claude B's behavior and bringing insights back to Claude A
+Use the Skill in real workflows: Give Claude B (with the Skill loaded) actual tasks, not test scenarios
+
+Observe Claude B's behavior: Note where it struggles, succeeds, or makes unexpected choices
+
+Example observation: "When I asked Claude B for a regional sales report, it wrote the query but forgot to filter out test accounts, even though the Skill mentions this rule."
+
+Return to Claude A for improvements: Share the current SKILL.md and describe what you observed. Ask: "I noticed Claude B forgot to filter test accounts when I asked for a regional report. The Skill mentions filtering, but maybe it's not prominent enough?"
+
+Review Claude A's suggestions: Claude A might suggest reorganizing to make rules more prominent, using stronger language such as "MUST filter" instead of "always filter," or restructuring the workflow section.
+
+Apply and test changes: Update the Skill with Claude A's refinements, then test again with Claude B on similar requests
+
+Repeat based on usage: Continue this observe-refine-test cycle as you encounter new scenarios. Each iteration improves the Skill based on real agent behavior, not assumptions.
+
+Gathering team feedback:
+
+Share Skills with teammates and observe their usage
+Ask: Does the Skill activate when expected? Are instructions clear? What's missing?
+Incorporate feedback to address gaps in your own usage patterns
+Why this approach works: Claude A understands agent needs, you provide domain expertise, Claude B reveals gaps through real usage, and iterative refinement improves Skills based on observed behavior rather than assumptions.
+
+Observe how Claude navigates Skills
+As you iterate on Skills, pay attention to how Claude actually uses them in practice. Watch for:
+
+Unexpected exploration paths: Does Claude read files in an order you didn't anticipate? This might indicate your structure isn't as intuitive as you thought
+Missed connections: Does Claude fail to follow references to important files? Your links might need to be more explicit or prominent
+Overreliance on certain sections: If Claude repeatedly reads the same file, consider whether that content should be in the main SKILL.md instead
+Ignored content: If Claude never accesses a bundled file, it might be unnecessary or poorly signaled in the main instructions
+Iterate based on these observations rather than assumptions. The 'name' and 'description' in your Skill's metadata are particularly critical. Claude uses these when determining whether to trigger the Skill in response to the current task. Make sure they clearly describe what the Skill does and when it should be used.
+
+Anti-patterns to avoid
+Avoid Windows-style paths
+Always use forward slashes in file paths, even on Windows:
+
+✓ Good: scripts/helper.py, reference/guide.md
+✗ Avoid: scripts\helper.py, reference\guide.md
+Unix-style paths work across all platforms, while Windows-style paths cause errors on Unix systems.
+
+Avoid offering too many options
+Don't present multiple approaches unless necessary:
+
+**Bad example: Too many choices** (confusing):
+"You can use pypdf, or pdfplumber, or PyMuPDF, or pdf2image, or..."
+
+**Good example: Provide a default** (with escape hatch):
+"Use pdfplumber for text extraction:
+```python
+import pdfplumber
+```
+
+For scanned PDFs requiring OCR, use pdf2image with pytesseract instead."
+Advanced: Skills with executable code
+The following sections focus on Skills that include executable scripts. If your Skill uses only markdown instructions, skip to Checklist for effective Skills.
+
+Solve, don't defer
+When writing scripts for Skills, handle error conditions rather than deferring to Claude.
+
+Good example: Handle errors explicitly:
+
+def process_file(path):
+    """Process a file, creating it if it doesn't exist."""
+    try:
+        with open(path) as f:
+            return f.read()
+    except FileNotFoundError:
+        # Create file with default content instead of failing
+        print(f"File {path} not found, creating default")
+        with open(path, "w") as f:
+            f.write("")
+        return ""
+    except PermissionError:
+        # Provide alternative instead of failing
+        print(f"Cannot access {path}, using default")
+        return ""
+Bad example: Defer to Claude:
+
+def process_file(path):
+    # Just fail and let Claude figure it out
+    return open(path).read()
+Configuration parameters should also be justified and documented to avoid "voodoo constants" (Ousterhout's law). If you don't know the right value, how will Claude determine it?
+
+Good example: Self-documenting:
+
+# HTTP requests typically complete within 30 seconds
+# Longer timeout accounts for slow connections
+REQUEST_TIMEOUT = 30
+
+# Three retries balances reliability vs speed
+# Most intermittent failures resolve by the second retry
+MAX_RETRIES = 3
+Bad example: Magic numbers:
+
+TIMEOUT = 47  # Why 47?
+RETRIES = 5  # Why 5?
+Provide utility scripts
+Even if Claude could write a script, pre-made scripts offer advantages:
+
+Benefits of utility scripts:
+
+More reliable than generated code
+Save tokens (no need to include code in context)
+Save time (no code generation required)
+Ensure consistency across uses
+Bundling executable scripts alongside instruction files
+
+The preceding diagram shows how executable scripts work alongside instruction files. The instruction file (forms.md) references the script, and Claude can execute it without loading its contents into context.
+
+Important distinction: Make clear in your instructions whether Claude should:
+
+Execute the script (most common): "Run analyze_form.py to extract fields"
+Read it as reference (for complex logic): "See analyze_form.py for the field extraction algorithm"
+For most utility scripts, execution is preferred because it's more reliable and efficient. See the following Runtime environment section for details on how script execution works.
+
+Example:
+
+## Utility scripts
+
+**analyze_form.py**: Extract all form fields from PDF
+
+```bash
+python scripts/analyze_form.py input.pdf > fields.json
+```
+
+Output format:
+```json
+{
+  "field_name": {"type": "text", "x": 100, "y": 200},
+  "signature": {"type": "sig", "x": 150, "y": 500}
+}
+```
+
+**validate_boxes.py**: Check for overlapping bounding boxes
+
+```bash
+python scripts/validate_boxes.py fields.json
+# Returns: "OK" or lists conflicts
+```
+
+**fill_form.py**: Apply field values to PDF
+
+```bash
+python scripts/fill_form.py input.pdf fields.json output.pdf
+```
+Use visual analysis
+When inputs can be rendered as images, have Claude analyze them:
+
+## Form layout analysis
+
+1. Convert PDF to images:
+   ```bash
+   python scripts/pdf_to_images.py form.pdf
+   ```
+
+2. Analyze each page image to identify form fields
+3. Claude can see field locations and types visually
+In this example, you'd need to write the pdf_to_images.py script.
+
+Claude's vision capabilities help analyze layouts and structures.
+
+Create verifiable intermediate outputs
+When Claude performs complex, open-ended tasks, it can make mistakes. The "plan-validate-execute" pattern catches errors early by having Claude first create a plan in a structured format, then validate that plan with a script before executing it.
+
+Example: Imagine asking Claude to update 50 form fields in a PDF based on a spreadsheet. Without validation, Claude might reference non-existent fields, create conflicting values, miss required fields, or apply updates incorrectly.
+
+Solution: Use the workflow pattern shown earlier (PDF form filling), but add an intermediate changes.json file that gets validated before applying changes. The workflow becomes: analyze → create plan file → validate plan → execute → verify.
+
+Why this pattern works:
+
+Catches errors early: Validation finds problems before changes are applied
+Machine-verifiable: Scripts provide objective verification
+Reversible planning: Claude can iterate on the plan without touching originals
+Clear debugging: Error messages point to specific problems
+When to use: Batch operations, destructive changes, complex validation rules, high-stakes operations.
+
+Implementation tip: Make validation scripts verbose with specific error messages such as "Field 'signature_date' not found. Available fields: customer_name, order_total, signature_date_signed" to help Claude fix issues.
+
+Package dependencies
+Skills run in the code execution environment with platform-specific limitations:
+
+claude.ai: Can install packages from npm and PyPI and pull from GitHub repositories
+Claude API: Has no network access and no runtime package installation
+List required packages in your SKILL.md and verify they're available in the Code execution tool documentation.
+
+Runtime environment
+Skills run in a code execution environment with filesystem access, bash commands, and code execution capabilities. For the conceptual explanation of this architecture, see The Skills architecture in the overview.
+
+How this affects your authoring:
+
+How Claude accesses Skills:
+
+Metadata pre-loaded: At startup, the name and description from all Skills' YAML frontmatter are loaded into the system prompt
+Files read on-demand: Claude uses bash Read tools to access SKILL.md and other files from the filesystem when needed
+Scripts executed efficiently: Utility scripts can be executed through bash without loading their full contents into context. Only the script's output consumes tokens
+No context penalty for large files: Reference files, data, or documentation don't consume context tokens until actually read
+File paths matter: Claude navigates your skill directory like a filesystem. Use forward slashes (reference/guide.md), not backslashes
+Name files descriptively: Use names that indicate content: form_validation_rules.md, not doc2.md
+Organize for discovery: Structure directories by domain or feature
+Good: reference/finance.md, reference/sales.md
+Bad: docs/file1.md, docs/file2.md
+Bundle comprehensive resources: Include complete API docs, extensive examples, large datasets; no context penalty until accessed
+Prefer scripts for deterministic operations: Write validate_form.py rather than asking Claude to generate validation code
+Make execution intent clear:
+"Run analyze_form.py to extract fields" (execute)
+"See analyze_form.py for the extraction algorithm" (read as reference)
+Test file access patterns: Verify Claude can navigate your directory structure by testing with real requests
+Example:
+
+bigquery-skill/
+├── SKILL.md (overview, points to reference files)
+└── reference/
+    ├── finance.md (revenue metrics)
+    ├── sales.md (pipeline data)
+    └── product.md (usage analytics)
+When the user asks about revenue, Claude reads SKILL.md, sees the reference to reference/finance.md, and calls bash to read just that file. The sales.md and product.md files remain on the filesystem, consuming zero context tokens until needed. This filesystem-based model is what enables progressive disclosure. Claude can navigate and selectively load exactly what each task requires.
+
+For complete details on the technical architecture, see How Skills work in the Skills overview.
+
+MCP tool references
+If your Skill uses MCP (Model Context Protocol) tools, always use fully qualified tool names to avoid "tool not found" errors.
+
+Format: ServerName:tool_name
+
+Example:
+
+Use the BigQuery:bigquery_schema tool to retrieve table schemas.
+Use the GitHub:create_issue tool to create issues.
+Where:
+
+BigQuery and GitHub are MCP server names
+bigquery_schema and create_issue are the tool names within those servers
+Without the server prefix, Claude may fail to locate the tool, especially when multiple MCP servers are available.
+
+Avoid assuming tools are installed
+Don't assume packages are available:
+
+**Bad example: Assumes installation**:
+"Use the pdf library to process the file."
+
+**Good example: Explicit about dependencies**:
+"Install required package: `pip install pypdf`
+
+Then use it:
+```python
+from pypdf import PdfReader
+reader = PdfReader("file.pdf")
+```"
+Technical notes
+YAML frontmatter requirements
+The SKILL.md frontmatter requires name and description fields with specific validation rules:
+
+name: Maximum 64 characters, lowercase letters/numbers/hyphens only, no XML tags, no reserved words
+description: Maximum 1,024 characters, non-empty, no XML tags
+See the Skills overview for complete structure details.
+
+Token budgets
+Keep SKILL.md body under 500 lines for optimal performance. If your content exceeds this, split it into separate files using the progressive disclosure patterns described earlier. For architectural details, see the Skills overview.
+
+Checklist for effective Skills
+Before sharing a Skill, verify:
+
+Core quality
+ Description is specific and includes key terms
+ Description includes both what the Skill does and when to use it
+ SKILL.md body is under 500 lines
+ Additional details are in separate files (if needed)
+ No time-sensitive information (or in "old patterns" section)
+ Consistent terminology throughout
+ Examples are concrete, not abstract
+ File references are one level deep
+ Progressive disclosure used appropriately
+ Workflows have clear steps
+Code and scripts
+ Scripts solve problems rather than defer to Claude
+ Error handling is explicit and helpful
+ No "voodoo constants" (all values justified)
+ Required packages listed in instructions and verified as available
+ Scripts have clear documentation
+ No Windows-style paths (all forward slashes)
+ Validation/verification steps for critical operations
+ Feedback loops included for quality-critical tasks
+Testing
+ At least three evaluations created
+ Tested with Haiku, Sonnet, and Opus
+ Tested with real usage scenarios
+ Team feedback incorporated (if applicable)
+
+Abstract—Agent Skills provide on-demand domain knowledge
+to LLM agents without requiring model retraining. Each Agent
+Skill is defined by a mandatory SKILL.md file containing
+metadata and an unstructured Markdown body whose contents
+are left entirely to the skill author. Despite the rapid adoption of
+Agent Skills, little is known about how these files are authored
+or whether existing authoring guidelines are followed in practice.
+In this paper, we present the first systematic study of SKILL.mdfiles as a software artifact. We qualitatively analyze 238 realworld skills and derive a taxonomy of 13 higher-level and 44
+lower-level semantic components. We then conduct a multivocal
+literature review of 29 sources to identify best practices for
+authoring SKILL.md files and introduce skill smells as violations
+of these practices. Finally, we develop an automated detector and
+apply it to real-world skills, finding that over 99% of SKILL.mdfiles contain at least one skill smell, and once introduced, skill
+smells rarely disappear as skills evolve. These findings reveal
+a substantial gap between recommended and actual authoring
+practices, motivating the development of automated techniques
+to remediate skill smells while increasing developer awareness of
+this emerging quality issue.Index Terms—agent skill, SKILL.mdI. INTRODUCTIONWith the recent growth of autonomous software agents, such
+as Claude Code [1] and GitHub Copilot [2], that use Large
+Language Models (LLMs) to perform Software Engineering
+(SE) tasks, the ability to provide agents with task-specific and
+project-specific knowledge has become increasingly important.
+Agent Skills1 [3] address this need by packaging procedural knowledge together with organization-, team-, and userspecific context into portable, version-controlled artifacts that
+agents can retrieve on demand. As evidenced by the emergence
+of public skill marketplaces containing more than 100,000
+skills [4], [5], skills have become a widely adopted mechanism
+for adapting general-purpose agents to specialized tasks.
+Originally introduced by Anthropic [3], the Agent Skill
+Specification defines a skill as a directory containing a requiredSKILL.md file and optional scripts, references, and assets [6].
+The SKILL.md file consists of frontmatter, a metadata header
+in YAML format [7] with a set of predefined supported
+fields [6], which helps agents identify and load relevant skills,
+and a Markdown body containing skill instructions. Figure 2
+shows an excerpt from a SKILL.md body alongside two1We use “skill” and “Agent skill” interchangeably.excerpts from frontmatter sections. Beyond these structural
+requirements, skill authors are free to include any content that
+helps agents perform the target task effectively.
+The largely unconstrained nature of SKILL.md body and
+content create the potential for substantial variation in skill
+quality. Because skills directly contribute to the context provided to agents, poorly written skills may introduce irrelevant
+information, omit important guidance, or present instructions
+in ineffective ways, ultimately resulting in suboptimal agent
+behavior. Such effects may impact not only task performance but also resource consumption by increasing context
+length and reducing the usefulness of retrieved information.
+Despite the rapid adoption of agent skills, prior research
+has primarily focused on their effectiveness [8] and security
+implications [9]–[12], leaving their authoring practices largely
+unexplored. Understanding this gap is particularly important
+because skills may increasingly be used as training data for
+future models and may themselves be generated by LLMs,
+creating the potential for poor authoring practices to propagate
+through both training and generation pipelines.
+The history of SE shows that widely used textual artifacts
+tend to accumulate quality problems when they evolve without
+clear quality guidelines. For example, prior work found that
+commit messages, which are also free-form text describing a
+code change, were often incomplete, uninformative, or even
+empty [13], and that poor-quality commit messages were
+associated with software defects [14]. Because Agent Skills are
+likewise largely unconstrained in both structure and content,
+we posit that they represent an emerging software quality
+concern for agentic systems. Since Agent Skills are still in
+the early stages of adoption, there is a unique opportunity to
+understand current authoring practices and identify problematic patterns before they become widespread and entrenched.
+Hence, we conduct the first large-scale study of SKILL.mdquality, best practices, and quality deficiencies in real-world
+agent skills to understand what information they contain,
+characterize the semantic components of their bodies.RQ1: What are the semantic components of SKILL.md
+files in practice?The next step toward assessing SKILL.md quality is understanding how their semantic components should be authored.
+Although practitioners and organizations have proposed best
+practices for writing SKILL.md files [15], this guidance is
+1arXiv:2607.01456v2 [cs.SE] 3 Jul 2026TABLE IV
+Distribution of Skill Smells in the Groundtruth Dataset Used to Evaluate
+SSD and the Entire Skills Sample. Highlighted rows demonstrate Statically
+Detectable smells. Therefore, they were absent in the Validation Dataset
+used to evaluate the accuracy of detection of Semantically Detectable smells.Skill Smell Frequency of SmellValidation Dataset (53 Skills) Entire Sample (228 Skills)
+RL 52 (98%) 223 (94%)
+BG 30 (57%) 192 (81%)
+EWP 35 (66.0%) 185 (78%)
+NAH 38 (72%) 184 (77%)
+NPT 47 (89%) 169 (71%)
+MC 30 (57%) 170 (71%)
+NVS 43 (81%) 165 (69%)
+MDT 34 (64%) 165 (69%)
+NG 28 (53%) 159 (67%)
+MUS 37 (70%) 156 (66%)
+SOC 32 (60%) 148 (62%)
+UD 18 (34%) 109 (46%)
+MUR 12 (23%) 105 (44%)
+ME 17 (32%) 80 (34%)
+TSW 24 (45%) 75 (32%)
+CSD 18 (34%) 75 (32%)
+MT 30 (57%) 60 (25%)
+USN 12 (23%) 41 (17%)
+TOB 19 (36%) 19 (8%)
+TSS 2 (4%) 6 (3%)
+NTPD 2 (4%) 8 (3%)
+BP - 3 (1%)
+LSB - 1 (≈ 0%)
+LSD - 1 (≈ 0%)
+LSN - 0 (0%)
+XID - 0 (0%)but only in a single SKILL.md with one commit; per our RQ4
+methodology (Section III-D), we exclude all single-commitSKILL.md files.
+Across all analyzed skill smells, we observe no evidence
+that their prevalence decreases over time. Instead, the prevalence of each skill smell tends to worsen as time passes.
+We acknowledge that the full 35-week window does not
+apply uniformly to every skill smell, as 51% of the skills did
+not yet exist within the first 18 weeks. To account for this, we
+outline the final block of weeks with a blue rectangle on our
+figure, by which every SKILL.md has been included. Within
+this region, we observed that the prevalence of each smell
+remains stable; skill smells are neither addressed nor newly
+introduced, indicating that skill smells are seldom corrected
+once introduced and instead tend to persist throughout the
+development cycle.
+To validate that this trend is not driven solely by aggregate
+statistics, we also examined the evolution of each repository
+individually. Due to space constraints, we could not include
+all 142 individual skill-level figures in the paper; instead, they
+are provided in our supplementary material [50]. Across these
+figures, we observed a similar pattern of once introduced, skill
+smells are seldom removed during subsequent development.Finding 4: Skill smells rarely disappear once introduced. Across both repository-level and individualskill analyses, we find no systematic evidence that
+skill smells are corrected over time, suggesting they
+persist throughout the evolution of SKILL.md files.1 5 10 15 20 25 30 35Week number (study period: Oct 13, 2025 Jun 13, 2026; 35 weeks)RLBGNAHNVSNPTMCEWPNGMDTSOCMUSUDMURMTCSDMETSWUSNTOBBPNTPDTSSLSBXIDSkill smell0.00.20.40.60.81.0Prevalence (fraction of existing skills with the smell)Fig. 4. Temporal prevalence of skill smells across all existing skills, by week
+(green = 0% of existing skills affected, red = 100%). The area surrounded
+with a blue rectangle demonstrates the weeks where all SKILL.md files with
+at least 2 commits (142) were present.V. DISCUSSIONOur results show that skill smells are pervasive in real-worldSKILL.md files and persist throughout repository evolution
+rather than being corrected over time. The direct impact
+of individual skill smells on agent performance remains an
+open question. Since SKILL.md files become part of an
+agent’s context window [11], we therefore draw on empirical
+findings from the broader LLM and agent literature, arguing
+that evidence on analogous context-level deficiencies provides
+a reasonable proxy for understanding how skill smells may
+influence agent behavior, efficiency, robustness, and safety.
+Authoring high-quality SKILL.md files are fundamentally
+a balancing act between three complementary design principles: providing the right amount of procedural guidance,
+enabling effective verification, and supplying high-quality
+context. First, Under-Specified Guidance and Over-Prescribed
+Guidance represent opposite ends of the same spectrum. Skills
+should provide sufficient procedural structure to help agents
+decompose tasks and make informed decisions, yet avoid
+prescribing execution so rigidly that agents lose the flexibility
+to adapt when circumstances change. Prior work similarly
+shows that explicit workflow decomposition and decisionsupport mechanisms improve agent performance, whereas
+excessive prompt specification reduces an LLM’s ability to
+follow instructions reliably [57]–[60].
+Second, high-quality skills should support the execution
+process through planning, validation, feedback, progress tracking, and operational safeguards. These mechanisms enable
+agents to verify intermediate results, recognize infeasible
+tasks, and prevent errors from propagating to the final output. Prior work consistently demonstrates that planning, selfrefinement, structured checklists, and runtime guardrails improve reliability, reduce unsafe behavior, and enhance task performance [61]–[66]. Missing Verification & Feedback Loops,
+9Missing Follow-Through Guards, and Missing Safeguards represent skill smells in this category.
+Finally, effective skills should provide context that is both
+sufficient and focused. Context Bloat and Inadequate Contextual Grounding again represent opposing failure modes:
+unnecessary information increases reasoning burden and competes for limited context-window capacity, while insufficient
+grounding forces agents to compensate through inference.
+Prior work shows that both irrelevant context and missing contextual information degrade reasoning quality, highlighting that
+effective SKILL.md files should provide the right information
+at the appropriate level of detail rather than simply more or
+less information [67]–[70]. Collectively, these findings suggest
+that many skill smells arise not because a skill contains too
+much or too little of a particular element, but because it fails
+to strike the balance required for reliable and efficient agent
+execution.
+Skill smells can also have security implications. Security
+Hazard skill smells expose agents to prompt-injection attacks
+by embedding content that becomes part of the agent’s context. Prior work shows that LLMs are susceptible to prompt
+injection through untrusted retrieved content [71], making
+structured tags in SKILL.md files a potential attack vector.
+These smells, therefore, increase the attack surface of Agent
+Skills and may compromise the security of agentic systems.
+Seemingly superficial skill smells, such as those in theConvention & Style Violation and Unstructured Output categories, primarily affect naming conventions, metadata, or
+output templates, yet can substantially affect agent behavior.
+Tool names, descriptions, and parameter schemas are among
+the primary signals LLMs use when selecting tools [72],
+while explicit output templates improve adherence to userdefined output requirements [73]. Consequently, inconsistent
+metadata or missing output templates can hinder skill discovery, reduce correct skill invocation, and produce inconsistent
+outputs. These findings suggest that authoring conventions are
+more than stylistic guidelines; they directly shape how agents
+discover, invoke, and interact with skills.
+Our findings have implications for researchers, tool builders,
+and practitioners. We introduce skill smells as a new software
+quality concern for agentic systems, opening several research
+directions. Future work should quantify the causal impact of
+individual skill smells on agent performance, investigate interactions among multiple smells, evaluate their effects across
+different foundation models and agent architectures, and study
+how skill smells influence increasingly complex multi-agent
+workflows.
+Our findings also suggest that the high prevalence and persistence of skill smells make manual quality control unlikely
+to be sufficient. Our taxonomy provides a foundation for
+automated quality-assurance tools for Agent Skills. Similar
+to linters and static analyzers for source code, future tools
+could utilize the results of SSD to recommend refactorings,
+automatically repair common issues, and be integrated into
+IDEs, CI pipelines, and Agent Skill marketplaces.
+Finally, developers should treat SKILL.md files as executable software artifacts rather than passive documentation.
+As Agent Skills become increasingly shared across organizations and marketplaces, establishing and adhering to highquality authoring practices will be essential to building trustworthy and maintainable agent ecosystems.
+Taken together, our findings suggest that skill smells should
+not be viewed as isolated documentation issues, but as an
+emerging software quality concern for agentic systems. This
+combination of high prevalence, long-term persistence, and
+plausible downstream consequences suggests that the community has an opportunity to intervene while Agent Skills are
+still in their early stages of adoption. Software engineering has
+repeatedly witnessed similar trajectories with software artifacts
+such as source code, tests, and security configurations, in
+which quality concerns were initially underestimated, prompting decades of research on code smells, test smells, security
+smells, automated detection, and refactoring techniques. Our
+findings suggest that Agent Skills present a similar opportunity
+for early intervention before poor authoring practices become
+deeply embedded in the ecosystem.
+VI. THREATS TO VALIDITYConstruct Validity. One threat concerns the subjectivity
+of manually identifying semantic components and labeling
+skill smells. We mitigated this through using independent
+coding by two authors, followed by negotiated agreement
+to resolve all disagreements [35], [36]. Another unavoidable
+threat is that our best practices are derived from grey literature
+rather than peer-reviewed guidelines. To reduce potential bias,
+we independently reviewed the top 50 retrieved sources and
+retained only practices supported by a strict majority of the
+selected sources. A further threat concerns the reliability of our
+LLM-based detector for semantically detectable skill smells,
+which we mitigated by validating it on a manually curated
+ground-truth dataset.External Validity. A key threat to external validity is that
+our sample was drawn exclusively from the skills.shmarketplace [4]. Furthermore, restricting the sample to popular
+English-language skills may limit generalizability and could
+underestimate the prevalence of skill smells in the broader
+ecosystem. Another threat concerns our use of a single LLM,
+Qwen3.6-27B (4-bit AWQ), for detecting semantically detectable skill smells; prevalence estimates may differ with
+other models or quantization schemes.
+VII. CONCLUSIONOur study presents the first systematic characterization ofSKILL.md files as a software artifact. We identify a taxonomy
+of 13 higher-level and 44 lower-level semantic components,
+derive 26 best practices, and introduce skill smells as violations
+of these practices. Our empirical study shows that skill smells
+are highly prevalent and become more common as skills evolve
+over time. These findings establish SKILL.md quality as an
+important SE concern and motivate automated support for
+refactoring skill smells during skill authoring. All code, data,
+10and replication materials are available in the supplementary
+material [50].
