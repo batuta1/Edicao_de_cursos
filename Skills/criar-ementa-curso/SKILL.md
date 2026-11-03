@@ -71,6 +71,24 @@ meses, a resposta está na análise crítica. Ele não entra na entrega, mas nã
 O `README.md` da pasta lista os arquivos com uma linha cada e registra o que ficou pendente de
 validação humana.
 
+### Quando o repositório for o `Edicao_de_cursos`
+
+**Leia antes a skill `organizar-pasta-de-cursos`**: ela decide onde cada arquivo mora. A pasta acima
+é a de **trabalho**; o que vai para o repositório é só o apoio, em `Cursos/<Empresa>/<curso>/base/`,
+onde `<curso>` é `<tema>-essentials` ou `<tema>-hands-on` (a empresa e o nome seguem a skill):
+
+| Produto desta skill | Destino |
+|---|---|
+| `roteiros/roteiro-essentials.md`, `roteiro-articulate-essentials.md` | `…/<tema>-essentials/base/roteiros/` |
+| `roteiros/roteiro-hands-on.md`, `roteiro-articulate-hands-on.md` | `…/<tema>-hands-on/base/roteiros/` |
+| `carga-horaria/*-essentials.md` / `*-hands-on.md` | `base/carga-horaria/` do curso da trilha |
+| `met-tabela.md` | `base/carga-horaria/` dos dois cursos |
+| `ementa.md` | `base/ementa/` dos dois cursos (cópia em cada) |
+| análise crítica (`_processo/02-analise-*`) | `base/analise/` do curso da trilha |
+| `_processo/` (contornos, v1) e `README.md` | **não** vão para a principal |
+
+Tema novo, sem pasta em `Cursos/`: confirme o nome com o usuário antes de criar.
+
 ## As duas trilhas
 
 | | **Essentials** | **Hands-on** |
