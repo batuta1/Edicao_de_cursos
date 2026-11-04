@@ -1,0 +1,716 @@
+AGENTES DE IA - ESSENCIAL
+Conteúdo bruto para curso introdutório de 100 a 130 minutos
+Público: profissionais de escritório e profissionais da área jurídica
+Data de corte da pesquisa: 18/10/2026
+
+LEGENDA DE CONFIABILIDADE
+[CONFIRMADO] Informação sustentada pelas fontes numeradas.
+[VERIFICAR] Informação que depende de conta, região, rollout, política interna ou nova checagem perto da gravação.
+[SUGESTÃO] Proposta didática, prompt, atividade ou recomendação editorial criada para este curso.
+
+0. RESUMO EXECUTIVO
+
+[CONFIRMADO] Um agente de IA não apenas responde: ele recebe um objetivo, planeja, usa ferramentas, observa resultados, ajusta o caminho e pode executar ações até concluir ou pedir intervenção humana. [15][16][28]
+[CONFIRMADO] Para o aluno iniciante, a mudança central é passar de “pedir uma resposta” para “delegar um resultado verificável”. [1][2]
+[CONFIRMADO] Em 18/10/2026, a experiência agente da OpenAI para trabalho cotidiano aparece na documentação como ChatGPT Work; o nome “ChatGPT agent/agent mode” pertence à fase anterior do produto. [1][2][3]
+[CONFIRMADO] Claude Cowork está disponível em planos pagos e, em parte das contas, Chat e Cowork já aparecem unificados como “Claude”. [9][11]
+[CONFIRMADO] Manus mantém Chat Mode e Agent Mode; o Agent Mode planeja e executa tarefas e consome créditos. [17][18]
+[CONFIRMADO] O aluno deve aprender quatro ações observáveis: definir a tarefa, acompanhar a execução, revisar o resultado e reconhecer limites e riscos. [1][2][9][10]
+[CONFIRMADO] A autonomia útil vem acompanhada de riscos de alucinação, excesso de permissões, vazamento de dados, prompt injection e ações indevidas. [10][27][29][32]
+[CONFIRMADO] Na advocacia, IA não substitui julgamento profissional, supervisão humana, sigilo, verificação das informações nem transparência com o cliente. [26][35]
+[SUGESTÃO] Estruturar a aula em 115 minutos: conceito 15; acesso e interface 20; delegação e acompanhamento 25; comparação 15; segurança e jurídico 20; exercícios e fechamento 20.
+[SUGESTÃO] Mensagem-chave: “Dê ao agente um objetivo delimitado, acompanhe evidências e aprove apenas o que você conferiu.”
+
+1. IDENTIDADE, DEFINIÇÃO E HISTÓRICO
+
+1.1 Definição operacional
+
+[CONFIRMADO] A Anthropic define agente como um modelo de IA que dirige seus próprios processos e o uso de ferramentas para cumprir uma tarefa, em vez de seguir apenas um roteiro fixo. O ciclo prático é: planejar, agir, observar, ajustar e repetir até terminar ou precisar do usuário. [15]
+
+[CONFIRMADO] A Google Cloud descreve agentes de IA como sistemas de software que usam IA para perseguir objetivos e concluir tarefas em nome do usuário, com raciocínio, planejamento, memória e algum grau de autonomia. [28]
+
+[CONFIRMADO] O NIST observa que agentes percebem e agem em ambientes e que a autonomia deve ser analisada junto com permissões, ambiente, monitoramento e tipo de ferramenta; portanto, “mais autônomo” não significa automaticamente “melhor”. [29]
+
+[SUGESTÃO] Definição simples para a aula: “Agente é uma IA que transforma um objetivo em uma sequência de ações, usa ferramentas e verifica o que aconteceu antes de decidir o próximo passo.”
+
+1.2 Chat, automação, workflow e agente
+
+[CONFIRMADO] Chat comum: o usuário pergunta, a IA responde e o ciclo depende de uma nova mensagem humana. No ChatGPT atual, a documentação recomenda Chat para perguntas, explicações, brainstorming e rascunhos curtos. [1][2]
+
+[CONFIRMADO] Workflow: modelo e ferramentas seguem caminhos predefinidos. Agente: o modelo escolhe dinamicamente processos e ferramentas conforme o contexto. A Anthropic recomenda começar pela solução mais simples e aceitar custo e latência maiores somente quando a flexibilidade justificar. [16]
+
+[SUGESTÃO] Analogia didática:
+- Chat = consultor que responde a cada pergunta.
+- Automação = esteira com etapas fixas.
+- Agente = assistente que recebe uma missão, escolhe etapas dentro de limites e volta quando precisa de decisão.
+
+1.3 Linha do tempo essencial
+
+[CONFIRMADO] Em 2024, a Anthropic publicou a distinção prática entre workflows predefinidos e agentes que controlam dinamicamente o processo e as ferramentas. [16]
+
+[CONFIRMADO] O ChatGPT agent foi lançado em julho de 2025 ao combinar capacidades de navegação do Operator e pesquisa do Deep Research; essa é a origem histórica do termo “agent mode” usado em materiais mais antigos. A afirmação histórica está apoiada por cobertura contemporânea independente e deve ser mostrada como evolução de produto, não como menu atual. [36]
+
+[CONFIRMADO] Manus lançou seu agente de propósito geral em março de 2025. [37]
+
+[CONFIRMADO] Claude Cowork entrou em research preview em janeiro de 2026 no Claude Desktop para assinantes Max e foi ampliado para Pro dias depois. [38]
+
+[CONFIRMADO] Em julho de 2026, a OpenAI passou a documentar ChatGPT Work como a experiência de delegação de trabalho cotidiano; em setembro de 2026 anunciou “dots”, agentes sempre ativos em rollout gradual. [1][8]
+
+[CONFIRMADO] Em setembro/outubro de 2026, a Anthropic começou a unificar Chat e Cowork em uma única experiência chamada Claude, com rollout gradual. Contas ainda podem mostrar os dois seletores separados. [9][11]
+
+[CONFIRMADO] A Manus informou em agosto de 2026 que voltaria a operar como empresa independente após a separação da Meta. A aquisição havia ocorrido em 29/12/2025, e a empresa informou exclusão específica de dados de determinados usuários por exigências regulatórias durante a transição. [24]
+
+2. ACESSO, PLANOS, REQUISITOS E DISPONIBILIDADE
+
+2.1 ChatGPT Work, sucessor prático do ChatGPT agent para esta aula
+
+[CONFIRMADO] Superfícies atuais: web e aplicativo ChatGPT para desktop; o aplicativo desktop é documentado para Windows, macOS e Linux. [3]
+
+[CONFIRMADO] Caminho na web: abrir ChatGPT, iniciar novo chat, escolher “Work” no seletor acima da caixa de mensagem e descrever o resultado. Em pt-BR, a documentação usa “Chat” e “Work”. [3]
+
+[CONFIRMADO] Caminho no desktop: selecionar “ChatGPT” no seletor de produto e depois “Work” no alto do novo chat. Para recursos locais, abrir ou autorizar uma pasta e escolher execução local quando disponível. [2][3]
+
+[CONFIRMADO] O ChatGPT Work aparece na tabela atual de planos junto com Free, Go, Plus, Pro, Business, Enterprise e Edu, mas modelos, execução local, navegador, plugins, créditos e limites variam por plano, região, cliente, rollout e política do workspace. [6][7]
+
+[CONFIRMADO] A documentação de preços consultada mostra Plus a US$ 20/mês e faixas Pro a partir de US$ 100/mês; valores, impostos e disponibilidade podem variar. O Work e o Codex compartilham uso e créditos. [6]
+
+[CONFIRMADO] Navegação em sites autenticados pelo navegador em nuvem do Work é documentada para Plus e Pro, sujeita a rollout; não está disponível do mesmo modo em Enterprise/Edu. [4]
+
+[VERIFICAR] Antes da gravação, abrir uma conta brasileira Free, Plus e Business e registrar quais opções “Work”, “Cloud/Local”, navegador e modelo aparecem. A documentação pública avisa que recursos variam, mas não fornece uma matriz brasileira completa para todas as combinações. [2][6]
+
+2.2 Claude Cowork
+
+[CONFIRMADO] Cowork está disponível nos planos pagos Pro, Max, Team e Enterprise. No desktop, é oferecido em macOS e Windows com a versão mais recente do Claude. Na web e no mobile, há disponibilidade para Pro, Max e Team; Enterprise depende de habilitação administrativa. [9][11]
+
+[CONFIRMADO] O Brasil aparece na lista oficial de países com acesso ao Claude, e a interface oferece Português (Brasil). [12][40]
+
+[CONFIRMADO] Preços individuais de referência nos EUA: Pro US$ 20/mês ou US$ 200/ano; Max 5x US$ 100/mês; Max 20x US$ 200/mês. Team custa US$ 30 por pessoa/mês ou US$ 25 por pessoa/mês no anual, com mínimo de cinco membros. Preços locais e tributos variam. [13][14]
+
+[CONFIRMADO] Caminho atual quando os modos ainda estão separados: localizar a caixa de mensagem, selecionar “Cowork” e descrever a tarefa; selecionar “Chat” para voltar à conversa regular. Quando a experiência unificada já chegou, não há necessariamente botões separados. [9]
+
+[CONFIRMADO] Sessões podem rodar em nuvem; tarefas com pasta local exigem o Claude Desktop aberto e a pasta explicitamente conectada. Em organizações, administradores podem habilitar ou bloquear Cowork, nuvem, navegador e aprovações automáticas. [10][11]
+
+2.3 Manus
+
+[CONFIRMADO] Manus oferece planos Free, Pro e Team. O Free inclui Chat Mode, Agent Mode com Manus 2.0 Lite, 300 créditos diários, uma tarefa concorrente e duas automações agendadas. [17]
+
+[CONFIRMADO] O Pro parte de US$ 20/mês com 4.000 créditos mensais; há uma faixa a partir de US$ 40/mês com 8.000 créditos. O Team parte de US$ 20 por assento/mês. A própria página alerta que a tela de preços é a referência final. [17]
+
+[CONFIRMADO] O Chat Mode não consome créditos; o Agent Mode planeja e conclui tarefas mais complexas, como sites, slides e vídeos, e consome créditos. Usuários Free acessam 2.0 Lite; Pro acessa 2.0 Lite, 2.0 e 2.0 Max. [18]
+
+[CONFIRMADO] O Manus pode ser usado na web. O aplicativo desktop está disponível para macOS e Windows e adiciona “My Computer” para trabalhar com arquivos locais e comandos. [39]
+
+[VERIFICAR] Não foi localizada uma lista oficial consolidada de países do Manus equivalente à lista da Anthropic. A página, o cadastro e os preços devem ser testados de uma conexão brasileira perto da gravação, inclusive moeda, tributação, meios de pagamento e recursos liberados.
+
+2.4 Requisitos mínimos para a aula
+
+[SUGESTÃO] Requisito comum: navegador atualizado, e-mail, conexão estável e pasta de exercícios sem dados reais.
+
+[SUGESTÃO] Para demonstração com pasta local, preparar uma pasta “Treino_Agente” contendo cópias de documentos públicos, uma planilha simples e um arquivo de instruções. Nunca demonstrar sobre Downloads, Documentos ou unidade inteira.
+
+[SUGESTÃO] Ter um plano alternativo gravado com capturas de tela, pois menus e rollouts variam por conta.
+
+3. PRIMEIROS PASSOS: O QUE O ALUNO VÊ E FAZ
+
+3.1 Primeira tarefa no ChatGPT Work
+
+[CONFIRMADO] Origem: documentação oficial em pt-BR. Passos visuais: 1) entrar em chatgpt.com ou no app; 2) selecionar ChatGPT; 3) mudar de Chat para Work acima do editor; 4) escolher projeto/pasta quando necessário; 5) descrever objetivo e anexar contexto; 6) acompanhar progresso; 7) responder perguntas e aprovar ações importantes; 8) revisar o resultado. [1][2][3]
+
+[SUGESTÃO] Microdemonstração: “Leia estes três arquivos públicos e produza um resumo executivo de uma página. Antes de escrever, mostre seu plano. Use somente os anexos. Liste lacunas. Pare antes de criar o arquivo final.”
+
+[CONFIRMADO] O aluno deve reconhecer na tela: seletor Chat/Work, campo de mensagem, anexos, menções a plugins com “@”, painel de progresso, pedidos de autorização, artefatos/arquivos entregues e controles para interromper ou redirecionar. A presença exata depende da superfície e do rollout. [1][2][3]
+
+3.2 Primeira tarefa no Claude Cowork
+
+[CONFIRMADO] Passos quando os modos estão separados: 1) abrir Claude; 2) na caixa de mensagem selecionar “Cowork”; 3) conectar somente a pasta do exercício, se necessário; 4) escolher modo de aprovação no seletor; 5) descrever o resultado; 6) acompanhar a tarefa; 7) aprovar ou negar ações; 8) localizar o arquivo no destino indicado. [9][10]
+
+[CONFIRMADO] Modos de aprovação atuais: Manual pede autorização; Auto executa com triagem de segurança por ação; Skip executa sem pedir e sem a revisão automática equivalente. A interface unificada pode mostrar apenas Auto e Manual por padrão. [9]
+
+[SUGESTÃO] Para iniciantes, usar Manual. Conectar uma pasta exclusiva e manter cópia dos arquivos originais.
+
+3.3 Primeira tarefa no Manus
+
+[CONFIRMADO] O aluno deve distinguir “Chat Mode” de “Agent Mode”. Chat serve para resposta/discussão e pesquisa leve; Agent Mode executa fluxo autônomo e consome créditos. O comando “/chatmode” abre Chat Mode em contas que oferecem esse comportamento. [18]
+
+[SUGESTÃO] Passos de aula: 1) entrar em manus.im; 2) verificar saldo; 3) escolher Agent Mode/2.0 Lite; 4) anexar apenas fontes públicas; 5) formular objetivo, critérios e limites; 6) enviar; 7) abrir a visualização de progresso/computador; 8) intervir somente quando necessário; 9) baixar e revisar a entrega.
+
+[CONFIRMADO] Em caso de login ou CAPTCHA, o usuário pode abrir “browser” no canto superior direito da tarefa e assumir o navegador; também pode desativar o armazenamento de login em Settings > Cloud Browser. [19][21]
+
+4. CONCEITOS E GLOSSÁRIO ESSENCIAL
+
+[CONFIRMADO] Objetivo: estado final que o agente deve alcançar. Um bom objetivo descreve resultado, público, formato e critério de sucesso. [1]
+
+[CONFIRMADO] Plano: decomposição do objetivo em etapas. Em agentes, o plano pode mudar após cada observação do ambiente. [15]
+
+[CONFIRMADO] Ferramenta: capacidade externa que permite pesquisar, ler arquivo, executar código, usar navegador, consultar aplicativo ou alterar estado. [29]
+
+[CONFIRMADO] Orquestração: lógica que reúne modelo, ferramentas e contexto e decide a próxima ação. [28][32]
+
+[CONFIRMADO] Memória/contexto: informações mantidas para orientar decisões futuras. Pode elevar continuidade, mas também persistir erro ou conteúdo malicioso. [32]
+
+[CONFIRMADO] Ground truth/evidência: retorno observável do ambiente, como arquivo aberto, resposta de ferramenta, cálculo executado ou página consultada, usado para avaliar progresso. [16]
+
+[CONFIRMADO] Checkpoint: ponto em que o agente pausa para informação, julgamento ou aprovação humana. [1][9]
+
+[CONFIRMADO] Ação consequencial: ato que cria compromisso financeiro, jurídico, de conta, comunicação externa ou mudança difícil de reverter. ChatGPT Work exige confirmação antes de ações como reserva ou pagamento. [4]
+
+[CONFIRMADO] Prompt injection: instrução maliciosa escondida em página, e-mail ou documento lido pelo agente, tentando desviá-lo do objetivo do usuário. [10][32]
+
+[CONFIRMADO] Alucinação/confabulação: conteúdo falso ou incorreto apresentado com confiança. [27]
+
+[CONFIRMADO] Princípio do menor privilégio: conceder apenas permissões necessárias, pelo tempo e escopo necessários. O relatório da Google recomenda limitar poderes do agente conforme finalidade e risco. [32]
+
+[CONFIRMADO] Human in the loop: supervisão humana em pontos relevantes, sobretudo para decisões sensíveis, irreversíveis ou profissionais. [10][26][32]
+
+[CONFIRMADO] Observabilidade: capacidade de ver plano, ações, fontes, logs, pedidos de aprovação e resultado para avaliar o que ocorreu. [29][32]
+
+[CONFIRMADO] Nível de autonomia: não há uma régua única consensual. O NIST propõe analisar permissões de ferramenta (somente leitura, escrita restrita, escrita) e ambiente (confiável ou não confiável). [29]
+
+[SUGESTÃO] Escada didática para iniciantes, não oficial: Nível 0 responde; Nível 1 propõe plano; Nível 2 usa ferramentas de leitura; Nível 3 executa escrita com aprovação; Nível 4 executa dentro de políticas e volta em exceções. Usar essa escada somente como recurso pedagógico.
+
+5. FUNCIONALIDADES QUE O ALUNO DEVE RECONHECER
+
+5.1 ChatGPT Work
+
+[CONFIRMADO] Pode pesquisar e analisar, ler arquivos, usar plugins, navegar, criar documentos, apresentações, planilhas, Sites e outros resultados revisáveis. [1][2]
+
+[CONFIRMADO] No desktop, pode trabalhar com arquivos locais, aplicativos e navegador quando habilitados. Na nuvem, pode continuar mesmo com o dispositivo fechado, mas não herda automaticamente arquivos locais nem sessões do navegador pessoal. [2][4][5]
+
+[CONFIRMADO] Plugins aparecem em Customize > Plugins; em prompts, “@” seguido do nome indica uma ferramenta específica. [1]
+
+[CONFIRMADO] O navegador em nuvem solicita acesso a novos sites por padrão; o usuário pode gerenciar permissões e o sistema pede confirmação separada antes de ações consequenciais. [4][5]
+
+5.2 Claude Cowork
+
+[CONFIRMADO] Atua em tarefas longas e de várias etapas, produz documentos, planilhas e apresentações, organiza arquivos, analisa dados e usa navegador. [9]
+
+[CONFIRMADO] Acesso a arquivos locais é limitado às pastas conectadas. A execução de código ocorre em ambiente isolado, mas o isolamento não impede que conteúdo lido ou ações autorizadas gerem risco. [10]
+
+[CONFIRMADO] Projects reúnem arquivos, links, instruções e memória. Scheduled tasks rodam na nuvem e podem continuar sem dispositivo online. [9][10]
+
+[CONFIRMADO] Cowork pode usar navegador embutido ou Claude in Chrome, conforme plano e rollout. Settings > Cowork permite escolher navegador em interfaces ainda separadas. [9][11]
+
+5.3 Manus
+
+[CONFIRMADO] Agent Mode planeja e executa criação de sites, slides, vídeos e outras entregas; Deep/Wide Research e geração de ativos custam mais créditos. [17][18][20]
+
+[CONFIRMADO] O usuário pode assumir navegador ou VS Code durante a tarefa. Em problemas de CAPTCHA/login, a ajuda oficial recomenda takeover manual. [19][21]
+
+[CONFIRMADO] Créditos são consumidos por tokens de modelo, máquinas virtuais e APIs de terceiros, conforme complexidade e duração. Falhas técnicas do serviço dão direito a estorno automático do consumo; outras reclamações podem ser analisadas mediante link da tarefa. [20]
+
+[CONFIRMADO] O custo exato não é previsto com segurança antes da tarefa. A própria ajuda alerta que promessas do modelo sobre consumo podem ser alucinações. [41]
+
+6. CASOS DE USO REAIS E CENÁRIOS DE AULA
+
+6.1 Casos reais documentados
+
+[CONFIRMADO] Caso jurídico, Law&Company: o produto SuperLawyer, apoiado por Claude, foi adotado por 6.000 usuários em 180 dias, equivalente a 20% dos advogados em exercício na Coreia do Sul segundo a empresa; o estudo de caso relata eficiência 1,7 vez maior e economia coletiva de 2,3 milhões de horas. É material do fornecedor, não auditoria independente, e trata de uma plataforma jurídica com Claude, não de Cowork isoladamente. [33]
+
+[CONFIRMADO] Caso jurídico interno da Anthropic: um fluxo de pré-revisão de marketing reduziu o tempo de retorno de dois ou três dias para 24 horas, e um fluxo de avaliação de impacto de privacidade reduziu aproximadamente 40 horas para cerca de 30 minutos; advogados continuam revisando o resultado. O relato consta no guia do próprio fornecedor. [30]
+
+[CONFIRMADO] O relatório 2026 da Anthropic afirma que pesquisa e relatórios lideram planos de adoção de agentes entre organizações pesquisadas, com 56% no agregado; o documento também relata exemplos em produção, como análise jurídica na Thomson Reuters e análise de ameaças na SentinelOne. É pesquisa patrocinada pelo fornecedor e deve ser apresentada com essa ressalva. [31]
+
+[CONFIRMADO] A página de histórias da Manus registra casos como Ascendea, Heicoders Academy e k-ID. São narrativas do fornecedor e seus números não devem ser apresentados como causalidade comprovada sem evidência independente. [34]
+
+6.2 Cenários úteis para profissionais de escritório
+
+[SUGESTÃO] Preparar um briefing semanal: ler atas, planilha de indicadores e calendário; extrair decisões, riscos, responsáveis e próximos passos; criar documento para revisão.
+
+[SUGESTÃO] Organizar arquivos de uma pasta de treino: propor convenção, mostrar plano, mover cópias e gerar inventário “antes/depois”. Não usar pasta real na primeira experiência.
+
+[SUGESTÃO] Comparar fornecedores: usar somente páginas oficiais fornecidas; construir matriz com critérios; separar fato, inferência e informação ausente; parar antes de contratar ou contatar.
+
+[SUGESTÃO] Planejar evento sem efetuar reservas: pesquisar opções, montar cronograma e orçamento estimado; exigir aprovação antes de qualquer login, envio ou pagamento.
+
+6.3 Cenários jurídicos seguros para iniciantes
+
+[CONFIRMADO] A OAB exige conformidade legal e ética, confidencialidade, diligência na escolha da ferramenta, verificação das informações, supervisão humana e comunicação apropriada ao cliente. [26][35]
+
+[SUGESTÃO] Exercício jurídico seguro: comparar a Recomendação 001/2024 do CFOAB com uma política interna fictícia e criar checklist de lacunas. Usar apenas o documento público e dados sintéticos.
+
+[SUGESTÃO] Triagem de documentos sintéticos: localizar datas, partes fictícias, obrigações e campos faltantes; não pedir parecer, estratégia ou decisão final.
+
+[SUGESTÃO] Revisão de citação: dar ao agente três fontes públicas e pedir que associe cada afirmação à página correta; o aluno abre cada fonte e marca “confere/não confere”.
+
+[SUGESTÃO] Nunca usar na demonstração: autos sigilosos, dados pessoais reais, credenciais, estratégia de cliente, comunicação privilegiada, assinatura de petição ou envio a tribunal.
+
+7. PROMPTS: OFICIAIS E PROPOSTAS DIDÁTICAS
+
+7.1 Estrutura recomendada
+
+[CONFIRMADO] A orientação do ChatGPT Work é informar resultado esperado, fontes/ferramentas, restrições, critérios de qualidade e momento de parar para revisão. [1]
+
+[SUGESTÃO] Fórmula O-F-L-C-P:
+- Objetivo: o que deve existir ao final.
+- Fontes: arquivos, páginas e aplicativos permitidos.
+- Limites: o que não fazer e onde parar.
+- Critérios: como julgar qualidade.
+- Produto: formato, nome e público do arquivo.
+
+7.2 Exemplos oficiais, traduzidos ou parafraseados
+
+[CONFIRMADO] ChatGPT Work: revisar notas de entrevistas e resultados de pesquisa; criar apresentação de oito slides; focar nos três problemas mais comuns; separar achados de recomendações; sinalizar alegações sem apoio; devolver rascunho para revisão. [1]
+
+[CONFIRMADO] Claude Cowork: organizar a pasta Downloads por tipo e data; produzir apresentação a partir de notas; transformar entradas dispersas em relatório. [9]
+
+[CONFIRMADO] Manus: agir como assistente diário, pedir esclarecimentos, planejar o dia, acompanhar tarefas e adaptar o plano; monitorar um tema e avisar quando houver mudança relevante. [25]
+
+7.3 Prompts sugeridos para o curso
+
+[SUGESTÃO] Prompt 1 - relatório controlado:
+“Objetivo: criar um resumo executivo de até 700 palavras sobre os documentos anexos. Fontes: use somente os anexos. Processo: primeiro liste o plano e as lacunas; depois extraia fatos com indicação do arquivo; por fim produza o rascunho. Limites: não navegue, não envie nada e não altere os originais. Critérios: todas as afirmações precisam de fonte; se não houver evidência, escreva ‘não localizado’. Pare e peça aprovação antes de gerar o arquivo final.”
+
+[SUGESTÃO] Prompt 2 - organização reversível:
+“Trabalhe somente na pasta Treino_Agente. Faça um inventário e proponha uma estrutura de subpastas e nomes. Não mova nem renomeie nada ainda. Mostre o plano, conflitos e número de arquivos afetados. Só execute depois da minha aprovação. Após executar, produza um log com nome antigo, nome novo e caminho.”
+
+[SUGESTÃO] Prompt 3 - pesquisa com limite:
+“Compare até cinco opções usando exclusivamente os links oficiais fornecidos. Registre preço, requisito, limitação e data da página. Não abra sites adicionais. Separe fatos de inferências. Entregue uma tabela e uma recomendação condicional. Pare se um dado essencial não estiver disponível.”
+
+[SUGESTÃO] Prompt 4 - jurídico sintético:
+“Com base apenas na Recomendação 001/2024/CFOAB anexa e na política fictícia anexa, crie um checklist de conformidade. Cite o item da Recomendação para cada controle. Não ofereça parecer jurídico, não invente obrigação e marque qualquer ambiguidade para revisão humana.”
+
+8. SEGURANÇA, PRIVACIDADE E CONTROLE
+
+8.1 Modelo simples de risco
+
+[CONFIRMADO] Risco prático aumenta quando o agente combina conteúdo não confiável com permissão de escrever, enviar, comprar, apagar ou acessar contas. A Anthropic descreve prompt injection como conteúdo externo malicioso; o NIST e a Google recomendam avaliar ambiente e escopo de ferramentas. [10][29][32]
+
+[SUGESTÃO] Fórmula para a aula: Risco = sensibilidade do conteúdo x poder da ferramenta x irreversibilidade x ausência de supervisão.
+
+8.2 Controles do aluno
+
+[SUGESTÃO] Antes de começar:
+- usar cópias e pasta dedicada;
+- remover dados pessoais e credenciais;
+- limitar fontes e sites;
+- escolher modo manual;
+- definir “pare antes de enviar, pagar, excluir ou publicar”;
+- criar critério de sucesso verificável.
+
+[SUGESTÃO] Durante a execução:
+- observar se o agente acessa fonte ou aplicativo não solicitado;
+- ler cada pedido de permissão;
+- interromper expansão de escopo;
+- nunca digitar senha no chat;
+- assumir o controle apenas para autenticação necessária e voltar ao agente.
+
+[SUGESTÃO] Depois:
+- abrir todos os arquivos;
+- verificar nomes, datas, números e citações;
+- comparar com os originais;
+- revisar histórico/log;
+- remover permissões persistentes desnecessárias.
+
+8.3 ChatGPT Work
+
+[CONFIRMADO] O navegador em nuvem é separado do navegador local; não herda automaticamente abas, histórico, senhas nem sessões locais. Login deve ocorrer no formulário seguro, e credenciais não devem ser enviadas no chat. [4][5]
+
+[CONFIRMADO] Para Business, Enterprise e Edu, dados do workspace são criptografados em trânsito e repouso e não são usados para treino por padrão. Retenção e auditoria variam por categoria e configuração. [5]
+
+[CONFIRMADO] Settings > Cloud browser > Browser data permite apagar dados de navegação e encerrar sessões; permissões de sites podem ser Always ask, Auto approve ou Always allow, conforme disponibilidade. [4][5]
+
+8.4 Claude Cowork
+
+[CONFIRMADO] A Anthropic recomenda pasta dedicada, backups, sites confiáveis e modo Manual para tarefas que tocam dados sensíveis, contas, mensagens ou compras. Deleção permanente exige aprovação explícita. [10]
+
+[CONFIRMADO] Em cloud sessions, arquivos locais autorizados são processados nos servidores da Anthropic; o ambiente isolado protege o computador do código, mas não neutraliza riscos das fontes lidas e ações permitidas. [10]
+
+[CONFIRMADO] “Skip all approvals” não executa a triagem automática do modo Auto e deve ser evitado em aula introdutória. [9][10]
+
+8.5 Manus
+
+[CONFIRMADO] A Manus informa certificações SOC 2 Type II, ISO 27001 e ISO 27701, criptografia de dados e exclusão de dados do cliente ao sair, conforme seu Trust Center. Certificação não substitui avaliação de finalidade, contrato e configuração. [22][42]
+
+[CONFIRMADO] Em conta Team, o Team Owner pode acessar dados de sessão dos membros, incluindo passos e conteúdo; em conta individual, tarefas são privadas por padrão até compartilhamento explícito. [23]
+
+[CONFIRMADO] A opção de salvar login no navegador em nuvem pode ser desativada em Settings > Cloud Browser. [21]
+
+8.6 Aplicação jurídica brasileira
+
+[CONFIRMADO] A Recomendação 001/2024/CFOAB organiza orientações em legislação aplicável, confidencialidade e privacidade, prática jurídica ética e comunicação sobre uso de IA. [26][35]
+
+[CONFIRMADO] O advogado deve avaliar a segurança do fornecedor, observar LGPD e sigilo, não delegar atividade privativa ao sistema, verificar integralmente informações destinadas ao Judiciário e assegurar análise humana competente. [26]
+
+[CONFIRMADO] O documento recomenda transparência prévia com o cliente, incluindo finalidade, benefícios, limitações, riscos, medidas de segurança e possibilidade de revisão humana; também prevê respeito à recusa do cliente. [26]
+
+[SUGESTÃO] Tradução operacional para escritório: nenhuma tarefa jurídica começa com dado real sem classificação, autorização interna, base legal, contrato adequado, configuração aprovada e responsável humano nomeado.
+
+9. LIMITES E SOLUÇÃO DE PROBLEMAS
+
+9.1 Limites gerais
+
+[CONFIRMADO] Agentes ainda podem produzir fatos falsos, raciocínio contraditório, citações inexistentes, ações fora de escopo e resultados incompletos. [27][41]
+
+[CONFIRMADO] Sites podem bloquear automação, exigir CAPTCHA, usar login incompatível ou mudar interface. Nesses casos, o agente pode parar e pedir takeover. [4][19][21]
+
+[CONFIRMADO] Tarefas longas consomem mais uso/créditos; custo não é função simples do tamanho do prompt, pois modelo, contexto, ferramentas, recuperação e cache influenciam. [6][20][41]
+
+9.2 Quando o agente travar
+
+[SUGESTÃO] Sequência de diagnóstico:
+1) ler a mensagem de erro e identificar etapa;
+2) confirmar acesso ao arquivo/site;
+3) reduzir escopo;
+4) fornecer uma fonte direta;
+5) trocar ação por alternativa de leitura;
+6) assumir login/CAPTCHA, sem entregar senha;
+7) iniciar nova tarefa para assunto diferente;
+8) registrar o que ficou pendente.
+
+[CONFIRMADO] No Claude Cowork, “Setting up Claude’s workspace” pode significar atualização do ambiente. Se uma antiga sessão local parou, verificar se o desktop ficou aberto; sessões em nuvem podem ser reabertas em outra superfície. [9]
+
+[CONFIRMADO] No Manus, abrir “browser” no canto superior direito e assumir manualmente pode resolver CAPTCHA ou login. Falha técnica do lado do serviço gera reembolso dos créditos consumidos; para outros casos, suporte pode exigir link compartilhável da tarefa. [19][20][21]
+
+[CONFIRMADO] No ChatGPT Work, alguns sites bloqueiam acesso; a documentação informa que o produto comunica o bloqueio e tenta alternativa quando possível. [4]
+
+9.3 Quando interromper
+
+[SUGESTÃO] Interromper imediatamente se o agente: abrir aplicativo não solicitado; tentar enviar mensagem; pedir segredo no chat; expandir acesso; alterar muitos arquivos sem plano; produzir conteúdo jurídico sem fonte; ocultar incerteza; ou pedir aprovação genérica sem mostrar ação e consequência.
+
+10. COMPARAÇÃO PARA INICIANTES
+
+10.1 ChatGPT Work
+
+[CONFIRMADO] Melhor encaixe: tarefa geral com arquivos, plugins, navegador e entrega em documento/planilha/apresentação; experiência desenhada para resultado cotidiano e revisão. [1][2]
+[CONFIRMADO] Diferencial visível: escolha Chat ou Work, execução cloud/local conforme superfície, plugins por “@”, artefatos e continuidade entre dispositivos em cenários compatíveis. [1][2][3]
+[CONFIRMADO] Atenção: recursos e modelos variam fortemente por plano e rollout; Work e Codex compartilham uso. [6][7]
+
+10.2 Claude Cowork
+
+[CONFIRMADO] Melhor encaixe: trabalho extenso com documentos, pasta local, conectores, produção de arquivos e modos claros de aprovação. [9][10]
+[CONFIRMADO] Diferencial visível: Manual/Auto/Skip, projetos persistentes, scheduled tasks e navegador embutido/Chrome conforme conta. [9][11]
+[CONFIRMADO] Atenção: parte das contas já não mostra “Cowork” separado porque Chat e Cowork estão sendo unificados. [9]
+
+10.3 Manus
+
+[CONFIRMADO] Melhor encaixe: agente cloud com tarefas autônomas, criação de ativos, research e possibilidade de takeover do computador remoto. [18][19][25]
+[CONFIRMADO] Diferencial visível: separação Chat Mode/Agent Mode, escolha 2.0 Lite/2.0/2.0 Max e contagem por créditos. [17][18]
+[CONFIRMADO] Atenção: custo é variável e não pode ser previsto com precisão; checar saldo e limitar tarefa. [20][41]
+
+10.4 Regra de escolha
+
+[SUGESTÃO] Escolha a ferramenta que já tem acesso autorizado às fontes e entrega necessária. Para aula, priorize a disponível no plano do aluno, use apenas conteúdo público e mantenha ações reversíveis.
+
+[SUGESTÃO] Não escolher por “qual é mais inteligente”. Escolher por: superfície, arquivos, ferramentas, permissão, custo, transparência, suporte administrativo e tipo de revisão.
+
+11. ESTADO RECENTE, BETA E MUDANÇAS DE INTERFACE
+
+[CONFIRMADO] ChatGPT Work é o nome atual da experiência geral de delegação descrita pela OpenAI. “Agent mode” deve aparecer na aula apenas como nome histórico ou quando uma conta legada ainda o mostrar. [1][2][3]
+
+[CONFIRMADO] “Dots” foram anunciados em 29/09/2026 como agentes sempre ativos, com computador e navegador próprios, em rollout gradual. Estão fora do núcleo da aula e devem ser citados em “o que vem depois”. [8]
+
+[CONFIRMADO] Claude Cowork está em transição para uma experiência unificada chamada Claude; o seletor pode mostrar Chat/Cowork ou não. [9][11]
+
+[CONFIRMADO] O navegador embutido do Cowork e a execução em nuvem têm disponibilidade gradual e controles distintos por plano/organização. [9][11]
+
+[CONFIRMADO] Manus 2.0 mantém variantes Lite, padrão e Max. A empresa declarou retorno à independência após a separação da Meta; a gravação deve evitar dizer que “Manus pertence à Meta”. [17][24]
+
+[VERIFICAR] Capturar telas finais no máximo sete dias antes da gravação e repetir a checagem na véspera da publicação.
+
+12. RECURSOS DIDÁTICOS EXISTENTES
+
+[CONFIRMADO] ChatGPT Learn oferece início rápido em pt-BR com passos para Chat, Work e Codex, além de guia específico de Work e navegador. [1][3][4]
+
+[CONFIRMADO] Claude Help Center oferece guia de início do Cowork, modos de aprovação, disponibilidade por superfície, segurança, troubleshooting e versão em português para disponibilidade/idioma. [9][10][12][40]
+
+[CONFIRMADO] Manus Help Center oferece páginas atuais de planos, créditos, modos, takeover, browser e aplicativo desktop. [17][18][19][20][21][39]
+
+[CONFIRMADO] O guia “Claude for the legal industry” descreve superfícies do Claude, exemplos internos, roadmap de adoção, controles de acesso e casos jurídicos. [30]
+
+[CONFIRMADO] O NIST AI 600-1 fornece uma lista transversal de riscos de IA generativa e ações de governança, medição e gestão. [27]
+
+[CONFIRMADO] “Google’s Approach for Secure AI Agents” apresenta riscos por etapa e princípios: controle humano definido, poderes limitados e ações observáveis. [32]
+
+[SUGESTÃO] Usar páginas oficiais como demonstração de “onde verificar”, não transformar a aula em leitura de documentação.
+
+13. EXERCÍCIOS PRÁTICOS DE BAIXO RISCO
+
+13.1 Ações observáveis antes das atividades
+
+[SUGESTÃO] Ação A - Definir: o aluno consegue escrever objetivo, fonte, limite, critério e produto.
+[SUGESTÃO] Ação B - Acompanhar: o aluno aponta plano, ação atual, fonte usada e pedido de aprovação.
+[SUGESTÃO] Ação C - Intervir: o aluno pausa, corrige escopo ou fornece informação faltante.
+[SUGESTÃO] Ação D - Revisar: o aluno confere cinco fatos e abre todos os arquivos.
+[SUGESTÃO] Ação E - Reconhecer limites: o aluno identifica ao menos três riscos e uma mitigação por risco.
+
+13.2 Exercício 1 - Da pergunta à tarefa delegável (10 minutos)
+
+[SUGESTÃO] Material: três PDFs públicos já salvos na pasta do curso: OAB, NIST e Google Secure AI Agents.
+[SUGESTÃO] Pedido inicial ruim: “Resuma IA.”
+[SUGESTÃO] Entrega do aluno: reescrever usando O-F-L-C-P; prever ponto de parada; escolher somente leitura.
+[SUGESTÃO] Critério: deve haver resultado, público, fontes, limite, formato e verificação.
+
+13.3 Exercício 2 - Acompanhar e intervir (12 minutos)
+
+[SUGESTÃO] Tarefa: pedir um briefing de uma página comparando três riscos comuns nos PDFs.
+[SUGESTÃO] Durante a execução, o instrutor injeta uma mudança: “não use a internet e limite a duas fontes”.
+[SUGESTÃO] O aluno precisa encontrar o controle de pausa/intervenção, enviar correção e observar se o plano muda.
+[SUGESTÃO] Critério: o resultado usa apenas fontes permitidas e registra a mudança.
+
+13.4 Exercício 3 - Revisão factual (12 minutos)
+
+[SUGESTÃO] Tarefa: o agente deve listar cinco orientações da OAB e associar cada uma a uma página.
+[SUGESTÃO] O aluno abre o PDF e valida uma a uma, marcando “confirmado”, “parcial” ou “não localizado”.
+[SUGESTÃO] Critério: nenhuma afirmação sem localização e nenhuma jurisprudência inventada.
+
+13.5 Exercício 4 - Arquivos reversíveis (12 minutos)
+
+[SUGESTÃO] Criar pasta Treino_Agente com seis cópias de arquivos públicos. Pedir inventário e proposta de nomes. Exigir aprovação antes de mover.
+[SUGESTÃO] Critério: log antes/depois, nenhum arquivo fora da pasta e originais preservados.
+
+13.6 Exercício 5 - Comparar ferramentas sem gastar muito (12 minutos)
+
+[SUGESTÃO] Executar a mesma tarefa pequena em até duas ferramentas disponíveis. Limitar a três fontes, 500 palavras e nenhuma ação externa.
+[SUGESTÃO] Rubrica: facilidade de iniciar; visibilidade do plano; clareza das aprovações; qualidade das fontes; custo/uso percebido; facilidade de corrigir; qualidade do arquivo final.
+[SUGESTÃO] Se só houver plano gratuito, usar Manus 2.0 Lite ou ChatGPT Work disponível e fazer a segunda comparação com capturas demonstrativas.
+
+13.7 Links diretos testados em 18/10/2026
+
+[CONFIRMADO] Recomendação 001/2024/CFOAB: https://www.oab.org.br/publicacoes/AbrirPDF?LivroId=0000002837 [26]
+[CONFIRMADO] NIST AI 600-1: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf [27]
+[CONFIRMADO] Google Secure AI Agents: https://storage.googleapis.com/gweb-research2023-media/pubtools/1018686.pdf [32]
+[CONFIRMADO] Guia jurídico Anthropic: https://www-cdn.anthropic.com/files/4zrzovbb/website/c95395f754f3ca24d46eb352f0c0a71266c36c13.pdf [30]
+
+14. DEZ RESPOSTAS CENTRAIS PARA O FOCO ESPECÍFICO
+
+14.1 Como transformar uma demanda em tarefa multi-etapas?
+
+[SUGESTÃO] Escrever objetivo, insumos, limites, critérios e entrega; pedir plano antes da ação; separar leitura, análise, produção e revisão; inserir checkpoints antes de escrita externa, envio, exclusão, compra ou publicação.
+
+14.2 Quais ferramentas o agente pode usar?
+
+[CONFIRMADO] Dependendo do produto e das permissões: arquivos, navegador, busca, execução de código, plugins/conectores, aplicações e memória/projetos. O conjunto real varia por plano, superfície e administrador. [1][2][9][11][18][29]
+
+14.3 Como acompanhar a execução?
+
+[SUGESTÃO] Observar plano, ação atual, fonte, retorno da ferramenta, mudança de estratégia, pedido de aprovação e arquivo produzido. Perguntar: “O que você já concluiu? O que falta? Qual evidência sustenta a próxima ação?”
+
+14.4 Quando e como intervir?
+
+[SUGESTÃO] Intervir em desvio de escopo, fonte inadequada, acesso excessivo, gasto crescente, erro repetido ou ação consequencial. Pausar, declarar correção concreta e confirmar novo limite.
+
+14.5 Como revisar o resultado?
+
+[CONFIRMADO] Verificar números, nomes, datas, citações, atualidade, completude e aderência aos arquivos originais; abrir cada guia, planilha, slide ou página criada. [2]
+
+14.6 Quais configurações de segurança usar?
+
+[SUGESTÃO] Manual/Always ask; pasta dedicada; sites em allowlist restrita; conectores mínimos; sem credenciais no chat; cópia de segurança; revisão antes de ação externa.
+
+14.7 O que fazer quando o agente para?
+
+[SUGESTÃO] Identificar bloqueio, fornecer só a informação necessária, assumir login/CAPTCHA se seguro, reduzir escopo, usar fonte direta e registrar o que não foi concluído.
+
+14.8 Como controlar custo e uso?
+
+[CONFIRMADO] Limitar fontes, subtarefas e formato; separar assuntos em tarefas diferentes; acompanhar saldo/painel; não confiar em estimativa inventada pelo modelo. [6][20][41]
+
+14.9 Qual tarefa jurídica é segura para o primeiro uso?
+
+[SUGESTÃO] Checklist sobre documento público ou contrato inteiramente fictício, sem dados pessoais e sem decisão profissional final; toda conclusão passa por advogado responsável.
+
+14.10 Como escolher entre ChatGPT Work, Claude Cowork e Manus?
+
+[SUGESTÃO] ChatGPT Work para fluxo amplo dentro do ecossistema ChatGPT; Cowork para documentos/pastas e aprovações explícitas; Manus para tarefas cloud e entregas autônomas com créditos. Confirmar plano, permissões e localização antes.
+
+15. TRECHOS ESSENCIAIS PARA USO DIDÁTICO
+
+[CONFIRMADO] “ChatGPT Work is a way to delegate real work to ChatGPT.” [1]
+
+[CONFIRMADO] “An agent is an AI model that directs its own processes and tool use.” [15]
+
+[CONFIRMADO] “Workflows are systems where LLMs and tools are orchestrated through predefined code paths.” [16]
+
+[CONFIRMADO] “Agent mode supports users in performing more complex tasks.” [18]
+
+[CONFIRMADO] “AI agents are software systems that use AI to pursue goals and complete tasks.” [28]
+
+[CONFIRMADO] “Agents must have well-defined human controllers.” [32]
+
+[CONFIRMADO] “O julgamento profissional não seja realizado por meio de sistemas de IA generativa sem supervisão humana.” [26]
+
+[CONFIRMADO] “Manus will soon return to operating as an independent company.” [24]
+
+16. MATERIAIS PARA DOWNLOAD E ARQUIVOS SALVOS
+
+16.1 [BAIXAR] Recomendação 001/2024/CFOAB
+[CONFIRMADO] Arquivo local: oab-recomendacao-001-2024-ia-generativa.pdf
+[CONFIRMADO] Fonte: Conselho Federal da OAB. Utilidade: seção jurídica, checklist de sigilo, verificação, supervisão e comunicação ao cliente. [26]
+[CONFIRMADO] Validação: PDF, 15 páginas, 1.302.782 bytes, SHA-256 95235C9364BB6A7E061180EB2C38DA4679DB947A6C05F66C2EFB0B3341C61A80.
+
+16.2 [BAIXAR] NIST AI 600-1 - Generative AI Profile
+[CONFIRMADO] Arquivo local: nist-ai-600-1-genai-profile.pdf
+[CONFIRMADO] Fonte: NIST. Utilidade: taxonomia de riscos e ações de governança/medição/gestão. [27]
+[CONFIRMADO] Validação: PDF, 64 páginas, 1.174.643 bytes, SHA-256 6E73620AB6B64E90EF2C04BF0E0D6246185A2F4B1B13CAB0DF494496CFF89B6A.
+
+16.3 [BAIXAR] Google’s Approach for Secure AI Agents: An Introduction
+[CONFIRMADO] Arquivo local: google-secure-ai-agents-introduction.pdf
+[CONFIRMADO] Fonte: Google. Utilidade: ameaça por etapa, prompt injection, memória, controle humano, limitação de poderes e observabilidade. [32]
+[CONFIRMADO] Validação: PDF, 18 páginas, 3.688.189 bytes, SHA-256 AD61F1B34E326130BE37FB60F0A29D39626D700DB8B0A57CDF5597BA510431C1.
+
+16.4 [BAIXAR] Claude for the legal industry - A practical deployment guide
+[CONFIRMADO] Arquivo local: anthropic-claude-for-legal-guide-2026.pdf
+[CONFIRMADO] Fonte: Anthropic. Utilidade: demonstrações jurídicas, casos internos, roadmap, governança e comparação Chat/Cowork. [30]
+[CONFIRMADO] Validação: PDF, 21 páginas, 646.335 bytes, SHA-256 C38779A191E1C4FAE4B5DFBB1530E1775144D7C896829B88C8A4B486E3A7DB70.
+
+16.5 [BAIXAR] The 2026 State of AI Agents Report
+[CONFIRMADO] Arquivo local: anthropic-2026-state-of-ai-agents-report.pdf
+[CONFIRMADO] Fonte: Anthropic. Utilidade: panorama de adoção e estudos de caso; usar com ressalva de patrocínio do fornecedor. [31]
+[CONFIRMADO] Validação: PDF, 48 páginas, 2.369.482 bytes, SHA-256 219DDD55734AF68741348031610D642E9EA6AF41A8D36CFB18530A225E8E82DE.
+
+16.6 [ACESSO RESTRITO]
+[CONFIRMADO] Relatórios completos SOC 2 e alguns artefatos do Trust Center da Manus exigem solicitação de acesso. A página pública confirma os controles e certificações, mas o instrutor não deve afirmar ter auditado o relatório completo. [42]
+
+17. PÁGINAS A SALVAR COMO REFERÊNCIA
+
+[SUGESTÃO] Salvar em PDF/web archive perto da gravação:
+- ChatGPT Learn: Quickstart; Get started with Work; Browser; Pricing; Models; Work cloud security. [1][3][4][5][6][7]
+- Claude Help: Get started with Cowork; Use Cowork safely; Cowork for Team/Enterprise; supported countries; choose a plan; release notes. [9][10][11][12][13][38]
+- Manus Help: pricing; Chat vs Agent; credits; takeover; browser access; Desktop App; task visibility. [17][18][19][20][21][23][39]
+- OAB: Recomendação 001/2024 e notícia explicativa. [26][35]
+- NIST: AI 600-1 e taxonomia de ferramentas/agentes. [27][29]
+
+[SUGESTÃO] Nome de captura: AAAA-MM-DD_produto_pagina_plano_conta.ext.
+[SUGESTÃO] Capturar também seletor de modo, permissões, página de uso/créditos e tela de conclusão.
+
+18. LACUNAS, INCERTEZAS E PONTOS A ATUALIZAR
+
+[VERIFICAR] Matriz exata de ChatGPT Work por plano no Brasil; a documentação pública atual mistura disponibilidade geral, modelos e rollouts.
+[VERIFICAR] Termos em português exibidos na interface: “Work” pode permanecer sem tradução, enquanto outras opções podem variar.
+[VERIFICAR] Em quais contas Claude ainda mostra Chat/Cowork separados versus experiência unificada.
+[VERIFICAR] Disponibilidade brasileira formal e moeda local do Manus; registrar teste de cadastro e checkout sem concluir compra.
+[VERIFICAR] Quantidade real de créditos consumida pelos exercícios do Manus; fazer ensaio com conta nova e registrar saldo antes/depois.
+[VERIFICAR] Limites de tarefa do ChatGPT e Claude, pois são dinâmicos e dependem de modelo, duração, superfície e plano.
+[VERIFICAR] Disponibilidade do navegador embutido do Claude em Windows e planos Pro no dia da gravação.
+[VERIFICAR] Se capturas antigas ainda mostram “agent mode”, inserir legenda “interface histórica - julho de 2025”.
+[VERIFICAR] Revisar a política de privacidade e contrato de cada fornecedor antes de recomendar uso com dados corporativos ou jurídicos.
+[VERIFICAR] Confirmar que links diretos dos PDFs continuam ativos e que hashes mudaram somente se houver versão nova.
+
+19. APÊNDICE TÉCNICO PARA O INSTRUTOR
+
+19.1 Arquitetura mínima
+
+[CONFIRMADO] Um agente prático combina modelo, ferramentas, orquestração e contexto/memória. O modelo interpreta e decide; ferramentas observam ou alteram o ambiente; a orquestração controla o ciclo; contexto mantém objetivo e evidências. [15][16][28][32]
+
+19.2 Tipos de ferramenta
+
+[CONFIRMADO] Somente leitura: busca, leitura de arquivo e consulta a base. Escrita restrita: formulário, calendário, criação de arquivo em pasta delimitada. Escrita ampla: shell, computador, navegador autenticado ou API capaz de alterar sistemas. [29]
+
+[CONFIRMADO] Ambiente confiável contém fontes controladas; ambiente não confiável inclui internet, e-mail externo e documentos de origem desconhecida. Combinar escrita ampla com ambiente não confiável exige controles fortes. [10][29][32]
+
+19.3 Confiabilidade
+
+[CONFIRMADO] Agentes devem observar retorno real das ferramentas, usar critérios de parada e pedir julgamento humano em bloqueios ou decisões relevantes. [15][16]
+
+[SUGESTÃO] Avaliar cada exercício por: taxa de conclusão; fatos corretos; fontes válidas; ações indevidas; número de intervenções; tempo; custo; qualidade do artefato; reversibilidade.
+
+19.4 Governança jurídica
+
+[CONFIRMADO] Controles recomendados pela OAB incluem políticas claras, treinamento, monitoramento, revisão integral de dados gerados e análise humana competente antes de documentos enviados a tribunais. [26]
+
+[SUGESTÃO] Política mínima para piloto: finalidade; dados proibidos; fornecedores aprovados; permissões; responsável; logging; retenção; revisão; comunicação ao cliente; incidente; desligamento.
+
+19.5 Limites do escopo
+
+[SUGESTÃO] Não aprofundar nesta aula: construção de agentes, APIs, multiagentes, MCP técnico, n8n, benchmarks de modelos, automação irrestrita, agentes sempre ativos ou administração empresarial avançada.
+
+20. FONTES NUMERADAS
+
+[1] OPENAI. Get started with ChatGPT Work. ChatGPT Learn. Atualização contínua; consultado em 18/10/2026. https://learn.chatgpt.com/docs/get-started-with-work
+
+[2] OPENAI. Use ChatGPT. ChatGPT Learn. Atualização contínua; consultado em 18/10/2026. https://learn.chatgpt.com/docs/use-chatgpt
+
+[3] OPENAI. Quickstart / Início rápido. ChatGPT Learn. Atualização contínua; consultado em 18/10/2026. https://learn.chatgpt.com/pt-BR/docs/quickstart
+
+[4] OPENAI. Browser. ChatGPT Learn. Atualização contínua; consultado em 18/10/2026. https://learn.chatgpt.com/docs/browser
+
+[5] OPENAI. ChatGPT Work cloud security. ChatGPT Learn. Atualização contínua; consultado em 18/10/2026. https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security
+
+[6] OPENAI. Pricing. ChatGPT Learn. Atualização contínua; consultado em 18/10/2026. https://learn.chatgpt.com/docs/pricing
+
+[7] OPENAI. Models. ChatGPT Learn. Atualização contínua; consultado em 18/10/2026. https://learn.chatgpt.com/docs/models?surface=web
+
+[8] OPENAI. DevDay 2026. ChatGPT Learn, 29/09/2026; consultado em 18/10/2026. https://learn.chatgpt.com/docs/whats-new/devday-2026
+
+[9] ANTHROPIC. Get started with Claude Cowork. Claude Help Center. Atualizado em outubro de 2026; consultado em 18/10/2026. https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
+
+[10] ANTHROPIC. Use Claude Cowork safely. Claude Help Center. Atualizado em outubro de 2026; consultado em 18/10/2026. https://support.claude.com/en/articles/13364135-use-claude-cowork-safely
+
+[11] ANTHROPIC. Use Claude Cowork on Team and Enterprise plans. Claude Help Center. Atualizado em outubro de 2026; consultado em 18/10/2026. https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans
+
+[12] ANTHROPIC. Onde posso acessar Claude? Claude Help Center, 05/03/2026; consultado em 18/10/2026. https://support.claude.com/pt/articles/8461763-onde-posso-acessar-claude
+
+[13] ANTHROPIC. Choose a Claude plan. Claude Help Center, 19/05/2026; consultado em 18/10/2026. https://support.claude.com/en/articles/11049762-choose-a-claude-plan
+
+[14] ANTHROPIC. Pricing. Consultado em 18/10/2026. https://www.anthropic.com/pricing
+
+[15] ANTHROPIC. Trustworthy agents in practice. 09/04/2026; consultado em 18/10/2026. https://www.anthropic.com/research/trustworthy-agents
+
+[16] ANTHROPIC. Building effective agents. 19/12/2024; consultado em 18/10/2026. https://www.anthropic.com/engineering/building-effective-agents
+
+[17] MANUS. What is the current membership pricing for Manus? Manus Help Center. Atualizado em outubro de 2026; consultado em 18/10/2026. https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus
+
+[18] MANUS. What are the differences between Chat mode and Agent mode? Manus Help Center. Atualizado em setembro de 2026; consultado em 18/10/2026. https://help.manus.im/en/articles/11711128-what-are-the-differences-between-chat-mode-and-agent-mode
+
+[19] MANUS. How can I take over Manus' browser or VS Code? Manus Help Center, 17/03/2026; consultado em 18/10/2026. https://help.manus.im/en/articles/11711218-how-can-i-take-over-manus-browser-or-vs-code
+
+[20] MANUS. What are the rules for credits consumption? Manus Help Center. Atualizado em outubro de 2026; consultado em 18/10/2026. https://help.manus.im/en/articles/11711097-what-are-the-rules-for-credits-consumption-and-how-can-i-obtain-them
+
+[21] MANUS. What can I do if I encounter browser access issues? Manus Help Center, 17/12/2025; consultado em 18/10/2026. https://help.manus.im/en/articles/11813705-what-can-i-do-if-i-encounter-browser-access-issues
+
+[22] MANUS. Security. Consultado em 18/10/2026. https://manus.im/security
+
+[23] MANUS. Who can see my tasks? Manus Help Center, 08/12/2025; consultado em 18/10/2026. https://help.manus.im/en/articles/11711929-who-can-see-my-tasks
+
+[24] MANUS. A Note to Our Users. 11/08/2026; consultado em 18/10/2026. https://manus.im/blog/a-note-to-our-users
+
+[25] MANUS. Beginner Prompts to Get Started with Manus. 11/02/2026; consultado em 18/10/2026. https://manus.im/blog/manus-beginner-prompts
+
+[26] CONSELHO FEDERAL DA OAB. Recomendação n. 001/2024/CFOAB. Aprovada em 11/11/2024; PDF consultado em 18/10/2026. https://www.oab.org.br/publicacoes/AbrirPDF?LivroId=0000002837
+
+[27] NIST. Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile. NIST AI 600-1, julho de 2024; página atualizada em 08/04/2026; consultado em 18/10/2026. https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
+
+[28] GOOGLE CLOUD. What are AI agents? Atualizado em 02/04/2026; consultado em 18/10/2026. https://cloud.google.com/discover/what-are-ai-agents
+
+[29] NIST. Lessons Learned from the Consortium: Tool Use in Agent Systems. Agosto de 2025; consultado em 18/10/2026. https://www.nist.gov/news-events/news/2025/08/lessons-learned-consortium-tool-use-agent-systems
+
+[30] ANTHROPIC. Claude for the legal industry: A practical deployment guide. 2026; PDF consultado em 18/10/2026. https://www-cdn.anthropic.com/files/4zrzovbb/website/c95395f754f3ca24d46eb352f0c0a71266c36c13.pdf
+
+[31] ANTHROPIC. The 2026 State of AI Agents Report. 2026; PDF consultado em 18/10/2026. https://resources.anthropic.com/hubfs/The%202026%20State%20of%20AI%20Agents%20Report.pdf
+
+[32] GOOGLE. Google’s Approach for Secure AI Agents: An Introduction. Maio de 2025; PDF consultado em 18/10/2026. https://storage.googleapis.com/gweb-research2023-media/pubtools/1018686.pdf
+
+[33] ANTHROPIC. Law&Company transforms legal services in South Korea with Claude. Estudo de caso; consultado em 18/10/2026. https://www.anthropic.com/customers/law-and-company
+
+[34] MANUS. Customer Stories. Consultado em 18/10/2026. https://manus.im/blog/customer-stories
+
+[35] CONSELHO FEDERAL DA OAB. OAB aprova recomendações para uso de IA na prática jurídica. 11/11/2024; consultado em 18/10/2026. https://www.oab.org.br/noticia/62704/oab-aprova-recomendacoes-para-uso-de-ia-na-pratica-juridica
+
+[36] TECHCRUNCH. OpenAI launches a general purpose agent in ChatGPT. 17/07/2025; consultado em 18/10/2026. https://techcrunch.com/2025/07/17/openai-launches-a-general-purpose-agent-in-chatgpt/
+
+[37] AMAZON WEB SERVICES. Manus Selects AWS to Power General Purpose AI Agent, Serving Millions Globally. 03/12/2025; consultado em 18/10/2026. https://press.aboutamazon.com/aws/2025/12/manus-selects-aws-to-power-general-purpose-ai-agent-serving-millions-globally
+
+[38] ANTHROPIC. Release notes. Claude Help Center. Entradas de janeiro a outubro de 2026; consultado em 18/10/2026. https://support.claude.com/en/articles/12138966-release-notes
+
+[39] MANUS. How to download the Manus Desktop App? Manus Help Center. Atualizado em outubro de 2026; consultado em 18/10/2026. https://help.manus.im/en/articles/14089011-how-to-download-the-manus-desktop-app
+
+[40] ANTHROPIC. How to use Claude in your preferred language. 06/08/2026; consultado em 18/10/2026. https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language
+
+[41] MANUS. Is there a way to check how many credits a task will cost before I begin? Manus Help Center, 18/12/2025; consultado em 18/10/2026. https://help.manus.im/en/articles/13185575-is-there-a-way-to-check-how-many-credits-a-task-will-cost-before-i-begin
+
+[42] MANUS. Trust Center. Atualização contínua; consultado em 18/10/2026. https://trust.manus.im/
+
+CHECKLIST FINAL
+
+1. Identidade, definição e histórico cobertos: SIM
+2. Acesso, planos, requisitos e disponibilidade cobertos: SIM
+3. Primeiros passos com nomes de menus e variantes de rollout: SIM
+4. Conceitos essenciais e níveis de autonomia cobertos: SIM
+5. Funcionalidades, casos de uso e comparação cobertos: SIM
+6. Prompts oficiais separados de prompts sugeridos: SIM
+7. Segurança, privacidade, limites e troubleshooting cobertos: SIM
+8. Aplicação jurídica brasileira e Recomendação 001/2024/CFOAB cobertas: SIM
+9. Exercícios de baixo risco ligados às ações observáveis: SIM
+10. Materiais externos baixados, identificados e validados: SIM
+11. Lacunas e itens sujeitos a mudança marcados para verificação: SIM
+12. Fontes numeradas com URL e data de consulta: SIM
