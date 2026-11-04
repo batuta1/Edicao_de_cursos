@@ -68,7 +68,7 @@ Copie o `.zip` para `original/` (copiar, não mover) e confira o hash se quiser 
 `organizar-pasta-de-cursos`: o pacote de origem está em `Cursos/<Empresa>/<curso>/scorm/vN/` e o `.zip`
 final de `saidas/` é uma **versão nova** do curso. Rode `versao_do_pacote.py` dessa skill nele para
 saber se vira `v(N+1)` ou se tem o mesmo conteúdo de uma versão existente (então vai em `copias/`),
-guarde o zip (e, se quiser, a pasta extraída) em `scorm/vN/` e atualize o `scorm/LEIAME.md`.
+guarde o zip (e, se quiser, a pasta extraída) em `scorm/vN/` e atualize o `scorm/README.md`.
 `trabalho/`, `teste/` e os roteiros de blocos não vão para a principal.
 
 ---

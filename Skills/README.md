@@ -7,7 +7,7 @@ Cópias das skills pessoais que ficam em `%USERPROFILE%\.claude\skills\`.
 | `criar-ementa-curso` | Cria do zero o pacote de um curso: ementa, roteiros Essentials e Hands-on, tabela MET e carga horária. |
 | `revisar-curso-scorm` | Revisa os textos de cursos Articulate Rise 360 exportados em SCORM (.zip) sem quebrar a estrutura. |
 | `inserir-blocos-scorm` | Insere blocos novos (nativos no padrão da equipe ou HTML próprio) em SCORM do Rise 360 sem a plataforma Articulate, e verifica se o pacote está consistente antes da LMS. |
-| `organizar-pasta-de-cursos` | Diz onde guardar e como nomear tudo da pasta `Cursos/` (empresa, curso, versões do SCORM, cópias, apoio em `base/`, LEIAME). As três skills acima a citam para decidir onde entregar. Traz o script `versao_do_pacote.py`, que diz se um SCORM é versão nova ou cópia de uma existente. |
+| `organizar-pasta-de-cursos` | Diz onde guardar e como nomear tudo da pasta `Cursos/` (empresa, curso, versões do SCORM, cópias, apoio em `base/`, README). As três skills acima a citam para decidir onde entregar. Traz o script `versao_do_pacote.py`, que diz se um SCORM é versão nova ou cópia de uma existente. |
 
 ## Como instalar em outro Claude
 

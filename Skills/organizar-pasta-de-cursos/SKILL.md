@@ -1,6 +1,6 @@
 ---
 name: organizar-pasta-de-cursos
-description: Regras de onde guardar e como nomear tudo o que é de curso na pasta `Cursos/` do repositório Edicao_de_cursos — empresa, pasta do curso, versões do SCORM (`scorm/vN`), cópias idênticas, material de apoio (`base/`) e o LEIAME de cada curso. Use sempre que for salvar, mover, renomear ou procurar um arquivo de curso (pacote SCORM .zip ou pasta extraída, ementa, plano de aula, roteiro, carga horária, conteúdo bruto, pesquisa, análise crítica), criar a pasta de um curso novo, decidir se um SCORM novo é uma versão nova ou cópia de uma que já existe, ou reorganizar pastas — mesmo que o usuário só diga "guarda esse zip", "onde coloco esse roteiro?", "isso é a v2 ou a v3?". As skills criar-ementa-curso, revisar-curso-scorm e inserir-blocos-scorm usam esta para decidir onde entregar.
+description: Regras de onde guardar e como nomear tudo o que é de curso na pasta `Cursos/` do repositório Edicao_de_cursos — empresa, pasta do curso, versões do SCORM (`scorm/vN`), cópias idênticas, material de apoio (`base/`) e o README de cada curso. Use sempre que for salvar, mover, renomear ou procurar um arquivo de curso (pacote SCORM .zip ou pasta extraída, ementa, plano de aula, roteiro, carga horária, conteúdo bruto, pesquisa, análise crítica), criar a pasta de um curso novo, decidir se um SCORM novo é uma versão nova ou cópia de uma que já existe, ou reorganizar pastas — mesmo que o usuário só diga "guarda esse zip", "onde coloco esse roteiro?", "isso é a v2 ou a v3?". As skills criar-ementa-curso, revisar-curso-scorm e inserir-blocos-scorm usam esta para decidir onde entregar.
 ---
 
 # Organização da pasta `Cursos/`
@@ -13,9 +13,9 @@ O repositório guarda o **processo de desenvolvimento** dos cursos: os pacotes S
 Cursos/
 └── <Empresa>/
     └── <curso>/
-        ├── LEIAME.md              id do curso na plataforma e para que serve cada pasta
+        ├── README.md              id do curso na plataforma e para que serve cada pasta
         ├── scorm/
-        │   ├── LEIAME.md          tabela de versões e «versão publicada na plataforma» (a preencher)
+        │   ├── README.md          tabela de versões e «versão publicada na plataforma» (a preencher)
         │   └── vN/                v1 = a mais antiga
         │       ├── <pacote>.zip
         │       ├── <pacote>/      pasta extraída do mesmo zip (se houver)
@@ -52,7 +52,7 @@ Empresa nova: crie a pasta com o nome da marca e avise o usuário.
 - O que já existe é a lista de referência: **olhe `ls Cursos/*/`** antes de criar. Se o assunto já tem pasta, o pacote entra nela.
 - Nome de pasta novo = assunto novo. Confira com o catálogo (`novos-cursos-iaclube-priorizacao-v6.json`, só na branch `joao`: `git show joao:novos-cursos-iaclube-priorizacao-v6.json`) e **peça confirmação ao usuário** se não estiver lá.
 - ARCTEL: `modulo-<N>-parte-<M>-<tema>` (ex.: `modulo-1-parte-1-impactos-do-ecossistema-digital`), uma pasta por parte.
-- O id do curso na plataforma (ex.: `curso_ClaudeChatESS`) **não** é o nome da pasta: vai escrito no `LEIAME.md` do curso.
+- O id do curso na plataforma (ex.: `curso_ClaudeChatESS`) **não** é o nome da pasta: vai escrito no `README.md` do curso.
 
 ## 3. Versões do SCORM (`scorm/vN/`)
 
@@ -65,7 +65,7 @@ python Skills/organizar-pasta-de-cursos/scripts/versao_do_pacote.py PACOTE --cur
 O script só lê. Ele diz uma de três coisas:
 - **Mesmo conteúdo que a vN** → o pacote vai em `scorm/vN/copias/`. Não crie versão.
 - **Conteúdo novo e mais recente** → crie `scorm/v(N+1)/`.
-- **Conteúdo novo, mas mais antigo que uma versão existente** → ele ocupa essa posição: renumere de trás para frente com `git mv` e atualize o `scorm/LEIAME.md`.
+- **Conteúdo novo, mas mais antigo que uma versão existente** → ele ocupa essa posição: renumere de trás para frente com `git mv` e atualize o `scorm/README.md`.
 
 Regras de ordem:
 1. **Pela data de publicação** (`lastPublishedAt`, gravada dentro do curso, em UTC). No empate, pelo estágio indicado no nome: original → revisado/editado → V2/v3.
@@ -74,7 +74,7 @@ Regras de ordem:
 
 Dentro de `vN/`: o zip é o pacote principal; a pasta extraída fica ao lado, com o mesmo nome do zip sem `.zip`. Cópias idênticas com o mesmo nome ganham o sufixo `_copia1`, `_copia2`.
 
-Depois de guardar qualquer pacote, **atualize a tabela do `scorm/LEIAME.md`** (versão, data, título, pacote principal, quantas cópias).
+Depois de guardar qualquer pacote, **atualize a tabela do `scorm/README.md`** (versão, data, título, pacote principal, quantas cópias).
 
 ## 4. Material de apoio (`base/<tipo>/`)
 
@@ -94,17 +94,17 @@ Mantenha o nome original do arquivo. Material comum a Essentials e Hands-on do m
 
 **Não entra na principal** (fica na branch `joao`): JSONs de lição, etapas intermediárias, scripts, HTML dos blocos, prompts, versões antigas de plano e roteiro, relatórios de edição, cursos sem SCORM. Se uma skill gerar isso, deixe na pasta de trabalho fora de `Cursos/` e **não** faça commit na principal.
 
-## 5. LEIAME
+## 5. README
 
-- `<curso>/LEIAME.md`: id e título na plataforma, e o que há em `scorm/` e `base/`.
-- `<curso>/scorm/LEIAME.md`: tabela de versões e o bloco «Versão publicada na plataforma» (versão e data). Quem publica na plataforma preenche; não invente.
+- `<curso>/README.md`: id e título na plataforma, e o que há em `scorm/` e `base/`.
+- `<curso>/scorm/README.md`: tabela de versões e o bloco «Versão publicada na plataforma» (versão e data). Quem publica na plataforma preenche; não invente.
 
 ## Como proceder
 
 1. Descubra a empresa e o curso (seções 1 e 2). Na dúvida, pergunte.
 2. SCORM novo? Rode o script e siga a resposta (seção 3). Documento de apoio? Escolha o tipo (seção 4).
 3. Mova com `git mv` quando o arquivo já for do repositório, para preservar o histórico.
-4. Atualize os LEIAME, confira que não ficou pasta vazia e **commite só o que você tocou**. Não faça `push` sem o usuário pedir.
+4. Atualize os README, confira que não ficou pasta vazia e **commite só o que você tocou**. Não faça `push` sem o usuário pedir.
 
 ## Antes de reorganizar em massa
 
