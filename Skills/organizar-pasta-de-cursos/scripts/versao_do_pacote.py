@@ -121,7 +121,7 @@ def main():
         print(f"\n=> CONTEÚDO NOVO e mais recente: crie scorm/v{posicao}/.")
     else:
         print(f"\n=> CONTEÚDO NOVO, mas mais antigo que a v{posicao}: ele seria a v{posicao}; "
-              f"renumere (git mv) da v{posicao} em diante e atualize o scorm/LEIAME.md.")
+              f"renumere (git mv) da v{posicao} em diante e atualize o scorm/README.md.")
     return 0
 
 
