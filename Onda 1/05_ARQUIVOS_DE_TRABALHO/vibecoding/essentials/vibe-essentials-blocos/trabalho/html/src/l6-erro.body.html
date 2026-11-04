@@ -1,0 +1,55 @@
+<!--titulo: Descreva o erro antes de pedir a correção-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mão na massa</span>
+  <h1 id="t">Descreva o erro antes de pedir a correção</h1>
+  <p class="sub">“Conserte” não é um pedido investigável. Preencha as quatro partes da descrição e gere o pedido para enviar no Chat ou no Plan — ele pede a causa primeiro e limita a correção ao necessário.</p>
+  <div class="opcoes" role="group" aria-label="Exemplo">
+    <button type="button" class="btn" id="exemplo">Ver um exemplo preenchido</button>
+  </div>
+  <div class="grid" id="campos" style="margin-top:14px"></div>
+  <div class="feedback" id="aviso" aria-live="polite"></div>
+  <h2 style="margin-top:18px">Seu pedido</h2>
+  <pre class="saida" id="saida"></pre>
+  <p class="nota"><button type="button" class="btn principal" id="copiar">Copiar pedido</button></p>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+</section>
+
+<script>
+  // Modelo "Mão na massa" do Módulo 5 do roteiro.
+  var CAMPOS = [
+    ['acontece', 'O que acontece', 'descrever'],
+    ['onde', 'Onde', 'tela ou ação'],
+    ['esperava', 'O que eu esperava', 'descrever'],
+    ['aconteceu', 'O que aconteceu', 'descrever; colar a mensagem de erro, se houver']
+  ];
+  var EX = {
+    acontece: 'o filtro Concluídas mostra também as tarefas pendentes',
+    onde: 'na lista de tarefas, depois de clicar em Concluídas',
+    esperava: 'ver só as tarefas marcadas como concluídas',
+    aconteceu: 'a lista continua igual, com todas as tarefas; nenhuma mensagem de erro aparece'
+  };
+  var FIM = 'Investigue a causa primeiro e me explique. Depois, altere apenas o necessário, sem mudar visual, login ou dados.';
+  var box = document.getElementById('campos');
+  CAMPOS.forEach(function (c) {
+    var d = document.createElement('div'); d.className = 'item';
+    d.innerHTML = '<label for="f-' + c[0] + '"><p class="f">' + c[1] + '</p></label>';
+    var i = document.createElement('textarea'); i.id = 'f-' + c[0]; i.rows = 2; i.placeholder = c[2];
+    i.addEventListener('input', montar); d.appendChild(i); box.appendChild(d);
+  });
+  function montar() {
+    var vazios = 0, linhas = CAMPOS.map(function (c) {
+      var v = document.getElementById('f-' + c[0]).value.trim(); if (!v) vazios++;
+      return c[1] + ': ' + (v || '[' + c[2] + ']');
+    });
+    document.getElementById('saida').textContent = linhas.concat([FIM]).join('\n');
+    var av = document.getElementById('aviso'), todo = linhas.join(' ').toLowerCase();
+    if (vazios) { av.textContent = 'Faltam ' + vazios + ' parte(s) da descrição.'; av.className = 'feedback info'; }
+    else if (/senha|cpf|chave/.test(todo)) { av.textContent = 'Atenção: a descrição parece conter senha, CPF ou chave. Apague antes de enviar — o que você escreve na conversa vai para os servidores da empresa.'; av.className = 'feedback erro'; }
+    else { av.textContent = 'Descrição completa. Antes de enviar, marque um Bookmark em History: se a correção piorar algo, você volta com Revert.'; av.className = 'feedback ok'; }
+  }
+  document.getElementById('exemplo').addEventListener('click', function () {
+    CAMPOS.forEach(function (c) { document.getElementById('f-' + c[0]).value = EX[c[0]]; }); montar();
+  });
+  ligarCopia('copiar', 'saida', 'msg', 'Pedido');
+  montar();
+</script>

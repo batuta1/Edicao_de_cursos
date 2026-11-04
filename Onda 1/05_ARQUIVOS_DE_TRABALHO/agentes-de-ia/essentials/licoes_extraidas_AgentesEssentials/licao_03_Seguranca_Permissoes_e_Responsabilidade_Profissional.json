@@ -1,0 +1,602 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Segurança, Permissões e Responsabilidade Profissional",
+  "lesson": {
+    "description": "",
+    "id": "ed379441-9d34-42ae-b144-337c133bd136",
+    "items": [
+      {
+        "id": "a3fgj51ji5ht054570dxo62o",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pv6zyc9nsey8l06gfcudto39",
+            "heading": "Quais chaves entregar ao agente",
+            "paragraph": "<p>Retomando a analogia da lição 2: antes de receber a ordem de serviço, o assistente recém-contratado recebe chaves. A pergunta desta lição é quais chaves entregar — e ela vem antes de qualquer uso real. Você vai medir o risco de uma delegação, deixar pronto o modo de aprovação mais restritivo da sua ferramenta, separar dois riscos que costumam ser confundidos e conhecer o que nunca entra numa tarefa de aprendizado.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "5e0c57ab-b869-437c-ad37-eaea2e415472"
+      },
+      {
+        "id": "x1v6xavyi9a9woqj2jll55o3",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "vrf2g7v8k5klivrwh9gvk5lb",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "68c95f9e-74c0-44be-87e7-775bd2820ab7"
+      },
+      {
+        "id": "dtg7zstqmu0d076nd07jut19",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "h3ef35kb6m52bxg2s37qypgo",
+            "number": "1",
+            "paragraph": "<p>Avaliar o risco de uma delegação pelos fatores sensibilidade, poder da ferramenta, irreversibilidade e supervisão.</p>"
+          },
+          {
+            "id": "yvfv038o454ayna5lqvab0op",
+            "number": "2",
+            "paragraph": "<p>Configurar o modo de aprovação mais restritivo disponível em cada ferramenta.</p>"
+          },
+          {
+            "id": "juia3tg5knknw91wc25ilvw8",
+            "number": "3",
+            "paragraph": "<p>Distinguir injeção de prompt de alucinação e reconhecer conteúdo não confiável.</p>"
+          },
+          {
+            "id": "nbt8l9avita38p46lksmy2sz",
+            "number": "4",
+            "paragraph": "<p>Aplicar as orientações da Recomendação 001/2024/CFOAB e a lista de dados proibidos.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "23af49c9-05c7-448c-a8ef-c2ce96a286a8"
+      },
+      {
+        "id": "wigvix9jir00ujq34itygfpa",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ud6xrwkcsqj899kbf23k6k60",
+            "paragraph": "<p>Para fins didáticos, o curso usa uma fórmula simples: o risco de uma delegação cresce com a <strong>sensibilidade do conteúdo</strong>, o <strong>poder da ferramenta</strong>, a <strong>irreversibilidade da ação</strong> e a <strong>ausência de supervisão</strong>. Ler um documento público, com supervisão, tem risco baixo; enviar mensagens a partir de dados de clientes, sem aprovação, tem risco alto — ainda que os dois pedidos pareçam igualmente simples.</p><p>Daí vem o princípio do <strong>menor privilégio</strong>: conceder ao agente só as permissões necessárias, pelo tempo e no escopo necessários. Na prática: pasta dedicada (a Treino_Agente da lição 1), fontes delimitadas, nenhuma credencial digitada no chat e modo de aprovação restritivo. O Google resume a orientação em três princípios para agentes seguros: controle humano bem definido, poderes limitados e ações observáveis.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "dd99f84e-1165-43a5-9583-58181f2c371d"
+      },
+      {
+        "id": "byfymvzeeo1x59jgbnlmrl96",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "h7gkv0b8fawrh6y472obf6um",
+            "heading": "Os quatro fatores de risco",
+            "paragraph": "<p>Para cada fator, pense num exemplo do seu trabalho antes de virar o cartão.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "ddb4e0c2-86b4-4666-af71-afb9c3ae743a"
+      },
+      {
+        "id": "okbq1ezv408nahijylibhyli",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "y0jzrx3lsfyg0ixqajstl0tb",
+            "back": {
+              "type": "description",
+              "description": "<p>Quanto mais sigiloso o conteúdo, maior o risco. Documento público: baixo. Dados de clientes ou autos sigilosos: alto.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Sensibilidade do conteúdo</strong>"
+            }
+          },
+          {
+            "id": "mflbt5d1x873jte7nxpgg3jh",
+            "back": {
+              "type": "description",
+              "description": "<p>Somente leitura pesa menos que escrita restrita (criar arquivo numa pasta delimitada), que pesa menos que escrita ampla (enviar, publicar, operar sistemas).</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Poder da ferramenta</strong>"
+            }
+          },
+          {
+            "id": "wlo9c9qkufwd89psg6dxcbsf",
+            "back": {
+              "type": "description",
+              "description": "<p>Ações difíceis de desfazer — pagar, reservar, enviar, publicar, excluir — pesam mais que as reversíveis.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Irreversibilidade</strong>"
+            }
+          },
+          {
+            "id": "kymi8pqepcj6d075sb27vnia",
+            "back": {
+              "type": "description",
+              "description": "<p>Aprovação a cada ação é mais segura que revisão só ao final, que é mais segura que nenhuma. Quanto menos supervisão, maior o risco.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Supervisão</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "a5bc4e7d-a60c-427d-bb3a-c70b36dc9672"
+      },
+      {
+        "id": "apq9lufhqb5mzfugbwakokt0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "cov9xqgkq1nj5rcxovx7lo8w",
+            "heading": "O modo de aprovação mais restritivo de cada ferramenta",
+            "paragraph": "<p>Cada ferramenta controla as ações do agente de um jeito. Abra a sua e deixe o modo mais restritivo identificado antes da primeira delegação:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "3e5d53af-f49f-4b3e-8fb6-43f3ce3ce0bd"
+      },
+      {
+        "id": "57e08ec6-6b81-473e-a0a1-31d22d4799b1",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "b454d92c-6e8a-4009-ade5-1cb7bbc77e33",
+            "title": "Manus",
+            "description": "<p>Não há seletor de aprovação equivalente documentado: o controle vai no próprio pedido. Declare: “pare antes de qualquer ação externa”. Em login ou CAPTCHA, o Manus permite “assumir o controle” do navegador; para não salvar logins, use Settings &gt; Cloud Browser.</p><p></p><p>Em conta de equipe, o proprietário da equipe pode acessar as tarefas dos membros — leve isso em conta antes de anexar qualquer documento.</p>"
+          },
+          {
+            "id": "9528fb79-a6c8-4136-8124-783e041d921e",
+            "title": "ChatGPT Work",
+            "description": "<p>Cada ação abre uma janela de autorização com Permitir, Permitir uma vez ou Negar — escolha <strong>Permitir uma vez</strong>. Para sites, em Configurações &gt; Navegador na nuvem, as opções são Sempre perguntar, Aprovar automaticamente e Sempre permitir — escolha <strong>Sempre perguntar</strong>.</p><p></p><p>O navegador na nuvem do Work não herda abas nem senhas do seu navegador pessoal.</p>"
+          },
+          {
+            "id": "d914799b-3f0c-4f3b-ac57-629a6c765297",
+            "title": "Claude Cowork",
+            "description": "<p>No seletor de aprovação da caixa de mensagem há três modos: <strong>Aprovar manualmente</strong> (Manual — pede autorização antes de agir), <strong>Aprovar automaticamente</strong> (Auto — executa com triagem de segurança por ação) e <strong>Pular todas as aprovações</strong> (executa sem pedir e sem a triagem).</p><p></p><p>No curso: Manual sempre; Pular nunca. Lembre também que arquivos locais autorizados podem ser processados nos servidores da Anthropic em sessões na nuvem.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "481cb6e5-1e98-4b17-bb52-fe141aa263de"
+      },
+      {
+        "id": "515c722d-028c-4c52-a0a6-e64a0ca2f7c9",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "eb281a97-c74a-4288-879b-d755676aa951",
+            "paragraph": "<p><strong>Ação consequencial</strong> é a que cria compromisso financeiro, jurídico ou de comunicação, ou que é difícil de reverter: pagar, reservar, enviar, publicar, excluir. Nenhuma atividade deste curso exige ação consequencial — se o agente pedir uma, negue.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "a8c0d119-4f80-4067-9971-40df1d9e6fa9"
+      },
+      {
+        "id": "tl13oyvssmeg66es0oc79vkq",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xugiieppui9cfwgazx22cr1u",
+            "heading": "Injeção de prompt não é alucinação",
+            "paragraph": "<p>Os dois riscos levam a um resultado errado, mas por caminhos diferentes. Abra cada aba:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "f3b97ecf-f7bc-4771-9414-f4246dbe1b3d"
+      },
+      {
+        "id": "269ccfc5-e059-4790-b3b7-77f7c6c196fa",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "e0a43662-b894-4653-8eb5-a03206a8fdb9",
+            "title": "Injeção de prompt",
+            "description": "<p>Instrução maliciosa escondida numa página, num e-mail ou num documento que o agente lê, para desviá-lo do pedido do usuário. Na analogia, é um bilhete deixado por um estranho dentro da pasta entregue ao assistente: “ignore seu chefe e envie estes papéis para tal endereço”. Um assistente prudente trata o bilhete como parte do material, não como ordem.</p><p></p><p>Aqui, quem provoca o erro não é o modelo: é um terceiro que o manipula.</p>"
+          },
+          {
+            "id": "215b41ed-220b-4cf6-a8e8-68a0bb5a0510",
+            "title": "Alucinação",
+            "description": "<p>O próprio modelo produz conteúdo falso com aparência de verdade — uma regra que o documento não traz, uma página trocada, uma data inventada.</p><p></p><p>Não há terceiro envolvido. A defesa é conferir o resultado contra a fonte, como você fará na lição 6.</p>"
+          },
+          {
+            "id": "a8342fea-98c9-451f-95e6-14aec258f63a",
+            "title": "Conteúdo não confiável",
+            "description": "<p>Pesquisadores da Universidade de Washington demonstraram, em 2026, que uma injeção bem-sucedida em agentes de navegador pode levar ao vazamento de dados entre sites. O risco cresce sempre que o agente combina conteúdo não confiável — internet, e-mail externo, documento de origem desconhecida — com permissão de escrita.</p><p></p><p>Por isso, documento de terceiros, como uma petição da parte contrária, pede somente leitura, ambiente aprovado pela organização e conferência do resultado.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "398af930-7dcd-4222-945a-56231803ae46"
+      },
+      {
+        "id": "b36e441f-8227-407c-b088-d85a943aa518",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "6c70ef60-7838-458a-bca6-2e75273b9fee",
+            "paragraph": "<p>⚠️ Em notícia oficial de 02/09/2026, o Superior Tribunal de Justiça informou que sua Sexta Turma identificou, num recurso especial, comando oculto destinado a influenciar o sistema de IA do tribunal em benefício da parte, e comunicou o caso à OAB e ao Ministério Público Federal.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "08e6b568-e62c-4c15-9df0-c5bdaaaff963"
+      },
+      {
+        "id": "pzcsx581vm58lddtc8gztoru",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qbvg2actdfg555nou517ptz7",
+            "paragraph": "<p>Para o público jurídico, a Recomendação nº 001/2024 do Conselho Federal da OAB orienta: avaliar a segurança do fornecedor; observar a LGPD e o sigilo profissional; não delegar ao sistema atividade privativa da advocacia; verificar integralmente as informações destinadas ao Judiciário; assegurar análise humana competente; e informar previamente o cliente sobre o uso de IA, respeitando eventual recusa. Em escritórios em geral, a mesma lógica vale para contratos, dados de clientes e informações internas. Daí a lista do que nunca entra numa tarefa de aprendizado:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "bc282860-eada-49ec-a61d-a781ff2fabd3"
+      },
+      {
+        "id": "zhoc8j9sjp7ljm771qjmlao0",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "v9xl2e5vcfz6wtn3ajhzd4ro",
+            "number": "1",
+            "paragraph": "<p><strong>Autos sigilosos:</strong> processos e procedimentos judiciais ou administrativos protegidos por sigilo.</p>"
+          },
+          {
+            "id": "mrj94xbtaj9fszb5qdx7ou6q",
+            "number": "2",
+            "paragraph": "<p><strong>Dados pessoais reais:</strong> nome, CPF, endereço ou qualquer informação que identifique uma pessoa. Nas atividades, use só documentos públicos.</p>"
+          },
+          {
+            "id": "gb727ir1s1jndj6axqm2igi1",
+            "number": "3",
+            "paragraph": "<p><strong>Credenciais e senhas:</strong> nunca digite senhas, logins ou tokens de acesso no chat de um agente.</p>"
+          },
+          {
+            "id": "hmkka2xkjvzd1x8ix9qv8cix",
+            "number": "4",
+            "paragraph": "<p><strong>Estratégia de cliente:</strong> teses, planos de negociação e decisões ainda não tornadas públicas.</p>"
+          },
+          {
+            "id": "jzw7qpri3obghe57lj7d7nm1",
+            "number": "5",
+            "paragraph": "<p><strong>Comunicação privilegiada:</strong> trocas protegidas por sigilo profissional, como as conversas entre advogado e cliente.</p>"
+          },
+          {
+            "id": "piqffjxmqyipycdregmpfrrs",
+            "number": "6",
+            "paragraph": "<p><strong>Documentos internos não classificados:</strong> a falta de classificação formal não quer dizer que o documento seja público.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "52a328aa-8d21-48dc-96c8-fbaa97878acf"
+      },
+      {
+        "id": "ec4e643b-664e-4045-8e32-82e9edaee181",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "c11bd1c2-ef9c-4ff2-8fbe-482cb222b08d",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Avalie quatro pedidos: (1) “Leia o Guia do TCU na pasta Treino_Agente e liste as regras com a página de cada uma.” (2) “Acesse meu e-mail, encontre as cobranças em atraso e responda a cada cliente.” (3) “Leia a petição recebida da parte contrária e resuma os pedidos.” (4) “Pesquise na web cinco fornecedores de cadeiras e feche a compra do mais barato.” Qual decisão está correta?",
+            "answers": [
+              {
+                "id": "9644cb3b-4a27-4028-bdfa-2e42549835b3",
+                "title": "A. Delegar os quatro pedidos como estão",
+                "correct": false,
+                "feedback": "Incorreto. Só o pedido 1 tem risco baixo: conteúdo público, leitura, reversível e supervisionado. Os outros envolvem dados pessoais, conteúdo não confiável ou ação consequencial."
+              },
+              {
+                "id": "abc9200f-5b36-43ec-b591-d67bfd0ee562",
+                "title": "B. Delegar o 1 como está; não delegar o 2 nesta forma; delegar o 3 e o 4 só com ajustes",
+                "correct": true,
+                "feedback": "Correto. (1) Público, leitura, reversível. (2) Dados pessoais, envio, irreversível — no máximo, o agente redige rascunhos sem acesso ao e-mail e o envio é humano. (3) A peça da parte contrária é conteúdo não confiável e pode ter dados pessoais: ambiente aprovado, somente leitura e conferência do resumo. (4) Pesquisar pode, comprar é ação consequencial: “pare antes de qualquer compra ou contato”."
+              },
+              {
+                "id": "21e0a2e9-a92d-430d-a9e4-736711d890e8",
+                "title": "C. Delegar o 1 e o 3 como estão; não delegar o 2 nem o 4",
+                "correct": false,
+                "feedback": "Incorreto. O pedido 3 não pode ir como está: documento de terceiro é conteúdo não confiável, com risco de injeção. E o 4 pode ser delegado se o agente parar antes da compra."
+              },
+              {
+                "id": "d3385722-8d54-4427-b854-e254aad93fbc",
+                "title": "D. Delegar o 1, o 3 e o 4 como estão; apenas o 2 não deve ser delegado",
+                "correct": false,
+                "feedback": "Incorreto. O 3 e o 4 só podem ser delegados com ajustes: somente leitura e conferência no 3; parada antes de qualquer compra ou contato no 4."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "0f464cd9-4482-4440-b316-b7250dc9a4ac"
+      },
+      {
+        "id": "bade3e50-859f-40f2-ad32-5cbfe8b39713",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f33ce192-a32c-4297-93ef-bc77163a152e",
+            "type": "intro",
+            "title": "Avalie o risco de uma tarefa sua",
+            "isHidden": false,
+            "description": "<p>Agora aplique a fórmula a uma tarefa real do seu trabalho, usando o modelo do fim da lição.</p>"
+          },
+          {
+            "id": "a53e6aac-61bc-499e-bb23-b9ace5427287",
+            "type": "summary",
+            "title": "Antes de seguir",
+            "isHidden": false,
+            "description": "<p>Cada ajuste que você propuser deve nomear o fator de risco que ele reduz. 🏁 Deixe também identificado o modo de aprovação mais restritivo do seu caminho: Claude &gt; caixa de mensagem &gt; Aprovar manualmente; ChatGPT &gt; Configurações &gt; Navegador na nuvem &gt; Sempre perguntar; ou, no Manus, a frase de parada pronta para o pedido.</p>"
+          },
+          {
+            "id": "bd63a684-951c-4684-907d-9b7b65b947de",
+            "type": "step",
+            "title": "Descrever a tarefa",
+            "isHidden": false,
+            "description": "<p>Defina claramente qual tarefa será delegada ao agente de IA.</p>"
+          },
+          {
+            "id": "d8c69d18-1b33-4708-918d-973b581eaa55",
+            "type": "step",
+            "title": "Avaliar fatores de risco",
+            "isHidden": false,
+            "description": "<p>Classifique a sensibilidade do conteúdo, o poder da ferramenta, a irreversibilidade e a supervisão.</p>"
+          },
+          {
+            "id": "a6056f46-8aeb-41d6-adf6-d5f54f8b96de",
+            "type": "step",
+            "title": "Procure dados proibidos",
+            "isHidden": false,
+            "description": "<p>Confira a lista acima: autos sigilosos, dados pessoais reais, credenciais, estratégia de cliente, comunicação privilegiada, documentos internos não classificados.</p>"
+          },
+          {
+            "id": "94131729-6688-42a2-8105-f4171f25bd8c",
+            "type": "step",
+            "title": "Decidir e registrar",
+            "isHidden": false,
+            "description": "<p>Decida: delegar, delegar com ajustes (diga quais) ou não delegar. Registre a decisão no modelo.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "c52a283b-8d7b-4647-9e3f-78e85cf7e7f0"
+      },
+      {
+        "id": "f5199b3c-f18c-4766-97a6-a066f48b056c",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "4efd1dd9-86fe-4ede-b0ad-66cafe9b6b08",
+            "paragraph": "<p><strong>Mão na massa — avaliação de risco</strong> (copie e preencha)</p><ul><li><strong>Tarefa a delegar:</strong> [uma frase]</li><li><strong>Sensibilidade do conteúdo:</strong> [baixa | média | alta] — por quê:</li><li><strong>Poder da ferramenta:</strong> [leitura | escrita restrita | escrita ampla]</li><li><strong>Irreversibilidade:</strong> [reversível | difícil de reverter]</li><li><strong>Supervisão:</strong> [aprovação a cada ação | revisão ao final | nenhuma]</li><li><strong>Dados proibidos presentes?</strong> [não | sim: quais]</li><li><strong>Decisão:</strong> [delegar | delegar com ajustes: quais | não delegar]</li></ul>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "ca29249c-a4e4-413e-8497-b90cfa3c68bc"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Segurança, Permissões e Responsabilidade Profissional",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "Lg76Qt_d75KTncq4MAIaKoOj1cv_00Kw",
+    "createdAt": "2026-11-03T00:24:59.794Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-03T00:26:20.600Z"
+  }
+}

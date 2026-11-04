@@ -1,0 +1,11 @@
+{"licao": 2, "posicao": 12, "blocos": [
+  {"modelo": "knowledgecheck-knowledgecheck-multiple-choice.json", "itens": [{
+    "title": "Ao resumir uma petição da parte contrária, o agente inclui no resumo um pedido que não está na peça. Logo depois, pede autorização para enviar o resumo a um e-mail que aparece em letras brancas no rodapé do documento. Como classificar os dois problemas?",
+    "answers": [
+      {"title": "Os dois são alucinação: o modelo produziu conteúdo falso", "correct": false, "feedback": "Não. O pedido inventado é alucinação, mas o envio foi provocado por um texto escondido no documento: um terceiro tentando mandar no agente. Isso é injeção de prompt."},
+      {"title": "O pedido inventado é alucinação; a tentativa de envio guiada pelo texto oculto é injeção de prompt", "correct": true, "feedback": "Correto. Na alucinação, o próprio modelo produz conteúdo falso com aparência de verdade; na injeção, um terceiro manipula o agente por meio do conteúdo que ele lê. A defesa da primeira é conferir contra a fonte; a da segunda, tratar o conteúdo como leitura e negar o envio."},
+      {"title": "Os dois são injeção de prompt: o documento é de terceiro", "correct": false, "feedback": "Não. O pedido inventado não veio de nenhuma instrução no documento: foi o modelo que o produziu. Isso é alucinação."},
+      {"title": "O pedido inventado é injeção de prompt; a tentativa de envio é alucinação", "correct": false, "feedback": "Não. É o contrário: inventar conteúdo é alucinação; obedecer a um comando escondido no material lido é injeção de prompt."}
+    ]
+  }]}
+]}

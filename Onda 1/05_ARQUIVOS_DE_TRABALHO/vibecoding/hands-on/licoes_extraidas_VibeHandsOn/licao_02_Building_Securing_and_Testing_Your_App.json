@@ -1,0 +1,979 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Building, Securing, and Testing Your App",
+  "lesson": {
+    "description": "",
+    "id": "396bafec-021e-449a-9532-5886a120468c",
+    "items": [
+      {
+        "id": "sg5a7f9e24hy2wnxnblectx1",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bjmz8on6ilesgr1v0hx8c8ga",
+            "heading": "Oficina 1 — Da ideia à tela",
+            "paragraph": "<p>Esta lição reúne três oficinas, cada uma resolvendo um problema e usando o app da anterior. Na Oficina 1, você tem a planta, mas nenhuma tela: vai construir só a interface do “Minhas Tarefas”, sem banco nem login. Na Oficina 2, o app ganha catraca e fichários. Na Oficina 3, você prova que ninguém abre a gaveta do outro.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "4d610c9c-5030-40f8-aa00-cb33db450034"
+      },
+      {
+        "id": "zpf8rv1a9c33wti2roecfflm",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "kryaimzuvps35ptsstrricg0",
+            "paragraph": "<p>Ao final destas três oficinas, você terá:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "9e1b1399-3aab-4431-9765-c9872ba08693"
+      },
+      {
+        "id": "m7dhzts30xweljpaqkj4i2pr",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "x73aib00x5e3ud4aiynvpd9e",
+            "number": "1",
+            "paragraph": "<p>A tela do “Minhas Tarefas” funcionando na prévia, legível no celular.</p>"
+          },
+          {
+            "id": "xavm8zahllgcahkf5on61q6g",
+            "number": "2",
+            "paragraph": "<p>Login por e-mail e senha e uma tabela de tarefas no banco.</p>"
+          },
+          {
+            "id": "c5w8lvt68f92u4htp1yfl6lw",
+            "number": "3",
+            "paragraph": "<p>Regras RLS para que cada conta só acesse as próprias tarefas.</p>"
+          },
+          {
+            "id": "d0uczcjuzj4fg6ym11f79te7",
+            "number": "4",
+            "paragraph": "<p>A prova, com duas contas, de que uma não vê as tarefas da outra.</p>"
+          },
+          {
+            "id": "lzr6064p6d4199dh5ph9q7fp",
+            "number": "5",
+            "paragraph": "<p>O hábito de usar só dados e e-mails fictícios nos testes.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "0a969f53-d713-4b1a-8990-a2d75fc66216"
+      },
+      {
+        "id": "105d51fe-6784-4da1-9183-0359b2ab12a9",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "0a91de19-e387-4ef5-88cf-a2915c3bf080",
+            "type": "intro",
+            "title": "Oficina 1 — Mão na massa (22 min)",
+            "isHidden": false,
+            "description": "<p>Você vai usar o Lovable no modo Build e a ficha de requisitos da lição anterior. Siga os passos na ordem.</p>"
+          },
+          {
+            "id": "168194fb-d737-4054-a866-ed0822c02ed8",
+            "type": "summary",
+            "title": "Deu certo?",
+            "isHidden": false,
+            "description": "<p>🏁 Ponto de controle: no editor do Lovable, a prévia mostra o “Minhas Tarefas” com campo, botão e lista vazia, legível em Mobile view, sem tela de login.</p>"
+          },
+          {
+            "id": "1c2db234-7f5f-4549-9f02-3863f58d7275",
+            "type": "step",
+            "title": "Ajuste a ficha",
+            "isHidden": false,
+            "description": "<p>Leia a ficha e ajuste o que quiser — sem acrescentar funcionalidades!</p>"
+          },
+          {
+            "id": "e477837b-a258-4b50-9e91-5aa7f840aa19",
+            "type": "step",
+            "title": "Anote os créditos",
+            "isHidden": false,
+            "description": "<p>Anote seus créditos em Lovable &gt; More &gt; Usage.</p>"
+          },
+          {
+            "id": "15d32754-cb7f-40b1-afb3-ffbdaa05531d",
+            "type": "step",
+            "title": "Peça a tela em Build",
+            "isHidden": false,
+            "description": "<p>Escolha o modo Build, cole e envie:</p><p>\"\"\"Crie um aplicativo web chamado Minhas Tarefas. Por enquanto, faça só a interface: cabeçalho, campo para o título da tarefa, botão Adicionar, lista de tarefas e uma mensagem quando a lista estiver vazia. Visual simples, alto contraste, legível no celular, em português do Brasil.<br>Não adicione banco de dados nem login ainda.\"\"\"</p>"
+          },
+          {
+            "id": "24a17e48-a9fe-4078-bd26-37ef5da9a5fa",
+            "type": "step",
+            "title": "Teste na prévia",
+            "isHidden": false,
+            "description": "<p>Espere a prévia aparecer à direita. Clique no campo, digite uma tarefa e clique em Adicionar.</p>"
+          },
+          {
+            "id": "e99153f8-e7e4-44cc-ad2a-bd550bc0cf9c",
+            "type": "step",
+            "title": "Confira no celular",
+            "isHidden": false,
+            "description": "<p>Troque para Preview toolbar &gt; Mobile view e veja se tudo continua legível.</p>"
+          },
+          {
+            "id": "2710c162-c3a0-4353-9786-bc6e8c41ee68",
+            "type": "step",
+            "title": "Edite textos de graça (opcional)",
+            "isHidden": false,
+            "description": "<p>Quer mudar um texto? Use Preview toolbar &gt; Select elements, clique no texto e edite direto — sem gastar crédito de construção.</p>"
+          },
+          {
+            "id": "30374910-0db3-403c-ac09-d151c8706a7f",
+            "type": "step",
+            "title": "Anote o gasto",
+            "isHidden": false,
+            "description": "<p>Anote quanto crédito a construção gastou.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "d1fda3e2-8edf-4870-aa03-f59a511218d9"
+      },
+      {
+        "id": "ac99224b-0901-45c8-98f3-f21aff290b86",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ad7b468c-cf2c-43cf-844c-9cb0cf5825c1",
+            "paragraph": "<p>⚠️ <strong>Cuidado:</strong> recarregue a página e a tarefa some. Isso é esperado! Ainda não há banco de dados — é o problema da Oficina 2.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "5acb7fc2-7d36-4ab6-b216-b65aa4306fcc"
+      },
+      {
+        "id": "66570f20-0eac-4f59-9271-7462c1cf67f6",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "e3186f98-20c0-43fa-8080-e2889a6ea61c",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você digitou uma tarefa na prévia e recarregou a página. Ao fim da Oficina 1, o que acontece?",
+            "answers": [
+              {
+                "id": "ad873423-c726-471a-bef5-9f346f860e3c",
+                "title": "A tarefa continua salva",
+                "correct": false,
+                "feedback": "Não. Ainda não há banco de dados, então nada é guardado."
+              },
+              {
+                "id": "3fe8b910-62c2-412b-a6f5-2998f148464b",
+                "title": "O app pede login",
+                "correct": false,
+                "feedback": "Não. O login só chega na Oficina 2 — e, se apareceu agora, o Lovable fez mais do que você pediu."
+              },
+              {
+                "id": "ba5bdae6-0b27-4291-9ec0-78e2fef41b93",
+                "title": "A tarefa some",
+                "correct": true,
+                "feedback": "Correto. Sem banco de dados, a tarefa vive só na tela. Resolver isso é a Oficina 2."
+              },
+              {
+                "id": "5c312af9-7e5b-4159-a6fb-ff65ee3298ab",
+                "title": "O app mostra uma mensagem de erro",
+                "correct": false,
+                "feedback": "Não. O app continua funcionando; só não guarda nada ainda."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "9cbe5456-533b-4405-b2be-934ebc196b73"
+      },
+      {
+        "id": "w4qaywkqlpyg7zj0losfxcf4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qmtefchq45i5vw1n4psdbwd4",
+            "heading": "Se travar na Oficina 1",
+            "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "72d6ed31-eac4-4298-a58a-8738daa6f474"
+      },
+      {
+        "id": "7391a793-6031-42c3-ae48-ab4792c629e2",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "1f5aa000-a744-4e64-a1b6-aacc8b002dc8",
+            "title": "O Lovable criou login mesmo assim",
+            "description": "<p>Abra History, clique em Revert na versão anterior e reenvie o pedido com “Não adicione banco nem login” numa linha sozinha.</p><p></p><p>A camada de login tem hora certa: a Oficina 2.</p>"
+          },
+          {
+            "id": "f1807684-4c3b-4ccd-86ae-9e631d3666e3",
+            "title": "O visual ficou estranho",
+            "description": "<p>Peça uma mudança só: “Aumente o contraste do botão Adicionar. Não mude mais nada.”</p><p></p><p>O “não mude mais nada” evita que o Lovable mexa no que já estava certo.</p>"
+          },
+          {
+            "id": "89bec2b6-a6a6-4867-b4cd-65b22c72b8fe",
+            "title": "Acabaram os créditos",
+            "description": "<p>Volte amanhã: a prévia e a conversa ficam salvas.</p><p></p><p>Nada se perde enquanto os créditos se renovam.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "25d656ca-2a7f-4447-9d82-35b3a50e7c54"
+      },
+      {
+        "id": "13eeaf54-d2e6-40b4-917e-cfacfe640171",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "eae21caa-83a2-485e-906f-10e826d63e20",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "ef5ff5dd-7443-45d9-af81-ec55e25071f5"
+      },
+      {
+        "id": "cfrf4d2hdnb53o87a4l9t47s",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "iudkrqqzaw73wbaxkfa41jce",
+            "heading": "Oficina 2 — Login e banco de dados",
+            "paragraph": "<p>Seu app esquece tudo ao recarregar a página — e qualquer pessoa que abrisse o link usaria a mesma lista. Você precisa de uma catraca (login) e de fichários (banco de dados). No Lovable, os dois vêm do Lovable Cloud — não precisa criar conta em nenhum outro serviço.</p><p>Mudança grande pede plano. O modo Plan lê seu projeto, propõe o que vai fazer e espera seu OK — por 1 crédito. Assim você descobre, antes de gastar, se o Lovable entendeu.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "2db17155-830a-450d-9306-fa5f7c718257"
+      },
+      {
+        "id": "vjxamozsul5gwuy0t03mo0sd",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "daqidgqx4o8menxz010rnghn",
+            "heading": "As palavras da Oficina 2",
+            "paragraph": "<p>Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "faf370fd-2066-4f46-82d7-9feed1f52056"
+      },
+      {
+        "id": "deguvmntfuoqw6zrqnmremex",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "omnha4418gisjca8zicccpqd",
+            "back": {
+              "type": "description",
+              "description": "A catraca: confere quem está entrando no app. Aqui, por e-mail e senha."
+            },
+            "front": {
+              "type": "description",
+              "description": "<b>Autenticação</b>"
+            }
+          },
+          {
+            "id": "vg4lka0tnmfjpekkr2xu3vwt",
+            "back": {
+              "type": "description",
+              "description": "Os fichários dos fundos: guardam as tarefas. Cada tabela é um fichário; cada linha, uma ficha."
+            },
+            "front": {
+              "type": "description",
+              "description": "<b>Banco de dados</b>"
+            }
+          },
+          {
+            "id": "h9n9kpcd87p401lo8m78sb49",
+            "back": {
+              "type": "description",
+              "description": "A regra que tranca as gavetas: cada conta só lê, cria, altera e apaga o que é dela. Você a testa na Oficina 3."
+            },
+            "front": {
+              "type": "description",
+              "description": "<b>RLS (Row-Level Security)</b>"
+            }
+          },
+          {
+            "id": "l68i25rt95eouxoun5n3ytr0",
+            "back": {
+              "type": "description",
+              "description": "O back-end do Lovable: dá o login e o banco. É montado sobre o Supabase, um serviço de banco de dados de código aberto — mas você não precisa de conta lá. Dá para ligar um Supabase seu, só que não existe botão para trocar depois. No curso, fique no Cloud."
+            },
+            "front": {
+              "type": "description",
+              "description": "<b>Lovable Cloud</b>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "d83d5e4c-0ea6-4180-9a2d-5f8b795fded5"
+      },
+      {
+        "id": "14820d9b-2d4c-4cc7-8c90-b4e8668c2689",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "e3665825-9b2f-4463-aa51-f0375c713729",
+            "type": "intro",
+            "title": "Oficina 2 — Mão na massa (20 min)",
+            "isHidden": false,
+            "description": "<p>Você vai usar os modos Plan e Build e as telas More &gt; Cloud &gt; Database e More &gt; Cloud &gt; Users. Mantenha os nomes das colunas exatamente como estão no pedido.</p>"
+          },
+          {
+            "id": "efbd5129-b00d-447f-879c-22cc456edd72",
+            "type": "summary",
+            "title": "Deu certo?",
+            "isHidden": false,
+            "description": "<p>🏁 Ponto de controle: a prévia abre numa tela de login e a tabela tasks aparece em Lovable &gt; More &gt; Cloud &gt; Database.</p>"
+          },
+          {
+            "id": "aac754e9-1ea9-4952-a476-d5d31b2a9d03",
+            "type": "step",
+            "title": "Anote os créditos",
+            "isHidden": false,
+            "description": "<p>Anote os créditos antes de começar.</p>"
+          },
+          {
+            "id": "e6c09cb1-79f1-404e-b349-3380d2ec10cb",
+            "type": "step",
+            "title": "Peça o plano",
+            "isHidden": false,
+            "description": "<p>Escolha Plan e envie:</p><p>\"\"\"Analise o app e proponha a menor alteração possível para adicionar autenticação por e-mail e senha e uma tabela de tarefas. Cada usuário deve acessar apenas as próprias tarefas. Inclua regras RLS e descreva como testar com duas contas. Não implemente até eu aprovar.\"\"\"</p>"
+          },
+          {
+            "id": "5b94a177-3e85-489f-bc22-aa6f923dd77b",
+            "type": "step",
+            "title": "Leia o plano",
+            "isHidden": false,
+            "description": "<p>Leia o plano. Ele fala em:</p><ul><li>e-mail e senha?</li><li>uma tabela de tarefas?</li><li>RLS (a regra que tranca as gavetas — você entende na Oficina 3)?</li></ul><p>Se sim, aprove.</p>"
+          },
+          {
+            "id": "3ca62b58-0c06-4174-a42a-e7c24e467049",
+            "type": "step",
+            "title": "Construa em Build",
+            "isHidden": false,
+            "description": "<p>Troque para Build e envie:</p><p>\"\"\"Aplique o plano aprovado. Adicione login por e-mail e senha, logout e uma tabela tasks com title, completed, user_id e created_at. Crie políticas RLS para que cada usuário só possa ler, criar, atualizar e excluir as próprias tarefas. Não altere o visual.\"\"\"</p>"
+          },
+          {
+            "id": "4eec69bf-5f5f-4b1c-bf0e-ff351e725440",
+            "type": "step",
+            "title": "Ative o Lovable Cloud",
+            "isHidden": false,
+            "description": "<p>Se o Lovable pedir para ativar o Lovable Cloud, aprove.</p>"
+          },
+          {
+            "id": "3c7618ca-abeb-41b2-973c-754eb30aa0b2",
+            "type": "step",
+            "title": "Confira a tabela",
+            "isHidden": false,
+            "description": "<p>Abra Lovable &gt; More &gt; Cloud &gt; Database: a tabela tasks está lá?</p>"
+          },
+          {
+            "id": "4b1e152f-acc1-47f7-8c1c-a38e46dba188",
+            "type": "step",
+            "title": "Ache o Add user",
+            "isHidden": false,
+            "description": "<p>Abra Lovable &gt; More &gt; Cloud &gt; Users e ache o botão Add user. Ainda não crie ninguém.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "5026de3e-6e13-43fd-b2a3-d1dd34086005"
+      },
+      {
+        "id": "03f29d10-570e-4a87-a0de-ecbfb6c0d3d6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e881f201-b1c7-4800-9da5-44c418d52c96",
+            "paragraph": "<p>⚠️ <strong>Cuidado:</strong> em Database, apagar linhas é para sempre. Nem o Revert traz dados de volta — ele só desfaz o código.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "856ce40c-8b2c-492c-92bd-411d35783a39"
+      },
+      {
+        "id": "7ad45995-cafd-4ed3-8b0c-4ae7e79b5f7d",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "7f921a78-6361-4f91-927f-ad55abc86d56",
+            "type": "MULTIPLE_CHOICE",
+            "title": "No app da Oficina 2, para que servem as regras RLS?",
+            "answers": [
+              {
+                "id": "3b5e7e72-0ae3-474a-95b3-d2c77cfe7ccd",
+                "title": "Para deixar o app mais rápido",
+                "correct": false,
+                "feedback": "Não. A RLS não tem a ver com velocidade: ela controla quem acessa cada registro."
+              },
+              {
+                "id": "4f22fcb7-885b-4088-81a4-398cc8be463f",
+                "title": "Para deixar qualquer pessoa editar qualquer tarefa",
+                "correct": false,
+                "feedback": "Não. É o contrário: a RLS restringe o acesso."
+              },
+              {
+                "id": "0df31ee0-6f79-47bb-9f59-4943e430c5f5",
+                "title": "Para que cada conta só acesse as próprias tarefas",
+                "correct": true,
+                "feedback": "Correto. A RLS é o crachá: cada conta só lê, cria, altera e apaga o que é dela."
+              },
+              {
+                "id": "30ec946a-efa8-4b09-bd8d-1fd1d586d4bc",
+                "title": "Para mudar a aparência do app",
+                "correct": false,
+                "feedback": "Não. A RLS fica no banco de dados e não mexe no visual."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "7ce64189-af4a-4638-95ae-6058c70d9c41"
+      },
+      {
+        "id": "szhuqtcy7q6dmgtrdvtyd2rz",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rti9pruvx25os8uic93d6jff",
+            "heading": "Se travar na Oficina 2",
+            "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "49c527de-08ab-479b-828f-0cb808cf32c5"
+      },
+      {
+        "id": "2061aa8e-d275-4e71-beb7-d131b72fc349",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "5eba8001-86b2-4eb4-94ec-2f7e5eee51c6",
+            "title": "O plano não fala em RLS",
+            "description": "<p>Responda no Plan: “Inclua políticas RLS por usuário no plano” — e só depois aprove.</p><p></p><p>Sem RLS, o login vira catraca sem crachá: quem entra abre todas as gavetas.</p>"
+          },
+          {
+            "id": "e2331cde-9696-48c9-85f6-b75889a15151",
+            "title": "O Lovable também criou login com Google",
+            "description": "<p>Peça em Build: “Remova as outras formas de login; mantenha só e-mail e senha.”</p><p></p><p>Formas de entrada que você não pediu aumentam o que precisa ser testado.</p>"
+          },
+          {
+            "id": "148718c4-bad4-4a47-b632-4c4ea930d883",
+            "title": "Erro depois do Build",
+            "description": "<p>Copie a mensagem e use em Plan: “O que acontece / onde / esperado / observado. Investigue antes de corrigir.”</p><p></p><p>Pedir “conserte” sem descrever o erro costuma gastar créditos à toa.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "6324476d-2d77-4efd-b663-24687f7b6e34"
+      },
+      {
+        "id": "9f188c7e-0fab-463a-baca-af5192079e90",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "f6f23526-ccf3-4fb9-884a-b1573aec100d",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "ab3e9839-f008-488a-b45f-d442f2885f08"
+      },
+      {
+        "id": "ohmc9ea9r1df38a7tvevnw24",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bpp2yw2oh3qlfbupesinygob",
+            "heading": "Oficina 3 — Quem vê o quê",
+            "paragraph": "<p>O login funciona. Mas será que a Ana não consegue ver as tarefas do Bruno? Esconder dados da tela não basta: tudo o que vai para o navegador pode ser inspecionado. Quem garante que cada pessoa só abre a própria gaveta é a regra RLS no banco. E só existe um jeito de saber se ela funciona: testar com duas contas.</p><p>Autenticação é a catraca: confere quem entrou. Autorização é o crachá: diz quais gavetas essa pessoa abre. Num app feito por vibe coding, o erro clássico é ter a catraca e esquecer o crachá. Em 2026, pesquisas acadêmicas apontaram justamente autenticação e autorização mal feitas como falhas recorrentes desses apps.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "bc094419-6c0f-42eb-8c49-c40645a8961e"
+      },
+      {
+        "id": "2c27acf3-1483-4c6e-bc7c-a2ff86f6496e",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "266c336f-c458-4cec-ac93-c0104e05c22f",
+            "type": "intro",
+            "title": "Oficina 3 — Mão na massa (16 min)",
+            "isHidden": false,
+            "description": "<p>Você vai usar More &gt; Cloud &gt; Users &gt; Add user e a prévia do app. Tenha o bloco de notas à mão para as senhas de teste.</p>"
+          },
+          {
+            "id": "1b507c96-973c-4a27-83cc-ad624bc0a05e",
+            "type": "summary",
+            "title": "Deu certo?",
+            "isHidden": false,
+            "description": "<p>🏁 Ponto de controle: logada como B, a prévia mostra só “Tarefa da conta B”, a tarefa sobrevive ao recarregar, e More &gt; Cloud &gt; Database &gt; tasks mostra dois user_id diferentes.</p>"
+          },
+          {
+            "id": "e61f9286-943f-435f-ad6e-041c53790347",
+            "type": "step",
+            "title": "Crie as duas contas",
+            "isHidden": false,
+            "description": "<p>Em Lovable &gt; More &gt; Cloud &gt; Users &gt; Add user, crie <strong>teste.a@exemplo.com</strong> e <strong>teste.b@exemplo.com</strong> com senhas de teste. Anote no seu bloco de notas — nunca no chat do Lovable.</p>"
+          },
+          {
+            "id": "74a463d5-c937-49ec-8060-649a94d4510c",
+            "type": "step",
+            "title": "Entre como A",
+            "isHidden": false,
+            "description": "<p>Na prévia, entre como <strong>teste.a@exemplo.com</strong>, crie “Tarefa da conta A” e saia.</p>"
+          },
+          {
+            "id": "f91a82e2-6679-4309-b450-ce3381575be8",
+            "type": "step",
+            "title": "Entre como B",
+            "isHidden": false,
+            "description": "<p>Entre como <strong>teste.b@exemplo.com</strong>, crie “Tarefa da conta B” e olhe a lista. A tarefa da conta A aparece?</p>"
+          },
+          {
+            "id": "b23a6b4b-5710-494a-9930-b22d44293f2e",
+            "type": "step",
+            "title": "Recarregue",
+            "isHidden": false,
+            "description": "<p>Recarregue a página: a tarefa continua?</p>"
+          },
+          {
+            "id": "364d22a3-64b1-4ec6-8fd8-f792726b9026",
+            "type": "step",
+            "title": "Confira no banco",
+            "isHidden": false,
+            "description": "<p>Em Lovable &gt; More &gt; Cloud &gt; Database, confira as duas linhas da tabela tasks, cada uma com um user_id diferente.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "7658d92b-e5c2-4932-8879-9cad81a4e48f"
+      },
+      {
+        "id": "f1587b72-4de4-4d3d-9bef-950aae3eecba",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e38db498-23a2-47c9-a13c-31511e56b6ef",
+            "paragraph": "<p>📌 <strong>Não esqueça:</strong> exemplo.com é um endereço fictício. Nada de e-mail real de colega, aluno ou cliente no teste.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "f3c44014-fc93-42e9-9200-530e267bba36"
+      },
+      {
+        "id": "090e2f39-2a9a-4918-9609-97a28047e1fe",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "a286c0b6-0d8c-446e-8e04-cb774b61cff7",
+            "type": "MULTIPLE_CHOICE",
+            "title": "No teste da Oficina 3, logada como B, você vê a “Tarefa da conta A”. O que fazer?",
+            "answers": [
+              {
+                "id": "1c0d486d-2625-425d-8807-56c1dc9dc00a",
+                "title": "Ignorar e seguir para a Oficina 4",
+                "correct": false,
+                "feedback": "Não. Isso é falha de segurança: a gaveta de A está aberta para B."
+              },
+              {
+                "id": "e5bf4732-054a-47f3-b2cb-ebbbcc276c90",
+                "title": "Publicar mesmo assim",
+                "correct": false,
+                "feedback": "Não. App com falha de isolamento não se publica."
+              },
+              {
+                "id": "2945b426-188b-4503-84e3-2ce2c0971dae",
+                "title": "Pedir em Plan que o Lovable investigue as políticas RLS e proponha a correção; depois, repetir o teste",
+                "correct": true,
+                "feedback": "Correto. Não publique; investigue antes de corrigir e repita o teste com as duas contas."
+              },
+              {
+                "id": "7a505e9d-d6fa-4637-9f71-8a4fddb79d44",
+                "title": "Apagar todas as tarefas e começar de novo",
+                "correct": false,
+                "feedback": "Não. Apagar dados não corrige a regra — e, no banco, apagar é para sempre."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "2d28404d-afc7-4d09-abf4-383fd8d29887"
+      },
+      {
+        "id": "e31xalsutauq72pgq13xj2d4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "d81drt32xx80wg71u3n59d9i",
+            "heading": "Se travar na Oficina 3",
+            "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "04c03312-3f82-49f6-9862-46d53183e42a"
+      },
+      {
+        "id": "aac91c0a-f64a-46fd-a2df-195c757b7756",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "94b112dd-2b6d-4f9f-a551-ff0952d71fc4",
+            "title": "A conta B vê a tarefa da A",
+            "description": "<p>Isso é falha de segurança: não publique. Em Plan: “A conta B vê tarefas da conta A. Investigue as políticas RLS e proponha a correção.” Depois, repita o teste.</p><p></p><p>Só siga para a Oficina 4 quando cada conta vir apenas a própria tarefa.</p>"
+          },
+          {
+            "id": "6d136ad5-46e6-4bae-a53e-3ac98a353058",
+            "title": "Add user não aparece ou pede confirmação por e-mail",
+            "description": "<p>Cadastre-se pela tela de login do próprio app com dois e-mails que você controla.</p><p></p><p>O teste vale do mesmo jeito: são duas contas diferentes.</p>"
+          },
+          {
+            "id": "42db997e-1e8d-45e1-9f9a-25335aba6ecc",
+            "title": "A tarefa some ao recarregar",
+            "description": "<p>O app ainda não grava no banco. Descreva o erro em Plan (onde, esperado, observado).</p><p></p><p>Peça para investigar antes de corrigir.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "588817cb-e82b-4110-ba63-3e3fb22aa26a"
+      },
+      {
+        "id": "559b69f9-4935-46e5-ba85-ccc4027151e3",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "3de2362c-8d61-4567-a07c-93a6836786b9",
+            "paragraph": "<p>🔑 <strong>Regra de ouro da segurança:</strong> duas contas, sempre. Quem não testou não sabe quem vê o quê — e protótipo de curso é só com dados inventados.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "39d1a026-7b8c-4c09-9557-e13076c18683"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Oficinas 1 a 3: Tela, Login e Quem Vê o Quê",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "hYt5G13q8PzyOy-BOjyYHbxsHuwm3dH_",
+    "createdAt": "2026-11-04T18:12:41.770Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-04T18:13:37.780Z"
+  }
+}

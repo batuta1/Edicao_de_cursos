@@ -1,0 +1,61 @@
+<!--titulo: Descreva sua ideia como uma loja-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mão na massa</span>
+  <h1 id="t">Descreva sua ideia como uma loja</h1>
+  <p class="sub">Antes de qualquer pedido ao Lovable, descreva uma ideia de aplicativo com o vocabulário da loja. Preencha os campos e gere o texto para guardar no seu bloco de notas. Nada aqui é enviado a lugar nenhum.</p>
+  <div class="grid" id="campos"></div>
+  <p class="nota"><button type="button" class="btn" id="exemplo">Ver um exemplo preenchido</button></p>
+  <h2 style="margin-top:18px">Sua descrição</h2>
+  <pre class="saida" id="saida" aria-live="polite"></pre>
+  <div class="feedback" id="aviso" aria-live="polite"></div>
+  <p class="nota"><button type="button" class="btn principal" id="copiar">Copiar texto</button></p>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+</section>
+
+<script>
+  // Campos: modelo "Mão na massa" do Módulo 1 do roteiro.
+  var CAMPOS = [
+    { id: 'ideia', rotulo: 'Ideia de aplicativo', dica: 'uma frase' },
+    { id: 'salao', rotulo: 'Salão (o que o usuário vê e faz)', dica: 'telas e ação principal' },
+    { id: 'ficharios', rotulo: 'Fichários (o que precisa ser guardado)', dica: 'campos' },
+    { id: 'catraca', rotulo: 'Catraca (quem precisa entrar com login?)', dica: 'sim/não; quem' },
+    { id: 'crachas', rotulo: 'Crachás (quem pode ver o quê?)', dica: 'regra de acesso' },
+    { id: 'portas', rotulo: 'Abrir as portas (quem vai usar o endereço público?)', dica: 'público' }
+  ];
+  var EXEMPLO = {
+    ideia: 'Diário de Leituras: registrar os livros que estou lendo.',
+    salao: 'Tela de login e uma lista de livros com botão Adicionar; a ação principal é registrar um livro.',
+    ficharios: 'título do livro, autor, páginas lidas, status (lendo/concluído).',
+    catraca: 'Sim: cada leitor entra com e-mail e senha.',
+    crachas: 'Cada conta vê apenas os próprios livros.',
+    portas: 'Eu e alguns colegas, com dados fictícios.'
+  };
+  var box = document.getElementById('campos');
+  CAMPOS.forEach(function (c) {
+    var d = document.createElement('div'); d.className = 'item';
+    d.innerHTML = '<label for="f-' + c.id + '"><p class="f">' + c.rotulo + '</p></label>';
+    var i = document.createElement('textarea'); i.id = 'f-' + c.id; i.rows = 2; i.placeholder = c.dica;
+    i.addEventListener('input', montar); d.appendChild(i); box.appendChild(d);
+  });
+  function montar() {
+    var linhas = [], vazios = 0;
+    CAMPOS.forEach(function (c) {
+      var v = document.getElementById('f-' + c.id).value.trim();
+      if (!v) vazios++;
+      linhas.push(c.rotulo + ': ' + (v || '[' + c.dica + ']'));
+    });
+    document.getElementById('saida').textContent = linhas.join('\n');
+    var av = document.getElementById('aviso');
+    var cat = document.getElementById('f-catraca').value.trim().toLowerCase();
+    var cra = document.getElementById('f-crachas').value.trim();
+    if (vazios) { av.textContent = 'Faltam ' + vazios + ' campo(s).'; av.className = 'feedback info'; }
+    else if (cat.indexOf('sim') === 0 && !cra) { av.textContent = 'Se há catraca, defina os crachás: quem pode ver o quê.'; av.className = 'feedback aviso'; }
+    else { av.textContent = 'Descrição completa. Repare: se há login, quase sempre há também uma regra de acesso por usuário — e ela precisará ser testada com duas contas.'; av.className = 'feedback ok'; }
+  }
+  document.getElementById('exemplo').addEventListener('click', function () {
+    CAMPOS.forEach(function (c) { document.getElementById('f-' + c.id).value = EXEMPLO[c.id]; });
+    montar();
+  });
+  ligarCopia('copiar', 'saida', 'msg', 'Texto');
+  montar();
+</script>
