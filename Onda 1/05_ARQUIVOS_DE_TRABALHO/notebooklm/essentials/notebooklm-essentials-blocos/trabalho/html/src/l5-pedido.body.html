@@ -1,0 +1,88 @@
+<!--titulo: Monte seu pedido ancorado-->
+<style>
+  .el h2 { display: flex; gap: 8px; align-items: center; }
+  .el h2 .n { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #fff; font-size: 12px; flex: 0 0 auto; }
+  .el .opcoes .btn { text-align: left; border-radius: 12px; }
+  .el .opcoes .btn.nao { border-style: dashed; color: var(--suave); border-color: var(--linha); }
+  .el .opcoes .btn.nao[aria-pressed="true"] { background: var(--erro-claro); color: var(--erro); border-color: var(--erro); }
+  .medidor { font-weight: 700; color: var(--azul); margin: 16px 0 4px; }
+  .lista-el { display: grid; gap: 10px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Laboratório</span>
+  <h1 id="t">Monte seu pedido ancorado</h1>
+  <p class="sub">Um pedido bem formulado tem cinco elementos. Escolha uma opção em cada um — ou deixe um de fora para ver o que se perde. O prompt se monta abaixo.</p>
+  <div class="lista-el" id="elementos"></div>
+  <p class="medidor" id="medidor" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <pre class="saida" id="saida"></pre>
+  <div class="feedback" id="alerta" role="status" aria-live="polite"></div>
+  <div class="opcoes" style="margin-top:10px"><button type="button" class="btn principal" id="copiar">Copiar prompt</button></div>
+  <div class="feedback" id="msgCopia" role="status" aria-live="polite"></div>
+  <p class="nota">Lembre: as caixas de seleção do painel Fontes definem quais fontes entram na consulta. O texto do pedido não substitui essa delimitação.</p>
+</section>
+
+<script>
+  // Cinco elementos (tarefa, escopo, formato, divergências, citação) e prompts-base: Módulos 1 e 4 do roteiro.
+  var EL = [
+    { nome: 'Tarefa', falta: 'Sem tarefa, a ferramenta não sabe o que fazer com as fontes.',
+      op: ['Explique os direitos do titular de dados para uma pessoa iniciante.',
+           'Compare dado pessoal, dado pessoal sensível e dado anonimizado.',
+           'Liste o que cada fonte afirma sobre minimização de dados.'] },
+    { nome: 'Escopo', falta: 'Sem escopo explícito, a resposta pode completar lacunas com conhecimento geral.',
+      op: ['Use somente as fontes selecionadas.',
+           'Use somente as fontes selecionadas; não complete lacunas com conhecimento geral.'] },
+    { nome: 'Formato', falta: 'Sem formato, a resposta vem como texto corrido, mais difícil de auditar.',
+      op: ['Para cada conceito, apresente a definição, um exemplo e a citação do trecho.',
+           'Organize em duas partes: o que as fontes afirmam (evidência) e o que se pode inferir (inferência).',
+           'Responda em tópicos curtos, para iniciantes.'] },
+    { nome: 'Divergências', falta: 'Sem essa instrução, fontes que discordam podem ser conciliadas indevidamente.',
+      op: ['Se as fontes divergirem, apresente as versões separadamente.'] },
+    { nome: 'Citação', falta: 'Sem exigir citação e "não encontrado nas fontes", você perde o caminho para conferir.',
+      op: ['Para cada afirmação central, inclua uma citação. Se a informação não estiver nas fontes, escreva "não encontrado nas fontes".'] }
+  ];
+  var esc = EL.map(function () { return 0; });
+  var caixa = document.getElementById('elementos');
+
+  EL.forEach(function (e, i) {
+    var d = document.createElement('div'); d.className = 'item el';
+    d.innerHTML = '<h2 id="e' + i + '"><span class="n">' + (i + 1) + '</span>' + e.nome + '</h2>';
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'e' + i);
+    e.op.concat([null]).forEach(function (txt, k) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn' + (txt === null ? ' nao' : '');
+      b.textContent = txt === null ? 'Deixar de fora' : txt;
+      b.setAttribute('data-k', txt === null ? -1 : k);
+      b.addEventListener('click', function () { esc[i] = txt === null ? -1 : k; marcar(g, b); montar(); });
+      g.appendChild(b);
+    });
+    d.appendChild(g); caixa.appendChild(d);
+    marcar(g, g.querySelector('[data-k="0"]'));
+  });
+
+  function marcar(g, b) { g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); }
+  function montar() {
+    var partes = [], faltas = [];
+    EL.forEach(function (e, i) { if (esc[i] >= 0) partes.push(e.op[esc[i]]); else faltas.push(e.nome + ': ' + e.falta); });
+    document.getElementById('saida').textContent = partes.length ? partes.join(' ') : '(escolha ao menos um elemento)';
+    var n = partes.length;
+    document.getElementById('medidor').textContent = n + ' de 5 elementos';
+    document.getElementById('barra').style.width = (20 * n) + '%';
+    var a = document.getElementById('alerta');
+    if (faltas.length) { a.textContent = 'Faltando — ' + faltas.join(' '); a.className = 'feedback aviso'; }
+    else { a.textContent = 'Pedido completo: tarefa, escopo, formato, tratamento de divergências e exigência de citação.'; a.className = 'feedback ok'; }
+  }
+
+  document.getElementById('copiar').addEventListener('click', function () {
+    var texto = document.getElementById('saida').textContent, msg = document.getElementById('msgCopia');
+    function falhou() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('saida'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+      msg.textContent = ok ? 'Prompt copiado.' : 'O texto está selecionado: use Ctrl+C (ou Cmd+C) para copiar.'; msg.className = 'feedback info';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto).then(function () { msg.textContent = 'Prompt copiado.'; msg.className = 'feedback info'; }, falhou);
+    } else { falhou(); }
+  });
+  montar();
+</script>

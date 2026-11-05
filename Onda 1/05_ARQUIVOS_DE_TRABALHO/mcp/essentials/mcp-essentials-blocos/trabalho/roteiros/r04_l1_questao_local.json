@@ -1,0 +1,36 @@
+{
+  "licao": 1,
+  "posicao": 17,
+  "blocos": [
+    {
+      "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+      "itens": [
+        {
+          "title": "Uma colega quer usar o MCP para que o Claude leia arquivos de uma pasta do computador dela. Qual das situações descreve um servidor local?",
+          "answers": [
+            {
+              "title": "Um conector adicionado no Claude pelo navegador, informando uma URL pública.",
+              "correct": false,
+              "feedback": "Não. Um conector adicionado por URL é um servidor remoto, acessado pela internet."
+            },
+            {
+              "title": "Uma extensão instalada no Claude Desktop que lê arquivos de uma pasta do computador.",
+              "correct": true,
+              "feedback": "Correto. Extensões do Claude Desktop rodam na máquina do usuário; por isso existem apenas no Desktop."
+            },
+            {
+              "title": "Um plugin do diretório do ChatGPT.",
+              "correct": false,
+              "feedback": "Não. Plugins do diretório do ChatGPT são servidores remotos, acessados pela internet."
+            },
+            {
+              "title": "O conector do Google Calendar.",
+              "correct": false,
+              "feedback": "Não. O Google Calendar é um conector remoto: funciona no navegador, no aplicativo e no celular."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

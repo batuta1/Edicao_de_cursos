@@ -1,0 +1,68 @@
+<!--titulo: Resultado do teste de isolamento-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Ferramenta</span>
+  <h1 id="t">Resultado do teste de isolamento</h1>
+  <p class="sub">Depois de fazer o teste com as contas A e B, responda ao que você observou. A ferramenta diz se o aplicativo passou — e, se não passou, o que fazer antes de seguir.</p>
+  <div class="grid" id="lista"></div>
+  <div class="feedback" id="veredito" role="status" aria-live="polite"></div>
+  <div id="blocoPedido" hidden>
+    <h2 style="margin-top:16px">Pedido para o modo Plan</h2>
+    <pre class="saida" id="pedido"></pre>
+    <p class="nota"><button type="button" class="btn principal" id="copiar">Copiar pedido</button></p>
+    <div class="feedback" id="msg" aria-live="polite"></div>
+  </div>
+</section>
+
+<script>
+  // Critério de êxito e solução de problemas do Módulo 4 do roteiro.
+  var PERG = [
+    { id: 'a', t: 'Logada como A, a lista mostra a “Tarefa da conta A”?', bom: 'sim' },
+    { id: 'b', t: 'Logada como B, aparece a “Tarefa da conta A”?', bom: 'nao' },
+    { id: 'r', t: 'Depois de recarregar a página, a tarefa continua lá?', bom: 'sim' },
+    { id: 'd', t: 'Em More > Cloud > Database > tasks, há duas linhas com user_id diferentes?', bom: 'sim' }
+  ];
+  var resp = {}, lista = document.getElementById('lista');
+  PERG.forEach(function (q) {
+    var c = document.createElement('div'); c.className = 'item';
+    var p = document.createElement('p'); p.className = 'f'; p.id = 'q-' + q.id; p.textContent = q.t; c.appendChild(p);
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', p.id);
+    [['sim', 'Sim'], ['nao', 'Não']].forEach(function (o) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = o[1]; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        resp[q.id] = o[0];
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        avaliar();
+      });
+      g.appendChild(b);
+    });
+    c.appendChild(g); lista.appendChild(c);
+  });
+  function mostrarPedido(t) {
+    document.getElementById('blocoPedido').hidden = !t;
+    document.getElementById('pedido').textContent = t || '';
+  }
+  function avaliar() {
+    var ve = document.getElementById('veredito');
+    if (Object.keys(resp).length < PERG.length) { ve.textContent = 'Responda às quatro perguntas.'; ve.className = 'feedback info'; mostrarPedido(''); return; }
+    if (resp.b === 'sim') {
+      ve.textContent = 'Falha de segurança: a conta B enxerga a gaveta da conta A. Não publique. Peça a investigação em Plan e repita o teste depois da correção.';
+      ve.className = 'feedback erro';
+      mostrarPedido('Investigue por que a conta B vê tarefas da conta A e proponha a correção das políticas RLS. Não implemente até eu aprovar.');
+    } else if (resp.r === 'nao') {
+      ve.textContent = 'As tarefas não estão sendo gravadas no banco. Descreva o erro em Plan e peça investigação antes de corrigir.';
+      ve.className = 'feedback aviso';
+      mostrarPedido('O que acontece: a tarefa some ao recarregar a página.\nOnde: na lista de tarefas, logada como conta B.\nO que eu esperava: que a tarefa ficasse gravada.\nO que aconteceu: [descrever; colar a mensagem de erro, se houver]\nInvestigue a causa primeiro e me explique. Depois, altere apenas o necessário, sem mudar visual, login ou dados.');
+    } else if (resp.a === 'nao' || resp.d === 'nao') {
+      ve.textContent = 'O teste não está completo: confira se cada conta criou a sua tarefa e se a tabela tasks mostra duas linhas com user_id diferentes. Se não mostrar, peça investigação em Plan.';
+      ve.className = 'feedback aviso';
+      mostrarPedido('');
+    } else {
+      ve.textContent = 'Aprovado: cada conta vê apenas a própria tarefa, a tarefa persiste e a tabela mostra dois donos distintos. As gavetas estão trancadas — o aplicativo pode seguir para a publicação.';
+      ve.className = 'feedback ok';
+      mostrarPedido('');
+      concluir(null, '');
+    }
+  }
+  ligarCopia('copiar', 'pedido', 'msg', 'Pedido');
+  avaliar();
+</script>

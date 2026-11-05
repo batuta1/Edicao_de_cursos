@@ -1,0 +1,397 @@
+Usando o Codex com seu plano ChatGPT
+Como acessar e começar a usar o Codex
+
+Atualizado: há 3 dias
+Este artigo aborda o Codex, o agente de programação da OpenAI. Se você tiver interesse no ChatGPT Work, uma experiência separada do ChatGPT para pesquisas mais longas e tarefas que geram entregáveis, consulte ChatGPT Work e Codex; para ver detalhes técnicos do Codex, consulte a página do Codex em nosso site para desenvolvedores. O Codex está incluído nos planos do ChatGPT.
+
+Para obter informações sobre recursos do ChatGPT, como Sora, ChatGPT Imagens ou modo voz, consulte outros artigos da nossa Central de Ajuda.
+
+Saiba mais sobre o ChatGPT Modo Voz — incluindo o Modo Voz normal do Chat e o Modo Voz no Work e no Codex para desktop.
+
+O que é o Codex?
+O Codex é um agente de AI que ajuda você a escrever, revisar e entregar código.
+
+Primeiros passos
+Como conectar o Codex à sua conta do ChatGPT
+Para começar a usar o Codex com seu plano do ChatGPT:
+
+Entre com sua conta do ChatGPT.
+
+O Codex está incluído nos planos do ChatGPT, inclusive Free e Go. Os limites de uso variam de acordo com o plano.
+
+Para mais informações, incluindo opções de uso ampliado para pessoas físicas e planos de créditos do Codex para usuários empresariais, acesse chatgpt.com/pricing.
+
+Abra seu cliente Codex preferido e siga as instruções para entrar com o ChatGPT:
+
+Aplicativo do ChatGPT para desktop (modo Codex)
+
+CLI do Codex
+
+Extensão do Codex para IDE
+
+Codex para a web
+
+Siga as etapas de configuração exibidas no cliente selecionado.
+
+Use o Codex no Windows
+O Codex no Windows inclui estas ferramentas:
+
+Codex Doctor: execute codex doctor na CLI do Codex para diagnosticar problemas de inicialização, conectividade e desempenho.
+
+Controle remoto: controle outros dispositivos pelo seu dispositivo Windows. As permissões do Ambiente de trabalho seguro e as configurações de descoberta e controle do dispositivo continuam válidas.
+
+Seleção da distribuição do WSL: se você tiver várias distribuições do Windows Subsystem for Linux (WSL) instaladas, escolha qual distribuição Linux o Codex usará.
+
+Se sua organização gerencia as atualizações de aplicativos, o administrador precisa implantar a versão aprovada por meio do MDM antes que você possa usar os recursos que exigem essa versão.
+
+Quais termos regem o uso do Codex?
+Quando você entra no Codex usando uma conta existente do ChatGPT, os Termos de Uso e a Política de Privacidade do ChatGPT — ou o contrato de serviços on-line correspondente para usuários da API da OpenAI e do ChatGPT Enterprise, Education ou Business — se aplicam aos dados compartilhados entre o Codex e o ChatGPT.
+
+Configuração e controles Enterprise
+Padrões de modelo do Codex
+Administradores e proprietários do Ambiente de trabalho seguro podem configurar o modelo inicial, o nível de raciocínio, a velocidade, a disponibilidade do Modo rápido e o comportamento de novas conversas do Codex em Configurações do Ambiente de trabalho seguro → Modelos (abra Modelos). O Modo rápido vem habilitado por padrão. Quando houver controles específicos por função, os administradores poderão substituir o padrão do Ambiente de trabalho seguro para funções selecionadas. Essas configurações definem a experiência inicial do membro; elas não disponibilizam modelos indisponíveis nem substituem requisitos obrigatórios do Ambiente de trabalho seguro.
+
+Quando mais de uma configuração se aplica, os controles obrigatórios têm prioridade: os requisitos gerenciados de requirements.toml substituem os padrões iniciais do Ambiente de trabalho seguro, que substituem a escolha inicial local do membro. Os membros só podem trocar um padrão inicial quando o modelo continuar disponível para eles e nenhum requisito obrigatório impedir a mudança.
+
+Configuração
+Para ver um guia detalhado sobre como configurar seu Ambiente de trabalho seguro com o Codex, consulte nosso
+
+guia: Guia do administrador Enterprise
+
+Plugins
+O Diretório de plugins está visível em todos os planos do ChatGPT. A possibilidade de um membro instalar ou usar um plugin depende do plano, das configurações do Ambiente de trabalho seguro, da função, da interface e das permissões de aplicativo exigidas pelo plugin. Em Ambientes de trabalho seguros Business e Enterprise/Edu, administradores e proprietários gerenciam a instalação de plugins em Configurações do Ambiente de trabalho seguro > Plugins e o acesso aos aplicativos subjacentes em Configurações do Ambiente de trabalho seguro > Aplicativos.
+
+Um plugin pode incluir habilidades, aplicativos e modelos de aplicativos. Se um plugin exigir um aplicativo, esse aplicativo deverá estar habilitado para a função do membro antes que o Codex possa usar o recurso baseado nele. As configurações atuais dos aplicativos continuam válidas, incluindo acesso por função, controles de ações, configurações de aprovação e sincronização, restrições de domínio e autenticação do provedor.
+
+Os controles de plugins do Ambiente de trabalho seguro permitem definir um plugin como Disponível ou Instalado para funções qualificadas. Instalado instala o plugin por padrão para essa função; Disponível permite que os membros o instalem por conta própria. Esses controles se aplicam ao ChatGPT na web, em dispositivos móveis e no desktop, além do Codex, quando o plugin está disponível na interface. Os administradores não definem uma opção separada de aplicativo ou plugin para cada interface.
+
+Alguns plugins locais ou específicos do Codex podem ser usados somente no Codex. Se um plugin tiver sido criado localmente, talvez seja necessário enviá-lo, importá-lo ou pedir a um administrador que o disponibilize antes que ele possa ser usado pelo restante do Ambiente de trabalho seguro.
+
+Sites no Codex
+Sites está disponível em planos pagos do ChatGPT, exceto Free e Go, nas regiões compatíveis. No momento, Sites não está disponível no Espaço Econômico Europeu, na Suíça nem no Reino Unido. Os administradores do Ambiente de trabalho seguro controlam se os membros podem criar Sites ou publicá-los abertamente.
+
+Quando Sites estiver disponível no Codex, descreva o que deseja criar, confira a visualização gerada e use os controles de compartilhamento disponíveis. Para ver o fluxo completo de criação e implantação, consulte o guia do desenvolvedor do Codex Sites.
+
+Os administradores do Ambiente de trabalho seguro podem controlar a criação de Sites e a publicação aberta usando as configurações disponíveis no plano.
+
+Os controles disponíveis dependem do plano e da configuração do Ambiente de trabalho seguro. Se você não encontrar o controle esperado, entre em contato com o Suporte da OpenAI.
+
+Modo de desenvolvedor para Uso do navegador e navegador integrado
+O modo de desenvolvedor funciona com o Uso do navegador no Chrome e com o navegador integrado do Codex. Ele dá ao Codex acesso controlado ao Chrome DevTools Protocol (CDP) para depuração mais avançada do navegador, como inspecionar a saída do console, o tráfego da rede, o estado da página e o desempenho do JavaScript.
+
+Você pode habilitar o recurso localmente no aplicativo do ChatGPT para desktop abrindo Configurações > Navegador e ativando Habilitar acesso total ao CDP em Modo de desenvolvedor. O acesso total ao CDP permite que o Codex inspecione e controle componentes internos confidenciais do navegador que podem colocar seus dados em risco. O Codex solicita aprovação explícita antes de usar esse acesso para inspecionar um site.
+
+Usuários com permissão para administrar o Codex podem desabilitar o acesso total ao CDP na Configuração gerenciada, definindo browser_use_full_cdp_access como false. Desabilitar o Uso do navegador também desabilita o CDP.
+
+Para saber mais sobre configuração e aprovação, consulte Modo de desenvolvedor. Os administradores/proprietários precisarão primeiro habilitar o navegador integrado para depois habilitar o modo de desenvolvedor.
+
+RBAC (controle de acesso baseado em funções)
+O acesso ao Codex pode ser concedido a funções específicas de usuários. Para saber mais sobre como configurar o RBAC, consulte nosso guia: RBAC
+
+API de Compliance
+O uso do Codex, incluindo clientes locais como o CLI e a extensão para IDE, além do uso na web ou delegado à nuvem, está disponível na API de Compliance. Essa interface de registros abrange os clientes compatíveis do Codex e é separada dos endpoints específicos para tarefas na nuvem.
+
+Limites de uso por plano
+Se você estiver perto de atingir ou já tiver atingido um limite do Codex, abra as Configurações ou seu painel de uso. Confira qual cota foi esgotada, seu saldo de créditos e o horário de redefinição exibido, se houver. Em uma sessão ativa do Codex CLI, digite /status.
+
+Para ver os limites, valores e opções de créditos atuais, consulte a página de preços.
+
+Por que o uso pode se esgotar
+Codex, ChatGPT Work, ChatGPT para Excel e Agentes do Ambiente de trabalho seguro usam uma cota e um saldo de créditos compartilhados quando esses recursos estão disponíveis no seu plano. O uso depende do modelo, de onde a tarefa é executada, da complexidade, do contexto, do raciocínio, da velocidade e das ferramentas. Uma tarefa de longa duração pode consumir muito mais do que uma solicitação curta.
+
+As tarefas iniciadas pelo ChatGPT Modo Voz no Work ou no Codex para desktop usam essa mesma cota. O tempo do Modo Voz conectado é contabilizado separadamente quando há preços flexíveis. O Modo Voz normal do Chat tem limites separados e não consome o uso do Codex.
+
+Quando compatível, o ChatGPT para desktop mostra o uso de créditos de conversas individuais do Work e do Codex. O uso normal do Chat não está incluído. Os valores estimados em dólares só aparecem quando o Ambiente de trabalho seguro permite que os membros vejam os custos. São estimativas para planejamento, não faturas.
+
+Membros de Ambientes de trabalho seguros Enterprise qualificados com cobrança por créditos podem abrir Configurações > Uso e faturamento no ChatGPT para desktop. Isso mostra a cota mensal do Work e do Codex, além do histórico recente de créditos. Quando disponível, também podem conferir localmente as conversas de alto uso do Work e do Codex e o total de créditos usado por cada conversa. Consulte Como analisar o uso do Work e do Codex e usar a Análise Pessoal para saber mais sobre navegação, atualização dos dados e configuração.
+
+O que fazer em seguida
+Confira no aviso de limite quais opções estão disponíveis para sua conta. Talvez você possa adicionar créditos, usar uma redefinição disponível, fazer upgrade ou aguardar até o horário de redefinição exibido. Usuários qualificados dos planos Plus e Pro podem comprar créditos sem mudar de plano.
+
+Se os créditos comprados não aparecerem, primeiro confirme se você está na conta ou no Ambiente de trabalho seguro correto e confira seu uso recente. O guia de créditos também explica como um saldo negativo pode afetar uma compra posterior.
+
+Se os números ainda parecerem incorretos
+Entre em contato com o Suporte da OpenAI. Informe o limite ou saldo de créditos em questão, o horário de redefinição exibido, uma captura de tela, o cliente e o modelo do Codex e quando isso ocorreu, incluindo seu fuso horário. Remova informações confidenciais das capturas de tela.
+
+Controles de contexto e dados
+Alguns recursos do Codex podem torná-lo mais útil ao permitir que ele se lembre do contexto, continue o trabalho ao longo do tempo e se conecte às ferramentas que você escolher. Entre eles estão Memórias, Tarefas agendadas, o navegador integrado do Codex e o Uso do computador. Para saber mais sobre esses e outros recursos, inclusive como gerenciar os dados que eles armazenam e com os quais interagem, consulte nossa central do desenvolvedor.
+
+Gravar e reproduzir
+O recurso Gravar e reproduzir está disponível para usuários qualificados no aplicativo do ChatGPT para desktop ao usar o Codex no macOS. Ele permite demonstrar um fluxo de trabalho uma vez e transformá-lo em uma habilidade reutilizável. É útil para fluxos de trabalho estáveis e repetitivos, mais fáceis de demonstrar do que descrever.
+
+O recurso Gravar e reproduzir exige que o Uso do computador esteja disponível e habilitado. Inicialmente, ele não estará disponível na União Europeia, Suíça nem no Reino Unido. Durante a gravação, o Codex observa as ações e o conteúdo das janelas necessários para aprender o fluxo de trabalho. Mantenha as gravações concentradas na tarefa e evite inserir segredos ou dados confidenciais durante a gravação.
+
+Para saber mais, consulte o guia de Gravar e reproduzir.
+
+Controles de dados
+Os controles de dados de treinamento do ChatGPT se aplicam ao conteúdo processado pelo Codex, incluindo capturas de tela feitas pelo Uso do computador. Os fluxos de trabalho locais são executados no seu dispositivo; as tarefas na nuvem são executadas em ambientes gerenciados pela OpenAI. Serviços conectados podem estar disponíveis nas interfaces compatíveis do ChatGPT e do Codex, e você pode desconectá-los a qualquer momento.
+
+Perguntas frequentes
+Qual modelo o Codex CLI ou a extensão para IDE usa?
+O modelo usado por padrão pelo Codex depende da versão do CLI ou da extensão para IDE e da configuração. Consulte a documentação do Codex para conhecer os modelos disponíveis e saber como configurar modelos diferentes.
+
+A OpenAI treina modelos com meu uso do Codex?
+Business, Enterprise e Edu
+Por padrão, a OpenAI não usa entradas nem saídas de nossos produtos para usuários empresariais, incluindo ChatGPT Business, ChatGPT Enterprise e a API, para melhorar nossos modelos. No entanto, os proprietários de organizações da API podem optar por compartilhar dados da API com a OpenAI. Essa configuração não está disponível para determinadas organizações, incluindo clientes Enterprise e clientes com zero retenção de dados habilitada.
+
+Saiba mais sobre como compartilhar feedback, dados de avaliação e ajuste fino e entradas e saídas da API com a OpenAI.
+
+Pro e Plus
+As conversas podem ser usadas para melhorar os modelos, a menos que você desative o treinamento nos controles de dados do ChatGPT. Para saber mais, consulte como seus dados são usados para melhorar o desempenho dos modelos.
+
+Posso executar o Codex no meu IDE?
+Sim. A extensão Codex para VS Code é compatível com a maioria das variações do VS Code. Em outros IDEs, você também pode executar o Codex CLI no terminal do IDE.
+
+Como as permissões do Ambiente de trabalho seguro se aplicam ao Codex no aplicativo do ChatGPT para desktop?
+Sim. Ambientes de trabalho seguros gerenciados podem controlar separadamente o uso local do Codex e as tarefas do Codex na nuvem. O Codex Local abrange o CLI, a extensão para IDE e os fluxos de trabalho no desktop, enquanto o Codex Cloud abrange as tarefas delegadas à nuvem. O Controle remoto também pode exigir habilitação no Ambiente de trabalho seguro ou permissão de RBAC, e o dispositivo deve permitir descoberta e controle nas configurações do ChatGPT para desktop.
+
+Para ver um guia detalhado sobre como configurar seu Ambiente de trabalho seguro com o Codex, consulte: Guia do administrador Enterprise
+
+Onde encontro ajuda para solucionar problemas do Codex no aplicativo do ChatGPT para desktop?
+Consulte nosso guia da plataforma se tiver problemas ao usar o Codex no aplicativo do ChatGPT para desktop. Se precisar de mais ajuda, entre em contato conosco.
+
+Como posso acessar o Codex Enterprise Analytics?
+O Codex Enterprise Analytics está disponível para Ambientes de trabalho seguros Enterprise com o Codex habilitado. Para usar a API, peça a um proprietário ou administrador do Ambiente de trabalho seguro que crie uma chave de administrador com escopo do Ambiente de trabalho seguro e a permissão codex.enterprise.analytics.read.
+
+No Console do administrador, selecione o Ambiente de trabalho seguro correto do ChatGPT, abra Credenciais > Chaves de administrador e defina API de análise do Codex como Leitura. As chaves de organização da Plataforma de API não dão acesso às análises do Ambiente de trabalho seguro do ChatGPT.
+
+Para saber mais sobre configuração e permissões, consulte: Como gerenciar chaves de administrador no Console do administrador.
+
+Para ver detalhes do endpoint, consulte: Referência da API do Codex Enterprise Analytics.
+
+Os limites de taxa do ChatGPT para envio de arquivos, imagens e voz também se aplicam ao Codex?
+O envio de arquivos, a geração de imagens e a voz no ChatGPT têm limites de uso, períodos de redefinição e avisos próprios. Por exemplo, se você vir avisos como "50 imagens no último dia" ou "redefine em 720 horas", atingir limites de voz ou vir avisos de limite ao enviar arquivos no ChatGPT, esses limites não se aplicam ao Codex.
+
+Para saber mais sobre os limites de imagens, vídeos e voz, consulte limites de geração de imagens e vídeos e limites de uso de voz. Para saber mais sobre os limites de envio de arquivos no ChatGPT e solucionar problemas, consulte as Perguntas frequentes sobre envio de arquivos. Para conferir o status de diversos serviços do ChatGPT, incluindo o envio de arquivos, consulte a página de status da OpenAI.
+
+O ChatGPT Modo Voz usado dentro do Work ou do Codex para desktop é contabilizado separadamente, enquanto as tarefas iniciadas por Voz usam o mesmo saldo compartilhado com agentes de IA que o Work e o Codex. Saiba mais.
+
+Como funcionam os convites por indicação e as redefinições guardadas do Codex?
+Usuários qualificados podem ver convites de indicação do Codex no menu do perfil. Usuários de planos pessoais podem ver Convidar um amigo, e membros qualificados de Ambientes de trabalho seguros Business podem ver Convidar um colega. A caixa de diálogo do convite mostra detalhes da oferta atual, como a recompensa, os limites de convites, a validade e os requisitos aplicáveis aos destinatários.
+
+Em algumas promoções dos planos Plus e Pro, uma indicação bem-sucedida pode adicionar uma redefinição guardada do limite de uso do Codex. Para usar uma redefinição guardada, abra o menu do perfil e selecione o resumo de uso que mostra a quantidade disponível, como 1 redefinição disponível.
+
+O uso de uma redefinição completa guardada renova suas janelas de uso de cinco horas e semanal do Codex e altera a data de redefinição semanal. Consulte Configurações → Uso para ver o horário de redefinição atualizado.
+
+As recompensas por indicação variam conforme a oferta e o plano. Para ver os detalhes atuais de recompensa, limite e qualificação, consulte Convidar amigos e colegas e Promoções de indicação do Codex.
+
+Como posso criar instruções de projeto no Codex?
+Ao usar o Codex no aplicativo do ChatGPT para desktop, use /init para gerar uma estrutura inicial de AGENTS.md para o projeto atual. Esse comando usa o mesmo fluxo de inicialização do Codex CLI. Para ver outros comandos, consulte Comandos do aplicativo.
+
+O que acontece se eu atingir um limite de uso enquanto o Codex está trabalhando?
+Se você atingir um limite de uso durante uma interação ativa, o Codex poderá continuar trabalhando nela, sujeito aos limites de uso razoável. Após essa interação, consulte a página de uso do Codex ou o aviso de limite para ver as opções disponíveis no seu plano, como adicionar créditos, aplicar uma redefinição disponível, fazer upgrade ou aguardar a redefinição do limite.
+
+Para saber mais, consulte Limites de uso do Codex.
+
+O que acontecerá com o GPT-5.4 e o GPT-5.4 mini no Codex?
+Em 31 de agosto de 2026, o GPT-5.4 e o GPT-5.4 mini deixarão de estar disponíveis no Codex quando você entrar com sua conta do ChatGPT.
+
+Substitua o GPT-5.4 pelo GPT-5.6 Terra.
+
+Substitua o GPT-5.4 mini pelo GPT-5.6 Luna.
+
+Antes de 31 de agosto, atualize os padrões do Ambiente de trabalho seguro, as configurações de modelo salvas, as configurações gerenciadas e as automações.
+
+Essa mudança não afeta a API da OpenAI nem o uso do Codex com sua própria chave de API.
+
+O Suporte pode redefinir meus limites de uso?
+Não. O Suporte da OpenAI não redefine os limites de uso do ChatGPT nem do Codex. Se você atingir um limite, aguarde a redefinição ou use outra opção disponível exibida em sua conta.
+
+Se você acredita que seu uso foi contabilizado incorretamente ou o acesso não voltou após o horário de redefinição informado, entre em contato com o Suporte para investigarmos.
+
+Como funcionam as redefinições únicas dos limites de uso?
+Ocasionalmente, a OpenAI pode oferecer a usuários qualificados uma redefinição única dos limites de uso do Codex ou do ChatGPT Work. A qualificação, os limites afetados e os requisitos de resgate ou validade podem variar conforme a oferta. Redefinições futuras não são garantidas.
+
+Uma redefinição automática é aplicada diretamente aos limites de uso abrangidos pelo anúncio. A redefinição automática não fica guardada para uso posterior. O uso após a aplicação é contabilizado na sua cota renovada. Algumas ofertas também podem incluir uma redefinição separada para uso posterior. Se você receber uma, consulte sua conta ou a oferta para ver os detalhes de resgate e validade.
+
+Não oferecemos outra redefinição, crédito, reembolso ou compensação apenas porque você não se qualificou para uma redefinição única, não percebeu uma redefinição aplicada corretamente ou não usou uma redefinição guardada antes do vencimento informado.
+
+Entre em contato com o Suporte se o uso parecer incorreto, o acesso não tiver voltado após o horário de redefinição informado ou você acreditar que uma redefinição para a qual se qualificava não foi aplicada conforme descrito.
+
+Por que o Codex não inicia com approval_policy = "untrusted"?
+O Codex não é mais compatível com a política de aprovação untrusted. Se sua configuração ainda a utiliza, o Codex pode não iniciar e exibir este erro: approval_policy = "untrusted" is no longer supported; remove this setting.
+
+Essa mudança se aplica ao Codex CLI versão 0.149.0 ou posterior, ao aplicativo Codex para desktop versão 26.818.31338 ou posterior no macOS, Windows e Linux e à extensão Codex para VS Code versão 26.818.31338 ou posterior.
+
+Para corrigir o problema, abra ~/.codex/config.toml no macOS ou Linux, ou %USERPROFILE%\.codex\config.toml no Windows, e remova approval_policy = "untrusted".
+
+Verifique também se há referências à política incompatível nos perfis ativos, na configuração gerenciada pela organização, em allowed_approval_policies e nos comandos que usam --ask-for-approval untrusted.
+
+Como alternativa restritiva, defina sandbox_mode = "read-only" e approval_policy = "on-request".
+
+Reinicie o Codex depois de atualizar sua configuração. A configuração trust_level = "untrusted" no nível do projeto é separada e continua sendo aceita.
+
+Update on September 23, 2025:  GPT‑5‑Codex is now available to developers using Codex via API key (in addition to being available to developers using Codex via their ChatGPT subscription). GPT‑5 Codex is available at the same price as GPT‑5, and is available in the Responses API only. The underlying model snapshot will be regularly updated. Check out the Codex developer documentation⁠(abre em uma nova janela) and changelog⁠(abre em uma nova janela) for more details.
+
+Today, we’re releasing GPT‑5‑Codex—a version of GPT‑5 further optimized for agentic coding in Codex. GPT‑5‑Codex was trained with a focus on real-world software engineering work; it’s equally proficient at quick, interactive sessions and at independently powering through long, complex tasks. Its code review capability can catch critical bugs before they ship. GPT‑5‑Codex is available everywhere you use Codex—it’s the default for cloud tasks and code review, and developers can choose to use it for local tasks via Codex CLI and the IDE extension.
+
+Since we first launched Codex CLI⁠(abre em uma nova janela) in April and Codex⁠ web in May, Codex has steadily evolved into a more effective coding collaborator. Two weeks ago, we unified Codex into a single product experience connected by your ChatGPT account, enabling you to move work seamlessly between your local environment and the cloud without losing context. Codex now works where you develop—in your terminal or IDE, on the web, in GitHub, and even in the ChatGPT iOS app. Codex is included with ChatGPT Plus, Pro, Business, Edu, and Enterprise plans.
+
+With these updates, Codex moves closer to what we’ve been building toward all along—a teammate that understands your context, works alongside you, and reliably takes on work for your team.
+
+GPT‑5‑Codex
+GPT‑5‑Codex is a version of GPT‑5 further optimized for agentic software engineering in Codex. It’s trained on complex, real-world engineering tasks such as building full projects from scratch, adding features and tests, debugging, performing large-scale refactors, and conducting code reviews. It’s more steerable, adheres better to AGENTS.md⁠(abre em uma nova janela) instructions, and produces higher-quality code—just tell it what you need without writing long instructions on style or code cleanliness.
+
+SWE-bench Verified (n=500)
+
+GPT-5 (high)
+GPT-5-Codex (high)
+0%
+20%
+40%
+60%
+80%
+Accuracy
+74.5%
+72.8%
+Code refactoring tasks
+
+GPT-5 (high)
+GPT-5-Codex (high)
+0%
+20%
+40%
+60%
+80%
+Accuracy
+33.9%
+51.3%
+Verificado pelo SWE-Bench (SWE-Bench Verified) Em ocasiões passadas, inclusive quando do lançamento do GPT‑5, declaramos os resultados de 477 tarefas verificadas pelo SWE-bench, porque algumas delas não podiam ser executadas em nossa infraestrutura. Desde então, resolvemos o problema e agora relatamos todas as 500 tarefas.
+
+Tarefas de refatoração de código: Nossa avaliação de refatoração de código contém tarefas de repositórios grandes e bem estabelecidos, inclusive de Python, Go e até OCaml. Um exemplo de tarefa seria este pull request do Gitea⁠(abre em uma nova janela), que altera 232 arquivos e 3.541 linhas para aplicar uma variável ctx na lógica do aplicativo.
+
+GPT‑5‑Codex adapts how much time it spends thinking more dynamically based on the complexity of the task. The model combines two essential skills for a coding agent: pairing with developers in interactive sessions, and persistent, independent execution on longer tasks. That means Codex will feel snappier on small, well-defined requests or while you are chatting with it, and will work for longer on complex tasks like big refactors. During testing, we’ve seen GPT‑5‑Codex work independently for more than 7 hours at a time on large, complex tasks, iterating on its implementation, fixing test failures, and ultimately delivering a successful implementation.
+
+On OpenAI employee traffic, we see that for the bottom 10% of user turns sorted by model-generated tokens (including hidden reasoning and final output), GPT‑5‑Codex uses 93.7% fewer tokens than GPT‑5. Conversely, for the top 10%, GPT‑5‑Codex thinks more, spending twice as long reasoning, editing and testing code, and iterating.
+
+OpenAI employee traffic using Codex CLI
+
+
+GPT-5 (medium)
+
+GPT-5-Codex (medium)
+10th percentile
+30th percentile
+50th percentile
+70th percentile
+90th percentile
+# of model-generated tokens per response
+−93.7%
+−68.4%
+−30.8%
++25.1%
++102.2%
+GPT-5 (medium)
+GPT-5-Codex (medium)
+GPT‑5‑Codex has been trained specifically for conducting code reviews and finding critical flaws. When reviewing, it navigates your codebase, reasons through dependencies, and runs your code and tests in order to validate correctness. We evaluated code review performance on recent commits from popular open-source repositories. For each commit, experienced software engineers evaluated review comments for correctness and importance. We find that comments by GPT‑5‑Codex are less likely to be incorrect or unimportant, reserving more user attention for critical issues.
+
+Incorrect comments
+
+GPT-5 (high)
+GPT-5-Codex (high)
+0%
+5%
+10%
+15%
+20%
+% of comments
+13.7%
+4.4%
+High-impact comments
+
+GPT-5 (high)
+GPT-5-Codex (high)
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+% of comments
+39.4%
+52.4%
+Comments per PR (avg)
+
+GPT-5 (high)
+GPT-5-Codex (high)
+0.0
+0.5
+1.0
+1.5
+# of comments
+1.32
+0.93
+GPT‑5‑Codex is a reliable partner on front-end tasks. In addition to creating aesthetic desktop apps, GPT‑5‑Codex also shows significant improvements in human preference evaluations when creating mobile websites. When working in the cloud, it can look at images or screenshots you provide as input, visually inspect its progress, and display screenshots of its work to you.
+
+GPT‑5‑Codex was purpose-built for Codex CLI, the Codex IDE extension, the Codex cloud environment, and working in GitHub, and also supports versatile tool use. Unlike GPT‑5, which is a general-purpose model, we recommend using GPT‑5‑Codex only for agentic coding tasks in Codex or Codex-like environments.
+
+Updates to Codex
+We also recently made some updates to make Codex a better pair programmer, with a revamped Codex CLI and the new Codex IDE extension.
+
+Codex CLI
+Codex CLI is open-source, and community feedback over the last few months has been invaluable in shaping its evolution. With this feedback, we’ve rebuilt Codex CLI around agentic coding workflows to harness our models into more capable and reliable partners. You can now attach and share images—screenshots, wireframes, and diagrams—right in the CLI to build shared context on design decisions and get exactly what you want. When doing more complex work, Codex now tracks progress with a to-do list, and includes tools like web search and MCP for connecting to external systems, with more accurate tool use overall.
+
+The terminal UI has also been upgraded: tool calls and diffs are better formatted and easier to follow. Approval modes are simplified to three levels: read-only with explicit approvals, auto with full workspace access but requiring approvals outside the workspace, and full access with the ability to read files anywhere and run commands with network access. It also supports compacting conversation state to make longer sessions easier to manage.
+
+Check out the Codex CLI quickstart⁠(abre em uma nova janela) to learn more.
+
+
+
+The Codex IDE extension
+
+
+Codex meets you where you already work, including in your IDE. The IDE extension brings the Codex agent into VS Code, Cursor, and other VS Code forks, so that you can seamlessly preview local changes and edit code with Codex. When you use Codex in your IDE, you can write shorter prompts and get faster results because Codex can use context like the files you’ve opened or the code you’ve selected.
+
+The Codex IDE extension also lets you move work smoothly between the cloud and your local environment. You can create new cloud tasks, track in‑progress work, and review completed tasks without leaving your editor. To make finishing touches, you can open cloud tasks in your IDE, and Codex maintains context. Learn more on how to get the most out of the IDE extension in the quickstart⁠(abre em uma nova janela).
+
+Codex cloud
+In addition to Codex CLI, the new IDE extension and GitHub integration bring the Codex cloud agent closer to developer workflows so you can now delegate tasks without switching away from your editor or GitHub.
+
+Behind the scenes, we’ve also been continuously improving cloud infrastructure performance. By caching containers, we’ve slashed the median completion time for new tasks and follow-ups by 90%. Codex also now automatically sets up its own environment by scanning for common setup scripts and executing them, and with configurable internet access can run commands like pip install to fetch dependencies as needed at runtime.
+
+Like in the CLI and IDE extension, you can now use images to share frontend design specs or explain UI bugs. As it builds for you, Codex can spin up its own browser, look at what it built, iterate, and attach a screenshot of the result to the task and GitHub PR. For more details, check out the docs⁠(abre em uma nova janela).
+
+
+
+Code review
+Codex also now includes code review capabilities trained to catch critical flaws. Unlike static analysis tools, it matches the stated intent of a PR to the actual diff, reasons over the entire codebase and dependencies, and executes code and tests to validate behavior. Only the most thorough human reviewers put this level of effort into every PR they review, so Codex fills the gap—helping teams find problems earlier, reduce reviewer load, and ship with more confidence.
+
+Once turned on for a GitHub repo, Codex automatically reviews PRs as they move from draft to ready, posting its analysis on the PR. If it recommends edits, you can stay in the same thread and ask Codex to implement them. You can also explicitly ask for a review by mentioning “@codex review” in a PR, and give it extra guidance like “@codex review for security vulnerabilities” or “@codex review for outdated dependencies”. Check out the quickstart⁠(abre em uma nova janela) to learn how to set up code review for your repos.
+
+At OpenAI, Codex now reviews the vast majority of our PRs, catching hundreds of issues every day—often before a human review begins. It’s been key to letting the Codex team move fast with greater confidence.
+
+
+
+Veja como os desenvolvedores estão usando o Codex
+
+Cisco Meraki
+
+Duolingo
+
+Ramp
+
+Vanta
+
+Virgin Atlantic
+
+Gap
+“Eu precisava atualizar uma base de código de outra equipe para o lançamento de um recurso. [...] Com o Codex, deleguei a refatoração e geração de testes e me concentrei em outras prioridades. Ele produz código de alta qualidade, totalmente testado, que eu posso entregar rapidamente, mantendo o cronograma do lançamento sem aumentar os riscos.”
+Tres Wong-Godfrey, líder de tecnologia na Cisco Meraki
+Building safe and trustworthy AI agents
+We’re building Codex with a focus on protecting code and data from exfiltration, and guarding against misuse. By default, Codex runs in a sandboxed environment with network access⁠(abre em uma nova janela) disabled, whether locally or in the cloud. This helps ensure Codex can’t take harmful actions on your computer, and reduces the risk of prompt injections from untrusted sources.
+
+Codex can ask for permission before potentially dangerous actions and is trained to run commands to verify its outputs. Developers can customize security settings to match their risk tolerance. In the cloud, you can limit network access to trusted domains. In the CLI and IDE extension, developers can approve commands to run with full access or allow the agent to use web search and connect to MCP servers. This can expand capabilities of the agent while increasing the risks–learn more about how to securely operate and manage Codex here⁠(abre em uma nova janela).
+
+We always encourage developers to review the agent’s work before making changes or deploying to production. Codex provides citations, terminal logs, and test results with each task to help with this. While Codex code reviews help reduce the risk of dangerous issues being deployed to production, whether created by humans or agents, we always recommend using Codex as an additional reviewer—not a replacement for human reviews.
+
+Consistent with our approach to GPT‑5, we have decided to treat GPT‑5‑Codex as High capability in the Biological and Chemical domains, and have implemented safeguards to minimize the associated risks. Read more about our assessments and robust safety approach in the system card addendum⁠.
+
+Pricing and availability
+Codex is included with ChatGPT Plus, Pro, Business, Edu, and Enterprise plans. Usage scales with your plan: Plus, Edu and Business seats can cover a few focused coding sessions each week, while Pro can support a full workweek across multiple projects.
+
+Business plans can purchase credits to enable developers to go beyond their included limits, while Enterprise plans provide a shared credit pool so you only pay for what your developers use. Learn more about usage limits in ChatGPT here⁠(abre em uma nova janela).
+
+For developers using Codex CLI via API key, we plan to make GPT‑5‑Codex available in the API soon.
+
+Codex is becoming the coding partner we’ve always envisioned—one that’s faster, more reliable, and deeply integrated into the tools you already use. We’re excited to see what you build with it and will keep improving Codex to make it an even better teammate for your most ambitious projects.

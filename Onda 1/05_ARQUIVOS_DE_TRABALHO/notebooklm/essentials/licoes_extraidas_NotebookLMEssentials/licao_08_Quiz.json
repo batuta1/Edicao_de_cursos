@@ -1,0 +1,838 @@
+{
+  "numero_da_licao": 8,
+  "position_original": 7,
+  "title": "Quiz",
+  "lesson": {
+    "description": "Teste seu entendimento de como usar o NotebookLM para reunir e auditar informações de múltiplas fontes, validar respostas com citações e aplicar o fluxo decidir, reunir, perguntar, conferir e produzir. Veja também como você lida com tipos de fonte como PDFs, sites e vídeos do YouTube, além de cuidados com LGPD, sigilo profissional e recursos do Estúdio, como o Resumo em Áudio.",
+    "id": "KpvoWtvcYcctYzN2uRyGmquEPQMdR6o5",
+    "items": [
+      {
+        "answers": [
+          {
+            "id": "e8ad2622-bd2c-491c-8345-997a66cb9763",
+            "title": "Usar a versão web no computador pelo navegador.",
+            "correct": true,
+            "feedback": "Correto. Configuração do chat, notas, mapas mentais, relatórios e tabelas de dados só estão completos na versão web."
+          },
+          {
+            "id": "e8b8eb71-6a91-40aa-9dce-fd8a1334bd6e",
+            "title": "Usar o aplicativo no celular para todas as tarefas.",
+            "correct": false,
+            "feedback": "Não. O celular serve para usos complementares, como ouvir um Resumo em Áudio, mas os aplicativos não têm todos os recursos."
+          },
+          {
+            "id": "4e88ff93-aa66-464f-8216-22d58fee6fc6",
+            "title": "Usar qualquer dispositivo com a mesma experiência de recursos.",
+            "correct": false,
+            "feedback": "Não. Os aplicativos para Android e iPhone/iPad não têm paridade de recursos com a versão web."
+          },
+          {
+            "id": "aaf07abe-c9fd-4952-973a-11bb8c3eb263",
+            "title": "Usar o tablet com aplicativo para configurar os recursos.",
+            "correct": false,
+            "feedback": "Não. O aplicativo para tablet também não reúne todos os recursos; as atividades principais devem ser feitas na versão web, no computador."
+          }
+        ],
+        "correct": "e8ad2622-bd2c-491c-8345-997a66cb9763",
+        "corrects": [
+          "e8ad2622-bd2c-491c-8345-997a66cb9763"
+        ],
+        "id": "61d5af88-78f8-4667-a5c1-019f16a37416",
+        "title": "Para realizar as atividades principais do curso no NotebookLM com acesso aos recursos necessários, qual forma de uso deve ser escolhida?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "c8fb5427-4ee4-441c-883e-770e80b4eaf1"
+      },
+      {
+        "answers": [
+          {
+            "id": "b5d7d3ea-93be-41c2-b394-d7fcaaf88ca0",
+            "title": "NotebookLM, porque trabalha sobre fontes selecionadas e permite respostas ancoradas com citações verificáveis.",
+            "correct": true,
+            "feedback": "Correto. Com um corpus já definido, o NotebookLM responde de forma ancorada, e cada citação abre o trecho original."
+          },
+          {
+            "id": "33056dce-3f4f-41dd-8791-121f10e087f1",
+            "title": "Perplexity, porque amplia a pesquisa com páginas recentes da web e cita resultados encontrados online.",
+            "correct": false,
+            "feedback": "Não. Um buscador com IA serve para descobrir páginas atuais na web; aqui o conjunto de fontes já está definido."
+          },
+          {
+            "id": "532bad26-eb69-4664-9811-1c010e2132ae",
+            "title": "Deep Research, porque automatiza a coleta e a análise de grande volume de páginas para pesquisas amplas.",
+            "correct": false,
+            "feedback": "Não. O Deep Research serve para pesquisa ampla e automatizada em muitas páginas, não para trabalhar sobre fontes já escolhidas."
+          },
+          {
+            "id": "8b3cea1a-2fa8-4f6b-a66d-79fbf87a129b",
+            "title": "Projetos RAG e Bases de Conhecimento, porque sustentam assistentes persistentes para múltiplos temas e usos contínuos.",
+            "correct": false,
+            "feedback": "Não. Projetos de assistentes gerais servem para produção persistente além de um corpus; aqui a necessidade é rastrear respostas até os trechos de fontes definidas."
+          }
+        ],
+        "correct": "b5d7d3ea-93be-41c2-b394-d7fcaaf88ca0",
+        "corrects": [
+          "b5d7d3ea-93be-41c2-b394-d7fcaaf88ca0"
+        ],
+        "id": "fbbc1e10-eece-4b85-99ee-5707c88ffb16",
+        "title": "Você já definiu um conjunto confiável de fontes e precisa obter respostas com rastreabilidade até os trechos originais. Qual ferramenta é a escolha mais adequada para essa situação?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "3be845fa-ca43-4cca-a453-df08d21e5f7e"
+      },
+      {
+        "answers": [
+          {
+            "id": "80def1c5-3a64-41a8-b712-03b74387c36f",
+            "title": "minimização"
+          }
+        ],
+        "id": "f2569454-5727-4704-aa4c-c5c9afbd12fd",
+        "title": "Antes de importar dados pessoais para o NotebookLM, é necessário aplicar o princípio da __________, removendo identificadores que não sejam indispensáveis.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "31282980-4abc-4845-bd6c-85fa3b023f98",
+        "feedbackCorrect": "Correto. O princípio da minimização exige limitar o uso de dados pessoais ao que é realmente necessário para a finalidade definida, removendo informações como CPF, endereço e outros identificadores dispensáveis.",
+        "feedbackIncorrect": "Incorreto. A lacuna se refere à minimização, princípio da LGPD que orienta a reduzir os dados pessoais ao mínimo necessário para a finalidade do uso. Isso ajuda a diminuir riscos à privacidade e à exposição indevida."
+      },
+      {
+        "answers": [
+          {
+            "id": "381d2410-18f0-42bc-bd45-6647129072a7",
+            "title": "Decidir, perguntar, reunir, conferir e produzir.",
+            "correct": false,
+            "feedback": "Não. Perguntar antes de reunir o corpus rompe a lógica da ancoragem: as perguntas são feitas sobre as fontes já importadas."
+          },
+          {
+            "id": "db72166b-bd7d-4366-b5e9-7a9d4645cebd",
+            "title": "Decidir, reunir, conferir, perguntar e produzir.",
+            "correct": false,
+            "feedback": "Não. Conferir vem depois de perguntar: sem resposta, não há citação para auditar."
+          },
+          {
+            "id": "f6fbfe56-3840-4355-b3b7-b9fdc5898f49",
+            "title": "Decidir, reunir, perguntar, conferir e produzir.",
+            "correct": true,
+            "feedback": "Correto. Primeiro se decide o que pode ser usado, depois se monta o corpus, pergunta-se de forma ancorada, auditam-se as citações e, por fim, produzem-se artefatos revisados."
+          },
+          {
+            "id": "f2df58cf-6cc6-44f8-a7f3-b1f1a467d68e",
+            "title": "Reunir, decidir, perguntar, conferir e produzir.",
+            "correct": false,
+            "feedback": "Não. Decidir vem antes de reunir: é a decisão de segurança que define quais fontes podem entrar no corpus."
+          }
+        ],
+        "correct": "f6fbfe56-3840-4355-b3b7-b9fdc5898f49",
+        "corrects": [
+          "f6fbfe56-3840-4355-b3b7-b9fdc5898f49"
+        ],
+        "id": "3c486627-3128-4a7b-9e1a-6d5a1fd1ae6f",
+        "title": "Ao usar o NotebookLM para estudar ou trabalhar com fontes já selecionadas, qual sequência representa corretamente o fluxo completo de trabalho?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "bfd8a91d-45e0-470b-b300-7aac3e64f25f"
+      },
+      {
+        "answers": [
+          {
+            "id": "80808795-a56d-4c8c-8172-d9fd9cac8543",
+            "title": "A conta pessoal exige liberação da instituição, enquanto a conta institucional oferece acesso imediato no plano gratuito.",
+            "correct": false,
+            "feedback": "Não. É o contrário: a conta pessoal abre direto, e a institucional pode depender de habilitação do administrador."
+          },
+          {
+            "id": "f1b614cf-c0e6-4178-8fd4-ec20a9b3ad99",
+            "title": "A conta pessoal e a conta institucional oferecem o mesmo acesso inicial, desde que o usuário entre pelo computador.",
+            "correct": false,
+            "feedback": "Não. Usar o computador é recomendado, mas não elimina a diferença de acesso entre os tipos de conta."
+          },
+          {
+            "id": "b426d144-e9a6-402e-a0b9-67882f89dd15",
+            "title": "A conta pessoal permite acesso direto, enquanto a conta institucional pode depender de habilitação do administrador.",
+            "correct": true,
+            "feedback": "Correto. A conta pessoal dá acesso direto no plano gratuito; a conta Workspace/Education depende de o administrador ter habilitado o serviço."
+          },
+          {
+            "id": "684dcbc8-0e75-4073-a278-5152aaa39cc4",
+            "title": "A conta institucional permite acesso direto, enquanto a conta pessoal deve ser ajustada no idioma antes de abrir a ferramenta.",
+            "correct": false,
+            "feedback": "Não. O idioma da conta afeta a interface, não a liberação do acesso — e é a conta institucional que pode depender de habilitação."
+          }
+        ],
+        "correct": "b426d144-e9a6-402e-a0b9-67882f89dd15",
+        "corrects": [
+          "b426d144-e9a6-402e-a0b9-67882f89dd15"
+        ],
+        "id": "ba50917b-ca26-432f-89c1-bbd3bb8d3c08",
+        "title": "Ao acessar o notebook.google.com para iniciar o curso, qual situação descreve corretamente a diferença de acesso entre uma conta pessoal e uma conta institucional?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "8d4b65ed-9a04-40cf-a2d7-abe360c5106e"
+      },
+      {
+        "answers": [
+          {
+            "id": "aa2e4e67-ae9a-45c5-8029-ceb5b76aeaaa",
+            "title": "Faça um resumo completo do tema com a melhor resposta possível, usando seu conhecimento para preencher lacunas quando necessário.",
+            "correct": false,
+            "feedback": "Não. Preencher lacunas com conhecimento geral mistura o que está nas fontes com o que não está, e nada separa evidência de inferência."
+          },
+          {
+            "id": "d24511e6-3e5d-488d-9e9e-e2bbfc584353",
+            "title": "Liste primeiro as evidências encontradas nas fontes com citação por afirmação e, em seguida, apresente as inferências separadamente, marcando como \"não encontrado nas fontes\" o que não puder ser comprovado.",
+            "correct": true,
+            "feedback": "Correto. O pedido separa o que está nas fontes do que é interpretação, exige citação por afirmação e sinaliza a falta de evidência."
+          },
+          {
+            "id": "89de8c54-7225-4709-8417-3caa48b116d4",
+            "title": "Responda de forma curta com base nas fontes mais relevantes e apresente apenas a síntese final para facilitar a leitura.",
+            "correct": false,
+            "feedback": "Não. Uma resposta curta pode ser mais legível, mas o pedido não separa evidência de inferência nem sinaliza o que não foi encontrado."
+          },
+          {
+            "id": "969a3abb-27af-494c-b114-488c9dc60673",
+            "title": "Compare todas as fontes disponíveis e entregue uma conclusão final em texto corrido, sem dividir a resposta por tipo de informação.",
+            "correct": false,
+            "feedback": "Não. Comparar fontes é útil, mas o texto corrido, sem divisão, esconde o que é evidência e o que é inferência."
+          }
+        ],
+        "correct": "d24511e6-3e5d-488d-9e9e-e2bbfc584353",
+        "corrects": [
+          "d24511e6-3e5d-488d-9e9e-e2bbfc584353"
+        ],
+        "id": "e76a891a-cece-45db-be1c-bbd1381add09",
+        "title": "Ao elaborar um prompt no NotebookLM para responder com base em fontes selecionadas, qual formulação separa melhor evidência de inferência?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "db4743b5-b34d-46cd-9c34-bde19c1c3333"
+      },
+      {
+        "answers": [
+          {
+            "id": "262c92b9-a7da-462b-a848-8a3cb292af3a",
+            "title": "É a seleção de trechos citados automaticamente para comprovar que toda resposta está correta.",
+            "correct": false,
+            "feedback": "Não. A citação é o caminho para conferir a resposta, não uma prova de que ela está correta — e não é a definição de artefato."
+          },
+          {
+            "id": "6693a68c-352a-41ef-8346-749c80eab98a",
+            "title": "É um contêiner dedicado a um tema, reunindo fontes, conversas, notas e materiais gerados.",
+            "correct": false,
+            "feedback": "Não. Essa é a definição de notebook."
+          },
+          {
+            "id": "ed347912-fbec-48c6-ae67-963c47059832",
+            "title": "É uma saída persistente e reutilizável, como relatório, guia de estudo ou mapa mental, criada no painel Estúdio.",
+            "correct": true,
+            "feedback": "Correto. Artefato é a saída persistente e reutilizável criada no painel Estúdio."
+          },
+          {
+            "id": "faef6149-40e4-4280-9771-7550311ed19f",
+            "title": "É qualquer documento, página, vídeo ou áudio importado para servir de base às respostas.",
+            "correct": false,
+            "feedback": "Não. Essa é a definição de fonte."
+          }
+        ],
+        "correct": "ed347912-fbec-48c6-ae67-963c47059832",
+        "corrects": [
+          "ed347912-fbec-48c6-ae67-963c47059832"
+        ],
+        "id": "57e94588-eb14-4250-8c49-fe700dc17d33",
+        "title": "Qual opção define corretamente o termo \"artefato\" no contexto do NotebookLM?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "d2a79ea5-a07e-49f0-b553-da7d32a0611c"
+      },
+      {
+        "answers": [
+          {
+            "id": "fd12add6-f504-49b9-8cfc-da232561cd01",
+            "title": "Definir as fontes adequadas, reunir o corpus, formular perguntas ancoradas, auditar citações e gerar o guia no Estúdio com revisão final.",
+            "correct": true,
+            "feedback": "Correto. A sequência segue as etapas decidir, reunir, perguntar, conferir e produzir, adaptadas ao trabalho do educador."
+          },
+          {
+            "id": "fe1ddc7f-949b-4ec1-9379-2fbbccd55c6f",
+            "title": "Escolher um perfil profissional, automatizar a busca em larga escala, importar milhares de páginas e gerar um assistente persistente para consultas futuras.",
+            "correct": false,
+            "feedback": "Não. Busca em larga escala e assistente persistente são terreno de outras ferramentas; o guia de estudo parte de um corpus já selecionado."
+          },
+          {
+            "id": "cd91da71-cd2d-4e05-be9c-fe0cf98261a6",
+            "title": "Definir as fontes adequadas, gerar o guia no Estúdio, buscar novas páginas na web e revisar o texto final com a turma.",
+            "correct": false,
+            "feedback": "Não. Gerar o guia antes de perguntar e conferir inverte o fluxo, e buscar páginas novas na web não é o uso do NotebookLM quando o corpus já existe."
+          },
+          {
+            "id": "d37b80db-f0fc-4ef9-821f-4be11512596a",
+            "title": "Reunir qualquer material disponível, formular perguntas gerais, criar o guia no Estúdio e confiar nas respostas por estarem organizadas em um notebook.",
+            "correct": false,
+            "feedback": "Não. Reunir qualquer material pula a decisão sobre as fontes, e confiar sem conferir as citações pula a auditoria."
+          }
+        ],
+        "correct": "fd12add6-f504-49b9-8cfc-da232561cd01",
+        "corrects": [
+          "fd12add6-f504-49b9-8cfc-da232561cd01"
+        ],
+        "id": "0c03e04d-267d-4026-bda2-291b0eb7110f",
+        "title": "Você é educador e precisa preparar um guia de estudo auditável para sua turma sobre um tema já delimitado por fontes selecionadas. Qual sequência de ações aplica corretamente o fluxo completo do NotebookLM ao seu contexto profissional?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "18f40464-7014-4a20-8920-887d54ef7b24"
+      },
+      {
+        "answers": [
+          {
+            "id": "45c83165-e890-45c6-bf99-f56893e3ab5b",
+            "title": "Aceitar a resposta se ela estiver escrita de forma clara e organizada.",
+            "correct": false,
+            "feedback": "Não. Uma resposta clara e organizada pode estar errada; só a citação conferida mostra se ela se sustenta."
+          },
+          {
+            "id": "8562b7bb-0fae-4ec5-b77e-f08376ddc762",
+            "title": "Conferir se a resposta está apoiada nas citações das fontes relevantes.",
+            "correct": true,
+            "feedback": "Correto. Conferir as citações conecta cada afirmação ao trecho das fontes que a sustenta."
+          },
+          {
+            "id": "f4b4570d-ec4f-453f-8c01-851c5887b712",
+            "title": "Validar a resposta comparando o tamanho do resumo com o das fontes.",
+            "correct": false,
+            "feedback": "Não. O tamanho do resumo não diz nada sobre se a informação está sustentada pelas fontes."
+          },
+          {
+            "id": "dcc95af0-e662-40fa-b509-2ae46e72cd2b",
+            "title": "Confirmar a resposta apenas pela familiaridade com o tema tratado.",
+            "correct": false,
+            "feedback": "Não. Familiaridade com o tema ajuda a desconfiar, mas não substitui a conferência das citações."
+          }
+        ],
+        "correct": "8562b7bb-0fae-4ec5-b77e-f08376ddc762",
+        "corrects": [
+          "8562b7bb-0fae-4ec5-b77e-f08376ddc762"
+        ],
+        "id": "476b8147-bf1a-4e6f-a53c-3fe209f73f7e",
+        "title": "Ao usar o NotebookLM para responder a uma pergunta com base em suas fontes, qual ação valida melhor a confiabilidade da resposta?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "b904db2e-1b8c-4d6c-8aea-9b3f1897c5f9"
+      },
+      {
+        "answers": [
+          {
+            "id": "9f062b16-a661-48d4-99ee-a66d54cb351d",
+            "title": "Arquivos do Google Drive podem ser usados como fonte, e comentários e notas de rodapé são importados junto com o arquivo sincronizado.",
+            "correct": false,
+            "feedback": "Não. Arquivos do Drive são aceitos, mas comentários e notas de rodapé não são importados."
+          },
+          {
+            "id": "bad3d598-1b54-4c17-8e2b-eae7ec4db715",
+            "title": "Sites podem ser usados como fonte, e o NotebookLM importa automaticamente imagens, vídeos incorporados e páginas vinculadas.",
+            "correct": false,
+            "feedback": "Não. Sites são aceitos, mas só o texto HTML da página entra — sem imagens, vídeos incorporados ou páginas vinculadas."
+          },
+          {
+            "id": "6a2d5766-7129-4ab9-a4be-1e44b28a1c80",
+            "title": "PDFs podem ser usados como fonte, e arquivos enviados do computador no plano gratuito podem ter até 500 MB.",
+            "correct": false,
+            "feedback": "Não. PDFs são aceitos, mas arquivos enviados do computador têm limite de 200 MB. O número 500.000 é o limite de palavras por fonte, não de tamanho em MB."
+          },
+          {
+            "id": "067029ee-8107-4e21-b1ed-21ff029129b1",
+            "title": "Vídeos do YouTube podem ser usados como fonte, mas o NotebookLM importa apenas a transcrição de vídeos públicos com legenda.",
+            "correct": true,
+            "feedback": "Correto. Do YouTube, importa-se somente a transcrição de vídeos públicos com legenda."
+          }
+        ],
+        "correct": "067029ee-8107-4e21-b1ed-21ff029129b1",
+        "corrects": [
+          "067029ee-8107-4e21-b1ed-21ff029129b1"
+        ],
+        "id": "7658eb99-884b-40c9-b044-36fba474155f",
+        "title": "Ao montar um notebook no plano gratuito, qual opção descreve corretamente um tipo de fonte aceito e uma limitação associada a ele?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "a56d3458-7d8f-4d2f-a201-cc0dc8e52b1a"
+      },
+      {
+        "answers": [
+          {
+            "id": "d8637f60-767d-4b2e-b351-a11dd04728d1",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. Segundo a documentação, em contas Workspace/Education uploads, consultas e respostas não são revisados por pessoas nem usados para treinar modelos generativos. Os deveres legais de quem trata os dados continuam valendo."
+          },
+          {
+            "id": "d7a553fe-f59b-4121-a7d3-ff8e98536f37",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Não. A afirmação é verdadeira: é o que a documentação informa para contas Workspace/Education. Em conta pessoal, o risco aparece no envio de feedback."
+          }
+        ],
+        "correct": "d8637f60-767d-4b2e-b351-a11dd04728d1",
+        "corrects": [
+          "d8637f60-767d-4b2e-b351-a11dd04728d1"
+        ],
+        "id": "14b033e7-09fd-4ca6-bf04-fa504a1df3df",
+        "title": "Em contas Workspace/Education, uploads, consultas e respostas não são revisados por pessoas nem usados para treinar modelos generativos.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "44611378-970e-4757-a51a-b1f3b9841d66"
+      },
+      {
+        "answers": [
+          {
+            "id": "77451c1b-5ec4-4dc8-af1f-8ad9b27ff106",
+            "title": "Aceitar a afirmação como precisa, porque a presença da citação já demonstra que o conteúdo foi validado.",
+            "correct": false,
+            "feedback": "Não. A citação indica de onde o trecho veio, mas não prova que a resposta o interpretou sem distorção."
+          },
+          {
+            "id": "1d59ec3a-ae07-4397-a94a-79831d2e7500",
+            "title": "Abrir a citação e comparar a afirmação com o trecho original, para confirmar que a resposta representa corretamente a fonte.",
+            "correct": true,
+            "feedback": "Correto. A citação aponta o trecho usado; a confiabilidade depende de confirmar que a afirmação preserva o sentido da fonte."
+          },
+          {
+            "id": "0bdc4983-28cb-47ff-b321-b1ffb132d2f2",
+            "title": "Reformular a pergunta para obter uma resposta mais detalhada, pois respostas extensas reduzem a necessidade de conferir a fonte.",
+            "correct": false,
+            "feedback": "Não. Uma resposta mais longa traz mais afirmações para conferir, não menos."
+          },
+          {
+            "id": "4e6ba54d-0193-4a7b-9cd0-da1767ac85c1",
+            "title": "Copiar a afirmação para outro chat de IA, para verificar se a mesma resposta aparece em uma ferramenta diferente.",
+            "correct": false,
+            "feedback": "Não. Outra ferramenta não tem acesso ao trecho citado e pode repetir o erro com outras palavras."
+          }
+        ],
+        "correct": "1d59ec3a-ae07-4397-a94a-79831d2e7500",
+        "corrects": [
+          "1d59ec3a-ae07-4397-a94a-79831d2e7500"
+        ],
+        "id": "ead84a18-04d0-40c3-8117-2a12c1dfab2b",
+        "title": "Uma resposta do NotebookLM traz uma citação numerada ao lado de uma afirmação importante. O que fazer antes de confiar na informação?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "1ec3074d-36ce-42e1-927e-a0aec7c5539e"
+      },
+      {
+        "answers": [
+          {
+            "id": "f583361d-376a-4030-90c2-27428999f3cb",
+            "matchTitle": "Importam apenas o texto HTML da página, sem incluir automaticamente imagens, vídeos incorporados ou páginas vinculadas.",
+            "title": "Sites e links"
+          },
+          {
+            "id": "9c83e70b-8af4-4a6f-b028-39b8ebd5d34c",
+            "matchTitle": "Só têm a transcrição importada quando são públicos e possuem legenda; vídeos muito recentes ainda podem falhar.",
+            "title": "Vídeos do YouTube"
+          },
+          {
+            "id": "2cde8686-5930-44eb-a62f-4b74090f6717",
+            "matchTitle": "Podem não gerar conteúdo útil se não tiverem texto selecionável, tornando necessário aplicar OCR antes da importação.",
+            "title": "PDFs digitalizados"
+          },
+          {
+            "id": "d1bfa958-f5b4-48c3-bd95-4e7d41e8f9db",
+            "matchTitle": "São trazidos como cópias e podem exigir sincronização manual para refletir alterações recentes no arquivo original.",
+            "title": "Arquivos do Google Drive"
+          }
+        ],
+        "id": "cd623d3d-204c-4b0e-81d3-2de2f9d8d341",
+        "title": "Associe cada tipo de fonte à característica que mais afeta sua importação no NotebookLM.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "c98b89a7-b828-456a-99cd-56a2559c99f1",
+        "feedbackCorrect": "Correto. Sites trazem apenas o HTML da página, vídeos do YouTube dependem de transcrição disponível, PDFs digitalizados costumam precisar de OCR, e arquivos do Google Drive podem precisar de sincronização manual para mostrar a versão mais recente.",
+        "feedbackIncorrect": "Incorreto. As correspondências certas dependem da principal limitação ou cuidado de cada fonte: sites não importam tudo da página, vídeos do YouTube exigem condições específicas, PDFs digitalizados podem precisar de OCR, e arquivos do Drive podem ficar desatualizados sem sincronização."
+      },
+      {
+        "answers": [
+          {
+            "id": "e592c6c0-1c86-41ae-927a-87e24481a6d1",
+            "title": "Os resultados mais recentes de busca na web sobre o tema.",
+            "correct": false,
+            "feedback": "Não. Resultados de busca na web não fazem parte do material entregue; na analogia, só vale o que você selecionou."
+          },
+          {
+            "id": "cd75d8b7-298d-4ae9-bc1a-d236a2800d2b",
+            "title": "As conversas anteriores mantidas pelo usuário dentro da conta.",
+            "correct": false,
+            "feedback": "Não. O histórico de conversas não é material de consulta; o que conta são as fontes selecionadas."
+          },
+          {
+            "id": "f6de8c8e-8c27-46c8-a52c-98b00c60b3c2",
+            "title": "O conhecimento geral do modelo combinado com as fontes abertas.",
+            "correct": false,
+            "feedback": "Não. Essa é a lógica de um chat de IA de uso geral, não da ancoragem do NotebookLM."
+          },
+          {
+            "id": "a201d1f3-1b12-4f99-8785-c69a184d5e08",
+            "title": "As fontes selecionadas pelo usuário no painel Fontes.",
+            "correct": true,
+            "feedback": "Correto. A ancoragem restringe a resposta ao conjunto de fontes marcadas no painel Fontes."
+          }
+        ],
+        "correct": "a201d1f3-1b12-4f99-8785-c69a184d5e08",
+        "corrects": [
+          "a201d1f3-1b12-4f99-8785-c69a184d5e08"
+        ],
+        "id": "fa9d4e28-d319-454b-84a7-574f6068d69f",
+        "title": "Pense na analogia da “prova com consulta”. No NotebookLM, o que representa o conjunto de materiais que pode ser usado para fundamentar a resposta?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "091291ab-a83c-4c17-b427-58cfdb9ab40b"
+      },
+      {
+        "answers": [
+          {
+            "id": "9020a6f3-8eab-4a50-aa40-439ca66989d8",
+            "matchTitle": "Nome original do produto, que ainda pode aparecer em algumas áreas da interface e em materiais de apoio.",
+            "title": "NotebookLM"
+          },
+          {
+            "id": "d0604472-f4f8-4323-bb4b-00116904a864",
+            "matchTitle": "Nome adotado a partir de julho de 2026 para o mesmo assistente de pesquisa e estudo do Google.",
+            "title": "Gemini Notebook"
+          },
+          {
+            "id": "50d52bcd-9d98-4beb-9f24-4191aba5a52e",
+            "matchTitle": "Referem-se à mesma ferramenta e podem surgir durante o uso e na documentação do curso.",
+            "title": "Ambos os nomes"
+          },
+          {
+            "id": "e2b3e56e-adf9-4e11-ad97-c915b2945937",
+            "matchTitle": "Endereço web usado para acessar a ferramenta no navegador durante as atividades do curso.",
+            "title": "notebook.google.com"
+          }
+        ],
+        "id": "46a988ed-c267-4bb2-8455-4a05425c50a7",
+        "title": "Associe cada nome ou referência ao que ele significa no curso, considerando a mudança de nome de julho de 2026.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "aa33778c-591d-4700-a540-fccf3665a523",
+        "feedbackCorrect": "Correto. O produto foi renomeado de NotebookLM para Gemini Notebook em julho de 2026, mas os dois nomes ainda podem aparecer. Além disso, o curso orienta o acesso pela web em notebook.google.com.",
+        "feedbackIncorrect": "Incorreto. A ideia central é reconhecer que NotebookLM e Gemini Notebook são nomes do mesmo produto em momentos e contextos diferentes. Revise também que o acesso do curso é feito pelo endereço notebook.google.com."
+      },
+      {
+        "answers": [
+          {
+            "id": "d4a5ae57-fe5e-4466-b514-0ee1c9ced980",
+            "title": "Mapa mental — representação visual dos temas em ramos expansíveis para explorar tópicos.",
+            "correct": true,
+            "feedback": "Correto. O Mapa mental mostra os temas em ramos expansíveis, e selecionar um nó gera perguntas sobre ele."
+          },
+          {
+            "id": "296b9716-ea2e-4e4b-bae4-ec0d340e9c42",
+            "title": "Guia de estudo — lista de dúvidas comuns com respostas extraídas das fontes selecionadas.",
+            "correct": false,
+            "feedback": "Não. Dúvidas comuns com respostas descrevem o modelo Perguntas frequentes, não o Guia de estudo."
+          },
+          {
+            "id": "42d9bf35-73d8-4e20-b0aa-ad87d530df78",
+            "title": "Documento de resumo — narrativa em áudio para revisão rápida em diferentes idiomas.",
+            "correct": false,
+            "feedback": "Não. Narrativa em áudio é o Resumo em Áudio; o Documento de resumo é um relatório escrito."
+          },
+          {
+            "id": "ac784fd9-1c9b-4f4c-9c73-31e8bed4b043",
+            "title": "Cartões de estudo — apresentação visual em slides para explicar um tema de forma sequencial.",
+            "correct": false,
+            "feedback": "Não. Apresentação de slides é outro artefato do Estúdio; cartões de estudo servem para prática e revisão."
+          }
+        ],
+        "correct": "d4a5ae57-fe5e-4466-b514-0ee1c9ced980",
+        "corrects": [
+          "d4a5ae57-fe5e-4466-b514-0ee1c9ced980"
+        ],
+        "id": "42ddff12-65c5-46e1-b795-4032c48d53fd",
+        "title": "Qual opção identifica corretamente um artefato disponível no Estúdio e sua função principal?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "aaaa346c-b773-4cfc-9e7d-1e5f6aa15c24"
+      },
+      {
+        "answers": [
+          {
+            "id": "5125e4f8-282f-4750-b0f4-84358ed14ebd",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Não. A afirmação é verdadeira: em Personalizar, você escolhe formato, idioma, duração e uma orientação de foco."
+          },
+          {
+            "id": "cf69b747-db7f-470a-8c1c-f593c267a3c0",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. Em Personalizar, você escolhe formato, idioma, duração e uma orientação de foco antes de gerar."
+          }
+        ],
+        "correct": "cf69b747-db7f-470a-8c1c-f593c267a3c0",
+        "corrects": [
+          "cf69b747-db7f-470a-8c1c-f593c267a3c0"
+        ],
+        "id": "55de6f09-605f-4792-97fc-8e653890a957",
+        "title": "O Resumo em Áudio no Estúdio pode ser personalizado quanto ao formato, ao idioma e à duração antes da geração.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "28156cc1-8e23-4f27-a9e3-b607a776a5d2"
+      },
+      {
+        "answers": [
+          {
+            "id": "2e706f76-37d4-4c60-8a74-e8e6fb04ae7e",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. O notebook reúne fontes de tipos diferentes, e cada citação leva ao trecho original, o que permite auditar a resposta."
+          },
+          {
+            "id": "b840fd31-459c-4af3-a212-02128935d81c",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Não. A afirmação é verdadeira: o notebook reúne várias fontes, e as citações permitem conferir cada resposta no trecho original."
+          }
+        ],
+        "correct": "2e706f76-37d4-4c60-8a74-e8e6fb04ae7e",
+        "corrects": [
+          "2e706f76-37d4-4c60-8a74-e8e6fb04ae7e"
+        ],
+        "id": "06dcb1fe-d317-4cc1-b104-cd16c0bffbb2",
+        "title": "O NotebookLM permite reunir várias fontes num notebook e auditar as respostas pelas citações.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "b9d0fd20-c868-49f5-863d-9f495d8929b9"
+      },
+      {
+        "answers": [
+          {
+            "id": "3b3f87db-4747-4df0-891e-496efe2ea22b",
+            "title": "correspondência"
+          }
+        ],
+        "id": "bc3f1f3f-25ce-4f2a-98f6-6c305a3db3e5",
+        "title": "Ao auditar uma resposta no NotebookLM, a classificação como total, parcial ou ausente indica o nível de __________ entre a frase gerada e o trecho citado.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "7f1e6c67-7368-4680-9fa2-e2ab89489a47",
+        "feedbackCorrect": "Correto. “Correspondência” é o conceito usado para avaliar se a frase gerada reflete total, parcialmente ou de forma ausente o conteúdo do trecho citado.",
+        "feedbackIncorrect": "Incorreto. A classificação total, parcial ou ausente se refere ao nível de correspondência entre a frase gerada e o trecho citado, o que ajuda a avaliar a confiabilidade da resposta."
+      },
+      {
+        "answers": [
+          {
+            "id": "e5b0150e-b8fb-4f3c-8f99-e68b0a02956c",
+            "matchTitle": "Lei publicada em portal oficial, sem dados pessoais, podendo ser usada em conta pessoal ou institucional e, se necessário, compartilhada preferencialmente como Leitor.",
+            "title": "Verde"
+          },
+          {
+            "id": "0c344796-7675-4b4c-87c3-e1f08f4e5782",
+            "matchTitle": "Manual interno da organização, sem dados pessoais, devendo ficar em conta institucional autorizada e ser compartilhado apenas com pessoas autorizadas, de preferência como Leitor.",
+            "title": "Amarelo"
+          },
+          {
+            "id": "ecce8d3d-3722-4186-85c5-d9f73c197299",
+            "matchTitle": "Planilha com dados de alunos ou documento sob sigilo, que só pode ser usado com base legal, minimização e ambiente institucional aprovado, evitando compartilhamento amplo e jamais por link público.",
+            "title": "Vermelho"
+          }
+        ],
+        "id": "a1953a8f-3408-440c-b06a-4e5e043922cc",
+        "title": "Associe cada classificação de fonte ao cenário que melhor representa como ela deve ser tratada no NotebookLM. Considere o nível de risco, o tipo de conta mais adequado e o papel de compartilhamento mais seguro em cada caso.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "55bb2d17-ff72-4554-a78f-7afdfc90b727",
+        "feedbackCorrect": "Correto. A classificação verde corresponde a materiais públicos e de baixo risco; a amarela, a materiais internos sem dados pessoais que exigem controle institucional; e a vermelha, a fontes com dados pessoais ou sigilo, que requerem base legal, minimização e forte restrição de acesso.",
+        "feedbackIncorrect": "Incorreto. A correspondência correta depende de avaliar o risco da fonte e a conduta adequada: verde para material público e oficial, amarelo para material interno sem dados pessoais em ambiente institucional controlado, e vermelho para conteúdo com dados pessoais ou sigilo, que exige controles rigorosos e compartilhamento mínimo."
+      },
+      {
+        "answers": [
+          {
+            "id": "c376cf62-3157-457e-8963-75c3f4dec4ce",
+            "title": "painel Fontes"
+          },
+          {
+            "id": "290711b7-db17-43d0-a1e3-685cb849e4d8",
+            "title": "Fontes"
+          }
+        ],
+        "id": "f9eaf3a0-d1e6-4124-a41e-5bfe81292216",
+        "title": "No NotebookLM, o __________ permite selecionar documentos específicos para consultas, delimitando o escopo da resposta.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "f0bd6861-d720-456f-a8c5-15912e4a380d",
+        "feedbackCorrect": "Correto. O painel Fontes é o recurso usado para escolher exatamente quais documentos serão considerados na consulta, o que ajuda a delimitar o escopo da resposta.",
+        "feedbackIncorrect": "Incorreto. O termo esperado é painel Fontes, que é onde você marca ou desmarca documentos para definir quais fontes serão usadas na consulta."
+      }
+    ],
+    "settings": {
+      "passingScore": 80,
+      "retryCount": -1,
+      "revealAnswers": "all",
+      "shuffleAnswerChoices": false,
+      "randomizeQuestionOrder": false
+    },
+    "title": "Quiz",
+    "type": "quiz",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "eWZujv1Xok7elajJFi1DMm2BmX2loKYb",
+    "createdAt": "2026-10-17T21:45:19.596Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Quiz",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": null,
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 7,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-10-17T21:45:19.596Z"
+  }
+}

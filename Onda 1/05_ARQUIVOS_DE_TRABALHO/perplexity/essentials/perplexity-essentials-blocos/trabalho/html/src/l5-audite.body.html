@@ -1,0 +1,46 @@
+<!--titulo: Audite esta citação-->
+<style>
+  .extra .rot { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--suave); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Audite esta citação</h1>
+  <p class="sub">Cada caso traz uma frase que a IA escreveu e o que você encontrou ao abrir a citação. Decida o resultado da conferência.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+  <p class="nota">Frases e páginas são exemplos criados para o exercício. Os trechos da LGPD reproduzem o art. 20 conforme o portal do Planalto (consultado em 18/10/2026): o texto em vigor e a redação original de 2018. Na prática, confira sempre no texto compilado.</p>
+</section>
+
+<script>
+  // Critérios de conferência e falhas de citação: Módulo 4 do roteiro. Tema-âncora: art. 20 da LGPD.
+  function caso(frase, fonte, trecho) {
+    return '<div class="rot">Fonte aberta</div><div>' + fonte + '</div>' + (trecho ? '<div class="trecho">' + trecho + '</div>' : '');
+  }
+  classificador({
+    casos: [
+      { t: '“A LGPD garante ao titular o direito de solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado que afetem seus interesses.”',
+        extra: caso(1, 'Texto compilado da LGPD, no Planalto — art. 20, caput:', '“O titular dos dados tem direito a solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado de dados pessoais que afetem seus interesses (…)”'),
+        r: 'sustenta', p: 'O trecho está na fonte primária, no texto em vigor, e diz o que a frase afirma.' },
+      { t: '“Pela LGPD, toda decisão automatizada precisa ser revisada por uma pessoa antes de produzir efeitos.”',
+        extra: caso(2, 'O mesmo art. 20, caput, no texto compilado:', '“O titular dos dados tem direito a solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado (…)”'),
+        r: 'nao', p: 'A lei dá ao titular o direito de solicitar a revisão; não diz que toda decisão é revisada antes. A frase foi além da fonte: peça nova fonte primária ou retire a afirmação.' },
+      { t: '“Segundo o art. 20 da LGPD, a revisão deve ser feita por pessoa natural.”',
+        extra: caso(3, 'Blog jurídico de 2018 que reproduz o art. 20:', '“(…) direito a solicitar revisão, por pessoa natural, de decisões tomadas unicamente com base em tratamento automatizado (…)”'),
+        r: 'desatualizada', p: 'A LGPD foi alterada em 2019, e a página reproduz a redação anterior. Confira no texto compilado do Planalto antes de usar.' },
+      { t: '“O controlador é obrigado a revelar o algoritmo da decisão automatizada sempre que o titular pedir.”',
+        extra: caso(4, 'Texto compilado da LGPD — art. 20, § 1º:', '“O controlador deverá fornecer, sempre que solicitadas, informações claras e adequadas a respeito dos critérios e dos procedimentos utilizados para a decisão automatizada, observados os segredos comercial e industrial.”'),
+        r: 'nao', p: 'A fonte fala em critérios e procedimentos, e ressalva os segredos comercial e industrial. A frase exagerou e omitiu a ressalva.' },
+      { t: '“Desde 2018, a lei brasileira proíbe decisões tomadas unicamente por sistemas automatizados.”',
+        extra: caso(5, 'Artigo sobre as regras de decisões automatizadas na União Europeia, sem menção à lei brasileira.', ''),
+        r: 'escopo', p: 'A página trata de outro país (outra jurisdição). Mesmo correta, não sustenta uma frase sobre a lei brasileira.' }
+    ],
+    opcoes: { sustenta: 'Sustenta a frase', nao: 'Não sustenta', desatualizada: 'Fonte desatualizada', escopo: 'Escopo diferente' },
+    dicaErro: 'Releia: o trecho diz exatamente o que a frase afirma? A página é atual? Trata do mesmo país e da mesma lei?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'citações auditadas',
+    aoConcluir: function () {
+      concluir('final', 'Cinco conferências: uma citação boa, duas frases que foram além da fonte, uma fonte desatualizada e uma de outro escopo. A citação mostra onde conferir — quem confere é você. Você já pode continuar.');
+    }
+  });
+</script>

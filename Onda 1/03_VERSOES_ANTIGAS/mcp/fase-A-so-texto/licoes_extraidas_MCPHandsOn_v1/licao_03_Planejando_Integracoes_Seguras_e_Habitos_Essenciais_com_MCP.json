@@ -1,0 +1,637 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Planejando Integrações Seguras e Hábitos Essenciais com MCP",
+  "lesson": {
+    "description": "",
+    "id": "de5855b0-20c1-4866-afc9-fb56469eab49",
+    "items": [
+      {
+        "id": "r7spd90ibw7a8gax9v2rm6fj",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xt1bc3ifz3n7e7ztnw0s95t5",
+            "heading": "Projeto final: seu plano de conexão segura",
+            "paragraph": "<p>Pense numa tarefa real do seu trabalho que um conector MCP poderia facilitar — consultar tarefas de um projeto, achar um modelo de contrato, preparar a agenda da semana. Sua missão é decidir sozinho se, como e com que permissões ligar esse conector, testar o que for possível com dado fictício e terminar com tudo desligado. Ninguém vai te dizer qual conector escolher: o critério é seu.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "fcc5582f-d4c1-4ed5-ba56-a63e304450fe"
+      },
+      {
+        "id": "ybxkuxjxlb022c2md5ohagx5",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pf0yc5uaofgb1231vt74t0is",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "0c941b04-b9b2-46c3-a546-c76a019dac08"
+      },
+      {
+        "id": "g3mnlkoyp26d6uasxwbvbwjv",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "iqc4iszu4wso2yetadieyqmz",
+            "number": "1",
+            "paragraph": "<p>Escrever em uma frase a finalidade de um conector para uma tarefa real do seu trabalho.</p>"
+          },
+          {
+            "id": "vbe2v45bq3zh6n2e8dzef53y",
+            "number": "2",
+            "paragraph": "<p>Ler a ficha do conector e definir o destino de cada ferramenta que altera dados.</p>"
+          },
+          {
+            "id": "bntn05hgacorgk4bmrrrjpiv",
+            "number": "3",
+            "paragraph": "<p>Justificar a cor do semáforo pelos dados envolvidos e testar só com dado fictício ou público.</p>"
+          },
+          {
+            "id": "r3azczbfyj4epti6k7cv439f",
+            "number": "4",
+            "paragraph": "<p>Desligar e revogar as conexões do curso — e levar dez hábitos para o dia a dia.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "b2679b65-370a-406e-b461-63347f140371"
+      },
+      {
+        "id": "nvii72w4qaava5e7u3yrfk7b",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ug37rf0wlr52radpsfda9sg9",
+            "heading": "Os critérios da decisão",
+            "paragraph": "<p>Antes de preencher o plano, vire os cartões: cada um corresponde a uma parte do plano que você vai escrever.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "4a5a40ae-ad86-4d52-bb35-60af3bbb6d59"
+      },
+      {
+        "id": "a4btalzkrvp5yo5jkie3wqvz",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "kifqjmpatomgrb2hszwy0ogo",
+            "back": {
+              "type": "description",
+              "description": "Uma frase que diz o que o conector vai fazer e permite saber se foi cumprido — por exemplo, \"preparar a agenda da semana\"."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Finalidade clara</strong>"
+            }
+          },
+          {
+            "id": "t120x370fpcw1f6ckpmbgbq3",
+            "back": {
+              "type": "description",
+              "description": "Liste as ferramentas que leem e as que alteram. Cada ferramenta que altera ganha um destino: Needs approval ou Blocked."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Leitura vs. escrita</strong>"
+            }
+          },
+          {
+            "id": "fyg16mxi08tqvdalok8nt5jy",
+            "back": {
+              "type": "description",
+              "description": "Verde: fonte pública ou dado fictício, só leitura. Amarelo: sua conta pessoal, com escrita. Vermelho: conta do trabalho, dado de cliente, aluno ou paciente, sigilo."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Cor do semáforo</strong>"
+            }
+          },
+          {
+            "id": "g5ipwbwxe7l571z5qu4u8xmw",
+            "back": {
+              "type": "description",
+              "description": "O primeiro teste usa só dado fictício ou público, e o resultado é conferido no próprio serviço."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Uso de dados fictícios</strong>"
+            }
+          },
+          {
+            "id": "emhxl6aavdf2p55pybmq71wl",
+            "back": {
+              "type": "description",
+              "description": "Antes de ligar, saiba como desligar: desconectar no Claude, remover no ChatGPT e revogar no serviço são passos diferentes."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Revogação de acessos</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "43b02225-ca92-45c7-9f6f-7073cd78eeb8"
+      },
+      {
+        "id": "136c0360-311c-4e31-a202-6c7db1799a9c",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "8236cd48-647f-4e54-9b63-dc6dd500781a",
+            "type": "intro",
+            "title": "Seu plano de conexão segura",
+            "isHidden": false,
+            "description": "<p>Cinco passos: escolher a tarefa, ler a ficha, preencher o plano, testar ou pedir autorização, e fazer a faxina. Se a cor der vermelho, o plano termina num pedido de autorização — e isso também é um plano bem-feito.</p>"
+          },
+          {
+            "id": "85318f0b-5317-4a88-a6da-7a093ba161e7",
+            "type": "summary",
+            "title": "Ponto de controle",
+            "isHidden": false,
+            "description": "<p>🏁 O plano está pronto quando atende aos seis critérios de \"Como saber que terminou\", logo abaixo — e <strong>Claude &gt; Personalizar &gt; Conectores</strong> não tem nenhuma conexão do curso sobrando sem motivo anotado.</p>"
+          },
+          {
+            "id": "beb92155-5876-48b9-a0d6-309602ab1b41",
+            "type": "step",
+            "title": "Escolha a tarefa",
+            "isHidden": false,
+            "description": "<p>Escolha uma tarefa real do seu trabalho e escreva a finalidade em uma frase.</p>"
+          },
+          {
+            "id": "a6f42c8b-9e6c-4d92-bba0-0387e920ee96",
+            "type": "step",
+            "title": "Abra a ficha, sem instalar",
+            "isHidden": false,
+            "description": "<p>Em <strong>Claude &gt; Personalizar &gt; Conectores &gt; +</strong>, encontre o conector mais adequado e abra a ficha <strong>sem instalar</strong>. Anote o publicador, o selo de verificado e as ferramentas.</p>"
+          },
+          {
+            "id": "d8f17a83-8448-4b72-b41f-6dd628c1da0f",
+            "type": "step",
+            "title": "Preencha o plano",
+            "isHidden": false,
+            "description": "<p>Copie e preencha o plano:</p><p>\"\"\"</p><p>Tarefa: [ ]</p><p>Conector: [ ] — publicador: [ ] — selo de verificado: [sim | não]</p><p>Local ou remoto: [ ]</p><p>Ferramentas que leem: [ ]</p><p>Ferramentas que alteram: [ ] — vou deixar em: [Needs approval | Blocked]</p><p>Conta: [pessoal | teste | do trabalho, com autorização]</p><p>Dados envolvidos: [fictícios | públicos | pessoais | de terceiros | sigilosos]</p><p>Cor do semáforo: [verde | amarelo | vermelho], porque [ ]</p><p>Primeiro teste com dado fictício: [ ]</p><p>Como desligo e revogo: [ ]</p><p>Decisão: [ligar | não ligar | pedir autorização antes]</p><p>\"\"\"</p>"
+          },
+          {
+            "id": "25ea1bfd-c73b-4a31-8f97-971443081863",
+            "type": "step",
+            "title": "Teste ou peça autorização",
+            "isHidden": false,
+            "description": "<p>Se a cor for verde ou amarelo e o serviço for seu: conecte, configure as permissões em <strong>Tool permissions</strong>, faça o primeiro teste com dado fictício e confira no serviço.</p><p></p><p>Se for vermelho: não conecte. Escreva a quem você levaria o pedido (TI, encarregado de dados, gestor) e com qual justificativa.</p>"
+          },
+          {
+            "id": "e2b992b0-e149-42ff-972a-9f7a02ae254d",
+            "type": "step",
+            "title": "Faça a faxina final",
+            "isHidden": false,
+            "description": "<p>Remova o OpenAI Docs em <strong>Claude &gt; Personalizar &gt; Conectores &gt; ⋯ &gt; Remover</strong>, desative a extensão em <strong>Claude Desktop &gt; Settings &gt; Extensions &gt; Filesystem</strong> [conferir o rótulo], desconecte o que tiver ligado no teste, revogue na Conta Google e apague a pasta teste-mcp-arquivos. Registre a decisão final no plano.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "2c5c9773-b6a1-469e-bc95-d05af7feaeef"
+      },
+      {
+        "id": "9d223107-5f8f-46e7-87d1-02eb5a942b75",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "5e60a04c-eb20-44b4-b356-d0ce032c1dde",
+            "type": "MULTIPLE_CHOICE",
+            "title": "O seu plano envolve um conector que acessaria dados de clientes da empresa. Qual cor o semáforo dá, e qual é o próximo passo?",
+            "answers": [
+              {
+                "id": "e5f6dbfb-284b-4539-a782-0bd4114e1b3c",
+                "title": "Verde; conectar direto.",
+                "correct": false,
+                "feedback": "Não. Verde é para fonte pública ou dado fictício, só leitura. Dado de cliente é vermelho."
+              },
+              {
+                "id": "73da6c65-1be1-462e-b64b-914ecc68b00e",
+                "title": "Amarelo; testar com alguns dados reais.",
+                "correct": false,
+                "feedback": "Não. Amarelo é para a sua conta pessoal. Dado de cliente é vermelho — e teste com dado real não entra no plano em nenhuma cor."
+              },
+              {
+                "id": "ffc5aee5-274a-4eb8-af5e-c951e496caeb",
+                "title": "Vermelho; não conectar e levar o pedido a quem autoriza.",
+                "correct": true,
+                "feedback": "Correto. Conta do trabalho e dado de cliente são vermelho: não se liga sem autorização da organização. O plano termina com a quem você levaria o pedido (TI, encarregado de dados, gestor) e por quê."
+              },
+              {
+                "id": "62aa6026-ea94-4e35-9881-059e42ef8a09",
+                "title": "Verde; testar só com dados fictícios.",
+                "correct": false,
+                "feedback": "Não. Testar com dado fictício é um bom hábito, mas não muda a cor: quem decide é o dado que o conector acessaria no uso real — de clientes, portanto vermelho."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "8222a819-fe1b-4d95-a058-aba918c565b3"
+      },
+      {
+        "id": "piet2oo4e1orm9uv4ehbzk3p",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "kl7iu3jq4y9tfgs3oh7f6u7r",
+            "heading": "Como saber que terminou",
+            "paragraph": "<p>Confira o seu plano contra estes seis critérios. Abra cada item e só dê o projeto por encerrado quando todos valerem para ele.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "ecf23a03-926e-4446-b1d6-343f0133b76f"
+      },
+      {
+        "id": "7eed29fe-ec60-4266-bb0c-df55ae507fab",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "11e1a3fa-0e37-4490-a04c-2fde95466206",
+            "title": "Finalidade definida e clara",
+            "description": "<p>A finalidade cabe numa frase e dá para saber se foi cumprida.</p>"
+          },
+          {
+            "id": "7fac2e12-49b0-4978-abbe-109236375460",
+            "title": "Ficha do conector revisada",
+            "description": "<p>A ficha do conector foi lida: publicador e ferramentas anotados.</p>"
+          },
+          {
+            "id": "7877352d-1de1-4713-bb24-c208d9c7eaaf",
+            "title": "Permissões de escrita controladas",
+            "description": "<p>Cada ferramenta que altera dados tem destino definido (Needs approval ou Blocked).</p>"
+          },
+          {
+            "id": "1983ba53-dd8f-4198-aee9-62557f32c9b0",
+            "title": "Justificativa da cor do semáforo",
+            "description": "<p>A cor do semáforo está justificada pelos dados envolvidos.</p>"
+          },
+          {
+            "id": "8c846931-6911-4dbe-b532-7d428f42b77e",
+            "title": "Teste com dados fictícios",
+            "description": "<p>O teste, se houve, usou só dado fictício ou público.</p>"
+          },
+          {
+            "id": "c720b144-e449-4556-bd69-aa35859ba818",
+            "title": "Limpeza de conexões",
+            "description": "<p><strong>Claude &gt; Personalizar &gt; Conectores</strong> não tem nenhuma conexão do curso sobrando sem motivo anotado.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "6c2f6fd2-ddd1-4961-9335-ebf464129e6c"
+      },
+      {
+        "id": "726e1529-54dc-4ec5-bc96-8752b94a63a7",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "af9f0fc0-b46d-480e-9e05-495514de70b2",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "c0061909-8cd9-4e26-870c-f642f50a280e"
+      },
+      {
+        "id": "mfguffppdhm2swssfybxxuot",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "d26dgu1907boeeqioy4z5lov",
+            "heading": "A parte dos dez: hábitos que salvam seu dia com conectores",
+            "paragraph": "<p>Dez hábitos para levar das oficinas para o trabalho. Vire cada cartão: a frente é o hábito, o verso é o porquê.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "2327fda0-df98-4e8d-85ad-ed56cffe37a0"
+      },
+      {
+        "id": "v364qf6lwdp85od88fb5a92j",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "aej8i3t432ijt378hyt7w9e9",
+            "back": {
+              "type": "description",
+              "description": "Publicador, selo e lista de ferramentas dizem mais do que a popularidade."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Leia a ficha antes de instalar.</strong>"
+            }
+          },
+          {
+            "id": "q38tz4yhw6xotmuivut50mkl",
+            "back": {
+              "type": "description",
+              "description": "Escrita entra quando você já sabe o que o conector faz."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Comece pelo que só lê.</strong>"
+            }
+          },
+          {
+            "id": "kbxeeavswhd72f8c0hejwh68",
+            "back": {
+              "type": "description",
+              "description": "Always allow só para o que é seu, confiável e testado."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Escrita em Needs approval.</strong>"
+            }
+          },
+          {
+            "id": "psskmsobfb70cslqnamchbyz",
+            "back": {
+              "type": "description",
+              "description": "Assim a resposta não mistura fonte com memória do modelo."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Diga \"use somente o conector\".</strong>"
+            }
+          },
+          {
+            "id": "szc8slgzl2ia0fyx6mzd5wyw",
+            "back": {
+              "type": "description",
+              "description": "Ele mostra o que foi usado e com quais dados."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Abra o bloco da chamada de ferramenta.</strong>"
+            }
+          },
+          {
+            "id": "c7m69dmjm1fzvo3i0dj544wi",
+            "back": {
+              "type": "description",
+              "description": "Uma pasta, não o disco; um calendário, não a conta inteira."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Libere a menor porta possível.</strong>"
+            }
+          },
+          {
+            "id": "ccvqgrjmp4q6qnokmhw2memh",
+            "back": {
+              "type": "description",
+              "description": "\"Teste MCP — apagar depois\" não se confunde com nada."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Item de teste com nome de teste.</strong>"
+            }
+          },
+          {
+            "id": "aex5swmm32eo7pq2md7sbm8c",
+            "back": {
+              "type": "description",
+              "description": "E nada de convidado em evento de teste."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Rascunho antes de envio.</strong>"
+            }
+          },
+          {
+            "id": "lkxn6arwrjmp2wxdot84i1rp",
+            "back": {
+              "type": "description",
+              "description": "Instrução que veio de arquivo, página ou e-mail é dado, não ordem."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Documento manda? Não manda.</strong>"
+            }
+          },
+          {
+            "id": "xlyowzqwlgfvx3ux77dsz9km",
+            "back": {
+              "type": "description",
+              "description": "Desconectar no Claude, remover no ChatGPT e revogar no serviço são passos diferentes."
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Desligue e revogue ao terminar.</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "f874ddfc-3b2e-489a-8275-c7834f9a9ad2"
+      },
+      {
+        "id": "ejuoeit1xjtgowzaglsbdm7i",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wpe5mjp8ol7nma5taftcji7q",
+            "paragraph": "<p>Você ligou o Claude a uma documentação pública, a uma pasta do seu computador e à sua agenda, fez uma alteração com a sua aprovação, desfez, e saiu com a conta limpa. Isso é exatamente o que o MCP promete — e o que muita gente faz sem o cuidado que você acabou de praticar. Para manter a mão treinada, uma vez por semana abra <strong>Claude &gt; Personalizar &gt; Conectores</strong> e pergunte: \"ainda preciso de cada um destes?\".</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "74fa6b90-d971-4515-8d63-7c204ac96675"
+      },
+      {
+        "id": "luwe9efed3iwcz7nzd2naj0x",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "gz6iz7pqhfre15547b8f2f96",
+            "paragraph": "<p>Quer ir mais longe? Claude Desktop - Hands On e MCP com ChatGPT - Hands On trazem fluxos mais longos, encadeando vários conectores; Segurança em MCP - Essentials aprofunda os riscos; e, se você programa, Construindo Servidores MCP - Hands On ensina a criar o seu próprio servidor. Para entender o porquê de tudo o que fez aqui, o curso MCP - Essentials (trilha de compreensão) é o par natural deste.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "3e9aaca7-3ee1-4a9f-b10d-d7b2eea653ca"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Planejando Integrações Seguras e Hábitos Essenciais com MCP",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "9pUgk_ePl9Hcs6jPzZ36jjE2dZc5U0SO",
+    "createdAt": "2026-10-18T19:41:07.782Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-10-18T19:42:05.233Z"
+  }
+}

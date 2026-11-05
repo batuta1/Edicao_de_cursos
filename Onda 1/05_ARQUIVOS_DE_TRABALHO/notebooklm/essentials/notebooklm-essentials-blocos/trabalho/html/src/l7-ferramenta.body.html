@@ -1,0 +1,53 @@
+<!--titulo: Qual ferramenta?-->
+<style>
+  .item p.f { margin: 0 0 10px; font-weight: 600; color: var(--azul); }
+  .item p.f b { color: var(--azul-2); }
+  .placar { font-weight: 700; color: var(--azul); margin: 0; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Qual ferramenta serve melhor?</h1>
+  <p class="sub">Para cada situação, escolha a ferramenta indicada. A pergunta-chave: o problema começa num corpus já definido ou na descoberta de fontes?</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Cenários (a)–(d) e tabela de ferramentas: Módulo 6 do roteiro.
+  var FERR = { nb: 'NotebookLM', busca: 'Buscador com IA', deep: 'Deep Research', proj: 'Projetos de assistentes gerais' };
+  var CASOS = [
+    { t: '<b>(a)</b> Um estudante precisa de um panorama inicial de um tema que ainda não tem bibliografia.', r: 'busca', p: 'O problema começa pela descoberta de fontes: um buscador com IA, orientado à web com citações, é mais adequado.' },
+    { t: '<b>(b)</b> Uma professora tem o plano de ensino e três textos e precisa de um guia para a turma.', r: 'nb', p: 'Corpus definido: terreno do notebook, com ancoragem e citação ao trecho.' },
+    { t: '<b>(c)</b> Um advogado precisa organizar legislação e decisões públicas já reunidas.', r: 'nb', p: 'O material já está selecionado: o notebook responde a partir dele e cita o trecho.' },
+    { t: '<b>(d)</b> Uma jornalista precisa reconstruir uma cronologia a partir de comunicados oficiais.', r: 'nb', p: 'Os comunicados formam um corpus definido; a cronologia pode ser pedida por relatório personalizado ou por pergunta.' },
+    { t: 'Uma equipe quer uma pesquisa ampla e automatizada, varrendo muitas páginas sobre um tema.', r: 'deep', p: 'Pesquisa ampla e automatizada em muitas páginas é terreno do Deep Research (curso Deep Research - Hands On).' },
+    { t: 'Você quer um assistente para produção geral contínua, que vá além de um corpus delimitado.', r: 'proj', p: 'Produção geral persistente além de um corpus: projetos de assistentes gerais (curso RAG e Bases de Conhecimento - Essentials).' }
+  ];
+  var certos = {}, lista = document.getElementById('lista');
+  CASOS.forEach(function (c, i) {
+    var d = document.createElement('div'); d.className = 'item';
+    var p = document.createElement('p'); p.className = 'f'; p.id = 'q' + i; p.innerHTML = c.t;
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'q' + i);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    Object.keys(FERR).forEach(function (k) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = FERR[k]; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        if (k === c.r) { certos[i] = true; d.className = 'item certo'; fb.textContent = 'Correto. ' + c.p; fb.className = 'feedback ok'; }
+        else { delete certos[i]; d.className = 'item errado'; fb.textContent = 'Não é a melhor escolha. O problema começa num corpus definido ou na busca de fontes? É amplo e automatizado? Vai além de um corpus?'; fb.className = 'feedback erro'; }
+        atualizar();
+      });
+      g.appendChild(b);
+    });
+    d.appendChild(p); d.appendChild(g); d.appendChild(fb); lista.appendChild(d);
+  });
+  function atualizar() {
+    var n = Object.keys(certos).length;
+    document.getElementById('placar').textContent = n + ' de ' + CASOS.length + ' situações';
+    document.getElementById('barra').style.width = (100 * n / CASOS.length) + '%';
+    document.getElementById('final').textContent = n === CASOS.length ? 'Regra prática: quando a evidência deve vir de material já selecionado, use o notebook; quando o primeiro problema é descobrir fontes, comece por outra ferramenta.' : '';
+  }
+  atualizar();
+</script>

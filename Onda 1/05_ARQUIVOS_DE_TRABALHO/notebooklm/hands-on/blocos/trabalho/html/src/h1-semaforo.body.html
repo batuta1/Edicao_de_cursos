@@ -1,0 +1,70 @@
+<!--titulo: Semáforo das fontes-->
+<style>
+  .niv button[data-n="verde"][aria-pressed="true"] { background: var(--verde); border-color: var(--verde); }
+  .niv button[data-n="amarelo"][aria-pressed="true"] { background: var(--amarelo); border-color: var(--amarelo); }
+  .niv button[data-n="vermelho"][aria-pressed="true"] { background: var(--vermelho); border-color: var(--vermelho); }
+  .item p.f { margin: 0 0 10px; font-weight: 600; color: var(--azul); }
+  .placar { font-weight: 700; color: var(--azul); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Semáforo: posso subir isto?</h1>
+  <p class="sub">Para cada documento, escolha verde, amarelo ou vermelho. Você recebe a correção na hora e pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Exemplos e condutas: tabela do semáforo do roteiro Hands-on ("Antes de Arregaçar as Mangas").
+  var FONTES = [
+    { t: 'A LGPD no site do Planalto', n: 'verde', p: 'Lei publicada em portal oficial: sobe em qualquer conta.' },
+    { t: 'Ata de reunião do departamento, sem nomes nem dados pessoais', n: 'amarelo', p: 'Documento interno sem dado pessoal: só na conta da instituição, se ela autorizou.' },
+    { t: 'Planilha com nome e nota de cada aluno da turma', n: 'vermelho', p: 'Nome e nota de aluno: não sobe sem base legal, ambiente aprovado e dados removidos antes. Em conta pessoal, nunca.' },
+    { t: 'Artigo que você mesmo publicou numa revista de acesso aberto', n: 'verde', p: 'Material que você mesmo publicou, de acesso aberto: verde.' },
+    { t: 'Plano de ensino interno da sua escola', n: 'amarelo', p: 'Documento interno: só na conta da instituição, com autorização.' },
+    { t: 'Prontuário de um paciente', n: 'vermelho', p: 'Prontuário é vermelho: dado pessoal sensível, não sobe.' },
+    { t: 'Guia da ANPD baixado do portal gov.br', n: 'verde', p: 'Guia de órgão público: verde, como todo o Kit LGPD.' }
+  ];
+  var NOMES = { verde: 'Verde', amarelo: 'Amarelo', vermelho: 'Vermelho' };
+  var certos = {}, concluido = false;
+  var lista = document.getElementById('lista');
+
+  FONTES.forEach(function (f, i) {
+    var c = document.createElement('div'); c.className = 'item';
+    var titulo = document.createElement('p'); titulo.className = 'f'; titulo.id = 'f' + i; titulo.textContent = f.t;
+    var g = document.createElement('div'); g.className = 'opcoes niv'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'f' + i);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    ['verde', 'amarelo', 'vermelho'].forEach(function (n) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = NOMES[n];
+      b.setAttribute('data-n', n); b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        if (n === f.n) {
+          certos[i] = true; c.className = 'item certo';
+          fb.textContent = 'Correto. ' + f.p; fb.className = 'feedback ok';
+        } else {
+          delete certos[i]; c.className = 'item errado';
+          fb.textContent = 'Não é ' + NOMES[n].toLowerCase() + '. Pergunte: é público? É interno? Tem nome, nota, dado de cliente ou sigilo?';
+          fb.className = 'feedback erro';
+        }
+        placar();
+      });
+      g.appendChild(b);
+    });
+    c.appendChild(titulo); c.appendChild(g); c.appendChild(fb); lista.appendChild(c);
+  });
+
+  function placar() {
+    var n = Object.keys(certos).length;
+    document.getElementById('placar').textContent = n + ' de ' + FONTES.length + ' classificadas corretamente';
+    document.getElementById('barra').style.width = (100 * n / FONTES.length) + '%';
+    if (n === FONTES.length && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Tudo classificado. No curso, só entra verde — e o Kit LGPD é todo verde.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+  placar();
+</script>

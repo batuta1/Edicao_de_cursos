@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monte seu plano de conexão segura</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+    --aviso: #8a5a00; --aviso-claro: #fdf3e1;
+    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }
+  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }
+  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }
+  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }
+  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }
+  button { font: inherit; }
+  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }
+  .btn:hover { background: var(--azul-claro); }
+  .btn[aria-pressed="true"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .btn.principal:hover { background: var(--azul-2); }
+  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }
+  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }
+  .feedback:empty { display: none; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }
+  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }
+  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }
+  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }
+  .final:empty { display: none; }
+  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }
+  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }
+  .saida { white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+</style>
+</head>
+<body>
+<style>
+  .campos { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .campo label { display: block; font-size: 13px; font-weight: 600; color: var(--azul); margin-bottom: 4px; }
+  .campo input, .campo select { width: 100%; font: inherit; font-size: 14px; padding: 8px 10px; border: 1px solid var(--linha); border-radius: 10px; background: #fff; color: var(--tinta); }
+  .largo { grid-column: 1 / -1; }
+  .alertas { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+  .alertas li { padding: 10px 12px; border-radius: 10px; font-size: 14px; background: var(--aviso-claro); color: var(--aviso); }
+  .alertas li.ok { background: var(--ok-claro); color: var(--ok); }
+  .acoes { margin: 16px 0 10px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Seu plano</span>
+  <h1 id="t">Monte seu plano de conexão segura</h1>
+  <p class="sub">Preencha os campos: o plano se forma embaixo, no formato do modelo, e o semáforo é conferido na hora. Este bloco não guarda o que você digitou — copie o plano antes de sair.</p>
+  <div class="campos" id="campos"></div>
+  <ul class="alertas" id="alertas" aria-live="polite"></ul>
+  <div class="acoes">
+    <button type="button" class="btn principal" id="copiar">Copiar o plano</button>
+    <span class="nota" id="copiado" role="status" aria-live="polite"></span>
+  </div>
+  <pre class="saida" id="saida" tabindex="0" aria-label="Plano preenchido"></pre>
+</section>
+<script>
+  // Modelo do plano e semáforo do Projeto Final (roteiro Hands-on).
+  var CAMPOS = [
+    ['tarefa', 'Tarefa', 'texto', 'Finalidade em uma frase', true],
+    ['conector', 'Conector', 'texto', ''],
+    ['publicador', 'Publicador', 'texto', ''],
+    ['selo', 'Selo de verificado', ['', 'sim', 'não']],
+    ['local', 'Local ou remoto', ['', 'local', 'remoto']],
+    ['leem', 'Ferramentas que leem', 'texto', ''],
+    ['alteram', 'Ferramentas que alteram', 'texto', ''],
+    ['destino', 'Vou deixar as que alteram em', ['', 'Needs approval', 'Blocked']],
+    ['conta', 'Conta', ['', 'pessoal', 'teste', 'do trabalho, com autorização']],
+    ['dados', 'Dados envolvidos', ['', 'fictícios', 'públicos', 'pessoais', 'de terceiros', 'sigilosos']],
+    ['cor', 'Cor do semáforo', ['', 'verde', 'amarelo', 'vermelho']],
+    ['porque', 'Porque', 'texto', 'A cor se justifica pelos dados envolvidos', true],
+    ['teste', 'Primeiro teste com dado fictício', 'texto', '', true],
+    ['desligo', 'Como desligo e revogo', 'texto', '', true],
+    ['decisao', 'Decisão', ['', 'ligar', 'não ligar', 'pedir autorização antes']]
+  ];
+  var v = {}, box = document.getElementById('campos');
+  CAMPOS.forEach(function (c) {
+    var d = document.createElement('div'); d.className = 'campo' + (c[4] ? ' largo' : '');
+    var l = document.createElement('label'); l.setAttribute('for', 'f-' + c[0]); l.textContent = c[1];
+    var el;
+    if (c[2] === 'texto') { el = document.createElement('input'); el.type = 'text'; el.placeholder = c[3]; }
+    else { el = document.createElement('select'); c[2].forEach(function (o) { var op = document.createElement('option'); op.value = o; op.textContent = o || 'escolha…'; el.appendChild(op); }); }
+    el.id = 'f-' + c[0];
+    el.addEventListener('input', function () { v[c[0]] = el.value.trim(); montar(); });
+    el.addEventListener('change', function () { v[c[0]] = el.value.trim(); montar(); });
+    d.appendChild(l); d.appendChild(el); box.appendChild(d);
+  });
+  function x(k, alt) { return v[k] ? v[k] : (alt || ' '); }
+  function montar() {
+    var s = '"""\n' +
+      'Tarefa: [' + x('tarefa') + ']\n' +
+      'Conector: [' + x('conector') + '] — publicador: [' + x('publicador') + '] — selo de verificado: [' + x('selo', 'sim | não') + ']\n' +
+      'Local ou remoto: [' + x('local') + ']\n' +
+      'Ferramentas que leem: [' + x('leem') + ']\n' +
+      'Ferramentas que alteram: [' + x('alteram') + '] — vou deixar em: [' + x('destino', 'Needs approval | Blocked') + ']\n' +
+      'Conta: [' + x('conta', 'pessoal | teste | do trabalho, com autorização') + ']\n' +
+      'Dados envolvidos: [' + x('dados', 'fictícios | públicos | pessoais | de terceiros | sigilosos') + ']\n' +
+      'Cor do semáforo: [' + x('cor', 'verde | amarelo | vermelho') + '], porque [' + x('porque') + ']\n' +
+      'Primeiro teste com dado fictício: [' + x('teste') + ']\n' +
+      'Como desligo e revogo: [' + x('desligo') + ']\n' +
+      'Decisão: [' + x('decisao', 'ligar | não ligar | pedir autorização antes') + ']\n' +
+      '"""';
+    document.getElementById('saida').textContent = s;
+    var a = [];
+    var sensivel = v.dados === 'de terceiros' || v.dados === 'sigilosos' || (v.conta || '').indexOf('trabalho') === 0;
+    if (sensivel && v.cor && v.cor !== 'vermelho') a.push('Conta do trabalho, dado de terceiros ou sigiloso pede vermelho: não liga sem autorização da organização.');
+    if (v.cor === 'verde' && (v.dados === 'pessoais' || v.conta === 'pessoal')) a.push('Verde é para fonte pública ou dado fictício. Sua conta pessoal é amarelo.');
+    if (v.cor === 'vermelho' && v.decisao === 'ligar') a.push('Vermelho não liga direto: a decisão é não ligar ou pedir autorização antes.');
+    if (v.cor === 'vermelho' && v.decisao === 'pedir autorização antes') a.push('ok:Anote a quem você levaria o pedido (TI, encarregado de dados, gestor) e com qual justificativa.');
+    if (v.alteram && !v.destino) a.push('Toda ferramenta que altera dados precisa de destino: Needs approval ou Blocked.');
+    if (v.cor && !v.porque) a.push('Justifique a cor pelos dados envolvidos.');
+    var ul = document.getElementById('alertas'); ul.innerHTML = '';
+    a.forEach(function (t) { var li = document.createElement('li'); if (t.indexOf('ok:') === 0) { li.className = 'ok'; t = t.slice(3); } li.textContent = t; ul.appendChild(li); });
+  }
+  document.getElementById('copiar').addEventListener('click', function () {
+    var txt = document.getElementById('saida').textContent, aviso = document.getElementById('copiado');
+    function manual() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('saida'));
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      aviso.textContent = 'Plano selecionado: use Ctrl+C (ou Cmd+C) para copiar.';
+    }
+    try {
+      navigator.clipboard.writeText(txt).then(function () { aviso.textContent = 'Plano copiado.'; }, manual);
+    } catch (e) { manual(); }
+  });
+  montar();
+</script>
+
+</body>
+</html>

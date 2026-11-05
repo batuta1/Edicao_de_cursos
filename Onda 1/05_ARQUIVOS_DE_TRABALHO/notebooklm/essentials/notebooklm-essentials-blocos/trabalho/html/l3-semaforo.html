@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semáforo das fontes</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+    --aviso: #8a5a00; --aviso-claro: #fdf3e1;
+    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }
+  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }
+  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }
+  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }
+  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }
+  button { font: inherit; }
+  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }
+  .btn:hover { background: var(--azul-claro); }
+  .btn[aria-pressed="true"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .btn.principal:hover { background: var(--azul-2); }
+  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }
+  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }
+  .feedback:empty { display: none; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }
+  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }
+  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }
+  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }
+  .final:empty { display: none; }
+  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }
+  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }
+  .saida { white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+</style>
+</head>
+<body>
+<style>
+  .niv button[data-n="verde"][aria-pressed="true"] { background: var(--verde); border-color: var(--verde); }
+  .niv button[data-n="amarelo"][aria-pressed="true"] { background: var(--amarelo); border-color: var(--amarelo); }
+  .niv button[data-n="vermelho"][aria-pressed="true"] { background: var(--vermelho); border-color: var(--vermelho); }
+  .item p.f { margin: 0 0 10px; font-weight: 600; color: var(--azul); }
+  .placar { font-weight: 700; color: var(--azul); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Semáforo: classifique antes do upload</h1>
+  <p class="sub">Para cada fonte, escolha verde, amarelo ou vermelho. Você recebe a correção na hora e pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Exemplos e condutas: Módulo 2 do roteiro (tabela verde/amarelo/vermelho e questão de cenários).
+  var FONTES = [
+    { t: 'LGPD (Lei nº 13.709/2018), texto compilado no portal do Planalto', n: 'verde', p: 'Lei publicada em portal oficial: material público e oficial. Pode ser usada em qualquer conta.' },
+    { t: 'Planilha com nomes e notas da turma, para gerar devolutivas', n: 'vermelho', p: 'Dados pessoais de alunos. Não carregar sem base legal, ambiente institucional aprovado e minimização prévia.' },
+    { t: 'Manual interno de procedimentos da sua organização, sem dados pessoais', n: 'amarelo', p: 'Material interno sem dados pessoais: somente em conta institucional autorizada.' },
+    { t: 'Guia orientativo da ANPD baixado do portal gov.br', n: 'verde', p: 'Guia de órgão público: material público e oficial, adequado a qualquer conta.' },
+    { t: 'Petição inicial de um cliente do escritório', n: 'vermelho', p: 'Documento sob sigilo profissional. Em conta pessoal, não; mesmo no institucional, só com autorização e controles.' },
+    { t: 'Artigo científico de acesso aberto', n: 'verde', p: 'Material de acesso aberto: nível verde.' },
+    { t: 'Documentos entregues por uma fonte jornalística que pediu sigilo', n: 'vermelho', p: 'Material de fonte jornalística sob sigilo. E lembre: a visualização da conversa não protege as fontes de quem recebe o compartilhamento.' }
+  ];
+  var NOMES = { verde: 'Verde', amarelo: 'Amarelo', vermelho: 'Vermelho' };
+  var certos = {}, concluido = false;
+  var lista = document.getElementById('lista');
+
+  FONTES.forEach(function (f, i) {
+    var c = document.createElement('div'); c.className = 'item';
+    var titulo = document.createElement('p'); titulo.className = 'f'; titulo.id = 'f' + i; titulo.textContent = f.t;
+    var g = document.createElement('div'); g.className = 'opcoes niv'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'f' + i);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    ['verde', 'amarelo', 'vermelho'].forEach(function (n) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = NOMES[n];
+      b.setAttribute('data-n', n); b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        if (n === f.n) {
+          certos[i] = true; c.className = 'item certo';
+          fb.textContent = 'Correto. ' + f.p; fb.className = 'feedback ok';
+        } else {
+          delete certos[i]; c.className = 'item errado';
+          fb.textContent = 'Não é ' + NOMES[n].toLowerCase() + '. Pense: é público e oficial? É interno? Tem dados pessoais ou sigilo?';
+          fb.className = 'feedback erro';
+        }
+        placar();
+      });
+      g.appendChild(b);
+    });
+    c.appendChild(titulo); c.appendChild(g); c.appendChild(fb); lista.appendChild(c);
+  });
+
+  function placar() {
+    var n = Object.keys(certos).length;
+    document.getElementById('placar').textContent = n + ' de ' + FONTES.length + ' classificadas corretamente';
+    document.getElementById('barra').style.width = (100 * n / FONTES.length) + '%';
+    if (n === FONTES.length && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Todas classificadas. Repare: nas atividades deste curso, só entra material verde. Você já pode continuar.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+  placar();
+</script>
+
+</body>
+</html>

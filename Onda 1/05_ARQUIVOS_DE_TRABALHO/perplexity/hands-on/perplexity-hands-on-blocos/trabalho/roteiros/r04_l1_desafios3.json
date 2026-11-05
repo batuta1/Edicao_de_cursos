@@ -1,0 +1,32 @@
+{
+  "licao": 1,
+  "posicao": 19,
+  "blocos": [
+    {
+      "modelo": "text-text-heading-paragraph.json",
+      "itens": [
+        {
+          "heading": "Quer ir além? (opcional)",
+          "paragraph": "<p>Três desafios para quem terminou a oficina. Cada um diz como saber se deu certo:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "interactive-interactive-accordion.json",
+      "itens": [
+        {
+          "title": "Um processo que não existe",
+          "description": "<p>Peça à Perplexity os dados de um número de processo inventado por você (troque dois dígitos do número do TJPR).</p><p></p><p><strong>Validação:</strong> anote se ela admitiu NÃO ENCONTRADO ou \"achou\" algo — e confira no portal.</p>"
+        },
+        {
+          "title": "A notícia do STJ",
+          "description": "<p>Abra a notícia do STJ sobre o HC 1.094.270 (https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/19052026-relator-identifica-habeas-corpus-com-erros-e-alucinacoes-criadas-por-ia.aspx) e peça uma síntese de cinco linhas em que cada linha aponte o trecho da notícia.</p><p></p><p><strong>Validação:</strong> a síntese diz \"16 julgados com erros e trechos inexistentes\", e não \"16 precedentes inexistentes\".</p>"
+        },
+        {
+          "title": "Prova de existência no STJ",
+          "description": "<p>Repita a prova de existência no STJ, em <strong>scon.stj.jus.br &gt; Por número do processo</strong>, com um julgado que a Perplexity indicar.</p><p></p><p><strong>Validação:</strong> ficha com quatro campos conferidos no portal do STJ.</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+<!--titulo: Confira sua ordem de serviço-->
+<style>
+  .crit { display: flex; gap: 10px; align-items: flex-start; background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; }
+  .crit .m { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 14px; background: var(--azul-claro); color: var(--azul); }
+  .crit.ok { border-color: var(--ok); background: var(--ok-claro); }
+  .crit.ok .m { background: var(--ok); color: #fff; }
+  .crit.falta { border-color: var(--erro); background: var(--erro-claro); }
+  .crit.falta .m { background: var(--erro); color: #fff; }
+  .crit strong { color: var(--azul); }
+  .crit .d { display: block; font-size: 13.5px; color: var(--suave); margin-top: 2px; }
+  textarea { min-height: 170px; resize: vertical; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; }
+  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 16px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Autoverificação</span>
+  <h1 id="t">Confira sua ordem de serviço</h1>
+  <p class="sub">Cole aqui o texto do seu ordem_servico_tcu.txt e clique em Conferir. A verificação procura os cinco elementos e as exigências da lista de validação. É uma ajuda, não um juiz: ela confere palavras-chave — a leitura final é sua.</p>
+  <label for="os" class="nota" style="display:block;margin:0 0 6px">Sua ordem de serviço</label>
+  <textarea id="os" spellcheck="false" placeholder="Objetivo: ...&#10;Fontes: ...&#10;Limites: ...&#10;Critérios: ...&#10;Produto: ..."></textarea>
+  <div class="acoes">
+    <button type="button" class="btn principal" id="conferir">Conferir</button>
+    <button type="button" class="btn" id="exemplo">Ver um pedido vago</button>
+  </div>
+  <div id="lista" aria-live="polite"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Critérios: lista de validação do Módulo 3 do roteiro (O-F-L-C-P e ponto de parada).
+  function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  function linha(txt, rotulo) {
+    var m = norm(txt).match(new RegExp('(^|\\n)\\s*' + rotulo + '\\s*:([^\\n]*)'));
+    return m ? m[2] : null;
+  }
+  var CRITERIOS = [
+    { n: 'O', t: 'Objetivo descreve um produto concreto, não um tema',
+      ok: function (x) { var l = linha(x, 'objetivo'); return l !== null && /(tabela|lista|checklist|procedimento|quadro|planilha|relatorio)/.test(l); },
+      d: 'Comece uma linha com “Objetivo:” e diga o que deve existir ao final (uma tabela, uma lista…), não só o assunto.' },
+    { n: 'F', t: 'Fontes restringem ao arquivo anexo',
+      ok: function (x) { var l = linha(x, 'fontes'); return l !== null && /(somente|apenas|so o|so os|unicamente)/.test(l) && /anex/.test(l); },
+      d: 'Em “Fontes:”, limite ao anexo: “use somente o arquivo anexo”.' },
+    { n: 'L', t: 'Limites proíbem ação externa e exigem o plano antes da execução',
+      ok: function (x) { var l = linha(x, 'limites'); return l !== null && /(nao envie|nao acesse|nao use internet|nao navegue)/.test(l) && /plano/.test(l) && /pare/.test(l); },
+      d: 'Em “Limites:”, proíba envio e sites e peça: “mostre o seu plano e PARE”.' },
+    { n: 'C', t: 'Critérios exigem a página e tratam a ausência (“não localizado”)',
+      ok: function (x) { var l = linha(x, 'criterios'); return l !== null && /pagina/.test(l) && /nao localizado/.test(l); },
+      d: 'Em “Critérios:”, exija a página de cada linha e o “não localizado” para o que não constar.' },
+    { n: 'P', t: 'Produto define colunas ou formato',
+      ok: function (x) { var l = linha(x, 'produto'); return l !== null && (/coluna/.test(l) || l.indexOf('|') >= 0); },
+      d: 'Em “Produto:”, nomeie o formato e as colunas — por exemplo, Regra | Risco evitado | Ação recomendada | Página.' }
+  ];
+  function conferir() {
+    var txt = document.getElementById('os').value, lista = document.getElementById('lista'), n = 0;
+    lista.innerHTML = '';
+    if (!txt.trim()) {
+      lista.innerHTML = '<div class="feedback aviso">Cole primeiro o texto da sua ordem de serviço.</div>';
+      return;
+    }
+    CRITERIOS.forEach(function (c) {
+      var ok = c.ok(txt); if (ok) n++;
+      var div = document.createElement('div'); div.className = 'crit ' + (ok ? 'ok' : 'falta');
+      var m = document.createElement('span'); m.className = 'm'; m.textContent = c.n; m.setAttribute('aria-hidden', 'true');
+      var s = document.createElement('span');
+      var b = document.createElement('strong'); b.textContent = (ok ? 'Atendido — ' : 'Falta — ') + c.t;
+      s.appendChild(b);
+      if (!ok) { var d = document.createElement('span'); d.className = 'd'; d.textContent = c.d; s.appendChild(d); }
+      div.appendChild(m); div.appendChild(s); lista.appendChild(div);
+    });
+    var fim = document.getElementById('final');
+    if (n === CRITERIOS.length) {
+      concluir(null);
+      fim.textContent = 'Os cinco itens aparecem no texto. Salve como ordem_servico_tcu.txt na pasta Treino_Agente — ele é o ponto de partida da lição 5.';
+    } else {
+      fim.textContent = '';
+    }
+  }
+  document.getElementById('conferir').addEventListener('click', conferir);
+  document.getElementById('exemplo').addEventListener('click', function () {
+    document.getElementById('os').value = 'Resuma o guia do TCU.';
+    conferir();
+  });
+</script>

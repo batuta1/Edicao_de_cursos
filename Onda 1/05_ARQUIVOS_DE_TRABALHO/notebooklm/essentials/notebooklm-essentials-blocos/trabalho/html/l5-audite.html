@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audite esta citação</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+    --aviso: #8a5a00; --aviso-claro: #fdf3e1;
+    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }
+  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }
+  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }
+  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }
+  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }
+  button { font: inherit; }
+  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }
+  .btn:hover { background: var(--azul-claro); }
+  .btn[aria-pressed="true"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .btn.principal:hover { background: var(--azul-2); }
+  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }
+  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }
+  .feedback:empty { display: none; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }
+  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }
+  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }
+  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }
+  .final:empty { display: none; }
+  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }
+  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }
+  .saida { white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+</style>
+</head>
+<body>
+<style>
+  .par { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 10px; }
+  .lado { border-radius: 12px; padding: 10px 12px; font-size: 14px; }
+  .lado small { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; color: var(--suave); }
+  .gerada { background: var(--azul-claro); }
+  .original { background: var(--areia); border-left: 4px solid var(--azul-2); }
+  .caso { margin-bottom: 12px; }
+  .caso h2 { font-size: 14px; }
+  .placar { font-weight: 700; color: var(--azul); margin: 0; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Audite esta citação</h1>
+  <p class="sub">Compare a frase gerada com o trecho que a citação abre e classifique a correspondência: total, parcial ou ausente.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="casos"></div>
+  <p class="nota">Trechos da Lei nº 13.709/2018 (texto compilado do Planalto). As frases geradas são exemplos criados para o exercício.</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Classificação total/parcial/ausente: Módulo 4 do roteiro. Trechos: LGPD, art. 5º, I e II, e art. 11, caput.
+  var CASOS = [
+    { gerada: 'Dado pessoal é a informação relacionada a pessoa natural identificada ou identificável.',
+      ref: 'Art. 5º, I', original: 'dado pessoal: informação relacionada a pessoa natural identificada ou identificável;',
+      resp: 'total', explica: 'O trecho sustenta a frase inteira, sem acréscimo nem omissão.' },
+    { gerada: 'Dado pessoal sensível é aquele sobre a saúde ou a religião de uma pessoa.',
+      ref: 'Art. 5º, II', original: 'dado pessoal sensível: dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural;',
+      resp: 'parcial', explica: 'Saúde e religião estão no trecho, mas a frase reduz a definição a dois exemplos e omite as demais categorias e a condição "quando vinculado a uma pessoa natural".' },
+    { gerada: 'A LGPD proíbe o tratamento de dados pessoais sensíveis.',
+      ref: 'Art. 11, caput', original: 'O tratamento de dados pessoais sensíveis somente poderá ocorrer nas seguintes hipóteses:',
+      resp: 'ausente', explica: 'O trecho não sustenta a frase: ele estabelece hipóteses em que o tratamento pode ocorrer. A citação existe, mas a afirmação não pode ser usada.' }
+  ];
+  var DICA = {
+    total: 'O trecho sustenta mesmo a frase inteira? Procure algo que a frase acrescentou ou deixou de fora.',
+    parcial: 'Releia: o trecho sustenta parte da frase, ou diz outra coisa?',
+    ausente: 'Há alguma parte da frase que o trecho sustenta?'
+  };
+  var certos = {}, concluido = false, caixa = document.getElementById('casos');
+
+  CASOS.forEach(function (c, i) {
+    var d = document.createElement('div'); d.className = 'item caso';
+    d.innerHTML = '<h2 id="c' + i + '">Citação ' + (i + 1) + '</h2>';
+    var par = document.createElement('div'); par.className = 'par';
+    var a = document.createElement('div'); a.className = 'lado gerada';
+    a.innerHTML = '<small>Frase gerada</small>'; a.appendChild(document.createTextNode(c.gerada));
+    var b = document.createElement('div'); b.className = 'lado original';
+    b.innerHTML = '<small>Trecho original — ' + c.ref + '</small>'; b.appendChild(document.createTextNode('"' + c.original + '"'));
+    par.appendChild(a); par.appendChild(b);
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 'c' + i);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    ['total', 'parcial', 'ausente'].forEach(function (op) {
+      var bt = document.createElement('button'); bt.type = 'button'; bt.className = 'btn';
+      bt.textContent = op.charAt(0).toUpperCase() + op.slice(1); bt.setAttribute('aria-pressed', 'false');
+      bt.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === bt ? 'true' : 'false'); });
+        if (op === c.resp) { certos[i] = true; d.className = 'item caso certo'; fb.textContent = 'Correto. ' + c.explica; fb.className = 'feedback ok'; }
+        else { delete certos[i]; d.className = 'item caso errado'; fb.textContent = 'Ainda não. ' + DICA[op]; fb.className = 'feedback erro'; }
+        atualizar();
+      });
+      g.appendChild(bt);
+    });
+    d.appendChild(par); d.appendChild(g); d.appendChild(fb); caixa.appendChild(d);
+  });
+
+  function atualizar() {
+    var n = Object.keys(certos).length;
+    document.getElementById('placar').textContent = n + ' de ' + CASOS.length + ' citações auditadas';
+    document.getElementById('barra').style.width = (100 * n / CASOS.length) + '%';
+    if (n === CASOS.length && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Auditoria concluída. Uma citação real pode não sustentar a frase: é por isso que ela precisa ser aberta. Você já pode continuar.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+  atualizar();
+</script>
+
+</body>
+</html>

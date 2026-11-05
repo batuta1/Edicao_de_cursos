@@ -1,0 +1,36 @@
+{
+  "licao": 3,
+  "posicao": 13,
+  "blocos": [
+    {
+      "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+      "itens": [
+        {
+          "title": "Você pediu “use apenas planalto.gov.br e gov.br/anpd”. A resposta lista seis fontes, e duas delas são blogs. O que fazer?",
+          "answers": [
+            {
+              "title": "Aceitar a resposta, porque a maioria das fontes é oficial.",
+              "correct": false,
+              "feedback": "Não. As frases apoiadas nos blogs continuam sem fonte oficial: a restrição foi ignorada em parte."
+            },
+            {
+              "title": "Repetir a pergunta com o operador site:, que garante a restrição.",
+              "correct": false,
+              "feedback": "Não. Operadores como site: não têm suporte documentado na Perplexity: podem funcionar ou ser ignorados sem aviso."
+            },
+            {
+              "title": "Responder no Thread “Refaça usando apenas planalto.gov.br e gov.br/anpd” e contar as fontes de novo.",
+              "correct": true,
+              "feedback": "Correto. É o procedimento da lição: pedir que refaça com a restrição e conferir, citação por citação, se ela foi obedecida."
+            },
+            {
+              "title": "Trocar para a Research, que respeita melhor as restrições.",
+              "correct": false,
+              "feedback": "Não. Nada indica que a Research obedeça melhor à restrição, e ela gasta a cota mensal. O caminho é pedir que refaça e conferir."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

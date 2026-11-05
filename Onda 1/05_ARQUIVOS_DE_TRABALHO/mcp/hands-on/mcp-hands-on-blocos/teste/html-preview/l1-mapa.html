@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O mapa da mão na massa</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+    --aviso: #8a5a00; --aviso-claro: #fdf3e1;
+    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }
+  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }
+  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }
+  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }
+  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }
+  button { font: inherit; }
+  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }
+  .btn:hover { background: var(--azul-claro); }
+  .btn[aria-pressed="true"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .btn.principal:hover { background: var(--azul-2); }
+  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }
+  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }
+  .feedback:empty { display: none; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }
+  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }
+  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }
+  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }
+  .final:empty { display: none; }
+  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }
+  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }
+  .saida { white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+</style>
+</head>
+<body>
+<style>
+  .trilha { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .etapa { display: grid; grid-template-columns: 92px 1fr auto; gap: 12px; align-items: center; background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 12px 14px; }
+  .degrau { font-size: 10.5px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; text-align: center; border-radius: 10px; padding: 8px 4px; color: #fff; }
+  .d-prep { background: var(--suave); }
+  .d-consultar { background: var(--verde); }
+  .d-ler { background: var(--azul-2); }
+  .d-agir { background: var(--amarelo); }
+  .d-decidir { background: var(--azul); }
+  .etapa h2 { margin: 0; font-size: 15px; }
+  .etapa p { margin: 2px 0 0; font-size: 13.5px; color: var(--suave); }
+  .tempo { font-weight: 700; color: var(--azul); white-space: nowrap; font-size: 14px; }
+  .onde { display: inline-block; margin-top: 4px; font-size: 11.5px; font-weight: 600; color: var(--azul-2); }
+  .total { display: flex; justify-content: space-between; margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: var(--azul); color: #fff; font-weight: 700; }
+  @media (max-width: 480px) { .etapa { grid-template-columns: 88px 1fr; } .tempo { grid-column: 2; } }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mapa do curso</span>
+  <h1 id="t">O mapa da mão na massa</h1>
+  <p class="sub">As oficinas sobem de risco uma a uma: primeiro consultar, depois ler, depois agir. Cada uma termina com uma vitória e com a conexão desligada.</p>
+  <ol class="trilha" id="trilha"></ol>
+  <div class="total"><span>Total</span><span>117 min</span></div>
+</section>
+<script>
+  // Tabela "O Mapa da Mão na Massa" do roteiro Hands-on.
+  var ETAPAS = [
+    ['prep', 'Preparar', 'Antes de arregaçar as mangas', '"O que eu posso ligar?"', 'Lição 1', 13],
+    ['consultar', 'Consultar', 'Ligue seu primeiro conector', 'Seu assistente responde de memória, sem fonte', 'Lição 1', 20],
+    ['ler', 'Ler', 'Deixe o Claude ler uma pasta — só uma', 'Ler arquivos sem enxergar o resto do computador', 'Lição 2', 20],
+    ['ler', 'Ler', 'Consulte sua agenda sem mexer em nada', 'Saber o que tem na agenda sem risco de bagunçá-la', 'Lição 2', 20],
+    ['agir', 'Agir', 'Crie, confira e apague', 'O assistente fazer algo por você, com aprovação e desfazer', 'Lição 2', 20],
+    ['decidir', 'Decidir', 'Seu plano de conexão segura', 'Decidir sozinho se e como ligar um conector do seu trabalho', 'Lição 3', 18],
+    ['prep', 'Levar', 'A parte dos dez', 'Hábitos para levar', 'Lição 3', 6]
+  ];
+  var ol = document.getElementById('trilha');
+  ETAPAS.forEach(function (e) {
+    var li = document.createElement('li'); li.className = 'etapa';
+    var d = document.createElement('div'); d.className = 'degrau d-' + e[0]; d.textContent = e[1];
+    var txt = document.createElement('div');
+    var h = document.createElement('h2'); h.textContent = e[2];
+    var p = document.createElement('p'); p.textContent = 'Problema: ' + e[3];
+    var o = document.createElement('span'); o.className = 'onde'; o.textContent = e[4];
+    txt.appendChild(h); txt.appendChild(p); txt.appendChild(o);
+    var t = document.createElement('div'); t.className = 'tempo'; t.textContent = e[5] + ' min';
+    li.appendChild(d); li.appendChild(txt); li.appendChild(t); ol.appendChild(li);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,680 @@
+{
+  "numero_da_licao": 5,
+  "position_original": 4,
+  "title": "Acompanhamento da Execução e Intervenção Eficaz",
+  "lesson": {
+    "description": "",
+    "id": "0446d47f-3f5d-4e9b-bfe7-c31f4ca9d748",
+    "items": [
+      {
+        "id": "w38e1pr0otryua9obf7q6hgy",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "g8mavm13f7mj27ex07tyagaa",
+            "heading": "O diário de bordo do agente",
+            "paragraph": "<p>Com a ordem de serviço pronta, chega a primeira delegação de verdade. Acompanhar a execução equivale a ler o diário de bordo do assistente recém-contratado: o que ele planejou, o que está fazendo, com base em quê e o que entregou. Nesta lição você aprende a ler essa tela, a reconhecer quando intervir e a corrigir o rumo sem recomeçar — tudo com o Guia do TCU.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "31c2f03e-c9d9-4d3b-8d3f-f190243fbf66"
+      },
+      {
+        "id": "noan8nh9hwfy2r50hdp493lq",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "lyj56nwyzcyol4nxfgpdur2f",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "01c9da5f-ab43-42c5-98f6-d4fe3657ba19"
+      },
+      {
+        "id": "nuwvbe70uh56nhp7jd7sr9m2",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "tjn5e6je6i9v1yw2xaj7kgcj",
+            "number": "1",
+            "paragraph": "<p>Identificar na tela o plano, a ação atual, as evidências, os pedidos de aprovação e o produto.</p>"
+          },
+          {
+            "id": "na6hlcfwilz8gqpsm1h6pxfd",
+            "number": "2",
+            "paragraph": "<p>Reconhecer os sinais que exigem intervenção.</p>"
+          },
+          {
+            "id": "zb219fi8t4al8p1nbqmbw67v",
+            "number": "3",
+            "paragraph": "<p>Redirecionar o agente durante a execução sem reiniciar a tarefa.</p>"
+          },
+          {
+            "id": "jr4gwerjy9hc39bdehz4931f",
+            "number": "4",
+            "paragraph": "<p>Controlar o consumo de créditos ou de uso.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "f6543af5-70cd-4486-a670-36dc5982f021"
+      },
+      {
+        "id": "rhz83zbwbo08cicw8tnjzccb",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bwnfdz40hze7hvhcztuwamoi",
+            "heading": "Os cinco elementos da tela",
+            "paragraph": "<p>Manus, ChatGPT Work e Claude Cowork exibem, com variações, os mesmos cinco elementos. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "bbda0dcf-ff84-4425-9b60-e642fdbeb4c5"
+      },
+      {
+        "id": "v44y2nbyn2rac86pm13yebhi",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "itj9egnpkze1w6rzvf0dvyeq",
+            "back": {
+              "type": "description",
+              "description": "<span>A decomposição do objetivo em etapas, apresentada antes da execução.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Plano</strong>"
+            }
+          },
+          {
+            "id": "p1l4akb732lob74wjzy1mu3h",
+            "back": {
+              "type": "description",
+              "description": "<span>Indica qual etapa está em curso e qual ferramenta está sendo utilizada pelo agente naquele momento.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Ação Atual</strong>"
+            }
+          },
+          {
+            "id": "opkylstzh3edm7lmlqiyp4zw",
+            "back": {
+              "type": "description",
+              "description": "<span>Registros, arquivos abertos ou páginas consultadas que comprovam o que foi feito até agora.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Evidências</strong>"
+            }
+          },
+          {
+            "id": "v4wokt10mwcet2wpxz8w2pxj",
+            "back": {
+              "type": "description",
+              "description": "<span>Solicitações do agente para seguir adiante, que exigem análise e resposta do usuário.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Pedidos de Aprovação</strong>"
+            }
+          },
+          {
+            "id": "xedqpk9aosicpp68pio6z4hz",
+            "back": {
+              "type": "description",
+              "description": "<span>Resultado final ou parcial entregue pelo agente, conforme especificado na ordem de serviço.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Produto</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "bfa3b0dd-af28-44de-92e8-107ddf766db7"
+      },
+      {
+        "id": "tsn6cq0jhlkdt2aymo48f37n",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wkdz9o3d3xc8kpze9kb7s71y",
+            "heading": "O que conferir em cada elemento",
+            "paragraph": "<p>Ver o que o agente fez e por quê tem nome: <strong>observabilidade</strong>. Sem ela, não há revisão possível. Abra cada elemento para saber o que conferir:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "41409799-75c8-40af-8e52-6e96df8e5bbc"
+      },
+      {
+        "id": "fc44b8a7-2880-4b51-b0b8-7797fdb42165",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cb5ef4b5-a4ce-4b26-9eac-8a8104922dda",
+            "title": "Plano em Etapas",
+            "description": "<p>O plano em etapas detalha a sequência de ações que o agente pretende executar. Conferir se o plano está alinhado à ordem de serviço é o primeiro passo para garantir que o trabalho seguirá o escopo correto.</p><p></p><p>Se houver divergências, é importante intervir antes que a execução avance, evitando retrabalho ou riscos desnecessários.</p>"
+          },
+          {
+            "id": "3278797a-d1e9-4089-9bb7-a52e062975fa",
+            "title": "Ação Atual e Ferramenta",
+            "description": "<p>A ação atual mostra exatamente o que o agente está fazendo no momento, incluindo qual ferramenta está sendo utilizada. Isso permite identificar rapidamente qualquer desvio de comportamento ou uso de recursos não autorizados.</p><p></p><p>Monitorar essa informação ajuda a manter o controle e a agir prontamente diante de situações inesperadas.</p>"
+          },
+          {
+            "id": "10f2e885-60c2-48d6-97e0-a38f21b956b6",
+            "title": "Evidências e Registros",
+            "description": "<p>As evidências são arquivos, páginas ou registros que comprovam as ações realizadas pelo agente. Elas garantem rastreabilidade e transparência durante todo o processo.</p><p></p><p>Observar esses registros é fundamental para revisar o trabalho e justificar eventuais intervenções.</p>"
+          },
+          {
+            "id": "1a5d36d6-fab2-4721-874e-a1544794db9c",
+            "title": "Pedidos de Aprovação",
+            "description": "<p>Pedidos de aprovação são as perguntas do agente antes de uma ação que exige sua autorização.</p><p></p><p>Aprove só se o pedido descreve claramente a ação e a consequência e se cabe nos Limites da ordem de serviço. Na dúvida, negue e pergunte.</p>"
+          },
+          {
+            "id": "390eecf1-31ba-4dff-9ff2-fec6cbcbb0d3",
+            "title": "Produto Parcial ou Final",
+            "description": "<p>O produto parcial ou final é o resultado entregue pelo agente, que deve ser conferido quanto ao formato, conteúdo e aderência ao escopo.</p><p></p><p>Verifique se o produto atende aos critérios estabelecidos e se não há informações além do permitido.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "92b3ad55-d572-44cf-a98e-cde849a71984"
+      },
+      {
+        "id": "dd744e25-ee6a-43b3-920d-6ffd09499333",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "870f7d7e-db8c-4d7d-8b77-e12a9befd131",
+            "paragraph": "<p>Três perguntas úteis ao agente durante a execução: “O que já foi concluído? O que falta? Qual evidência sustenta a próxima ação?”</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "aa5bceab-3e47-4eb0-9207-061a6208fb0c"
+      },
+      {
+        "id": "zt1dqk0maw1ecbw4mbooay0m",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qnve3eryfcat5s2l5udrzqto",
+            "paragraph": "<p>Durante a execução, observe cinco sinais. Qualquer um deles pede intervenção:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "0df93c17-4ca4-4fc9-9163-0f4249471d18"
+      },
+      {
+        "id": "xkitbad4ucna6cqs2oqf1mop",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "fwe2swaikzi4wfjol2a5tpnu",
+            "number": "1",
+            "paragraph": "<p>O plano de execução não corresponde à ordem de serviço estabelecida.</p>"
+          },
+          {
+            "id": "c627pswq6pn12y6eica8ghad",
+            "number": "2",
+            "paragraph": "<p>Há consulta a fontes que não são permitidas ou autorizadas.</p>"
+          },
+          {
+            "id": "aqwmkbmlmd0g13j6so2s98ei",
+            "number": "3",
+            "paragraph": "<p>O pedido de aprovação não descreve claramente a ação e a consequência.</p>"
+          },
+          {
+            "id": "tidwi3h8nen20j9gje2qr5b6",
+            "number": "4",
+            "paragraph": "<p>Há consumo excessivo de créditos ou uso desproporcional de recursos.</p>"
+          },
+          {
+            "id": "uehgzi8q6sn5a48wrhf2cclr",
+            "number": "5",
+            "paragraph": "<p>O ponto de parada definido não está sendo respeitado.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "0e700bc7-967e-46b0-9b13-0776672f0633"
+      },
+      {
+        "id": "tl7uoothcc0ew6ahzmtu1jlu",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "sbaihv1yo8nk6bqv852txsng",
+            "heading": "Rotas por ferramenta",
+            "paragraph": "<p>Como iniciar, anexar, acompanhar e intervir em cada ferramenta. Abra a aba do caminho que você escolheu:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "da568ec7-aada-4b82-9977-34e0fb2620ec"
+      },
+      {
+        "id": "8d7546bf-949b-4cac-9739-b923a1bf6245",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "0c7a8304-9c04-45c9-9ab1-7181d0110f5c",
+            "title": "Manus (gratuito)",
+            "description": "<p><strong>Iniciar:</strong> Manus &gt; Nova tarefa &gt; seletor de modo &gt; Agent &gt; Manus 2.0 Lite. <strong>Anexar:</strong> botão de anexo da caixa de mensagem.</p><p><strong>Acompanhar:</strong> plano em etapas e painel do computador do agente. <strong>Intervir:</strong> mensagem na mesma tarefa; em login ou CAPTCHA, “assumir o controle” do navegador.</p><p></p><p>Cada tarefa no Agent Mode consome créditos conforme complexidade e duração — e a própria ajuda alerta que estimativas de custo dadas pelo modelo podem ser inventadas. O Chat Mode não consome créditos.</p>"
+          },
+          {
+            "id": "90489455-2212-46af-b698-a763792ea393",
+            "title": "ChatGPT Work (Plus)",
+            "description": "<p><strong>Iniciar:</strong> ChatGPT &gt; Novo chat &gt; seletor acima da caixa &gt; Work. <strong>Anexar:</strong> botão de anexo da caixa de mensagem.</p><p><strong>Acompanhar:</strong> painel de progresso. <strong>Intervir:</strong> responder às perguntas do agente ou mudar a direção na mesma conversa.</p><p></p><p>O uso é medido pelo trabalho realizado e sai de uma franquia variável, compartilhada com o Codex.</p>"
+          },
+          {
+            "id": "f9800b0e-41d1-41fa-8b94-a842b13f1a43",
+            "title": "Claude Cowork (Pro)",
+            "description": "<p><strong>Iniciar:</strong> Claude &gt; caixa de mensagem &gt; Cowork &gt; Aprovar manualmente. <strong>Anexar:</strong> anexe o arquivo ou conecte somente a pasta Treino_Agente.</p><p><strong>Acompanhar:</strong> andamento da tarefa e pedidos de aprovação. <strong>Intervir:</strong> negar a ação; enviar correção na mesma tarefa.</p><p></p><p>Há limite de uso por sessão de cinco horas. Em tarefas com pasta local, mantenha o Claude Desktop aberto.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "a5ae0b5f-747f-4a1f-8cd8-7af82147b85d"
+      },
+      {
+        "id": "u43n6ruqyezpp1azsia8cccs",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pwre9bah0vryw1o8atwbsg5y",
+            "heading": "Como Intervir Durante a Execução de Tarefas",
+            "paragraph": "<p>Intervir é parte normal do trabalho, não sinal de falha. Intervenha diante de desvio de escopo, fonte inadequada, pedido de acesso excessivo, gasto crescente, erro repetido ou qualquer ação consequencial:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "db33387d-314f-45e4-b040-1c3248fe7886"
+      },
+      {
+        "id": "141bd6b4-92a5-4d94-96ae-4af9dc40d8e4",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "c3350ed3-38c1-4bf4-a7a7-2bc7c09b2799",
+            "title": "Identificação do Desvio",
+            "description": "<p>Observe se o agente está seguindo o plano e respeitando as fontes e limites definidos. Desvios comuns incluem uso de fontes não permitidas, execução fora do escopo ou pedidos de aprovação confusos.</p><p></p><p>Ao notar qualquer desvio, prepare-se para intervir imediatamente, evitando que o erro se propague.</p>"
+          },
+          {
+            "id": "7b618b49-87ea-49f5-aa45-336c4babea44",
+            "title": "Intervenção Concreta",
+            "description": "<p>Pause, quando a ferramenta oferecer esse controle; declare a correção (“limite-se às seções 1 a 3”, “não use internet”); e confirme o novo limite pedindo o plano atualizado.</p><p></p><p>Corrigir na mesma tarefa preserva o que já foi feito — recomeçar do zero gasta créditos e tempo à toa.</p>"
+          },
+          {
+            "id": "9e087d20-6898-49c2-ac0e-cbde9a3efbad",
+            "title": "Bloqueios comuns (login, CAPTCHA)",
+            "description": "<p>CAPTCHA é o teste que distingue pessoas de robôs. O Manus e o Work permitem assumir o controle do navegador nesses bloqueios.</p><p></p><p>No curso, porém, nenhuma tarefa exige login: não resolva o bloqueio. Ele indica que o agente saiu do escopo — intervenha com “não use internet”.</p>"
+          },
+          {
+            "id": "9e323d66-5de1-442f-b19d-8858ebe5ca87",
+            "title": "Controle de Consumo",
+            "description": "<p>No Manus, anote o saldo de créditos antes e depois; no Work e no Claude, acompanhe a indicação de uso. Consumo desproporcional pode indicar erro ou desvio de escopo.</p><p></p><p>Tarefas pequenas, sobre documentos curtos, preservam a cota. Se os créditos acabarem, reduza a tarefa a um trecho do documento ou aguarde a renovação no dia seguinte.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "c71572ff-673a-478e-9152-a6e75936369e"
+      },
+      {
+        "id": "58011421-3fc2-4bac-9429-a5e04ace4e84",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "4b3d21ae-f4ba-4ece-861a-b70889bd0f69",
+            "type": "intro",
+            "title": "Delegação com plano prévio e intervenção (12 min)",
+            "isHidden": false,
+            "description": "<p>Sua primeira delegação real: o agente recebe a ordem de serviço da lição 4, mostra o plano, executa e é redirecionado no meio do caminho.</p>"
+          },
+          {
+            "id": "1b6624b4-fcbc-4e7c-86a3-4108eb0992f1",
+            "type": "summary",
+            "title": "Critério de êxito",
+            "isHidden": false,
+            "description": "<p>O agente apresentou o plano e parou antes de executar; o plano foi atualizado após a intervenção; a tabela final respeita o novo limite. Se a tarefa terminar antes da intervenção, envie a mudança como nova instrução na mesma tarefa e verifique o mesmo critério.</p><p>🏁 Na tela da tarefa, a mensagem de plano atualizado aparece depois da intervenção e antes da tabela final.</p>"
+          },
+          {
+            "id": "5947fbd8-8686-41f4-b386-b439259d05c9",
+            "type": "step",
+            "title": "Abra a tarefa e anote o saldo",
+            "isHidden": false,
+            "description": "<p>Abra Manus &gt; Nova tarefa &gt; Agent &gt; Manus 2.0 Lite (ou a rota equivalente da sua ferramenta) e anote o saldo de créditos exibido, se houver.</p>"
+          },
+          {
+            "id": "ed6993fe-0bb5-418c-8a8c-b55be39db1dd",
+            "type": "step",
+            "title": "Anexe o guia e envie a ordem de serviço",
+            "isHidden": false,
+            "description": "<p>Anexe o Guia do TCU, cole o texto de ordem_servico_tcu.txt e envie.</p>"
+          },
+          {
+            "id": "f11ee239-d8be-407d-aede-2b939029dcad",
+            "type": "step",
+            "title": "Confira e aprove o plano",
+            "isHidden": false,
+            "description": "<p>Leia o plano: ele respeita Fontes e Limites? Se sim, responda “Plano aprovado, pode executar”.</p>"
+          },
+          {
+            "id": "7785b61b-1887-4a05-95c0-23273e01d9af",
+            "type": "step",
+            "title": "Intervenha durante a execução",
+            "isHidden": false,
+            "description": "<p>Com a tarefa em andamento, envie o prompt de mudança de escopo do fim desta lição, limitando o trabalho às páginas 1 a 4.</p>"
+          },
+          {
+            "id": "59c74ab9-55ff-4f00-9755-63d3a246c7e3",
+            "type": "step",
+            "title": "Confira o plano atualizado e a tabela",
+            "isHidden": false,
+            "description": "<p>Verifique se o agente apresentou plano atualizado e se nenhuma linha da tabela final cita página posterior à 4.</p>"
+          },
+          {
+            "id": "bd84f43c-07e0-4066-b932-d55aada8f79a",
+            "type": "step",
+            "title": "Anote o saldo final",
+            "isHidden": false,
+            "description": "<p>Anote o saldo de créditos ao final, se houver, e compare com o inicial.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "b10e267a-3d62-419e-94d5-80d0334e991e"
+      },
+      {
+        "id": "74d4a85a-ea01-4654-a06a-991f9d64de91",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "895e7726-b634-4f72-9067-73f815a3dcbf",
+            "type": "MULTIPLE_CHOICE",
+            "title": "O que fazer se o agente executa sem mostrar o plano ou consome créditos em excesso?",
+            "answers": [
+              {
+                "id": "f3c61c2f-c22a-4aea-bfeb-95e9bb198e81",
+                "title": "Deixar a tarefa seguir até o final e revisar depois",
+                "correct": false,
+                "feedback": "Revisar apenas ao final pode permitir que erros se agravem e recursos sejam desperdiçados. Intervenha assim que identificar o problema."
+              },
+              {
+                "id": "0b05170f-695d-4079-a406-4b1f07d4b76b",
+                "title": "Interromper e reenviar a ordem de serviço com “PARE após o plano” em linha própria",
+                "correct": true,
+                "feedback": "Correto! Interrompa imediatamente e envie instrução clara para garantir que o agente pare após apresentar o plano."
+              },
+              {
+                "id": "5869d55c-cef4-4763-ba3d-8b2026be6c05",
+                "title": "Ignorar o consumo de créditos, pois é irrelevante",
+                "correct": false,
+                "feedback": "O consumo de créditos ou uso é um recurso limitado e deve ser monitorado para evitar bloqueios e desperdícios."
+              },
+              {
+                "id": "e1723699-9949-4649-b360-5bc23008a9b1",
+                "title": "Reiniciar a tarefa do zero sem tentar intervir",
+                "correct": false,
+                "feedback": "Reiniciar a tarefa pode ser desnecessário e causar perda de progresso. Tente intervir antes de reiniciar."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "b76a11cd-be2a-4a9a-8a12-34aaf9aeb052"
+      },
+      {
+        "id": "t9uln1isd4mbr0ksccb85e3q",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wvw77sqn7xn9xfe7b9oaax6b",
+            "heading": "Se algo der errado",
+            "paragraph": "<ul><li><strong>O agente executou sem mostrar o plano:</strong> interrompa e reenvie com “PARE após o plano” em linha própria; no Cowork, confirme o modo Manual.</li><li><strong>Créditos do Manus insuficientes:</strong> aguarde a renovação no dia seguinte ou reduza a tarefa a um trecho do documento.</li><li><strong>O agente abriu sites não solicitados:</strong> intervenha com “não use internet”; se persistir, encerre e recomece com as Fontes reescritas.</li><li><strong>“Setting up Claude's workspace” demora:</strong> aguarde e mantenha o Claude Desktop aberto em tarefas com pasta local.</li></ul>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "9509104a-9aea-46d1-9b6b-d69299ffabe6"
+      },
+      {
+        "id": "b9288ed0-529f-435e-b894-15b3604a74fe",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "8aa7f07f-f162-428b-8ab1-b880ca5392b3",
+            "paragraph": "<p><strong>Mão na massa — prompt de mudança de escopo</strong> (troque [x] e [y] pelas páginas)</p><p>Mudança de escopo: a partir de agora, use somente as páginas [x] a [y] do documento. Não consulte nenhuma outra parte nem fonte externa. Antes de continuar, mostre o plano atualizado e informe o que do trabalho anterior será mantido e o que será descartado.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.163.0"
+          }
+        },
+        "globalBlockId": "8e5e7897-0b4a-4fec-a19a-029327638e50"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Acompanhamento da Execução e Intervenção Eficaz",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "Lg76Qt_d75KTncq4MAIaKoOj1cv_00Kw",
+    "createdAt": "2026-11-03T00:24:59.794Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 4,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-03T00:27:15.786Z"
+  }
+}

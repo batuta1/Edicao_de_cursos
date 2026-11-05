@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posso digitar isto?</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+    --aviso: #8a5a00; --aviso-claro: #fdf3e1;
+    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }
+  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }
+  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }
+  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }
+  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }
+  button { font: inherit; }
+  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }
+  .btn:hover { background: var(--azul-claro); }
+  .btn[aria-pressed="true"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .btn.principal:hover { background: var(--azul-2); }
+  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }
+  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }
+  .feedback:empty { display: none; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }
+  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }
+  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }
+  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }
+  .final:empty { display: none; }
+  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }
+  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }
+  .saida { white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+</style>
+</head>
+<body>
+<style>
+  .uso { margin: 0 0 10px; font-weight: 600; }
+  .b-verde.sel { background: var(--verde); border-color: var(--verde); }
+  .b-amarelo.sel { background: var(--amarelo); border-color: var(--amarelo); }
+  .b-vermelho.sel { background: var(--vermelho); border-color: var(--vermelho); }
+  .legenda { display: grid; gap: 6px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: 0 0 16px; font-size: 13px; }
+  .legenda div { background: #fff; border: 1px solid var(--linha); border-radius: 10px; padding: 8px 10px; }
+  .legenda strong { display: block; }
+  .c-verde { color: var(--verde); } .c-amarelo { color: var(--amarelo); } .c-vermelho { color: var(--vermelho); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Posso digitar isto?</h1>
+  <p class="sub">Tudo o que você digita ou anexa sai do seu computador. Dê a cor do semáforo a cada item antes de levá-lo para a Perplexity. A correção aparece na hora; o Continue abaixo libera quando os seis estiverem certos.</p>
+  <div class="legenda" aria-label="Legenda do semáforo">
+    <div><strong class="c-verde">Verde</strong>Lei, decisão pública, relatório oficial, artigo aberto, notícia publicada. Pode entrar na pergunta.</div>
+    <div><strong class="c-amarelo">Amarelo</strong>Documento interno sem dado pessoal, rascunho seu, número agregado. Só resumido, sem nomes, e em conta que a instituição autorizou.</div>
+    <div><strong class="c-vermelho">Vermelho</strong>Nome ou CPF de cliente, paciente ou aluno; peça de processo; estratégia do caso; fonte jornalística protegida. Não entra.</div>
+  </div>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="usos"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Semáforo de "Antes de Arregaçar as Mangas" (roteiro Hands-on).
+  var USOS = [
+    ['O texto do art. 20 da LGPD, copiado do planalto.gov.br.', 'verde',
+     'Verde. Lei é informação pública: pode entrar inteira na pergunta.'],
+    ['A ementa de um acórdão do TJPR publicada no portal do tribunal.', 'verde',
+     'Verde. Decisão pública, no site oficial.'],
+    ['Um rascunho seu, sem nenhum dado pessoal, para conferir as fontes.', 'amarelo',
+     'Amarelo. Rascunho seu entra só resumido, sem nomes, e em conta que a instituição autorizou.'],
+    ['O total de reclamações que o seu setor recebeu no mês, sem nomes.', 'amarelo',
+     'Amarelo. Número agregado: só resumido e em conta autorizada.'],
+    ['Nome e CPF do cliente que teve o crédito negado.', 'vermelho',
+     'Vermelho. Não entra. Troque o nome por um rótulo ("cliente A") e pergunte só a tese.'],
+    ['A estratégia do escritório para um processo em andamento.', 'vermelho',
+     'Vermelho. Estratégia do caso não entra. Pergunte só a tese, sem o caso.']
+  ];
+  var CORES = ['verde', 'amarelo', 'vermelho'], certos = {}, concluido = false;
+  var grid = document.getElementById('usos');
+  USOS.forEach(function (u, i) {
+    var card = document.createElement('div'); card.className = 'item';
+    var p = document.createElement('p'); p.className = 'uso'; p.textContent = u[0];
+    var ops = document.createElement('div'); ops.className = 'opcoes'; ops.setAttribute('role', 'group'); ops.setAttribute('aria-label', 'Cor para: ' + u[0]);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    CORES.forEach(function (c) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn b-' + c;
+      b.textContent = c.charAt(0).toUpperCase() + c.slice(1); b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(ops.children, function (x) { x.classList.remove('sel'); x.setAttribute('aria-pressed', 'false'); });
+        b.classList.add('sel'); b.setAttribute('aria-pressed', 'true');
+        var ok = c === u[1]; certos[i] = ok;
+        card.className = 'item ' + (ok ? 'certo' : 'errado');
+        fb.className = 'feedback ' + (ok ? 'ok' : 'erro');
+        fb.textContent = ok ? 'Correto. ' + u[2] : 'Ainda não. Releia a legenda: é público, é seu sem dado pessoal, ou identifica alguém?';
+        atualizar();
+      });
+      ops.appendChild(b);
+    });
+    card.appendChild(p); card.appendChild(ops); card.appendChild(fb); grid.appendChild(card);
+  });
+  function atualizar() {
+    var n = 0; for (var k in certos) if (certos[k]) n++;
+    document.getElementById('barra').style.width = (100 * n / USOS.length) + '%';
+    if (n === USOS.length && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Seis de seis. A pergunta vem antes de digitar: posso escrever isto aqui? Neste curso, tudo é verde.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+</script>
+
+</body>
+</html>

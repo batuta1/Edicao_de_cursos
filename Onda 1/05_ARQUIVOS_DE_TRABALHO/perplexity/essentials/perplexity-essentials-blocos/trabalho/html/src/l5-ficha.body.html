@@ -1,0 +1,87 @@
+<!--titulo: Ficha de prova de existência-->
+<style>
+  .linha { display: grid; gap: 8px; grid-template-columns: 1fr; background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
+  .linha h2 { margin: 0; }
+  .linha .sit { display: flex; flex-wrap: wrap; gap: 6px; }
+  .linha .sit .btn { font-size: 13px; padding: 6px 12px; }
+  .linha.ok { border-color: var(--ok); }
+  .oficial { font-size: 14px; color: var(--ok); background: var(--ok-claro); border-radius: 8px; padding: 6px 10px; }
+  .oficial:empty { display: none; }
+  .passo { font-weight: 700; color: var(--azul); margin: 18px 0 8px; }
+  label.r { font-size: 13px; color: var(--suave); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mão na massa</span>
+  <h1 id="t">Ficha de prova de existência</h1>
+  <p class="sub">Acórdão nº 0033052-89.2025.8.16.0001 do TJPR. Siga os três passos; a ficha se monta para você copiar.</p>
+
+  <p class="passo">1. Copie o prompt e envie numa nova pesquisa na Perplexity</p>
+  <pre class="saida" id="prompt">Localize o acórdão 0033052-89.2025.8.16.0001 do TJPR e informe órgão julgador, relator, data de julgamento e resultado. Use apenas portal.tjpr.jus.br. Para cada campo, mostre o link oficial. Se qualquer campo não estiver na página oficial, escreva NÃO ENCONTRADO.</pre>
+  <div class="opcoes" style="margin-top:8px"><button type="button" class="btn" id="copiarPrompt">Copiar prompt</button></div>
+  <div class="feedback" id="msgPrompt" role="status" aria-live="polite"></div>
+
+  <p class="passo">2. Anote o que a Perplexity informou &nbsp; 3. Abra o acórdão no portal oficial e marque a situação</p>
+  <div id="linhas"></div>
+
+  <div class="opcoes"><button type="button" class="btn" id="verOficial" aria-pressed="false">Mostrar o ponto de controle (portal oficial)</button></div>
+  <p class="nota">Abra o portal antes de olhar o ponto de controle: a ficha vale pelo que <strong>você</strong> conferiu no portal, não pela resposta da IA nem por esta tela.</p>
+
+  <h2 style="margin-top:16px">Sua ficha</h2>
+  <pre class="saida" id="saida"></pre>
+  <div class="opcoes" style="margin-top:10px"><button type="button" class="btn principal" id="copiar">Copiar ficha</button></div>
+  <div class="feedback" id="msgCopia" role="status" aria-live="polite"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Exercício, ficha e ponto de controle do Módulo 4 do roteiro (portal do TJPR consultado em 18/10/2026).
+  var CAMPOS = [
+    { nome: 'Órgão julgador', oficial: '7ª Câmara Cível' },
+    { nome: 'Relator', oficial: 'Desembargador Fabian Schweitzer' },
+    { nome: 'Data de julgamento', oficial: '01/06/2026' },
+    { nome: 'Resultado/consequência', oficial: 'Ementa sobre precedentes inexistentes, multa e ofício à OAB' }
+  ];
+  var SITS = ['confere', 'não confere', 'não informado pela IA'];
+  var estado = CAMPOS.map(function () { return { ia: '', po: '', sit: '' }; });
+  var mostrarOficial = false, caixa = document.getElementById('linhas');
+
+  CAMPOS.forEach(function (c, i) {
+    var l = document.createElement('div'); l.className = 'linha';
+    l.innerHTML = '<h2 id="c' + i + '">' + c.nome + '</h2>' +
+      '<label class="r" for="ia' + i + '">O que a Perplexity informou</label><input type="text" id="ia' + i + '" placeholder="copie da resposta, ou deixe em branco">' +
+      '<label class="r" for="po' + i + '">O que o portal oficial mostra</label><input type="text" id="po' + i + '" placeholder="anote o que você viu no portal">' +
+      '<div class="sit" role="group" aria-labelledby="c' + i + '"></div><div class="oficial" id="of' + i + '"></div>';
+    var g = l.querySelector('.sit');
+    SITS.forEach(function (s) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = s; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        estado[i].sit = s;
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        l.classList.add('ok'); atualizar();
+      });
+      g.appendChild(b);
+    });
+    l.querySelector('#ia' + i).addEventListener('input', function () { estado[i].ia = this.value.trim(); atualizar(); });
+    l.querySelector('#po' + i).addEventListener('input', function () { estado[i].po = this.value.trim(); atualizar(); });
+    caixa.appendChild(l);
+  });
+
+  document.getElementById('verOficial').addEventListener('click', function () {
+    mostrarOficial = !mostrarOficial;
+    this.setAttribute('aria-pressed', mostrarOficial ? 'true' : 'false');
+    CAMPOS.forEach(function (c, i) { document.getElementById('of' + i).textContent = mostrarOficial ? 'Portal oficial: ' + c.oficial : ''; });
+  });
+
+  function atualizar() {
+    document.getElementById('saida').textContent = 'Prova de existência — Acórdão 0033052-89.2025.8.16.0001 (TJPR)\n' +
+      CAMPOS.map(function (c, i) {
+        return c.nome + ' | IA: ' + (estado[i].ia || '[não informado]') + ' | Portal oficial: ' + (estado[i].po || '[anotar]') + ' | Situação: ' + (estado[i].sit || '[marcar]');
+      }).join('\n');
+    if (estado.every(function (e) { return e.sit; })) {
+      concluir('final', 'Os quatro campos estão marcados. Registre se a Perplexity acertou, errou ou deixou de informar algum — e lembre: o que vale é o portal oficial. Você já pode continuar.');
+    }
+  }
+  ligarCopia('copiarPrompt', 'prompt', 'msgPrompt', 'Prompt');
+  ligarCopia('copiar', 'saida', 'msgCopia', 'Ficha');
+  atualizar();
+</script>

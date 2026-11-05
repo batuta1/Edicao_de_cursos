@@ -1,0 +1,30 @@
+<!--titulo: Qual nível de busca?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Prática</span>
+  <h1 id="t">Qual nível de busca?</h1>
+  <p class="sub">Para cada situação, escolha o nível mais adequado, pensando também na cota do plano gratuito: busca padrão praticamente ilimitada, 3 Pesquisas Pro por dia e 1 Research por mês.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Tabela dos três níveis (o que faz, quando usar, cota): Módulo 3 do roteiro.
+  classificador({
+    casos: [
+      { t: 'Saber o que a LGPD entende por “dado pessoal”.', r: 'padrao', p: 'Definição: a busca padrão resolve, e não gasta cota.' },
+      { t: 'Comparar o que o art. 20 da LGPD diz com o que a ANPD orienta sobre ele.', r: 'pro', p: 'Comparação com várias facetas: a Pesquisa Pro encadeia buscas e combina dezenas de fontes.' },
+      { t: 'Ter uma primeira aproximação de um tema que você nunca estudou.', r: 'padrao', p: 'Primeira aproximação: busca padrão. Se a pergunta se mostrar ambígua, passe para a Pesquisa Pro.' },
+      { t: 'Uma pergunta ambígua, que pode ser lida de vários jeitos e exige juntar várias fontes.', r: 'pro', p: 'Pergunta ambígua: é para isso que serve a Pesquisa Pro, dentro da cota diária.' },
+      { t: 'Um panorama amplo, em relatório longo, sobre um tema extenso.', r: 'research', p: 'Panorama amplo em relatório longo: Research. Lembre que é 1 por mês no plano gratuito — e que não precisa gastá-la neste curso.' },
+      { t: 'Confirmar a data em que uma norma foi publicada.', r: 'padrao', p: 'Fato simples: busca padrão — e depois a conferência na fonte oficial.' }
+    ],
+    opcoes: { padrao: 'Busca padrão', pro: 'Pesquisa Pro', research: 'Research' },
+    dicaErro: 'Pense no tipo de pergunta: fato ou definição, pergunta com várias facetas, ou panorama em relatório longo?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'situações resolvidas',
+    aoConcluir: function () {
+      document.getElementById('final').textContent = 'Regra prática: comece pela busca padrão, use a Pesquisa Pro de propósito e guarde a Research para quando precisar de um relatório longo.';
+    }
+  });
+</script>

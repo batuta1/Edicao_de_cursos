@@ -1,0 +1,621 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Getting Started: Setting Up and Planning Your No-Code App",
+  "lesson": {
+    "description": "",
+    "id": "16db44f8-0659-4f2d-965d-2d77c04fbdb4",
+    "items": [
+      {
+        "id": "hfuhwj88w0g5f2n5jl5lg8e8",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dlgsalgb85f2hgiiziho8kv9",
+            "heading": "Um app de verdade, sem escrever código",
+            "paragraph": "<p>Aqui você não escreve código: você descreve o que quer e o Lovable constrói. Isso tem nome — vibe coding. Pense numa loja: a tela que o visitante vê é o salão; o login é a catraca; o banco de dados são os fichários dos fundos. Você vai encomendar essa loja por descrição e inspecionar cada etapa. O plano grátis serve.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "b8094dbe-f419-4eb6-b93f-15ab5a3b1531"
+      },
+      {
+        "id": "fi9466l44eiwl62tbw4tkma7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "x21zxr3mbkg02q8qox9zlhm8",
+            "paragraph": "<p>Nesta primeira lição, você monta a bancada e faz a planta do app. Ao final, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "cf854571-ecd5-4181-89fc-1f8eb8e7782b"
+      },
+      {
+        "id": "mis5nan5ppmtwvjhrz4265uu",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "lg5s4akcf74taqyt2x5g9tu6",
+            "number": "1",
+            "paragraph": "<p>Dizer o que o Lovable faz e o que é vibe coding.</p>"
+          },
+          {
+            "id": "hjvj0bcunjv6j390cvkxgkty",
+            "number": "2",
+            "paragraph": "<p>Criar a conta gratuita e decidir sobre o uso dos seus dados para treinar a IA.</p>"
+          },
+          {
+            "id": "cfswuwlrg9rhv3dmrnpoq6y5",
+            "number": "3",
+            "paragraph": "<p>Achar na interface, em inglês, a caixa de pedido, os modos e o saldo de créditos.</p>"
+          },
+          {
+            "id": "tkrokcfi7whmnuzxa594i3zy",
+            "number": "4",
+            "paragraph": "<p>Fazer a planta do app numa ficha de requisitos.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "875e9d73-b094-4085-b86e-584369bf7520"
+      },
+      {
+        "id": "gagg1l4djjr3n6rxgpo7oodi",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "uujbn6zo54ra83n8nembxc4w",
+            "heading": "As palavras da bancada",
+            "paragraph": "<p>Vire cada cartão. São os cinco termos que você vai ler o tempo todo daqui para a frente:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "74cda33b-c994-45e7-b3a6-d27807026af0"
+      },
+      {
+        "id": "hqkkxjhc6u33xtspwa2miijp",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "oyywxwti6b7z34j5g4j28tdl",
+            "back": {
+              "type": "description",
+              "description": "<span>A plataforma do curso: você descreve o app numa conversa e ela gera telas, banco de dados, login e endereço público. Usa-se pelo navegador, em lovable.dev.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Lovable</strong>"
+            }
+          },
+          {
+            "id": "sai4hsexnk74wbzcivc8z89s",
+            "back": {
+              "type": "description",
+              "description": "<span>Criar software descrevendo o resultado em linguagem natural e aceitando, em boa parte, o código que a IA gera. Você pede; a IA constrói; você inspeciona.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Vibe Coding</strong>"
+            }
+          },
+          {
+            "id": "a44su7dae15o6jvmes2afoqe",
+            "back": {
+              "type": "description",
+              "description": "<span>Conversa e tira dúvidas. Não mexe em nada do app.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Modo Chat</strong>"
+            }
+          },
+          {
+            "id": "asd6hxraktb4q05wkn4flr93",
+            "back": {
+              "type": "description",
+              "description": "<span>Faz um plano e espera o seu OK antes de construir. Cada mensagem custa 1 crédito.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Modo Plan</strong>"
+            }
+          },
+          {
+            "id": "mqr3ha1crpdovljfmct7a6l9",
+            "back": {
+              "type": "description",
+              "description": "<span>Constrói: executa o pedido ou o plano aprovado. Tutorial antigo falando em “Agent mode”? É o Build com nome velho.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Modo Build</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "c8f818ab-9535-408c-be1c-f5983de5a5b8"
+      },
+      {
+        "id": "cec21521-284f-4b85-9b46-b24b99789739",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "7f1347ff-5ffe-4010-9a70-ef741a250c8f",
+            "type": "intro",
+            "title": "Monte sua bancada (7 min)",
+            "isHidden": false,
+            "description": "<p>Tenha aberto agora: computador com navegador e internet, e um bloco de notas para anotar créditos e senhas de teste. Depois, siga os cinco passos.</p>"
+          },
+          {
+            "id": "e44909c0-2afb-4de0-a4e0-56964006d116",
+            "type": "summary",
+            "title": "Deu certo?",
+            "isHidden": false,
+            "description": "<p>🏁 Ponto de controle: em Lovable &gt; More &gt; Usage, você anotou os créditos de hoje; em Account settings &gt; Preferences, a opção de treinamento está do jeito que você escolheu.</p>"
+          },
+          {
+            "id": "81254540-ff4d-4182-b70d-5bb9f33158fb",
+            "type": "step",
+            "title": "Crie sua conta",
+            "isHidden": false,
+            "description": "<p>Entre em lovable.dev &gt; Sign up e crie sua conta gratuita (e-mail, Google, GitHub ou Apple).</p>"
+          },
+          {
+            "id": "ce571d3a-c302-4cb7-81c5-7b6760ca6823",
+            "type": "step",
+            "title": "Ache a caixa de pedido e o seletor de modo",
+            "isHidden": false,
+            "description": "<p>Ache a caixa onde você escreve os pedidos e o seletor de modo (Chat / Plan / Build). Não envie nada ainda.</p>"
+          },
+          {
+            "id": "896456b2-f7d6-4d8b-b087-6f47bc956f9f",
+            "type": "step",
+            "title": "Anote seus créditos",
+            "isHidden": false,
+            "description": "<p>Abra Lovable &gt; More &gt; Usage e anote seus créditos de hoje.</p>"
+          },
+          {
+            "id": "4780384a-90d3-423e-a7d7-e576ff3013e0",
+            "type": "step",
+            "title": "Decida sobre o treinamento",
+            "isHidden": false,
+            "description": "<p>Abra Lovable &gt; Account settings &gt; Preferences &gt; AI model training. Desde 09/09/2026, o que você faz no plano grátis pode treinar a IA da Lovable. Decida se quer desligar.</p>"
+          },
+          {
+            "id": "abcdeb57-3839-49ef-93be-7691f9d8b649",
+            "type": "step",
+            "title": "Repare nos menus",
+            "isHidden": false,
+            "description": "<p>Os menus estão em inglês. A ajuda oficial é toda em inglês, e o curso usa os nomes em inglês. Os seus pedidos, porém, podem ser em português.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "f02d07c0-8ff6-4991-bbb4-dd6133c23b44"
+      },
+      {
+        "id": "ff0f935e-57c0-48ba-9208-507ccdb4242e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fe421700-d7e8-4a42-8396-13da5ddae328",
+            "paragraph": "<p>🔑 <strong>Regra de ouro:</strong> uma mudança por pedido, um teste depois de cada mudança. Pedir tudo de uma vez é o caminho mais curto para um app que ninguém entende.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "a02fb4ef-1c9a-4318-b465-402ea00e1b73"
+      },
+      {
+        "id": "cb1dimln1u3vr3h5fad35xqb",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e4gxpp4xmkp98q058seysyss",
+            "heading": "Se travar na bancada",
+            "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "0f3d0faa-f9a7-423c-b0a7-1e06eb3ecf6e"
+      },
+      {
+        "id": "57f1150a-1475-4b73-ae62-a841cac1bd55",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "9409ada4-3810-4454-842a-0af474e6736c",
+            "title": "Não acho Usage",
+            "description": "<p>Procure “credits” ou “usage” no menu da conta ou do workspace.</p><p></p><p>O que importa é achar o saldo de hoje.</p>"
+          },
+          {
+            "id": "9bc7806c-686d-4812-80db-8c862b286a7a",
+            "title": "O seletor mostra “Agent”",
+            "description": "<p>É o Build com nome antigo. Use-o.</p><p></p><p>Onde o curso disser Build, leia Agent.</p>"
+          },
+          {
+            "id": "28db0891-b9f8-480f-9d45-2b1fbb4f3803",
+            "title": "Já estou sem créditos hoje",
+            "description": "<p>Espere a renovação de amanhã para começar a Oficina 1.</p><p></p><p>Enquanto isso, dá para fazer a planta do app, logo abaixo: ela não gasta crédito.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "7e64b13e-1e14-4b6d-a44e-122ed73e417f"
+      },
+      {
+        "id": "lr4gwf1qk63vwe526yur65l4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ll0koxt3d7augel3scly6dxh",
+            "heading": "Planta antes da obra",
+            "paragraph": "<p>Você tem uma ideia de app de tarefas. A tentação é escrever “faz um app de tarefas com login, banco, categorias, prazos, notificações e modo escuro” e torcer. Resultado provável: créditos do dia esgotados e um app que você não sabe por onde consertar. Por isso, antes da obra, vem a planta.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "9af490e2-f9f1-466c-8db1-3663ae62e34c"
+      },
+      {
+        "id": "l1qru85irkuz6cu033lktich",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rma1yue3oswxstlnnnuyae56",
+            "paragraph": "<p>A própria Lovable recomenda responder quatro perguntas antes de construir — as quatro primeiras abaixo. Some a isso o que fica de fora e como saber que está pronto, e você tem uma ficha:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "6e6d7097-b29c-4199-a830-f24fc1262c93"
+      },
+      {
+        "id": "kbwq0x7kkgsrdweqltv0mhai",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "k2zfddg20fyqeumzqrp8csry",
+            "number": "1",
+            "paragraph": "<p><strong>O quê?</strong> – O nome do app e o que ele faz.</p>"
+          },
+          {
+            "id": "otnvzb138tb955vyk3bgvw0o",
+            "number": "2",
+            "paragraph": "<p><strong>Para quem?</strong> – Quem vai usar.</p>"
+          },
+          {
+            "id": "t37rri023nybp0xoxqh3m22u",
+            "number": "3",
+            "paragraph": "<p><strong>Por quê?</strong> – O problema que ele resolve.</p>"
+          },
+          {
+            "id": "kv0mybo0mxfxtzhfx5gsaxwx",
+            "number": "4",
+            "paragraph": "<p><strong>Qual a ação principal?</strong> – A coisa que a pessoa mais vai fazer no app.</p>"
+          },
+          {
+            "id": "iqr4u4wt12j1evwthj008ihm",
+            "number": "5",
+            "paragraph": "<p><strong>O que fica de fora?</strong> – O que este app não vai ter. Escrito, vira limite para você e para a IA.</p>"
+          },
+          {
+            "id": "qyaww3ignvxheraw6mv1waep",
+            "number": "6",
+            "paragraph": "<p><strong>Pronto quando?</strong> – As ações que, testadas, provam que o app funciona.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "1525ec1a-6caf-4752-b72e-9656b7faff2c"
+      },
+      {
+        "id": "c26a0b23-da14-489b-8e13-dab78b59c399",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "40cd6aa2-2d01-452b-b3c1-38bd8b2d0cab",
+            "paragraph": "<p><strong>Nome:</strong> Minhas Tarefas</p><ul><li><strong>Para quem:</strong> uma pessoa que quer organizar os próprios afazeres</li><li><strong>Problema:</strong> anotar, concluir e remover tarefas</li><li><strong>Ação principal:</strong> adicionar uma tarefa</li><li><strong>Telas:</strong> login e lista de tarefas</li><li><strong>Dados:</strong> título, concluída (sim/não), dono, data de criação</li><li><strong>Regra de acesso:</strong> cada conta vê só as próprias tarefas</li><li><strong>Fora do escopo:</strong> colaboração, anexos, pagamentos, notificações, dados reais</li><li><strong>Visual:</strong> simples, alto contraste, legível no celular</li><li><strong>Pronto quando:</strong> criar conta, entrar, criar tarefa, concluir, sair, entrar com outra conta e não ver as tarefas da primeira</li></ul>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "f6a27cdd-dde9-475f-9888-a1fe831374cb"
+      },
+      {
+        "id": "20bf33b3-38fa-4013-9764-76aeadc780f5",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "9804c72f-237f-4ef4-95f5-6fd795ec06e4",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Por que fazer a ficha de requisitos antes de pedir o app ao Lovable?",
+            "answers": [
+              {
+                "id": "014bfb50-b6ee-4182-a386-ea375b0f7ce6",
+                "title": "Porque deixa claro o que pedir e o que fica de fora, poupando créditos",
+                "correct": true,
+                "feedback": "Correto. Com a ficha, cada pedido é pequeno e claro, e o “fora do escopo” impede que o app cresça a cada mensagem."
+              },
+              {
+                "id": "e5e95155-e838-4d16-8f50-72ecd90e4b86",
+                "title": "Porque dispensa planejar o resto do app",
+                "correct": false,
+                "feedback": "Não. A ficha é o planejamento: sem ela, os pedidos crescem e os créditos acabam."
+              },
+              {
+                "id": "09f4a4e6-13cb-483c-a98c-5e34621ecdc6",
+                "title": "Porque garante que o app vai sair perfeito",
+                "correct": false,
+                "feedback": "Não. A ficha ajuda muito, mas cada mudança ainda precisa de teste — é a regra de ouro."
+              },
+              {
+                "id": "da8e7d9f-e752-47ab-8ae3-f17986c17679",
+                "title": "Porque faz o app se construir sozinho",
+                "correct": false,
+                "feedback": "Não. Você continua pedindo, uma mudança por vez; a ficha diz o que pedir."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "3a5d7f10-d916-4178-a8c3-05111860e72d"
+      },
+      {
+        "id": "1c357ca5-9387-4394-b673-c4cda395e50b",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b91725d2-c875-4fca-82dc-ae67e7e870d6",
+            "paragraph": "<p>📌 <strong>Não esqueça:</strong> o plano grátis dá 5 créditos de construção por dia (no máximo 30 por mês). Cada pedido em Build gasta uma fração variável — mudar uma cor custa uns 0,50; adicionar login, uns 1,20 (exemplos da página de preços). Uma mensagem em Plan custa 1. Ninguém garante que o app inteiro caiba no grátis, por isso o curso vai em três dias: Preparação + Oficinas 1–2; Oficinas 3–4; Projeto Final.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "ef363379-36cc-4a4b-aa53-f5497f497bba"
+      },
+      {
+        "id": "xcq5jc01mwi08r6oacqg3jjo",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fhgjm4pi3952kp60bvas6cpl",
+            "heading": "Três hábitos que poupam créditos",
+            "paragraph": "<p>Abra cada hábito. Eles valem para todas as oficinas:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "fa448e50-af1d-4779-8910-9340931958fa"
+      },
+      {
+        "id": "08854238-140e-4df7-82e9-09d797115536",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "e0dd0c53-ef83-4b3d-9441-fcefe947674e",
+            "title": "Uma mudança por pedido",
+            "description": "<p>Peça uma coisa de cada vez.</p><p></p><p>Se algo der errado, você sabe exatamente qual pedido causou o problema.</p>"
+          },
+          {
+            "id": "359fd845-6470-45eb-a0e5-58606981781f",
+            "title": "Teste depois de cada mudança",
+            "description": "<p>Confira o resultado na prévia antes do próximo pedido.</p><p></p><p>Erro achado cedo custa um pedido pequeno; erro achado tarde custa vários.</p>"
+          },
+          {
+            "id": "4658390e-21c7-4a93-8aee-d9e257ccc6f2",
+            "title": "Nada de pedir tudo de uma vez",
+            "description": "<p>Um pedido enorme gasta os créditos do dia e entrega um app difícil de consertar.</p><p></p><p>Quebre o projeto em camadas: primeiro a tela, depois login e banco, depois o teste.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "4a1c28e4-b253-4837-a924-24dcc7605b6d"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Antes de Arregaçar as Mangas: Bancada e Planta",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "hYt5G13q8PzyOy-BOjyYHbxsHuwm3dH_",
+    "createdAt": "2026-11-04T18:12:41.770Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-04T18:13:12.666Z"
+  }
+}

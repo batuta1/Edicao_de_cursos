@@ -1,0 +1,32 @@
+{
+  "licao": 1,
+  "posicao": 16,
+  "blocos": [
+    {
+      "modelo": "text-text-heading-paragraph.json",
+      "itens": [
+        {
+          "heading": "🚀 Quer ir além?",
+          "paragraph": "<p>Três desafios opcionais para quem terminou. Abra cada um para ver o desafio e como validar:</p>"
+        }
+      ]
+    },
+    {
+      "modelo": "interactive-interactive-accordion.json",
+      "itens": [
+        {
+          "title": "Horas livres na semana",
+          "description": "<p>Peça \"Em quais dias desta semana eu tenho pelo menos duas horas livres entre 9h e 18h?\".</p><p></p><p><strong>Validação:</strong> os dias batem com a agenda.</p>"
+        },
+        {
+          "title": "Escrita bloqueada",
+          "description": "<p>Coloque as ferramentas de escrita em Blocked e peça para criar um evento.</p><p></p><p><strong>Validação:</strong> o Claude avisa que não pode e nada aparece na agenda.</p>"
+        },
+        {
+          "title": "Resumo da semana",
+          "description": "<p>Peça um resumo da semana em tabela, com uma coluna \"o que preparar\", sem alterar nenhum evento.</p><p></p><p><strong>Validação:</strong> nenhum pedido de aprovação aparece.</p>"
+        }
+      ]
+    }
+  ]
+}

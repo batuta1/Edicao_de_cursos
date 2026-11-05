@@ -1,0 +1,629 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "O que é o MCP: um padrão comum entre assistentes e serviços",
+  "lesson": {
+    "description": "",
+    "id": "a78af5ba-e370-47c7-8933-86a8293123d8",
+    "items": [
+      {
+        "id": "mup4kjmqg4sw0px5p1qeiu9l",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b8lr8dsk098d2tb3t93inq78",
+            "heading": "O problema que o MCP resolve",
+            "paragraph": "<p>Um assistente de IA, como o Claude ou o ChatGPT, sabe redigir, resumir e responder perguntas, mas, sozinho, não enxerga a sua agenda, os seus arquivos ou os sistemas que você usa. Para isso é preciso uma integração: um meio técnico pelo qual o assistente consulta ou altera um serviço externo. Esta lição explica o padrão que tornou essas integrações comuns entre assistentes de fabricantes diferentes — e o que ele não garante.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "7eec5988-642b-4412-978d-5cac18a3a6ef"
+      },
+      {
+        "id": "qhlz60nv82015zu08she78qh",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "k8qugv3zt6syfl2mwncz3t0o",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "44a09d21-27a7-43ea-904d-6cb02ac79820"
+      },
+      {
+        "id": "cwezs00gdfa0d0e8hlcrydny",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "kuz9usow0d1q87x71t964w0u",
+            "number": "1",
+            "paragraph": "<p>Explicar o problema de integração que o MCP resolve e o que ele não garante.</p>"
+          },
+          {
+            "id": "qgdf1voy4sff36xud6ji557d",
+            "number": "2",
+            "paragraph": "<p>Distinguir host, client e servidor, e tools, resources e prompts.</p>"
+          },
+          {
+            "id": "i3rpmrxlq63xwdlfqccnmsw1",
+            "number": "3",
+            "paragraph": "<p>Diferenciar servidor local de servidor remoto.</p>"
+          },
+          {
+            "id": "a1rwkxoi2vwp0nqxep0ze901",
+            "number": "4",
+            "paragraph": "<p>Distinguir MCP de API, conector, plugin, skill e orquestradores de automação.</p>"
+          },
+          {
+            "id": "plss9bytb77oiidmmzf5csx1",
+            "number": "5",
+            "paragraph": "<p>Reconhecer os três usos mais frequentes para quem não programa: consultar, ler e agir.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "13c869a0-aeff-4067-ad7a-ad6f3e8ee261"
+      },
+      {
+        "id": "ljvdbbksdrfg821ivdaswdxq",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "sz4l5i1089pnes57mggqx3j9",
+            "paragraph": "<p>Até 2024, cada fabricante de assistente precisava construir uma integração própria para cada serviço. Com cinco assistentes e dez serviços, seriam cinquenta integrações diferentes — e o esforço cresce a cada assistente ou serviço novo. A literatura técnica chama esse problema de “N × M”. O Model Context Protocol (MCP) é a resposta: um protocolo, isto é, um conjunto de regras públicas de comunicação, assim como o protocolo que permite a qualquer navegador abrir qualquer site. Foi anunciado pela Anthropic em 25/11/2024 e, em 09/12/2025, doado à Agentic AI Foundation, dirigida pela Linux Foundation e cofundada por Anthropic, Block e OpenAI. OpenAI, Google e Microsoft documentam sua adoção.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "850ece8f-0dbd-4773-9163-f634eb87db1b"
+      },
+      {
+        "id": "798d3f4c-7507-4e86-97ec-e55a02a6401e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "8df3d046-879d-4b96-9135-a55871476e73",
+            "paragraph": "MCP não é um aplicativo, não é um modelo de IA e não pertence a um único fabricante. A documentação da Anthropic o compara a uma porta USB-C: um formato comum de tomada que permite ligar muitos aparelhos a muitos acessórios."
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "9ccda59b-a849-435f-ba5c-b2a6f8d5b14c"
+      },
+      {
+        "id": "e2bdfzzn6frg29pppndlcihj",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "y0nd2f5qtev1ix29wnvj29b2",
+            "heading": "Tomada e crachá: o que o MCP padroniza",
+            "paragraph": "<p>A analogia da tomada é útil, mas incompleta. Abra cada item para ver o que o protocolo resolve e o que continua nas mãos do serviço e do usuário:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "e69b9146-41d8-4b45-a57d-15a3b2fd687d"
+      },
+      {
+        "id": "dc1a23de-7d94-48b0-a70c-d26f5fc4ad40",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "6f642834-2098-4092-8cf4-f2effd83ba92",
+            "title": "O que o MCP padroniza",
+            "description": "<p>O MCP define um formato comum para que assistentes descubram e usem ferramentas e dados de serviços externos. É a tomada: qualquer assistente compatível se liga a qualquer servidor compatível, sem uma integração sob medida para cada combinação.</p><p></p><p>Na prática, um mesmo servidor pode atender ao Claude e ao ChatGPT — você verá isso no Módulo 3.</p>"
+          },
+          {
+            "id": "5a26cb04-f221-4b72-a8af-e8948cacc07c",
+            "title": "O que o MCP não garante",
+            "description": "<p>O MCP padroniza a conexão, mas não garante a qualidade dos dados, a veracidade da resposta do modelo nem a segurança do servidor.</p><p></p><p>Por isso, mesmo com o conector funcionando, continua sendo preciso conferir a origem da resposta e avaliar quem publica o servidor.</p>"
+          },
+          {
+            "id": "c6575424-af53-45e6-b444-60cb9a7f524b",
+            "title": "A analogia da tomada e do crachá",
+            "description": "<p>A tomada padroniza a ligação; o crachá define quais portas se abrem. O MCP padroniza o formato do crachá, mas cada serviço decide o que libera, e cada usuário decide o que aceita conceder.</p><p></p><p>Essa dupla — tomada e crachá — volta em todos os módulos seguintes.</p>"
+          },
+          {
+            "id": "d3afe739-2930-410f-9f5b-e960bf72d935",
+            "title": "Onde ficam os cuidados de segurança",
+            "description": "<p>Uma conexão possível não significa que todas as ações estejam liberadas. O serviço aplica suas próprias permissões, e o host — o aplicativo de IA — aplica as aprovações que você configurar.</p><p></p><p>A maior parte dos cuidados de segurança consiste em verificar o que o crachá permite, tema do Módulo 2.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "0cbeb801-5044-47f8-98a2-804b94834627"
+      },
+      {
+        "id": "krnknk3oafhv6wxaqsmn88iy",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rz9yyimrigiuhfklt2bf0p45",
+            "heading": "MCP e conceitos vizinhos",
+            "paragraph": "<p>MCP costuma ser confundido com API, plugin, skill e ferramentas de automação. Abra cada aba para ver o que é cada um e como se relaciona com o MCP:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "a4fc1715-6bcc-4a23-91c8-5ad2cff0aeed"
+      },
+      {
+        "id": "c2175bc0-95e8-40cc-aac4-48f4167c64b7",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cf59eb14-e2b6-4366-b5ca-76c5f2166906",
+            "title": "API",
+            "description": "<p>Interface própria de um serviço, feita para programas. Cada serviço tem a sua.</p><p></p><p>Relação com o MCP: o servidor MCP normalmente chama a API do serviço por trás. O MCP não substitui a API; ele padroniza a forma como o assistente chega até ela.</p>"
+          },
+          {
+            "id": "b9d20a82-6e4c-4fd4-b8d1-f5f0f66788c9",
+            "title": "MCP",
+            "description": "<p>Protocolo comum para que assistentes de IA descubram e usem ferramentas e dados.</p><p></p><p>É aberto e não pertence a um fabricante: o mesmo servidor pode servir a assistentes diferentes.</p>"
+          },
+          {
+            "id": "eee4a0cb-b6dd-47ac-bf51-5797b4e31871",
+            "title": "Conector, Plugin, App, Extensão",
+            "description": "<p>Nomes comerciais do servidor MCP instalado no produto: conector no Claude, plugin ou app no ChatGPT, extensão no Claude Desktop.</p><p></p><p>Cuidado: no ChatGPT, um plugin pode reunir servidor MCP e skills. “Plugin” não é sinônimo de MCP.</p>"
+          },
+          {
+            "id": "f2ce83a2-d92e-4a94-a980-20bd6a942a98",
+            "title": "Skill",
+            "description": "<p>Conjunto de instruções que ensina ao assistente um procedimento.</p><p></p><p>Uma skill não acessa sistemas vivos por conta própria; pode ser combinada com um conector MCP, que é quem dá o acesso.</p>"
+          },
+          {
+            "id": "0d83a9cb-97cc-4c9b-9bc3-d9b7c93932aa",
+            "title": "Zapier e n8n",
+            "description": "<p>Orquestradores de automação, com gatilhos e passos fixos definidos por você.</p><p></p><p>São complementares ao MCP: ambos oferecem servidores MCP para que assistentes acionem as automações que você já montou.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "181337db-f762-4a13-8abb-eaa322dcc187"
+      },
+      {
+        "id": "o05kjipcs77zedibsma3ctts",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "q2aox1ac6ppi5rizkm7no04j",
+            "heading": "Os papéis e os recursos de um servidor",
+            "paragraph": "<p>A arquitetura do MCP envolve três papéis, e um servidor pode oferecer três tipos de recurso. Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "b96bc603-bbad-4f29-a239-bc4c5edf705d"
+      },
+      {
+        "id": "gv0qjmki3pyivd2cb2jndmnc",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "fz8iem2nwie0qbthuzoo8m86",
+            "back": {
+              "type": "description",
+              "description": "<p>O aplicativo de IA que você usa: Claude, Claude Desktop, ChatGPT.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Host (anfitrião)</strong>"
+            }
+          },
+          {
+            "id": "ldrikm3hmdfpgpkee6he800h",
+            "back": {
+              "type": "description",
+              "description": "<p>Peça interna do host que mantém a ligação com cada servidor. Para o usuário, é invisível.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Client (cliente)</strong>"
+            }
+          },
+          {
+            "id": "k9h8qd61wfosxix53qpewzn7",
+            "back": {
+              "type": "description",
+              "description": "<p>O programa que oferece capacidades ao assistente — por exemplo, o servidor do Google Calendar, que sabe listar e criar eventos.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Servidor MCP</strong>"
+            }
+          },
+          {
+            "id": "a8zcrn45b0c80najqle3kb2r",
+            "back": {
+              "type": "description",
+              "description": "<p>Ações executáveis, como “buscar documento” ou “criar evento”. São as mais comuns e pedem atenção: algumas só leem, outras alteram dados.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Tools (ferramentas)</strong>"
+            }
+          },
+          {
+            "id": "utz4yh6hxn0gl8frapqkc346",
+            "back": {
+              "type": "description",
+              "description": "<p>Conteúdos que o assistente pode ler. O terceiro tipo são os prompts: modelos prontos de pedido oferecidos pelo servidor.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Resources (recursos)</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "64c1e4cc-dd5b-441d-8b12-f6dcdefe33b0"
+      },
+      {
+        "id": "gu36y7di2vkeimy6xwq89ba4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pvint3e6pw9qa7ov8bflezzd",
+            "heading": "Servidor local e servidor remoto",
+            "paragraph": "<p>Onde o servidor roda muda o que ele alcança e onde ele aparece. Essa distinção será decisiva no Módulo 4:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "a3b51fc7-dcf6-4ab2-a745-d8ed0f4fadbb"
+      },
+      {
+        "id": "65be24a7-8c19-4bb5-b2df-a11233bc478a",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "304a128d-6b87-4118-980c-7da08c140083",
+            "title": "Servidor local",
+            "description": "<p>Executado no próprio computador. No Claude, são as extensões locais, que existem apenas no Claude Desktop e acessam recursos da máquina, como pastas autorizadas.</p><p></p><p>Não aparecem no Claude pelo navegador nem no celular.</p>"
+          },
+          {
+            "id": "7cae8cdc-759d-4e52-843d-d8d43f02b16c",
+            "title": "Servidor remoto",
+            "description": "<p>Hospedado na internet e acessado por endereço (URL). No Claude, os conectores remotos são chamados a partir da nuvem da Anthropic e funcionam no navegador, no aplicativo e no celular — é o caso do Google Calendar e do Google Drive.</p><p></p><p>Dependem do serviço e da conta conectada.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "30a4a915-5770-41f1-9dca-a36fa24cfd90"
+      },
+      {
+        "id": "it9tjtg7pxmqdu7tijsjynzd",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ot66ixebrpnbbzm674zypjl9",
+            "paragraph": "<p>Para quem não programa, os usos mais frequentes se organizam em três verbos, que correspondem aos Módulos 3 a 5, em ordem crescente de risco:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "3b69159f-7421-414d-97d5-6d6ac4f0e78e"
+      },
+      {
+        "id": "mp3rg4cr0t6327bacgg1ew78",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "ygn7ealiqbbua025gg4tf34y",
+            "number": "1",
+            "paragraph": "<p><strong>Consultar:</strong> documentação, agenda, tarefas de um projeto.</p>"
+          },
+          {
+            "id": "b9eaowc9ufjh33dsn4qh0q42",
+            "number": "2",
+            "paragraph": "<p><strong>Ler:</strong> arquivos de uma pasta, documentos de um repositório.</p>"
+          },
+          {
+            "id": "wunji7nqfhr1znk8k0d3hy99",
+            "number": "3",
+            "paragraph": "<p><strong>Agir:</strong> criar um evento, redigir um rascunho de e-mail, mover um arquivo.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "6bd5d447-91d5-4b2d-bc88-91b8bf62191a"
+      },
+      {
+        "id": "ff5df767-bf4b-4b01-a7e5-739c0e854d68",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "409df0d4-472a-4621-9fc7-30f7f5519481",
+            "paragraph": "<p>🧭 Os conectores disponíveis podem ser explorados, sem instalação, em <strong>Claude &gt; Personalizar &gt; Conectores &gt; +</strong>. Abra a ficha de cada conector para ler o publicador, o selo de verificação e a lista de ferramentas.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "dcff9272-5c6b-4a49-805b-14332dcda579"
+      },
+      {
+        "id": "5937b68a-82a4-46e9-bbed-2a60ebcfba4d",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "f1794df7-afaa-4875-8936-646ba8022db2",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Um colega afirma: “Instalei o MCP do Google Drive, então agora o Claude pode fazer qualquer coisa no meu Drive”. Qual alternativa está correta?",
+            "answers": [
+              {
+                "id": "bd4bbd73-3100-4997-806e-b40fe2f6f321",
+                "title": "Está correto: o MCP concede acesso total ao serviço conectado.",
+                "correct": false,
+                "feedback": "Não. O protocolo não concede permissão automaticamente: o serviço aplica suas permissões e o host aplica as aprovações."
+              },
+              {
+                "id": "c9b9a121-4958-49ad-9bde-e78f7472cb66",
+                "title": "Está incorreto: o MCP padroniza a ligação, mas o que o assistente pode fazer depende das ferramentas oferecidas, das permissões da conta e das aprovações configuradas.",
+                "correct": true,
+                "feedback": "Correto. É a distinção entre tomada e crachá: o protocolo padroniza a ligação; o serviço aplica suas próprias permissões e o host aplica as aprovações."
+              },
+              {
+                "id": "cddf99e1-97e8-4a02-b733-d0c975728449",
+                "title": "Está incorreto: o MCP só funciona com serviços da Anthropic.",
+                "correct": false,
+                "feedback": "Não. O colega está errado, mas não por isso: o MCP é aberto e funciona com serviços de vários fabricantes."
+              },
+              {
+                "id": "54f8f3a1-fab2-4425-9dae-7a9ae8308af5",
+                "title": "Está correto, desde que o plano seja pago.",
+                "correct": false,
+                "feedback": "Não. O plano não muda o que o crachá permite: as permissões do serviço e as aprovações valem em qualquer plano."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "ae3890b6-b509-4d7f-a2c5-6e2eb1d4c5db"
+      },
+      {
+        "id": "263cbcfb-e2f5-427f-a6d1-ffdbc6991afc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "022244cc-c2ea-408a-821b-0917f5d17ea0",
+            "paragraph": "<p><strong>Critério de êxito:</strong> duas respostas corretas.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "6b2d1903-d2cf-4fc2-9ab9-1c730c25f700"
+      },
+      {
+        "id": "b678de18-3ce0-41b8-809c-902766109178",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ec98634f-79f0-4674-b3e0-c71983cd0b6b",
+            "paragraph": "<p><strong>Mão na massa — prompt-base para listar os conectores ativos.</strong> Neste momento nenhum conector foi instalado, e a resposta esperada é que não há conectores ativos. O mesmo pedido será repetido nos Módulos 3, 4 e 5.</p><p>Liste os conectores que estão ativos nesta conversa. Para cada um, informe:</p><ol><li>o nome do conector e quem o publica;</li><li>as ferramentas disponíveis;</li><li>se cada ferramenta apenas lê ou também altera dados.</li></ol><p>Não execute nenhuma ferramenta.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.144.0"
+          }
+        },
+        "globalBlockId": "9da30d42-18c2-4fc0-b127-f428271f2aac"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "O que é o MCP: um padrão comum entre assistentes e serviços",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "A6GxuiVLrHaIYJQ0N2rtL7ZCDLnK5DG_",
+    "createdAt": "2026-10-18T18:35:35.031Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-10-18T18:36:16.833Z"
+  }
+}

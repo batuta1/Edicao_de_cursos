@@ -1,0 +1,70 @@
+<!--titulo: Configure as Tool permissions-->
+<style>
+  .linha { display: grid; grid-template-columns: 1fr auto; gap: 10px 14px; align-items: center; background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 12px 14px; }
+  .linha.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .linha.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .linha.aviso { border-color: var(--aviso); box-shadow: inset 4px 0 0 var(--aviso); }
+  .nome { font-weight: 600; }
+  .tipo { display: inline-block; margin-left: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 2px 8px; border-radius: 999px; }
+  .t-ler { background: var(--ok-claro); color: var(--ok); }
+  .t-escrever { background: var(--aviso-claro); color: var(--aviso); }
+  .seg { display: flex; flex-wrap: wrap; gap: 6px; }
+  .seg .btn { padding: 6px 11px; font-size: 13px; }
+  .msg { grid-column: 1 / -1; font-size: 13.5px; margin: 0; }
+  .msg:empty { display: none; }
+  .lista { display: grid; gap: 10px; }
+  .acoes { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+  @media (max-width: 560px) { .linha { grid-template-columns: 1fr; } }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Simulação</span>
+  <h1 id="t">Configure as Tool permissions</h1>
+  <p class="sub">Treine a decisão ferramenta por ferramenta — e compare com o que você deixou na tela real. Escolha uma opção para cada ferramenta e clique em Conferir. Os nomes das ferramentas aqui são ilustrativos: a lista do Google Calendar no Claude pode ter outros nomes.</p>
+  <div class="lista" id="lista"></div>
+  <div class="acoes"><button type="button" class="btn principal" id="conferir">Conferir</button></div>
+  <div class="feedback" id="geral" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Oficina 3, passos 3 a 5, e o lembrete "Always allow é carta branca" (roteiro Hands-on).
+  var FERR = [['Listar eventos', 'ler'], ['Ver disponibilidade', 'ler'], ['Criar evento', 'escrever'], ['Alterar evento', 'escrever'], ['Excluir evento', 'escrever']];
+  var OPC = ['Always allow', 'Needs approval', 'Blocked'], escolha = {}, linhas = [];
+  var lista = document.getElementById('lista');
+  FERR.forEach(function (f, i) {
+    var l = document.createElement('div'); l.className = 'linha';
+    var n = document.createElement('div'); n.className = 'nome'; n.textContent = f[0];
+    var tg = document.createElement('span'); tg.className = 'tipo t-' + f[1]; tg.textContent = f[1] === 'ler' ? 'lê' : 'altera'; n.appendChild(tg);
+    var seg = document.createElement('div'); seg.className = 'seg'; seg.setAttribute('role', 'group'); seg.setAttribute('aria-label', 'Permissão de ' + f[0]);
+    var msg = document.createElement('p'); msg.className = 'msg';
+    OPC.forEach(function (o) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = o; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(seg.children, function (x) { x.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true'); escolha[i] = o; l.className = 'linha'; msg.textContent = '';
+      });
+      seg.appendChild(b);
+    });
+    l.appendChild(n); l.appendChild(seg); l.appendChild(msg); lista.appendChild(l); linhas.push([l, msg]);
+  });
+  document.getElementById('conferir').addEventListener('click', function () {
+    var falta = 0, erros = 0, avisos = 0;
+    FERR.forEach(function (f, i) {
+      var l = linhas[i][0], msg = linhas[i][1], o = escolha[i];
+      if (!o) { falta++; l.className = 'linha'; msg.textContent = 'Escolha uma opção.'; return; }
+      if (f[1] === 'escrever' && o === 'Always allow') {
+        erros++; l.className = 'linha errado';
+        msg.textContent = 'Carta branca: o evento mudaria sem você ver a tela de aprovação. Use Needs approval ou Blocked.';
+      } else if (f[1] === 'ler' && o === 'Blocked') {
+        avisos++; l.className = 'linha aviso';
+        msg.textContent = 'Seguro, mas a consulta da oficina não vai funcionar: a leitura fica em Always allow ou Needs approval.';
+      } else {
+        l.className = 'linha certo';
+        msg.textContent = f[1] === 'ler' ? 'Ok: leitura liberada (' + o + ').' : (o === 'Blocked' ? 'Ok: cinto e suspensório nesta oficina.' : 'Ok: você revisa cada alteração antes.');
+      }
+    });
+    var g = document.getElementById('geral');
+    if (falta) { g.className = 'feedback info'; g.textContent = 'Faltam ' + falta + ' ferramenta(s) sem escolha.'; }
+    else if (erros) { g.className = 'feedback erro'; g.textContent = 'Há ' + erros + ' ferramenta(s) de escrita em Always allow. Corrija antes de fazer a consulta.'; }
+    else if (avisos) { g.className = 'feedback aviso'; g.textContent = 'A escrita está protegida, mas a leitura bloqueada impede a consulta. Ajuste e confira de novo.'; }
+    else { g.className = 'feedback ok'; g.textContent = 'Configuração segura: leitura liberada e escrita sob o seu controle. Confira se a tela real do Claude ficou igual.'; }
+  });
+</script>

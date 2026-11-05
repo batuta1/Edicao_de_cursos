@@ -1,0 +1,48 @@
+<!--titulo: Devolva os acessos do curso-->
+<style>
+  .chk { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  .chk input { width: 20px; height: 20px; margin-top: 2px; flex: none; }
+  .chk small { display: block; color: var(--suave); margin-top: 2px; }
+  .lista { display: grid; gap: 10px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Checklist</span>
+  <h1 id="t">Devolva os acessos do curso</h1>
+  <p class="sub">Faça cada item no Claude, no Claude Desktop e na Conta Google e marque aqui. O Continue abaixo libera quando todos estiverem marcados.</p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="lista" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Passo 3 da atividade integradora do Módulo 6 do roteiro.
+  var ITENS = [
+    ['Removi o conector OpenAI Docs', 'Claude > Personalizar > Conectores > ⋯ > Remover — ou registrei no plano por que mantê-lo.'],
+    ['Desconectei o Google Calendar', 'Claude > Personalizar > Conectores > Google Calendar > Disconnect.'],
+    ['Desconectei o Google Drive', 'Mesmo caminho. Se não usei o Drive, marco este item.'],
+    ['Desativei ou removi a extensão Filesystem', 'Claude Desktop > Settings > Extensions > Filesystem (rótulo a conferir). Se não usei o Desktop, marco este item.'],
+    ['Revoguei o acesso na Conta Google', 'Na área de conexões de terceiros da Conta Google (caminho a conferir).'],
+    ['Apaguei a pasta teste-mcp-arquivos e conferi a agenda', 'O evento “Teste MCP — apagar depois” não ficou no calendário.']
+  ];
+  var marcados = 0, concluido = false, lista = document.getElementById('lista');
+  ITENS.forEach(function (it, i) {
+    var d = document.createElement('div'); d.className = 'item';
+    var l = document.createElement('label'); l.className = 'chk';
+    var c = document.createElement('input'); c.type = 'checkbox'; c.id = 'i' + i;
+    var s = document.createElement('span'); s.textContent = it[0];
+    var sm = document.createElement('small'); sm.textContent = it[1]; s.appendChild(sm);
+    c.addEventListener('change', function () {
+      d.className = c.checked ? 'item certo' : 'item';
+      marcados += c.checked ? 1 : -1; atualizar();
+    });
+    l.appendChild(c); l.appendChild(s); d.appendChild(l); lista.appendChild(d);
+  });
+  function atualizar() {
+    document.getElementById('barra').style.width = (100 * marcados / ITENS.length) + '%';
+    if (marcados === ITENS.length && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Crachá devolvido. Repita esta revisão de tempos em tempos em Claude > Personalizar > Conectores.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+</script>

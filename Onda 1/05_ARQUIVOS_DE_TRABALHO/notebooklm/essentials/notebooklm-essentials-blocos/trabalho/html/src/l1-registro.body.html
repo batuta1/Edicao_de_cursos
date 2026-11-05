@@ -1,0 +1,102 @@
+<!--titulo: Registro de verificação-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mão na massa</span>
+  <h1 id="t">Monte o seu registro de verificação</h1>
+  <p class="sub">Com o NotebookLM aberto no computador, marque o que você vê na tela. O registro se monta sozinho, pronto para copiar.</p>
+
+  <div class="grid" id="campos"></div>
+
+  <div class="item" style="margin-top:12px">
+    <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer">
+      <input type="checkbox" id="botao" style="width:20px;height:20px;margin-top:2px">
+      <span>Em notebook.google.com, a tela inicial exibe o botão <strong>"Criar novo notebook"</strong>.</span>
+    </label>
+  </div>
+
+  <div class="feedback" id="dica" role="status" aria-live="polite"></div>
+
+  <h2 style="margin-top:18px">Seu registro</h2>
+  <pre class="saida" id="saida"></pre>
+  <div class="opcoes" style="margin-top:10px">
+    <button type="button" class="btn principal" id="copiar">Copiar registro</button>
+  </div>
+  <div class="feedback" id="msgCopia" role="status" aria-live="polite"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Campos e opções: Módulo 0 do roteiro (registro de verificação e tabela de problemas).
+  var CAMPOS = [
+    { id: 'tipo', rotulo: 'Tipo de conta', opcoes: ['pessoal', 'trabalho', 'escolar'] },
+    { id: 'nome', rotulo: 'Nome exibido pela ferramenta', opcoes: ['NotebookLM', 'Gemini Notebook', 'os dois'] },
+    { id: 'idioma', rotulo: 'Idioma da interface', opcoes: ['português', 'inglês', 'misto'] },
+    { id: 'nav', rotulo: 'Navegador no computador', opcoes: ['Chrome', 'Edge', 'Firefox', 'Safari', 'outro'] }
+  ];
+  var DICAS = {
+    trabalho: 'Conta de trabalho: se a tela não abrir, o serviço provavelmente não foi habilitado pelo administrador. Peça ao setor de tecnologia ou siga o curso com uma conta pessoal.',
+    escolar: 'Conta escolar: se a tela não abrir, o serviço provavelmente não foi habilitado pelo administrador. Peça ao setor de tecnologia ou siga o curso com uma conta pessoal.',
+    'inglês': 'Interface em inglês: ajuste o idioma da Conta Google ou siga os nomes em inglês que o curso indica entre parênteses.',
+    misto: 'Interface mista é comum na transição de nome e de tradução. Siga os caminhos do curso a partir de notebook.google.com.',
+    'os dois': 'Normal: o produto foi renomeado em 16/07/2026, e os dois nomes ainda aparecem. É a mesma ferramenta.'
+  };
+  var escolha = {}, concluido = false;
+  var caixa = document.getElementById('campos');
+
+  CAMPOS.forEach(function (c) {
+    var bloco = document.createElement('div');
+    bloco.className = 'item';
+    bloco.innerHTML = '<h2 id="r-' + c.id + '">' + c.rotulo + '</h2>';
+    var grupo = document.createElement('div');
+    grupo.className = 'opcoes';
+    grupo.setAttribute('role', 'group');
+    grupo.setAttribute('aria-labelledby', 'r-' + c.id);
+    c.opcoes.forEach(function (op) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'btn'; b.textContent = op;
+      b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        escolha[c.id] = op;
+        grupo.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        var d = document.getElementById('dica');
+        if (DICAS[op]) { d.textContent = DICAS[op]; d.className = 'feedback info'; } else { d.textContent = ''; d.className = 'feedback'; }
+        atualizar();
+      });
+      grupo.appendChild(b);
+    });
+    bloco.appendChild(grupo);
+    caixa.appendChild(bloco);
+  });
+
+  function v(id, padrao) { return escolha[id] || padrao; }
+  function atualizar() {
+    document.getElementById('saida').textContent =
+      'Conta utilizada: [endereço de e-mail]\n' +
+      'Tipo de conta: ' + v('tipo', '[pessoal | trabalho | escolar]') + '\n' +
+      'Nome exibido pela ferramenta: ' + v('nome', '[NotebookLM | Gemini Notebook]') + '\n' +
+      'Idioma da interface: ' + v('idioma', '[português | inglês | misto]') + '\n' +
+      'Dispositivo para o curso: computador, navegador ' + v('nav', '[nome]');
+    var completo = CAMPOS.every(function (c) { return escolha[c.id]; }) && document.getElementById('botao').checked;
+    if (completo && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Acesso verificado e registro montado. Copie o registro, complete o e-mail e guarde-o. Você já pode continuar.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+  document.getElementById('botao').addEventListener('change', atualizar);
+
+  document.getElementById('copiar').addEventListener('click', function () {
+    var texto = document.getElementById('saida').textContent;
+    var msg = document.getElementById('msgCopia');
+    function falhou() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('saida'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+      msg.textContent = ok ? 'Registro copiado.' : 'O texto está selecionado: use Ctrl+C (ou Cmd+C) para copiar.';
+      msg.className = 'feedback info';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto).then(function () { msg.textContent = 'Registro copiado.'; msg.className = 'feedback info'; }, falhou);
+    } else { falhou(); }
+  });
+  atualizar();
+</script>

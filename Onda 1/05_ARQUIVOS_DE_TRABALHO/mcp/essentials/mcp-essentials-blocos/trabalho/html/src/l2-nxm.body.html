@@ -1,0 +1,72 @@
+<!--titulo: O problema N × M-->
+<style>
+  svg { width: 100%; height: auto; display: block; }
+  .no rect { fill: #fff; stroke: var(--azul-2); stroke-width: 1.5; }
+  .no text { font-size: 13px; fill: var(--tinta); text-anchor: middle; dominant-baseline: middle; }
+  .fio { stroke: #c24a35; stroke-width: 1.4; opacity: .7; }
+  .fio-mcp { stroke: var(--azul-2); stroke-width: 2; }
+  .hub rect { fill: var(--azul); }
+  .hub text { fill: #fff; font-weight: 700; font-size: 14px; text-anchor: middle; dominant-baseline: middle; }
+  .col { font-size: 12px; font-weight: 700; fill: var(--suave); text-anchor: middle; letter-spacing: .08em; }
+  .conta { font-size: 18px; font-weight: 700; color: var(--azul); margin: 12px 0 2px; }
+  [hidden] { display: none !important; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Infográfico</span>
+  <h1 id="t">Por que um protocolo comum muda a conta</h1>
+  <p class="sub">Alterne entre as duas situações. No desenho, três assistentes e quatro serviços; o raciocínio vale para qualquer número.</p>
+  <div class="opcoes" role="group" aria-label="Escolha a situação">
+    <button type="button" class="btn" id="bSem" aria-pressed="true">Sem padrão comum</button>
+    <button type="button" class="btn" id="bCom" aria-pressed="false">Com o MCP</button>
+  </div>
+
+  <div id="sem">
+    <svg viewBox="0 0 520 250" role="img" aria-labelledby="dSem">
+      <title id="dSem">Sem padrão comum: cada um dos três assistentes precisa de uma integração própria com cada um dos quatro serviços, doze ligações diferentes.</title>
+      <text class="col" x="90" y="16">ASSISTENTES</text><text class="col" x="430" y="16">SERVIÇOS</text>
+      <g id="fios"></g>
+      <g id="nosSem"></g>
+    </svg>
+    <p class="conta">3 × 4 = 12 integrações sob medida</p>
+    <p class="sub" style="margin:0">Com 5 assistentes e 10 serviços, seriam 50. Cada assistente ou serviço novo multiplica o trabalho: é o problema que a literatura técnica chama de “N × M”.</p>
+  </div>
+
+  <div id="com" hidden>
+    <svg viewBox="0 0 520 250" role="img" aria-labelledby="dCom">
+      <title id="dCom">Com o MCP: cada assistente e cada serviço implementam o mesmo protocolo uma única vez e se ligam por ele.</title>
+      <text class="col" x="90" y="16">ASSISTENTES</text><text class="col" x="430" y="16">SERVIÇOS</text>
+      <g id="fiosMcp"></g>
+      <g class="hub"><rect x="225" y="40" width="70" height="190" rx="14"></rect><text x="260" y="135">MCP</text></g>
+      <g id="nosCom"></g>
+    </svg>
+    <p class="conta">Cada lado implementa o protocolo uma vez</p>
+    <p class="sub" style="margin:0">Um servidor MCP feito para a agenda serve ao Claude, ao ChatGPT e a qualquer assistente compatível — como você verá no Módulo 3, com um mesmo servidor funcionando nos dois.</p>
+  </div>
+
+  <div class="feedback aviso" style="margin-top:14px">🔑 O MCP padroniza a <strong>tomada</strong>. O <strong>crachá</strong> — o que cada serviço libera e o que você aceita conceder — continua decidido pelo serviço e por você.</div>
+</section>
+
+<script>
+  // Conteúdo: Módulo 1 do roteiro (problema N × M, protocolo comum, tomada e crachá).
+  var A = ['Claude', 'ChatGPT', 'Outro assistente'], S = ['Agenda', 'Arquivos', 'E-mail', 'Documentação'];
+  function yA(i) { return 60 + i * 75; } function yS(i) { return 45 + i * 55; }
+  function linha(c, x1, y1, x2, y2) { return '<line class="' + c + '" x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '"></line>'; }
+  function no(x, y, t) { return '<g class="no"><rect x="' + (x - 70) + '" y="' + (y - 18) + '" width="140" height="36" rx="10"></rect><text x="' + x + '" y="' + y + '">' + t + '</text></g>'; }
+  var nos = A.map(function (t, i) { return no(90, yA(i), t); }).join('') + S.map(function (t, i) { return no(430, yS(i), t); }).join('');
+  var fios = '';
+  A.forEach(function (a, i) { S.forEach(function (s, j) { fios += linha('fio', 160, yA(i), 360, yS(j)); }); });
+  document.getElementById('fios').innerHTML = fios;
+  document.getElementById('nosSem').innerHTML = nos;
+  document.getElementById('fiosMcp').innerHTML =
+    A.map(function (a, i) { return linha('fio-mcp', 160, yA(i), 225, yA(i)); }).join('') +
+    S.map(function (s, j) { return linha('fio-mcp', 295, yS(j), 360, yS(j)); }).join('');
+  document.getElementById('nosCom').innerHTML = nos;
+
+  var bSem = document.getElementById('bSem'), bCom = document.getElementById('bCom');
+  function mostrar(com) {
+    document.getElementById('sem').hidden = com; document.getElementById('com').hidden = !com;
+    bSem.setAttribute('aria-pressed', com ? 'false' : 'true'); bCom.setAttribute('aria-pressed', com ? 'true' : 'false');
+  }
+  bSem.addEventListener('click', function () { mostrar(false); });
+  bCom.addEventListener('click', function () { mostrar(true); });
+</script>

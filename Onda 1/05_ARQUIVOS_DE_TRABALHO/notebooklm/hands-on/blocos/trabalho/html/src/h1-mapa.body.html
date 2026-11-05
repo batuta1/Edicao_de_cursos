@@ -1,0 +1,53 @@
+<!--titulo: Mapa da mão na massa-->
+<style>
+  .trilha { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .etapa { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 12px 14px; cursor: pointer; text-align: left; width: 100%; color: var(--tinta); }
+  .etapa:hover { border-color: var(--azul-2); }
+  .etapa[aria-expanded="true"] { border-color: var(--azul); background: var(--azul-claro); }
+  .etapa .n { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--azul); color: #fff; font-weight: 700; font-size: 14px; }
+  .etapa .nome { font-weight: 700; color: var(--azul); display: block; }
+  .etapa .prob { font-size: 13.5px; color: var(--suave); display: block; }
+  .etapa .min { font-weight: 700; color: var(--azul-2); font-size: 14px; white-space: nowrap; }
+  .etapa .lic { display: inline-block; margin-top: 4px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ok); }
+  .detalhe { grid-column: 2 / -1; font-size: 14px; color: var(--azul); margin-top: 4px; }
+  .detalhe[hidden] { display: none; }
+  .total { display: flex; justify-content: space-between; margin-top: 12px; padding: 10px 14px; border-radius: 12px; background: var(--azul); color: #fff; font-weight: 700; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mapa</span>
+  <h1 id="t">O mapa da mão na massa</h1>
+  <p class="sub">As oficinas usam o mesmo notebook, em sequência: cada uma entrega uma pequena vitória, e o Projeto Final junta todas num tema seu. Clique numa etapa para ver o que você vai entregar.</p>
+  <ol class="trilha" id="trilha"></ol>
+  <div class="total"><span>Total</span><span>115 min</span></div>
+</section>
+
+<script>
+  // Tabela "O Mapa da Mão na Massa" do roteiro Hands-on; entregas tiradas dos pontos de controle de cada oficina.
+  var ROT = ['0', '1', '2', '3', '4', 'PF', '10'];
+  var ETAPAS = [
+    { n: 'Antes de Arregaçar as Mangas', p: '"Posso subir qualquer documento?"', m: 13, l: 'Lição 1', e: 'Conta conferida, Kit LGPD à mão e o semáforo para decidir o que sobe.' },
+    { n: 'Oficina 1 — Junte tudo num notebook', p: 'Tenho documentos demais e nenhum lugar para juntá-los', m: 20, l: 'Lição 1', e: 'Notebook "LGPD — revisão" com quatro fontes marcadas e conferidas.' },
+    { n: 'Oficina 2 — Pergunte e confira a citação', p: 'Preciso de resposta rápida, mas que eu consiga conferir', m: 20, l: 'Lição 2', e: 'Ficha com três citações conferidas e uma nota salva.' },
+    { n: 'Oficina 3 — Gere guia de estudo, resumo e teste', p: 'Quero estudar (ou dar aula) sem reler tudo', m: 20, l: 'Lição 2', e: 'Guia de estudo, documento de resumo e teste, com um item de cada conferido.' },
+    { n: 'Oficina 4 — Ouça suas fontes e mostre para alguém', p: 'Quero ouvir o conteúdo e mostrar para outra pessoa', m: 20, l: 'Lição 3', e: 'Resumo em Áudio em português, mapa mental e decisão de compartilhamento anotada.' },
+    { n: 'Projeto Final — O kit de estudo do seu tema', p: 'Repetir tudo sozinho, num tema seu', m: 16, l: 'Lição 3', e: 'Notebook novo num tema seu, com fontes verdes, pergunta-chave conferida e um artefato revisado.' },
+    { n: 'A Parte dos Dez', p: 'Hábitos para levar', m: 6, l: 'Lição 3', e: 'Dez hábitos que deixam qualquer notebook confiável.' }
+  ];
+  var lista = document.getElementById('trilha');
+  ETAPAS.forEach(function (x, i) {
+    var li = document.createElement('li');
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'etapa'; b.setAttribute('aria-expanded', 'false');
+    b.setAttribute('aria-controls', 'd' + i);
+    b.innerHTML = '<span class="n">' + ROT[i] + '</span><span><span class="nome"></span><span class="prob"></span><span class="lic"></span></span><span class="min"></span><span class="detalhe" hidden></span>';
+    b.querySelector('.nome').textContent = x.n;
+    b.querySelector('.prob').textContent = x.p;
+    b.querySelector('.lic').textContent = x.l;
+    b.querySelector('.min').textContent = x.m + ' min';
+    var d = b.querySelector('.detalhe'); d.id = 'd' + i; d.textContent = 'Você sai com: ' + x.e;
+    b.addEventListener('click', function () {
+      var aberto = b.getAttribute('aria-expanded') === 'true';
+      b.setAttribute('aria-expanded', aberto ? 'false' : 'true'); d.hidden = aberto;
+    });
+    li.appendChild(b); lista.appendChild(li);
+  });
+</script>

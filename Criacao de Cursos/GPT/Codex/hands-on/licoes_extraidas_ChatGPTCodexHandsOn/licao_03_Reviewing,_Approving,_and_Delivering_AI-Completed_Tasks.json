@@ -1,0 +1,550 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Reviewing, Approving, and Delivering AI-Completed Tasks",
+  "lesson": {
+    "description": "",
+    "id": "53f41768-a077-4c4b-a34a-22569223edfa",
+    "items": [
+      {
+        "id": "ky4c2ho1132h3ct1bfr2ztdt",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "af32gu7u01qmkrm98x9hduwm",
+            "heading": "“Pronto” não é o mesmo que “certo”",
+            "paragraph": "<p>O Codex avisou que a tarefa terminou. Ótimo, mas “terminou” não é sinônimo de “está certo”. Nesta lição, você aprende a conferir o trabalho do agente antes de aceitar qualquer coisa, do jeito que um profissional experiente faria (Oficina 4). Depois, junta tudo no Projeto Final: escolhe um problema real e pequeno no repositório de teste e o leva do pedido à entrega.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "dda37761-a3d0-4773-a775-82eea20e37f1"
+      },
+      {
+        "id": "h4gxcagwzxnz5rhus26nfonj",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fhpc2dxy0ghwrar5lwm9ea6h",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "c1695ecd-b87c-41ed-9699-ace150980ab6"
+      },
+      {
+        "id": "xa2rnkmts2kd66b3t06kj1ng",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "ll9ch3is92jr8lx3cpu02p88",
+            "number": "1",
+            "paragraph": "<p>Ler o comparativo (diff) de uma tarefa e confirmar que nada além do combinado foi alterado.</p>"
+          },
+          {
+            "id": "okz3gurk024a1fucrwmtc6si",
+            "number": "2",
+            "paragraph": "<p>Conferir o registro (log) de execução em busca de erros ou avisos.</p>"
+          },
+          {
+            "id": "uc4l22s50nny91tm4nt1pgoi",
+            "number": "3",
+            "paragraph": "<p>Decidir entre aceitar o resultado, pedir um ajuste ou pedir uma nova execução, e explicar o porquê.</p>"
+          },
+          {
+            "id": "ajqrwebnczc92c9fw6kjpyne",
+            "number": "4",
+            "paragraph": "<p>Entregar uma tarefa completa, do pedido à aceitação ou à Pull Request.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "752f16a9-28c4-4d49-b0c6-fa384b1bbda0"
+      },
+      {
+        "id": "fe36d6e3-bd32-470f-b7d7-c71c7e38cacb",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "55ee137d-df70-4ab3-854f-0e56e63d5285",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "b75cc94b-ee0a-4842-919c-1357168d7813"
+      },
+      {
+        "id": "d1ff645a-0ce2-43d7-a750-4593aa47f59a",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "d239e3a9-8da2-440f-9715-2c7fd9c0fea3",
+            "type": "intro",
+            "title": "Oficina 4: mão na massa",
+            "isHidden": false,
+            "description": "<p>Abra a tarefa concluída na Oficina 3, a da seção “Sobre o projeto” no README. É nela que você vai praticar a conferência.</p>"
+          },
+          {
+            "id": "831a0dc0-81c4-43d2-a9bb-3d83a552bbb0",
+            "type": "summary",
+            "title": "Deu certo?",
+            "isHidden": false,
+            "description": "<p>Você consegue explicar, com suas próprias palavras, exatamente o que mudou no projeto e por que decidiu aceitar (ou não) o resultado. Quer ir além? Aplique o mesmo roteiro de conferência (diff → log → decisão) a uma tarefa antiga sua, ou à de um colega, se tiver uma disponível.</p>"
+          },
+          {
+            "id": "51f5f9f6-30aa-4e49-be56-3831d3522fca",
+            "type": "step",
+            "title": "Leia o diff linha por linha",
+            "isHidden": false,
+            "description": "<p>Localize o comparativo (diff) com as linhas alteradas. Leia linha por linha o que foi modificado e confirme que nada além do combinado foi tocado.</p>"
+          },
+          {
+            "id": "b676b23d-6795-4187-864a-8df6bdc06b3b",
+            "type": "step",
+            "title": "Confira o log",
+            "isHidden": false,
+            "description": "<p>Confira o registro (log) de execução em busca de erros ou avisos. Ele mostra o que o Codex realmente fez, inclusive problemas que não aparecem no diff.</p>"
+          },
+          {
+            "id": "26d1b80f-8d37-4c89-8e54-531b5127de92",
+            "type": "step",
+            "title": "Decida",
+            "isHidden": false,
+            "description": "<p>Escolha entre três caminhos: aceitar o resultado, pedir um ajuste ou pedir para o Codex testar de novo. Só siga em frente se entendeu completamente a alteração.</p>"
+          },
+          {
+            "id": "00d499a4-2df8-4c0e-994b-bb1249a8a64c",
+            "type": "step",
+            "title": "Aceite ou abra uma Pull Request",
+            "isHidden": false,
+            "description": "<p>Se estiver tudo certo, aceite a alteração, ou abra uma Pull Request, caso essa opção esteja disponível para o seu repositório no GitHub.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "f3888c15-38d8-4b59-8f75-2c7e0fe34ae9"
+      },
+      {
+        "id": "i4g95aj14hokdo88nidwr0zx",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "tdfrmvzsemkp17kvhxlybony",
+            "heading": "Conceitos-chave da conferência",
+            "paragraph": "<p>Três ideias sustentam a revisão de qualquer tarefa do Codex. Vire cada cartão.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "0b43521a-d1c6-479a-ada8-959a781de803"
+      },
+      {
+        "id": "qxh2fa605d9b6rwg1fw2sihq",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "sbvxx3ssbf2meqgo5flyf81k",
+            "back": {
+              "type": "description",
+              "description": "<p>Mostra exatamente quais linhas o Codex adicionou, removeu ou alterou nos arquivos do projeto. É a primeira coisa a ler antes de aceitar.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Diff (comparativo)</p>"
+            }
+          },
+          {
+            "id": "itvwhsde5qoynlz865hgjpln",
+            "back": {
+              "type": "description",
+              "description": "<p>Registra as ações, os erros, os avisos e os resultados de teste da execução. É a prova do que o Codex realmente fez.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Log (registro)</p>"
+            }
+          },
+          {
+            "id": "o0wbubogk5jfodcghqbutwfx",
+            "back": {
+              "type": "description",
+              "description": "<p>Antes de aceitar, confira se o resultado cumpre o pedido original e o critério de sucesso que você definiu, sem nada além do combinado.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Critério para aceitar</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "ca798759-9a7f-439c-b33d-b92611872346"
+      },
+      {
+        "id": "qhb3sjlvhkkupf1g6jwusrwt",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "p92i7k2sp4s8ykjr8v8dm33d",
+            "heading": "Se travar na Oficina 4",
+            "paragraph": "<p>Abra o item que corresponde ao seu caso.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "53e47f1e-dc8c-4769-980e-24fced7199d1"
+      },
+      {
+        "id": "0d5e4449-5a8c-432d-8ac9-bd45dac31ee4",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f369cf21-fefd-4830-917a-986414db419a",
+            "title": "Não entendo por que uma linha foi alterada",
+            "description": "<p>Pergunte diretamente ao Codex: <em>“Explique por que você alterou esta linha.”</em> Entender cada modificação é condição para aprovar.</p>"
+          },
+          {
+            "id": "efbc7e57-7f80-45af-aca9-4602f901fcf2",
+            "title": "O log mostra um teste que falhou",
+            "description": "<p>Não aceite a alteração ainda. Peça uma nova execução explicando o que falhou e o que se espera como correção.</p>"
+          },
+          {
+            "id": "feddeb0e-c7d4-4aa0-8126-8e707ddef549",
+            "title": "Cuidado: aceitar para ganhar tempo",
+            "description": "<p>⚠️ Nunca aceite uma alteração só para ganhar tempo se você não entendeu completamente o que ela faz. Esse é o erro mais comum de quem começa a trabalhar com agentes de IA.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "f368960a-916f-407a-97ba-06a4d438473e"
+      },
+      {
+        "id": "9682bcf1-561c-42c0-97b8-5fd12ad840fe",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "c49bdd19-1df6-4aa8-a8cc-daeaaf17b44a",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Ao revisar uma tarefa, você nota uma alteração que não esperava. O que fazer antes de aceitar?",
+            "answers": [
+              {
+                "id": "3b5c7fad-4cd5-4e10-88eb-dcecb6272f7e",
+                "title": "Aceitar a alteração para ganhar tempo",
+                "correct": false,
+                "feedback": "Não. Aceitar sem entender é o erro mais comum de quem começa a trabalhar com agentes de IA, e o problema aparece depois, no projeto."
+              },
+              {
+                "id": "472b4485-0ca4-4326-9ba7-c1c226fc7821",
+                "title": "Pedir ao Codex que explique a alteração e conferir o log",
+                "correct": true,
+                "feedback": "Correto. A explicação do Codex e o log mostram por que a linha mudou. Com isso, você decide com segurança entre aceitar, pedir um ajuste ou pedir nova execução."
+              },
+              {
+                "id": "d64afc81-1b24-48f2-aa77-45e6ac5b936c",
+                "title": "Ignorar e seguir em frente",
+                "correct": false,
+                "feedback": "Não. Uma alteração inesperada é justamente o que a conferência existe para pegar. Ignorá-la pode levar erros para o projeto."
+              },
+              {
+                "id": "dccf15fe-8dc2-42a4-9f47-c3338a953347",
+                "title": "Rodar o projeto inteiro de novo",
+                "correct": false,
+                "feedback": "Não. Antes de refazer qualquer coisa, entenda o que mudou. Se for preciso corrigir, peça um ajuste ou uma nova execução explicando o que está errado."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "7854985b-954e-4af1-963b-8912883419e2"
+      },
+      {
+        "id": "c3d8d77c-13ee-41d1-89e7-f38b0a20404b",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "8788bad5-b8ee-4b7c-8324-b9f1be7eca66",
+            "paragraph": "<p><strong>Revisão humana nunca é opcional</strong>, nem quando o resultado parece perfeito à primeira vista. O Codex produz alterações no estilo de um profissional revisando o próprio código, mas quem responde pelo que entra no projeto é você.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "2ed16a75-588a-451b-9dc4-c171610c133f"
+      },
+      {
+        "id": "6af535ad-0a4c-4b5d-867f-16c63a0be977",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "7f99b8dd-5e50-46af-acb4-6e2d10761ae7",
+            "type": "intro",
+            "title": "Projeto Final: do pedido à entrega completa",
+            "isHidden": false,
+            "description": "<p>Chegou a hora de juntar tudo: escolher um problema real e pequeno no seu repositório de teste, pedir a tarefa do jeito certo, acompanhar a execução, revisar com cuidado e entregar formalmente o resultado, como se fosse seu primeiro dia trabalhando ao lado de um agente de IA.</p>"
+          },
+          {
+            "id": "e2c4e5f8-6cc7-4376-a7a7-b82a2a6af965",
+            "type": "summary",
+            "title": "Como saber que terminou",
+            "isHidden": false,
+            "description": "<p>Confira se você: escreveu um pedido com objetivo, contexto e critério de sucesso claros; acompanhou a execução até o fim; revisou o diff e o log completos antes de decidir; aceitou a alteração ou abriu uma Pull Request de forma consciente; e consegue explicar, em uma frase, o que foi entregue e por quê.</p>"
+          },
+          {
+            "id": "f966b106-d74f-4786-ac2a-5a7e28e695cf",
+            "type": "step",
+            "title": "Escolha uma melhoria real",
+            "isHidden": false,
+            "description": "<p>Escolha uma pequena melhoria real para o repositório. Por exemplo: corrigir um erro de digitação, atualizar o README ou adicionar um comentário explicativo.</p>"
+          },
+          {
+            "id": "29c2e1a0-0d4b-4b62-9818-d706336ee229",
+            "type": "step",
+            "title": "Escreva o pedido",
+            "isHidden": false,
+            "description": "<p>Escreva o pedido com objetivo, contexto e critério de sucesso, do jeito praticado na Oficina 3. Se houver algo que não deve ser tocado, inclua também a restrição.</p>"
+          },
+          {
+            "id": "3242efd3-854e-43a6-b70c-1e22dc7ead6a",
+            "type": "step",
+            "title": "Envie e acompanhe",
+            "isHidden": false,
+            "description": "<p>Envie a tarefa e acompanhe a execução até o fim, como na Oficina 3: a lista de arquivos sendo alterados e o log.</p>"
+          },
+          {
+            "id": "f71e28d3-251d-49d5-9d89-b7f6e26265a8",
+            "type": "step",
+            "title": "Revise o resultado",
+            "isHidden": false,
+            "description": "<p>Quando terminar, revise completamente o diff e o log, como praticado na Oficina 4. Confira se o resultado cumpre o critério de sucesso que você definiu.</p>"
+          },
+          {
+            "id": "be8ad5ef-e15e-4130-8f33-e68531d5284e",
+            "type": "step",
+            "title": "Aceite ou abra uma Pull Request",
+            "isHidden": false,
+            "description": "<p>Se estiver tudo certo, aceite a alteração ou abra uma Pull Request com o resultado. Se não estiver, peça um ajuste antes de aceitar.</p>"
+          },
+          {
+            "id": "a29a39fd-7086-44aa-8750-f86c4acea4ab",
+            "type": "step",
+            "title": "Resuma em uma frase",
+            "isHidden": false,
+            "description": "<p>Escreva, em uma frase só, o que você entregou e o que aprendeu fazendo esse projeto.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "d295cb13-89e6-4a42-a291-4951e42fee8b"
+      },
+      {
+        "id": "8630c00e-2280-43da-b1b3-59d23e588011",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "02ded3c4-0845-4122-933f-174ad85225bb",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "66a6434d-9cc7-4d6d-9fbe-8dfc0c6ac1bf"
+      },
+      {
+        "id": "r73c10ax05gnyq8grnldcy71",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e2ut33z4vsklm6rpf5swk7mj",
+            "paragraph": "<p>Se você chegou até aqui, já abriu o Codex, escreveu pedidos de verdade, acompanhou uma execução real e revisou um resultado antes de aceitá-lo. É exatamente o ciclo que profissionais experientes repetem todos os dias.</p><p>O próximo passo é praticar com projetos reais, cada vez um pouco mais ambiciosos, dividindo tarefas grandes em pedidos menores e mais claros. Quando o básico estiver confortável, explore recursos mais avançados: um arquivo AGENTS.md na raiz do projeto (que pode ser criado com o comando <strong>/init</strong>) para o Codex seguir os padrões do seu time, várias tarefas rodando em paralelo e automações recorrentes. Uma tarefa de cada vez: a confiança no agente se constrói aos poucos.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "59cb791c-9627-434a-b4dd-ceee04fecec7"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Conferindo o Trabalho do Agente e Entregando o Projeto Final",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "fN9ngsTJ7w33fLOZaVYLFwlFj8Hl9FP5",
+    "createdAt": "2026-10-07T18:01:23.922Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-10-07T18:02:14.689Z"
+  }
+}

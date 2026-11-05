@@ -1,0 +1,41 @@
+<!--titulo: Como saber que terminou-->
+<style>
+  .chk { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  .chk input { width: 20px; height: 20px; margin-top: 2px; flex: none; }
+  .lista { display: grid; gap: 10px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Checklist</span>
+  <h1 id="t">Como saber que terminou</h1>
+  <p class="sub">Confira o seu dossiê item por item e marque o que já está pronto. O Continue abaixo libera quando os seis estiverem marcados.</p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="lista" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // "Como saber que terminou" do Projeto Final (roteiro Hands-on).
+  var ITENS = [
+    'O tema passou pelo semáforo (e foi minimizado, se precisava).',
+    'A pergunta tem instrução, recorte, fontes aceitas e formato.',
+    'O nível de busca foi escolhido com justificativa.',
+    'Duas citações (ou uma decisão, no jurídico) foram conferidas no original.',
+    'A síntese tem citação por parágrafo e "Limites desta síntese".',
+    'A decisão de compartilhar está registrada com o motivo.'
+  ];
+  var marcados = 0, concluido = false, lista = document.getElementById('lista');
+  ITENS.forEach(function (texto) {
+    var d = document.createElement('div'); d.className = 'item';
+    var l = document.createElement('label'); l.className = 'chk';
+    var c = document.createElement('input'); c.type = 'checkbox';
+    var s = document.createElement('span'); s.textContent = texto;
+    c.addEventListener('change', function () {
+      d.className = c.checked ? 'item certo' : 'item';
+      marcados += c.checked ? 1 : -1;
+      document.getElementById('barra').style.width = (100 * marcados / ITENS.length) + '%';
+      var tudo = marcados === ITENS.length;
+      document.getElementById('final').textContent = tudo ? 'Dossiê entregue. Os dez hábitos a seguir resumem o que você acabou de fazer.' : '';
+      if (tudo && !concluido) { concluido = true; window.parent.postMessage({ type: 'complete' }, '*'); }
+    });
+    l.appendChild(c); l.appendChild(s); d.appendChild(l); lista.appendChild(d);
+  });
+</script>

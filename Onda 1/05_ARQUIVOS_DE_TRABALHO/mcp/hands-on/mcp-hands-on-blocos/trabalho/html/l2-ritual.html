@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preparar, revisar, conferir, desfazer</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+    --aviso: #8a5a00; --aviso-claro: #fdf3e1;
+    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }
+  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }
+  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }
+  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }
+  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }
+  button { font: inherit; }
+  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }
+  .btn:hover { background: var(--azul-claro); }
+  .btn[aria-pressed="true"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .btn.principal:hover { background: var(--azul-2); }
+  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }
+  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }
+  .feedback:empty { display: none; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }
+  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }
+  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }
+  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }
+  .final:empty { display: none; }
+  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }
+  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }
+  .saida { white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+</style>
+</head>
+<body>
+<style>
+  .chk { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+  .chk input { width: 20px; height: 20px; margin-top: 2px; flex: none; }
+  .chk small { display: block; color: var(--suave); margin-top: 2px; }
+  .lista { display: grid; gap: 10px; }
+  .fase { margin: 14px 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--azul-2); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Checklist</span>
+  <h1 id="t">Preparar, revisar, conferir, desfazer</h1>
+  <p class="sub">Confira no Google Calendar, no Gmail e no Claude e marque cada item. O Continue abaixo libera quando todos estiverem marcados.</p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Ponto de controle e Parte C da Oficina 4 (roteiro Hands-on).
+  var GRUPOS = [
+    ['Parte A — o evento de teste', [
+      ['O evento apareceu com os dados certos e sem convidados', 'Título "Teste MCP — apagar depois", amanhã às 15h, 10 minutos, sem link de reunião.'],
+      ['O evento sumiu do Google Calendar', 'Excluído pelo Claude, com a aprovação conferida.']]],
+    ['Parte B — o rascunho', [
+      ['O rascunho apareceu em Gmail > Rascunhos', 'Assunto "Teste MCP — excluir", endereçado a você mesmo.'],
+      ['Gmail > Enviados não tem nada novo', 'A ação aprovada foi criar rascunho, não enviar.'],
+      ['Apaguei o rascunho dentro do Gmail', 'Você mesmo, sem o assistente.']]],
+    ['Parte C — devolva os crachás', [
+      ['Google Calendar aparece desconectado', 'Claude > Personalizar > Conectores > Google Calendar > Disconnect.'],
+      ['Gmail aparece desconectado', 'Claude > Personalizar > Conectores > Gmail > Disconnect.'],
+      ['Removi o acesso do Claude na Conta Google, se ainda aparecia', 'Na área de conexões com apps de terceiros (caminho a conferir).']]]
+  ];
+  var total = 0, marcados = 0, concluido = false, raiz = document.getElementById('lista');
+  GRUPOS.forEach(function (g) {
+    var h = document.createElement('p'); h.className = 'fase'; h.textContent = g[0]; raiz.appendChild(h);
+    var box = document.createElement('div'); box.className = 'lista'; raiz.appendChild(box);
+    g[1].forEach(function (it) {
+      total++;
+      var d = document.createElement('div'); d.className = 'item';
+      var l = document.createElement('label'); l.className = 'chk';
+      var c = document.createElement('input'); c.type = 'checkbox';
+      var s = document.createElement('span'); s.textContent = it[0];
+      var sm = document.createElement('small'); sm.textContent = it[1]; s.appendChild(sm);
+      c.addEventListener('change', function () {
+        d.className = c.checked ? 'item certo' : 'item';
+        marcados += c.checked ? 1 : -1; atualizar();
+      });
+      l.appendChild(c); l.appendChild(s); d.appendChild(l); box.appendChild(d);
+    });
+  });
+  function atualizar() {
+    document.getElementById('barra').style.width = (100 * marcados / total) + '%';
+    if (marcados === total && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Ritual completo: você preparou, revisou, conferiu e desfez — e devolveu os crachás.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+</script>
+
+</body>
+</html>

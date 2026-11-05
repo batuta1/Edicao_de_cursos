@@ -1,0 +1,73 @@
+<!--titulo: Dê a cor-->
+<style>
+  .uso { margin: 0 0 10px; font-weight: 600; }
+  .b-verde.sel { background: var(--verde); border-color: var(--verde); }
+  .b-amarelo.sel { background: var(--amarelo); border-color: var(--amarelo); }
+  .b-vermelho.sel { background: var(--vermelho); border-color: var(--vermelho); }
+  .legenda { display: grid; gap: 6px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin: 0 0 16px; font-size: 13px; }
+  .legenda div { background: #fff; border: 1px solid var(--linha); border-radius: 10px; padding: 8px 10px; }
+  .legenda strong { display: block; }
+  .c-verde { color: var(--verde); } .c-amarelo { color: var(--amarelo); } .c-vermelho { color: var(--vermelho); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Dê a cor</h1>
+  <p class="sub">Escolha a cor do semáforo para cada uso. A correção aparece na hora; o Continue abaixo libera quando as seis estiverem certas.</p>
+  <div class="legenda" aria-label="Legenda do semáforo">
+    <div><strong class="c-verde">Verde</strong>Fonte pública ou dado fictício, só leitura. Pode ligar.</div>
+    <div><strong class="c-amarelo">Amarelo</strong>Sua conta pessoal, com ações de escrita. Liga com aprovação manual e item de teste.</div>
+    <div><strong class="c-vermelho">Vermelho</strong>Conta do trabalho, dado de cliente, aluno ou paciente, sigilo. Não liga sem autorização.</div>
+  </div>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="usos"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Semáforo e ponto de controle do "Treine o semáforo" (roteiro Hands-on).
+  var USOS = [
+    ['"Ver meus eventos" na agenda da sua Conta Google pessoal.', 'amarelo',
+     'Amarelo. É a sua conta pessoal, com dados seus — mesmo só lendo. Verde fica para fonte pública ou dado fictício.'],
+    ['"Criar evento de teste" na sua agenda pessoal.', 'amarelo',
+     'Amarelo. Conta pessoal com escrita: liga com aprovação manual (Needs approval) e um item de teste que você apaga depois.'],
+    ['"Organizar a agenda do meu chefe", na conta do trabalho.', 'vermelho',
+     'Vermelho. Conta do trabalho não se liga sem autorização da organização.'],
+    ['Perguntar à documentação pública do OpenAI Docs, sem login.', 'verde',
+     'Verde. Fonte pública e só leitura — é a primeira oficina do curso.'],
+    ['Ler a pasta teste-mcp-arquivos, com os dois arquivos fictícios.', 'verde',
+     'Verde. Dado fictício, só leitura. Mesmo assim, só essa pasta é liberada — e o pedido de gravar recebe Deny.'],
+    ['Resumir e-mails de clientes na caixa de entrada do trabalho.', 'vermelho',
+     'Vermelho. Dado de cliente e conta do trabalho: não liga sem autorização da organização.']
+  ];
+  var CORES = ['verde', 'amarelo', 'vermelho'], certos = {}, concluido = false;
+  var grid = document.getElementById('usos');
+  USOS.forEach(function (u, i) {
+    var card = document.createElement('div'); card.className = 'item';
+    var p = document.createElement('p'); p.className = 'uso'; p.textContent = u[0];
+    var ops = document.createElement('div'); ops.className = 'opcoes'; ops.setAttribute('role', 'group'); ops.setAttribute('aria-label', 'Cor para: ' + u[0]);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    CORES.forEach(function (c) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn b-' + c;
+      b.textContent = c.charAt(0).toUpperCase() + c.slice(1); b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(ops.children, function (x) { x.classList.remove('sel'); x.setAttribute('aria-pressed', 'false'); });
+        b.classList.add('sel'); b.setAttribute('aria-pressed', 'true');
+        var ok = c === u[1]; certos[i] = ok;
+        card.className = 'item ' + (ok ? 'certo' : 'errado');
+        fb.className = 'feedback ' + (ok ? 'ok' : 'erro');
+        fb.textContent = ok ? 'Correto. ' + u[2] : 'Ainda não. Releia a legenda: que conta e que dados esse uso envolve?';
+        atualizar();
+      });
+      ops.appendChild(b);
+    });
+    card.appendChild(p); card.appendChild(ops); card.appendChild(fb); grid.appendChild(card);
+  });
+  function atualizar() {
+    var n = 0; for (var k in certos) if (certos[k]) n++;
+    document.getElementById('barra').style.width = (100 * n / USOS.length) + '%';
+    if (n === USOS.length && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Seis de seis. A cor sai de duas perguntas: de quem é a conta e que dados o conector vai tocar.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+</script>

@@ -1,0 +1,70 @@
+<!--titulo: Revise antes do Allow-->
+<style>
+  .pedido-original { background: var(--azul-claro); color: var(--azul); border-radius: 12px; padding: 12px 14px; margin: 0 0 16px; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 0 0 12px; }
+  th { text-align: left; font-weight: 600; color: var(--suave); width: 38%; padding: 4px 8px 4px 0; vertical-align: top; }
+  td { padding: 4px 0; }
+  tr + tr th, tr + tr td { border-top: 1px dashed var(--linha); }
+  td.marca { color: var(--erro); font-weight: 700; }
+  .placar { font-weight: 700; color: var(--azul); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Revise antes do Allow</h1>
+  <p class="sub">Quatro solicitações de aprovação simuladas (o formato real da tela do Claude é outro). Compare cada uma com o pedido e decida.</p>
+  <p class="pedido-original"><strong>Seu pedido:</strong> no calendário principal, evento “Teste MCP — apagar depois”, amanhã às 15h (horário de Brasília), 10 minutos, sem convidados e sem link de reunião.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Itens a conferir: tempo "Revisar" do Módulo 5 do roteiro (serviço, conta, alvo, data, fuso, destinatários, verbo).
+  var BASE = { 'Ferramenta': 'criar evento (Google Calendar)', 'Calendário': 'principal', 'Título': 'Teste MCP — apagar depois', 'Data e hora': 'amanhã, 15h00', 'Fuso': 'horário de Brasília', 'Duração': '10 minutos', 'Convidados': 'nenhum' };
+  var CASOS = [
+    { muda: { 'Fuso': 'UTC' }, campo: 'Fuso', fb: 'Em UTC, 15h corresponde a 12h em Brasília. Deny e repita o pedido informando o fuso.' },
+    { muda: {}, ok: true, fb: 'Todos os campos batem com o pedido. Allow, e depois confira no Google Calendar.' },
+    { muda: { 'Convidados': 'colega@exemplo.com' }, campo: 'Convidados', fb: 'Um convidado receberia um e-mail, e o aviso não se desfaz ao apagar o evento. Deny.' },
+    { muda: { 'Calendário': 'Família (compartilhado)' }, campo: 'Calendário', fb: 'O alvo está errado: um calendário compartilhado mostraria o teste a outras pessoas. Deny.' }
+  ];
+  var certos = {}, concluido = false, lista = document.getElementById('lista');
+  CASOS.forEach(function (c, i) {
+    var d = document.createElement('div'); d.className = 'item';
+    var h = document.createElement('h2'); h.id = 's' + i; h.textContent = 'Solicitação ' + (i + 1);
+    var tb = document.createElement('table'), celulas = {};
+    Object.keys(BASE).forEach(function (k) {
+      var tr = document.createElement('tr'), th = document.createElement('th'), td = document.createElement('td');
+      th.textContent = k; td.textContent = c.muda[k] || BASE[k]; celulas[k] = td;
+      tr.appendChild(th); tr.appendChild(td); tb.appendChild(tr);
+    });
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', 's' + i);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    [['Allow', true], ['Deny', false]].forEach(function (op) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = op[0]; b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        var certo = op[1] === !!c.ok;
+        if (certo) {
+          certos[i] = true; d.className = 'item certo'; fb.className = 'feedback ok'; fb.textContent = 'Correto. ' + c.fb;
+          if (c.campo) celulas[c.campo].className = 'marca';
+        } else {
+          delete certos[i]; d.className = 'item errado'; fb.className = 'feedback erro';
+          fb.textContent = c.ok ? 'Não. Compare campo a campo: nenhum diverge do pedido.' : 'Não. Um dos campos não bate com o pedido. Compare linha a linha.';
+        }
+        placar();
+      });
+      g.appendChild(b);
+    });
+    d.appendChild(h); d.appendChild(tb); d.appendChild(g); d.appendChild(fb); lista.appendChild(d);
+  });
+  function placar() {
+    var n = Object.keys(certos).length;
+    document.getElementById('placar').textContent = n + ' de ' + CASOS.length + ' decisões corretas';
+    if (n === CASOS.length && !concluido) {
+      concluido = true;
+      document.getElementById('final').textContent = 'Revisão feita. No exercício real, faça a mesma conferência antes de cada Allow. Você já pode continuar.';
+      window.parent.postMessage({ type: 'complete' }, '*');
+    }
+  }
+  placar();
+</script>

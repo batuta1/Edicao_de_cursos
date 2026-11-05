@@ -1,0 +1,652 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Connecting Codex to GitHub and Delegating Tasks",
+  "lesson": {
+    "description": "",
+    "id": "be938ca5-9b5e-4e60-a526-ad3c30960ac6",
+    "items": [
+      {
+        "id": "gqddmgi5yofhp57dp3xhuzzz",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dr43g465ot5v7x4culbr2n42",
+            "heading": "Preparando sua sala de trabalho",
+            "paragraph": "<p>Um agente de trabalho precisa de um lugar para trabalhar. Sem um projeto conectado, o Codex simplesmente não tem onde colocar a mão. Nesta lição, você dá a ele essa “sala”, um repositório de teste no GitHub (Oficina 2), e depois pede a primeira tarefa de verdade (Oficina 3). Tenha à mão a conta no GitHub e reserve uns 15 minutos de atenção, sem pressa, para a parte do pedido.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "b2a095af-cc54-4f7b-9ffe-68fc46c18567"
+      },
+      {
+        "id": "q3ia887n1ins2dufy2jnzmwy",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wr7cs7vcry75ssvahz7x8uwr",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "4ed64c02-dee7-4a2f-9fd6-ed7c80b374f5"
+      },
+      {
+        "id": "bnsc53c61urk6xm6lrk9tgaz",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "zuz9g8yokjk1lyr9ditfb5w1",
+            "number": "1",
+            "paragraph": "<p>Criar um repositório de teste no GitHub e conectá-lo ao Codex.</p>"
+          },
+          {
+            "id": "udi2nm6mshhjj8zto284vk63",
+            "number": "2",
+            "paragraph": "<p>Revisar as permissões concedidas ao Codex ao autorizar o acesso ao GitHub.</p>"
+          },
+          {
+            "id": "cxear3wfpxhhinx379n3f2fx",
+            "number": "3",
+            "paragraph": "<p>Escrever um pedido com objetivo, contexto, restrições e critério de sucesso.</p>"
+          },
+          {
+            "id": "ia8q3kj5cbnnejffhb1ioj4b",
+            "number": "4",
+            "paragraph": "<p>Delegar uma tarefa real ao Codex e acompanhar a execução até o comparativo (diff) final.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "17203046-bea0-491e-be32-1cf32a170b6b"
+      },
+      {
+        "id": "0f6f3908-23a9-4112-a7c6-47376bfd3e71",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "4975fb6b-e816-4d30-a5af-e552be1fe43d",
+            "type": "intro",
+            "title": "Oficina 2: mão na massa",
+            "isHidden": false,
+            "description": "<p>Você vai criar um repositório só para praticar e conectá-lo ao Codex. É nele que o agente vai trabalhar até o fim do curso.</p>"
+          },
+          {
+            "id": "692d9450-4bbc-4d37-84bb-8e569cb3572e",
+            "type": "summary",
+            "title": "Deu certo?",
+            "isHidden": false,
+            "description": "<p>O repositório de teste aparece disponível dentro do Codex, pronto para receber uma tarefa. Era exatamente esse o objetivo da Oficina 2. Quer ir além? Antes de seguir, explore a lista de arquivos do repositório diretamente de dentro do Codex.</p>"
+          },
+          {
+            "id": "5d7d5bce-81cf-47b6-8783-2de44ca8fd99",
+            "type": "step",
+            "title": "Crie sua conta no GitHub",
+            "isHidden": false,
+            "description": "<p>Se ainda não tiver conta no GitHub, crie uma gratuitamente em <strong>github.com</strong>. Se já criou na lição anterior, apenas faça login.</p>"
+          },
+          {
+            "id": "c271e24f-a1fe-481d-a250-f1d11f0863ef",
+            "type": "step",
+            "title": "Crie um repositório de teste",
+            "isHidden": false,
+            "description": "<p>Dentro do GitHub, crie um repositório novo, só para praticar. Sugestão de nome: <strong>meu-teste-codex</strong>. Na tela de criação, marque a opção de adicionar um arquivo README (“Add a README file”): é nele que o Codex vai trabalhar na Oficina 3.</p>"
+          },
+          {
+            "id": "4db22e95-db76-41bc-85e5-9c607c06bff5",
+            "type": "step",
+            "title": "Conecte o repositório no Codex",
+            "isHidden": false,
+            "description": "<p>Volte ao Codex e procure a opção para conectar ou adicionar um repositório. Siga o fluxo que aparecer na tela.</p>"
+          },
+          {
+            "id": "22498b7c-31c5-48db-8b56-95e0825d1c07",
+            "type": "step",
+            "title": "Autorize revisando as permissões",
+            "isHidden": false,
+            "description": "<p>O fluxo vai pedir que você autorize o Codex a acessar sua conta do GitHub. Leia com atenção quais permissões estão sendo concedidas antes de confirmar.</p>"
+          },
+          {
+            "id": "8af64c5b-aee5-4b40-999c-c4f75cfdada4",
+            "type": "step",
+            "title": "Confirme a conexão",
+            "isHidden": false,
+            "description": "<p>Confira se o repositório <strong>meu-teste-codex</strong> aparece listado dentro do Codex. Se aparecer, o agente já tem onde trabalhar.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "11ffd560-22bf-4dec-b8e2-b7ef753b6050"
+      },
+      {
+        "id": "mx0132g52x21ki7v6db2r2r3",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "akaqo2076q1vsztdef006jh5",
+            "heading": "Se travar na Oficina 2",
+            "paragraph": "<p>Abra o item que corresponde ao seu caso.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "87813835-61a4-4f7c-98db-ab45c8c132a1"
+      },
+      {
+        "id": "92eb8680-b66c-48aa-87b5-f6e8c262bf54",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "7b2e839e-566c-4750-8942-877ce9fca668",
+            "title": "Não aparece a opção para conectar o GitHub",
+            "description": "<p>A sessão do ChatGPT pode ter expirado. Saia da conta e entre novamente.</p><p></p><p>Esse passo simples costuma trazer de volta as opções que tinham sumido do menu.</p>"
+          },
+          {
+            "id": "84c0c8a8-80ca-47ad-b8c3-ab455b16ed06",
+            "title": "O repositório não aparece depois de autorizado",
+            "description": "<p>Verifique, nas configurações da sua conta ou organização no GitHub, se o acesso ao repositório foi realmente concedido ao Codex.</p><p></p><p>Se você autorizou só alguns repositórios, confira se o <strong>meu-teste-codex</strong> está entre os selecionados.</p>"
+          },
+          {
+            "id": "6ef63d60-a67f-484a-bbc0-9c9a831d6591",
+            "title": "Cuidado com as permissões",
+            "description": "<p>⚠️ Revise sempre quais permissões está concedendo ao autorizar o acesso ao GitHub. Para praticar, prefira repositórios de teste em vez de projetos importantes.</p><p></p><p>Assim, se algo sair diferente do esperado, nada que importa é afetado.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "dd333566-343e-48a5-9941-d87213e65944"
+      },
+      {
+        "id": "f4957fbe-bb2a-43f2-90f6-0d9f9029f749",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "772e48d1-7b6c-4fd0-9201-0c3825d2b8d6",
+            "paragraph": "<p><strong>Regra para todo o curso:</strong> pratique sempre no repositório de teste. Conecte projetos importantes só depois de dominar o ciclo de pedir, conferir e aceitar.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "5f052451-3562-4bde-b12d-a7039b34d127"
+      },
+      {
+        "id": "68f55d00-37dc-4513-9bdf-a4512bd311c5",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "1db0e69a-9137-4db5-b1d8-59a93d396171",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "302da38d-0d8c-46cb-9443-03965029cbda"
+      },
+      {
+        "id": "w1eex64miw4ef14jz1xplki7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jf6jd7x2cyjw4r71hxgknlqv",
+            "heading": "Oficina 3: as quatro partes de um bom pedido",
+            "paragraph": "<p>Pedir algo de forma vaga para um agente de IA é como pedir para alguém “resolver isso aí” sem dizer o quê, onde, nem como saber que terminou. Um bom pedido sempre tem quatro partes. Vire cada cartão.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "a5d39398-a1bc-446d-9756-25dcbbddeb2c"
+      },
+      {
+        "id": "xglkwlv3e3m4k3e137sg914m",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "kcc70ll1y0ojs60xy7v8xuch",
+            "back": {
+              "type": "description",
+              "description": "<p><strong>O quê.</strong> A tarefa que você quer que o Codex faça. Exemplo: adicionar uma seção chamada “Sobre o projeto”.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Objetivo</strong>"
+            }
+          },
+          {
+            "id": "kvl6rzdx4kjeoadgpv8vgo8k",
+            "back": {
+              "type": "description",
+              "description": "<p><strong>Onde.</strong> O arquivo, a pasta ou a parte do projeto em que a tarefa acontece. Exemplo: no arquivo README.md.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Contexto</strong>"
+            }
+          },
+          {
+            "id": "wzfrpmgq17c707k4m1g20rg8",
+            "back": {
+              "type": "description",
+              "description": "<p><strong>O que não mexer.</strong> O que o Codex deve deixar intacto. Exemplo: “Não altere mais nada além disso.”</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Restrições</strong>"
+            }
+          },
+          {
+            "id": "kf503mqylathjot9ornga7mw",
+            "back": {
+              "type": "description",
+              "description": "<p><strong>Como saber que terminou.</strong> O resultado que você espera ver. Exemplo: o README passa a ter a nova seção, sem perder o conteúdo que já existia.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Critério de sucesso</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "342fcc5a-c93c-48b8-965d-e16d69a7f094"
+      },
+      {
+        "id": "kgidn5gm7z86wifsisxpg0sr",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "h64l6agwnsapjjiyc47qua2f",
+            "paragraph": "<p>Com as quatro partes, o Codex sabe o que fazer, onde agir e o que não tocar. Sem elas, ele precisa adivinhar, e o resultado fica imprevisível: pode alterar arquivos que você não queria ou parar antes do que você esperava.</p><p>No exercício a seguir, você envia os dois tipos de pedido e compara o resultado.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "12eceae6-cee4-448f-b777-99177f491e52"
+      },
+      {
+        "id": "6def71ac-df7f-4398-8d9b-d198603807b0",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "8d162753-fb6e-41ef-ada1-bf2e188c8100",
+            "type": "intro",
+            "title": "Mão na massa: do pedido vago ao pedido bem-feito",
+            "isHidden": false,
+            "description": "<p>Você vai enviar dois pedidos ao Codex no repositório de teste: um propositalmente vago, só para observar, e outro bem estruturado. No fim, terá uma alteração real no seu README.</p>"
+          },
+          {
+            "id": "aa2dcc9d-d50d-49b1-86ad-408f8950189a",
+            "type": "summary",
+            "title": "Deu certo?",
+            "isHidden": false,
+            "description": "<p>O Codex mostra um comparativo (diff) com a nova seção “Sobre o projeto” adicionada ao README, sem apagar nada que já estava lá. Quer ir além? Na mesma tarefa ou em uma nova, peça também uma seção “Como usar”, seguindo a mesma estrutura de pedido.</p>"
+          },
+          {
+            "id": "1c7a87ee-ae59-48fe-b068-df0ba8971f51",
+            "type": "step",
+            "title": "Teste um pedido vago",
+            "isHidden": false,
+            "description": "<p>Abra o repositório de teste dentro do Codex e escolha a opção de gerar/executar uma tarefa (não apenas perguntar). Digite, de propósito:</p><p><em>“Melhora esse projeto.”</em></p><p>Repare como o pedido deixa muita coisa em aberto: o Codex pode até tentar, mas vai ter que adivinhar o que você realmente quer.</p>"
+          },
+          {
+            "id": "631c54fc-71fc-4566-af3e-72b3b978be21",
+            "type": "step",
+            "title": "Envie um pedido bem estruturado",
+            "isHidden": false,
+            "description": "<p>Abra uma nova tarefa e envie:</p><p><em>“No arquivo README.md, adicione uma seção chamada ‘Sobre o projeto’ com uma frase explicando que este é um repositório de testes para aprender a usar o Codex. Não altere mais nada além disso. Critério de sucesso: o README passa a ter essa nova seção, sem perder o conteúdo que já existia.”</em></p>"
+          },
+          {
+            "id": "bb1a7746-6f65-4e22-84fe-a98d8a803a33",
+            "type": "step",
+            "title": "Acompanhe o Codex trabalhando",
+            "isHidden": false,
+            "description": "<p>Acompanhe a execução em tempo real, observando a lista de arquivos sendo alterados e o registro (log) da tarefa. Tarefas simples costumam terminar em poucos minutos; aguarde a conclusão.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "6016d356-d6d9-478f-9da6-ff3f0887638a"
+      },
+      {
+        "id": "31959fa3-dd9e-46ce-9773-5bd89c266a41",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "ed8080d6-b6ff-45da-b39f-4728611d302a",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual das opções descreve melhor um pedido bem estruturado para o Codex?",
+            "answers": [
+              {
+                "id": "f8075499-2cae-41f6-ab31-612221d1a82d",
+                "title": "Escrever apenas “melhora o projeto”",
+                "correct": false,
+                "feedback": "Não. É o pedido vago da Oficina 3: não diz o quê, onde nem como saber que terminou, e o Codex fica obrigado a adivinhar."
+              },
+              {
+                "id": "62ff31e7-115b-428c-84bc-5258dcfbda03",
+                "title": "Dizer o que fazer, onde, o que não alterar e como saber que terminou",
+                "correct": true,
+                "feedback": "Correto. São as quatro partes de um bom pedido: objetivo, contexto, restrições e critério de sucesso."
+              },
+              {
+                "id": "e918dffe-3c23-40b5-92ab-51519fe74527",
+                "title": "Deixar o Codex decidir tudo sozinho",
+                "correct": false,
+                "feedback": "Não. Sem orientação, o resultado fica imprevisível, e o Codex pode alterar mais do que você queria."
+              },
+              {
+                "id": "898914d0-00bf-455c-8177-8da1db20dfc0",
+                "title": "Informar só o objetivo",
+                "correct": false,
+                "feedback": "Não. O objetivo é só uma das quatro partes. Sem contexto, restrições e critério de sucesso, o Codex não sabe onde agir, o que preservar nem quando parar."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "af4ae10a-ca6d-41fe-9b49-3eb0eb1b6844"
+      },
+      {
+        "id": "qrz6xc99tjxybl8mql7ib6h9",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f8lkelxe3vpfkvguf1f887e8",
+            "heading": "Se travar na Oficina 3",
+            "paragraph": "<p>Abra o item que corresponde ao seu caso.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "663660dd-1551-4430-96de-15120ecc8622"
+      },
+      {
+        "id": "700646e1-9f76-4053-860e-dd7bf66b8e37",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "aa45230a-6032-4dfe-9fa8-4655a095d868",
+            "title": "A tarefa parece travada",
+            "description": "<p>Tarefas mais complexas podem levar até 30 minutos. Aguarde e acompanhe o log: passar alguns minutos sem novidade é normal.</p><p></p><p>A tarefa do README, por ser simples, costuma terminar em poucos minutos.</p>"
+          },
+          {
+            "id": "7bc02227-164b-484b-ab93-b0de15359c2d",
+            "title": "O resultado alterou mais do que o esperado",
+            "description": "<p>O pedido provavelmente não deixou as restrições claras. Da próxima vez, diga explicitamente o que <strong>não</strong> deve ser alterado.</p><p></p><p>Uma frase como “Não altere mais nada além disso” já evita a maior parte das alterações indesejadas.</p>"
+          },
+          {
+            "id": "0d6a1328-7d11-46c0-bcfc-b1ef78201294",
+            "title": "Dica: confira as quatro partes antes de enviar",
+            "description": "<p>💡 Antes de enviar qualquer pedido, confira se ele tem objetivo (o quê), contexto (onde), restrições (o que não mexer) e critério de sucesso (como saber que terminou).</p><p></p><p>Se faltar uma das quatro, complete antes de enviar. Sai mais rápido do que corrigir depois.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "089c5e7c-108e-4cf9-8fa1-17e965e165b5"
+      },
+      {
+        "id": "c93f6287-b95f-41d2-9f69-df4ba9af34c6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "eb960700-c10c-4d47-9c08-0af44fdaa8d6",
+            "paragraph": "<p>📌 <strong>Não esqueça:</strong> pedido vago não é necessariamente “errado”, mas é imprevisível. Quanto mais claro o pedido, menos rodadas de correção você vai precisar depois.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "e651f684-2976-42d4-98a4-023d8fdfcb07"
+      },
+      {
+        "id": "6c1f5891-8f99-4c8c-b36f-fe194b51b2ca",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "d2afd085-3b48-4853-9974-65132af25ed2",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "0f255cf3-dd95-4a4d-a09b-79ab8cc55e3c"
+      },
+      {
+        "id": "pvhkg7b5k7v9p9kmxg96if33",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "a01gr6lu8s6un2qi17vqwmdo",
+            "paragraph": "<p>Seu repositório de teste está conectado e o Codex já entregou a primeira alteração. Mas “terminou” não é sinônimo de “está certo”. Na próxima lição, você confere esse trabalho antes de aceitar (Oficina 4) e depois faz o Projeto Final, do pedido à entrega. Mantenha à mão a tarefa do README: ela é o ponto de partida da Oficina 4.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.142.0"
+          }
+        },
+        "globalBlockId": "7481ce4f-6402-476d-a0b4-c136cf28b5b4"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Conectando o Codex ao GitHub e Pedindo Sua Primeira Tarefa",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "fN9ngsTJ7w33fLOZaVYLFwlFj8Hl9FP5",
+    "createdAt": "2026-10-07T18:01:23.922Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-10-07T18:02:09.827Z"
+  }
+}
