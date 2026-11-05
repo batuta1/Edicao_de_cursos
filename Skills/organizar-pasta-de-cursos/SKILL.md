@@ -19,6 +19,7 @@ Cursos/
         │   └── vN/                v1 = a mais antiga
         │       ├── <pacote>.zip
         │       ├── <pacote>/      pasta extraída do mesmo zip (se houver)
+        │       ├── autor.json     quem fez esta versão: {"autor": "Nome"} (ou {"autor": null} se ainda não se sabe)
         │       └── copias/        pacotes de conteúdo idêntico (outros zips, pastas em outros lugares)
         └── base/                  material de apoio, uma pasta por tipo (abaixo)
 ```
@@ -73,6 +74,14 @@ Regras de ordem:
 3. Rascunhos antigos entram como versões antigas pela data, não como `v0`.
 
 Dentro de `vN/`: o zip é o pacote principal; a pasta extraída fica ao lado, com o mesmo nome do zip sem `.zip`. Cópias idênticas com o mesmo nome ganham o sufixo `_copia1`, `_copia2`.
+
+**Autor da versão (`autor.json`).** Cada pasta `vN/` tem um `autor.json` com o autor **daquela versão** (um nome por versão; a v3 pode ser de outra pessoa que a v1):
+
+```json
+{ "autor": "Ana Souza" }
+```
+
+Ao criar uma versão nova, crie também o `autor.json` (com `{ "autor": null }` se não souber o nome; quem souber troca `null` pelo nome). Um arquivo que já existe **não** se sobrescreve. O extrator de SCORM (`scorm_data_extractor`) lê esse arquivo e mostra o autor no resumo dos cursos; o `autor.json` não é um pacote SCORM e não atrapalha a leitura dos zips e das pastas.
 
 Depois de guardar qualquer pacote, **atualize a tabela do `scorm/README.md`** (versão, data, título, pacote principal, quantas cópias).
 
