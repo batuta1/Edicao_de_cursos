@@ -1,0 +1,81 @@
+{
+ "licao": 2,
+ "posicao": 15,
+ "blocos": [
+  {
+   "modelo": "text-text-heading-paragraph.json",
+   "itens": [
+    {
+     "heading": "🎯 Projeto Final — Auditoria de uma resposta de IA",
+     "paragraph": "<p>Agora o texto é seu (22 min). Você vai gerar uma resposta de IA sobre um tema da sua área e entregar uma ficha que mostre, afirmação por afirmação, o que se sustenta. Escolha o dossiê:</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "interactive-interactive-tabs.json",
+   "itens": [
+    {
+     "title": "Dossiê científico",
+     "description": "<p>Pergunta: <em>\"Quais percentuais de referências fabricadas por ChatGPT foram medidos em estudos acadêmicos? Indique amostra, modelo, data e DOI.\"</em> — ou uma pergunta da sua pesquisa.</p><p></p><p>Na ficha, todo número de estudo vai com amostra, modelo e data.</p>"
+    },
+    {
+     "title": "Dossiê jurídico",
+     "description": "<p>Uma pergunta sobre precedente do STJ ou do STF da sua área, pedindo número do processo, órgão, relator, data e link oficial — sem dados de nenhum caso real seu.</p><p></p><p>Na ficha, toda decisão vai com o link oficial do tribunal.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "text-text-heading-paragraph.json",
+   "itens": [
+    {
+     "heading": "👐 Mão na massa",
+     "paragraph": "<p>Siga os seis passos, na ordem:</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "list-list-numbered.json",
+   "itens": [
+    {
+     "paragraph": "<p>Confira o semáforo: a pergunta não leva dado sigiloso.</p>"
+    },
+    {
+     "paragraph": "<p>Faça a pergunta na Perplexity com Pro Search (sua segunda e última do curso).</p>"
+    },
+    {
+     "paragraph": "<p>Escolha duas afirmações atômicas da resposta (de preferência, uma com número e outra com referência).</p>"
+    },
+    {
+     "paragraph": "<p>Para cada uma: camada 1 (como na Oficina 1), camada 2 (Oficina 2), camada 3 (Oficina 3 ou 4).</p>"
+    },
+    {
+     "paragraph": "<p>Escreva uma frase de conclusão por afirmação: \"apoiada\", \"contestada em X\", \"não localizada em Y\", \"retratada\".</p>"
+    },
+    {
+     "paragraph": "<p>Releia a ficha como se fosse outra pessoa: dá para refazer cada decisão?</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "html-html-inline.json",
+   "settings": {
+    "width": "1",
+    "hasCustomCompletion": true
+   },
+   "itens": [
+    {
+     "srcdoc": "@arquivo:../html/pf-checklist.html"
+    }
+   ]
+  },
+  {
+   "modelo": "divider-continue-continue.json",
+   "itens": [
+    {
+     "title": "Continue",
+     "type": "completeBlock"
+    }
+   ]
+  }
+ ]
+}

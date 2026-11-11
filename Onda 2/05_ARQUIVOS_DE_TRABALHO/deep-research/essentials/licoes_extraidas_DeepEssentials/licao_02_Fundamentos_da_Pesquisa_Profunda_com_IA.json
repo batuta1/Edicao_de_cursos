@@ -1,0 +1,609 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Fundamentos da Pesquisa Profunda com IA",
+  "lesson": {
+    "description": "",
+    "id": "0f3f8c73-af64-4a5e-a178-bfdb7023f23b",
+    "items": [
+      {
+        "id": "ribivdkml607m5rhg5dm7cac",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "sz54xz9the4y68eiumvjhetn",
+            "heading": "Fundamentos da Pesquisa Profunda com IA",
+            "paragraph": "<p>Pedir \"qual é a taxa Selic hoje?\" a um agente de pesquisa profunda é gastar uma cota no que uma busca comum responde em segundos. Pedir a uma busca comum um panorama de como a população idosa mudou em doze anos, com dados oficiais e diferenças regionais, dá uma resposta rasa. Esta lição mostra o que o agente faz de diferente e ensina a decidir quando ele vale a cota.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "9a2effd4-94b6-45d5-b46b-7eb36017df04"
+      },
+      {
+        "id": "bdd9gpzsfqmq1zrb8e9m9ub4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "cq2yec1o57nakqo1afu02muf",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "2e17686b-0ac8-4c28-b687-fb9ff5e0a8e1"
+      },
+      {
+        "id": "ksn3msgetl2fcyc6c32vaw4o",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "wj5nh4z13nnn359ut78yfxpt",
+            "number": "1",
+            "paragraph": "<p>Definir pesquisa profunda como tarefa de agente em várias etapas.</p>"
+          },
+          {
+            "id": "ferclvrkqad38o3qbrlq6ne3",
+            "number": "2",
+            "paragraph": "<p>Distinguir pesquisa profunda de busca rápida e de conversa comum com chatbot.</p>"
+          },
+          {
+            "id": "ulrusffotlbfe7pnrwpghiyg",
+            "number": "3",
+            "paragraph": "<p>Explicar os conceitos de plano, grounding, citação inline e fonte primária.</p>"
+          },
+          {
+            "id": "iuopqcdnlliqrtqs7on14e9n",
+            "number": "4",
+            "paragraph": "<p>Decidir quando um pedido justifica pesquisa profunda.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "9083bf8d-5446-4b03-bc46-567dd51a3a3e"
+      },
+      {
+        "id": "y2t75u11bzmw13qbxkxf0sv6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "twizdcow4m0cz01sefswgtf0",
+            "paragraph": "<p>Pesquisa profunda (deep research) é uma modalidade de pesquisa conduzida por um <strong>agente</strong> — sistema que planeja e executa etapas com ferramentas, em vez de produzir uma única resposta imediata. O agente recebe uma tarefa ampla, propõe ou executa um <strong>plano</strong> de várias etapas (uma lista de subperguntas e ações), faz buscas sucessivas, lê muitas fontes, muda de rota quando encontra nova evidência e entrega um relatório documentado. Equivale a um assistente de pesquisa que recebe um brief e volta com relatório e fichas — mas que precisa de supervisão.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "dc0dd815-4aa3-4d5d-bad5-88552928f385"
+      },
+      {
+        "id": "z5olrjpabgwmtufsw8p5gttr",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "vjcsl5sp26j1hndg6qux8v6c",
+            "heading": "Diferenças práticas entre métodos",
+            "paragraph": "<p>A diferença entre as três formas de uso é prática: muda o tempo, a cota e, principalmente, se existe uma trilha de fontes que você possa conferir. Abra cada item:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "fb92079b-c768-47cd-848a-70b05a0ea7ec"
+      },
+      {
+        "id": "5820258f-e30a-4080-9e1a-dc84fee03de3",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "7155a174-14f8-4a27-8ecd-321a0f3ae479",
+            "title": "Pesquisa Profunda",
+            "description": "<p>A pesquisa profunda envolve sínteses de várias etapas, com buscas sucessivas e análise de múltiplas fontes. O agente pode mudar de rota ao encontrar novas evidências e entrega um relatório documentado, geralmente consumindo mais tempo e cota. No lançamento, a OpenAI informava de 5 a 30 minutos por pesquisa, mas atualmente não há promessa de tempo.</p>"
+          },
+          {
+            "id": "11e5cd7f-c6ec-4f0b-8399-b73e134fbe0d",
+            "title": "Busca Rápida",
+            "description": "<p>A busca rápida devolve uma resposta curta e imediata, adequada a fatos pontuais. É ideal para perguntas objetivas, onde basta consultar uma fonte oficial ou confiável para obter a resposta desejada.</p>"
+          },
+          {
+            "id": "69f5693d-17a7-4d7f-8f1e-07aeb44e5af4",
+            "title": "Conversa com Chatbot",
+            "description": "<p>A conversa com chatbot sem pesquisa profunda responde principalmente a partir do próprio modelo de linguagem, sem necessariamente produzir uma trilha verificável. Não há garantia de que a resposta esteja ancorada em fontes recuperadas ou que seja possível auditar o caminho da informação.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "88dcef3a-32e0-4441-afb4-4ac71abf7194"
+      },
+      {
+        "id": "j54wfeavxtaeslu6wvddbgyl",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "nc8vsrai4ncdzx4dd86e4ih1",
+            "heading": "Conceitos-chave da Pesquisa Profunda",
+            "paragraph": "<p>Quatro conceitos sustentam a auditoria que você fará no Módulo 4. Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "12ef1209-90c8-4788-b262-f3940ffc516a"
+      },
+      {
+        "id": "bg7bt5jmu59b5phz5fi6tgvx",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "agphmr1pz9u1e8cg6xpdhr5b",
+            "back": {
+              "type": "description",
+              "description": "<p>A lista de subperguntas e ações que o agente propõe ou executa antes de buscar. Em algumas ferramentas, você pode revisá-lo antes do início.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Plano</strong>"
+            }
+          },
+          {
+            "id": "xepx5h8iaf01gsoji9q6idws",
+            "back": {
+              "type": "description",
+              "description": "<p>Ancoragem: a vinculação da resposta a fontes recuperadas. Mostra de onde veio a informação, mas não significa que a inferência esteja correta.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Grounding</strong>"
+            }
+          },
+          {
+            "id": "aerolce0r84e7s7i0zdhyogf",
+            "back": {
+              "type": "description",
+              "description": "<p>Citação inline é o marcador junto à afirmação que abre a fonte; sua presença não prova que a fonte sustente a frase.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Citação Inline</strong>"
+            }
+          },
+          {
+            "id": "g3h91t5dl6z09iivrrscjhhj",
+            "back": {
+              "type": "description",
+              "description": "<p>O documento ou dado original — lei, decisão, base de dados, relatório do órgão responsável. A fonte secundária apenas interpreta a primária.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Fonte Primária</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "c6148ef6-e581-4a1c-b791-3877011541a3"
+      },
+      {
+        "id": "fdpca20b0rwd9ppbo5hgmkl6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "t08wyza2yux3zrk9510j8raf",
+            "heading": "Evolução das ferramentas de pesquisa profunda",
+            "paragraph": "<p>O recurso é recente e já mudou de nome, de modelo e de cota várias vezes. Por isso, entenda-o pela função, não pelo modelo do momento. Percorra a linha do tempo:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "5a3f0298-a073-4312-9087-16648984fd71"
+      },
+      {
+        "id": "99c91820-8037-4a95-b068-813e95bb1d2b",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "25260e07-5816-4207-b35b-56229b16b210",
+            "date": "11/12/2024",
+            "title": "Lançamento no Gemini",
+            "description": "<p>O Gemini foi o primeiro a lançar o recurso. Hoje oferece o modo Thinking a todos e o modo Pro a assinantes.</p>"
+          },
+          {
+            "id": "3076fd17-cbb2-4e6b-93ae-c3d5161a5439",
+            "date": "02/02/2025",
+            "title": "Lançamento no ChatGPT",
+            "description": "<p>O ChatGPT lançou o deep research com uma versão do modelo o3; hoje a ajuda declara apenas \"latest models\". No lançamento, a OpenAI informava de 5 a 30 minutos por pesquisa — a ajuda atual evita prometer tempo.</p>"
+          },
+          {
+            "id": "139f0f12-fde4-4582-aca6-20d404650b8b",
+            "date": "14/02/2025",
+            "title": "Lançamento na Perplexity",
+            "description": "<p>Doze dias depois do ChatGPT, a Perplexity lançou o seu. Desde então, alternou os nomes \"Research\" e \"Deep Research\".</p>"
+          },
+          {
+            "id": "2f45365c-1314-4a12-b0f6-9023155d69f0",
+            "date": "2025 em diante",
+            "title": "Mudanças nos nomes, modelos e cotas",
+            "description": "<p>Desde os lançamentos, houve mudanças frequentes nos nomes dos recursos, nos modelos utilizados e nas cotas disponíveis. Por isso, é essencial compreender o recurso pela função, não pelo modelo do momento.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "timeline",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "d4a6c47e-eea5-4106-b098-6bea80caa19d"
+      },
+      {
+        "id": "0139cf0a-236f-4d09-aef8-91daff66fe04",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "1eb6fc60-997a-49b4-9de2-b82251a18e8d",
+            "paragraph": "<p>🏁 Ponto de controle: em um relatório concluído, o modo <strong>relatório &gt; tela cheia</strong> exibe o sumário, as citações inline junto às afirmações e, no ChatGPT, a seção <strong>Sources used</strong> ao final.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "455587c6-5919-4225-b634-bbc967375ac0"
+      },
+      {
+        "id": "zvqqe3dgchzzxaw763did04o",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "y6unleieh37jmmf3jzjshxxl",
+            "heading": "Classificação de pedidos: busca rápida ou pesquisa profunda",
+            "paragraph": "<p>Hora de aplicar o critério. Leia cada pedido e arraste o cartão para <strong>Busca rápida (B)</strong> ou <strong>Pesquisa profunda (P)</strong>. Pergunte-se: é um fato pontual ou uma síntese de várias fontes?</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "653aa5c8-eb6f-4814-97e8-cd02c4038649"
+      },
+      {
+        "id": "513a1c09-11bc-4b2a-94c0-ad4dcd2f65f6",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "5ce3b740-995d-4fe3-a51d-3275da1a7a00",
+            "title": "Qual é a taxa Selic vigente hoje?",
+            "pileId": "5b0c0c09-2f49-4b19-98ec-e66d82eaf5ae"
+          },
+          {
+            "id": "7d4c29f6-0feb-4017-a4c3-8db57906660a",
+            "title": "Como a população 60+ e 65+ mudou de 2010 a 2022, com dados oficiais e regiões",
+            "pileId": "ed4aafb2-8512-430f-8cdc-a1525c8d871e"
+          },
+          {
+            "id": "cd830340-e9e0-41b9-b680-1ac6a9a0c0f1",
+            "title": "Qual o prazo da Resolução CD/ANPD 15/2024 para comunicar incidente?",
+            "pileId": "5b0c0c09-2f49-4b19-98ec-e66d82eaf5ae"
+          },
+          {
+            "id": "8f8b7d09-8b5f-4be0-871f-218c0f713fe8",
+            "title": "Comparar LGPD, Resolução 15/2024 e orientações da ANPD sobre incidentes",
+            "pileId": "ed4aafb2-8512-430f-8cdc-a1525c8d871e"
+          }
+        ],
+        "piles": [
+          {
+            "id": "5b0c0c09-2f49-4b19-98ec-e66d82eaf5ae",
+            "title": "Busca rápida (B)"
+          },
+          {
+            "id": "ed4aafb2-8512-430f-8cdc-a1525c8d871e",
+            "title": "Pesquisa profunda (P)"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "sorting",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "19b0933e-f76f-4441-9dbb-57b75eb0663f"
+      },
+      {
+        "id": "5cb5a343-eb3d-44e1-ba2f-f2e1162e29f9",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "14e693f8-f3c4-4c73-88b3-62a7770b058b",
+            "paragraph": "<p><strong>Gabarito:</strong></p><ol><li>B — fato pontual, verificado na fonte oficial.</li><li>P — síntese de várias fontes e cortes.</li><li>B — dispositivo único, conferido no texto da norma.</li><li>P — várias fontes e hierarquia normativa.</li></ol><p>Mesmo os itens B devem ser conferidos na fonte primária.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "de044772-5558-46b1-a127-5cf5851c6223"
+      },
+      {
+        "id": "mjtfhucn6ywxdp3o6ppmoqzu",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dq4zs0d3aejg2h10sil12pnr",
+            "heading": "Dicas para decidir pelo uso de pesquisa profunda",
+            "paragraph": "<p>Antes de gastar cota, faça três perguntas ao pedido. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "6a0c70dc-01ea-42c8-8833-f218efa8ca80"
+      },
+      {
+        "id": "bs33fbh91xhqukpaextlwiyx",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "gijwa7yh2ibr64pefadw2awj",
+            "back": {
+              "type": "description",
+              "description": "<p>Um dado só (uma taxa, um prazo) pede busca rápida. Síntese de várias fontes, cortes e períodos pede pesquisa profunda.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Fato pontual ou síntese?</p>"
+            }
+          },
+          {
+            "id": "bxeshgce4qxm79kfop6e8yjp",
+            "back": {
+              "type": "description",
+              "description": "<p>Quem produziu o dado: IBGE, Banco Central, o texto da norma no Planalto. É ali que a resposta será conferida, qualquer que seja a ferramenta.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Qual é a fonte primária?</p>"
+            }
+          },
+          {
+            "id": "qslqmgmk6a6a1apmy70sr58m",
+            "back": {
+              "type": "description",
+              "description": "<p>Período, recorte, formato. O que você não disser, o agente decide sozinho.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Informação faltante no pedido</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "7f31f709-fd1d-41c3-8830-9c4baf79f89b"
+      },
+      {
+        "id": "769333a7-acb6-4591-96bb-223db689ef3f",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "88155635-6b66-46ac-b7f2-8f7bed0f4906",
+            "paragraph": "<p><strong>Prompt-base</strong> para testar se um pedido justifica pesquisa profunda. Use em busca comum, sem consumir cota:</p><p>Vou fazer o seguinte pedido a um agente de pesquisa profunda: [pedido]. Antes, responda em três linhas:</p><ol><li>isso é um fato pontual ou uma síntese de várias fontes?</li><li>qual seria a fonte primária?</li><li>que informação falta no meu pedido (período, recorte, formato)?</li></ol><p>Não faça a pesquisa.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "327b8cc7-6376-4848-a26f-985076227748"
+      },
+      {
+        "id": "44804aca-1840-4616-8fb6-946d26e173a4",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "0b8aa8ec-4a0d-4c2c-ad7a-5f13b0acb6be",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "2cb53104-9193-442a-b9cb-3304c1a6274e"
+      },
+      {
+        "id": "wvso6dfgiieql4r9gxt6i2n7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "q97teoczyary15s1jtf4f3r0",
+            "paragraph": "<p>No Módulo 2, antes da primeira execução, você decide o que pode e o que não pode ir para cada ferramenta — e ajusta as configurações de dados.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "25f564f6-9e61-48d7-85f7-740b13686fb6"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Fundamentos da Pesquisa Profunda com IA",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "KvZFlVArk5NLyTJLgjEe-e8IozLnLCLq",
+    "createdAt": "2026-11-07T20:25:11.957Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-07T20:25:58.007Z"
+  }
+}

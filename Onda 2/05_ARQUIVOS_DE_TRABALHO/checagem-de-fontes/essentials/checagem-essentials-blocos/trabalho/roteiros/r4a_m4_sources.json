@@ -1,0 +1,36 @@
+{
+ "licao": 4,
+ "posicao": 12,
+ "blocos": [
+  {
+   "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+   "itens": [
+    {
+     "title": "Você pede à Perplexity a fonte de uma afirmação. A resposta cita um artigo, e o painel Sources mostra uma passagem que parece apoiá-la. Qual é o próximo passo?",
+     "answers": [
+      {
+       "title": "Abrir o original pelo DOI, localizar o trecho com Ctrl+F e ler o parágrafo inteiro, o método e as limitações.",
+       "correct": true,
+       "feedback": "Correto. A Perplexity localiza; você confirma — no original e com o contexto do trecho."
+      },
+      {
+       "title": "Registrar \"apoia\" na ficha, porque a passagem está visível ao lado da resposta.",
+       "correct": false,
+       "feedback": "Não. A passagem exibida acelera a localização, mas não substitui a leitura do original."
+      },
+      {
+       "title": "Rodar o Check Sources e aceitar o resultado como decisão final.",
+       "correct": false,
+       "feedback": "Não. O Check Sources confronta a resposta com a evidência, mas a decisão continua com você, depois de ler o original."
+      },
+      {
+       "title": "Ler o abstract do artigo para confirmar.",
+       "correct": false,
+       "feedback": "Não. O abstract é necessariamente genérico e não sustenta afirmação específica."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

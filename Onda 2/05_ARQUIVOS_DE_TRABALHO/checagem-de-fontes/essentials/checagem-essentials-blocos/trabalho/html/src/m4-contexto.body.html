@@ -1,0 +1,33 @@
+<!--titulo: A fonte diz isso?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">A fonte diz isso — nessas condições?</h1>
+  <p class="sub">Seis afirmações atômicas sobre os estudos do Módulo 1. Compare cada uma com o que o estudo mediu (o quadro cinza resume a fonte) e decida: a fonte <strong>apoia</strong>, a afirmação está <strong>fora de contexto</strong> (o dado é verdadeiro, mas perdeu modelo, data ou escopo) ou a fonte <strong>não apoia</strong>?</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Dados das fontes exatamente como estão no Módulo 1 do roteiro (Walters e Wilder 2023; Lehr et al. 2024; Tow Center 2025).
+  var WW = '<div class="trecho">Walters e Wilder (abril de 2023): 636 referências do ChatGPT. Fabricadas: 55% (GPT-3.5) e 18% (GPT-4). Entre as reais, com erro substantivo: 43% e 24%.</div>';
+  var TOW = '<div class="trecho">Tow Center (06/03/2025): oito motores de busca com IA, 1.600 tentativas de identificar a notícia original de um trecho. A Perplexity errou 37%.</div>';
+  var LEHR = '<div class="trecho">Lehr et al. (2024): 1.000 referências solicitadas; as incompletas eram alucinadas com frequência muito superior à das completas.</div>';
+  classificador({
+    casos: [
+      { t: '1. "No estudo de Walters e Wilder, 55% das referências do GPT-3.5 eram fabricadas."', extra: WW, r: 'apoia', p: 'O número, o modelo e o estudo batem com a fonte.' },
+      { t: '2. "O ChatGPT inventa mais da metade das referências."', extra: WW, r: 'contexto', p: 'Os 55% valem para o GPT-3.5 em abril de 2023; no GPT-4 foram 18%. A frase apagou modelo e data.' },
+      { t: '3. "Walters e Wilder mostraram que o GPT-4 não fabrica referências."', extra: WW, r: 'nao', p: 'A fonte diz o contrário: 18% das referências do GPT-4 eram fabricadas.' },
+      { t: '4. "Entre as referências reais do GPT-4, 24% tinham ao menos um erro substantivo."', extra: WW, r: 'apoia', p: 'É exatamente o que o estudo relata para o GPT-4.' },
+      { t: '5. "A Perplexity erra 37% das respostas factuais."', extra: TOW, r: 'contexto', p: 'O teste mediu atribuição de notícias, não toda resposta factual. O escopo foi ampliado.' },
+      { t: '6. "Referências incompletas são alucinadas com mais frequência do que as completas."', extra: LEHR, r: 'apoia', p: 'É a conclusão de Lehr et al. (2024), sem alterar o escopo.' }
+    ],
+    opcoes: { apoia: 'Apoia', contexto: 'Fora de contexto', nao: 'Não apoia' },
+    dicaErro: 'Compare com o quadro: o número existe na fonte? Vale para o mesmo modelo, a mesma data e a mesma tarefa?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'avaliadas corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Seis afirmações avaliadas. Fora de contexto é o erro mais traiçoeiro: o número está certo, mas sem modelo, data e escopo ele vira outra afirmação.');
+    }
+  });
+</script>

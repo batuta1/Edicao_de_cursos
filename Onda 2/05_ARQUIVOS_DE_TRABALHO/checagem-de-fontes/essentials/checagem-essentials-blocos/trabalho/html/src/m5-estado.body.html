@@ -1,0 +1,30 @@
+<!--titulo: Qual é o estado da evidência?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Qual é o estado da evidência?</h1>
+  <p class="sub">Para cada situação, escolha o registro da camada 3 da ficha. Atenção às cautelas: rótulo automático e contagem não decidem sozinhos, e o que você não verificou fica como "não verificado".</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Estados da ficha de auditoria do Módulo 0; situações baseadas nos pares 3 e 5 e nas cautelas do Módulo 5.
+  classificador({
+    casos: [
+      { t: '1. A página do artigo na SciELO exibe o banner "ARTIGO RETRATADO", com aviso vinculado.', r: 'ret', p: 'É o par 5: registre "retratada", com o DOI do aviso.' },
+      { t: '2. O Crossmark do artigo mostra uma errata publicada que alterou uma tabela.', r: 'cor', p: 'Correção (errata) altera parte do conteúdo; a obra continua no registro. Confira se a parte citada foi afetada.' },
+      { t: '3. Uma replicação com 200 participantes encontrou efeito na sensação de poder, mas não em hormônios nem em risco.', r: 'cont', p: 'É o par 3: "contestada em desfechos específicos" — e não "o tema todo é falso".' },
+      { t: '4. Crossmark, PubMed e o site do periódico não trazem aviso, e os trechos Contrasting lidos não questionam o achado citado.', r: 'vig', p: 'Você procurou em mais de uma fonte e leu os trechos: dá para registrar "vigente", com onde verificou.' },
+      { t: '5. A Scite não mostra citações para o DOI, e você ainda não consultou nenhuma outra fonte.', r: 'nv', p: 'Ausência na Scite pode ser só falta de cobertura. Registre "não verificado na Scite" e siga para Crossmark e Google Scholar.' },
+      { t: '6. O relatório mostra 7 Supporting, 1.077 Mentioning e 0 Contrasting; você não leu os trechos nem consultou avisos editoriais.', r: 'nv', p: 'Contagem não é placar: sem ler os trechos e sem consultar o estado editorial, nada foi verificado.' }
+    ],
+    opcoes: { vig: 'Vigente', cor: 'Corrigida', cont: 'Contestada', ret: 'Retratada', nv: 'Não verificado' },
+    dicaErro: 'Releia: há aviso editorial (retratação, errata)? Há estudo posterior em tensão? Você de fato verificou em alguma fonte?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'registradas corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Seis situações registradas. "Não verificado" é um registro honesto — muito melhor do que "vigente" sem ter procurado.');
+    }
+  });
+</script>

@@ -1,0 +1,30 @@
+<!--titulo: Semáforo de envio-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Semáforo de envio: pode ir para a ferramenta?</h1>
+  <p class="sub">Seis materiais novos, diferentes dos cenários do exercício. Para cada um, pergunte-se: é público? Contém dado pessoal ou sensível? Está sob sigilo? Dá para enviar só a referência? Você recebe a correção na hora e pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Critérios e fundamentos do semáforo do Módulo 2 do roteiro (Liberado / Condicionado / Vedado).
+  classificador({
+    casos: [
+      { t: '1. Uma frase de reportagem já publicada, com o link da matéria, para localizar o estudo citado.', r: 'lib', p: 'Afirmação e referência de material publicado são informação pública.' },
+      { t: '2. O PDF de um artigo de acesso aberto, para conferir uma citação.', r: 'lib', p: 'Artigo de acesso aberto é documento público.' },
+      { t: '3. Apenas o número "HC 1.023.732", sem nenhum dado do caso, para achar a decisão.', r: 'lib', p: 'Número de processo sem dados do caso é a saída segura que o semáforo recomenda — e a conferência final é na base oficial.' },
+      { t: '4. O manuscrito de um artigo seu, ainda em avaliação num periódico.', r: 'cond', p: 'Manuscrito inédito próprio: avalie sigilo editorial e contrato antes; de preferência, confira referência por referência, sem enviar o documento.' },
+      { t: '5. O e-mail de um cliente relatando os fatos do caso, para a IA sugerir precedentes.', r: 'ved', p: 'Documento de cliente: sigilo profissional e LGPD. Extraia só a pergunta jurídica, sem dados do caso.' },
+      { t: '6. Um laudo médico com o nome do paciente, para conferir uma referência citada no texto.', r: 'ved', p: 'Dado pessoal sensível (saúde): vedado pela LGPD. Envie só a referência, nunca o laudo.' }
+    ],
+    opcoes: { lib: 'Liberado', cond: 'Condicionado', ved: 'Vedado' },
+    dicaErro: 'Releia as quatro perguntas do checklist de pré-envio: público? dado sensível? sigilo? dá para enviar só a referência?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'classificados corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Os seis materiais classificados. Na dúvida, a saída é a mesma: envie só a referência ou o número — nunca o documento — e confira na base oficial.');
+    }
+  });
+</script>

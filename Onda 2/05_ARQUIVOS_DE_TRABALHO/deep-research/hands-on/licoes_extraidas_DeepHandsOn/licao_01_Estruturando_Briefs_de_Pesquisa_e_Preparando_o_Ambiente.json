@@ -1,0 +1,656 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Estruturando Briefs de Pesquisa e Preparando o Ambiente",
+  "lesson": {
+    "description": "",
+    "id": "2217729f-8048-421b-9171-2c90df86f00f",
+    "items": [
+      {
+        "id": "plfm1zq49ige0nu284p64lho",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dlpjg55ty61ffm1atyjw9c3v",
+            "heading": "Antes de clicar: um brief que o agente não entenda errado",
+            "paragraph": "<p>Seu chefe (ou orientador, ou editor) pediu \"uma pesquisa sobre envelhecimento no Brasil\". Se você colar isso no agente, ele decide sozinho o período, o corte de idade e as fontes — e você gasta uma pesquisa para receber um relatório genérico. Nesta lição você prepara o ambiente e aprende a escrever o pedido certo, sem gastar nenhuma pesquisa.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "b4c4f7e8-c321-4933-8f14-5188aa5de426"
+      },
+      {
+        "id": "meln5ohn3rlukzc07lau3mb7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "mremwx1iz02se20fdl5l8ya6",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "dff990be-7af5-4fd6-b89e-c36aa080baa1"
+      },
+      {
+        "id": "c2swhpdczkiip3te9bmlu5wr",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "h84e2g4l9v40pv0bzkqm6v3f",
+            "number": "1",
+            "paragraph": "<p>Decidir se um pedido é caso de busca rápida ou de pesquisa profunda.</p>"
+          },
+          {
+            "id": "y05i2yjst5xyr35twvrccxmz",
+            "number": "2",
+            "paragraph": "<p>Reescrever um pedido vago como brief de seis linhas.</p>"
+          },
+          {
+            "id": "rhffkk0l5yil74opq650mmh6",
+            "number": "3",
+            "paragraph": "<p>Nomear a fonte obrigatória: quem produziu o dado.</p>"
+          },
+          {
+            "id": "b7wg92uog9o75e6s64n4bsad",
+            "number": "4",
+            "paragraph": "<p>Desligar o uso dos seus dados para treino em cada ferramenta.</p>"
+          },
+          {
+            "id": "l0qpw3ryhrwqztmwx2yvxkjw",
+            "number": "5",
+            "paragraph": "<p>Separar o que pode, o que só pode com aprovação e o que nunca vai para a IA.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "2a4e6dc4-fab5-443e-8d19-988a38d35bf2"
+      },
+      {
+        "id": "rn5mgoziczjlml1qfirfvowh",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xpni62rqt8n3ndpfns7vh82v",
+            "heading": "Primeiro passo: é caso de pesquisa profunda?",
+            "paragraph": "<p>Nem todo pedido merece uma pesquisa profunda — e, no plano gratuito, cada uma conta. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "cca0594c-8606-4d0c-905e-923e97fa0d56"
+      },
+      {
+        "id": "mupagp815jrdadu4md6avbt5",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "ytrs88mwrbunj3tmk5d2ny6z",
+            "back": {
+              "type": "description",
+              "description": "<p>Fato pontual, como \"Qual é a taxa Selic hoje?\" ou \"Qual o prazo para comunicar incidente na Resolução CD/ANPD 15/2024?\". Até esses se conferem na fonte oficial.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Busca rápida (B)</strong>"
+            }
+          },
+          {
+            "id": "jed56ynish3wgdqa1drkqebz",
+            "back": {
+              "type": "description",
+              "description": "<p>Síntese de várias fontes, como \"Panorama de como a população de 60+ e 65+ mudou de 2010 a 2022, com dados oficiais\" ou \"Compare lei, regulamento e orientações da ANPD sobre comunicação de incidente\".</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Pesquisa profunda (P)</strong>"
+            }
+          },
+          {
+            "id": "tlfggponv8ca6nutbq545s5v",
+            "back": {
+              "type": "description",
+              "description": "<p>Pergunte: é um dado só, ou uma síntese de várias fontes, cortes e períodos? Um dado só, busca rápida. Síntese, pesquisa profunda.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Dica para Classificar Pedidos</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "5f6d82c0-12f1-4b29-a969-db7233a00f05"
+      },
+      {
+        "id": "6d0c5ffc-9654-47d6-af7d-69eb57d14ec0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "46c8aa41-1056-43b6-bd34-cfd3c8e2f9ea",
+            "paragraph": "<p>💡 Quem acaba com a cota não é o curso: é clicar sem brief. Por isso, a Oficina 1 não gasta nenhuma pesquisa.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "ef90e422-822b-42ef-b439-6b641b20ab69"
+      },
+      {
+        "id": "990649d3-07e0-42a6-b429-9caf412f133f",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "99f05b5d-6c83-4c57-b1b7-7491a1010ad1",
+            "type": "intro",
+            "title": "Como transformar um pedido vago em um brief de seis linhas para IA",
+            "isHidden": false,
+            "description": "<p>Parte guiada, sem gastar cota. Você vai pegar o pedido vago \"pesquise envelhecimento no Brasil\" e transformá-lo num brief que qualquer agente executa do jeito certo.</p>"
+          },
+          {
+            "id": "6e482530-3ca4-4ac0-9c60-56234d7181f0",
+            "type": "summary",
+            "title": "Deu certo?",
+            "isHidden": false,
+            "description": "<p>Classificação: B, P, B, P (e até os B se conferem na fonte oficial). Seu brief tem as seis linhas, nomeia a fonte obrigatória, pede número com fonte e data e não tem nenhum dado pessoal.</p><p>🏁 Na aba Registro, a coluna Brief tem as seis linhas e a linha extra.</p>"
+          },
+          {
+            "id": "623ce592-04a0-4060-b26f-af6dca5452d1",
+            "type": "step",
+            "title": "Identifique o tipo de pesquisa",
+            "isHidden": false,
+            "description": "<p>Marque B (busca rápida) ou P (pesquisa profunda): \"Qual é a taxa Selic hoje?\"; \"Panorama de como a população de 60+ e 65+ mudou de 2010 a 2022, com dados oficiais\"; \"Qual o prazo para comunicar incidente na Resolução CD/ANPD 15/2024?\"; \"Compare lei, regulamento e orientações da ANPD sobre comunicação de incidente\".</p>"
+          },
+          {
+            "id": "52f6d2f3-07a2-41d1-8f71-75b7d6129077",
+            "type": "step",
+            "title": "Reescreva o pedido com as seis linhas",
+            "isHidden": false,
+            "description": "<p>Reescreva \"pesquise envelhecimento no Brasil\" com as seis linhas:</p><p>Pergunta: como mudou a população brasileira de 60+ e de 65+ entre 2010 e 2022?<br>Decisão apoiada: [pauta | relatório técnico | aula]<br>Recorte: Brasil, 2010–2022, com diferenças regionais quando houver.<br>Fontes obrigatórias: IBGE (Censo 2022 e IBGE Educa). Outras só para contexto.<br>Formato: resumo; tabela afirmação–número–fonte–data; evidências contrárias; lacunas.<br>Conclusão: todo número com fonte primária e data; não misturar 60+ com 65+.</p>"
+          },
+          {
+            "id": "920909cf-09a7-4b2f-8dd9-51a54d876f32",
+            "type": "step",
+            "title": "Adicione a linha padrão",
+            "isHidden": false,
+            "description": "<p>Acrescente a linha que vale para qualquer brief: \"Atue como assistente de pesquisa, não como autoridade final. Separe fatos, inferências e lacunas. Não preencha lacunas com suposições. Antes de começar, faça até cinco perguntas e proponha um plano editável.\"</p>"
+          },
+          {
+            "id": "2634b059-1565-4c0f-8964-51c599be3786",
+            "type": "step",
+            "title": "Revise dados sensíveis",
+            "isHidden": false,
+            "description": "<p>Confira: tem dado pessoal ou segredo? Se tiver, tire.</p>"
+          },
+          {
+            "id": "448c9f23-418f-4e79-be33-bb53da40c36c",
+            "type": "step",
+            "title": "Escreva o brief do dossiê escolhido",
+            "isHidden": false,
+            "description": "<p>Sua vez: escolha agora o dossiê do seu Projeto Final — A (Selic), B (Renda) ou C (Licitações) — e escreva o brief dele com as seis linhas. Guarde na aba Registro.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "938fd61b-b3eb-4ad8-a9e2-a48e4e936260"
+      },
+      {
+        "id": "c31ec056-6cf5-4393-8994-205007b9c311",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "7e112044-e6e9-45ed-96ae-51514bf0c5bd",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "c58aec03-3b16-405b-b374-ee2db39ed2e5"
+      },
+      {
+        "id": "b7b0349d-522b-4657-a037-0842cc5efff7",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "9dbd0bf6-09e2-4658-8fc7-042ac092b731",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual destes pedidos está pronto para ir ao agente de pesquisa profunda sobre a população idosa no Brasil?",
+            "answers": [
+              {
+                "id": "1b612972-5570-482b-b095-229cc503e32b",
+                "title": "Pedido genérico, sem fontes ou recorte.",
+                "correct": false,
+                "feedback": "Um pedido genérico não delimita o foco da pesquisa, nem exige fontes ou formato, o que dificulta a obtenção de resultados aprofundados."
+              },
+              {
+                "id": "8e409b9b-e8aa-4959-b378-b4863885c881",
+                "title": "Brief de seis linhas com pergunta específica, fontes obrigatórias e formato definido.",
+                "correct": true,
+                "feedback": "Correto. Pergunta específica, fonte obrigatória nomeada e formato definido: o agente não precisa adivinhar nada."
+              },
+              {
+                "id": "8f2d465f-4c91-4287-8b2e-7055c51f1276",
+                "title": "Pedido amplo sem delimitação temporal.",
+                "correct": false,
+                "feedback": "Sem delimitação temporal, o pedido fica vago e pode resultar em informações dispersas e superficiais."
+              },
+              {
+                "id": "c89a2d53-5e28-409e-bcaf-b8284d7916ae",
+                "title": "Pedido com apenas uma linha de instrução.",
+                "correct": false,
+                "feedback": "Pedidos muito curtos geralmente não fornecem informações suficientes para orientar uma pesquisa aprofundada."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "9973dace-540b-403e-a53a-e502dcbbcdeb"
+      },
+      {
+        "id": "srl3rmzk4on2lvu5zxwfhc3e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jmx93pgb6b446shaq5btusz7",
+            "heading": "Como resolver dúvidas comuns ao estruturar briefs",
+            "paragraph": "<p>Três travas comuns ao escrever o brief, e como sair delas:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "c16ff0d5-f5e8-44d3-9549-72b8786fd157"
+      },
+      {
+        "id": "5f959cd0-2b58-4bdc-b0f1-9e009bde1240",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f0e282d2-2d75-4b3d-a9f9-b0df6f85c982",
+            "title": "Não sei a 'decisão apoiada'",
+            "description": "<p>Pergunte: quem vai ler e o que vai fazer com isso?</p>"
+          },
+          {
+            "id": "3f22b426-5776-4715-b333-b82a88b5eeab",
+            "title": "O brief ficou enorme",
+            "description": "<p>Seis linhas bastam; o detalhe vai na linha de formato.</p>"
+          },
+          {
+            "id": "d016fcce-7fc6-4c35-9310-b2086f40196a",
+            "title": "Não sei qual fonte é a primária",
+            "description": "<p>É quem produziu o dado: IBGE, Banco Central, Ipea, Planalto.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "e2ee89c0-60b1-4269-a9fa-afbc79351490"
+      },
+      {
+        "id": "qlblnx0q07kmr5wa49n18nkv",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "i1ljj0kgn48tbqsx1gebg1qy",
+            "heading": "Monte a planilha de auditoria",
+            "paragraph": "<p>Enquanto o agente pesquisa (pode levar vários minutos), você trabalha na planilha. Crie agora as duas abas.</p><p><strong>Aba Auditoria</strong> — uma linha por afirmação:</p><ul><li>Nº</li><li>Afirmação</li><li>Fonte citada</li><li>Trecho da fonte</li><li>Suporte (integral / parcial / ausente / inacessível)</li><li>Primária ou secundária?</li><li>Data da fonte</li><li>Decisão (manter / corrigir / remover)</li></ul><p><strong>Aba Registro</strong> — uma linha por execução:</p><ul><li>Ferramenta</li><li>Modo</li><li>Data e hora</li><li>Brief</li><li>Plano e edições</li><li>Configuração de dados</li></ul>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "80ade9b7-a283-4dfb-8949-e352fb65a693"
+      },
+      {
+        "id": "cpnyolfh2sujptyd2ogj49g2",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "cfv8ad18ig5t419f8ir50of0",
+            "heading": "Desligue o treino antes de começar",
+            "paragraph": "<p>Por padrão, as ferramentas podem usar o que você envia para treinar modelos. Ajuste antes da primeira pesquisa:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "053e6616-b0c8-4fef-bd6f-4accc97b11ef"
+      },
+      {
+        "id": "fe32c4a8-b8b9-434e-8332-bf9a8761fe84",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "0fc397a3-1f1a-429f-aba2-f40f1b6550df",
+            "title": "ChatGPT",
+            "description": "<p><strong>Padrão:</strong> no ChatGPT pessoal, conversas podem treinar modelos.</p><p></p><p><strong>O que fazer:</strong> <strong>Profile &gt; Settings &gt; Data Controls &gt; Improve the model for everyone</strong> — desligue.</p>"
+          },
+          {
+            "id": "1d11e93b-5b71-4d71-acac-73e25af044f3",
+            "title": "Gemini",
+            "description": "<p><strong>Padrão:</strong> com Keep Activity ligado, prompts e uploads podem treinar, com revisão humana; a atividade fica guardada 18 meses.</p><p></p><p><strong>O que fazer:</strong> use Temporary chat ou desligue Keep Activity. Os chats ainda ficam guardados 72 horas.</p>"
+          },
+          {
+            "id": "f0d33872-57ce-4ad3-95d2-20e41ab85b99",
+            "title": "Perplexity",
+            "description": "<p><strong>Padrão:</strong> o opt-out de treino está documentado nos planos Pro, Education Pro e Max.</p><p></p><p><strong>O que fazer:</strong> no gratuito, confira em <strong>Perplexity &gt; Settings</strong> [conferir].</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "84de21dd-de7e-46a6-a055-1576fbc9490a"
+      },
+      {
+        "id": "9993e287-e03a-4e1a-bb4a-b155c960a660",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "d25df1f9-226c-41e1-8ea3-e95d9e5605f0",
+            "paragraph": "<p>🔑 <strong>Regra de ouro:</strong> o relatório da IA é um rascunho pesquisado. Só vira texto seu depois de auditado.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "c4eca613-1a90-4605-a52f-2b278c056123"
+      },
+      {
+        "id": "k53r3glvafphafrf9a014w11",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "kfk6x2cknhiuz62n7x5e5tw1",
+            "heading": "Semáforo: o que pode ir para a IA",
+            "paragraph": "<p>Arraste cada exemplo para a cor certa: verde (pode usar), amarelo (só a pasta mínima, com aprovação) ou vermelho (não envie).</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "9c5ca695-e114-4529-b7fc-d08b66a5ea9a"
+      },
+      {
+        "id": "ce7cc307-f8f5-46b5-875f-54e152bfd7bc",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "2f8bed12-7268-4942-9ebb-b461d92a205a",
+            "title": "PDF público de norma",
+            "pileId": "de6872c0-41c7-4cd3-b41e-e9b13b1780ef"
+          },
+          {
+            "id": "305db594-3a72-4c3a-b168-c040b11660c0",
+            "title": "Pasta Drive autorizada",
+            "pileId": "0ae0349b-7bed-46d4-8ef4-00f92a787cd0"
+          },
+          {
+            "id": "ada9e8cc-a522-45b5-a90f-5029f9631c6e",
+            "title": "Dados de cliente ou credenciais",
+            "pileId": "088b88cd-ff11-4f16-b21d-868a28b4d3ed"
+          }
+        ],
+        "piles": [
+          {
+            "id": "de6872c0-41c7-4cd3-b41e-e9b13b1780ef",
+            "title": "Pode usar (Verde)"
+          },
+          {
+            "id": "0ae0349b-7bed-46d4-8ef4-00f92a787cd0",
+            "title": "Use só com aprovação (Amarelo)"
+          },
+          {
+            "id": "088b88cd-ff11-4f16-b21d-868a28b4d3ed",
+            "title": "Não envie (Vermelho)"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "sorting",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "1dc435e0-ecb9-4aa8-8950-c8295daf005b"
+      },
+      {
+        "id": "862f8a84-2fb9-482e-bde3-356efff00c02",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "24c25387-d1d0-4cc1-8bcc-b653a7c09708",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "52523b07-783e-49af-918e-a176b5063573"
+      },
+      {
+        "id": "vm0cpjw7mdc1q4w91wajet6f",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "nc8fdn3vzud4old49k6y8rf3",
+            "paragraph": "<p>Brief pronto e ambiente configurado. Na próxima lição você gasta a primeira pesquisa: roda o brief, corrige o plano do agente e guarda a trilha para alguém refazer.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "ed4c25bc-7256-4d65-926d-86af1b040188"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Estruturando Briefs de Pesquisa e Preparando o Ambiente",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "dHkTtvyGslmNIPiqZ8vB0l46eBMTOJyd",
+    "createdAt": "2026-11-07T21:05:16.476Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-07T21:05:42.999Z"
+  }
+}

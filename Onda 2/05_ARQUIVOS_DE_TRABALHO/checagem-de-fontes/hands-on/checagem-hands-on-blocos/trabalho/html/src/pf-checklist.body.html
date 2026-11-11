@@ -1,0 +1,24 @@
+<!--titulo: Como saber que terminou-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Projeto Final</span>
+  <h1 id="t">🏁 Como saber que terminou</h1>
+  <p class="sub">Confira a sua ficha item por item e marque só o que ela já mostra. Quando os seis estiverem marcados, o Continue abaixo é liberado.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Itens verbatim do checklist "Como saber que terminou" do roteiro Hands-on.
+  checklist([
+    'Duas afirmações atômicas listadas',
+    'Cada uma com bases consultadas e data (camada 1)',
+    'Cada uma com trecho e seção do original (camada 2)',
+    'Cada uma com o estado verificado e onde (camada 3)',
+    'Nenhuma decisão baseada só na resposta da IA ou num rótulo da Scite',
+    'Números de estudo sempre com amostra, modelo e data (dossiê científico) ou link oficial (dossiê jurídico)'
+  ], 'lista', 'placar', 'barra', 'itens conferidos', function () {
+    concluir('final', 'Ficha completa. Releia como se fosse outra pessoa: se ela consegue refazer cada decisão só com a ficha, a auditoria está pronta.');
+  });
+</script>

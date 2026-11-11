@@ -1,0 +1,77 @@
+<!--titulo: Monte seu brief-->
+<style>
+  .campos { display: grid; gap: 10px; }
+  .campos label { display: block; font-size: 13px; font-weight: 600; color: var(--azul); }
+  .campos label small { font-weight: 400; color: var(--suave); }
+  .campos input { margin-top: 4px; }
+  .dossies { margin: 0 0 14px; }
+  .dossies p { margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--azul); }
+  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 10px; }
+  #avisos { margin: 10px 0 0; padding: 0; list-style: none; font-size: 13.5px; }
+  #avisos li { margin: 0 0 4px; padding: 6px 10px; border-radius: 8px; background: var(--aviso-claro); color: var(--aviso); }
+  #avisos li.ok { background: var(--ok-claro); color: var(--ok); }
+  textarea.saida { min-height: 190px; resize: vertical; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mão na massa</span>
+  <h1 id="t">Monte o brief do seu dossiê</h1>
+  <p class="sub">Escolha o dossiê para preencher a pergunta e a fonte obrigatória, complete as outras linhas e copie o brief pronto para a aba Registro. Nada do que você digita sai desta página.</p>
+  <div class="dossies">
+    <p>Começar pelo dossiê:</p>
+    <div class="opcoes" role="group" aria-label="Dossiê">
+      <button type="button" class="btn" data-d="A">A — Selic</button>
+      <button type="button" class="btn" data-d="B">B — Renda</button>
+      <button type="button" class="btn" data-d="C">C — Licitações</button>
+    </div>
+  </div>
+  <div class="campos">
+    <label>1. Pergunta <input type="text" id="f1" placeholder="O que o relatório precisa responder?"></label>
+    <label>2. Decisão apoiada <small>— quem vai ler e o que vai fazer com isso?</small><input type="text" id="f2" placeholder="Ex.: pauta | relatório técnico | aula"></label>
+    <label>3. Recorte <small>— onde e quando</small><input type="text" id="f3" placeholder="Ex.: Brasil, jan/2025 a set/2026"></label>
+    <label>4. Fontes obrigatórias <small>— quem produziu o dado</small><input type="text" id="f4" placeholder="Ex.: Banco Central, Ipea, Planalto"></label>
+    <label>5. Formato <input type="text" id="f5" placeholder="Ex.: tabela afirmação–número–fonte–data; lacunas"></label>
+    <label>6. Conclusão <small>— quando a pesquisa está pronta</small><input type="text" id="f6" placeholder="Ex.: todo número com fonte primária e data"></label>
+  </div>
+  <ul id="avisos" aria-live="polite"></ul>
+  <div class="acoes">
+    <button type="button" class="btn principal" id="copiar">Copiar o brief</button>
+  </div>
+  <label for="saida" class="nota">Brief pronto (com a linha que vale para qualquer brief):</label>
+  <textarea class="saida" id="saida" readonly></textarea>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+</section>
+<script>
+  // Dossiês e linha padrão: Oficina 1 do roteiro Hands-on.
+  var DOSSIES = {
+    A: ['Reconstrua as decisões do Copom de janeiro de 2025 a setembro de 2026; identifique pico e reversão.', 'Banco Central (histórico de taxas)'],
+    B: ['O que a PNAD Contínua/Ipea mostra sobre crescimento da renda por gênero no 2º trimestre de 2025?', 'Nota do Ipea'],
+    C: ['Quais valores de dispensa da Lei 14.133 estão vigentes em 2026 e qual ato os atualizou?', 'Lei 14.133 consolidada no Planalto e o decreto nela referido']
+  };
+  var ROT = ['Pergunta', 'Decisão apoiada', 'Recorte', 'Fontes obrigatórias', 'Formato', 'Conclusão'];
+  var PADRAO = 'Atue como assistente de pesquisa, não como autoridade final. Separe fatos, inferências e lacunas. Não preencha lacunas com suposições. Antes de começar, faça até cinco perguntas e proponha um plano editável.';
+  function v(i) { return document.getElementById('f' + i).value.trim(); }
+  function atualizar() {
+    var linhas = [];
+    for (var i = 1; i <= 6; i++) linhas.push(ROT[i - 1] + ': ' + (v(i) || '[ ]'));
+    document.getElementById('saida').value = linhas.join('\n') + '\n\n' + PADRAO;
+    var av = [], vazias = [];
+    for (var j = 1; j <= 6; j++) if (!v(j)) vazias.push(ROT[j - 1]);
+    if (vazias.length) av.push(['Falta preencher: ' + vazias.join(', ') + '.', false]);
+    var fim = (v(5) + ' ' + v(6)).toLowerCase();
+    if (v(5) && v(6) && !(fim.indexOf('fonte') >= 0 && fim.indexOf('data') >= 0)) av.push(['O formato ou a conclusão deveria pedir número com fonte e data.', false]);
+    if (!av.length) av.push(['Seis linhas preenchidas. Antes de colar: tem dado pessoal ou segredo? Se tiver, tire.', true]);
+    var ul = document.getElementById('avisos'); ul.innerHTML = '';
+    av.forEach(function (a) { var li = document.createElement('li'); li.textContent = a[0]; if (a[1]) li.className = 'ok'; ul.appendChild(li); });
+  }
+  document.querySelectorAll('.dossies button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.dossies button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var d = DOSSIES[b.getAttribute('data-d')];
+      document.getElementById('f1').value = d[0]; document.getElementById('f4').value = d[1];
+      atualizar();
+    });
+  });
+  for (var i = 1; i <= 6; i++) document.getElementById('f' + i).addEventListener('input', atualizar);
+  ligarCopia('copiar', 'saida', 'msg', 'Brief');
+  atualizar();
+</script>

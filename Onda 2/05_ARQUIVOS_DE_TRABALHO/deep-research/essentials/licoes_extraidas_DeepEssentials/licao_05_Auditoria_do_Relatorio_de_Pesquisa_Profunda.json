@@ -1,0 +1,605 @@
+{
+  "numero_da_licao": 5,
+  "position_original": 4,
+  "title": "Auditoria do Relatório de Pesquisa Profunda",
+  "lesson": {
+    "description": "",
+    "id": "688b479a-dbe9-4e5e-af78-dedece1a5d95",
+    "items": [
+      {
+        "id": "h8z5npo8ift81bo2tvei4g3n",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "c0vfn07fo5biq153i74e66x8",
+            "heading": "Auditoria do Relatório de Pesquisa Profunda",
+            "paragraph": "<p>O relatório chega organizado, com números e um marcador de citação em cada frase. Só que citação visível não garante suporte: a fonte pode não existir, pode existir e não dizer aquilo, ou dizer só metade. A própria OpenAI reconhece, no lançamento e no System Card, alucinações, dificuldade de distinguir fonte autoritativa de rumor e confiança mal calibrada. Esta lição ensina a conferir o relatório com o método que você vai usar até o fim do curso.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "3744e84d-5db8-400c-9eb3-a89dde066f6a"
+      },
+      {
+        "id": "yjxe388diffbrdv3ubnz8ck3",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "yisuulbp3ka7sijzghwtznue",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "7462b6f1-195c-453a-8624-6e3b2b566027"
+      },
+      {
+        "id": "wh4m9iroyjzazf51et4enxac",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "a8j22bb3gdvp7kiynb3gonvn",
+            "number": "1",
+            "paragraph": "<p>Extrair e numerar as afirmações verificáveis de um relatório.</p>"
+          },
+          {
+            "id": "ss8uzr4ssx7846dex6rgwk7l",
+            "number": "2",
+            "paragraph": "<p>Classificar o suporte de cada citação como integral, parcial, ausente ou fonte inacessível.</p>"
+          },
+          {
+            "id": "a1hjpiinic4fg7kuzqp5sxc9",
+            "number": "3",
+            "paragraph": "<p>Aplicar SIFT e leitura lateral para avaliar autoria, data e independência das fontes.</p>"
+          },
+          {
+            "id": "kcsgqebz9sz4fdjgohvtotoa",
+            "number": "4",
+            "paragraph": "<p>Identificar lacunas e famílias de evidência repetidas.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "5a4fa9b6-bb13-4254-9ae1-df5adde9b75e"
+      },
+      {
+        "id": "rtpmfl4frczr9n4k3ew0c2jo",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "acw4e25tpo945z6djiz0dl6s",
+            "heading": "Dez Passos do Processo de Auditoria",
+            "paragraph": "<p>O procedimento mínimo tem dez passos. Em uso de alto risco, confira 100% das conclusões centrais e uma amostra das demais. Abra cada passo:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "872b7702-6f4d-4ebb-9d2c-e5e9611389ae"
+      },
+      {
+        "id": "721aebed-6105-4e82-a1ab-a2c20e00de86",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "fa3fe75c-112d-4996-84d5-f0f339efca62",
+            "title": "Passo 1: Salvar prompt, plano, relatório e horário",
+            "description": "<p>Registre o prompt utilizado, o plano de pesquisa, o relatório gerado e o horário de execução. Isso garante reprodutibilidade e rastreabilidade do processo.</p>"
+          },
+          {
+            "id": "41516a10-e81d-4c4e-8d09-864a2f6f6eac",
+            "title": "Passo 2: Numerar as afirmações verificáveis",
+            "description": "<p>Identifique e numere todas as afirmações do relatório que podem ser verificadas em fontes externas.</p>"
+          },
+          {
+            "id": "08d74636-f362-40b8-9118-960982cea7e6",
+            "title": "Passo 3: Abrir cada citação em nova aba",
+            "description": "<p>Para cada afirmação numerada, abra a fonte citada em uma nova aba do navegador para facilitar a conferência.</p>"
+          },
+          {
+            "id": "e7d3dcdc-5fd6-4f88-ba4d-a219ffa381a5",
+            "title": "Passo 4: Procurar no original a frase ou o número",
+            "description": "<p>Utilize a função de busca do navegador (Ctrl+F ou Cmd+F) para localizar rapidamente o trecho exato na fonte original.</p>"
+          },
+          {
+            "id": "d7e4bc0c-a551-4fa8-b9f0-60cba6026ace",
+            "title": "Passo 5: Registrar “suporta”, “suporta parcialmente”, “não suporta” ou “fonte inacessível”",
+            "description": "<p>Classifique o nível de suporte que a fonte oferece à afirmação e registre essa avaliação na planilha de auditoria.</p>"
+          },
+          {
+            "id": "5b0fc022-9b64-4691-9c61-c40d0b28a5c0",
+            "title": "Passo 6: Conferir autor, data, atualização e conflito de interesse",
+            "description": "<p>Verifique quem é o autor, a data de publicação, se há atualizações recentes e possíveis conflitos de interesse na fonte.</p>"
+          },
+          {
+            "id": "b68164dd-a799-4f85-9d39-7b5a44ae02e7",
+            "title": "Passo 7: Procurar a fonte primária",
+            "description": "<p>Quando a fonte citada for secundária, busque identificar e registrar a fonte primária correspondente.</p>"
+          },
+          {
+            "id": "ddfdc531-b2a3-4a55-9093-d263519e5e71",
+            "title": "Passo 8: Listar lacunas e perspectivas ausentes",
+            "description": "<p>Identifique grupos, períodos, fontes ou contrapontos que estejam ausentes no relatório.</p>"
+          },
+          {
+            "id": "0a12bd15-fd46-4123-b58f-41fadbd15b6b",
+            "title": "Passo 9: Corrigir o texto",
+            "description": "<p>Faça os ajustes necessários no relatório para corrigir informações não suportadas ou incompletas.</p>"
+          },
+          {
+            "id": "9145704f-5d62-40d3-a561-2e9e815717fa",
+            "title": "Passo 10: Guardar a trilha de evidências",
+            "description": "<p>Salve todos os registros, links e documentos utilizados na auditoria para garantir a rastreabilidade e facilitar futuras revisões.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "d793d321-b49e-4d43-86d2-f31928f267d7"
+      },
+      {
+        "id": "u83vasoqft8ntg51f9t9f413",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "vex1opha3gi733sy9lign2pe",
+            "heading": "Conceitos-Chave e Armadilhas Comuns",
+            "paragraph": "<p>Os erros mais comuns em relatórios de pesquisa assistida e os dois métodos de bibliotecas universitárias que ajudam a pegá-los. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "379c4a8f-52b7-48a4-8c40-1150b3b28e99"
+      },
+      {
+        "id": "nlqcaomj083ciaujnap2yeq5",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "dy3a6jv3hbj44h6qkom74cjn",
+            "back": {
+              "type": "description",
+              "description": "<ul><li>Fonte inexistente ou mal atribuída</li><li>Fonte verdadeira que não sustenta a frase</li><li>Fonte de baixa autoridade</li><li>Duplicação</li><li>Desatualização</li><li>Paywall (o agente vê só trecho ou resumo)</li><li>Omissão</li><li>Inferência excessiva</li><li>Confiança indevida</li></ul>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Erros comuns na auditoria de relatórios de IA</strong>"
+            }
+          },
+          {
+            "id": "j06v7ql2l45d3plzop2d4l97",
+            "back": {
+              "type": "description",
+              "description": "<p><strong>S</strong>top (pare); <strong>I</strong>nvestigate the source (investigue a fonte); <strong>F</strong>ind trusted coverage (busque cobertura confiável); <strong>T</strong>race claims to original context (rastreie a afirmação até o contexto original).</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Método SIFT</strong>"
+            }
+          },
+          {
+            "id": "aiw332as7j7wb93u3kh1i6hm",
+            "back": {
+              "type": "description",
+              "description": "<p>Sair da página e investigar autor, organização, financiamento e cobertura independente em outras abas do navegador.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Leitura lateral</strong>"
+            }
+          },
+          {
+            "id": "jpsnb3vc8u1xvm9jtfz6jdh4",
+            "back": {
+              "type": "description",
+              "description": "<p>Várias fontes que apenas repetem a mesma matéria contam como uma, não como várias evidências distintas.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Famílias de evidência</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "b45a383d-b393-4b6b-9d62-174804a1b041"
+      },
+      {
+        "id": "75028903-e7c6-422f-87bd-1a6b7d3cb0a9",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "2294a7f1-ac6d-485c-9c0a-29c3fabab91d",
+            "paragraph": "<p>⚠️ O relatório nunca serve de evidência de si mesmo. A prova é a fonte primária, aberta por você.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "a53d7b94-0bba-44c4-b922-4c95016f7a4c"
+      },
+      {
+        "id": "784191e2-0e8c-416c-922e-2b578287587b",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "9c4dd490-42b0-445f-8e92-ca47332aeb17",
+            "type": "intro",
+            "title": "Introdução ao Exercício Prático de Auditoria",
+            "isHidden": false,
+            "description": "<p>Demonstração de 10 minutos, com o relatório que você obteve no Módulo 3 ou com o relatório do MIT (rota sem cota).</p>"
+          },
+          {
+            "id": "6ba44865-da97-4a90-aa53-25ba40480760",
+            "type": "summary",
+            "title": "Conclusão do Exercício de Auditoria",
+            "isHidden": false,
+            "description": "<p>Ao final, a aba Auditoria tem cinco linhas com trecho, suporte, tipo de fonte e decisão. É a base da atividade integradora do Módulo 6.</p>"
+          },
+          {
+            "id": "f5e72b12-c70d-44b8-ae4f-f196b24d1d2a",
+            "type": "step",
+            "title": "Numerar afirmações verificáveis",
+            "isHidden": false,
+            "description": "<p>No relatório do Módulo 3 (ou do MIT), identifique e numere cinco afirmações que possam ser verificadas.</p>"
+          },
+          {
+            "id": "0457bf87-c028-4658-91a9-9d3326c65908",
+            "type": "step",
+            "title": "Localizar trechos nas fontes",
+            "isHidden": false,
+            "description": "<p>Abra a citação de cada afirmação em uma nova aba do navegador e utilize a função Localizar (Ctrl+F; no Mac, Cmd+F) para encontrar o trecho correspondente na fonte.</p>"
+          },
+          {
+            "id": "b005cd30-d3ea-4eb6-9cd8-721e726ee205",
+            "type": "step",
+            "title": "Preencher a aba Auditoria",
+            "isHidden": false,
+            "description": "<p>Na aba Auditoria, registre o trecho encontrado, o suporte, o tipo de fonte e a decisão tomada para cada afirmação.</p>"
+          },
+          {
+            "id": "f6a6c27d-4676-47a7-b7f7-13a67aa85ea7",
+            "type": "step",
+            "title": "Comparar com fontes oficiais",
+            "isHidden": false,
+            "description": "<p>Para o caso-guia, compare os números apresentados com as informações disponíveis em educa.ibge.gov.br &gt; Jovens &gt; Conheça o Brasil &gt; População &gt; Pirâmide etária e com o PDF \"Censo 2022 — Pessoas de 60 anos ou mais\".</p>"
+          },
+          {
+            "id": "ecc62b55-1bb7-42b6-9800-e43155f261a3",
+            "type": "step",
+            "title": "No caso jurídico: conferir a vigência",
+            "isHidden": false,
+            "description": "<p>Se a sua rota é o caso jurídico, acrescente a vigência: abra o texto consolidado da norma, confira os atos alteradores e o repositório oficial. Norma revogada não sustenta a conclusão.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "b7537ae1-7b78-4404-99ec-d483f4e35979"
+      },
+      {
+        "id": "325c8a78-fa5d-4fd3-b723-4f2abcf0227e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "6bf71ddb-588c-4688-ad3e-0319b03e4547",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> na aba Auditoria, as cinco linhas têm a coluna Suporte preenchida e, quando a fonte é secundária, a fonte primária correspondente anotada.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "41d936d5-fe0b-4dd6-94a0-ff872e957b15"
+      },
+      {
+        "id": "06a8b1dd-f8d0-43cb-a979-48d9d7bf9951",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "a7aeb83e-6c7a-4abc-98ba-ed66e42d72ed",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Com base no gabarito do IBGE, classifique o suporte de cada frase: (1) \"Em 2022, pessoas com 65 anos ou mais eram 10,9% da população, cerca de 22,2 milhões.\" (2) \"A população idosa cresceu 46,6% entre 2010 e 2022 e chegou a 10,9% do total.\" (3) \"A parcela de pessoas com 65 anos ou mais dobrou entre 2010 e 2022.\"",
+            "answers": [
+              {
+                "id": "8058a97c-3fbf-49ad-a5a5-242c84ad7f03",
+                "title": "1. Integral; 2. Parcial; 3. Não suporta",
+                "correct": true,
+                "feedback": "Correto. (1) integral; (2) parcial — mistura cortes: 46,6% refere-se a 60+ e 10,9% a 65+; (3) não suporta — passou de 7,4% para 10,9% (e de 14 para 22,2 milhões), o que não é dobrar."
+              },
+              {
+                "id": "bf5a3e6b-1c65-4369-aa8b-0e6361cc7cf5",
+                "title": "1. Parcial; 2. Integral; 3. Não suporta",
+                "correct": false,
+                "feedback": "Não. A frase 1 bate exatamente com o IBGE (10,9% e 22,2 milhões em 2022): suporte integral. A frase 2 é que é parcial, porque mistura os cortes 60+ e 65+."
+              },
+              {
+                "id": "1b921f60-2c3f-4131-bb6b-084cb2f25187",
+                "title": "1. Integral; 2. Não suporta; 3. Parcial",
+                "correct": false,
+                "feedback": "Não. A frase 2 não é falsa por inteiro: os dois números existem, mas são de cortes diferentes (60+ e 65+) — suporte parcial. A frase 3 é que não tem suporte: 7,4% para 10,9% não é dobrar."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "48dd5be0-9ac8-4379-8bcc-487e1e104399"
+      },
+      {
+        "id": "m8g52ggyvkss0xu76gj20her",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dj1dj8ul874z6pzt4m90dqxj",
+            "heading": "Dicas Práticas para Registro",
+            "paragraph": "<p>Ao conferir números no IBGE, o critério de êxito é o registro, não só o número. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "0b3ba28e-adb4-42e4-ba82-956f3ce98865"
+      },
+      {
+        "id": "wbmo6xyjc7xepsh0en4im9c2",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "mrbj9k1iba4l2osaa79yu2ah",
+            "back": {
+              "type": "description",
+              "description": "<p>Os valores exatos, a URL e a data da consulta devem ser anotados para cada dado auditado.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>O que deve ser registrado para cada dado auditado?</p>"
+            }
+          },
+          {
+            "id": "e6fi3osa3q73fjasrfpeksne",
+            "back": {
+              "type": "description",
+              "description": "<p>Para evitar confusões, não se deve misturar cortes etários ou períodos; cada grupo deve ser mantido separado.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Por que é importante separar cortes etários ou períodos ao registrar dados?</p>"
+            }
+          },
+          {
+            "id": "cuix92k8nwkukn46zfp8ikhb",
+            "back": {
+              "type": "description",
+              "description": "<p>Valores, URL e data devem estar registrados, sem misturar grupos como 60+ e 65+, garantindo clareza e precisão nos resultados.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Qual é o critério de êxito para o registro de dados?</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "349d361d-3406-4885-844b-06ca500d5aba"
+      },
+      {
+        "id": "e730e6ba-83be-4f8b-967e-b1386b2f3178",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "61bbbdeb-f021-47e9-ae20-bde6551cba21",
+            "paragraph": "<p><strong>Prompt-base de auditoria</strong>, para usar numa IA <strong>diferente</strong> da que produziu o relatório. As respostas dela também devem ser conferidas à mão:</p><blockquote><p>Audite o relatório anexado. Extraia todas as afirmações verificáveis. Para cada uma, abra a fonte citada, copie o trecho que sustenta a afirmação, classifique suporte integral/parcial/ausente e registre data, autoria e tipo de fonte. Depois liste fontes inexistentes, links quebrados, dados antigos, conclusões sem evidência, grupos ausentes e perguntas não respondidas. Não use o próprio relatório como evidência.</p></blockquote>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "056f3899-e912-4d6b-8850-1d118c320b69"
+      },
+      {
+        "id": "7c699797-d403-4991-abae-fe07f40655a3",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "631b3b73-7a99-4aad-bd76-1fdcf194ff12",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "9a823852-284b-400f-839f-eb006019cb08"
+      },
+      {
+        "id": "mb3hj3gyhcxttp7pmle2hfe7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "hwe5o9qjuxqkiv8dihagwv4a",
+            "paragraph": "<p>No Módulo 5, você compara as três ferramentas pelo que elas fazem de verdade e aprende a ler um benchmark antes de acreditar no \"vencedor\".</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "8128da54-e376-42be-b423-9ed9f638fea9"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Auditoria do Relatório de Pesquisa Profunda",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "KvZFlVArk5NLyTJLgjEe-e8IozLnLCLq",
+    "createdAt": "2026-11-07T20:25:11.957Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 4,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-07T20:26:37.994Z"
+  }
+}

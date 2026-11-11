@@ -1,0 +1,31 @@
+<!--titulo: Em qual camada está o erro?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Em qual camada está o erro?</h1>
+  <p class="sub">Cada caso traz um dos sete erros de citação. Pergunte-se: o problema é a obra existir e os dados baterem (identidade), a fonte dizer o que lhe atribuem (fidelidade) ou a evidência ainda valer (estado)? Você recebe a correção na hora e pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Um caso para cada um dos sete erros do Módulo 1, usando os pares e casos do próprio curso.
+  classificador({
+    casos: [
+      { t: '1. A referência "SILVA, Ana (2026)", com DOI 10.9999/…, não aparece em DOI.org, Crossref, Google Scholar nem SciELO.', r: 'id', p: 'Obra inexistente (ou não localizada): é a primeira pergunta — a obra existe?' },
+      { t: '2. O artigo está no Crossref, mas a referência traz outro ano e outro primeiro autor.', r: 'id', p: 'Metadados incorretos: a obra existe, mas os dados da referência não batem com o registro.' },
+      { t: '3. Um artigo real é citado como prova de "99% de acurácia em todas as classes"; o artigo relata desempenho desigual entre as classes.', r: 'fid', p: 'Fonte que não apoia a alegação: a obra existe, mas não diz o que lhe atribuem.' },
+      { t: '4. Um percentual medido com o GPT-3.5 em abril de 2023 é apresentado como a taxa de erro de "qualquer IA".', r: 'fid', p: 'Trecho fora de contexto: o número é verdadeiro, mas foi deslocado do modelo e da data em que foi medido.' },
+      { t: '5. A frase vem de uma reportagem, mas o link citado pelo motor de busca abre outra notícia.', r: 'fid', p: 'Atribuição à fonte errada: o conteúdo pode até existir, mas não está na fonte indicada.' },
+      { t: '6. O artigo existe e diz o que se afirma, mas a página na SciELO exibe o banner "ARTIGO RETRATADO".', r: 'est', p: 'Obra retratada: foi formalmente retirada do registro e não vale como evidência vigente.' },
+      { t: '7. O estudo de 2010 sobre power posing diz o que se afirma, mas uma replicação de 2015 não encontrou efeito em hormônios.', r: 'est', p: 'Resultado contestado depois: a evidência mudou de estado — em desfechos específicos.' }
+    ],
+    opcoes: { id: 'Identidade', fid: 'Fidelidade', est: 'Estado da evidência' },
+    dicaErro: 'Releia: o problema é a obra (existe? os dados batem?), o conteúdo (diz isso?) ou a validade (ainda vale?)?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'classificados corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Os sete erros classificados. Repare: só os dois primeiros são resolvidos ao confirmar a obra — os outros cinco exigem abrir a fonte ou procurar o que veio depois.');
+    }
+  });
+</script>

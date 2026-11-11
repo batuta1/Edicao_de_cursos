@@ -1,0 +1,38 @@
+<!--titulo: O que acontece entre o pedido e o relatório-->
+<style>
+  .fluxo { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); counter-reset: passo; }
+  .fluxo li { position: relative; background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 12px 12px 12px; counter-increment: passo; }
+  .fluxo li::before { content: counter(passo); position: absolute; top: -10px; left: 12px; width: 22px; height: 22px; border-radius: 50%; background: var(--azul); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .fluxo li.voce { background: var(--aviso-claro); border-color: #e7c98f; }
+  .fluxo li.voce::before { background: var(--aviso); }
+  .quem { display: inline-block; margin: 6px 0 4px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--azul-2); }
+  .voce .quem { color: var(--aviso); }
+  .fluxo h2 { font-size: 15px; margin: 0 0 4px; }
+  .fluxo p { margin: 0; font-size: 13.5px; color: var(--suave); }
+  .legenda { display: flex; flex-wrap: wrap; gap: 14px; margin: 0 0 14px; font-size: 13px; color: var(--suave); }
+  .legenda span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; background: #fff; border: 1px solid var(--linha); }
+  .legenda .lv::before { background: var(--aviso-claro); border-color: #e7c98f; }
+  .compara { margin-top: 18px; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .compara div { border-radius: 12px; padding: 10px 12px; background: var(--azul-claro); font-size: 13.5px; }
+  .compara div.destaque { background: var(--azul); color: #fff; }
+  .compara strong { display: block; margin-bottom: 2px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Infográfico</span>
+  <h1 id="t">O que acontece entre o pedido e o relatório</h1>
+  <p class="sub">A pesquisa profunda é uma tarefa de várias etapas. O agente faz o meio do caminho; o começo e o fim são seus.</p>
+  <p class="legenda"><span class="lv">Você</span><span>Agente</span></p>
+  <ol class="fluxo">
+    <li class="voce"><span class="quem">Você</span><h2>Brief</h2><p>Uma tarefa ampla, com pergunta, recorte, fontes e formato. É o que você vai redigir no Módulo 3.</p></li>
+    <li><span class="quem">Agente</span><h2>Plano</h2><p>Uma lista de subperguntas e ações. No ChatGPT e no Gemini, você pode revisá-lo antes de começar.</p></li>
+    <li><span class="quem">Agente</span><h2>Buscas sucessivas</h2><p>Cada busca leva à seguinte, em vez de uma única consulta.</p></li>
+    <li><span class="quem">Agente</span><h2>Leitura e mudança de rota</h2><p>Lê muitas fontes e muda de caminho quando encontra nova evidência.</p></li>
+    <li><span class="quem">Agente</span><h2>Relatório</h2><p>Um relatório documentado, com citações inline junto às afirmações.</p></li>
+    <li class="voce"><span class="quem">Você</span><h2>Auditoria</h2><p>Citação não prova suporte: cada afirmação central é conferida na fonte primária (Módulo 4).</p></li>
+  </ol>
+  <div class="compara" aria-label="Comparação com outras formas de uso">
+    <div><strong>Busca rápida</strong>Resposta curta e rápida, para um fato pontual.</div>
+    <div><strong>Chatbot sem pesquisa</strong>Responde principalmente a partir do próprio modelo, sem trilha verificável garantida.</div>
+    <div class="destaque"><strong>Pesquisa profunda</strong>Síntese de várias etapas e muitas fontes. Consome mais tempo e mais cota.</div>
+  </div>
+</section>

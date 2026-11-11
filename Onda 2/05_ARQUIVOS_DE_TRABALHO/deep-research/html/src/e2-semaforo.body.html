@@ -1,0 +1,29 @@
+<!--titulo: Semáforo: pode ir para o agente?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Semáforo: pode ir para o agente?</h1>
+  <p class="sub">Seis situações novas, diferentes dos cinco cenários do exercício. Para cada uma, pergunte-se: o material é público? Há dados de terceiros ou sigilo? Que conta e que conectores estão em jogo? Você recebe a correção na hora e pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Critérios do Módulo 2 do roteiro: público, mínimo necessário, dados de terceiros, sigilo, conta e conectores.
+  classificador({
+    casos: [
+      { t: '1. Enviar o PDF de um relatório público do IBGE para o agente resumir, em conta pessoal.', r: 'verde', p: 'Material público, sem dados de terceiros.' },
+      { t: '2. Colar no prompt uma planilha de clientes com nomes e CPFs, em conta pessoal, para "achar padrões".', r: 'verm', p: 'Dados pessoais de terceiros em conta pessoal. Não envie.' },
+      { t: '3. Usar no Gemini uma pasta do Drive com cinco documentos internos, já autorizada pelo jurídico, em conta empresarial contratada.', r: 'amar', p: 'Só a pasta mínima, com aprovação e no ambiente contratado. Ainda assim, um caso de cautela.' },
+      { t: '4. Ligar o Gmail no Deep Research para "resumir tudo o que chegou sobre o projeto".', r: 'verm', p: 'Caixa inteira, com dados de terceiros. No máximo, uma pasta mínima e com autorização.' },
+      { t: '5. Colar o texto da LGPD copiado do Planalto para comparar com a Resolução CD/ANPD 15/2024.', r: 'verde', p: 'Norma pública.' },
+      { t: '6. Informar no prompt a senha do sistema da empresa para o agente acessar uma base interna.', r: 'verm', p: 'Credenciais nunca vão para a IA, em nenhuma conta.' }
+    ],
+    opcoes: { verde: 'Verde', amar: 'Amarelo', verm: 'Vermelho' },
+    dicaErro: 'Releia o checklist: o material é público? Há dados de terceiros, sigilo ou credenciais? É o mínimo necessário, em conta aprovada?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'classificadas corretamente',
+    aoConcluir: function () {
+      concluir('final', 'As seis situações classificadas. A pergunta que decide é sempre a mesma: é público? Se não for, quem autorizou, e em que ambiente?');
+    }
+  });
+</script>

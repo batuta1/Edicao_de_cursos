@@ -1,0 +1,705 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Segurança, Dados e Sigilo em Pesquisas com IA",
+  "lesson": {
+    "description": "",
+    "id": "5832a627-b790-40c6-a179-636b765edaac",
+    "items": [
+      {
+        "id": "zh9rphiv3he3mftm4nyh9vgb",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "uhlihmorvkt5pksttgo8ewua",
+            "heading": "Segurança, Dados e Sigilo em Pesquisas com IA",
+            "paragraph": "<p>Um agente de pesquisa profunda lê tudo o que você entrega: o arquivo anexado, a pasta do Drive conectada, a caixa de e-mail, se você deixar. E as configurações padrão das três ferramentas, em geral, não são as mais restritivas. Por isso esta lição vem antes da primeira execução: a decisão sobre dados é tomada antes do uso, não depois.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "83268a48-8228-41ec-923d-927e5a47c775"
+      },
+      {
+        "id": "kwfdjyjthf4lz8l50qy9nojp",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "louvokc696kis3wlz6rvndnv",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "9d609f99-6acc-4397-a115-3d3a41a1e844"
+      },
+      {
+        "id": "lm0pvt1edjxx08r6sjqjctqi",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "ah5yr23u6408mlzflpbm7b0l",
+            "number": "1",
+            "paragraph": "<p>Identificar como cada ferramenta trata conversas e arquivos para treinamento e retenção.</p>"
+          },
+          {
+            "id": "q4u80xovguz03tfld93tco0i",
+            "number": "2",
+            "paragraph": "<p>Localizar a configuração que limita o uso dos dados em cada ferramenta.</p>"
+          },
+          {
+            "id": "lm5489p5riz3k672lqu0dj9y",
+            "number": "3",
+            "paragraph": "<p>Reconhecer os riscos de conectores (Gmail, Drive) e de prompt injection.</p>"
+          },
+          {
+            "id": "m4jcypqsolv1loqcpggh1hi1",
+            "number": "4",
+            "paragraph": "<p>Classificar materiais quanto à possibilidade de envio, à luz da LGPD e do sigilo profissional.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "4f40ed83-0dbc-4f5a-9c3e-a4d87e0c40a0"
+      },
+      {
+        "id": "u3i46krbicxv8ncxp3frdrue",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ijgls0fx866pb57ez0wxztqx",
+            "heading": "Comparação de Ferramentas de IA: Tratamento de Dados e Privacidade",
+            "paragraph": "<p>Cada fabricante trata conversas e arquivos de um jeito. O que muda é se o conteúdo pode treinar modelos, por quanto tempo fica guardado e qual plano dá mais controle. Abra cada ferramenta:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "8c8b28ee-ea39-46c8-855e-404b2f834c28"
+      },
+      {
+        "id": "6914af9e-6e27-4b2f-8a7a-b0789926973f",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "8ef532c2-64d8-427c-84a5-4c09aa58074d",
+            "title": "ChatGPT",
+            "description": "<p>No ChatGPT pessoal (Free, Plus e Pro), novas conversas podem ser usadas para melhorar os modelos <strong>por padrão</strong>. A pesquisa profunda segue as mesmas regras de retenção da conversa.</p><p></p><p>Os planos Business, Enterprise e Edu não usam os dados para treinamento por padrão. Na conta pessoal, quem desliga é você — o caminho está nas abas abaixo.</p>"
+          },
+          {
+            "id": "a6342c59-b108-4b3e-ae05-8343f0ddb3c2",
+            "title": "Gemini",
+            "description": "<p>No Gemini, quando a atividade (Keep Activity) está ligada, prompts, uploads e atividades podem ser usados para desenvolver e melhorar serviços, inclusive para treinar IA, com revisão humana. A autoexclusão padrão é de 18 meses, e conteúdos revisados podem ser mantidos por até três anos, desvinculados da conta.</p><p></p><p>Ao desligar a atividade ou usar chat temporário, as conversas futuras não são usadas para treinamento, mas permanecem armazenadas por 72 horas para resposta e segurança. Alguns aplicativos conectados podem deixar de funcionar nessas condições.</p>"
+          },
+          {
+            "id": "91366b9e-ce75-4504-a1db-f0cc71aef559",
+            "title": "Perplexity",
+            "description": "<p>Nos planos Pro, Education Pro e Max, é possível desativar a coleta para treinamento. Os planos Enterprise e a API declaram não usar os dados.</p><p></p><p>A situação do plano gratuito não consta da documentação consultada [conferir]. Enquanto não houver confirmação, envie pela conta gratuita apenas material público.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "3b899786-2568-4272-bcb4-1dd8a10fe128"
+      },
+      {
+        "id": "cqlfd3a8fdi58ms8hi93qzds",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "mxxxtvuvvy9git1pnnszxu5a",
+            "heading": "Como ajustar configurações de privacidade e treinamento de dados",
+            "paragraph": "<p>Os caminhos abaixo levam à configuração que limita o uso dos dados. Os rótulos estão em inglês, como aparecem nas ferramentas:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "cb895360-1ca0-48ee-af54-52d593cbbe2e"
+      },
+      {
+        "id": "4290c090-5927-4d62-a279-5d6decc0d43d",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "4f68f4f6-2615-4226-9ef0-1fcfa0d7c25f",
+            "title": "ChatGPT",
+            "description": "<p>Caminho: <strong>ChatGPT &gt; Profile &gt; Settings &gt; Data Controls &gt; Improve the model for everyone</strong>. Desligue a chave.</p><p></p><p>Com ela desligada, as novas conversas — incluindo as pesquisas profundas — deixam de ser usadas para melhorar os modelos.</p>"
+          },
+          {
+            "id": "a462e107-1730-4177-b635-b4d9c7ca99ca",
+            "title": "Gemini",
+            "description": "<p>Caminho: <strong>Gemini &gt; Settings &gt; Activity (Keep Activity)</strong> para desligar a atividade, ou <strong>Gemini &gt; Temporary chat</strong> para abrir um chat temporário [conferir rótulos].</p><p></p><p>No próprio Deep Research, limite as fontes: <strong>Deep Research &gt; Sources</strong>, desmarque Gmail e Drive (ou desmarque Google Search para usar só os arquivos que você escolher). Com a atividade desligada, os chats ainda ficam 72 horas guardados, e alguns aplicativos conectados deixam de funcionar.</p>"
+          },
+          {
+            "id": "cc133bb0-2d56-44ff-995d-da888f12a16f",
+            "title": "Perplexity",
+            "description": "<p>Caminho: <strong>Perplexity &gt; Settings</strong>, nos planos Pro, Education Pro e Max, para desligar a coleta para treinamento.</p><p></p><p>No plano gratuito, confira se a opção aparece [conferir]. Se não aparecer, não envie nada além de material público.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "e9940a4d-285c-472d-b0d5-83f4f13a2b8a"
+      },
+      {
+        "id": "zefe126lkv1ln15jo1jooe0y",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "gjrtvew7wm7s99z07vcafhaw",
+            "heading": "Principais Riscos e Obrigações",
+            "paragraph": "<p>Dois riscos são próprios dos agentes — conectores e prompt injection — e um terceiro vale para quem lida com dados de terceiros: a LGPD. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "16d41021-47ce-4d95-8fa2-dca1f69c0de1"
+      },
+      {
+        "id": "dxkus30z0sm9xjkfgwagjqn5",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "xvy551625kviie8t9m8nqa9i",
+            "back": {
+              "type": "description",
+              "description": "<p>Gmail, Drive e outros aplicativos herdam as suas permissões. São usados só para leitura, mas ampliam a quantidade de dados expostos. Em vez de abrir a caixa de e-mail inteira, crie uma pasta com o corpus mínimo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Conectores</strong>"
+            }
+          },
+          {
+            "id": "hvv2zl3g6c8e9qk65tlpsrk9",
+            "back": {
+              "type": "description",
+              "description": "<p>Instrução maliciosa escondida numa página ou arquivo, que tenta desviar o agente ou extrair dados. O risco é descrito no System Card da OpenAI — mais um motivo para não conectar o que você não precisa.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Prompt Injection</strong>"
+            }
+          },
+          {
+            "id": "vxq28pq2qnrw4i0c521uqoh8",
+            "back": {
+              "type": "description",
+              "description": "<p>A LGPD impõe finalidade, adequação, necessidade, segurança, prevenção, transparência e responsabilização. Enviar dados a uma IA externa pode envolver operador, suboperador e transferência internacional — e a organização continua responsável. Autos sigilosos, estratégia de cliente, credenciais e dados sensíveis exigem ambiente empresarial contratado e aprovado, nunca conta pessoal.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>LGPD e Sigilo</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "213f2182-89dc-4069-af5d-77fb6b827e6a"
+      },
+      {
+        "id": "6acdeeac-69c4-496a-bbde-302eafb6ff7f",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "3681c17c-2183-44b7-b4f3-6a9e8e85fb72",
+            "type": "intro",
+            "title": "Introdução à Classificação de Cenários Práticos",
+            "isHidden": false,
+            "description": "<p>Classifique cada cenário em <strong>verde</strong> (pode), <strong>amarelo</strong> (só com ajuste ou autorização) ou <strong>vermelho</strong> (não). Decida e justifique antes de avançar para a resposta. Tempo sugerido: 8 minutos.</p>"
+          },
+          {
+            "id": "6803a008-cbc2-474a-b5be-427ca830c0da",
+            "type": "summary",
+            "title": "Resumo das Classificações e Justificativas",
+            "isHidden": false,
+            "description": "<ul><li><strong>Verde:</strong> cenários 1 e 4 — fontes públicas e norma pública.</li><li><strong>Amarelo a vermelho:</strong> cenário 5 — depende de contrato, DPA e aprovação; sem aprovação, não.</li><li><strong>Vermelho:</strong> cenários 2 e 3 — caixa de e-mail inteira com dados de terceiros; documento sob segredo de justiça.</li></ul><p>A pergunta que decide: o material é público? Se não for, quem autorizou, e em que ambiente?</p>"
+          },
+          {
+            "id": "8f276107-d3b7-4746-bad9-a7b2aef861ff",
+            "type": "step",
+            "title": "Cenário 1: Pesquisa com Fontes Públicas em Conta Pessoal",
+            "isHidden": false,
+            "description": "<p><strong>Classificação: Verde (pode)</strong></p><p>Justificativa: O uso de fontes públicas para pesquisa não envolve dados pessoais sensíveis ou protegidos por sigilo. Não há risco relevante de violação da LGPD ou do sigilo profissional.</p>"
+          },
+          {
+            "id": "7da64a32-7bce-43bb-813e-5267998701c4",
+            "type": "step",
+            "title": "Cenário 2: Ativar Gmail no Gemini Deep Research para Buscar Informações de Cliente",
+            "isHidden": false,
+            "description": "<p><strong>Classificação: Vermelho (não)</strong></p><p>Justificativa: abrir a caixa inteira expõe dados de terceiros sem necessidade. No máximo, uma pasta mínima e com autorização.</p>"
+          },
+          {
+            "id": "2fb9ba2a-805a-4884-bde2-ad57aa985e7d",
+            "type": "step",
+            "title": "Cenário 3: Enviar Petição Inicial Sob Segredo de Justiça ao ChatGPT Pessoal",
+            "isHidden": false,
+            "description": "<p><strong>Classificação: Vermelho (não)</strong></p><p>Justificativa: documento sob segredo de justiça, com dados sensíveis, em conta pessoal. Material assim exige ambiente empresarial contratado e aprovado.</p>"
+          },
+          {
+            "id": "dd0154f9-3bfe-4e3c-a7d1-f9b0be32a6de",
+            "type": "step",
+            "title": "Cenário 4: Enviar PDF Público da Resolução CD/ANPD 15/2024 ao ChatGPT",
+            "isHidden": false,
+            "description": "<p><strong>Classificação: Verde (pode)</strong></p><p>Justificativa: Trata-se de documento público, sem restrições de acesso ou sigilo. Não há risco de violação da LGPD ou do sigilo profissional.</p>"
+          },
+          {
+            "id": "5c9bd530-0413-4969-a56c-d932680c74ec",
+            "type": "step",
+            "title": "Cenário 5: Usar Drive da Empresa como Fonte no Gemini sem Aprovação",
+            "isHidden": false,
+            "description": "<p><strong>Classificação: Amarelo a vermelho</strong></p><p>Justificativa: depende de contrato, DPA (acordo de tratamento de dados) e aprovação do jurídico ou da segurança. Sem aprovação, a resposta é não.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "dc88337a-2dcb-49f9-bc6a-1a7ff7b20464"
+      },
+      {
+        "id": "2c6f762b-93a7-414f-953f-9bf5d22dc45e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "5f960bca-dd3b-44d0-a895-7475d837e25d",
+            "paragraph": "<p><strong>Gabarito:</strong></p><ul><li>1: verde</li><li>2: vermelho (caixa inteira, dados de terceiros; usar no máximo pasta mínima e com autorização)</li><li>3: vermelho (sigilo e dados sensíveis)</li><li>4: verde (norma pública)</li><li>5: amarelo a vermelho (depende de contrato, DPA e aprovação; sem aprovação, não)</li></ul>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "a7ec95a5-d458-4197-940a-d1749b3732e5"
+      },
+      {
+        "id": "6eb11b94-db26-4f62-b089-367d4e2eb151",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "c567122e-96fb-4fbc-b631-ca78ba7dfca7",
+            "type": "intro",
+            "title": "Introdução à Aplicação Prática das Configurações",
+            "isHidden": false,
+            "description": "<p>Aplique, em cada ferramenta que você usa, a configuração vista nas abas acima e registre-a na aba Registro. Tempo sugerido: 6 minutos.</p>"
+          },
+          {
+            "id": "d9af3061-64cc-43c3-8df2-fe4ce334027c",
+            "type": "summary",
+            "title": "Resumo da Documentação das Ações",
+            "isHidden": false,
+            "description": "<p>Com isso, o campo \"Configuração de dados\" do cabeçalho do Módulo 0 fica preenchido. Ele é um dos critérios de avaliação do dossiê final.</p>"
+          },
+          {
+            "id": "c8277fd1-6caf-42fd-be89-162b14be8ea0",
+            "type": "step",
+            "title": "Ajuste das Configurações de Privacidade nas Ferramentas",
+            "isHidden": false,
+            "description": "<p>Desligue o treinamento (ChatGPT), desligue a atividade ou abra um chat temporário (Gemini) e, no Deep Research do Gemini, desmarque Gmail e Drive. Na Perplexity, desligue a coleta se o seu plano permitir.</p>"
+          },
+          {
+            "id": "4b893401-f682-4c02-b153-82ea115e2c71",
+            "type": "step",
+            "title": "Registro das Ações na Planilha de Auditoria",
+            "isHidden": false,
+            "description": "<p>Na aba <strong>Registro</strong> da planilha de auditoria, registre as seguintes informações:</p><ul><li>Ferramenta utilizada</li><li>Configuração aplicada</li><li>Data</li><li>Horário</li></ul>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "5a030fd4-2f8b-47fc-905d-ae3d09dc1e2c"
+      },
+      {
+        "id": "c01c56a7-3881-4086-8d56-9032d6e79c24",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e215bad8-3b47-4e22-9559-c74381441faa",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> em <em>ChatGPT &gt; Profile &gt; Settings &gt; Data Controls</em>, a chave \"Improve the model for everyone\" aparece desligada; no Gemini, o chat aberto indica modo temporário ou a atividade aparece desligada.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "dac00ac0-5345-43d8-af20-c2c7df21a4f2"
+      },
+      {
+        "id": "9de260aa-c18d-42dd-b9d1-718f2d80b842",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "f787871a-0631-4ebd-bb77-21c9567d935b",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Desligar Keep Activity no Gemini significa que:",
+            "answers": [
+              {
+                "id": "068e8874-d442-4426-aef4-5c4e854983e7",
+                "title": "nenhum dado fica armazenado",
+                "correct": false,
+                "feedback": "Não. Com Keep Activity desligado, os chats futuros ainda ficam guardados por 72 horas, para resposta e segurança."
+              },
+              {
+                "id": "cc196b71-b0dd-4357-aa1d-e1087dfe5542",
+                "title": "os chats futuros não treinam modelos, mas ficam 72 horas",
+                "correct": true,
+                "feedback": "Correto. Os chats futuros deixam de ser usados para treinar modelos, mas permanecem 72 horas para resposta e segurança."
+              },
+              {
+                "id": "663005c5-d926-4ec0-959e-25019d8c1f6c",
+                "title": "o Gmail continua funcionando normalmente",
+                "correct": false,
+                "feedback": "Não. O efeito é o contrário: com a atividade desligada, alguns aplicativos conectados deixam de funcionar."
+              },
+              {
+                "id": "1f7b7178-7ffd-4819-8eae-879e42c70943",
+                "title": "os dados passam a ser apagados em 18 meses",
+                "correct": false,
+                "feedback": "Não. Os 18 meses são a autoexclusão padrão com a atividade ligada. Desligada, os chats futuros ficam 72 horas."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "0bcde866-387b-4f0b-961d-28035e166529"
+      },
+      {
+        "id": "o5f88tmepcuqci1itrru0wex",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "sjvxnye4pwvm3lijthxoj2ie",
+            "heading": "Checklist de Prevenção e Conformidade",
+            "paragraph": "<p>Antes de enviar qualquer arquivo ou conectar um aplicativo, passe por estas sete perguntas. Juntas, formam o checklist-base que você pode copiar para a aba Registro:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "72a01142-fa04-49a9-908e-b2560f56b99e"
+      },
+      {
+        "id": "sgesom1oxrw0cklzoby1w3tq",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "xizvucd0388akjuf5in4s7p8",
+            "back": {
+              "type": "description",
+              "description": "<p>Por que você vai enviar este material? Se ele não é público, há base legal e autorização interna?</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Finalidade documentada</strong>"
+            }
+          },
+          {
+            "id": "hvc805pvhp1jmrmtt3zh2ta1",
+            "back": {
+              "type": "description",
+              "description": "<p>Quais arquivos ou pastas serão enviados? Evite compartilhar a caixa inteira.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Mínimo necessário</strong>"
+            }
+          },
+          {
+            "id": "qty9qv3fan49xct1zzyoitjm",
+            "back": {
+              "type": "description",
+              "description": "<p>Todos os dados sensíveis foram removidos ou anonimizados de fato?</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Dados pessoais ou sigilosos</strong>"
+            }
+          },
+          {
+            "id": "oixl6w7eus2v15ymalplvre1",
+            "back": {
+              "type": "description",
+              "description": "<p>Você está usando uma conta pessoal ou empresarial contratada e aprovada?</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Conta utilizada</strong>"
+            }
+          },
+          {
+            "id": "cprdfj3ec5n7fhcbi0z9qggz",
+            "back": {
+              "type": "description",
+              "description": "<p>A configuração de uso para treinamento está desativada?</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Treinamento desligado</strong>"
+            }
+          },
+          {
+            "id": "h41nohg73zktmf66q8d3rsr5",
+            "back": {
+              "type": "description",
+              "description": "<p>Quais conectores estão ativos? Limite ao mínimo necessário.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Conectores ativos</strong>"
+            }
+          },
+          {
+            "id": "ejqczildoti7h62jfxx99b2g",
+            "back": {
+              "type": "description",
+              "description": "<p>Foi feita uma revisão para garantir que não há violação de sigilo profissional?</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Revisão de sigilo profissional</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "8520cf44-dd81-4339-af5f-8ff4e1461aa3"
+      },
+      {
+        "id": "e6aa726b-74b6-49eb-b5e8-4ccce9cebcb5",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "1df8a54c-47db-4494-85c3-c159855fb70b",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "4f1c8340-3947-4880-ad78-a31f5306afab"
+      },
+      {
+        "id": "yi54t43yekdcecf4pqofyitp",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "eg8cwygsddplqyixaldgbls3",
+            "paragraph": "<p>No Módulo 3, com as regras de dados definidas, você escreve o brief da primeira pesquisa e aprende a revisar o plano do agente antes de ele começar.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "077b4333-0b18-4f48-a971-fee329c73841"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Segurança, Dados e Sigilo em Pesquisas com IA",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "KvZFlVArk5NLyTJLgjEe-e8IozLnLCLq",
+    "createdAt": "2026-11-07T20:25:11.957Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-07T20:26:12.881Z"
+  }
+}

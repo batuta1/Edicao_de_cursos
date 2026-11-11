@@ -1,0 +1,123 @@
+{
+ "licao": 2,
+ "posicao": 11,
+ "blocos": [
+  {
+   "modelo": "divider-continue-continue.json",
+   "itens": [
+    {
+     "title": "Continue"
+    }
+   ]
+  },
+  {
+   "modelo": "text-text-heading-paragraph.json",
+   "itens": [
+    {
+     "heading": "Pesquisa com fonte oficial: a regra que vale",
+     "paragraph": "<p>Uma empresa sofreu um vazamento de dados. Quando e para quem ela precisa comunicar? Pergunta assim não aceita \"segundo um blog\": a resposta mora na LGPD e na Resolução CD/ANPD 15/2024. Aqui você prende o agente às fontes oficiais e confere artigo por artigo — serve para quem é do Direito e para qualquer pessoa que precise de regra, não de opinião.</p><p>Você vai usar o ChatGPT, pela restrição de sites (<strong>1 pesquisa</strong>), ou a Perplexity, se for a sua do mês; o PDF da Resolução CD/ANPD 15/2024 e a página da ANPD sobre comunicação de incidente. Parte guiada:</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "list-list-numbered.json",
+   "itens": [
+    {
+     "paragraph": "<p>No ChatGPT, vá a <strong>caixa do prompt &gt; Sites &gt; Manage sites</strong>, inclua planalto.gov.br e gov.br/anpd e escolha <strong>restringir</strong> a esses sites (não \"priorizar\").</p>"
+    },
+    {
+     "paragraph": "<p>Ative <strong>+ &gt; Deep research</strong> e cole o prompt do destaque abaixo.</p>"
+    },
+    {
+     "paragraph": "<p>Registre a execução na aba Registro, com os sites restringidos.</p>"
+    },
+    {
+     "paragraph": "<p>Abra o PDF da Resolução. Ele traz outros atos do Diário Oficial antes: procure pelo título dentro do arquivo (<strong>Localizar &gt; \"Resolução CD/ANPD nº 15\"</strong>).</p>"
+    },
+    {
+     "paragraph": "<p>Confira três afirmações do relatório: prazo, destinatários e tempo de guarda do registro. 🏁 Em Sites &gt; Manage sites, os dois domínios aparecem com a opção de restringir marcada; no PDF, o art. 6º está localizado.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "text-impact-b.json",
+   "itens": [
+    {
+     "paragraph": "<p>💬 <strong>Prompt:</strong> Pesquise a obrigação de comunicar incidente de segurança sob a LGPD e a Resolução CD/ANPD 15/2024. Use apenas planalto.gov.br, gov.br/anpd e o repositório do Ministério da Justiça para a conclusão normativa. Distinga lei, regulamento e orientação; informe vigência e artigo; não dê parecer para caso concreto; transcreva no máximo o trecho necessário; liste qualquer conflito ou mudança posterior.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "text-impact-b.json",
+   "itens": [
+    {
+     "paragraph": "<p>⚠️ <strong>Na Perplexity,</strong> escrever os domínios no prompt não bloqueia o resto da web (não há garantia documentada). Se usar a Perplexity, confira no painel de fontes quais escaparam do domínio.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "text-text-paragraph.json",
+   "itens": [
+    {
+     "paragraph": "<p>Sua vez:</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "list-list-numbered.json",
+   "itens": [
+    {
+     "paragraph": "<p>Para cada afirmação do relatório, marque o tipo: lei (LGPD), regulamento (Resolução) ou orientação (página da ANPD).</p>"
+    },
+    {
+     "paragraph": "<p>Verifique se o relatório trata a regra geral como parecer para um caso concreto. Se sim, marque \"corrigir\".</p>"
+    },
+    {
+     "paragraph": "<p><strong>Sem saldo?</strong> Rode o mesmo pedido na busca comum da Perplexity (ilimitada) e audite do mesmo jeito — anotando que não foi pesquisa profunda.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "text-impact-b.json",
+   "itens": [
+    {
+     "paragraph": "<p>✅ <strong>Deu certo?</strong> Sua auditoria confirma: comunicação à ANPD e aos titulares, em três dias úteis (art. 6º); conteúdo da comunicação nos arts. 6º e 9º; registro do incidente por pelo menos cinco anos (art. 10). Cada linha diz se a fonte é lei, regulamento ou orientação, e nenhuma frase do relatório corrigido virou parecer.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "text-text-heading-paragraph.json",
+   "itens": [
+    {
+     "heading": "Se travar",
+     "paragraph": "<p>Abra o item do seu problema:</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "interactive-interactive-accordion.json",
+   "itens": [
+    {
+     "title": "Não acho Manage sites",
+     "description": "<p>Pode depender de plano ou região [conferir]. Escreva os domínios no brief e audite as fontes uma a uma.</p>"
+    },
+    {
+     "title": "O relatório cita blog de escritório",
+     "description": "<p>É fonte secundária: troque pelo artigo da norma ou remova.</p>"
+    },
+    {
+     "title": "Dúvida se a norma mudou",
+     "description": "<p>Abra o texto consolidado no Planalto e procure atos alteradores; anote a data.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "divider-continue-continue.json",
+   "itens": [
+    {
+     "title": "Continue"
+    }
+   ]
+  }
+ ]
+}

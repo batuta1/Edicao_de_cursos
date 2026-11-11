@@ -1,0 +1,595 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Executando Pesquisas Profundas e Documentando o Processo",
+  "lesson": {
+    "description": "",
+    "id": "5caa1180-c5cf-47e7-9931-07f0042b8d04",
+    "items": [
+      {
+        "id": "e9tf8gfnirebnmiw4ioapnk3",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "piwtlpzu0eng91g1juo56xdu",
+            "heading": "Rode, dirija o plano e guarde a trilha",
+            "paragraph": "<p>O agente vai propor um plano. Se você só clicar \"começar\", ele faz do jeito dele. Nesta lição você lê o plano, corrige o rumo, deixa o agente trabalhar e guarda tudo o que alguém precisaria para refazer a pesquisa. Vai usar <strong>1 pesquisa</strong> — de preferência no Gemini (limite diário) ou no ChatGPT — e o brief do caso-guia da lição anterior.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "727aebc2-737c-448d-b0fb-e291c589873a"
+      },
+      {
+        "id": "tchs5tw0h3s91ydbkox7hknc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "m3inzepywuwaqbbm0gpvvj28",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "bf2a6920-b21b-45d5-a36a-3edda590d689"
+      },
+      {
+        "id": "g3jiixq3b37khulrctv38c4a",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "zads88wiprix24ip8jl086xv",
+            "number": "1",
+            "paragraph": "<p>Rodar o brief no Deep Research da ferramenta escolhida.</p>"
+          },
+          {
+            "id": "zeqrrvrn9ggb5fu37rbvaq2n",
+            "number": "2",
+            "paragraph": "<p>Ler o plano do agente e corrigir o rumo antes de começar.</p>"
+          },
+          {
+            "id": "pea7ft2jw5mejlt2lhzamskf",
+            "number": "3",
+            "paragraph": "<p>Registrar ferramenta, modo, data, hora, plano e edições na aba Registro.</p>"
+          },
+          {
+            "id": "r3qodsknzpgkzebzw810cbtp",
+            "number": "4",
+            "paragraph": "<p>Exportar o relatório com a data no nome e pedir um refinamento sem gastar nova pesquisa.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "7c3e2056-b500-47a7-8cf9-2143cd0c7b9a"
+      },
+      {
+        "id": "ma8cot9qcmp7gh61p6njjbkl",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dse3ti3j0g0f0f9f8kpqynfe",
+            "heading": "Onde fica o Deep Research em cada ferramenta",
+            "paragraph": "<p>Caminhos e limites do plano gratuito. Rótulos marcados com [conferir] podem ter mudado na interface:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "07fea0b4-bde2-45a1-90a7-d1a2b76c37a4"
+      },
+      {
+        "id": "5c4fdeaf-6015-48d3-b1cb-2fb5e08e1fa5",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "0847a16d-fd08-4fd2-a025-df5539914d21",
+            "title": "ChatGPT",
+            "description": "<p>Caminho: <strong>caixa de mensagem &gt; + &gt; Deep research</strong>, ou digite <strong>/Deepresearch</strong>. No gratuito, o acesso é limitado e o saldo aparece no próprio produto [conferir onde].</p><p></p><p>Você responde às perguntas de esclarecimento e revisa o plano proposto antes de confirmar. Exporta em Markdown, Word e PDF.</p>"
+          },
+          {
+            "id": "077b251b-26c9-47fa-821c-aae057d3102c",
+            "title": "Gemini",
+            "description": "<p>Caminho: <strong>gemini.google.com &gt; ferramentas &gt; Deep Research</strong> [conferir rótulo]. Limite diário variável; exige 18 anos ou mais.</p><p></p><p>Mostra o plano antes de começar e deixa editá-lo em <strong>Edit plan</strong>. Exporta direto para o Docs em <strong>Open report &gt; Export &gt; Export to Docs</strong>.</p>"
+          },
+          {
+            "id": "f6a620f0-493e-45bd-83fb-cb77788864c2",
+            "title": "Perplexity",
+            "description": "<p>Caminho: <strong>barra de pergunta &gt; + &gt; Deep research</strong>. No gratuito, <strong>1 pesquisa por mês</strong> — guarde para quando o brief estiver pronto.</p><p></p><p>Não clique em \"Create files and apps\": é outro modo, com outra cota. A Perplexity não tem etapa de aprovação do plano, então todo o controle fica no brief.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "5a93dcf2-ea6f-4e4a-afef-21a3115ef8e6"
+      },
+      {
+        "id": "b472666c-76b0-4e82-b19d-5e25d362a81b",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "a2f4b8d3-5156-4fde-890e-6df3262272f1",
+            "paragraph": "<p>🤓 O Gemini deixa desmarcar o Google Search (<strong>Deep Research &gt; Sources</strong>) e pesquisar só nos arquivos que você escolher. É o jeito de separar \"o que meus documentos dizem\" de \"o que a web diz\".</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "5cfbf51c-8f0d-43e5-bf51-b3aacc949813"
+      },
+      {
+        "id": "b8f86b9e-631d-4cd2-88bc-7ea9c917ff67",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "26b8e8ea-f908-4f4f-b848-44317639e0fa",
+            "type": "intro",
+            "title": "Introdução ao Processo de Pesquisa Profunda",
+            "isHidden": false,
+            "description": "<p>Parte guiada: uma pesquisa, do brief colado ao relatório exportado. Use a espera do agente para adiantar a planilha.</p>"
+          },
+          {
+            "id": "4a52bc1f-6b45-49da-b667-1225c96a972c",
+            "type": "summary",
+            "title": "Deu certo?",
+            "isHidden": false,
+            "description": "<p>Você tem: o relatório exportado com data no nome; a aba Registro com ferramenta, modo, data, hora, plano e edição; e a tabela de afirmações com fonte. Na rota sem cota: o Registro tem o prompt e o plano tirados do relatório do MIT.</p>"
+          },
+          {
+            "id": "b0620331-644c-4854-8696-0153ffa0f337",
+            "type": "step",
+            "title": "Abrir Deep Research e inserir brief",
+            "isHidden": false,
+            "description": "<p>Abra o Deep Research da ferramenta escolhida e cole o brief do caso-guia da lição anterior.</p>"
+          },
+          {
+            "id": "93e8ebb9-8b6a-48b4-9ee2-6e527c83bda4",
+            "type": "step",
+            "title": "Revisar e ajustar o plano da IA",
+            "isHidden": false,
+            "description": "<p><strong>No Gemini:</strong> leia o plano. Se não houver um passo \"separar 60+ e 65+\" ou \"usar o Censo 2022 do IBGE\", vá a <strong>Deep Research &gt; plano &gt; Edit plan</strong> e acrescente. <strong>No ChatGPT:</strong> responda às perguntas de esclarecimento e revise o plano proposto.</p>"
+          },
+          {
+            "id": "2fa4ea67-d63b-4980-8c63-bd1de07f97b5",
+            "type": "step",
+            "title": "Confirmar e registrar",
+            "isHidden": false,
+            "description": "<p>No Gemini, clique em <strong>Start research</strong>; no ChatGPT, confirme. Anote na aba Registro: ferramenta, modo (Thinking ou Pro, no Gemini), data, hora, plano e o que você editou.</p><p>🏁 No Gemini, <strong>Deep Research &gt; plano</strong> mostra o passo que você acrescentou antes de Start research.</p>"
+          },
+          {
+            "id": "22d3cfe6-9d9a-4bfe-a28f-929dd2e3bc61",
+            "type": "step",
+            "title": "Preparar a planilha durante a pesquisa",
+            "isHidden": false,
+            "description": "<p>Enquanto o agente trabalha, numere de 1 a 5 as linhas da aba Auditoria.</p>"
+          },
+          {
+            "id": "4424b2c9-e59f-4e27-9847-719fd9617b61",
+            "type": "step",
+            "title": "Examinar relatório e histórico",
+            "isHidden": false,
+            "description": "<p>Com o relatório pronto, abra-o inteiro. No ChatGPT, veja <strong>relatório &gt; Sources used</strong> e o histórico de atividade (activity history).</p>"
+          },
+          {
+            "id": "87163e52-5aab-4e3a-a355-05006266ec51",
+            "type": "step",
+            "title": "Exportar e salvar o relatório",
+            "isHidden": false,
+            "description": "<p>Exporte: Gemini <strong>Open report &gt; Export &gt; Export to Docs</strong>; ChatGPT <strong>relatório &gt; Download/Export &gt; Word, PDF ou Markdown</strong> [conferir rótulo]. Guarde o arquivo com a data no nome.</p>"
+          },
+          {
+            "id": "08442829-a6ff-4814-b7be-a8b8ab6ecd10",
+            "type": "step",
+            "title": "Solicitar refinamento e registrar",
+            "isHidden": false,
+            "description": "<p>Sua vez, sem gastar nova pesquisa. No mesmo chat, cole: \"Transforme os achados numa tabela com quatro colunas: afirmação, número, fonte primária com link, data da fonte. Marque 'sem fonte primária' quando for o caso.\" Depois, anote no Registro que houve refinamento.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "38eaf5c6-3cc1-45f3-b643-e3897bd94c67"
+      },
+      {
+        "id": "30d51849-9d7b-406f-8abe-f0ebc555977a",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "a5cf9502-3911-4bd8-8c9d-04630992eaac",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "34ec1a25-7746-4973-9f28-ac51c169ea9c"
+      },
+      {
+        "id": "ivtn495irl3pu68qn6lgfhvp",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ra9zmbze00yvslsj43p815od",
+            "heading": "O que vai para a aba Registro",
+            "paragraph": "<p>A aba Registro é o que permite a outra pessoa — ou a você, daqui a um mês — refazer a pesquisa. Para cada execução, anote:</p><ul><li>Ferramenta e modo (Thinking ou Pro, no Gemini)</li><li>Data e hora</li><li>Brief</li><li>Plano e as edições que você fez</li><li>Configuração de dados</li><li>Refinamentos pedidos depois do relatório</li></ul><p>O mesmo brief pode gerar números diferentes em outra data. Sem registro, não há como explicar a diferença.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "8d67fdb6-7ba8-425b-ab61-758bf8f93037"
+      },
+      {
+        "id": "662b2cb6-87c1-47d7-bfcc-498dd74037d4",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "761d35ac-6a36-42d9-8ca5-2f941ccbbe70",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Ao revisar o plano de pesquisa sugerido pela IA, qual das opções abaixo garante maior precisão e aderência ao brief?",
+            "answers": [
+              {
+                "id": "ccb34bf2-62a3-4fbb-b95d-3333ed54db23",
+                "title": "Aceitar o plano original da IA sem ajustes.",
+                "correct": false,
+                "feedback": "Aceitar o plano sem ajustes pode resultar em desvios do escopo e fontes necessárias, comprometendo a precisão."
+              },
+              {
+                "id": "d188ce13-f7e1-4b7f-83ce-4ae38bd7e982",
+                "title": "Editar o plano para incluir recortes, fontes obrigatórias e etapas essenciais antes de iniciar.",
+                "correct": true,
+                "feedback": "Editar o plano antes de iniciar garante que a pesquisa siga exatamente o escopo e as fontes necessárias, aumentando a precisão dos resultados."
+              },
+              {
+                "id": "9960a817-a3d8-4489-8de3-c5dd0bed47bb",
+                "title": "Corrigir o plano apenas após o relatório estar pronto.",
+                "correct": false,
+                "feedback": "Corrigir apenas após o relatório pode gerar retrabalho e perda de tempo, além de não garantir aderência ao brief desde o início."
+              },
+              {
+                "id": "f0429658-60b4-48e2-a9cf-4557f3d3559f",
+                "title": "Ignorar o plano e seguir direto para o relatório.",
+                "correct": false,
+                "feedback": "Ignorar o plano compromete totalmente a estrutura e a precisão da pesquisa, podendo resultar em um relatório desalinhado com o brief."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "32bcf072-2449-4d1d-ac69-148a30668cf3"
+      },
+      {
+        "id": "rcnkk156zkpi7vv8p1ekkeod",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e68spzqme96jhtu6m6ogny05",
+            "heading": "Como Resolver Dúvidas e Obstáculos em Pesquisas Profundas com IA",
+            "paragraph": "<p>Três situações comuns na primeira execução:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "f7c7a12e-6125-4852-951c-01e247e2462a"
+      },
+      {
+        "id": "4c0827da-7210-4bf7-aa32-ff6c85d8d449",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "b3149ec0-0efe-48bc-9e6d-00050d3430f8",
+            "title": "Não achei Edit plan",
+            "description": "<p>No Gemini, o plano aparece antes do início [conferir rótulo]. No ChatGPT, edite respondendo às perguntas ou pedindo ajuste. Na Perplexity não há aprovação de plano: o controle fica todo no brief.</p>"
+          },
+          {
+            "id": "3e7dd5e1-9839-4b2e-b8f8-46a4e257bc97",
+            "title": "O agente está demorando",
+            "description": "<p>Normal: a pesquisa profunda pode levar vários minutos. Deixe o agente trabalhar e prepare a planilha.</p>"
+          },
+          {
+            "id": "1e3641a5-e604-4199-b988-8715d0cac7f4",
+            "title": "Relatório raso ou fora do Brasil",
+            "description": "<p>Reduza o escopo, exija fonte primária e \"Brasil, pt-BR\" e rode em outra data.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "1189e735-cb4a-4257-a2df-99e7b8488c0a"
+      },
+      {
+        "id": "ba0e9eef-ff36-402a-9ce0-a6540958cb27",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b29f8f77-f49e-4fbd-9ef6-c9afeb948bc7",
+            "paragraph": "<p>⚠️ O ChatGPT exporta em Markdown, Word e PDF; Google Docs não é formato direto (abra o Word no Drive). Só o Gemini exporta direto para o Docs.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "d5878a9f-0a2c-4554-8ed0-daaaca7f67d8"
+      },
+      {
+        "id": "ehd3kra5vezkm0n35wpi26q8",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "g56jywwy9r8t5to81z0g8wn9",
+            "heading": "Antes de seguir: confira a trilha",
+            "paragraph": "<p>Três pontos que costumam faltar no registro. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "3c34db6c-93dd-4d08-a1c6-5a5df263fa76"
+      },
+      {
+        "id": "kx0vfl1rsc97u9ddrep7pkd4",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "vd4aqaeedc4lyd5v7ylfkjcr",
+            "back": {
+              "type": "description",
+              "description": "<p>Salvar o relatório com a data no nome facilita a organização, rastreabilidade e auditoria futura dos resultados.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Por que é importante salvar o relatório com a data no nome?</p>"
+            }
+          },
+          {
+            "id": "j6xkb1258n31uljplhybm1jt",
+            "back": {
+              "type": "description",
+              "description": "<p>Que houve refinamento, o que foi pedido e quando. O refinamento muda o relatório; sem a anotação, a trilha fica incompleta.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>O que deve ser registrado ao fazer um refinamento em um relatório?</p>"
+            }
+          },
+          {
+            "id": "wmdo2c1kjr8zj71jxwoxn1i9",
+            "back": {
+              "type": "description",
+              "description": "<p>Apenas o Gemini permite exportar relatórios diretamente para o Google Docs, facilitando o compartilhamento e edição.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Qual ferramenta permite exportar relatórios diretamente para o Google Docs?</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "a158b657-e3ef-478f-94df-2f33563979f3"
+      },
+      {
+        "id": "8642d3e5-0213-4a61-9117-ef1531013c27",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "f667ffe8-3e75-4a9d-ac38-bce21b8c0ad4",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "4fbb99f1-8b4e-43ac-83c0-5a5bb1d5c018"
+      },
+      {
+        "id": "bb6oiaastpzq6ywdy1x7us0c",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "lvoeux136ooz6i0honkz3y82",
+            "paragraph": "<p>Relatório na mão e trilha guardada. Na próxima lição você confere o relatório afirmação por afirmação na fonte primária e entrega o seu dossiê auditado.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.165.0"
+          }
+        },
+        "globalBlockId": "2a126adf-e39d-425b-b636-f1267f7a4150"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Executando Pesquisas Profundas e Documentando o Processo",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "dHkTtvyGslmNIPiqZ8vB0l46eBMTOJyd",
+    "createdAt": "2026-11-07T21:05:16.476Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-07T21:05:57.868Z"
+  }
+}

@@ -1,0 +1,36 @@
+{
+ "licao": 3,
+ "posicao": 13,
+ "blocos": [
+  {
+   "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+   "itens": [
+    {
+     "title": "Ao conferir uma referência, você encontra no Crossref o mesmo título, os mesmos autores e o mesmo periódico, mas com ano 2021; a referência cita 2020. Como registrar a camada 1?",
+     "answers": [
+      {
+       "title": "Não localizada, porque o ano não bate.",
+       "correct": false,
+       "feedback": "Não. Título, autores e periódico batem: a obra foi localizada. Um único campo divergente não indica inexistência."
+      },
+      {
+       "title": "Localizada com divergência, anotando que o Crossref registra 2021 e a referência cita 2020.",
+       "correct": true,
+       "feedback": "Correto. Um campo divergente pode ser erro de transcrição ou versão prévia (preprint). Registre a divergência e o que cada fonte mostra."
+      },
+      {
+       "title": "Localizada, sem observações, porque o ano é um detalhe.",
+       "correct": false,
+       "feedback": "Não. Divergência de metadados se registra na ficha; é ela que permite a outra pessoa entender e refazer a decisão."
+      },
+      {
+       "title": "Obra inexistente, provavelmente fabricada pela IA.",
+       "correct": false,
+       "feedback": "Não. A conclusão é especulativa e desproporcional: a obra foi encontrada no Crossref."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
