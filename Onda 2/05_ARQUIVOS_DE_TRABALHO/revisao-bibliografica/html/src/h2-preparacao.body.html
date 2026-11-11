@@ -1,0 +1,21 @@
+<!--titulo: Preparação: quatro abas abertas-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Ponto de controle</span>
+  <h1 id="t">Quatro abas abertas</h1>
+  <p class="sub">Marque cada item quando ele estiver pronto no seu computador. O curso segue com os quatro marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <p class="nota">Plano gratuito: no Consensus, Paper search à vontade, de 10 a 15 mensagens Pro por mês (as páginas da própria Consensus divergem) e 3 Deep por mês — o curso usa no máximo duas Pro e nenhuma Deep. No Elicit Basic, o Research Agent tem uso limitado — o curso usa duas execuções.</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  checklist([
+    'semanticscholar.org aberto (não precisa de conta para buscar).',
+    'consensus.app aberto, com conta gratuita: o seu avatar aparece no canto.',
+    'elicit.com aberto, com conta gratuita Basic: a caixa do Research Agent aceita digitação.',
+    'Planilha com as abas Log, Triagem, Extração e Síntese, com a data de hoje na primeira linha do Log.'
+  ], 'lista', 'placar', 'barra', 'itens prontos', function () {
+    concluir('final', 'Tudo pronto. Agora, a primeira etapa de toda revisão: a pergunta.');
+  });
+</script>

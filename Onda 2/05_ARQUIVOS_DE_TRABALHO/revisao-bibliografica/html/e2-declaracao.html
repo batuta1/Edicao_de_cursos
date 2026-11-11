@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monte sua declaração de uso de IA</title>
+<style>
+  :root {
+    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;
+    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;
+    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;
+    --aviso: #8a5a00; --aviso-claro: #fdf3e1;
+    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }
+  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }
+  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }
+  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }
+  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }
+  .sub { margin: 0 0 18px; color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }
+  button { font: inherit; }
+  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }
+  .btn:hover { background: var(--azul-claro); }
+  .btn[aria-pressed="true"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }
+  .btn.principal:hover { background: var(--azul-2); }
+  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }
+  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }
+  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }
+  .feedback:empty { display: none; }
+  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }
+  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }
+  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }
+  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }
+  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }
+  .final:empty { display: none; }
+  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }
+  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }
+  .saida { white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }
+  .item p.f { margin: 0 0 10px; font-weight: 600; color: var(--azul); }
+  .extra { margin: 0 0 10px; font-size: 14px; }
+  .extra .trecho { margin: 6px 0 0; padding: 8px 10px; border-left: 3px solid var(--azul-2); background: var(--azul-claro); border-radius: 0 8px 8px 0; }
+  .placar { font-weight: 700; color: var(--azul); margin: 0; }
+  .chk { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }
+  .chk input { width: 20px; height: 20px; margin: 1px 0 0; flex: 0 0 auto; accent-color: var(--azul); }
+  .chk.feito { border-color: var(--ok); background: var(--ok-claro); }
+  input[type="text"], input[type="number"], textarea, select { font: inherit; width: 100%; border: 1px solid var(--linha); border-radius: 10px; padding: 8px 10px; background: #fff; color: var(--tinta); }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+</style>
+<script>
+// Funções comuns aos blocos HTML do curso Revisão Bibliográfica com IA.
+
+// Avisa o Rise (uma vez) que a atividade foi concluída: libera o Continue "completeBlock".
+var __concluido = false;
+function concluir(idFinal, texto) {
+  if (__concluido) return;
+  __concluido = true;
+  if (idFinal) document.getElementById(idFinal).textContent = texto;
+  window.parent.postMessage({ type: 'complete' }, '*');
+}
+
+// Copia o texto de um elemento; se a LMS bloquear a área de transferência, deixa o texto selecionado.
+function ligarCopia(idBotao, idSaida, idMsg, rotulo) {
+  document.getElementById(idBotao).addEventListener('click', function () {
+    var el = document.getElementById(idSaida), msg = document.getElementById(idMsg);
+    var texto = el.value !== undefined ? el.value : el.textContent;
+    function ok() { msg.textContent = rotulo + ' copiado.'; msg.className = 'feedback info'; }
+    function falhou() {
+      if (el.select) { el.select(); } else {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      }
+      var copiou = false; try { copiou = document.execCommand('copy'); } catch (e) {}
+      if (copiou) { ok(); } else { msg.textContent = 'O texto está selecionado: use Ctrl+C (ou Cmd+C) para copiar.'; msg.className = 'feedback info'; }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(texto).then(ok, falhou); } else { falhou(); }
+  });
+}
+
+// Atividade de classificação: cada caso tem uma resposta certa entre as opções.
+// cfg = { casos: [{t, extra?, r, p}], opcoes: {chave: rotulo}, dicaErro, idLista, idPlacar, idBarra,
+//         rotuloPlacar, aoConcluir: function () {} }
+function classificador(cfg) {
+  var certos = {}, lista = document.getElementById(cfg.idLista);
+  cfg.casos.forEach(function (caso, i) {
+    var c = document.createElement('div'); c.className = 'item';
+    var titulo = document.createElement('p'); titulo.className = 'f'; titulo.id = cfg.idLista + '-c' + i;
+    titulo.textContent = caso.t;
+    c.appendChild(titulo);
+    if (caso.extra) {
+      var ex = document.createElement('div'); ex.className = 'extra'; ex.innerHTML = caso.extra; c.appendChild(ex);
+    }
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group');
+    g.setAttribute('aria-labelledby', titulo.id);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');
+    Object.keys(cfg.opcoes).forEach(function (k) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = cfg.opcoes[k];
+      b.setAttribute('data-k', k); b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        if (Array.isArray(caso.r) ? caso.r.indexOf(k) >= 0 : k === caso.r) {
+          certos[i] = true; c.className = 'item certo';
+          fb.textContent = 'Correto. ' + caso.p; fb.className = 'feedback ok';
+        } else {
+          delete certos[i]; c.className = 'item errado';
+          fb.textContent = 'Não é “' + cfg.opcoes[k] + '”. ' + (caso.dica || cfg.dicaErro); fb.className = 'feedback erro';
+        }
+        placar();
+      });
+      g.appendChild(b);
+    });
+    c.appendChild(g); c.appendChild(fb); lista.appendChild(c);
+  });
+  function placar() {
+    var n = Object.keys(certos).length, total = cfg.casos.length;
+    document.getElementById(cfg.idPlacar).textContent = n + ' de ' + total + ' ' + cfg.rotuloPlacar;
+    document.getElementById(cfg.idBarra).style.width = (100 * n / total) + '%';
+    if (n === total && cfg.aoConcluir) cfg.aoConcluir();
+  }
+  placar();
+}
+
+// Checklist: libera quando todos os itens estão marcados.
+function checklist(itens, idLista, idPlacar, idBarra, rotuloPlacar, aoConcluir) {
+  var marcados = {}, lista = document.getElementById(idLista);
+  itens.forEach(function (txt, i) {
+    var l = document.createElement('label'); l.className = 'chk';
+    var c = document.createElement('input'); c.type = 'checkbox';
+    var s = document.createElement('span'); s.textContent = txt;
+    c.addEventListener('change', function () {
+      if (c.checked) { marcados[i] = true; l.classList.add('feito'); } else { delete marcados[i]; l.classList.remove('feito'); }
+      atualizar();
+    });
+    l.appendChild(c); l.appendChild(s); lista.appendChild(l);
+  });
+  function atualizar() {
+    var n = Object.keys(marcados).length;
+    document.getElementById(idPlacar).textContent = n + ' de ' + itens.length + ' ' + rotuloPlacar;
+    document.getElementById(idBarra).style.width = (100 * n / itens.length) + '%';
+    if (n === itens.length) aoConcluir();
+  }
+  atualizar();
+}
+
+</script>
+</head>
+<body>
+<style>
+  .campos { display: grid; gap: 12px; }
+  .campos .linha { background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 12px 14px; }
+  .campos .linha > label:first-child { display: flex; gap: 10px; align-items: center; font-weight: 600; color: var(--azul); cursor: pointer; }
+  .campos .linha input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--azul); }
+  .campos .det { margin: 8px 0 0 28px; font-size: 13.5px; color: var(--suave); }
+  .campos .det input, .campos .det select { margin-top: 4px; }
+  .campos > label { display: block; font-size: 13px; font-weight: 600; color: var(--azul); }
+  .campos > label input { margin-top: 4px; }
+  #avisos { margin: 12px 0 0; padding: 0; list-style: none; font-size: 13.5px; }
+  #avisos li { margin: 0 0 4px; padding: 6px 10px; border-radius: 8px; background: var(--aviso-claro); color: var(--aviso); }
+  #avisos li.ok { background: var(--ok-claro); color: var(--ok); }
+  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 10px; }
+  textarea.saida { min-height: 150px; resize: vertical; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mão na massa</span>
+  <h1 id="t">Monte sua declaração de uso de IA</h1>
+  <p class="sub">Marque as ferramentas que usou, complete a finalidade e as datas e copie a declaração para o seu dossiê. O CNPq exige ferramenta e finalidade. Nada do que você digita sai desta página.</p>
+  <div class="campos">
+    <div class="linha">
+      <label><input type="checkbox" id="ss" checked> Semantic Scholar</label>
+      <div class="det">Finalidade: busca e descoberta</div>
+    </div>
+    <div class="linha">
+      <label><input type="checkbox" id="co" checked> Consensus</label>
+      <div class="det"><label>Modo usado no panorama da literatura
+        <select id="modo"><option>Pro</option><option>Deep</option><option>Pro e Deep</option></select></label></div>
+    </div>
+    <div class="linha">
+      <label><input type="checkbox" id="el" checked> Elicit</label>
+      <div class="det"><label>Colunas da extração assistida no Research Agent
+        <input type="text" id="cols" placeholder="Ex.: Study design, Country and setting, Sample size"></label></div>
+    </div>
+    <label>Datas de uso <input type="text" id="datas" placeholder="Ex.: 04/11/2026 a 11/11/2026"></label>
+  </div>
+  <ul id="avisos" aria-live="polite"></ul>
+  <div class="acoes"><button type="button" class="btn principal" id="copiar">Copiar a declaração</button></div>
+  <label for="saida" class="nota">Declaração pronta:</label>
+  <textarea class="saida" id="saida" readonly></textarea>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+</section>
+<script>
+  // Modelo-base de declaração do Módulo 2 do roteiro Essentials.
+  function el(id) { return document.getElementById(id); }
+  function atualizar() {
+    var partes = [];
+    if (el('ss').checked) partes.push('Semantic Scholar (busca e descoberta)');
+    if (el('co').checked) partes.push('Consensus (panorama da literatura, modo ' + el('modo').value + ')');
+    if (el('el').checked) partes.push('Elicit (Research Agent, extração assistida de ' + (el('cols').value.trim() || '[colunas]') + ')');
+    var lista = partes.length > 1 ? partes.slice(0, -1).join(', ') + ' e ' + partes[partes.length - 1] : (partes[0] || '[ferramentas]');
+    var datas = el('datas').value.trim() || '[datas]';
+    el('saida').value = 'Declaração de uso de IA: na preparação desta revisão ' + (partes.length > 1 ? 'foram utilizados ' : 'foi utilizado ') + lista + ', em ' + datas + '. Todas as referências foram localizadas nas bases indicadas e todos os dados extraídos foram conferidos no texto original pelos autores, que assumem integral responsabilidade pelo conteúdo. Nenhum dado pessoal ou material inédito de terceiros foi enviado às ferramentas.';
+    var av = [];
+    if (!partes.length) av.push(['Marque pelo menos uma ferramenta.', false]);
+    if (el('el').checked && !el('cols').value.trim()) av.push(['Diga quais colunas o Elicit extraiu: é a finalidade dele na sua revisão.', false]);
+    if (!el('datas').value.trim()) av.push(['Falta a data de uso. Resultados e ferramentas mudam: a data situa a declaração.', false]);
+    if (!av.length) av.push(['Ferramenta, finalidade e data: a declaração atende ao CNPq. Confira também a norma da universidade e as instruções do periódico.', true]);
+    var ul = el('avisos'); ul.innerHTML = '';
+    av.forEach(function (a) { var li = document.createElement('li'); li.textContent = a[0]; if (a[1]) li.className = 'ok'; ul.appendChild(li); });
+  }
+  ['ss', 'co', 'el', 'modo'].forEach(function (id) { el(id).addEventListener('change', atualizar); });
+  ['cols', 'datas'].forEach(function (id) { el(id).addEventListener('input', atualizar); });
+  ligarCopia('copiar', 'saida', 'msg', 'Declaração');
+  atualizar();
+</script>
+
+</body>
+</html>

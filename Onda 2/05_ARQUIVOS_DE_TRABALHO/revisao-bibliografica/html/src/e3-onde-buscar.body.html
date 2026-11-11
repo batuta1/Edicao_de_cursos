@@ -1,0 +1,28 @@
+<!--titulo: Onde esta consulta funciona?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Onde esta consulta funciona?</h1>
+  <p class="sub">O Semantic Scholar não aceita AND, OR nem curingas, mas aceita aspas para frase exata. A BVS e a SciELO aceitam expressões booleanas. Para cada consulta do caso-guia, decida onde ela pode ser colada como está.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Regras de consulta do Módulo 4 do roteiro Essentials.
+  classificador({
+    casos: [
+      { t: 'hipertensão AND (telessaúde OR telemedicina)', r: 'bvs', p: 'Expressão booleana: é para a BVS ou a SciELO. No Semantic Scholar, ela piora a busca.' },
+      { t: 'telehealth hypertension Brazil', r: 'ss', p: 'Consulta curta, sem operadores: é o formato que o Semantic Scholar pede.' },
+      { t: '"telessaúde na hipertensão"', r: 'ss', p: 'Frase exata entre aspas: o Semantic Scholar aceita.' },
+      { t: 'telehealth OR telemonitoring', r: 'bvs', p: 'OR é operador booleano. No Semantic Scholar, faça uma consulta por sinônimo.' },
+      { t: 'telemonitoring blood pressure control', r: 'ss', p: 'Outra consulta curta, uma por combinação de sinônimos — registre cada uma no Log.' }
+    ],
+    opcoes: { ss: 'Também no Semantic Scholar', bvs: 'Só na BVS ou SciELO' },
+    dicaErro: 'Procure AND, OR ou curingas: se houver, a consulta é para a BVS ou a SciELO. Aspas o Semantic Scholar aceita.',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'certas',
+    aoConcluir: function () {
+      concluir('final', 'Cinco de cinco. No Semantic Scholar, consultas curtas e separadas; o booleano fica para as bases tradicionais.');
+    }
+  });
+</script>

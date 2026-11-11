@@ -1,0 +1,94 @@
+{
+ "licao": 0,
+ "posicao": 3,
+ "blocos": [
+  {
+   "modelo": "text-text-heading-paragraph.json",
+   "itens": [
+    {
+     "heading": "Antes de arregaçar as mangas",
+     "paragraph": "<p>Este curso é mão na massa: você vai fazer uma revisão de literatura de verdade, pequena e completa, com três ferramentas de IA gratuitas e uma base brasileira. Revisão é trabalho de abas e de anotação — e a anotação é o que transforma \"uns artigos que a IA me deu\" em revisão. A preparação leva 7 minutos.</p><p>Toda revisão passa por cinco etapas: <strong>pergunta → busca → triagem → extração → síntese</strong>. Cada uma deixa uma pegada na planilha. Se a pegada não está lá, para quem lê a revisão a etapa não aconteceu.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "text-text-heading-paragraph.json",
+   "itens": [
+    {
+     "heading": "Monte a planilha",
+     "paragraph": "<p>Revisão bem anotada é como receita bem escrita: outra pessoa segue e chega ao mesmo bolo. Crie uma planilha com quatro abas — abra cada uma para ver as colunas:</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "interactive-interactive-accordion.json",
+   "itens": [
+    {
+     "title": "Log",
+     "description": "<p><strong>Colunas:</strong> Data · Onde buscou · Consulta exata · Filtros · Total exibido.</p><p></p><p><strong>Para quê:</strong> refazer cada busca — e explicar por que o total mudou.</p>"
+    },
+    {
+     "title": "Triagem",
+     "description": "<p><strong>Colunas:</strong> ID · Título · Onde achou · Decisão (incluir / excluir / incerto) · Motivo.</p><p></p><p><strong>Para quê:</strong> mostrar por que cada registro entrou ou saiu.</p>"
+    },
+    {
+     "title": "Extração",
+     "description": "<p><strong>Colunas:</strong> ID · País · Desenho · Amostra · Resultado · Página e trecho · Texto completo ou só resumo? · Conferido?</p><p></p><p><strong>Para quê:</strong> guardar cada dado com a sua origem.</p>"
+    },
+    {
+     "title": "Síntese",
+     "description": "<p><strong>Colunas:</strong> Frase · Tipo · Referência · Trecho.</p><p></p><p><strong>Para quê:</strong> ligar cada frase da conclusão ao trecho que a sustenta.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "text-text-heading-paragraph.json",
+   "itens": [
+    {
+     "heading": "O que pode ir para a IA",
+     "paragraph": "<p>O Elicit pode processar dados nos Estados Unidos com provedores de modelo; o Consensus repassa consultas e uploads a OpenAI, Anthropic, Google e Baseten (sem usar para treino, segundo a política). O Semantic Scholar busca sem conta. Antes de colar qualquer coisa, passe pelo semáforo:</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "html-html-inline.json",
+   "itens": [
+    {
+     "srcdoc": "@arquivo:../../../../html/h1-semaforo.html"
+    }
+   ],
+   "settings": {
+    "width": "1"
+   }
+  },
+  {
+   "modelo": "text-impact-b.json",
+   "itens": [
+    {
+     "paragraph": "<p>⚠️ <strong>Não precisa pagar:</strong> Systematic Review do Elicit e exportação de tabela em CSV são pagos. Você não precisa deles — a planilha faz esse papel.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "html-html-inline.json",
+   "itens": [
+    {
+     "srcdoc": "@arquivo:../../../../html/h2-preparacao.html"
+    }
+   ],
+   "settings": {
+    "width": "1",
+    "hasCustomCompletion": true
+   }
+  },
+  {
+   "modelo": "divider-continue-continue.json",
+   "itens": [
+    {
+     "title": "Continue",
+     "type": "completeBlock"
+    }
+   ]
+  }
+ ]
+}

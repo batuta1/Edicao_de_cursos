@@ -1,0 +1,40 @@
+{
+ "licao": 2,
+ "posicao": 12,
+ "blocos": [
+  {
+   "modelo": "text-text-heading-paragraph.json",
+   "itens": [
+    {
+     "heading": "Quer ir além? (opcional)",
+     "paragraph": "<p>Três desafios opcionais, para quem quiser ir além. Abra cada um — o desafio diz como saber se deu certo:</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "interactive-interactive-accordion.json",
+   "itens": [
+    {
+     "title": "Desafio 1: rode de novo",
+     "description": "<p>Rode a mesma pergunta de novo no Research Agent e compare duas células com a primeira execução.</p><p></p><p><strong>Valida se:</strong> você anotou se o resultado mudou (no estudo de 2026, só 77% se repetiram).</p>"
+    },
+    {
+     "title": "Desafio 2: Research Report",
+     "description": "<p>Gere um Research Report (<strong>elicit.com &gt; Research Report</strong>) com a mesma pergunta e abra três citações.</p><p></p><p><strong>Valida se:</strong> cada uma tem o supporting quote conferido.</p>"
+    },
+    {
+     "title": "Desafio 3: instrução mais precisa",
+     "description": "<p>Escreva uma coluna com instrução mais precisa (\"Sample size: number of participants analyzed, not recruited\") e compare.</p><p></p><p><strong>Valida se:</strong> a coluna nova errou menos.</p>"
+    }
+   ]
+  },
+  {
+   "modelo": "divider-continue-continue.json",
+   "itens": [
+    {
+     "title": "Continue"
+    }
+   ]
+  }
+ ]
+}

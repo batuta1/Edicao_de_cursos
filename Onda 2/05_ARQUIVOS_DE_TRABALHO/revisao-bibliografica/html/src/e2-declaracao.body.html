@@ -1,0 +1,67 @@
+<!--titulo: Monte sua declaração de uso de IA-->
+<style>
+  .campos { display: grid; gap: 12px; }
+  .campos .linha { background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 12px 14px; }
+  .campos .linha > label:first-child { display: flex; gap: 10px; align-items: center; font-weight: 600; color: var(--azul); cursor: pointer; }
+  .campos .linha input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--azul); }
+  .campos .det { margin: 8px 0 0 28px; font-size: 13.5px; color: var(--suave); }
+  .campos .det input, .campos .det select { margin-top: 4px; }
+  .campos > label { display: block; font-size: 13px; font-weight: 600; color: var(--azul); }
+  .campos > label input { margin-top: 4px; }
+  #avisos { margin: 12px 0 0; padding: 0; list-style: none; font-size: 13.5px; }
+  #avisos li { margin: 0 0 4px; padding: 6px 10px; border-radius: 8px; background: var(--aviso-claro); color: var(--aviso); }
+  #avisos li.ok { background: var(--ok-claro); color: var(--ok); }
+  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 10px; }
+  textarea.saida { min-height: 150px; resize: vertical; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mão na massa</span>
+  <h1 id="t">Monte sua declaração de uso de IA</h1>
+  <p class="sub">Marque as ferramentas que usou, complete a finalidade e as datas e copie a declaração para o seu dossiê. O CNPq exige ferramenta e finalidade. Nada do que você digita sai desta página.</p>
+  <div class="campos">
+    <div class="linha">
+      <label><input type="checkbox" id="ss" checked> Semantic Scholar</label>
+      <div class="det">Finalidade: busca e descoberta</div>
+    </div>
+    <div class="linha">
+      <label><input type="checkbox" id="co" checked> Consensus</label>
+      <div class="det"><label>Modo usado no panorama da literatura
+        <select id="modo"><option>Pro</option><option>Deep</option><option>Pro e Deep</option></select></label></div>
+    </div>
+    <div class="linha">
+      <label><input type="checkbox" id="el" checked> Elicit</label>
+      <div class="det"><label>Colunas da extração assistida no Research Agent
+        <input type="text" id="cols" placeholder="Ex.: Study design, Country and setting, Sample size"></label></div>
+    </div>
+    <label>Datas de uso <input type="text" id="datas" placeholder="Ex.: 04/11/2026 a 11/11/2026"></label>
+  </div>
+  <ul id="avisos" aria-live="polite"></ul>
+  <div class="acoes"><button type="button" class="btn principal" id="copiar">Copiar a declaração</button></div>
+  <label for="saida" class="nota">Declaração pronta:</label>
+  <textarea class="saida" id="saida" readonly></textarea>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+</section>
+<script>
+  // Modelo-base de declaração do Módulo 2 do roteiro Essentials.
+  function el(id) { return document.getElementById(id); }
+  function atualizar() {
+    var partes = [];
+    if (el('ss').checked) partes.push('Semantic Scholar (busca e descoberta)');
+    if (el('co').checked) partes.push('Consensus (panorama da literatura, modo ' + el('modo').value + ')');
+    if (el('el').checked) partes.push('Elicit (Research Agent, extração assistida de ' + (el('cols').value.trim() || '[colunas]') + ')');
+    var lista = partes.length > 1 ? partes.slice(0, -1).join(', ') + ' e ' + partes[partes.length - 1] : (partes[0] || '[ferramentas]');
+    var datas = el('datas').value.trim() || '[datas]';
+    el('saida').value = 'Declaração de uso de IA: na preparação desta revisão ' + (partes.length > 1 ? 'foram utilizados ' : 'foi utilizado ') + lista + ', em ' + datas + '. Todas as referências foram localizadas nas bases indicadas e todos os dados extraídos foram conferidos no texto original pelos autores, que assumem integral responsabilidade pelo conteúdo. Nenhum dado pessoal ou material inédito de terceiros foi enviado às ferramentas.';
+    var av = [];
+    if (!partes.length) av.push(['Marque pelo menos uma ferramenta.', false]);
+    if (el('el').checked && !el('cols').value.trim()) av.push(['Diga quais colunas o Elicit extraiu: é a finalidade dele na sua revisão.', false]);
+    if (!el('datas').value.trim()) av.push(['Falta a data de uso. Resultados e ferramentas mudam: a data situa a declaração.', false]);
+    if (!av.length) av.push(['Ferramenta, finalidade e data: a declaração atende ao CNPq. Confira também a norma da universidade e as instruções do periódico.', true]);
+    var ul = el('avisos'); ul.innerHTML = '';
+    av.forEach(function (a) { var li = document.createElement('li'); li.textContent = a[0]; if (a[1]) li.className = 'ok'; ul.appendChild(li); });
+  }
+  ['ss', 'co', 'el', 'modo'].forEach(function (id) { el(id).addEventListener('change', atualizar); });
+  ['cols', 'datas'].forEach(function (id) { el(id).addEventListener('input', atualizar); });
+  ligarCopia('copiar', 'saida', 'msg', 'Declaração');
+  atualizar();
+</script>

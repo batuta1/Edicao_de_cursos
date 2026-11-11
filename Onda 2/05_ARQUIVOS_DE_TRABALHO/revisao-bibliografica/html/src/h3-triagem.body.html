@@ -1,0 +1,29 @@
+<!--titulo: Trie com regra-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Trie com regra: incluir, excluir ou incerto?</h1>
+  <p class="sub">Seis resumos <strong>fictícios</strong>, escritos só para treinar, e os critérios do caso-guia. Incluir: estudos empíricos com adultos no Brasil, atenção primária, intervenção de telessaúde e resultado de pressão arterial. Excluir: protocolos, editoriais, estudos sem resultado clínico e estudos fora do Brasil.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Critérios do caso-guia (Oficina 1) e motivos de exclusão da Oficina 3 do roteiro Hands-on.
+  classificador({
+    casos: [
+      { t: 'Registro 1', extra: '<p class="trecho">Ensaio com adultos hipertensos atendidos em unidades básicas de saúde de um município brasileiro: telemonitoramento comparado ao cuidado usual. Desfecho: pressão arterial em seis meses.</p>', r: 'inc', p: 'Atende a todos os critérios: Brasil, adultos, atenção primária, telessaúde e resultado de pressão.' },
+      { t: 'Registro 2', extra: '<p class="trecho">Protocolo de um ensaio que vai avaliar teleconsultas para hipertensão na atenção primária brasileira. Os resultados serão publicados depois.</p>', r: 'exc', p: 'Motivo: "protocolo". Ainda não tem resultado.' },
+      { t: 'Registro 3', extra: '<p class="trecho">Estudo com adultos hipertensos em centros de saúde de Portugal: acompanhamento por telefone reduziu a pressão sistólica.</p>', r: 'exc', p: 'Motivo: "fora do Brasil".' },
+      { t: 'Registro 4', extra: '<p class="trecho">Programa de telessaúde para pacientes com hipertensão na atenção primária. Mostra queda da pressão arterial. O resumo não informa o país.</p>', r: 'inc2', p: 'Incerto: confira o país no texto completo antes de decidir.' },
+      { t: 'Registro 5', extra: '<p class="trecho">Capacitação de enfermeiros em telessaúde no Brasil, avaliada por questionário de conhecimento. Não mede a pressão arterial dos pacientes.</p>', r: 'exc', p: 'Motivo: "sem desfecho de pressão" (sem resultado clínico).' },
+      { t: 'Registro 6', extra: '<p class="trecho">Editorial defende a ampliação da telessaúde no SUS para doenças crônicas.</p>', r: 'exc', p: 'Motivo: "editorial".' }
+    ],
+    opcoes: { inc: 'Incluir', exc: 'Excluir', inc2: 'Incerto' },
+    dicaErro: 'Releia os critérios e procure no resumo: país, população, tipo de estudo e desfecho. Se faltar uma informação, a decisão é "incerto".',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'decididos corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Seis decisões, cada uma com motivo. Na aba Triagem, as quatro exclusões viram quatro motivos diferentes — e todos entram no PRISMA.');
+    }
+  });
+</script>

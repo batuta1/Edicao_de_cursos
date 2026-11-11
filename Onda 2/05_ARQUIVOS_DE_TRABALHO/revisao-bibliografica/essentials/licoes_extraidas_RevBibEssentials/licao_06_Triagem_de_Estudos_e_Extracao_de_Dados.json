@@ -1,0 +1,691 @@
+{
+  "numero_da_licao": 6,
+  "position_original": 5,
+  "title": "Triagem de Estudos e Extração de Dados",
+  "lesson": {
+    "description": "",
+    "id": "0a1f11dc-e531-488f-885c-f2973fac5d0f",
+    "items": [
+      {
+        "id": "vw2t5rhimcw8ydmeb6rzu7bk",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pkv07k1bk9todh69j4t59qqj",
+            "heading": "Triar com motivo, extrair com conferência",
+            "paragraph": "<p>Com os registros reunidos, duas decisões: o que entra na revisão e quais dados tirar de cada estudo. A IA acelera as duas — o Research Agent do Elicit monta a tabela em minutos —, mas estudos independentes mostram que ela erra. Nesta lição você tria com motivo, cria colunas de extração e confere cada dado no original.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "995b9b02-cffc-4644-844d-723bb5ea856e"
+      },
+      {
+        "id": "veh5klo82zhl7gkijvpjf3bi",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "s9f9czydilsezura0iltp5b0",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "25f5f7d2-b0a2-4b44-98af-4c9c218463e8"
+      },
+      {
+        "id": "xf3gq23c536zn6hqmafwnd91",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "wss26ro7x815lik8x6m1dj5y",
+            "number": "1",
+            "paragraph": "<p>Aplicar critérios de triagem por título/resumo e por texto completo, registrando o motivo de exclusão.</p>"
+          },
+          {
+            "id": "vyjsswsslsza9nud6kwj1702",
+            "number": "2",
+            "paragraph": "<p>Criar colunas de extração no Research Agent do Elicit.</p>"
+          },
+          {
+            "id": "mc72qs6fjxrnxzlke9jwdviq",
+            "number": "3",
+            "paragraph": "<p>Interpretar o supporting quote como pista de auditoria e conferir o dado no original.</p>"
+          },
+          {
+            "id": "y0xai1sbkoy6apwv332rkino",
+            "number": "4",
+            "paragraph": "<p>Citar os resultados dos estudos independentes sobre a precisão de extração.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "e5c371d1-7c47-4f34-94b4-a6fe090fcdcc"
+      },
+      {
+        "id": "b7nutpf16x0agoitvgmmspr9",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jmo6czobdsspiskw1sqi38su",
+            "heading": "Cinco termos da triagem e da extração",
+            "paragraph": "<p>Você vai usar estes termos a lição inteira. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "cf45550e-a3db-4407-a221-7ddcd2c4a99d"
+      },
+      {
+        "id": "uqiir4ewwtvom204zf5bizhd",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "o7g4lw722rnqjm6bu9a9bo89",
+            "back": {
+              "type": "description",
+              "description": "<p>Primeira etapa: cada registro recebe incluir, excluir ou incerto com base no título e no resumo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Triagem por título/resumo</p>"
+            }
+          },
+          {
+            "id": "r9l12xo3ht41jyu81u769jin",
+            "back": {
+              "type": "description",
+              "description": "<p>Segunda etapa: o artigo é lido inteiro para confirmar a elegibilidade dos incluídos e dos incertos — ou registrar o motivo da exclusão.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Triagem por texto completo</p>"
+            }
+          },
+          {
+            "id": "br088b0eul0axza0imbe9btz",
+            "back": {
+              "type": "description",
+              "description": "<p>Regras fixadas antes da busca. Toda exclusão aponta o critério que falhou.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Critérios de inclusão/exclusão</p>"
+            }
+          },
+          {
+            "id": "smduqw76jswlofnppoiig2p3",
+            "back": {
+              "type": "description",
+              "description": "<p>O trecho de onde o Elicit afirma ter tirado o dado. Pista de auditoria, não garantia de correção.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Supporting quote</p>"
+            }
+          },
+          {
+            "id": "czdfb6qm8lxt138ujxu3bsjr",
+            "back": {
+              "type": "description",
+              "description": "<p>Coletar de cada estudo incluído os dados da planilha — país, desenho, amostra, desfecho… — com página, trecho e fonte (texto completo ou só resumo).</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Extração de dados</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "95dbe685-8bc0-4528-a0e2-eed872d91503"
+      },
+      {
+        "id": "eba4be7d-90ae-4130-bdbb-8867c89cd390",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "694ea187-cf54-4050-9aa6-704e6468e11d",
+            "type": "intro",
+            "title": "Demonstração (10 min): Research Agent do Elicit",
+            "isHidden": false,
+            "description": "<p>Com o caso-guia, no Research Agent do Elicit (plano Basic).</p>"
+          },
+          {
+            "id": "1c4eff2b-fdce-4ab1-8cb7-5ca6a6160a36",
+            "type": "summary",
+            "title": "Ponto de controle",
+            "isHidden": false,
+            "description": "<p>🏁 Em <strong>Research Agent &gt; tabela</strong>, as quatro colunas aparecem preenchidas e, ao clicar numa célula, o supporting quote é exibido ao lado. As decisões dos cinco primeiros resultados estão na aba Triagem.</p>"
+          },
+          {
+            "id": "08c899cc-a7b0-4b6c-a4e9-c401326c526b",
+            "type": "step",
+            "title": "Iniciar no Research Agent",
+            "isHidden": false,
+            "description": "<p>Em <strong>elicit.com &gt; Research Agent</strong>, cole a pergunta PICO do caso-guia.</p>"
+          },
+          {
+            "id": "8ec2b252-bce3-45a7-9b24-1572aee2755d",
+            "type": "step",
+            "title": "Priorizar textos completos",
+            "isHidden": false,
+            "description": "<p>Se o Research Agent oferecer o filtro de artigos com PDF (<strong>Has PDF</strong>), ative-o para priorizar trabalhos com texto completo.</p>"
+          },
+          {
+            "id": "81126963-6f55-49e1-9e4e-99b87d8734ff",
+            "type": "step",
+            "title": "Criar colunas de extração",
+            "isHidden": false,
+            "description": "<p>No chat do Research Agent, peça uma coluna por vez, por exemplo:</p><p>Add a column: \"Study design\" — the type of study (trial, cohort, cross-sectional, qualitative).</p><p>Repita para \"Country and setting\", \"Sample size\" e \"Blood pressure outcome\".</p>"
+          },
+          {
+            "id": "3a114099-0f7f-4d6d-a1fe-fc8c09af0932",
+            "type": "step",
+            "title": "Conferir supporting quotes",
+            "isHidden": false,
+            "description": "<p>Em <strong>tabela &gt; célula &gt; supporting quote</strong>, abra o trecho de apoio de duas células.</p>"
+          },
+          {
+            "id": "9896d236-f6ba-42c8-ace1-74367143aa07",
+            "type": "step",
+            "title": "Aplicar critérios e registrar",
+            "isHidden": false,
+            "description": "<p>Aplique os critérios do caso-guia aos cinco primeiros resultados e registre as decisões na aba Triagem.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "56ad23f7-9cd3-47b0-888d-477f8fb2d7ef"
+      },
+      {
+        "id": "hdp4az8ucc8fn5i3eg7jp4fc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "z1ovb25hv9yz8irz52lg6jcv",
+            "heading": "Como funciona cada etapa",
+            "paragraph": "<p>O que fazer — e o que anotar — em cada etapa. Abra cada item:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "e8eb79d0-ee75-4fb5-afe4-254321579950"
+      },
+      {
+        "id": "0f476fca-757d-4236-82dd-4b4f642532b6",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "2ac7da74-893e-4aff-ab7c-755d09fe214e",
+            "title": "Triagem por título e resumo",
+            "description": "<p>Cada registro recebe incluir, excluir ou incerto. Toda exclusão leva um motivo ligado a um critério, como \"fora do Brasil\" ou \"sem desfecho de pressão arterial\".</p><p></p><p>O registro \"incerto\" segue para o texto completo, em vez de ser descartado por um título apenas parecido.</p>"
+          },
+          {
+            "id": "4f588b4f-80ce-49a5-a9a5-ef5ecfe8e979",
+            "title": "Triagem por texto completo",
+            "description": "<p>Os incluídos e os incertos da primeira etapa são lidos inteiros. A decisão agora se apoia em todos os detalhes do estudo.</p><p></p><p>Registre a etapa (\"texto completo\") e o motivo de cada exclusão, como \"não apresenta o desfecho de interesse\".</p>"
+          },
+          {
+            "id": "5e802cf2-72c0-4531-9a2a-83752bccbac7",
+            "title": "Deduplicação antes da triagem",
+            "description": "<p>A deduplicação elimina registros repetidos antes da triagem, para que cada estudo seja avaliado uma vez só.</p><p></p><p>O número de registros em cada etapa alimenta o fluxograma PRISMA.</p>"
+          },
+          {
+            "id": "152c5994-2a32-4c4e-b66b-bb832982d725",
+            "title": "Registro de motivos de exclusão",
+            "description": "<p>Motivo de exclusão é o critério que falhou: \"protocolo\", \"fora do Brasil\", \"sem desfecho de pressão arterial\". Use sempre o mesmo rótulo para o mesmo motivo.</p><p></p><p>Estudo cujo texto completo não foi obtido não é excluído: entra no PRISMA como \"não recuperado\".</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "02e6928d-b47d-4153-ad10-889ba224c9ff"
+      },
+      {
+        "id": "bcs7vi7ozsvv2uahw36k6kdg",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fut4rsoolg0so7espmiomruf",
+            "heading": "Como registrar cada decisão",
+            "paragraph": "<p>Exemplos de como aplicar os critérios e anotar na aba Triagem. Uma aba por situação:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "342f7cf0-7fcb-46a4-bc4d-b25c732c9851"
+      },
+      {
+        "id": "4fc8164b-856b-4eeb-a910-014b5f4aef3d",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "73caf19d-ce5a-4960-b55f-d167dee61c7d",
+            "title": "Critério de inclusão",
+            "description": "<p>Exemplo: \"Estudos que avaliam intervenções de telessaúde para controle da pressão arterial em adultos no Brasil.\"</p><p></p><p>Na planilha, marque \"incluir\" só quando o registro atende a todos os pontos do critério.</p>"
+          },
+          {
+            "id": "ed71a618-07e6-48e2-8f99-aa19ee34b78d",
+            "title": "Critério de exclusão",
+            "description": "<p>Exemplo: \"Exclui estudos que não apresentam resultados sobre pressão arterial ou que envolvem apenas crianças.\" Use critérios claros e objetivos para evitar dúvidas na decisão.</p><p></p><p>Na planilha, registre o motivo exato da exclusão, como \"população fora do escopo\" ou \"desfecho não avaliado\".</p>"
+          },
+          {
+            "id": "52b03a1f-5fed-4700-9b8b-7993ad8aca57",
+            "title": "Decisão “incerto”",
+            "description": "<p>Quando não for possível decidir pela inclusão ou exclusão apenas pelo título e resumo, marque como \"incerto\". Isso garante que o estudo será avaliado pelo texto completo antes de qualquer descarte.</p><p></p><p>Na planilha, registre \"incerto\" e mova o registro para a próxima etapa, mantendo a rastreabilidade da decisão.</p>"
+          },
+          {
+            "id": "355bc94c-bc07-4b1a-b578-4d7e3049cc75",
+            "title": "Motivo vago × motivo específico",
+            "description": "<p>Motivo vago (\"irrelevante\", \"não serve\") não deixa ninguém conferir a decisão. Motivo específico aponta o critério que falhou: \"não aborda o desfecho de interesse\", \"população fora do escopo\", \"protocolo\".</p><p></p><p>Com rótulos padronizados, fica fácil contar as exclusões por motivo para o PRISMA.</p>"
+          },
+          {
+            "id": "76128ece-fc40-442b-860f-32303fe5e94d",
+            "title": "Registro correto na aba Triagem",
+            "description": "<p>Cada linha da aba Triagem tem ID, título, origem, etapa (título/resumo ou texto completo), decisão e motivo.</p><p></p><p>A coluna Etapa é o que permite contar, no PRISMA, quantos registros saíram na triagem e quantos na leitura do texto completo.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "ea02a424-c072-47e3-8c8e-1d9b61ea8c53"
+      },
+      {
+        "id": "mcyv1vrosw18d8driu8rrs10",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "gtog6uzuumv0cki1ljm7kany",
+            "paragraph": "<p>Desde 30/09/2026, o Elicit concentra Find Papers, Extract Data e Chat with Papers no <strong>Research Agent</strong>; sessões antigas ficaram só para visualização. Vídeos e tutoriais anteriores mostram telas que já não existem, e o recurso \"Notebooks\", de materiais de 2024, não aparece como fluxo atual.</p><p>O Research Agent recebe a pergunta, busca e organiza os trabalhos em tabela. Para acrescentar uma variável, escreva no chat \"Add a column…\" ou use Add Column, com nome claro e instrução simples. O <strong>Research Report</strong> produz uma revisão rápida automatizada, com texto citado. O <strong>Systematic Review</strong> (Setup, Gather, Screen, Extract, Report) faz triagem e extração assistidas em até 5.000 artigos, mas é exclusivo do plano Pro e não entra nos exercícios deste curso.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "9ee7d89b-8828-49db-bdd3-b2180dbdea31"
+      },
+      {
+        "id": "0a75a7b0-bc53-42a3-99fe-2b89b2a47416",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "499fca27-9a78-46b8-9178-d8811089455d",
+            "paragraph": "🔎 Cada célula do Research Agent vem com um supporting quote: pista de auditoria, não garantia de correção. Com PDF, a extração pode usar o texto completo; sem PDF, usa só o resumo — e a coluna Fonte do dado deve dizer \"só resumo\". A própria documentação do Elicit reconhece que a ferramenta pode perder nuances e interpretar mal a que um número se refere."
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "cdc09686-e960-4265-993c-4786d10790be"
+      },
+      {
+        "id": "bq9y07igk1ziusp5do1v3rwr",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wdmoxbh0u3mdxl61n7eiveqc",
+            "heading": "O que dizem os estudos independentes",
+            "paragraph": "<p>Dois estudos testaram a extração assistida pelo Elicit. Os números justificam a regra de conferir tudo no original e registrar a data:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "6a67b250-1af9-40e1-a079-7d3c9e6423e1"
+      },
+      {
+        "id": "6d78b629-a459-4120-a952-38cca6611091",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "5ccae8e2-050e-4a2d-9329-9d94a11a7be7",
+            "title": "Meliante et al., JMIR AI, 2025",
+            "description": "<p>Estudo com 4 revisões PRISMA de glaucoma. Recuperação incompleta; extrações 51,40% precisas, 13,69% imprecisas, 22,37% ausentes e 12,51% incorretas.</p><p></p><p>Em outras palavras: só metade dos dados extraídos estava certa.</p>"
+          },
+          {
+            "id": "cadf88d5-7f42-42b5-a6db-6fc913adfe9f",
+            "title": "Estudo de viabilidade, Research Synthesis Methods, 2026",
+            "description": "<p>Estudo com 7 revisões ambientais e de ciências da vida: 22 divergências em 208 comparações (10,6%) e acurácia de 82%.</p><p></p><p>Uma nova execução reproduziu 77% das saídas e só 10% dos supporting quotes. Por isso a data de cada extração vai para a planilha.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "04dab259-57ac-4d00-8793-61da55c733ae"
+      },
+      {
+        "id": "17cfd844-d990-4805-9e7f-a1c79a8439cb",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "6a136611-4aaa-4bc2-835d-f05631f72c69",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual das opções abaixo NÃO é uma boa prática ao utilizar o Research Agent do Elicit para extração de dados?",
+            "answers": [
+              {
+                "id": "b0b6a524-ad9a-4e73-8995-9a5358e15506",
+                "title": "Conferir cada dado extraído no texto original",
+                "correct": false,
+                "feedback": "Conferir cada dado extraído no texto original é uma boa prática, pois garante a precisão das informações extraídas."
+              },
+              {
+                "id": "470b67be-c132-4b66-ae21-3fdd3134e5e0",
+                "title": "Registrar a fonte como 'só resumo' quando não houver PDF disponível",
+                "correct": false,
+                "feedback": "Registrar a fonte como 'só resumo' quando não houver PDF disponível é uma boa prática para manter a rastreabilidade dos dados."
+              },
+              {
+                "id": "4d581449-c6af-400a-94c1-67dc1db7cc69",
+                "title": "Assumir que o supporting quote garante a precisão do dado",
+                "correct": true,
+                "feedback": "Correto: isto não é boa prática. O supporting quote é pista de auditoria, não garantia — o dado sempre se confere no texto original."
+              },
+              {
+                "id": "fe7fccf0-bcb1-4bfa-a1dd-ae7ee6ed4480",
+                "title": "Adicionar colunas personalizadas para cada variável relevante",
+                "correct": false,
+                "feedback": "Adicionar colunas personalizadas para cada variável relevante é uma boa prática, pois facilita a organização e análise dos dados extraídos."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "60e34603-4857-48d4-99b0-1e8e7f8dc98e"
+      },
+      {
+        "id": "321ebcf5-aa0c-49fa-a48c-9823d8d6b6b2",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "8926e57f-48cf-4052-baf2-304b58a0413f",
+            "type": "intro",
+            "title": "Pílula Hands-on (6 min): extração manual",
+            "isHidden": false,
+            "description": "<p>Extraia à mão os dados de um artigo de acesso aberto, célula por célula, com página e trecho.</p>"
+          },
+          {
+            "id": "97a037a6-404f-4a1d-9ad6-86e441a562d7",
+            "type": "summary",
+            "title": "Critério de êxito",
+            "isHidden": false,
+            "description": "<p>As quatro células têm página e trecho copiado do PDF, e a coluna \"Fonte do dado\" indica \"texto completo\".</p>"
+          },
+          {
+            "id": "d91f3986-6b3d-4476-a808-6c872deae6f8",
+            "type": "step",
+            "title": "Abrir o artigo de acesso aberto",
+            "isHidden": false,
+            "description": "<p>Acesse o artigo intitulado “Efeitos da capacitação em telessaúde...” disponível em <a href=\"http://objnursing.uff.br/nursing/article/download/6885/pdf_pt\" target=\"_blank\">objnursing.uff.br/nursing/article/download/6885/pdf_pt</a>.</p>"
+          },
+          {
+            "id": "97a91ba0-a257-4ed5-bd63-65fafcadf51e",
+            "type": "step",
+            "title": "Preencher a aba Extração da planilha",
+            "isHidden": false,
+            "description": "<p>Na aba Extração da planilha, registre as seguintes informações extraídas do artigo:</p><ul><li>País</li><li>Desenho</li><li>População</li><li>Resultado</li></ul><p>Para cada célula preenchida, anote também a página e o trecho copiado do PDF correspondente.</p>"
+          },
+          {
+            "id": "7770242c-a31e-4fde-8f71-e039f7656ec0",
+            "type": "step",
+            "title": "Indicar a fonte do dado extraído",
+            "isHidden": false,
+            "description": "<p>Na coluna “Fonte do dado” da planilha, indique \"texto completo\" para cada informação que foi extraída diretamente do PDF do artigo.</p>"
+          },
+          {
+            "id": "79e3db79-86f9-438b-ad76-5d3957ea2616",
+            "type": "step",
+            "title": "Avaliar critérios e registrar decisão",
+            "isHidden": false,
+            "description": "<p>O artigo serve ao exercício de extração; sua inclusão no caso-guia depende dos critérios. É um estudo retrospectivo de Campo Grande (MS) que mede encaminhamentos presenciais à cardiologia, não a pressão arterial dos pacientes: pelos critérios do caso-guia, ele seria excluído (\"sem desfecho de pressão\"). Registre essa decisão na aba Triagem — ela também é parte do exercício.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "6efef210-2d27-4d64-b033-e089dd74a9fd"
+      },
+      {
+        "id": "42a1f8f9-2eab-4901-b8fa-01d39f304138",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "73903373-2560-4fbc-b7a2-592d0dcff432",
+            "paragraph": "Notou? Um artigo ótimo para treinar extração pode não passar nos critérios do caso-guia. Triagem e extração conversam: a decisão sobre ele vai para a aba Triagem, com motivo ligado a um critério."
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "948fc66a-fb83-4848-9124-a75189bc696b"
+      },
+      {
+        "id": "7468819e-4b32-44db-bb28-638462125834",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "0c94c4e3-f1de-4dc2-aa0a-e90a1c784dc5",
+            "paragraph": "<p>📝 <strong>Instruções-base de colunas</strong> para o Research Agent — adapte à sua pergunta e mantenha em inglês:</p><p>Add a column: \"Country and setting\" — country and care setting where the study was conducted.<br>Add a column: \"Study design\" — the type of study (trial, cohort, cross-sectional, qualitative).<br>Add a column: \"Sample size\" — number of participants analyzed, not recruited.<br>Add a column: \"[Outcome]\" — the main result for [outcome], with the measure and the time point.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.169.0"
+          }
+        },
+        "globalBlockId": "ab587f70-005b-4a55-b62b-40b79a098bd7"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Triagem de Estudos e Extração de Dados",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "fpLlvZF9kfoGmoXuy7p4VgdYl5WmUTXA",
+    "createdAt": "2026-11-11T14:59:27.186Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 5,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-11T15:01:13.368Z"
+  }
+}

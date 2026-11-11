@@ -1,0 +1,28 @@
+<!--titulo: Confira a célula-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Confira a célula</h1>
+  <p class="sub">Cinco células que um Research Agent poderia preencher, com o trecho do artigo original ao lado. Os estudos são <strong>fictícios</strong>, criados só para treinar. Como você marca cada uma na coluna Conferido (ou Fonte do dado)?</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Regras de conferência do Módulo 5 do roteiro Essentials (supporting quote, "só resumo", "corrigido").
+  classificador({
+    casos: [
+      { t: 'Country and setting: "Brasil, atenção primária"', extra: '<p class="trecho">Artigo, p. 3: "realizado em 12 unidades básicas de saúde de um município brasileiro".</p>', r: 'conf', p: 'O artigo sustenta a célula. Anote a página e o trecho.' },
+      { t: 'Sample size: "1.200"', extra: '<p class="trecho">Artigo, p. 5: "1.200 participantes foram recrutados; 980 completaram o seguimento e foram analisados".</p>', r: 'corr', p: 'A coluna pede analisados, não recrutados: o dado certo é 980.' },
+      { t: 'Study design: "randomized controlled trial"', extra: '<p class="trecho">O artigo não tem PDF disponível: a ferramenta extraiu o dado do resumo.</p>', r: 'res', p: 'Sem texto completo, registre "só resumo" na coluna Fonte do dado.' },
+      { t: 'Blood pressure outcome: "redução de 12 mmHg"', extra: '<p class="trecho">Artigo, p. 7: "redução média de 8 mmHg na pressão sistólica em seis meses".</p>', r: 'corr', p: 'O número da célula não bate com o artigo. Vale o artigo: 8 mmHg, sistólica, em seis meses.' },
+      { t: 'Study design: "cross-sectional"', extra: '<p class="trecho">Artigo, p. 2: "estudo transversal com 340 adultos atendidos na atenção primária".</p>', r: 'conf', p: 'Transversal é cross-sectional: a célula está certa.' }
+    ],
+    opcoes: { conf: 'Conferido', corr: 'Corrigido', res: 'Só resumo' },
+    dicaErro: 'Compare a célula com o trecho, palavra por palavra e número por número. Sem texto completo, a marcação é "só resumo".',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'marcadas corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Cinco de cinco. Duas das cinco células estavam erradas — por isso o supporting quote é pista, não garantia.');
+    }
+  });
+</script>

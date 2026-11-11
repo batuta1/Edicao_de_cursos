@@ -1,0 +1,23 @@
+<!--titulo: Como saber que terminou-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Projeto Final</span>
+  <h1 id="t">Como saber que terminou</h1>
+  <p class="sub">Marque cada item que a sua mini-revisão cumpre. O curso segue com os seis marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Checklist "Como saber que terminou" do Projeto Final do roteiro Hands-on.
+  checklist([
+    'Pergunta com framework e critérios escritos antes da busca.',
+    'Log com pelo menos três buscas (incluindo uma base brasileira), cada uma com data, consulta, filtros e total.',
+    '10 registros triados, cada exclusão com motivo.',
+    '3 estudos extraídos, cada célula com página e trecho e marcação de texto completo ou só resumo.',
+    'Cinco frases de síntese com referência e trecho, sem citar o resumo da IA como se fosse o estudo.',
+    'Fluxograma PRISMA batendo com a planilha e declaração de uso de IA anexada.'
+  ], 'lista', 'placar', 'barra', 'itens cumpridos', function () {
+    concluir('final', 'Mini-revisão entregue. Qualquer pessoa consegue refazer cada passo dela.');
+  });
+</script>

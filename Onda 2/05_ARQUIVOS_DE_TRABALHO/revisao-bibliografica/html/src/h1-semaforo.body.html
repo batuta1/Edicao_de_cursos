@@ -1,0 +1,29 @@
+<!--titulo: Semáforo: pode ir para a IA?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Semáforo: pode ir para a IA?</h1>
+  <p class="sub">Antes de colar qualquer coisa no Consensus ou no Elicit, classifique o material. Verde: pode usar. Amarelo: confira a licença e combine com orientador ou coautores antes. Vermelho: não envie. A correção vem na hora e você pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Exemplos do semáforo da preparação do roteiro Hands-on.
+  classificador({
+    casos: [
+      { t: '1. A sua pergunta de revisão, para o Consensus montar um panorama.', r: 'verde', p: 'A pergunta não tem dado pessoal nem sigilo.' },
+      { t: '2. O PDF de um artigo de acesso aberto, para o Elicit extrair dados.', r: 'verde', p: 'Material publicado e aberto.' },
+      { t: '3. O PDF de um artigo baixado pelo Portal CAPES.', r: 'amar', p: 'Depende da licença do periódico: confira antes e combine com orientador ou coautores.' },
+      { t: '4. Um capítulo seu, ainda não publicado, para o Consensus "revisar".', r: 'amar', p: 'Material inédito: combine com orientador ou coautores antes, porque o texto é processado por terceiros.' },
+      { t: '5. Uma planilha com dados de participantes de uma pesquisa.', r: 'verm', p: 'Dados de participantes não vão para a IA.' },
+      { t: '6. O manuscrito de outra pessoa que você recebeu para dar parecer.', r: 'verm', p: 'Manuscrito de terceiros em avaliação é sigiloso. Não envie.' }
+    ],
+    opcoes: { verde: 'Verde', amar: 'Amarelo', verm: 'Vermelho' },
+    dicaErro: 'Pergunte-se: é público? Tem dado de pessoas, sigilo ou texto inédito de alguém?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'classificados corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Seis de seis. O motivo de tanto cuidado: o Elicit pode processar dados nos Estados Unidos com provedores de modelo, e o Consensus repassa consultas e uploads a OpenAI, Anthropic, Google e Baseten.');
+    }
+  });
+</script>

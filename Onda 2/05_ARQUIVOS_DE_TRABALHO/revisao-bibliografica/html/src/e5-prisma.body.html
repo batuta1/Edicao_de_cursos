@@ -1,0 +1,80 @@
+<!--titulo: Do Log ao fluxograma PRISMA-->
+<style>
+  .campos { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+  .campos label { display: block; font-size: 13px; font-weight: 600; color: var(--azul); }
+  .campos label small { display: block; font-weight: 400; color: var(--suave); }
+  .campos input { margin-top: 4px; }
+  .grupo { margin: 16px 0 6px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--azul-2); }
+  .fluxo { margin-top: 16px; display: grid; gap: 8px; }
+  .caixa { display: flex; justify-content: space-between; gap: 12px; align-items: center; background: #fff; border: 1px solid var(--linha); border-left: 6px solid var(--azul-2); border-radius: 10px; padding: 10px 14px; }
+  .caixa .n { font-size: 20px; font-weight: 700; color: var(--azul); min-width: 3ch; text-align: right; }
+  .caixa.fim { border-left-color: var(--ok); background: var(--ok-claro); }
+  .faixa { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--suave); margin: 6px 0 0; }
+  #avisos { margin: 12px 0 0; padding: 0; list-style: none; font-size: 13.5px; }
+  #avisos li { margin: 0 0 4px; padding: 6px 10px; border-radius: 8px; background: var(--aviso-claro); color: var(--aviso); }
+  #avisos li.ok { background: var(--ok-claro); color: var(--ok); }
+  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mão na massa</span>
+  <h1 id="t">Do Log ao fluxograma PRISMA</h1>
+  <p class="sub">Digite os números da sua planilha e veja as caixas do fluxograma se preencherem. Use os registros anotados no Log — não o total exibido pela ferramenta: 8.230 resultados no Semantic Scholar não são 8.230 registros da sua revisão.</p>
+  <p class="grupo">Identificação (aba Log, coluna Registros anotados)</p>
+  <div class="campos">
+    <label>Semantic Scholar <input type="number" min="0" id="a"></label>
+    <label>Consensus <input type="number" min="0" id="b"></label>
+    <label>Base brasileira <input type="number" min="0" id="c"></label>
+  </div>
+  <p class="grupo">Triagem (aba Triagem)</p>
+  <div class="campos">
+    <label>Duplicatas removidas <input type="number" min="0" id="dup"></label>
+    <label>Excluídos por título e resumo <input type="number" min="0" id="ex1"></label>
+    <label>Não recuperados <small>texto completo não obtido</small><input type="number" min="0" id="nr"></label>
+    <label>Excluídos no texto completo <small>com motivos</small><input type="number" min="0" id="ex2"></label>
+  </div>
+  <div class="acoes">
+    <button type="button" class="btn" id="exemplo">Ver um exemplo fictício</button>
+    <button type="button" class="btn" id="limpar">Limpar</button>
+  </div>
+  <div class="fluxo" aria-live="polite">
+    <p class="faixa">Identificação</p>
+    <div class="caixa"><span>Registros identificados (soma das fontes)</span><span class="n" id="o1">–</span></div>
+    <div class="caixa"><span>Removidos antes da triagem (duplicatas)</span><span class="n" id="o2">–</span></div>
+    <p class="faixa">Triagem</p>
+    <div class="caixa"><span>Registros triados</span><span class="n" id="o3">–</span></div>
+    <div class="caixa"><span>Relatórios buscados para texto completo</span><span class="n" id="o4">–</span></div>
+    <div class="caixa"><span>Relatórios avaliados para elegibilidade</span><span class="n" id="o5">–</span></div>
+    <p class="faixa">Incluídos</p>
+    <div class="caixa fim"><span>Estudos incluídos</span><span class="n" id="o6">–</span></div>
+  </div>
+  <ul id="avisos" aria-live="polite"></ul>
+</section>
+<script>
+  // Caixas do fluxograma PRISMA 2020 descritas no Módulo 6 do roteiro Essentials.
+  var IDS = ['a', 'b', 'c', 'dup', 'ex1', 'nr', 'ex2'];
+  function n(id) { var v = parseInt(document.getElementById(id).value, 10); return isNaN(v) ? null : v; }
+  function put(id, v) { document.getElementById(id).textContent = (v === null ? '–' : v); }
+  function atualizar() {
+    var vals = IDS.map(n), av = [];
+    if (vals.every(function (v) { return v === null; })) { ['o1','o2','o3','o4','o5','o6'].forEach(function (o) { put(o, null); }); document.getElementById('avisos').innerHTML = ''; return; }
+    var v = {}; IDS.forEach(function (id, i) { v[id] = vals[i] || 0; });
+    var ident = v.a + v.b + v.c, triados = ident - v.dup, buscados = triados - v.ex1, avaliados = buscados - v.nr, incl = avaliados - v.ex2;
+    put('o1', ident); put('o2', v.dup); put('o3', triados); put('o4', buscados); put('o5', avaliados); put('o6', incl);
+    if ([triados, buscados, avaliados, incl].some(function (x) { return x < 0; })) av.push(['Algum número ficou negativo: as exclusões somam mais do que os registros da etapa anterior. Confira a planilha.', false]);
+    else {
+      av.push(['Confira: o número de incluídos (' + incl + ') deve ser igual ao de linhas "incluir" da aba Triagem.', true]);
+      if (incl < 3) av.push(['Menos de três estudos incluídos? Registre a lacuna como achado na síntese.', false]);
+    }
+    var ul = document.getElementById('avisos'); ul.innerHTML = '';
+    av.forEach(function (a) { var li = document.createElement('li'); li.textContent = a[0]; if (a[1]) li.className = 'ok'; ul.appendChild(li); });
+  }
+  IDS.forEach(function (id) { document.getElementById(id).addEventListener('input', atualizar); });
+  document.getElementById('exemplo').addEventListener('click', function () {
+    var ex = { a: 10, b: 5, c: 5, dup: 3, ex1: 9, nr: 1, ex2: 2 };
+    IDS.forEach(function (id) { document.getElementById(id).value = ex[id]; }); atualizar();
+  });
+  document.getElementById('limpar').addEventListener('click', function () {
+    IDS.forEach(function (id) { document.getElementById(id).value = ''; }); atualizar();
+  });
+  atualizar();
+</script>

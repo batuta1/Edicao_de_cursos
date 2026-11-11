@@ -1,0 +1,28 @@
+<!--titulo: Qual modalidade?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Qual modalidade de revisão?</h1>
+  <p class="sub">Cinco objetivos de pesquisa. Para cada um, escolha a modalidade que melhor serve — pense na finalidade e no grau de reprodutibilidade que o objetivo pede. A correção vem na hora e você pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  // Definições do Módulo 1 do roteiro Essentials.
+  classificador({
+    casos: [
+      { t: '1. Dar contexto ao tema na introdução de um artigo, sem pretensão de cobrir tudo o que foi publicado.', r: 'narr', p: 'Síntese flexível e interpretativa, sem obrigação de busca exaustiva.' },
+      { t: '2. Saber que tipos de estudo existem sobre IA em decisões judiciais brasileiras, e onde há lacunas, antes de escolher uma pergunta.', r: 'esco', p: 'Mapear extensão, características e lacunas de um campo é a finalidade da revisão de escopo (estruturada em PCC).' },
+      { t: '3. Responder, com protocolo e busca em várias bases, se a telessaúde melhora o controle da pressão arterial na atenção primária.', r: 'sist', p: 'Pergunta delimitada, métodos pré-especificados e reproduzíveis: revisão sistemática.' },
+      { t: '4. Reunir estudos quantitativos e qualitativos para compreender, de forma ampla, as barreiras das metodologias ativas.', r: 'inte', p: 'Estudos de métodos diversos para uma compreensão ampla, com etapas explícitas.' },
+      { t: '5. Combinar estatisticamente os resultados de ensaios compatíveis já selecionados numa revisão.', r: 'meta', p: 'Combinação estatística de resultados — procedimento distinto da revisão sistemática.' }
+    ],
+    opcoes: { narr: 'Narrativa', inte: 'Integrativa', esco: 'Escopo', sist: 'Sistemática', meta: 'Meta-análise' },
+    dicaErro: 'Pergunte-se: o objetivo é contextualizar, compreender de forma ampla, mapear um campo, responder a uma pergunta delimitada ou combinar números?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'classificados corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Cinco de cinco. Lembre: a mini-revisão deste curso é rastreável, não sistemática — e isso deve constar do relato.');
+    }
+  });
+</script>
