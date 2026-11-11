@@ -199,7 +199,7 @@ A contagem do validador bate exatamente com a do script de edição. Somando a c
 
 ## O que foi gerado
 
-Em `Criacao de Cursos/GPT/Codex/hands-on/`:
+Em `Criacao de Cursos/GPT/Codex/hands-on/` (em 11/11/2026 os pacotes e arquivos de trabalho foram para `Onda 3/`; veja `Onda 3/LEIA-ME.md`):
 
 - `cursoChatGPTCodexHandsOn.json`: payload desserializado original.
 - `cursoChatGPTCodexHandsOn_base_capa_pt.json`: original com a descrição da capa traduzida (base da
