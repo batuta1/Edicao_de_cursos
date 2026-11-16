@@ -7,6 +7,8 @@ Pacote completo gerado a partir de `../conteudo-bruto/gemini-workspace-essential
 - `roteiros/roteiro-hands-on.md`: roteiro final prático da trilha Hands-on.
 - `roteiros/roteiro-articulate-essentials.md`: versão de montagem no Rise 360.
 - `roteiros/roteiro-articulate-hands-on.md`: versão de montagem no Rise 360.
+- `roteiros/pdf/roteiro-articulate-essentials.pdf`: versão PDF para leitura e entrega humana.
+- `roteiros/pdf/roteiro-articulate-hands-on.pdf`: versão PDF para leitura e entrega humana.
 - `carga-horaria/met-tabela.md`: taxonomia MET usada nos cálculos.
 - `carga-horaria/carga-horaria-essentials.md`: cálculo reproduzível da trilha Essentials.
 - `carga-horaria/carga-horaria-hands-on.md`: cálculo reproduzível da trilha Hands-on.
