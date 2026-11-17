@@ -1,0 +1,36 @@
+{
+ "licao": 5,
+ "posicao": 10,
+ "blocos": [
+  {
+   "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+   "itens": [
+    {
+     "title": "Você quer que o Gemini calcule a média diária de atendimentos de uma planilha que traz nome e telefone de cada cliente. Você usa conta pessoal. Qual é a conduta adequada?",
+     "answers": [
+      {
+       "title": "Enviar a planilha inteira, porque o arquivo só será usado para o cálculo",
+       "correct": false,
+       "feedback": "Não. Arquivo enviado é dado tratado: nomes e telefones de clientes são sinal vermelho."
+      },
+      {
+       "title": "Enviar e excluir a conversa logo depois",
+       "correct": false,
+       "feedback": "Não. Conversas lidas por revisores humanos ficam até 3 anos, mesmo depois de excluídas."
+      },
+      {
+       "title": "Enviar só as colunas de dia e de atendimentos, sem nomes nem telefones",
+       "correct": true,
+       "feedback": "Correto. Sem dado que identifique pessoa, o arquivo passa a sinal verde — e o cálculo continua possível."
+      },
+      {
+       "title": "Usar o chat temporário para enviar a planilha inteira",
+       "correct": false,
+       "feedback": "Não. O chat temporário fica salvo por cerca de 2 meses e não muda a cor do conteúdo: dados de clientes continuam em sinal vermelho."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

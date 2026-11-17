@@ -1,0 +1,38 @@
+<!--titulo: Calculadora de mesas-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Confira a decisão</span>
+  <h1 id="t">Quantas mesas? Faça a conta você também</h1>
+  <p class="sub">As contagens tema × turno abaixo vêm do arquivo inscricoes-mutirao.csv. Mude o número de horários por mesa e veja a decisão mudar — é a mesma conta que você pediu ao Gemini.</p>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+    <label class="item" for="hm"><h2>Horários por mesa — manhã</h2><input type="number" id="hm" min="1" max="12" value="6"><span class="nota">9h–12h, atendimentos de 30 min = 6</span></label>
+    <label class="item" for="ht"><h2>Horários por mesa — tarde</h2><input type="number" id="ht" min="1" max="12" value="8"><span class="nota">13h–17h, atendimentos de 30 min = 8</span></label>
+  </div>
+  <div style="overflow-x:auto;margin-top:14px">
+    <table id="tab" style="width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--linha);border-radius:12px;font-size:14px">
+      <caption class="nota" style="caption-side:bottom;text-align:left">Mesas = inscrições ÷ horários por mesa, arredondado para cima. Em destaque, os turnos que precisam de mais de uma mesa.</caption>
+      <thead><tr><th style="text-align:left;padding:8px">Tema</th><th style="padding:8px">Manhã<br><span class="nota">inscrições → mesas</span></th><th style="padding:8px">Tarde<br><span class="nota">inscrições → mesas</span></th></tr></thead>
+      <tbody id="corpo"></tbody>
+    </table>
+  </div>
+  <div class="feedback info" id="msg" aria-live="polite" style="margin-top:12px"></div>
+  <p style="margin:12px 0 0"><button type="button" class="btn" id="desafio">Testar o desafio: tarde com 4 horários</button> <button type="button" class="btn" id="voltar">Voltar ao caso (6 e 8)</button></p>
+</section>
+<script>
+  var dados = [['Consumidor', 5, 4], ['Previdência', 1, 7], ['Família', 3, 4], ['Trabalho', 3, 3]];
+  function td(t, destaque) { var c = document.createElement('td'); c.style.padding = '8px'; c.style.textAlign = 'center'; c.style.borderTop = '1px solid var(--linha)'; c.textContent = t; if (destaque) { c.style.background = 'var(--aviso-claro)'; c.style.color = 'var(--aviso)'; c.style.fontWeight = '700'; } return c; }
+  function calc() {
+    var hm = Math.max(1, parseInt(document.getElementById('hm').value, 10) || 1), ht = Math.max(1, parseInt(document.getElementById('ht').value, 10) || 1);
+    var corpo = document.getElementById('corpo'); corpo.innerHTML = ''; var total = 0, extras = [];
+    dados.forEach(function (d) {
+      var mm = Math.ceil(d[1] / hm), mt = Math.ceil(d[2] / ht); total += mm + mt;
+      if (mm > 1) extras.push(d[0] + ' de manhã'); if (mt > 1) extras.push(d[0] + ' à tarde');
+      var tr = document.createElement('tr'); var n = td(d[0]); n.style.textAlign = 'left'; n.style.fontWeight = '600'; tr.appendChild(n);
+      tr.appendChild(td(d[1] + ' → ' + mm, mm > 1)); tr.appendChild(td(d[2] + ' → ' + mt, mt > 1)); corpo.appendChild(tr);
+    });
+    document.getElementById('msg').textContent = extras.length ? 'Total: ' + total + ' mesas. Precisa de mais de uma mesa: ' + extras.join(', ') + '.' : 'Total: ' + total + ' mesas — uma por tema em cada turno basta. O maior uso é Previdência à tarde: 7 de ' + ht + ' horários.';
+  }
+  document.getElementById('hm').addEventListener('input', calc); document.getElementById('ht').addEventListener('input', calc);
+  document.getElementById('desafio').addEventListener('click', function () { document.getElementById('hm').value = 6; document.getElementById('ht').value = 4; calc(); });
+  document.getElementById('voltar').addEventListener('click', function () { document.getElementById('hm').value = 6; document.getElementById('ht').value = 8; calc(); });
+  calc();
+</script>

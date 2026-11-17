@@ -1,0 +1,44 @@
+<!--titulo: Monte o seu pedido-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Monte o seu pedido</span>
+  <h1 id="t">Persona, tarefa, contexto e formato</h1>
+  <p class="sub">Escolha uma opção em cada elemento e veja o pedido se formar. Depois, copie e envie ao Gemini.</p>
+  <div class="grid" id="partes"></div>
+  <h2 style="margin-top:18px">Seu pedido</h2>
+  <pre class="saida" id="saida" aria-live="polite"></pre>
+  <p style="margin:10px 0 0"><button type="button" class="btn principal" id="copiar">Copiar o pedido</button></p>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+  <p class="nota">Falta algum elemento? O pedido ainda funciona, mas o Gemini vai preencher a lacuna por conta própria — e é aí que a resposta fica genérica.</p>
+</section>
+<script>
+  var partes = [
+    { k: 'Persona', o: ['Você é assessor de comunicação de uma associação de bairro.', 'Você é advogado de um núcleo de prática jurídica.', 'Você é professor de ensino médio.'] },
+    { k: 'Tarefa', o: ['Escreva um aviso sobre um mutirão de orientação gratuita.', 'Explique o que é a audiência de conciliação.', 'Resuma em tópicos o que é dado pessoal na LGPD.'] },
+    { k: 'Contexto', o: ['O público são moradores sem familiaridade com termos jurídicos.', 'O mutirão é no sábado, das 9h às 17h, no centro comunitário.', 'O texto vai para pessoas que nunca leram uma lei.'] },
+    { k: 'Formato', o: ['Até 80 palavras, com título e três tópicos.', 'Em 5 linhas, sem jargão.', 'Em versão para WhatsApp, com no máximo 3 linhas.'] }
+  ];
+  var esc = {};
+  var box = document.getElementById('partes');
+  partes.forEach(function (p) {
+    var c = document.createElement('div'); c.className = 'item';
+    var h = document.createElement('h2'); h.textContent = p.k; h.id = 'h-' + p.k; c.appendChild(h);
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', h.id);
+    p.o.forEach(function (txt) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = txt; b.setAttribute('aria-pressed', 'false');
+      b.style.textAlign = 'left'; b.style.borderRadius = '12px';
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        esc[p.k] = txt; montar();
+      });
+      g.appendChild(b);
+    });
+    c.appendChild(g); box.appendChild(c);
+  });
+  function montar() {
+    var linhas = partes.map(function (p) { return esc[p.k] ? esc[p.k] : '[' + p.k.toLowerCase() + ': escolha acima]'; });
+    linhas.push('Se faltar informação, pergunte antes de responder.');
+    document.getElementById('saida').textContent = linhas.join('\n');
+  }
+  montar();
+  ligarCopia('copiar', 'saida', 'msg', 'Pedido');
+</script>

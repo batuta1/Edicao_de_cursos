@@ -1,0 +1,43 @@
+<!--titulo: Quadro comparativo-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade integradora</span>
+  <h1 id="t">Seu quadro comparativo</h1>
+  <p class="sub">Preencha enquanto executa os passos da atividade. No fim, copie o quadro para guardar — ele é o produto final do curso. Nada do que você digita aqui sai do seu navegador.</p>
+  <div class="grid" id="campos"></div>
+  <h2 style="margin-top:18px">Prévia</h2>
+  <pre class="saida" id="saida" aria-live="polite"></pre>
+  <p style="margin:10px 0 0"><button type="button" class="btn principal" id="copiar">Copiar o quadro</button></p>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+</section>
+<script>
+  var linhas = ['Formato da resposta', 'Fontes citadas', 'Afirmação conferida no Planalto', 'Erro encontrado (se houver)'];
+  var box = document.getElementById('campos');
+  ['Gemini', 'Outro assistente'].forEach(function (col, ci) {
+    var c = document.createElement('div'); c.className = 'item';
+    var h = document.createElement('h2'); h.textContent = col; c.appendChild(h);
+    if (ci === 1) {
+      var s = document.createElement('select'); s.id = 'qual'; s.setAttribute('aria-label', 'Qual outro assistente');
+      ['ChatGPT', 'Claude'].forEach(function (o) { var op = document.createElement('option'); op.textContent = o; s.appendChild(op); });
+      s.addEventListener('change', montar); c.appendChild(s);
+    }
+    linhas.forEach(function (l, li) {
+      var lab = document.createElement('label'); lab.style.display = 'block'; lab.style.marginTop = '10px'; lab.style.fontSize = '13px'; lab.style.color = 'var(--suave)';
+      lab.textContent = l;
+      var i = document.createElement('input'); i.type = 'text'; i.id = 'c' + ci + '_' + li; i.addEventListener('input', montar);
+      lab.appendChild(i); c.appendChild(lab);
+    });
+    box.appendChild(c);
+  });
+  var d = document.createElement('div'); d.className = 'item'; d.style.gridColumn = '1 / -1';
+  d.innerHTML = '<label style="display:block;font-size:13px;color:var(--suave)">Preferência e motivo (formato, fontes, regras de dados)<textarea id="pref" rows="3"></textarea></label>';
+  box.appendChild(d); document.getElementById('pref').addEventListener('input', montar);
+  function v(id) { var e = document.getElementById(id); return e && e.value.trim() ? e.value.trim() : '—'; }
+  function montar() {
+    var outro = document.getElementById('qual').value, t = 'Pedido: Explique a um cidadão, em 5 tópicos, o que é dado pessoal na LGPD, com fonte oficial.\n\n';
+    linhas.forEach(function (l, li) { t += l + '\n  Gemini: ' + v('c0_' + li) + '\n  ' + outro + ': ' + v('c1_' + li) + '\n'; });
+    t += '\nPreferência e motivo: ' + v('pref');
+    document.getElementById('saida').textContent = t;
+  }
+  montar();
+  ligarCopia('copiar', 'saida', 'msg', 'Quadro');
+</script>

@@ -1,0 +1,578 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Análise e Decisão com Planilhas de Inscrições via Gemini",
+  "lesson": {
+    "description": "",
+    "id": "a488554a-2f5b-428b-8723-657ce8635c9b",
+    "items": [
+      {
+        "id": "iw30ftch9xaoq1u2bjmf9c6q",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "oecm2639p6jss2d6gbr0yhtg",
+            "heading": "Oficina 2 — Planilha de inscrições",
+            "paragraph": "<p>🎯 <strong>O problema.</strong> São 30 inscrições. A coordenação quer saber quantas mesas montar em cada turno e quem precisa de acessibilidade. Nesta oficina (20 min), o Gemini faz as contagens — e você confere uma delas na mão.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "93732b9c-15d1-45e0-bd4b-5bab360fa4fe"
+      },
+      {
+        "id": "im9wgv4hwcrq9yyttiooe0nc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "i2rwg8ck1hd9w8zxouh5dbiv",
+            "paragraph": "<p>Ao final desta oficina, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "217a9c03-e1da-43be-b47e-29f529627395"
+      },
+      {
+        "id": "gf5wfbnjt8j6rlbydrx30uyj",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "o881rqd4l9ehbil1bqysqj7f",
+            "number": "1",
+            "paragraph": "<p>Enviar o arquivo inscricoes-mutirao.csv e conferir se o Gemini o leu direito.</p>"
+          },
+          {
+            "id": "vmh38r5ece8pqizhdcgd91wn",
+            "number": "2",
+            "paragraph": "<p>Obter as contagens por tema, turno, canal e acessibilidade.</p>"
+          },
+          {
+            "id": "sgftpb79y37ipwv4so3350rn",
+            "number": "3",
+            "paragraph": "<p>Calcular quantas mesas cada tema precisa em cada turno.</p>"
+          },
+          {
+            "id": "jh7l7ilywuynhmtc1xfsx1tc",
+            "number": "4",
+            "paragraph": "<p>Conferir os números com o gabarito e resolver divergências.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "6748630b-0e91-4315-8b27-29b8e84db750"
+      },
+      {
+        "id": "r0m6ub7l1xdch7injlc24cyl",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "azmn6vtwx72qmsq93eok50bx",
+            "heading": "🧰 O que você vai usar",
+            "paragraph": "<p>O envio de arquivos do Gemini e o arquivo <strong>inscricoes-mutirao.csv</strong>, salvo na preparação. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "aa241540-fa8b-475e-9dd6-a8b5343cb0f7"
+      },
+      {
+        "id": "wg5h2bvottfrsquu029g8z7w",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "tpnbnpmglgm3r1tn3w0ukdmd",
+            "back": {
+              "type": "description",
+              "description": "<p>Uma planilha em texto puro: cada linha é uma inscrição e as colunas são separadas por vírgula. A primeira linha traz os nomes das colunas.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Arquivo CSV em eventos</p>"
+            }
+          },
+          {
+            "id": "vteuf391o7az0ebgt7jl16zx",
+            "back": {
+              "type": "description",
+              "description": "<p>O Gemini lê as colunas e as linhas do arquivo e calcula a partir delas. Por isso o primeiro pedido é sempre ver as 5 primeiras linhas.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Leitura de arquivos pelo Gemini</p>"
+            }
+          },
+          {
+            "id": "nh67a2ug8tph6wnq7r774vya",
+            "back": {
+              "type": "description",
+              "description": "<p>Conferir pelo menos uma contagem na mão antes de usar os números. Com 30 linhas, leva um minuto.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Validação dos dados</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "13456fc2-a04e-4dad-b9ac-5a4cbb35095d"
+      },
+      {
+        "id": "ca71e302-b60c-4e0b-8640-149b9f1de87c",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "b9802c3e-1d3f-4247-a5f6-c409feefa1af",
+            "type": "intro",
+            "title": "👐 Mão na massa",
+            "isHidden": false,
+            "description": "<p>Em um chat novo, digite <strong>/Assistente do Mutirão</strong> e envie o CSV em <strong>Gemini &gt; Caixa de mensagem &gt; + &gt; Fazer upload de arquivos</strong>. Depois, envie os três pedidos, na ordem.</p>"
+          },
+          {
+            "id": "cd733bfa-562e-4823-a4f3-0f6904e17604",
+            "type": "summary",
+            "title": "Antes de usar os números",
+            "isHidden": false,
+            "description": "<p>Compare tudo com o gabarito desta oficina, mais abaixo. Se algum número divergir, veja “Se travar”.</p>"
+          },
+          {
+            "id": "de731391-cce8-4bff-9bd1-8dcbff538c7f",
+            "type": "step",
+            "title": "Teste de leitura",
+            "isHidden": false,
+            "description": "<p>Peça: “Mostre as 5 primeiras linhas e os nomes das colunas.” Se as colunas não forem inscricao, tema, turno, canal e acessibilidade, o arquivo não foi lido direito.</p>"
+          },
+          {
+            "id": "78f58ac2-e902-4639-9e14-580173b3797e",
+            "type": "step",
+            "title": "As contagens",
+            "isHidden": false,
+            "description": "<p>Peça: “Conte as inscrições por tema, por turno e por canal. Faça uma tabela tema × turno. Liste os códigos que pediram acessibilidade.”</p>"
+          },
+          {
+            "id": "f720e0b0-8170-4303-b2a3-1e1dfac86198",
+            "type": "step",
+            "title": "A decisão",
+            "isHidden": false,
+            "description": "<p>Peça: “Cada atendimento dura 30 minutos; a manhã tem 6 horários por mesa (9h–12h) e a tarde 8 (13h–17h). Quantas mesas por tema em cada turno são necessárias?”</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "1a99d3a1-d804-45ae-b4ee-5917b6ac131a"
+      },
+      {
+        "id": "d4e5f5bd-ba15-488c-ae1d-8cea891515a1",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e46ab5a1-d8f9-4c7e-b9cd-620957be66c1",
+            "paragraph": "<p>💡 <strong>Dica:</strong> confira uma contagem na mão. Procure “Previdencia,tarde” no arquivo (Ctrl+F): são 7.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2d030027-784d-4346-9dc3-3e23c16748bc"
+      },
+      {
+        "id": "df0a4124-4e4b-4724-a367-cf5109c8e57b",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "06d4a78b-91dd-4061-81e8-c2007d6b5c0c",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você conferiu na mão, com Ctrl+F, quantas inscrições de Previdência são do turno da tarde. Quantas são?",
+            "answers": [
+              {
+                "id": "8e46fb94-3f87-4e21-b71a-bed5ac6ae76b",
+                "title": "8",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "a1c4d9c2-8421-4640-8a2b-8c9746a6c7c4",
+                "title": "7",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "603a6fd6-6373-4b00-a0bc-a700a5c03abc",
+                "title": "9",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "020900ce-0dbd-4c97-a880-67ee16fe0f56",
+                "title": "4",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto! São 7 inscrições de Previdência à tarde (I03, I09, I14, I19, I22, I28, I30) — o maior bloco do mutirão.",
+            "feedbackIncorrect": "Não. Procure “Previdencia,tarde” no arquivo com Ctrl+F: são 7 (I03, I09, I14, I19, I22, I28, I30). Cuidado: 8 é o total de Previdência nos dois turnos."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2c38271c-3c41-496a-af6e-5af14b834dab"
+      },
+      {
+        "id": "diptzq6s1mto6xzfzkgg9lsr",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pbjtydcerrb8yg5a3ws1mh7t",
+            "heading": "🚑 Se travar",
+            "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "a89c0db8-040b-4018-ad78-6f6787935144"
+      },
+      {
+        "id": "959a34b8-725b-4940-ae4e-ca268d50f2c3",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "065f9d27-b33c-4a2a-af18-3c274e43fb3a",
+            "title": "Contagem diferente",
+            "description": "<p>Peça: “mostre a contagem linha a linha do tema X” e confira com o arquivo. Em geral, a divergência aparece numa linha lida em dobro ou pulada.</p>"
+          },
+          {
+            "id": "81ae6ed4-965d-4154-b071-9509efa58093",
+            "title": "Arquivo recusado",
+            "description": "<p>Cole as 31 linhas (cabeçalho + 30 inscrições) direto na conversa.</p>"
+          },
+          {
+            "id": "d9e5b4a5-a756-4cc0-8c04-d11449e03076",
+            "title": "Apareceram nomes inventados",
+            "description": "<p>A planilha só tem códigos. Lembre o Gemini: “use só os códigos” — e confira se a habilidade está ativa.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "d5e50c06-415f-46cd-96d5-c00c95909aa9"
+      },
+      {
+        "id": "joczm9jdh0hu3ymx3ab075mf",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "gxyhmkm8obcunnj6tsx1022a",
+            "heading": "✅ Deu certo? Gabarito",
+            "paragraph": "<p>Compare os seis indicadores com o que o Gemini respondeu. 🏁 <strong>Ponto de controle:</strong> os seis batem.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "c42e31d4-6a25-406e-a710-ac169df2efb0"
+      },
+      {
+        "id": "b2cac3aa-1460-447c-9d7d-0ddaf79cae2c",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "e8a20274-8491-4331-b0f3-c217b837ad4b",
+            "title": "Por tema",
+            "description": "<p>Consumidor 9, Previdência 8, Família 7, Trabalho 6.</p><p></p><p>Total: 30. Se a soma do Gemini não der 30, alguma linha foi pulada ou lida em dobro.</p>"
+          },
+          {
+            "id": "7c942f2e-b8f8-4ffe-8647-eadc99089b78",
+            "title": "Por turno",
+            "description": "<p>Tarde 18, manhã 12.</p><p></p><p>A tarde concentra 60% das inscrições — e tem mais horários por mesa (8 contra 6).</p>"
+          },
+          {
+            "id": "fa6ba167-48fb-4c7f-849c-895e6a93b4fc",
+            "title": "Por canal",
+            "description": "<p>Presencial 11, site 10, WhatsApp 9.</p><p></p><p>O canal não muda as mesas, mas indica por onde mandar o comunicado da Oficina 4.</p>"
+          },
+          {
+            "id": "f68e6ef3-b230-4336-9191-3f5868bf52a4",
+            "title": "Acessibilidade",
+            "description": "<p>4 inscrições: I03, I06, I07, I30.</p><p></p><p>Só os códigos — é o que a coordenação precisa para preparar o atendimento, sem expor ninguém.</p>"
+          },
+          {
+            "id": "da4f1680-073a-445e-be85-6c545064f028",
+            "title": "Maior bloco",
+            "description": "<p>Previdência à tarde, com 7 inscrições.</p><p></p><p>É o mesmo número da conferência com Ctrl+F.</p>"
+          },
+          {
+            "id": "ce09ff53-046f-4481-a118-87115fb6f237",
+            "title": "Mesas",
+            "description": "<p>Uma mesa por tema em cada turno basta: o maior uso é 7 dos 8 horários da tarde (Previdência).</p><p></p><p>Na manhã, o maior bloco cabe nos 6 horários de uma mesa.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "c03805e0-e509-4baa-b6b8-aa987dc4a1d9"
+      },
+      {
+        "id": "shqsdrtv7s12mw1znpxmnlb2",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "axre683wjcvbwfh1ucfof3vy",
+            "heading": "🚀 Quer ir além? (opcional)",
+            "paragraph": "<p>Três desafios, cada um com a forma de validar:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "382ec69e-72b3-49f7-8ff7-e8f92e146c1c"
+      },
+      {
+        "id": "acd280bf-23ca-4796-95ae-f5120a1a9a76",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "47b1c1b0-7ac8-4d64-8318-cd862ff7fcb9",
+            "title": "Gráfico de barras por tema e turno",
+            "description": "<p>Peça um gráfico de barras por tema e turno.</p><p><strong>Validação:</strong> a barra mais alta é Previdência/tarde.</p>"
+          },
+          {
+            "id": "dcc67012-8d3c-44e3-87a1-cf87ec460383",
+            "title": "Usar o CSV do Drive",
+            "description": "<p>Salve o CSV no Drive e use <strong>Gemini &gt; Caixa de mensagem &gt; + &gt; Adicionar do Drive</strong>.</p><p><strong>Validação:</strong> a resposta é a mesma.</p>"
+          },
+          {
+            "id": "60768513-f13d-4f91-a53a-db4541cc3edc",
+            "title": "Mudança no número de horários",
+            "description": "<p>Pergunte: “e se a tarde tivesse só 4 horários por mesa?”.</p><p><strong>Validação:</strong> Previdência à tarde passa a precisar de 2 mesas.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "b6924e7b-63ae-4ad4-9dd5-76ef78d7eb01"
+      },
+      {
+        "id": "97e29b23-4acc-4a9c-88ab-39578aff4a23",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "858bad4b-861d-4817-b9f2-f3ebe5032627",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "bdf84166-1344-4fdb-b140-620a3437f48d"
+      },
+      {
+        "id": "nys0re489j6gj1t3pbcevx2h",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "t7727hnz1qmnd45wjyd6957q",
+            "paragraph": "<p>Mesas decididas. Na Oficina 3, o pedido da coordenação sai do seu e-mail: o Gemini encontra as três datas no Gmail e marca a reunião de preparação na Agenda — sem você digitar nada no calendário.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "be408ee7-5dd9-4aaa-bc44-e9c6d909437d"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Análise e Decisão com Planilhas de Inscrições via Gemini",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ",
+    "createdAt": "2026-11-17T16:48:25.142Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T16:49:01.259Z"
+  }
+}

@@ -1,0 +1,3003 @@
+{
+  "course": {
+    "description": "Já pensou em organizar um evento inteiro usando apenas ferramentas do Google e inteligência artificial? Este curso prático mostra como transformar tarefas repetitivas em processos automáticos, desde o cadastro de inscrições até o envio de comunicados e o agendamento de reuniões. Aprenda a usar o Gemini integrado ao Gmail, Agenda e Documentos Google para simplificar a organização de eventos comunitários, sempre conferindo os dados e protegendo suas informações pessoais. Ao final, você estará pronto para coordenar eventos do início ao fim, mesmo sem experiência prévia com automação ou IA.",
+    "lessons": [
+      {
+        "description": "",
+        "id": "c1d4eeb6-ea53-4672-aa26-19339d5711a3",
+        "items": [
+          {
+            "id": "jhrgtyhjct7swk2uux0e363l",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "lipntq162r8b4cv25dp8p4o2",
+                "heading": "Oficina 1 — Crie a habilidade do mutirão",
+                "paragraph": "<p>🎯 <strong>O problema.</strong> Toda conversa você explica de novo: “é um caso fictício, use só os códigos, diga de onde tirou...”. Uma <strong>habilidade</strong> — um pacote de instruções salvo, como uma receita guardada — faz isso por você sempre que você digita “/”. Nesta oficina (20 min), você cria a habilidade que vai acompanhar todas as outras.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "45f6c2f1-de01-460e-992c-431dbf45690d"
+          },
+          {
+            "id": "svgw4ip8pg1lm6pbkprfh13f",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "b3uqj53sq6ksmf3oe2vqrr12",
+                "paragraph": "<p>Ao final desta oficina, você será capaz de:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "52df5a39-c7cf-4829-8e3e-a15761c5a500"
+          },
+          {
+            "id": "y5q6kjaqpw34tdjolp4fmqkt",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "h16hc7ck5ena9eztc57hs4qf",
+                "number": "1",
+                "paragraph": "<p>Explicar por que instruções repetidas devem virar habilidade.</p>"
+              },
+              {
+                "id": "ababvj2gxdv00tg7yjr3hsv0",
+                "number": "2",
+                "paragraph": "<p>Localizar as habilidades em Personalizar.</p>"
+              },
+              {
+                "id": "qxngznf38d4ja8uu0nkh51m7",
+                "number": "3",
+                "paragraph": "<p>Criar a habilidade “Assistente do Mutirão”.</p>"
+              },
+              {
+                "id": "txovsky5l9s5n8p0vforbxxt",
+                "number": "4",
+                "paragraph": "<p>Acionar a habilidade com “/” e conferir se ela foi seguida.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "2ceea8df-9b6d-419c-bde3-c844532f84ec"
+          },
+          {
+            "id": "vv8qh3qzdfl3aw2t9xgg0fe6",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "q9doj6gy7955a937ov8xjs1v",
+                "heading": "🧰 O que você vai usar",
+                "paragraph": "<p>Só um recurso: <strong>Personalizar &gt; Habilidades</strong> (as habilidades substituíram os antigos Gems em novembro de 2026). Vire os cartões para revisar o essencial:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "e9f1e0ae-3351-4ce3-b5a5-098cb60ec887"
+          },
+          {
+            "id": "q267yer3tnu9t8yvf4jteek6",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "ngu84fwdma72dnnmqy172v1j",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Conjuntos de instruções salvos que orientam o Gemini numa tarefa específica. Você aciona digitando “/” e o nome.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>O que são habilidades no Gemini?</p>"
+                }
+              },
+              {
+                "id": "rnlfdxtujbsypfgegtd18a8l",
+                "back": {
+                  "type": "description",
+                  "description": "<p>A instrução manual vale só para a conversa em que foi colada. A habilidade fica salva e vale em qualquer conversa nova.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Diferença entre habilidade e instrução manual</p>"
+                }
+              },
+              {
+                "id": "ys4647ci5mzdwwb4esinyfbh",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Porque cada repetição é uma chance de esquecer um detalhe — como “use só os códigos”. Na habilidade, a regra está sempre lá.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Por que automatizar instruções recorrentes?</p>"
+                }
+              }
+            ],
+            "family": "flashcard",
+            "variant": "flashcard",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "ec82282a-da9d-4cc1-a7fb-6c61ada15d23"
+          },
+          {
+            "id": "396677ce-c134-4c07-8dd3-099486c075e8",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "14ec6e84-a857-4da5-b201-6590c32338c5",
+                "type": "intro",
+                "title": "👐 Mão na massa",
+                "isHidden": false,
+                "description": "<p>Cinco passos para criar e testar a habilidade “Assistente do Mutirão”. As instruções a colar estão no bloco logo abaixo deste.</p>"
+              },
+              {
+                "id": "dee7e13b-4d04-47f9-bf3d-b56fd4584f70",
+                "type": "summary",
+                "title": "Pronto",
+                "isHidden": false,
+                "description": "<p>A partir de agora, “/Assistente do Mutirão” abre todas as conversas das próximas oficinas.</p>"
+              },
+              {
+                "id": "3e36c6f3-fc4c-4f13-a808-2072c77d8218",
+                "type": "step",
+                "title": "Abrir Habilidades",
+                "isHidden": false,
+                "description": "<p>Abra <strong>Gemini &gt; Menu à esquerda &gt; Personalizar &gt; Habilidades</strong> e crie uma habilidade nova manualmente.</p>"
+              },
+              {
+                "id": "4198e943-1520-45e1-a825-0ccf55070215",
+                "type": "step",
+                "title": "Nome e descrição",
+                "isHidden": false,
+                "description": "<p>Nome: <strong>Assistente do Mutirão</strong>. Descrição: <strong>Organização do Mutirão de Orientação Cidadã</strong>.</p>"
+              },
+              {
+                "id": "b9d3a673-e374-43e5-99b1-29b95d2f3e6d",
+                "type": "step",
+                "title": "Colar as instruções",
+                "isHidden": false,
+                "description": "<p>Cole no campo de instruções o texto do bloco abaixo, sem alterar.</p>"
+              },
+              {
+                "id": "ba784615-c3d0-45ce-9b68-654f9c8f07a4",
+                "type": "step",
+                "title": "Salvar e ativar",
+                "isHidden": false,
+                "description": "<p>Salve e confira se a habilidade aparece ativa na lista.</p>"
+              },
+              {
+                "id": "78710d4b-d3bf-4f0a-9950-83874604ee73",
+                "type": "step",
+                "title": "Testar",
+                "isHidden": false,
+                "description": "<p>Em <strong>Gemini &gt; Barra lateral &gt; Novo chat</strong>, digite <strong>/Assistente do Mutirão</strong> e pergunte: “Quais são as cinco tarefas principais para organizar um mutirão de atendimento de um dia?”</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "85d4a816-3c03-4705-a811-07b0e48b1a6d"
+          },
+          {
+            "id": "9f50b4a4-04cc-4237-bb5d-173e2e1960c8",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "540d0e3e-e104-4a89-85fe-83eee278c276",
+                "paragraph": "<p><strong>Instruções da habilidade — copie e cole:</strong></p><p>“Você apoia a organização do Mutirão de Orientação Cidadã (caso fictício). Responda em português do Brasil, em tópicos curtos. Identifique inscrições só pelo código (I01, I02...). Sempre que usar dados de arquivo, e-mail ou agenda, diga de onde vieram. Termine toda resposta com uma linha ‘Conferir:’ listando o que a pessoa deve verificar.”</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "ff753f22-98ca-4bc6-ad34-f31b94bc5dfd"
+          },
+          {
+            "id": "e4e0bfb8-4642-4aff-b8cd-303cd5b232cf",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "128bbd01-5acc-4032-907b-7426da39f4f8",
+                "type": "MULTIPLE_CHOICE",
+                "title": "✅ Deu certo? Você testou a habilidade com a pergunta das cinco tarefas. O que mostra que ela foi seguida?",
+                "answers": [
+                  {
+                    "id": "25beddba-dce5-4646-8218-b46c16279155",
+                    "title": "A resposta vem em tópicos curtos e termina com a linha “Conferir:”",
+                    "correct": true,
+                    "feedback": "Correto. Tópicos curtos e a linha “Conferir:” no fim vêm direto das instruções que você colou — é o ponto de controle da oficina."
+                  },
+                  {
+                    "id": "f81c2861-4d43-4118-bd4c-eb75541559ff",
+                    "title": "A resposta é longa e sem tópicos",
+                    "correct": false,
+                    "feedback": "Não. As instruções pedem tópicos curtos; uma resposta longa e corrida indica que a habilidade não foi acionada."
+                  },
+                  {
+                    "id": "ca51d25c-354d-4a27-8f87-050f52a01fbd",
+                    "title": "Não importa o formato da resposta",
+                    "correct": false,
+                    "feedback": "Não. O formato é justamente o que mostra se a habilidade foi seguida: tópicos curtos e a linha “Conferir:”."
+                  },
+                  {
+                    "id": "14502b9c-3e76-42a7-b455-b8a3c910ad1b",
+                    "title": "A resposta deve vir em inglês",
+                    "correct": false,
+                    "feedback": "Não. As instruções pedem português do Brasil."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "a338ab21-13ad-40be-b75a-17f694bec87e"
+          },
+          {
+            "id": "wb9iisziye6te9hp70l8b4kt",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "kriak5jpmakayxkcnhebtzqo",
+                "heading": "🚑 Se travar",
+                "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "fc6cf04b-5234-49a8-842d-ed872b6a04c0"
+          },
+          {
+            "id": "0433d8ea-a379-47b9-b9a0-43d81ba1acc3",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "1b509db5-8d47-4065-aa9b-14bfd628026c",
+                "title": "Problema: Não existe “Habilidades”",
+                "description": "<p>A opção some em conta de menor de 18 anos, conta de trabalho ou escola, ou quando a liberação ainda não chegou à sua conta.</p><p></p><p>Rota alternativa: salve as instruções num arquivo de texto e cole-as no início de cada conversa.</p>"
+              },
+              {
+                "id": "8318d730-79ff-49fa-b27d-66b7dbaa6a80",
+                "title": "Problema: A habilidade não aparece no “/”",
+                "description": "<p>Confira em <strong>Personalizar &gt; Habilidades</strong> se ela está ativa e recarregue a página.</p><p></p><p>Digite o nome exatamente como foi salvo, logo depois da barra.</p>"
+              },
+              {
+                "id": "b82b07f8-058b-4b44-9e08-39937b80305f",
+                "title": "Problema: Tenho um Gem antigo",
+                "description": "<p>Ele migrou como rascunho inativo em <strong>Personalizar</strong>.</p><p></p><p>Revise as instruções e ative para usá-lo como habilidade.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "6a9c770d-16f4-48ab-83d0-0f9f21930a5f"
+          },
+          {
+            "id": "p867pi7y0qzcfic5lu287a43",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "y0lfq808ixixgkf9n8juqu3k",
+                "heading": "🚀 Quer ir além? (opcional)",
+                "paragraph": "<p>Três desafios para quem terminou antes. Cada um traz a forma de validar:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "3b0227d7-db59-4153-a231-44d2631085b6"
+          },
+          {
+            "id": "5edd2ee8-e167-4c66-aaf0-4cdb47952473",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "deef47aa-6a9d-4b34-9238-b4c6f72f7ead",
+                "title": "Criar habilidade com Gemini",
+                "description": "<p>Crie a mesma habilidade com <strong>Criar com o Gemini</strong>, descrevendo a função em uma frase.</p><p></p><p><strong>Validação:</strong> compare as instruções geradas com as suas. O que o Gemini esqueceu?</p>"
+              },
+              {
+                "id": "b30b6307-0c6b-498e-939c-4ee60dca8451",
+                "title": "Combinar duas habilidades",
+                "description": "<p>Combine /Assistente do Mutirão com /Texto claro (do Essentials) na mesma conversa.</p><p></p><p><strong>Validação:</strong> a resposta segue as duas — tópicos curtos, linguagem simples e a linha “Conferir:”.</p>"
+              },
+              {
+                "id": "ab31d59b-bc52-414b-aa13-6cc83e58179f",
+                "title": "Limitar tópicos da resposta",
+                "description": "<p>Edite a habilidade para exigir “no máximo 8 tópicos”.</p><p></p><p><strong>Validação:</strong> a próxima resposta respeita o limite.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "e9a6eabd-54ad-4ea5-a106-4f4d8074c28f"
+          },
+          {
+            "id": "fa507546-ba54-4922-9f90-d8660c1defe0",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "88456a2c-bbef-442f-a16c-517115c072cb",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "3e3641c8-45ea-4c50-a9d2-7dba397a3741"
+          },
+          {
+            "id": "qd2ysn8lqb9ook18kj72be5y",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "jussbr023ukq0igs82u2qs3p",
+                "paragraph": "<p>Habilidade criada. Na Oficina 2, ela entra em ação com a planilha de 30 inscrições: você vai descobrir quantas mesas montar em cada turno sem contar nada na mão — e conferir uma contagem para ter certeza.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "0ac6f6b7-b74c-45f4-b9d3-4f5b6496bfbd"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Criando e Personalizando Habilidades no Gemini",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ",
+        "createdAt": "2026-11-17T16:48:25.142Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 0,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-11-17T16:48:46.154Z"
+      },
+      {
+        "description": "",
+        "id": "a488554a-2f5b-428b-8723-657ce8635c9b",
+        "items": [
+          {
+            "id": "iw30ftch9xaoq1u2bjmf9c6q",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "oecm2639p6jss2d6gbr0yhtg",
+                "heading": "Oficina 2 — Planilha de inscrições",
+                "paragraph": "<p>🎯 <strong>O problema.</strong> São 30 inscrições. A coordenação quer saber quantas mesas montar em cada turno e quem precisa de acessibilidade. Nesta oficina (20 min), o Gemini faz as contagens — e você confere uma delas na mão.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "93732b9c-15d1-45e0-bd4b-5bab360fa4fe"
+          },
+          {
+            "id": "im9wgv4hwcrq9yyttiooe0nc",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "i2rwg8ck1hd9w8zxouh5dbiv",
+                "paragraph": "<p>Ao final desta oficina, você será capaz de:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "217a9c03-e1da-43be-b47e-29f529627395"
+          },
+          {
+            "id": "gf5wfbnjt8j6rlbydrx30uyj",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "o881rqd4l9ehbil1bqysqj7f",
+                "number": "1",
+                "paragraph": "<p>Enviar o arquivo inscricoes-mutirao.csv e conferir se o Gemini o leu direito.</p>"
+              },
+              {
+                "id": "vmh38r5ece8pqizhdcgd91wn",
+                "number": "2",
+                "paragraph": "<p>Obter as contagens por tema, turno, canal e acessibilidade.</p>"
+              },
+              {
+                "id": "sgftpb79y37ipwv4so3350rn",
+                "number": "3",
+                "paragraph": "<p>Calcular quantas mesas cada tema precisa em cada turno.</p>"
+              },
+              {
+                "id": "jh7l7ilywuynhmtc1xfsx1tc",
+                "number": "4",
+                "paragraph": "<p>Conferir os números com o gabarito e resolver divergências.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "6748630b-0e91-4315-8b27-29b8e84db750"
+          },
+          {
+            "id": "r0m6ub7l1xdch7injlc24cyl",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "azmn6vtwx72qmsq93eok50bx",
+                "heading": "🧰 O que você vai usar",
+                "paragraph": "<p>O envio de arquivos do Gemini e o arquivo <strong>inscricoes-mutirao.csv</strong>, salvo na preparação. Vire os cartões:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "aa241540-fa8b-475e-9dd6-a8b5343cb0f7"
+          },
+          {
+            "id": "wg5h2bvottfrsquu029g8z7w",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "tpnbnpmglgm3r1tn3w0ukdmd",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Uma planilha em texto puro: cada linha é uma inscrição e as colunas são separadas por vírgula. A primeira linha traz os nomes das colunas.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Arquivo CSV em eventos</p>"
+                }
+              },
+              {
+                "id": "vteuf391o7az0ebgt7jl16zx",
+                "back": {
+                  "type": "description",
+                  "description": "<p>O Gemini lê as colunas e as linhas do arquivo e calcula a partir delas. Por isso o primeiro pedido é sempre ver as 5 primeiras linhas.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Leitura de arquivos pelo Gemini</p>"
+                }
+              },
+              {
+                "id": "nh67a2ug8tph6wnq7r774vya",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Conferir pelo menos uma contagem na mão antes de usar os números. Com 30 linhas, leva um minuto.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Validação dos dados</p>"
+                }
+              }
+            ],
+            "family": "flashcard",
+            "variant": "flashcard",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "13456fc2-a04e-4dad-b9ac-5a4cbb35095d"
+          },
+          {
+            "id": "ca71e302-b60c-4e0b-8640-149b9f1de87c",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "b9802c3e-1d3f-4247-a5f6-c409feefa1af",
+                "type": "intro",
+                "title": "👐 Mão na massa",
+                "isHidden": false,
+                "description": "<p>Em um chat novo, digite <strong>/Assistente do Mutirão</strong> e envie o CSV em <strong>Gemini &gt; Caixa de mensagem &gt; + &gt; Fazer upload de arquivos</strong>. Depois, envie os três pedidos, na ordem.</p>"
+              },
+              {
+                "id": "cd733bfa-562e-4823-a4f3-0f6904e17604",
+                "type": "summary",
+                "title": "Antes de usar os números",
+                "isHidden": false,
+                "description": "<p>Compare tudo com o gabarito desta oficina, mais abaixo. Se algum número divergir, veja “Se travar”.</p>"
+              },
+              {
+                "id": "de731391-cce8-4bff-9bd1-8dcbff538c7f",
+                "type": "step",
+                "title": "Teste de leitura",
+                "isHidden": false,
+                "description": "<p>Peça: “Mostre as 5 primeiras linhas e os nomes das colunas.” Se as colunas não forem inscricao, tema, turno, canal e acessibilidade, o arquivo não foi lido direito.</p>"
+              },
+              {
+                "id": "78f58ac2-e902-4639-9e14-580173b3797e",
+                "type": "step",
+                "title": "As contagens",
+                "isHidden": false,
+                "description": "<p>Peça: “Conte as inscrições por tema, por turno e por canal. Faça uma tabela tema × turno. Liste os códigos que pediram acessibilidade.”</p>"
+              },
+              {
+                "id": "f720e0b0-8170-4303-b2a3-1e1dfac86198",
+                "type": "step",
+                "title": "A decisão",
+                "isHidden": false,
+                "description": "<p>Peça: “Cada atendimento dura 30 minutos; a manhã tem 6 horários por mesa (9h–12h) e a tarde 8 (13h–17h). Quantas mesas por tema em cada turno são necessárias?”</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "1a99d3a1-d804-45ae-b4ee-5917b6ac131a"
+          },
+          {
+            "id": "d4e5f5bd-ba15-488c-ae1d-8cea891515a1",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "e46ab5a1-d8f9-4c7e-b9cd-620957be66c1",
+                "paragraph": "<p>💡 <strong>Dica:</strong> confira uma contagem na mão. Procure “Previdencia,tarde” no arquivo (Ctrl+F): são 7.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "2d030027-784d-4346-9dc3-3e23c16748bc"
+          },
+          {
+            "id": "df0a4124-4e4b-4724-a367-cf5109c8e57b",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "06d4a78b-91dd-4061-81e8-c2007d6b5c0c",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Você conferiu na mão, com Ctrl+F, quantas inscrições de Previdência são do turno da tarde. Quantas são?",
+                "answers": [
+                  {
+                    "id": "8e46fb94-3f87-4e21-b71a-bed5ac6ae76b",
+                    "title": "8",
+                    "correct": false,
+                    "feedback": ""
+                  },
+                  {
+                    "id": "a1c4d9c2-8421-4640-8a2b-8c9746a6c7c4",
+                    "title": "7",
+                    "correct": true,
+                    "feedback": ""
+                  },
+                  {
+                    "id": "603a6fd6-6373-4b00-a0bc-a700a5c03abc",
+                    "title": "9",
+                    "correct": false,
+                    "feedback": ""
+                  },
+                  {
+                    "id": "020900ce-0dbd-4c97-a880-67ee16fe0f56",
+                    "title": "4",
+                    "correct": false,
+                    "feedback": ""
+                  }
+                ],
+                "feedbackType": "CORRECT_INCORRECT",
+                "feedbackCorrect": "Correto! São 7 inscrições de Previdência à tarde (I03, I09, I14, I19, I22, I28, I30) — o maior bloco do mutirão.",
+                "feedbackIncorrect": "Não. Procure “Previdencia,tarde” no arquivo com Ctrl+F: são 7 (I03, I09, I14, I19, I22, I28, I30). Cuidado: 8 é o total de Previdência nos dois turnos."
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "2c38271c-3c41-496a-af6e-5af14b834dab"
+          },
+          {
+            "id": "diptzq6s1mto6xzfzkgg9lsr",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "pbjtydcerrb8yg5a3ws1mh7t",
+                "heading": "🚑 Se travar",
+                "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "a89c0db8-040b-4018-ad78-6f6787935144"
+          },
+          {
+            "id": "959a34b8-725b-4940-ae4e-ca268d50f2c3",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "065f9d27-b33c-4a2a-af18-3c274e43fb3a",
+                "title": "Contagem diferente",
+                "description": "<p>Peça: “mostre a contagem linha a linha do tema X” e confira com o arquivo. Em geral, a divergência aparece numa linha lida em dobro ou pulada.</p>"
+              },
+              {
+                "id": "81ae6ed4-965d-4154-b071-9509efa58093",
+                "title": "Arquivo recusado",
+                "description": "<p>Cole as 31 linhas (cabeçalho + 30 inscrições) direto na conversa.</p>"
+              },
+              {
+                "id": "d9e5b4a5-a756-4cc0-8c04-d11449e03076",
+                "title": "Apareceram nomes inventados",
+                "description": "<p>A planilha só tem códigos. Lembre o Gemini: “use só os códigos” — e confira se a habilidade está ativa.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "d5e50c06-415f-46cd-96d5-c00c95909aa9"
+          },
+          {
+            "id": "joczm9jdh0hu3ymx3ab075mf",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "gxyhmkm8obcunnj6tsx1022a",
+                "heading": "✅ Deu certo? Gabarito",
+                "paragraph": "<p>Compare os seis indicadores com o que o Gemini respondeu. 🏁 <strong>Ponto de controle:</strong> os seis batem.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "c42e31d4-6a25-406e-a710-ac169df2efb0"
+          },
+          {
+            "id": "b2cac3aa-1460-447c-9d7d-0ddaf79cae2c",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "e8a20274-8491-4331-b0f3-c217b837ad4b",
+                "title": "Por tema",
+                "description": "<p>Consumidor 9, Previdência 8, Família 7, Trabalho 6.</p><p></p><p>Total: 30. Se a soma do Gemini não der 30, alguma linha foi pulada ou lida em dobro.</p>"
+              },
+              {
+                "id": "7c942f2e-b8f8-4ffe-8647-eadc99089b78",
+                "title": "Por turno",
+                "description": "<p>Tarde 18, manhã 12.</p><p></p><p>A tarde concentra 60% das inscrições — e tem mais horários por mesa (8 contra 6).</p>"
+              },
+              {
+                "id": "fa6ba167-48fb-4c7f-849c-895e6a93b4fc",
+                "title": "Por canal",
+                "description": "<p>Presencial 11, site 10, WhatsApp 9.</p><p></p><p>O canal não muda as mesas, mas indica por onde mandar o comunicado da Oficina 4.</p>"
+              },
+              {
+                "id": "f68e6ef3-b230-4336-9191-3f5868bf52a4",
+                "title": "Acessibilidade",
+                "description": "<p>4 inscrições: I03, I06, I07, I30.</p><p></p><p>Só os códigos — é o que a coordenação precisa para preparar o atendimento, sem expor ninguém.</p>"
+              },
+              {
+                "id": "da4f1680-073a-445e-be85-6c545064f028",
+                "title": "Maior bloco",
+                "description": "<p>Previdência à tarde, com 7 inscrições.</p><p></p><p>É o mesmo número da conferência com Ctrl+F.</p>"
+              },
+              {
+                "id": "ce09ff53-046f-4481-a118-87115fb6f237",
+                "title": "Mesas",
+                "description": "<p>Uma mesa por tema em cada turno basta: o maior uso é 7 dos 8 horários da tarde (Previdência).</p><p></p><p>Na manhã, o maior bloco cabe nos 6 horários de uma mesa.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "tabs",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "c03805e0-e509-4baa-b6b8-aa987dc4a1d9"
+          },
+          {
+            "id": "shqsdrtv7s12mw1znpxmnlb2",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "axre683wjcvbwfh1ucfof3vy",
+                "heading": "🚀 Quer ir além? (opcional)",
+                "paragraph": "<p>Três desafios, cada um com a forma de validar:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "382ec69e-72b3-49f7-8ff7-e8f92e146c1c"
+          },
+          {
+            "id": "acd280bf-23ca-4796-95ae-f5120a1a9a76",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "47b1c1b0-7ac8-4d64-8318-cd862ff7fcb9",
+                "title": "Gráfico de barras por tema e turno",
+                "description": "<p>Peça um gráfico de barras por tema e turno.</p><p><strong>Validação:</strong> a barra mais alta é Previdência/tarde.</p>"
+              },
+              {
+                "id": "dcc67012-8d3c-44e3-87a1-cf87ec460383",
+                "title": "Usar o CSV do Drive",
+                "description": "<p>Salve o CSV no Drive e use <strong>Gemini &gt; Caixa de mensagem &gt; + &gt; Adicionar do Drive</strong>.</p><p><strong>Validação:</strong> a resposta é a mesma.</p>"
+              },
+              {
+                "id": "60768513-f13d-4f91-a53a-db4541cc3edc",
+                "title": "Mudança no número de horários",
+                "description": "<p>Pergunte: “e se a tarde tivesse só 4 horários por mesa?”.</p><p><strong>Validação:</strong> Previdência à tarde passa a precisar de 2 mesas.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "b6924e7b-63ae-4ad4-9dd5-76ef78d7eb01"
+          },
+          {
+            "id": "97e29b23-4acc-4a9c-88ab-39578aff4a23",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "858bad4b-861d-4817-b9f2-f3ebe5032627",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "bdf84166-1344-4fdb-b140-620a3437f48d"
+          },
+          {
+            "id": "nys0re489j6gj1t3pbcevx2h",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "t7727hnz1qmnd45wjyd6957q",
+                "paragraph": "<p>Mesas decididas. Na Oficina 3, o pedido da coordenação sai do seu e-mail: o Gemini encontra as três datas no Gmail e marca a reunião de preparação na Agenda — sem você digitar nada no calendário.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "be408ee7-5dd9-4aaa-bc44-e9c6d909437d"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Análise e Decisão com Planilhas de Inscrições via Gemini",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ",
+        "createdAt": "2026-11-17T16:48:25.142Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 1,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-11-17T16:49:01.259Z"
+      },
+      {
+        "description": "",
+        "id": "17ab5d25-ce95-4cc7-879a-c5da6c0b3728",
+        "items": [
+          {
+            "id": "xwowo2wyth33t1srrixyw32u",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "jrsfsvbah93es0g1stasgq7m",
+                "heading": "Oficinas 3 e 4 e Projeto Final — do e-mail ao Pacote do Mutirão",
+                "paragraph": "<p>🎯 <strong>O problema.</strong> O pedido da coordenação está no seu e-mail, com três datas diferentes. Você quer o resumo e a reunião marcada sem copiar nada à mão (Oficina 3), um comunicado claro para quem nunca foi a um atendimento jurídico, num documento que a coordenação consiga abrir (Oficina 4), e, por fim, tudo reunido no Pacote do Mutirão (Projeto Final).</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "302a592e-98a9-4a3a-b432-cb20235dcd74"
+          },
+          {
+            "id": "xxx9eve87itq2i8qvwgbilp4",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "pb8zv2pmfplf5vuawvho83cg",
+                "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "ad6b8c9b-2dfc-49cc-915f-9e92c7abedef"
+          },
+          {
+            "id": "w8tnu3dil262ak9vdmc24wac",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "lg5ivqi9qezbd61sh3wt5tuy",
+                "number": "1",
+                "paragraph": "<p>Conectar Gmail e Google Agenda ao Gemini, sabendo o que isso libera.</p>"
+              },
+              {
+                "id": "okhmm6wiokwas9yvisdb8a1l",
+                "number": "2",
+                "paragraph": "<p>Extrair datas, horários e prazos de um e-mail específico, citando o assunto.</p>"
+              },
+              {
+                "id": "fv8x4navvmckionqnk7uitsp",
+                "number": "3",
+                "paragraph": "<p>Criar um evento na Agenda pela conversa e conferi-lo no calendário.</p>"
+              },
+              {
+                "id": "h2jugvg36swrsoxqbgp6iymc",
+                "number": "4",
+                "paragraph": "<p>Redigir o comunicado no Canvas e exportá-lo para o Documentos Google.</p>"
+              },
+              {
+                "id": "vda3tqildwjjvvwk6861zclh",
+                "number": "5",
+                "paragraph": "<p>Montar o Pacote do Mutirão em quatro seções.</p>"
+              },
+              {
+                "id": "dy0fczsxowas26s7t60hbbop",
+                "number": "6",
+                "paragraph": "<p>Conferir cada número e cada data antes de entregar.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "33c4873e-6610-4e08-8e49-f22f9e3a3aa3"
+          },
+          {
+            "id": "v5649371a4m4qvnrv1n2ks16",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "q6y8gw9o6s5j9yolaagp5gh9",
+                "heading": "Oficina 3 — Gmail e Agenda (20 min)",
+                "paragraph": "<p>🧰 Você vai usar os apps do Google conectados ao Gemini (Gmail e Google Agenda) e o e-mail de teste que mandou para si mesmo na preparação. Vire os cartões:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "9b5d1946-df42-4028-aff1-7b347169273c"
+          },
+          {
+            "id": "jt1zqrqagk4bo8zs541vwwpg",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "gv79wbxgcl4o18138hamc7qy",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Com sua autorização, o Gemini passa a ler e-mails da conta. Exige o Histórico ativado — por isso a preparação pediu para conferi-lo.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Conexão do Gmail ao Gemini</p>"
+                }
+              },
+              {
+                "id": "uvbpshfh6632894ch1tn8ti3",
+                "back": {
+                  "type": "description",
+                  "description": "<p>Com o assunto exato entre aspas, o Gemini lê só aquele e-mail. “Resuma meus e-mails” o faz ler mensagens que você não escolheu.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Citar o assunto exato</p>"
+                }
+              },
+              {
+                "id": "h6xkyy2p7qi4m3tu0gfvucef",
+                "back": {
+                  "type": "description",
+                  "description": "<p>O Gemini cria o evento a partir da conversa, mas quem confere data e horário no calendário é você.</p>"
+                },
+                "front": {
+                  "type": "description",
+                  "description": "<p>Automação de eventos na Agenda</p>"
+                }
+              }
+            ],
+            "family": "flashcard",
+            "variant": "flashcard",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "4fbb07af-700b-4dab-9d19-8d823a5829ee"
+          },
+          {
+            "id": "1bdfe83e-d7c7-4fc2-8cfa-3224299a7010",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "4487354f-48aa-4b00-a068-e092d99bfc4f",
+                "type": "intro",
+                "title": "👐 Mão na massa — Oficina 3",
+                "isHidden": false,
+                "description": "<p>Quatro passos: conectar, extrair as datas, criar o evento e conferir na Agenda.</p>"
+              },
+              {
+                "id": "51c34f3b-fffb-4d8b-94d1-7a8f88e67a75",
+                "type": "summary",
+                "title": "Conferência",
+                "isHidden": false,
+                "description": "<p>As três datas devem vir com o Gmail citado como origem (é a regra da habilidade), e o evento tem de estar no calendário no dia e na hora certos.</p>"
+              },
+              {
+                "id": "3dea0b3b-3357-47b7-911d-74d01d0a063f",
+                "type": "step",
+                "title": "Conectar os apps",
+                "isHidden": false,
+                "description": "<p>Abra <strong>Gemini &gt; Menu à esquerda &gt; Personalizar &gt; Apps conectados</strong> e conecte <strong>Gmail</strong> e <strong>Google Agenda</strong>. O Gemini pede autorização: leia e aceite.</p>"
+              },
+              {
+                "id": "be37a6c1-1368-4550-bf40-42a06b58f292",
+                "type": "step",
+                "title": "Listar as datas do e-mail",
+                "isHidden": false,
+                "description": "<p>Em um chat novo, com /Assistente do Mutirão, peça: “Encontre no meu Gmail o e-mail com assunto ‘Mutirão de Orientação Cidadã — pedido da coordenação’ e liste todas as datas, horários e prazos.”</p>"
+              },
+              {
+                "id": "5683f35b-176a-4aaa-84fe-1a225e12908f",
+                "type": "step",
+                "title": "Criar evento na Agenda",
+                "isHidden": false,
+                "description": "<p>Em seguida, peça: “Crie na minha Agenda o evento ‘Reunião de preparação — Mutirão’ na quarta-feira, 02/12/2026, das 15h às 16h.”</p>"
+              },
+              {
+                "id": "deda67e9-0575-4c19-81d7-d24aea53f7ff",
+                "type": "step",
+                "title": "Confirmar e conferir",
+                "isHidden": false,
+                "description": "<p>Confirme quando o Gemini pedir e abra calendar.google.com no dia 02/12/2026.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "f8b781f9-be9d-471f-b8d9-00a0415a69b4"
+          },
+          {
+            "id": "d51175eb-9673-482d-b61c-14b58f7046bd",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "321e0100-a60b-49cb-bfb4-3ff781718019",
+                "paragraph": "<p>⚠️ <strong>Cuidado:</strong> cite sempre o assunto exato. Pedidos como “resuma meus e-mails” fazem o Gemini ler mensagens que você não escolheu.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "ca9d2b94-7757-4497-85cd-9fda0578b1bd"
+          },
+          {
+            "id": "e016feb8-ad12-4019-ae9a-474852997bc2",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "58de3212-5b6f-4f27-8510-542c54e28439",
+                "type": "MULTIPLE_CHOICE",
+                "title": "✅ Deu certo? O que mostra que a Oficina 3 funcionou?",
+                "answers": [
+                  {
+                    "id": "dd3bef1f-4d09-46a2-bb02-645e844b611e",
+                    "title": "Três datas listadas com o Gmail citado como origem (mutirão em 05/12/2026, 9h–17h; reunião em 02/12/2026, 15h–16h; prazo em 27/11/2026) e o evento visível na Agenda em 02/12, das 15h às 16h",
+                    "correct": true,
+                    "feedback": "Correto. É o ponto de controle completo: as três datas, a origem citada e o evento conferido no calendário."
+                  },
+                  {
+                    "id": "fdfad84c-faab-4269-9cbb-c6e97e6d3a00",
+                    "title": "Apenas o evento criado na Agenda",
+                    "correct": false,
+                    "feedback": "Incompleto. O evento na Agenda não mostra que as datas do e-mail foram lidas — nem que a origem foi citada."
+                  },
+                  {
+                    "id": "55a3875e-ffe1-4cc2-87cb-de7dc979e018",
+                    "title": "Apenas as datas extraídas do e-mail",
+                    "correct": false,
+                    "feedback": "Incompleto. Faltou conferir o evento no calendário, em 02/12/2026, das 15h às 16h."
+                  },
+                  {
+                    "id": "e75003db-20b4-4080-85db-db1e2afaa665",
+                    "title": "O Gemini enviou a resposta à coordenação sem pedir confirmação",
+                    "correct": false,
+                    "feedback": "Não. O Gemini não envia nada sem você — e enviar e-mail não faz parte desta oficina."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "56f151b3-833c-41cb-8cb8-8ad556a90aab"
+          },
+          {
+            "id": "wcyh1q3hgsg5km8j7r33w1wk",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "yxwgi7q45jbppipafzj7um49",
+                "heading": "🚑 Se travar — Gmail e Agenda",
+                "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "7649046b-df81-46a4-a6e7-290b77730ece"
+          },
+          {
+            "id": "6411518d-d026-43e2-99a7-f79aeb02ed75",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "a19b881c-1197-4fb8-a65f-45f0e46ebc2e",
+                "title": "“Não consigo acessar seu Gmail”",
+                "description": "<p>O Histórico está desativado ou o app não foi conectado.</p><p></p><p>Reveja a preparação (myactivity.google.com/product/gemini) e <strong>Personalizar &gt; Apps conectados</strong>.</p>"
+              },
+              {
+                "id": "dc4fa8a9-8106-494a-8d04-df00030a6436",
+                "title": "E-mail não encontrado",
+                "description": "<p>Confira se ele chegou à Caixa de entrada.</p><p></p><p>Cite o assunto entre aspas, exatamente como foi enviado.</p>"
+              },
+              {
+                "id": "670f897b-4c20-4a02-bb16-c955bb8b6e19",
+                "title": "Evento em horário errado",
+                "description": "<p>Confira o fuso da Agenda (horário de Brasília).</p><p></p><p>Peça a correção ao Gemini ou ajuste no próprio evento.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "754d42d4-c888-4837-8ecd-4ba603880390"
+          },
+          {
+            "id": "ll61g4rfkblbckih4mye6qir",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "hqnlu95nsy2c4bkale208naz",
+                "heading": "🚀 Quer ir além? Oficina 3 (opcional)",
+                "paragraph": "<p>Três desafios, cada um com a forma de validar:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "bce1906f-1d10-4cb7-8abb-e8e7dae6049f"
+          },
+          {
+            "id": "fc2cac62-7e85-463a-9636-836116aaa783",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "b19bf51a-a6a3-43ec-967f-4a25caf75fc6",
+                "title": "Incluir descrição no evento",
+                "description": "<p>Peça para incluir no evento a descrição “Pauta: mesas e comunicado”.</p><p></p><p><strong>Validação:</strong> abra o evento e confira.</p>"
+              },
+              {
+                "id": "aa1c51aa-d45f-4028-a0f6-4bacb93ee4ee",
+                "title": "Rascunho de resposta à coordenação",
+                "description": "<p>Peça um rascunho de resposta à coordenação.</p><p></p><p><strong>Validação:</strong> o Gemini não envia nada sem você.</p>"
+              },
+              {
+                "id": "692e53e8-c263-4bae-b68b-cc00bca57ce7",
+                "title": "Testar desconexão do Gmail",
+                "description": "<p>Desconecte o Gmail em <strong>Personalizar &gt; Apps conectados</strong> e repita o pedido das datas.</p><p></p><p><strong>Validação:</strong> o acesso acabou. Reconecte antes do Projeto Final.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "060acb61-104b-4aa7-861f-5d0e262cf7d3"
+          },
+          {
+            "id": "b9500eb1-8f8c-49c5-85ce-e20481782dc0",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "3d76407a-3fac-4635-b40f-dadfea467ebe",
+                "type": "intro",
+                "title": "Oficina 4 — Comunicado no Canvas (20 min)",
+                "isHidden": false,
+                "description": "<p>O comunicado aos inscritos precisa ser claro para quem nunca foi a um atendimento jurídico e ir para um documento que a coordenação consiga abrir. Você vai usar o <strong>Canvas</strong> — uma folha de rascunho ao lado da conversa, que você edita direto — e a exportação para o Documentos Google.</p>"
+              },
+              {
+                "id": "c725c4eb-1795-4dc2-a1d4-a856b156b23a",
+                "type": "summary",
+                "title": "🏁 Ponto de controle",
+                "isHidden": false,
+                "description": "<p>Em <strong>Google Drive &gt; Meu Drive</strong>, um documento com o comunicado — data, horário, local, duração do atendimento e o que levar —, em até 150 palavras.</p>"
+              },
+              {
+                "id": "ad348cd9-d39c-4cc3-a969-6a026880a901",
+                "type": "step",
+                "title": "Abrir o Canvas",
+                "isHidden": false,
+                "description": "<p>Em um chat novo, com /Assistente do Mutirão, abra <strong>Gemini &gt; Caixa de mensagem &gt; Ferramentas &gt; Canvas</strong>.</p>"
+              },
+              {
+                "id": "96a0312c-4a07-48c1-82cd-74e1d2dea1b6",
+                "type": "step",
+                "title": "Pedir o comunicado",
+                "isHidden": false,
+                "description": "<p>Peça: “Escreva um comunicado aos inscritos do Mutirão de Orientação Cidadã: sábado, 05/12/2026, das 9h às 17h, no Centro Comunitário Vila Serena; atendimento de 30 minutos por ordem de turno; levar documento com foto e papéis do caso. Linguagem simples, até 150 palavras.”</p>"
+              },
+              {
+                "id": "eb234a06-8ce3-4d64-b578-f7f72557fbd4",
+                "type": "step",
+                "title": "Simplificar o texto",
+                "isHidden": false,
+                "description": "<p>No Canvas, selecione a frase mais difícil e peça “mais simples”.</p>"
+              },
+              {
+                "id": "c480f81a-a56c-4237-a5d4-8d679ca2f731",
+                "type": "step",
+                "title": "Exportar para o Documentos Google",
+                "isHidden": false,
+                "description": "<p>Exporte pelo menu <strong>Compartilhar</strong> do Canvas: <strong>Canvas &gt; Compartilhar &gt; Exportar para o Documentos</strong>.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "944d08a5-67d9-4a13-ae20-ce68b5a3329d"
+          },
+          {
+            "id": "19aea4cb-fbc0-4db9-867f-50345e9f2d43",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "60b6de03-9261-45c7-a9e7-893c52378f86",
+                "type": "MULTIPLE_CHOICE",
+                "title": "✅ Deu certo? O que o comunicado exportado precisa ter?",
+                "answers": [
+                  {
+                    "id": "3ba18a05-b9de-4a2b-924a-89e255ef439b",
+                    "title": "Data, horário, local, duração do atendimento e o que levar, em até 150 palavras",
+                    "correct": true,
+                    "feedback": "Correto. São os cinco dados de que um inscrito precisa para comparecer, dentro do limite de 150 palavras."
+                  },
+                  {
+                    "id": "8b05171c-be81-4fe5-994d-0a8f970905df",
+                    "title": "Apenas a data e o local",
+                    "correct": false,
+                    "feedback": "Incompleto. Sem horário, duração e o que levar, o inscrito chega sem os papéis ou na hora errada."
+                  },
+                  {
+                    "id": "3e82e81a-b384-47e7-8107-23226e1ceb9f",
+                    "title": "Apenas instruções para voluntários",
+                    "correct": false,
+                    "feedback": "Não. O comunicado é para os inscritos, não para os voluntários."
+                  },
+                  {
+                    "id": "9a473f8b-dc42-47a0-ba2a-fa9f6777940e",
+                    "title": "Um resumo do evento sem detalhes",
+                    "correct": false,
+                    "feedback": "Não. Sem os detalhes práticos, o comunicado não cumpre a função."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "d9352b02-8683-4e05-8657-18fe47e0a59b"
+          },
+          {
+            "id": "vvj7e1kfot0cddncb73idqse",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "h3qx2h0c1ga9bvb47tg9calo",
+                "heading": "🚑 Se travar — Canvas e Documentos",
+                "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "7359f616-c7c7-4b8b-973e-865a9db4cab0"
+          },
+          {
+            "id": "b4968927-9597-4dc6-9700-7bfc1910bf23",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "88b91252-9b57-45c0-964b-ee19cd03e2eb",
+                "title": "O Canvas não abre",
+                "description": "<p>Peça “abra no Canvas”.</p><p></p><p>Se não funcionar, confira se não atingiu o limite do plano gratuito.</p>"
+              },
+              {
+                "id": "ff6d86f6-9e0c-473e-8422-ad7c7efce107",
+                "title": "Data ou local errado",
+                "description": "<p>Corrija direto no Canvas — ele é editável.</p><p></p><p>Faça isso antes de exportar.</p>"
+              },
+              {
+                "id": "54df318c-4ed9-4f4f-b8fe-b197701c851c",
+                "title": "Não acho a exportação",
+                "description": "<p>Procure no menu Compartilhar do Canvas.</p><p></p><p>Alternativa: copiar e colar num documento novo do Documentos Google.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "7671ef16-e299-43d9-a162-e39be6a77ed5"
+          },
+          {
+            "id": "gw6livplmxt4j4eh2oqs56k7",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "k71lb06esyrurhuop7np483s",
+                "heading": "🚀 Quer ir além? Oficina 4 (opcional)",
+                "paragraph": "<p>Três desafios, cada um com a forma de validar:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "1e5d299a-3e94-43b5-8ae1-e8754274a4ac"
+          },
+          {
+            "id": "a1dd3602-f945-4c01-9d26-1ce157586b82",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "fd262ee7-fb06-41cb-9947-a567d7101e8c",
+                "title": "Versão para WhatsApp",
+                "description": "<p>Peça uma versão de 3 linhas para WhatsApp.</p><p></p><p><strong>Validação:</strong> no máximo 3 linhas.</p>"
+              },
+              {
+                "id": "81c86b41-0de2-458a-ab78-c6e311feddf6",
+                "title": "Imagem para cartaz",
+                "description": "<p>Peça “crie uma imagem simples para o cartaz do mutirão”.</p><p></p><p><strong>Validação:</strong> confira data e local na imagem — imagens geradas costumam errar texto.</p>"
+              },
+              {
+                "id": "a7197a12-489a-481a-93f9-de82d5dc3827",
+                "title": "Versão formal para ofício",
+                "description": "<p>Peça a versão formal para um ofício à prefeitura.</p><p></p><p><strong>Validação:</strong> o tom muda e os dados continuam certos.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "c2cc1fde-2e82-4fbf-9f62-ead2fe25801b"
+          },
+          {
+            "id": "82466c5f-caf3-4316-ab7f-121f8af25acc",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "6e53f481-bd06-4e8a-9c9c-bd8b17f59098",
+                "type": "intro",
+                "title": "Projeto Final — Pacote do mutirão (26 min)",
+                "isHidden": false,
+                "description": "<p>🎯 <strong>A missão:</strong> a coordenação pediu, para 27/11, o comunicado e a distribuição das mesas. Monte um único documento com tudo, conferido, e deixe a reunião de preparação na Agenda.</p>"
+              },
+              {
+                "id": "bfb8ce8a-2f94-4063-84f4-4384cc8c2781",
+                "type": "summary",
+                "title": "Entrega",
+                "isHidden": false,
+                "description": "<p>Antes de considerar terminado, passe pelo checklist “Como saber que terminou”, logo abaixo.</p>"
+              },
+              {
+                "id": "6bcf101e-4bbe-484e-a063-aa9cf5b638b6",
+                "type": "step",
+                "title": "Preparar a conversa",
+                "isHidden": false,
+                "description": "<p>Em um chat novo, com /Assistente do Mutirão e o Canvas aberto (<strong>Ferramentas &gt; Canvas</strong>), envie o CSV de novo ou use <strong>+ &gt; Adicionar do Drive</strong>.</p>"
+              },
+              {
+                "id": "340860dd-12d3-4b8d-b4a6-b8fb618a1364",
+                "type": "step",
+                "title": "Pedir o Pacote do Mutirão",
+                "isHidden": false,
+                "description": "<p>Peça: “Monte o ‘Pacote do Mutirão’ em quatro seções: (1) Resumo do pedido da coordenação, com as datas do e-mail no Gmail; (2) Distribuição de mesas por tema e turno, com as contagens da planilha; (3) Atendimento com acessibilidade, só com os códigos; (4) Comunicado aos inscritos.”</p>"
+              },
+              {
+                "id": "abf911ff-88d6-40c4-bae8-65ce7b452c92",
+                "type": "step",
+                "title": "Conferir dados e datas",
+                "isHidden": false,
+                "description": "<p>Confira cada número com o gabarito da Oficina 2 e cada data com o e-mail.</p>"
+              },
+              {
+                "id": "de146d50-f82a-4b61-b733-3770d8419e90",
+                "type": "step",
+                "title": "Exportar o documento final",
+                "isHidden": false,
+                "description": "<p>Exporte para o Documentos Google com o título Pacote do Mutirão.</p>"
+              },
+              {
+                "id": "5ff0d114-faba-4dfd-a8b8-4e1a885067df",
+                "type": "step",
+                "title": "Validar o evento na Agenda",
+                "isHidden": false,
+                "description": "<p>Confira em Google Agenda &gt; 02/12/2026 que o evento de preparação continua lá.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "30bb5e42-e4a7-4a4f-af79-1c1ef983051d"
+          },
+          {
+            "id": "oq7rcrfj873qzitb7rd6oenn",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "dpz8i5byxyvqsz4pmewqihta",
+                "heading": "🏁 Como saber que terminou",
+                "paragraph": "<p>Confira os seis itens. Abra cada aba e marque mentalmente o que já está certo:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "387bfcfc-e2b0-49c0-bce1-e4a9b3c30ff4"
+          },
+          {
+            "id": "61607e41-e00a-4b26-baf6-f264bea6a32b",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "ee47c58e-111d-4ce6-95a4-9f61604d0e77",
+                "title": "Documento Pacote do Mutirão",
+                "description": "<p>Documento “Pacote do Mutirão” no Drive, com as quatro seções: resumo do pedido, distribuição de mesas, acessibilidade e comunicado.</p>"
+              },
+              {
+                "id": "a052d411-0839-4032-8672-094423b7cdf5",
+                "title": "Datas certas",
+                "description": "<p>05/12 (9h–17h), 02/12 (15h–16h) e prazo em 27/11.</p><p></p><p>Compare cada uma com o e-mail da coordenação.</p>"
+              },
+              {
+                "id": "b7785f1e-106a-4b9e-be58-2f2c2dfd463d",
+                "title": "Contagens certas",
+                "description": "<p>9/8/7/6 por tema; 12 de manhã e 18 à tarde; uma mesa por tema e turno.</p><p></p><p>São os números do gabarito da Oficina 2.</p>"
+              },
+              {
+                "id": "939c281b-a8cc-4dbc-b4c4-bfaa06703e65",
+                "title": "Acessibilidade só com códigos",
+                "description": "<p>Só os códigos: I03, I06, I07, I30.</p><p></p><p>Se aparecer qualquer nome, ele foi inventado — apague.</p>"
+              },
+              {
+                "id": "200b55cf-95ca-4334-bea5-c64f0ba21224",
+                "title": "Evento de preparação na Agenda",
+                "description": "<p>A reunião de preparação continua em <strong>Google Agenda &gt; 02/12/2026</strong>, das 15h às 16h.</p>"
+              },
+              {
+                "id": "6241d7eb-e00f-4d4c-873b-5c4be58ebecc",
+                "title": "Privacidade e desconexão",
+                "description": "<p>Nenhum dado real de pessoa no documento.</p><p></p><p>Se preferir, desconecte o Gmail ao terminar, em Personalizar &gt; Apps conectados.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "tabs",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "964f083e-ce7d-439a-abf2-1f1ce55926fa"
+          },
+          {
+            "type": "html",
+            "family": "html",
+            "variant": "inline",
+            "settings": {
+              "autoResize": true,
+              "hasCustomCompletion": true,
+              "height": 40,
+              "width": "1"
+            },
+            "metadata": {},
+            "id": "58ca88bf-cf59-4bef-84e7-dccc5eb3b4b1",
+            "globalBlockId": "806eaffc-9fd7-457b-9876-b73ee7d79f74",
+            "items": [
+              {
+                "id": "a2e6aba7-83c5-418a-913b-c8329a61ae36",
+                "srcdoc": "<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Pacote do Mutirão: conferência final</title>\n<style>\n  :root {\n    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;\n    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;\n    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;\n    --aviso: #8a5a00; --aviso-claro: #fdf3e1;\n    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;\n  }\n  * { box-sizing: border-box; }\n  html, body { margin: 0; padding: 0; background: transparent; }\n  body { font-family: \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }\n  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }\n  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }\n  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }\n  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }\n  .sub { margin: 0 0 18px; color: var(--suave); }\n  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }\n  button { font: inherit; }\n  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }\n  .btn:hover { background: var(--azul-claro); }\n  .btn[aria-pressed=\"true\"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }\n  .btn:disabled { opacity: .45; cursor: default; }\n  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }\n  .btn.principal:hover { background: var(--azul-2); }\n  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }\n  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }\n  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }\n  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }\n  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }\n  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }\n  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }\n  .feedback:empty { display: none; }\n  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }\n  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }\n  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }\n  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }\n  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }\n  .final:empty { display: none; }\n  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }\n  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }\n  .saida { white-space: pre-wrap; font-family: Consolas, \"Courier New\", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }\n  .item p.f { margin: 0 0 10px; font-weight: 600; color: var(--azul); }\n  .extra { margin: 0 0 10px; font-size: 14px; }\n  .extra .trecho { margin: 6px 0 0; padding: 8px 10px; border-left: 3px solid var(--azul-2); background: var(--azul-claro); border-radius: 0 8px 8px 0; }\n  .placar { font-weight: 700; color: var(--azul); margin: 0; }\n  .chk { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }\n  .chk input { width: 20px; height: 20px; margin: 1px 0 0; flex: 0 0 auto; accent-color: var(--azul); }\n  .chk.feito { border-color: var(--ok); background: var(--ok-claro); }\n  input[type=\"text\"], input[type=\"number\"], textarea, select { font: inherit; width: 100%; border: 1px solid var(--linha); border-radius: 10px; padding: 8px 10px; background: #fff; color: var(--tinta); }\n  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }\n\n</style>\n<script>\n// Funções comuns aos blocos HTML dos cursos Gemini Chat (Essentials e Hands On).\n\n// Avisa o Rise (uma vez) que a atividade foi concluída: libera o Continue \"completeBlock\".\nvar __concluido = false;\nfunction concluir(idFinal, texto) {\n  if (__concluido) return;\n  __concluido = true;\n  if (idFinal) document.getElementById(idFinal).textContent = texto;\n  window.parent.postMessage({ type: 'complete' }, '*');\n}\n\n// Copia o texto de um elemento; se a LMS bloquear a área de transferência, deixa o texto selecionado.\nfunction ligarCopia(idBotao, idSaida, idMsg, rotulo) {\n  document.getElementById(idBotao).addEventListener('click', function () {\n    var el = document.getElementById(idSaida), msg = document.getElementById(idMsg);\n    var texto = el.value !== undefined ? el.value : el.textContent;\n    function ok() { msg.textContent = rotulo + ' copiado.'; msg.className = 'feedback info'; }\n    function falhou() {\n      if (el.select) { el.select(); } else {\n        var r = document.createRange(); r.selectNodeContents(el);\n        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);\n      }\n      var copiou = false; try { copiou = document.execCommand('copy'); } catch (e) {}\n      if (copiou) { ok(); } else { msg.textContent = 'O texto está selecionado: use Ctrl+C (ou Cmd+C) para copiar.'; msg.className = 'feedback info'; }\n    }\n    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(texto).then(ok, falhou); } else { falhou(); }\n  });\n}\n\n// Atividade de classificação: cada caso tem uma resposta certa entre as opções.\n// cfg = { casos: [{t, extra?, r, p}], opcoes: {chave: rotulo}, dicaErro, idLista, idPlacar, idBarra,\n//         rotuloPlacar, aoConcluir: function () {} }\nfunction classificador(cfg) {\n  var certos = {}, lista = document.getElementById(cfg.idLista);\n  cfg.casos.forEach(function (caso, i) {\n    var c = document.createElement('div'); c.className = 'item';\n    var titulo = document.createElement('p'); titulo.className = 'f'; titulo.id = cfg.idLista + '-c' + i;\n    titulo.textContent = caso.t;\n    c.appendChild(titulo);\n    if (caso.extra) {\n      var ex = document.createElement('div'); ex.className = 'extra'; ex.innerHTML = caso.extra; c.appendChild(ex);\n    }\n    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group');\n    g.setAttribute('aria-labelledby', titulo.id);\n    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');\n    Object.keys(cfg.opcoes).forEach(function (k) {\n      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = cfg.opcoes[k];\n      b.setAttribute('data-k', k); b.setAttribute('aria-pressed', 'false');\n      b.addEventListener('click', function () {\n        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });\n        if (Array.isArray(caso.r) ? caso.r.indexOf(k) >= 0 : k === caso.r) {\n          certos[i] = true; c.className = 'item certo';\n          fb.textContent = 'Correto. ' + caso.p; fb.className = 'feedback ok';\n        } else {\n          delete certos[i]; c.className = 'item errado';\n          fb.textContent = 'Não é “' + cfg.opcoes[k] + '”. ' + (caso.dica || cfg.dicaErro); fb.className = 'feedback erro';\n        }\n        placar();\n      });\n      g.appendChild(b);\n    });\n    c.appendChild(g); c.appendChild(fb); lista.appendChild(c);\n  });\n  function placar() {\n    var n = Object.keys(certos).length, total = cfg.casos.length;\n    document.getElementById(cfg.idPlacar).textContent = n + ' de ' + total + ' ' + cfg.rotuloPlacar;\n    document.getElementById(cfg.idBarra).style.width = (100 * n / total) + '%';\n    if (n === total && cfg.aoConcluir) cfg.aoConcluir();\n  }\n  placar();\n}\n\n// Checklist: libera quando todos os itens estão marcados.\nfunction checklist(itens, idLista, idPlacar, idBarra, rotuloPlacar, aoConcluir) {\n  var marcados = {}, lista = document.getElementById(idLista);\n  itens.forEach(function (txt, i) {\n    var l = document.createElement('label'); l.className = 'chk';\n    var c = document.createElement('input'); c.type = 'checkbox';\n    var s = document.createElement('span'); s.textContent = txt;\n    c.addEventListener('change', function () {\n      if (c.checked) { marcados[i] = true; l.classList.add('feito'); } else { delete marcados[i]; l.classList.remove('feito'); }\n      atualizar();\n    });\n    l.appendChild(c); l.appendChild(s); lista.appendChild(l);\n  });\n  function atualizar() {\n    var n = Object.keys(marcados).length;\n    document.getElementById(idPlacar).textContent = n + ' de ' + itens.length + ' ' + rotuloPlacar;\n    document.getElementById(idBarra).style.width = (100 * n / itens.length) + '%';\n    if (n === itens.length) aoConcluir();\n  }\n  atualizar();\n}\n\n</script>\n</head>\n<body>\n<section class=\"card\" aria-labelledby=\"t\">\n  <span class=\"rotulo\">Projeto Final</span>\n  <h1 id=\"t\">Pacote do Mutirão: conferência final</h1>\n  <p class=\"sub\">Abra o documento “Pacote do Mutirão” e a Agenda ao lado desta página. Marque cada item só depois de conferir. O curso segue com os seis marcados.</p>\n  <p class=\"placar\" id=\"placar\" aria-live=\"polite\"></p>\n  <div class=\"barra\" aria-hidden=\"true\"><span id=\"barra\"></span></div>\n  <div id=\"lista\"></div>\n  <div class=\"final\" id=\"final\" role=\"status\" aria-live=\"polite\"></div>\n</section>\n<script>\n  checklist([\n    'Documento “Pacote do Mutirão” no Drive, com as quatro seções: resumo do pedido, mesas, acessibilidade e comunicado.',\n    'Datas certas: mutirão em 05/12 (9h–17h), reunião em 02/12 (15h–16h) e prazo em 27/11.',\n    'Contagens certas: 9/8/7/6 por tema; 12 de manhã e 18 à tarde; uma mesa por tema e turno.',\n    'Acessibilidade só com códigos: I03, I06, I07, I30 — nenhum nome.',\n    'Evento “Reunião de preparação — Mutirão” na Agenda em 02/12/2026, das 15h às 16h.',\n    'Nenhum dado real de pessoa no documento; Gmail desconectado, se você preferir.'\n  ], 'lista', 'placar', 'barra', 'itens conferidos', function () {\n    concluir('final', 'Pacote entregue e conferido. A coordenação recebe números e datas que você mesmo checou.');\n  });\n</script>\n\n</body>\n</html>\n"
+              }
+            ]
+          },
+          {
+            "type": "divider",
+            "family": "continue",
+            "variant": "continue",
+            "settings": {
+              "v": 2
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "b944789d-0926-4ba3-8a33-aaa01d5386bf",
+            "globalBlockId": "191bf588-bc16-4beb-be81-e513a96437f6",
+            "items": [
+              {
+                "id": "32f8eb61-025c-469a-8649-a2d2ef4afff9",
+                "type": "completeBlock",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "heading paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "jx6ec05wy24yt6dy7a6ccsad",
+            "globalBlockId": "3468ef98-ff94-4829-9f4e-29cd5810b76c",
+            "items": [
+              {
+                "id": "ov3kerfufnasa2wwp7mry8kl",
+                "heading": "A Parte dos Dez — atalhos do Gemini",
+                "paragraph": "<p>Dez hábitos para levar do mutirão para o seu dia a dia:</p>"
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "family": "list",
+            "variant": "numbered",
+            "settings": {
+              "paddingTop": 0
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "t59dzar7nwty86naefnhdxze",
+            "globalBlockId": "18eb8860-addf-4511-9e6c-e4e62a227f4f",
+            "items": [
+              {
+                "id": "bj2g6xcxhe9h9kua1k8xs5yl",
+                "number": "1",
+                "paragraph": "<p><strong>“/” chama suas habilidades.</strong> Instrução repetida vira habilidade.</p>"
+              },
+              {
+                "id": "yogrn5xfsxutxg28hq16sz1s",
+                "number": "2",
+                "paragraph": "<p><strong>Cite o assunto exato</strong> ao pedir algo do Gmail; nada de “resuma meus e-mails”.</p>"
+              },
+              {
+                "id": "sr4quznq6rh2i5scre3xx4vf",
+                "number": "3",
+                "paragraph": "<p><strong>Chat temporário</strong> para o que não deve ir para o Histórico.</p>"
+              },
+              {
+                "id": "unyygpgv5ciuljl1e0c4nq8h",
+                "number": "4",
+                "paragraph": "<p><strong>O Histórico é a chave dos apps.</strong> Sem ele, Gmail e Agenda não respondem.</p>"
+              },
+              {
+                "id": "z3p3khvsbeojpilg8n2xc2dl",
+                "number": "5",
+                "paragraph": "<p><strong>Primeiro as 5 linhas</strong> de qualquer planilha.</p>"
+              },
+              {
+                "id": "vpo6z4dtpo563ywoefk4laad",
+                "number": "6",
+                "paragraph": "<p><strong>Canvas para o texto que vai sair do Gemini</strong> — e exporte para o Documentos.</p>"
+              },
+              {
+                "id": "dvip6jkqmclw5aal0qwp09p3",
+                "number": "7",
+                "paragraph": "<p><strong>Confira a Agenda</strong> depois que o Gemini criar um evento.</p>"
+              },
+              {
+                "id": "tat8osthtk4mll8fxjxrr9zq",
+                "number": "8",
+                "paragraph": "<p><strong>Verifique a resposta</strong> com a Pesquisa Google, mas confie no trecho que você leu.</p>"
+              },
+              {
+                "id": "mk8psld4svmlsu8br8bh9gyk",
+                "number": "9",
+                "paragraph": "<p><strong>Alt + Espaço</strong> abre o Gemini no Windows sem sair do que você está fazendo.</p>"
+              },
+              {
+                "id": "uqwittryc2rh4nzf65k71m9m",
+                "number": "10",
+                "paragraph": "<p><strong>“O que você sabe sobre mim?”</strong> mostra a memória; apague o que não deve ficar.</p>"
+              }
+            ]
+          },
+          {
+            "id": "e1242135-2430-4bed-8b53-0a0e6f3690e7",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "d97a790a-9288-442d-a781-5fb447ea79cb",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "2faf3cd7-0dff-46c9-b422-e52c3bac32ba"
+          },
+          {
+            "id": "qk77nh59hw6v2li83uvwno8m",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "olt77hjp85e5cr67wuge11di",
+                "paragraph": "<p><strong>Conseguiu! E agora?</strong> Você organizou um evento inteiro conversando: a planilha virou decisão, o e-mail virou compromisso na Agenda, o rascunho virou documento. E você conferiu cada número — é isso que separa ajuda de risco.</p><p>Para continuar, crie uma habilidade para uma tarefa que você repete toda semana. Depois, siga para <em>Gemini Workspace - Essentials</em>, o Gemini dentro do Gmail e do Documentos, ou para <em>Deep Research - Hands On</em>.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.171.1"
+              }
+            },
+            "globalBlockId": "da613cad-d9f8-44d9-b831-7dbe643b3c2c"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Integrando Gmail, Agenda e Documentos Google para Comunicação e Relatórios",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ",
+        "createdAt": "2026-11-17T16:48:25.142Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 2,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-11-17T16:49:26.097Z"
+      }
+    ],
+    "title": "Gemini Chat - Hands On",
+    "exportSettings": {
+      "completeWith": "reporting",
+      "identifier": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ_rise",
+      "resetLearnerData": false,
+      "quizId": null,
+      "storylineId": null,
+      "completionPercentage": 100,
+      "reporting": "passed-incomplete",
+      "updateResumeData": true,
+      "hideLmsUi": false,
+      "title": "Gemini Chat - Hands On",
+      "format": "zip",
+      "target": "scorm12",
+      "locales": [],
+      "activeLMS": 0,
+      "exportType": "lms",
+      "targetName": "SCORM 1.2",
+      "isTranslated": false,
+      "quizComplete": false,
+      "activeEdition": 0,
+      "loadOnlyInLMS": true,
+      "isRemotePackage": false,
+      "disableCoverPage": false,
+      "enableExitCourse": false,
+      "storylineComplete": false,
+      "localesPackageType": "single",
+      "notifyLearnersOfUpdates": false,
+      "enableTelemetryCollection": true
+    },
+    "lmsOptions": {
+      "enableTelemetryCollection": true,
+      "disableCoverPage": false,
+      "enableExitCourse": false
+    },
+    "id": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ",
+    "originalId": null,
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "selectedAuthorId": "",
+    "color": "#152f4d",
+    "navigationMode": "",
+    "copyOf": "",
+    "order": "1794934260772",
+    "fonts": null,
+    "media": {
+      "image": {
+        "key": "rise/courses/v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ/gnkU0NrV4Hhf2F23.jpeg",
+        "width": 70,
+        "height": 89,
+        "crushedKey": "wiqwqizP8wsM0u6v51Mz8dnUSS.jpg",
+        "sourcedFrom": "USER",
+        "useCrushedKey": true
+      }
+    },
+    "coverImage": {
+      "media": {
+        "image": {
+          "key": "rise/courses/v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ/-9e8b3UCq5wTPBPx.jpg",
+          "crushedKey": "stock-image.jpg",
+          "dimensions": {
+            "originalWidth": 1360,
+            "originalHeight": 765
+          },
+          "originalUrl": "stock-image.jpg",
+          "sourcedFrom": "AI",
+          "useCrushedKey": true,
+          "src": ""
+        }
+      }
+    },
+    "jobs": [],
+    "labelSetId": "",
+    "deleted": false,
+    "createdAt": "2026-11-17T16:46:25.503Z",
+    "updatedAt": "2026-11-17T16:51:00.772Z",
+    "markComplete": false,
+    "isDefault": false,
+    "ready": true,
+    "reviewId": "",
+    "headingTypefaceId": "l3OkM5EhWOfcM9t9NRpKxV9u",
+    "bodyTypefaceId": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+    "uiTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+    "sidebarMode": "open",
+    "tenantId": "59833a41-7aa6-40d9-b4a8-439946c15810",
+    "showLessonCount": true,
+    "showNavigationButtons": true,
+    "allowSearch": true,
+    "animateBlockEntrance": true,
+    "transferredAt": null,
+    "allowCopy": false,
+    "enableVideoPlaybackSpeed": null,
+    "jobType": null,
+    "partnerContentId": null,
+    "cardImage": {},
+    "theme": {
+      "colors": [
+        "#152f4d"
+      ],
+      "brandId": "59f64ff4-b18c-4a67-94b3-d3378c1fc409",
+      "themeId": "classic",
+      "coverImage": "",
+      "navigation": true,
+      "showAuthor": true,
+      "allowSearch": true,
+      "colorAccent": "#152f4d",
+      "appliedBrand": {
+        "logoKey": "rise/brands/59833a41-7aa6-40d9-b4a8-439946c15810/59f64ff4-b18c-4a67-94b3-d3378c1fc409/gnkU0NrV4Hhf2F23.jpeg",
+        "colorAccent": "#152f4d",
+        "bodyTypefaceId": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+        "additionalColors": [
+          "#152f4d"
+        ],
+        "headingTypefaceId": "l3OkM5EhWOfcM9t9NRpKxV9u"
+      },
+      "blockCorners": "ROUNDED",
+      "buttonScheme": "LIGHT",
+      "uiTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "coverPageType": "SPLIT_LEFT_IMAGE",
+      "accentContrast": "AUTO",
+      "bodyTypefaceId": "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+      "navigationType": "COMPACT",
+      "blockPaddingTop": 30,
+      "coverImageAlpha": 50,
+      "navigationStyle": "LIGHT_ACCENT",
+      "showLessonCount": true,
+      "lessonHeaderSize": "MEDIUM",
+      "buttonInlineStyle": "ROUNDED",
+      "coverImageDefault": "https://cdn.articulate.com/assets/rise/assets/themes/classic/cover-image/16_architecture.jpg",
+      "headingTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "lessonHeaderColor": null,
+      "lessonHeaderImage": "",
+      "lessonHeaderStyle": "ACCENT",
+      "sidebarStartsOpen": true,
+      "blockPaddingBottom": 30,
+      "markLessonsComplete": false,
+      "animateBlockEntrance": true,
+      "navigationRestricted": false,
+      "buttonNavigationStyle": "FULL",
+      "showNavigationButtons": true,
+      "compactShowLessonCount": true,
+      "lessonHeaderImageAlpha": 0.6,
+      "lessonHeaderImageColor": "DARK",
+      "enableVideoPlaybackSpeed": true,
+      "customColorLessonHeaderContrast": "AUTO"
+    },
+    "lessonHeaderImage": {},
+    "overlayNavigationImage": {},
+    "type": null,
+    "experiments": null,
+    "settings": {
+      "isAIConceptToCourse": true
+    },
+    "defaultLocaleId": null,
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "blockBackgroundImage": {},
+    "otherTypefaceIds": null,
+    "contentUpdatedAt": "2026-11-17T16:50:35.430Z",
+    "authorType": "standard",
+    "lastPublishedAt": "2026-11-17T16:50:46.054Z",
+    "localizationMetadata": {},
+    "awaitingContent": false,
+    "features": {
+      "rise-rte-fonts": true,
+      "ai-learner-chatbot": true,
+      "rise-audio-release": true,
+      "rise-process-accessibility": true,
+      "rise-matching-accessibility": true,
+      "rise-ai-tutor-required-disclosures": true
+    },
+    "aiTutorConfig": null,
+    "authors": [
+      {
+        "id": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "avatar": "small_1782404657678.jpg",
+        "authorName": "Iaclube Help"
+      }
+    ],
+    "aiLearnerCourseApiKey": null,
+    "aiLearnerSubscriptionId": null,
+    "mondrian": {},
+    "bodyTypeface": "Montserrat",
+    "headingTypeface": "Ubuntu Sans Mono",
+    "uiTypeface": "Lato"
+  },
+  "labelSet": {
+    "iso639Code": "en",
+    "labels": {
+      "exitMessage": "You may now leave this page.",
+      "salutation": "👋 Bye!",
+      "a11yAiScenarioChooseResponse": "Choose a response",
+      "a11yAiScenarioConversation": "Conversation",
+      "a11yAiScenarioConversationComplete": "Conversation complete",
+      "a11yAiScenarioFailedThreshold": "You did not reach the passing threshold.",
+      "a11yAiScenarioGoalAchieved": "achieved",
+      "a11yAiScenarioGoalNotAchieved": "not achieved",
+      "a11yAiScenarioGoalPartial": "partially correct",
+      "a11yAiScenarioMute": "Mute",
+      "a11yAiScenarioPassedThreshold": "You met or exceeded the passing threshold.",
+      "a11yAiScenarioPause": "Pause",
+      "a11yAiScenarioPlay": "Play",
+      "a11yAiScenarioReplayAudio": "Replay audio",
+      "a11yAiScenarioResponseOptions": "Response options",
+      "a11yAiScenarioRestart": "Restart",
+      "a11yAiScenarioRetryScenario": "Retry scenario",
+      "a11yAiScenarioSentBy": "Sent by",
+      "a11yAiScenarioStartScenario": "Start scenario",
+      "a11yAiScenarioSubmitResponse": "Submit response",
+      "a11yAiScenarioUnmute": "Unmute",
+      "a11yAiTutorArticulateLogo": "Articulate - open in new tab",
+      "a11yAiTutorAskButton": "Ask AI Tutor",
+      "a11yAiTutorAssistantMessage": "AI Tutor response",
+      "a11yAiTutorChatWindow": "AI Tutor chat window",
+      "a11yAiTutorCloseTipsModal": "Close tips modal",
+      "a11yAiTutorFeedbackDismiss": "Dismiss feedback",
+      "a11yAiTutorFeedbackInput": "Type your feedback",
+      "a11yAiTutorFeedbackSubmit": "Submit feedback",
+      "a11yAiTutorFeedbackWhyUnhelpful": "Why is it unhelpful?",
+      "a11yAiTutorHide": "Hide AI Tutor chat",
+      "a11yAiTutorInput": "Type your message for AI Tutor",
+      "a11yAiTutorSection": "AI Tutor",
+      "a11yAiTutorSeeTips": "See tips for using AI Tutor",
+      "a11yAiTutorSendButton": "Send message to AI Tutor",
+      "a11yAiTutorStartOver": "Return to AI Tutor home screen",
+      "a11yAiTutorThumbsDown": "Rate response as not helpful",
+      "a11yAiTutorThumbsDownSubmitted": "Not helpful, feedback submitted",
+      "a11yAiTutorThumbsUp": "Rate response as helpful",
+      "a11yAiTutorThumbsUpSubmitted": "Helpful, feedback submitted",
+      "a11yAiTutorUserMessage": "User message",
+      "a11yAnswerLive": "Your answer",
+      "a11yAuthorPrefix": "By",
+      "a11yBlockArrowSequence": "Arrow sequence",
+      "a11yBlockChartAxisX": "x-axis",
+      "a11yBlockChartAxisY": "y-axis",
+      "a11yBlockChartBar": "Bar chart",
+      "a11yBlockChartInstructions": "Use arrow keys to navigate data points. Screen reader users may need to switch modes to interact.",
+      "a11yBlockChartLine": "Line chart",
+      "a11yBlockChartPie": "Pie chart",
+      "a11yBlockChartPreposition": "of",
+      "a11yBlockCode": "Custom Interaction",
+      "a11yBlockCodeSnippet": "Code",
+      "a11yBlockEmbed": "Embedded Content",
+      "a11yBlockFlashcardBack": "Back of card",
+      "a11yBlockFlashcardFront": "Front of card",
+      "a11yBlockFlashcardGrid": "Flashcard grid",
+      "a11yBlockFlashcardStack": "Flashcard carousel",
+      "a11yBlockFlashcardStackRoleDescription": "Carousel",
+      "a11yBlockFlashcardStackSlideControls": "Slide controls",
+      "a11yBlockFlashcardStackSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockFlashcardStackSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockFlashcardStackSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockFlashcardStackSlidePreposition": "of",
+      "a11yBlockFlashcardStackSlideRoleDescription": "Slide",
+      "a11yBlockImageCarousel": "Image Carousel",
+      "a11yBlockImageCarouselRoleDescription": "Carousel",
+      "a11yBlockImageCarouselSlideControls": "Slide controls",
+      "a11yBlockImageCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockImageCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockImageCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockImageCarouselSlidePreposition": "of",
+      "a11yBlockImageCarouselSlideRoleDescription": "Slide",
+      "a11yBlockKnowledgeCheck": "Knowledge check",
+      "a11yBlockKnowledgeCheckFIB": "Knowledge check: Fill in the blank",
+      "a11yBlockKnowledgeCheckM": "Knowledge check: Matching",
+      "a11yBlockKnowledgeCheckMC": "Knowledge check: Multiple choice",
+      "a11yBlockKnowledgeCheckMR": "Knowledge check: Multiple response",
+      "a11yBlockProcessCarousel": "Carousel",
+      "a11yBlockProcessRoleDescription": "Carousel",
+      "a11yBlockProcessSlideControls": "Slide controls",
+      "a11yBlockProcessSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockProcessSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockProcessSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockProcessSlideControlsIntroduction": "Introduction",
+      "a11yBlockProcessSlideControlsSummary": "Summary",
+      "a11yBlockProcessSlidePreposition": "of",
+      "a11yBlockProcessSlideRoleDescription": "Slide",
+      "a11yBlockQuoteCarousel": "Quote Carousel",
+      "a11yBlockQuoteCarouselRoleDescription": "Carousel",
+      "a11yBlockQuoteCarouselSlideControls": "Slide controls",
+      "a11yBlockQuoteCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockQuoteCarouselSlidePreposition": "of",
+      "a11yBlockQuoteCarouselSlideRoleDescription": "Slide",
+      "a11yBlockStoryline": "Storyline",
+      "a11yBlockSurveyCharCount": "Character count:",
+      "a11yBlockSurveyConfirmation": "Thanks! Your responses were sent.",
+      "a11yBlockSurveySubmitting": "Submitting survey responses.",
+      "a11yBlockSurveyValidationError": "Please answer all required questions to continue",
+      "a11yBlockTimeline": "Timeline",
+      "a11yBlockVideoSidePanelTablist": "Video details",
+      "a11yCarouselNext": "Next",
+      "a11yCarouselPrevious": "Previous",
+      "a11yCertificateDownloadFailed": "Failed to download certificate",
+      "a11yContentRevealed": "New content shown",
+      "a11yCorrectLive": "Correct answer",
+      "a11yCoverCourseCompleted": "Course Completed",
+      "a11yCoverCourseLength": "Course Length",
+      "a11yCoverRequirementComplete": "Requirement complete",
+      "a11yCoverRequirementFailed": "Requirement failed",
+      "a11yCoverRequirementIncomplete": "Requirement incomplete",
+      "a11yExcelIcon": "Microsoft Excel spreadsheet",
+      "a11yFileIcon": "File",
+      "a11yGroupAudioPlayer": "Audio player",
+      "a11yGroupScenario": "Interactive scenario",
+      "a11yGroupVideoPlayer": "Video player",
+      "a11yLabeledGraphicBlock": "Labeled graphic",
+      "a11yLabeledGraphicButtonMarker": "Marker",
+      "a11yLabeledGraphicIconArrowDown": "Down arrow",
+      "a11yLabeledGraphicIconArrowDownLeft": "Down left arrow",
+      "a11yLabeledGraphicIconArrowDownRight": "Down right arrow",
+      "a11yLabeledGraphicIconArrowLeft": "Left arrow",
+      "a11yLabeledGraphicIconArrowRight": "Right arrow",
+      "a11yLabeledGraphicIconArrowUp": "Up arrow",
+      "a11yLabeledGraphicIconArrowUpLeft": "Up left arrow",
+      "a11yLabeledGraphicIconArrowUpRight": "Up right arrow",
+      "a11yLabeledGraphicIconCheck": "Check mark",
+      "a11yLabeledGraphicIconDot": "Dot",
+      "a11yLabeledGraphicIconHeart": "Heart",
+      "a11yLabeledGraphicIconInformation": "Information",
+      "a11yLabeledGraphicIconPin": "Map pin",
+      "a11yLabeledGraphicIconPlus": "Plus",
+      "a11yLabeledGraphicIconQuestion": "Question mark",
+      "a11yLabeledGraphicIconX": "X",
+      "a11yLabeledGraphicUnviewed": "Not viewed",
+      "a11yLabeledGraphicViewed": "Viewed",
+      "a11yMatchingColumn1": "Matching column 1",
+      "a11yMatchingColumn2": "Matching column 2",
+      "a11yMatchingItemMatchedWith": "Matched with",
+      "a11yMatchingItemMatchWith": "Match with",
+      "a11yMatchingItemSelectableItem": "Selectable item",
+      "a11yMatchingItemShowLess": "Show less",
+      "a11yMatchingItemShowMore": "Show more",
+      "a11yMediaCaptions": "Captions",
+      "a11yMediaCaptionsOff": "Captions off",
+      "a11yMediaCurrentTime": "Current time",
+      "a11yMediaDownload": "Download",
+      "a11yMediaDuration": "Duration",
+      "a11yMediaErrorVideo": "This video could not be loaded.",
+      "a11yMediaExitFullscreen": "Exit fullscreen",
+      "a11yMediaExitPictureInPicture": "Exit picture-in-picture",
+      "a11yMediaFullscreen": "Fullscreen",
+      "a11yMediaMoreOptions": "More options",
+      "a11yMediaMoreOptionsBack": "Back to more options",
+      "a11yMediaMute": "Mute",
+      "a11yMediaPause": "Pause",
+      "a11yMediaPictureInPicture": "Picture-in-picture",
+      "a11yMediaPlay": "Play",
+      "a11yMediaPlaybackRate": "Playback Rate",
+      "a11yMediaPlaybackRateNormal": "Normal",
+      "a11yMediaPlayVideo": "Play video",
+      "a11yMediaRemainingTime": "Remaining time",
+      "a11yMediaReplay": "Replay",
+      "a11yMediaSeek": "Seek",
+      "a11yMediaSeekDisabled": "Forward seeking is disabled",
+      "a11yMediaUnmute": "Unmute",
+      "a11yMediaVolume": "Volume",
+      "a11yNavigationMenuClose": "Close navigation menu",
+      "a11yNavigationMenuOpen": "Open navigation menu",
+      "a11yNoticeLinkNewTab": "(opens in a new tab)",
+      "a11yPageMarker": "Top of page",
+      "a11yPDFIcon": "PDF file",
+      "a11yPPTIcon": "PowerPoint presentation",
+      "a11yPreposition": "of",
+      "a11yProgressSummaryRequirementCompleted": "Requirement completed, check mark",
+      "a11yProgressSummaryRequirementNotCompleted": "Requirement not completed, empty square",
+      "a11yQuizFailed": "Failed",
+      "a11yQuizFeedback": "Feedback",
+      "a11yQuizPassed": "Passed",
+      "a11yQuizReviewCorrectlyChecked": "Correctly checked",
+      "a11yQuizReviewCorrectlySelected": "Correctly selected",
+      "a11yQuizReviewCorrectlyUnchecked": "Correctly unchecked",
+      "a11yQuizReviewCorrectlyUnselected": "Correctly unselected",
+      "a11yQuizReviewIncorrectlyChecked": "Incorrectly checked",
+      "a11yQuizReviewIncorrectlySelected": "Incorrectly selected",
+      "a11yQuizReviewIncorrectlyUnchecked": "Incorrectly unchecked",
+      "a11yQuizReviewIncorrectlyUnselected": "Incorrectly unselected",
+      "a11yRegionMainLesson": "Lesson content",
+      "a11yRegionMainOverview": "Course overview",
+      "a11yRegionNavLesson": "Navigation menu",
+      "a11yRegionNavOverview": "Table of contents",
+      "a11yRestrictedNav": "This lesson is currently unavailable",
+      "a11yRTFIcon": "Rich Text File",
+      "a11ySearchClose": "Close search menu",
+      "a11ySearchInput": "Search",
+      "a11ySearchInputClear": "clear search term",
+      "a11ySearchOpen": "Open search menu",
+      "a11ySortingCategories": "Categories",
+      "a11ySortingCategoriesComplete": "Categories. Interaction completed.",
+      "a11ySortingCategory": "category",
+      "a11ySortingComplete": "cards correct",
+      "a11ySortingCompleteOf": "of",
+      "a11ySortingCorrect": "Correct",
+      "a11ySortingCurrentItem": "Current item",
+      "a11ySortingIncorrect": "Incorrect. Choose another category.",
+      "a11ySortingNextItem": "Next item",
+      "a11yStatusAdditionalContent": "Additional content has been loaded",
+      "a11yStatusContinued": "Continued",
+      "a11yUnzoomImage": "Unzoom image",
+      "a11yWordIcon": "Microsoft Word document",
+      "a11yZipIcon": "Zip file",
+      "a11yZoomImage": "Zoom image",
+      "aiScenarioChooseResponsePrompt": "Choose the best response…",
+      "aiScenarioContinue": "Continue",
+      "aiScenarioErrorBody": "Please try again in a little while.",
+      "aiScenarioErrorTitle": "Something went wrong",
+      "aiScenarioGoal": "Goal #",
+      "aiScenarioGoals": "Goals",
+      "aiScenarioInvalidBody": "The scenario has validation errors and cannot be played.",
+      "aiScenarioInvalidTitle": "Invalid scenario",
+      "aiScenarioPassing": "Passing",
+      "aiScenarioRetry": "Retry",
+      "aiScenarioSenderCharacter": "Character",
+      "aiScenarioSenderYou": "You",
+      "aiScenarioStart": "Start",
+      "aiScenarioUnavailableBody": "Check back soon — it may still be getting set up.",
+      "aiScenarioUnavailableTitle": "This scenario isn't available yet",
+      "aiScenarioWrapUp": "That's a wrap—see how you did.",
+      "aiScenarioYourScore": "Your score",
+      "aiTutorAcceptableUsePolicyLink": "Acceptable Use Policy",
+      "aiTutorAskButton": "Ask AI Tutor",
+      "aiTutorBlankHeading": "Hey there, need a hand?",
+      "aiTutorBlankPillExplain": "Explain this in simpler terms",
+      "aiTutorBlankPillSearch": "Search course content",
+      "aiTutorBlankPillSummarize": "Summarize this training",
+      "aiTutorDataUseDisclosure": "Prompts are stored and analyzed. The organization that shared this training may receive aggregated or AI-generated insights.",
+      "aiTutorDisabledWhileQuiz": "AI Tutor is disabled while a quiz is in progress.",
+      "aiTutorDisclaimer": "AI isn't perfect—double check important information.",
+      "aiTutorErrorGeneral": "Something went wrong. Try refreshing the page or submitting a new request.",
+      "aiTutorErrorUnavailable": "AI Tutor is currently unavailable.",
+      "aiTutorFeedbackDetailsPlaceholder": "Share additional details (optional)",
+      "aiTutorFeedbackImprovementNote": "Your feedback helps improve this feature.",
+      "aiTutorFeedbackLearnMore": "Learn more",
+      "aiTutorFeedbackPopoverTitle": "Tell us more",
+      "aiTutorFeedbackReasonIncorrect": "Incorrect information",
+      "aiTutorFeedbackReasonNoAnswer": "Didn't answer my question",
+      "aiTutorFeedbackReasonNotHelpful": "Explanation wasn't helpful for me",
+      "aiTutorFeedbackReasonNotRelevant": "Response wasn't relevant",
+      "aiTutorFeedbackReasonOther": "Other",
+      "aiTutorFeedbackSubmit": "Submit",
+      "aiTutorFeedbackThankYou": "Thank you for your feedback",
+      "aiTutorFeedbackToast": "Thanks for your feedback",
+      "aiTutorGeneratingResponse": "Generating response",
+      "aiTutorHideTooltip": "Hide",
+      "aiTutorInputPlaceholder": "Type your message",
+      "aiTutorPrivacyLink": "privacy policy",
+      "aiTutorSeeTips": "See tips",
+      "aiTutorStartOverTooltip": "Start over",
+      "aiTutorTermsLink": "terms of use",
+      "aiTutorTermsPrefix": "By using this service, you agree to the Articulate",
+      "aiTutorTipsGotIt": "Got it",
+      "aiTutorTipsTip1": "AI can make mistakes. Use it as a guide, but verify what matters.",
+      "aiTutorTipsTip2": "Focus on topics covered in the course. Ask specific questions for best results.",
+      "aiTutorTipsTip3": "Don't share personal or sensitive information.",
+      "aiTutorTipsTitle": "What to know",
+      "audioCollapsePlayer": "Collapse audio player",
+      "audioExpandPlayer": "Expand audio player",
+      "audioHideTranscript": "Hide transcript",
+      "audioNoTranscriptAvailable": "No transcript available",
+      "audioPlaySpeed": "Play speed",
+      "audioShowTranscript": "Show transcript",
+      "audioTranscript": "Audio transcript",
+      "bannerButtonDismiss": "Dismiss",
+      "bannerCourseUpdated": "You're viewing the latest version.",
+      "bannerCourseUpdatedEmphasis": "Course updated.",
+      "bannerCourseUpdatedProgressReset": "You're viewing the latest version.",
+      "bannerCourseUpdatedProgressResetEmphasis": "Course updated and learner progress reset.",
+      "blocksClickToFlip": "Click to flip",
+      "blocksPreposition": "of",
+      "certificateDownload": "Download certificate",
+      "certificateDownloadInProgress": "Downloading...",
+      "certificateRetryDownload": "Retry download",
+      "courseCompletionOverdue": "Overdue",
+      "courseExit": "EXIT COURSE",
+      "courseFinish": "Finish",
+      "courseHome": "Home",
+      "courseResume": "RESUME COURSE",
+      "courseSkipToLesson": "SKIP TO LESSON",
+      "courseStart": "START COURSE",
+      "coverCompleteAllLessons": "Complete all lessons in this course",
+      "coverCompleted": "Completed",
+      "coverCompleteLessonsInCourse": "lessons in this course",
+      "coverCompleteLessonsName": "Complete",
+      "coverCompleteLessonsPreposition": "of",
+      "coverCourseRequirements": "Course Requirements",
+      "coverHour": "Hour",
+      "coverHours": "Hours",
+      "coverLesson": "Lesson",
+      "coverLessons": "Lessons",
+      "coverMinute": "Minute",
+      "coverMinutes": "Minutes",
+      "coverNoAttemptsRemaining": "No attempts remaining",
+      "coverPublished": "Published",
+      "coverQuizPercentOrHigher": "% or higher",
+      "coverQuizScoreOf": "Score of",
+      "coverUpdated": "Updated",
+      "curtainLoading": "Your content is loading.",
+      "curtainOffline": "Your computer is offline.",
+      "curtainOfflineReconnecting": "Attempting to reconnect…",
+      "curtainSessionTimedOut": "Your session has timed out.",
+      "curtainSessionTimedOutRefresh": "Refresh",
+      "curtainSessionTimedOutRestart": "Click refresh to restart your session.",
+      "curtainSomethingWrong": "Something went wrong.",
+      "curtainSomethingWrongRefresh": "Refresh",
+      "curtainSomethingWrongTryAgain": "Click to refresh and try again.",
+      "customBlockVideoError": "Video didn't load",
+      "embedLinkGroup": "Embedded web content",
+      "embedPlayerGroup": "Embedded media player",
+      "embedReadMore": "Read more",
+      "embedViewOn": "VIEW ON",
+      "knowledgeCheckCorrectAnswerRequiredBlock": "Requires a correct answer to continue",
+      "knowledgeCheckCorrectAnswerRequiredNav": "Complete previous knowledge checks to unlock this lesson",
+      "knowledgeCheckMaxRetriesReached": "You have reached the maximum amount of retries.",
+      "knowledgeCheckRetriesAttemptsRemaining": "Attempts remaining:",
+      "l10nChooseLanguage": "Choose your course language",
+      "l10nChooseLanguageContinue": "Continue",
+      "labeledGraphicMarkerLabel": "Labeled graphic marker",
+      "lessonComplete": "COMPLETE",
+      "lessonName": "Lesson",
+      "lessonPreposition": "of",
+      "lessonRestricted": "Lessons must be completed in order",
+      "lessonUntitled": "Untitled Lesson",
+      "noResults": "No results for",
+      "numberedDividerGroup": "Numbered divider",
+      "overviewPageTitleSuffix": "Overview",
+      "pauseButtonLabel": "Pause",
+      "playButtonLabel": "Play",
+      "presentationCheckpointAnswerSent": "Answer sent",
+      "presentationCheckpointAnswerThanks": "Thanks for your answer",
+      "presentationCheckpointAverage": "Average",
+      "presentationCheckpointChangeAnswer": "Change my answer",
+      "presentationCheckpointContinueHint": "Use the slide controls to continue.",
+      "presentationCheckpointLinearScale": "Linear scale",
+      "presentationCheckpointMultipleChoice": "Multiple choice",
+      "presentationCheckpointMultipleResponse": "Multiple response",
+      "presentationCheckpointOpenResponse": "Open response",
+      "presentationCheckpointOpenResponseEmpty": "Written answers stack up here as they come in",
+      "presentationCheckpointResponse": "response",
+      "presentationCheckpointResponsePlural": "responses",
+      "presentationCheckpointResultsPlaceholder": "Responses fill in here while you present.",
+      "presentationCheckpointSubmitError": "Your answer wasn't sent. Check your connection and try again.",
+      "presentationCheckpointWaitingForNext": "Waiting for the next question.",
+      "presentationCheckpointWordCloud": "Word cloud",
+      "presentationCheckpointWordCloudEmpty": "Audience responses, sized by how often they come up",
+      "presentationPdfUnsupportedBlock": "This block type is not supported in presentation PDFs.",
+      "processComplete": "Complete",
+      "processLandmark": "Process",
+      "processLessonName": "Lesson",
+      "processNextStep": "NEXT STEP",
+      "processStart": "START",
+      "processStartAgain": "START AGAIN",
+      "processStepName": "Step",
+      "processStepPreposition": "of",
+      "processSwipe": "Swipe to continue",
+      "progressPieClickToComplete": "Click to complete",
+      "progressPieClickToReset": "Click to reset",
+      "progressPieCompleted": "Completed",
+      "progressPieQuizFailed": "Failed",
+      "progressPieUnstarted": "Unstarted",
+      "progressSummary": "Progress Summary",
+      "progressSummaryBackToLearning": "Back to my learning",
+      "progressSummaryCompleted": "Completed:",
+      "progressSummaryCompletionRequirement": "Completion Requirement",
+      "progressSummaryCongratulations": "Congratulations!",
+      "progressSummaryNextUp": "Next up",
+      "progressSummaryNoAttemptsRemaining": "No attempts remaining.",
+      "progressSummaryNoTitle": "(No Title)",
+      "progressSummaryPercentComplete": "% Complete",
+      "progressSummaryPercentCompletion": "% Completion",
+      "progressSummaryQuizRequirement": "Quiz Requirement",
+      "progressSummaryRequirementsMet": "You've met all the requirements.",
+      "progressSummaryScoreOf": "Score of",
+      "progressSummaryScoreOfPreposition": "% on",
+      "progressSummaryStartOver": "Start Over",
+      "progressSummaryViewQuiz": "View quiz",
+      "progressSummaryYouCompleted": "You completed:",
+      "progressSummaryYouScored": "You scored",
+      "quizAcceptableResponses": "Acceptable responses",
+      "quizAnswerPlaceholder": "Type your answer here",
+      "quizContinue": "Continue",
+      "quizCorrect": "Correct",
+      "quizIncorrect": "Incorrect",
+      "quizNext": "NEXT",
+      "quizPassing": "PASSING",
+      "quizQuestion": "Question",
+      "quizRequireAnswer": "Please answer the question to continue",
+      "quizRequirePassingScore": "Must pass quiz before continuing",
+      "quizRestart": "Restart",
+      "quizResults": "Quiz Results",
+      "quizScore": "Your score",
+      "quizSkipAhead": "Skip Ahead to Lesson",
+      "quizStart": "START QUIZ",
+      "quizSubmit": "SUBMIT",
+      "quizTakeAgain": "TAKE AGAIN",
+      "quizTimerElapsed": "Time elapsed",
+      "quizTimerExpired": "Time expired",
+      "quizTimerExpiredAction": "OK",
+      "quizTimerExpiredMessage": "You have reached the time limit for this quiz. Your results will be automatically submitted",
+      "quizTimerHide": "Hide",
+      "quizTimerLimit": "Time limit",
+      "quizTimerMinute": "Minute",
+      "quizTimerMinutePlural": "Minutes",
+      "quizTimerRemaining": "Time left",
+      "quizTimerShow": "Show timer",
+      "quizUntitled": "Untitled Quiz",
+      "result": "result",
+      "results": "results",
+      "scenarioComplete": "Scenario Complete!",
+      "scenarioContinue": "CONTINUE",
+      "scenarioStartOver": "START OVER",
+      "scenarioTryAgain": "TRY AGAIN",
+      "search": "search",
+      "seekSliderLabel": "Seek",
+      "sortingCardsCorrect": "Cards Correct",
+      "sortingLandmark": "Sorting Activity",
+      "sortingReplay": "REPLAY",
+      "surveyConfirmation": "Thanks! Your responses were sent.",
+      "surveyFreeResponseRequired": "Please enter a response",
+      "surveyMultipleChoiceRequired": "Please select an answer",
+      "surveyMultipleResponseRequired": "Please select at least one answer",
+      "surveyPlaceholder": "Share your thoughts",
+      "surveyRatingRequired": "Please select a rating",
+      "surveyRequired": "Required",
+      "surveySubmit": "Submit",
+      "surveySubmitting": "Submitting...",
+      "surveyValidationError": "Please answer all required questions to continue.",
+      "trialBadgePoweredBy": "Powered by",
+      "trialBadgeTooltip": "Purchase to remove badging and watermarks from published content",
+      "videoBlock": "block",
+      "videoBlocks": "blocks",
+      "videoChapterName": "Chapter",
+      "videoChapters": "Chapters",
+      "videoChapterUntitled": "Untitled chapter",
+      "videoChapterWholeVideo": "Whole video",
+      "videoCheckpointAddBlock": "Add a block",
+      "videoCheckpointBookendEnd": "End",
+      "videoCheckpointBookendStart": "Start",
+      "videoCheckpointContinue": "Continue",
+      "videoCheckpointDefaultTitle": "Checkpoint",
+      "videoCheckpointDone": "Done",
+      "videoCheckpointLocked": "Complete the activities above to continue.",
+      "videoCheckpointNew": "New checkpoint",
+      "videoCheckpointNoContent": "No content added to this checkpoint.",
+      "videoCheckpointPausedAt": "Paused at",
+      "videoCheckpointPlaysAfter": "Plays after video",
+      "videoCheckpointPlaysBefore": "Plays before video",
+      "videoCheckpointRequireCorrectAnswer": "A knowledge check here requires a correct answer to continue.",
+      "videoCheckpointRequired": "Require interactions",
+      "videoCheckpointRequiredEmpty": "There are currently no interactive blocks to require.",
+      "videoCheckpointResume": "Resume video",
+      "videoCheckpoints": "Checkpoints",
+      "videoCheckpointStart": "Start video",
+      "videoCheckpointStartDismiss": "Start video",
+      "videoCheckpointUntitled": "Untitled checkpoint",
+      "videoHideTranscript": "Hide transcript",
+      "videoNoChapters": "No chapters yet",
+      "videoNoChaptersMessage": "Add timestamps in the block settings to organize your video.",
+      "videoOutline": "Video outline",
+      "videoOutlineAddChapterAt": "Add chapter at",
+      "videoOutlineChapter": "chapter",
+      "videoOutlineChapters": "chapters",
+      "videoOutlineCheckpoint": "checkpoint",
+      "videoOutlineCheckpoints": "checkpoints",
+      "videoShowLessChapters": "Show less chapters",
+      "videoShowMoreChapters": "Show more chapters",
+      "videoTranscript": "Transcript",
+      "videoTranscriptAutoScroll": "Auto-scroll transcript",
+      "videoViewTranscript": "View transcript"
+    },
+    "id": "VhNWbYblvhwawL6qDtUlbJ0n",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "name": "English",
+    "defaultId": 1,
+    "defaultSet": true,
+    "deleted": false,
+    "createdAt": "2026-06-07T16:36:41.888Z",
+    "updatedAt": "2026-06-07T16:36:41.888Z",
+    "transferredAt": null
+  },
+  "settings": {
+    "completionPercentage": 100,
+    "reporting": "passed-incomplete",
+    "resetLearnerData": false,
+    "loadOnlyInLMS": true,
+    "filename": "gemini-chat-hands-on-scorm12-YnTu2rTV.zip",
+    "coursePackageVersion": "YnTu2rTV",
+    "exporterAuthId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "cdnUri": "https://cdn.articulate.com",
+    "courseUpdateCallbackUrl": "https://rise-runtime.360.prod.art-internal.com/publish/course/v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ",
+    "format": "zip",
+    "identifier": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ_rise",
+    "isRemotePackage": false,
+    "reviewContentUrl": "https://360.articulate.com/review/content",
+    "s3Metadata": {
+      "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+      "tenant-id": "59833a41-7aa6-40d9-b4a8-439946c15810"
+    },
+    "telemetryUri": "https://metrics.articulate.com",
+    "title": "Gemini Chat - Hands On"
+  },
+  "deliveryPolicy": {
+    "status": "resolved",
+    "schemaVersion": 1,
+    "evaluatedAt": "2026-11-17T16:50:45.599Z",
+    "access": "allowed",
+    "protection": "none"
+  },
+  "exportAggregate": {
+    "subscriptionId": "59833a41-7aa6-40d9-b4a8-439946c15810",
+    "exportId": "CjmHCT2YUcErd7zO14K5YVQlyMEnqf8e",
+    "courseId": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ",
+    "courseType": "course",
+    "courseTheme": "classic",
+    "courseCreatedVia": "ai",
+    "courseLessons": {
+      "total": 3,
+      "ai": 3,
+      "blocks": {
+        "total": 3,
+        "ai": 3
+      }
+    },
+    "courseBlocks": {
+      "total": 53,
+      "ai": 53,
+      "text": {
+        "total": 25,
+        "ai": 25
+      },
+      "list": {
+        "total": 3,
+        "ai": 3
+      },
+      "interactive": {
+        "total": 18,
+        "ai": 18
+      },
+      "knowledgeCheck": {
+        "total": 4,
+        "ai": 4
+      },
+      "divider": {
+        "total": 3,
+        "ai": 3
+      }
+    }
+  },
+  "fonts": [
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "odEbaqB-9smJ3djS.woff",
+      "style": "italic",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "400"
+    },
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "LM161uPxEAP6TYht.woff",
+      "style": "normal",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "700"
+    },
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "d3AXvJ6ebo6lNjzY.woff",
+      "style": "normal",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-SemiBold.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "600"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Medium.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "500"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Black.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "900"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Bold.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "700"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Italic.woff",
+      "style": "italic",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Regular.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Light.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "300"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Regular.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "400"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Light.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "300"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Italic.woff",
+      "style": "italic",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "400"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Bold.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "700"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Black.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "900"
+    }
+  ],
+  "partnerContent": []
+}

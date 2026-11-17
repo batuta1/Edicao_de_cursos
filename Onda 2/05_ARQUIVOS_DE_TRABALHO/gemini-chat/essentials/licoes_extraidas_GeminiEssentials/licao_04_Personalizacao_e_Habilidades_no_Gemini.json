@@ -1,0 +1,609 @@
+{
+  "numero_da_licao": 4,
+  "position_original": 3,
+  "title": "Personalização e Habilidades no Gemini",
+  "lesson": {
+    "description": "",
+    "id": "ff164842-03ea-449f-a704-40163c7f2e91",
+    "items": [
+      {
+        "id": "uhnmyyk4daux2qczfy3pdoou",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xa31c6j8fl4dqeahj1t4aknm",
+            "heading": "Do zero a cada conversa à receita guardada",
+            "paragraph": "<p>Sem personalização, cada conversa começa do zero: você repete quem é, como gosta das respostas e as mesmas instruções para a mesma tarefa. O Gemini oferece três camadas para dar continuidade a esse trabalho — e cada uma guarda algo diferente sobre você. Nesta lição você aprende a distingui-las, a revisar o que o Gemini já sabe e a criar sua primeira habilidade.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "4cfdad2d-6aad-4333-9081-3abe11d2ba89"
+      },
+      {
+        "id": "aju0ob42svmd627kj16yqlcc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "drzxaxho3rl1v7to08vgnf87",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "e41b1c27-99c7-40ad-9a0b-ecc6c81f0320"
+      },
+      {
+        "id": "ddu0zym34cs9pmyy56lj8z36",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "hbu9c43629rlgtp1nj255m4r",
+            "number": "1",
+            "paragraph": "<p>Distinguir informações salvas, memória e habilidades.</p>"
+          },
+          {
+            "id": "spcbr2e0gtoonirp1wm78c5g",
+            "number": "2",
+            "paragraph": "<p>Revisar e apagar o que o Gemini sabe sobre o usuário.</p>"
+          },
+          {
+            "id": "br928incb5ayhi34d4ve8las",
+            "number": "3",
+            "paragraph": "<p>Criar e acionar uma habilidade.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "d318a6c5-5889-4204-a861-efeff12dbd97"
+      },
+      {
+        "id": "kkwza058rgigcxe6hr4zou9a",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "vwg98kxw7goupr1cnvy5cz0a",
+            "heading": "As Três Camadas de Personalização do Gemini",
+            "paragraph": "<p>Desde outubro de 2026, o item <strong>Personalizar</strong>, no menu à esquerda, reúne como o Gemini responde, os apps conectados e as habilidades. Abra cada camada:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ab2fec72-1268-451c-9a8b-7338c33e8a18"
+      },
+      {
+        "id": "bbf4a03f-fa66-4c74-8ceb-f7cb5e48e33b",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "172bf26b-1f45-43cf-a2c0-0350f5e67e29",
+            "title": "Informações Salvas",
+            "description": "<p>As informações salvas são preferências e fatos que <strong>você mesmo escreve</strong> — por exemplo, “responda sempre em tópicos” ou “sou professor de Direito Civil”. Valem para todas as conversas e ficam em gemini.google.com/saved-info.</p>"
+          },
+          {
+            "id": "45acadea-3397-47ca-a1e0-3c58cc7cbe59",
+            "title": "Memória",
+            "description": "<p>A memória reúne fatos que o Gemini <strong>extrai das suas conversas anteriores</strong> do Histórico (recurso antes chamado “conversas anteriores”). Para ver o que está em uso, pergunte: “o que você sabe sobre mim?”. Como vem do Histórico, a memória depende dele ativado — é a configuração do Módulo 2.</p><p></p><p>Desde março de 2026, também é possível importar memória e histórico de outros assistentes. Aplique o semáforo antes: a importação transfere ao Google o que estava sob a guarda de outra empresa.</p>"
+          },
+          {
+            "id": "8b90f848-8075-4efc-bf63-6b6710ceaa0d",
+            "title": "Habilidades",
+            "description": "<p>Uma habilidade é um conjunto salvo de instruções para uma tarefa específica — como uma receita guardada. Você a cria “com o Gemini”, que redige as instruções a partir de uma descrição, ou manualmente, com nome, descrição e instruções. Para acionar, digite “/” seguido do nome; o Gemini também a usa sozinho quando o pedido corresponde, e várias podem ser combinadas.</p><p></p><p>As habilidades substituem os <strong>Gems</strong>: em contas pessoais, os Gems passam a habilidades em novembro de 2026 e precisam ser revisados e ativados. Estão no plano gratuito, por ora apenas para maiores de 18 anos.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "7afd4205-8479-4f51-84a3-514800affdd0"
+      },
+      {
+        "id": "g045wi1juabxpygzxig909p7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e25sblaohsk51wppr6vqn6b6",
+            "heading": "Revisão rápida: quem escreve o quê",
+            "paragraph": "<p>A diferença está em quem produz o conteúdo e para que ele serve. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "a75d6859-d735-446c-beae-6a6c35801e7a"
+      },
+      {
+        "id": "dpwq61uv3hg45spcvtrc671j",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "w6j5orp46o3p6fh5mwej1v98",
+            "back": {
+              "type": "description",
+              "description": "<p>Preferências e fatos que você escreve. Valem para todas as conversas.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Informações Salvas</strong>"
+            }
+          },
+          {
+            "id": "zxr2pfti3ylgctkh0hblxkuq",
+            "back": {
+              "type": "description",
+              "description": "<p>Fatos que o Gemini extrai das conversas do Histórico. Depende do Histórico ativado.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Memória</strong>"
+            }
+          },
+          {
+            "id": "sl6s8u7h8o69k7673x6jd3sx",
+            "back": {
+              "type": "description",
+              "description": "<p>Instruções salvas para uma tarefa específica, acionadas com “/” e o nome.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Habilidades</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "64a498dc-eb6a-421a-80f1-68d3c0b16722"
+      },
+      {
+        "id": "pl1mkjmd6stg4gal14r4vtx6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "vlx6twro0fejgmtbf9557qok",
+            "heading": "Como revisar e gerenciar o que o Gemini sabe sobre você",
+            "paragraph": "<p>Personalizar também é decidir o que o Gemini <strong>não</strong> deve saber. Três cuidados:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "4f839f87-0180-4f2a-bade-db4c8649823b"
+      },
+      {
+        "id": "48d192e1-a04e-40d1-9337-11463cefdfa0",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "756662d8-1d2a-4eed-8cda-40fb4c137c72",
+            "title": "Revisão de Dados",
+            "description": "<p>Pergunte ao Gemini “o que você sabe sobre mim?” e abra gemini.google.com/saved-info e gemini.google.com/personalization-settings para ver as informações salvas e a memória em uso.</p><p></p><p>Faça essa revisão de tempos em tempos — principalmente depois de conversas sobre trabalho.</p>"
+          },
+          {
+            "id": "84829bba-7643-4d32-b6d3-63e750015c5e",
+            "title": "Exclusão de Dados",
+            "description": "<p>Nas mesmas páginas, você apaga uma informação salva ou desativa a memória. O que for removido deixa de orientar as respostas.</p><p></p><p>Lembre que apagar a memória não apaga as conversas do Histórico: para isso, use myactivity.google.com/product/gemini.</p>"
+          },
+          {
+            "id": "940856b7-c574-4f44-af07-e30a24225e37",
+            "title": "Boas Práticas de Segurança",
+            "description": "<p>Antes de importar memória ou histórico de outro assistente, passe o conteúdo pelo semáforo de dados. A importação transfere ao Google o que estava sob a guarda de outra empresa — se houver dado de cliente ou de terceiros, não importe.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "374c604f-3f70-44c7-af94-e1b2cc877e12"
+      },
+      {
+        "id": "523d645c-01c9-4d14-97c4-8b753aa26719",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bff1170d-9530-4450-94d3-d12d554f0b0a",
+            "paragraph": "<p>⚠️ Sem a opção “Habilidades” (conta de menor de 18 anos, conta Workspace ou liberação incompleta), cole as mesmas instruções no início da conversa — o efeito é parecido.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "953beded-4d1f-432d-85e2-160d7aceb11c"
+      },
+      {
+        "id": "3e8dad7c-4a37-49b7-a298-d8ccf6989c33",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "764097b2-3df5-4343-bd4d-a846edae9ab9",
+            "type": "intro",
+            "title": "Habilidade “Texto claro” (6 min)",
+            "isHidden": false,
+            "description": "<p>Você vai criar uma habilidade que traduz juridiquês para linguagem simples e testá-la com uma frase real.</p>"
+          },
+          {
+            "id": "b0d827d9-d561-4dd9-8935-328c225a747f",
+            "type": "summary",
+            "title": "Para que serve",
+            "isHidden": false,
+            "description": "<p>A partir de agora, qualquer texto técnico vira linguagem simples com “/Texto claro” — sem reescrever a instrução. Você vai usar essa habilidade de novo no Módulo 6.</p>"
+          },
+          {
+            "id": "15bb0dc0-6028-45b5-9f8f-c63e378a8a4c",
+            "type": "step",
+            "title": "Criar a habilidade manualmente",
+            "isHidden": false,
+            "description": "<p>Abra <strong>Gemini &gt; Menu à esquerda &gt; Personalizar &gt; Habilidades</strong> e crie uma habilidade nova manualmente, com o nome “Texto claro” e a instrução: “Reescreva o texto recebido em linguagem simples, frases de até 20 palavras, sem jargão; liste ao final os termos técnicos que foram substituídos.”</p>"
+          },
+          {
+            "id": "387fd2d7-2efb-4d81-9971-ab3a81f54876",
+            "type": "step",
+            "title": "Acionar a habilidade em uma conversa",
+            "isHidden": false,
+            "description": "<p>Em uma conversa nova, digite “/Texto claro” e cole: “O requerente pleiteia a concessão de tutela de urgência, ante a presença do periculum in mora.”</p>"
+          },
+          {
+            "id": "e70affd1-c3be-4268-89f9-42529c6dd148",
+            "type": "step",
+            "title": "Verificar o resultado",
+            "isHidden": false,
+            "description": "<p>Confira se o texto saiu em frases curtas e sem jargão, e se os termos técnicos aparecem listados ao final.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "57266034-5636-40af-9ec6-cc68b82ea33a"
+      },
+      {
+        "id": "555d9fc7-d3e2-410e-9052-12950681a359",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "7c18b0e1-f082-484a-8172-56aba4014572",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> o texto reescrito não contém “periculum in mora” nem “tutela de urgência” no corpo, e os dois termos aparecem listados ao final.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "a68f1086-231f-497c-9ef4-02410a0a50d5"
+      },
+      {
+        "id": "ag5n5fte2e312hxjqpjl4oe3",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "h2w3np2d1h3xh6a5h7s2zvgw",
+            "heading": "Onde fica cada camada",
+            "paragraph": "<p>Guarde estes endereços — são os que você usa para revisar e apagar. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "e94ceaea-fb27-409e-8428-f03273b29147"
+      },
+      {
+        "id": "nqduzj787s6a5w39fzmzbjs6",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "xm0mlu0i17yirp011hf3z6bo",
+            "back": {
+              "type": "description",
+              "description": "<p>gemini.google.com/saved-info</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Informações Salvas</p>"
+            }
+          },
+          {
+            "id": "ibbn2vo7d76tnb187v7qcj6a",
+            "back": {
+              "type": "description",
+              "description": "<p>gemini.google.com/personalization-settings</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Memória</p>"
+            }
+          },
+          {
+            "id": "wooorwuw1da7fsunbku5ipnj",
+            "back": {
+              "type": "description",
+              "description": "<p>Gemini &gt; Menu à esquerda &gt; Personalizar &gt; Habilidades</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Habilidades</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "97b81526-67c3-43af-ad93-244d98b568d4"
+      },
+      {
+        "id": "e934157d-4e3a-43f5-bac3-7534ae1945a6",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "bea0c919-6b26-4adc-a237-21649a72931a",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual das opções abaixo descreve corretamente a diferença entre memória e habilidades no Gemini?",
+            "answers": [
+              {
+                "id": "b2e17c47-9c3c-4874-94e5-040fcb8c4d91",
+                "title": "Memória armazena instruções reutilizáveis, habilidades guardam fatos extraídos de conversas anteriores.",
+                "correct": false,
+                "feedback": "Não. A alternativa inverte os conceitos: a memória guarda fatos de conversas anteriores, e as habilidades guardam instruções reutilizáveis."
+              },
+              {
+                "id": "b4ceb343-8e20-4b08-9d54-37da1280362d",
+                "title": "Memória guarda fatos extraídos de conversas anteriores; habilidades são conjuntos de instruções para tarefas específicas.",
+                "correct": true,
+                "feedback": "Correto. A memória vem das conversas do Histórico; a habilidade é uma receita de instruções que você aciona para uma tarefa."
+              },
+              {
+                "id": "923f226e-ba1a-4419-bfef-2a7c2df82a99",
+                "title": "Ambas servem apenas para personalização visual.",
+                "correct": false,
+                "feedback": "Não. Nenhuma das duas mexe na aparência: memória guarda fatos sobre você, e habilidades guardam instruções de tarefa."
+              },
+              {
+                "id": "cd81b1da-22cb-486b-87c9-be23971bdf28",
+                "title": "Habilidades são preferências do usuário, memória são informações salvas manualmente.",
+                "correct": false,
+                "feedback": "Não. Preferências escritas por você são as informações salvas; a memória é extraída das conversas, e as habilidades são instruções de tarefa."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "c4fb43f1-453d-4e37-8a69-e6b45234db95"
+      },
+      {
+        "id": "d344abbb-6709-4029-9581-09e484e36a61",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e172204c-20bf-44ab-a5d1-8b15d74b69cf",
+            "paragraph": "<p><strong>Mão na massa — modelo de habilidade.</strong> Preencha os colchetes para criar a sua próxima habilidade:</p><p><strong>Nome da habilidade:</strong> [nome curto]</p><p><strong>Descrição:</strong> [quando usar]</p><p><strong>Instruções:</strong> Você [papel]. Ao receber [tipo de entrada], [o que fazer]. Entregue em [formato]. Nunca [restrição]. Termine com [verificação ou pendências].</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2dad4562-ce17-4ac8-bfcb-ce5f7b4f43fa"
+      },
+      {
+        "id": "da7da21d-be64-4dd9-8fbd-00243d7e8420",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "10b6f44c-2cc5-4b6a-95ca-0681049ec4a9",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "14c7f4c3-b56a-4a9a-84d5-98decc68d7cb"
+      },
+      {
+        "id": "ax7pnztt9uamb9gysedul7yd",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "d8pe5ml08akjtwfxxrk9bxe9",
+            "paragraph": "<p>Você já tem uma habilidade pronta para reutilizar. No Módulo 4, o foco passa para a informação atual: como o Gemini busca na Pesquisa Google, por que a marcação de “verificar resposta” não é prova e como redigir o texto final no Canvas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "8ae25ee1-8527-4d86-b982-91c745535451"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Personalização e Habilidades no Gemini",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "o2w9H3KPfY-qYE6_ZB6-DWWneO3TEDCw",
+    "createdAt": "2026-11-17T16:39:55.585Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 3,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T16:40:56.589Z"
+  }
+}

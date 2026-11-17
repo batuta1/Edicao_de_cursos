@@ -1,0 +1,33 @@
+<!--titulo: O que acontece com a conversa-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Compare</span>
+  <h1 id="t">O que acontece com a sua conversa?</h1>
+  <p class="sub">Escolha um modo de uso e veja, ponto a ponto, o destino da conversa. Fonte: Central de privacidade dos apps do Gemini, consultada em 17/11/2026.</p>
+  <div class="opcoes" role="group" aria-label="Modo de uso" id="modos"></div>
+  <div class="grid" id="quadro" style="margin-top:16px" aria-live="polite"></div>
+  <p class="nota">Em qualquer modo, um subconjunto das conversas pode ser lido por revisores humanos; as revisadas ficam até 3 anos, mesmo depois de excluídas. Por isso, conteúdo de sinal vermelho não entra em conta pessoal.</p>
+</section>
+<script>
+  var linhas = ['Aparece nas conversas recentes', 'Pode treinar modelos', 'Por quanto tempo fica salva', 'Personaliza respostas futuras', 'Gmail, Drive e Agenda funcionam'];
+  var modos = {
+    'Histórico ativado': [['Sim', 'ok'], ['Sim, conforme as suas configurações', 'aviso'], ['18 meses (padrão); pode ser 3, 36 ou nunca excluir', 'info'], ['Sim (memória)', 'info'], ['Sim', 'ok']],
+    'Histórico desativado': [['Não', 'info'], ['Não (salvo feedback que você enviar)', 'ok'], ['Cerca de 2 meses', 'info'], ['Não', 'info'], ['Alguns param de funcionar', 'erro']],
+    'Chat temporário': [['Não', 'info'], ['Não', 'ok'], ['Cerca de 2 meses', 'info'], ['Não', 'info'], ['Dependem do Histórico ativado na conta', 'aviso']]
+  };
+  var g = document.getElementById('modos'), q = document.getElementById('quadro');
+  Object.keys(modos).forEach(function (m, i) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = m; b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', function () { mostrar(m, b); }); g.appendChild(b);
+    if (i === 0) setTimeout(function () { mostrar(m, b); }, 0);
+  });
+  function mostrar(m, b) {
+    g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    q.innerHTML = '';
+    modos[m].forEach(function (v, i) {
+      var c = document.createElement('div'); c.className = 'item';
+      var h = document.createElement('p'); h.className = 'f'; h.textContent = linhas[i]; c.appendChild(h);
+      var r = document.createElement('div'); r.className = 'feedback ' + v[1]; r.style.marginTop = '0'; r.textContent = v[0]; c.appendChild(r);
+      q.appendChild(c);
+    });
+  }
+</script>

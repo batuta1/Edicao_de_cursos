@@ -1,0 +1,631 @@
+{
+  "numero_da_licao": 6,
+  "position_original": 5,
+  "title": "Trabalhando com Arquivos, Imagens e Integração com Apps Google",
+  "lesson": {
+    "description": "",
+    "id": "2707990d-294c-48c8-9da0-d609f3674420",
+    "items": [
+      {
+        "id": "qfroggwrjtnaozumn0q11xqu",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xp22mq40cesgh16mf1cjlo0y",
+            "heading": "Arquivos, imagens e a sua conta Google",
+            "paragraph": "<p>Até aqui, o Gemini trabalhou com o que você digitou e com a web. Agora ele passa a trabalhar com os seus arquivos — uma planilha, um PDF, um áudio — e, se você autorizar, com o seu Gmail, o Drive e a Agenda. É aí que o Gemini mais rende e onde o semáforo do Módulo 2 mais pesa: arquivo enviado é dado tratado, e app conectado é caixa de entrada ao alcance das perguntas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "790271f8-22c8-47f9-bbc1-78a945b5143a"
+      },
+      {
+        "id": "d2n4q5pchx63g2bxrwbhr4e4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "viav4s8xxze2rfgnizd30bao",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "d124287a-9869-448b-b4e8-f6f21e4f4516"
+      },
+      {
+        "id": "en2qhuoakct4flev2r43mp8y",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "yt8tksiuwzz9xot3suxsp2dg",
+            "number": "1",
+            "paragraph": "<p>Enviar arquivos e obter cálculos e gráficos, observando os limites oficiais.</p>"
+          },
+          {
+            "id": "xwesv3xsfm3hiaynw686gtbf",
+            "number": "2",
+            "paragraph": "<p>Gerar uma imagem na conversa.</p>"
+          },
+          {
+            "id": "h21z3bwfmjpo9ttqx6silhjv",
+            "number": "3",
+            "paragraph": "<p>Decidir se e quando conectar Gmail, Drive e Agenda.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "29e86541-15db-4742-be1d-0a5b0970b495"
+      },
+      {
+        "id": "iksapkzn995zox7ejnl6071j",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "oskk29705jdeks0evftbpycs",
+            "heading": "Três novas fontes de informação",
+            "paragraph": "<p>Abra cada item para ver o que o Gemini faz e quais são os limites:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "43c790a7-4a22-4c42-96bb-feaaf1516699"
+      },
+      {
+        "id": "75154fab-79b4-47cd-999a-9114b5970699",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "dbff7e50-3943-406b-a60d-05178b955f08",
+            "title": "Upload e análise de arquivos",
+            "description": "<p>O botão <strong>+</strong> da caixa de mensagem envia documentos, planilhas, imagens, áudio e vídeo, do computador ou do Drive. Com eles, o Gemini resume documentos, calcula e organiza planilhas e gera gráficos.</p><p></p><p>Limites oficiais (consultados em 17/11/2026): até 10 arquivos por comando e 100 MB por arquivo (vídeo até 2 GB). No plano gratuito, vídeo de até 5 minutos e áudio de até 10 minutos no total.</p>"
+          },
+          {
+            "id": "4277c865-ef3b-49ee-8cf3-548cb98663f6",
+            "title": "Geração de imagens",
+            "description": "<p>Você gera e edita imagens pela própria conversa (“crie um ícone de...”) ou pelo menu Ferramentas. No plano gratuito, o uso é limitado — se o limite chegar, o Gemini avisa.</p><p></p><p>Quando a imagem é o assunto principal, o curso <em>Imagem com IA</em> aprofunda o tema.</p>"
+          },
+          {
+            "id": "9bca1c8d-217b-45c3-932d-f8fc8de6907c",
+            "title": "Integração com Gmail, Drive e Agenda",
+            "description": "<p>Com sua autorização em Personalizar, o Gemini consulta Gmail, Drive e Agenda e cria eventos. Retome o Módulo 2: <strong>os apps conectados exigem o Histórico ativado</strong> — conectar é, portanto, uma decisão sobre dados.</p><p></p><p>Há ainda mais de 40 apps de terceiros conectáveis, a maioria disponível em inglês e nos Estados Unidos.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "55910b12-5fbd-4e25-8f89-e7dfc4fdcc78"
+      },
+      {
+        "id": "o230igoypbcruue9onboa27e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bd007w7exhpy7t90iuo85r5s",
+            "heading": "Onde ficam os comandos",
+            "paragraph": "<p>Vire os cartões para revisar o caminho de cada ação:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "72e65f34-63d6-40a9-90e4-71c8c06dcc62"
+      },
+      {
+        "id": "gvqo3hzwxvsy1ljzs0imzxz3",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "pn37b0kzspu1efz3rty7un2r",
+            "back": {
+              "type": "description",
+              "description": "<p>Gemini &gt; Caixa de mensagem &gt; + &gt; Fazer upload de arquivos</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Enviar arquivo</p>"
+            }
+          },
+          {
+            "id": "ilivedydiscw1g2depnz0ngh",
+            "back": {
+              "type": "description",
+              "description": "<p>Gemini &gt; Caixa de mensagem &gt; + &gt; Adicionar do Drive</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Arquivo do Drive</p>"
+            }
+          },
+          {
+            "id": "kae1gwdcd26amxsi4iggy375",
+            "back": {
+              "type": "description",
+              "description": "<p>Gemini &gt; Caixa de mensagem &gt; Ferramentas &gt; Criar imagens (ou peça direto na conversa)</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Criar imagem</p>"
+            }
+          },
+          {
+            "id": "tcwtux4m31ixr8h0gzb9snn6",
+            "back": {
+              "type": "description",
+              "description": "<p>Gemini &gt; Menu à esquerda &gt; Personalizar &gt; Apps conectados</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Conectar apps</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "820daae6-2053-460a-ac6a-d154fa2e5eca"
+      },
+      {
+        "id": "tqzr8hos7o17tzzbzrjpkkra",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "cfqq8m9d6zamzopcbvyksc1v",
+            "heading": "Antes de enviar ou conectar",
+            "paragraph": "<p>Três cuidados que valem para qualquer arquivo e qualquer app:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "995e3934-c51d-447e-8219-a7c28036131a"
+      },
+      {
+        "id": "d63e470e-1233-44fc-80b7-b3af1c8bce31",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "6c3a3b62-c400-4ed4-b5e8-586b2aa6e599",
+            "title": "Limites oficiais para arquivos",
+            "description": "<p>Até 10 arquivos por comando e 100 MB por arquivo (vídeo até 2 GB); no plano gratuito, vídeo de até 5 minutos e áudio de até 10 minutos no total.</p><p></p><p>Se o envio falhar, confira o tamanho e a duração antes de tentar de novo.</p>"
+          },
+          {
+            "id": "65aa0624-46f4-48e4-b729-4ff96bba2dd8",
+            "title": "Critérios para conectar apps",
+            "description": "<p>Conecte apenas contas cujo conteúdo esteja em sinal verde. Faça pedidos delimitados — cite o assunto do e-mail, a data do evento — em vez de “resuma meus e-mails”. E desconecte quando não estiver usando.</p><p></p><p>Lembre o exemplo do Módulo 2: um Gmail pessoal que recebe e-mails de clientes é sinal vermelho.</p>"
+          },
+          {
+            "id": "dc5d4fcd-8f3f-4e23-8fe7-62e00706e700",
+            "title": "Implicações de privacidade",
+            "description": "<p>Arquivo enviado e e-mail consultado viram conteúdo da conversa: seguem as regras do Histórico, inclusive a possibilidade de revisão humana.</p><p></p><p>Antes de clicar no +, pergunte: em que cor do semáforo está este arquivo?</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "00d61b48-33c2-4d2d-b4db-1467eaaa3571"
+      },
+      {
+        "id": "da484bc3-de55-409c-a217-c3a3da3b8856",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e439ce3d-f22c-4267-8e3d-a07147816db8",
+            "paragraph": "<p>Conecte só contas em sinal verde, faça pedidos delimitados (citando o assunto do e-mail, por exemplo) e desconecte quando não houver uso.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "56fb4c78-9487-40b1-b681-f2dcab9312bc"
+      },
+      {
+        "id": "v2es8l2r3lefasnojrz0n4f7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "gsna4fzhrt7vvhwp3fu63rb4",
+            "heading": "Outros recursos e onde aprofundar",
+            "paragraph": "<p>O Gemini tem outros recursos que este curso apenas apresenta. Vire os cartões para ver o que cada um faz e qual curso o aprofunda:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "62114f82-f4e8-49f3-ab0d-e373778e794c"
+      },
+      {
+        "id": "zv4uyiqixfxq6l78rhx0mb5g",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "nifjwttstdn27x7ssipxyhxp",
+            "back": {
+              "type": "description",
+              "description": "<span>Relatórios a partir de muitas fontes – Curso: Deep Research - Hands On</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Deep Research</strong>"
+            }
+          },
+          {
+            "id": "w34tlrxjo6mkfd606fv5wg5r",
+            "back": {
+              "type": "description",
+              "description": "<span>Conversa por voz, com câmera e tela</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Gemini Live</strong>"
+            }
+          },
+          {
+            "id": "m0m6iodx153vrdqln214rpti",
+            "back": {
+              "type": "description",
+              "description": "<span>Pesquisa e escrita sobre fontes próprias – Curso: NotebookLM - Essentials</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Gemini Notebook/NotebookLM</strong>"
+            }
+          },
+          {
+            "id": "pyhwp65v0w4pz3smfb470n90",
+            "back": {
+              "type": "description",
+              "description": "<span>Gemini dentro do Gmail, Documentos e Meet – Curso: Gemini Workspace - Essentials</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Gemini no Workspace</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "54669ed5-5a5e-4281-aa3c-57f5c8be279d"
+      },
+      {
+        "id": "e888e36a-36bb-40e3-a502-e453af3de577",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "d47738af-9693-400b-9935-3964a445cbea",
+            "type": "intro",
+            "title": "Planilha e imagem (6 min)",
+            "isHidden": false,
+            "description": "<p>Você vai criar um CSV pequeno, pedir cálculos e um gráfico e, em seguida, gerar uma imagem simples.</p>"
+          },
+          {
+            "id": "8291b951-07dc-4631-a0dc-57625d801667",
+            "type": "summary",
+            "title": "O que conferir",
+            "isHidden": false,
+            "description": "<p>Confira os números do Gemini com os seus: com dados tão pequenos, você consegue verificar o cálculo de cabeça. É o mesmo hábito do Módulo 4, agora aplicado a planilhas.</p>"
+          },
+          {
+            "id": "95ce5d99-d40d-4022-850b-da465e96f911",
+            "type": "step",
+            "title": "Preparar arquivo de dados",
+            "isHidden": false,
+            "description": "<p>Crie um arquivo de texto com o seguinte conteúdo e salve como <strong>atendimentos.csv</strong>:</p><p>dia,atendimentos<br>seg,14<br>ter,22<br>qua,18</p>"
+          },
+          {
+            "id": "12b3ebb1-afc6-4ff6-ac4e-cd0b1ae6e3e1",
+            "type": "step",
+            "title": "Enviar e analisar arquivo",
+            "isHidden": false,
+            "description": "<p>Envie o arquivo em <strong>Gemini &gt; Caixa de mensagem &gt; + &gt; Fazer upload de arquivos</strong> e peça: “Calcule o total e a média por dia e faça um gráfico de barras.”</p>"
+          },
+          {
+            "id": "5aa3d1a8-fe62-4bbe-a324-34188e126dd1",
+            "type": "step",
+            "title": "Gerar imagem personalizada",
+            "isHidden": false,
+            "description": "<p>Peça: “Crie um ícone simples de balança da justiça, estilo plano, fundo branco.” Se o limite do plano gratuito tiver sido atingido, anote a mensagem.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "19bd757f-113b-40a1-98e5-4f05b98440d5"
+      },
+      {
+        "id": "4cbdc1a7-3e8f-4fd9-9443-94d62199ae5a",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e1c635f4-e5ce-4c75-9ab8-60eea9eaa446",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> total 54, média 18 e gráfico de três barras; imagem gerada ou mensagem de limite registrada.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "de1d1705-8628-48ec-9683-4cb0e8335da0"
+      },
+      {
+        "id": "7ec57bac-b76e-4a86-99d0-c6185a505490",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "8138d633-6671-40b7-b1ec-7a1258e1f016",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você quer que o Gemini localize no Gmail um e-mail sobre a reunião de quinta e crie o evento na Agenda. Qual conduta é segura?",
+            "answers": [
+              {
+                "id": "d3a7cbe5-537a-457d-96a7-89d6356809a9",
+                "title": "Conectar qualquer conta, independentemente do conteúdo.",
+                "correct": false,
+                "feedback": "Não. Conectar sem olhar o conteúdo pode colocar e-mails de clientes ou de terceiros ao alcance das perguntas."
+              },
+              {
+                "id": "3001012f-2583-47dc-8faf-1be6c8838898",
+                "title": "Conectar apenas contas cujos dados estão em sinal verde e desconectar após o uso.",
+                "correct": true,
+                "feedback": "Correto. Conta em sinal verde, pedido delimitado e desconexão após o uso são os três cuidados desta lição."
+              },
+              {
+                "id": "91b2235e-2dbf-45f1-9138-64ddc5b7539a",
+                "title": "Manter apps conectados o tempo todo, sem restrições.",
+                "correct": false,
+                "feedback": "Não. Quanto mais tempo o app fica conectado, maior a superfície de exposição. Desconecte quando não houver uso."
+              },
+              {
+                "id": "09446525-564f-42d3-b3c0-6b0a487bd4e4",
+                "title": "Ignorar os limites de privacidade, pois o Gemini não armazena dados.",
+                "correct": false,
+                "feedback": "Não. Com o Histórico ativado — exigido pelos apps conectados — as conversas ficam salvas e podem ser revisadas por pessoas."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "92c369c4-6381-47aa-b692-e494b7679d54"
+      },
+      {
+        "id": "02368774-e679-4dc3-b036-8599a49ae1cc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f3128083-f5db-44bf-b34c-85d6c9971ccd",
+            "paragraph": "<p><strong>Mão na massa — modelo para analisar um arquivo.</strong> Troque os colchetes:</p><p>“Enviei [arquivo]. Primeiro, mostre as 5 primeiras linhas e as colunas. Depois, calcule [indicadores], faça uma tabela por [categoria] e um gráfico de [tipo]. Diga em 3 frases o que os dados mostram e o que não permitem concluir.”</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "863d12ae-2939-4df4-8b1a-12d09fdf394e"
+      },
+      {
+        "id": "e79d5857-e1f8-44c9-af71-2b8b105da14b",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "a4b1039c-ed53-425f-9d88-47c5da035faa",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "3692ba30-b531-45fa-9dcb-5cb3b28697fe"
+      },
+      {
+        "id": "iifrigz97lc0s99hx77ia4eu",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rox9s53oui5meastcgmzjq0p",
+            "paragraph": "<p>Você já viu todos os recursos do Gemini usados no curso. No Módulo 6, eles se juntam numa tarefa completa — pedido estruturado, habilidade e verificação — executada também no ChatGPT ou no Claude, para comparar e justificar qual assistente usar.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "77bfb638-fd2d-428d-a6a7-6f6ffa053578"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Trabalhando com Arquivos, Imagens e Integração com Apps Google",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "o2w9H3KPfY-qYE6_ZB6-DWWneO3TEDCw",
+    "createdAt": "2026-11-17T16:39:55.585Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 5,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T16:41:21.694Z"
+  }
+}

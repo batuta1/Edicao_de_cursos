@@ -1,0 +1,661 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Privacidade, Dados e Segurança no Gemini",
+  "lesson": {
+    "description": "",
+    "id": "de3fb1f6-3afa-437f-9089-ac07c8a96581",
+    "items": [
+      {
+        "id": "movz5ze0trvourwsiunryfbi",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fcstwu9yoc09mlwoq7mpxktq",
+            "heading": "Para onde vão os dados da conversa",
+            "paragraph": "<p>Até aqui, você conversou com o Gemini. Antes de personalizá-lo, enviar arquivos ou conectar o Gmail, é preciso decidir o que ele pode guardar. Uma conversa pode ficar salva por meses, ser lida por um revisor humano e servir para treinar modelos — ou não, dependendo de uma configuração que a maioria das pessoas nunca abriu. Nesta lição você a encontra, ajusta e aprende a classificar o que pode ou não ser enviado.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "a4f5786d-8577-45ac-80f5-69b507e22901"
+      },
+      {
+        "id": "fwvuabtghwykct8h8nfrqhe4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xn2f6kezhn58khinqztds9vy",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "e5a03ec8-eaf8-4049-9aa9-63a1dde6cf9a"
+      },
+      {
+        "id": "wvcx82wh4gfvg96bg34epzuj",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "u5gg6b1fayblcs9y1gaevhzu",
+            "number": "1",
+            "paragraph": "<p>Descrever o Histórico do Gemini, a revisão humana e os prazos de retenção.</p>"
+          },
+          {
+            "id": "mbv56cfvsqev9ui8qw77bdt7",
+            "number": "2",
+            "paragraph": "<p>Configurar o Histórico e iniciar um chat temporário.</p>"
+          },
+          {
+            "id": "vsxaf2dc7mpkzr24vj76k8rj",
+            "number": "3",
+            "paragraph": "<p>Classificar conteúdos no semáforo de dados, à luz da LGPD e do sigilo profissional.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "633f55a6-08db-474d-aca4-baf1508f3227"
+      },
+      {
+        "id": "zy5730vc8xzyu9jmnzbo5yis",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "noiz8f9phkeu3tbdw5t0ki9u",
+            "heading": "Histórico, revisão humana e prazos",
+            "paragraph": "<p>A configuração central chama-se <strong>Histórico do Gemini</strong>. Abra cada item para ver o que ela controla:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ac2cc4ad-4ce0-4670-a405-b52fc229b6be"
+      },
+      {
+        "id": "36274748-cac0-4a1f-9882-6895aa1fe8a5",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "b5b803ba-5c4e-4d68-b77e-a10bbf60f4e0",
+            "title": "Histórico do Gemini",
+            "description": "<p>O Histórico do Gemini — antes chamado “Atividade nos Apps do Gemini” e “Manter atividade” — é gerido em <a href=\"https://myactivity.google.com/product/gemini\">myactivity.google.com/product/gemini</a>. Com ele ativado, as conversas ficam salvas e podem ser usadas para melhorar os serviços e treinar modelos, conforme as suas configurações.</p>"
+          },
+          {
+            "id": "14dec9ac-5a50-4a6e-a604-eae4c64fc7ae",
+            "title": "Revisão Humana",
+            "description": "<p>Segundo a Central de privacidade dos apps do Gemini (consultada em 17/11/2026), um subconjunto das conversas é lido por revisores humanos. As conversas revisadas ficam guardadas por até 3 anos, <strong>mesmo depois que você as exclui</strong>.</p>"
+          },
+          {
+            "id": "c15f063b-8419-4471-9a8d-021d1dd56a69",
+            "title": "Prazos de Retenção",
+            "description": "<p>Com o Histórico ativado, a exclusão automática padrão ocorre após <strong>18 meses</strong>; dá para trocar para 3 ou 36 meses, ou nunca excluir. Com o Histórico desativado, as conversas futuras não aparecem no Histórico e não treinam modelos (salvo feedback que você enviar), mas ficam salvas por cerca de 2 meses — e alguns apps conectados deixam de funcionar.</p>"
+          },
+          {
+            "id": "19a83cd8-6a19-44bf-a4bc-bf0e53f2cbac",
+            "title": "Chats Temporários",
+            "description": "<p>O chat temporário não entra no Histórico, não personaliza respostas e não treina modelos. Mesmo assim, fica salvo por cerca de 2 meses. É a opção para uma consulta pontual que você não quer ver nas conversas recentes.</p>"
+          },
+          {
+            "id": "4b6464bd-8eba-4955-80c7-af0a08cbbcfd",
+            "title": "Contas Workspace",
+            "description": "<p>Nas contas do Google Workspace, o Google declara não usar os dados da organização para treinar modelos nem para anúncios. Por isso, conteúdo interno de trabalho deve passar pela conta da organização, não pela pessoal.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "be5c3a0c-ed7a-4886-be1f-5d0b1eda734a"
+      },
+      {
+        "id": "oueurqcyiu1ny1zd3c4iqtv6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jxy5phoz6iw4szyeinrgaaik",
+            "heading": "Revisão rápida: cinco situações",
+            "paragraph": "<p>Vire os cartões e confira o que acontece com a conversa em cada caso:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "0926dfb4-fb3e-418e-8389-5bfdcfa620c7"
+      },
+      {
+        "id": "ntkgb6udkohcnn6r97hk2jyh",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "kt5996kkz5uk6szq2k55icmi",
+            "back": {
+              "type": "description",
+              "description": "<ul><li>Conversas salvas</li><li>Podem melhorar serviços e treinar modelos</li><li>Exclusão automática padrão de 18 meses</li></ul>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Histórico ativado</strong>"
+            }
+          },
+          {
+            "id": "ia4rx1b5mt84o6mznpzn12c2",
+            "back": {
+              "type": "description",
+              "description": "<ul><li>Conversas revisadas ficam até 3 anos</li><li>Permanecem mesmo após exclusão</li></ul>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Revisão humana</strong>"
+            }
+          },
+          {
+            "id": "wwrbytc0oe0nooo78cdelg3o",
+            "back": {
+              "type": "description",
+              "description": "<ul><li>Sem histórico e sem treino (salvo feedback)</li><li>Salvas por cerca de 2 meses</li><li>Alguns apps conectados param</li></ul>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Histórico desativado</strong>"
+            }
+          },
+          {
+            "id": "d8y0i61abl9isx477rwzduyq",
+            "back": {
+              "type": "description",
+              "description": "<ul><li>Fora do histórico</li><li>Salvas por cerca de 2 meses</li><li>Não treina modelos</li></ul>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Chat temporário</strong>"
+            }
+          },
+          {
+            "id": "fpucyp28o6vnlrbmrdv2wy87",
+            "back": {
+              "type": "description",
+              "description": "<ul><li>Dados da organização não treinam modelos</li><li>Não servem a anúncios</li></ul>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Conta Workspace</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "bc78f33f-26cb-4a6c-b0b9-7b7d4216b4e2"
+      },
+      {
+        "id": "88646b55-6714-4e10-9a2a-5e85af91dd8a",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ad52ec27-bc92-4d17-a547-1803546a180a",
+            "paragraph": "<p>O próprio Google recomenda não inserir informação confidencial que você não queira ver lida por um revisor. A LGPD (Lei 13.709/2018) exige base legal e finalidade para tratar dados pessoais; para o público jurídico, soma-se o sigilo profissional.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "b2ec95e3-3ebb-4ae6-85ec-a1156f8f7960"
+      },
+      {
+        "id": "hm3ri6rwq0jq05px6niz8l6n",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "z76ev9fzmznd1p0xbo9u4jpq",
+            "heading": "Semáforo de dados",
+            "paragraph": "<p>Antes de colar um texto, enviar um arquivo ou conectar um app, classifique o conteúdo em uma de três cores. Cada cor define uma conduta:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "3633f728-778f-43f6-a0f6-3585120468c1"
+      },
+      {
+        "id": "307b2792-a648-4655-903d-b99d49fa8619",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "46604ee9-a31e-457e-bec3-fa2673813bc1",
+            "title": "Verde",
+            "description": "<p>Textos públicos, dados fictícios e conteúdo próprio sem dados pessoais. <strong>Pode ser enviado.</strong></p>"
+          },
+          {
+            "id": "addd24b5-907c-4570-911c-0d9f77409b69",
+            "title": "Amarelo",
+            "description": "<p>Documentos internos sem dados pessoais. <strong>Somente com autorização</strong>, de preferência na conta Workspace da organização.</p>"
+          },
+          {
+            "id": "7c0ec2c2-8b0e-4bce-826f-45f29b19d8b5",
+            "title": "Vermelho",
+            "description": "<p>Dados pessoais de terceiros, segredos comerciais, documentos de clientes e processos sob segredo. <strong>Não enviar em conta pessoal.</strong></p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "bba765fe-ed4f-4f2e-8e93-2f2f7d079e55"
+      },
+      {
+        "id": "kqk8eb8wv9kn5meuuaw6vqno",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b65jt51df810tugl9h450n19",
+            "heading": "O semáforo na prática",
+            "paragraph": "<p>Veja como situações comuns se distribuem pelas três cores:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2abbd295-5a13-4c0b-ab0d-62d12edfd64c"
+      },
+      {
+        "id": "b579552b-8237-465a-98f6-4df0922a5fc1",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "c5d91c0f-ce4c-4eaa-95fb-5fc3e2b402bd",
+            "title": "Verde",
+            "description": "<p>Uma notícia de jornal, um rascunho próprio de artigo de opinião ou uma planilha de inscritos identificados só por códigos (I01, I02...) e tema.</p><p></p><p>Nenhum desses conteúdos identifica uma pessoa nem envolve sigilo. Pode usar o Gemini para resumir, revisar ou analisar.</p>"
+          },
+          {
+            "id": "3e2b6992-d62a-445b-a1ce-1183965c2111",
+            "title": "Amarelo",
+            "description": "<p>Um relatório interno da equipe, sem nomes nem dados de clientes.</p><p></p><p>Não há dado pessoal, mas o documento pertence à organização. Envie só com autorização e, de preferência, pela conta Workspace, cujos dados não treinam modelos.</p>"
+          },
+          {
+            "id": "aec84473-d895-456d-84f3-2d24edc04fca",
+            "title": "Vermelho",
+            "description": "<p>Uma planilha de inscritos com nome e telefone, ou o e-mail de um cliente relatando o próprio processo.</p><p></p><p>São dados pessoais de terceiros e, no segundo caso, informação protegida por sigilo profissional. Não envie em conta pessoal: falta base legal, e a conversa pode ser lida por revisores e guardada por até 3 anos.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "10f7ac08-607a-45c7-8a59-0b1fa6f2cb12"
+      },
+      {
+        "id": "cd491bee-92c5-47fd-8138-fedd83398f51",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "9eb24b45-1059-4a75-899e-dd515ec29832",
+            "type": "intro",
+            "title": "Configurar o Histórico (7 min)",
+            "isHidden": false,
+            "description": "<p>Abra o Gemini e a página de atividade em abas lado a lado e siga os três passos.</p>"
+          },
+          {
+            "id": "51f8e382-bbe6-4687-a076-415ccbcb5b10",
+            "type": "summary",
+            "title": "O que você deve ter anotado",
+            "isHidden": false,
+            "description": "<p>O estado do seu Histórico (ativado ou desativado), o prazo de exclusão automática escolhido e a confirmação de que o chat temporário não ficou nas conversas recentes.</p>"
+          },
+          {
+            "id": "b7fd291b-750b-4a8d-8abb-9969cfaeee66",
+            "type": "step",
+            "title": "Abrir a página de atividade",
+            "isHidden": false,
+            "description": "<p>Abra <a href=\"https://myactivity.google.com/product/gemini\">myactivity.google.com/product/gemini</a> com a sua conta pessoal.</p>"
+          },
+          {
+            "id": "87f89d82-5632-49f8-b68b-30b7c3491109",
+            "type": "step",
+            "title": "Verificar e ajustar o Histórico",
+            "isHidden": false,
+            "description": "<p>Veja se o Histórico está ativado e qual é o prazo de exclusão automática (o padrão é 18 meses). Ajuste, se for o caso, e anote a escolha.</p>"
+          },
+          {
+            "id": "b785ce51-aab1-49ff-9864-f5805e8630f4",
+            "type": "step",
+            "title": "Testar o chat temporário",
+            "isHidden": false,
+            "description": "<p>Em <strong>Gemini &gt; Barra lateral &gt; ícone de chat temporário</strong>, envie uma pergunta qualquer. Depois, confira se ela aparece nas conversas recentes.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "f6175808-61f3-4178-84b5-d606c91d4c14"
+      },
+      {
+        "id": "4c14b068-ec2c-45c6-8170-65e677ab0df4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "20928e63-a358-412e-9c0b-cfe5a2fae58b",
+            "paragraph": "<p>🏁 Ponto de controle: o estado do Histórico e o prazo de exclusão foram anotados; o chat temporário não aparece em <strong>Gemini &gt; Barra lateral &gt; conversas recentes</strong>.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "46486c0c-be04-4bbd-97f6-00a41282142c"
+      },
+      {
+        "id": "l8zcqeyikrt2eimd4n64xlcx",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jrkqxsgi388iiba69q6q6y3w",
+            "heading": "Discussão orientada: classifique no semáforo (8 min)",
+            "paragraph": "<p>Arraste cada conteúdo para a cor correta. Antes de soltar, pergunte-se: este conteúdo identifica alguma pessoa? Envolve sigilo?</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ff113c7e-1dbf-453b-8a86-1563e6ff5509"
+      },
+      {
+        "id": "f36fbab0-d300-4ca1-bea7-575334760358",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "d8668521-e0e2-47cd-a740-48c701c97375",
+            "title": "Notícia de jornal",
+            "pileId": "7e2d71ef-0c91-44fb-87b1-a6b819979047"
+          },
+          {
+            "id": "2c8e0eb6-76be-46ca-adc9-15999613112a",
+            "title": "Planilha de inscritos apenas com códigos (I01, I02...) e tema",
+            "pileId": "7e2d71ef-0c91-44fb-87b1-a6b819979047"
+          },
+          {
+            "id": "74792afa-a771-404d-a484-252e86b7b8b1",
+            "title": "Rascunho próprio de artigo de opinião",
+            "pileId": "7e2d71ef-0c91-44fb-87b1-a6b819979047"
+          },
+          {
+            "id": "1a68786d-b6c6-4e64-a5ee-020dd34a6b9a",
+            "title": "Planilha de inscritos com nome e telefone",
+            "pileId": "33c4087a-a5cf-4cf7-baf7-0c2d71807a1d"
+          },
+          {
+            "id": "0f5e5ec1-d2c3-4f97-8437-51d75c50b62b",
+            "title": "E-mail de cliente com relato de processo",
+            "pileId": "33c4087a-a5cf-4cf7-baf7-0c2d71807a1d"
+          }
+        ],
+        "piles": [
+          {
+            "id": "7e2d71ef-0c91-44fb-87b1-a6b819979047",
+            "title": "Verde"
+          },
+          {
+            "id": "c3d32534-c180-41a2-a3be-1252e0c3ebed",
+            "title": "Amarelo"
+          },
+          {
+            "id": "33c4087a-a5cf-4cf7-baf7-0c2d71807a1d",
+            "title": "Vermelho"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "sorting",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "48200483-6974-4395-80fc-98ea92419d1d"
+      },
+      {
+        "id": "ba121e96-a65d-49f1-b801-558fa833c235",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bc09d831-7996-4c75-9b08-60b0be8e8c5c",
+            "paragraph": "<p><strong>Mão na massa.</strong> Sem colar nenhum conteúdo real, peça ao Gemini que avalie uma situação:</p><p>“Sem que eu cole o conteúdo, avalie esta situação: [descrição genérica, ex.: ‘quero conectar meu Gmail pessoal, que recebe e-mails de clientes’]. Classifique em verde, amarelo ou vermelho e indique alternativas mais seguras.”</p><p>Para o exemplo, a classificação esperada é <strong>vermelho</strong>: conectar esse Gmail coloca os e-mails dos clientes ao alcance das perguntas. Se o Gemini classificar de outro jeito, use o semáforo desta lição como referência — o tema volta no Módulo 5.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "6de5ca23-030b-450a-8628-d46787add59a"
+      },
+      {
+        "id": "6ef5dbc7-2d00-4e2e-ab3b-d5a706729012",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "36460220-f412-4ad3-bc26-bd66fef6704b",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "90065a19-a408-4f47-8207-25abbe71020a"
+      },
+      {
+        "id": "oalx9qm2630neguqqy1xo8dz",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ptfahh657e56mql623z73q29",
+            "paragraph": "<p>Com o Histórico configurado e o semáforo em mãos, você já decide o que o Gemini pode guardar. No Módulo 3, o foco passa da conversa isolada para a continuidade: informações salvas, memória e habilidades — e a primeira habilidade criada por você.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "016dc6a0-5991-4a79-a87b-3d18f10ec55c"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Privacidade, Dados e Segurança no Gemini",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "o2w9H3KPfY-qYE6_ZB6-DWWneO3TEDCw",
+    "createdAt": "2026-11-17T16:39:55.585Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T16:40:46.560Z"
+  }
+}

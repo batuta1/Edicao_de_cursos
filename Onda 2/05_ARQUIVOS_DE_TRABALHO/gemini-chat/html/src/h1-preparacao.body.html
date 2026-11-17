@@ -1,0 +1,73 @@
+<!--titulo: Preparação do mutirão-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Preparação · 7 min</span>
+  <h1 id="t">Kit do mutirão: planilha, e-mail e conta</h1>
+  <p class="sub">Copie os dois arquivos de prática, faça os passos e marque o checklist no fim. O curso segue com tudo marcado.</p>
+
+  <h2>1. A planilha: inscricoes-mutirao.csv</h2>
+  <p class="extra">Cole num editor de texto simples e salve como <strong>inscricoes-mutirao.csv</strong> na pasta <strong>mutirao</strong>. No Bloco de Notas, use Arquivo &gt; Salvar como &gt; Tipo: Todos os arquivos.</p>
+  <textarea id="csv" rows="8" readonly aria-label="Conteúdo do arquivo inscricoes-mutirao.csv">inscricao,tema,turno,canal,acessibilidade
+I01,Familia,tarde,site,nao
+I02,Consumidor,manha,presencial,nao
+I03,Previdencia,tarde,WhatsApp,sim
+I04,Trabalho,manha,presencial,nao
+I05,Consumidor,manha,site,nao
+I06,Trabalho,manha,WhatsApp,sim
+I07,Previdencia,manha,presencial,sim
+I08,Consumidor,manha,WhatsApp,nao
+I09,Previdencia,tarde,WhatsApp,nao
+I10,Consumidor,tarde,WhatsApp,nao
+I11,Trabalho,manha,presencial,nao
+I12,Familia,manha,presencial,nao
+I13,Trabalho,tarde,WhatsApp,nao
+I14,Previdencia,tarde,presencial,nao
+I15,Familia,manha,presencial,nao
+I16,Trabalho,tarde,site,nao
+I17,Familia,tarde,site,nao
+I18,Consumidor,manha,presencial,nao
+I19,Previdencia,tarde,WhatsApp,nao
+I20,Trabalho,tarde,presencial,nao
+I21,Familia,manha,site,nao
+I22,Previdencia,tarde,presencial,nao
+I23,Consumidor,manha,presencial,nao
+I24,Familia,tarde,WhatsApp,nao
+I25,Consumidor,tarde,site,nao
+I26,Consumidor,tarde,site,nao
+I27,Familia,tarde,site,nao
+I28,Previdencia,tarde,site,nao
+I29,Consumidor,tarde,WhatsApp,nao
+I30,Previdencia,tarde,site,sim</textarea>
+  <p style="margin:8px 0 0"><button type="button" class="btn principal" id="bCsv">Copiar a planilha</button></p>
+  <div class="feedback" id="mCsv" aria-live="polite"></div>
+
+  <h2 style="margin-top:22px">2. O e-mail de teste</h2>
+  <p class="extra">No Gmail, envie para <strong>você mesmo</strong> um e-mail com este assunto exato e este corpo. A Oficina 3 vai procurá-lo pelo assunto.</p>
+  <p class="extra"><strong>Assunto:</strong></p>
+  <pre class="saida" id="assunto">Mutirão de Orientação Cidadã — pedido da coordenação</pre>
+  <p style="margin:8px 0 0"><button type="button" class="btn" id="bAss">Copiar o assunto</button></p>
+  <div class="feedback" id="mAss" aria-live="polite"></div>
+  <p class="extra" style="margin-top:12px"><strong>Corpo:</strong></p>
+  <pre class="saida" id="corpo">Olá! Confirmado: o Mutirão de Orientação Cidadã será no sábado, 05/12/2026, das 9h às 17h, no Centro Comunitário Vila Serena. Precisamos de uma reunião de preparação com os voluntários na quarta-feira, 02/12/2026, das 15h às 16h, por videochamada. Até sexta-feira, 27/11/2026, preciso do comunicado aos inscritos e da distribuição das mesas por tema e turno. Cada atendimento dura 30 minutos; manhã das 9h às 12h e tarde das 13h às 17h. Obrigado! — Coordenação (caso fictício)</pre>
+  <p style="margin:8px 0 0"><button type="button" class="btn" id="bCorpo">Copiar o corpo</button></p>
+  <div class="feedback" id="mCorpo" aria-live="polite"></div>
+
+  <h2 style="margin-top:22px">3. Checklist</h2>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <p class="nota">Se o seu Gmail recebe e-mails de clientes ou dados sensíveis, faça o curso numa conta pessoal secundária: o que o Gemini lê pode entrar no Histórico, e conversas revisadas por pessoas ficam guardadas por até 3 anos.</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  ligarCopia('bCsv', 'csv', 'mCsv', 'Planilha');
+  ligarCopia('bAss', 'assunto', 'mAss', 'Assunto');
+  ligarCopia('bCorpo', 'corpo', 'mCorpo', 'Corpo do e-mail');
+  checklist([
+    'gemini.google.com, mail.google.com e calendar.google.com abertos com a mesma conta Google pessoal, de maior de 18 anos.',
+    'Histórico do Gemini ativado, conferido em myactivity.google.com/product/gemini (a Oficina 3 precisa dele).',
+    'inscricoes-mutirao.csv salvo na pasta mutirao.',
+    'E-mail de teste enviado para mim mesmo, com o assunto exato, e já na Caixa de entrada.'
+  ], 'lista', 'placar', 'barra', 'itens prontos', function () {
+    concluir('final', 'Kit pronto. Primeira oficina: transformar as instruções repetidas em habilidade.');
+  });
+</script>

@@ -1,0 +1,28 @@
+<!--titulo: Isso já é conferência?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Isso já é conferência?</h1>
+  <p class="sub">O Gemini afirmou: “Segundo o art. 5º, I, da LGPD, dado pessoal é informação relacionada a pessoa natural identificada ou identificável.” Em cada situação, a afirmação já está conferida ou ainda não?</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'A opção Verificar resposta marcou o trecho como semelhante ao que existe na web.', r: 'nao', p: 'Marcação não é prova: falta abrir a fonte e ler o trecho.' },
+      { t: 'A resposta trouxe um link para um blog jurídico.', r: 'nao', p: 'Link não é leitura — e um blog não é a fonte oficial.' },
+      { t: 'Você pediu ao Gemini “tem certeza?” e ele confirmou.', r: 'nao', p: 'O Gemini só gerou outra resposta provável.' },
+      { t: 'Você abriu a LGPD no Planalto, encontrou o art. 5º, I, e o texto bate com a resposta.', r: 'sim', p: 'Fonte aberta, trecho localizado, fonte oficial. Para o texto de lei, a fonte oficial já é a referência final.' },
+      { t: 'Você trocou de modelo no seletor e a nova resposta disse a mesma coisa.', r: 'nao', p: 'Dois modelos concordando não substituem a fonte.' },
+      { t: 'Você leu o art. 5º, I, no Planalto e confirmou a mesma redação no site da ANPD.', r: 'sim', p: 'Os quatro passos completos: abrir, localizar, avaliar e triangular.' }
+    ],
+    opcoes: { sim: 'Conferida', nao: 'Ainda não' },
+    dicaErro: 'Só conta como conferência quando você abriu a fonte e leu o trecho que sustenta a afirmação.',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'situações classificadas corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Conferir é ler o trecho na fonte. Link, marcação e “tem certeza?” são só pontos de partida.');
+    }
+  });
+</script>

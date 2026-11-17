@@ -1,0 +1,354 @@
+
+######## licao_01_Criando_e_Personalizando_Habilidades_no_Gemini.json  title='Criando e Personalizando Habilidades no Gemini'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Por que automatizar tarefas recorrentes na organização de eventos?
+items.0.items.0.paragraph = <p>Organizar eventos envolve lidar com diversas tarefas repetitivas, como responder dúvidas frequentes, conferir listas de inscrições e repassar instruções. Automatizar esses processos não só economiza tempo, mas também reduz o risco de erros e garante que todos recebam informações padronizadas. Ao longo deste curso, você vai aprender como a automação pode transformar a rotina de quem organiza eventos, tornando tudo mais eficiente e confiável.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você aprenderá como criar uma habilidade personalizada no Gemini, validá-la e solucionar problemas comuns. Siga o roteiro abaixo para entender cada etapa do processo e garantir que sua automação funcione conforme o esperado.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Entender o problema das instruções repetidas</p>
+items.2.items.1.paragraph = <p>Conhecer a interface de habilidades do Gemini</p>
+items.2.items.2.paragraph = <p>Criar e personalizar uma habilidade para o evento</p>
+items.2.items.3.paragraph = <p>Validar o funcionamento da automação</p>
+
+--- [3] text/text/heading paragraph
+items.3.items.0.heading = Conceitos-chave sobre Habilidades no Gemini
+items.3.items.0.paragraph = <p>Revise os conceitos-chave abaixo para nivelar seu conhecimento antes de colocar a mão na massa.</p>
+
+--- [4] interactive/flashcard/flashcard
+items.4.items.0.back.description = <p>São conjuntos de instruções salvos que automatizam respostas e tarefas recorrentes dentro do Gemini.</p>
+items.4.items.0.front.description = <p>O que são habilidades no Gemini?</p>
+items.4.items.1.back.description = <p>Habilidades são automáticas e reutilizáveis; instruções manuais precisam ser digitadas toda vez.</p>
+items.4.items.1.front.description = <p>Diferença entre habilidade e instrução manual</p>
+items.4.items.2.back.description = <p>Para economizar tempo, evitar erros e garantir respostas padronizadas em todas as interações.</p>
+items.4.items.2.front.description = <p>Por que automatizar instruções recorrentes?</p>
+
+--- [5] interactive/interactive-fullscreen/process
+items.5.items.0.title = Introdução à Criação de Habilidade Personalizada no Gemini
+items.5.items.0.description = <p>Aprenda como criar uma habilidade personalizada no Gemini utilizando o exemplo do Mutirão de Orientação Cidadã. Siga os passos para configurar e testar sua nova habilidade.</p>
+items.5.items.1.title = Resumo do Processo
+items.5.items.1.description = <p>Ao seguir esses passos, você terá uma habilidade pronta para automatizar tarefas recorrentes na organização do seu evento.</p>
+items.5.items.2.title = Acesse o menu de habilidades
+items.5.items.2.description = <p>Abra Gemini, acesse o menu à esquerda, selecione Personalizar, depois Habilidades e escolha a opção Criar manualmente.</p>
+items.5.items.3.title = Defina nome e descrição
+items.5.items.3.description = <p>Informe o nome "Assistente do Mutirão" e a descrição "Organização do Mutirão de Orientação Cidadã".</p>
+items.5.items.4.title = Cole as instruções da habilidade
+items.5.items.4.description = <p>Cole o texto fornecido no próximo bloco como instrução principal da habilidade.</p>
+items.5.items.5.title = Salve e ative a habilidade
+items.5.items.5.description = <p>Salve a habilidade criada e verifique se ela está ativa na lista de habilidades.</p>
+items.5.items.6.title = Teste a habilidade criada
+items.5.items.6.description = <p>No Gemini, acesse a barra lateral, inicie um novo chat, digite <strong>/Assistente do Mutirão</strong> e pergunte: "Quais são as cinco tarefas principais para organizar um mutirão de atendimento de um dia?"</p>
+
+--- [6] text/impact/b
+items.6.items.0.paragraph = <ul><li>I01: Inscrição recebida por e-mail em 10/06. Confirmar presença.</li><li>I02: Inscrição feita pelo formulário online. Dados completos.</li><li>I03: Nome consta na lista da agenda compartilhada. Verificar documentação.</li><li>I04: Inscrição enviada por arquivo Excel da secretaria. Falta telefone de contato.</li></ul><p>Conferir: presença de I01, documentação de I03, telefone de I04.</p>
+
+--- [7] knowledgeCheck/knowledgeCheck/multiple choice
+items.7.items.0.title = Qual é o critério para saber se a habilidade está funcionando corretamente no Gemini?
+items.7.items.0.answers.0.title = A resposta vem em tópicos curtos e termina com a linha “Conferir:”
+items.7.items.0.answers.0.feedback = Este é o critério correto. A resposta deve ser apresentada em tópicos curtos e finalizar com a linha 'Conferir:' para indicar que está de acordo com o padrão esperado.
+items.7.items.0.answers.1.title = A resposta é longa e sem tópicos
+items.7.items.0.answers.1.feedback = Respostas longas e sem tópicos não seguem o padrão estabelecido para o funcionamento correto da habilidade no Gemini.
+items.7.items.0.answers.2.title = Não importa o formato da resposta
+items.7.items.0.answers.2.feedback = O formato da resposta é importante para garantir clareza e padronização, portanto esta opção está incorreta.
+items.7.items.0.answers.3.title = A resposta deve vir em inglês
+items.7.items.0.answers.3.feedback = Não há exigência de que a resposta seja em inglês; o critério correto está relacionado ao formato da resposta.
+
+--- [8] text/text/heading paragraph
+items.8.items.0.heading = Soluções para Problemas Comuns ao Criar ou Ativar Habilidades no Gemini
+items.8.items.0.paragraph = <p>Encontre abaixo soluções para os problemas mais comuns ao criar ou ativar habilidades no Gemini. Expanda cada item para ver como resolver cada situação.</p>
+
+--- [9] interactive/interactive/accordion
+items.9.items.0.title = Problema: Não existe “Habilidades”
+items.9.items.0.description = <p>Se você não encontra a opção “Habilidades”, pode ser porque está usando uma conta de menor de 18 anos, uma conta de trabalho/escola ou a liberação está incompleta.</p><p></p><p>Nesse caso, salve as instruções num arquivo e cole-as no início de cada conversa.</p>
+items.9.items.1.title = Problema: A habilidade não aparece no “/”
+items.9.items.1.description = <p>Confira em Personalizar &gt; Habilidades se está ativa; recarregue a página para garantir que as alterações foram aplicadas.</p><p></p><p>Se continuar não aparecendo, tente salvar novamente ou revisar as configurações da habilidade.</p>
+items.9.items.2.title = Problema: Tenho um Gem antigo
+items.9.items.2.description = <p>Se você tinha um Gem antigo, ele migrou como rascunho inativo em Personalizar.</p><p></p><p>Revise o conteúdo e ative para utilizá-lo como habilidade.</p>
+
+--- [10] text/text/heading paragraph
+items.10.items.0.heading = Desafios Extras: Aprofunde seu Domínio das Habilidades do Gemini
+items.10.items.0.paragraph = <p>Quer ir além? Explore os desafios extras abaixo para aprofundar seu domínio das habilidades do Gemini. Cada desafio inclui uma forma de validar seu sucesso.</p>
+
+--- [11] interactive/interactive/accordion
+items.11.items.0.title = Criar habilidade com Gemini
+items.11.items.0.description = <p>Crie a mesma habilidade usando a opção “Criar com o Gemini”, descrevendo a função em uma frase.</p><p></p><p>Valide comparando as instruções geradas automaticamente com as suas.</p>
+items.11.items.1.title = Combinar duas habilidades
+items.11.items.1.description = <p>Combine /Assistente do Mutirão com /Texto claro (do Essentials) em uma mesma conversa.</p><p></p><p>Valide se a resposta segue as duas instruções corretamente.</p>
+items.11.items.2.title = Limitar tópicos da resposta
+items.11.items.2.description = <p>Edite a habilidade para exigir “no máximo 8 tópicos” nas respostas.</p><p></p><p>Valide se a próxima resposta respeita esse limite.</p>
+
+--- [12] divider/continue/continue
+items.12.items.0.title = Continue
+
+--- [13] text/text/paragraph
+items.13.items.0.paragraph = <p>No próximo módulo, você vai aprender a analisar inscrições de participantes usando planilhas CSV no Gemini, extraindo rapidamente informações essenciais para a logística do evento.</p>
+
+######## licao_02_Analise_e_Decisao_com_Planilhas_de_Inscricoes_via_Gemini.json  title='Análise e Decisão com Planilhas de Inscrições via Gemini'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Como transformar dados em decisões para eventos
+items.0.items.0.paragraph = <p>Ao organizar um evento, analisar as inscrições de participantes de forma eficiente é fundamental para garantir uma logística bem planejada. Automatizar essa análise com inteligência artificial não só economiza tempo, mas também reduz o risco de erros manuais, tornando o processo mais confiável e ágil.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você aprenderá a utilizar o Gemini para analisar inscrições de eventos de forma prática e automatizada. Confira os principais objetivos que serão alcançados:</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Importar e validar uma planilha de inscrições em formato CSV no Gemini.</p>
+items.2.items.1.paragraph = <p>Analisar as inscrições considerando critérios como tema, turno, canal e acessibilidade.</p>
+items.2.items.2.paragraph = <p>Tomar decisões logísticas fundamentadas nos dados analisados.</p>
+items.2.items.3.paragraph = <p>Validar os resultados obtidos e resolver possíveis inconsistências na análise.</p>
+
+--- [3] text/text/heading paragraph
+items.3.items.0.heading = Conceitos essenciais para análise de dados
+items.3.items.0.paragraph = <p>Revise cada flashcard para entender os principais conceitos antes de colocar a mão na massa.</p>
+
+--- [4] interactive/flashcard/flashcard
+items.4.items.0.back.description = <p>Um arquivo CSV é um formato de planilha simples, usado para organizar dados de inscrições de forma estruturada e fácil de importar.</p>
+items.4.items.0.front.description = <p>Arquivo CSV em eventos</p>
+items.4.items.1.back.description = <p>O Gemini processa arquivos enviados, extraindo informações das colunas e linhas para responder perguntas automaticamente.</p>
+items.4.items.1.front.description = <p>Leitura de arquivos pelo Gemini</p>
+items.4.items.2.back.description = <p>Validar os dados significa conferir se as informações analisadas estão corretas antes de tomar decisões importantes.</p>
+items.4.items.2.front.description = <p>Validação dos dados</p>
+
+--- [5] interactive/interactive-fullscreen/process
+items.5.items.0.title = Início do processo
+items.5.items.0.description = <p>Abra um chat novo no Gemini, digite /Assistente do Mutirão e envie o arquivo CSV em Gemini &gt; Caixa de mensagem &gt; Fazer upload de arquivos.</p>
+items.5.items.1.title = Resumo do processo
+items.5.items.1.description = <p>Ao seguir esses passos, você conseguirá importar, analisar e tomar decisões logísticas com base nos dados das inscrições, tudo de forma automatizada e segura.</p>
+items.5.items.2.title = Teste de leitura
+items.5.items.2.description = <p>Peça: “Mostre as 5 primeiras linhas e os nomes das colunas.” Isso garante que o arquivo foi lido corretamente.</p>
+items.5.items.3.title = Análise das contagens
+items.5.items.3.description = <p>Solicite: “Conte as inscrições por tema, por turno e por canal. Faça uma tabela tema × turno. Liste os códigos que pediram acessibilidade.” Assim, você terá uma visão detalhada dos dados.</p>
+items.5.items.4.title = Decisão logística
+items.5.items.4.description = <p>Peça: “Cada atendimento dura 30 minutos; a manhã tem 6 horários por mesa (9h–12h) e a tarde 8 (13h–17h). Quantas mesas por tema em cada turno são necessárias?” Isso ajuda a definir a quantidade de mesas para cada tema e turno.</p>
+
+--- [6] text/impact/b
+items.6.items.0.paragraph = <p><strong>Dica:</strong> Confira uma contagem manualmente. Procure por ‘Previdencia,tarde’ no arquivo usando Ctrl+F: existem 7 ocorrências.</p>
+
+--- [7] knowledgeCheck/knowledgeCheck/multiple choice
+items.7.items.0.title = Qual é o número correto de inscrições para o tema “Previdência” no turno da tarde, segundo a planilha fornecida?
+items.7.items.0.answers.0.title = 7
+items.7.items.0.answers.1.title = 5
+items.7.items.0.answers.2.title = 9
+items.7.items.0.answers.3.title = 4
+
+--- [8] text/text/heading paragraph
+items.8.items.0.heading = Soluções para problemas comuns
+items.8.items.0.paragraph = <p>Durante a análise de planilhas no Gemini, alguns problemas podem surgir. Expanda cada item para ver como lidar com essas situações e garantir que sua análise seja precisa.</p>
+
+--- [9] interactive/interactive/accordion
+items.9.items.0.title = Contagem diferente
+items.9.items.0.description = <p>Se o número de inscrições não bater, peça ao Gemini: “mostre a contagem linha a linha do tema X” e compare manualmente com o arquivo original.</p>
+items.9.items.1.title = Arquivo recusado
+items.9.items.1.description = <p>Se o Gemini não aceitar o arquivo, copie e cole as 31 linhas da planilha diretamente na conversa para garantir a leitura dos dados.</p>
+items.9.items.2.title = Apareceram nomes inventados
+items.9.items.2.description = <p>Se surgirem nomes que não existem, lembre o Gemini: “use só os códigos” e confira se a habilidade personalizada está ativa para evitar erros.</p>
+
+--- [10] text/text/heading paragraph
+items.10.items.0.heading = Gabarito para auto-validação dos resultados
+items.10.items.0.paragraph = <p>Confira cada critério abaixo para validar se suas análises estão corretas. Expanda cada aba para comparar seus resultados com o esperado e garantir a precisão do seu trabalho.</p>
+
+--- [11] interactive/interactive/tabs
+items.11.items.0.title = Por tema
+items.11.items.0.description = <p>Os totais por tema são: Consumidor 9, Previdência 8, Família 7, Trabalho 6. Esses números mostram a distribuição das inscrições entre os diferentes temas do evento.</p><p></p><p>Verifique se os dados extraídos do Gemini correspondem a esses valores. Se houver diferença, revise o arquivo original e repita a análise.</p>
+items.11.items.1.title = Por turno
+items.11.items.1.description = <p>Os totais por turno são: Tarde 18, manhã 12. Isso indica como as inscrições estão distribuídas entre os períodos do evento.</p><p></p><p>Essas informações ajudam a planejar a quantidade de recursos necessários em cada turno. Confirme se os números batem com o resultado do Gemini.</p>
+items.11.items.2.title = Por canal
+items.11.items.2.description = <p>Os canais de inscrição tiveram os seguintes totais: Presencial 11, site 10, WhatsApp 9. Isso mostra por onde os participantes se inscreveram.</p><p></p><p>Esses dados são úteis para avaliar a divulgação do evento. Compare com o que foi extraído do arquivo para garantir precisão.</p>
+items.11.items.3.title = Acessibilidade
+items.11.items.3.description = <p>Quatro inscrições solicitaram acessibilidade: I03, I06, I07, I30. Esses códigos identificam os participantes que precisam de atendimento especial.</p><p></p><p>Certifique-se de que o Gemini listou exatamente esses códigos. Caso contrário, revise o processo de análise.</p>
+items.11.items.4.title = Maior bloco
+items.11.items.4.description = <p>O maior grupo é Previdência à tarde, com 7 inscrições. Esse dado é importante para o planejamento das mesas.</p><p></p><p>Se o seu resultado for diferente, confira a contagem manualmente no arquivo, conforme a dica anterior.</p>
+items.11.items.5.title = Mesas
+items.11.items.5.description = <p>Uma mesa por tema em cada turno é suficiente, pois o maior uso foi de 7 de 8 horários disponíveis.</p><p></p><p>Essa informação ajuda a evitar excesso ou falta de mesas, otimizando o espaço e o atendimento no evento.</p>
+
+--- [12] text/text/heading paragraph
+items.12.items.0.heading = Desafios extras para aprofundamento
+items.12.items.0.paragraph = <p>Quer ir além? Explore os desafios abaixo para ampliar suas habilidades de análise de dados com o Gemini e experimentar novas possibilidades.</p>
+
+--- [13] interactive/interactive/accordion
+items.13.items.0.title = Gráfico de barras por tema e turno
+items.13.items.0.description = <p>Peça ao Gemini um gráfico de barras por tema e turno. Valide se a barra mais alta corresponde a Previdência/tarde.</p>
+items.13.items.1.title = Usar o CSV do Drive
+items.13.items.1.description = <p>Salve o arquivo CSV no Google Drive e use Gemini &gt; Caixa de mensagem &gt; + &gt; Adicionar do Drive. Valide se a resposta é igual à análise anterior.</p>
+items.13.items.2.title = Mudança no número de horários
+items.13.items.2.description = <p>Pergunte ao Gemini: “e se a tarde tivesse só 4 horários por mesa?”. Valide se Previdência à tarde passa a precisar de 2 mesas.</p>
+
+--- [14] divider/continue/continue
+items.14.items.0.title = Continue
+
+--- [15] text/text/paragraph
+items.15.items.0.paragraph = <p>No próximo módulo, você vai aprender a integrar o Gemini ao Gmail, Agenda e Documentos Google, automatizando a comunicação e consolidando os relatórios do evento.</p>
+
+######## licao_03_Integrando_Gmail_Agenda_e_Documentos_Google_para_Comunicacao.json  title='Integrando Gmail, Agenda e Documentos Google para Comunicação e Relatórios'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Automatizando a comunicação e relatórios do evento
+items.0.items.0.paragraph = <p>Integrar o Gemini ao Gmail, Google Agenda e Documentos Google transforma a organização de eventos. Com essas integrações, você pode automatizar tarefas como agendamento de reuniões, envio de comunicados e geração de relatórios, tudo de forma rápida, segura e sem retrabalho. Isso garante que todas as informações essenciais estejam centralizadas, acessíveis e protegidas, facilitando a comunicação entre equipe e participantes.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você vai aprender a integrar o Gemini às principais ferramentas do Google para otimizar a comunicação e consolidar informações do evento. Veja os principais objetivos que você irá alcançar:</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Conectar o Gmail e o Google Agenda ao Gemini de forma segura</p>
+items.2.items.1.paragraph = <p>Extrair e organizar informações importantes de e-mails automaticamente</p>
+items.2.items.2.paragraph = <p>Agendar reuniões e compromissos sem digitação manual</p>
+items.2.items.3.paragraph = <p>Gerar comunicados claros e exportá-los para o Documentos Google</p>
+items.2.items.4.paragraph = <p>Consolidar informações e montar um dossiê final do evento</p>
+items.2.items.5.paragraph = <p>Validar dados e proteger informações pessoais</p>
+
+--- [3] text/text/heading paragraph
+items.3.items.0.heading = Integrações essenciais: Gemini e Google Apps
+items.3.items.0.paragraph = <p>Revise os conceitos-chave para entender como as integrações entre Gemini e Google Apps facilitam a organização de eventos.</p>
+
+--- [4] interactive/flashcard/flashcard
+items.4.items.0.back.description = <p>Permite que o Gemini acesse e-mails para buscar informações, sempre com sua autorização e controle.</p>
+items.4.items.0.front.description = <p>Conexão do Gmail ao Gemini</p>
+items.4.items.1.back.description = <p>Garante que o Gemini encontre apenas o e-mail correto, evitando leitura de mensagens não desejadas.</p>
+items.4.items.1.front.description = <p>Citar o assunto exato</p>
+items.4.items.2.back.description = <p>O Gemini pode criar compromissos automaticamente na Agenda, poupando tempo e evitando erros manuais.</p>
+items.4.items.2.front.description = <p>Automação de eventos na Agenda</p>
+
+--- [5] interactive/interactive-fullscreen/process
+items.5.items.0.title = Introdução à Integração entre Gmail e Google Agenda
+items.5.items.0.description = <p>Nesta lição, você aprenderá como integrar o Gmail e o Google Agenda usando o Gemini para automatizar a extração de informações de e-mails e o agendamento de eventos.</p>
+items.5.items.1.title = Resumo do processo
+items.5.items.1.description = <p>Ao seguir esses passos, você automatiza a extração de dados do e-mail e o agendamento de reuniões, centralizando informações importantes do evento.</p>
+items.5.items.2.title = Iniciar integração
+items.5.items.2.description = <p>Abra Gemini, acesse o menu à esquerda, selecione Personalizar, depois Apps e conecte o Gmail e o Google Agenda. O Gemini solicitará autorização; leia e aceite os termos.</p>
+items.5.items.3.title = Extrair informações do e-mail
+items.5.items.3.description = <p>Em um novo chat, utilizando o /Assistente do Mutirão, solicite: “Encontre no meu Gmail o e-mail com assunto ‘Mutirão de Orientação Cidadã — pedido da coordenação’ e liste todas as datas, horários e prazos.”</p>
+items.5.items.4.title = Criar evento na Agenda
+items.5.items.4.description = <p>Em seguida, peça: “Crie na minha Agenda o evento ‘Reunião de preparação — Mutirão’ na quarta-feira, 02/12/2026, das 15h às 16h.”</p>
+items.5.items.5.title = Validar o resultado
+items.5.items.5.description = <p>Confirme quando o Gemini solicitar e acesse calendar.google.com no dia 02/12/2026 para verificar o evento criado.</p>
+
+--- [6] text/impact/b
+items.6.items.0.paragraph = <p><strong>⚠️ Cuidado:</strong> cite sempre o assunto exato. Pedidos como ‘resuma meus e-mails’ fazem o Gemini ler mensagens que você não escolheu.</p>
+
+--- [7] knowledgeCheck/knowledgeCheck/multiple choice
+items.7.items.0.title = Qual é o critério para saber se a integração entre Gemini, Gmail e Agenda funcionou corretamente?
+items.7.items.0.answers.0.title = Três datas listadas, com o Gmail citado como origem, e o evento visível na Agenda na data correta
+items.7.items.0.answers.0.feedback = Esta opção está correta porque demonstra que as datas foram extraídas do Gmail, o Gemini reconheceu a origem e os eventos foram criados corretamente na Agenda.
+items.7.items.0.answers.1.title = Apenas o evento criado na Agenda
+items.7.items.0.answers.1.feedback = Esta opção está incorreta porque não garante que as datas vieram do Gmail nem que todas as datas foram reconhecidas.
+items.7.items.0.answers.2.title = Apenas as datas extraídas do e-mail
+items.7.items.0.answers.2.feedback = Esta opção está incorreta porque não garante que os eventos foram criados na Agenda.
+items.7.items.0.answers.3.title = O Gemini envia e-mails automaticamente sem confirmação
+items.7.items.0.answers.3.feedback = Esta opção está incorreta porque não está relacionada ao critério de integração entre Gemini, Gmail e Agenda.
+
+--- [8] text/text/heading paragraph
+items.8.items.0.heading = Soluções para problemas comuns de integração
+items.8.items.0.paragraph = <p>Explore as soluções para dificuldades frequentes ao conectar o Gmail e a Agenda ao Gemini. Expanda cada item para ver como resolver rapidamente e seguir com a organização do evento.</p>
+
+--- [9] interactive/interactive/accordion
+items.9.items.0.title = Não consigo acessar seu Gmail
+items.9.items.0.description = <p>Histórico desativado ou app não conectado: reveja a preparação e Personalizar &gt; Apps.</p><p></p><p>Certifique-se de que o histórico está ativado e que as permissões foram concedidas corretamente.</p>
+items.9.items.1.title = E-mail não encontrado
+items.9.items.1.description = <p>Confira se ele chegou na Caixa de entrada; cite o assunto entre aspas.</p><p></p><p>Verifique se o e-mail está na caixa correta e se o assunto foi digitado exatamente como está no e-mail.</p>
+items.9.items.2.title = Evento em horário errado
+items.9.items.2.description = <p>Confira o fuso da Agenda (horário de Brasília); peça a correção ou ajuste no próprio evento.</p><p></p><p>Se necessário, edite o evento manualmente para garantir que o horário esteja correto.</p>
+
+--- [10] text/text/heading paragraph
+items.10.items.0.heading = Desafios extras: integração avançada (opcional)
+items.10.items.0.paragraph = <p>Quer ir além? Experimente estes desafios para dominar ainda mais as integrações do Gemini com Gmail e Agenda. Valide cada ação conforme indicado.</p>
+
+--- [11] interactive/interactive/accordion
+items.11.items.0.title = Incluir descrição no evento
+items.11.items.0.description = <p>Peça para incluir no evento a descrição “Pauta: mesas e comunicado”. Validação: abra o evento e confira se a descrição está correta.</p><p></p><p>Essa prática ajuda a detalhar o objetivo da reunião diretamente no convite da Agenda.</p>
+items.11.items.1.title = Rascunho de resposta à coordenação
+items.11.items.1.description = <p>Peça um rascunho de resposta à coordenação. Validação: o Gemini não envia nada sem você confirmar.</p><p></p><p>Assim, você mantém controle total sobre as mensagens enviadas.</p>
+items.11.items.2.title = Testar desconexão do Gmail
+items.11.items.2.description = <p>Desconecte o Gmail em Personalizar &gt; Apps e repita o passo 2. Validação: o acesso acabou e o Gemini não pode mais buscar e-mails.</p><p></p><p>Isso garante a segurança dos seus dados ao finalizar o processo.</p>
+
+--- [12] interactive/interactive-fullscreen/process
+items.12.items.0.title = Introdução à Geração e Exportação de Comunicado
+items.12.items.0.description = <p>Este processo orienta como criar, simplificar e exportar um comunicado para os inscritos do Mutirão de Orientação Cidadã utilizando o Canvas do Gemini.</p>
+items.12.items.1.title = Resumo do Processo
+items.12.items.1.description = <p>Esses passos garantem que o comunicado seja claro, acessível e compartilhável com a equipe e os inscritos.</p>
+items.12.items.2.title = Abrir o Canvas
+items.12.items.2.description = <p>Em um chat novo, com /Assistente do Mutirão, abra Gemini &gt; Caixa de mensagem &gt; Ferramentas &gt; Canvas.</p>
+items.12.items.3.title = Solicitar comunicado
+items.12.items.3.description = <p>Peça: “Escreva um comunicado aos inscritos do Mutirão de Orientação Cidadã: sábado, 05/12/2026, das 9h às 17h, no Centro Comunitário Vila Serena; atendimento de 30 minutos por ordem de turno; levar documento com foto e papéis do caso. Linguagem simples, até 150 palavras.”</p>
+items.12.items.4.title = Simplificar o texto
+items.12.items.4.description = <p>No Canvas, selecione a frase mais difícil e peça “mais simples”.</p>
+items.12.items.5.title = Exportar para o Documentos Google
+items.12.items.5.description = <p>Exporte em Canvas &gt; Compartilhar/Exportar &gt; Exportar para o Documentos [conferir].</p>
+
+--- [13] knowledgeCheck/knowledgeCheck/multiple choice
+items.13.items.0.title = O que deve conter o comunicado exportado para o Documentos Google para estar correto?
+items.13.items.0.answers.0.title = Data, horário, local, duração do atendimento e o que levar, em até 150 palavras
+items.13.items.0.answers.0.feedback = Esta opção está correta porque um comunicado completo deve conter todas as informações essenciais: data, horário, local, duração do atendimento e o que levar, de forma clara e objetiva, respeitando o limite de até 150 palavras.
+items.13.items.0.answers.1.title = Apenas a data e o local
+items.13.items.0.answers.1.feedback = Esta opção está incorreta porque não inclui todas as informações necessárias, como horário, duração e orientações sobre o que levar.
+items.13.items.0.answers.2.title = Apenas instruções para voluntários
+items.13.items.0.answers.2.feedback = Esta opção está incorreta porque restringe o comunicado apenas a um público específico e não contempla todas as informações essenciais para o evento.
+items.13.items.0.answers.3.title = Um resumo do evento sem detalhes
+items.13.items.0.answers.3.feedback = Esta opção está incorreta porque um resumo sem detalhes não fornece informações suficientes para os participantes se prepararem adequadamente.
+
+--- [14] text/text/heading paragraph
+items.14.items.0.heading = Soluções para problemas no Canvas e Documentos
+items.14.items.0.paragraph = <p>Encontre respostas rápidas para dificuldades comuns ao usar o Canvas e exportar comunicados para o Documentos Google. Expanda cada item para saber como agir.</p>
+
+--- [15] interactive/interactive/accordion
+items.15.items.0.title = O Canvas não abre
+items.15.items.0.description = <p>Peça “abra no Canvas”; confira o limite do plano gratuito.</p><p></p><p>Se o problema persistir, tente recarregar a página ou usar outro navegador.</p>
+items.15.items.1.title = Data ou local errado
+items.15.items.1.description = <p>Corrija direto no Canvas — ele é editável.</p><p></p><p>Faça a alteração antes de exportar para garantir que o comunicado esteja correto.</p>
+items.15.items.2.title = Não acho a exportação
+items.15.items.2.description = <p>Procure no menu de compartilhar do Canvas; alternativa: copiar e colar num documento novo.</p><p></p><p>Assim, você garante que o comunicado estará disponível para todos os envolvidos.</p>
+
+--- [16] text/text/heading paragraph
+items.16.items.0.heading = Desafios extras: comunicação do evento (opcional)
+items.16.items.0.paragraph = <p>Explore desafios avançados para aprimorar a comunicação do evento. Valide cada resultado conforme indicado.</p>
+
+--- [17] interactive/interactive/accordion
+items.17.items.0.title = Versão para WhatsApp
+items.17.items.0.description = <p>Peça uma versão de 3 linhas para WhatsApp. Validação: o texto deve ter no máximo 3 linhas.</p><p></p><p>Ideal para comunicação rápida e objetiva com os inscritos.</p>
+items.17.items.1.title = Imagem para cartaz
+items.17.items.1.description = <p>Peça “crie uma imagem simples para o cartaz do mutirão”. Validação: confira data e local na imagem.</p><p></p><p>Imagens geradas podem conter erros, então sempre revise as informações.</p>
+items.17.items.2.title = Versão formal para ofício
+items.17.items.2.description = <p>Peça a versão formal para um ofício à prefeitura. Validação: o tom deve ser formal e os dados precisam estar corretos.</p><p></p><p>Útil para comunicação institucional com órgãos públicos.</p>
+
+--- [18] interactive/interactive-fullscreen/process
+items.18.items.0.title = Introdução à Montagem do Dossiê Final do Evento
+items.18.items.0.description = <p>Este processo orienta você na preparação e montagem do dossiê final do evento, utilizando ferramentas digitais para garantir organização e precisão das informações.</p>
+items.18.items.1.title = Resumo do Processo
+items.18.items.1.description = <p>Ao consolidar todas as informações, você garante um dossiê completo, organizado e pronto para ser compartilhado.</p>
+items.18.items.2.title = Preparar o Canvas e arquivos
+items.18.items.2.description = <p>Em um chat novo, com /Assistente do Mutirão e o Canvas aberto (Ferramentas &gt; Canvas), envie o CSV de novo ou use + &gt; Adicionar do Drive.</p>
+items.18.items.3.title = Solicitar o Pacote do Mutirão
+items.18.items.3.description = <p>Peça: “Monte o ‘Pacote do Mutirão’ em quatro seções: (1) Resumo do pedido da coordenação, com as datas do e-mail no Gmail; (2) Distribuição de mesas por tema e turno, com as contagens da planilha; (3) Atendimento com acessibilidade, só com os códigos; (4) Comunicado aos inscritos.”</p>
+items.18.items.4.title = Conferir dados e datas
+items.18.items.4.description = <p>Confira cada número com o gabarito da Oficina 2 e cada data com o e-mail.</p>
+items.18.items.5.title = Exportar o documento final
+items.18.items.5.description = <p>Exporte para o Documentos Google com o título Pacote do Mutirão.</p>
+items.18.items.6.title = Validar o evento na Agenda
+items.18.items.6.description = <p>Confira em Google Agenda &gt; 02/12/2026 que o evento de preparação continua lá.</p>
+
+--- [19] text/text/heading paragraph
+items.19.items.0.heading = Checklist de Validação do Dossiê Final
+items.19.items.0.paragraph = <p>Revise cada critério abaixo para garantir que o Pacote do Mutirão está completo e correto. Expanda cada aba para ver detalhes e dicas de validação.</p>
+
+--- [20] interactive/interactive/tabs
+items.20.items.0.title = Documento Pacote do Mutirão
+items.20.items.0.description = <p>O documento deve estar salvo no Google Drive, contendo as quatro seções solicitadas: resumo do pedido, distribuição de mesas, acessibilidade e comunicado.</p><p></p><p>Verifique se todas as informações estão organizadas de forma clara e fácil de localizar para qualquer membro da equipe.</p>
+items.20.items.1.title = Datas certas
+items.20.items.1.description = <p>Confira se as datas estão corretas: 05/12 (9h–17h), 02/12 (15h–16h) e prazo em 27/11.</p><p></p><p>Datas erradas podem comprometer a logística do evento, então revise atentamente cada uma.</p>
+items.20.items.2.title = Contagens certas
+items.20.items.2.description = <p>As contagens devem ser: 9/8/7/6 por tema; 12 de manhã e 18 à tarde; uma mesa por tema e turno.</p><p></p><p>Esses números garantem que todos os participantes serão atendidos de forma eficiente.</p>
+items.20.items.3.title = Acessibilidade só com códigos
+items.20.items.3.description = <p>Inclua apenas os códigos: I03, I06, I07, I30 para o atendimento com acessibilidade.</p><p></p><p>Evite usar nomes ou dados pessoais para proteger a privacidade dos inscritos.</p>
+items.20.items.4.title = Evento de preparação na Agenda
+items.20.items.4.description = <p>O evento de preparação deve estar visível na Google Agenda em 02/12/2026, das 15h às 16h.</p><p></p><p>Isso assegura que todos os envolvidos estejam alinhados quanto à reunião de preparação.</p>
+items.20.items.5.title = Privacidade e desconexão
+items.20.items.5.description = <p>Não inclua dados reais de pessoas no documento final. Se preferir, desconecte o Gmail ao terminar.</p><p></p><p>Essa prática reforça a segurança e o respeito à privacidade dos participantes.</p>
+
+--- [21] divider/continue/continue
+items.21.items.0.title = Continue
+
+--- [22] text/text/paragraph
+items.22.items.0.paragraph = <p>Parabéns! Você concluiu o curso e agora sabe como organizar um evento inteiro usando IA, desde a análise de dados até a comunicação e consolidação dos resultados. Ao validar cada etapa, você garante precisão, segurança e eficiência em todo o processo.</p><p>Continue explorando as possibilidades do Gemini: crie habilidades para tarefas recorrentes e aprofunde seus conhecimentos nos cursos Gemini Workspace - Essentials ou Deep Research - Hands On. O próximo evento organizado por você será ainda mais fácil!</p>

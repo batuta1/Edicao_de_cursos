@@ -1,0 +1,756 @@
+{
+  "numero_da_licao": 7,
+  "position_original": 6,
+  "title": "Síntese e Aplicação Comparativa: Gemini, ChatGPT e Claude",
+  "lesson": {
+    "description": "",
+    "id": "61cd949b-5206-439f-8f3b-015ad860155c",
+    "items": [
+      {
+        "id": "u6wrio9v75qv1v8eklbs8a7a",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bfg5rlydwd0jrpecvyzq8lsn",
+            "heading": "Gemini, ChatGPT ou Claude?",
+            "paragraph": "<p>Esta lição junta tudo o que você fez nos Módulos 0 a 5 e coloca o Gemini ao lado dos outros dois assistentes da trilha. Os três fazem quase as mesmas coisas, com nomes diferentes; o que muda é onde cada um se apoia. Você vai executar a mesma tarefa em dois assistentes, conferir uma afirmação de cada um na fonte oficial e registrar qual usaria — e por quê.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "7528d4f3-5cb0-454b-9d9f-ff7fca4f752a"
+      },
+      {
+        "id": "s1ws3fpsi0e9t6btt3mu1q6y",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rkuv7b87oxl5o49ytrm5x5os",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "6a9ea9c7-1c72-4afa-b724-a398cfb15598"
+      },
+      {
+        "id": "kuvvdg3wv3vb2ngxbtzq2t52",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "i754o2ho7w0d4r5psqm0y2fg",
+            "number": "1",
+            "paragraph": "<p>Relacionar os recursos equivalentes nos três assistentes da trilha.</p>"
+          },
+          {
+            "id": "fz0ktx1ch681h4qb16bv0qmn",
+            "number": "2",
+            "paragraph": "<p>Executar uma tarefa completa no Gemini com segurança, habilidade e verificação.</p>"
+          },
+          {
+            "id": "higk4dp5wgvxn8r8xr8yi1ke",
+            "number": "3",
+            "paragraph": "<p>Justificar a escolha do assistente para uma tarefa.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "64090cc5-67c0-447e-bf1b-afbbf3d0805b"
+      },
+      {
+        "id": "k719451xup9zkjg0jg7i93jj",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "gm1m1l3fi2phr00507k4b03f",
+            "heading": "Mesma função, nomes diferentes",
+            "paragraph": "<p>Abra cada função para ver como ela se chama em cada assistente. Os nomes de interface foram mantidos como aparecem nas ferramentas:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "d5a4f543-1f7a-47cd-be63-f1aa2d0c8421"
+      },
+      {
+        "id": "3b6998ef-9fce-4156-8a8f-4b43d80cbb2a",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "a0d5e3c2-ff36-4f36-bacb-556b5ea712c6",
+            "title": "Preferências permanentes",
+            "description": "<p><b>Gemini:</b> Informações salvas / Personalizar<br><b>ChatGPT:</b> Instruções personalizadas<br><b>Claude:</b> Preferências pessoais, em Configurações &gt; Perfil</p>"
+          },
+          {
+            "id": "32e13407-e3b9-4bcf-afe1-9181ce1bea83",
+            "title": "Lembrar entre conversas",
+            "description": "<p><b>Gemini, ChatGPT e Claude:</b> Memória</p>"
+          },
+          {
+            "id": "200eec49-9996-4c8c-8d7d-45ca78741c17",
+            "title": "Fora do histórico",
+            "description": "<p><b>Gemini e ChatGPT:</b> Chat temporário<br><b>Claude:</b> Chat incógnito</p>"
+          },
+          {
+            "id": "e8305046-ac28-4e07-8e2b-5b7b287e6574",
+            "title": "Instruções reutilizáveis",
+            "description": "<p><b>Gemini:</b> Habilidades<br><b>ChatGPT:</b> GPTs / instruções de projeto<br><b>Claude:</b> Projetos / Skills</p>"
+          },
+          {
+            "id": "097ae656-871d-44da-a321-109e69e1d0a1",
+            "title": "Pasta de trabalho",
+            "description": "<p><b>Gemini:</b> sem equivalente direto (as habilidades guardam instruções, mas não reúnem conversas)<br><b>ChatGPT e Claude:</b> Projetos</p>"
+          },
+          {
+            "id": "b19af769-4d8b-4df2-9252-e418b8d7cf96",
+            "title": "Informação atual",
+            "description": "<p><b>Gemini:</b> Pesquisa Google e verificação<br><b>ChatGPT:</b> Buscar<br><b>Claude:</b> Pesquisa na web</p>"
+          },
+          {
+            "id": "97282124-d8e8-4a65-871d-074fa628e669",
+            "title": "Documento lado a lado",
+            "description": "<p><b>Gemini/ChatGPT:</b> Canvas<br><b>Claude:</b> Artefatos</p>"
+          },
+          {
+            "id": "ca490466-8af9-4204-868f-c98214cbc563",
+            "title": "Apps conectados",
+            "description": "<p><b>Gemini:</b> Gmail, Drive, Agenda (exigem o Histórico ativado)<br><b>ChatGPT:</b> Plugins e apps<br><b>Claude:</b> Conectores</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "76cbe62c-36b3-4e3f-b508-191c00cf3cf0"
+      },
+      {
+        "id": "ay4pikxfq6g58tkmwxkwyz3h",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qt0dw1b57hd6i23hxbot1ygk",
+            "heading": "Revisão rápida: equivalências",
+            "paragraph": "<p>Vire os cartões e tente dizer o nome nos três assistentes antes de ler o verso:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2d417d9e-aeb2-4850-b7de-83a76670e9eb"
+      },
+      {
+        "id": "c5rw2q1b3ohpvt0q83kfth9m",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "warottnljsu5zva80askq3sf",
+            "back": {
+              "type": "description",
+              "description": "<p>Gemini: Informações salvas. ChatGPT: Instruções personalizadas. Claude: Preferências pessoais do perfil.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Preferências permanentes</strong>"
+            }
+          },
+          {
+            "id": "oiit6zdvjysvyta2o0exsgvv",
+            "back": {
+              "type": "description",
+              "description": "<p>Os três chamam de Memória o recurso que lembra informações entre conversas.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Memória</strong>"
+            }
+          },
+          {
+            "id": "u4am5c74131kkenq81610qj8",
+            "back": {
+              "type": "description",
+              "description": "<p>Gemini e ChatGPT: Chat temporário. Claude: Chat incógnito.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Fora do histórico</strong>"
+            }
+          },
+          {
+            "id": "m7pw0924bjpy991qnofhgtmg",
+            "back": {
+              "type": "description",
+              "description": "<p>Gemini: Habilidades. ChatGPT: GPTs ou instruções de projeto. Claude: Projetos ou Skills.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Instruções reutilizáveis</strong>"
+            }
+          },
+          {
+            "id": "lao0ck5315nkr27d6au0lst8",
+            "back": {
+              "type": "description",
+              "description": "<p>Gemini: Gmail, Drive e Agenda, com o Histórico ativado. ChatGPT: Plugins e apps. Claude: Conectores.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Apps conectados</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ab0bdd5a-de71-4a9c-91f9-0002e5fb744c"
+      },
+      {
+        "id": "554cdd64-d6e2-4a88-be12-d4680e2178cb",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "24c88f46-ab10-4211-9424-ef40301c518a",
+            "paragraph": "<p>O diferencial do Gemini é a integração nativa com a conta Google — Gmail, Drive, Agenda e Documentos. A contrapartida é depender do Histórico ativado para essa integração. E o Gemini não tem equivalente direto aos Projetos: as habilidades guardam instruções, mas não reúnem conversas.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "7b87a1f6-2820-48e8-95bc-02d894d5f1dd"
+      },
+      {
+        "id": "x9a1tc5soue1at9mclbm9h57",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fft1ek09nzxk2u3tcjb0cs7n",
+            "heading": "Onde cada um se apoia",
+            "paragraph": "<p>Veja, em cada aba, o ponto forte de cada assistente e o cuidado que ele exige:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ebcbf4f8-21c8-465d-99b8-64c3877c7dfb"
+      },
+      {
+        "id": "15da7b5f-4fe6-40ce-9d24-11fd304620aa",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "a1dc0c75-f5f1-4ec4-968a-b37a67ad67cc",
+            "title": "Gemini",
+            "description": "<p>O Gemini se apoia na conta Google: consulta Gmail, Drive e Agenda e cria eventos a partir da conversa, além de buscar na Pesquisa Google e oferecer a opção Verificar resposta.</p><p></p><p>O cuidado: essa integração exige o Histórico ativado. Antes de conectar, aplique o semáforo de dados.</p>"
+          },
+          {
+            "id": "4bc28d9d-de31-49ee-9147-b7c8a122d427",
+            "title": "ChatGPT",
+            "description": "<p>O ChatGPT organiza trabalhos longos em Projetos, que reúnem conversas, arquivos e instruções, e usa GPTs para instruções reutilizáveis. Plugins e apps ampliam o que ele consegue fazer.</p><p></p><p>O cuidado é o mesmo de sempre: conferir as fontes que ele cita antes de usar a resposta.</p>"
+          },
+          {
+            "id": "c30fd2df-49e0-4530-85cc-9f08b5f06e19",
+            "title": "Claude",
+            "description": "<p>O Claude também trabalha com Projetos e gera Artefatos — documentos que aparecem ao lado da conversa, como o Canvas. Conectores ligam o Claude a outras ferramentas.</p><p></p><p>Para conversas fora do histórico, o Claude usa o chat incógnito.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "e9de4923-660b-4b19-a612-22f4360af446"
+      },
+      {
+        "id": "77b9600d-4611-4fd0-b8ec-87b6fef4ca5d",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "22dbaa86-6ce0-4224-9c45-501d68597a1c",
+            "type": "intro",
+            "title": "Atividade integradora (6 min + 4 min de avaliação)",
+            "isHidden": false,
+            "description": "<p>Use dados públicos. O pedido-base é: “Explique a um cidadão, em 5 tópicos, o que é dado pessoal na LGPD, com fonte oficial.” Se o seu perfil for jurídico, acrescente: “e diferencie dado pessoal de dado pessoal sensível (art. 5º, I e II)”.</p>"
+          },
+          {
+            "id": "a725c80b-c168-4213-984c-ec3f68b6958f",
+            "type": "summary",
+            "title": "Avaliação",
+            "isHidden": false,
+            "description": "<p>Confira a sua tabela com os critérios do checklist logo abaixo. A preferência pode ser por qualquer um dos assistentes — o que conta é o motivo estar apoiado no formato, nas fontes e no erro encontrado.</p>"
+          },
+          {
+            "id": "63380d8d-9025-433b-8b2d-6daa769cf432",
+            "type": "step",
+            "title": "Executar no Gemini",
+            "isHidden": false,
+            "description": "<p>Envie o pedido-base no Gemini. Em seguida, aplique a habilidade criada no Módulo 3: digite “/Texto claro” e cole a resposta.</p>"
+          },
+          {
+            "id": "47f9a574-bafe-43dc-8f9e-b9eda31391b1",
+            "type": "step",
+            "title": "Executar no outro assistente",
+            "isHidden": false,
+            "description": "<p>Envie exatamente o mesmo pedido no ChatGPT ou no Claude.</p>"
+          },
+          {
+            "id": "33fe5c4c-b4f4-4bae-b1f5-65c101ec3b3b",
+            "type": "step",
+            "title": "Conferir no Planalto",
+            "isHidden": false,
+            "description": "<p>Escolha uma afirmação de cada resposta e confira no texto oficial da LGPD (Lei 13.709/2018), no site do Planalto.</p>"
+          },
+          {
+            "id": "ffece6cf-e566-4f30-ac7f-2fbfef359177",
+            "type": "step",
+            "title": "Registrar em tabela",
+            "isHidden": false,
+            "description": "<p>Monte uma tabela com, para cada assistente:</p><ul><li>formato da resposta;</li><li>fontes citadas;</li><li>erro encontrado (se houver);</li><li>preferência;</li><li>motivo.</li></ul>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "24017a7e-0fb4-438c-852a-c901185c391f"
+      },
+      {
+        "id": "c5596cbb-0b4f-47a0-af9b-63887c587949",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f0d1e03a-f489-416c-a4ac-57cc91d50d4c",
+            "paragraph": "<p><strong>Checklist de avaliação — confira cada item:</strong></p><ul><li>Pedido com persona, tarefa, contexto e formato.</li><li>Nenhum dado de sinal vermelho.</li><li>Habilidade aplicada no Gemini.</li><li>Uma afirmação de cada ferramenta conferida no Planalto.</li><li>Comparação com preferência justificada.</li></ul>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "119202c6-4287-4547-87d8-33872c7c8397"
+      },
+      {
+        "id": "83f3cfef-07b8-4c5b-a608-55106e6a853c",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "aa8279bb-0e14-430e-afd4-58d661e26685",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual critério deve ser priorizado ao escolher entre Gemini, ChatGPT e Claude para uma tarefa profissional sensível?",
+            "answers": [
+              {
+                "id": "e374572e-1786-455d-8933-5f073c782d02",
+                "title": "A ferramenta mais popular no momento.",
+                "correct": false,
+                "feedback": "Não. Popularidade não diz nada sobre o formato, as fontes ou as regras de dados da sua tarefa."
+              },
+              {
+                "id": "e690a87d-2894-4e5c-9d70-523efcbf8bf1",
+                "title": "Aquela que entrega o formato necessário, com fontes conferíveis e dentro das regras de dados aplicáveis.",
+                "correct": true,
+                "feedback": "Correto. É o critério estável da trilha: formato necessário, fontes conferíveis e regras de dados aplicáveis."
+              },
+              {
+                "id": "14cd5709-ae22-4aee-a745-6ae0d265d0fb",
+                "title": "Aquela que responde mais rápido, independentemente da fonte.",
+                "correct": false,
+                "feedback": "Não. Em tarefa sensível, uma resposta rápida sem fonte conferível só adia o trabalho de verificação."
+              },
+              {
+                "id": "8fde67ad-1333-4f83-b57f-f5fee88ea685",
+                "title": "A que oferece mais opções de personalização visual.",
+                "correct": false,
+                "feedback": "Não. A aparência da interface não influencia a confiabilidade nem a conformidade com as regras de dados."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "9aaf832f-31e8-4a4f-878d-40ef2c6b151a"
+      },
+      {
+        "id": "ed8e1wc5di2h2lhwfgkih26k",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qfp0j1mprxs4inpsgrxwk08x",
+            "heading": "Associe cada recurso ao assistente",
+            "paragraph": "<p>Arraste cada recurso para o assistente que usa esse nome. Se travar, volte ao comparativo acima.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "32895c6a-06f2-4f22-a875-0013bffe5c41"
+      },
+      {
+        "id": "a4006fe6-da5f-4703-8dd6-30804e5173cf",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "b25e53d9-7d34-4663-9415-199bbfdcbc00",
+            "title": "Artefatos",
+            "pileId": "369fdaad-f8e8-4e87-8dd6-bcc4c48bdb34"
+          },
+          {
+            "id": "02efc272-5cfd-4ada-89a5-907a85b9ccd5",
+            "title": "Plugins e apps",
+            "pileId": "1ba62df4-ccef-4108-91f3-b69bed25622e"
+          },
+          {
+            "id": "fc0a07b5-f5d5-4037-ae95-874ae13a5f10",
+            "title": "Habilidades",
+            "pileId": "b8ab021f-bc70-4829-a131-b796a452e2e7"
+          },
+          {
+            "id": "e95d4ef4-0ef5-45b5-a93a-4001a791d2a3",
+            "title": "Conectores",
+            "pileId": "369fdaad-f8e8-4e87-8dd6-bcc4c48bdb34"
+          },
+          {
+            "id": "0cfbbf20-10f9-4dad-8528-710762d506d1",
+            "title": "Pesquisa Google",
+            "pileId": "b8ab021f-bc70-4829-a131-b796a452e2e7"
+          },
+          {
+            "id": "5b71a1be-63ce-400f-9e07-f529408dba0e",
+            "title": "GPTs",
+            "pileId": "1ba62df4-ccef-4108-91f3-b69bed25622e"
+          }
+        ],
+        "piles": [
+          {
+            "id": "b8ab021f-bc70-4829-a131-b796a452e2e7",
+            "title": "Gemini"
+          },
+          {
+            "id": "1ba62df4-ccef-4108-91f3-b69bed25622e",
+            "title": "ChatGPT"
+          },
+          {
+            "id": "369fdaad-f8e8-4e87-8dd6-bcc4c48bdb34",
+            "title": "Claude"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "sorting",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2f783c9a-c164-4c8f-8758-38952c56953c"
+      },
+      {
+        "id": "1b8e1fab-17c7-41db-ac0a-a2f7c36e1070",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "76adf897-a632-4897-8b53-f6636ef676f9",
+            "paragraph": "<p><strong>Mão na massa — compare as duas respostas.</strong> Cole as respostas no lugar dos colchetes e envie a um dos assistentes:</p><p>“Compare as duas respostas abaixo à mesma pergunta. Monte uma tabela com formato, fontes citadas, afirmações a conferir e clareza para um leigo. Não escolha a vencedora; indique os critérios.<br>[Resposta do Gemini]<br>[Resposta do outro assistente]”</p><p>A tabela organiza a comparação; a decisão sobre qual usar continua sendo sua.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "adc850d0-8677-41a8-b4af-bfebed04f31d"
+      },
+      {
+        "id": "d1beeb63-5074-49f6-bf45-99ba52b5b696",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "b3da9a02-1824-46e4-ae10-225aecc3dd26",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "a2dcdb39-8153-4946-8712-b3a977994bcf"
+      },
+      {
+        "id": "schmptsn54f7nhf2bwl0m1ff",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "eb49yem7l8q2umqyycswjefz",
+            "heading": "Encerramento",
+            "paragraph": "<p>O curso apresentou o app Gemini: sua identidade, o pedido estruturado, o Histórico e a privacidade, a personalização e as habilidades, a pesquisa verificada, o Canvas, os arquivos, as imagens e os apps do Google. O próximo passo é praticar com tarefas de baixo risco, decidindo antes o que pode ser enviado e conectado e conferindo as afirmações relevantes.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2a9e2077-995c-4bbc-bf1d-645080b34603"
+      },
+      {
+        "id": "xzvcsyyy3rxca1lhon1bayd6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "a6kggxggbv267izb8fvqef89",
+            "paragraph": "<p>Para aprofundar, comece pelo primeiro da lista — o Hands On resolve um caso completo com habilidade, planilha, Gmail, Agenda e Canvas:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "1c033c8c-7756-4632-b68b-34cdea597d8e"
+      },
+      {
+        "id": "wmyl6mswbs0h83kgs247vek3",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "eux96h1mkqv3gkifrr99fkqj",
+            "number": "1",
+            "paragraph": "<p>Gemini Chat - Hands On</p>"
+          },
+          {
+            "id": "s1q4u1twq3s1kaa937s9plgp",
+            "number": "2",
+            "paragraph": "<p>Gemini Workspace - Essentials</p>"
+          },
+          {
+            "id": "qob01f3orr0j7aslvn5a3em8",
+            "number": "3",
+            "paragraph": "<p>NotebookLM - Essentials</p>"
+          },
+          {
+            "id": "wias7sa5dt1otfb77oyyct76",
+            "number": "4",
+            "paragraph": "<p>Deep Research - Hands On</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "3bd0f5f0-f8e1-47b8-9bde-6a67aff8cf06"
+      },
+      {
+        "id": "8968bb03-5abf-4f8b-b6de-3fe6cb7c9cdb",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bcc568cc-233d-49f6-9669-95eef35f2c28",
+            "paragraph": "<p><strong>Síntese:</strong> o Gemini rende mais quando conhece a conta do usuário — e, por isso, exige que o usuário decida, antes, o que ele pode conhecer.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "6133c188-6a48-4b44-9d32-3de76c57a397"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Síntese e Aplicação Comparativa: Gemini, ChatGPT e Claude",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "o2w9H3KPfY-qYE6_ZB6-DWWneO3TEDCw",
+    "createdAt": "2026-11-17T16:39:55.585Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 6,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T16:41:41.849Z"
+  }
+}

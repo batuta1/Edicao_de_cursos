@@ -1,0 +1,28 @@
+<!--titulo: Pedido delimitado ou amplo demais?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Este pedido ao Gmail é delimitado ou amplo demais?</h1>
+  <p class="sub">Com o Gmail conectado, cada pedido decide quais mensagens o Gemini vai ler. Classifique os seis pedidos.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: '“Resuma meus e-mails da semana.”', r: 'amplo', p: 'O Gemini leria todas as mensagens da semana — inclusive as que você não escolheu.' },
+      { t: '“Encontre o e-mail com assunto ‘Mutirão de Orientação Cidadã — pedido da coordenação’ e liste as datas.”', r: 'del', p: 'Assunto exato entre aspas: o Gemini lê só aquela mensagem.' },
+      { t: '“Veja o que a coordenação me pediu.”', r: 'amplo', p: 'Sem assunto, o Gemini precisa vasculhar a caixa para adivinhar qual mensagem é.' },
+      { t: '“No e-mail com assunto ‘Mutirão de Orientação Cidadã — pedido da coordenação’, qual é o prazo do comunicado?”', r: 'del', p: 'Uma mensagem identificada e uma pergunta fechada.' },
+      { t: '“Procure nos meus e-mails tudo o que fala de mutirão.”', r: 'amplo', p: 'A busca por palavra pode trazer mensagens de outras pessoas e outros assuntos.' },
+      { t: '“Crie na minha Agenda o evento ‘Reunião de preparação — Mutirão’ em 02/12/2026, das 15h às 16h.”', r: 'del', p: 'Os dados estão no próprio pedido; nenhum e-mail precisa ser lido.' }
+    ],
+    opcoes: { del: 'Delimitado', amplo: 'Amplo demais' },
+    dicaErro: 'Pergunte-se: o pedido aponta uma mensagem específica, pelo assunto exato? Se não aponta, o Gemini vai ler mais do que o necessário.',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'pedidos classificados corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Regra prática: cite sempre o assunto exato. É o que mantém a conta Google sob o seu controle.');
+    }
+  });
+</script>

@@ -1,0 +1,22 @@
+<!--titulo: Pacote do Mutirão: conferência final-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Projeto Final</span>
+  <h1 id="t">Pacote do Mutirão: conferência final</h1>
+  <p class="sub">Abra o documento “Pacote do Mutirão” e a Agenda ao lado desta página. Marque cada item só depois de conferir. O curso segue com os seis marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  checklist([
+    'Documento “Pacote do Mutirão” no Drive, com as quatro seções: resumo do pedido, mesas, acessibilidade e comunicado.',
+    'Datas certas: mutirão em 05/12 (9h–17h), reunião em 02/12 (15h–16h) e prazo em 27/11.',
+    'Contagens certas: 9/8/7/6 por tema; 12 de manhã e 18 à tarde; uma mesa por tema e turno.',
+    'Acessibilidade só com códigos: I03, I06, I07, I30 — nenhum nome.',
+    'Evento “Reunião de preparação — Mutirão” na Agenda em 02/12/2026, das 15h às 16h.',
+    'Nenhum dado real de pessoa no documento; Gmail desconectado, se você preferir.'
+  ], 'lista', 'placar', 'barra', 'itens conferidos', function () {
+    concluir('final', 'Pacote entregue e conferido. A coordenação recebe números e datas que você mesmo checou.');
+  });
+</script>

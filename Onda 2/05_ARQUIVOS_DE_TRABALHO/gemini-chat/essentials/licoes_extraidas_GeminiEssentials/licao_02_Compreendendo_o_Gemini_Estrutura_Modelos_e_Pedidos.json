@@ -1,0 +1,708 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Compreendendo o Gemini: Estrutura, Modelos e Pedidos",
+  "lesson": {
+    "description": "",
+    "id": "9639c0c5-7958-4263-acb7-37829cba420c",
+    "items": [
+      {
+        "id": "m7b6rlhizlf2jsscx860kpke",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b40hy993x035l2rqqr2htss6",
+            "heading": "Um nome, quatro coisas diferentes",
+            "paragraph": "<p>Com a conta verificada no Módulo 0, o foco passa da interface para o assistente em si. “Gemini” é o nome de um app, de uma família de modelos e de um recurso dentro do Gmail — e saber qual é qual evita procurar no lugar errado. Nesta lição você também entende por que o Gemini às vezes erra com toda a segurança e aprende a escrever um pedido que reduz o retrabalho.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "74e0097a-8b51-425d-99cc-ab921e957856"
+      },
+      {
+        "id": "fgeuwq0qxidd638w8ee0r0ds",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "omqz1rj6s8etsdmh6miupknj",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "564f2cce-6dbb-4c62-ba77-29dd62931ba3"
+      },
+      {
+        "id": "jxi82s9qszbbb6co2yakjpyy",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "wjnkbgh1z1ap3zwn7c9kj7wu",
+            "number": "1",
+            "paragraph": "<p>Distinguir app Gemini, modelos Gemini, Gemini no Workspace e Google Assistente.</p>"
+          },
+          {
+            "id": "kjh6igd3atn6u4pewlq7dd0j",
+            "number": "2",
+            "paragraph": "<p>Explicar modelo de linguagem e alucinação.</p>"
+          },
+          {
+            "id": "b7pxyuppj46fvin87bpsftfz",
+            "number": "3",
+            "paragraph": "<p>Redigir um pedido com persona, tarefa, contexto e formato.</p>"
+          },
+          {
+            "id": "zf6zhlj9afv2ed42axil155b",
+            "number": "4",
+            "paragraph": "<p>Refinar uma resposta ao longo da conversa.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "694a9673-13e3-47ca-9319-85c472ca55fd"
+      },
+      {
+        "id": "g5uwvowgewaoh39apr1daz5j",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "n43qsta8qohgldu1knlrsi2q",
+            "heading": "Formas do Gemini e suas funções",
+            "paragraph": "<p>O curso trata do <strong>app Gemini</strong>. Os outros três nomes aparecem em notícias, configurações e no próprio celular. Abra cada item para separá-los:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "dacd5aef-92ec-45e0-a1af-a482ab4ed8a9"
+      },
+      {
+        "id": "7fd6061a-74e8-4f56-89f6-7a5b4b07f0ac",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "bc03a5e1-6ef8-4467-a48b-1b8742bd0231",
+            "title": "App Gemini",
+            "description": "<p>O app Gemini é o assistente de conversa — objeto deste curso. É o sucessor do Bard, renomeado em fevereiro de 2024, e funciona no navegador, no celular e no computador.</p>"
+          },
+          {
+            "id": "f92e3569-8932-49b0-9305-c3c5c77f1a1e",
+            "title": "Modelos Gemini",
+            "description": "<p>Os modelos Gemini são os sistemas de IA que movem o app — em novembro de 2026, a família Gemini 4 (Hydrogen, Argon, Carbon) e os modelos Flash. No seletor de modelo, a escolha é, em essência, entre <strong>resposta rápida</strong> e <strong>raciocínio</strong>; como os nomes comerciais mudam, escolha pela função.</p>"
+          },
+          {
+            "id": "06cdf2fa-d375-400b-99f2-c45688ccd455",
+            "title": "Gemini no Workspace",
+            "description": "<p>O Gemini no Google Workspace é o assistente embutido no Gmail, no Documentos e no Meet. Ele tem regras próprias de uso e de dados e é tema do curso <em>Gemini Workspace - Essentials</em>.</p>"
+          },
+          {
+            "id": "5ed123ce-d9fe-43d7-b8dd-2799c3eded63",
+            "title": "Google Assistente",
+            "description": "<p>O Google Assistente é o assistente de voz anterior, que está sendo substituído pelo Gemini nos celulares. Se o seu telefone ainda abre o Assistente, ele não é o app deste curso.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "79d92979-1c55-4e52-80ef-16da4a190ff9"
+      },
+      {
+        "id": "um5r7tz2dlfu2ghxtbzkikwu",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "af3cx9qwlssg4o85cks055uz",
+            "heading": "Revisão rápida: os quatro nomes",
+            "paragraph": "<p>Vire os cartões e tente lembrar a definição antes de ler o verso:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "e0f2d6f6-2c22-488d-95e1-ec6f4e8b04c8"
+      },
+      {
+        "id": "kut1uks1iwr2vrvosjp6u7t6",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "nf9kn25uikdxj13508pvomf1",
+            "back": {
+              "type": "description",
+              "description": "<p>Assistente de conversa principal, sucessor do Bard desde fevereiro de 2024.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>App Gemini</p>"
+            }
+          },
+          {
+            "id": "jn21ir7jmnj96ego5eqf29iz",
+            "back": {
+              "type": "description",
+              "description": "<p>Sistemas de IA que movem o app (família Gemini 4 e modelos Flash).</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Modelos Gemini</p>"
+            }
+          },
+          {
+            "id": "igfhhchnnt3v8cpucujpllze",
+            "back": {
+              "type": "description",
+              "description": "<p>Assistente integrado ao Gmail, Documentos e Meet, com foco em ambientes profissionais.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Gemini no Workspace</p>"
+            }
+          },
+          {
+            "id": "bzm1ke6er7n1om5bpe3ov8tp",
+            "back": {
+              "type": "description",
+              "description": "<p>Assistente de voz anterior, sendo substituído pelo Gemini nos celulares.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Google Assistente</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "d6dca6a8-d4f3-45cc-8c80-b39179b78d40"
+      },
+      {
+        "id": "dej02hor1ixcdku0ak757rhy",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "g09axnld4k9aejf6jn7mhwb4",
+            "heading": "O que é um Modelo de Linguagem e Alucinação",
+            "paragraph": "<p>Entender como o Gemini gera uma resposta explica tanto o que ele faz bem quanto o tipo de erro que ele comete.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ca57740c-7796-4add-8917-d08e7ce26862"
+      },
+      {
+        "id": "qkrrxfkpd72zenyqcctjzx5a",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zs1ghdbkl248o0srwq8cr8xt",
+            "paragraph": "<p>O núcleo do app é um <strong>modelo de linguagem</strong>: um sistema treinado com grandes volumes de texto, que produz a resposta prevendo a continuação mais provável do seu pedido. Por isso o texto sai fluente e bem organizado.</p><p>O mesmo mecanismo gera a <strong>alucinação</strong> — uma resposta incorreta apresentada com segurança. Ela não é uma falha ocasional, e sim consequência do próprio funcionamento: o modelo produz o que é provável, não o que foi conferido. O tema volta no Módulo 4, dedicado à verificação; em direito, saúde e finanças, a conferência na fonte oficial é obrigatória.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "49100790-92ba-4b20-836b-086e44888687"
+      },
+      {
+        "id": "87edf684-4041-405f-a8cd-8407930809eb",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "035eaf64-a8fe-4499-bf4e-6c85b574285e",
+            "paragraph": "<p>Número de lei, artigo e prazo dão aparência de precisão, mas não provam nada. Se a afirmação importa, confira no texto oficial.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "cc79f7e5-87e7-4af7-9757-b689510f8286"
+      },
+      {
+        "id": "b3jsjsdey3g7ie0kr8fg34y3",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qfk9eucmhdtmay21epszpmgv",
+            "heading": "Estruturando Pedidos Eficazes",
+            "paragraph": "<p>O guia oficial de prompts do Google organiza o pedido em quatro elementos: <strong>persona</strong> (o papel que o Gemini deve assumir), <strong>tarefa</strong> (o que fazer), <strong>contexto</strong> (situação e dados) e <strong>formato</strong> (como entregar). Se você fez o curso do ChatGPT, é o mesmo quadro de tarefa, contexto, público e formato, com a persona no lugar do público.</p><p>A conversa é cumulativa: você refina o resultado com mensagens de acompanhamento, editando a própria mensagem ou pedindo uma nova versão.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "fe3270e5-8d98-4145-94c6-46151bb573b0"
+      },
+      {
+        "id": "t0p2zuzj3vp8z421jplu8757",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bo2toczuayiomkhrg8miq1kk",
+            "heading": "Do vago ao estruturado",
+            "paragraph": "<p>Compare o mesmo pedido escrito de duas formas e veja a variação para o público jurídico:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "a842bc1c-4ce9-4797-b8c9-40fd03e5e8a3"
+      },
+      {
+        "id": "a8961dc4-ab6d-4670-899c-a61d784c1391",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "0d892990-40b4-46c6-a549-587acf673e05",
+            "title": "Pedido vago",
+            "description": "<p>“Faça um aviso do evento.”</p><p></p><p>Que evento? Para quem? Com que tamanho? Sem essas informações, o Gemini preenche as lacunas por conta própria e entrega um texto genérico, que você vai precisar refazer.</p>"
+          },
+          {
+            "id": "8288d4f0-734b-4d40-8186-b3a89963e634",
+            "title": "Pedido estruturado",
+            "description": "<p>“Você é assessor de comunicação de uma associação de bairro. Escreva um aviso sobre um mutirão de orientação gratuita no sábado, das 9h às 17h, no centro comunitário, para moradores sem familiaridade com termos jurídicos. Até 80 palavras, com título e três tópicos.”</p><p></p><p><strong>Persona:</strong> assessor de comunicação. <strong>Tarefa:</strong> escrever o aviso. <strong>Contexto:</strong> mutirão, data, local e público leigo. <strong>Formato:</strong> até 80 palavras, título e três tópicos.</p>"
+          },
+          {
+            "id": "a681b22f-c2b8-4155-b07a-cdad2550c1be",
+            "title": "Variação jurídica",
+            "description": "<p>📌 “Você é advogado de um núcleo de prática jurídica. Explique a um cidadão, em 5 linhas e sem jargão, o que é a audiência de conciliação.”</p><p></p><p>Os mesmos quatro elementos, agora num contexto jurídico: o papel, a explicação pedida, o público leigo e o limite de 5 linhas sem jargão.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2ae80e8e-a077-4153-bb79-501343aa41ea"
+      },
+      {
+        "id": "774773d1-86c3-4ca4-86e2-9f07c9e7da6d",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "5d30cd93-6bf7-440b-bb08-6ba9b19d1b8e",
+            "type": "intro",
+            "title": "Do vago ao estruturado (6 min)",
+            "isHidden": false,
+            "description": "<p>Abra uma conversa nova no Gemini e envie os três pedidos abaixo, nesta ordem, na mesma conversa.</p>"
+          },
+          {
+            "id": "aec16015-6a98-4cfd-80fc-a4f4a9ae734b",
+            "type": "summary",
+            "title": "O que observar",
+            "isHidden": false,
+            "description": "<p>Compare as três respostas: o que o Gemini inventou no pedido vago, o que mudou com o pedido estruturado e como a terceira mensagem aproveitou a conversa sem que você repetisse os dados.</p>"
+          },
+          {
+            "id": "1f8b2f14-b8d6-453a-b0d1-5b4f5540c1d1",
+            "type": "step",
+            "title": "Enviar Pedido Vago",
+            "isHidden": false,
+            "description": "<p>Envie \"Faça um aviso do evento.\" e observe a resposta gerada.</p>"
+          },
+          {
+            "id": "73e22fbe-2a2f-4ebe-a454-b7c4dab0f533",
+            "type": "step",
+            "title": "Enviar Pedido Estruturado",
+            "isHidden": false,
+            "description": "<p>Envie o pedido estruturado do exemplo (assessor de comunicação, mutirão no sábado, até 80 palavras, título e três tópicos).</p>"
+          },
+          {
+            "id": "85aa5c76-875e-4c95-b0f7-5769bee7d3b6",
+            "type": "step",
+            "title": "Refinar para WhatsApp",
+            "isHidden": false,
+            "description": "<p>Peça: “Agora em versão para WhatsApp, com no máximo 3 linhas.”</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2f09d217-db4b-4428-94dd-c8189034a063"
+      },
+      {
+        "id": "56290d81-9029-425e-ba62-0948d56cb8d8",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "6590cafe-e4f4-4f19-9195-baa033b5d29f",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> a segunda resposta tem título, três tópicos e até 80 palavras; a terceira tem no máximo 3 linhas.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "68f6e631-f072-41b5-a348-721d0bcf4e7d"
+      },
+      {
+        "id": "9a3f77fb-b1d4-48b0-913c-4b0f7257a33f",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "4ec48f49-a844-4372-ad7f-da56aee0a6cc",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Ao pedir \"quais são os direitos do consumidor que compra pela internet?\", o Gemini cita \"art. 49 da Lei 8.078/1990, prazo de 15 dias\". A conduta adequada é:",
+            "answers": [
+              {
+                "id": "0bd8c3be-598f-4748-8ce0-7e3029823405",
+                "title": "aceitar, pois há número de lei.",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "f0a6fa64-b90f-4df9-bee5-f5d5cb83b2d3",
+                "title": "pedir ao Gemini que confirme.",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "f5983422-e0c9-42d7-9f08-80f25cd84532",
+                "title": "conferir o artigo no texto oficial do Planalto.",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "fdd8996b-5375-41ac-8276-c24fa49105a7",
+                "title": "trocar de modelo e aceitar a nova resposta.",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto! Conferir o artigo no texto oficial do Planalto é a melhor prática, pois garante que a informação está de acordo com a legislação vigente. O art. 49 prevê 7 dias, e não 15.",
+            "feedbackIncorrect": "Não é a melhor conduta. O número de lei dá aparência de precisão, mas não prova nada — e pedir confirmação ao próprio Gemini ou trocar de modelo só gera outra resposta provável. O caminho é conferir o art. 49 no texto oficial do Planalto: ele prevê 7 dias, não 15."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "6fc0b875-4157-49be-8edd-3f6bce81e210"
+      },
+      {
+        "id": "vzdpu720wkdc0cmnyq0i5esl",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dzpi10f9z5ibkfor1a3am9sd",
+            "heading": "Os quatro elementos do pedido",
+            "paragraph": "<p>Vire os cartões para revisar o que cada elemento informa ao Gemini:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "112df3ed-4674-42e6-9e2d-9384cf9366f8"
+      },
+      {
+        "id": "edklgbcy1t2f4xztlsns8lka",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "v7lj59pwhh8kuzppuy5x4fjl",
+            "back": {
+              "type": "description",
+              "description": "<span>O papel que o Gemini deve assumir</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Persona</strong>"
+            }
+          },
+          {
+            "id": "ucwh9ek5nnnvi78efp7zg5m0",
+            "back": {
+              "type": "description",
+              "description": "<span>O que deve ser feito</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Tarefa</strong>"
+            }
+          },
+          {
+            "id": "y8jckomjwiejm9dbpa89ed0a",
+            "back": {
+              "type": "description",
+              "description": "<span>Situação, público, dados relevantes</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Contexto</strong>"
+            }
+          },
+          {
+            "id": "rlq73li0pxcfqkktxuihfcwd",
+            "back": {
+              "type": "description",
+              "description": "<span>Como entregar (tamanho, estrutura, tom)</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Formato</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "36a26af3-039f-4443-a1cf-af77ff247eac"
+      },
+      {
+        "id": "5acd9810-15c5-4a20-b38d-52ef88c4334a",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "657896a4-781e-470d-adf8-d17f47531d88",
+            "paragraph": "<p><strong>Mão na massa — modelo de pedido.</strong> Copie, preencha os colchetes e use em qualquer tarefa:</p><p><strong>Persona:</strong> você é [papel].</p><p><strong>Tarefa:</strong> [o que deve ser feito].</p><p><strong>Contexto:</strong> [situação, público, dados relevantes].</p><p><strong>Formato:</strong> [tamanho, estrutura, tom].</p><p>Se faltar informação, pergunte antes de responder.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "9c94136a-04d4-4fe3-8984-fbd9922f6380"
+      },
+      {
+        "id": "f99dd8fe-d2d1-4fd3-beb3-cafed0304c7e",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "47e3191b-048f-4d8e-a52c-3872e0319c0b",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "59813e75-1c2f-4998-aa90-8bb1b5798e4d"
+      },
+      {
+        "id": "xfnso74r9ui3xx8j9tq1v4uv",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rssw5kkozbp200szfv8g3zyh",
+            "paragraph": "<p>Você já sabe montar um bom pedido. No Módulo 2, antes de enviar qualquer arquivo ou conectar qualquer app, a pergunta passa a ser outra: para onde vão os dados da conversa? Você vai configurar o Histórico do Gemini, testar o chat temporário e classificar conteúdos no semáforo de dados.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "e72b6cc8-0c2b-4706-b9f0-cc15fd5ab0e1"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Compreendendo o Gemini: Estrutura, Modelos e Pedidos",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "o2w9H3KPfY-qYE6_ZB6-DWWneO3TEDCw",
+    "createdAt": "2026-11-17T16:39:55.585Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T16:40:36.563Z"
+  }
+}

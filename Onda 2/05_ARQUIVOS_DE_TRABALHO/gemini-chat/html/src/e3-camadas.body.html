@@ -1,0 +1,28 @@
+<!--titulo: Qual camada é esta?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Informação salva, memória ou habilidade?</h1>
+  <p class="sub">Seis situações do dia a dia com o Gemini. Para cada uma, indique qual camada de personalização está em ação.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'Você escreveu em Personalizar: “responda sempre em tópicos”.', r: 'info', p: 'É uma preferência que você mesmo escreveu.' },
+      { t: 'Sem você pedir, o Gemini lembrou que você prepara um mutirão — assunto de uma conversa da semana passada.', r: 'mem', p: 'O fato veio de uma conversa anterior do Histórico.' },
+      { t: 'Você digita “/Texto claro” e cola um parágrafo de petição.', r: 'hab', p: 'É um conjunto salvo de instruções, acionado por “/” e o nome.' },
+      { t: 'Você perguntou “o que você sabe sobre mim?” e o Gemini listou fatos das suas conversas.', r: 'mem', p: 'A pergunta revela a memória em uso.' },
+      { t: 'Você registrou: “sou professor de Direito Civil”.', r: 'info', p: 'Fato escrito por você, que vale para todas as conversas.' },
+      { t: 'Você salvou um passo a passo para revisar contratos e o Gemini o usa quando o pedido corresponde.', r: 'hab', p: 'Instruções para uma tarefa específica, que também podem ser acionadas automaticamente.' }
+    ],
+    opcoes: { info: 'Informação salva', mem: 'Memória', hab: 'Habilidade' },
+    dicaErro: 'Pergunte-se: quem escreveu isso? Você (informação salva), o Gemini a partir das conversas (memória) ou é uma receita para uma tarefa (habilidade)?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'situações identificadas',
+    aoConcluir: function () {
+      concluir('final', 'Você escreve as informações salvas; o Gemini extrai a memória do Histórico; a habilidade é a receita de uma tarefa.');
+    }
+  });
+</script>

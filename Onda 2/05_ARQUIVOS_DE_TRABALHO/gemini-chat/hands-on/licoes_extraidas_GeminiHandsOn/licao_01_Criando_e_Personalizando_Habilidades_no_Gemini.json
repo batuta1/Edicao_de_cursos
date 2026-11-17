@@ -1,0 +1,512 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Criando e Personalizando Habilidades no Gemini",
+  "lesson": {
+    "description": "",
+    "id": "c1d4eeb6-ea53-4672-aa26-19339d5711a3",
+    "items": [
+      {
+        "id": "jhrgtyhjct7swk2uux0e363l",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "lipntq162r8b4cv25dp8p4o2",
+            "heading": "Oficina 1 — Crie a habilidade do mutirão",
+            "paragraph": "<p>🎯 <strong>O problema.</strong> Toda conversa você explica de novo: “é um caso fictício, use só os códigos, diga de onde tirou...”. Uma <strong>habilidade</strong> — um pacote de instruções salvo, como uma receita guardada — faz isso por você sempre que você digita “/”. Nesta oficina (20 min), você cria a habilidade que vai acompanhar todas as outras.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "45f6c2f1-de01-460e-992c-431dbf45690d"
+      },
+      {
+        "id": "svgw4ip8pg1lm6pbkprfh13f",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b3uqj53sq6ksmf3oe2vqrr12",
+            "paragraph": "<p>Ao final desta oficina, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "52df5a39-c7cf-4829-8e3e-a15761c5a500"
+      },
+      {
+        "id": "y5q6kjaqpw34tdjolp4fmqkt",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "h16hc7ck5ena9eztc57hs4qf",
+            "number": "1",
+            "paragraph": "<p>Explicar por que instruções repetidas devem virar habilidade.</p>"
+          },
+          {
+            "id": "ababvj2gxdv00tg7yjr3hsv0",
+            "number": "2",
+            "paragraph": "<p>Localizar as habilidades em Personalizar.</p>"
+          },
+          {
+            "id": "qxngznf38d4ja8uu0nkh51m7",
+            "number": "3",
+            "paragraph": "<p>Criar a habilidade “Assistente do Mutirão”.</p>"
+          },
+          {
+            "id": "txovsky5l9s5n8p0vforbxxt",
+            "number": "4",
+            "paragraph": "<p>Acionar a habilidade com “/” e conferir se ela foi seguida.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2ceea8df-9b6d-419c-bde3-c844532f84ec"
+      },
+      {
+        "id": "vv8qh3qzdfl3aw2t9xgg0fe6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "q9doj6gy7955a937ov8xjs1v",
+            "heading": "🧰 O que você vai usar",
+            "paragraph": "<p>Só um recurso: <strong>Personalizar &gt; Habilidades</strong> (as habilidades substituíram os antigos Gems em novembro de 2026). Vire os cartões para revisar o essencial:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "e9f1e0ae-3351-4ce3-b5a5-098cb60ec887"
+      },
+      {
+        "id": "q267yer3tnu9t8yvf4jteek6",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "ngu84fwdma72dnnmqy172v1j",
+            "back": {
+              "type": "description",
+              "description": "<p>Conjuntos de instruções salvos que orientam o Gemini numa tarefa específica. Você aciona digitando “/” e o nome.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>O que são habilidades no Gemini?</p>"
+            }
+          },
+          {
+            "id": "rnlfdxtujbsypfgegtd18a8l",
+            "back": {
+              "type": "description",
+              "description": "<p>A instrução manual vale só para a conversa em que foi colada. A habilidade fica salva e vale em qualquer conversa nova.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Diferença entre habilidade e instrução manual</p>"
+            }
+          },
+          {
+            "id": "ys4647ci5mzdwwb4esinyfbh",
+            "back": {
+              "type": "description",
+              "description": "<p>Porque cada repetição é uma chance de esquecer um detalhe — como “use só os códigos”. Na habilidade, a regra está sempre lá.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Por que automatizar instruções recorrentes?</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ec82282a-da9d-4cc1-a7fb-6c61ada15d23"
+      },
+      {
+        "id": "396677ce-c134-4c07-8dd3-099486c075e8",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "14ec6e84-a857-4da5-b201-6590c32338c5",
+            "type": "intro",
+            "title": "👐 Mão na massa",
+            "isHidden": false,
+            "description": "<p>Cinco passos para criar e testar a habilidade “Assistente do Mutirão”. As instruções a colar estão no bloco logo abaixo deste.</p>"
+          },
+          {
+            "id": "dee7e13b-4d04-47f9-bf3d-b56fd4584f70",
+            "type": "summary",
+            "title": "Pronto",
+            "isHidden": false,
+            "description": "<p>A partir de agora, “/Assistente do Mutirão” abre todas as conversas das próximas oficinas.</p>"
+          },
+          {
+            "id": "3e36c6f3-fc4c-4f13-a808-2072c77d8218",
+            "type": "step",
+            "title": "Abrir Habilidades",
+            "isHidden": false,
+            "description": "<p>Abra <strong>Gemini &gt; Menu à esquerda &gt; Personalizar &gt; Habilidades</strong> e crie uma habilidade nova manualmente.</p>"
+          },
+          {
+            "id": "4198e943-1520-45e1-a825-0ccf55070215",
+            "type": "step",
+            "title": "Nome e descrição",
+            "isHidden": false,
+            "description": "<p>Nome: <strong>Assistente do Mutirão</strong>. Descrição: <strong>Organização do Mutirão de Orientação Cidadã</strong>.</p>"
+          },
+          {
+            "id": "b9d3a673-e374-43e5-99b1-29b95d2f3e6d",
+            "type": "step",
+            "title": "Colar as instruções",
+            "isHidden": false,
+            "description": "<p>Cole no campo de instruções o texto do bloco abaixo, sem alterar.</p>"
+          },
+          {
+            "id": "ba784615-c3d0-45ce-9b68-654f9c8f07a4",
+            "type": "step",
+            "title": "Salvar e ativar",
+            "isHidden": false,
+            "description": "<p>Salve e confira se a habilidade aparece ativa na lista.</p>"
+          },
+          {
+            "id": "78710d4b-d3bf-4f0a-9950-83874604ee73",
+            "type": "step",
+            "title": "Testar",
+            "isHidden": false,
+            "description": "<p>Em <strong>Gemini &gt; Barra lateral &gt; Novo chat</strong>, digite <strong>/Assistente do Mutirão</strong> e pergunte: “Quais são as cinco tarefas principais para organizar um mutirão de atendimento de um dia?”</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "85d4a816-3c03-4705-a811-07b0e48b1a6d"
+      },
+      {
+        "id": "9f50b4a4-04cc-4237-bb5d-173e2e1960c8",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "540d0e3e-e104-4a89-85fe-83eee278c276",
+            "paragraph": "<p><strong>Instruções da habilidade — copie e cole:</strong></p><p>“Você apoia a organização do Mutirão de Orientação Cidadã (caso fictício). Responda em português do Brasil, em tópicos curtos. Identifique inscrições só pelo código (I01, I02...). Sempre que usar dados de arquivo, e-mail ou agenda, diga de onde vieram. Termine toda resposta com uma linha ‘Conferir:’ listando o que a pessoa deve verificar.”</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ff753f22-98ca-4bc6-ad34-f31b94bc5dfd"
+      },
+      {
+        "id": "e4e0bfb8-4642-4aff-b8cd-303cd5b232cf",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "128bbd01-5acc-4032-907b-7426da39f4f8",
+            "type": "MULTIPLE_CHOICE",
+            "title": "✅ Deu certo? Você testou a habilidade com a pergunta das cinco tarefas. O que mostra que ela foi seguida?",
+            "answers": [
+              {
+                "id": "25beddba-dce5-4646-8218-b46c16279155",
+                "title": "A resposta vem em tópicos curtos e termina com a linha “Conferir:”",
+                "correct": true,
+                "feedback": "Correto. Tópicos curtos e a linha “Conferir:” no fim vêm direto das instruções que você colou — é o ponto de controle da oficina."
+              },
+              {
+                "id": "f81c2861-4d43-4118-bd4c-eb75541559ff",
+                "title": "A resposta é longa e sem tópicos",
+                "correct": false,
+                "feedback": "Não. As instruções pedem tópicos curtos; uma resposta longa e corrida indica que a habilidade não foi acionada."
+              },
+              {
+                "id": "ca51d25c-354d-4a27-8f87-050f52a01fbd",
+                "title": "Não importa o formato da resposta",
+                "correct": false,
+                "feedback": "Não. O formato é justamente o que mostra se a habilidade foi seguida: tópicos curtos e a linha “Conferir:”."
+              },
+              {
+                "id": "14502b9c-3e76-42a7-b455-b8a3c910ad1b",
+                "title": "A resposta deve vir em inglês",
+                "correct": false,
+                "feedback": "Não. As instruções pedem português do Brasil."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "a338ab21-13ad-40be-b75a-17f694bec87e"
+      },
+      {
+        "id": "wb9iisziye6te9hp70l8b4kt",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "kriak5jpmakayxkcnhebtzqo",
+            "heading": "🚑 Se travar",
+            "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "fc6cf04b-5234-49a8-842d-ed872b6a04c0"
+      },
+      {
+        "id": "0433d8ea-a379-47b9-b9a0-43d81ba1acc3",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "1b509db5-8d47-4065-aa9b-14bfd628026c",
+            "title": "Problema: Não existe “Habilidades”",
+            "description": "<p>A opção some em conta de menor de 18 anos, conta de trabalho ou escola, ou quando a liberação ainda não chegou à sua conta.</p><p></p><p>Rota alternativa: salve as instruções num arquivo de texto e cole-as no início de cada conversa.</p>"
+          },
+          {
+            "id": "8318d730-79ff-49fa-b27d-66b7dbaa6a80",
+            "title": "Problema: A habilidade não aparece no “/”",
+            "description": "<p>Confira em <strong>Personalizar &gt; Habilidades</strong> se ela está ativa e recarregue a página.</p><p></p><p>Digite o nome exatamente como foi salvo, logo depois da barra.</p>"
+          },
+          {
+            "id": "b82b07f8-058b-4b44-9e08-39937b80305f",
+            "title": "Problema: Tenho um Gem antigo",
+            "description": "<p>Ele migrou como rascunho inativo em <strong>Personalizar</strong>.</p><p></p><p>Revise as instruções e ative para usá-lo como habilidade.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "6a9c770d-16f4-48ab-83d0-0f9f21930a5f"
+      },
+      {
+        "id": "p867pi7y0qzcfic5lu287a43",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "y0lfq808ixixgkf9n8juqu3k",
+            "heading": "🚀 Quer ir além? (opcional)",
+            "paragraph": "<p>Três desafios para quem terminou antes. Cada um traz a forma de validar:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "3b0227d7-db59-4153-a231-44d2631085b6"
+      },
+      {
+        "id": "5edd2ee8-e167-4c66-aaf0-4cdb47952473",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "deef47aa-6a9d-4b34-9238-b4c6f72f7ead",
+            "title": "Criar habilidade com Gemini",
+            "description": "<p>Crie a mesma habilidade com <strong>Criar com o Gemini</strong>, descrevendo a função em uma frase.</p><p></p><p><strong>Validação:</strong> compare as instruções geradas com as suas. O que o Gemini esqueceu?</p>"
+          },
+          {
+            "id": "b30b6307-0c6b-498e-939c-4ee60dca8451",
+            "title": "Combinar duas habilidades",
+            "description": "<p>Combine /Assistente do Mutirão com /Texto claro (do Essentials) na mesma conversa.</p><p></p><p><strong>Validação:</strong> a resposta segue as duas — tópicos curtos, linguagem simples e a linha “Conferir:”.</p>"
+          },
+          {
+            "id": "ab31d59b-bc52-414b-aa13-6cc83e58179f",
+            "title": "Limitar tópicos da resposta",
+            "description": "<p>Edite a habilidade para exigir “no máximo 8 tópicos”.</p><p></p><p><strong>Validação:</strong> a próxima resposta respeita o limite.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "e9a6eabd-54ad-4ea5-a106-4f4d8074c28f"
+      },
+      {
+        "id": "fa507546-ba54-4922-9f90-d8660c1defe0",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "88456a2c-bbef-442f-a16c-517115c072cb",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "3e3641c8-45ea-4c50-a9d2-7dba397a3741"
+      },
+      {
+        "id": "qd2ysn8lqb9ook18kj72be5y",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jussbr023ukq0igs82u2qs3p",
+            "paragraph": "<p>Habilidade criada. Na Oficina 2, ela entra em ação com a planilha de 30 inscrições: você vai descobrir quantas mesas montar em cada turno sem contar nada na mão — e conferir uma contagem para ter certeza.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "0ac6f6b7-b74c-45f4-b9d3-4f5b6496bfbd"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Criando e Personalizando Habilidades no Gemini",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ",
+    "createdAt": "2026-11-17T16:48:25.142Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T16:48:46.154Z"
+  }
+}

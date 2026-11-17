@@ -1,0 +1,911 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Integrando Gmail, Agenda e Documentos Google para Comunicação e Relatórios",
+  "lesson": {
+    "description": "",
+    "id": "17ab5d25-ce95-4cc7-879a-c5da6c0b3728",
+    "items": [
+      {
+        "id": "xwowo2wyth33t1srrixyw32u",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jrsfsvbah93es0g1stasgq7m",
+            "heading": "Oficinas 3 e 4 e Projeto Final — do e-mail ao Pacote do Mutirão",
+            "paragraph": "<p>🎯 <strong>O problema.</strong> O pedido da coordenação está no seu e-mail, com três datas diferentes. Você quer o resumo e a reunião marcada sem copiar nada à mão (Oficina 3), um comunicado claro para quem nunca foi a um atendimento jurídico, num documento que a coordenação consiga abrir (Oficina 4), e, por fim, tudo reunido no Pacote do Mutirão (Projeto Final).</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "302a592e-98a9-4a3a-b432-cb20235dcd74"
+      },
+      {
+        "id": "xxx9eve87itq2i8qvwgbilp4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pb8zv2pmfplf5vuawvho83cg",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ad6b8c9b-2dfc-49cc-915f-9e92c7abedef"
+      },
+      {
+        "id": "w8tnu3dil262ak9vdmc24wac",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "lg5ivqi9qezbd61sh3wt5tuy",
+            "number": "1",
+            "paragraph": "<p>Conectar Gmail e Google Agenda ao Gemini, sabendo o que isso libera.</p>"
+          },
+          {
+            "id": "okhmm6wiokwas9yvisdb8a1l",
+            "number": "2",
+            "paragraph": "<p>Extrair datas, horários e prazos de um e-mail específico, citando o assunto.</p>"
+          },
+          {
+            "id": "fv8x4navvmckionqnk7uitsp",
+            "number": "3",
+            "paragraph": "<p>Criar um evento na Agenda pela conversa e conferi-lo no calendário.</p>"
+          },
+          {
+            "id": "h2jugvg36swrsoxqbgp6iymc",
+            "number": "4",
+            "paragraph": "<p>Redigir o comunicado no Canvas e exportá-lo para o Documentos Google.</p>"
+          },
+          {
+            "id": "vda3tqildwjjvvwk6861zclh",
+            "number": "5",
+            "paragraph": "<p>Montar o Pacote do Mutirão em quatro seções.</p>"
+          },
+          {
+            "id": "dy0fczsxowas26s7t60hbbop",
+            "number": "6",
+            "paragraph": "<p>Conferir cada número e cada data antes de entregar.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "33c4873e-6610-4e08-8e49-f22f9e3a3aa3"
+      },
+      {
+        "id": "v5649371a4m4qvnrv1n2ks16",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "q6y8gw9o6s5j9yolaagp5gh9",
+            "heading": "Oficina 3 — Gmail e Agenda (20 min)",
+            "paragraph": "<p>🧰 Você vai usar os apps do Google conectados ao Gemini (Gmail e Google Agenda) e o e-mail de teste que mandou para si mesmo na preparação. Vire os cartões:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "9b5d1946-df42-4028-aff1-7b347169273c"
+      },
+      {
+        "id": "jt1zqrqagk4bo8zs541vwwpg",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "gv79wbxgcl4o18138hamc7qy",
+            "back": {
+              "type": "description",
+              "description": "<p>Com sua autorização, o Gemini passa a ler e-mails da conta. Exige o Histórico ativado — por isso a preparação pediu para conferi-lo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Conexão do Gmail ao Gemini</p>"
+            }
+          },
+          {
+            "id": "uvbpshfh6632894ch1tn8ti3",
+            "back": {
+              "type": "description",
+              "description": "<p>Com o assunto exato entre aspas, o Gemini lê só aquele e-mail. “Resuma meus e-mails” o faz ler mensagens que você não escolheu.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Citar o assunto exato</p>"
+            }
+          },
+          {
+            "id": "h6xkyy2p7qi4m3tu0gfvucef",
+            "back": {
+              "type": "description",
+              "description": "<p>O Gemini cria o evento a partir da conversa, mas quem confere data e horário no calendário é você.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Automação de eventos na Agenda</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "4fbb07af-700b-4dab-9d19-8d823a5829ee"
+      },
+      {
+        "id": "1bdfe83e-d7c7-4fc2-8cfa-3224299a7010",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "4487354f-48aa-4b00-a068-e092d99bfc4f",
+            "type": "intro",
+            "title": "👐 Mão na massa — Oficina 3",
+            "isHidden": false,
+            "description": "<p>Quatro passos: conectar, extrair as datas, criar o evento e conferir na Agenda.</p>"
+          },
+          {
+            "id": "51c34f3b-fffb-4d8b-94d1-7a8f88e67a75",
+            "type": "summary",
+            "title": "Conferência",
+            "isHidden": false,
+            "description": "<p>As três datas devem vir com o Gmail citado como origem (é a regra da habilidade), e o evento tem de estar no calendário no dia e na hora certos.</p>"
+          },
+          {
+            "id": "3dea0b3b-3357-47b7-911d-74d01d0a063f",
+            "type": "step",
+            "title": "Conectar os apps",
+            "isHidden": false,
+            "description": "<p>Abra <strong>Gemini &gt; Menu à esquerda &gt; Personalizar &gt; Apps conectados</strong> e conecte <strong>Gmail</strong> e <strong>Google Agenda</strong>. O Gemini pede autorização: leia e aceite.</p>"
+          },
+          {
+            "id": "be37a6c1-1368-4550-bf40-42a06b58f292",
+            "type": "step",
+            "title": "Listar as datas do e-mail",
+            "isHidden": false,
+            "description": "<p>Em um chat novo, com /Assistente do Mutirão, peça: “Encontre no meu Gmail o e-mail com assunto ‘Mutirão de Orientação Cidadã — pedido da coordenação’ e liste todas as datas, horários e prazos.”</p>"
+          },
+          {
+            "id": "5683f35b-176a-4aaa-84fe-1a225e12908f",
+            "type": "step",
+            "title": "Criar evento na Agenda",
+            "isHidden": false,
+            "description": "<p>Em seguida, peça: “Crie na minha Agenda o evento ‘Reunião de preparação — Mutirão’ na quarta-feira, 02/12/2026, das 15h às 16h.”</p>"
+          },
+          {
+            "id": "deda67e9-0575-4c19-81d7-d24aea53f7ff",
+            "type": "step",
+            "title": "Confirmar e conferir",
+            "isHidden": false,
+            "description": "<p>Confirme quando o Gemini pedir e abra calendar.google.com no dia 02/12/2026.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "f8b781f9-be9d-471f-b8d9-00a0415a69b4"
+      },
+      {
+        "id": "d51175eb-9673-482d-b61c-14b58f7046bd",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "321e0100-a60b-49cb-bfb4-3ff781718019",
+            "paragraph": "<p>⚠️ <strong>Cuidado:</strong> cite sempre o assunto exato. Pedidos como “resuma meus e-mails” fazem o Gemini ler mensagens que você não escolheu.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ca9d2b94-7757-4497-85cd-9fda0578b1bd"
+      },
+      {
+        "id": "e016feb8-ad12-4019-ae9a-474852997bc2",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "58de3212-5b6f-4f27-8510-542c54e28439",
+            "type": "MULTIPLE_CHOICE",
+            "title": "✅ Deu certo? O que mostra que a Oficina 3 funcionou?",
+            "answers": [
+              {
+                "id": "dd3bef1f-4d09-46a2-bb02-645e844b611e",
+                "title": "Três datas listadas com o Gmail citado como origem (mutirão em 05/12/2026, 9h–17h; reunião em 02/12/2026, 15h–16h; prazo em 27/11/2026) e o evento visível na Agenda em 02/12, das 15h às 16h",
+                "correct": true,
+                "feedback": "Correto. É o ponto de controle completo: as três datas, a origem citada e o evento conferido no calendário."
+              },
+              {
+                "id": "fdfad84c-faab-4269-9cbb-c6e97e6d3a00",
+                "title": "Apenas o evento criado na Agenda",
+                "correct": false,
+                "feedback": "Incompleto. O evento na Agenda não mostra que as datas do e-mail foram lidas — nem que a origem foi citada."
+              },
+              {
+                "id": "55a3875e-ffe1-4cc2-87cb-de7dc979e018",
+                "title": "Apenas as datas extraídas do e-mail",
+                "correct": false,
+                "feedback": "Incompleto. Faltou conferir o evento no calendário, em 02/12/2026, das 15h às 16h."
+              },
+              {
+                "id": "e75003db-20b4-4080-85db-db1e2afaa665",
+                "title": "O Gemini enviou a resposta à coordenação sem pedir confirmação",
+                "correct": false,
+                "feedback": "Não. O Gemini não envia nada sem você — e enviar e-mail não faz parte desta oficina."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "56f151b3-833c-41cb-8cb8-8ad556a90aab"
+      },
+      {
+        "id": "wcyh1q3hgsg5km8j7r33w1wk",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "yxwgi7q45jbppipafzj7um49",
+            "heading": "🚑 Se travar — Gmail e Agenda",
+            "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "7649046b-df81-46a4-a6e7-290b77730ece"
+      },
+      {
+        "id": "6411518d-d026-43e2-99a7-f79aeb02ed75",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "a19b881c-1197-4fb8-a65f-45f0e46ebc2e",
+            "title": "“Não consigo acessar seu Gmail”",
+            "description": "<p>O Histórico está desativado ou o app não foi conectado.</p><p></p><p>Reveja a preparação (myactivity.google.com/product/gemini) e <strong>Personalizar &gt; Apps conectados</strong>.</p>"
+          },
+          {
+            "id": "dc4fa8a9-8106-494a-8d04-df00030a6436",
+            "title": "E-mail não encontrado",
+            "description": "<p>Confira se ele chegou à Caixa de entrada.</p><p></p><p>Cite o assunto entre aspas, exatamente como foi enviado.</p>"
+          },
+          {
+            "id": "670f897b-4c20-4a02-bb16-c955bb8b6e19",
+            "title": "Evento em horário errado",
+            "description": "<p>Confira o fuso da Agenda (horário de Brasília).</p><p></p><p>Peça a correção ao Gemini ou ajuste no próprio evento.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "754d42d4-c888-4837-8ecd-4ba603880390"
+      },
+      {
+        "id": "ll61g4rfkblbckih4mye6qir",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "hqnlu95nsy2c4bkale208naz",
+            "heading": "🚀 Quer ir além? Oficina 3 (opcional)",
+            "paragraph": "<p>Três desafios, cada um com a forma de validar:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "bce1906f-1d10-4cb7-8abb-e8e7dae6049f"
+      },
+      {
+        "id": "fc2cac62-7e85-463a-9636-836116aaa783",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "b19bf51a-a6a3-43ec-967f-4a25caf75fc6",
+            "title": "Incluir descrição no evento",
+            "description": "<p>Peça para incluir no evento a descrição “Pauta: mesas e comunicado”.</p><p></p><p><strong>Validação:</strong> abra o evento e confira.</p>"
+          },
+          {
+            "id": "aa1c51aa-d45f-4028-a0f6-4bacb93ee4ee",
+            "title": "Rascunho de resposta à coordenação",
+            "description": "<p>Peça um rascunho de resposta à coordenação.</p><p></p><p><strong>Validação:</strong> o Gemini não envia nada sem você.</p>"
+          },
+          {
+            "id": "692e53e8-c263-4bae-b68b-cc00bca57ce7",
+            "title": "Testar desconexão do Gmail",
+            "description": "<p>Desconecte o Gmail em <strong>Personalizar &gt; Apps conectados</strong> e repita o pedido das datas.</p><p></p><p><strong>Validação:</strong> o acesso acabou. Reconecte antes do Projeto Final.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "060acb61-104b-4aa7-861f-5d0e262cf7d3"
+      },
+      {
+        "id": "b9500eb1-8f8c-49c5-85ce-e20481782dc0",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "3d76407a-3fac-4635-b40f-dadfea467ebe",
+            "type": "intro",
+            "title": "Oficina 4 — Comunicado no Canvas (20 min)",
+            "isHidden": false,
+            "description": "<p>O comunicado aos inscritos precisa ser claro para quem nunca foi a um atendimento jurídico e ir para um documento que a coordenação consiga abrir. Você vai usar o <strong>Canvas</strong> — uma folha de rascunho ao lado da conversa, que você edita direto — e a exportação para o Documentos Google.</p>"
+          },
+          {
+            "id": "c725c4eb-1795-4dc2-a1d4-a856b156b23a",
+            "type": "summary",
+            "title": "🏁 Ponto de controle",
+            "isHidden": false,
+            "description": "<p>Em <strong>Google Drive &gt; Meu Drive</strong>, um documento com o comunicado — data, horário, local, duração do atendimento e o que levar —, em até 150 palavras.</p>"
+          },
+          {
+            "id": "ad348cd9-d39c-4cc3-a969-6a026880a901",
+            "type": "step",
+            "title": "Abrir o Canvas",
+            "isHidden": false,
+            "description": "<p>Em um chat novo, com /Assistente do Mutirão, abra <strong>Gemini &gt; Caixa de mensagem &gt; Ferramentas &gt; Canvas</strong>.</p>"
+          },
+          {
+            "id": "96a0312c-4a07-48c1-82cd-74e1d2dea1b6",
+            "type": "step",
+            "title": "Pedir o comunicado",
+            "isHidden": false,
+            "description": "<p>Peça: “Escreva um comunicado aos inscritos do Mutirão de Orientação Cidadã: sábado, 05/12/2026, das 9h às 17h, no Centro Comunitário Vila Serena; atendimento de 30 minutos por ordem de turno; levar documento com foto e papéis do caso. Linguagem simples, até 150 palavras.”</p>"
+          },
+          {
+            "id": "eb234a06-8ce3-4d64-b578-f7f72557fbd4",
+            "type": "step",
+            "title": "Simplificar o texto",
+            "isHidden": false,
+            "description": "<p>No Canvas, selecione a frase mais difícil e peça “mais simples”.</p>"
+          },
+          {
+            "id": "c480f81a-a56c-4237-a5d4-8d679ca2f731",
+            "type": "step",
+            "title": "Exportar para o Documentos Google",
+            "isHidden": false,
+            "description": "<p>Exporte pelo menu <strong>Compartilhar</strong> do Canvas: <strong>Canvas &gt; Compartilhar &gt; Exportar para o Documentos</strong>.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "944d08a5-67d9-4a13-ae20-ce68b5a3329d"
+      },
+      {
+        "id": "19aea4cb-fbc0-4db9-867f-50345e9f2d43",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "60b6de03-9261-45c7-a9e7-893c52378f86",
+            "type": "MULTIPLE_CHOICE",
+            "title": "✅ Deu certo? O que o comunicado exportado precisa ter?",
+            "answers": [
+              {
+                "id": "3ba18a05-b9de-4a2b-924a-89e255ef439b",
+                "title": "Data, horário, local, duração do atendimento e o que levar, em até 150 palavras",
+                "correct": true,
+                "feedback": "Correto. São os cinco dados de que um inscrito precisa para comparecer, dentro do limite de 150 palavras."
+              },
+              {
+                "id": "8b05171c-be81-4fe5-994d-0a8f970905df",
+                "title": "Apenas a data e o local",
+                "correct": false,
+                "feedback": "Incompleto. Sem horário, duração e o que levar, o inscrito chega sem os papéis ou na hora errada."
+              },
+              {
+                "id": "3e82e81a-b384-47e7-8107-23226e1ceb9f",
+                "title": "Apenas instruções para voluntários",
+                "correct": false,
+                "feedback": "Não. O comunicado é para os inscritos, não para os voluntários."
+              },
+              {
+                "id": "9a473f8b-dc42-47a0-ba2a-fa9f6777940e",
+                "title": "Um resumo do evento sem detalhes",
+                "correct": false,
+                "feedback": "Não. Sem os detalhes práticos, o comunicado não cumpre a função."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "d9352b02-8683-4e05-8657-18fe47e0a59b"
+      },
+      {
+        "id": "vvj7e1kfot0cddncb73idqse",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "h3qx2h0c1ga9bvb47tg9calo",
+            "heading": "🚑 Se travar — Canvas e Documentos",
+            "paragraph": "<p>Abra o item que corresponde ao seu problema:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "7359f616-c7c7-4b8b-973e-865a9db4cab0"
+      },
+      {
+        "id": "b4968927-9597-4dc6-9700-7bfc1910bf23",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "88b91252-9b57-45c0-964b-ee19cd03e2eb",
+            "title": "O Canvas não abre",
+            "description": "<p>Peça “abra no Canvas”.</p><p></p><p>Se não funcionar, confira se não atingiu o limite do plano gratuito.</p>"
+          },
+          {
+            "id": "ff6d86f6-9e0c-473e-8422-ad7c7efce107",
+            "title": "Data ou local errado",
+            "description": "<p>Corrija direto no Canvas — ele é editável.</p><p></p><p>Faça isso antes de exportar.</p>"
+          },
+          {
+            "id": "54df318c-4ed9-4f4f-b8fe-b197701c851c",
+            "title": "Não acho a exportação",
+            "description": "<p>Procure no menu Compartilhar do Canvas.</p><p></p><p>Alternativa: copiar e colar num documento novo do Documentos Google.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "7671ef16-e299-43d9-a162-e39be6a77ed5"
+      },
+      {
+        "id": "gw6livplmxt4j4eh2oqs56k7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "k71lb06esyrurhuop7np483s",
+            "heading": "🚀 Quer ir além? Oficina 4 (opcional)",
+            "paragraph": "<p>Três desafios, cada um com a forma de validar:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "1e5d299a-3e94-43b5-8ae1-e8754274a4ac"
+      },
+      {
+        "id": "a1dd3602-f945-4c01-9d26-1ce157586b82",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "fd262ee7-fb06-41cb-9947-a567d7101e8c",
+            "title": "Versão para WhatsApp",
+            "description": "<p>Peça uma versão de 3 linhas para WhatsApp.</p><p></p><p><strong>Validação:</strong> no máximo 3 linhas.</p>"
+          },
+          {
+            "id": "81c86b41-0de2-458a-ab78-c6e311feddf6",
+            "title": "Imagem para cartaz",
+            "description": "<p>Peça “crie uma imagem simples para o cartaz do mutirão”.</p><p></p><p><strong>Validação:</strong> confira data e local na imagem — imagens geradas costumam errar texto.</p>"
+          },
+          {
+            "id": "a7197a12-489a-481a-93f9-de82d5dc3827",
+            "title": "Versão formal para ofício",
+            "description": "<p>Peça a versão formal para um ofício à prefeitura.</p><p></p><p><strong>Validação:</strong> o tom muda e os dados continuam certos.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "c2cc1fde-2e82-4fbf-9f62-ead2fe25801b"
+      },
+      {
+        "id": "82466c5f-caf3-4316-ab7f-121f8af25acc",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "6e53f481-bd06-4e8a-9c9c-bd8b17f59098",
+            "type": "intro",
+            "title": "Projeto Final — Pacote do mutirão (26 min)",
+            "isHidden": false,
+            "description": "<p>🎯 <strong>A missão:</strong> a coordenação pediu, para 27/11, o comunicado e a distribuição das mesas. Monte um único documento com tudo, conferido, e deixe a reunião de preparação na Agenda.</p>"
+          },
+          {
+            "id": "bfb8ce8a-2f94-4063-84f4-4384cc8c2781",
+            "type": "summary",
+            "title": "Entrega",
+            "isHidden": false,
+            "description": "<p>Antes de considerar terminado, passe pelo checklist “Como saber que terminou”, logo abaixo.</p>"
+          },
+          {
+            "id": "6bcf101e-4bbe-484e-a063-aa9cf5b638b6",
+            "type": "step",
+            "title": "Preparar a conversa",
+            "isHidden": false,
+            "description": "<p>Em um chat novo, com /Assistente do Mutirão e o Canvas aberto (<strong>Ferramentas &gt; Canvas</strong>), envie o CSV de novo ou use <strong>+ &gt; Adicionar do Drive</strong>.</p>"
+          },
+          {
+            "id": "340860dd-12d3-4b8d-b4a6-b8fb618a1364",
+            "type": "step",
+            "title": "Pedir o Pacote do Mutirão",
+            "isHidden": false,
+            "description": "<p>Peça: “Monte o ‘Pacote do Mutirão’ em quatro seções: (1) Resumo do pedido da coordenação, com as datas do e-mail no Gmail; (2) Distribuição de mesas por tema e turno, com as contagens da planilha; (3) Atendimento com acessibilidade, só com os códigos; (4) Comunicado aos inscritos.”</p>"
+          },
+          {
+            "id": "abf911ff-88d6-40c4-bae8-65ce7b452c92",
+            "type": "step",
+            "title": "Conferir dados e datas",
+            "isHidden": false,
+            "description": "<p>Confira cada número com o gabarito da Oficina 2 e cada data com o e-mail.</p>"
+          },
+          {
+            "id": "de146d50-f82a-4b61-b733-3770d8419e90",
+            "type": "step",
+            "title": "Exportar o documento final",
+            "isHidden": false,
+            "description": "<p>Exporte para o Documentos Google com o título Pacote do Mutirão.</p>"
+          },
+          {
+            "id": "5ff0d114-faba-4dfd-a8b8-4e1a885067df",
+            "type": "step",
+            "title": "Validar o evento na Agenda",
+            "isHidden": false,
+            "description": "<p>Confira em Google Agenda &gt; 02/12/2026 que o evento de preparação continua lá.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "30bb5e42-e4a7-4a4f-af79-1c1ef983051d"
+      },
+      {
+        "id": "oq7rcrfj873qzitb7rd6oenn",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dpz8i5byxyvqsz4pmewqihta",
+            "heading": "🏁 Como saber que terminou",
+            "paragraph": "<p>Confira os seis itens. Abra cada aba e marque mentalmente o que já está certo:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "387bfcfc-e2b0-49c0-bce1-e4a9b3c30ff4"
+      },
+      {
+        "id": "61607e41-e00a-4b26-baf6-f264bea6a32b",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "ee47c58e-111d-4ce6-95a4-9f61604d0e77",
+            "title": "Documento Pacote do Mutirão",
+            "description": "<p>Documento “Pacote do Mutirão” no Drive, com as quatro seções: resumo do pedido, distribuição de mesas, acessibilidade e comunicado.</p>"
+          },
+          {
+            "id": "a052d411-0839-4032-8672-094423b7cdf5",
+            "title": "Datas certas",
+            "description": "<p>05/12 (9h–17h), 02/12 (15h–16h) e prazo em 27/11.</p><p></p><p>Compare cada uma com o e-mail da coordenação.</p>"
+          },
+          {
+            "id": "b7785f1e-106a-4b9e-be58-2f2c2dfd463d",
+            "title": "Contagens certas",
+            "description": "<p>9/8/7/6 por tema; 12 de manhã e 18 à tarde; uma mesa por tema e turno.</p><p></p><p>São os números do gabarito da Oficina 2.</p>"
+          },
+          {
+            "id": "939c281b-a8cc-4dbc-b4c4-bfaa06703e65",
+            "title": "Acessibilidade só com códigos",
+            "description": "<p>Só os códigos: I03, I06, I07, I30.</p><p></p><p>Se aparecer qualquer nome, ele foi inventado — apague.</p>"
+          },
+          {
+            "id": "200b55cf-95ca-4334-bea5-c64f0ba21224",
+            "title": "Evento de preparação na Agenda",
+            "description": "<p>A reunião de preparação continua em <strong>Google Agenda &gt; 02/12/2026</strong>, das 15h às 16h.</p>"
+          },
+          {
+            "id": "6241d7eb-e00f-4d4c-873b-5c4be58ebecc",
+            "title": "Privacidade e desconexão",
+            "description": "<p>Nenhum dado real de pessoa no documento.</p><p></p><p>Se preferir, desconecte o Gmail ao terminar, em Personalizar &gt; Apps conectados.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "964f083e-ce7d-439a-abf2-1f1ce55926fa"
+      },
+      {
+        "id": "e1242135-2430-4bed-8b53-0a0e6f3690e7",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "d97a790a-9288-442d-a781-5fb447ea79cb",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "2faf3cd7-0dff-46c9-b422-e52c3bac32ba"
+      },
+      {
+        "id": "qk77nh59hw6v2li83uvwno8m",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "olt77hjp85e5cr67wuge11di",
+            "paragraph": "<p><strong>Conseguiu! E agora?</strong> Você organizou um evento inteiro conversando: a planilha virou decisão, o e-mail virou compromisso na Agenda, o rascunho virou documento. E você conferiu cada número — é isso que separa ajuda de risco.</p><p>Para continuar, crie uma habilidade para uma tarefa que você repete toda semana. Depois, siga para <em>Gemini Workspace - Essentials</em>, o Gemini dentro do Gmail e do Documentos, ou para <em>Deep Research - Hands On</em>.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "da613cad-d9f8-44d9-b831-7dbe643b3c2c"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Integrando Gmail, Agenda e Documentos Google para Comunicação e Relatórios",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "v-oWPbRj2wF1Ma7H5OwnB0gcbTo7FroJ",
+    "createdAt": "2026-11-17T16:48:25.142Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T16:49:26.097Z"
+  }
+}
