@@ -9,17 +9,19 @@ A Onda 2 é feita **trilha por trilha**. Primeiro entram os cursos que faltam pa
 | 1 | [01-checagem-de-fontes-e-citacoes-essentials.md](01-checagem-de-fontes-e-citacoes-essentials.md) | Checagem de Fontes e Citações | T2 — Pesquisa com IA | ✅ publicado |
 | 2 | [02-revisao-bibliografica-com-ia-hands-on.md](02-revisao-bibliografica-com-ia-hands-on.md) | Revisão Bibliográfica com IA | T2 — Pesquisa com IA | ✅ publicado |
 | 3 | [03-deep-research-hands-on.md](03-deep-research-hands-on.md) | Deep Research | T2 — Pesquisa com IA | ✅ publicado |
-| 4 | [04-chatgpt-chat-essentials.md](04-chatgpt-chat-essentials.md) | ChatGPT Chat | T1 — Começando com assistentes de IA | ⏳ rodar a pesquisa |
-| 5 | [05-gemini-chat-essentials.md](05-gemini-chat-essentials.md) | Gemini Chat | T1 — Começando com assistentes de IA | ⏳ rodar a pesquisa |
+| 4 | [04-chatgpt-chat-essentials.md](04-chatgpt-chat-essentials.md) | ChatGPT Chat | T1 — Começando com assistentes de IA | ✅ publicado |
+| 5 | [05-gemini-chat-essentials.md](05-gemini-chat-essentials.md) | Gemini Chat | T1 — Começando com assistentes de IA | ✅ publicado |
+| 6 | [06-ia-para-analise-de-dados-essentials.md](06-ia-para-analise-de-dados-essentials.md) | IA para Análise de Dados | T8 — Planilhas e dados | ⏳ rodar a pesquisa |
+| 7 | [07-dados-com-python-e-ia-hands-on.md](07-dados-com-python-e-ia-hands-on.md) | Dados com Python e IA (Onda 3, trazido para fechar a T8) | T8 — Planilhas e dados | ⏳ rodar a pesquisa |
 
-## Por que a T1 é a próxima
+## Por que a T8 é a próxima
 
-- **Faltam só 4 cursos para fechar a T1, e os 4 são da Onda 2:** ChatGPT Chat (Essentials e Hands On) e Gemini Chat (Essentials e Hands On). Os outros três cursos da trilha já existem: Claude Chat (Essentials e Hands On) e Claude Skills - Essentials.
-- **É a trilha de entrada do catálogo:**
-  - é pré-requisito da maioria das trilhas da área Geral;
-  - é a primeira trilha de 6 dos 7 perfis gerais.
-- **Os mesmos cursos aparecem nas trilhas de fundamentos das outras áreas** (J1, R1, F1, E1, S1, C1 e TE1). Com eles prontos, a J1 fica dependendo só do contextual "IA no Direito".
-- **Alternativa descartada por enquanto: J2 — Pesquisa e fundamentação jurídica.** Ela fecha com um curso só, Pesquisa jurídica com IA - Hands On. Mas é um curso contextual (R10) que precisa de jurista revisor, e a área Jurídica ainda depende da decisão D4.
+- **T1 e T2 já estão completas** (a T1 fechou em 17/11 com ChatGPT Chat e Gemini Chat).
+- **A T8 é a trilha da área Geral mais perto do fim:** os quatro cursos de Excel (Claude e ChatGPT, Essentials e Hands On) já existem. Faltam só IA para Análise de Dados e Dados com Python e IA, cada um com seu par da D12.
+- **IA para Análise de Dados é o curso que mais trilhas destrava entre os que faltam:** entra em 8 (T8, J4, F2, R4, S4, TE3, E6 e C2). Dados com Python e IA é o último curso de T8, F2 e R4.
+- **J1 e J2 continuam paradas:** cada uma depende de um único curso contextual jurídico (IA no Direito e Pesquisa jurídica com IA). A Pesquisa jurídica não pode ser feita pelo João.
+
+Os prompts 06 e 07 usam a versão 6 sem mudanças na parte comum. O 07 acrescenta uma linha à regra de profundidade: nesse assunto, o código Python que o aluno lê e confere faz parte do curso e não vai para o apêndice técnico.
 
 ## Restante da Onda 2, por trilha (cursos ainda não feitos)
 
@@ -32,9 +34,6 @@ A Onda 2 é feita **trilha por trilha**. Primeiro entram os cursos que faltam pa
   - Construindo Servidores MCP
   - Multiagentes e Segurança em MCP (também estão na T3)
   - MCP com Claude (Onda 3)
-- **T8 Planilhas e dados:**
-  - IA para Análise de Dados
-  - Dados com Python e IA (Onda 3)
 - **T7 Documentos:**
   - Microsoft 365 Copilot
   - DeepL (Onda 3)
