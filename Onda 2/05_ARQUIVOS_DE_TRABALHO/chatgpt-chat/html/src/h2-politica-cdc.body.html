@@ -1,0 +1,28 @@
+<!--titulo: Política × CDC-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Oficina 3 · atividade</span>
+  <h1 id="t">Política × CDC, item por item</h1>
+  <p class="sub">Depois de ler os artigos no Planalto, classifique cada item da política da Loja Aurora. O resultado vai para a seção 2 do relatório final.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <p class="nota">A conclusão vale para este caso fictício e para os artigos lidos na oficina (CDC, arts. 18 e 49).</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'Item 1 — desistência em até 3 dias corridos do recebimento, para compras no site.', r: 'conf', p: 'O art. 49 dá 7 dias para desistir de compra feita fora do estabelecimento.' },
+      { t: 'Item 2 — troca de produto com defeito depende de análise técnica concluída em até 45 dias.', r: 'conf', p: 'O § 1º do art. 18 dá 30 dias para o fornecedor sanar o vício.' },
+      { t: 'Item 3 — produtos em promoção têm as mesmas garantias dos demais.', r: 'ok', p: 'Está de acordo: o art. 18 não traz exceção para promoção.' },
+      { t: 'Item 4 — atendimento por e-mail e chat, de segunda a sexta, das 9h às 18h.', r: 'ok', p: 'Os artigos conferidos não tratam de horário de atendimento; não é um dos conflitos do caso.' },
+      { t: 'Item 5 — resposta a reclamações em até 5 dias úteis.', r: 'ok', p: 'Os artigos conferidos não fixam prazo de resposta a reclamações; não é um dos conflitos do caso.' }
+    ],
+    opcoes: { conf: 'Conflita com o CDC', ok: 'Não é conflito do caso' },
+    dicaErro: 'Volte ao Planalto: o item contraria o art. 49 (7 dias) ou o § 1º do art. 18 (30 dias)?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'itens classificados',
+    aoConcluir: function () {
+      concluir('final', 'Dois conflitos: item 1 × art. 49 (7 dias) e item 2 × art. 18, § 1º (30 dias). É isso que a diretoria precisa corrigir.');
+    }
+  });
+</script>

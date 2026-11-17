@@ -1,0 +1,657 @@
+{
+  "numero_da_licao": 5,
+  "position_original": 4,
+  "title": "Busca, Verificação e Fontes Oficiais",
+  "lesson": {
+    "description": "",
+    "id": "7eba4034-3fd9-45eb-b3ef-c6931611deb8",
+    "items": [
+      {
+        "id": "g6dh2z06t0vfzyipx9fj3ncf",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "njxdnv3uid8tz9twef9kv5c2",
+            "heading": "Do que o ChatGPT sabe ao que ele comprova",
+            "paragraph": "<p>Com o projeto do Módulo 3 configurado, o foco sai do que o ChatGPT sabe e vai para o que ele consegue encontrar e comprovar. Uma resposta com link parece conferida, mas o link pode não dizer o que a frase lhe atribui. Esta lição mostra quando a busca entra em ação e o procedimento de quatro passos para conferir.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "dc10617a-156b-4325-92ea-46714a58b87c"
+      },
+      {
+        "id": "af6xfdtbt4ce31v1xhihaawl",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dig0vvp7t4pyk8q9zcb6bwwe",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "53b9f0d7-8fcd-43fb-9f3b-aab6826e1466"
+      },
+      {
+        "id": "ocjq7vjze76df589chhsevp5",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "bp7p21lofrn8s7hw3zxl5ad5",
+            "number": "1",
+            "paragraph": "<p>Explicar quando a busca na web é acionada e como forçá-la.</p>"
+          },
+          {
+            "id": "yoym6d95gji2xou67rbgvl0i",
+            "number": "2",
+            "paragraph": "<p>Localizar as citações e as fontes de uma resposta.</p>"
+          },
+          {
+            "id": "iz8hoz8d4t50evqcalov7rpn",
+            "number": "3",
+            "paragraph": "<p>Aplicar o procedimento de conferência em quatro passos.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "25514534-b040-4986-8673-8f5260b31837"
+      },
+      {
+        "id": "uld13dvauypav50ax1y7wxb2",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "exm9nnci1j8i9kw52v18cp07",
+            "paragraph": "<p>O modelo, por si, conhece o mundo apenas até a data do seu treinamento. A <strong>busca</strong> permite ao ChatGPT consultar páginas atuais e indicar as fontes usadas. O próprio assistente decide quando buscar — em perguntas sobre fatos recentes, preços ou notícias —, mas você pode forçar a busca pelo botão “+” ou pedindo explicitamente “pesquise na web”. As fontes aparecem como citações no corpo da resposta e numa lista própria.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "74702bf7-7063-40ee-8b58-1e727d524dc5"
+      },
+      {
+        "id": "qh47ezyebugiwh2ggh5pu91p",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "h5rjy8iawyt6417etbgm9zc5",
+            "heading": "Busca e fontes, na interface",
+            "paragraph": "<p>Abra cada item:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "8294fc48-9a5b-4fe8-8cad-5e36450a8424"
+      },
+      {
+        "id": "9bf5e89d-4e18-4c74-88cc-53ba0ad8f792",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "bbb8336c-ef64-4052-bd4f-e74822b6f735",
+            "title": "Quando a busca é acionada automaticamente",
+            "description": "<p>Em perguntas sobre fatos recentes, preços ou notícias, o ChatGPT decide sozinho consultar a web.</p><p></p><p>Se a pergunta não parece “atual”, ele pode responder só com o que aprendeu no treinamento — e é aí que vale forçar a busca.</p>"
+          },
+          {
+            "id": "71f0b1ce-773f-4ac8-995a-b9b186ceb829",
+            "title": "Como forçar a busca manualmente",
+            "description": "<p>Duas formas: no botão <strong>“+”</strong> da caixa de mensagem, escolha a opção de busca na web (o rótulo pode variar entre versões); ou escreva “pesquise na web” no próprio pedido.</p><p></p><p>Use quando a resposta depende de dado atual ou quando você quer as fontes listadas.</p>"
+          },
+          {
+            "id": "78337327-524e-4e4b-bdcf-20ea164a5a75",
+            "title": "Onde localizar as citações e fontes em uma resposta",
+            "description": "<p>As fontes aparecem como citações no corpo da resposta e numa lista própria, aberta pelo botão de fontes ao final da resposta (<strong>ChatGPT &gt; Resposta &gt; botão de fontes</strong>).</p><p></p><p>Citação é ponto de partida, não prova: abra e leia.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "d1f89081-d45d-4cb3-a322-85de735446eb"
+      },
+      {
+        "id": "ut9hpdqbanzkmcx4eygv0lmb",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rrrtympirj2ri7lrhz3p3w54",
+            "heading": "Três situações comuns",
+            "paragraph": "<p>Veja como a busca se comporta em cada caso:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "7cef6751-df42-4207-84ae-3b9c744f17fb"
+      },
+      {
+        "id": "5fc579c4-41ee-4040-a998-43ce2e306daf",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "fcda616d-737c-4c2b-ada0-eddbd0764a6d",
+            "title": "Pergunta sobre fato recente",
+            "description": "<p>Ao perguntar sobre uma decisão judicial recente, o ChatGPT tende a buscar sozinho e cita notícias ou documentos.</p><p></p><p>Confira se a fonte sustenta exatamente o que a resposta afirma: notícia sobre decisão não é a decisão.</p>"
+          },
+          {
+            "id": "ee24ff3c-83de-4b4c-a3ba-1faab1947a3d",
+            "title": "Pergunta forçada a buscar na web",
+            "description": "<p>Com “pesquise na web: …” ou com a busca ativada pelo “+”, o ChatGPT consulta a web mesmo quando não faria isso sozinho, e lista as fontes ao final.</p><p></p><p>Útil para temas que mudam rápido, como preços, prazos e regras recém-alteradas.</p>"
+          },
+          {
+            "id": "c6db86df-3d83-40eb-b09f-a4a139930958",
+            "title": "Pergunta sem fonte disponível",
+            "description": "<p>Em tema muito específico ou pouco documentado, a busca pode não achar fonte. O bom pedido manda o ChatGPT dizer isso em vez de preencher a lacuna.</p><p></p><p>Resposta sem fonte é hipótese: confirme por conta própria antes de usar.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "c5af935b-5ad8-4ec2-ade6-4909a3e46b68"
+      },
+      {
+        "id": "xw3ax5zh3qm05f39967rmbrn",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ffbwsf1gr85qodfq8d8k8nsc",
+            "heading": "Conferir em quatro passos",
+            "paragraph": "<p>Lembra a alucinação do Módulo 1? Uma resposta com link pode continuar errada, porque o link pode não afirmar o que a frase lhe atribui. O procedimento:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "8068b742-ae35-4756-91e8-0c0585ba463b"
+      },
+      {
+        "id": "60030454-59d5-4267-9cff-d6d6cc588f65",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "59a0f892-1465-46c4-b2af-269e18bcec8c",
+            "type": "intro",
+            "title": "Procedimento de conferência",
+            "isHidden": false,
+            "description": "<p>Quatro passos para qualquer afirmação que você vá usar.</p>"
+          },
+          {
+            "id": "5bafc02a-38e4-4ee2-aece-1e768a1ff58c",
+            "type": "summary",
+            "title": "Afirmação conferida",
+            "isHidden": false,
+            "description": "<p>Fonte aberta, trecho localizado, natureza avaliada e segunda fonte independente: só então a afirmação vai para o seu trabalho.</p>"
+          },
+          {
+            "id": "26a8875b-8a69-4ff6-80d5-1ca01e04cbe2",
+            "type": "step",
+            "title": "Abrir",
+            "isHidden": false,
+            "description": "<p>Abra a fonte citada.</p>"
+          },
+          {
+            "id": "990da3e2-844a-4ef2-88cb-49712ee4fc43",
+            "type": "step",
+            "title": "Localizar",
+            "isHidden": false,
+            "description": "<p>Localize o trecho que sustenta a afirmação. Se não achar, a afirmação não está comprovada.</p>"
+          },
+          {
+            "id": "a842582f-bdb5-451b-9102-0187fdc9403c",
+            "type": "step",
+            "title": "Avaliar",
+            "isHidden": false,
+            "description": "<p>Avalie a natureza da fonte: oficial, imprensa, blog ou fórum.</p>"
+          },
+          {
+            "id": "bb149219-f5ef-4359-9fc3-76a11aab8b17",
+            "type": "step",
+            "title": "Triangular",
+            "isHidden": false,
+            "description": "<p>Triangule fatos relevantes com uma segunda fonte independente.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "cba3b543-a8b7-4093-928a-f3ca9aba36c5"
+      },
+      {
+        "id": "98965df2-f701-484d-bf5d-7284c96ac773",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "7dc72118-8dcf-4797-88ec-a0655bd1de37",
+            "paragraph": "<p>⚖️ Em matérias de direito, saúde e finanças, a fonte final é a oficial — Planalto, tribunais, órgãos reguladores —, e a resposta do assistente não substitui profissional habilitado.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "0027bbd8-6c24-4a41-892c-e56fbec6efb0"
+      },
+      {
+        "id": "rot35sauub4i9m4dz9rnv6zv",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "y7sqj3gavfstt9unqs92l7t3",
+            "heading": "Que peso tem esta fonte?",
+            "paragraph": "<p>Decida antes de virar cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "87caf52c-ff84-4697-8a98-33fe05be113e"
+      },
+      {
+        "id": "u3wnoknapk0q05sxb54pslnu",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "tsatcs4rnhjssitn505eez6h",
+            "back": {
+              "type": "description",
+              "description": "<p>Pode ajudar a entender, mas não fecha a questão: confirme na fonte oficial.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Link para blog</p>"
+            }
+          },
+          {
+            "id": "ls9aa9evws28jnzek8rusmsr",
+            "back": {
+              "type": "description",
+              "description": "<p>É a fonte final em direito, saúde e finanças. Ainda assim, localize o trecho exato.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Site oficial do governo</p>"
+            }
+          },
+          {
+            "id": "stfhzm99rbsxrwa924qd78yb",
+            "back": {
+              "type": "description",
+              "description": "<p>A afirmação é hipótese. Não use sem localizar uma fonte você mesmo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Ausência de fonte</p>"
+            }
+          },
+          {
+            "id": "noowlx1b7z0hbzwskcn48c6l",
+            "back": {
+              "type": "description",
+              "description": "<p>Opinião não verificada. Serve, no máximo, de pista para buscar fonte oficial.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Citação de fórum online</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "6998f4fe-1495-47cd-b659-b20871659cd3"
+      },
+      {
+        "id": "ef073b5b-2523-47aa-b9f7-a65c0a1b47d4",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "9f299e88-121d-4660-a5a9-839a858ac15b",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "567305b2-73d5-46ec-aa20-bc7a3eca80a9"
+      },
+      {
+        "id": "a48fec38-3198-4c4f-87f5-efefc5077d24",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "e1124b25-1b02-47b7-8d8c-72e3825d2aff",
+            "type": "intro",
+            "title": "Conferência na fonte (6 min)",
+            "isHidden": false,
+            "description": "<p>Você vai pedir um prazo legal com fonte e conferi-lo no texto oficial.</p>"
+          },
+          {
+            "id": "631d0b0c-440c-40a5-bc72-711e559f0292",
+            "type": "summary",
+            "title": "Prazo confirmado",
+            "isHidden": false,
+            "description": "<p>Você leu o art. 49 no Planalto, e não apenas a frase do ChatGPT. É esse o hábito que a atividade final cobra.</p>"
+          },
+          {
+            "id": "4c108c47-ed92-40f4-be22-ea65c75223e1",
+            "type": "step",
+            "title": "Perguntar com a busca ativada",
+            "isHidden": false,
+            "description": "<p>Com a busca ativada, pergunte: “Qual é o prazo de arrependimento em compras pela internet segundo o Código de Defesa do Consumidor? Cite a fonte oficial.”</p>"
+          },
+          {
+            "id": "3c3e52d7-c9e7-49e8-84b5-3069f81a0d8a",
+            "type": "step",
+            "title": "Abrir a fonte indicada",
+            "isHidden": false,
+            "description": "<p>Abra a fonte indicada e localize o artigo.</p>"
+          },
+          {
+            "id": "88d1883f-ea27-4288-9d4d-6f1f3e307786",
+            "type": "step",
+            "title": "Conferir no Planalto",
+            "isHidden": false,
+            "description": "<p>Confira em <strong>planalto.gov.br/ccivil_03/leis/l8078compilado.htm</strong>, art. 49.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ad046385-edeb-4376-b945-1431c9aa7f1e"
+      },
+      {
+        "id": "626a82ee-03eb-4fc8-be95-9ecd33d362e0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ac7bc1e8-48cd-4dea-878b-0fb44842d8b4",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> prazo de 7 dias confirmado no art. 49 do texto oficial no Planalto.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "871e7c9c-1286-4f91-ba0a-770ea0db1c34"
+      },
+      {
+        "id": "632aaeb3-b0c4-4b04-bc45-268970bcba27",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "a8cd14cf-d746-425b-a791-73aa16bcae41",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você recebeu uma resposta do ChatGPT com um link para um blog sobre legislação. O que deve fazer antes de confiar nessa informação?",
+            "answers": [
+              {
+                "id": "6d81f1c3-ef22-4cad-95e1-c9ede8261742",
+                "title": "Aceitar sem conferir",
+                "correct": false,
+                "feedback": "Não. Blog pode conter erro ou estar desatualizado."
+              },
+              {
+                "id": "90db54d9-c45d-4a1d-9c63-a31caed5c40b",
+                "title": "Procurar a informação em fonte oficial",
+                "correct": true,
+                "feedback": "Correto. O blog pode ajudar a entender, mas a fonte final em direito é a oficial."
+              },
+              {
+                "id": "acd905a1-bd44-490b-becd-de31069032b1",
+                "title": "Pedir ao ChatGPT para confirmar",
+                "correct": false,
+                "feedback": "Não. O próprio modelo pode confirmar o erro; a conferência é sua, na fonte oficial."
+              },
+              {
+                "id": "55451f08-7cec-4fc8-a0b8-a055129adf88",
+                "title": "Ignorar a resposta",
+                "correct": false,
+                "feedback": "Não. A resposta pode estar certa; o que falta é conferi-la na fonte oficial."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "57a9d1f9-0608-4770-a353-e37aca702ff2"
+      },
+      {
+        "id": "332e87aa-1107-4185-9a12-bd1a1f51cc3c",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "c7f9a6df-4ec9-4923-b32a-8090684cb59f",
+            "paragraph": "<p>✋ <strong>Mão na massa.</strong> Modelo de pedido com fonte:</p><p>“Pesquise na web: [pergunta]. Use preferencialmente fontes oficiais. Para cada afirmação, indique o link e copie o trecho da fonte que a sustenta. Se não encontrar fonte, diga isso.”</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "abe13c3e-b5be-4544-ba6b-71352d0d5fdf"
+      },
+      {
+        "id": "wmjxtdt5xf4meuruigk3omoi",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ertlizip7y9pnlvfwq27ktnv",
+            "paragraph": "<p>Próximo passo: no Módulo 5, a conversa ganha novas entradas (arquivo, voz, imagem) e novas saídas (gráfico, imagem, documento). A conferência vem junto: número calculado também se confere.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "c64fea50-3fac-4b52-9b93-372f7f749218"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Busca, Verificação e Fontes Oficiais",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "PcwvUVFfmZ2qUGJkT9oH7JGOHT3sfnJc",
+    "createdAt": "2026-11-17T20:07:37.873Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 4,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T20:08:53.909Z"
+  }
+}

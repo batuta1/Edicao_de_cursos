@@ -1,0 +1,44 @@
+<!--titulo: Monte o seu pedido-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Monte o seu pedido</span>
+  <h1 id="t">Tarefa, contexto, público e formato</h1>
+  <p class="sub">Escolha uma opção em cada elemento e veja o pedido se formar. Depois, copie e envie ao ChatGPT.</p>
+  <div class="grid" id="partes"></div>
+  <h2 style="margin-top:18px">Seu pedido</h2>
+  <pre class="saida" id="saida" aria-live="polite"></pre>
+  <p style="margin:10px 0 0"><button type="button" class="btn principal" id="copiar">Copiar o pedido</button></p>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+  <p class="nota">Falta algum elemento? O pedido ainda funciona, mas o ChatGPT preenche a lacuna por conta própria — e é aí que a resposta fica genérica.</p>
+</section>
+<script>
+  var partes = [
+    { k: 'Tarefa', o: ['Escreva um e-mail convocando a equipe para uma reunião.', 'Explique a diferença entre prescrição e decadência.', 'Resuma em tópicos as regras de arrependimento em compras on-line.'] },
+    { k: 'Contexto', o: ['As reclamações de clientes aumentaram neste mês.', 'O cliente perdeu o prazo para reclamar de um produto.', 'O texto vai para o mural de avisos do escritório.'] },
+    { k: 'Público', o: ['Colegas da equipe de atendimento.', 'Um cliente leigo, sem formação jurídica.', 'Estudantes do primeiro ano de Direito.'] },
+    { k: 'Formato', o: ['Até 6 linhas, com assunto, tom cordial.', 'Em 5 linhas, sem jargão.', 'Três tópicos de uma linha cada.'] }
+  ];
+  var esc = {};
+  var box = document.getElementById('partes');
+  partes.forEach(function (p) {
+    var c = document.createElement('div'); c.className = 'item';
+    var h = document.createElement('h2'); h.textContent = p.k; h.id = 'h-' + p.k; c.appendChild(h);
+    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group'); g.setAttribute('aria-labelledby', h.id);
+    p.o.forEach(function (txt) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = txt; b.setAttribute('aria-pressed', 'false');
+      b.style.textAlign = 'left'; b.style.borderRadius = '12px';
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        esc[p.k] = txt; montar();
+      });
+      g.appendChild(b);
+    });
+    c.appendChild(g); box.appendChild(c);
+  });
+  function montar() {
+    var linhas = partes.map(function (p) { return p.k + ': ' + (esc[p.k] ? esc[p.k] : '[escolha acima]'); });
+    linhas.push('Antes de responder, faça-me até três perguntas se faltar informação.');
+    document.getElementById('saida').textContent = linhas.join('\n');
+  }
+  montar();
+  ligarCopia('copiar', 'saida', 'msg', 'Pedido');
+</script>

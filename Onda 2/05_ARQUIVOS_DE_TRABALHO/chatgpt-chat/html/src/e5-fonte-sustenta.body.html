@@ -1,0 +1,38 @@
+<!--titulo: A fonte sustenta a frase?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade · passo 2 da conferência</span>
+  <h1 id="t">A fonte sustenta a frase?</h1>
+  <p class="sub">Em cada caso, compare a frase da resposta com o trecho que você encontrou ao abrir a fonte. Decida se o trecho sustenta a afirmação.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <p class="nota">Casos ilustrativos. Os trechos do CDC seguem o texto do Planalto (Lei 8.078/1990).</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'Resposta: “O consumidor tem 7 dias para desistir de compra feita pela internet.”',
+        extra: '<strong>Trecho no Planalto (art. 49):</strong> “O consumidor pode desistir do contrato, no prazo de 7 dias a contar de sua assinatura ou do ato de recebimento do produto ou serviço, sempre que a contratação de fornecimento de produtos e serviços ocorrer fora do estabelecimento comercial…”',
+        r: 'sim', p: 'Compra pela internet é contratação fora do estabelecimento, e o prazo é de 7 dias.' },
+      { t: 'Resposta: “O consumidor tem 30 dias úteis para desistir de compra on-line.”',
+        extra: '<strong>Trecho no Planalto (art. 49):</strong> “…no prazo de 7 dias a contar de sua assinatura ou do ato de recebimento do produto…”',
+        r: 'nao', p: 'O link existe, mas o trecho fala em 7 dias. A frase está errada mesmo com fonte.' },
+      { t: 'Resposta: “O fornecedor tem 30 dias para sanar o vício do produto.”',
+        extra: '<strong>Trecho no Planalto (art. 18, § 1º):</strong> “Não sendo o vício sanado no prazo máximo de trinta dias, pode o consumidor exigir…”',
+        r: 'sim', p: 'O § 1º do art. 18 fixa 30 dias.' },
+      { t: 'Resposta: “Segundo o art. 49, a loja pode cobrar o frete de volta de quem desistir.”',
+        extra: '<strong>Trecho no Planalto (art. 49, parágrafo único):</strong> “Se o consumidor exercitar o direito de arrependimento previsto neste artigo, os valores eventualmente pagos, a qualquer título, durante o prazo de reflexão, serão devolvidos, de imediato, monetariamente atualizados.”',
+        r: 'nao', p: 'O trecho diz o contrário: os valores pagos são devolvidos. Fonte citada não é fonte que sustenta.' },
+      { t: 'Resposta: “Produto em promoção não tem garantia contra defeito.” A fonte citada é um blog.',
+        extra: '<strong>No blog:</strong> “Muita gente acha que promoção não tem garantia, mas…” — e o texto não cita nenhum artigo.',
+        r: 'nao', p: 'O próprio blog não afirma isso, e blog não é fonte final em direito: confira no Planalto.' }
+    ],
+    opcoes: { sim: 'Sustenta', nao: 'Não sustenta' },
+    dicaErro: 'Leia o trecho, não o link: ele afirma exatamente o que a frase diz?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'casos conferidos',
+    aoConcluir: function () {
+      concluir('final', 'Abrir, localizar, avaliar e triangular: link na resposta é só o começo.');
+    }
+  });
+</script>

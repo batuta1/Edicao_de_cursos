@@ -1,0 +1,473 @@
+{
+  "numero_da_licao": 4,
+  "position_original": 3,
+  "title": "Analisando Dados e Produzindo Gráficos no ChatGPT",
+  "lesson": {
+    "description": "",
+    "id": "d98481a1-45d6-447f-806b-a9573ab95acb",
+    "items": [
+      {
+        "id": "dso0cg6e94o7j2pncu02uvoj",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "raala546v7nz7kac3yb4145g",
+            "heading": "Oficina 4 — Faça a planilha falar",
+            "paragraph": "<p>São 24 linhas de números. A diretoria quer três frases e um gráfico. Bora. (20 min)</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "5b420630-00c8-44dc-8a8d-d38dcb2d4da8"
+      },
+      {
+        "id": "xeuaada2ftc7r54sejcrk0o2",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zd8s52iw12c1u3q14dr7hlq8",
+            "paragraph": "<p>Ao final desta oficina, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "77708939-4df6-4ee6-ab98-d7084e83fec0"
+      },
+      {
+        "id": "eubs1j3sivmlmo42eftw7ill",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "i8t0qowjwinr1py2dzgoatix",
+            "number": "1",
+            "paragraph": "<p>Conferir se o ChatGPT leu a planilha certa antes de analisar.</p>"
+          },
+          {
+            "id": "d0v91jnch303vpe0mgdeytim",
+            "number": "2",
+            "paragraph": "<p>Obter totais, taxas e uma tabela por categoria.</p>"
+          },
+          {
+            "id": "n9wqcgahg6hjha01rehtqtgp",
+            "number": "3",
+            "paragraph": "<p>Gerar e baixar um gráfico de tendência.</p>"
+          },
+          {
+            "id": "brm1x9cqqyw37hb0j69okqr2",
+            "number": "4",
+            "paragraph": "<p>Conferir à mão pelo menos um número.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "34b2348e-da19-4b53-956b-7ab3590d3547"
+      },
+      {
+        "id": "legmt19mkfvybucwlheiuwtl",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "li0qgwv8vqco2fdvurf9i9e3",
+            "paragraph": "<p>🧰 <strong>O que você vai usar:</strong> a análise de dados do ChatGPT (ele faz as contas de verdade, como uma calculadora que lê planilha) e o arquivo <strong>reclamacoes-loja-aurora.csv</strong>.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "1d334440-239c-4596-a7b4-7eb7ec7ad21a"
+      },
+      {
+        "id": "a57de168-b3b9-49e8-aff0-2a477c83cab8",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "aee8fb63-7dcf-4168-a186-53826f399e64",
+            "type": "intro",
+            "title": "Faça a planilha falar (5 passos)",
+            "isHidden": false,
+            "description": "<p>Primeiro o teste de leitura, depois os números, por fim o gráfico.</p>"
+          },
+          {
+            "id": "196cdfe7-0485-4be1-8f87-b9ec8e754aff",
+            "type": "summary",
+            "title": "Números na mão",
+            "isHidden": false,
+            "description": "<p>Você tem os indicadores, a tabela por categoria e o gráfico salvo. Confira cada valor no gabarito logo abaixo.</p>"
+          },
+          {
+            "id": "273bb497-6c96-46a7-9f2d-acacbe567fc1",
+            "type": "step",
+            "title": "Anexar o CSV",
+            "isHidden": false,
+            "description": "<p>No projeto, abra uma conversa nova e anexe o CSV em <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong>.</p>"
+          },
+          {
+            "id": "6a3bf189-597f-4473-b0f5-196d99208555",
+            "type": "step",
+            "title": "Fazer o teste de leitura",
+            "isHidden": false,
+            "description": "<p>Primeiro, o teste de leitura:</p><p>“Mostre as 5 primeiras linhas e os nomes das colunas.”</p>"
+          },
+          {
+            "id": "1d908b20-0743-4cd5-9c9a-4dc727de19cf",
+            "type": "step",
+            "title": "Pedir os números",
+            "isHidden": false,
+            "description": "<p>Depois, os números:</p><p>“Calcule: total de reclamações, total resolvido e taxa de resolução. Faça uma tabela por categoria com reclamações, resolvidas e taxa. Diga qual mês teve mais reclamações.”</p>"
+          },
+          {
+            "id": "8ef9f431-eaa7-44ee-b343-df955085aca0",
+            "type": "step",
+            "title": "Pedir e baixar o gráfico",
+            "isHidden": false,
+            "description": "<p>E o gráfico:</p><p>“Faça um gráfico de linhas de “Troca ou devolucao” por mês e compare maio–agosto com setembro–outubro.”</p><p>Baixe o gráfico pelo ícone de download no canto do gráfico e salve na pasta <strong>caso-aurora</strong>. No Free, ele vem como imagem; tabelas e gráficos interativos são dos planos pagos.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "deea0f53-a801-492e-a5ad-dfae648ba82b"
+      },
+      {
+        "id": "626293a1-0603-41e1-ae2e-f2d13d213a92",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "aa63933d-2c90-47df-9935-2057b8a29bcb",
+            "paragraph": "<p>💡 <strong>Dica:</strong> confira um número na mão. 46 + 58 = 104 reclamações de troca em setembro e outubro.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "1c15c9af-bfdb-4c05-b7ac-e1c5b6ca620a"
+      },
+      {
+        "id": "28a2734f-ed88-482a-b8e3-faaf1a6051c9",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "a3df4756-92ee-453d-8d14-797e839a87e3",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Por que é importante conferir pelo menos um número manualmente após a análise automática no ChatGPT?",
+            "answers": [
+              {
+                "id": "d0425966-820a-401d-b058-1e50451de769",
+                "title": "A. Para garantir que a IA não cometeu erros na leitura ou cálculo",
+                "correct": true,
+                "feedback": "Correto. Um número conferido mostra se ele leu as 24 linhas e fez a conta certa."
+              },
+              {
+                "id": "5cce6e63-fe61-4e7f-9ce2-62ddf1eddf95",
+                "title": "B. Porque não é necessário confiar na IA",
+                "correct": false,
+                "feedback": "Não. A IA faz as contas de verdade; a conferência serve para pegar erro de leitura ou de cálculo."
+              },
+              {
+                "id": "6a1ae83a-9367-40ac-8b3f-89515386e5dd",
+                "title": "C. Apenas por curiosidade",
+                "correct": false,
+                "feedback": "Não. É a conferência que permite assinar o relatório."
+              },
+              {
+                "id": "4c393dd2-9ff0-4e1a-9264-1f1fedd340fa",
+                "title": "D. Para economizar tempo",
+                "correct": false,
+                "feedback": "Não. Conferir custa um minuto; o objetivo é a precisão, não a pressa."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "65c1001f-8e5e-46c5-964e-e248cde533f9"
+      },
+      {
+        "id": "bplclnyu8i86hvimjo2wpehr",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "vtdyie62it6eradn949pouow",
+            "heading": "🚑 Se travar",
+            "paragraph": "<p>Abra o problema que apareceu para você:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "8b4a2410-f5e6-4b56-bd4a-3096950ebb11"
+      },
+      {
+        "id": "9b6ff380-e5dc-4019-9d6c-a6ab92e51058",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "518196af-e14e-4bfe-8d70-91d0b44e75b4",
+            "title": "Limite de upload ou de análise no Free",
+            "description": "<p>Cole as 25 linhas do CSV direto na conversa e peça os mesmos cálculos.</p>"
+          },
+          {
+            "id": "3e90685b-4141-4e72-a447-0d9b4d19462e",
+            "title": "Números diferentes do gabarito",
+            "description": "<p>Peça “mostre o cálculo passo a passo” e confira se ele leu as 24 linhas de dados.</p>"
+          },
+          {
+            "id": "92509f8b-5f9c-46ba-8472-6cbe7f2181db",
+            "title": "O arquivo virou .csv.txt",
+            "description": "<p>Renomeie a extensão; ou anexe assim mesmo e avise “é um CSV”.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "9307315a-7101-4dcb-9fc4-b83777d5f3d6"
+      },
+      {
+        "id": "4f0e8c6a-e964-499e-9ca7-0162774ed530",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "5b0a7565-6fd2-4261-a885-f443d9debe01",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> os cinco valores do gabarito batem e o gráfico está salvo na pasta <strong>caso-aurora</strong>.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "afaf0a96-072c-4b0e-b811-8d68cd51e599"
+      },
+      {
+        "id": "r3mz9vbe70d5e2jnoqpm7o45",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zy7aputvbjxnkjlwjjqyzx6c",
+            "heading": "🚀 Quer ir além? (opcional)",
+            "paragraph": "<p>Três desafios curtos, cada um com a sua validação:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "b18891ce-8a9b-45a3-ad1a-6c8308187553"
+      },
+      {
+        "id": "2251fb1d-a624-4a57-9cf5-494afeac5c76",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "03eb970f-1aae-47ab-9d76-98b0d3005634",
+            "title": "Peça o prazo médio de troca por mês",
+            "description": "<p><strong>Validação:</strong> sobe de 4–5 dias para 15 (setembro) e 18 (outubro).</p>"
+          },
+          {
+            "id": "9bbd093d-42be-4534-932d-65709ae8516f",
+            "title": "Peça um gráfico de barras empilhadas por categoria",
+            "description": "<p>Validação: outubro é a barra mais alta.</p>"
+          },
+          {
+            "id": "dec5b64f-e84c-41a3-aacd-6cf6e00c28d4",
+            "title": "Pergunte “o que estes dados NÃO permitem concluir?”",
+            "description": "<p><strong>Validação:</strong> ele aponta que coincidência no tempo não prova que a política causou o aumento.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "32ed8b8e-7554-41e9-88cf-e3af1b793c2d"
+      },
+      {
+        "id": "d13f7af8-7174-4eb8-b26e-cbbb20cdd688",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "62cc137a-e650-4637-9941-2025d8b1a5fc",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "e8a002c8-ba0a-4da9-b9f1-63af5ac68faf"
+      },
+      {
+        "id": "yikhobrx6deezhioxd641bp1",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ij08ugn9i18vt281nbd2uxkr",
+            "paragraph": "<p>Próximo passo: no Projeto Final, documento, lei e números viram um relatório de uma página para a diretoria.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "aa6d39f7-b0d2-4c80-9052-3d4467b4431d"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Analisando Dados e Produzindo Gráficos no ChatGPT",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "ZMiUBEJ_TmZAJuv-UeH4tjrUPgxcKpsi",
+    "createdAt": "2026-11-17T20:12:19.614Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 3,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T20:13:05.619Z"
+  }
+}

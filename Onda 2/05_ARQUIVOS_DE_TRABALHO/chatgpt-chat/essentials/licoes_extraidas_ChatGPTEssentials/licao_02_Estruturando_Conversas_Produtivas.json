@@ -1,0 +1,694 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Estruturando Conversas Produtivas",
+  "lesson": {
+    "description": "",
+    "id": "df303247-feff-417d-b798-3cb6bde5d845",
+    "items": [
+      {
+        "id": "aypj1axoyvw7shqiqcd2y8sh",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "thk19a07u76a0z76o6dy4aur",
+            "heading": "Do pedido vago à resposta que serve",
+            "paragraph": "<p>Com a conta verificada no Módulo 0, o foco sai da interface e vai para a qualidade do pedido e da resposta. “Escreva sobre reunião” rende um texto genérico; o mesmo pedido com tarefa, contexto, público e formato rende um e-mail pronto para enviar. Esta lição mostra por que isso acontece e como refinar a resposta sem recomeçar a conversa.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "b532de42-0933-4957-a2c3-15498ae65473"
+      },
+      {
+        "id": "m5lombnvaq295mfmrisms9ar",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "k8xk5oyw2t0azkec7w2qv5rq",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "d0def2b6-052b-4542-bab8-7445434b1071"
+      },
+      {
+        "id": "q5tvbt1abhwrgejk5sdxgu0w",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "l9kewvuvxsga030zn8nfljlu",
+            "number": "1",
+            "paragraph": "<p>Explicar o que é um modelo de linguagem, um prompt, o contexto e a alucinação.</p>"
+          },
+          {
+            "id": "lgys13ky792l8i9pf2yfxq8d",
+            "number": "2",
+            "paragraph": "<p>Distinguir as famílias de modelo \"resposta rápida\" e \"raciocínio\".</p>"
+          },
+          {
+            "id": "ploqg97lhhqcl6sk98ofhcez",
+            "number": "3",
+            "paragraph": "<p>Redigir um pedido com tarefa, contexto, público e formato.</p>"
+          },
+          {
+            "id": "hvyk5ml78t2f568ezeagow6l",
+            "number": "4",
+            "paragraph": "<p>Refinar uma resposta editando, regenerando ou ramificando a conversa.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "27868da2-2aba-4675-9c27-59ef5a8e1169"
+      },
+      {
+        "id": "tfpsxr1a7l24q6l8jhw5cv6d",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qbs3s1oswy93v0gijthbnwpx",
+            "paragraph": "<p>O núcleo do ChatGPT é um <strong>modelo de linguagem</strong>: um sistema treinado com grandes volumes de texto que produz respostas prevendo, passo a passo, a continuação mais provável de um pedido. Pense num redator muito experiente que escreve sem consultar arquivos: produz textos fluentes, mas pode errar datas, números e referências sem perceber.</p><p>Esse erro apresentado com segurança se chama <strong>alucinação</strong>. Não é falha ocasional, e sim consequência do próprio modo de funcionamento; por isso, toda resposta com fato verificável — norma, número, data, citação — deve ser conferida antes do uso. O conceito volta no Módulo 4, dedicado à verificação, e na atividade final.</p><p>O pedido que você escreve é o <strong>prompt</strong>. O conjunto de mensagens que o modelo considera ao responder é o <strong>contexto</strong>, e seu tamanho máximo, a <strong>janela de contexto</strong>: no Free, a entrada comporta cerca de 12 páginas de texto no modo de resposta rápida, segundo a página oficial de preços. Por isso, conversas muito longas podem “esquecer” o início.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "6b4cab09-08e6-4264-9150-adfabcdb7822"
+      },
+      {
+        "id": "oeyh3lukg2r9cbmho1348q92",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "imqtxq8hm8cyaxweuhgiy6gf",
+            "heading": "Quatro termos para guardar",
+            "paragraph": "<p>Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "94b7b229-54eb-47d1-bda5-9af0fab13600"
+      },
+      {
+        "id": "wszmt5oyiv5hawd4ht4jd8s2",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "pdlxy47dna9bnc1ixsz9jurc",
+            "back": {
+              "type": "description",
+              "description": "<span>Sistema treinado com grandes volumes de texto que responde prevendo a continuação mais provável do pedido. Escreve com fluência, mas não consulta arquivos.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Modelo de linguagem</strong>"
+            }
+          },
+          {
+            "id": "ykjj572h7wdcvcjq9alusrln",
+            "back": {
+              "type": "description",
+              "description": "<span>O pedido que você escreve ao ChatGPT.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Prompt</strong>"
+            }
+          },
+          {
+            "id": "u2iexlcyvjacvss2beaapbet",
+            "back": {
+              "type": "description",
+              "description": "<span>As mensagens que o modelo considera ao responder. A janela de contexto tem tamanho máximo: conversas muito longas podem “esquecer” o início.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Contexto</strong>"
+            }
+          },
+          {
+            "id": "e2b33pl8c4hg9bzqkkqj1cwi",
+            "back": {
+              "type": "description",
+              "description": "<span>Erro apresentado com segurança — norma, número, data ou citação inventados. Confira todo fato verificável antes de usar.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Alucinação</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "9ff9548f-6ff8-46d8-a78d-8b7bb6708164"
+      },
+      {
+        "id": "lhzjg1f5zr7jwomq2irobkuo",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "sdl7sn3k8bq5lz2vsh96y6oz",
+            "heading": "Resposta rápida ou raciocínio?",
+            "paragraph": "<p>O seletor de modelo (<strong>ChatGPT &gt; Topo da conversa &gt; Seletor de modelo</strong>) oferece, em essência, duas famílias. Os nomes comerciais dos modelos mudaram várias vezes em 2026; escolha pela função, não pelo nome:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "626370f7-aa73-4143-a397-b75ae03381b5"
+      },
+      {
+        "id": "6c913c0f-e662-4a33-9476-60aa3947c3b5",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f68b96dc-5d3b-4588-acc1-4e18f38500d4",
+            "title": "Resposta rápida",
+            "description": "<p>Adequada a tarefas simples: perguntas diretas, textos curtos, reformulações. Responde em segundos.</p>"
+          },
+          {
+            "id": "39ad5cc9-9d82-44ed-a6bf-706bb0fcd5b9",
+            "title": "Raciocínio",
+            "description": "<p>Leva mais tempo e elabora etapas intermediárias antes de responder. Adequada a análises, cálculos e planejamento.</p><p></p><p>Atenção: modelos de raciocínio também alucinam. Pensar mais não dispensa conferir.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "75267754-de8e-4ea0-8673-d87b1eba0bd5"
+      },
+      {
+        "id": "ilss3c7a480g2glwtjhuiete",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "w0vri1tfatwgxra4lqutgefm",
+            "heading": "Na prática: qual escolher",
+            "paragraph": "<p>Veja dois casos:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "b59aeb2d-d204-42d7-9e13-81c5aad97c57"
+      },
+      {
+        "id": "f29cb3d0-b161-48f2-b204-ba3f59c3abd3",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "4b88ba48-fefa-4f9a-affb-914854d7e158",
+            "title": "Situação simples",
+            "description": "<p>Você precisa explicar a um cliente, em poucas linhas, o que é prescrição. Resposta rápida resolve: o pedido é direto e o texto é curto.</p><p></p><p>O mesmo vale para e-mails curtos, listas simples e reformulações de tom.</p>"
+          },
+          {
+            "id": "21e79eea-718e-4059-9e0a-c198f83ebf10",
+            "title": "Situação analítica",
+            "description": "<p>Você precisa comparar três regimes de prazo, com vantagens e riscos de cada um, ou planejar um projeto em etapas. Raciocínio é a escolha: a tarefa pede análise antes da resposta.</p><p></p><p>Nos dois casos, número, data e artigo de lei continuam sujeitos a conferência.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "1f2e1518-c0d6-4749-8485-8afb97bac554"
+      },
+      {
+        "id": "f4tf51444lqpwjzqtdhisduz",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f96bo16z9dmeykgke3kn2umc",
+            "heading": "Os quatro elementos de um bom pedido",
+            "paragraph": "<p>Um pedido completo tem <strong>tarefa</strong> (o que fazer), <strong>contexto</strong> (para quê e em que situação), <strong>público</strong> (para quem) e <strong>formato</strong> (como entregar). Compare:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "ea5ee882-7fee-4b04-99f2-280b90a82cb3"
+      },
+      {
+        "id": "o1giijfyklsf8uj3wj59idbc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "emiecwzxhjmf8ss0iym8d926",
+            "heading": "Pedido vago × pedido estruturado",
+            "paragraph": "<p><strong>Pedido vago:</strong> “Escreva sobre reunião.”</p><p><strong>Pedido estruturado:</strong> “Escreva um e-mail curto convocando a equipe de atendimento para uma reunião de 30 min na quinta às 14h sobre o aumento de reclamações. Os destinatários são colegas; tom cordial. Até 6 linhas, com assunto.”</p><p>📌 <strong>Variação jurídica:</strong> “Explique a diferença entre prescrição e decadência para um cliente leigo que perdeu prazo de reclamação, em 5 linhas, sem jargão.”</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "843edbb9-caf1-46ca-85f2-6af4071840fb"
+      },
+      {
+        "id": "2d11c2bd-7e25-4dda-b22b-d0b6ef3d6136",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f4b2e4a0-6e07-44aa-aa6a-e2ba6315d3d7",
+            "type": "intro",
+            "title": "Do vago ao estruturado (6 min)",
+            "isHidden": false,
+            "description": "<p>Você vai enviar o pedido vago, transformá-lo no estruturado e refinar a resposta sem abrir outro chat.</p>"
+          },
+          {
+            "id": "eb09b7a5-1752-4270-9a4a-7c95589b9617",
+            "type": "summary",
+            "title": "O que mudou",
+            "isHidden": false,
+            "description": "<p>O mesmo assunto rendeu um texto genérico e, depois, um e-mail pronto. A diferença veio dos quatro elementos — e o refinamento aproveitou a conversa em vez de recomeçar.</p>"
+          },
+          {
+            "id": "7b0e64d6-f5ba-4d40-920a-8fd502892b2d",
+            "type": "step",
+            "title": "Enviar pedido vago",
+            "isHidden": false,
+            "description": "<p>Envie: “Escreva sobre reunião.”</p>"
+          },
+          {
+            "id": "44a79005-a0b5-42a1-975a-f83620028e36",
+            "type": "step",
+            "title": "Editar para versão estruturada",
+            "isHidden": false,
+            "description": "<p>Edite a mesma mensagem (passe o cursor sobre ela e clique no lápis) para a versão estruturada: “Escreva um e-mail curto convocando a equipe de atendimento para uma reunião de 30 min na quinta às 14h sobre o aumento de reclamações. Os destinatários são colegas; tom cordial. Até 6 linhas, com assunto.”</p>"
+          },
+          {
+            "id": "6e5c214d-9726-42ab-ad31-d2e9ad761405",
+            "type": "step",
+            "title": "Solicitar ajuste adicional",
+            "isHidden": false,
+            "description": "<p>Peça: “Agora em tom mais formal e com três tópicos de pauta.”</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "8a654f90-0331-4b84-8641-27b282cf1178"
+      },
+      {
+        "id": "edff836f-6834-4f93-bb12-fb4cf6154d2a",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "c9179514-fed9-4b8f-a02d-5813bac41bd9",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> a última resposta tem assunto, corpo de até 6 linhas e três tópicos de pauta.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "3c62f71d-d9c1-44e6-96b0-5a2efe7cff48"
+      },
+      {
+        "id": "d4233d36-c56a-4028-a5aa-3512bfb6a9f8",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "f2dbd370-7034-4af4-b649-0ecdbf1e1b0b",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "45a8638a-8d7c-4ff7-94e2-321feb3901ee"
+      },
+      {
+        "id": "tp4cy5nwzl8uzgggmzcirj5w",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fnv4v0guv7spgigg8v7t8ds7",
+            "heading": "Refinar em vez de recomeçar",
+            "paragraph": "<p>A conversa é cumulativa, então convém refinar em vez de recomeçar. Três comandos sustentam o refinamento, e um quarto troca o modelo:</p><p><strong>Editar mensagem:</strong> <strong>ChatGPT &gt; Conversa &gt; passar o cursor sobre a própria mensagem &gt; ícone de lápis</strong>.<br><strong>Tentar novamente</strong> (gerar outra versão da resposta): <strong>ChatGPT &gt; Conversa &gt; ícones abaixo da resposta &gt; Tentar novamente</strong>.<br><strong>Ramificar</strong> (abrir um novo chat a partir de um ponto da conversa, preservando o original): <strong>ChatGPT &gt; Conversa &gt; ícones abaixo da resposta &gt; Mais ações (⋯) &gt; Ramificar em novo chat</strong>.<br><strong>Trocar de modelo:</strong> <strong>ChatGPT &gt; Topo da conversa &gt; Seletor de modelo</strong>.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "7ac1c3b1-dd98-46dc-b757-b511c7b0be13"
+      },
+      {
+        "id": "t41dz7i7jc3w6v2a3mup23ef",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "tk2amrwzt03pffmb7ykf4i73",
+            "heading": "Revise os comandos",
+            "paragraph": "<p>Vire cada cartão e confira o caminho:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "687f04a4-c880-4415-b0e2-3b28d9b4448a"
+      },
+      {
+        "id": "ij9t0gurf9ue76m3go46z6kh",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "lfnkc4py8djgu3s5oq727dos",
+            "back": {
+              "type": "description",
+              "description": "<p>Permite corrigir ou detalhar o pedido original.<br><strong>Caminho:</strong> passar o cursor sobre a mensagem e clicar no lápis.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Editar mensagem</strong>"
+            }
+          },
+          {
+            "id": "pzmuwm9bbbjwys8n1t1rckke",
+            "back": {
+              "type": "description",
+              "description": "<p>Gera outra versão da resposta para o mesmo pedido.<br><strong>Caminho:</strong> ícones abaixo da resposta &gt; Tentar novamente.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Tentar novamente</strong>"
+            }
+          },
+          {
+            "id": "obnwxyvi52pxaqirg1tgbtwq",
+            "back": {
+              "type": "description",
+              "description": "<p>Abre um novo chat a partir de um ponto da conversa, preservando o original.<br><strong>Caminho:</strong> ícones abaixo da resposta &gt; Mais ações (⋯) &gt; Ramificar em novo chat.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Ramificar</strong>"
+            }
+          },
+          {
+            "id": "oq0d37kyv4qdhvwe0tywtldu",
+            "back": {
+              "type": "description",
+              "description": "<p>Permite alternar entre modelos de resposta rápida e raciocínio.<br><strong>Caminho:</strong> topo da conversa, seletor de modelo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Trocar de modelo</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "09c6c5cf-b2c0-4aee-8329-d18fb87be0b9"
+      },
+      {
+        "id": "43363b3e-07de-42a2-8d2d-f7ce4ae4b9da",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "cac89d34-9e52-4ff1-b845-0144477ba2e4",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Um assistente apresentou o \"art. 52 da Lei 8.078/1990\" como fundamento, com redação convincente. A conduta adequada é:",
+            "answers": [
+              {
+                "id": "4307417f-ef77-41a9-b69d-d5331a913bda",
+                "title": "aceitar, pois a redação é precisa.",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "c633b60f-54d5-4a0c-9f23-0d75ec8a3826",
+                "title": "pedir ao ChatGPT que confirme o artigo.",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "0ac337d8-e64e-4e1a-885a-4a2ef4918cad",
+                "title": "conferir o texto na fonte oficial (Planalto) antes de usar.",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "9e44a7b2-26e4-484f-a413-7051bc15e959",
+                "title": "trocar para o modelo de raciocínio e aceitar a nova resposta.",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto. Fluência não é evidência: só o texto oficial no Planalto confirma o artigo.",
+            "feedbackIncorrect": "Não. Fluência não é evidência; o próprio modelo pode confirmar o erro, e modelos de raciocínio também alucinam. Confira o texto na fonte oficial (Planalto) antes de usar."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "864aff23-caf3-45e6-8d0f-9ddebd134e90"
+      },
+      {
+        "id": "a84fba5d-2fca-43ca-afc2-b9de86ba6d43",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "3b1d56b1-29a3-40f4-a966-566739e1a654",
+            "paragraph": "<p>✋ <strong>Mão na massa.</strong> Use este modelo no seu próximo pedido real:</p><p><strong>Tarefa:</strong> [o que deve ser feito]</p><p><strong>Contexto:</strong> [para quê e em que situação]</p><p><strong>Público:</strong> [quem vai ler]</p><p><strong>Formato:</strong> [tamanho, estrutura, tom]</p><p>Antes de responder, faça-me até três perguntas se faltar informação.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "59610aeb-e79d-4763-8178-e6df56f09793"
+      },
+      {
+        "id": "ec0s2oyyet8p99odi9q666ex",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "t97gt530mg7ifm089bk5hd1p",
+            "paragraph": "<p>Próximo passo: no Módulo 2, antes do primeiro uso real de memória, projetos e arquivos, você decide o que pode — e o que não pode — entrar numa conversa com o ChatGPT.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.171.1"
+          }
+        },
+        "globalBlockId": "7eab5a54-7dc1-4689-89ab-bfeed4142fb3"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Estruturando Conversas Produtivas",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "PcwvUVFfmZ2qUGJkT9oH7JGOHT3sfnJc",
+    "createdAt": "2026-11-17T20:07:37.873Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-17T20:08:18.817Z"
+  }
+}

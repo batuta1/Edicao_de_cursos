@@ -1,0 +1,29 @@
+<!--titulo: O que o Free libera-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Disponível não é ilimitado</h1>
+  <p class="sub">Seis recursos do ChatGPT. Para cada um, diga como ele funciona no plano Free, que é o plano do curso.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <p class="nota">Fonte: chatgpt.com/pt-BR/pricing, consultada em 17/11/2026. Planos mudam: na dúvida, vale a página oficial.</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'Conversas de texto', r: 'ilim', p: 'Ilimitadas no Free, sujeitas apenas a proteções contra abuso.' },
+      { t: 'Busca na web', r: 'ilim', p: 'Incluída no Free, assim como os projetos.' },
+      { t: 'Envio de arquivos e análise de dados', r: 'cota', p: 'Funcionam até a cota; quando ela acaba, a interface avisa quando o recurso volta.' },
+      { t: 'Criação de imagens', r: 'cota', p: 'Limitada no Free — a cota pode estar esgotada quando você precisar.' },
+      { t: 'Tarefas agendadas', r: 'nao', p: 'Só do plano Go em diante.' },
+      { t: 'Tabelas e gráficos interativos', r: 'nao', p: 'Só no Plus e no Pro. No Free, o gráfico chega como imagem.' }
+    ],
+    opcoes: { ilim: 'Incluído', cota: 'Limitado (cota)', nao: 'Não disponível' },
+    dicaErro: 'Releia o quadro-resumo dos planos: incluído, limitado por cota ou fora do Free?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'recursos classificados',
+    aoConcluir: function () {
+      concluir('final', 'Recurso esgotado não é erro de procedimento: no Free, arquivos, voz, memória e imagens têm cota.');
+    }
+  });
+</script>

@@ -1,0 +1,28 @@
+<!--titulo: Qual recurso está em ação?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Instruções, memória ou projeto?</h1>
+  <p class="sub">Seis situações com o ChatGPT. Para cada uma, indique qual recurso de continuidade está em ação.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'Você escreveu em Personalização: “respostas objetivas, com no máximo 8 linhas”.', r: 'inst', p: 'Preferência escrita por você, que vale para as conversas novas.' },
+      { t: 'Sem você pedir, o ChatGPT lembrou que você dá aulas de Direito do Consumidor — assunto de uma conversa antiga.', r: 'mem', p: 'Fato aprendido numa conversa e guardado como memória.' },
+      { t: 'Todas as conversas sobre o cliente A usam os mesmos três arquivos e a mesma instrução, e nada disso aparece nas outras conversas.', r: 'proj', p: 'É um projeto com memória “Apenas do projeto”.' },
+      { t: 'Você perguntou “o que você lembra sobre mim?” e recebeu uma lista de fatos.', r: 'mem', p: 'A pergunta revela as memórias em uso.' },
+      { t: 'Você quer que todas as respostas venham em português do Brasil, em qualquer assunto.', r: 'inst', p: 'Preferência permanente: instruções personalizadas.' },
+      { t: 'Ao criar a pasta “Curso ChatGPT”, você escreveu: “indique ao final o que conferir em fonte externa”.', r: 'proj', p: 'Instrução do projeto: vale só para as conversas dele.' }
+    ],
+    opcoes: { inst: 'Instruções personalizadas', mem: 'Memória', proj: 'Projeto' },
+    dicaErro: 'Pergunte-se: você escreveu para valer em tudo (instruções), o ChatGPT aprendeu numa conversa (memória) ou vale só dentro de uma pasta de trabalho (projeto)?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'situações identificadas',
+    aoConcluir: function () {
+      concluir('final', 'Instruções: você escreve para tudo. Memória: o ChatGPT aprende, sob o seu controle. Projeto: regras e arquivos de um assunto só.');
+    }
+  });
+</script>

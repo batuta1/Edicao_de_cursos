@@ -1,0 +1,36 @@
+{
+ "licao": 5,
+ "posicao": 13,
+ "blocos": [
+  {
+   "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+   "itens": [
+    {
+     "title": "Você quer que o ChatGPT calcule a média mensal de atendimentos de uma planilha que traz nome e CPF de cada cliente. Você usa conta pessoal, no Free. Qual é a conduta adequada?",
+     "answers": [
+      {
+       "title": "Enviar a planilha inteira, porque o arquivo só será usado para o cálculo",
+       "correct": false,
+       "feedback": "Não. Arquivo enviado é dado tratado: nome e CPF de clientes são sinal vermelho."
+      },
+      {
+       "title": "Enviar no chat temporário, que não fica no histórico",
+       "correct": false,
+       "feedback": "Não. O chat temporário pode ficar guardado por até 30 dias e não muda a cor do conteúdo: continua sinal vermelho."
+      },
+      {
+       "title": "Enviar só as colunas de mês e de atendimentos, sem nomes nem CPFs",
+       "correct": true,
+       "feedback": "Correto. Sem dado que identifique pessoa, o arquivo vira sinal verde — e o cálculo continua possível."
+      },
+      {
+       "title": "Desativar “Melhorar o modelo para todos” e enviar a planilha inteira",
+       "correct": false,
+       "feedback": "Não. O controle reduz o uso dos dados, mas não elimina o tratamento pela empresa."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

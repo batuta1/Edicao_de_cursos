@@ -1,0 +1,55 @@
+<!--titulo: Quadro comparativo-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade integradora</span>
+  <h1 id="t">Seu quadro comparativo</h1>
+  <p class="sub">Preencha enquanto executa os passos da atividade. No fim, copie o quadro para guardar — ele é o produto final do curso. Nada do que você digita aqui sai do seu navegador.</p>
+  <div class="item" style="margin-bottom:12px">
+    <h2 id="hp">Perfil escolhido</h2>
+    <div class="opcoes" role="group" aria-labelledby="hp" id="perfis"></div>
+  </div>
+  <div class="grid" id="campos"></div>
+  <h2 style="margin-top:18px">Prévia</h2>
+  <pre class="saida" id="saida" aria-live="polite"></pre>
+  <p style="margin:10px 0 0"><button type="button" class="btn principal" id="copiar">Copiar o quadro</button></p>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+</section>
+<script>
+  var pedidos = {
+    'Perfil geral': 'Resuma em 5 tópicos as regras de arrependimento em compras on-line no Brasil, com fonte oficial.',
+    'Perfil jurídico': 'Prepare um quadro de 3 linhas comparando arrependimento (art. 49), vício do produto (art. 18) e prazo para reclamar (art. 26) do CDC, com fonte oficial.'
+  };
+  var perfil = 'Perfil geral', gp = document.getElementById('perfis');
+  Object.keys(pedidos).forEach(function (k) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = k;
+    b.setAttribute('aria-pressed', k === perfil ? 'true' : 'false');
+    b.addEventListener('click', function () {
+      perfil = k; gp.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); montar();
+    });
+    gp.appendChild(b);
+  });
+  var linhas = ['Formato', 'Fontes', 'Afirmação conferida no Planalto', 'Erro encontrado (se houver)'];
+  var box = document.getElementById('campos');
+  ['ChatGPT', 'Claude'].forEach(function (col, ci) {
+    var c = document.createElement('div'); c.className = 'item';
+    var h = document.createElement('h2'); h.textContent = col; c.appendChild(h);
+    linhas.forEach(function (l, li) {
+      var lab = document.createElement('label'); lab.style.display = 'block'; lab.style.marginTop = '10px'; lab.style.fontSize = '13px'; lab.style.color = 'var(--suave)';
+      lab.textContent = l;
+      var i = document.createElement('input'); i.type = 'text'; i.id = 'c' + ci + '_' + li; i.addEventListener('input', montar);
+      lab.appendChild(i); c.appendChild(lab);
+    });
+    box.appendChild(c);
+  });
+  var d = document.createElement('div'); d.className = 'item'; d.style.gridColumn = '1 / -1';
+  d.innerHTML = '<label style="display:block;font-size:13px;color:var(--suave)">Preferência e motivo (formato, fontes, regras de dados)<textarea id="pref" rows="3"></textarea></label>';
+  box.appendChild(d); document.getElementById('pref').addEventListener('input', montar);
+  function v(id) { var e = document.getElementById(id); return e && e.value.trim() ? e.value.trim() : '—'; }
+  function montar() {
+    var t = perfil + ' — pedido: ' + pedidos[perfil] + '\n\n';
+    linhas.forEach(function (l, li) { t += l + '\n  ChatGPT: ' + v('c0_' + li) + '\n  Claude: ' + v('c1_' + li) + '\n'; });
+    t += '\nPreferência e motivo: ' + v('pref');
+    document.getElementById('saida').textContent = t;
+  }
+  montar();
+  ligarCopia('copiar', 'saida', 'msg', 'Quadro');
+</script>

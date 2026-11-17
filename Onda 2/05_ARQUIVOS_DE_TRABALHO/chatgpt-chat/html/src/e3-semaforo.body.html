@@ -1,0 +1,28 @@
+<!--titulo: Semáforo de dados-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Pode ir para o ChatGPT?</h1>
+  <p class="sub">Seis conteúdos que aparecem no trabalho. Classifique cada um no semáforo, pensando numa conta pessoal (Free, Go, Plus ou Pro).</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'O texto do art. 49 do CDC, copiado do Planalto.', r: 'verde', p: 'Texto público pode ser enviado.' },
+      { t: 'Planilha de atendimentos com nome e telefone de clientes.', r: 'vermelho', p: 'Dados pessoais de terceiros: não enviar em conta pessoal; anonimize antes.' },
+      { t: 'Rascunho interno de um manual de atendimento, sem nomes.', r: 'amarelo', p: 'Documento interno sem dados pessoais: só com autorização da organização, de preferência em conta corporativa.' },
+      { t: 'Um caso fictício que você mesmo inventou para treinar.', r: 'verde', p: 'Dado fictício pode ser enviado.' },
+      { t: 'Petição de um processo que corre em segredo de justiça.', r: 'vermelho', p: 'Processo sob segredo de justiça é sinal vermelho, ainda mais com dever de sigilo profissional.' },
+      { t: 'A mesma planilha de atendimentos, com “Cliente 1, Cliente 2” no lugar dos nomes e sem telefones.', r: 'amarelo', p: 'Anonimizada, ainda é documento de trabalho: amarelo (verde se não houver outro dado identificável e a organização permitir).' }
+    ],
+    opcoes: { verde: '🟢 Verde', amarelo: '🟡 Amarelo', vermelho: '🔴 Vermelho' },
+    dicaErro: 'Pergunte-se: é público ou fictício (verde), interno sem dados pessoais (amarelo) ou identifica pessoas, clientes ou segredos (vermelho)?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'conteúdos classificados',
+    aoConcluir: function () {
+      concluir('final', 'Os controles da conta reduzem o uso dos dados; o semáforo decide o que nem deve entrar.');
+    }
+  });
+</script>

@@ -1,0 +1,69 @@
+<!--titulo: Kit do caso Loja Aurora-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Preparação · 7 min</span>
+  <h1 id="t">Kit do caso: planilha, política e conta</h1>
+  <p class="sub">Copie os dois arquivos, salve-os na pasta <strong>caso-aurora</strong> e marque o checklist no fim. O curso segue com tudo marcado. Não altere nada nos arquivos: as oficinas dependem do texto exato.</p>
+
+  <h2>1. A planilha: reclamacoes-loja-aurora.csv</h2>
+  <p class="extra">Cole num editor de texto simples e salve como <strong>reclamacoes-loja-aurora.csv</strong>. No Bloco de Notas, use Arquivo &gt; Salvar como &gt; Tipo: Todos os arquivos, para o CSV não virar .csv.txt.</p>
+  <textarea id="csv" rows="8" readonly aria-label="Conteúdo do arquivo reclamacoes-loja-aurora.csv">mes,categoria,reclamacoes,resolvidas,prazo_medio_dias
+2026-05,Atraso na entrega,42,38,6
+2026-05,Produto com defeito,25,20,12
+2026-05,Troca ou devolucao,12,11,4
+2026-05,Cobranca indevida,9,9,3
+2026-06,Atraso na entrega,38,35,5
+2026-06,Produto com defeito,27,22,11
+2026-06,Troca ou devolucao,14,13,4
+2026-06,Cobranca indevida,8,8,3
+2026-07,Atraso na entrega,45,41,6
+2026-07,Produto com defeito,24,19,13
+2026-07,Troca ou devolucao,13,12,5
+2026-07,Cobranca indevida,10,9,4
+2026-08,Atraso na entrega,40,37,5
+2026-08,Produto com defeito,26,21,12
+2026-08,Troca ou devolucao,15,14,4
+2026-08,Cobranca indevida,7,7,3
+2026-09,Atraso na entrega,39,36,6
+2026-09,Produto com defeito,28,22,12
+2026-09,Troca ou devolucao,46,25,15
+2026-09,Cobranca indevida,9,9,3
+2026-10,Atraso na entrega,41,38,5
+2026-10,Produto com defeito,25,20,13
+2026-10,Troca ou devolucao,58,27,18
+2026-10,Cobranca indevida,8,8,3</textarea>
+  <p style="margin:8px 0 0"><button type="button" class="btn principal" id="bCsv">Copiar a planilha</button></p>
+  <div class="feedback" id="mCsv" aria-live="polite"></div>
+
+  <h2 style="margin-top:22px">2. A política: politica-de-trocas-loja-aurora.txt</h2>
+  <p class="extra">Cole num editor de texto simples e salve como <strong>politica-de-trocas-loja-aurora.txt</strong>.</p>
+  <textarea id="pol" rows="8" readonly aria-label="Conteúdo do arquivo politica-de-trocas-loja-aurora.txt">POLÍTICA DE TROCAS E DEVOLUÇÕES — LOJA AURORA
+(Documento fictício, criado para fins didáticos)
+Versão 2 — vigente desde 01/09/2026. A versão 1, válida até 31/08/2026, previa 7 dias para desistência.
+
+1. Desistência de compras feitas pelo site: o cliente pode desistir em até 3 (três) dias corridos, contados do recebimento do produto.
+2. Produto com defeito: a troca depende de análise técnica, concluída em até 45 (quarenta e cinco) dias.
+3. Produtos em promoção têm as mesmas garantias dos demais.
+4. Atendimento: e-mail e chat, de segunda a sexta, das 9h às 18h.
+5. Prazo de resposta a reclamações: até 5 (cinco) dias úteis.</textarea>
+  <p style="margin:8px 0 0"><button type="button" class="btn principal" id="bPol">Copiar a política</button></p>
+  <div class="feedback" id="mPol" aria-live="polite"></div>
+
+  <h2 style="margin-top:22px">3. Checklist</h2>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <p class="nota">O caso é fictício. No trabalho, vale o semáforo do Essentials: dado pessoal de terceiro, segredo comercial e documento de cliente não vão para conta pessoal.</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  ligarCopia('bCsv', 'csv', 'mCsv', 'Planilha');
+  ligarCopia('bPol', 'pol', 'mPol', 'Política');
+  checklist([
+    'chatgpt.com aberto com a minha conta (o plano Free serve).',
+    'Decisão tomada sobre “Melhorar o modelo para todos”, em Perfil > Configurações > Controles de dados.',
+    'reclamacoes-loja-aurora.csv salvo na pasta caso-aurora (e não como .csv.txt).',
+    'politica-de-trocas-loja-aurora.txt salvo na pasta caso-aurora.'
+  ], 'lista', 'placar', 'barra', 'itens prontos', function () {
+    concluir('final', 'Kit pronto. Primeira oficina: tirar o caso das conversas soltas e montar um projeto.');
+  });
+</script>

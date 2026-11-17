@@ -1,0 +1,45 @@
+<!--titulo: Confira os números do ChatGPT-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Oficina 4 · conferência</span>
+  <h1 id="t">Os números do ChatGPT batem?</h1>
+  <p class="sub">Digite os valores que o ChatGPT entregou e clique em Conferir. O curso segue quando os cinco baterem com o gabarito.</p>
+  <div class="grid" id="campos"></div>
+  <p style="margin:12px 0 0"><button type="button" class="btn principal" id="conferir">Conferir</button></p>
+  <p class="placar" id="placar" aria-live="polite" style="margin-top:12px"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <p class="nota">Valor diferente? Peça ao ChatGPT “mostre o cálculo passo a passo” e confira se ele leu as 24 linhas de dados.</p>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  var itens = [
+    { r: 'Total de reclamações', ok: function (v) { return n(v) === 609; }, dica: 'Some a coluna reclamacoes das 24 linhas.' },
+    { r: 'Total resolvido', ok: function (v) { return n(v) === 501; }, dica: 'Some a coluna resolvidas das 24 linhas.' },
+    { r: 'Taxa de resolução (%)', ok: function (v) { return Math.abs(n(v) - 82.3) < 0.051; }, dica: 'Resolvidas ÷ reclamações × 100, com uma casa decimal.' },
+    { r: 'Troca ou devolução em setembro + outubro', ok: function (v) { return n(v) === 104; }, dica: '46 + 58.' },
+    { r: 'Mês com mais reclamações', ok: function (v) { return /out|10/i.test(v); }, dica: 'Some as quatro categorias de cada mês.' }
+  ];
+  function n(v) { return parseFloat(String(v).replace('%', '').replace(',', '.').trim()); }
+  var box = document.getElementById('campos'), fbs = [];
+  itens.forEach(function (it, i) {
+    var c = document.createElement('div'); c.className = 'item';
+    var lab = document.createElement('label'); lab.style.display = 'block'; lab.style.fontSize = '14px'; lab.style.fontWeight = '600';
+    lab.textContent = it.r;
+    var inp = document.createElement('input'); inp.type = 'text'; inp.id = 'v' + i; inp.setAttribute('inputmode', i < 4 ? 'decimal' : 'text');
+    lab.appendChild(inp); c.appendChild(lab);
+    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite'); c.appendChild(fb);
+    fbs.push(fb); box.appendChild(c);
+  });
+  document.getElementById('conferir').addEventListener('click', function () {
+    var certos = 0;
+    itens.forEach(function (it, i) {
+      var v = document.getElementById('v' + i).value, fb = fbs[i], item = fb.parentNode;
+      if (!v.trim()) { fb.textContent = ''; fb.className = 'feedback'; item.className = 'item'; return; }
+      if (it.ok(v)) { certos++; fb.textContent = 'Bate com o gabarito.'; fb.className = 'feedback ok'; item.className = 'item certo'; }
+      else { fb.textContent = 'Não bate. ' + it.dica; fb.className = 'feedback erro'; item.className = 'item errado'; }
+    });
+    document.getElementById('placar').textContent = certos + ' de ' + itens.length + ' valores conferidos';
+    document.getElementById('barra').style.width = (100 * certos / itens.length) + '%';
+    if (certos === itens.length) concluir('final', 'Números conferidos: 609 reclamações, 501 resolvidas (82,3%), salto de trocas para 104 e outubro como pior mês. Eles vão para a seção 1 do relatório.');
+  });
+  document.getElementById('placar').textContent = '0 de ' + itens.length + ' valores conferidos';
+</script>
