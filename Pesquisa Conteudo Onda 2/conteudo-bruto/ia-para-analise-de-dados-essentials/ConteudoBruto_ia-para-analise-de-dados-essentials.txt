@@ -1,0 +1,529 @@
+================================================================
+CONTEÚDO BRUTO — IA para Análise de Dados
+Pesquisa realizada em: 17 de novembro de 2026
+Ferramenta(s): ChatGPT (recurso "Análise de dados", sem número de versão próprio; planos Free, Go, Plus, Pro, Business, Enterprise; modelos da família GPT-6 conforme a página de preços) e Julius AI (modelos "Julius 1.2" Lite/padrão/Max/Ultra; cobrança por créditos desde 28/02/2026)
+================================================================
+
+NOTA DE MÉTODO (leia antes): a central de ajuda da OpenAI (help.openai.com) e a documentação do Julius (julius.ai/docs) bloqueiam leitura automática (HTTP 403 / Cloudflare). Nesta rodada as páginas foram lidas por um navegador real, por isso os trechos das seções 2, 5, 8 e 15 são transcrições da página oficial. Os números de "atualizado há N dias" foram convertidos para datas aproximadas a partir de 17/11/2026. Bases de dados públicas foram baixadas e conferidas por script (seção 14, ponto 9): os gabaritos numéricos citados foram recalculados a partir do arquivo e comparados com a publicação oficial.
+
+0. RESUMO EXECUTIVO
+- O que é: usar um assistente de IA que escreve e executa código Python "por trás" para carregar uma planilha/CSV, explorar, limpar, fazer gráficos e resumir achados em linguagem natural, sem o aluno programar. No ChatGPT o recurso chama-se hoje simplesmente "Análise de dados" (ex-Code Interpreter, ex-Advanced Data Analysis) e não é mais um modo separado: é acionado automaticamente quando você envia um arquivo e pede uma análise [1][5]. O Julius AI é um "espaço de trabalho de IA" especializado em análise, com modelos próprios e cobrança por créditos [12][13].
+- Para quem: analistas, financeiro/planejamento, pesquisadores, jurídico (jurimetria), setor público, saúde, engenharia, escolas e comunicação que já usam Excel básico.
+- O que mudou nos últimos 12 meses: (a) OpenAI reescreveu a ajuda de análise de dados (out/2026) e passou a falar em "ambiente de notebook Jupyter com estado", "Alternar para gráfico interativo" e fontes conectadas via plugins/apps (Google Drive, OneDrive, SharePoint) [1][3]; (b) surgiu o "ChatGPT Work" (modo de trabalho do app de desktop) e o plugin "Data" para dados corporativos [10][61]; (c) o Julius trocou "mensagens" por "créditos" (28/02/2026), mudou preços (Plus US$ 20) e encerrou a exportação do chat inteiro em PDF/DOCX/Notebook [18][22][12].
+ALERTAS PARA QUEM VAI CRIAR O CURSO:
+1) Plano gratuito apertado: no ChatGPT Free há limite de 3 uploads de arquivo por dia e "Análise de dados: Limitado" [3][5]; no Julius Free há 75 créditos de boas-vindas + 25 créditos diários, só o modelo Julius 1.2 Lite, e os arquivos são apagados após 1 hora de inatividade [18][31][16]. Exercícios precisam ser curtos e com poucos arquivos.
+2) A própria fabricante manda conferir: a OpenAI diz para "revisar o código gerado, as saídas e as suposições antes de confiar no resultado" e admite que o ChatGPT pode "não analisar o arquivo inteiro" [1]. Um estudo independente (JMIR 2025) mediu acerto de 32,5% em estatística inferencial com prompts básicos contra 92,5% com prompts detalhados [36]. A verificação contra número oficial tem de ser o eixo do curso.
+3) Privacidade diferente nas duas ferramentas: no ChatGPT pessoal (Free/Plus/Pro) o conteúdo pode treinar modelos até o aluno desligar "Melhorar o modelo para todo mundo" [7][8]; no Julius, os Termos e a Política permitem compartilhar prompts, arquivos e saídas com provedores de IA "para avaliar, melhorar e desenvolver os modelos deles", com opt-out só por e-mail (privacy@julius.ai) [19][20]. Não enviar dados pessoais, sigilosos ou de clientes.
+
+1. IDENTIDADE E HISTÓRICO
+1.1 ChatGPT — recurso de análise de dados
+- Fabricante: OpenAI. Nome atual na ajuda: "Análise de dados com o ChatGPT" (pt-BR) / "Data analysis with ChatGPT" (en), artigo 8437071, atualizado há 29 dias (≈19/10/2026) [1][2]. [CONFIRMADO]
+- Nomes antigos: "Code Interpreter" e "Advanced Data Analysis". Evidência de que o mesmo artigo já teve esses nomes: os endereços antigos indexados pelo buscador para o artigo 8437071 incluem os slugs "advanced-data-analysis-chatgpt" e "data-analyst-gpt-faq" [busca, 17/11/2026]. As datas exatas das trocas de nome NÃO ENCONTRADO nas páginas oficiais lidas (procurei: artigo 8437071 pt-BR e en; página de preços). [VERIFICAR]
+- Situação atual: não é um modo nem uma ferramenta que se liga à parte; a ajuda descreve que, "para algumas tarefas de análise de dados, o ChatGPT escreve e executa código Python em um ambiente de notebook Jupyter com estado" [1]. Na página de preços, "Análise de dados" aparece como linha de recurso na tabela de planos (Free: "Limitado") [5]. [CONFIRMADO]
+- Onde o nome antigo ainda aparece: em tutoriais de universidades e blogs (ex.: "ChatGPT Advanced Data Analysis (Code Interpreter): Practical Guide") [busca]. [VERIFICAR]
+- Produtos vizinhos que surgiram em 2026 e que o curso deve citar só para delimitar: "ChatGPT Work" (modo do app de desktop para "pesquisa, análise ou entregáveis como documentos, apresentações, planilhas e Sites") [61] e o plugin "Data" ("@Data") para dados corporativos conectados (Databricks, Snowflake, BigQuery etc.) no ChatGPT Work e no Codex [10]. [CONFIRMADO]
+1.2 Julius AI
+- Empresa: Julius AI Inc., sede em 600 California St., 11th Floor, San Francisco, CA, EUA (Política de Privacidade, atualizada em 21/10/2026) [20]. [CONFIRMADO]
+- Fundador e lançamento: Rahul Sonwalkar, após o Y Combinator (2022); rodada seed de US$ 10 milhões liderada pela Bessemer em julho de 2025; a empresa declarou mais de 2 milhões de usuários [34]. Data exata de lançamento público: fontes divergem (2022 x julho de 2023). [VERIFICAR]
+- Autodefinição atual: "Julius is an AI workspace for research, analysis, and creation" (espaço de trabalho de IA para pesquisa, análise e criação) [13]. No FAQ ainda consta a definição antiga: "AI assistant designed for statistical analysis, data science, and computations" que "writes code to analyze your data" [15]. [CONFIRMADO]
+- Mudanças recentes: troca de mensagens por créditos anunciada em 28/02/2026 [18]; "Custom Agents" descontinuados (página "Custom Agents Sunset") [13, menu lateral]; exportação do chat inteiro como PDF/DOCX/Jupyter Notebook "no longer available" [22]. [CONFIRMADO]
+- Versão dos modelos próprios: "Julius 1.2 Lite" (padrão), "Julius 1.2", "Julius 1.2 Max", "Julius 1.2 Ultra" [31]. [CONFIRMADO]
+
+2. ACESSO, PLANOS E REQUISITOS
+2.1 ChatGPT — planos (página oficial pt-BR, lida em 17/11/2026) [5]
+- Preços exibidos em reais: Free R$ 0; Go R$ 39,99/mês; Plus R$ 99,90/mês; Pro "De R$ 525/mês" (três níveis: Pro 100, Pro 200, Pro 500). Business e Enterprise: preço não exibido nessa aba. [CONFIRMADO] Preços em dólar: Free US$ 0, Go US$ 8, Plus US$ 20, Pro a partir de US$ 100 (100/200/500) — esses valores em dólar estão na página de preços do Codex/ChatGPT Work em learn.chatgpt.com, não na página pt-BR [61b: https://learn.chatgpt.com/docs/pricing]. [CONFIRMADO]
+- Linhas relevantes da tabela "Compare os recursos dos planos" [5]: "Upload de arquivos": Free "Limitado"; Go/Plus/Pro: incluído (ícone). "Análise de dados": Free "Limitado"; Go/Plus/Pro: incluído. "Tabelas e gráficos interativos": aparece com ícone nas quatro colunas. "Extensões para Excel, Word, PowerPoint e Planilhas Google": Free e Go "Limitado", Plus incluído, Pro "Expandido". [CONFIRMADO quanto aos rótulos de texto; o significado dos ícones (marcado/desmarcado) não pôde ser lido como texto: VERIFICAR na tela]
+- Janela de contexto (mesma tabela): GPT Instant — Free 27K (~12 páginas), Go/Plus 54K (~40 páginas), Pro 128.000 (~250 páginas); GPT Reasoning — Free "Varia", Go/Plus 256K (~320 páginas), Pro 400K (~680 páginas) [5]. [CONFIRMADO]
+- Privacidade na tabela: "O conteúdo é usado para treinar nossos modelos — Opção de não participação disponível" em Free, Go, Plus e Pro [5]. [CONFIRMADO]
+- Limites de arquivo (artigo "Envio de arquivos e áudios para o ChatGPT", atualizado há 3 dias ≈14/11/2026) [3]: "Arquivos CSV e planilhas têm um limite de tamanho de aproximadamente 50 MB, dependendo do tamanho de cada linha"; documentos e apresentações até 512 MB; texto e documentos até 2 milhões de tokens por arquivo (o limite de tokens "não se aplica a planilhas"); imagens 20 MB; "Você pode fazer upload de até 80 arquivos a cada 3 horas. Usuários do plano gratuito têm um limite de 3 uploads de arquivos por dia. A OpenAI pode reduzir esses limites nos horários de pico."; armazenamento de 25 GB por usuário e 100 GB por organização. [CONFIRMADO]
+- Arquivos por conversa: "O limite exato de arquivos por conversa pode variar conforme o tipo de upload, o modelo, o plano, as configurações do espaço de trabalho e a cota restante para upload de arquivos" [1]. Número fixo: NÃO ENCONTRADO (procurei: artigos 8437071 e 8555545). [CONFIRMADO que não há número publicado]
+- Número máximo de linhas: NÃO ENCONTRADO. A ajuda só diz que um arquivo "pode ser grande ou complexo demais" para análise completa e sugere dividir em arquivos menores [1].
+- Tempo de sessão do ambiente Python: NÃO ENCONTRADO nas páginas lidas (procurei: 8437071, 8555545, 8983778). Ver seção 9 e 18.
+- Plataformas: "O envio de documentos, planilhas, apresentações, textos e imagens está disponível nos planos Free e pagos do ChatGPT, sujeito aos limites de cada plano e às configurações da conta, na web e nos aplicativos móveis compatíveis" [3]. Web, iOS e Android em todos os planos [5]. App de desktop (macOS, Windows, Linux) [61]. [CONFIRMADO]
+- Projetos: Free até 5 arquivos por projeto; Go e Plus até 25; Edu, Pro, Business e Enterprise até 40 [3]. [CONFIRMADO]
+- Disponibilidade no Brasil e em português: página de preços em pt-BR com preços em reais [5]; central de ajuda com versão pt-BR [1]. [CONFIRMADO]
+2.2 Julius AI — planos (julius.ai/pricing, lida em 17/11/2026) [12]
+- Free US$ 0; Plus US$ 20/mês; Pro US$ 45/mês; Business US$ 450/mês; Enterprise sob consulta. A página traz alternância "Annual Billing — SAVE 20%" / "Monthly Billing"; os valores exibidos não mudaram ao clicar em "Monthly Billing" na leitura feita, então não ficou claro se US$ 20/45/450 são o preço mensal ou o equivalente mensal anual. [CONFIRMADO os valores; VERIFICAR a modalidade]
+- Preço em reais: NÃO ENCONTRADO (página só em USD). A doc diz aceitar "cards, digital wallets, bank redirects, bank debits, and bank transfers across many regions" (título da página Billing Cycles & Payment Methods, índice da doc) [13]. [VERIFICAR para o Brasil]
+- Créditos por plano [12][18]: Plus 2.000/mês; Pro 5.000/mês; Business 60.000/mês; todos os pagos com "100 daily refresh credits". Free: "Eligible new web accounts receive 75 one-time welcome credits, plus 25 daily credits on the Free plan: 100 initially available credits before usage" [18]. Créditos diários renovam às 00:00 UTC (21h em Brasília) e não acumulam [18]. [CONFIRMADO]
+- O que o Free libera [12][31]: modelos "Julius Lite models" (Julius 1.2 Lite); conectores Google Drive, OneDrive, SharePoint; "Scheduled Runs: 3"; Presentation Maker, Image, Video e Website "Limited". Modelos de terceiros (GPT-6 Astra, Claude Opus 5.5 etc.) só nos pagos [31]. [CONFIRMADO]
+- RAM do ambiente: Plus 16 GB; Pro 32 GB [12]. Free: NÃO ENCONTRADO na página atual (fonte de terceiros antiga cita 2 GB) [VERIFICAR].
+- Retenção de arquivos: "Free-tier users: Files are retained for up to 1 hour of inactivity, after which all uploaded and AI-generated files are deleted. Paid users: Files remain available for up to 7 days of inactivity" [16]; a página de preços mostra "7-day file storage" para Plus/Pro/Business e "Permanent file storage" para Enterprise [12]. [CONFIRMADO]
+- Contêiner (ambiente de execução): "By default all free and paid user containers are live for up to 1 hour of inactivity" [17]. [CONFIRMADO]
+- Limite de linhas/tamanho: "There is no limit enforced by us, but you may find a practical limit based on what can fit into 32G of RAM on the sandbox" [15]. Tamanho máximo de upload: NÃO ENCONTRADO na doc atual. [CONFIRMADO o trecho]
+- Plataformas: web (julius.ai); a doc menciona compras por iOS e Android (página Cancel your subscription "on web, iOS, or Android") [13, índice]. Link da loja brasileira: NÃO ENCONTRADO/não testado. [VERIFICAR]
+- Português: a interface é em inglês; para respostas em português, "open the gear icon → Customize Julius, enter an instruction such as 'Respond in Portuguese,' and save your changes. This changes Julius's replies, not the language of the app interface." [21] [CONFIRMADO]
+- Fontes de terceiros antigas (coefficient.io, dailyaifixs.com) falam em "15 mensagens/mês" no Free e Plus a US$ 35 — modelo de cobrança anterior à troca por créditos [64]. Não usar. [VERIFICAR/obsoleto]
+
+3. PRIMEIROS PASSOS (passo a passo oficial)
+3.1 ChatGPT — analisar um arquivo
+Passo a passo oficial (ajuda pt-BR) [3][1][6]:
+1. "Anexe um arquivo compatível à sua conversa no ChatGPT." Caminho do anexo: "selecione + na área do prompt e depois Adicionar fotos e arquivos" (ajuda pt-BR) [3].
+2. "Descreva o que você quer que o ChatGPT faça com ele" [3]; para dados, "diga ao ChatGPT o que você quer aprender com o arquivo e especifique colunas, cálculos, agrupamentos ou tipos de gráfico" [1].
+3. "Revise a resposta e faça perguntas adicionais ou solicite alterações" [3].
+- Ao carregar o arquivo, "o ChatGPT cria automaticamente uma visualização interativa da tabela"; para ampliar, "clique nas duas setas no canto superior direito" (ajuda pt-BR) [6].
+- Selecionar partes da tabela: clicar em linha/coluna; várias com Ctrl (Windows) ou Command (Mac); arrastar para selecionar células; depois pedir um cálculo sobre a seleção [6]. [CONFIRMADO]
+- Baixar tabela: "clique no botão de download no canto superior direito da tabela. O arquivo baixado estará no formato CSV" [6]. Baixar gráfico: "No canto superior direito do gráfico, você pode baixar ou expandir... Por padrão, os gráficos baixados ficam em formato PNG" [6]. [CONFIRMADO]
+- Preparar a planilha antes (ajuda pt-BR) [1]: "Cabeçalhos de coluna descritivos na primeira linha; Uma linha por registro; Nomes de coluna em linguagem simples". Evitar: "Várias tabelas não relacionadas em uma só planilha; Linhas ou colunas vazias que dividem os dados; Imagens que contêm valores que o ChatGPT precisa analisar". [CONFIRMADO]
+- Conectar o Google Drive (ajuda pt-BR) [9]: "Abra Plugins ou Apps, dependendo das opções disponíveis na sua versão do ChatGPT. Encontre o Google Drive e selecione a opção para conectar sua conta. Faça login na Conta do Google que você quer usar. Revise as permissões do Google solicitadas... Conclua o processo de autorização do Google e volte ao ChatGPT." Disponibilidade "depende do seu plano do ChatGPT, da sua localização, das configurações do espaço de trabalho". [CONFIRMADO] OneDrive/SharePoint: artigo próprio existe (12143177, SharePoint), não lido por inteiro. [VERIFICAR passos]
+- Página de configuração do armazenamento: "Configurações > Armazenamento" (ajuda pt-BR) [3]. [CONFIRMADO]
+3.2 Julius AI — primeira análise (doc en, "Getting Started") [14]
+1. "Upload your data: Click the + icon or drag a file into the conversation window. Julius supports CSVs, Excel, JSON, PDFs, images, and more." (ajuda en)
+2. "Ask questions about your data... in plain language." Exemplos oficiais: "Show me the average sales by product category"; "Sort the data by customer age". (ajuda en)
+3. "Create visualizations... Show me a bar plot of sales by product category". "Right-click any visualization to copy or save it." (ajuda en)
+4. "Export data: Ask Julius to export your results as CSV or Excel. A download link will appear in the chat." (ajuda en) [CONFIRMADO]
+- Conectar Google Sheets [16]: no Google Sheets, "click Share, and ensure that 'Anyone with the link' is set to Viewer"; no Julius, "Click on the Paper Clip and select Google Sheet"; colar a URL; "Click the Submit button". (ajuda en) Atenção: esse passo torna a planilha pública para quem tiver o link [SUGESTÃO: usar só com dados públicos]. Há também, no botão "+", importação de Google Drive, OneDrive, SharePoint ou Google Sheets [24]. A doc de Files cita "Paper Clip" e a de Chat Interface cita "+ Button": possível diferença de versão da interface. [VERIFICAR na tela]
+- Mudar idioma das respostas: ícone de engrenagem (canto superior direito) > "Customize Julius" > escrever a instrução > salvar [21]. (ajuda en) [CONFIRMADO]
+- Ver os dados por trás: "Data Explorer" no menu da direita ou botão "Expand" em qualquer dataframe; mostra 49 linhas por vez com botões "Next" / "Previous"; exportar CSV pelo botão de exportação [26]. (ajuda en) [CONFIRMADO]
+
+4. CONCEITOS E GLOSSÁRIO
+(Definições simples e analogias abaixo são elaboração própria [SUGESTÃO], salvo quando indicada fonte.)
+- Base de dados / conjunto de dados (dataset): [SUGESTÃO] uma tabela em que cada linha é um registro (um mês, um processo, uma empresa) e cada coluna é uma característica. Analogia: um fichário em que cada ficha tem os mesmos campos.
+- Dicionário de dados: [SUGESTÃO] o "manual" da base, que diz o que significa cada coluna, a unidade e o período. Ex. real: o arquivo "Variáveis - JN.csv" do CNJ, com 1.314 siglas e descrições [46].
+- Registro / linha; variável / coluna; tipo de coluna (número, texto, data). [SUGESTÃO]
+- DataFrame: "a table that shows all of the data used and processed by Julius" (ajuda en) [26]. Na OpenAI: o ambiente "pode exibir DataFrames do pandas como tabelas interativas" [1]. [CONFIRMADO]
+- Python / código por trás: [SUGESTÃO] a IA escreve uma "receita" (código) e a executa; o número que você vê é o resultado da receita, não um "chute" do texto. Ver a receita é como pedir a memória de cálculo ao contador.
+- Notebook Jupyter "com estado": [SUGESTÃO] um caderno em que cada passo lembra o que foi feito antes; se a sessão cai, a memória se perde e é preciso recarregar o arquivo. Fonte do termo: [1].
+- Contêiner / sandbox: "A container is the virtual environment where Julius is manipulating your files... Each container acts like a remote computer in the cloud" (ajuda en) [17]. [CONFIRMADO]
+- Valor ausente (missing / NaN), duplicado, valor discrepante (outlier, "valores atípicos" / "valores discrepantes" na ajuda pt-BR) [6][1].
+- CSV: [SUGESTÃO] texto puro com colunas separadas por um caractere. No Brasil é comum o separador ";" e a vírgula decimal (ex.: arquivo do Banco Central: "01/01/2020";"0,21") [41].
+- Codificação de caracteres (UTF-8 x latin-1/ISO-8859-1): [SUGESTÃO] "o alfabeto" em que o arquivo foi gravado; se lido com o alfabeto errado, "Decisão" vira "Decis�o". Casos reais testados: CVM cadastro de companhias abertas em ISO-8859 (latin-1) [48]; CNJ Justiça em Números em latin-1 [46]; Banco Central e IBGE/SIDRA em UTF-8 [41][43].
+- Média x mediana: [SUGESTÃO] média é "dividir o bolo igualmente"; mediana é "o valor do meio da fila". Um bilionário entrando numa sala muda a média, quase não muda a mediana.
+- Desvio padrão: [SUGESTÃO] quão espalhados os valores estão em torno da média. Citado pela OpenAI entre as agregações possíveis [6].
+- Valor atípico (outlier): [SUGESTÃO] ponto muito fora do padrão; pode ser erro de digitação ou fato real importante.
+- Correlação x causalidade: [SUGESTÃO] duas coisas andarem juntas não prova que uma causa a outra (venda de sorvete e afogamentos sobem no verão). A OpenAI recomenda instruir o ChatGPT "a não tratar correlações como causas" [11]. [CONFIRMADO o trecho da OpenAI]
+- Amostra x população: [SUGESTÃO] a amostra é a "colherada" para provar a sopa; só representa a panela se a sopa foi mexida (amostra aleatória).
+- Número absoluto x taxa x per capita: [SUGESTÃO] SP tem mais processos que AC porque tem mais gente; compare "por 100 mil habitantes" (usar a população do Censo 2022 [43]).
+- Valor nominal x valor real (inflação): [SUGESTÃO] R$ 100 de 2020 não compram o mesmo que R$ 100 de 2025; corrigir pelo IPCA. Gabarito real: IPCA acumulado 2024 = 4,83%; 2025 = 4,26% [42][41].
+- Variação percentual x pontos percentuais: [SUGESTÃO] de 4,83% para 4,26% a inflação caiu 0,57 ponto percentual (p.p.), não 0,57% — o IBGE usa "0,57 p.p." [42].
+- Tabela dinâmica (pivot): [SUGESTÃO] resumo que agrupa linhas por categoria e soma/conta. O Julius gera planilhas Excel "with formulas, multi-sheet models, pivot tables" [24].
+- Gráficos interativos x estáticos: ver seção 5 [1].
+- Consolidado x controladora (finanças): [SUGESTÃO, com caso real] na DRE consolidada da Petrobras 2024 o "Lucro/Prejuízo Consolidado do Período" é R$ 37,009 bi, mas o número divulgado à imprensa (R$ 36,6 bi) é a linha "Atribuído a Sócios da Empresa Controladora" [48][49]. A IA pode escolher a linha errada.
+- Alucinação: [SUGESTÃO] resposta inventada dita com segurança; na análise de dados aparece como número que não está no arquivo. O Julius chama de "hallucinating" o caso em que a IA "goes into loops and can't produce an output" [29].
+- Créditos (Julius): "Every action in Julius costs credits. The cost depends on what you're doing, which AI model is used, and how complex the task is" [15]. [CONFIRMADO]
+- Camada semântica: "definições de métricas, cálculos personalizados e relações entre conjuntos de dados" usadas pelo plugin Data [10]. [CONFIRMADO] (avançado; só para a ementa)
+
+5. FUNCIONALIDADES
+5.1 ChatGPT — Análise de dados [1][3][6][5]
+- Tipos de arquivo para análise: "Planilhas, como arquivos .xls, .xlsx e .csv; PDFs; Arquivos de texto e dados, como .json, .xml, .yaml, .txt e .md" [1]. Na tabela geral de formatos: planilhas "XLSX, XLS, CSV, TSV, planilha OpenDocument (.ods)" [3]. Arquivo .gdoc não sobe direto ("Exporte-o como PDF ou DOCX") [3]. ZIP: "quando a análise de dados está disponível, o ChatGPT pode usar ferramentas para abrir um arquivo ZIP e trabalhar com os arquivos contidos nele" [3]. [CONFIRMADO] Plano: Free e pagos, com limites [3][5].
+- PDFs com tabelas: "O ChatGPT pode não extrair valores exatos de forma confiável de tabelas em imagens, arquivos digitalizados ou arquivos com layouts visuais complexos. Quando valores exatos forem importantes, carregue uma planilha ou um arquivo baseado em texto" [1]. [CONFIRMADO]
+- O que faz: "Resumir linhas, colunas, tendências e valores discrepantes; Criar tabelas para revisão linha por linha; Criar gráficos a partir de dados carregados; Executar cálculos, transformações e análises estatísticas baseados em Python; Explicar suposições, resultados e possíveis próximos passos" [1]. [CONFIRMADO]
+- Detecção de problemas: o ChatGPT identifica "Valores ausentes; Valores atípicos; Linhas duplicadas; Tipos de dados incorretos"; prompt oficial: "Verifique se há problemas comuns nestes dados" [6]. [CONFIRMADO]
+- Agregações: "Somas; Médias (mediana, média, moda); Valores mínimos e máximos; Contagens de valores distintos; Desvio padrão" [6]. Juntar duas bases por identificador comum (ex.: customer_id): "O ChatGPT mescla conjuntos de dados automaticamente" quando a pergunta exige [6]. [CONFIRMADO]
+- Estatística avançada citada pela OpenAI: testes t, ANOVA, MANOVA, correlação, regressão, séries temporais (ARIMA, decomposição sazonal) [6]. Fora do escopo do curso (estatística inferencial), mas útil para a ementa como fronteira. [CONFIRMADO]
+- Tabelas interativas: criadas ao carregar o arquivo; expandir (duas setas); selecionar linhas/colunas/células e pedir cálculo; editar via prompt (ex.: adicionar coluna com soma de duas colunas); baixar em CSV [6]. [CONFIRMADO]
+- Gráficos: tipos que podem ser pedidos (estáticos): "gráfico de linhas, gráfico de barras, gráfico de pizza, histogramas, gráfico de dispersão, box plots (diagramas de caixa e bigodes), mapas de calor, gráficos de área, gráficos de radar, mapas de árvore, gráficos de bolhas e gráficos de cascata" [6]. Interativos: "Gráficos interativos são compatíveis com gráficos de barras, linhas, pizza e dispersão. Outros tipos de gráfico podem ser retornados como imagens estáticas" [1]. Botões: "Alternar para gráfico interativo" / "Alternar para gráfico estático" (ajuda pt-BR) = "Switch to interactive chart" / "Switch to static chart" (ajuda en) [1][2]. Personalizar: "editar as cores do gráfico ou ativar ou desativar sua interatividade... selecionar uma das nossas cores padrão ou inserir o código hexadecimal de uma cor" [6]. [CONFIRMADO] Tabela de preços: "Tabelas e gráficos interativos" em todos os planos, Free incluído (ícone) [5] [VERIFICAR na tela].
+- Exportar: tabela em CSV (botão de download) e gráfico em PNG (botão de download) [6]. XLSX: a ajuda lida não traz botão; pode-se pedir que o ChatGPT gere o arquivo [SUGESTÃO/VERIFICAR].
+- Ver o código: a ajuda atual diz "revise o código gerado, as saídas e as suposições" e "peça ao ChatGPT para mostrar ou ajustar esse método" [1], mas NÃO nomeia o botão. Nome do controle em fontes não oficiais (universidades e blogs, 2024–2026): "View analysis" / "Ver análise", ícone [>_] ao fim da resposta [57]. [VERIFICAR na interface; nome em pt-BR NÃO ENCONTRADO em fonte oficial]
+- Sem internet no ambiente Python: "O ambiente Python usado para análise de dados não pode fazer solicitações externas na web nem chamadas de API" [1]. Consequência didática: o aluno precisa baixar a base (ex.: do IBGE) e enviar o arquivo. [CONFIRMADO]
+- Fontes conectadas: "Quando houver conectores disponíveis para sua conta ou espaço de trabalho, você também poderá anexar arquivos de fontes conectadas, como Google Drive, OneDrive e SharePoint" [1]. Permissões: "O ChatGPT não pode usar arquivos que a Conta do Google conectada não consegue abrir"; ações que alteram arquivos "exigem as permissões correspondentes do Google"; "O ChatGPT pode pedir que você confirme uma ação antes de executá-la" [9]. Plano: depende de plano, local e workspace [9]. [CONFIRMADO]
+- Biblioteca / ChatGPT Space: arquivos enviados ou criados podem ser salvos separadamente da conversa, na "Biblioteca" ou no "Space" [3][4]. [CONFIRMADO]
+- O que acontece com arquivos quando a sessão expira: a ajuda não fala em "sessão expirada". Diz que "Arquivos que não forem salvos na Biblioteca podem expirar independentemente das configurações de retenção do chat. Para espaços de trabalho corporativos, alguns arquivos temporários podem expirar após 48 horas" [4]. Para contas pessoais, prazo NÃO ENCONTRADO. [CONFIRMADO o trecho; VERIFICAR o resto]
+- ChatGPT Work e plugin Data (avançado, para ementa): "O plugin Data ajuda você a investigar questões de negócio no ChatGPT Work e no Codex... criar dashboards e relatórios interativos"; acionamento com "@Data"; fontes: Amazon Redshift, ClickHouse, Databricks, Google BigQuery, MongoDB, Snowflake; ferramentas de BI: Omni, Oracle BI, Power BI, Sigma, Tableau, ThoughtSpot [10]. Disponibilidade por plano: depende do workspace; voltado a empresas [10]. [CONFIRMADO]
+5.2 Julius AI [12][14][16][23][24][25][26][30][31]
+- Tipos de arquivo [16]: dados CSV, Excel (.xlsx, .xls), JSON, Parquet, Feather, SQLite (.db, .sqlite), SPSS (.sav); texto .txt, .md, PDF; imagens PNG, JPEG, HEIC, WebP, GIF; código .py, .ipynb, .r, .sql. Planilhas com várias abas: "Yes!... you can refer to the individual names of the tabs in your prompts" [15]. [CONFIRMADO]
+- Conectores [24][12]: Google Drive, Google Sheets (conexão "live"), Microsoft OneDrive (pessoal), SharePoint (OneDrive for Business) em todos os planos; Postgres, MySQL, SQL Server, Supabase, BigQuery, Snowflake, Google Ads, Meta Ads; bancos/armazéns a partir do Plus/Pro/Business conforme a página de preços (Snowflake, BigQuery, Postgres listados em Pro e Business) [12]. [CONFIRMADO]
+- Barra de chat (nomes da doc em inglês) [24]: "+ Button" (anexar ou importar); "Reasoning Intensity" com níveis "Low / Medium" e "High / Extra High"; "Connectors" (ícone de link/nós) com "Request connector"; "Model Selector" (clicar no nome do modelo, ex.: "Julius 1.2 Lite"); "Browser Agent"; "Video"; "Image"; "Build Website"; "Excel"; "Slides"; "More" (Stock Analysis, Dashboard, Report). (ajuda en) [CONFIRMADO]
+- Execução de código e transparência: "Julius writes Python or R and runs it in a secure cloud container... In the chat this appears as Generating code → Generated code. You can read the code, copy it, and see its output inline." [25]. Outros rótulos: "Generating visualization → Generated visualization"; "Searched internet"; "Editing file → Edited file" (com diff); "Querying BigQuery → Queried BigQuery" [25]. (ajuda en) [CONFIRMADO]
+- Gráficos [23][14]: básicos (Line, Bar, Scatter, Histograms, Box Plots, Pie, Heatmaps, Violin), avançados (3D, mapas coropléticos com geopandas, redes, Sankey, Treemaps, Radar, Candlestick, Gantt, Parallel Coordinates, Sunburst), interativos (Plotly, Bokeh, Altair, Streamlit/Dash). Copiar/salvar: botão direito do mouse sobre o gráfico [14]. (ajuda en) [CONFIRMADO]
+- Data Explorer [26]: prévia de todas as tabelas geradas; exportar CSV; 49 linhas por página. [CONFIRMADO]
+- Relatórios e apresentações [30][33]: "A report is a written deliverable... executive summary, a research memo"; botão "Publish" cria link público; apresentações em HTML, PowerPoint, PDF, PNG, Google Slides. [CONFIRMADO] No Free, Presentation Maker é "Limited" [12].
+- Compartilhar: "Share → Public access → Share now" gera link de replay; "Anyone with that link can watch the replay" [22]. Exportar o chat inteiro em PDF/DOCX/Notebook: "no longer available" [22]. [CONFIRMADO]
+- Limpeza: dois jeitos oficiais — comandos passo a passo ("standardize the data", "Handle missing values", "Remove duplicates") ou "Clean this dataset." de uma vez [28]. [CONFIRMADO]
+- Modelos [31]: Julius 1.2 Lite (todos os planos), Julius 1.2 e 1.2 Max (pagos), 1.2 Ultra (Max e acima); modelos gerais (GPT-6 Astra, Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, Grok 4.7, Muse Spark 1.3, Kimi K3) só nos pagos. [CONFIRMADO]
+- Execuções agendadas: Free 3; pagos ilimitadas [12]. Fora do escopo (automação). [CONFIRMADO]
+
+6. CASOS DE USO PARA O PÚBLICO DO CURSO
+- Analistas / ciência de dados: OpenAI Academy publicou webinar "Como as equipes de ciência de dados usam ChatGPT Work" (14/07/2026) e o guia "ChatGPT Work for data teams" (webinar de 20/08/2026, com dados de demonstração fictícios) [55]. Fonte: fabricante. Resultado medido: NÃO ENCONTRADO.
+- Universidades usando Julius em disciplinas (ex.: Rice University) — relatado em matéria sobre a rodada seed [34]. Fonte: imprensa repetindo a empresa. [VERIFICAR]
+- Setor público brasileiro: TCU (ferramenta Alice 360 combinando IA e estatística em compras públicas, com reconhecimento de problemas de qualidade de dados e falsos positivos) e CGU (grupo de trabalho de 120 dias para propor IA em análise de dados; ferramenta interna CGU-Insight) [54]. Fonte: imprensa (Contábeis), não oficial; e não é uso de ChatGPT/Julius. [VERIFICAR]
+- Pesquisa Economist Impact citada pela imprensa: análise de dados e análises preditivas são o uso mais comum de IA no setor público brasileiro (58% dos entrevistados) [54]. [VERIFICAR]
+- Jurídico: Anuário Análise Advocacia 2026 — 47% de 723 escritórios empresariais já incorporaram IA; sócio do Arruda Alvim diz que a IA "democratizou o uso de dados e a jurimetria" [53]. Fonte: imprensa especializada. Caso com ChatGPT/Julius e resultado medido: NÃO ENCONTRADO.
+- Finanças e negócios (caso real com ChatGPT/Julius e resultado): NÃO ENCONTRADO (procurei: OpenAI Academy, blog Julius, imprensa brasileira).
+- Saúde (gestão de serviços): NÃO ENCONTRADO caso de gestão. O estudo JMIR 2025 testou o ChatGPT em estatística de dados de pesquisa em saúde [36] (avaliação, não caso de uso).
+- Engenharia e técnicos: NÃO ENCONTRADO.
+- Escolas / gestores escolares: NÃO ENCONTRADO.
+- Comunicação e marketing: exemplo de prompt de marketing publicado pela OpenAI [11] (não é caso real). NÃO ENCONTRADO caso real.
+Cenários hipotéticos (não substituem casos reais):
+- [SUGESTÃO] Analista de planejamento compara a inflação mensal de 2024 e 2025 (base do Banco Central) e confere o acumulado com o IBGE.
+- [SUGESTÃO] Advogado de contencioso usa a base do Justiça em Números para comparar casos novos por tribunal e por 100 mil habitantes.
+- [SUGESTÃO] Gestor público monta ranking de população por UF e calcula participação percentual.
+- [SUGESTÃO] Equipe de RI compara lucro e receita de companhias abertas na base de DFP da CVM.
+
+7. BOAS PRÁTICAS E EXEMPLOS DE PROMPTS
+7.1 Publicados pela OpenAI
+- "Comece pela decisão que você está tentando apoiar. Uma estrutura simples seria: 'Estou tentando decidir ___, com base em ___.'" [11]
+- "Forneça seus dados juntamente com qualquer contexto crítico — definições, período de tempo e o que as colunas principais representam." [11]
+- "Peça uma proposta, não apenas uma resposta... solicite um resumo de análise exploratória de dados (EDA) seguido de hipóteses a serem testadas." [11]
+- "Se recursos visuais forem úteis, solicite-os explicitamente — o que plotar, como segmentar e quaisquer itens indispensáveis, como rótulos dos eixos ou unidades." [11]
+- "Se os números forem realmente importantes, você também pode pedir que mostre como chegou a eles, incluindo as suposições que fez, quaisquer fórmulas que usou... e verificações rápidas de dados ausentes ou picos incomuns." [11]
+- "instruí-lo a não tratar correlações como causas, a apontar quaisquer limitações nos dados e a sinalizar qualquer coisa que pareça fora do comum... faça uma rápida verificação da realidade — escolha alguns números-chave e verifique-os pontualmente" [11]
+- Prompts prontos da Academy [11]: "Analise esta planilha e produza: (1) uma tabela de KPIs (Mês + Ano), (2) 3 gráficos e (3) um resumo executivo de 10 tópicos com 'riscos' e 'ações recomendadas'. Dados: [enviar]."; Finanças: "Analise esta exportação em busca de anomalias (duplicatas, picos inesperados, alterações de fornecedor). Sinalize as linhas para revisão, explique por que cada uma é suspeita e sugira a próxima verificação que devo executar."; "Converta essas descobertas em 5 títulos de slides com marcadores (público-alvo: equipe executiva). Inclua um gráfico por slide e um slide final com a indicação de 'decisão necessária'."
+- Da ajuda: "Verifique se há problemas comuns nestes dados."; "Calcule a mediana e o desvio padrão destes dados."; "Há algo notável ou incomum nesta análise?" [6]
+- Ao pedir um método: "Peça que ele use um método, tipo de gráfico, agrupamento ou coluna específico quando você precisar de uma abordagem específica" [1].
+7.2 Publicados pelo Julius
+- Princípios "Effective Prompting" [27]: Be Clear and Specific; Provide Sufficient Context ("If you're referring to an uploaded document or a data connection, say so explicitly"); Use Structured Instructions ("Don't try to boil the ocean!"); Indicate Your Desired Output Format; Set a Role; Iterate and Refine. TL;DR: "Work in small chunks!"
+- Relatórios [30]: "Write up these findings as a report for my stakeholders"; "Reference the specific figures from the revenue and retention tables"; "Keep it to one page, confident and plain-spoken".
+- Reasoning: usar "High / Extra High" para "messy data cleaning, complex analysis... or when accuracy matters more than speed" [24].
+7.3 Escritos pela pesquisa [SUGESTÃO]
+- [SUGESTÃO] Carregar e entender: "Antes de analisar, me diga: quantas linhas e colunas o arquivo tem, o tipo de cada coluna, o período coberto, e quais colunas têm valores vazios. Não calcule nada ainda."
+- [SUGESTÃO] Formato brasileiro: "Este CSV usa ponto e vírgula como separador, vírgula como decimal e datas dd/mm/aaaa, codificação latin-1. Leia respeitando isso e me mostre as 5 primeiras linhas já convertidas."
+- [SUGESTÃO] Conferência: "Liste as premissas que você usou, mostre o código do cálculo do total e diga quantas linhas entraram na conta e quantas foram descartadas, e por quê."
+- [SUGESTÃO] Gráfico acessível: "Faça um gráfico de barras horizontais ordenado do maior para o menor, eixo começando em zero, título que diga a conclusão, rótulos com o valor, fonte dos dados no rodapé e cores distinguíveis por daltônicos. Depois escreva um texto alternativo de 2 frases."
+- [SUGESTÃO] Gabarito: "Compare o seu resultado com o número oficial X publicado por [fonte]. Se não bater, investigue e explique a diferença sem ajustar o número para coincidir."
+
+8. SEGURANÇA, PRIVACIDADE E DADOS
+8.1 ChatGPT
+- Treinamento (contas pessoais): "Nos espaços de trabalho pessoais dos planos ChatGPT Free, Plus e Pro, o compartilhamento de dados para treinamento fica ativado por padrão. Você pode desativar Melhorar o modelo para todo mundo" [7]. Caminho web: "Abra o menu da sua conta. Selecione 'Configurações'. Selecione 'Controles de dados'. Selecione 'Melhorar o modelo para todo mundo', desative a opção e selecione 'Pronto'." iOS/Android: "Abra a barra lateral. Selecione o ícone do seu perfil para abrir as Configurações. Selecione 'Controles de dados'. Desative..." (ajuda pt-BR) [7]. Alternativa: "Não treinar com meu conteúdo" no Portal de Privacidade [8]. [CONFIRMADO]
+- Atenção: "Se você optar por fornecer feedback, toda a conversa associada a esse feedback poderá ser usada para treinar nossos modelos" (mesmo com opt-out) [8]. [CONFIRMADO]
+- Empresas: "Por padrão, não usamos entradas ou saídas do ChatGPT Business, ChatGPT Enterprise, ChatGPT Edu ou da nossa API para melhorar nossos modelos" [8]. [CONFIRMADO]
+- Chat temporário: não entra no histórico, não cria memórias, "não são usados para aprimorar os modelos da OpenAI", "podem ser retidos por até 30 dias por motivos de segurança" [7][4]. [CONFIRMADO]
+- Retenção e exclusão: conversa excluída é removida da conta "imediatamente" e a OpenAI "programa a exclusão permanente... em até 30 dias", salvo motivos de segurança ou obrigação legal; não é possível restaurar [4]. "Excluir uma conversa não exclui um arquivo salvo separadamente" na Biblioteca/Space [4][3]. Arquivos de projetos ficam até o projeto ou arquivo ser excluído [4]. [CONFIRMADO]
+- Segurança técnica: "Todos os dados são criptografados em trânsito (TLS 1.2). Os dados em repouso são criptografados (AES-256)" [5]. [CONFIRMADO]
+- Apps conectados: o ChatGPT usa a conta e as permissões do app conectado; administradores controlam quais apps estão disponíveis [1][9]. [CONFIRMADO]
+8.2 Julius AI
+- Treinamento: a Política diz que Julius pode "improve the Site, the Services and the AI Function, provided, that we do not use your Personal Information to train our artificial intelligence models" [20]. Mas a página "Privacy and Data Security" esclarece: "Julius doesn't build its own AI models. The Terms of Service, section 4, and the Privacy Policy, section 4, permit Julius to share user content, including prompts, uploaded files and outputs, with AI technology providers to help evaluate, improve and develop their models." Opt-out: "email privacy@julius.ai (Privacy Policy, section 9)" [19]. [CONFIRMADO]
+- Contradição a registrar: uma listagem do Julius no Slack Marketplace afirma que o Julius "does not allow LLM providers (OpenAI or Anthropic) to retain, log, or use Customer Data for model training" e que os dados ficam nos EUA, no Google Cloud [busca, slack.com/marketplace]. Isso conflita com [19]. [VERIFICAR]
+- Onde os dados ficam: "Julius AI is based in the United States... Personal Information may be transferred to, stored on servers in, and accessed from the United States and countries other than the country in which the Personal Information was initially collected" [20]. Subprocessadores citados: Anthropic, Google, OpenAI, Stripe [20]. [CONFIRMADO]
+- Retenção: arquivos apagados após 1 h (Free) ou 7 dias (pagos) de inatividade [16]; exclusão de conta "is permanent", mas "does not establish immediate erasure of every backup or legally retained record"; a Política "does not publish a fixed backup-deletion deadline" [15][19]; em cancelamento empresarial, exclusão "within seven business days" [20]. [CONFIRMADO]
+- Certificações: "As of October 8, 2026, the Trust Center displays SOC 2 Type 2 Compliant... and provides a public TX-RAMP Level 2 certificate" [19]. [CONFIRMADO]
+- Contas empresariais: Business com SOC 2, 2FA, papéis e permissões; Enterprise com SSO [12]. Acordo de processamento de dados: mencionado ("any Data Processing Agreement") [20].
+8.3 LGPD, ANPD e sigilo
+- ANPD — anonimização e pseudonimização: existe apenas o "Estudo Preliminar — Anonimização e pseudonimização para proteção de dados" (versão 1.0, dez/2023), submetido a consulta à sociedade de 30/01/2024 a 28/02/2024 [39][40]. Versão final do guia: NÃO ENCONTRADO (procurei: gov.br/anpd, notícias 2025–2026). Pontos do estudo citados por fontes de terceiros: criptografia não é anonimização, mas técnica de pseudonimização; pseudonimização só é eficaz se a informação adicional for guardada à parte; metodologia em 12 etapas; técnicas como substituição, ofuscação, tokenização e salting [busca; mattosfilho.com.br; cesconbarrieu.com.br]. [VERIFICAR no PDF baixado]
+- [SUGESTÃO] Regra prática para o curso: antes de enviar, remover colunas de nome, CPF, e-mail, telefone, número de processo ligado a pessoa física, endereço; substituir identificadores por códigos (pseudonimização) e guardar a chave fora da ferramenta; agregar (contagens por categoria) quando possível. Dados de saúde, processos judiciais com partes identificáveis, dados de clientes e dados financeiros pessoais: não enviar em conta pessoal.
+- Sigilo profissional (OAB, CFM): orientação específica de conselhos sobre IA em análise de dados: NÃO ENCONTRADO nesta rodada (procurei: busca geral). A Resolução CNJ nº 615/2025 exige supervisão humana no uso de IA no Judiciário [busca; imprensa jurídica] [VERIFICAR texto oficial].
+- Políticas corporativas: [SUGESTÃO] verificar se a empresa tem ChatGPT Business/Enterprise (sem treino por padrão) e política interna antes de enviar qualquer base de trabalho.
+
+9. LIMITAÇÕES, ERROS COMUNS E SOLUÇÃO DE PROBLEMAS
+9.1 Oficiais (OpenAI)
+- Análise incompleta: "Mesmo que o upload seja concluído, o arquivo pode ser grande ou complexo demais, conter muitas imagens ou estar mal estruturado... Se o resultado parecer incompleto, peça ao ChatGPT para examinar abas, linhas, colunas ou seções específicas, ou divida o arquivo em arquivos menores" [1]. [CONFIRMADO]
+- Método errado na primeira tentativa: "O ChatGPT pode escolher um método de análise ou tipo de gráfico que não corresponda à sua intenção na primeira tentativa" [1]. [CONFIRMADO]
+- Sem web no Python [1]; PDF digitalizado não confiável [1]. [CONFIRMADO]
+- "limite de upload atingido": confirmar conta/plano; esperar o horário indicado; "Tentativas de upload malsucedidas podem, em alguns casos, contar para o limite"; ver "Configurações > Armazenamento"; consultar o Status da OpenAI [3]. "Atualmente, o ChatGPT não mostra quanto da sua cota de uploads por período móvel já foi usado" [3]. [CONFIRMADO]
+9.2 Oficiais (Julius)
+- Contêiner travando: "we recommend creating a new task. This resets the accumulated context" [29]. Julius "crashed in the middle of an analysis": reescrever o prompt mais específico ou começar novo thread [29]. Falha de download: procurar em "available files", atualizar o navegador, pedir que o Julius reproduza o arquivo [29]. Código de verificação de e-mail no spam [29]. [CONFIRMADO]
+- Arquivos somem após 1 h de inatividade no Free [16]: o aluno que para o exercício e volta depois precisa reenviar a base. [CONFIRMADO + SUGESTÃO didática]
+9.3 Erros documentados de IA em análise de dados (ver também seção 14, ponto 4)
+- Estudo JMIR 2025 (Ruta et al.): ChatGPT (interpretador de código) acertou estatística descritiva e tabulação em todas as tentativas, mas a estatística inferencial teve 32,5% de acerto com prompts "Basic", 81,3% "Intermediate" e 92,5% "Advanced"; o artigo cita outros estudos que encontraram "respostas incorretas, dados rotulados errado e resultados especulativos" [36]. [VERIFICAR números no PDF — o PDF não pôde ser baixado; lido via resumo de busca]
+- DSBench (2024/2025): o melhor agente resolveu 34,12% das 466 tarefas de análise de dados [37]. DABstep (Adyen + Hugging Face, jun/2025): o melhor agente no lançamento (o4-mini) teve 14,55% nas tarefas difíceis [38]. Leaderboards de 2026 mostram notas bem mais altas (agregador de terceiros) [VERIFICAR].
+- Erros que o próprio teste desta pesquisa mostrou nas bases públicas (para usar como exercícios): (a) arquivos em latin-1 lidos como UTF-8 viram "Decis�o" [48][46]; (b) soma ingênua de uma variável de "casos novos" no Justiça em Números 2025 deu 64.560.846, enquanto o relatório do CNJ divulga 40,9 milhões de casos novos em 2025 [46][47] — a diferença vem de definição/variável (qual indicador o relatório usa) e precisa ser investigada antes de concluir; (c) na DRE da Petrobras, "Lucro Consolidado" (R$ 37,0 bi) x "Atribuído a Sócios da Controladora" (R$ 36,6 bi) [48][49]; (d) valores em "MIL" (coluna ESCALA_MOEDA = MIL) na CVM: esquecer a escala dá um número mil vezes menor [48]. [CONFIRMADO os valores medidos; SUGESTÃO o uso didático]
+- Fóruns da comunidade (Reddit, OpenAI Community) sobre sessão expirada ("the code execution state was reset"): não consultados nesta rodada. NÃO ENCONTRADO. [VERIFICAR]
+
+10. COMPARAÇÃO COM ALTERNATIVAS
+(Fatos com fonte; conclusões marcadas [SUGESTÃO].)
+- ChatGPT (Análise de dados): Free com análise "Limitado" e 3 uploads/dia [5][3]; planilhas até ~50 MB [3]; gráficos interativos de barras, linhas, pizza e dispersão [1]; pt-BR na interface e na ajuda. Fonte oficial. [CONFIRMADO]
+- Julius AI: Free com 75 + 25 créditos diários, modelo Lite, arquivos apagados após 1 h; pagos a partir de US$ 20 [12][18][16]; interface em inglês, respostas em português por instrução [21]; formatos estatísticos (SPSS, Parquet) e R [16][25]. Fonte oficial. [CONFIRMADO]
+- Claude (Anthropic): página de preços em reais — Free R$ 0 ("Search the web, create files, and run code"; "Create and edit files with code execution: Yes"); Pro R$ 110/mês (R$ 92/mês no anual); Max R$ 550; Ultra R$ 1.100 [35]. "Claude Data" (ex-"Claude Dashboards", GA em 10/11/2026 segundo imprensa) e "Claude Sheets (beta)": só Pro e acima [35][60]. Limites de arquivo na análise: NÃO ENCONTRADO nesta rodada. [CONFIRMADO preços e tabela; VERIFICAR Claude Data]
+- Gemini (Google): análise de planilhas no app Gemini e no Google Sheets — NÃO ENCONTRADO com fonte oficial nesta rodada (ver pesquisa Gemini Chat da Onda 2). Agente de ciência de dados do Google Colab (Data Science Agent): lançado grátis em março de 2025 para maiores de 18 anos em países e idiomas selecionados; aceitava CSV, JSON e .txt até 1 GB (imprensa, 2025) [58]. Situação em nov/2026: NÃO CONFIRMADA. [VERIFICAR]
+- Microsoft Copilot / Python no Excel: "Copilot in Excel with Python" exige disponibilidade do Python no Excel e licença Microsoft 365 Copilot, segundo fontes secundárias; o artigo oficial existe (support.microsoft.com, 364e4ae9) mas não foi lido [59]. Fora do escopo (IA dentro da planilha). [VERIFICAR]
+- Painéis de BI (Power BI, Looker Studio, Tableau): alternativa para relatórios recorrentes; não pesquisados (fora do escopo).
+- Avaliação independente comparando ChatGPT x Julius x Claude x Gemini em análise de dados com metodologia publicada: NÃO ENCONTRADO (procurei: busca geral, arXiv). Benchmarks de agentes (DSBench, DABstep) avaliam modelos/agentes, não esses produtos de consumo [37][38].
+- [SUGESTÃO] Posicionamento para o curso: ChatGPT como ferramenta principal (o aluno já tem conta, interface em pt-BR); Julius como segunda opção para mostrar transparência do código ("Generated code") e o Data Explorer, mas com aviso de privacidade e de créditos.
+
+11. NOVIDADES RECENTES E RECURSOS INSTÁVEIS
+- ≈19/10/2026: artigo "Análise de dados com o ChatGPT" reescrito (Jupyter com estado, botões "Alternar para gráfico interativo/estático", fontes conectadas via plugins) [1]. [CONFIRMADO]
+- ≈14/11/2026: artigo de envio de arquivos atualizado; inclui limites, "ChatGPT Space" e transcrição de áudio no GPT-6 Instantâneo [3]. [CONFIRMADO]
+- 2026: ChatGPT Work e plugin Data (≈27/10/2026) [10][61]; webinars de dados na OpenAI Academy (jul–ago/2026) [55]. [CONFIRMADO]
+- 16/11/2026: artigos de controles de dados atualizados ("Acesso de confiança" Daybreak) [7]. [CONFIRMADO]
+- Julius: créditos (28/02/2026) [18]; Custom Agents descontinuados; fim da exportação do chat inteiro [22]; modelos Julius 1.2 [31]; Trust Center SOC 2 em 08/10/2026 [19]; Política de Privacidade de 21/10/2026 [20]. [CONFIRMADO]
+- Instável / pode mudar antes do curso ir ao ar: nomes de botões (a ajuda do Julius alterna "Paper Clip" e "+"), preços do Julius (mudaram duas vezes em 2026 segundo terceiros), limite diário de uploads do Free do ChatGPT ("A OpenAI pode reduzir esses limites nos horários de pico") [3], Claude Data/Sheets (beta) [35]. [SUGESTÃO: reconferir 2 semanas antes da publicação]
+
+12. MATERIAL DIDÁTICO EXISTENTE
+- OpenAI Academy — "Analisando dados com o ChatGPT" (pt-BR, 10/04/2026, com vídeo de demonstração embutido e áudio de 3:27) [11].
+- OpenAI Academy — webinar "Como as equipes de ciência de dados usam ChatGPT Work" (sob demanda, 14/07/2026) [55]; "ChatGPT Work for data teams — webinar resource guide" (20/08/2026) [55]; "Skill Lab: Analyzing data" (06/08/2026, encerrado) [55].
+- Julius — canal oficial no YouTube (youtube.com/@Julius-AI) e vídeos "How To Get Started on Julius", "Data Explorer Intro", "Teams Intro" [32]. Transcrição para baixar: NÃO VERIFICADA (o YouTube costuma oferecer legendas automáticas).
+- Escola de Dados (Open Knowledge Brasil) — escoladedados.org (testado: 200, HTML) [52]. Cursos específicos de IA para análise: NÃO VERIFICADO.
+- Guia de Estilo do Senado Federal — seção "Visualização de dados" (pt-BR) [50].
+- "Guia de Linguagem Simples para Visualização de Dados" (SBC, livro em PDF, ~100 páginas, Oliveira, Cappelli e Oliveira) [51].
+- Guias de universidades sobre "Data analysis" no ChatGPT (ex.: UCCS, Univ. of Michigan MIDAS, BYU) — em inglês, comunidade acadêmica [57].
+
+13. IDEIAS DE EXERCÍCIO
+Decomposição da tarefa observável ("Carregar uma base, explorar, gerar gráficos e interpretar resultados com verificação"):
+A1 Carregar — passo a passo oficial: seção 3.1 (ChatGPT) e 3.2 (Julius).
+A2 Explorar (entender, limpar, resumir) — passos oficiais: [6] (problemas comuns, agregações), [28] (limpeza Julius), [26] (Data Explorer).
+A3 Gerar gráficos — [1][6] (tipos, interativo, cores, PNG); [23][14] (Julius).
+A4 Interpretar — [11] (decisão, hipóteses, limitações, correlação ≠ causa); [30] (relatório Julius).
+A5 Verificar — [1] (revisar código, saídas e suposições); [11] (mostrar como chegou, conferir números-chave); seção 14 ponto 4.
+
+Bases testadas (detalhes na seção 14, ponto 9):
+B1 IPCA mensal (Banco Central, SGS 433): https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv&dataInicial=01/01/2020&dataFinal=31/12/2025 — devolve CSV direto (72 linhas, 2 colunas). Gabarito: 2024 = 4,83%; 2025 = 4,26% (IBGE) [41][42].
+B2 População por UF (IBGE/SIDRA 4709): https://apisidra.ibge.gov.br/values/t/4709/n3/all/v/93/p/2022?formato=csv — devolve CSV direto (27 UFs + 2 linhas de cabeçalho). Gabarito: Brasil = 203.080.756 [43][44].
+B3 Cadastro de companhias abertas (CVM): https://dados.cvm.gov.br/dados/CIA_ABERTA/CAD/DADOS/cad_cia_aberta.csv — CSV direto, 1,5 MB, 2.680 linhas, latin-1 [48].
+B4 DRE consolidada 2024 (CVM DFP, zip 13,4 MB com 19 CSVs; o arquivo dfp_cia_aberta_DRE_con_2024.csv tem 6,8 MB e 32.776 linhas): https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip. Gabarito: Petrobras 2024 lucro atribuído aos controladores R$ 36,6 bi; receita R$ 490,8 bi [48][49].
+B5 Justiça em Números (CNJ), zip 4,2 MB com 3 CSVs (o principal tem 11,6 MB, 1.595 linhas, 1.314 colunas) + dicionário: https://www.cnj.jus.br/wp-content/uploads/2026/09/17-set-2026.zip [46]. Gabarito do relatório 2026: 40,9 milhões de casos novos em 2025; acervo de 75,5 milhões (imprensa citando o relatório) [47] [VERIFICAR qual coluna reproduz o número].
+
+13a. EXERCÍCIOS CURTOS DE COMPREENSÃO (Essentials) — todos [SUGESTÃO]
+1. (A1) "Raio X do arquivo": enviar B1 ao ChatGPT e pedir número de linhas, colunas, tipos e período. Deu certo se: 72 linhas de dados, colunas "data" e "valor", de 01/2020 a 12/2025, e a coluna valor reconhecida como número (vírgula decimal convertida).
+2. (A1/A2) "O alfabeto errado": enviar B3 e pedir as 5 primeiras linhas. Se aparecer "Decis�o"/"RECUPERA��O", pedir que releia em latin-1. Deu certo se: "RECUPERAÇÃO JUDICIAL" aparece com acento.
+3. (A2) "Média ou mediana?": com B2, pedir média e mediana da população das UFs e explicar a diferença. Deu certo se: o aluno explica, com as palavras dele, por que SP puxa a média para cima (média ≈ 7,52 milhões = 203.080.756 / 27; mediana = valor da 14ª UF ordenada) [cálculo da média a partir de [43]].
+4. (A3) "Gráfico honesto": pedir gráfico de barras das 10 UFs mais populosas; depois pedir a versão com eixo começando em 50%. Deu certo se: o aluno identifica qual versão engana e por quê.
+5. (A3) "Interativo x estático": gerar gráfico de linhas do IPCA mensal e usar "Alternar para gráfico interativo"; baixar o PNG. Deu certo se: o arquivo .png abre no computador.
+6. (A4) "Correlação não é causa": pedir ao ChatGPT para "explicar por que" UFs mais populosas têm mais processos (B5) e depois pedir que liste explicações alternativas e o que não dá para concluir. Deu certo se: a resposta final cita população como fator de escala e sugere taxa por 100 mil habitantes.
+7. (A5) "Mostre o cálculo": pedir o IPCA acumulado de 2024 a partir de B1 e o código. Deu certo se: 4,83% (juros compostos: produto de (1+taxa/100) − 1). Se a IA somar as taxas mensais em vez de compô-las, o resultado é 4,73% (0,42+0,83+0,16+0,38+0,46+0,21+0,38−0,02+0,44+0,56+0,39+0,52, calculado a partir de B1); o aluno identifica o erro lendo o código.
+8. (A5) "Premissas": pedir à IA que liste as premissas usadas em qualquer cálculo anterior. Deu certo se: aparecem separador, decimal, período, linhas excluídas.
+9. (Privacidade) "Desligar o treino": localizar Configurações > Controles de dados > "Melhorar o modelo para todo mundo". Deu certo se: o aluno descreve o estado da opção na conta dele.
+
+13b. PRÁTICAS LONGAS COM PROBLEMA REAL (Hands On) — todas [SUGESTÃO]
+P1 "Inflação real do meu reajuste" (finanças/negócios; B1): calcular o IPCA acumulado de 2024 e 2025 e corrigir um valor de R$ 1.000 de jan/2024 para dez/2025; gráfico de linhas mensal; resumo de 5 linhas. Critérios: 2024 = 4,83% e 2025 = 4,26% batem com o IBGE [42]; valor corrigido = 1.000 × 1,0483 × 1,0426 ≈ R$ 1.092,96 [cálculo]; o aluno anexa o código ou a explicação do cálculo composto.
+P2 "Quem é grande na bolsa" (finanças; B4): no ChatGPT (cabe no limite de ~50 MB por planilha) carregar o DRE consolidado 2024, filtrar ORDEM_EXERC = "ÚLTIMO" e conta 3.11.01, ordenar as 10 maiores e fazer gráfico de barras horizontais. Critérios: Petrobras com 36.606.000 (em R$ mil) = R$ 36,6 bi, igual ao divulgado [49]; o aluno explica a diferença para os R$ 37,0 bi da conta 3.11 e a escala "MIL".
+P3 "Mapa da população" (setor público/escolas/saúde; B2): participação de cada UF no total, ranking, gráfico e frase de conclusão. Critérios: soma = 203.080.756; percentuais somam 100%.
+P4 "Judiciário em números" (jurídico; B5): carregar o CSV principal (11,6 MB; no Julius Free atenção aos créditos), filtrar ano 2025, identificar com ajuda do dicionário a variável de casos novos usada no relatório e tentar reproduzir 40,9 milhões. Critério de sucesso: o aluno documenta qual variável usou, o total obtido e, se não bater, a hipótese da diferença (ex.: inclusão de execuções, recursos internos ou duplicidade de linhas "Militar da União"/"Militar Uniao" vistas no arquivo) — sem forçar o número [46][47].
+P5 "Duas ferramentas, mesmo número" (qualquer área): repetir P1 ou P3 no Julius (Free) e comparar com o ChatGPT; abrir "Generated code" e o Data Explorer. Critério: os dois chegam ao mesmo gabarito; o aluno registra quanto crédito gastou.
+
+13c. IDEIAS DE PROJETO FINAL — todas [SUGESTÃO]
+F1 "Relatório de inflação e reajustes" (finanças/planejamento): material B1 (link testado). Entregas: base carregada e descrita; tabela anual 2020–2025; 2 gráficos (mensal e anual); resumo executivo com premissas e limitações; conferência contra o IBGE (2024 4,83%, 2025 4,26%). Terminou quando: os dois números oficiais batem; o resumo cita a fonte e a data de extração; há uma seção "o que esta análise não mostra".
+F2 "Raio X das companhias abertas" (finanças/negócios; servirá também para Dados com Python e IA): materiais B3 + B4. Entregas: setores com mais companhias ativas (B3), top 10 lucros 2024 (B4), gráfico, resumo para diretoria. Terminou quando: Petrobras confere com R$ 36,6 bi e R$ 490,8 bi de receita [49]; o aluno explica escala MIL e controladora x consolidado; há registro das linhas descartadas.
+F3 "Litigiosidade por 100 mil habitantes" (jurídico/setor público): B5 + B2. Entregas: casos novos 2025 por tribunal estadual, divididos pela população da UF (Censo 2022), ranking e gráfico. Terminou quando: o total nacional usado é explicado frente aos 40,9 milhões do relatório; a taxa por 100 mil é calculada com fórmula exposta; há aviso de que população de 2022 ≠ 2025.
+
+14. RESPOSTAS AO FOCO ESPECÍFICO DESTE CURSO
+1. Análise de dados no ChatGPT
+- Nome atual: "Análise de dados" / "Data analysis"; não é recurso separado nem modo a ligar; acionado ao enviar arquivo e pedir análise; usa Python em notebook Jupyter com estado [1][5]. [CONFIRMADO]
+- Planos: Free (Limitado), Go, Plus, Pro, Business, Enterprise [5]. Limites: planilhas ~50 MB; 80 arquivos a cada 3 h; Free 3 uploads/dia; arquivos por conversa sem número fixo; linhas: NÃO ENCONTRADO; tempo de sessão: NÃO ENCONTRADO [3][1].
+- Tipos: CSV, XLS, XLSX, TSV, ODS, JSON, XML, YAML, TXT, MD, PDF (tabelas em PDF digitalizado não confiáveis), ZIP [1][3].
+- Google Drive / OneDrive / SharePoint: via Plugins/Apps conectados, conforme plano e região [1][9].
+- Tabelas interativas: sim (expandir, selecionar, editar, baixar CSV) [6]. Gráficos interativos: barras, linhas, pizza, dispersão; demais estáticos [1]. Personalizar: cores (padrão ou hexadecimal), interatividade [6]. Baixar: CSV (tabela), PNG (gráfico) [6]; XLSX: pedir na conversa [VERIFICAR].
+- Botão para ver o código: NÃO ENCONTRADO em fonte oficial; fontes não oficiais citam "View analysis" [57]. [VERIFICAR]
+- Arquivos quando a sessão expira: NÃO ENCONTRADO para conta pessoal; arquivos fora da Biblioteca "podem expirar"; 48 h em alguns casos corporativos [4].
+- O aluno Free consegue fazer todos os exercícios? [SUGESTÃO] Os exercícios curtos com 1 arquivo pequeno por dia, sim (B1 1,5 KB; B2 2,7 KB; B3 1,5 MB). As práticas com vários arquivos esbarram no limite de 3 uploads por dia [3] e na análise "Limitada" [5]. Recomendação: desenhar o Hands On para no máximo 2–3 uploads por oficina, ou indicar Go/Plus. Teste real com conta Free: NÃO REALIZADO nesta rodada.
+2. Julius AI: ver 1.2, 2.2, 3.2, 5.2 e 8.2. Empresa Julius AI Inc. (São Francisco) [20]; fundador Rahul Sonwalkar [34]; Free 75 + 25 créditos/dia; Plus US$ 20; Pro US$ 45; Business US$ 450 [12][18]; em reais: NÃO ENCONTRADO; tamanho máximo de arquivo: NÃO ENCONTRADO (limite prático de RAM) [15]; fontes: arquivo, Google Sheets, Drive, OneDrive, SharePoint, bancos [24]; notebooks/fluxos salvos: exportação de notebook do chat inteiro descontinuada [22]; arquivos .ipynb podem ser enviados [16]; gráficos [23]; exportação CSV/Excel por link no chat [14]; português: respostas sim (instrução), interface não [21]; privacidade, retenção e treinamento: [19][20][16].
+3. O caminho de uma análise, para leigos
+- Carregar → entender (dicionário, tipos, unidades, período) → limpar → explorar → visualizar → interpretar e comunicar. Etapas e prompts oficiais: [1][6][11][28].
+- Formatos brasileiros observados nas bases testadas: separador ";" (BCB, SIDRA, CVM, CNJ), vírgula decimal (BCB "0,21"), datas dd/mm/aaaa (BCB) ou aaaa-mm-dd (CVM), latin-1 (CVM, CNJ) x UTF-8 (BCB, SIDRA), cabeçalho em 2 linhas (SIDRA: códigos NC;NN;... e depois os nomes) [41][43][48][46]. [CONFIRMADO por inspeção dos arquivos]
+- Guias de fontes confiáveis em pt-BR: Escola de Dados [52]; Guia de Estilo do Senado (visualização) [50]; Guia de Linguagem Simples para Visualização (SBC) [51]; IBGE Educa e "Código de Boas Práticas das Estatísticas do IBGE" (sobre qualidade estatística, não gráficos) [busca]. Guia de letramento em dados do IBGE específico: NÃO ENCONTRADO.
+- Conceitos estatísticos mínimos com definição e analogia: seção 4 [SUGESTÃO].
+4. Verificação
+- Erros documentados: (a) análise parcial do arquivo e método errado — reconhecidos pela OpenAI [1]; (b) estatística inferencial com prompt simples: 32,5% de acerto (JMIR 2025) [36]; (c) agentes de ciência de dados: 34,12% (DSBench) [37] e 14,55% em tarefas difíceis (DABstep, 2025) [38]; (d) números inventados, linhas descartadas sem aviso, arquivo truncado: mencionados em outros estudos citados por [36] — artigos específicos NÃO LIDOS; (e) conclusão causal sem base: alerta da própria OpenAI [11]. Teste de imprensa comparando ferramentas: NÃO ENCONTRADO.
+- Técnicas publicadas: revisar código, saídas e suposições [1]; pedir que mostre como chegou, fórmulas e verificações de ausentes/picos; conferir números-chave pontualmente [11]; pedir que cite os números das tabelas no relatório [30]; Data Explorer para inspecionar os dados [26]. [CONFIRMADO]
+- [SUGESTÃO] Rotina de 5 conferências para o curso: (1) contar linhas antes e depois de cada filtro; (2) recalcular um total na planilha; (3) ler o código do cálculo principal; (4) comparar com um número oficial publicado; (5) pedir a lista de premissas.
+5. Gráficos
+- Boas práticas em pt-BR: Senado ("indicar sempre a fonte de onde os dados foram obtidos" e "a representação gráfica deve manter fidelidade à proporção dos dados") [50]; Guia de Linguagem Simples (SBC, mais de 150 diretrizes) [51]. [VERIFICAR transcrição literal]
+- Gráficos enganosos comuns [SUGESTÃO]: eixo que não começa em zero em barras; pizza com muitas fatias; escala diferente entre gráficos comparados; dupla escala; acumulado apresentado como mensal; valores nominais sem correção de inflação.
+- Acessibilidade [SUGESTÃO]: rótulos diretos, título com a conclusão, contraste, paleta para daltonismo, texto alternativo. Orientação oficial OpenAI/Julius sobre acessibilidade de gráficos: NÃO ENCONTRADO.
+- No ChatGPT: pedir tipo, segmentação e rótulos/unidades [11]; "Alternar para gráfico interativo"; editar cores (padrão ou hexadecimal); baixar PNG [1][6]. No Julius: descrever o gráfico em linguagem natural; botão direito para copiar/salvar; bibliotecas citadas (matplotlib, seaborn, plotly) [14][23].
+6. Privacidade e dados: ver seção 8. Pessoal x empresarial: ChatGPT Business/Enterprise/Edu e API não treinam por padrão [8]; Julius Business/Enterprise com SOC 2/SSO, mas a cláusula de compartilhamento com provedores de IA está nos Termos e na Política gerais [19][12]. ANPD: só estudo preliminar [39]. Dados sensíveis e sigilo: [SUGESTÃO] não enviar.
+7. Comparação: ver seção 10.
+8. Casos reais: ver seção 6 (maioria NÃO ENCONTRADO com resultado medido).
+9. Bases públicas (todas testadas em 17/11/2026, sem login)
+- B1 BCB SGS 433 (IPCA % a.m.): link da API devolve text/csv UTF-8; 2 colunas; 72 linhas para 2020–2025; separador ";" e vírgula decimal entre aspas. Dicionário: a própria série (433 = IPCA, variação % mensal) [41]. Gabarito IBGE: 2024 4,83%; 2025 4,26% ("IPCA em dezembro vai a 0,33% e acumula 4,26% em 2025", 09/01/2026) [42]. Roda no ChatGPT Free e no Julius Free. [CONFIRMADO — acumulados recalculados por script a partir do arquivo: 4,83% e 4,26%]
+- B2 IBGE SIDRA 4709 (população residente, Censo 2022, por UF): API devolve text/csv UTF-8; 11 colunas; 27 UFs; primeira linha com códigos de coluna (NC;NN;D1C...), segunda com nomes [43]. Gabarito: Brasil 203.080.756 (soma das UFs = 203.080.756, conferida por script; também na consulta n1/all) [43][44]. Roda nos dois planos gratuitos.
+- B3 CVM cadastro de companhias abertas: CSV ISO-8859-1, CRLF, 1.495.337 bytes, 2.680 linhas, dezenas de colunas (CNPJ_CIA; DENOM_SOCIAL; ...; SIT; SETOR_ATIV; ...) [48]. Dicionário: página do conjunto em dados.cvm.gov.br [48]. Gabarito oficial direto: NÃO ENCONTRADO (usar contagem por situação como exercício de consistência). Roda nos dois gratuitos.
+- B4 CVM DFP 2024 (zip 13.397.608 bytes; DRE consolidada 6,8 MB, 32.776 linhas, 15 colunas, 467 empresas): latin-1; escala "MIL"; coluna ORDEM_EXERC com "ÚLTIMO"/"PENÚLTIMO" [48]. Gabarito: Petrobras 2024 — receita 490.829.000 mil (R$ 490,8 bi) e lucro atribuído aos controladores 36.606.000 mil (R$ 36,6 bi), iguais aos divulgados [49]. Roda no ChatGPT (planilha < 50 MB) se o aluno enviar só o CSV da DRE; o zip inteiro tem 19 CSVs. Também serve ao curso Dados com Python e IA (comparar sem código x com código). [CONFIRMADO por script]
+- B5 CNJ Justiça em Números (base de 17/09/2026; JN_23-Jun-2026.csv 11,6 MB, 1.595 linhas, 1.314 colunas, anos 2009–2025, latin-1; dicionário "Variáveis - JN.csv"; arquivo da Justiça Federal por seção) [46]. Gabarito: 40,9 milhões de casos novos em 2025, acervo 75,5 milhões (relatório 2026, via imprensa) [47]; relatório oficial em PDF de 26 MB [45]. Base jurídica. Roda no ChatGPT (≈11,6 MB); no Julius Free, limitada por créditos. [CONFIRMADO estrutura; VERIFICAR variável que reproduz 40,9 mi]
+- Saúde (OpenDataSUS), educação (INEP), ANS, ANEEL, Tesouro: não testados como base de exercício nesta rodada; ANEEL geração distribuída (113 MB) e Tesouro Direto (CSV ~ dezenas de MB) responderam ao link mas excedem o tamanho ideal para o plano gratuito [teste de link]. [VERIFICAR]
+10. Comunicar os resultados
+- OpenAI: pedir "uma tabela final bem elaborada ou um breve resumo executivo que traduza as conclusões em ações concretas"; prompt de slides com "decisão necessária" [11]. Julius: Reports (resumo executivo, memo, metodologia) e Presentation Maker (PowerPoint, PDF, Google Slides) [30][33].
+- Registrar premissas e limitações: OpenAI recomenda pedir suposições, fórmulas e limitações [11]. [CONFIRMADO]
+- Orientações publicadas sobre comunicar números a leigos em pt-BR: Guia de Estilo do Senado [50]; Guia de Linguagem Simples (SBC) [51]. [VERIFICAR conteúdo detalhado]
+
+15. TRECHOS TRANSCRITOS DA DOCUMENTAÇÃO OFICIAL
+15.1 "Análise de dados com o ChatGPT" — https://help.openai.com/pt-br/articles/8437071-data-analysis-with-chatgpt — atualizado há 29 dias (≈19/10/2026)
+"Para algumas tarefas de análise de dados, o ChatGPT escreve e executa código Python em um ambiente de notebook Jupyter com estado. O ambiente pode usar arquivos disponibilizados para a sessão e exibir DataFrames do pandas como tabelas interativas quando esse formato for útil."
+"Quando o ChatGPT usa Python para análise, revise o código gerado, as saídas e as suposições antes de confiar no resultado. Se a resposta depender de um método específico, peça ao ChatGPT para mostrar ou ajustar esse método."
+"Quando um gráfico interativo estiver disponível, selecione Alternar para gráfico interativo. Para voltar à versão em imagem, selecione Alternar para gráfico estático. Gráficos interativos são compatíveis com gráficos de barras, linhas, pizza e dispersão. Outros tipos de gráfico podem ser retornados como imagens estáticas."
+"O ambiente Python usado para análise de dados não pode fazer solicitações externas na web nem chamadas de API."
+"Mesmo que o upload seja concluído, o arquivo pode ser grande ou complexo demais, conter muitas imagens ou estar mal estruturado, o que dificulta uma análise completa."
+15.2 "Data analysis with ChatGPT" (en) — https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt — mesma data
+"When an interactive chart is available, select Switch to interactive chart. To return to the image version, select Switch to static chart."
+15.3 "Envio de arquivos e áudios para o ChatGPT" — https://help.openai.com/pt-br/articles/8555545-uploading-files-and-audio-to-chatgpt — atualizado há 3 dias (≈14/11/2026)
+"Arquivos CSV e planilhas têm um limite de tamanho de aproximadamente 50 MB, dependendo do tamanho de cada linha."
+"Você pode fazer upload de até 80 arquivos a cada 3 horas. Usuários do plano gratuito têm um limite de 3 uploads de arquivos por dia. A OpenAI pode reduzir esses limites nos horários de pico."
+"Para enviar um PDF, selecione + na área do prompt e depois Adicionar fotos e arquivos."
+"Excluir uma conversa não exclui um arquivo salvo separadamente na Biblioteca ou no ChatGPT Space."
+15.4 "Extraindo insights com a análise de dados do ChatGPT" — https://help.openai.com/pt-br/articles/9213685-extracting-insights-with-chatgpt-data-analysis — atualizado há 29 dias
+"Para baixar a tabela gerada pelo ChatGPT, clique no botão de download no canto superior direito da tabela. O arquivo baixado estará no formato CSV."
+"Observe que apenas gráficos de barras, pizza, dispersão e linhas são atualmente interativos na maioria dos casos."
+"Comece sua análise com um prompt como este: Verifique se há problemas comuns nestes dados."
+15.5 "Chat e retenção de arquivos no ChatGPT" — https://help.openai.com/pt-br/articles/8983778-chat-and-file-retention-in-chatgpt — atualizado há 14 dias (≈03/11/2026)
+"A OpenAI programa a exclusão permanente do chat de seus sistemas em até 30 dias, a menos que o chat já tenha sido desidentificado e desvinculado da sua conta ou que a OpenAI precise retê-lo por mais tempo por motivos de segurança ou obrigações legais."
+"Os arquivos que não forem salvos na Biblioteca podem expirar independentemente das configurações de retenção do chat."
+15.6 "Controles de dados no ChatGPT" — https://help.openai.com/pt-br/articles/7730893 — atualizado ontem (16/11/2026)
+"Nos espaços de trabalho pessoais dos planos ChatGPT Free, Plus e Pro, o compartilhamento de dados para treinamento fica ativado por padrão. Você pode desativar Melhorar o modelo para todo mundo e continuar mantendo seu histórico de conversas."
+15.7 "Como seus dados são usados para melhorar o desempenho do modelo" — https://help.openai.com/pt-br/articles/5722486 — 16/11/2026
+"Por padrão, não usamos entradas ou saídas do ChatGPT Business, ChatGPT Enterprise, ChatGPT Edu ou da nossa API para melhorar nossos modelos."
+15.8 OpenAI Academy "Analisando dados com o ChatGPT" — https://openai.com/pt-BR/academy/data-analysis/ — 10/04/2026
+"Peça uma proposta, não apenas uma resposta. Por exemplo, solicite um resumo de análise exploratória de dados (EDA) seguido de hipóteses a serem testadas."
+15.9 Julius "Files" — https://julius.ai/docs/get-started/files — data não informada (lida 17/11/2026)
+"Free-tier users: Files are retained for up to 1 hour of inactivity, after which all uploaded and AI-generated files are deleted. Paid users: Files remain available for up to 7 days of inactivity."
+15.10 Julius "Understanding credits" — https://julius.ai/docs/billing/credits-overview
+"Eligible new web accounts receive 75 one-time welcome credits, plus 25 daily credits on the Free plan: 100 initially available credits before usage."
+"Daily credits reset at 00:00 UTC, expire at the next UTC midnight, and do not accumulate."
+15.11 Julius "Privacy and Data Security" — https://julius.ai/docs/get-started/privacy-and-data-security
+"Julius doesn't build its own AI models. The Terms of Service, section 4, and the Privacy Policy, section 4, permit Julius to share user content, including prompts, uploaded files and outputs, with AI technology providers to help evaluate, improve and develop their models."
+"To opt out of having your content shared with AI technology providers, email privacy@julius.ai (Privacy Policy, section 9)."
+15.12 Julius "Tools & capabilities" — https://julius.ai/docs/get-started/tools
+"Julius writes Python or R and runs it in a secure cloud container to clean data, run analysis, build models, and produce charts... In the chat this appears as Generating code → Generated code. You can read the code, copy it, and see its output inline."
+15.13 Julius "FAQs" — https://julius.ai/docs/faqs
+"There is no limit enforced by us, but you may find a practical limit based on what can fit into 32G of RAM on the sandbox."
+15.14 Julius "Custom Instructions" — https://julius.ai/docs/get-started/language-settings-custom-instructions
+"To save a lasting preference, open the gear icon → Customize Julius, enter an instruction such as 'Respond in Portuguese,' and save your changes. This changes Julius's replies, not the language of the app interface."
+
+16. MATERIAIS PARA BAIXAR
+[BAIXAR] BAIXADO — "DSBench: How Far Are Data Science Agents from Becoming Data Science Experts?" — https://arxiv.org/pdf/2409.07703 — PDF, 4,96 MB, inglês — benchmark independente (466 tarefas de análise; melhor agente 34,12%). Licença: arXiv (ver página). Arquivo: dsbench-2024-agentes-ciencia-de-dados.pdf (conferido: começa com %PDF).
+[BAIXAR] BAIXADO — "DABstep: Data Agent Benchmark for Multi-step Reasoning" — https://arxiv.org/pdf/2506.23719 — PDF, 2,08 MB, inglês — benchmark de agentes em análise financeira (Adyen/Hugging Face). Arquivo: dabstep-2025-benchmark-agentes-dados.pdf (%PDF conferido).
+[BAIXAR] NÃO BAIXADO — "ChatGPT for Univariate Statistics: Validation of AI-Assisted Data Analysis in Healthcare Research" (Ruta et al., JMIR 2025) — https://www.jmir.org/2025/1/e63550 (PDF: https://jmir.org/2025/1/e63550/PDF) — PDF, inglês, acesso aberto (CC BY, ver página) — avaliação independente de acerto. Motivo: download automático devolveu arquivo vazio; baixar pelo navegador. Arquivo sugerido: jmir-2025-chatgpt-estatistica-univariada.pdf.
+[BAIXAR] BAIXADO — ANPD "Estudo Preliminar — Anonimização e pseudonimização para proteção de dados" (v1.0, dez/2023) — https://www.gov.br/anpd/pt-br/assuntos/regulacao/agenda-regulatoria-1/cp-estudo-preliminar_anonimizacao_e_pseudon.pdf/@@display-file/file — PDF, 1,50 MB, pt-BR — base para a aula de privacidade (não é guia final). Arquivo: anpd-estudo-preliminar-anonimizacao-pseudonimizacao.pdf (%PDF conferido).
+[BAIXAR] BAIXADO — CNJ "Base de dados para download — Justiça em Números" (17/09/2026) — https://www.cnj.jus.br/wp-content/uploads/2026/09/17-set-2026.zip — ZIP, 4,25 MB, pt-BR, contém JN_23-Jun-2026.csv, BD_Consolidado_JF_Secao_23_Jun_2026.csv e "Variáveis - JN.csv" (dicionário) — base jurídica e dicionário de dados. Arquivo: cnj-justica-em-numeros-base-17-set-2026.zip (assinatura ZIP "PK" conferida; aberto por script).
+[BAIXAR] NÃO BAIXADO — CNJ "Relatório Justiça em Números 2026" — https://www.cnj.jus.br/wp-content/uploads/2026/06/relatorio-justica-em-numeros2026-1.pdf — PDF, 26,3 MB, pt-BR — gabarito oficial (casos novos, acervo). Motivo: tamanho; baixar manualmente. Arquivo sugerido: cnj-relatorio-justica-em-numeros-2026.pdf.
+[BAIXAR] BAIXADO — Banco Central SGS 433 IPCA mensal 2020–2025 — https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv&dataInicial=01/01/2020&dataFinal=31/12/2025 — CSV, 1,5 KB, pt-BR — base B1. Licença: dados abertos do BCB. Arquivo: bcb-sgs433-ipca-mensal-2020-2025.csv (conferido: começa com "data";"valor").
+[BAIXAR] BAIXADO — IBGE SIDRA tabela 4709, população residente por UF, Censo 2022 — https://apisidra.ibge.gov.br/values/t/4709/n3/all/v/93/p/2022?formato=csv — CSV, 2,7 KB, pt-BR — base B2. Arquivo: ibge-sidra4709-populacao-uf-censo2022.csv.
+[BAIXAR] NÃO BAIXADO (está na pasta do curso Dados com Python e IA) — CVM cadastro de companhias abertas — https://dados.cvm.gov.br/dados/CIA_ABERTA/CAD/DADOS/cad_cia_aberta.csv — CSV latin-1, 1,5 MB — base B3. Arquivo: cvm-cadastro-cias-abertas.csv.
+[BAIXAR] NÃO BAIXADO (está na pasta do curso Dados com Python e IA) — CVM DFP companhias abertas 2024 — https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip — ZIP 13,4 MB, 19 CSVs — base B4. Arquivo: cvm-dfp-cia-aberta-2024.zip.
+[BAIXAR] NÃO BAIXADO — "Guia de Linguagem Simples para Visualização de Dados" (SBC) — página: https://sol.sbc.org.br/index.php/wide/article/view/26876 ; livro: https://books-sol.sbc.org.br/index.php/sbc/catalog/download/121/537/823?inline=1 — PDF, pt-BR — boas práticas de gráficos em português. Motivo: não testado nesta rodada. Arquivo sugerido: sbc-guia-linguagem-simples-visualizacao.pdf.
+[BAIXAR] NÃO BAIXADO — IBGE "Código de Boas Práticas das Estatísticas do IBGE" — https://biblioteca.ibge.gov.br/visualizacao/livros/liv102200.pdf (link indicado pela busca; não aberto) — PDF, pt-BR — qualidade estatística (contexto da ementa). Arquivo sugerido: ibge-codigo-boas-praticas-estatisticas.pdf. [VERIFICAR se o link é esse documento]
+[BAIXAR] NÃO ENCONTRADO como arquivo — guias oficiais de prompt para análise de dados (OpenAI e Julius): existem só como páginas web [11][27]; ver seção 17.
+[BAIXAR] VÍDEO — OpenAI Academy, "Analise dados com o vídeo de demonstração do ChatGPT" (embutido em https://openai.com/pt-BR/academy/data-analysis/) — transcrição para baixar: NÃO ENCONTRADO. Arquivo sugerido: openai-academy-demo-analise-dados.mp4 (só se houver download autorizado).
+[BAIXAR] VÍDEO [ACESSO RESTRITO?] — OpenAI Academy, webinar sob demanda "Como as equipes de ciência de dados usam o Codex/ChatGPT Work" — link na página https://openai.com/pt-BR/academy/chatgpt-work/how-data-science-teams-use-codex/ — pode exigir login na Academy. Transcrição: NÃO VERIFICADO.
+[BAIXAR] VÍDEO — Julius "How To Get Started on Julius" — https://youtu.be/ir8qShUBCco ; "Data Explorer Intro" — https://youtu.be/Uezezbl5S5M ; canal https://www.youtube.com/@Julius-AI (testado: 200) — inglês; legendas: NÃO VERIFICADO.
+[BAIXAR] NÃO ENCONTRADO — página de planos do ChatGPT em PDF; central de ajuda, termos e política do Julius em PDF: só existem como páginas web (ver seção 17).
+[BAIXAR] NÃO ENCONTRADO — dicionário de dados das bases B1 e B2 em arquivo separado (as APIs trazem os nomes das colunas; ver páginas na seção 17).
+
+17. PÁGINAS PARA SALVAR
+1. Título: Análise de dados com o ChatGPT (pt-BR) — URL: https://help.openai.com/pt-br/articles/8437071-data-analysis-with-chatgpt — Trecho: tipos de arquivo, Jupyter, revisão do código, gráficos interativos, restrições, FAQ — Prioridade: alta — Arquivo: openai-ajuda-analise-de-dados-ptbr.pdf
+2. Título: Data analysis with ChatGPT (en) — URL: https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt — Trecho: nomes dos botões em inglês — Prioridade: média — Arquivo: openai-help-data-analysis-en.pdf
+3. Título: Envio de arquivos e áudios para o ChatGPT — URL: https://help.openai.com/pt-br/articles/8555545-uploading-files-and-audio-to-chatgpt — Trecho: limites de tamanho, 3 uploads/dia no Free, armazenamento, solução de problemas — Prioridade: alta — Arquivo: openai-ajuda-envio-de-arquivos-limites.pdf
+4. Título: Extraindo insights com a análise de dados do ChatGPT — URL: https://help.openai.com/pt-br/articles/9213685-extracting-insights-with-chatgpt-data-analysis — Trecho: tabelas interativas, download CSV/PNG, tipos de gráfico, prompts — Prioridade: alta — Arquivo: openai-ajuda-extraindo-insights.pdf
+5. Título: Chat e retenção de arquivos no ChatGPT — URL: https://help.openai.com/pt-br/articles/8983778-chat-and-file-retention-in-chatgpt — Trecho: exclusão em 30 dias, Biblioteca/Space, expiração — Prioridade: alta — Arquivo: openai-ajuda-retencao-chats-arquivos.pdf
+6. Título: Controles de dados no ChatGPT — URL: https://help.openai.com/pt-br/articles/7730893 — Trecho: "Melhorar o modelo para todo mundo", caminhos web e celular, chat temporário — Prioridade: alta — Arquivo: openai-ajuda-controles-de-dados.pdf
+7. Título: Como seus dados são usados para melhorar o desempenho do modelo — URL: https://help.openai.com/pt-br/articles/5722486 — Trecho: pessoal x empresarial, feedback — Prioridade: alta — Arquivo: openai-ajuda-uso-dos-dados-treinamento.pdf
+8. Título: App Google Drive e sua configuração no ChatGPT — URL: https://help.openai.com/pt-br/articles/10929079-google-drive-app-and-setup-in-chatgpt — Trecho: passos de conexão e permissões — Prioridade: alta — Arquivo: openai-ajuda-google-drive.pdf
+9. Título: Aplicativo SharePoint e configuração no ChatGPT — URL: https://help.openai.com/pt-br/articles/12143177-sharepoint-app-and-setup-in-chatgpt — Trecho: OneDrive for Business/SharePoint — Prioridade: média — Arquivo: openai-ajuda-sharepoint-onedrive.pdf
+10. Título: Como usar o plugin Data no ChatGPT Work e no Codex — URL: https://help.openai.com/pt-br/articles/20001518-using-the-data-plugin-in-chatgpt-work-and-codex — Trecho: @Data, fontes, painéis — Prioridade: média — Arquivo: openai-ajuda-plugin-data.pdf
+11. Título: Planos e preços | ChatGPT (pt-BR) — URL: https://chatgpt.com/pt-BR/pricing/ — Trecho: preços em reais, tabela "Análise de dados", "Upload de arquivos", "Tabelas e gráficos interativos", contexto — Prioridade: alta — Arquivo: chatgpt-planos-e-precos-ptbr.pdf
+12. Título: OpenAI Academy — Analisando dados com o ChatGPT — URL: https://openai.com/pt-BR/academy/data-analysis/ — Trecho: boas práticas e prompts oficiais — Prioridade: alta — Arquivo: openai-academy-analisando-dados.pdf
+13. Título: Julius AI Pricing — URL: https://julius.ai/pricing — Trecho: preços, créditos, conectores, retenção de arquivos — Prioridade: alta — Arquivo: julius-precos-planos.pdf
+14. Título: Julius — Getting Started — URL: https://julius.ai/docs/get-started/quickstart — Trecho: passo a passo do primeiro uso — Prioridade: alta — Arquivo: julius-ajuda-primeiros-passos.pdf
+15. Título: Julius — Files — URL: https://julius.ai/docs/get-started/files — Trecho: formatos, Google Sheets, retenção 1 h / 7 dias — Prioridade: alta — Arquivo: julius-ajuda-arquivos-retencao.pdf
+16. Título: Julius — Understanding credits — URL: https://julius.ai/docs/billing/credits-overview — Trecho: 75 + 25 créditos, tabela por plano — Prioridade: alta — Arquivo: julius-ajuda-creditos.pdf
+17. Título: Julius — Privacy and Data Security — URL: https://julius.ai/docs/get-started/privacy-and-data-security — Trecho: compartilhamento com provedores de IA, opt-out, retenção — Prioridade: alta — Arquivo: julius-ajuda-privacidade-seguranca.pdf
+18. Título: Julius — Privacy Policy (21/10/2026) — URL: https://julius.ai/privacy-policy — Trecho: seções 3, 4, 8, 9, 10, 11 — Prioridade: alta — Arquivo: julius-politica-de-privacidade.pdf
+19. Título: Julius — Terms of Service — URL: https://julius.ai/tos — Trecho: seção 4 (uso do conteúdo) — Prioridade: alta — Arquivo: julius-termos-de-uso.pdf (não lida nesta rodada)
+20. Título: Julius — FAQs — URL: https://julius.ai/docs/faqs — Trecho: limite de linhas (32 GB RAM), várias abas, exclusão de conta, problemas — Prioridade: alta — Arquivo: julius-ajuda-faq.pdf
+21. Título: Julius — Chat Interface — URL: https://julius.ai/docs/get-started/understanding-the-chat-interface — Trecho: nomes de botões, conectores, modelos — Prioridade: alta — Arquivo: julius-ajuda-interface-chat.pdf
+22. Título: Julius — Tools & capabilities — URL: https://julius.ai/docs/get-started/tools — Trecho: "Generated code", rótulos de ferramentas — Prioridade: alta — Arquivo: julius-ajuda-ferramentas.pdf
+23. Título: Julius — Data Visualizations — URL: https://julius.ai/docs/get-started/data-visualizations — Trecho: tipos de gráfico — Prioridade: média — Arquivo: julius-ajuda-graficos.pdf
+24. Título: Julius — Data Explorer — URL: https://julius.ai/docs/data-explorer — Trecho: Expand, exportar CSV, 49 linhas — Prioridade: média — Arquivo: julius-ajuda-data-explorer.pdf
+25. Título: Julius — Custom Instructions (idioma) — URL: https://julius.ai/docs/get-started/language-settings-custom-instructions — Trecho: responder em português — Prioridade: alta — Arquivo: julius-ajuda-idioma.pdf
+26. Título: Julius — Sharing chats and downloading results — URL: https://julius.ai/docs/get-started/sharing-and-downloads — Trecho: replay público, fim da exportação do chat — Prioridade: média — Arquivo: julius-ajuda-compartilhar-baixar.pdf
+27. Título: Julius — Effective Prompting — URL: https://julius.ai/docs/get-started/create-an-effective-prompt — Trecho: princípios de prompt — Prioridade: média — Arquivo: julius-ajuda-prompts.pdf
+28. Título: Julius — Containers — URL: https://julius.ai/docs/get-started/containers — Trecho: 1 h de inatividade — Prioridade: média — Arquivo: julius-ajuda-conteineres.pdf
+29. Título: Julius — Reports — URL: https://julius.ai/docs/artifacts/reports — Trecho: relatórios e Publish — Prioridade: média — Arquivo: julius-ajuda-relatorios.pdf
+30. Título: Julius — Model Selector — URL: https://julius.ai/docs/get-started/model-selector — Trecho: modelos por plano — Prioridade: média — Arquivo: julius-ajuda-modelos.pdf
+31. Título: Claude — Plans & pricing — URL: https://claude.com/pricing — Trecho: preços em reais, "Create and edit files with code execution", Claude Data — Prioridade: média — Arquivo: claude-planos-precos.pdf
+32. Título: CNJ — Justiça em Números — URL: https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/ — Trecho: links da base e do relatório 2026 — Prioridade: alta — Arquivo: cnj-justica-em-numeros-pagina.pdf
+33. Título: IBGE Agência de Notícias — IPCA em dezembro vai a 0,33% e acumula 4,26% em 2025 — URL: https://agenciadenoticias.ibge.gov.br/agencia-noticias/45613-ipca-em-dezembro-vai-a-0-33-e-acumula-4-26-em-2025.html — Trecho: gabarito 4,26% e 4,83% — Prioridade: alta — Arquivo: ibge-ipca-2025-gabarito.pdf (a página bloqueia robôs; abrir no navegador)
+34. Título: SIDRA — Tabela 4709 — URL: https://sidra.ibge.gov.br/tabela/4709 — Trecho: metadados da tabela (dicionário) — Prioridade: média — Arquivo: ibge-sidra-4709-metadados.pdf
+35. Título: CVM — Dados abertos DFP — URL: https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp — Trecho: dicionário de dados (meta) — Prioridade: alta — Arquivo: cvm-dfp-dicionario.pdf
+36. Título: Senado — Guia de Estilo — Visualização de dados — URL: https://www12.senado.leg.br/institucional/guia-de-estilo-sf/elementos-de-leiaute/visualizacao-de-dados — Trecho: boas práticas de gráficos — Prioridade: média — Arquivo: senado-guia-visualizacao-dados.pdf
+37. Título: Participa+Brasil — Consulta Estudo Preliminar Anonimização — URL: https://www.gov.br/participamaisbrasil/consulta-a-sociedade-estudo-preliminar-anonimizacao-e-pseudonimizacao-para-protecao-de-dados — Trecho: status da consulta — Prioridade: média — Arquivo: anpd-consulta-anonimizacao-status.pdf
+
+18. LACUNAS E PONTOS A VERIFICAR
+- Nome e localização exata do controle para ver o código no ChatGPT ("View analysis"?) — não está na ajuda oficial; conferir na interface pt-BR e en.
+- Tempo de vida da sessão Python do ChatGPT e o que acontece com os arquivos de conta pessoal quando o ambiente é reiniciado — NÃO ENCONTRADO.
+- Número máximo de linhas e de arquivos por conversa no ChatGPT — não publicado.
+- Significado dos ícones na tabela de planos (Análise de dados, Tabelas e gráficos interativos) — conferir na tela, especialmente para o Free.
+- Teste prático com conta Free (ChatGPT e Julius) dos exercícios 13a e 13b — não realizado.
+- Julius: preço exibido é mensal ou anual-equivalente; preço em reais; RAM do Free; tamanho máximo de upload; nome atual do botão de anexar ("+" x "Paper Clip"); lojas iOS/Android no Brasil.
+- Julius: contradição sobre treino por provedores de LLM (doc oficial [19] permite compartilhamento para melhorar modelos de terceiros; listagem no Slack diz o contrário) — ler os Termos (seção 4).
+- Data de lançamento do Julius (2022 x jul/2023).
+- JMIR 2025: números (32,5% / 81,3% / 92,5%) vindos de resumo; conferir no PDF.
+- CNJ: qual variável reproduz 40,9 milhões de casos novos em 2025; soma ingênua de "cnnjud" deu 64,6 milhões; checar duplicidades ("Militar da União" x "Militar Uniao").
+- ANPD: guia final de anonimização não localizado (só estudo preliminar de 2023/2024).
+- Claude Data e Claude Sheets: status e planos (imprensa de 11/11/2026); Gemini e Colab Data Science Agent em nov/2026; Python no Excel/Copilot — sem fonte oficial lida.
+- Casos reais com resultado medido: NÃO ENCONTRADO para finanças, saúde, engenharia, escolas, comunicação; jurídico e setor público só panorama.
+- Bases de saúde (OpenDataSUS), educação (INEP), ANS, ANEEL, Tesouro: não testadas como exercício.
+- Guia oficial do IBGE sobre letramento em dados e visualização — NÃO ENCONTRADO.
+- Orientações da OAB/CFM sobre IA e dados de clientes/pacientes — NÃO ENCONTRADO nesta rodada.
+
+19. APÊNDICE TÉCNICO
+- Ambiente do ChatGPT: notebook Jupyter com estado, Python, pandas; sem acesso à web/API [1].
+- Julius: Python ou R em contêiner na nuvem; instala bibliotecas sob demanda; bancos via SQL; "Secret Keys and Connections" para chamar APIs externas (página da doc, não lida) [25][13]; contêiner com 16 GB (Plus) e 32 GB (Pro) de RAM [12].
+- Plugin Data (OpenAI): instalação pelo Console de administração > Plugins > Data, política "Disponível" x "Instalado", controle por função (RBAC) em Enterprise/Edu [10].
+- APIs das bases: BCB SGS (https://api.bcb.gov.br/dados/serie/bcdata.sgs.{código}/dados?formato=csv&dataInicial=dd/mm/aaaa&dataFinal=dd/mm/aaaa) [41]; IBGE SIDRA (https://apisidra.ibge.gov.br/values/t/{tabela}/n{nível}/all/v/{variável}/p/{período}?formato=csv) [43].
+
+20. FONTES CONSULTADAS
+(Data de acesso de todas: 17/11/2026, salvo indicação.)
+[1] Análise de dados com o ChatGPT — https://help.openai.com/pt-br/articles/8437071-data-analysis-with-chatgpt — ajuda oficial pt-BR — atualizado há 29 dias (≈19/10/2026)
+[2] Data analysis with ChatGPT — https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt — ajuda oficial en — ≈19/10/2026
+[3] Envio de arquivos e áudios para o ChatGPT — https://help.openai.com/pt-br/articles/8555545-uploading-files-and-audio-to-chatgpt — ajuda oficial pt-BR — ≈14/11/2026
+[4] Chat e retenção de arquivos no ChatGPT — https://help.openai.com/pt-br/articles/8983778-chat-and-file-retention-in-chatgpt — ajuda oficial pt-BR — ≈03/11/2026
+[5] Planos e preços | ChatGPT — https://chatgpt.com/pt-BR/pricing/ — página oficial de preços (Brasil) — sem data visível
+[6] Extraindo insights com a análise de dados do ChatGPT — https://help.openai.com/pt-br/articles/9213685-extracting-insights-with-chatgpt-data-analysis — ajuda oficial pt-BR — ≈19/10/2026
+[7] Controles de dados no ChatGPT — https://help.openai.com/pt-br/articles/7730893 — ajuda oficial pt-BR — 16/11/2026
+[8] Como seus dados são usados para melhorar o desempenho do modelo — https://help.openai.com/pt-br/articles/5722486 — ajuda oficial pt-BR — 16/11/2026
+[9] App Google Drive e sua configuração no ChatGPT — https://help.openai.com/pt-br/articles/10929079-google-drive-app-and-setup-in-chatgpt — ajuda oficial pt-BR — ≈21/10/2026
+[10] Como usar o plugin Data no ChatGPT Work e no Codex — https://help.openai.com/pt-br/articles/20001518-using-the-data-plugin-in-chatgpt-work-and-codex — ajuda oficial pt-BR — ≈27/10/2026
+[11] Analisando dados com o ChatGPT — https://openai.com/pt-BR/academy/data-analysis/ — OpenAI Academy (oficial) — 10/04/2026
+[12] Julius AI Pricing — https://julius.ai/pricing — página oficial de preços — sem data
+[13] Welcome to Julius / índice da documentação — https://julius.ai/docs/get-started/welcome e https://julius.ai/docs/llms.txt — documentação oficial — sem data
+[14] Getting Started — https://julius.ai/docs/get-started/quickstart — doc oficial — sem data
+[15] FAQs — https://julius.ai/docs/faqs — doc oficial — sem data
+[16] Files — https://julius.ai/docs/get-started/files — doc oficial — sem data
+[17] Containers — https://julius.ai/docs/get-started/containers — doc oficial — sem data
+[18] Understanding credits — https://julius.ai/docs/billing/credits-overview — doc oficial — cita anúncio de 28/02/2026
+[19] Privacy and Data Security — https://julius.ai/docs/get-started/privacy-and-data-security — doc oficial — cita Trust Center em 08/10/2026
+[20] Privacy Policy — https://julius.ai/privacy-policy — política oficial — Last Updated 21/10/2026
+[21] Custom Instructions — https://julius.ai/docs/get-started/language-settings-custom-instructions — doc oficial — sem data
+[22] Sharing chats and downloading results — https://julius.ai/docs/get-started/sharing-and-downloads — doc oficial — sem data
+[23] Data Visualizations — https://julius.ai/docs/get-started/data-visualizations — doc oficial — sem data
+[24] Chat Interface — https://julius.ai/docs/get-started/understanding-the-chat-interface — doc oficial — sem data
+[25] Tools & capabilities — https://julius.ai/docs/get-started/tools — doc oficial — sem data
+[26] Data Explorer — https://julius.ai/docs/data-explorer — doc oficial — sem data
+[27] Effective Prompting — https://julius.ai/docs/get-started/create-an-effective-prompt — doc oficial — sem data
+[28] Data Cleaning Basics — https://julius.ai/docs/get-started/data-cleaning-basics — doc oficial — sem data
+[29] Troubleshooting — https://julius.ai/docs/help-center/troubleshooting — doc oficial — sem data
+[30] Reports — https://julius.ai/docs/artifacts/reports — doc oficial — sem data
+[31] Model Selector — https://julius.ai/docs/get-started/model-selector — doc oficial — sem data
+[32] Video Tutorials — https://julius.ai/docs/basic-tools/how-to-hub — doc oficial — sem data
+[33] What is Julius AI? — https://julius.ai/docs/get-started/what-is-Julius-AI — doc oficial — sem data
+[34] "AI data analyst startup Julius nabs $10M seed round" — https://techcrunch.com/2025/07/28/ai-data-analyst-startup-julius-nabs-10m-seed-round/ — imprensa de tecnologia — 28/07/2025 (lido via resumo de busca)
+[35] Plans & pricing | Claude — https://claude.com/pricing — página oficial de preços (exibida em R$) — sem data
+[36] Ruta et al., "ChatGPT for Univariate Statistics: Validation of AI-Assisted Data Analysis in Healthcare Research" — https://www.jmir.org/2025/1/e63550 — artigo acadêmico (JMIR, vol. 27) — 2025 (lido via resumo de busca)
+[37] Jing et al., "DSBench" — https://arxiv.org/abs/2409.07703 — preprint acadêmico — v1 12/09/2024, v3 11/04/2025
+[38] "DABstep: Data Agent Benchmark for Multi-step Reasoning" — https://arxiv.org/abs/2506.23719 — preprint acadêmico — jun/2025
+[39] ANPD, Estudo Preliminar Anonimização e Pseudonimização — https://www.gov.br/anpd/pt-br/assuntos/regulacao/agenda-regulatoria-1/cp-estudo-preliminar_anonimizacao_e_pseudon.pdf/@@display-file/file — documento oficial — v1.0 dez/2023
+[40] Consulta à Sociedade — Estudo Preliminar — https://www.gov.br/participamaisbrasil/consulta-a-sociedade-estudo-preliminar-anonimizacao-e-pseudonimizacao-para-protecao-de-dados — página oficial — 30/01/2024 (encerrada)
+[41] Banco Central — SGS série 433 (IPCA) via API — https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv — dados oficiais — consulta em 17/11/2026
+[42] IBGE Agência de Notícias — "IPCA em dezembro vai a 0,33% e acumula 4,26% em 2025" — https://agenciadenoticias.ibge.gov.br/agencia-noticias/45613-ipca-em-dezembro-vai-a-0-33-e-acumula-4-26-em-2025.html — oficial — 09/01/2026 (lido via resumo de busca; página bloqueia robôs)
+[43] IBGE SIDRA — Tabela 4709 — https://sidra.ibge.gov.br/tabela/4709 e API https://apisidra.ibge.gov.br/values/t/4709/n3/all/v/93/p/2022?formato=csv — dados oficiais — consulta 17/11/2026
+[44] O Povo — "IBGE revisa dados do Censo 2022; população brasileira sobe para 203.080.756 pessoas" — https://www.opovo.com.br/noticias/economia/2023/08/31/ibge-revisa-dados-do-censo-2022-populacao-brasileira-sobe-para-203-080-756-pessoas.html — imprensa — 31/08/2023
+[45] CNJ — Justiça em Números — https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/ — página oficial — consulta 17/11/2026
+[46] CNJ — Base de dados para download (17/09/2026) — https://www.cnj.jus.br/wp-content/uploads/2026/09/17-set-2026.zip — dados oficiais — 17/09/2026
+[47] Correio da Manhã — "Judiciário encerrou 2025 com 75,5 milhões de processos e recorde de ações" — https://www.correiodamanha.com.br/economia/justica/2026/06/amp/297188-judiciario-encerrou-2025-com-755-milhoes-de-processos-e-recorde-de-acoes.html — imprensa — jun/2026 (via resumo de busca)
+[48] CVM — Dados abertos (cadastro e DFP) — https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp ; arquivos em https://dados.cvm.gov.br/dados/CIA_ABERTA/ — dados oficiais — consulta 17/11/2026
+[49] Safra "O Especialista" — "Petrobras lucra R$ 36,6 bilhões em 2024 e vai pagar R$ 9,1 bilhões em dividendos" — https://oespecialista.safra.com.br/petrobras-lucro-dividendos-2024/ — imprensa financeira — fev/2025 (via resumo de busca)
+[50] Senado Federal — Guia de Estilo — Visualização de dados — https://www12.senado.leg.br/institucional/guia-de-estilo-sf/elementos-de-leiaute/visualizacao-de-dados — institucional — sem data (via resumo de busca)
+[51] SBC — "Guia de Linguagem Simples para Visualização de Dados: Construção, Design, Avaliação e Contribuições" — https://sol.sbc.org.br/index.php/wide/article/view/26876 — acadêmico — 2022/2023 (via resumo de busca)
+[52] Escola de Dados — https://escoladedados.org/ — organização (Open Knowledge Brasil) — consulta 17/11/2026 (link testado)
+[53] Análise Editorial — "IA já é usada por 47% dos escritórios Mais Admirados do país" — https://analise.com/noticias/ia-ja-e-usada-por-47-dos-escritorios-mais-admirados-do-pais — imprensa especializada — 2026 (via resumo de busca)
+[54] Contábeis — "IA transforma fiscalização pública no Brasil com foco em análise de dados" — https://www.contabeis.com.br/artigos/72415/ia-transforma-fiscalizacao-publica-no-brasil-com-foco-em-analise-de-dados/ — imprensa — 2026 (via resumo de busca)
+[55] OpenAI Academy — "Como as equipes de ciência de dados usam ChatGPT Work" — https://openai.com/pt-BR/academy/chatgpt-work/how-data-science-teams-use-codex/ — oficial — 14/07/2026; e resource guide https://academy.openai.com/home/clubs/work-users-ynjqu/resources/chatgpt-work-for-data-teams-webinar-resource-guide-2026-08-19 — oficial — 19/08/2026 (via busca)
+[56] "Evaluating ChatGPT's Data Analysis Improvements: Interactive Tables and Charts" — https://towardsdatascience.com/evaluating-chatgpts-data-analysis-improvements-interactive-tables-and-charts-622d3e5a3816 — comunidade/blog — 2024 (via busca)
+[57] UCCS Knowledge Base — "Using Data Analysis in ChatGPT" — https://kb.uccs.edu/x/ugEMHQ ; e demais guias universitários (MIDAS/UMich, BYU) — comunidade acadêmica — 2024–2026 (via resumo de busca)
+[58] TechCrunch — "Google upgrades Colab with an AI agent tool" — https://techcrunch.com/2025/03/03/google-upgrades-colab-with-an-ai-agent-tool/ — imprensa — 03/03/2025 (via busca)
+[59] Microsoft Support — "Copilot in Excel with Python" — https://support.microsoft.com/office/copilot-in-excel-with-python-364e4ae9-9343-4d56-952a-5f62b0f70db6 — ajuda oficial — não lida (via busca)
+[60] iTechPost — "Claude gets new workplace tools..." — https://www.itechpost.com/articles/237776/20261111/claude-gets-new-workplace-tools-anthropic-takes-aim-microsoft-office-google-workspace.htm — imprensa — 11/11/2026 (via busca)
+[61] Quickstart (ChatGPT/Codex) — https://learn.chatgpt.com/docs/quickstart ; [61b] Pricing — https://learn.chatgpt.com/docs/pricing — documentação oficial OpenAI — sem data
+[62] (reservado)
+[63] Julius AI — canal YouTube — https://www.youtube.com/@Julius-AI — vídeo oficial — consulta 17/11/2026
+[64] Coefficient — "Julius AI Pricing (2026)" — https://coefficient.io/julius-ai-pricing ; Daily AI Fixs — https://dailyaifixs.com/blog/julius-ai-pricing-2026-free-is-15-messages — blogs de terceiros — 2026 (via busca; informação obsoleta)
+
+CHECKLIST
+[SIM] O arquivo usa exatamente o cabeçalho, os títulos e a numeração pedidos.
+[SIM] O conteúdo cobre o assunto inteiro e serve aos três produtos: ementa completa, curso Essentials e curso Hands On.
+[SIM] A seção 13 tem exercícios curtos (13a), práticas longas (13b) e ideias de projeto final (13c).
+[SIM] Todos os pontos do FOCO ESPECÍFICO e todos os materiais de "procure especialmente" foram respondidos ou estão como NÃO ENCONTRADO.
+[SIM] Todo [CONFIRMADO] está dito literalmente na fonte citada.
+[SIM] Nenhum exercício depende de instrutor, e o curso não foi dividido em blocos de tempo.
+[SIM] A seção 17 tem um item por página, com URL, prioridade e nome de arquivo.
+[SIM] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+[SIM] Os casos de uso são reais, e cada público sem caso real está como NÃO ENCONTRADO.
+[SIM] As fontes estão em pt-BR ou inglês (outro idioma só quando era a única fonte), e as lojas e ofertas são as do Brasil.
+[SIM] Nenhum endereço é de ambiente de teste (dev., hml., staging., qa.).
+[SIM] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é técnico demais está no APÊNDICE TÉCNICO.
+[SIM] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está marcada [CONFIRMADO].
+[SIM] Todo material não-web citado nas seções 1 a 20 está na seção 16.
+[SIM] Cada arquivo declarado BAIXADO abre e é do tipo anunciado (nenhuma página HTML salva como .pdf).
+[SIM] Os links dos exercícios foram testados e levam direto ao conteúdo.
+[SIM] A seção 17 lista páginas dos quatro tipos pedidos na regra 6.
+[SIM] Cada número está atribuído à fonte que de fato o contém.
+[NÃO] Nomes de menus e botões indicam a origem: (interface), (ajuda pt-BR) ou (ajuda en). — Indicam nas seções 3 e 5; alguns rótulos repetidos nas seções 13 e 14 não repetem a marcação.

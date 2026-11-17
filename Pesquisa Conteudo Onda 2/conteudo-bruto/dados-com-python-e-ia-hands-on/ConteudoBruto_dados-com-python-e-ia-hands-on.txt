@@ -1,0 +1,430 @@
+================================================================
+CONTEÚDO BRUTO — Dados com Python e IA
+Pesquisa realizada em: 17 de novembro de 2026
+Ferramenta(s): Claude Code (Anthropic; CLI com atualização automática, extensão VS Code, app de desktop aba "Code", web; versão numérica não fixada — usar "claude --version"); Codex (OpenAI; Codex CLI, extensão de IDE, modo "Codex" no app de desktop do ChatGPT e Codex Cloud; planos ChatGPT Free/Go/Plus/Pro/Business/Enterprise); Python 3 com pandas, Matplotlib e Jupyter; gerenciador uv
+================================================================
+
+NOTA DE MÉTODO: a documentação do Claude Code (code.claude.com/docs) e do Codex (learn.chatgpt.com/docs) foi lida nas versões Markdown oficiais em 17/11/2026. As bases públicas da seção 14 (ponto 11) foram baixadas ou inspecionadas por script (cabeçalho do ZIP, codificação, número de linhas) e os gabaritos foram recalculados a partir do arquivo. Documentação sem data visível está marcada "sem data".
+
+0. RESUMO EXECUTIVO
+- O que é: o aluno descreve a análise em português, um agente de código (Claude Code ou Codex) escreve o script Python (pandas, Matplotlib), executa no computador do aluno ou na nuvem, e o aluno lê o código no nível de leigo, roda de novo do zero e confere os números contra uma fonte oficial. Diferença para o curso anterior (IA para Análise de Dados): aqui o resultado é um projeto reprodutível em pasta (script/notebook, dados brutos, resultados, registro de premissas), não só uma conversa.
+- Para quem: analistas, financeiro/planejamento, pesquisadores, servidores e reguladores, engenheiros e técnicos que já fizeram IA para Análise de Dados - Essentials e não programam.
+- O que mudou nos últimos 12 meses: (a) Claude Code passou a existir também no app de desktop (aba "Code") e na web, além do terminal e da extensão VS Code, e exige assinatura paga (Pro, Max, Ultra, Team ou Enterprise) ou conta de API [2][4][12]; (b) o "app Codex" foi incorporado ao app de desktop do ChatGPT: o Codex é escolhido no menu do ChatGPT, e fluxos de análise de dados migraram para o "ChatGPT Work" [13][23]; (c) Codex aparece no plano gratuito do ChatGPT ("Acesso limitado ao Codex"; modelo GPT-6 Luna no app de desktop, "subject to rollout") [14][19]; (d) a política "untrusted" de aprovação do Codex foi aposentada [15].
+ALERTAS PARA QUEM VAI CRIAR O CURSO:
+1) Não há caminho 100% gratuito com Claude Code (exige plano pago) [2][12]. O caminho gratuito é Codex no plano Free (limitado e "sujeito a lançamento gradual") ou Google Colab; o caminho mais estável para todos os exercícios é ChatGPT Plus (R$ 99,90/mês) ou Claude Pro (R$ 110/mês) [19][12].
+2) Dados brasileiros quebram ferramentas: as bases públicas testadas usam latin-1, ";" e vírgula decimal; a ferramenta de edição de notebook do Claude Code "refuses a notebook file that doesn't decode as UTF-8" [7]. Ensinar a converter a cópia de trabalho para UTF-8 (sem tocar no bruto) é pré-requisito prático.
+3) Agente de código age no computador: pode apagar e alterar arquivos e rodar comandos; incidentes reais em julho de 2025 (Replit apagou banco de produção; Gemini CLI perdeu arquivos de um usuário) [40]. O checkpoint do Claude Code não desfaz mudanças feitas por comandos Bash [11]. Trabalhar sempre numa cópia dos dados, com modo de permissão restrito e Git.
+
+1. IDENTIDADE E HISTÓRICO
+1.1 Claude Code
+- Fabricante: Anthropic. "Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools. Available in your terminal, IDE, desktop app, and browser." [3] [CONFIRMADO]
+- Superfícies: CLI (terminal), VS Code, JetBrains, app de desktop (aba "Code" do app Claude), web (claude.ai/code, "Claude Code in the cloud"), celular [3][4]. [CONFIRMADO]
+- Versão: instalação nativa "automatically update[s] in the background"; verificar com "claude --version" [1]. Canal "stable" (cerca de uma semana atrás) e "latest" no Homebrew [1]. [CONFIRMADO]
+- Linha do tempo detalhada (lançamento em 2025, GA, desktop, web): NÃO ENCONTRADO nas páginas lidas (procurei: setup, overview, quickstart). [VERIFICAR em anthropic.com/news]
+- Nome do modo de permissão padrão: "The mode that reviews every action is named Manual in the CLI... Its config value is default" [5] — mudança de nome recente (antes "default"). [CONFIRMADO]
+1.2 Codex
+- Fabricante: OpenAI. Superfícies: Codex CLI, extensão de IDE, modo "Codex" no app de desktop do ChatGPT (macOS, Windows, Linux), Codex Cloud (web, desktop, celular) [13][17][18]. [CONFIRMADO]
+- Mudança de marca/produto: "este webinar foi gravado quando esses fluxos de trabalho ainda faziam parte do aplicativo Codex antigo. Agora, você pode acompanhá-los no ChatGPT Work, em chatgpt.com ou no aplicativo do ChatGPT para desktop" (OpenAI Academy, 14/07/2026) [23]. No app: "For software development with codebase context and developer tools, select Codex from the ChatGPT dropdown"; para "research, analysis, or deliverables" selecionar "ChatGPT" e mudar para "Work" [13]. [CONFIRMADO] Data exata da incorporação: NÃO ENCONTRADO. [VERIFICAR]
+- "Codex Cloud (Legacy)" coexiste com o "Current Codex Cloud" [15][17]. [CONFIRMADO]
+1.3 Python e bibliotecas
+- Python (python.org), pandas, NumPy, Matplotlib, seaborn, Plotly, openpyxl, Jupyter: software livre mantido por comunidades/fundações. Versões atuais: NÃO PESQUISADO nesta rodada (usar a que o uv instalar). [VERIFICAR]
+- uv: gerenciador de pacotes e de Python da Astral; instalador oficial para macOS/Linux e Windows [24]. [CONFIRMADO]
+
+2. ACESSO, PLANOS E REQUISITOS
+2.1 Claude Code
+- Conta necessária: "A Claude subscription (Pro, Max, Ultra, Team, or Enterprise), Claude Console account, or access through a supported cloud provider" [2]. App de desktop: "Claude Code requires a Pro, Max, Ultra, Team, or Enterprise subscription" [4]. Na tabela de preços, "Claude Code": Free "No"; Pro, Max, Ultra "Yes" [12]. [CONFIRMADO]
+- Preços (claude.com/pricing exibido em reais, 17/11/2026) [12]: Free R$ 0; Pro R$ 110/mês (ou R$ 92/mês no anual, R$ 1.100 cobrados à vista); Max R$ 550/mês ("5x Pro usage"); Ultra R$ 1.100/mês ("No 5-hour limit", "10x Pro usage every week"). "Prices shown don't include applicable tax." Team e Enterprise: não exibidos nessa aba. [CONFIRMADO] Preço em dólar: NÃO lido nesta rodada (a página detectou o Brasil). [VERIFICAR]
+- Limites: "Limited usage every 5 hours and every week" (Free); Pro "More usage than Free, every 5 hours and every week"; "How fast you reach a limit depends on the model you use, how long your chats are, and how large your files are" [12]. [CONFIRMADO]
+- Requisitos de sistema [1]: "macOS 13.0+; Windows 10 1809+ or Windows Server 2019+; Ubuntu 20.04+; Debian 10+; Alpine Linux 3.19+"; "4 GB+ RAM, x64 or ARM64 processor"; "internet connection required"; shell "Bash, Zsh, PowerShell, or CMD"; países suportados pela Anthropic. Git: opcional. "Git for Windows is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead." [CONFIRMADO]
+- Disponibilidade no Brasil: página de preços em reais [12]. Interface do Claude Code em português: NÃO ENCONTRADO (docs em inglês; o agente responde no idioma do pedido — [SUGESTÃO]).
+2.2 Codex
+- Planos (learn.chatgpt.com/docs/pricing, sem data) [14]: Free US$ 0 ("GPT-6 Luna at Standard speed in the desktop app, subject to rollout"); Go US$ 8/mês (idem); Plus US$ 20/mês ("Codex on the web, in the CLI, in the IDE extension, and on iOS"; GPT-6.1 Sol e GPT-6 Luna; créditos extras); Pro a partir de US$ 100 (planos de US$ 100, 200 ou 500); API Key (CLI, SDK, IDE; sem recursos de nuvem). "ChatGPT Work and Codex share pricing, credits, and usage limits." [CONFIRMADO]
+- Em reais (chatgpt.com/pt-BR/pricing): Free R$ 0; Go R$ 39,99; Plus R$ 99,90; Pro "De R$ 525"; tabela: "Codex — Free: Limitado; Go: Limitado; Plus: Expandido"; Free/Go: "Acesso limitado ao Work e ao Codex no desktop" [19]. [CONFIRMADO]
+- Limites: estimativas de mensagens locais por 5 horas para Plus/Business Standard variam por modelo (ex.: GPT-6.2 Sol 17–180; GPT-6.2 Astra 6–50; GPT-6 Astra 5–45); "Pro plans currently have no five-hour limit"; "These estimates are not fixed message limits" [14]. [CONFIRMADO]
+- Instalação do CLI [18]: macOS/Linux "curl -fsSL https://chatgpt.com/codex/install.sh | sh"; Windows "powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex""; também via npm. App de desktop: "available for macOS, Windows, and Linux" [13]. [CONFIRMADO]
+2.3 Python, uv, VS Code, Jupyter
+- uv [24]: macOS/Linux "curl -LsSf https://astral.sh/uv/install.sh | sh"; Windows "powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"". [CONFIRMADO]
+- Python: python.org/downloads (link testado, 200) [31]. VS Code + extensão Python: tutorial oficial (link testado) [32]. Jupyter: jupyter.org/try roda no navegador sem instalar (link testado) [27]. Git for Windows (link testado) [33].
+- Google Colab (alternativa sem instalação, conta Google): colab.research.google.com (link testado) [34]. Limites do Colab gratuito: NÃO ENCONTRADO em fonte oficial nesta rodada; imprensa (2025) fala em computação "relatively low" para gratuitos e planos pagos a partir de US$ 9,99 [35]. [VERIFICAR]
+
+3. PRIMEIROS PASSOS (passo a passo oficial)
+3.1 Claude Code no app de desktop (caminho sem terminal) [4]
+- "Claude Code is in the Code tab at the top of the app's sidebar." Instalar o app Claude (macOS/Windows), entrar com conta paga, clicar na aba "Code" e escolher a pasta do projeto. Se aparecer "Prompt to upgrade": "you need to subscribe to a paid plan first". No início da sessão é possível escolher o modo "Plan": "Claude proposes an approach without editing any files". (ajuda en) [CONFIRMADO]
+3.2 Claude Code no terminal [1][2]
+1. Abrir o terminal (PowerShell no Windows). 2. Rodar o instalador ("irm https://claude.ai/install.ps1 | iex" no PowerShell; "curl -fsSL https://claude.ai/install.sh | bash" no macOS/Linux). 3. "When the installer finishes, open a new terminal window and run claude --version. A working installation prints a version number." 4. Entrar na pasta do projeto e digitar "claude"; "Claude Code prompts you to log in on first use... follow the prompts to complete authentication in your browser." [CONFIRMADO]
+- Erros típicos citados na própria página [1]: "If you see The token '&&' is not a valid statement separator, you're in PowerShell, not CMD. If you see 'irm' is not recognized as an internal or external command, you're in CMD, not PowerShell." Comando "claude" não encontrado: diretório de instalação fora do PATH; ver "Troubleshoot installation". [CONFIRMADO]
+3.3 Codex no app de desktop do ChatGPT [13][17]
+1. "Install the ChatGPT desktop app" (macOS, Windows, Linux). 2. "Open the ChatGPT desktop app and sign in". 3. "Select where ChatGPT should work: Start a chat, create a project, or open a folder. ChatGPT can read and modify files in the folder you choose." 4. Para código: "select Codex from the ChatGPT dropdown". 5. Ao iniciar, escolher onde roda: "Local", "Worktree" ou "Cloud"; controle "Work in" com "This computer" ou "Cloud". (ajuda en) [CONFIRMADO]
+3.4 Codex CLI [18]: instalar (ver 2.2), entrar com a conta do ChatGPT ou chave de API, rodar a partir da pasta do projeto ("Install Codex, sign in, and run your first task from a project directory"). [CONFIRMADO]
+3.5 Ambiente Python mínimo [SUGESTÃO, com comandos oficiais do uv [24]]
+- [SUGESTÃO] Caminho mais simples: instalar o uv; pedir ao agente "crie um projeto uv nesta pasta com pandas, matplotlib e openpyxl e um script que leia dados/brutos/arquivo.csv"; o agente roda "uv init", "uv add pandas matplotlib openpyxl" e "uv run analise.py". O aluno só aprova os comandos. (Comandos "uv init/add/run" são da documentação do uv, não lida nesta rodada além da página de instalação — [VERIFICAR].)
+
+4. CONCEITOS E GLOSSÁRIO
+(Definições e analogias são [SUGESTÃO] salvo indicação de fonte.)
+- Agente de código: programa de IA que lê arquivos, escreve código e executa comandos no computador; "reads your codebase, edits files, runs commands" [3]. Analogia: um estagiário muito rápido que trabalha na sua mesa — precisa de instruções claras e de alguém conferindo.
+- Terminal / linha de comando / shell: janela de texto onde se digitam comandos (PowerShell, CMD, Bash) [1]. Analogia: falar com o computador por bilhetes em vez de clicar.
+- Python: linguagem em que o agente escreve a "receita" da análise.
+- Script (.py): a receita inteira num arquivo; roda do começo ao fim. Notebook (.ipynb): caderno com células de código, texto e gráficos; "Jupyter notebook" [7][27]. Analogia: script = receita impressa; notebook = caderno de laboratório com anotações e fotos.
+- Biblioteca/pacote: conjunto de ferramentas prontas que o script importa.
+- pandas: biblioteca de tabelas (DataFrame) — "a planilha dentro do Python"; tutorial oficial "10 minutes to pandas" (inglês, link testado) [25]. NumPy: cálculos numéricos (base do pandas). Matplotlib: gráficos estáticos (tutoriais oficiais, link testado) [26]. seaborn: gráficos estatísticos sobre o Matplotlib. Plotly: gráficos interativos. openpyxl: ler/escrever .xlsx. Jupyter: notebooks [27].
+- Ambiente virtual (.venv): uma "caixa" de bibliotecas só daquele projeto, para não misturar versões entre projetos.
+- Gerenciador de pacotes (pip, uv): o "app store" das bibliotecas; o uv também instala o próprio Python [24].
+- Arquivo de versões (requirements.txt, pyproject.toml, uv.lock): a "lista de compras" com versões exatas, para que outra pessoa monte o mesmo ambiente.
+- Reprodutibilidade: "data and code available so the analysis can be fully rerun" (definição de The Turing Way, segundo resumo de busca) [28]. Analogia: outra cozinha, mesma receita, mesmo bolo.
+- Semente aleatória (random seed): número que fixa sorteios para que se repitam iguais.
+- Git / commit: "fotografias" numeradas do projeto; permite voltar atrás. O próprio Claude Code recomenda versionamento para desfazer o que comandos Bash alteraram [11].
+- Assert (teste simples): linha de código que para o script se uma condição for falsa (ex.: "a soma tem de ser 203.080.756").
+- Codificação (UTF-8 x latin-1): ver curso anterior; aqui é crítica porque ferramentas de edição recusam arquivos não UTF-8 [7].
+- Modo de permissão (Claude Code): "default"/"Manual", "acceptEdits", "plan", "auto", "dontAsk", "bypassPermissions" [5]. Sandbox e política de aprovação (Codex): "Sandbox mode: What Codex can do technically..."; "Approval policy: When Codex must ask you before it executes an action" [15]. [CONFIRMADO]
+- CLAUDE.md / AGENTS.md: arquivos de instruções persistentes do projeto lidos no início de cada sessão [9][16]. Analogia: o "manual do estagiário" colado na parede.
+- Checkpoint / rewind: Claude Code "automatically tracks Claude's file edits"; "/rewind" ou "/undo" desfaz [11]. Worktree (Codex): cópia isolada do projeto via Git [17].
+- Pacote alucinado / slopsquatting: a IA sugere instalar um pacote que não existe; um atacante pode registrar esse nome [39].
+
+5. FUNCIONALIDADES
+5.1 Claude Code (o que importa para dados)
+- Ler, editar e criar arquivos; executar comandos (Bash/PowerShell) [3][5]. Planos: Pro e acima [12].
+- Notebooks: leitura de .ipynb "return all cells with their outputs, including code, markdown, and visualizations"; erro se as células passarem de 256 KB ou o arquivo de 100 MB [7]. Edição com "NotebookEdit", uma célula por vez; ao trocar uma célula de código "its execution count and saved outputs are cleared. To get the output back, re-run the cell" [7][8]. "NotebookEdit refuses a notebook file that doesn't decode as UTF-8" [7]. No VS Code: "Save the notebook before you ask for an edit" [8]. [CONFIRMADO]
+- Leitura de arquivos grandes: por padrão uma leitura retorna até 25.000 tokens e "refuses a whole file over 256 KB, so Claude reads a larger file in pages" [7]. Consequência [SUGESTÃO]: para bases grandes, o certo é o agente escrever código pandas que lê o arquivo, e não "ler" o CSV na conversa.
+- Arquivos não UTF-8: Edit e NotebookEdit recusam "non-ASCII text saved in a legacy encoding such as Windows-1252" (trecho da referência de ferramentas) [7]. [CONFIRMADO — transcrição parcial]
+- Modos de permissão [5]: tabela oficial — "default: Reads only"; "acceptEdits: Reads, file edits, and common filesystem commands (mkdir, touch, mv, cp, etc.)"; "plan: Reads, plus classifier-approved commands when auto mode is available"; "auto: Everything, with background safety checks"; "dontAsk: File reads inside your working directories and pre-approved tools"; "bypassPermissions: Everything — Isolated containers and VMs only". Trocar no CLI: "press Shift+Tab to cycle permission modes"; a barra mostra "⏸ manual mode on", "accept edits on", "plan mode on" [5]. Nenhum modo aprova sozinho remoções "rm/rmdir" de caminhos críticos [5]. [CONFIRMADO]
+- CLAUDE.md [9]: "Run /init to generate a starting CLAUDE.md automatically"; confirmar carregamento com "/context all" (lista "Memory files"); "CLAUDE.local.md" para preferências privadas; importar arquivos com "@caminho". Auto memória carrega "first 200 lines or 25KB". [CONFIRMADO]
+- Checkpoints [11]: "/rewind" (alias "/undo") ou Esc duas vezes com o campo vazio; guarda os 100 checkpoints mais recentes; snapshots apagados ~30 dias depois; limitação: "A file that only Bash commands changed isn't tracked and stays as it is. To revert it, use version control, such as Git." [CONFIRMADO]
+- Verificação embutida [10]: "/code-review reviews the diff in a fresh subagent that never saw your conversation"; "/verify" para rodar e olhar o resultado; "/goal" com condição verificada a cada turno. [CONFIRMADO]
+- Desktop: sessões paralelas, editor e terminal integrados, revisão visual de diff [3, índice]. Web: sessões na nuvem a partir de repositório GitHub [3, índice]. Detalhes não lidos. [VERIFICAR]
+5.2 Codex (o que importa para dados)
+- Onde roda: "Local" (pasta do projeto), "Worktree" (isolado em Git worktree), "Cloud" (workspace remoto). "Both Local and Worktree chats run on your computer." [17] [CONFIRMADO]
+- Sandbox e aprovações [15]: "By default, the agent runs with network access turned off. Locally, Codex uses an OS-enforced sandbox that limits what it can touch (typically to the current workspace), plus an approval policy". Preset "Auto" ("--sandbox workspace-write --ask-for-approval on-request"): "Codex can read files, make edits, and run commands in the working directory automatically"; pede aprovação para editar fora da pasta ou usar rede. Para só conversar/planejar: "switch to read-only mode with the /permissions command". Política "untrusted" aposentada. [CONFIRMADO]
+- AGENTS.md [16]: "Codex reads AGENTS.md files before doing any work"; global em "~/.codex/AGENTS.md"; por projeto, da raiz até a pasta atual; limite combinado de 32 KiB. [CONFIRMADO]
+- Notebooks Jupyter no Codex: NÃO ENCONTRADO página específica (procurei: índice learn.chatgpt.com/docs/llms.txt). [VERIFICAR]
+- Plugin Data / ChatGPT Work: análise de dados corporativos e dashboards via "@Data" [22]. Mais voltado a empresas com data warehouse. [CONFIRMADO]
+- Treinamento com dados do Codex: "O Codex tem uma configuração separada, Incluir ambientes, nas Configurações do Codex, que permite o treinamento em ambientes completos" [20]. [CONFIRMADO]
+5.3 Python (o que o aluno vê)
+- Ler CSV brasileiro com pandas [SUGESTÃO]: pd.read_csv("arquivo.csv", sep=";", decimal=",", encoding="latin-1"). Datas: dayfirst=True ou format="%d/%m/%Y". Excel: pd.read_excel(..., engine="openpyxl"). Juntar arquivos mensais: pd.concat. Cruzar tabelas: merge pela chave.
+- Gráfico com Matplotlib salvo em arquivo: plt.savefig("resultados/grafico.png", dpi=150) [SUGESTÃO].
+
+6. CASOS DE USO PARA O PÚBLICO DO CURSO
+- Equipes internas da Anthropic: PDF oficial "How Anthropic teams use Claude Code" (jul/2025) descreve a equipe de Data Infrastructure usando Claude Code para trabalho de engenharia de dados e, segundo resumos de terceiros, ensinando a equipe de finanças a descrever fluxos de dados em arquivos de texto executados pelo Claude Code [41]. Fonte: fabricante. Resultado medido: ver PDF (baixado). [VERIFICAR trechos no PDF]
+- Equipes de ciência de dados com Codex/ChatGPT Work: webinar oficial da OpenAI (14/07/2026) e guia de recursos com dados fictícios (20/08/2026) [23]. Fonte: fabricante. Resultado medido: NÃO ENCONTRADO.
+- Analistas (Brasil): NÃO ENCONTRADO.
+- Finanças (Brasil): NÃO ENCONTRADO.
+- Setor público e regulação (Brasil): NÃO ENCONTRADO uso de agente de código; panorama de IA em TCU/CGU sem agentes de código (ver pesquisa de IA para Análise de Dados).
+- Engenharia e técnicos: NÃO ENCONTRADO.
+Cenários hipotéticos:
+- [SUGESTÃO] Analista de RI consolida DRE de 467 companhias (CVM) e gera ranking reprodutível.
+- [SUGESTÃO] Servidor de órgão de controle junta as quatro tabelas de viagens do Portal da Transparência e calcula gasto por órgão.
+- [SUGESTÃO] Engenheiro junta centenas de CSVs de estações do INMET e calcula média anual e máxima por estação.
+
+7. BOAS PRÁTICAS E EXEMPLOS DE PROMPTS
+7.1 Publicadas pela Anthropic (Claude Code) [10][9]
+- "Only write down what Claude can't find by reading the repo, or what it would otherwise spend time rediscovering every session." [10]
+- "If you name the file, describe the symptom, and say what 'fixed' looks like up front, you usually save yourself a round of corrections later." [10]
+- "Give Claude something it can run that comes back pass or fail. Once it has that, it can keep going on its own and you don't have to watch." [10]
+- "Whichever option you use, ask Claude for evidence: the command it ran and its output... 'All tests pass' on its own tells you very little" [10].
+- "One phrase that does still help is be ambitious" (quando se quer o escopo completo) [10].
+- "If your repo already has one of these, the single most useful line in your CLAUDE.md is the command that runs it." [10]
+- Exemplo oficial de prompt específico (contexto de software): "users report login fails after the session times out. look at token refresh in src/auth/, write a failing test that reproduces it, then fix it" [10].
+7.2 Publicadas pela OpenAI (Codex/ChatGPT)
+- AGENTS.md exemplo oficial: "## Working agreements — Always run npm test after modifying JavaScript files... Ask for confirmation before adding new production dependencies." [16]
+- Plugin Data: "Inclua a fonte, a métrica, o período e a comparação desejados"; "Confira a fonte, o período, os filtros e a definição da métrica antes de confiar em um resultado. Se um resultado for diferente de um relatório existente, peça ao Data para comparar esses detalhes." [22]
+- Guia geral de análise (OpenAI Academy, pt-BR, 10/04/2026): começar pela decisão, pedir EDA e hipóteses, pedir premissas e fórmulas, "não tratar correlações como causas" (ver pesquisa de IA para Análise de Dados) [link: https://openai.com/pt-BR/academy/data-analysis/].
+7.3 Escritos pela pesquisa [SUGESTÃO]
+- [SUGESTÃO] Brief de análise: "Objetivo: decidir X. Dados: dados/brutos/arquivo.csv (latin-1, separador ;, vírgula decimal; dicionário em docs/dicionario.pdf). Não altere nada em dados/brutos. Escreva o código em analise.py, salve tabelas em resultados/ e gráficos em resultados/graficos/. Antes de calcular, mostre o plano em 5 passos e espere meu ok."
+- [SUGESTÃO] Validação: "Adicione asserts: número de linhas lidas, soma de controle, nenhum valor negativo em VL_CONTA onde não faz sentido, e compare o total com o número oficial X. Rode do zero e me mostre a saída do terminal."
+- [SUGESTÃO] Leitura para leigo: "Explique o script linha a linha em português simples, em blocos de no máximo 5 linhas, dizendo o que cada bloco faz com os dados."
+- [SUGESTÃO] CLAUDE.md/AGENTS.md de análise: "Premissas: valores em R$ mil; considerar ORDEM_EXERC = ÚLTIMO; fonte CVM DFP 2024 baixada em 17/11/2026. Comando de verificação: uv run python -m pytest (ou uv run analise.py). Nunca apagar arquivos em dados/brutos."
+- [SUGESTÃO] Segunda opinião: "Revise analise.py como um auditor que não confia no autor: liste 5 jeitos de o número final estar errado e escreva um teste para cada."
+
+8. SEGURANÇA, PRIVACIDADE E DADOS
+- O que o agente pode fazer: ler, editar, criar arquivos e executar comandos [3]; ChatGPT/Codex "can read and modify files in the folder you choose" [13]. [CONFIRMADO]
+- Controles: modos de permissão do Claude Code [5]; sandbox/aprovação do Codex com rede desligada por padrão [15]. "Deny rules block in every mode, including bypassPermissions" [5]. [CONFIRMADO]
+- Desfazer: checkpoints não cobrem Bash [11]; Codex "Worktree" isola mudanças [17]. [CONFIRMADO]
+- Treinamento e retenção — Claude Code [6]: "Consumer users (Free, Pro, Max, and Ultra plans): We give you the choice to allow your data to be used to improve future Claude models... (including when you use Claude Code from these accounts)". "Commercial users (Team and Enterprise plans, API, 3rd-party platforms, and Claude Gov)... Anthropic does not train generative models using code or prompts sent to Claude Code under commercial terms" (salvo opt-in). Retenção consumidor: "5-year retention period" se permitir uso para melhoria; "30-day retention period" se não permitir. Comercial: 30 dias padrão; Zero Data Retention sob elegibilidade no Enterprise. Local: transcrições guardadas "in plaintext under ~/.claude/projects/ for 30 days by default". Feedback via "/feedback" é retido por 5 anos. [CONFIRMADO]
+- Treinamento — Codex/ChatGPT [20][21]: contas pessoais Free/Plus/Pro treinam por padrão; desligar "Melhorar o modelo para todo mundo" (Configurações > Controles de dados) ou "Não treinar com meu conteúdo" no Portal de Privacidade vale para "conversas do ChatGPT e tarefas do Codex"; a configuração "Incluir ambientes" do Codex é separada; Business/Enterprise/Edu/API não treinam por padrão. [CONFIRMADO]
+- Senhas e chaves: [SUGESTÃO] nunca deixar senha/chave em script ou CSV; usar variável de ambiente; colocar ".env" no .gitignore. O Claude Code redige "Known API key and token patterns" só em transcrições enviadas por feedback [6] — não protege arquivos do projeto.
+- LGPD/ANPD: só existe o Estudo Preliminar de anonimização e pseudonimização (v1.0, dez/2023; consulta encerrada em 2024); guia final NÃO ENCONTRADO [42]. [SUGESTÃO] Pseudonimizar antes (substituir CPF/nome por código, guardando a tabela de correspondência fora da pasta que o agente lê); preferir bases agregadas e públicas no curso.
+
+9. LIMITAÇÕES, ERROS COMUNS E SOLUÇÃO DE PROBLEMAS
+- Instalação Windows (oficial) [1]: confusão PowerShell x CMD (mensagens de erro citadas na seção 3.2); "claude" não reconhecido (PATH; abrir novo terminal); sem Git for Windows o Claude Code usa PowerShell em vez de Bash. [CONFIRMADO]
+- Codificação: edição recusada em arquivos não UTF-8 [7]; bases públicas brasileiras em latin-1 (CVM, INMET, Portal da Transparência, CNJ — conferido por inspeção) [43][45][47]. [CONFIRMADO]
+- Notebook: saídas apagadas após edição de célula; é preciso reexecutar [7][8]. Notebooks grandes (>256 KB de células) dão erro de leitura [7]. [CONFIRMADO]
+- Limites de uso: janelas de 5 horas e semanais (Claude) [12]; mensagens por 5 h (Codex Plus) [14]. [CONFIRMADO]
+- Erros documentados de agentes:
+  - Pacotes inexistentes: estudo USENIX Security 2025 (Spracklen et al.) testou 16 LLMs de código e 576 mil amostras; fontes secundárias citam 19,7% de pacotes sugeridos inexistentes e 205.474 nomes alucinados únicos; taxas de 5,2% (comerciais) a 21,7% (abertos) [39]. Reavaliação de 2026 com modelos novos: 4,62%–6,10% [52]. [CONFIRMADO o estudo; VERIFICAR percentuais no PDF baixado]
+  - Apagar/alterar dados: Replit apagou banco de produção do SaaStr apesar de "code freeze" (jul/2025); Gemini CLI moveu arquivos para pasta inexistente e os perdeu (jul/2025) [40]. Fonte: imprensa e AI Incident Database. [VERIFICAR detalhes]
+  - Código que roda mas calcula errado: benchmarks — DSBench, melhor agente 34,12% em tarefas de análise [37]; DABstep, 14,55% nas tarefas difíceis no lançamento [38]. [CONFIRMADO resumo; VERIFICAR tabelas]
+  - Alteração silenciosa de dados: [SUGESTÃO] exemplos para o curso — o agente "limpa" linhas com vírgula decimal convertendo para NaN e descarta; escolhe "Lucro Consolidado" em vez de "Atribuído aos controladores" (R$ 37,0 bi x R$ 36,6 bi na Petrobras 2024) [43][44].
+- Comunidade (GitHub issues, Reddit): não pesquisado nesta rodada. NÃO ENCONTRADO.
+
+10. COMPARAÇÃO COM ALTERNATIVAS
+(Fatos com fonte; conclusões [SUGESTÃO].)
+- Claude Code: exige Pro (R$ 110/mês) ou superior; instala (CLI) ou usa app de desktop/web; docs em inglês [2][12]. [CONFIRMADO]
+- Codex: Free com acesso limitado no app de desktop ("subject to rollout"); Plus US$ 20 / R$ 99,90 para CLI, IDE, web [14][19]. [CONFIRMADO]
+- Google Colab + Gemini (Data Science Agent): sem instalação; agente lançado grátis em 03/2025 para maiores de 18 anos em países/idiomas selecionados; aceitava CSV, JSON, .txt até 1 GB; paid a partir de US$ 9,99 (imprensa 2025) [35]. Situação em 11/2026: NÃO CONFIRMADA. [VERIFICAR]
+- Gemini CLI: quota oficial publicada (geminicli.com) cita 1.000 requisições/dia para conta Google (Gemini Code Assist Individual), mas reportagens de 2026 dizem que, desde 18/06/2026, o uso gratuito/AI Pro/Ultra foi direcionado ao "Antigravity CLI" [36]. Fontes conflitantes. [VERIFICAR]
+- Cursor, GitHub Copilot, Gemini Code Assist: não pesquisados nesta rodada (cursos próprios). NÃO ENCONTRADO.
+- Python no Excel / Copilot in Excel with Python: exige disponibilidade do Python no Excel e licença Microsoft 365 Copilot segundo fontes secundárias; artigo oficial não lido [50]. [VERIFICAR]
+- Análise sem código (ChatGPT Análise de dados, Julius): ver pesquisa IA para Análise de Dados (ChatGPT Free: 3 uploads/dia, planilhas ~50 MB; Julius Free: créditos e arquivos apagados após 1 h).
+- Avaliação independente de qualidade comparando Claude Code x Codex em análise de dados: NÃO ENCONTRADO (procurei: arXiv, busca geral). Benchmarks citados (DSBench, DABstep) não comparam esses produtos diretamente [37][38].
+- [SUGESTÃO] Quando passar do sem código para código: mais de ~50 MB ou de 3 arquivos; vários arquivos mensais para juntar; necessidade de refazer todo mês; necessidade de auditoria (código e dados versionados).
+
+11. NOVIDADES RECENTES E RECURSOS INSTÁVEIS
+- Claude Code: modo "Manual" (antigo "default"), "auto" mode com classificador, "/goal", "/verify", "/code-review", Projects, mods/plugins [5][10]; preços com plano Ultra e "Fable" por créditos [12]. Instável: modos opcionais e classificador; planos e limites.
+- Codex: incorporação ao app de desktop do ChatGPT e ao ChatGPT Work (2026) [13][23]; política "untrusted" aposentada [15]; Codex Cloud atual x Legacy [17]; Free "subject to rollout" [14]. Instável: nomes de menus ("Work in", "Worktree"), modelos (GPT-6.x).
+- Gemini CLI → Antigravity CLI (jun/2026, [VERIFICAR]) [36].
+- [SUGESTÃO] Reconferir todos os nomes de botões e preços duas semanas antes da gravação.
+
+12. MATERIAL DIDÁTICO EXISTENTE
+- Anthropic: documentação Claude Code (quickstart, best practices, common workflows, "terminal guide" para quem nunca usou terminal) [1][2][10]; PDF "How Anthropic teams use Claude Code" [41]. Cursos oficiais (Anthropic Academy/Skilljar): NÃO VERIFICADO nesta rodada.
+- OpenAI: OpenAI Academy — "Como as equipes de ciência de dados usam ChatGPT Work" (webinar sob demanda) [23]; documentação Codex (quickstart, CLI, AGENTS.md, segurança) [13][15][16][18]; glossário Codex (learn.chatgpt.com/docs/glossary) [índice].
+- pandas "10 minutes to pandas" (inglês) [25]; Matplotlib tutoriais [26]; Jupyter "Try" [27]; VS Code Python tutorial [32].
+- Reprodutibilidade: The Turing Way (capítulo de pesquisa reprodutível; tradução pt-BR em andamento via Crowdin, não publicada como edição completa) [28]; Software Carpentry "Programming with Python" (inflammation) [29]; Data Carpentry "Data Analysis and Visualization in Python for Ecologists" [30]. Versões em português: NÃO ENCONTRADO.
+- Vídeos oficiais de demonstração do Claude Code e do Codex com transcrição: NÃO ENCONTRADO nesta rodada (canais YouTube oficiais não consultados).
+
+13. IDEIAS DE EXERCÍCIO
+Decomposição da tarefa observável ("Conduzir uma análise reprodutível em Python com agente de código e validar resultados"):
+A1 Preparar o ambiente e o projeto (pasta, cópia dos dados, uv) — passos oficiais: [1][2][4][13][24].
+A2 Pedir (brief) e planejar — [10] (prompt específico, plano), [5] modo "plan", [15] read-only.
+A3 Conduzir (carregar, limpar, explorar, gráficos, relatório) — o agente escreve e executa; leitura de notebooks [7][8].
+A4 Tornar reprodutível (script/notebook, versões, CLAUDE.md/AGENTS.md, Git, rodar do zero) — [9][16][11].
+A5 Validar (asserts, contagens, número oficial, segunda revisão) — [10] ("Give Claude a check to run"; "/code-review").
+
+Bases testadas (ver seção 14, ponto 11):
+C1 CVM DFP 2024 — https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip (ZIP 13,4 MB, 19 CSVs latin-1). Gabarito: Petrobras receita R$ 490,8 bi e lucro atribuído aos controladores R$ 36,6 bi em 2024 [43][44].
+C2 Portal da Transparência — Viagens 2024 — https://portaldatransparencia.gov.br/download-de-dados/viagens/2024 (redireciona para ZIP de ~148 MB com 2024_Pagamento.csv, 2024_Passagem.csv, 2024_Trecho.csv, 2024_Viagem.csv; latin-1; ";"; vírgula decimal; chave "Identificador do processo de viagem") [47].
+C3 INMET dados históricos 2024 — https://portal.inmet.gov.br/uploads/dadoshistoricos/2024.zip (ZIP ~103 MB, ~560 CSVs, um por estação automática; 8 linhas de metadados antes do cabeçalho; latin-1; ";"; vírgula decimal; hora UTC) [45].
+C4 IPCA mensal (BCB SGS 433, API CSV) — compartilhada com IA para Análise de Dados; gabarito 2024 4,83% e 2025 4,26% [48][49].
+
+13a. EXERCÍCIOS CURTOS DE COMPREENSÃO (Essentials) — todos [SUGESTÃO]
+1. (A1) "Instalou?": instalar Claude Code ou Codex CLI (ou abrir o app de desktop) e rodar "claude --version" / abrir a aba Code. Deu certo se: aparece um número de versão ou a tela de nova sessão [1][4].
+2. (A1) "Pasta de projeto": pedir ao agente para criar dados/brutos, dados/tratados, resultados e um README. Deu certo se: as pastas existem e o README explica cada uma.
+3. (A2) "Modo plano": no Claude Code, Shift+Tab até "plan mode on" (ou modo read-only no Codex via /permissions) e pedir um plano de análise de C4. Deu certo se: nenhum arquivo foi criado e o plano tem passos numerados [5][15].
+4. (A3) "Leia o código como leigo": pedir o script que calcula o IPCA acumulado de 2024 a partir de C4 e a explicação linha a linha. Deu certo se: 4,83% e o aluno aponta onde está a multiplicação dos fatores (1 + taxa/100).
+5. (A3) "O alfabeto do arquivo": pedir para ler o cadastro da CVM com encoding errado e depois certo. Deu certo se: o aluno vê "RECUPERA��O" e depois "RECUPERAÇÃO".
+6. (A4) "CLAUDE.md/AGENTS.md": rodar /init (Claude Code) ou criar AGENTS.md e escrever 3 premissas. Deu certo se: "/context all" lista o arquivo em "Memory files" (Claude Code) [9].
+7. (A4) "Rodar do zero": apagar resultados/ e rodar "uv run analise.py". Deu certo se: os mesmos números reaparecem.
+8. (A5) "Assert que falha": pedir um assert com valor errado de propósito (ex.: 4,99%). Deu certo se: o script para com AssertionError.
+9. (Segurança) "Desfazer": pedir uma edição de arquivo e usar /rewind. Deu certo se: o arquivo volta; depois o aluno lê a limitação de comandos Bash [11].
+
+13b. PRÁTICAS LONGAS COM PROBLEMA REAL (Hands On) — todas [SUGESTÃO]
+O1 "Balanço de 467 empresas" (finanças/negócios; C1): agente lê dfp_cia_aberta_DRE_con_2024.csv (32.776 linhas), filtra ORDEM_EXERC = ÚLTIMO e conta 3.11.01, ranking top 20, gráfico, relatório Markdown. Critérios: Petrobras = 36.606.000 (R$ mil); receita 3.01 = 490.829.000; assert no script; README explica escala MIL e controladora x consolidado (3.11 = 37.009.000) [43][44].
+O2 "Para onde vão as viagens" (setor público/regulação; C2): juntar as 4 tabelas pela chave, somar valores por órgão superior, top 10, gráfico. Critérios: contagem de linhas por arquivo antes e depois do merge registrada; nenhum valor perdido na conversão de vírgula decimal (assert: número de NaN em "Valor" = 0 ou explicado). Gabarito oficial direto: NÃO ENCONTRADO — usar o painel de viagens do Portal da Transparência como conferência [VERIFICAR número].
+O3 "Calor em 2024" (engenharia/técnica; C3): juntar os CSVs de uma UF (ex.: estações de "INMET_CO_DF_*"), pular as 8 linhas de metadados, tratar vazios, calcular média anual e máxima por estação, gráfico. Critério: script roda do zero; quantidade de estações lidas = quantidade de arquivos da UF; documentado que a média de estações automáticas não é a média nacional oficial de 25,02 °C divulgada pelo INMET para 2024 (que usa outra metodologia) [46].
+O4 "Mesmo número, dois caminhos" (comparação com IA para Análise de Dados; C1 ou C4): resolver no ChatGPT Análise de dados e no agente de código; comparar números e o tempo para refazer com dados novos.
+
+13c. IDEIAS DE PROJETO FINAL — todas [SUGESTÃO]
+F1 "Relatório reprodutível das companhias abertas 2024" (finanças; C1 + cadastro CVM). Entregas: pasta com dados/brutos (zip original intocado), analise.py ou notebook, pyproject/uv.lock, CLAUDE.md ou AGENTS.md com premissas, resultados/relatorio.md com 3 gráficos, testes com asserts, commits Git. Terminou quando: "rodar do zero" reproduz tudo; Petrobras confere com R$ 36,6 bi e R$ 490,8 bi; uma revisão independente (/code-review ou outro modelo) foi feita e respondida.
+F2 "Painel de viagens a serviço 2024" (setor público; C2). Entregas: junção das 4 tabelas, gasto por órgão e por tipo de pagamento, relatório. Terminou quando: contagens antes/depois do merge e soma total documentadas; diferenças para o painel oficial explicadas.
+F3 "Clima e operação" (engenharia; C3 + C4 opcional). Entregas: junção de estações de uma região, indicadores (média, máxima, horas acima de 35 °C), gráfico, memória de cálculo. Terminou quando: número de estações e de linhas lidas confere com os arquivos; valores ausentes tratados e relatados; resultado reproduz do zero.
+
+14. RESPOSTAS AO FOCO ESPECÍFICO DESTE CURSO
+1. Ambiente mínimo: [SUGESTÃO, com base em [1][4][13][24]] Caminho mais simples com Claude: app de desktop Claude, aba "Code" (sem terminal) + uv; caminho mais simples com OpenAI: app de desktop do ChatGPT em modo Codex, pasta local + uv. Sem instalação: Codex Cloud/Claude Code na web (exigem repositório GitHub para a maioria dos fluxos [13][3 índice]) ou Google Colab (gratuito, conta Google) [34]. Requisitos Claude Code: seção 2.1 [1]. Problemas comuns no Windows: PowerShell x CMD, PATH, Git for Windows [1]. Mais barato para todos os exercícios: [SUGESTÃO] ChatGPT Plus (R$ 99,90) com Codex, ou Claude Pro (R$ 110) — o Free do Codex é limitado e em rollout [14][19]. Passo a passo oficial de instalação do Python no Windows/macOS: python.org [31] (página não transcrita); uv instala Python [24 navegação] [VERIFICAR].
+2. Claude Code para análise de dados: planos Pro/Max/Ultra/Team/Enterprise ou Console/API; sem Free [2][12]; preços em reais na seção 2.1; em dólar NÃO lido; limites por 5 h e semana [12]; roda em terminal, VS Code, JetBrains, desktop, web [3]; permissões [5]; notebooks [7][8]; CLAUDE.md [9]; exemplos oficiais de análise de dados: PDF "How Anthropic teams use Claude Code" [41]; página oficial dedicada a "data analysis" no Claude Code: NÃO ENCONTRADO (procurei: índice code.claude.com/docs/llms.txt).
+3. Codex para análise de dados: planos e preços seção 2.2 [14][19]; limites [14]; onde roda [13][17][18]; sandbox e aprovações [15]; AGENTS.md [16]; notebooks: NÃO ENCONTRADO; exemplos oficiais: webinar de ciência de dados [23] e plugin Data [22].
+4. Bibliotecas e conceitos: seção 4; tutoriais oficiais com links testados [25][26][27]; versão em português de "10 minutes to pandas": NÃO ENCONTRADO.
+5. Reprodutibilidade para leigos: seção 4 e [28][29][30]; organização de pastas, requirements/pyproject/uv.lock, semente, registro de decisões, Git mínimo: [SUGESTÃO] (fontes oficiais de cada ferramenta não lidas nesta rodada). Guias em português: NÃO ENCONTRADO.
+6. Validar resultados: técnicas oficiais da Anthropic (check que retorna passa/falha, pedir evidência, /code-review em subagente que não viu a conversa, /verify) [10]; OpenAI (conferir fonte, período, filtros e definição; comparar com relatório existente) [22]. Erros documentados e benchmarks independentes: seção 9 [37][38][39][40]. Teste de imprensa comparando Claude Code x Codex em dados: NÃO ENCONTRADO.
+7. Caminho completo com agente: brief → plano (modo plan/read-only) → carregar e limpar (latin-1, vírgula decimal, datas, juntar arquivos) → explorar → gráficos → relatório (Markdown/HTML/notebook/Excel) → revisar. Guias oficiais: Anthropic best practices [10]; OpenAI AGENTS.md e segurança [15][16]. Etapas específicas de dados: [SUGESTÃO].
+8. Segurança e privacidade: seção 8 [5][6][11][15][20][21][42].
+9. Comparação: seção 10.
+10. Casos reais: seção 6 (Brasil: NÃO ENCONTRADO).
+11. Bases públicas (testadas em 17/11/2026, sem login)
+- C1 CVM DFP 2024: ZIP 13.397.608 bytes; 19 CSVs (BPA, BPP, DRE, DFC, DMPL, DVA, consolidados e individuais, mais parecer e composição do capital); DRE consolidada 32.776 linhas × 15 colunas, 467 companhias; latin-1; escala "MIL"; dicionário em dados.cvm.gov.br/dataset/cia_aberta-doc-dfp [43]. Gabarito: Petrobras 2024 receita 490.829.000 e lucro atribuído aos controladores 36.606.000 (R$ mil), iguais a R$ 490,8 bi e R$ 36,6 bi divulgados [44]. Roda num computador comum e no Colab gratuito (tamanho pequeno) [SUGESTÃO]. Serve também ao curso IA para Análise de Dados (só o CSV da DRE). [CONFIRMADO por script]
+- C2 Portal da Transparência Viagens 2024: página https://portaldatransparencia.gov.br/download-de-dados/viagens/2024 redireciona para dadosabertos-download.cgu.gov.br/.../2024_20261115_Viagens.zip (148.348.370 bytes; atualizado em 15/11/2026); 4 CSVs; cabeçalho de Pagamento: "Identificador do processo de viagem";"Número da Proposta (PCDP)";...;"Tipo de pagamento";"Valor" [47]. Número de linhas: NÃO MEDIDO (não descompactado). Gabarito oficial: NÃO ENCONTRADO. Roda em computador comum [SUGESTÃO]; no Colab gratuito, depende da RAM [VERIFICAR].
+- C3 INMET 2024: 102.772.199 bytes (Last-Modified 02/01/2025); ~560 arquivos "INMET_<região>_<UF>_<código>_<nome>_01-01-2024_A_31-12-2024.CSV"; metadados (REGIAO, UF, ESTACAO, CODIGO (WMO), LATITUDE, LONGITUDE, ALTITUDE, DATA DE FUNDACAO) e 19 colunas horárias (precipitação, pressão, radiação, temperatura, umidade, vento) [45]. Gabarito: INMET divulgou 2024 como o ano mais quente desde 1961, média 25,02 °C (0,79 °C acima de 1991–2020) — confirmado por imprensa; a nota oficial no portal do INMET não exibiu o número no trecho lido [46] [VERIFICAR]. Atenção: não reproduzível diretamente a partir das estações automáticas. Dicionário: página de dados históricos [45].
+- C4 BCB SGS 433: ver IA para Análise de Dados; gabarito IBGE 4,83% (2024) e 4,26% (2025) [48][49].
+- Base de engenharia com gabarito direto e simples: NÃO ENCONTRADO além do INMET (ANEEL geração distribuída respondeu ao link, ZIP de 113 MB servido como .csv, não inspecionado) [VERIFICAR].
+
+15. TRECHOS TRANSCRITOS DA DOCUMENTAÇÃO OFICIAL
+15.1 Claude Code — Quickstart — https://code.claude.com/docs/en/quickstart — sem data
+"A Claude subscription (Pro, Max, Ultra, Team, or Enterprise), Claude Console account, or access through a supported cloud provider"
+15.2 Claude Code — Advanced setup — https://code.claude.com/docs/en/setup — sem data
+"Hardware: 4 GB+ RAM, x64 or ARM64 processor"
+"When the installer finishes, open a new terminal window and run claude --version. A working installation prints a version number."
+"Git for Windows is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead."
+15.3 Claude Code — Desktop quickstart — https://code.claude.com/docs/en/desktop-quickstart — sem data
+"Claude Code is in the Code tab at the top of the app's sidebar... Claude Code requires a Pro, Max, Ultra, Team, or Enterprise subscription."
+15.4 Claude Code — Choose a permission mode — https://code.claude.com/docs/en/permission-modes — sem data
+"default | Reads only | Reviewing every action yourself, sensitive work"
+"bypassPermissions | Everything | Isolated containers and VMs only"
+"During a session: press Shift+Tab to cycle permission modes."
+15.5 Claude Code — Data usage — https://code.claude.com/docs/en/data-usage — sem data
+"Users who allow data use for model improvement: 5-year retention period to support model development and safety improvements"
+"Users who don't allow data use for model improvement: 30-day retention period"
+"Claude Code clients store session transcripts locally in plaintext under ~/.claude/projects/ for 30 days by default"
+15.6 Claude Code — Tools reference — https://code.claude.com/docs/en/tools-reference — sem data
+"NotebookEdit modifies a Jupyter notebook one cell at a time, targeting cells by their cell_id."
+"NotebookEdit refuses a notebook file that doesn't decode as UTF-8, under the same rule as Edit, and writes nothing."
+15.7 Claude Code — Checkpointing — https://code.claude.com/docs/en/checkpointing — sem data
+"A file that only Bash commands changed isn't tracked and stays as it is. To revert it, use version control, such as Git."
+15.8 Claude Code — Best practices — https://code.claude.com/docs/en/best-practices — sem data
+"Give Claude something it can run that comes back pass or fail. Once it has that, it can keep going on its own and you don't have to watch."
+15.9 Codex — Agent approvals & security — https://learn.chatgpt.com/docs/agent-approvals-security — sem data
+"By default, the agent runs with network access turned off. Locally, Codex uses an OS-enforced sandbox that limits what it can touch (typically to the current workspace), plus an approval policy that controls when it must stop and ask you before acting."
+"If you want to chat or plan without making changes, switch to read-only mode with the /permissions command."
+15.10 Codex — Codex environments — https://learn.chatgpt.com/docs/environments/modes — sem data
+"Local: work directly in your current project directory. Worktree: isolate changes in a Git worktree. Cloud: run a remote task in its own workspace."
+15.11 Codex — AGENTS.md — https://learn.chatgpt.com/docs/agent-configuration/agents-md — sem data
+"Codex reads AGENTS.md files before doing any work."
+15.12 Codex — Pricing — https://learn.chatgpt.com/docs/pricing — sem data
+"ChatGPT Work and Codex share pricing, credits, and usage limits."
+"GPT-6 Luna at Standard speed in the desktop app, subject to rollout" (Free e Go)
+15.13 uv — Installation — https://docs.astral.sh/uv/getting-started/installation/ — sem data
+"curl -LsSf https://astral.sh/uv/install.sh | sh" ; "powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex""
+15.14 OpenAI — Como seus dados são usados — https://help.openai.com/pt-br/articles/5722486 — 16/11/2026
+"O Codex tem uma configuração separada, Incluir ambientes, nas Configurações do Codex, que permite o treinamento em ambientes completos."
+
+16. MATERIAIS PARA BAIXAR
+[BAIXAR] BAIXADO — "How Anthropic teams use Claude Code" — https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad8871e7658.pdf — PDF, 6,2 MB, inglês — casos internos (dados, finanças). Arquivo: how-anthropic-teams-use-claude-code.pdf (cabeçalho %PDF conferido; conteúdo identificado pelo título na busca — abrir para confirmar).
+[BAIXAR] BAIXADO — "We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs" (Spracklen et al., USENIX Security 2025) — https://arxiv.org/pdf/2406.10279 — PDF, 680 KB, inglês. Arquivo: package-hallucinations-usenix2025.pdf (%PDF conferido).
+[BAIXAR] BAIXADO — DSBench (arXiv 2409.07703) — https://arxiv.org/pdf/2409.07703 — PDF, 4,96 MB, inglês. Arquivo: dsbench-2024-agentes-ciencia-de-dados.pdf (%PDF conferido).
+[BAIXAR] NÃO BAIXADO (está na pasta de IA para Análise de Dados) — DABstep (arXiv 2506.23719) — https://arxiv.org/pdf/2506.23719 — PDF 2,1 MB. Arquivo: dabstep-2025-benchmark-agentes-dados.pdf.
+[BAIXAR] BAIXADO — ANPD Estudo Preliminar Anonimização e Pseudonimização — https://www.gov.br/anpd/pt-br/assuntos/regulacao/agenda-regulatoria-1/cp-estudo-preliminar_anonimizacao_e_pseudon.pdf/@@display-file/file — PDF 1,5 MB, pt-BR. Arquivo: anpd-estudo-preliminar-anonimizacao-pseudonimizacao.pdf (%PDF conferido).
+[BAIXAR] BAIXADO — CVM DFP companhias abertas 2024 — https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip — ZIP 13,4 MB, pt-BR. Arquivo: cvm-dfp-cia-aberta-2024.zip (aberto por script).
+[BAIXAR] BAIXADO — CVM cadastro de companhias abertas — https://dados.cvm.gov.br/dados/CIA_ABERTA/CAD/DADOS/cad_cia_aberta.csv — CSV latin-1, 1,5 MB. Arquivo: cvm-cadastro-cias-abertas.csv.
+[BAIXAR] NÃO BAIXADO — Portal da Transparência Viagens 2024 — https://portaldatransparencia.gov.br/download-de-dados/viagens/2024 — ZIP ~148 MB. Motivo: tamanho (baixar manualmente). Arquivo sugerido: transparencia-viagens-2024.zip.
+[BAIXAR] NÃO BAIXADO — INMET dados históricos 2024 — https://portal.inmet.gov.br/uploads/dadoshistoricos/2024.zip — ZIP ~103 MB. Motivo: tamanho. Arquivo sugerido: inmet-dados-historicos-2024.zip.
+[BAIXAR] NÃO BAIXADO (está na pasta de IA para Análise de Dados) — BCB SGS 433 IPCA CSV. Arquivo: bcb-sgs433-ipca-mensal-2020-2025.csv.
+[BAIXAR] NÃO ENCONTRADO como arquivo — documentação oficial do Claude Code e do Codex (instalação, permissões, notebooks, segurança, uso de dados, AGENTS.md, planos): só páginas web; versões Markdown disponíveis acrescentando ".md" à URL (ver seção 17).
+[BAIXAR] NÃO ENCONTRADO como arquivo — guias de boas práticas para agentes (Anthropic/OpenAI): páginas web [10][15][16].
+[BAIXAR] NÃO ENCONTRADO como arquivo — tutoriais pandas/Matplotlib/Jupyter, The Turing Way, Data Carpentry: páginas web (The Turing Way tem PDFs no Zenodo, ex.: https://zenodo.org/records/4269795/files/turingway_comp_repro.pdf — não testado) [VERIFICAR]. Arquivo sugerido: turing-way-reproducibilidade.pdf.
+[BAIXAR] VÍDEO — OpenAI Academy, webinar sob demanda "Como as equipes de ciência de dados usam o Codex" — link em https://openai.com/pt-BR/academy/chatgpt-work/how-data-science-teams-use-codex/ — pode exigir login [ACESSO RESTRITO?]; transcrição: NÃO VERIFICADO.
+[BAIXAR] NÃO ENCONTRADO — vídeos oficiais de demonstração do Claude Code com transcrição para baixar (não pesquisado o canal oficial).
+[BAIXAR] NÃO ENCONTRADO — dicionários de dados em arquivo das bases C1, C2, C3 (estão em páginas web; ver seção 17).
+
+17. PÁGINAS PARA SALVAR
+1. Título: Claude Code — Quickstart — URL: https://code.claude.com/docs/en/quickstart — Trecho: contas exigidas, primeiro uso — Prioridade: alta — Arquivo: claude-code-quickstart.pdf
+2. Título: Claude Code — Advanced setup — URL: https://code.claude.com/docs/en/setup — Trecho: requisitos de sistema, instalação Windows/macOS, erros — Prioridade: alta — Arquivo: claude-code-instalacao-requisitos.pdf
+3. Título: Claude Code — Troubleshoot installation and login — URL: https://code.claude.com/docs/en/troubleshoot-install — Trecho: PATH, 403, permissões — Prioridade: alta — Arquivo: claude-code-problemas-instalacao.pdf (não lida)
+4. Título: Claude Code — Get started with the desktop app — URL: https://code.claude.com/docs/en/desktop-quickstart — Trecho: aba Code, plano exigido — Prioridade: alta — Arquivo: claude-code-desktop-primeiros-passos.pdf
+5. Título: Claude Code — Choose a permission mode — URL: https://code.claude.com/docs/en/permission-modes — Trecho: tabela de modos, Shift+Tab — Prioridade: alta — Arquivo: claude-code-modos-permissao.pdf
+6. Título: Claude Code — Data usage — URL: https://code.claude.com/docs/en/data-usage — Trecho: treino, retenção 5 anos/30 dias, local — Prioridade: alta — Arquivo: claude-code-uso-de-dados.pdf
+7. Título: Claude Code — Security — URL: https://code.claude.com/docs/en/security — Trecho: proteções e riscos — Prioridade: alta — Arquivo: claude-code-seguranca.pdf
+8. Título: Claude Code — Tools reference — URL: https://code.claude.com/docs/en/tools-reference — Trecho: NotebookEdit, leitura de .ipynb, arquivos não UTF-8 — Prioridade: alta — Arquivo: claude-code-ferramentas-notebooks.pdf
+9. Título: Claude Code — VS Code (Work with Jupyter notebooks) — URL: https://code.claude.com/docs/en/vs-code — Trecho: reexecutar células, salvar antes — Prioridade: média — Arquivo: claude-code-vscode-jupyter.pdf
+10. Título: Claude Code — How Claude remembers your project — URL: https://code.claude.com/docs/en/memory — Trecho: CLAUDE.md, /init, /context all — Prioridade: alta — Arquivo: claude-code-claude-md.pdf
+11. Título: Claude Code — Checkpointing — URL: https://code.claude.com/docs/en/checkpointing — Trecho: /rewind, limitação Bash — Prioridade: alta — Arquivo: claude-code-checkpoints.pdf
+12. Título: Claude Code — Best practices — URL: https://code.claude.com/docs/en/best-practices — Trecho: prompt específico, check passa/falha, evidência — Prioridade: alta — Arquivo: claude-code-boas-praticas.pdf
+13. Título: Claude Code — Sandboxing — URL: https://code.claude.com/docs/en/sandboxing — Trecho: isolamento de comandos — Prioridade: média — Arquivo: claude-code-sandbox.pdf (não lida em detalhe)
+14. Título: Claude — Plans & pricing — URL: https://claude.com/pricing — Trecho: preços em reais, Claude Code por plano, limites — Prioridade: alta — Arquivo: claude-planos-precos.pdf
+15. Título: Codex/ChatGPT — Quickstart — URL: https://learn.chatgpt.com/docs/quickstart — Trecho: app de desktop, seleção Codex/Work — Prioridade: alta — Arquivo: codex-quickstart.pdf
+16. Título: Codex — CLI — URL: https://learn.chatgpt.com/docs/codex/cli — Trecho: instalação Windows/macOS — Prioridade: alta — Arquivo: codex-cli-instalacao.pdf
+17. Título: Codex — Pricing — URL: https://learn.chatgpt.com/docs/pricing — Trecho: planos, limites por 5 h — Prioridade: alta — Arquivo: codex-precos-limites.pdf
+18. Título: Codex — Agent approvals & security — URL: https://learn.chatgpt.com/docs/agent-approvals-security — Trecho: sandbox, aprovação, rede — Prioridade: alta — Arquivo: codex-sandbox-aprovacoes.pdf
+19. Título: Codex — Custom instructions with AGENTS.md — URL: https://learn.chatgpt.com/docs/agent-configuration/agents-md — Trecho: descoberta e exemplo — Prioridade: alta — Arquivo: codex-agents-md.pdf
+20. Título: Codex — Codex environments — URL: https://learn.chatgpt.com/docs/environments/modes — Trecho: Local, Worktree, Cloud — Prioridade: média — Arquivo: codex-ambientes.pdf
+21. Título: Planos e preços | ChatGPT (pt-BR) — URL: https://chatgpt.com/pt-BR/pricing/ — Trecho: preços em reais, Codex por plano — Prioridade: alta — Arquivo: chatgpt-planos-e-precos-ptbr.pdf
+22. Título: Como seus dados são usados para melhorar o desempenho do modelo — URL: https://help.openai.com/pt-br/articles/5722486 — Trecho: Codex "Incluir ambientes", pessoal x empresarial — Prioridade: alta — Arquivo: openai-ajuda-uso-dos-dados-codex.pdf
+23. Título: Como usar o plugin Data no ChatGPT Work e no Codex — URL: https://help.openai.com/pt-br/articles/20001518-using-the-data-plugin-in-chatgpt-work-and-codex — Trecho: validação de métricas — Prioridade: média — Arquivo: openai-ajuda-plugin-data.pdf
+24. Título: uv — Installation — URL: https://docs.astral.sh/uv/getting-started/installation/ — Trecho: comandos de instalação — Prioridade: alta — Arquivo: uv-instalacao.pdf
+25. Título: pandas — 10 minutes to pandas — URL: https://pandas.pydata.org/docs/user_guide/10min.html — Trecho: tutorial básico — Prioridade: média — Arquivo: pandas-10-minutos.pdf
+26. Título: Matplotlib — Tutorials — URL: https://matplotlib.org/stable/tutorials/index.html — Trecho: gráficos básicos — Prioridade: média — Arquivo: matplotlib-tutoriais.pdf
+27. Título: Jupyter — Try — URL: https://jupyter.org/try — Trecho: notebook no navegador — Prioridade: média — Arquivo: jupyter-try.pdf
+28. Título: The Turing Way — Reproducible research — URL: https://book.the-turing-way.org/reproducible-research — Trecho: definição e práticas — Prioridade: média — Arquivo: turing-way-pesquisa-reprodutivel.pdf
+29. Título: Software Carpentry — Programming with Python — URL: https://swcarpentry.github.io/python-novice-inflammation/ — Trecho: estrutura didática — Prioridade: média — Arquivo: swcarpentry-python.pdf
+30. Título: Data Carpentry — Python for Ecologists — URL: https://datacarpentry.github.io/python-ecology-lesson/ — Trecho: pandas para iniciantes — Prioridade: média — Arquivo: datacarpentry-python-ecologia.pdf
+31. Título: VS Code — Python tutorial — URL: https://code.visualstudio.com/docs/python/python-tutorial — Trecho: instalação Windows/macOS — Prioridade: média — Arquivo: vscode-python-tutorial.pdf
+32. Título: CVM — Dados abertos DFP (dicionário) — URL: https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp — Trecho: metadados/dicionário — Prioridade: alta — Arquivo: cvm-dfp-dicionario.pdf
+33. Título: Portal da Transparência — Download de dados — Viagens — URL: https://portaldatransparencia.gov.br/download-de-dados/viagens — Trecho: dicionário das 4 tabelas — Prioridade: alta — Arquivo: transparencia-viagens-dicionario.pdf
+34. Título: INMET — Dados históricos — URL: https://portal.inmet.gov.br/dadoshistoricos — Trecho: descrição dos arquivos anuais — Prioridade: alta — Arquivo: inmet-dados-historicos.pdf
+35. Título: INMET — 2024 é o ano mais quente da série histórica no Brasil — URL: https://portal.inmet.gov.br/noticias/2024-%C3%A9-o-ano-mais-quente-da-s%C3%A9rie-hist%C3%B3rica-no-brasil — Trecho: gabarito 25,02 °C — Prioridade: média — Arquivo: inmet-2024-ano-mais-quente.pdf
+36. Título: Google Colab — URL: https://colab.research.google.com/ — Trecho: termos e limites do gratuito (FAQ) — Prioridade: média — Arquivo: colab-faq-limites.pdf
+
+18. LACUNAS E PONTOS A VERIFICAR
+- Preço do Claude Pro/Max em dólar e planos Team/Enterprise (não exibidos na leitura em reais).
+- Codex no plano Free: "subject to rollout" — confirmar se a conta Free brasileira tem o modo Codex no app de desktop e quais limites.
+- Suporte do Codex a notebooks Jupyter — NÃO ENCONTRADO.
+- Página oficial de "data analysis" para Claude Code — NÃO ENCONTRADO.
+- Data de incorporação do app Codex ao app do ChatGPT/ChatGPT Work.
+- Linha do tempo do Claude Code (lançamento, GA, desktop, web).
+- Limites do Google Colab gratuito e status do Data Science Agent em nov/2026; Gemini CLI x Antigravity CLI (fontes conflitantes).
+- Cursor, GitHub Copilot, Python no Excel: sem fonte oficial lida.
+- Percentuais de alucinação de pacotes (19,7%, 5,2%–21,7%) — conferir no PDF baixado; reavaliação de 2026 (alphaxiv 2605.17062) não lida.
+- Incidentes Replit/Gemini CLI — detalhes vêm de imprensa.
+- Gabaritos: Portal da Transparência Viagens (sem número oficial localizado); INMET 25,02 °C (confirmado só pela imprensa e não reproduzível pelas estações automáticas).
+- Número de linhas de C2 e C3 não medido (arquivos não descompactados).
+- Comandos "uv init/add/run" e instalação do Python via uv — documentação não lida além da instalação do uv.
+- Casos reais brasileiros (analistas, finanças, setor público, engenharia) — NÃO ENCONTRADO.
+- Guias de reprodutibilidade em português — NÃO ENCONTRADO.
+- ANPD: guia final de anonimização não publicado (só estudo preliminar).
+
+19. APÊNDICE TÉCNICO
+- Claude Code: instalação via Homebrew ("brew install --cask claude-code"; canais stable/latest) [1]; "claude --permission-mode plan"; "permissions.defaultMode"; "claude -p" para execuções não interativas; Stop hooks; variável CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS; telemetria desativável com DISABLE_TELEMETRY=1 e DISABLE_ERROR_REPORTING=1 [5][6][7][10].
+- Codex: config.toml com sandbox_mode = "read-only" / "workspace-write" e approval_policy = "on-request"; "sandbox_workspace_write.network_access = true"; features.network_proxy; project_doc_max_bytes (32 KiB); CODEX_HOME [15][16].
+- Plugin Data: Console de administração > Plugins > Data; camada semântica; Databricks/Snowflake [22].
+- CI/CD, SDKs (Agent SDK, Codex SDK), MCP: fora do escopo do aluno [3][índices].
+
+20. FONTES CONSULTADAS
+(Data de acesso de todas: 17/11/2026, salvo indicação.)
+[1] Claude Code — Advanced setup — https://code.claude.com/docs/en/setup — documentação oficial — sem data
+[2] Claude Code — Quickstart — https://code.claude.com/docs/en/quickstart — documentação oficial — sem data
+[3] Claude Code — Overview e índice (llms.txt) — https://code.claude.com/docs/en/overview ; https://code.claude.com/docs/llms.txt — documentação oficial — sem data
+[4] Claude Code — Get started with the desktop app — https://code.claude.com/docs/en/desktop-quickstart — documentação oficial — sem data
+[5] Claude Code — Choose a permission mode — https://code.claude.com/docs/en/permission-modes — documentação oficial — sem data
+[6] Claude Code — Data usage — https://code.claude.com/docs/en/data-usage — documentação oficial — sem data
+[7] Claude Code — Tools reference — https://code.claude.com/docs/en/tools-reference — documentação oficial — sem data
+[8] Claude Code — VS Code — https://code.claude.com/docs/en/vs-code — documentação oficial — sem data
+[9] Claude Code — How Claude remembers your project — https://code.claude.com/docs/en/memory — documentação oficial — sem data
+[10] Claude Code — Best practices — https://code.claude.com/docs/en/best-practices — documentação oficial — sem data
+[11] Claude Code — Checkpointing — https://code.claude.com/docs/en/checkpointing — documentação oficial — sem data
+[12] Claude — Plans & pricing — https://claude.com/pricing — página oficial de preços (exibida em R$) — sem data
+[13] ChatGPT/Codex — Quickstart — https://learn.chatgpt.com/docs/quickstart — documentação oficial — sem data
+[14] ChatGPT Work e Codex — Pricing — https://learn.chatgpt.com/docs/pricing — documentação oficial — sem data
+[15] Codex — Agent approvals & security — https://learn.chatgpt.com/docs/agent-approvals-security — documentação oficial — sem data
+[16] Codex — Custom instructions with AGENTS.md — https://learn.chatgpt.com/docs/agent-configuration/agents-md — documentação oficial — sem data
+[17] Codex — Codex environments — https://learn.chatgpt.com/docs/environments/modes — documentação oficial — sem data
+[18] Codex — CLI — https://learn.chatgpt.com/docs/codex/cli — documentação oficial — sem data
+[19] Planos e preços | ChatGPT — https://chatgpt.com/pt-BR/pricing/ — página oficial (Brasil) — sem data
+[20] Como seus dados são usados para melhorar o desempenho do modelo — https://help.openai.com/pt-br/articles/5722486 — ajuda oficial pt-BR — 16/11/2026
+[21] Controles de dados no ChatGPT — https://help.openai.com/pt-br/articles/7730893 — ajuda oficial pt-BR — 16/11/2026
+[22] Como usar o plugin Data no ChatGPT Work e no Codex — https://help.openai.com/pt-br/articles/20001518-using-the-data-plugin-in-chatgpt-work-and-codex — ajuda oficial pt-BR — ≈27/10/2026
+[23] OpenAI Academy — Como as equipes de ciência de dados usam ChatGPT Work — https://openai.com/pt-BR/academy/chatgpt-work/how-data-science-teams-use-codex/ — oficial — 14/07/2026
+[24] uv — Installation — https://docs.astral.sh/uv/getting-started/installation/ — documentação oficial — sem data
+[25] pandas — 10 minutes to pandas — https://pandas.pydata.org/docs/user_guide/10min.html — documentação oficial — sem data (link testado)
+[26] Matplotlib — Tutorials — https://matplotlib.org/stable/tutorials/index.html — documentação oficial (link testado)
+[27] Jupyter — Try — https://jupyter.org/try — oficial (link testado)
+[28] The Turing Way — Reproducible research — https://book.the-turing-way.org/reproducible-research — guia comunitário/acadêmico (link testado; definição via resumo de busca)
+[29] Software Carpentry — Programming with Python — https://swcarpentry.github.io/python-novice-inflammation/ — material didático (link testado)
+[30] Data Carpentry — Python Ecology Lesson — https://datacarpentry.github.io/python-ecology-lesson/ — material didático (link testado)
+[31] Python — Downloads — https://www.python.org/downloads/ — oficial (link testado)
+[32] VS Code — Python tutorial — https://code.visualstudio.com/docs/python/python-tutorial — oficial (link testado)
+[33] Git for Windows — https://git-scm.com/downloads/win — oficial (link testado)
+[34] Google Colab — https://colab.research.google.com/ — oficial (link testado)
+[35] TechCrunch — "Google upgrades Colab with an AI agent tool" — https://techcrunch.com/2025/03/03/google-upgrades-colab-with-an-ai-agent-tool/ — imprensa — 03/03/2025 (via resumo de busca)
+[36] Gemini CLI — Quotas and pricing — https://geminicli.com/docs/resources/quota-and-pricing ; Tembo — "Gemini CLI Pricing (2026)" — https://www.tembo.io/blog/gemini-cli-pricing — oficial + blog — 2026 (via resumo de busca; conflitantes)
+[37] Jing et al., DSBench — https://arxiv.org/abs/2409.07703 — preprint acadêmico — 2024/2025
+[38] DABstep — https://arxiv.org/abs/2506.23719 — preprint acadêmico — jun/2025
+[39] Spracklen et al., "We Have a Package for You!" — https://www.usenix.org/conference/usenixsecurity25/presentation/spracklen ; https://arxiv.org/abs/2406.10279 — acadêmico (USENIX Security 2025)
+[40] AI Incident Database — incidente 1152 (Replit) e relacionados — https://incidentdatabase.ai/cite/1152/ ; Ars Technica via Slashdot — https://hardware.slashdot.org/story/25/07/24/2356212/ — imprensa — jul/2025 (via resumo de busca)
+[41] Anthropic — "How Anthropic teams use Claude Code" — https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad8871e7658.pdf ; post https://claude.com/blog/how-anthropic-teams-use-claude-code — oficial — 24/07/2025
+[42] ANPD — Estudo Preliminar Anonimização e Pseudonimização — https://www.gov.br/anpd/pt-br/assuntos/regulacao/agenda-regulatoria-1/cp-estudo-preliminar_anonimizacao_e_pseudon.pdf/@@display-file/file — oficial — dez/2023
+[43] CVM — Dados abertos DFP e cadastro — https://dados.cvm.gov.br/dataset/cia_aberta-doc-dfp ; https://dados.cvm.gov.br/dados/CIA_ABERTA/ — dados oficiais — consulta 17/11/2026
+[44] Safra "O Especialista" — "Petrobras lucra R$ 36,6 bilhões em 2024..." — https://oespecialista.safra.com.br/petrobras-lucro-dividendos-2024/ — imprensa financeira — fev/2025 (via resumo de busca)
+[45] INMET — Dados históricos — https://portal.inmet.gov.br/dadoshistoricos ; arquivo https://portal.inmet.gov.br/uploads/dadoshistoricos/2024.zip — dados oficiais — arquivo de 02/01/2025
+[46] INMET — "2024 é o ano mais quente da série histórica no Brasil" — https://portal.inmet.gov.br/noticias/2024-%C3%A9-o-ano-mais-quente-da-s%C3%A9rie-hist%C3%B3rica-no-brasil — oficial — jan/2025; número 25,02 °C via imprensa (CNN Brasil, Forbes Brasil, Diário do Nordeste)
+[47] Portal da Transparência — Download de dados — Viagens — https://portaldatransparencia.gov.br/download-de-dados/viagens/2024 — dados oficiais — arquivo de 15/11/2026
+[48] Banco Central — SGS 433 (API) — https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv — dados oficiais — consulta 17/11/2026
+[49] IBGE Agência de Notícias — IPCA 2025 4,26% — https://agenciadenoticias.ibge.gov.br/agencia-noticias/45613-ipca-em-dezembro-vai-a-0-33-e-acumula-4-26-em-2025.html — oficial — 09/01/2026 (via resumo de busca)
+[50] Microsoft Support — Copilot in Excel with Python — https://support.microsoft.com/office/copilot-in-excel-with-python-364e4ae9-9343-4d56-952a-5f62b0f70db6 — ajuda oficial — não lida (via busca)
+[51] (reservado)
+[52] "The Range Shrinks, the Threat Remains: Re-evaluating LLM Package Hallucinations on the 2026 Frontier-Model Cohort" — https://www.alphaxiv.org/abs/2605.17062 — preprint — 2026 (via resumo de busca)
+
+CHECKLIST
+[SIM] O arquivo usa exatamente o cabeçalho, os títulos e a numeração pedidos.
+[SIM] O conteúdo cobre o assunto inteiro e serve aos três produtos: ementa completa, curso Essentials e curso Hands On.
+[SIM] A seção 13 tem exercícios curtos (13a), práticas longas (13b) e ideias de projeto final (13c).
+[SIM] Todos os pontos do FOCO ESPECÍFICO e todos os materiais de "procure especialmente" foram respondidos ou estão como NÃO ENCONTRADO.
+[SIM] Todo [CONFIRMADO] está dito literalmente na fonte citada.
+[SIM] Nenhum exercício depende de instrutor, e o curso não foi dividido em blocos de tempo.
+[SIM] A seção 17 tem um item por página, com URL, prioridade e nome de arquivo.
+[SIM] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+[SIM] Os casos de uso são reais, e cada público sem caso real está como NÃO ENCONTRADO.
+[SIM] As fontes estão em pt-BR ou inglês (outro idioma só quando era a única fonte), e as lojas e ofertas são as do Brasil.
+[SIM] Nenhum endereço é de ambiente de teste (dev., hml., staging., qa.).
+[SIM] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é técnico demais está no APÊNDICE TÉCNICO.
+[SIM] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está marcada [CONFIRMADO].
+[SIM] Todo material não-web citado nas seções 1 a 20 está na seção 16.
+[SIM] Cada arquivo declarado BAIXADO abre e é do tipo anunciado (nenhuma página HTML salva como .pdf).
+[SIM] Os links dos exercícios foram testados e levam direto ao conteúdo.
+[SIM] A seção 17 lista páginas dos quatro tipos pedidos na regra 6.
+[SIM] Cada número está atribuído à fonte que de fato o contém.
+[NÃO] Nomes de menus e botões indicam a origem: (interface), (ajuda pt-BR) ou (ajuda en). — Indicados na seção 3; nas demais seções a origem é a documentação em inglês (ajuda en) citada pelo número da fonte, sem repetir a marcação. Nenhum nome foi visto na interface nesta rodada.
