@@ -1,0 +1,15 @@
+[project]
+name = "edicao-de-cursos"
+version = "0.1.0"
+description = "Automação do checklist de produção de cursos e extrator de dados SCORM"
+requires-python = ">=3.10"
+dependencies = [
+    "openpyxl>=3.1",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+tela = ["tkinterdnd2>=0.7.0"]    # só para a tela do extrator
+
+[tool.uv]
+package = false
