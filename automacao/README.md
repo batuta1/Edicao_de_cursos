@@ -1,5 +1,7 @@
 # Automação checklist → Notion
 
+> Guia passo a passo para iniciantes: [`documentacao/`](../documentacao/README.md).
+
 Um comando lê o checklist de produção (branch `joao`), atualiza `autor.json` dos cursos e o banco "Produção de cursos" do Notion.
 
 ```bash
@@ -7,6 +9,7 @@ uv sync
 uv run python -m automacao --dry-run      # não grava, não commita, não escreve no Notion
 uv run python -m automacao                # tudo (commits locais; nunca faz push)
 uv run python -m automacao --sem-notion --sem-fetch
+uv run python -m automacao --so checklist     # só uma etapa: checklist extrator autores notion
 ```
 
 Roda na branch que tem `Cursos/` (hoje a `main`). Em outra pasta de trabalho: `EDICAO_RAIZ=<raiz do repo>`.
