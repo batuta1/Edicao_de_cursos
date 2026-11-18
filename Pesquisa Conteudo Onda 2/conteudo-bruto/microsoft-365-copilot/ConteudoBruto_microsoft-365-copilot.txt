@@ -1,0 +1,1124 @@
+================================================================
+CONTEÚDO BRUTO — Microsoft 365 Copilot
+Registros no catálogo: microsoft-365-copilot-essentials e
+microsoft-365-copilot-hands-on
+Pesquisa realizada em: 18 de novembro de 2026
+Ferramenta-âncora: Microsoft 365 Copilot (licença "Premium"), com
+Copilot Chat (Basic) como alternativa sem licença
+Trilhas: T7 pos. 6; F3 pos. 7; J3 pos. 7; R3 pos. 6; S3 pos. 6
+Prompt: versão 7 (18/11/2026), alinhada à planilha v0.4
+================================================================
+
+Convenções deste arquivo
+- [CONFIRMADO] = a fonte citada diz isso literalmente (ou em tradução fiel).
+- [VERIFICAR] = evidência insuficiente, secundária, contraditória ou
+  sujeita a lançamento gradual.
+- [SUGESTÃO] = elaboração da pesquisa para a equipe; não é fato de fonte.
+- NÃO ENCONTRADO = procurado e não localizado em fonte confiável.
+- Números entre colchetes [n] remetem à seção 20 (Fontes).
+- Rótulos de menu entre aspas indicam a origem: EN = ajuda/guia em inglês;
+  PT = página em português do Brasil. A interface real varia por licença,
+  idioma, tenant, versão do app e lançamento gradual. Quase todos os
+  rótulos oficiais encontrados estão em INGLÊS; a tradução pt-BR da
+  interface precisa ser conferida em tela (ver seção 18).
+- Preços em R$ por usuário/mês, sem impostos, conforme páginas oficiais
+  consultadas em 18/11/2026. Preços em USD vêm de fontes secundárias e
+  estão marcados.
+- Este arquivo NÃO é aconselhamento jurídico, médico ou regulatório.
+
+----------------------------------------------------------------
+0. RESUMO EXECUTIVO
+----------------------------------------------------------------
+
+[CONFIRMADO] O que é: assistente de IA que combina (a) modelos de
+linguagem (LLMs), (b) dados de trabalho acessados pelo Microsoft Graph e
+pelo "Work IQ" e (c) os apps do Microsoft 365 (Word, Excel, PowerPoint,
+Outlook, Teams, OneNote). As respostas respeitam as permissões do usuário:
+o Copilot "only surfaces organizational data to which individual users
+have at least view permissions". [1][4]
+
+[CONFIRMADO] Nomenclatura em 18/11/2026 — é o ponto mais confuso do curso:
+- O app "Microsoft 365 Copilot" virou "Microsoft Copilot" (novo ícone;
+  endereço passou de m365.cloud.microsoft para copilot.cloud.microsoft).
+  [1][41]
+- O "Microsoft 365 Copilot Chat" virou "Microsoft Copilot Chat". [1]
+- A LICENÇA paga continua chamada "Microsoft 365 Copilot" na página de
+  visão geral e nas páginas de preço; na página de opções de licença
+  aparece como "Microsoft Copilot". [1][2][7][8]
+- Dentro dos apps, a Microsoft exibe rótulos que dizem ao usuário qual
+  experiência ele tem: "Copilot Chat (Basic)", "M365 Copilot (Basic)" e
+  "M365 Copilot (Premium)". Não são SKUs novos; são etiquetas na
+  interface. [1][23][40]
+→ [SUGESTÃO] O curso deve ensinar o aluno a LER O RÓTULO na parte
+  inferior do painel do Copilot antes de qualquer exercício, em vez de
+  memorizar nomes comerciais.
+
+[CONFIRMADO] Três níveis de experiência para o usuário corporativo [1]:
+1. Copilot Chat (Basic) — incluído em planos Microsoft 365 qualificados,
+   sem custo extra. Chat com dados da WEB; dados da empresa só se o
+   usuário anexar/abrir o arquivo. SEM Copilot dentro de Word, Excel,
+   PowerPoint e OneNote. Sujeito a limites de uso justo.
+2. Microsoft 365 Copilot (Basic) — usuário sem a licença paga, mas com
+   acesso a recursos do Copilot DENTRO dos apps (rascunho, resumo,
+   fórmulas etc.). Também só web + arquivos anexados. Sujeito a limites.
+3. Microsoft 365 Copilot (Premium) — licença paga (complemento/add-on).
+   Ancoragem automática em e-mails, arquivos, reuniões, chats e agenda via
+   Microsoft Graph e Work IQ; agentes Researcher e Analyst; Copilot em
+   Teams; controles avançados (SharePoint Advanced Management).
+4. Recursos cobrados por uso (exigem Premium + política de cobrança):
+   Copilot Cowork, Copilot Code (Frontier) e Autopilot (Frontier).
+
+[CONFIRMADO] Preços oficiais no Brasil (consulta 18/11/2026, sem impostos):
+- Microsoft 365 Copilot (empresa/enterprise): R$ 171,80 por usuário/mês,
+  cobrança anual; exige licença Microsoft 365 qualificada separada. [8]
+- Microsoft 365 Copilot para Empresas (complemento, até 300 usuários):
+  R$ 120,20/mês no anual (promocional R$ 103,03 de 1/7 a 31/12/2026, só
+  1º ano) ou R$ 144,24 no mensal. [7]
+- Pacotes: Business Standard + Copilot R$ 134,60 (anual); Business
+  Premium + Copilot R$ 183,20 (anual). [7]
+- Copilot Chat: "sem custo adicional, com planos qualificados do
+  Microsoft 365". [7][8]
+- Consumidor (conta pessoal): Microsoft 365 Personal R$ 51/mês, Family
+  R$ 60/mês, Premium R$ 109/mês (Copilot só para o titular). [9]
+  "Copilot Pro" foi descontinuado e substituído pelo Microsoft 365 Premium
+  [VERIFICAR data de encerramento — fontes secundárias citam 01/08/2026]. [51]
+
+[CONFIRMADO] Mudanças comerciais iminentes [VERIFICAR — fontes secundárias]:
+a partir de 01/12/2026 o Microsoft 365 Copilot e o Copilot Business poderão
+ser comprados SEM licença-base qualificada; assinaturas existentes passaram
+a se chamar "Microsoft 365 Copilot (add-on)" em 16/10/2026. [40][52]
+Microsoft 365 E7 inclui o Copilot junto com Entra Suite e Agent 365 [3];
+preço de US$ 99/usuário/mês só em fontes secundárias [VERIFICAR]. [52]
+
+[CONFIRMADO] Idioma: "Portuguese (Brazil)" está entre os 48 idiomas
+suportados para contas de trabalho/escola (atualizado set/2026). A Microsoft
+avisa que o Copilot suporta menos idiomas que a interface. [6]
+
+[CONFIRMADO] Compromissos de dados (contas Entra/trabalho) [4]:
+- prompts, respostas e dados do Graph "aren't used to train foundation
+  LLMs";
+- histórico de interações é armazenado (prompt + resposta + citações),
+  criptografado, sujeito a retenção/eDiscovery via Microsoft Purview;
+  o usuário pode apagar seu histórico em myaccount.microsoft.com;
+- fora da UE, consultas podem ser processadas "in the US, EU, or other
+  regions" — relevante para LGPD (transferência internacional). O
+  processamento no país anunciado para 15 países NÃO inclui o Brasil. [30]
+- modelos da Anthropic (Claude) podem ser usados como subprocessadores
+  quando o admin habilita; ficam FORA da EU Data Boundary. [1][4]
+
+[CONFIRMADO] Evidência independente de produtividade é MISTA:
+- Governo do Reino Unido (GDS, 20 mil servidores, set–dez/2024): economia
+  AUTODECLARADA média de 26 min/dia; 82% não queriam voltar ao "antes";
+  limitações com conteúdo complexo, nuance e dados pesados. [31]
+- Department for Business and Trade (DBT, 1.000 licenças, out–dez/2024):
+  72% satisfeitos; economia em redação/resumo/transcrição, mas SEM
+  economia em geração de imagens, agendamento e PowerPoint; relatório
+  não encontrou evidência de aumento de produtividade [VERIFICAR texto
+  exato no PDF baixado]. [32]
+- Tesouro australiano (14 semanas, 2024): resultados mistos;
+  ponto de equilíbrio estimado em 13 min/semana [VERIFICAR no PDF]. [33]
+→ [SUGESTÃO] Mensagem central: o ganho depende de treino, da qualidade
+  das permissões/arquivos e de revisão humana; não prometer números.
+
+[CONFIRMADO] Segurança: o maior risco prático é o OVERSHARING — o Copilot
+torna fácil encontrar o que o usuário JÁ podia acessar, inclusive o que não
+deveria. A Microsoft publica um "blueprint" de 3 pilares (remediar
+oversharing, guardrails, regulação) [18]. Houve vulnerabilidade crítica
+de injeção de prompt sem clique ("EchoLeak", CVE-2025-32711, CVSS 9,3),
+corrigida no servidor pela Microsoft em 2025 [VERIFICAR mês]. [42]
+
+[SUGESTÃO] Fluxo-espinha do curso (tarefa observável do prompt):
+CONTEXTO (localizar e escolher fontes; checar rótulo e permissão) →
+PRODUÇÃO (Word/PowerPoint com referência a arquivos) → ANÁLISE (Excel ou
+Analyst) → COMUNICAÇÃO E REUNIÃO (Outlook/Teams: resumo, decisões,
+tarefas) → VERIFICAÇÃO (abrir citações, conferir números, nomes, prazos)
+→ REGISTRO (o que foi gerado por IA, quem revisou, onde está a fonte).
+
+----------------------------------------------------------------
+1. IDENTIDADE E HISTÓRICO
+----------------------------------------------------------------
+
+1.1 O que é (definição oficial)
+[CONFIRMADO] "Microsoft Copilot is a sophisticated processing and
+orchestration engine" que coordena LLMs, conteúdo do Microsoft Graph
+("emails, chats, and documents that you have permission to access") e os
+apps do Microsoft 365. [4]
+[CONFIRMADO] Todas as experiências se apoiam em: LLMs; ancoragem
+("grounding") na web e/ou em dados organizacionais (Graph e Work IQ);
+acesso limitado pelas permissões do usuário. [1]
+
+1.2 Linha do tempo de nomes (o que o aluno pode encontrar em materiais)
+- 2023: "Microsoft 365 Copilot" anunciado; depois "Copilot for Microsoft
+  365"; volta a "Microsoft 365 Copilot". "Bing Chat Enterprise" →
+  "Copilot com proteção de dados comerciais" → Copilot Chat. [VERIFICAR
+  datas exatas; histórico consolidado em fontes secundárias]
+- Jan/2025: app Microsoft 365 renomeado "Microsoft 365 Copilot app";
+  Copilot Chat gratuito para contas Entra. O relatório do GDS registra a
+  confusão causada por essas renomeações durante o piloto. [31]
+- Out/2025: Copilot Pro (consumidor) anunciado como substituído pelo
+  Microsoft 365 Premium. [51][VERIFICAR]
+- 01/12/2025: lançamento do "Microsoft 365 Copilot Business" para até 300
+  usuários (US$ 21/mês na lista americana). [29]
+- 15/04/2026 (relatado): rótulos Basic/Premium nos apps. [40][VERIFICAR]
+- Ago–set/2026: app "Microsoft 365 Copilot" → "Microsoft Copilot";
+  URL copilot.cloud.microsoft (Message Center MC1454108). [41]
+- 25/09/2026: agente pessoal "Scout" anunciado como "Autopilot"
+  (Frontier). [40][VERIFICAR]
+- 16/10/2026: assinaturas existentes renomeadas "(add-on)". [40]
+- Fim de out/2026: "Copilot Notebooks" passa a "Copilot Workspaces";
+  surge "Copilot Projects" (trabalho individual). [15]
+- Out–nov/2026: botões "Agents"/"Agents & Skills" passam a "Plugins".
+  [40][VERIFICAR]
+- 01/12/2026: compra sem licença-base passa a ser permitida. [52][VERIFICAR]
+
+1.3 Diferenças que o aluno precisa saber [CONFIRMADO salvo indicação]
+| Produto | Para quem | Dados de trabalho | Copilot nos apps | Custo |
+| Copilot Chat (Basic) | conta de trabalho/escola com plano qualificado | só se anexar/abrir | NÃO (Word/Excel/PPT/OneNote) | incluso [1][8] |
+| Microsoft 365 Copilot (Basic) | conta de trabalho sem licença paga, conforme plano | só se anexar/abrir | SIM, recursos básicos, "standard access" | incluso conforme plano [1][VERIFICAR quais planos] |
+| Microsoft 365 Copilot (Premium) | licença complementar | automático (Graph/Work IQ) | SIM, completo | R$ 171,80 ou R$ 120,20 (Business) [7][8] |
+| Microsoft 365 Personal/Family/Premium | conta pessoal | não há dados de empresa | SIM (titular) | R$ 51/60/109 [9] |
+| Microsoft Copilot (app gratuito pessoal) | conta pessoal | não | — | gratuito [VERIFICAR] |
+| Copilot Studio | criadores de agentes | — | — | FORA DO ESCOPO [1] |
+| Security Copilot, GitHub Copilot | outras áreas | — | — | FORA DO ESCOPO [1] |
+
+[CONFIRMADO] Sinais visuais de conta de trabalho: cor de fundo diferente,
+rótulo "Work" sob o perfil e escudo verde de proteção de dados. [1]
+[SUGESTÃO] Exercício: aluno tira print do escudo e do rótulo antes de
+colar qualquer dado da empresa.
+
+1.4 Modelos de IA
+[CONFIRMADO] Seletor de modelos com "Auto" (roteador em tempo real),
+"Quick response" e "Think deeper"; no Word, conforme assinatura, opções
+podem incluir "Claude Sonnet" ou "Claude Opus"; sem seleção customizada
+há "Auto", "Instant" e "Think deeper". [1][10]
+
+----------------------------------------------------------------
+2. ACESSO, LICENÇAS, PREÇOS E LIMITES (consulta em 18/11/2026)
+----------------------------------------------------------------
+
+2.1 Licenças-base elegíveis (comercial) [CONFIRMADO, Learn ms.date
+19/10/2026] [2]
+- Copilot Business (até 300 usuários): Microsoft 365 Business Premium,
+  Business Standard, Business Basic, Microsoft 365 Apps for Business,
+  Microsoft Teams Essentials.
+- Microsoft 365: E7 (já inclui), E5, E3, F1, F3, Business Premium/
+  Standard/Basic, Apps for Enterprise/Business.
+- Office 365: E5, E3, E1, F3. Também Teams Enterprise/EEA/Essentials,
+  Exchange Online (Plan 1/2/Kiosk), SharePoint (Plan 1/2/Kiosk), OneDrive
+  (Plan 1/2), Planner/Project, Visio, Clipchamp.
+- Educação: Microsoft 365 A1/A3/A5, Office 365 A1/A3/A5; Copilot Chat
+  para estudantes de 13 anos ou mais.
+- "Customers with Education or Business subscriptions that don't include
+  Teams can purchase Microsoft Copilot licenses." [2]
+
+2.2 Preços oficiais Brasil — empresas (PT) [7][8]
+| Oferta | Anual (R$/usuário/mês) | Mensal |
+| Microsoft 365 Copilot (enterprise, complemento) | 171,80 | não exibido |
+| Microsoft 365 Copilot para Empresas (complemento) | 120,20 (promo 103,03 até 31/12/2026, só 1º ano, clientes Business existentes) | 144,24 |
+| Business Standard + Copilot para Empresas | 134,60 | 161,52 |
+| Business Premium + Copilot para Empresas | 183,20 | 219,84 |
+Notas literais relevantes [7]:
+- "Algumas experiências de IA usam cobrança por uso e podem gerar custos
+  adicionais além das taxas da sua licença."
+- "É necessário ter uma licença do Microsoft Teams." (Copilot no Teams)
+- "A disponibilidade nos aplicativos do Microsoft 365 pode variar conforme
+  o mercado e o tipo de licença do cliente."
+- Avaliação gratuita de um mês exige cartão de crédito.
+- Cancelamento: 7 dias com reembolso proporcional; ao cancelar, "todos
+  os dados associados" à assinatura são excluídos. [7][8]
+[CONFIRMADO] Cobrança por uso: Copilot Chat — uso de agentes com dados de
+trabalho e conectores; Microsoft 365 Copilot — Copilot Cowork; agentes
+exigem assinatura Azure ou pacotes pré-pagos do Copilot Studio. [8]
+
+2.3 Preços em USD (fontes secundárias) [VERIFICAR]
+- Microsoft 365 Copilot enterprise: US$ 30/usuário/mês (anual). [52]
+- Copilot Business: US$ 21 (anual) ou US$ 25,20 (mensal); promoções de
+  US$ 18 com datas divergentes entre fontes. [29][52]
+- Microsoft 365 E7: US$ 99/usuário/mês, lançado em 01/05/2026. [52]
+
+2.4 Consumidor (contas pessoais) — Brasil [9]
+| Plano | Mensal | Anual | IA |
+| Microsoft 365 Basic | — | — | "Os recursos de IA não estão disponíveis" |
+| Personal | R$ 51 (promo 1º mês R$ 34) | R$ 509 (promo R$ 349) | chat avançado com limites maiores que o gratuito |
+| Family (até 6 pessoas) | R$ 60 | R$ 599 | IA só do titular |
+| Premium | R$ 109 (promo R$ 74) | R$ 1.089 (promo R$ 739) | uso amplo + agentes de pesquisa/análise; só titular |
+Notas literais [9]: "O Copilot no Excel disponível para o proprietário de
+assinatura exige que o Salvamento Automático esteja habilitado" e "o
+arquivo deve ser salvo no OneDrive"; IA "não pode ser compartilhada,
+limites de uso são aplicáveis".
+[CONFIRMADO] Funcionalidades pessoais podem ser usadas em documentos de
+trabalho se o empregador permitir "acesso a várias contas" (exclui
+governo). [9] → [SUGESTÃO] alertar: usar conta pessoal em dado da empresa
+pode violar política interna e não tem as mesmas proteções (EDP).
+
+2.5 Limites
+- Copilot Chat sem licença: limites de "uso justo"; "Microsoft does not
+  publish or share specific numeric limits"; ao atingir, o recurso fica
+  indisponível com aviso e "isn't an error or product malfunction". [5]
+  Início relatado: 2/11/2026 (tenants ≤ 2.000 assentos) e 9/11/2026
+  (maiores). [52][VERIFICAR]
+- Researcher: "A maximum of 25 queries per user per month"; respostas de
+  "under five minutes" a "10 to 45 minutes"; não processa imagens de
+  entrada. [20]
+- Word: até 20 itens de referência em novo documento (versão atual da
+  página) vs. 3 arquivos em páginas/treinamentos antigos. [10][VERIFICAR]
+- PowerPoint a partir de Word: funciona melhor com arquivos "smaller than
+  24 MB". [12]
+- Outlook: indisponível em caixas de grupo e caixas fora do Exchange
+  Online; não lê e-mails S/MIME ou Double Key Encryption. [14]
+- Teams: Copilot pode resumir reuniões "up to 30 days" no nível Basic
+  segundo a visão geral [1] — mas o guia oficial de Teams diz "Copilot in
+  Teams requires a Microsoft 365 Copilot license" [23]. CONTRADIÇÃO
+  [VERIFICAR em tenant real].
+- Excel (empresa): página de suporte não cita exigência de OneDrive/
+  AutoSave e menciona arquivos "on your computer" [11]; release notes de
+  jul/2026 ampliam para pastas com AutoSave desligado [17]. Para
+  consumidor, OneDrive + AutoSave são exigidos [9].
+
+2.6 Disponibilidade regional
+[CONFIRMADO] "Microsoft Copilot is available in many regions worldwide.
+However, it might not be accessible in certain markets." [1] Brasil tem
+preços oficiais publicados, portanto está disponível. [7][8]
+
+----------------------------------------------------------------
+3. PRIMEIROS PASSOS (com origem dos menus)
+----------------------------------------------------------------
+
+3.1 Antes de tudo: descobrir a licença (todos os apps)
+1. Entrar com a conta de TRABALHO (Entra ID). Conferir escudo verde e
+   rótulo "Work". [1]
+2. Abrir o painel do Copilot e ler o rótulo no rodapé: "Copilot Chat
+   (Basic)", "M365 Copilot (Basic)" ou "M365 Copilot (Premium)" (EN). [23]
+3. Se nada aparecer: o recurso pode não estar no plano ou estar bloqueado
+   pela organização ("it might not be included with your Microsoft 365
+   subscription or available based on your organization's settings"). [11][12]
+4. Admin pode verificar com o "Microsoft Copilot service plan diagnostic
+   tool". [2]
+5. Se os "connected experiences that analyze your content" estiverem
+   desligados por política de privacidade, o Copilot some de Excel,
+   OneNote, Outlook, PowerPoint e Word. [4]
+
+3.2 Pontos de entrada [CONFIRMADO] [1]
+- copilot.cloud.microsoft (web) — app "Microsoft Copilot" (web, desktop,
+  celular) — Copilot Chat no Edge (ícone no canto superior direito) —
+  Copilot Chat no Outlook e no Teams — ícone do Copilot nos apps.
+- Aba "Home" no app Copilot reúne Chat e Cowork. [1]
+- Barra de navegação: agentes, histórico, Projects, Workspaces. [15]
+
+3.3 Anatomia do painel (guias oficiais, EN, UI de 18/05/2026) [23]
+- "Prompt Box"; "Sample prompts"; "Navigation panel" (agentes e
+  histórico); escudo de "Enterprise data protection"; "Model selection";
+  "Allow editing" (deixa o Copilot editar o arquivo ou responder só no
+  chat); "Add content" / "+" (anexar arquivos, imagens, agentes);
+  "Start dictation"; "Work/Web" (fontes; Work só Premium).
+- Na resposta: "Sources" (referências), "Add to doc", "Copy response",
+  "Share prompt and copy with response", polegar para cima/baixo
+  ("I like something"/"I don't like something"), "More options" (copiar
+  para novo documento, ler em voz alta, agendar o prompt).
+- Barra "/" (barra) para citar arquivos, chats e reuniões no prompt. [10][24]
+[SUGESTÃO] Sinal de êxito do passo 3: aluno identifica rótulo, escudo,
+seletor Work/Web e o botão "Sources".
+
+3.4 Primeiro prompt (estrutura recomendada)
+[CONFIRMADO] Word: "Describe what you want, including topic, audience,
+tone, format, and length." [10] Prompt Gallery: aka.ms/PromptGallery [26].
+[SUGESTÃO] Modelo didático de 4 partes muito usado em materiais Microsoft:
+Objetivo + Contexto + Fontes (/arquivo) + Expectativa (formato, tom,
+tamanho). [VERIFICAR nome "Goal, Context, Source, Expectations" no
+Experience Guide baixado]
+
+----------------------------------------------------------------
+4. GLOSSÁRIO PARA LEIGOS
+----------------------------------------------------------------
+- LLM (modelo de linguagem grande): programa que prevê texto; base do
+  Copilot. Pode errar com confiança.
+- Ancoragem (grounding): dar ao modelo fontes reais (arquivo, e-mail, web)
+  antes de responder, para reduzir invenção. [1]
+- Microsoft Graph: o "mapa" dos seus dados de trabalho — e-mails, arquivos,
+  reuniões, chats, agenda, pessoas — com as permissões de cada um. [4]
+- Work IQ: camada de inteligência que permite ao Copilot e aos agentes
+  raciocinar sobre dados de trabalho; pode ser ligada/desligada pelo
+  usuário no chat (substituiu as chaves "Work/Web"). [1][40]
+- Índice semântico: busca por significado, não só por palavra exata,
+  respeitando permissões. [1]
+- Tenant / locatário: o "espaço" da organização na nuvem Microsoft.
+- Licença Premium / Basic: ver seção 0.
+- Copilot Chat: chat seguro com proteção de dados corporativos (EDP).
+- EDP (Enterprise Data Protection): prompts e respostas protegidos pelos
+  mesmos termos contratuais de e-mails e arquivos. [1]
+- Agente: versão especializada do Copilot para uma tarefa (ex.:
+  Researcher, Analyst, agentes de Word/Excel/PowerPoint). [1][21]
+- Researcher: agente de pesquisa profunda em várias etapas, com citações;
+  usa Graph, conectores e Bing. [20]
+- Analyst: agente de análise de dados, mais adequado a Excel. [20]
+- Copilot Pages: "tela" editável criada a partir de resposta do chat,
+  salva como arquivo .page; compartilhável (abre no Loop). [16][VERIFICAR]
+- Copilot Workspaces (antes Notebooks): espaço compartilhado de equipe
+  com arquivos, páginas e chats. Copilot Projects: espaço individual. [15]
+- Copilot Cowork: experiência que executa tarefas em várias etapas no
+  ambiente Microsoft 365 em nome do usuário; cobrada por uso. [1]
+- Autopilot (Frontier): agente pessoal permanente na nuvem que recebe um
+  objetivo, fontes e limites. Programa de prévia. [1]
+- Frontier: programa de acesso antecipado a recursos experimentais. [1]
+- Oversharing (compartilhamento excessivo): pessoas com acesso a arquivos
+  que não deveriam ver; o Copilot torna isso visível. [18][31]
+- Rótulo de confidencialidade (sensitivity label): marca do Microsoft
+  Purview que classifica e pode criptografar um arquivo. [4]
+- DLP (prevenção de perda de dados): políticas que bloqueiam uso/compar-
+  tilhamento de conteúdo sensível; podem impedir o Copilot de processar
+  arquivos com determinado rótulo. [19]
+- Retenção / eDiscovery / auditoria: guardar, localizar e registrar o
+  histórico de interações com o Copilot para fins legais. [4]
+- Alucinação: resposta plausível, mas falsa.
+- Injeção de prompt (prompt injection / XPIA): instrução maliciosa
+  escondida em e-mail, documento ou página que tenta comandar a IA. [4][42]
+- Citação: número/link na resposta que leva à fonte usada. [13]
+- Recap inteligente: resumo de reunião no Teams com notas e tarefas. [43]
+
+----------------------------------------------------------------
+5. FUNCIONALIDADES POR APP (requisitos, passos, verificação)
+----------------------------------------------------------------
+
+5.1 Copilot Chat / app Microsoft Copilot
+Requisitos: conta de trabalho; Basic = web + anexos; Premium = Work IQ. [1]
+O que faz [CONFIRMADO]: perguntas, rascunhos, resumo de arquivos
+anexados, imagens (admin pode desligar), agentes; com Premium, busca em
+e-mails/arquivos/reuniões; "Try Again" e "Switch Model" para regenerar
+(out/2026). [1][17]
+Passos (Basic): abrir copilot.cloud.microsoft → conferir rótulo → anexar
+arquivo (+) ou colar texto → prompt → abrir "Sources". [1][23]
+Limite-chave: no Basic, "you must explicitly provide that content with
+your prompt". [1]
+Verificação: toda afirmação factual tem fonte? A fonte é interna ou web?
+
+5.2 Word (criar, transformar, resumir, referenciar, revisar) [10][23]
+Requisitos: assinatura elegível e/ou licença; Word para Microsoft 365
+(Windows/Mac; web/iPad com variações).
+Criar: documento em branco → caixa de prompt sobre o documento ou
+Copilot no canto inferior direito → descrever tópico, público, tom,
+formato e tamanho → "/" ou "+" para escolher arquivos → "Generate" →
+"keep", "discard", regenerar ou refinar. (EN)
+Transformar/editar: "Edit with Copilot"; selecionar texto → reescrever,
+mudar tom, encurtar, converter em tabela ou imagem; "Suggest ways to
+improve this document" → "Yes, Implement the changes now" → "Keep all"
+ou desfazer individualmente. (EN, guia mai/2026)
+Resumir: "Please summarize this document. I prefer bullet points that are
+concise." (Basic e Premium) [23]
+Citações: pedir conteúdo "with citations to referenced sources"; Word
+passou a mostrar citações em out/2026 [10][VERIFICAR fonte secundária].
+Revisão: desde set/2026 o Word destaca só as palavras alteradas pelo
+Copilot [VERIFICAR — fonte secundária]. Microsoft: verificar "facts,
+numbers, citations, names, and sensitive information before sharing". [10]
+Exemplo oficial: "Convert the selected text to a table and add our risk
+ratings in a column." [23]
+Sinal de êxito [SUGESTÃO]: documento com seções pedidas, fontes
+rastreáveis, edições revisadas uma a uma.
+
+5.3 Excel (analisar, fórmulas, gráficos; limites) [11][23]
+Plataformas: Windows, Mac e web — modos edit, chat e plan; iPad chat e
+plan (edit em implantação); iPhone chat (edit em implantação); Android
+só chat. [11]
+Passos: ícone Copilot no canto inferior direito → menu de modo: "Allow
+editing" (padrão; altera a pasta), "Plan" (gera plano para revisar antes)
+ou "Chat only" (não altera) → prompt → acompanhar raciocínio → "Stop"
+para interromper. (EN) [11]
+Capacidades: criar/renomear/excluir planilhas; fórmulas em várias
+planilhas; gráficos "with editable links to source data"; tabelas
+dinâmicas; classificação, filtros e formatação condicional; busca na web
+com citações; importar de outras pastas; "skills" personalizadas. [11]
+Python ao editar com Copilot (set/2026) [VERIFICAR — secundária]. Navegar
+até as mudanças a partir da resposta e atribuição no painel "Show
+Changes" (set–nov/2026). [17]
+Prompts oficiais: "Highlight empty values in <column name> yellow";
+"Add a column that shows the revenue in USD. Look up the exchange rates
+on [worksheet]"; "Create a Pivot Table on a new sheet aggregating...". [23]
+Verificação [SUGESTÃO]: conferir 3 linhas à mão; abrir fórmulas geradas;
+usar "Show Changes"; preferir "Plan" ou "Chat only" para dados reais.
+Fronteira [SUGESTÃO]: este curso ensina pedir, conferir e documentar
+análises simples; estatística, limpeza avançada e modelos ficam no curso
+"IA para Análise de Dados".
+
+5.4 PowerPoint (criar de prompt/arquivo, reorganizar, revisar) [12][23]
+Aplica-se a PowerPoint para Microsoft 365 (Windows/Mac/iPad).
+Criar: nova apresentação → ícone Copilot no canto inferior direito →
+modelo ou "Auto" → se a empresa exigir, "Select brand" (Brand Kit) →
+descrever → responder perguntas de esclarecimento (público, duração,
+modelo, imagens) ou pular. (EN) [12]
+De arquivo: Word < 24 MB; usar Estilos do Word para dividir em slides;
+imagens do documento podem ser aproveitadas. [12] Referenciar arquivos do
+SharePoint/OneDrive (out/2026) e estilo de outra apresentação anexada
+(nov/2026). [17]
+Editar: "Allow editing" ativo → "Add a new slide about..."; reescrever
+tópicos; criar notas do orador; gerar imagem; escrever/responder/
+resolver comentários (ago/2026 [VERIFICAR]). [23]
+Começar pelo modelo padrão da organização para manter tema e layouts. [12]
+Verificação [SUGESTÃO]: conferir cada número com a fonte; checar imagens
+geradas (direitos, representação); revisar notas do orador.
+Dado independente: no DBT, PowerPoint foi uma das tarefas SEM economia de
+tempo e com menor satisfação. [32]
+
+5.5 Outlook (resumir, redigir, preparar reunião, acompanhar) [13][14][23]
+Resumir conversa (Windows clássico/novo e web): abrir conversa →
+"Summary by Copilot" (ou "Summarize") no topo → citações numeradas levam
+ao e-mail → anexos PDF/PowerPoint/Word: "Summarize a file". Mac: caixa
+"Summary by Copilot" → "Summarize". iOS/Android: ícone Copilot na barra.
+(EN) [13]
+Redigir: digitar "/" → "Draft with Copilot", ou botão Copilot na faixa;
+guia mai/2026 cita "Help me write" (abre painel em modo edição). [14][23]
+Coaching: "Coaching by Copilot" avalia tom, sentimento e clareza →
+"Apply all suggestions" (ou escolher sugestões). [14]
+Preparar reunião: "Prepare for your meeting with Copilot" no item do
+calendário; resultados genéricos se houver pouco material. [14]
+Agendar: "Schedule with Copilot" a partir da conversa; agendar com até
+duas pessoas pelo chat. [14]
+Caixa de entrada: "Show my top action items" (Work selecionado);
+calendário: agente de calendário, ex. "Show me meetings I haven't
+responded to next week". [23]
+Ações por linguagem natural (excluir, mover, categorizar, regras) com
+confirmação quando > 5 e-mails ou mudança de regra (set/2026). [17]
+Idioma: resumo tende a sair no idioma do e-mail. [13][14]
+Verificação [SUGESTÃO]: abrir cada citação antes de responder; nunca
+enviar rascunho com nomes, datas ou valores não conferidos.
+
+5.6 Teams (recap, perguntas, decisões, tarefas) [43][44][45][23]
+Requisito: licença Microsoft 365 Copilot + licença Teams; recap
+inteligente também com Teams Premium; política do tenant. [7][45]
+Opção do organizador "Allow Copilot": "During and after the meeting"
+(exige transcrição salva), "Only during the meeting" (não salva) ou
+"Off" (desliga também gravação e transcrição). (EN) [23][45]
+Durante: ícone "Copilot" nos controles → prompts sugeridos ou pergunta
+livre ("What was discussed in the first 10 minutes..."). Depois: chat da
+reunião ou aba "Recap" → Copilot. Em reuniões recorrentes, precisa haver
+transcrição da ocorrência mais recente. [23]
+Prompt oficial: "What decisions were made and who is responsible." [23]
+Fronteira com o curso "IA para Reuniões" [SUGESTÃO]: aqui só o uso do
+Copilot do Teams como fonte para documento/e-mail/tarefa; consentimento,
+transcrição em pt-BR e ferramentas de terceiros ficam no outro curso
+(ver ConteudoBruto_ia-para-reunioes.txt, seções 1.3, 3.6–3.7, 8).
+Dado independente: Teams teve a maior adoção (até 71%) no piloto do
+governo britânico. [31]
+
+5.7 Pages, Workspaces/Notebooks, Projects (usuário final) [15][16]
+- Pages: "Edit in Pages" cria página ao lado do chat; arquivo .page em
+  contêiner SharePoint Embedded do usuário; salvo "indefinitely unless
+  you delete them"; link abre no Loop; pode virar Word/PowerPoint/PDF.
+  [16][VERIFICAR — dados de snippets; PDF da página salvo]
+- Workspaces (desde fim de out/2026): notebooks existentes viram
+  workspaces automaticamente; compartilhamento existente continua;
+  convidar por "Invite" no canto superior direito; no OneNote chega "over
+  time". [15]
+- Projects: para trabalho próprio; aparecem em "Home"; funcionam com Chat
+  e Cowork. [15]
+- Notebooks/Workspaces aceitam links web como referência (out/2026). [17]
+
+5.8 Agentes (só na medida do usuário final)
+- Researcher: pesquisa multi-etapas com citações; 25 consultas/mês;
+  usuário não pode desligar; admin pode bloquear; conteúdo das sessões não
+  vai para eDiscovery por padrão [20] → [SUGESTÃO] ponto de atenção para
+  jurídico/regulação.
+- Analyst: análise de dados (Excel). [20]
+- Agentes Word/Excel/PowerPoint podem ser chamados no Copilot Chat
+  (jul/2026). [VERIFICAR — secundária] Guia oficial em PPTX baixado. [21]
+- Criação de agentes próprios (Copilot Studio/Agent Builder): FORA DO
+  ESCOPO.
+
+5.9 Copilot Search
+[CONFIRMADO] Busca universal com IA nos apps e fontes conectadas, que
+passa para o chat; admins podem marcar até 100 sites SharePoint como
+conteúdo "autoritativo" (nov/2026). [1][17]
+
+----------------------------------------------------------------
+6. CASOS REAIS (resultados e riscos)
+----------------------------------------------------------------
+
+6.1 Avaliações independentes/governamentais
+a) Reino Unido — GDS, experimento intergovernamental (jun/2025) [31]
+   [CONFIRMADO] 20 mil servidores, 30/09–31/12/2024; 7.115 respostas;
+   26 min/dia de economia AUTODECLARADA (17% não notaram economia);
+   redação de documentos 24 min, apresentações 19 min, agendamento 9 min;
+   adoção ~80%; Teams máx. 71%, Excel 23%, PowerPoint 24%; satisfação
+   7,7/10; jurídico (19 min) e tributário (11 min) entre os menores
+   ganhos; "Human oversight was required at all times". Limitação:
+   tempo autodeclarado, sem medir uso do tempo poupado.
+b) Reino Unido — DBT (ago/2025) [32]
+   [CONFIRMADO] 1.000 licenças, out–dez/2024; 72% satisfeitos (diário);
+   ganhos em redação, resumo de pesquisa, transcrição e busca; sem ganho
+   em imagens, agendamento e PowerPoint; avaliação de custo-benefício e
+   impacto ambiental ainda em curso. [VERIFICAR no PDF: "no evidence"
+   de produtividade e 22% que identificaram alucinações — números de
+   imprensa]
+c) Austrália — Tesouro (fev/2025) [33]
+   [VERIFICAR no PDF] 14 semanas em 2024; 218 respostas; licença se paga
+   com 13 min/semana; expectativas iniciais maiores que o uso real.
+→ [SUGESTÃO] usar como estudo de caso de "como medir": autodeclarado vs.
+  medido; tarefas que ganham vs. que perdem.
+
+6.2 Brasil — setor público e Justiça
+- TJSC (02/09/2026): amplia licenças "Microsoft 365 Copilot Premium" a
+  todos os magistrados e assessores; Comitê de Governança de IA (2026);
+  IA "não pode resultar em decisão autônoma"; treinamento e
+  redistribuição de licenças sem uso efetivo. [34] [CONFIRMADO]
+- TJDFT (abr/2026): +30 agentes no Copilot Studio; ganhos de "até 30%" e
+  "até 70%" em alguns gabinetes — números autodeclarados em texto com tom
+  promocional. [35] [VERIFICAR]
+- TCDF: contrata Copilot e Google Agentspace para documentos e
+  auditorias. [36] [VERIFICAR]
+- MGI: acordo com Microsoft amplia desconto do Copilot e Copilot Studio
+  para órgãos federais (5% → 10%). [37] [VERIFICAR em fonte oficial]
+- TCU: ChatTCU/CopilotTCU (código compartilhado) — só fonte em rede
+  social; NÃO usar sem conferência. [VERIFICAR]
+
+6.3 Riscos documentados
+- EchoLeak (CVE-2025-32711): e-mail malicioso podia levar o Copilot a
+  vazar dados sem clique; CVSS 9,3; corrigido no servidor; Microsoft
+  afirma não ter havido acesso a dados de clientes. [42]
+- Oversharing exposto pelo Copilot: GDS alerta que a busca pode "highlight
+  issues when users have access to files they shouldn't". [31]
+- Conteúdo com nuance (políticas públicas, RH, queixas, avaliações de
+  desempenho): preocupação com precisão e risco reputacional. [31]
+- Agentes com pasta do OneDrive como fonte "struggled to identify the
+  exact documents used". [31]
+
+----------------------------------------------------------------
+7. BOAS PRÁTICAS (prompts oficiais e método)
+----------------------------------------------------------------
+
+7.1 Prompts oficiais úteis (manter em inglês ou traduzir com cuidado)
+- Chat: "Summarize emails where I was mentioned." / "Teach me about
+  [Concept] in a way a non-technical person could understand." [26]
+- Word: "Write a summary with the top 5 key points as an email that I
+  can send to my team." [23]
+- Excel: "Share the top insights and trends of this data and create a
+  visualization". [23]
+- PowerPoint: "What are some potential questions that I might be asked by
+  the audience who I present this to?" [23]
+- Outlook: "Summarize my emails from the last month related to [topic].
+  What key action items am I responsible for?" [23]
+- Teams: "What decisions were made and who is responsible." [23]
+- Basic (Top 10): "Give me a bulleted list of key points from <insert
+  file>." / "Generate three ways to say [text]." [25]
+- Jurídico (prompt pack): "Locate the regulation, associated articles,
+  and materials to generate an executive summary." [25]
+
+7.2 Regras dos prompt packs oficiais [24]
+- "Microsoft 365 Copilot is an AI assistant and does not provide legal
+  advice. All outputs should be reviewed by qualified legal
+  professionals before use." (Legal)
+- Finanças: resultados "should not be relied upon as financial,
+  accounting, investment, or legal advice".
+- Dicas: usar "/" para citar arquivos, chats ou reuniões; revisar
+  "accuracy, bias, and relevance"; dar feedback pelo produto.
+- Estrutura dos packs: Legal — regulatório/compliance, contratos, risco,
+  contencioso, pesquisa; Finanças — fechamento, previsão/variação,
+  risco/auditoria, contratos/fornecedores, cobrança/caixa.
+
+7.3 Método de verificação [SUGESTÃO]
+1. Escolher fonte explicitamente ("/" ou "+"), em vez de deixar o Copilot
+   procurar tudo.
+2. Pedir resposta com citações e dizer "se não houver na fonte, diga que
+   não encontrou".
+3. Abrir TODAS as citações de números, datas, nomes, prazos e normas.
+4. Comparar com o original em 3 pontos escolhidos ao acaso.
+5. Marcar no documento o que é gerado por IA e quem revisou.
+6. Em Excel/PowerPoint editáveis: preferir "Plan"/"Chat only" e revisar
+   "Show Changes" antes de aceitar.
+7. Nunca mandar adiante resumo de e-mail/reunião sem ler o original nos
+   pontos de decisão.
+
+----------------------------------------------------------------
+8. SEGURANÇA, PRIVACIDADE, LGPD E LIMITES PROFISSIONAIS
+----------------------------------------------------------------
+
+8.1 Como o Copilot usa dados (explicação sem jargão) [4]
+[CONFIRMADO] 1) usuário escreve o prompt; 2) Copilot busca, NO NOME DO
+USUÁRIO, conteúdo do Graph que ele pode ver (e-mails, arquivos, chats,
+reuniões, agenda) e, se permitido, gera consulta ao Bing; 3) envia
+prompt + trechos ao LLM; 4) devolve resposta com citações; 5) guarda o
+histórico (prompt, resposta, citações) no Microsoft 365.
+[CONFIRMADO] Busca na web: o Copilot "generates a search query that it
+sends to the Bing Search service" com termos extraídos do prompt. [4]
+[SUGESTÃO] Analogia: o Copilot é um estagiário com o MESMO crachá que
+você — entra em todas as salas em que você entra, inclusive as que
+ficaram abertas por engano.
+
+8.2 Compromissos e controles que afetam o aluno [CONFIRMADO] [1][4]
+- Sem treino de modelos fundacionais com prompts/respostas/dados do Graph.
+- Respeita rótulos e criptografia (IRM): o Copilot honra os direitos de
+  uso do usuário.
+- Histórico: admins veem via Content search/Purview; retenção
+  configurável; usuário apaga em myaccount.microsoft.com.
+- Filtros contra conteúdo nocivo, detecção de material protegido,
+  classificadores contra jailbreak e injeção cruzada (XPIA) — "may not be
+  available in all Microsoft Copilot scenarios".
+- Filtros contra "workplace harms": inferências sobre desempenho,
+  atitude, estado emocional ou características pessoais de empregados.
+- "The responses that generative AI produces aren't guaranteed to be 100%
+  factual."
+- Microsoft não reivindica propriedade do conteúdo gerado; compromisso de
+  defesa em direitos autorais ("Copilot Copyright Commitment") se o
+  cliente usou os filtros. [4]
+- Certificações citadas: GDPR, ISO 27001, HIPAA, ISO 42001. [4]
+- Feedback opcional pode ser usado para melhorar o produto (não para
+  treinar LLMs fundacionais); admin pode gerenciar. [4]
+- Abuse monitoring com revisão humana do Azure OpenAI: Copilot "opted
+  out". [4]
+
+8.3 Oversharing, rótulos, DLP, retenção, auditoria (para o aluno)
+- Blueprint oficial (ms.date 11/11/2026): "Remediate oversharing", "Set up
+  guardrails", "Meet regulations"; usa Purview e SharePoint Advanced
+  Management (incluído na licença Copilot). PDF e PPTX baixados. [18]
+- Restricted Content Discovery: impede que sites sensíveis apareçam no
+  Copilot sem mudar permissões; é medida provisória, não substitui a
+  limpeza. [1][18]
+- DLP para Copilot: política com local "Microsoft 365 Copilot and Copilot
+  Chat" e condição "Content contains > Sensitivity labels" exclui itens
+  rotulados do processamento; escopo e status (prévia/GA) variam
+  [VERIFICAR]. [19]
+- Relatório de permissões "Everyone except external users" (out/2026). [17]
+- O que o ALUNO faz [SUGESTÃO]: (1) rotular arquivos sensíveis; (2) não
+  compartilhar com "Todos"/"Everyone"; (3) revisar links "qualquer pessoa
+  com o link"; (4) reportar ao TI quando o Copilot trouxer algo que ele
+  não deveria ver — e NÃO usar esse conteúdo; (5) não colar dado pessoal
+  sensível sem base e necessidade.
+
+8.4 LGPD (Lei 13.709/2018) — pontos de contato [46] [VERIFICAR com jurídico]
+- Usar o Copilot sobre dados pessoais é TRATAMENTO (art. 5º, X): exige
+  base legal (art. 7º), finalidade e necessidade (art. 6º), segurança
+  (art. 46).
+- Dados sensíveis (saúde, biometria etc.) exigem base do art. 11.
+- Transferência internacional (arts. 33–36): consultas de clientes fora
+  da UE podem ser processadas "in the US, EU, or other regions" [4]; o
+  processamento no país não foi anunciado para o Brasil [30].
+- Microsoft como operadora; organização como controladora — conferir DPA
+  e Product Terms (Microsoft remete a esses documentos). [2][4]
+- PL 2338/2023 (marco legal da IA): aprovado no Senado em 10/12/2024;
+  na Câmara, aguardando parecer na comissão especial em nov/2026; não há
+  lei geral de IA em vigor. [38]
+
+8.5 Limites profissionais por área
+- Jurídico: OAB Recomendação 001/2024 (IA generativa) — sigilo, revisão,
+  transparência com cliente [47][VERIFICAR artigos]; prompt pack Microsoft
+  diz que não presta aconselhamento jurídico [24]; Judiciário: CNJ Res.
+  615/2025 (governança de IA; supervisão humana) [49]; TJSC: "não pode
+  resultar em decisão autônoma" [34].
+- Regulação/administração pública: guias federais de IA generativa,
+  prompt e RAG para servidores (gov.br) [39][VERIFICAR PDFs]; decisões
+  regulatórias não podem ser automatizadas pelo Copilot [SUGESTÃO].
+- Saúde: CFM Res. 2.454/2026 — informar paciente, registrar uso de IA,
+  proteger dados sensíveis [48]; Copilot não é dispositivo médico nem
+  ferramenta de diagnóstico [SUGESTÃO; NÃO ENCONTRADO declaração Microsoft
+  específica]; o produto clínico da Microsoft (Dragon Copilot) é outro
+  produto e está FORA DO ESCOPO [VERIFICAR nome/disponibilidade no BR].
+- Finanças: não usar como aconselhamento financeiro/contábil [24];
+  conferir números e fórmulas.
+- RH: filtros contra inferências sobre empregados [4]; GDS registra receio
+  em queixas e avaliações de desempenho [31].
+
+----------------------------------------------------------------
+9. LIMITAÇÕES E ERROS COMUNS
+----------------------------------------------------------------
+1. Achar que tem Copilot completo quando tem só Copilot Chat (Basic) —
+   Word/Excel/PPT sem Copilot. [1]
+2. Esperar que o Basic "ache" arquivos da empresa — precisa anexar. [1]
+3. Interface diferente dos tutoriais: lançamentos graduais, renomeações
+   (Notebooks→Workspaces; Agents→Plugins). [15][40]
+4. Citações não conferidas; alucinação. [4][31]
+5. Dados de baixa qualidade/desatualizados no SharePoint geram respostas
+   ruins; versões duplicadas confundem. [18][SUGESTÃO]
+6. Excel: confiança excessiva em "Allow editing"; não revisar mudanças. [11]
+7. PowerPoint: deck genérico; resultado melhor com modelo da empresa e
+   documento Word estruturado. [12][32]
+8. Outlook: caixas de grupo, e-mails criptografados (S/MIME, DKE) e
+   caixas fora do Exchange Online não funcionam. [14]
+9. Teams: sem transcrição salva não há Copilot depois da reunião; desligar
+   Copilot desliga gravação. [23]
+10. Limites de uso justo sem número publicado (Basic). [5]
+11. Researcher: 25/mês, demora até 45 min, não lê imagens. [20]
+12. Idioma: o Copilot suporta menos idiomas que a interface; prompts em
+    pt-BR são suportados, mas alguns recursos citam "Tier 1 languages"
+    (ex.: priorizar caixa de entrada). [6][14]
+13. Política de privacidade da organização pode remover o Copilot dos
+    apps ("connected experiences"). [4]
+14. Conteúdo com nuance, opiniões divergentes e dados complexos. [31]
+
+----------------------------------------------------------------
+10. COMPARAÇÃO IMPARCIAL E CRITÉRIOS DE ESCOLHA
+----------------------------------------------------------------
+| Critério | Microsoft 365 Copilot | Gemini no Google Workspace | ChatGPT Enterprise/Business | Claude (Team/Enterprise) |
+| Integração nativa | Word, Excel, PPT, Outlook, Teams [1] | Docs, Sheets, Slides, Gmail, Meet [VERIFICAR — ver curso Gemini Workspace] | conectores (SharePoint etc.) [VERIFICAR] | conectores e apps Office [VERIFICAR — ver cursos Claude] |
+| Dados de trabalho | Graph/Work IQ, permissões M365 [4] | Drive/Gmail [VERIFICAR] | conectores [VERIFICAR] | conectores [VERIFICAR] |
+| Preço BR | R$ 171,80 ou R$ 120,20 + licença-base [7][8] | ver pasta gemini-workspace | NÃO ENCONTRADO nesta pesquisa | NÃO ENCONTRADO nesta pesquisa |
+| Opção sem custo | Copilot Chat (Basic) [1] | [VERIFICAR] | — | — |
+[SUGESTÃO] Critérios para o aluno: (1) onde estão seus arquivos e e-mails;
+(2) qual licença a empresa já paga; (3) maturidade de permissões e
+rótulos; (4) política interna; (5) necessidade de auditoria/retenção.
+Não posicionar como "melhor"; o curso é sobre USAR o Copilot com
+responsabilidade quando a organização o adota.
+
+----------------------------------------------------------------
+11. NOVIDADES (últimos ~6 meses até 18/11/2026)
+----------------------------------------------------------------
+[CONFIRMADO salvo indicação — release notes [17] e páginas citadas]
+- 17/11/2026: agentes personalizados no Outlook; Tableau conectado;
+  mensagens de aviso de gravação/transcrição personalizáveis no Teams.
+- 04/11/2026: Excel navega até mudanças a partir da resposta; PowerPoint
+  usa estilo de deck anexado; agente de listas do SharePoint; conteúdo
+  autoritativo no Copilot Search (100 sites); Cowork usa Edge local.
+- 27/10/2026: Learning Agent; links web em Notebooks; PowerPoint anexa e
+  referencia imagem; configurações do Copilot no Outlook clássico.
+- Fim out/2026: Notebooks → Workspaces; Projects. [15]
+- 16/10/2026: renomeação "(add-on)" das assinaturas. [40]
+- 06/10/2026: "Try Again"/"Switch Model"; PowerPoint referencia arquivos
+  do SharePoint/OneDrive e cria "custom skills"; relatório de permissões
+  amplas no SharePoint.
+- 23/09/2026: busca de reuniões por tema (inclui transcrições dos últimos
+  2 meses); triagem do Outlook por linguagem natural; Planner Agent;
+  Copilot Cowork.
+- Ago–set/2026: app vira "Microsoft Copilot"; URL copilot.cloud.microsoft.
+  [41]
+- Ago/2026: Word com escolha de modelos Anthropic; PowerPoint comenta.
+  [VERIFICAR — secundária]
+- Jul/2026: agentes MCP em Word/Excel/PPT/Outlook; Excel em mais pastas;
+  promoção Copilot Business no Brasil (até 31/12/2026). [7][17]
+- Jun/2026: Word edita direto no chat padrão (web). [VERIFICAR]
+- Out/2026: Copilot em Word/Excel/PowerPoint no Android. [VERIFICAR]
+- Próximos: compra sem licença-base em 01/12/2026; cobrança por uso
+  padrão no Copilot Business adiada para jan–mar/2027. [52][VERIFICAR]
+
+----------------------------------------------------------------
+12. MATERIAL DIDÁTICO OFICIAL E DE APOIO
+----------------------------------------------------------------
+- Microsoft Learn — trilha "Draft, analyze, and present with Microsoft
+  365 Copilot" e curso MS-4018 (1 dia; Word, PPT, Excel, Teams, Outlook,
+  Copilot Chat). [28]
+- MS-4018 laboratórios no GitHub (6 labs, 10–30 min): setup de dados de
+  exemplo; Copilot Chat; PowerPoint; Word; Teams; Excel. Exigem licença
+  Copilot; os arquivos de exemplo são carregados no OneDrive no Lab 0.
+  [27][VERIFICAR origem dos arquivos de exemplo]
+- Curso "Get started with Microsoft 365 Copilot (3 hr)" e trilha
+  "Transform ideas into action with Copilot" (Basic). [1][28]
+- Copilot Prompt Gallery: aka.ms/PromptGallery /
+  copilot.cloud.microsoft/prompts. [1][26]
+- Scenario Library (por função: Finanças, Jurídico, Governo etc.),
+  com versão pt-BR em adoption.microsoft.com/pt-br/scenario-library. [21][22]
+- Copilot Success Kit (pt-BR disponível; ZIP de ~1,5 GB). [22]
+- Ferramentas e modelos de engajamento (pt-BR ZIP baixado). [21]
+- Copilot Chat video tutorial (support). [1]
+- Copilot Trainer Kit: aka.ms/CopilotChat/TrainerKit. [1][VERIFICAR]
+- Microsoft Copilot & Copilot Chat Risk Assessment Quickstart (Service
+  Trust Portal; pode exigir login). [4]
+
+----------------------------------------------------------------
+13. EXERCÍCIOS CURTOS, OFICINAS E PROJETOS [SUGESTÃO]
+----------------------------------------------------------------
+Todos com arquivos FICTÍCIOS, sem dados pessoais reais.
+
+13a. Exercícios curtos (Essentials)
+1. Qual é a minha licença? Identificar rótulo, escudo e Work/Web; print.
+2. Classificar 8 situações: "pode usar Copilot", "só com dado
+   anonimizado", "não usar" (ex.: contrato de cliente; prontuário;
+   planilha de salários; ata de reunião pública).
+3. Reescrever um prompt fraco em Objetivo + Contexto + Fonte + Formato.
+4. Receber um resumo com 4 erros plantados e achá-los pelas citações.
+5. Ler o rótulo de confidencialidade de um arquivo e decidir se pode ser
+   anexado.
+6. Escrever o rodapé de transparência: "Rascunho gerado com Microsoft
+   365 Copilot e revisado por [nome] em [data]".
+Alternativa sem licença: fazer 1, 3, 4 e 6 no Copilot Chat (Basic) com
+arquivo anexado; ou em conta pessoal Microsoft 365 Personal/Premium com
+arquivos fictícios (avisar diferenças de proteção).
+
+13b. Oficinas (Hands On, 4 x 12–20 min)
+OF1 — Contexto: localizar 3 fontes fictícias com "/" e pedir um resumo
+  comparativo com citações. Êxito: cada afirmação aponta a fonte certa.
+OF2 — Documento: Word cria relatório de 1 página a partir de 2 arquivos;
+  aluno aplica "Suggest ways to improve", aceita/rejeita edições e
+  verifica 5 fatos. Êxito: lista de verificação preenchida.
+OF3 — Análise: Excel com base fictícia de vendas/atendimentos; modo
+  "Plan"; tabela dinâmica + gráfico + 1 coluna calculada; conferência
+  manual de 3 linhas. Êxito: "Show Changes" revisado.
+OF4 — Reunião e comunicação: recap/transcrição FICTÍCIA (ou texto de
+  transcrição fornecido) → decisões e tarefas (responsável + prazo +
+  trecho de origem) → e-mail de follow-up com "Draft with Copilot" e
+  coaching. Êxito: cada tarefa rastreável à fala.
+
+13c. Projeto final (escolher trilha)
+P1 Negócios/Finanças (F3): do e-mail do diretor à proposta em PowerPoint
+  com dados do Excel e e-mail de envio.
+P2 Jurídico (J3): resumo de 3 cláusulas de contrato fictício + quadro de
+  riscos + e-mail ao cliente; revisão marcando o que exige advogado.
+P3 Regulação/Setor público (R3): nota técnica a partir de norma pública
+  (ex.: LGPD) e consulta pública fictícia; registrar fontes; sem
+  decisão automatizada.
+P4 Saúde (S3): protocolo administrativo fictício (escala, fluxo de
+  agendamento) — PROIBIDO dado de paciente e conteúdo diagnóstico.
+P5 Documentos (T7): padronizar 3 documentos internos em um modelo.
+Critérios: fonte escolhida; citações conferidas; dados sensíveis
+evitados; revisão registrada; resultado utilizável.
+
+----------------------------------------------------------------
+14. FOCO ESPECÍFICO (respostas aos 12 itens do prompt)
+----------------------------------------------------------------
+1. Mapa de produtos/licenças e nomes — seções 0, 1.2, 1.3, 2. [1][2][7][8][9]
+2. Graph, arquivos, e-mails, chats, reuniões e permissões — seções 4 e
+   8.1; limites: só o que o usuário pode ver; Basic precisa anexar. [1][4]
+3. Word — 5.2. [10][23]
+4. Excel — 5.3; fronteira com análise de dados. [11][23]
+5. PowerPoint — 5.4. [12][23]
+6. Outlook — 5.5. [13][14][23]
+7. Teams — 5.6; fronteira com IA para Reuniões. [23][43][45]
+8. Chat, Pages, Workspaces/Notebooks, agentes — 5.1, 5.7, 5.8. [1][15][16][20]
+9. Grounding, citações, alucinação e revisão — seções 4, 7.3, 9. [1][4][13]
+10. Segurança corporativa — 8.2, 8.3; treinamento: seção 12; compromissos
+    de dados: [4]. Auditoria de Researcher não disponível por padrão. [20]
+11. Casos e riscos por área — 6 e 8.5.
+12. Ambiente de prática — licença: Premium ideal; Basic cobre Chat e
+    parte dos apps; alternativa: conta pessoal Microsoft 365 Personal/
+    Premium (R$ 51/R$ 109) ou avaliação de 1 mês do Copilot Business (exige
+    cartão e tenant Business). Arquivos fictícios: NÃO ENCONTRADO pacote
+    oficial público de arquivos de exercício em pt-BR; MS-4018 tem setup
+    de dados de exemplo (inglês) [27]. [SUGESTÃO] criar pacote próprio
+    (seção 16).
+
+----------------------------------------------------------------
+15. TRECHOS-CHAVE (curtos, com fonte)
+----------------------------------------------------------------
+- "Copilot Chat can use organizational content, but you must explicitly
+  provide that content with your prompt." [1]
+- "only surfaces organizational data to which individual users have at
+  least view permissions" [4]
+- "aren't used to train foundation LLMs" [4]
+- "aren't guaranteed to be 100% factual" [4]
+- "Microsoft does not publish or share specific numeric limits." [5]
+- "does not provide legal advice" [24]
+- "Human oversight was required at all times" [31]
+- "não pode resultar em decisão autônoma" [34]
+
+----------------------------------------------------------------
+16. MATERIAIS PARA BAIXAR
+----------------------------------------------------------------
+Baixados nesta pasta (18/11/2026):
+1. gds-uk-experimento-m365-copilot-2025.pdf — GDS/DSIT, jun/2025. [31]
+   https://assets.publishing.service.gov.uk/media/683db42bd23a62e5d32680d0/M365_Copilot_Experiment_Findings_Report.pdf
+2. dbt-uk-avaliacao-piloto-m365-copilot-2025.pdf — DBT, ago/2025, 49 p. [32]
+   https://assets.publishing.service.gov.uk/media/68adbe409e1cebdd2c96a19d/dbt-microsoft-365-copilot-evaluation.pdf
+3. treasury-australia-avaliacao-copilot-resumo-2025.pdf — resumo. [33]
+   https://evaluation.treasury.gov.au/sites/evaluation.treasury.gov.au/files/2025-02/evaluation-generative-artificial-intelligence-summary.pdf
+4. microsoft-blueprint-seguranca-governanca-copilot.pdf (PDF) e
+   microsoft-blueprint-seguranca-governanca-copilot-nov2026.pptx. [18]
+   https://aka.ms/Copilot/SecureGovernBlueprintPDF
+5. microsoft-guia-inicio-rapido-copilot.pptx (2025). [26]
+6. microsoft-guia-copilot-word/-excel/-powerpoint/-outlook/-teams.pptx e
+   microsoft-guia-app-copilot.pptx — guias "Get started" (UI de
+   18/05/2026). [23] https://aka.ms/Copilot/WordGetStarted (etc.)
+7. microsoft-prompt-pack-juridico.pptx, -financas.pptx, -rh.pptx. [24]
+8. microsoft-guia-experiencia-prompts-recomendados.pptx (69 MB). [21]
+9. microsoft-copilot-chat-top10-prompts.pptx e
+   microsoft-copilot-chat-guia-treinamento-usuario.pptx (Basic). [25]
+10. microsoft-guia-agentes-word-excel-powerpoint.pptx;
+    microsoft-guia-researcher-analyst.pptx (68 MB). [21]
+11. microsoft-framework-avaliacao-ia.pdf — framework de avaliação. [50]
+12. microsoft-kit-engajamento-usuario-pt-BR.zip — modelos de e-mail e
+    comunicação EM PORTUGUÊS (Copilot Chat, Word, Excel, PPT, Outlook,
+    Teams, agentes; arquivos .oft/.docx, jul/2025). [21]
+13. Cópias de outras pastas: oab-recomendacao-001-2024-ia-generativa.pdf
+    [47]; cfm-resolucao-2454-2026-ia-medicina.pdf [48];
+    cnj-resolucao-615-2025-compilada-2026.pdf [49];
+    pagina-lgpd-lei-13709.pdf [46].
+Não baixados (baixar manualmente):
+14. Copilot Success Kit pt-BR (ZIP ~1,5 GB; download interrompido por
+    tamanho) — https://aka.ms/Copilot/SuccessKit/pt-br [22]
+15. Prompt packs de Vendas, Marketing, Atendimento, Operações e Produto
+    (aka.ms/M356_Copilot_PromptPack_for_...). [21]
+16. Guias de função CFO/CHRO/CMO (.pptx) em adoption.microsoft.com. [21]
+17. Guias federais de IA para servidores (IA generativa, prompt, RAG,
+    GuIA unificado) — gov.br/governodigital (links diretos não
+    confirmados). [39]
+18. Resumo DTA/Austrália (whole-of-government) — download expirou;
+    https://www.digital.gov.au/sites/default/files/documents/2024-10/Copilot%20Microsoft%20365%20summary%20of%20evaluation%20findings.pdf
+19. Microsoft Copilot & Copilot Chat Risk Assessment Quickstart (Service
+    Trust Portal). [4]
+20. [SUGESTÃO] Pacote de prática próprio (criar): empresa fictícia
+    "Distribuidora Aurora Ltda." com 5 e-mails, 3 documentos Word
+    (política, proposta, ata), 1 planilha de 300 linhas de vendas, 1
+    transcrição de reunião em texto, 1 contrato fictício, todos com rótulo
+    "Fictício — uso educacional". Sem CPF, nomes reais ou dados de saúde.
+
+----------------------------------------------------------------
+17. PÁGINAS PARA SALVAR (salvas como PDF nesta pasta, 18/11/2026)
+----------------------------------------------------------------
+Ver lista final de arquivos "pagina-*.pdf" nesta pasta; cada uma
+corresponde a uma fonte da seção 20:
+- pagina-microsoft-o-que-e-copilot.pdf [1]
+- pagina-microsoft-opcoes-licenca.pdf [2]
+- pagina-microsoft-comparar-e3-e5-e7.pdf [3]
+- pagina-microsoft-privacidade-copilot.pdf [4]
+- pagina-microsoft-limites-copilot-chat.pdf [5]
+- pagina-microsoft-idiomas-copilot.pdf [6]
+- pagina-microsoft-precos-empresas-br.pdf [7]
+- pagina-microsoft-precos-enterprise-br.pdf [8]
+- pagina-microsoft-planos-pessoais-br.pdf [9]
+- pagina-microsoft-copilot-word-rascunho.pdf [10]
+- pagina-microsoft-copilot-excel-inicio.pdf [11]
+- pagina-microsoft-copilot-powerpoint-criar.pdf [12]
+- pagina-microsoft-copilot-outlook-resumo.pdf [13]
+- pagina-microsoft-faq-copilot-outlook.pdf [14]
+- pagina-microsoft-notebooks-para-workspaces.pdf [15]
+- pagina-microsoft-como-funcionam-pages.pdf [16]
+- pagina-microsoft-blueprint-seguranca-governanca.pdf [18]
+- pagina-microsoft-dlp-copilot.pdf [19]
+- pagina-microsoft-faq-researcher.pdf [20]
+- pagina-microsoft-ferramentas-engajamento-usuario.pdf [21]
+- pagina-microsoft-success-kit-ptbr.pdf [22]
+- pagina-microsoft-ms4018-laboratorios.pdf e
+  pagina-microsoft-ms4018-lab-setup.pdf [27]
+- pagina-microsoft-processamento-local-15-paises.pdf [30]
+- pagina-gov-uk-dbt-relatorio.pdf e pagina-gov-uk-dbt-blog.pdf [32]
+- pagina-itnews-treasury-australia.pdf [33]
+- pagina-tjsc-amplia-copilot.pdf [34]
+- pagina-baguete-tjdft-copilot.pdf [35]
+- pagina-convergencia-tcdf-copilot.pdf [36]
+- pagina-camara-pl-2338.pdf [38]
+- pagina-gov-br-ia-servidores.pdf [39]
+- pagina-ctrlaltben-estado-copilot-q4-2026.pdf [40]
+- pagina-futurework-renomeacao-app-copilot.pdf [41]
+- Copiadas de ia-para-reunioes: pagina-microsoft-comecar-copilot-
+  reunioes.pdf [43]; pagina-microsoft-faq-copilot-teams.pdf [44];
+  pagina-microsoft-admin-copilot-reunioes-teams.pdf [45];
+  pagina-microsoft-recap-no-teams.pdf; pagina-microsoft-admin-
+  intelligent-recap.pdf.
+SALVAR MANUALMENTE:
+- Release notes do Microsoft 365 Copilot [17] (página com >1 milhão de
+  caracteres; salvar só as entradas de set–nov/2026).
+- Tech Community — Introducing Microsoft 365 Copilot Business [29]
+  (captura devolveu "The request is blocked").
+- The Hacker News — EchoLeak [42] (verificação anti-robô da Cloudflare);
+  alternativa oficial: entrada CVE-2025-32711 no Microsoft Security
+  Update Guide (msrc.microsoft.com).
+
+----------------------------------------------------------------
+18. LACUNAS E PONTOS A VERIFICAR
+----------------------------------------------------------------
+1. Rótulos de menu em PORTUGUÊS: todos os passos estão em inglês; abrir
+   cada app em pt-BR e registrar os nomes reais ("Resumo por Copilot"?,
+   "Rascunho com Copilot"?, "Permitir edição"?).
+2. Quais planos dão o nível "Microsoft 365 Copilot (Basic)" (Copilot nos
+   apps sem licença)? Learn não lista; conferir em tenant Business e E3.
+3. Teams no nível Basic: visão geral diz que resume reuniões; guia de
+   Teams diz que exige licença. Testar.
+4. Compra sem licença-base a partir de 01/12/2026 e preços após essa data
+   no Brasil (fontes secundárias).
+5. Preço do Microsoft 365 E7 em R$ — NÃO ENCONTRADO.
+6. Copilot Pro: data oficial de encerramento para assinantes existentes.
+7. Limites de uso justo do Copilot Chat: datas de início (2 e 9/11/2026)
+   só em fonte secundária.
+8. DBT: confirmar no PDF a frase sobre ausência de evidência de
+   produtividade e o percentual de alucinações (22%).
+9. Tesouro australiano: confirmar números no PDF.
+10. Copilot Pages: página de suporte acessada só por snippets; conferir no
+    PDF salvo.
+11. Word: 20 vs. 3 arquivos de referência.
+12. DLP para Copilot: status GA/prévia e licença necessária.
+13. Casos BR (TJDFT, TCDF, MGI, TCU): conferir em fontes oficiais.
+14. Pacote oficial de arquivos de exercício em pt-BR: NÃO ENCONTRADO.
+15. Páginas salvas automaticamente em 18/11/2026 com Edge headless;
+    duas bloqueadas foram descartadas (seção 17). Folhear as demais para
+    confirmar que não há banner de cookies cobrindo o conteúdo.
+16. Copilot no setor de saúde (Dragon Copilot) no Brasil: fora do escopo,
+    mas confirmar para a seção de comparação/limites.
+17. OAB Rec. 001/2024 e CNJ 615/2025: extrair artigos exatos para a
+    trilha J3.
+18. Treinamento de modelos Anthropic: confirmar termos do subprocessador
+    e implicações de transferência internacional para clientes BR.
+
+----------------------------------------------------------------
+19. APÊNDICE TÉCNICO (administração — fora do corpo do curso)
+----------------------------------------------------------------
+19.1 Rede: liberar *.cloud.microsoft e endpoints do Copilot; não bloquear
+copilot.cloud.microsoft para impedir contas pessoais — usar tenant
+restrictions v2. [1]
+19.2 Licenças: atribuir no Microsoft 365 admin center; diagnóstico de
+plano de serviço; nova página "License Requests" (set/2026). [2][17]
+19.3 Copilot controls (admin center): fixar Copilot Chat; geração de
+imagens; criação/uso de agentes; política "Allow web search in Copilot";
+remover acesso ao Copilot Chat; papel "AI Administrator". [1]
+19.4 Purview: rótulos, DLP com local "Microsoft 365 Copilot and Copilot
+Chat", retenção para Copilot, Content search/eDiscovery, auditoria. [4][19]
+19.5 SharePoint Advanced Management: Restricted Content Discovery,
+Restricted Access Control, relatórios de Data Access Governance,
+relatório "Everyone except external users". [1][17][18]
+19.6 Anthropic/OpenAI como subprocessadores: habilitação pelo admin;
+Anthropic fora da EU Data Boundary. [1][4]
+19.7 Teams: política de reunião "Copilot" (Teams admin center → Meeting
+policies); ver apêndice 19.1 do ConteudoBruto_ia-para-reunioes.txt. [45]
+19.8 Relatórios: "Microsoft Copilot Chat usage report" e "Microsoft
+Copilot usage report"; Copilot Dashboard/Analytics. [1]
+19.9 Cobrança por uso: política de gastos e solicitações de acesso para
+Cowork/Code/Autopilot. [1]
+
+----------------------------------------------------------------
+20. FONTES (acessadas em 18/11/2026)
+----------------------------------------------------------------
+[1] Microsoft Learn — What is Microsoft Copilot? (ms.date 17/11/2026). https://learn.microsoft.com/en-us/copilot/plan/copilot-overview
+[2] Microsoft Learn — License Options for Microsoft Copilot (ms.date 19/10/2026). https://learn.microsoft.com/en-us/copilot/plan/copilot-license-options
+[3] Microsoft Learn — Compare Copilot in E3, E5, and E7 (ms.date 28/10/2026). https://learn.microsoft.com/en-us/copilot/plan/compare-copilot-e3-e5-e7
+[4] Microsoft Learn — Data, Privacy, and Security for Microsoft Copilot (ms.date 09/07/2026; atualizado 04/11/2026). https://learn.microsoft.com/en-us/copilot/plan/microsoft-365-copilot-privacy
+[5] Microsoft Support — Limits for features in Copilot Chat. https://support.microsoft.com/en-us/microsoft-365-copilot/limits-for-features-copilot-chat
+[6] Microsoft Support — Supported languages for Microsoft Copilot (set/2026). https://support.microsoft.com/en-us/microsoft-365-copilot/supported-languages-for-microsoft-365-copilot
+[7] Microsoft Brasil — Preços do Microsoft 365 Copilot (empresas). https://www.microsoft.com/pt-br/microsoft-365-copilot/pricing
+[8] Microsoft Brasil — Preços do Microsoft 365 Copilot (grandes empresas). https://www.microsoft.com/pt-br/microsoft-365-copilot/pricing/enterprise
+[9] Microsoft Brasil — Comparar todos os planos Microsoft 365 (pessoais). https://www.microsoft.com/pt-br/microsoft-365/buy/compare-all-microsoft-365-products
+[10] Microsoft Support — Draft and add content with Copilot in Word. https://support.microsoft.com/en-us/office/start-a-draft-with-copilot-in-word-069c91f0-9e42-4c9a-bbce-fddf5d581541
+[11] Microsoft Support — Get started with Copilot in Excel. https://support.microsoft.com/en-us/office/get-started-with-copilot-in-excel-d7110502-0334-4b4f-a175-a73abdfc118a
+[12] Microsoft Support — Create a new presentation with Copilot in PowerPoint. https://support.microsoft.com/en-us/office/create-a-new-presentation-with-copilot-in-powerpoint-3222ee03-f5a4-4d27-8642-9c387ab4854d
+[13] Microsoft Support — Summarize an email thread with Copilot in Outlook. https://support.microsoft.com/en-us/office/summarize-an-email-thread-with-copilot-in-outlook-a79873f2-396b-46dc-b852-7fe5947ab640
+[14] Microsoft Support — Frequently asked questions about Copilot in Outlook. https://support.microsoft.com/outlook/frequently-asked-questions-about-copilot-in-outlook
+[15] Microsoft Support — Copilot Notebooks is now Copilot Workspaces. https://support.microsoft.com/microsoft-365-copilot/copilot-notebooks-to-copilot-workspaces
+[16] Microsoft Support — How Microsoft Copilot Pages works (via resultados de busca). https://support.microsoft.com/microsoft-365-copilot/how-microsoft-365-copilot-pages-works
+[17] Microsoft Learn — Release Notes for Microsoft 365 Copilot (entradas 23/09–17/11/2026). https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes
+[18] Microsoft Learn — Secure & Governed Data Foundation for Microsoft Copilot (ms.date 11/11/2026) + PDF/PPTX. https://learn.microsoft.com/en-us/copilot/plan/secure-govern-copilot-foundational-deployment-guidance
+[19] Microsoft Learn — Learn about the Microsoft 365 Copilot policy location (DLP). https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about
+[20] Microsoft Learn — Microsoft Copilot Researcher agent FAQ (ms.date 31/10/2025; atualizado 04/11/2026). https://learn.microsoft.com/en-us/copilot/manage/faq-researcher
+[21] Microsoft Adoption — User engagement tools and templates. https://adoption.microsoft.com/en-us/copilot/user-engagement-tools-and-templates/
+[22] Microsoft Adoption — Kit de sucesso Copilot (pt-BR; atualizado 06/08/2026). https://adoption.microsoft.com/pt-br/copilot/success-kit/
+[23] Microsoft — Guias "Get started with Microsoft 365 Copilot in Word/Excel/PowerPoint/Outlook/Teams" (PPTX, UI de 18/05/2026). https://aka.ms/Copilot/WordGetStarted (e equivalentes)
+[24] Microsoft — Prompt Packs for Legal, Finance e HR (PPTX). https://aka.ms/M356_Copilot_PromptPack_for_Legal (e equivalentes)
+[25] Microsoft — Copilot Chat Top 10 to Try (handout PPTX). https://aka.ms/Copilot/Top10ChatHandout
+[26] Microsoft — Quick Start Guide Microsoft 365 Copilot (PPTX, 2025). https://aka.ms/Copilot/QuickStartGuide
+[27] Microsoft Learning (GitHub) — MS-4018 labs. https://microsoftlearning.github.io/MS-4018-Draft-analyze-present-Microsoft-365-Copilot/
+[28] Microsoft Learn — Draft, analyze, and present with Microsoft 365 Copilot (trilha) e MS-4018. https://learn.microsoft.com/training/paths/draft-analyze-present-microsoft-365-copilot
+[29] Microsoft Tech Community — Introducing Microsoft 365 Copilot Business (dez/2025). https://techcommunity.microsoft.com/t5/microsoft-365-copilot-blog/introducing-microsoft-365-copilot-business-empowering-small-and/ba-p/4469700
+[30] Microsoft 365 Blog — In-country data processing in 15 countries (04/11/2025; nota de 03/04/2026). https://www.microsoft.com/en-us/microsoft-365/blog/2025/11/04/microsoft-offers-in-country-data-processing-to-15-countries-to-strengthen-sovereign-controls-for-microsoft-365-copilot/
+[31] GDS/DSIT (Reino Unido) — Microsoft 365 Copilot Experiment: Cross-Government Findings Report (jun/2025). PDF nesta pasta.
+[32] Department for Business and Trade (Reino Unido) — Microsoft 365 Copilot pilot: DBT evaluation report (28/08/2025) + blog 25/09/2025. https://www.gov.uk/government/publications/microsoft-365-copilot-pilot-dbt-evaluation-report
+[33] Australian Treasury — Evaluation of a trial of generative AI (Copilot) (fev/2025); iTnews (12/02/2025). https://evaluation.treasury.gov.au/publications/evaluation-generative-artificial-intelligence
+[34] TJSC — "TJSC amplia uso do Copilot após dois anos..." (02/09/2026). https://www.tjsc.jus.br/web/imprensa/-/tjsc-amplia-uso-do-copilot-apos-dois-anos-de-experimentacao-e-estruturacao
+[35] Baguete — "TJDFT ganha produtividade com Copilot" (2026). https://www.baguete.com.br/noticias/tjdft-ganha-produtividade-com-copilot
+[36] Convergência Digital — TCDF contrata IAs do Google e da Microsoft. https://convergenciadigital.com.br/governo/tribunal-de-contas-do-df-contrata-ias-do-google-e-da-microsoft-para-processos-e-auditorias/
+[37] Engenharia360 — Acordo MGI–Microsoft (Copilot). https://engenharia360.com/acordo-mgi-microsoft-integracao-ia-copilot/
+[38] Câmara dos Deputados — Ficha de tramitação PL 2338/2023. https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262
+[39] Gov.br / Governo Digital — Inteligência Artificial (guias para servidores). https://www.gov.br/governodigital/pt-br/inteligencia-artificial
+[40] Ctrl+Alt+Ben — "Is your Microsoft 365 Copilot Basic or Premium?" (16/11/2026; fonte secundária, cita Learn e Message Center). https://ctrlaltben.com/state-of-microsoft-365-copilot-q4-2026/
+[41] FutureWork blog — Microsoft Copilot app: one app, new name, new icon, new URL (14/08/2026; cita MC1454108). https://futurework.blog/2026/08/14/microsoft-copilot-app-one-app-new-name-new-icon-new-url/
+[42] The Hacker News — Zero-Click AI Vulnerability Exposes Microsoft 365 Copilot Data (jun/2025). https://thehackernews.com/2025/06/zero-click-ai-vulnerability-exposes.html
+[43] Microsoft Support — Get started with Copilot in Microsoft Teams meetings. https://support.microsoft.com/en-us/office/get-started-with-copilot-in-microsoft-teams-meetings-0bf9dd3c-96f7-44e2-8bb8-790bedf066b1
+[44] Microsoft Support — Frequently asked questions about Copilot in Microsoft Teams. https://support.microsoft.com/en-us/office/frequently-asked-questions-about-copilot-in-microsoft-teams-e8737767-4087-4ae6-b1d8-10264152b05a
+[45] Microsoft Learn — Manage Microsoft Copilot in Teams meetings and events. https://learn.microsoft.com/en-us/microsoftteams/copilot-teams-transcription
+[46] Planalto — Lei 13.709/2018 (LGPD). https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm
+[47] OAB — Recomendação 001/2024 (IA generativa na advocacia). PDF nesta pasta.
+[48] CFM — Resolução 2.454/2026 (IA na medicina). PDF nesta pasta.
+[49] CNJ — Resolução 615/2025 (IA no Judiciário), compilada 2026. PDF nesta pasta.
+[50] Microsoft Adoption — AI Evaluation Framework (PDF). https://adoption.microsoft.com/files/cowork/AIEvaluationFramework.pdf
+[51] Fontes secundárias sobre fim do Copilot Pro: aguidetocloud.com/licensing/copilot-pro/; howply.com (2026); Canaltech (Microsoft 365 Premium no Brasil).
+[52] Fontes secundárias de licenciamento: MetrixData 360 — Microsoft Licensing Changes, November 2026 (https://metrixdata360.com/top-takes/microsoft-licensing-changes-november-2026/); licenseq.com; gosearch.ai.
+[53] Office Watch — "Microsoft 365 has NOT been renamed Microsoft 365 Copilot" (2026; secundária). https://office-watch.com/2026/microsoft-365-has-not-been-renamed-microsoft-365-copilot/
+
+CHECKLIST FINAL
+[x] Nomes e licenças atuais foram distinguidos (seções 0, 1.3, 2).
+[x] Pesquisa sustenta ementa, Essentials e Hands On (seções 3–14).
+[x] Cada app/tarefa tem requisitos, passos, verificação e exercício
+    (seções 5 e 13) — rótulos em pt-BR pendentes (lacuna 1).
+[x] Permissões, oversharing, LGPD e limites profissionais cobertos (8).
+[x] Todos os focos têm resposta ou NÃO ENCONTRADO (seção 14).
+[x] Nenhuma sugestão está [CONFIRMADO]; links conferidos em 18/11/2026;
+    capturas de página a revisar (lacuna 15).

@@ -1,0 +1,1635 @@
+================================================================
+CONTEÚDO BRUTO — Multiagentes
+Pesquisa realizada em: 18 de novembro de 2026
+Escopo: coordenação de múltiplos agentes de IA com Claude Code
+(subagentes, equipes de agentes e workflows dinâmicos) e n8n
+(AI Agent, AI Agent Tool, sub-workflows, revisão humana, Agents e avaliações)
+Produtos atendidos: ementa completa, Essentials (100–130 min) e
+Hands On (60–90 min, 4 oficinas + 1 projeto final)
+================================================================
+
+CONVENÇÕES
+- [CONFIRMADO] = afirmação literal ou quase literal da fonte citada.
+- [VERIFICAR] = evidência fraca, secundária, contraditória ou que muda rápido.
+- [SUGESTÃO] = elaboração da pesquisa para a equipe de design instrucional.
+- NÃO ENCONTRADO = procurado e não localizado; o local da busca é informado.
+- Origem de menus: (interface) visto na tela; (ajuda en) documentação oficial em
+  inglês; (ajuda pt-BR) documentação oficial em português.
+- Números entre colchetes remetem às fontes da seção 20.
+- Claude Code e n8n têm interface e documentação oficiais em inglês. Não foi
+  encontrada documentação oficial em pt-BR para os recursos multiagente de
+  nenhum dos dois (busca em code.claude.com, support.claude.com e docs.n8n.io
+  em 18/11/2026). Todos os menus abaixo são (ajuda en), salvo indicação.
+
+================================================================
+0. RESUMO EXECUTIVO
+================================================================
+
+[CONFIRMADO] A Anthropic distingue dois tipos de sistema: workflows, em que LLMs
+e ferramentas seguem caminhos definidos em código, e agentes, em que o LLM dirige
+dinamicamente o próprio processo e o uso de ferramentas. A recomendação central é
+"encontrar a solução mais simples possível e só aumentar a complexidade quando
+necessário". [10]
+
+[CONFIRMADO] Um sistema multiagente reúne vários agentes autônomos que interagem
+num ambiente compartilhado; cada um se especializa num domínio e eles se
+coordenam por comunicação, memória compartilhada e lógica de orquestração. [19]
+
+[CONFIRMADO] Vários agentes ajudam quando o trabalho pode ser dividido em partes
+independentes. No sistema de pesquisa da Anthropic, um agente líder (Opus 4) com
+subagentes paralelos (Sonnet 4) superou um único agente Opus 4 em 90,2% na
+avaliação interna, mas consumiu cerca de 15 vezes mais tokens que um chat
+(agentes isolados: cerca de 4 vezes). A própria Anthropic diz que tarefas de
+programação e tarefas que exigem contexto compartilhado ou muitas dependências
+entre agentes são encaixes ruins. [9]
+
+[CONFIRMADO] Estudo controlado do Google Research (180 configurações, 3 famílias
+de modelos, 4 benchmarks) mostrou que coordenação centralizada melhorou 80,9% uma
+tarefa financeira paralelizável, mas todas as variantes multiagente pioraram de
+39% a 70% numa tarefa de planejamento sequencial (PlanCraft). Agentes
+independentes, sem comunicação, amplificaram erros 17,2 vezes; o modelo
+centralizado conteve a amplificação em 4,4 vezes. [25][39]
+
+[CONFIRMADO] Uma taxonomia acadêmica de falhas (MAST, NeurIPS 2025) identificou 14
+modos de falha em 3 categorias: problemas de especificação, desalinhamento entre
+agentes e verificação/término da tarefa. Os autores observam que os ganhos dos
+sistemas multiagente sobre agentes únicos em benchmarks populares muitas vezes
+são mínimos. [26]
+
+[CONFIRMADO] No Claude Code, em 18/11/2026, há cinco formas de trabalho paralelo:
+subagentes (dentro de uma sessão, devolvem um resumo), agent view (sessões em
+segundo plano, research preview), agent teams (líder + colegas com lista de
+tarefas e mensagens; experimental e desligado por padrão), projects (beta
+público) e dynamic workflows (script que orquestra dezenas a centenas de
+subagentes). [4]
+
+[CONFIRMADO] O Claude Code exige plano Pro, Max, Ultra, Team, Enterprise ou conta
+Console; o plano gratuito do claude.ai não inclui Claude Code. Pro custa US$ 20/mês
+(US$ 17/mês no anual). [7][8]
+
+[CONFIRMADO] No n8n, o padrão multiagente principal é o nó AI Agent Tool: um AI
+Agent "raiz" chama outros agentes como ferramentas, e esses nós podem ser
+aninhados em várias camadas. Sub-workflows entram como ferramentas pelo nó Call
+n8n Workflow Tool. Desde a versão 2.6 (26/01/2026) existe revisão humana por
+ferramenta; na 2.40 (21/09/2026) surgiu o recurso Agents (Preview), com
+subagentes, canais e agendamentos. [12][13][14][16][17]
+
+[CONFIRMADO] O n8n afirma que sistemas multiagente "podem facilmente consumir
+10–20x os tokens de um workflow de agente único" e recomenda roteamento
+determinístico (Switch) quando a categoria é conhecida: "use roteamento
+determinístico quando puder, roteamento por agente quando precisar". [20]
+
+[CONFIRMADO] Riscos específicos de multiagentes estão no OWASP Top 10 for Agentic
+Applications 2026 (publicado em 09/12/2025): ASI07 comunicação insegura entre
+agentes, ASI08 falhas em cascata e ASI10 agentes desonestos/comprometidos, além
+de sequestro de objetivo (ASI01) e abuso de identidade e privilégio. [27]
+
+[SUGESTÃO] Mensagem central do curso: "Comece com um agente. Só divida quando
+houver partes independentes, um critério para verificar cada parte e um motivo
+mensurável (qualidade, tempo ou contexto) que compense o custo extra."
+
+[SUGESTÃO] Ciclo observável que atravessa Essentials e Hands On:
+OBJETIVO → DECOMPOR → PAPÉIS → CONTRATOS (entrada/saída) → PERMISSÕES E LIMITES
+→ CRITÉRIO DE PARADA → EXECUTAR E ACOMPANHAR → AVALIAR POR ETAPA E PONTA A PONTA
+→ COMPARAR COM AGENTE ÚNICO → REGISTRAR E AJUSTAR.
+
+[SUGESTÃO] Divisão de profundidade: Essentials usa n8n Cloud (visual, sem
+programar) e demonstrações do Claude Code pelo app desktop; Hands On executa as
+quatro oficinas em Claude Code (subagentes em arquivo .md) e n8n (orquestrador +
+especialistas + revisão humana + avaliação).
+
+================================================================
+1. IDENTIDADE, HISTÓRICO E TERMINOLOGIA
+================================================================
+
+1.1 O que é "multiagente" neste curso
+
+[CONFIRMADO] O n8n define sistema multiagente (MAS) como um conjunto de agentes
+de IA autônomos que interagem num ambiente compartilhado, cada um especializado,
+e aponta três acréscimos em relação a um agente único: comunicação entre agentes,
+memória compartilhada e lógica de orquestração. [19]
+
+[CONFIRMADO] A Anthropic descreve o padrão orquestrador-trabalhadores: "um LLM
+central divide dinamicamente a tarefa, delega subtarefas a LLMs trabalhadores e
+sintetiza os resultados"; serve quando não é possível prever as subtarefas. [10]
+
+[SUGESTÃO] Definição para leigos: "Multiagente é dividir um trabalho grande entre
+vários assistentes de IA com funções diferentes, cada um com instruções,
+ferramentas e limites próprios, e ter alguém (um agente coordenador, um fluxo
+fixo ou uma pessoa) que distribui as tarefas, junta os resultados e confere."
+
+1.2 Linha do tempo verificável
+
+- 19/12/2024 — Anthropic publica "Building effective agents" com os padrões
+  encadeamento, roteamento, paralelização, orquestrador-trabalhadores e
+  avaliador-otimizador. [10]
+- Mar/2025 — Primeira versão do artigo MAST ("Why Do Multi-Agent LLM Systems
+  Fail?"), depois aceito no NeurIPS 2025. [26]
+- 12/06/2025 — Cognition publica "Don't Build Multi-Agents", contra sistemas
+  paralelos frágeis. [24]
+- 13/06/2025 — Anthropic publica "How we built our multi-agent research system".
+  [9]
+- 09/12/2025 — OWASP publica o Top 10 for Agentic Applications 2026. [27]
+- Dez/2025 — Google publica no arXiv o estudo 2512.08296; blog em 28/01/2026.
+  [25][39]
+- 22/12/2025 — n8n publica tutorial "Multi-agent systems". [19]
+- 26/01/2026 — n8n 2.6: aprovação humana antes de o AI Agent executar
+  ferramentas específicas. [17]
+- 05/02/2026 — Anthropic lança agent teams em research preview no Claude Code,
+  junto com o Claude Opus 4.6. [30]
+- 30/03/2026 e 05/05/2026 — n8n 2.15 e 2.20: tracing OpenTelemetry de execuções e
+  depois de agentes. [17]
+- 09/06/2026 — n8n publica "Production AI Playbook: Complex agent patterns". [20]
+- 07/07/2026 — n8n 2.30: aprovações em Slack e Telegram com identidade do
+  aprovador e horário registrados. [17]
+- 21/09/2026 — n8n 2.40: recurso Agents (Preview), com workflows como
+  ferramentas de agentes, nó Message an Agent e aprovação humana. [17]
+- 18/11/2026 — Claude Code documenta subagentes, agent teams (ainda
+  experimentais), dynamic workflows e agent view. [1][2][3][4]
+
+[VERIFICAR] A página "Build and manage agents" diz que o recurso Agents está em
+todos os planos self-hosted "a partir do n8n 2.32.3", enquanto o changelog data o
+lançamento em 2.40 (21/09/2026). Conferir na instância usada na gravação. [16][17]
+
+1.3 Mudanças de nome importantes
+
+[CONFIRMADO] No Claude Code, a ferramenta que dispara subagentes se chamava Task e
+passou a se chamar Agent na v2.1.63. Até a v2.1.197, o comando /agents abria um
+assistente com abas Running e Library; hoje /agents só imprime um lembrete para
+pedir ao Claude ou editar os arquivos em .claude/agents/ e ~/.claude/agents/.
+[1]
+
+[CONFIRMADO] No n8n, o seletor de tipo de agente foi descontinuado na 1.82.0;
+todos os nós AI Agent funcionam como "Tools Agent". O nó v1 será removido no n8n
+3.0. [11]
+
+[SUGESTÃO] Gravar telas com a versão vigente e evitar ensinar o antigo assistente
+/agents ou o antigo seletor "Agent type", que ainda aparecem em tutoriais de 2025.
+
+================================================================
+2. ACESSO, CONTAS, PLANOS, PREÇOS, LIMITES E REQUISITOS
+================================================================
+
+2.1 Claude Code
+
+[CONFIRMADO] Requisitos: macOS 13+, Windows 10 1809+ ou Windows Server 2019+,
+Ubuntu 20.04+, Debian 10+, Alpine 3.19+; 4 GB de RAM; internet; país suportado
+pela Anthropic. [7]
+
+[CONFIRMADO] Instalação nativa no Windows (PowerShell): irm
+https://claude.ai/install.ps1 | iex. macOS/Linux/WSL: curl -fsSL
+https://claude.ai/install.sh | bash. Também há WinGet (winget install
+Anthropic.ClaudeCode) e Homebrew. Git for Windows é opcional; sem ele, o Claude
+Code usa PowerShell como ferramenta de shell. [7]
+
+[CONFIRMADO] Há app Desktop (macOS, Windows, Linux) que permite usar o Claude Code
+sem terminal. [7]
+
+[CONFIRMADO] Planos em 18/11/2026 (preços sem impostos): [8]
+- Free: US$ 0 — sem Claude Code.
+- Pro: US$ 20/mês ou US$ 17/mês no anual (US$ 200 antecipado) — com Claude Code.
+- Max: US$ 100/mês — 5x o uso do Pro; inclui US$ 100/mês em créditos de API.
+- Ultra: US$ 200/mês — 10x o uso semanal do Pro; inclui US$ 200/mês em créditos.
+- Team Standard: US$ 25/mês ou US$ 20/mês no anual; Team Premium: US$ 125 ou
+  US$ 100 no anual (5x o Standard); 2 a 150 assentos.
+- Enterprise: US$ 20/assento no anual, mínimo de 20 assentos, uso cobrado a
+  preço de API.
+[CONFIRMADO] "Preços e planos estão sujeitos a alteração." A página não informa
+preço regional em reais. [8]
+
+[CONFIRMADO] Em Team e Enterprise, o uso de cada membro sai de uma franquia por
+assento que se renova numa janela de cinco horas e numa janela semanal, e é
+compartilhada com o Claude chat e o Cowork. [5]
+
+[CONFIRMADO] Custo médio em empresas: cerca de US$ 13 por desenvolvedor por dia
+ativo e US$ 150–250 por mês, abaixo de US$ 30 por dia ativo para 90% dos
+usuários. [5]
+
+[CONFIRMADO] Disponibilidade por recurso multiagente: [1][2][3][4]
+- Subagentes: qualquer conta com Claude Code.
+- Agent teams: experimental e desligado por padrão; ligar com
+  CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1; só em sessão interativa.
+- Dynamic workflows: todos os planos pagos, API e nuvens parceiras; no Pro, ligar
+  na linha Dynamic workflows do /config.
+- Agent view: research preview.
+- Projects: beta público em Pro, Max e Ultra.
+
+[CONFIRMADO] Limites técnicos relevantes: até 20 subagentes simultâneos por padrão
+(CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS); subagentes podem criar subagentes até
+três níveis abaixo da conversa principal (CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH);
+sem limite total de subagentes por sessão. [1]
+
+[CONFIRMADO] Workflows: até 16 agentes simultâneos por padrão; até 4.096 itens
+por parallel() ou pipeline(); 1.000 agentes por execução; aviso "Large workflow"
+acima de 25 agentes ou 1,5 milhão de tokens projetados. No Pro, a diretriz de
+tamanho padrão é small (menos de 5 agentes); nos demais, medium (menos de 10).
+[3]
+
+2.2 n8n
+
+[CONFIRMADO] Planos do n8n Cloud em 18/11/2026, em euros, cobrança anual: [18]
+- Starter: € 20/mês — 2.500 execuções/mês, 5 execuções simultâneas, workflows
+  ativos ilimitados, 1.600 créditos de Assistant/mês.
+- Pro: € 50/mês — 10.000 execuções/mês, até 50 execuções simultâneas (a tabela
+  mostra "20 / 50"), até 9.600 créditos de Assistant.
+- Business: € 667/mês — 40.000 execuções; só self-hosted ("not yet" na nuvem).
+- Enterprise: sob consulta; 200+ execuções simultâneas.
+- Community Edition: versão self-hosted padrão disponível no GitHub; a página não
+  lista preço.
+
+[CONFIRMADO] Todos os planos incluem "Agents, MCP and AI nodes", o AI Agent, MCP
+Server Trigger e MCP Client. Starter e Pro incluem "Gateway credits". [18]
+
+[CONFIRMADO] Avaliação "light" em todos os planos; avaliação com métricas: 1
+workflow no Starter e ilimitada no Pro e Enterprise. Tracing LangSmith e
+OpenTelemetry: "Available in self-hosted". Log streaming: só Enterprise. [18]
+
+[CONFIRMADO] Teste do Cloud: sem cartão; 1.000 execuções, 5 execuções
+simultâneas, timeout de 180 segundos e 800 créditos de Assistant. O teste do
+Business dura 14 dias e exige cartão. [18]
+
+[VERIFICAR] Duração do teste gratuito do Cloud: a página de preços não informa
+dias; um espelho não oficial da documentação fala em 14 dias com recursos do Pro.
+A página oficial "Start your free trial" diz que o workspace é apagado se não
+houver upgrade ao fim do teste. Confirmar antes de gravar. [18][36]
+
+[CONFIRMADO] Recurso Agents: n8n Cloud em todos os planos; turnos de agente
+contam na mesma cota de execuções dos workflows; modo de fila (queue mode) ainda
+não é suportado. [16]
+
+[CONFIRMADO] Avaliação com métricas no self-hosted: Enterprise; usuários
+Community registrados e Starter podem usar em um workflow. Casos de teste em
+paralelo: 1 (sequencial) no Community e Cloud Pro; 3 no Business; 5 no
+Enterprise. [15]
+
+[CONFIRMADO] O n8n não fornece o modelo de linguagem sem custo: é preciso
+credencial de um provedor (OpenAI, Anthropic, OpenRouter etc.) ou usar Gateway
+credits (introduzidos na 2.36, 02/09/2026). [17][18][21][22]
+
+[VERIFICAR] Se o teste gratuito do Cloud inclui Gateway credits suficientes para
+as oficinas. NÃO ENCONTRADO em docs.n8n.io e n8n.io/pricing.
+
+2.3 Requisitos combinados para o aluno
+
+[SUGESTÃO]
+- Essentials: navegador + conta n8n Cloud em teste ou Starter + chave de API de um
+  provedor com limite de gasto configurado. Claude Code apenas demonstrado em
+  vídeo ou feito por quem já tem Pro.
+- Hands On: Claude Code (Pro ou superior) instalado ou app Desktop; n8n Cloud ou
+  self-hosted; Git opcional; repositório de prática da seção 12.
+- Região: conferir país suportado pela Anthropic e moeda/imposto no checkout;
+  não converter dólar ou euro manualmente no curso.
+
+================================================================
+3. PRIMEIROS PASSOS (NOMES EXATOS DA INTERFACE)
+================================================================
+
+3.1 Claude Code — primeiro subagente (sem programar)
+
+Passo a passo (ajuda en) [1][7]:
+1. Instalar e abrir um terminal na pasta do projeto, ou usar o app Desktop.
+2. Rodar: claude  → seguir o login no navegador com conta Pro ou superior.
+3. Conferir instalação: claude --version (deve imprimir algo como
+   "2.1.xxx (Claude Code)"); diagnóstico: claude doctor.
+4. Pedir em linguagem natural, por exemplo:
+   "Crie um subagente de projeto chamado revisor-de-texto em .claude/agents/.
+   Ele deve ser somente leitura, usar Sonnet e revisar clareza e coerência."
+5. Abrir e revisar o arquivo gerado (.claude/agents/revisor-de-texto.md).
+6. Invocar: "Use o subagente revisor-de-texto para revisar o README" ou com
+   @-menção: @"revisor-de-texto (agent)" ou @agent-revisor-de-texto.
+7. Acompanhar: /tasks lista o que está em segundo plano; Ctrl+B manda uma tarefa
+   em execução para segundo plano; Esc nega uma chamada de ferramenta sem parar o
+   subagente.
+
+[CONFIRMADO] Sinal de êxito: o subagente aparece no painel abaixo do campo de
+mensagem enquanto roda e devolve um resumo à conversa principal. [1]
+
+[CONFIRMADO] Erro comum: se a pasta ~/.claude/agents/ não existia quando a sessão
+começou, o Claude não encontra o novo subagente; é preciso reiniciar o Claude
+Code. Arquivos sem name, com "---" fora da primeira linha, com ":" no nome ou sem
+description são ignorados em silêncio; usar claude --debug para ver o motivo.
+[1]
+
+Formato mínimo do arquivo (ajuda en) [1]:
+---
+name: revisor-de-texto
+description: Revisa textos quanto a clareza e coerência. Use após redigir.
+tools: Read, Glob, Grep
+model: sonnet
+---
+Você é um revisor. Aponte problemas de clareza, coerência e termos sem definição,
+em lista numerada com trecho, problema e sugestão. Não edite arquivos.
+
+3.2 Claude Code — primeira equipe de agentes (experimental)
+
+Passo a passo (ajuda en) [2]:
+1. Ligar o recurso em settings.json:
+   { "env": { "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1" } }
+2. Em sessão interativa, pedir: "Spawn three teammates to explore this from
+   different angles: one on UX, one on technical architecture, one playing
+   devil's advocate." (exemplo oficial; pode ser pedido em português).
+3. O líder cria a lista de tarefas compartilhada e os colegas (teammates).
+4. Navegar no painel de agentes: setas para cima/baixo selecionam um colega;
+   Enter abre a transcrição e permite enviar mensagem direta; Esc limpa a seleção
+   ou interrompe o turno do colega que está sendo visto; x para um colega
+   selecionado; Ctrl+T mostra/oculta a lista de tarefas.
+5. Encerrar: "Ask the researcher teammate to shut down".
+
+[CONFIRMADO] Atenção: o Claude pode usar subagentes em vez de equipe; o painel
+sozinho não confirma que uma equipe se formou. Se isso ocorrer, pedir
+explicitamente "an agent team". [2]
+
+[CONFIRMADO] Com equipes ligadas, um subagente que o Claude "nomeia" sai como
+colega de equipe, e equipes podem se formar sem pedido; para voltar ao normal,
+ajustar a variável para "0". [2]
+
+3.3 Claude Code — primeiro workflow dinâmico
+
+[CONFIRMADO] Passo a passo (ajuda en) [3]:
+1. Rodar /deep-research <pergunta> (workflow embutido; exige WebSearch).
+2. Aprovar: opções "Yes, run it", "Yes, and don't ask again for <name> in
+   <path>" (só para workflows salvos/embutidos), "View raw script" e "No".
+   No app Desktop o cartão tem Once, Always e Deny.
+3. Acompanhar com /workflows: ↑/↓ seleciona fase ou agente; Enter detalha;
+   f filtra; p pausa/retoma; x para; r reinicia agente; s salva o script.
+4. Ler o relatório final, com fontes e alegações não confirmadas filtradas.
+Para criar um workflow próprio: incluir a palavra ultracode no pedido ou escrever
+"use a workflow". Para salvar: /workflows → selecionar execução → s.
+
+3.4 n8n — primeiro orquestrador com dois especialistas (visual)
+
+Passo a passo [SUGESTÃO] montado a partir de (ajuda en) [11][12][19][20]:
+1. Criar workflow novo e adicionar o gatilho de chat ("When chat message
+   received").
+2. Adicionar o nó AI Agent (orquestrador). Conectar um Chat Model (sub-nó de
+   modelo) e, se houver conversa de vários turnos, Simple Memory.
+3. No conector Tools do AI Agent, adicionar dois nós AI Agent Tool:
+   "Pesquisador" e "Redator". Em cada um preencher Description (quando o
+   orquestrador deve chamá-lo), Prompt (User Message) e, em Options, System
+   Message e Max Iterations. Cada AI Agent Tool precisa do próprio Chat Model.
+4. Ligar "Require Specific Output Format" no Redator e conectar um parser de
+   saída estruturada, se quiser JSON.
+5. No System Message do orquestrador: quem são os especialistas, em que ordem
+   usar, formato final e quando parar.
+6. Abrir o chat, enviar um pedido e acompanhar a execução no canvas.
+7. Conferir em Executions: abrir a execução, clicar no AI Agent e ver os passos
+   intermediários (ligar "Return Intermediate Steps" ajuda). [37]
+
+[CONFIRMADO] O AI Agent exige pelo menos uma ferramenta conectada. [11]
+[CONFIRMADO] Em sub-nós, expressões sempre resolvem para o primeiro item de
+entrada (ex.: {{ $json.name }}). [12][13]
+[CONFIRMADO] "Uma descrição boa e específica diz ao agente pai quando delegar
+tarefas a este agente." [12]
+
+3.5 n8n — primeiro bloqueio humano
+
+[CONFIRMADO] Passo a passo (ajuda en) [14]:
+1. Clicar no conector Tools do AI Agent para abrir o painel de ferramentas.
+2. Na seção Human review, escolher o canal de aprovação e configurar credencial.
+3. Conectar as ferramentas que exigem aprovação ao conector de ferramentas do
+   passo de revisão humana.
+4. Descrever no System Message quais ferramentas precisam de aprovação e o que
+   fazer se forem negadas.
+Canais: Chat do n8n, Slack, Discord, Telegram, Microsoft Teams, Gmail, WhatsApp
+Business Cloud, Google Chat e Microsoft Outlook.
+Sinal de êxito: o workflow pausa; o revisor vê qual ferramenta e com quais
+parâmetros; Approve executa, Deny cancela e informa a IA.
+
+3.6 n8n — recurso Agents (Preview)
+
+[CONFIRMADO] (ajuda en) [16]: projeto → aba Agents → Create Agent → nomear →
+escolher modelo e escrever Instructions → adicionar Tools, Skills, Knowledge
+(csv, pdf, markdown, txt) e memória episódica opcional → Preview → Publish. Só a
+versão publicada roda para usuários, canais e agendamentos. Subagentes: na seção
+Agents da lista de capacidades, Add agent → escolher um agente publicado →
+descrever quando chamá-lo; o número de subagentes em paralelo é definido nas
+configurações do agente. Self-hosted: ligar em Settings > Agents (Enable Agents).
+
+[CONFIRMADO] A opção Enable Agents "não afeta o nó AI Agent de workflows". [16]
+
+[SUGESTÃO] Como é Preview, usar Agents só como "novidade a observar" no
+Essentials; construir as oficinas com AI Agent + AI Agent Tool, que é estável.
+
+================================================================
+4. GLOSSÁRIO PARA LEIGOS
+================================================================
+
+Agente: programa que recebe um objetivo, decide passos e usa ferramentas em ciclo
+até concluir; checa o resultado real de cada ação. [10]
+Agente único com ferramentas: um só agente que chama várias ferramentas (busca,
+planilha, e-mail). Primeira opção a tentar. [10][20]
+Sistema multiagente: vários agentes com papéis distintos coordenados para um
+objetivo comum. [19]
+Orquestrador / líder / supervisor: agente que divide o trabalho, distribui e junta
+os resultados. No Claude Code, "team lead"; no n8n, o AI Agent raiz. [2][12]
+Trabalhador / especialista / worker: agente que executa uma parte delimitada. [10]
+Subagente: agente chamado por outro, com contexto próprio, que devolve só um
+resumo. No Claude Code roda dentro de uma sessão. [1]
+Colega de equipe (teammate): no Claude Code, sessão completa e independente que
+conversa com as outras e com o líder. [2]
+Agente como ferramenta (agent as tool): o agente principal chama o especialista
+como se fosse uma ferramenta e continua dono da conversa. [12][28]
+Handoff (passagem de bastão): o controle da conversa passa ao especialista, que
+responde diretamente ao usuário. [28][29]
+Roteador (router): passo que classifica a entrada e a envia ao especialista
+certo; pode ser regra fixa (Switch) ou um LLM. [10][20][29]
+Pipeline / encadeamento: etapas em ordem fixa; a saída de uma é a entrada da
+próxima. [10]
+Paralelização: várias partes ao mesmo tempo (seccionamento) ou a mesma tarefa
+várias vezes para votar. [10]
+Avaliador-otimizador / revisão / debate: um agente produz, outro critica, até
+atingir o critério. [10][2]
+Swarm (enxame): agentes que se coordenam entre pares, sem chefe fixo. O estudo do
+Google chama de "decentralized" (malha ponto a ponto). [25]
+Contexto / janela de contexto: tudo o que o modelo "vê" numa chamada. Cada
+subagente ou colega tem a sua. [1][2]
+Contrato de entrada e saída: acordo explícito do que cada agente recebe e devolve
+(campos, formato, limites). [SUGESTÃO]
+Artefato: arquivo ou documento produzido e passado adiante (relatório, planilha,
+código). [SUGESTÃO]
+Estado: o que já foi feito e decidido; inclui lista de tarefas e resultados
+salvos. [2][3]
+Memória: informação guardada entre turnos ou sessões (Simple Memory no n8n;
+campo memory no Claude Code). [1][19]
+Critério de parada: condição que encerra o trabalho (meta atingida, número máximo
+de iterações, tempo, custo). [SUGESTÃO; base em 1][12][20]
+Max Iterations / maxTurns: limite de ciclos de um agente no n8n e no Claude Code.
+[1][12]
+Human-in-the-loop / revisão humana: pausa para uma pessoa aprovar ou negar uma
+ação. [14]
+Permissão / menor privilégio: dar a cada agente só as ferramentas necessárias.
+[1][6]
+Prompt injection: texto malicioso que tenta mudar as instruções do agente. [6]
+Token: unidade de texto que o modelo lê e escreve; base do custo. [5]
+Observabilidade: capacidade de ver o que cada agente fez, quanto custou e quanto
+demorou. [5][17][20]
+Rastreamento (tracing): registro encadeado de cada passo de uma execução. [17]
+Avaliação (eval): rodar casos de teste com resultado esperado e medir. [15]
+LLM como juiz: um modelo dá nota à resposta de outro usando uma rubrica. [9][15]
+Worktree: cópia isolada do repositório Git para um agente editar sem conflito.
+[1][4]
+
+================================================================
+5. FUNCIONALIDADES, LOCALIZAÇÃO, PLANO, LIMITES E DEPENDÊNCIAS
+================================================================
+
+5.1 Claude Code — subagentes
+
+[CONFIRMADO] Cada subagente roda na própria janela de contexto, com prompt de
+sistema, ferramentas e permissões próprios, e devolve só o resumo. Suas
+requisições contam nos mesmos limites de uso da conversa principal. [1]
+
+[CONFIRMADO] Subagentes embutidos: Explore (somente leitura, busca rápida),
+Plan (somente leitura, pesquisa no modo de planejamento), General-purpose
+(todas as ferramentas), statusline-setup (Sonnet) e claude-code-guide (Haiku).
+[1]
+
+[CONFIRMADO] Onde ficam e prioridade (maior primeiro): configurações gerenciadas
+da organização; flag --agents; .claude/agents/ do projeto; ~/.claude/agents/ do
+usuário; pasta agents/ de plugin. Em nomes iguais, vence a de maior prioridade.
+[1]
+
+[CONFIRMADO] Campos do cabeçalho (só name e description são obrigatórios): tools
+(lista permitida), disallowedTools (lista negada), model (sonnet, opus, haiku,
+fable, ID completo ou inherit), permissionMode, maxTurns, autoCompactWindow,
+skills, mcpServers, hooks, memory (user, project ou local), background,
+omitClaudeMd, effort, isolation (worktree), color, initialPrompt. [1]
+
+[CONFIRMADO] Modos de permissão: default/manual (pergunta), acceptEdits, auto
+(classificador revisa), dontAsk (nega o que perguntaria), bypassPermissions e
+plan (somente leitura). Se a conversa principal estiver em bypassPermissions,
+acceptEdits ou auto, o subagente herda e ignora o próprio permissionMode. [1]
+
+[CONFIRMADO] Ferramentas sempre retiradas de subagentes: AskUserQuestion,
+EnterPlanMode, ExitPlanMode (exceto em plan), ScheduleWakeup, entre outras. Ou
+seja, um subagente não pode fazer perguntas ao usuário. [1]
+
+[CONFIRMADO] Subagentes não veem o histórico da conversa nem arquivos já lidos;
+recebem a mensagem de delegação, o próprio prompt, CLAUDE.md (salvo omissão) e
+um retrato do git status. Explore e Plan não carregam CLAUDE.md. [1]
+
+[CONFIRMADO] Primeiro plano e segundo plano: em primeiro plano o subagente
+bloqueia a conversa; em segundo plano roda em paralelo e os pedidos de permissão
+aparecem na sessão principal com o nome do subagente. Por padrão, subagentes
+criados pelo Claude começam em segundo plano. [1]
+
+[CONFIRMADO] Retomar: cada chamada cria instância nova; para continuar, pedir ao
+Claude que retome (ele usa SendMessage com o ID ou nome). Explore e Plan não podem
+ser retomados. Transcrições ficam em
+~/.claude/projects/{projeto}/{sessão}/subagents/agent-{id}.jsonl e são apagadas
+após 30 dias por padrão. [1]
+
+[CONFIRMADO] Memória persistente: user em ~/.claude/agent-memory/<agente>/;
+project em .claude/agent-memory/<agente>/ (padrão recomendado); local em
+.claude/agent-memory-local/<agente>/. As primeiras 200 linhas ou 25 KB do
+MEMORY.md entram no prompt. [1]
+
+[CONFIRMADO] Hooks específicos: PreToolUse e PostToolUse no cabeçalho do
+subagente; SubagentStart e SubagentStop em settings.json, com filtro pelo nome do
+agente. Exemplo oficial: hook que bloqueia INSERT/UPDATE/DELETE de um subagente
+leitor de banco (código de saída 2 bloqueia). [1]
+
+[CONFIRMADO] Plugins não podem definir hooks, mcpServers nem permissionMode em
+subagentes, por segurança. [1]
+
+5.2 Claude Code — agent teams
+
+[CONFIRMADO] Componentes: team lead (sessão principal), teammates (instâncias
+separadas), task list (lista compartilhada) e mailbox (mensagens). Tarefas têm
+três estados: pending, in progress e completed; podem depender de outras e
+aparecem bloqueadas até elas terminarem. A reivindicação usa trava de arquivo
+para evitar disputa. [2]
+
+[CONFIRMADO] Diferenças em relação a subagentes: [2]
+- Contexto: ambos têm janela própria; colegas são totalmente independentes.
+- Comunicação: subagentes devolvem ao chamador; colegas falam entre si.
+- Coordenação: no subagente, o principal gerencia tudo; na equipe, há
+  auto-coordenação por mensagens e lista de tarefas.
+- Melhor para: tarefa focada em que só o resultado importa vs. trabalho que exige
+  discussão e colaboração.
+- Custo: menor vs. maior (cada colega é uma instância separada).
+
+[CONFIRMADO] Modos de exibição: in-process (qualquer terminal) e split panes
+(exige tmux ou iTerm2; configurar teammateMode "auto"). [2]
+
+[CONFIRMADO] Planejar antes de implementar: com o líder em plan mode, o colega
+criado também planeja e envia pedido de aprovação ao líder; se o modo do colega
+não foi alterado, o Claude Code aprova o plano automaticamente, sem revisão do
+líder. [2]
+
+[CONFIRMADO] Permissões: não é possível definir modo por colega ao criá-lo; o
+colega começa no modo do líder, inclusive bypassPermissions. Pedidos de permissão
+dos colegas aparecem na sessão do líder. Uma mensagem de outro agente é marcada
+como vinda de outra sessão do Claude, não do usuário; um colega não pode aprovar
+permissão nem dar consentimento pelo usuário. [2]
+
+[CONFIRMADO] Portões de qualidade por hooks: TeammateIdle, TaskCreated e
+TaskCompleted; sair com código 2 impede a ação e devolve feedback. [2]
+
+[CONFIRMADO] Limitações: /resume e /rewind não restauram colegas in-process;
+status de tarefa pode atrasar; desligamento pode ser lento; uma equipe por
+sessão; sem equipes aninhadas; o líder é fixo; sem modo de permissão por colega
+na criação; split panes exige tmux ou iTerm2. [2]
+
+[CONFIRMADO] Tamanho recomendado: começar com 3 a 5 colegas; 5 a 6 tarefas por
+colega; "três colegas focados frequentemente superam cinco dispersos". [2]
+
+5.3 Claude Code — dynamic workflows
+
+[CONFIRMADO] Um workflow dinâmico é um script JavaScript que orquestra muitos
+subagentes; o Claude escreve o script e um runtime o executa em segundo plano.
+Funções: agent() cria um subagente, pipeline() roda um por item de lista,
+parallel() roda vários ao mesmo tempo, phase() agrupa e log() registra. Um
+schema faz o subagente devolver JSON validado (até cinco tentativas). [3]
+
+[CONFIRMADO] Quem decide o próximo passo: em subagentes e equipes, o Claude turno a
+turno; no workflow, o script. Resultados intermediários ficam em variáveis do
+script, não no contexto do Claude. Execução retomável na mesma sessão. [3]
+
+[CONFIRMADO] Não aceita entrada do usuário no meio da execução; para aprovação
+entre etapas, rodar cada etapa como workflow separado. [3]
+
+[CONFIRMADO] Salvar para reutilizar: .claude/workflows/ (projeto, compartilhado no
+repositório) ou ~/.claude/workflows/ (pessoal); vira o comando /<nome>. [3]
+
+5.4 n8n — peças para multiagentes
+
+[CONFIRMADO] AI Agent: conecta um modelo de chat a ferramentas; o agente decide
+quais chamar. Exige pelo menos uma ferramenta. [11]
+
+[CONFIRMADO] AI Agent Tool: permite que um agente raiz chame outros agentes como
+ferramentas; pode ser aninhado em várias camadas. Parâmetros: Description,
+Prompt (User Message), Require Specific Output Format, Enable Fallback Model.
+Opções: System Message, Max Iterations, Return Intermediate Steps,
+Automatically Passthrough Binary Images, Batch Processing (Batch Size e Delay
+Between Batches). [12]
+
+[CONFIRMADO] Call n8n Workflow Tool: o agente roda outro workflow e recebe a
+saída. Source: Database (escolher workflow ou ID) ou Define Below (colar JSON).
+Workflow Inputs aparecem após definir o schema de entrada no sub-workflow e
+clicar em Refresh; cada entrada aceita valor fixo, expressão, valor definido pela
+IA ("Let the model define this parameter") ou $fromAI(). Em produção, o
+sub-workflow precisa estar publicado; senão, erro "Workflow is not active and
+cannot be executed". [13]
+
+[CONFIRMADO] Quando usar cada um: AI Agent Tool para "delegação dinâmica, em que o
+orquestrador precisa decidir em tempo de execução qual especialista acionar";
+sub-workflows para "pipelines previsíveis em que você conhece a sequência", para
+reutilização e teste independente. Separar sub-workflows quando a lógica se
+repete, o canvas passa de 15–20 nós ou partes precisam de teste isolado. [20]
+
+[CONFIRMADO] Execução: sistemas multiagente no n8n rodam em sequência por padrão;
+paralelismo é opcional (Execute sub-workflow, HTTP Request com várias requisições
+ou nó LangChain Code). [19]
+
+[CONFIRMADO] Memória: Simple (janela), em banco (Postgres, Redis, MongoDB) e
+estratégias de session ID (compartilhada, isolada ou por usuário). Para passagem
+eficiente, guardar resultados intermediários em memória compartilhada (nó Memory
+Manager) e passar IDs ou URLs em vez do conteúdo completo. [19][20]
+
+[CONFIRMADO] Roteamento: Switch para categoria conhecida; IF para portões de
+qualidade (aprovar ou devolver o rascunho). [20]
+
+[CONFIRMADO] Revisão humana por ferramenta (2.6+), inclusive dentro de subagentes:
+"Human review steps in sub-agents work correctly when an AI Agent is used as a
+tool for another agent." Variáveis: $tool.name e $tool.parameters. [14][17]
+
+[CONFIRMADO] Avaliações: light (comparar saídas com casos conhecidos durante o
+desenvolvimento) e com métricas. Métricas embutidas da operação Set Metrics:
+Correctness (IA, 1–5), Helpfulness (IA, 1–5), String Similarity (0–1),
+Categorization (0 ou 1) e Tools Used (0–1); métricas personalizadas são sempre
+números. Operação "Check if evaluating" evita custo de métrica em produção.
+Rodar em Evaluations tab → Run Test. Datasets em data tables ou Google Sheets.
+[15]
+
+[CONFIRMADO] Agents (Preview, 2.40): construtor com abas Agent, Instructions,
+Tools, Capabilities, Skills, Knowledge, Memory, Agents (subagentes), Channels
+(Slack, Telegram, Linear, Microsoft Teams), Schedules e Sessions; nó Message an
+Agent e Message an Agent Tool para usar agentes dentro de workflows; aprovação
+para chamadas sensíveis. [16]
+
+5.5 Tabela-síntese de padrões por ferramenta [SUGESTÃO, com base nas fontes]
+
+Padrão                      | Claude Code                         | n8n
+----------------------------|-------------------------------------|-----------------------------
+Agente único + ferramentas  | sessão normal                       | AI Agent + tools
+Supervisor/worker           | subagentes; agent teams (líder)     | AI Agent + AI Agent Tool
+Roteador                    | description dos subagentes          | Switch / IF; ou orquestrador
+Pipeline sequencial         | "use X e depois Y"; workflow        | sub-workflows encadeados
+Paralelo (fan-out)          | subagentes em 2º plano; workflow    | Execute sub-workflow/HTTP
+Debate/revisão              | equipe com hipóteses concorrentes   | IF + loop com limite
+Handoff                     | NÃO NATIVO como passagem de conversa| NÃO NATIVO; aproximar com
+                            | [VERIFICAR]                         | Switch + agentes distintos
+Escalonamento humano        | permissões; hooks; plan mode        | Human review por ferramenta
+Swarm/pares                 | colegas de equipe trocam mensagens  | peer-to-peer opcional [19]
+
+================================================================
+6. CASOS REAIS PUBLICADOS
+================================================================
+
+6.1 Pesquisa
+
+[CONFIRMADO] Anthropic Research (recurso do Claude): agente líder planeja e cria
+subagentes paralelos que buscam e devolvem achados; um agente de citação ajusta
+fontes. Produção. Resultados: +90,2% sobre agente único na avaliação interna;
+paralelizar cortou até 90% do tempo em consultas complexas; custo de ~15x
+tokens de um chat. [9]
+
+[CONFIRMADO] /deep-research do Claude Code: workflow embutido que espalha buscas
+por vários ângulos, cruza fontes, vota em cada alegação e filtra as que não
+sobrevivem. Produto em produção. [3]
+
+6.2 Desenvolvimento de software
+
+[CONFIRMADO] Exemplos oficiais de equipes: revisão paralela de PR (segurança,
+desempenho, cobertura de testes) e investigação de bug com cinco hipóteses
+concorrentes em formato de debate. São exemplos de documentação, não estudos de
+caso medidos. [2]
+
+[CONFIRMADO] Exemplos oficiais de workflow: auditoria de rotas sem autenticação,
+migração de 500 arquivos JS→TS, correção até o type check passar. [3]
+
+[CONFIRMADO] Contraponto: Cognition (Devin) relatou que dividir "construir um clone
+de Flappy Bird" entre dois subagentes gerou um fundo no estilo Super Mario e um
+pássaro incompatível; defende agente linear único com compressão de histórico.
+[24]
+
+6.3 Suporte
+
+[CONFIRMADO] Exemplo n8n: orquestrador roteia para especialistas de cobrança,
+técnico e conta; a qualidade do roteamento depende das descrições das
+ferramentas. É exemplo didático do blog, não caso de cliente. [20]
+
+[CONFIRMADO] Template n8n 11525: coordenador com subagente RAG (Qdrant),
+subagente de e-mail (Gmail) e ferramenta de notícias. Demonstração. [23]
+
+6.4 Conteúdo
+
+[CONFIRMADO] Template n8n 4904 (Pyragogy): gerador de manual com
+meta-orquestrador e revisão humana. Demonstração comunitária. [38]
+[CONFIRMADO] Template n8n 3473: chat com vários agentes acionados por @menção,
+cada um com modelo e instruções próprios; os agentes seguintes veem as respostas
+anteriores. Demonstração. [22]
+
+6.5 Operações e planejamento
+
+[CONFIRMADO] Template n8n 7504: agente "CEO" delega a agentes de Marketing,
+Operações e Finanças e compila plano em Markdown, JSON e PDF, compartilhado no
+Slack ou Drive. Demonstração gratuita. [21]
+
+6.6 Brasil
+
+NÃO ENCONTRADO: caso brasileiro publicado, com métricas, de sistema multiagente em
+Claude Code ou n8n em produção. Buscas em n8n.io/case-studies, blog.n8n.io,
+claude.com/customers e imprensa brasileira (termos "multiagente", "agentes de IA
+n8n", "Claude Code empresa brasileira") em 18/11/2026.
+
+[SUGESTÃO] Rotular sempre como "demonstração" os templates e exemplos de
+documentação; apenas o sistema de pesquisa da Anthropic tem dados de produção
+publicados pelo próprio operador.
+
+================================================================
+7. BOAS PRÁTICAS E EXEMPLOS OFICIAIS
+================================================================
+
+7.1 Decidir se vale dividir
+
+[CONFIRMADO] Anthropic: começar simples e acrescentar complexidade "só quando
+demonstravelmente melhora os resultados". [10]
+[CONFIRMADO] Claude Code: antes de montar equipe, verificar se uma opção mais leve
+resolve; equipes funcionam melhor quando os colegas operam de forma
+independente; para tarefas sequenciais, edições no mesmo arquivo ou muitas
+dependências, sessão única ou subagentes são mais eficazes. [2]
+[CONFIRMADO] n8n: "Não use um agente para trabalho que um nó simples faz melhor";
+evitar multiagente em tarefas simples em que a coordenação custa mais que o
+benefício. [19][20]
+[CONFIRMADO] Google: o desempenho depende das propriedades da tarefa
+(decomponibilidade, número de ferramentas); o modelo preditivo acertou a melhor
+estratégia em 87% das configurações não vistas. [25]
+
+[SUGESTÃO] Checklist "dividir ou não dividir" (5 perguntas):
+1. As partes podem andar sem esperar umas pelas outras?
+2. Cada parte tem entrada e saída claras e verificáveis?
+3. Um agente único está estourando contexto ou escolhendo mal entre muitas
+   ferramentas?
+4. O ganho esperado (qualidade, tempo) compensa 4–15x mais tokens?
+5. Existe um jeito de medir se ficou melhor que o agente único?
+Se houver menos de 3 "sim", ficar com agente único.
+
+7.2 Escrever papéis e delegações
+
+[CONFIRMADO] Anthropic Research: dar a cada subagente objetivo claro, formato de
+saída, orientação de ferramentas e limites da tarefa para evitar duplicidade;
+regras de escala de esforço (fato simples: 1 agente e 3–10 chamadas de
+ferramenta); começar amplo e depois estreitar; reescrever descrições ruins de
+ferramentas reduziu em 40% o tempo de conclusão. [9]
+[CONFIRMADO] Claude Code: description curta para o Claude delegar bem; detalhes no
+corpo do prompt; ferramentas no mínimo necessário; Haiku para tarefas simples e
+volumosas; repetir regras do projeto no pedido de delegação se o subagente não ler
+CLAUDE.md. [1]
+[CONFIRMADO] Equipes: dar contexto suficiente no prompt de criação (exemplo
+oficial descreve pasta, foco, tecnologia e formato com severidade). [2]
+[CONFIRMADO] n8n: incluir no System Message a configuração de ferramentas e de
+revisão humana; descrições de ferramentas guiam o roteamento. [14][20]
+
+Modelo de cartão de papel [SUGESTÃO]:
+PAPEL: (nome curto)
+MISSÃO: (uma frase)
+RECEBE: (campos, formato, origem)
+ENTREGA: (campos, formato, destino)
+FERRAMENTAS PERMITIDAS: (lista mínima)
+PROIBIDO: (ações que nunca faz)
+PARA QUANDO: (critério de conclusão; limite de iterações/tempo)
+SE FALHAR: (devolve erro estruturado / escala para humano)
+
+7.3 Coordenar e acompanhar
+
+[CONFIRMADO] Claude Code: evitar que dois colegas editem o mesmo arquivo; dividir
+tarefas em unidades autocontidas com entregável claro; mandar o líder esperar os
+colegas se ele começar a implementar sozinho; monitorar e redirecionar; começar
+com pesquisa e revisão antes de implementação paralela. [2]
+[CONFIRMADO] n8n: logar decisões de roteamento com a entrada que as motivou;
+testar cada especialista isolado antes de conectar; versionar prompts, modelos e
+ferramentas; "sem versionamento, você fica adivinhando qual mudança causou o
+problema". [20]
+
+7.4 Avaliar
+
+[CONFIRMADO] Anthropic: começar com amostra pequena (cerca de 20 consultas), LLM
+como juiz com nota 0,0–1,0 e aprovado/reprovado, rubrica com precisão factual,
+precisão de citação, completude, qualidade de fonte e eficiência de ferramentas;
+testes humanos continuam necessários; para agentes que mudam estado, avaliar o
+estado final. [9]
+[CONFIRMADO] n8n: casos de teste com resposta de referência; métricas por
+execução; rodar em Evaluations → Run Test. [15]
+
+================================================================
+8. SEGURANÇA, PRIVACIDADE, DADOS, CREDENCIAIS E LGPD
+================================================================
+
+8.1 Modelo de ameaça para leigos [SUGESTÃO com base em 27]
+Mais agentes = mais portas. Cada agente lê conteúdo, tem ferramentas e passa
+mensagens. Um texto malicioso lido por um agente pode virar instrução para o
+próximo; um erro de um agente pode ser tratado como fato pelos outros.
+
+8.2 Riscos catalogados (OWASP Agentic Top 10, 2026) [27]
+[CONFIRMADO] ASI01 Agent Goal Hijack (conteúdo malicioso altera objetivos);
+ASI02–ASI06 cobrem uso indevido de ferramentas, abuso de identidade e privilégio,
+cadeia de suprimentos, execução de código e envenenamento de memória; ASI07
+Insecure Inter-Agent Communication (mensagens sem autenticação permitem
+falsificação ou injeção); ASI08 Cascading Failures (erro de um agente se propaga);
+ASI09 Human-Agent Trust Exploitation; ASI10 Rogue Agents (agentes comprometidos
+agindo fora do escopo). Princípios: Least Agency e Strong Observability.
+[VERIFICAR] Nomes exatos de ASI02–ASI06 vieram de fontes secundárias; conferir no
+PDF oficial (seção 16).
+
+8.3 Controles no Claude Code
+[CONFIRMADO] Menor privilégio por subagente: tools, disallowedTools, mcpServers
+próprios, permissionMode e hooks PreToolUse para validar comandos. [1]
+[CONFIRMADO] Mensagens entre agentes são marcadas como vindas de outra sessão; um
+colega negado não pode repassar a ação a outro colega para burlar a checagem; no
+modo auto, o classificador trata alegação de aprovação vinda de outro agente como
+entrada não confiável. [2]
+[CONFIRMADO] Relatórios finais de subagentes são verificados contra imitação de
+tags de sistema ou texto de permissão; a verificação marca, não remove, e não
+substitui as permissões. [1]
+[CONFIRMADO] Proteções gerais: aprovação de comandos de rede (curl, wget) no modo
+Manual; sandbox de Bash com isolamento de arquivos e rede (não suportado no
+Windows nativo; suportado no WSL 2); diálogo de confiança na pasta; boas práticas
+com conteúdo não confiável: revisar comandos, não "despejar" conteúdo não
+confiável, verificar mudanças em arquivos críticos, usar VMs. "Nenhum sistema é
+completamente imune." [6][7]
+[CONFIRMADO] Atenção: colegas de equipe herdam o modo do líder, inclusive
+bypassPermissions. [2]
+[CONFIRMADO] Arquivos de agente de projeto com hooks ou servidores MCP inline
+exigem confiança na pasta. [1]
+
+8.4 Controles no n8n
+[CONFIRMADO] Revisão humana é bloqueio real na ferramenta, não instrução de prompt:
+a ferramenta não executa sem aprovação; recomendada para ações irreversíveis
+(apagar dados, enviar comunicação externa, compras), exigência de conformidade ou
+alto impacto; começar com revisão ligada e reduzir com a confiança. [14]
+[CONFIRMADO] 2.30: aprovações registram identidade do aprovador e horário. 2.44
+(Enterprise): políticas de tipo de nó checadas também no uso de ferramentas por
+agentes. [17]
+[CONFIRMADO] Isolar falhas: cada agente ou sub-workflow com tratamento de erro
+próprio; erros estruturados com campo success; timeouts explícitos (~30 s como
+ponto de partida). [20]
+
+8.5 Dados, credenciais e LGPD [SUGESTÃO, salvo marcações]
+- Nunca colar chaves de API em prompts; no n8n usar Credentials; no Claude Code,
+  credenciais ficam no Keychain (macOS), arquivo 0600 (Linux) ou perfil do
+  usuário (Windows). [CONFIRMADO 6]
+- Cada agente extra é mais um ponto que lê dados pessoais: minimizar o que é
+  passado entre agentes (IDs no lugar do conteúdo [CONFIRMADO 19]).
+- Usar dados fictícios ou anonimizados nas oficinas (datasets da seção 12).
+- Ao enviar dados pessoais a provedores de LLM, verificar base legal, contrato e
+  transferência internacional (LGPD, arts. 7º e 33) com o encarregado da
+  organização.
+- Termos: planos Free/Pro/Max/Ultra seguem Consumer Terms; Team/Enterprise/API
+  seguem Commercial Terms; usuário consumidor pode mudar preferência de uso para
+  treino em claude.ai/settings/privacy. [CONFIRMADO 6]
+
+================================================================
+9. LIMITAÇÕES, ERROS, OBSERVABILIDADE, RECUPERAÇÃO E CUSTOS
+================================================================
+
+9.1 Por que sistemas multiagente falham
+[CONFIRMADO] MAST: 14 modos em 3 grupos — especificação (papéis e tarefas mal
+definidos), desalinhamento entre agentes (informação retida, conversa
+desviada, ignorar o outro) e verificação/término (parar cedo, não verificar,
+verificar errado). Base: 7 frameworks, 200+ tarefas, 1.600+ traços anotados;
+concordância humana κ = 0,88. [26]
+[VERIFICAR] Lista nominal dos 14 modos: conferir no PDF arXiv 2503.13657.
+[CONFIRMADO] Google: independentes amplificam erro 17,2x; centralizados 4,4x;
+quanto mais ferramentas, maior o custo de coordenação. [25]
+[CONFIRMADO] Cognition: subagentes fazem suposições conflitantes que o agente final
+precisa conciliar; "ações carregam decisões implícitas". [24]
+
+9.2 Erros frequentes e recuperação (Claude Code)
+- Subagente não aparece → reiniciar se a pasta foi criada depois; claude --debug
+  para arquivos ignorados; /doctor para nomes duplicados. [1]
+- "Concurrent subagent limit reached" → esperar ou ajustar
+  CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS. [1]
+- maxTurns atingido → saída marcada como parcial; pode ser retomada. [1]
+- Colegas não aparecem → selecionar no painel; linhas ociosas somem após 30 s;
+  conferir se a tarefa justificava equipe; para split panes, which tmux. [2]
+- Claude cria colegas em vez de subagentes → variável de equipes = "0". [2]
+- Muitos pedidos de permissão → pré-aprovar comandos comuns antes de criar
+  colegas. [2]
+- Agentes param cedo → abrir a transcrição e dar instruções ou criar substituto;
+  o líder também pode encerrar antes; mandar continuar. [2]
+- Tarefa travada → verificar se o trabalho está feito e atualizar o status. [2]
+- Sessões tmux órfãs → tmux ls; tmux kill-session -t <nome>. [2]
+- Workflow com agente travado → reinício automático até 5 vezes; mensagens
+  "agent stalled on all 6 attempts" etc.; aumentar stallMs. [3]
+- Workflow parado → relançar; agentes concluídos devolvem resultado salvo, os
+  posteriores a uma falha rodam de novo. [3]
+- Limite de uso atingido → workflow pausa e retoma após o reset (condições na
+  documentação). [3]
+
+9.3 Erros frequentes e recuperação (n8n)
+- Ferramenta de sub-workflow falha sem motivo claro → publicar o sub-workflow;
+  ver a lista de execuções dele. [13]
+- Expressão pega o item errado → em sub-nós a expressão usa o primeiro item. [12]
+- Agente em loop → Max Iterations e limite de 2–3 rodadas em ciclos de
+  autocorreção. [12][20]
+- Roteamento errado → melhorar Description de cada AI Agent Tool; trocar por
+  Switch quando a categoria for previsível. [12][20]
+- Erros de limite de taxa do provedor na avaliação → reduzir a concorrência. [15]
+- Modelo indisponível → Enable Fallback Model. [12]
+- Contagem de tokens inconsistente no AI Agent com Return Intermediate Steps →
+  relatado na comunidade. [VERIFICAR 37]
+
+9.4 Observabilidade
+[CONFIRMADO] Claude Code: /usage mostra custo da sessão (para API) e, nos planos
+por assinatura, atribuição de uso a subagentes, skills e MCP; /tasks lista o que
+roda em segundo plano; /workflows mostra tokens por agente; transcrições .jsonl
+por subagente; OpenTelemetry para métricas por usuário. [1][3][5]
+[CONFIRMADO] n8n: cada execução grava entrada e saída de cada nó; Insights por
+plano (Starter só banner; Pro 7–14 dias; Enterprise 365 dias); OpenTelemetry para
+execuções (2.15) e agentes (2.20, atributos personalizados Enterprise); LangSmith
+e OpenTelemetry em self-hosted. [17][18][37]
+[CONFIRMADO] n8n recomenda acompanhar tokens por execução, por agente e por
+chamada de ferramenta e criar alertas para consumo anormal. [20]
+
+9.5 Custos
+[CONFIRMADO] Agentes ~4x tokens de um chat; multiagente ~15x (Anthropic). [9]
+[CONFIRMADO] Multiagente "10–20x" os tokens de agente único (n8n). [20]
+[CONFIRMADO] Equipes no Claude Code: cerca de 7x mais tokens que sessões padrão
+quando os colegas rodam em plan mode; custo cresce de forma aproximadamente
+linear com o número de colegas; usar Sonnet nos colegas, equipes pequenas,
+prompts focados e desligar colegas ao terminar. [5]
+[CONFIRMADO] Cache de prompt de colegas e agentes de workflow dura 5 minutos por
+padrão (configurável para 1 h, com escrita mais cara). [2][3]
+[CONFIRMADO] Workflows: testar numa fatia pequena antes (uma pasta, uma pergunta
+estreita). [3]
+[SUGESTÃO] Fórmula didática: custo ≈ (nº de agentes) × (contexto médio por
+chamada) × (nº de chamadas) × (preço do modelo). Reduzir qualquer fator reduz o
+custo; o mais barato costuma ser "menos agentes" e "modelo menor nos
+especialistas".
+
+================================================================
+10. COMPARAÇÃO IMPARCIAL COM ALTERNATIVAS
+================================================================
+
+10.1 Claude Code x n8n (para este curso) [SUGESTÃO]
+- Claude Code: melhor para trabalho em arquivos e código, pesquisa e revisão;
+  papéis em arquivos .md versionáveis; permissões finas; exige plano pago e
+  conforto mínimo com terminal (ou app Desktop).
+- n8n: melhor para processos de negócio com integrações (e-mail, Slack, planilhas),
+  visual, com revisão humana por ferramenta e avaliação embutida; exige credencial
+  de LLM e conta n8n.
+
+10.2 Frameworks de referência (só para explicar padrões)
+[CONFIRMADO] OpenAI Agents SDK: orquestração guiada por LLM ou por código;
+"agents as tools" (gerente mantém a conversa) e "handoffs" (especialista assume a
+resposta); podem ser combinados. [28]
+[CONFIRMADO] LangChain/LangGraph: padrões Subagents (supervisor), Handoffs,
+Skills, Router e Custom workflow. Em pedido de um domínio, subagentes fazem 4
+chamadas e os demais 3; em pedido repetido, padrões com estado (Handoffs, Skills)
+economizam 40–50% de chamadas; em pedido multidomínio, Subagents e Router gastam
+~9 mil tokens contra 14 mil+ de Handoffs. Observa que um agente único bem
+equipado frequentemente faz trabalho semelhante. [29]
+[VERIFICAR] CrewAI, AutoGen/Microsoft Agent Framework, Google ADK e plataformas
+no-code (Make, Zapier Agents) também oferecem multiagente; não foram verificados
+nesta pesquisa por estarem fora das ferramentas-âncora.
+
+10.3 Agente único x equipe — evidências
+[CONFIRMADO] A favor de equipe: tarefas amplas, paralelizáveis e que excedem uma
+janela de contexto (pesquisa: +90,2%; finanças: +80,9% centralizado). [9][25]
+[CONFIRMADO] A favor de agente único: tarefas sequenciais (−39% a −70%),
+programação com contexto compartilhado, muitas dependências; custos 4–20x
+maiores. [9][20][24][25]
+
+================================================================
+11. MUDANÇAS DOS ÚLTIMOS 12 MESES E RECURSOS INSTÁVEIS
+================================================================
+
+[CONFIRMADO] Claude Code (nov/2025–nov/2026):
+- Agent teams lançados em 05/02/2026 como research preview; continuam
+  experimentais e desligados por padrão em 18/11/2026. [2][30]
+- Dynamic workflows e /deep-research; palavra-chave ultracode; tamanho padrão
+  small no Pro. [3]
+- Agent view (research preview) e Projects (beta público). [4]
+- Subagentes: aninhamento até 3 níveis por padrão; limite de 20 simultâneos
+  (v2.1.217+); /agents deixou de abrir assistente (após v2.1.197); campos novos
+  como omitClaudeMd, autoCompactWindow, effort. [1]
+[CONFIRMADO] n8n (nov/2025–nov/2026): 2.6 revisão humana; 2.15/2.20
+OpenTelemetry; 2.25.1 busca web nativa para agentes; 2.29.9 n8n Assistant
+(Preview); 2.30 aprovações Slack/Telegram com registro; 2.36 Gateway credits;
+2.40 Agents (Preview); 2.44 políticas de nós (Enterprise). Stable 2.48.5 e beta
+2.49.1 em 18/11/2026. [17]
+
+Recursos instáveis — não fixar em vídeo sem caixa de aviso [SUGESTÃO]:
+- Claude Code agent teams (experimental), agent view (research preview),
+  projects (beta), nomes de atalhos e variáveis de ambiente.
+- n8n Agents, n8n Assistant e knowledge bases self-hosted (Preview).
+- Preços de ambos e créditos de gateway.
+
+================================================================
+12. MATERIAL DIDÁTICO OFICIAL E MATERIAIS DE PRÁTICA
+================================================================
+
+12.1 Oficial
+[CONFIRMADO] Documentação Claude Code: Create custom subagents; Orchestrate teams;
+Dynamic workflows; Run agents in parallel; Manage costs; Security. [1][2][3][4][5][6]
+[VERIFICAR] Claude Academy (antiga Anthropic Academy, academy.claude.com): cursos
+gratuitos "Introduction to subagents" (4 lições, ~45 min) e "Claude Code in
+Action" (9 lições, ~1 h); dados de fontes secundárias. [31]
+[CONFIRMADO] n8n: docs de AI Agent, AI Agent Tool, Call n8n Workflow Tool,
+Human-in-the-loop for tools, Evaluations; blog "Multi-agent systems" e
+"Production AI Playbook". [11]–[20]
+[CONFIRMADO] Templates n8n gratuitos: 7504, 3473, 11525, 4904. [21][22][23][38]
+
+12.2 Materiais para exercícios (públicos e gratuitos)
+- Repositório pequeno com especificação e testes: Gilded Rose Refactoring Kata
+  (emilybache), várias linguagens, especificação textual e testes; permite dividir
+  "analisar requisito / escrever testes / refatorar / revisar" e verificar
+  integração pelos testes. Licença MIT [VERIFICAR no license.txt]. [32]
+- Conjunto de tickets: Bitext Customer Support LLM Chatbot Training Dataset
+  (Hugging Face), em inglês, com intenção e categoria rotuladas — gabarito
+  natural para roteamento. Licença CDLA-Sharing 1.0 (atribuição e
+  compartilhamento igual). [33]
+- Conjunto em pt-BR: Olist Brazilian E-Commerce Public Dataset (Kaggle), tabela de
+  avaliações com nota 1–5 e comentários de clientes; ~100 mil pedidos 2016–2018.
+  Licença CC BY-NC-SA 4.0 [VERIFICAR]; exige login no Kaggle. [34]
+- Exemplos de subagentes da comunidade: VoltAgent/awesome-claude-code-subagents
+  (MIT [VERIFICAR]). Usar só como referência de formato, revisando ferramentas e
+  permissões. [35]
+- Brief e documentos públicos para pesquisa dividida [SUGESTÃO]: Guia Orientativo
+  da ANPD ou página da LGPD no gov.br; páginas oficiais de preço das próprias
+  ferramentas (seção 17), que já têm "gabarito" conferível.
+
+================================================================
+13. EXERCÍCIOS
+================================================================
+
+Todos os exercícios são [SUGESTÃO] da pesquisa, montados sobre recursos
+[CONFIRMADO] das seções 3, 5 e 7. Custos estimados são ordem de grandeza e
+devem ser medidos com /usage (Claude Code) ou com o painel do provedor de LLM
+(n8n) antes da gravação.
+
+13a. EXERCÍCIOS CURTOS (um por ação da tarefa observável)
+
+A1. DECOMPOR UM OBJETIVO (Essentials, sem ferramenta, 8 min)
+Entrada: objetivo "Preparar um comparativo de 3 ferramentas de automação para a
+diretoria".
+Passos: listar subtarefas; marcar quais dependem de outras; marcar quais podem
+rodar em paralelo; aplicar o checklist 7.1.
+Resultado verificável: diagrama de 4–6 caixas com setas de dependência;
+justificativa de "dividir" ou "não dividir".
+Erro típico: dividir em etapas que dependem umas das outras (pipeline
+disfarçado de paralelo).
+
+A2. ATRIBUIR PAPÉIS (Essentials, 8 min)
+Preencher 3 cartões de papel (modelo 7.2): Pesquisador, Analista, Revisor.
+Verificação: nenhum papel se sobrepõe; cada um tem "PROIBIDO" e "PARA QUANDO".
+
+A3. DEFINIR ENTRADAS E SAÍDAS (Essentials, 10 min)
+Escrever o contrato JSON do Pesquisador:
+{"ferramenta": "...", "preco_mensal": "...", "moeda": "...", "fonte_url": "...",
+ "data_consulta": "AAAA-MM-DD", "confianca": "alta|media|baixa"}
+Verificação: o Analista consegue trabalhar só com esses campos.
+
+A4. CRITÉRIO DE PARADA (Essentials, 5 min)
+Escrever para cada papel: meta (ex.: 3 fontes oficiais), teto (Max Iterations =
+5 no n8n; maxTurns = 15 no Claude Code) e o que fazer ao bater o teto.
+
+A5. COORDENAR A EXECUÇÃO (Hands On, Claude Code, 10 min)
+Pedir: "Pesquise em paralelo, com subagentes separados, os arquivos README, docs/
+e testes deste repositório e devolva um resumo de 5 linhas de cada."
+Acompanhar em /tasks; mandar um subagente para segundo plano com Ctrl+B.
+Êxito: três resumos retornam à conversa principal sem os conteúdos brutos.
+Custo: baixo (leitura de poucos arquivos). [1]
+
+A6. AVALIAR O RESULTADO (Hands On, n8n, 10 min)
+Criar data table com 5 perguntas e respostas de referência; rodar Evaluations →
+Run Test com a métrica Categorization ou Correctness. [15]
+Êxito: nota por caso e média visíveis na aba Evaluations.
+
+A7. SEGURANÇA — MENOR PRIVILÉGIO (Hands On, Claude Code, 8 min)
+Criar subagente "auditor" com tools: Read, Grep, Glob; pedir que "corrija" um
+arquivo. Êxito: ele não consegue editar e relata isso. [1]
+
+A8. ESCALONAMENTO HUMANO (Hands On, n8n, 8 min)
+Colocar a ferramenta "Enviar e-mail" (Gmail) atrás de Human review no Chat do n8n;
+pedir ao agente que envie; negar. Êxito: o e-mail não sai e o agente explica a
+negação. [14]
+
+A9. COMPARAR COM AGENTE ÚNICO (Hands On, 10 min)
+Mesmo pedido de A5 numa sessão sem subagentes; anotar tempo, tokens (/usage) e
+qualidade. Êxito: tabela com as três medidas.
+
+13b. OFICINAS (Hands On: 4 oficinas)
+
+OFICINA 1 — Claude Code: revisão paralela com subagentes (15–20 min)
+Material: Gilded Rose Refactoring Kata (versão Python ou JavaScript). [32]
+Objetivo: três revisores com lentes distintas e um sintetizador humano.
+Passos:
+1. Clonar ou baixar o ZIP do repositório; abrir a pasta da linguagem escolhida.
+2. Criar em .claude/agents/ três arquivos: revisor-requisitos (compara código com
+   GildedRoseRequirements.txt), revisor-testes (aponta regras sem teste) e
+   revisor-legibilidade. Todos com tools: Read, Grep, Glob e model: sonnet.
+3. Pedir: "Use os três revisores em paralelo e devolva uma tabela única com
+   achado, arquivo, regra do requisito e severidade."
+4. Conferir cada achado no arquivo de requisitos.
+Resultado verificável: os requisitos do kata (ex.: "Sulfuras" nunca muda;
+"Aged Brie" aumenta de qualidade; qualidade nunca passa de 50) aparecem como
+cobertos ou não. Gabarito: o próprio arquivo de requisitos.
+Erros e recuperação: subagente não reconhecido → reiniciar sessão; revisores
+repetem achados → afinar "MISSÃO" e "PROIBIDO" nos cartões.
+Custo: baixo a moderado (3 subagentes lendo poucos arquivos).
+
+OFICINA 2 — Claude Code: equipe com hipóteses concorrentes OU workflow (20 min)
+Opção A (equipes experimentais): ligar CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 e
+pedir 3 colegas: implementador (só gilded_rose.*), testador (só arquivo de
+teste), revisor (sem edição). Regra: cada colega dono de arquivos diferentes. [2]
+Opção B (estável): "use a workflow to run the tests and keep fixing the reported
+errors until they pass or two rounds in a row make no progress" (adaptar). [3]
+Resultado verificável: testes passam; lista de tarefas toda em completed (A) ou
+relatório do workflow (B).
+Erros: dois colegas no mesmo arquivo → sobrescrita; líder implementando sozinho →
+"Wait for your teammates to complete their tasks before proceeding". [2]
+Custo: alto relativo (equipes ~7x tokens em plan mode); usar Sonnet; encerrar
+colegas ao fim. [5]
+
+OFICINA 3 — n8n: triagem de tickets com orquestrador e especialistas (20 min)
+Material: bitext-amostra-oficina.csv (33 tickets, colunas instruction,
+category, intent) importado numa data table. [33]
+Passos:
+1. Gatilho manual + leitura da data table.
+2. AI Agent "Triagem" com três AI Agent Tool, agrupando as 11 categorias do
+   dataset: "Financeiro" (INVOICE, PAYMENT, REFUND), "Pedidos e entregas"
+   (ORDER, SHIPPING, DELIVERY, CANCEL) e "Conta e relacionamento" (ACCOUNT,
+   SUBSCRIPTION, CONTACT, FEEDBACK), cada um com Description precisa e saída
+   estruturada {categoria, resposta, precisa_humano}.
+3. Variante determinística: Switch pela categoria prevista por um classificador
+   simples; comparar.
+4. Gravar categoria prevista na data table.
+Resultado verificável: comparar categoria prevista com a coluna category
+(gabarito do dataset); calcular acertos.
+Erros: roteamento errado → reescrever Description; loop → Max Iterations.
+Custo: baixo com modelo pequeno; 30 itens × 2–4 chamadas.
+
+OFICINA 4 — n8n: revisão humana e avaliação ponta a ponta (20 min)
+Passos:
+1. No workflow da Oficina 3, adicionar ferramenta "Responder cliente" (Gmail ou
+   Slack de teste) atrás de Human review. [14]
+2. Escrever no System Message quando pedir aprovação e como reagir a Deny.
+3. Montar avaliação: Evaluation Trigger lendo a data table; Set Outputs;
+   Set Metrics com Categorization (acerto de rota) e Correctness (qualidade da
+   resposta); Check if evaluating antes das métricas. [15]
+4. Run Test duas vezes: versão multiagente e versão agente único (um AI Agent
+   com instruções das três áreas).
+Resultado verificável: duas linhas de resultado na aba Evaluations; nenhuma
+mensagem sai sem aprovação.
+Erros: limite de taxa → concorrência 1; métrica Correctness sem referência →
+preencher coluna de resposta esperada.
+
+13c. PROJETOS FINAIS (dois, escolher um)
+
+PROJETO 1 — "Equipe de pesquisa com verificação" (Claude Code)
+Entrega: relatório comparativo de preços e limites de Claude Code e n8n (ou de
+três ferramentas à escolha) com fonte e data em cada número.
+Requisitos: 2–3 subagentes pesquisadores + 1 verificador que confere cada número
+na fonte; contratos de saída em JSON; critério de parada; registro de custo
+(/usage) e comparação com uma execução de agente único.
+Gabarito: páginas oficiais da seção 17 (preços conferíveis na data).
+Rubrica: precisão factual (0–3), citação correta (0–3), completude (0–2),
+eficiência (tokens/tempo) (0–2). Base: rubrica da Anthropic Research. [9]
+
+PROJETO 2 — "Central de atendimento com especialistas" (n8n)
+Entrega: workflow com orquestrador, 3 especialistas, Switch ou roteamento por
+agente justificado, revisão humana na resposta ao cliente e avaliação com 20
+casos (dataset Bitext em inglês ou 20 comentários Olist traduzidos/rotulados pelo
+aluno em pt-BR).
+Rubrica: acerto de rota ≥ 80% (métrica Categorization), Correctness média ≥ 4,
+zero envios sem aprovação, documentação de custo por execução, comparação com
+agente único.
+
+================================================================
+14. RESPOSTAS AO FOCO ESPECÍFICO
+================================================================
+
+F1. Definição e diferenças
+- Agente único com ferramentas: um ciclo de decisão; mais simples. [10]
+- Subagentes: chamados por um agente, contexto próprio, devolvem resumo. [1]
+- Handoff: o controle da conversa passa ao especialista. [28][29]
+- Supervisor/worker: central divide, delega e sintetiza. [10][29]
+- Roteador: classifica e envia; pode ser regra ou LLM. [10][20][29]
+- Pipeline: ordem fixa de etapas. [10]
+- Swarm: coordenação entre pares, sem chefe fixo (decentralized). [25]
+Respondido em 1, 4 e 5.5.
+
+F2. Quando ajudam e quando atrapalham
+Ajudam em tarefas paralelizáveis, amplas, que excedem uma janela de contexto.
+Atrapalham em tarefas sequenciais, código com contexto compartilhado e muitas
+dependências; custo 4–20x. Evidências: Anthropic [9], Google [25], MAST [26],
+Cognition [24], n8n [20]. Seções 0, 7.1, 9 e 10.3.
+
+F3. Claude Code
+Subagentes, equipes, workflows, agent view, projects: configuração, papéis
+(arquivo .md), contexto, ferramentas, permissões, paralelismo, limites e
+interface nas seções 2.1, 3.1–3.3 e 5.1–5.3. [1][2][3][4]
+
+F4. n8n
+AI Agent, AI Agent Tool, Call n8n Workflow Tool, memória, Switch/IF, Human review,
+Evaluations e Agents (Preview) nas seções 3.4–3.6 e 5.4. Handoff nativo de
+conversa: NÃO ENCONTRADO na documentação do n8n (busca em docs.n8n.io por
+"handoff" em 18/11/2026); o blog diz que o padrão é passar contexto explícito
+pelos parâmetros da ferramenta. [20]
+
+F5. Padrões de coordenação e quando usar
+- Sequencial (pipeline): etapas fixas e previsíveis. [10][20]
+- Paralelo: partes independentes; velocidade ou foco. [10]
+- Supervisor: subtarefas imprevisíveis; melhor contenção de erro (4,4x). [10][25]
+- Debate/revisão: critérios claros; bugs com causa incerta. [2][10]
+- Roteamento por especialidade: categorias distintas; Switch se previsível. [10][20]
+- Escalonamento humano: ações irreversíveis, conformidade, alto impacto. [14]
+
+F6. Contratos, contexto, memória, artefatos, estado, conclusão e loops
+- Contratos: saída estruturada (Require Specific Output Format no n8n; schema em
+  agent() no workflow). [3][12]
+- Contexto: subagentes e colegas não herdam histórico; passar no prompt. [1][2]
+- Memória: campo memory (Claude Code); Simple/DB memory e Memory Manager
+  (n8n). [1][19][20]
+- Artefatos: arquivos compartilhados; passar IDs/URLs. [19]
+- Estado: lista de tarefas com dependências (equipes); variáveis do script
+  (workflows); retomada. [2][3]
+- Conclusão e loops: maxTurns, Max Iterations, teto de 2–3 rodadas, limite de
+  1.000 agentes por workflow, condição "duas rodadas sem progresso". [1][3][12][20]
+
+F7. Observabilidade
+/usage, /tasks, /workflows, transcrições .jsonl, OpenTelemetry (Claude Code);
+Executions, Return Intermediate Steps, Insights, OpenTelemetry, LangSmith (n8n);
+versionar prompts e logar roteamento. Seção 9.4. [1][3][5][17][18][20]
+Versão de prompts no Claude Code: arquivos .md em .claude/agents/ versionados no
+Git [SUGESTÃO]; no n8n, version history do workflow e Git em Enterprise. [18]
+
+F8. Segurança
+Menor privilégio, segredos, isolamento (worktree, sandbox, VMs), prompt
+injection, agente comprometido (ASI10), propagação de erro (ASI08), aprovação
+humana. Seção 8. [1][2][6][14][27]
+
+F9. Como testar
+Conjunto pequeno (~20 casos), resposta de referência, rubrica, LLM como juiz,
+métricas por etapa (testar cada especialista isolado) e ponta a ponta (Run Test),
+regressão (rodar o mesmo dataset após mudar prompt/modelo), comparação com agente
+único (exercício A9 e Oficina 4). [9][15][20]
+Teste de regressão automatizado no Claude Code: hooks TaskCompleted e workflows
+salvos reexecutáveis [CONFIRMADO 2][3]; ferramenta de avaliação dedicada para
+subagentes: NÃO ENCONTRADO na documentação do Claude Code (busca em
+code.claude.com por "evaluate subagent" em 18/11/2026).
+
+F10. Casos reais
+Seção 6. Produção com dados: só Anthropic Research [9]. Demais: demonstrações.
+Brasil: NÃO ENCONTRADO.
+
+F11. Planos gratuitos e custo previsível
+Claude Code: sem plano gratuito; mínimo Pro US$ 20/mês. n8n: teste Cloud (1.000
+execuções, sem cartão) ou Community self-hosted; custo de LLM à parte. Seções 2
+e 9.5. Custo exato por exercício: NÃO ENCONTRADO em fonte oficial; medir na
+gravação.
+
+F12. Materiais de prática
+Seção 12.2: Gilded Rose (repositório), Bitext (tickets), Olist (pt-BR), páginas
+oficiais de preço (brief verificável).
+
+================================================================
+15. TRECHOS OFICIAIS (curtos, para citação na ementa)
+================================================================
+
+[1] "Subagents work within a single session." (Claude Code, sub-agents)
+[2] "Agent teams add coordination overhead and use significantly more tokens
+than a single session." (Claude Code, agent-teams)
+[2] "Start with 3-5 teammates for most workflows." (Claude Code, agent-teams)
+[3] "A workflow moves the plan into code." (Claude Code, workflows)
+[5] "Agent teams use approximately 7x more tokens than standard sessions when
+teammates run in plan mode." (Claude Code, costs)
+[9] "multi-agent systems use about 15× more tokens than chats" (Anthropic,
+13/06/2025) [VERIFICAR redação exata]
+[10] "finding the simplest solution possible, and only increasing complexity
+when needed" (Anthropic, 19/12/2024)
+[12] "A good, specific description tells the parent agent when to delegate
+tasks to this agent for processing." (n8n, AI Agent Tool)
+[14] "Human review steps in sub-agents work correctly when an AI Agent is used
+as a tool for another agent." (n8n, human-in-the-loop for tools)
+[20] "Use deterministic routing when you can, agent routing when you must."
+(n8n blog, 09/06/2026)
+[24] "Actions carry implicit decisions" (Cognition, 12/06/2025)
+
+================================================================
+16. MATERIAIS PARA BAIXAR
+================================================================
+
+SITUAÇÃO EM 18/11/2026: itens 1–9 já baixados nesta pasta. Os templates n8n
+foram obtidos pela API pública de templates (api.n8n.io) e convertidos para
+JSON importável (Workflows > Import from File). Não baixados: item 10 (Kaggle
+exige login), item 11 (só referência) e item 12 (curso online).
+Arquivo extra: bitext-amostra-oficina.csv — 33 tickets, 3 por categoria das 11
+categorias do dataset (instruction, category, intent), para as Oficinas 3 e 4.
+
+1. "Why Do Multi-Agent LLM Systems Fail?" (Cemri et al.)
+   Link: https://arxiv.org/pdf/2503.13657
+   Tipo: PDF | Idioma: en | Licença: arXiv (verificar CC indicada na página)
+   Utilidade: taxonomia de 14 falhas para módulo de erros e avaliação.
+   Nome sugerido: mast-why-multi-agent-systems-fail.pdf
+
+2. "Towards a Science of Scaling Agent Systems" (Kim et al., Google)
+   Link: https://arxiv.org/pdf/2512.08296
+   Tipo: PDF | Idioma: en | Licença: arXiv (verificar)
+   Utilidade: quando multiagente ajuda ou atrapalha; números de erro.
+   Nome sugerido: google-scaling-agent-systems-2025.pdf
+
+3. "OWASP Top 10 for Agentic Applications 2026"
+   Link: https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+   (botão de download; o link direto genai.owasp.org/download/52117/ retornou
+   página HTML no teste automático de 18/11/2026 — baixar pelo navegador)
+   Tipo: PDF | Idioma: en | Licença: CC BY-SA 4.0 [VERIFICAR]
+   Nome sugerido: owasp-top-10-agentic-applications-2026.pdf
+   Observação: cópia do PDF que já existia em conteudo-bruto/agentes-web/.
+
+4. Template n8n 7504 — Collaborative sales planning with multi-agent AI
+   Link: https://n8n.io/workflows/7504-collaborative-sales-planning-with-multi-agent-ai-google-docs-and-slack/
+   Tipo: JSON de workflow (botão "Use for free" / copiar) | Idioma: en |
+   Licença: gratuito no catálogo n8n | Nome: n8n-7504-multiagente-vendas.json
+
+5. Template n8n 3473 — Scalable multi-agent chat using @mentions
+   Link: https://n8n.io/workflows/3473-scalable-multi-agent-chat-using-mentions/
+   Tipo: JSON | Idioma: en | Nome: n8n-3473-multiagente-mencoes.json
+
+6. Template n8n 11525 — Build a multi-agent system with n8n, Qdrant, Gmail & OpenAI
+   Link: https://n8n.io/workflows/11525-build-a-multi-agent-system-with-n8n-qdrant-gmail-and-openai/
+   Tipo: JSON | Idioma: en | Nome: n8n-11525-multiagente-rag-email.json
+
+7. Template n8n 4904 — Pyragogy AI-driven handbook generator
+   Link: https://n8n.io/workflows/4904-pyragogy-ai-driven-handbook-generator-with-multi-agent-orchestration/
+   Tipo: JSON | Idioma: en | Nome: n8n-4904-multiagente-revisao-humana.json
+
+8. Gilded Rose Refactoring Kata
+   Link: https://github.com/emilybache/GildedRose-Refactoring-Kata
+   Tipo: repositório (Code > Download ZIP) | Idioma: en | Licença: MIT
+   [CONFIRMADO no license.txt em 18/11/2026]
+   Utilidade: Oficinas 1 e 2. Nome: gildedrose-kata.zip
+
+9. Bitext Customer Support LLM Chatbot Training Dataset
+   Link: https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset
+   Tipo: CSV | Idioma: en | Licença: CDLA-Sharing 1.0
+   Utilidade: Oficinas 3 e 4; gabarito de categoria/intenção.
+   Nome: bitext-customer-support.csv (26.872 linhas; colunas flags, instruction,
+   category, intent, response; 11 categorias: ORDER, SHIPPING, CANCEL, INVOICE,
+   PAYMENT, REFUND, FEEDBACK, CONTACT, ACCOUNT, DELIVERY, SUBSCRIPTION)
+
+10. Olist Brazilian E-Commerce Public Dataset
+    Link: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+    Tipo: CSV (exige login Kaggle) | Idioma: pt-BR | Licença: CC BY-NC-SA 4.0
+    [VERIFICAR] | Utilidade: projeto 2 em português.
+    Nome: olist_order_reviews_dataset.csv
+
+11. VoltAgent — awesome-claude-code-subagents
+    Link: https://github.com/VoltAgent/awesome-claude-code-subagents
+    Tipo: repositório | Idioma: en | Licença: MIT [CONFIRMADO no LICENSE em
+    18/11/2026]
+    Utilidade: exemplos de formato de subagente (revisar antes de usar).
+
+12. Claude Academy — Introduction to subagents / Claude Code in Action
+    Link: https://academy.claude.com [VERIFICAR URL e catálogo]
+    Tipo: curso online gratuito | Idioma: en | Utilidade: leitura complementar.
+
+================================================================
+17. PÁGINAS PARA SALVAR (uma por item, salvar como PDF)
+================================================================
+
+1. Claude Code — Create custom subagents — https://code.claude.com/docs/en/sub-agents [1]
+2. Claude Code — Orchestrate teams of Claude Code sessions — https://code.claude.com/docs/en/agent-teams [2]
+3. Claude Code — Dynamic workflows — https://code.claude.com/docs/en/workflows [3]
+4. Claude Code — Run agents in parallel — https://code.claude.com/docs/en/agents [4]
+5. Claude Code — Manage costs effectively — https://code.claude.com/docs/en/costs [5]
+6. Claude Code — Security — https://code.claude.com/docs/en/security [6]
+7. Claude Code — Advanced setup — https://code.claude.com/docs/en/setup [7]
+8. Claude — Pricing — https://claude.com/pricing [8]
+9. Anthropic — How we built our multi-agent research system — https://www.anthropic.com/engineering/multi-agent-research-system [9]
+10. Anthropic — Building effective agents — https://www.anthropic.com/engineering/building-effective-agents [10]
+11. n8n — AI Agent node — https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent [11]
+12. n8n — AI Agent Tool node — https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolaiagent [12]
+13. n8n — Call n8n Workflow Tool — https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolworkflow [13]
+14. n8n — Human-in-the-loop for tools — https://docs.n8n.io/build/integrate-ai/ai-examples/human-in-the-loop-for-tools [14]
+15. n8n — Use metrics to measure quality — https://docs.n8n.io/build/integrate-ai/test-and-improve-ai-workflows/use-metrics-to-measure-quality [15]
+16. n8n — Build and manage agents — https://docs.n8n.io/build/build-and-manage-agents [16]
+17. n8n — Changelog — https://docs.n8n.io/changelog/ [17]
+18. n8n — Pricing — https://n8n.io/pricing/ [18]
+19. n8n Blog — Multi-agent systems — https://blog.n8n.io/multi-agent-systems/ [19]
+20. n8n Blog — Production AI Playbook: Complex agent patterns — https://blog.n8n.io/production-ai-playbook-complex-agent-patterns/ [20]
+21. Cognition — Don't Build Multi-Agents — https://cognition.com/blog/dont-build-multi-agents [24]
+22. Google Research — Towards a science of scaling agent systems — https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/ [25]
+23. OpenAI Agents SDK — Agent orchestration — https://openai.github.io/openai-agents-python/multi_agent/ [28]
+24. LangChain — Multi-agent — https://docs.langchain.com/oss/python/langchain/multi-agent [29]
+25. n8n — Start your free trial — https://docs.n8n.io/deploy/use-n8n-cloud/start-your-free-trial [36]
+
+================================================================
+18. LACUNAS E PONTOS A VERIFICAR
+================================================================
+
+1. Duração do teste gratuito do n8n Cloud e se inclui Gateway credits. [18][36]
+2. Versão mínima do recurso Agents no self-hosted (2.32.3 x 2.40). [16][17]
+3. Nomes oficiais ASI02–ASI06 e licença do PDF OWASP. [27]
+4. Lista nominal dos 14 modos MAST (consultar PDF). [26]
+5. Licença da Olist (CC BY-NC-SA 4.0?). Gilded Rose e VoltAgent: MIT confirmado
+   nos arquivos de licença em 18/11/2026.
+6. Catálogo e URLs atuais da Claude Academy. [31]
+7. Nome exato do gatilho de sub-workflow no n8n atual ("When Executed by Another
+   Workflow" / Execute Workflow Trigger) — a página do Call n8n Workflow Tool não
+   o cita. [13]
+8. Interface pt-BR: nem Claude Code nem n8n têm documentação pt-BR destes
+   recursos; confirmar se a interface do n8n Cloud oferece português.
+9. Custo real por exercício (medir na gravação com contas de teste).
+10. Caso brasileiro de produção: NÃO ENCONTRADO.
+11. Handoff nativo (passagem de conversa) em Claude Code e n8n: NÃO ENCONTRADO;
+    conferir se a equipe quer ensinar o conceito só com OpenAI Agents SDK como
+    referência.
+12. Agent teams podem sair de "experimental" a qualquer momento; reconferir
+    variável de ambiente e atalhos antes de gravar.
+13. Preços em reais e impostos: não publicados; conferir no checkout.
+
+================================================================
+19. APÊNDICE TÉCNICO
+================================================================
+
+19.1 Claude Code — variáveis e configurações úteis [1][2][3][5]
+- CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 (liga equipes)
+- teammateMode: "auto" | "tmux" | "iterm2"; flag --teammate-mode
+- CLAUDE_CODE_SUBAGENT_MODEL e CLAUDE_CODE_SUBAGENT_MODEL_FORCE=1
+- CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS (padrão 20)
+- CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH (padrão 3 níveis; 1 desliga aninhamento)
+- CLAUDE_CODE_FORK_SUBAGENT=0 (deixa o Claude esperar resultado)
+- CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS (1–256; padrão 16)
+- workflowSizeGuideline: unrestricted | small | medium | large
+- disableWorkflows / CLAUDE_CODE_DISABLE_WORKFLOWS=1
+- subagentPromptCacheTtl: "1h"
+- permissions.deny: "Agent(Explore)" bloqueia um tipo; "Agent" bloqueia todos
+- tools: Agent(worker, researcher) restringe quais subagentes um coordenador
+  (sessão iniciada com claude --agent) pode criar
+- Arquivos: ~/.claude/teams/{time}/config.json (não editar);
+  ~/.claude/teams/{time}/inboxes/{agente}.json; ~/.claude/tasks/{time}/
+
+19.2 Claude Code — subagente via CLI (sessão única) [1]
+claude --agents '{"code-reviewer": {"description": "Expert code reviewer.",
+ "prompt": "You are a senior code reviewer.", "tools": ["Read","Grep","Glob"],
+ "model": "sonnet"}}'
+
+19.3 Claude Code — esqueleto de workflow salvo [3]
+export const meta = { name: 'audit-routes', description: '...' }
+const found = await agent('List every .ts file under src/routes/.', { schema: {...} })
+const audits = await pipeline(found.files, f => agent(`Audit ${f}...`, { label: f }))
+return audits.filter(Boolean)
+Regras: meta como primeira instrução; Date.now() e Math.random() lançam erro
+(para reprodutibilidade); sem import(); sem acesso direto a arquivos pelo script.
+
+19.4 Claude Code — hooks de qualidade [1][2]
+- SubagentStart / SubagentStop (settings.json, matcher pelo nome)
+- TeammateIdle, TaskCreated, TaskCompleted (exit 2 bloqueia e devolve feedback)
+
+19.5 n8n — detalhes [12][13][15][17]
+- $fromAI() em parâmetros de ferramentas; $tool.name e $tool.parameters na
+  mensagem de revisão.
+- N8N_CONCURRENCY_EVALUATION_LIMIT (self-hosted) altera casos de teste em
+  paralelo.
+- Nó v1 do AI Agent será removido no 3.0.
+- Exemplo de Workbench/Benchmarks do estudo Google: Finance-Agent,
+  BrowseComp-Plus, PlanCraft, Workbench. [25]
+
+19.6 Arquitetura de referência (Anthropic Research) [9]
+Líder (modelo maior) → subagentes paralelos (modelo menor) com objetivo,
+formato e limites → agente de citação → síntese. Lições de produção: checkpoints
+para retomar, tracing completo, "rainbow deployments", execução síncrona como
+gargalo.
+
+================================================================
+20. FONTES
+================================================================
+
+[1] Anthropic. Claude Code Docs. "Create custom subagents". Consultada em
+18/11/2026. https://code.claude.com/docs/en/sub-agents
+
+[2] Anthropic. Claude Code Docs. "Orchestrate teams of Claude Code sessions".
+Consultada em 18/11/2026. https://code.claude.com/docs/en/agent-teams
+
+[3] Anthropic. Claude Code Docs. "Orchestrate subagents at scale with dynamic
+workflows". Consultada em 18/11/2026. https://code.claude.com/docs/en/workflows
+
+[4] Anthropic. Claude Code Docs. "Run agents in parallel". Consultada em
+18/11/2026. https://code.claude.com/docs/en/agents
+
+[5] Anthropic. Claude Code Docs. "Manage costs effectively". Consultada em
+18/11/2026. https://code.claude.com/docs/en/costs
+
+[6] Anthropic. Claude Code Docs. "Security". Consultada em 18/11/2026.
+https://code.claude.com/docs/en/security
+
+[7] Anthropic. Claude Code Docs. "Advanced setup". Consultada em 18/11/2026.
+https://code.claude.com/docs/en/setup
+
+[8] Anthropic. "Pricing". Consultada em 18/11/2026. https://claude.com/pricing
+
+[9] Anthropic Engineering. "How we built our multi-agent research system".
+13/06/2025. https://www.anthropic.com/engineering/multi-agent-research-system
+
+[10] Erik S.; Barry Zhang. Anthropic Engineering. "Building effective agents".
+19/12/2024. https://www.anthropic.com/engineering/building-effective-agents
+
+[11] n8n Docs. "AI Agent node". Consultada em 18/11/2026.
+https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent
+
+[12] n8n Docs. "AI Agent Tool node". Consultada em 18/11/2026.
+https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolaiagent
+
+[13] n8n Docs. "Call n8n Workflow Tool node". Consultada em 18/11/2026.
+https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolworkflow
+
+[14] n8n Docs. "Human-in-the-loop for tools". Consultada em 18/11/2026.
+https://docs.n8n.io/build/integrate-ai/ai-examples/human-in-the-loop-for-tools
+
+[15] n8n Docs. "Use metrics to measure quality". Consultada em 18/11/2026.
+https://docs.n8n.io/build/integrate-ai/test-and-improve-ai-workflows/use-metrics-to-measure-quality
+
+[16] n8n Docs. "Build and manage agents" (Preview). Consultada em 18/11/2026.
+https://docs.n8n.io/build/build-and-manage-agents
+
+[17] n8n Docs. "Changelog". Consultada em 18/11/2026 (stable 2.48.5; beta 2.49.1).
+https://docs.n8n.io/changelog/
+
+[18] n8n. "Pricing". Consultada em 18/11/2026. https://n8n.io/pricing/
+
+[19] Yulia Dmitrievna; Eduard Parsadanyan. n8n Blog. "Multi-agent systems:
+Frameworks & step-by-step tutorial". 22/12/2025.
+https://blog.n8n.io/multi-agent-systems/
+
+[20] Elvis Saravia e equipe n8n. n8n Blog. "Production AI Playbook: Complex agent
+patterns". 09/06/2026.
+https://blog.n8n.io/production-ai-playbook-complex-agent-patterns/
+
+[21] Trung Tran. n8n Templates. "Collaborative sales planning with multi-agent AI,
+Google Docs, and Slack" (7504).
+https://n8n.io/workflows/7504-collaborative-sales-planning-with-multi-agent-ai-google-docs-and-slack/
+
+[22] Jon Doran. n8n Templates. "Scalable multi-agent chat using @mentions" (3473).
+https://n8n.io/workflows/3473-scalable-multi-agent-chat-using-mentions/
+
+[23] n8n Templates. "Build a multi-agent system with n8n, Qdrant, Gmail & OpenAI"
+(11525).
+https://n8n.io/workflows/11525-build-a-multi-agent-system-with-n8n-qdrant-gmail-and-openai/
+
+[24] Walden Yan. Cognition. "Don't Build Multi-Agents". 12/06/2025.
+https://cognition.com/blog/dont-build-multi-agents
+
+[25] Yubin Kim; Xin Liu. Google Research Blog. "Towards a science of scaling agent
+systems: When and why agent systems work". 28/01/2026.
+https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/
+
+[26] Mert Cemri et al. "Why Do Multi-Agent LLM Systems Fail?". arXiv 2503.13657;
+NeurIPS 2025. https://arxiv.org/abs/2503.13657
+
+[27] OWASP GenAI Security Project. "OWASP Top 10 for Agentic Applications for
+2026". 09/12/2025.
+https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+(itens ASI02–ASI06 e ASI09 confirmados por fontes secundárias: Giskard, Cycode,
+Kratikal)
+
+[28] OpenAI. Agents SDK (Python). "Agent orchestration". Consultada em 18/11/2026.
+https://openai.github.io/openai-agents-python/multi_agent/
+
+[29] LangChain Docs. "Multi-agent". Consultada em 18/11/2026.
+https://docs.langchain.com/oss/python/langchain/multi-agent
+
+[30] TechCrunch. "Anthropic releases Opus 4.6 with new 'agent teams'". 05/02/2026.
+https://techcrunch.com/2026/02/05/anthropic-releases-opus-4-6-with-new-agent-teams
+
+[31] Claude Academy (antiga Anthropic Academy). Fontes secundárias:
+pasqualepillitteri.it (Claude Academy Is Live, 2026); beri.net (Introduction to
+subagents). https://academy.claude.com [VERIFICAR]
+
+[32] Emily Bache. "GildedRose-Refactoring-Kata". GitHub.
+https://github.com/emilybache/GildedRose-Refactoring-Kata
+
+[33] Bitext. "Bitext customer support LLM chatbot training dataset". Hugging Face.
+Licença CDLA-Sharing 1.0.
+https://huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset
+
+[34] Olist. "Brazilian E-Commerce Public Dataset by Olist". Kaggle.
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+[35] VoltAgent. "awesome-claude-code-subagents". GitHub.
+https://github.com/VoltAgent/awesome-claude-code-subagents
+
+[36] n8n Docs. "Start your free trial". https://docs.n8n.io/deploy/use-n8n-cloud/start-your-free-trial
+
+[37] n8n Blog. "How to debug failures or missteps in AI agent behavior" e fórum
+n8n Community, tópicos "Debugging an AI Agent Tool that's called from AI Agent" e
+"Inconsistent Token Counting in AI Agent".
+https://blog.n8n.io/how-to-debug-failures-or-missteps-in-ai-agent-behavior/
+https://community.n8n.io/t/debugging-an-ai-agent-tool-thats-called-from-ai-agent/79247
+
+[38] n8n Templates. "Pyragogy AI-driven handbook generator with multi-agent
+orchestration" (4904).
+https://n8n.io/workflows/4904-pyragogy-ai-driven-handbook-generator-with-multi-agent-orchestration/
+
+[39] Yubin Kim et al. "Towards a Science of Scaling Agent Systems". arXiv
+2512.08296, dez/2025. https://arxiv.org/abs/2512.08296
+
+================================================================
+CHECKLIST FINAL
+================================================================
+
+[x] Sustenta ementa, Essentials e Hands On (seções 3, 5, 7, 13 e 14).
+[x] Todos os 12 itens do foco têm resposta ou NÃO ENCONTRADO (seção 14).
+[x] Cada ação da tarefa observável tem passo a passo e prática: decompor (A1),
+    atribuir papéis (A2), entradas/saídas e parada (A3, A4), coordenar (A5,
+    Oficinas 1–3), avaliar (A6, A9, Oficina 4).
+[x] Padrões, custos, avaliação, falhas e segurança cobertos (5.5, 7, 8, 9).
+[x] Menus têm origem (ajuda en); planos e região distinguidos (seção 2).
+[x] Nenhuma elaboração própria está [CONFIRMADO].
+[x] Materiais (16) e páginas (17) listados individualmente. Links de fontes
+    oficiais abertos em 18/11/2026; o download direto do PDF OWASP retornou HTML
+    e está sinalizado; Kaggle exige login.
+[x] Mais de dois terços tratam do que o aluno vê e faz (seções 3, 5, 7, 9 e 13).

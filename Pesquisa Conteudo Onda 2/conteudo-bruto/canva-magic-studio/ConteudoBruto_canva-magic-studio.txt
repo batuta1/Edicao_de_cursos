@@ -1,0 +1,1391 @@
+================================================================
+CONTEÚDO BRUTO — Canva Magic Studio (Canva IA)
+Registros no catálogo: canva-magic-studio-essentials e canva-magic-studio-hands-on
+Produtos: ementa completa, Essentials (100–130 min) e Hands On (60–90 min)
+Pesquisa realizada em: 18 de novembro de 2026
+Ferramenta-âncora: Canva Magic Studio (hoje comercializado como "Canva IA")
+Trilhas: T11 pos. 3; T9 pos. 6; C3 pos. 3; E3 pos. 3; S5 pos. 2
+Prompt: versão 7 (18/11/2026), planilha v0.4
+================================================================
+
+Convenções deste arquivo
+- [CONFIRMADO] = a fonte citada diz isso literalmente (ou em tradução fiel).
+- [VERIFICAR] = evidência insuficiente, secundária, contraditória ou sujeita
+  a lançamento gradual.
+- [SUGESTÃO] = elaboração da pesquisa para a equipe; não é fato de fonte.
+- NÃO ENCONTRADO = procurado e não localizado em fonte confiável.
+- Números entre colchetes [n] remetem à seção 20 (Fontes).
+- Rótulos de menu entre aspas, com origem: (PT) = Central de Ajuda em
+  português do Brasil, que o próprio Canva avisa ser "traduzida
+  automaticamente" em vários artigos; (EN) = ajuda/página em inglês.
+  A interface real pode variar por plano, idioma, dispositivo e
+  lançamento gradual. Sempre conferir na tela antes de gravar aula.
+- Todos os arquivos "pagina-*.pdf" desta pasta foram gerados a partir do
+  HTML oficial baixado em 18/11/2026 (o Canva bloqueia impressão por
+  navegador automatizado). Cada PDF traz um carimbo com URL e data.
+
+----------------------------------------------------------------
+0. RESUMO EXECUTIVO
+----------------------------------------------------------------
+
+[CONFIRMADO] O nome "Magic Studio" (Estúdio Mágico) NÃO é mais a marca
+principal. Em 18/11/2026 a página canva.com/magic-studio/ retorna erro 404
+[97]; a página de produto atual é canva.com/canva-ai/ ("Canva AI") [78];
+a tabela de preços agrupa tudo como "Ferramentas de IA" e "Ferramentas de
+design com IA", sem a palavra Magic Studio [5]. Os recursos individuais
+continuam com o prefixo "Mágico/Mágica" (Design Mágico, Texto Mágico,
+Edição Mágica, Expansão Mágica, Captura Mágica, Borracha Mágica, Formato
+Mágico, Camadas Mágicas etc.) e artigos antigos da ajuda ainda falam em
+"Estúdio Mágico" [53].
+→ Consequência para o catálogo [SUGESTÃO]: manter o registro
+"canva-magic-studio", mas nomear o curso para o aluno como "Canva IA
+(antigo Magic Studio)" e explicar a mudança logo no início. Decisão final
+é da equipe.
+
+[CONFIRMADO] Linha do tempo essencial:
+- Out/2023: lançamento do Magic Studio ("all the power of AI, all in one
+  place"), com Magic Design, Magic Switch, Magic Grab, Magic Expand, Magic
+  Morph etc. [80]. Data exata: 04/10/2023 [VERIFICAR — conhecimento prévio;
+  a página não traz data legível no HTML].
+- 16/04/2026 (Canva Create, Los Angeles): Canva IA 2.0 em "research
+  preview" — design conversacional, orquestração agêntica, "layered object
+  intelligence", Biblioteca de memórias, conectores, agendamento, pesquisa
+  na web, Brand Intelligence, Sheets AI e Canva Code 2.0; modelo base
+  "Canva Design Model" [79]. Data: o post não traz data legível; fontes
+  secundárias dizem 15 ou 16/04/2026 [VERIFICAR].
+- 22/10/2026: Canva Craft, primeiro modelo de geração de imagens treinado
+  do zero pela Canva Research (2K, mais de 30 proporções, disponível no
+  Canva e via API) [81][101].
+- 29/10/2026: Canva Brush, modelo visão-linguagem que faz as edições do
+  Canva IA; inicialmente para assinantes Canva Pro [82][101].
+- 04/11/2026: reestruturação com 1.271 pessoas afetadas (22% da empresa);
+  a CEO diz que o crescimento "desacelerou pela primeira vez em uma
+  década" [85][102]. Relevância: risco de mudanças rápidas de produto.
+
+[CONFIRMADO] Planos no Brasil em 18/11/2026 [5]: Grátis (R$ 0), Pro
+(R$ 35/mês ou R$ 290/ano), Pro+ (R$ 49/mês ou R$ 490/ano por pessoa) e
+Enterprise (sob consulta). Canva Equipes não aceita novas assinaturas.
+O "Pro+" brasileiro corresponde ao "Canva Business" das páginas em inglês
+(mesmos recursos: 100 kits de marca, Flourish, 20x IA, 500 GB) [5][1].
+Também existem Canva Educação (gratuito para professores e escolas de
+educação básica elegíveis), Canva Universidades e Canva para ONGs [5][67].
+
+[CONFIRMADO] Modelo de IA atual (não é mais "créditos fixos"): as
+ferramentas são classificadas em IA Padrão (Standard), Premium e Ultra.
+Todas as que consomem cota compartilham um "limite mensal de uso da IA".
+Grátis: acesso limitado a Padrão e Premium, sem Ultra. Pro: Padrão à
+vontade* + 10x a cota do Grátis para Premium/Ultra. Pro+ e Enterprise:
+20x. Educação: 10x. Teste grátis = cota do Grátis [1][5]. O Canva NÃO
+publica um número absoluto de usos na versão atual da página brasileira;
+fontes secundárias citam "até 20 usos Premium/mês no Grátis" e "200
+Premium ou 20 Ultra no Pro" [VERIFICAR — números de versões anteriores].
+
+[CONFIRMADO] Gratuito x pago para o público geral [5]: no Canva Grátis
+estão o chat do Canva IA, o Texto Mágico, os Gráficos Mágicos, Mockups,
+animações e Voz de IA; NÃO estão Formato Mágico (redimensionar), Tradutor,
+Edição/Borracha/Expansão/Captura Mágica, Removedor de Fundo e Animação
+Mágica. Conclusão [SUGESTÃO]: o Hands On completo (redimensionar,
+traduzir, remover fundo) exige Pro, Pro+, Educação (professor) ou teste
+grátis; prever trilha alternativa para quem estiver no Grátis.
+
+[CONFIRMADO] Regras que mudam o curso de saúde e de uso comercial:
+- Termos de Produtos de IA (vigentes desde 26/06/2026) proíbem usar a IA
+  para "fornecer ou obter aconselhamento personalizado que exija licença,
+  como aconselhamento jurídico, médico ou financeiro, sem o envolvimento
+  apropriado de um profissional qualificado"; proíbem enganar sobre
+  autoria humana e remover metadados de proveniência, "incluindo C2PA"
+  [73].
+- O Acordo de Licença de Conteúdo proíbe usar fotos de pessoas da
+  biblioteca do Canva de forma que sugira que a pessoa "sofre de uma
+  enfermidade, doença ou condição física ou mental" e em anúncios de
+  produtos farmacêuticos, de saúde, suplementos etc. [74] — ponto crítico
+  para o folheto de educação em saúde.
+- Saída de IA: entre usuário e Canva, é do usuário; pode não ser única;
+  se a IA editar conteúdo da biblioteca do Canva, o usuário NÃO é dono do
+  resultado (apenas licenciado) [73][53].
+
+[SUGESTÃO] Fluxo observável do curso (a tarefa do prompt):
+BRIEF (objetivo, público, canal, formato, mensagem, restrições)
+→ ESCOLHER FORMATO/MODELO ou pedir ao Canva IA (com Kit de Marca)
+→ GERAR rascunho → EDITAR texto (Texto Mágico) e imagem (Edição/Expansão/
+Captura/Removedor de fundo/Camadas Mágicas) → REVISAR conteúdo (fatos,
+nomes, datas, números; especialista em saúde quando couber)
+→ ACESSIBILIDADE (Arquivo > Acessibilidade > Verificar acessibilidade do
+design; texto alternativo; contraste; fonte ≥ 12 pt; semântica e ordem de
+leitura) → ADAPTAR (Redimensionar/Formato Mágico; Tradutor)
+→ EXPORTAR no formato certo (PDF Digital/Impressão, PNG, PPTX, MP4) ou
+COMPARTILHAR (link com permissão adequada) → REGISTRAR uso de IA.
+
+----------------------------------------------------------------
+1. IDENTIDADE E HISTÓRICO
+----------------------------------------------------------------
+
+1.1 Empresa
+[CONFIRMADO] Canva fundada em 2013 (Austrália); "mais de um quarto de
+bilhão de pessoas por mês" (post de abr/2026) [79]; na página de cases,
+"220M+" e "135 milhões de pessoas" em contextos distintos [VERIFICAR —
+números variam por página e data]. Fontes secundárias: 265 milhões de
+usuários ativos mensais e ~30 milhões pagantes [98][VERIFICAR].
+[VERIFICAR] Brasil = 2º maior mercado em número de usuários; ~90% dos
+usuários brasileiros seriam microempreendedores e autônomos; escritório em
+São Paulo aberto em mai/2026 (fontes jornalísticas: Canaltech, Forbes
+Brasil) [98].
+
+1.2 O que é (definição para leigos) [SUGESTÃO, baseada em 78/80]
+"Canva IA" é o conjunto de ferramentas de inteligência artificial dentro
+do Canva, um editor de design on-line. Elas ajudam a criar um primeiro
+rascunho (de slides, posts, folhetos), escrever e reescrever textos,
+gerar e editar imagens, adaptar a peça para outros tamanhos e idiomas e
+manter cores, fontes e logotipo de uma marca.
+
+1.3 Composição atual (18/11/2026) — mapa de recursos e nomes
+(nome PT da ajuda / nome EN) [1][5][7]
+GERAR
+- Canva IA (chat; "Design conversacional com o Canva IA") / Canva AI —
+  cria designs, documentos, planilhas, apresentações, imagens, vídeos
+  e código a partir de conversa [6][7].
+- Design Mágico / Magic Design — gera opções de design a partir de texto
+  ou mídia; hoje é acionado pelo Canva IA ou pela aba Modelos ("Não
+  encontrou algo? → Experimentar o Canva IA") [13][14].
+- Texto Mágico / Magic Write — assistente de escrita [15][16].
+- Mídia Mágica / Magic Media — imagens, elementos gráficos, vídeos de
+  4 s e 3D [17].
+- Dream Lab — gerador de imagens da página inicial (tecnologia Leonardo.ai
+  segundo a ajuda; o Canva Craft "roda no Dream Lab" segundo fonte
+  secundária) [18][45][101][VERIFICAR modelo usado hoje].
+- Canva Code — experiências interativas [1][9].
+- Atividades Mágicas / Magic Activities (Educação) [68].
+EDITAR IMAGEM
+- Edição Mágica / Magic Edit (adicionar/substituir/modificar por pincel
+  ou clique) [19]; Borracha Mágica / Magic Eraser [22]; Expansão Mágica /
+  Magic Expand [20]; Captura Mágica / Magic Grab [21]; Removedor de Fundo
+  / Background Remover (foto e vídeo) [23]; Gerador de fundo de fotos [5];
+  Camadas Mágicas / Magic Layers (transforma imagem achatada em camadas
+  editáveis) [24]; Cópia de estilo / Style Match [25]; Aumentar resolução
+  / Image Upscaler (Otimizador) [1][18]; Transformação Mágica / Magic
+  Morph [5][80].
+ADAPTAR E ESCALAR
+- Redimensionar / "Formato Mágico" (Magic Resize) [26]; Tradutor /
+  Translate [27][28]; Transformar em doc (antigo "Magic Switch",
+  "Conversão Mágica") [29]; Animação Mágica / Magic Animate [30]; Criar em
+  lote / Bulk Create com "Conectar campos automaticamente" por IA [32].
+DADOS E APRESENTAÇÃO
+- Gráficos Mágicos / Magic Charts (Canva Planilhas) [31]; Insights
+  Mágicos; Fórmulas Mágicas [1]; apresentações a partir de dados (CSV/
+  Planilhas, 15 tipos de gráfico, 20 idiomas) [35]; notas geradas por
+  IA [36][16].
+MARCA
+- Kit de Marca / Brand Kit; Gerador de Kit de Marca (de site ou PDF) [40];
+  Voz da marca / Brand Voice [42]; Modelos da marca com bloqueios [43];
+  Controles da Marca™ (Pro+/Enterprise) [5]; imagens com identidade da
+  marca ("Gerar a partir da foto") [45]; "Aplicar a marca" no Canva IA [44].
+
+1.4 Modelos de IA por trás [CONFIRMADO salvo indicação]
+- Texto Mágico: "o Canva fez uma parceria com a OpenAI" [15]; a política
+  de privacidade lista "OpenAI (Canva AI products)" entre processadores de
+  dados de alunos [76].
+- Canva Design Model (abr/2026) [79]; Canva Craft (imagens) [81]; Canva
+  Brush (edições; escolha "Core" ou "Brush" no Canva IA, lançamento
+  gradual) [10][82].
+- Dream Lab: Leonardo.ai (adquirida pelo Canva) [45].
+[VERIFICAR] Texto antigo da ajuda diz que o Texto Mágico "somente usa
+dados... até meados de 2021" [15] — provavelmente desatualizado; não usar
+em aula sem checar.
+
+1.5 Mudanças de nome e localização (para evitar confusão em aula)
+[CONFIRMADO] "Magic Studio" → "Canva IA" (marca guarda-chuva) [78][97].
+[CONFIRMADO] "Magic Switch"/"Conversão Mágica" → opção dentro de
+Redimensionar ("Transformar em doc", "Traduzir") [26][27][29].
+[CONFIRMADO] "Resumir" → "Encurtar"; novo "Criar um resumo" [16].
+[CONFIRMADO] Canva Equipes → substituído por Pro+ (BR) / Business (EN) [5].
+[CONFIRMADO] Recursos "Magic Design para apresentações" agora aparecem
+como "Crie uma apresentação com o Canva IA" [33].
+[CONFIRMADO] Navegação em mudança gradual: vários artigos avisam "se você
+não encontrar o Canva AI... acesse Mais" [56][63].
+
+----------------------------------------------------------------
+2. ACESSO, PLANOS, PREÇOS E LIMITES (com data: 18/11/2026)
+----------------------------------------------------------------
+
+2.1 Preços oficiais Brasil [5] (pagina-canva-precos-e-matriz-de-recursos.pdf)
+| Plano | Mensal | Anual | Uso de IA |
+| Grátis | R$ 0 | R$ 0 | limitado (Padrão e Premium; sem Ultra) |
+| Pro (1 pessoa) | R$ 35 | R$ 290 | 10x o Grátis (Premium/Ultra); Padrão à vontade* |
+| Pro+ (por pessoa) | R$ 49 | R$ 490 | 20x o Grátis; IA Extra e recargas |
+| Enterprise | sob consulta | — | 20x; opções personalizadas |
+[CONFIRMADO] Pro tem "opções de planos diários e semanais" (pagamento
+único, inclusive PIX no Brasil) [5].
+[CONFIRMADO] EUA: Pro US$ 144/ano; Business US$ 250/ano por pessoa [5].
+[CONFIRMADO] ONGs: assinatura gratuita com recursos do Pro para até 50
+usuários [5]. Educação: gratuito para professores verificados da educação
+básica, alunos e escolas elegíveis [5][89].
+[VERIFICAR] Planilha do Brasil fala em "planos anuais parcelados
+(Brasil)" — artigo existe na ajuda, não lido.
+
+2.2 Níveis de ferramenta de IA [1][2][5]
+- IA Padrão (Standard): exemplos oficiais — Otimizador (aumentar
+  resolução), Fórmula Mágica, Texto Mágico para SEO, "Crie uma imagem com
+  o Canva IA" (na tabela de preços). Nos planos pagos não consome cota*;
+  no Grátis e no Pro Lite consome.
+- IA Premium: Camadas Mágicas; gerar design com o Canva IA; criar imagem
+  com o Canva IA; Canva Code; elementos (formas, 3D, gráficos, formulários);
+  música e efeitos; gerador de formulários; IA premium do Affinity.
+- IA Ultra: "Design conversacional com o Canva IA 2.0"; "Crie um clipe de
+  vídeo com o Canva IA".
+[VERIFICAR — divergência oficial] A tabela de preços classifica "Design
+conversacional com o Canva IA" como IA Premium, e a ajuda "Entenda seu
+uso de IA" como IA Ultra [1][5]. Explicar ao aluno que a classificação
+pode mudar e que o medidor fica em Configurações > Cobrança > Uso de IA.
+- "Ferramentas de design com IA" (não consomem cota nos planos pagos,
+  sujeitas a uso razoável): Texto Mágico, Tradutor, Formato Mágico,
+  Animação Mágica, Edição/Borracha/Expansão/Captura Mágica, Removedor de
+  fundo, Voz de IA etc. [5][3].
+[CONFIRMADO] Seletor de qualidade (Standard/Premium/Ultra) para fotos e
+vídeos gerados: Elementos > ícone + > "Qualidade da IA", ou na página
+inicial do Canva IA > + > "Qualidade da IA". Premium é o padrão; vídeo
+não aceita Standard; Ultra só em planos pagos e suporta áudio em vídeo;
+gráficos, áudio, 3D, formulários, código e planilhas só em Premium [2].
+
+2.3 O que acontece no limite [1][2][8]
+[CONFIRMADO] Avisos ao se aproximar e ao atingir; cota renova mensalmente
+(na data de cobrança). Grátis: pausas curtas entre gerações (Padrão e
+Premium) — mas outra página diz que "todos os níveis ficam
+indisponíveis até o limite ser zerado" [2] [VERIFICAR — duas descrições].
+Ultra: indisponível até a renovação. Pro: pode continuar com pausas.
+[CONFIRMADO] Cota é individual (não é somada entre membros) em Pro+,
+Educação, Enterprise e ONGs [1].
+[CONFIRMADO] Uso do Canva dentro do ChatGPT, Claude, Copilot etc. consome
+a mesma cota; apps de terceiros do Marketplace NÃO consomem (têm limites
+próprios) [1].
+[CONFIRMADO] Fatores que aumentam o consumo do Canva IA 2.0: tamanho dos
+designs referenciados (40 slides > 5 slides), complexidade, número de
+ferramentas e modelos usados [1][9].
+
+2.4 Como ver a cota [CONFIRMADO] (PT) foto do perfil > "Configurações" >
+"Cobrança" > seção "Uso de IA" [1].
+
+2.5 Comprar mais IA [3][4]
+- IA Extra (AI Pass): US$ 100 por pessoa/mês "em todo o mundo"; 40x mais
+  IA para Pro/Equipes/ONGs, 20x para Pro+. Não disponível para Grátis,
+  Educação, Enterprise, testes, planos pré-pagos e assinaturas via App
+  Store/Google Play. Comprado na web.
+- Recarga de IA (top-up): só Pro+; equivale à cota mensal do Pro+;
+  válida por 30 dias; manual ou automática com limite de gastos [4].
+[SUGESTÃO] Em aula, não recomendar compra; apenas explicar que existe.
+
+2.6 Disponibilidade por idioma, país e dispositivo
+[CONFIRMADO] Canva IA aceita: inglês, espanhol, português, francês,
+alemão, italiano, holandês, polonês, turco, árabe, japonês, coreano,
+chinês (simplificado e tradicional), indonésio, tailandês, vietnamita e
+hindi; "alguns recursos podem oferecer suporte a menos idiomas" [6][5].
+[CONFIRMADO] Texto Mágico: 103 idiomas, incluindo português [15].
+[CONFIRMADO] Tradutor: mais de 100 idiomas, com "português (Brasil)" e
+"português (Portugal)" separados; tom de voz disponível para português [27][28].
+[CONFIRMADO] Se o Canva IA não aparece: pode não estar disponível no
+idioma/país; o Canva sugere trocar o idioma da conta (ex.: inglês) [7].
+[CONFIRMADO] Celular: Canva IA no menu inferior; conectores de apps só no
+computador/navegador, não no app móvel [7][12]. Apresentar e gravar: só
+computador [38]. Edição offline: não funciona nos apps iOS/iPad [65].
+[CONFIRMADO] Planos pagos podem abrir várias conversas do Canva IA;
+Grátis e Educação: até dois chats simultâneos [6].
+[CONFIRMADO] Agendamento de tarefas do Canva IA: até 10 tarefas, diária/
+semanal/mensal; não disponível para alunos do Canva Educação (assim como
+Biblioteca de memórias e Pesquisa na web) [6].
+
+2.7 Contradições de plano a registrar [VERIFICAR]
+- Ajuda pt_br "Novidades do Canva IA" diz que os recursos do Canva IA
+  estão em Pro, Equipes, Pro+, ONGs e Enterprise, e que o Grátis tem
+  "recursos de IA, como Texto Mágico e Removedor de Fundo, com limites"
+  [7]; a tabela de preços diz que o Removedor de Fundo NÃO está no Grátis
+  [5] e a ajuda do Removedor diz "incluído nos planos pagos" [23].
+  Seguir a tabela de preços e testar com conta Grátis.
+- Tabela de preços: "Chat do Canva IA" incluído no Grátis [5]; ajuda de
+  solução de problemas diz que o Canva IA "é um recurso premium" [11].
+  Interpretação [SUGESTÃO]: o chat existe no Grátis, mas gerações
+  Premium/Ultra dependem da cota; testar.
+- Conectores: tabela diz "Não" no Grátis [5]; ajuda dos conectores diz
+  que estão disponíveis "para quem usa o Canva Grátis" [12].
+
+----------------------------------------------------------------
+3. PRIMEIROS PASSOS (passo a passo, origem dos menus)
+----------------------------------------------------------------
+
+3.1 Criar conta e idioma
+1. canva.com > "Criar uma conta" (Google, Microsoft, e-mail etc.).
+2. Idioma: foto do perfil > "Sua conta" > "Seu perfil" > "Idioma" (PT)
+   [66]. Para leitor de tela do design: "Arquivo" > "Idioma" [50].
+3. Professores: verificação em canva.com/edu-signup/ [67].
+
+3.2 Primeiro design com o Canva IA (PT) [6][14]
+1. Página inicial > "Canva IA" na navegação lateral (computador) ou menu
+   inferior (celular); se não aparecer, "Mais".
+2. Digite o comando ou escolha um tipo de documento sugerido.
+3. Opcional: "+" > "Fazer upload", "Adicionar do Canva", "Aplicar a
+   marca", "Conectar", "Fontes" (pesquisa na web); microfone para ditar.
+4. Enter ou "Enviar". Selecione o design > "Usar o editor do Canva" /
+   "Editar design". O Canva IA continua no painel lateral.
+5. Para refinar, continue a conversa ("Pede pro Canva" / "Perguntar ao
+   Canva" na barra flutuante ao selecionar um elemento) [9][23].
+Tipos aceitos pelo Canva IA para designs: apresentações, cartazes,
+cartões, panfletos, convites, cartões de visita, postais, documentos e
+redes sociais; vídeo 1920×1080, 1080×1920 ou 1080×1080 [14].
+
+3.3 Pelo caminho clássico (modelo) [13]
+Editor > "Modelos" > buscar com 4 ou mais palavras > "Não encontrou
+algo?" > "Experimentar o Canva IA". Ou no cartão de um modelo: "Editar com
+IA" (apresentações, redes sociais e impressos) [33].
+
+3.4 Apresentação com o Canva IA [33]
+Página inicial > Canva IA > "Apresentação" ou descreva > (opcional) "+"
+> Enviar > revisar a ESTRUTURA proposta > "Gerar apresentação" > abrir no
+editor. O esboço só aparece quando se começa pela página inicial.
+
+3.5 Editar imagem (PT) [19][20][21][22][23]
+Selecionar foto > barra superior "Editar" > "Ferramentas" > "Edição
+Mágica" / "Borracha Mágica" / "Ver tudo" > "Expansão Mágica" ou "Captura
+Mágica". Removedor de Fundo: botão direto na barra ao selecionar a foto.
+
+3.6 Redimensionar e traduzir [26][27]
+Barra do editor > "Redimensionar" > escolher tamanhos (vários) ou
+"Tamanho personalizado" > páginas > "Copiar e redimensionar" (cria cópia)
+ou "Redimensionar este design". Traduzir: clique direito no texto >
+"Traduzir texto", ou "Redimensionar" > "Traduzir", ou página > "Editar" >
+"Tradutor".
+
+3.7 Revisar acessibilidade e exportar [46][48][64]
+"Arquivo" > "Acessibilidade" > "Verificar acessibilidade do design".
+"Compartilhar" > "Baixar" > tipo de arquivo > "Configurações avançadas".
+
+3.8 Desativar a IA generativa (Grátis e Pro) [54]
+Ícone do perfil > "Configurações" > "Controles e permissões" >
+"Permissões" > "Ativar recursos de IA generativa". Para ver menos modelos
+gerados por IA: "Sua conta" > "Personalização de IA" > "Conteúdo gerado
+por IA". Em equipes/escolas, quem decide é o admin [55].
+
+----------------------------------------------------------------
+4. GLOSSÁRIO PARA LEIGOS [SUGESTÃO, com termos oficiais]
+----------------------------------------------------------------
+- Design (no Canva): qualquer arquivo criado no editor — slide, post,
+  folheto, documento, vídeo. Também é a disciplina de organizar texto,
+  imagem, cor e espaço para comunicar algo com clareza.
+- Brief: pedido curto que diz objetivo, público, canal, formato,
+  mensagem principal, tom, prazo e restrições.
+- Modelo (template): design pronto para personalizar.
+- Kit de Marca: lugar onde ficam logotipos, cores, fontes, voz e
+  diretrizes de uma marca [39].
+- Modelo da marca: modelo aprovado pela organização, com bloqueios [43].
+- Hierarquia visual: ordem em que os olhos leem a peça (título > apoio >
+  detalhe), definida por tamanho, peso, cor e posição.
+- Contraste: diferença entre cor do texto e cor do fundo; baixo contraste
+  dificulta a leitura [46].
+- Proporção (aspect ratio): relação largura × altura (1:1, 4:5, 9:16,
+  16:9).
+- Comando (prompt): instrução escrita ao Canva IA.
+- Cota/limite de uso da IA (AI allowance): "saldo" mensal das ferramentas
+  Premium/Ultra [1].
+- IA Padrão / Premium / Ultra: níveis de ferramentas e de qualidade [1][2].
+- Camadas: elementos separados e editáveis; "Camadas Mágicas" separa uma
+  imagem achatada em camadas [24].
+- Texto alternativo (alt text): descrição de imagem lida por leitores de
+  tela; até 250 caracteres no Canva [47].
+- Decorativo: marcação para imagem que não acrescenta informação [47].
+- Semântica de texto: marcar título como H1/H2/H3 ou parágrafo [48].
+- Ordem de leitura: sequência em que o leitor de tela lê os elementos [48].
+- PDF achatado: PDF sem camadas/etiquetas; perde acessibilidade [49].
+- CMYK/RGB: perfis de cor para impressão e tela [64].
+- Sangria e marcas de corte: margem extra para impressão [64].
+- Metadados de IA / C2PA: informação gravada no arquivo indicando uso de
+  IA generativa [23][73].
+- Conteúdo Pro / Grátis: itens da biblioteca do Canva com licenças
+  diferentes [74].
+- Linguagem simples: técnica de escrita para que a pessoa encontre,
+  entenda e use a informação (Lei 15.263/2025) [92].
+
+----------------------------------------------------------------
+5. FUNCIONALIDADES (o que faz, onde fica, plano, limites)
+----------------------------------------------------------------
+
+5.1 Canva IA (chat / design conversacional) [6][7][8][9][10][12]
+- Faz: cria e edita designs, docs, planilhas, apresentações, imagens,
+  vídeos, código; pesquisa na web ("Fontes"); usa arquivos anexados e
+  apps conectados (somente leitura: Slack, Gmail, Google Drive, Agenda,
+  Notion, Zoom, HubSpot, Asana etc.) [12]; Biblioteca de memórias
+  (preferências de estilo, cores, tom; página "Sobre mim") [8]; agenda
+  tarefas [6]; histórico e várias abas de chat [6].
+- Modelos: "Core" (alguns designs podem usar outro modelo) ou "Brush"
+  (sempre modelo do Canva); edições sempre usam Brush; opção em
+  lançamento gradual, indisponível em Docs, Planilhas, Code e Vídeos [10].
+- Limites: o próprio FAQ diz "O Canva IA pode cometer erros. Sempre revise
+  as saídas, especialmente dados e fatos; nomes, datas e figuras" [8].
+- "A IA do Canva é um recurso essencial e não pode ser totalmente
+  desativada" em equipes/escolas; admins controlam acesso [8].
+
+5.2 Design Mágico [13][14]
+- Gera designs a partir de texto, imagens e ideias; até oito modelos nos
+  resultados [14]. Não gera vídeo do zero (organiza conteúdo; vídeo vem da
+  Mídia Mágica — 4 s, sem som — ou do "Vídeo do Canva IA" — 8 s, com som)
+  [13]. "Quanto mais contexto e instruções você der, melhor será o
+  resultado" [13].
+
+5.3 Texto Mágico [15][16]
+- Acesso: ícone de "Ações rápidas" ou tecla "/" no editor; ou selecionar
+  texto > botão "Texto Mágico". Opções: Reescrever, Corrigir ortografia,
+  Continuar a escrever, Encurtar, Mais divertido, Mais formal, Alterar a
+  voz (inclui voz salva da marca), Gerar questionário, Gerar voz de IA;
+  "Mais conteúdo semelhante" e "Ficou bom, mas…" para refinar [16].
+- Notas de apresentação: "Notas" > "Gerar notas" (conteúdo da página ou
+  comando personalizado) > "Melhorar notas" [16][36].
+- Limites: entrada de 1.500 palavras, saída ~2.000 palavras; "pode gerar
+  textos que não sejam precisos ou inéditos" [15].
+
+5.4 Imagem: gerar [17][18][45]
+- Mídia Mágica (editor > "Magic Media"/"Mídia Mágica"; ou em "Apps"):
+  abas Imagens (estilos fotografia/arte digital/artes plásticas; quadrado,
+  paisagem, retrato; imagem de referência), Elementos gráficos, Vídeos
+  (4 s) e 3D [17].
+- Dream Lab (página inicial > "Mais" > "Dream Lab"; não fica no editor):
+  até 4 imagens por comando; imagem de referência, edição por comando e
+  "Aumentar resolução" consomem cota; histórico; "As imagens geradas
+  incluem uma indicação visível de que foram criadas por IA" [18].
+- Imagens com identidade da marca: Marca > Kit de Marca > imagem > "Mais"
+  > "Gerar a partir da foto"; 1:1, 16:9, 9:16; até 4 imagens; somente
+  titular, admin ou designer da marca; Pro, Pro+, Enterprise, ONGs [45].
+- Canva Craft (desde out/2026): 2K, mais de 30 proporções, texto legível
+  "com precisão", arquitetura em duas etapas (planeja composição e depois
+  renderiza) [81].
+
+5.5 Imagem: editar [19][20][21][22][23][24][25]
+- Edição Mágica: "Tudo", "Pincel" ou "Clique"; descrever e "Gerar". Dicas
+  oficiais: evitar bandeiras, textos, rostos ou mãos; adicionar um
+  elemento por vez; não escrever tamanho no comando (pincelar área
+  maior); celebridades e marcas podem ser bloqueadas. Limitações: luz e
+  estilo podem não combinar; área editada pode ficar mais pixelada [19].
+- Expansão Mágica: escolher tamanho ou arrastar alças; rostos, mãos e
+  fundos transparentes podem não funcionar bem [20].
+- Captura Mágica: separa objeto e mantém o fundo; não funciona em molduras
+  e grades [21].
+- Borracha Mágica: pincel, clique, "Primeiro plano" ou "Texto" [22].
+- Removedor de Fundo: um clique; pastas com até 50 imagens; fotos < 9 MB;
+  > 10 MP é reduzida; vídeo < 10 min; pincéis Apagar/Restaurar. É
+  "ferramenta de edição": NÃO adiciona metadados de conteúdo gerado por IA
+  [23].
+- Camadas Mágicas: PNG/JPG de uma página, maior lado ≤ 5.000 px; não
+  aceita PDF, vetores, imagens licenciadas (ex.: Disney, Hasbro), páginas
+  múltiplas; fotorrealistas têm resultado variável. Melhor com design
+  gráfico, ilustração e imagem estilizada [24].
+- Cópia de estilo: "Copiar estilo visual" ou "básico"; com imagem de
+  referência consome cota; aviso "Você atingiu o limite por enquanto" →
+  esperar 24 h [25].
+
+5.6 Adaptar [26][27][28][29][30][32]
+- Formato Mágico/Redimensionar: até 50 designs de uma vez, até 5 novos
+  tamanhos por design, máximo 250 resultados por ação; 40×40 a 8.000×3.125
+  px; desfazer via Histórico de versões (se não fez cópia); não funciona
+  em Canva Docs; pacotes (ex.: "Vídeos verticais"); "Redimensionar a
+  página para ajustá-la à seleção". Cada uso conta no limite de IA,
+  segundo a ajuda pt_br [26] [VERIFICAR — a tabela de preços diz que é
+  ferramenta que não consome cota nos pagos].
+- Tradutor: "Traduzir de" detecta automaticamente; até 2 mil caracteres
+  por vez; um idioma por vez; tons (Original, Conversacional, Informativo,
+  Profissional, Amigável, Inspirador); configurações "Reduzir o tamanho da
+  fonte para caber", "Duplicar página ao traduzir" (padrão ativado) e
+  "Inverter página" (idiomas da direita para a esquerda); não funciona com
+  todas as fontes [27]. Boas práticas oficiais: frases curtas, sem gírias,
+  contexto, pontuação correta, sem quebras de linha no meio da frase [28].
+- Transformar em doc: resumo executivo, post de blog, esboço de
+  apresentação, post para LinkedIn, roteiro de vídeo, plano de projeto,
+  e-mail, todo o texto, poema [29].
+- Animação Mágica: apresentações, redes sociais e vídeo [30].
+- Criar em lote: até 150 campos, 300 linhas; "Conectar campos
+  automaticamente" por IA; Pro e acima [32].
+
+5.7 Apresentações [33][34][35][36][37][38]
+- Gerar (página inicial) com esboço editável; "Editar com IA" em modelos;
+  remixar design privado [33].
+- Painel "Editar página" para refinar layout/design/conteúdo da página
+  inteira [34].
+- A partir de dados: CSV, Canva Planilhas ou fonte conectada; 15 tipos de
+  gráfico; 20 idiomas incluindo português; novo comando não altera
+  gráficos existentes (editar à mão) [35].
+- Notas: visíveis na "Vista de apresentação"; baixar PDF com notas
+  ("Configurações avançadas" > "Incluir notas") [36][37].
+- Modos: tela cheia, Vista de apresentação (duas janelas), Apresentar e
+  gravar, Reprodução automática [37].
+- Apresentar e gravar: só computador; uma gravação por design; cria link
+  público de visualização automaticamente, mesmo sem salvar; legendas
+  automáticas no link [38].
+- Exportar PPTX: só para apresentações; aparência pode mudar; animações e
+  vídeos podem não funcionar no PowerPoint [64].
+
+5.8 Marca [39][40][41][42][43][44][45]
+- Kits de marca por plano: Grátis 1 (apenas 3 cores); Pro 5; Pro+ 100;
+  Enterprise 1.000 [5]. Até 2.000 ativos por categoria [39].
+- Gerador de Kit de Marca: a partir de URL pública ou PDF de diretrizes
+  (< 200 MB); extrai logotipos, cores, fontes, elementos, fotos, voz e
+  diretrizes; "Sempre revise o conteúdo extraído" [40].
+- Voz da marca: até 500 caracteres; aplicada no Texto Mágico ("Gerar com
+  a voz da marca" / "Aplicar Voz da marca") [42].
+- Bloqueios em modelos da marca: total, só posição, página, fundo; o Canva
+  IA respeita bloqueios ao gerar novo design, mas ao editar com o Canva IA
+  trata todos os bloqueios como totais [43].
+- "Aplicar a marca" no Canva IA: usa kit (cores, fontes) e, se escolhido,
+  modelo da marca (layout). Sem kit, pode-se colar a URL do site no
+  comando para extrair a marca. Limitação: "o Canva IA não é compatível
+  com permissão e Controle da Marca" — usar bloqueios [44].
+- Para a geração na marca funcionar em equipes, admin precisa manter
+  ativas as permissões "Design Mágico" e "Canva IA" [44][55].
+
+5.9 Acessibilidade [46][47][48][49][50][51][77]
+(Detalhes na seção 14, foco 9.)
+
+5.10 Colaboração, versões e exclusão [58][59][60][61][62][63]
+(Detalhes na seção 14, foco 10.)
+
+5.11 Educação [67][68][69][70][84][89]
+- Atividades Mágicas: comando no formato "Os alunos poderão [verbo] sobre
+  [tópico]"; verbos da Taxonomia de Bloom; revisar adequação à idade,
+  precisão e sensibilidade cultural [68].
+- Criar & Realizar (alunos): estilos/cenas predefinidos, sem comando livre
+  [69].
+- Aulas: "Projetos" > "Adicionar novo" > "Aula"; "Visualizar como aluno";
+  "Atribuir aula" a uma turma [70].
+- Alunos: apps de IA generativa e redes sociais desativados por padrão;
+  admin habilita [67]. Por padrão, só Mídia Mágica, Dream Lab e Insights
+  Mágicos ficam ativos para alunos (ajuda EN) [55] [VERIFICAR conflito com
+  [67]].
+- Texto Mágico em Educação: "somente para contas de administrador e
+  professor" [90].
+
+----------------------------------------------------------------
+6. CASOS REAIS (resultados e riscos)
+----------------------------------------------------------------
+[CONFIRMADO — fonte é o próprio Canva, logo há viés comercial]
+- Virginia Department of Health (EUA; saúde pública, 35 distritos):
+  modelos da marca bloqueados com cores, fontes e contraste acessíveis;
+  comunicados de emergência caíram de 2–3 h para 15–20 min ("88%");
+  "redução de 70% no tempo de entrega de conteúdo"; problema anterior:
+  contas pessoais, padrões de acessibilidade não aplicados [86].
+  → Excelente caso para S5 e T9: o ganho veio de MODELOS BLOQUEADOS e
+  governança, não de geração livre.
+- Keller Williams (imobiliário): "300.000 horas" de agentes economizadas
+  no 1º ano; conteúdo de 8 h para 15 min; Kit de Marca e Controles da
+  Marca [87].
+- Virgin Voyages (turismo): agentes usando Canva convertem 2x; 3x
+  produção criativa; 95% menos pedidos de design; Kit de Marca e Formato
+  Mágico [88].
+- Educação (lista de cases, sem leitura detalhada): Berkeley County
+  Schools "18.000 horas economizadas por ano" [86-lista] [VERIFICAR].
+[VERIFICAR — independentes] Reviews de 2026 relatam maiores ganhos em
+redimensionar e adaptar formatos; Edição Mágica "irregular" em detalhes
+finos [99]. Números de blogs e "product insights" não são confiáveis.
+[CONFIRMADO — risco] Removedor de Fundo é ferramenta de edição, mas há
+relatos de posts marcados como "feito com IA"; o Canva pede contato com o
+suporte e diz "estamos investigando" [23].
+[CONFIRMADO — risco] Design público pode expor conteúdo oculto, cortado,
+notas e revisões anteriores [58]; PDF pode conter a imagem original sem
+corte [64].
+NÃO ENCONTRADO: estudo independente (revisado por pares) avaliando o Canva
+IA especificamente em materiais de educação em saúde. Há estudos sobre IA
+generativa em materiais para pacientes (ChatGPT, Gemini etc.), com
+legibilidade variável e erros de precisão apontados por especialistas
+[100].
+NÃO ENCONTRADO: case oficial brasileiro com números.
+
+----------------------------------------------------------------
+7. BOAS PRÁTICAS E PROMPTS OFICIAIS
+----------------------------------------------------------------
+7.1 Do Canva [9][11][13][17][18][19]
+- "Seja específico no comando"; "Divida solicitações complexas em etapas
+  menores"; "Continue a conversa para aprimorar"; "Anexe arquivos" [6][11].
+- Design com IA — comece pelo TIPO de design, diga o OBJETIVO e o
+  PÚBLICO, especifique o ESTILO (cores, sensação, tema) e a MENSAGEM
+  principal [9]. Exemplo oficial: "Crie um post para Instagram promovendo
+  uma venda de café por tempo limitado para clientes locais. Destaque a
+  urgência e impulsione as visitas à loja. Use um estilo caloroso e
+  amigável com cores convidativas." [9]
+- Imagem — comece pelo propósito; descreva estilo, cores, clima [9];
+  Dream Lab: estilo, cores, iluminação, layout, composição ("vista de
+  cima", "grande angular") [18].
+- Vídeo — assunto/ação primeiro, movimento de câmera, emoção no início,
+  parênteses para detalhes importantes [9].
+- Canva Code — propósito e público, detalhes visuais, palavras "editável"
+  e "interativo", "Salvar as respostas" [9].
+- "Pede pro Canva" em elemento selecionado — ex.: "Sugerir melhorias ao
+  meu design", "Reescreva esta legenda para ser amigável e mais clara" [9].
+- Atividades Mágicas — "Os alunos poderão avaliar o impacto do
+  desmatamento na floresta amazônica" (bom) vs. "aprender sobre o meio
+  ambiente" (amplo demais) [68].
+- Modelos da marca otimizados para IA: texto de instrução ("Insira o
+  título do seu evento"), imagens de espaço reservado, cores/fontes da
+  marca, layout simples, bloqueio de edição, logotipo como imagem,
+  "Verifique se há problemas de contraste" [44].
+
+7.2 Comandos-modelo para o curso [SUGESTÃO]
+BRIEF → COMANDO (estrutura de 6 partes):
+"[Tipo e formato] para [público] com o objetivo de [ação esperada].
+Mensagem principal: [1 frase]. Conteúdo obrigatório: [itens]. Tom:
+[tom]. Estilo visual: [cores/fontes ou 'use meu Kit de Marca']. Não
+inclua: [restrições]."
+Exemplos:
+- Apresentação curta: "Crie uma apresentação 16:9 de 6 slides para a
+  equipe de atendimento sobre o novo horário de funcionamento. Mensagem:
+  'a partir de 1º de dezembro atendemos das 8h às 18h'. Inclua: motivo,
+  o que muda para o cliente, roteiro de resposta e contato. Tom
+  objetivo. Use meu Kit de Marca. Uma ideia por slide, no máximo 25
+  palavras por slide."
+- Carrossel: "Crie um carrossel de 5 cards 1080×1350 para Instagram de
+  uma padaria de bairro anunciando pães sem lactose. Card 1 gancho, 2–4
+  benefícios, 5 chamada com endereço. Fonte grande, alto contraste."
+- Material didático: "Crie uma folha de atividade A4 para alunos do 7º
+  ano sobre frações equivalentes: título, 3 exemplos ilustrados, 6
+  exercícios e um espaço para resposta. Linguagem simples."
+- Educação em saúde: "Crie um folheto A5 em linguagem simples para
+  adultos sobre como lavar as mãos corretamente, usando SOMENTE o texto
+  abaixo [colar texto revisado por profissional]. Não acrescente
+  informações de saúde. Use ícones simples e texto ≥ 14 pt."
+Iteração: pedir mudanças pontuais ("aumente o contraste do título",
+"troque a foto do slide 3 por ícone", "reduza o texto do card 2 para 15
+palavras").
+
+7.3 Princípios de design para leigos [SUGESTÃO]
+1 mensagem por peça/slide; hierarquia (título, apoio, detalhe); 2 fontes
+no máximo; paleta curta (marca + neutro); espaço em branco; alinhamento;
+contraste; imagens que explicam (não só decoram); chamada para ação clara;
+consistência entre formatos.
+
+7.4 Economia de cota [9][1]
+Comandos claros e completos desde o início; usar Standard para
+rascunho e Premium/Ultra só para a versão final [2]; dividir pedidos
+grandes; evitar regenerar à toa; referenciar só os designs necessários.
+
+----------------------------------------------------------------
+8. SEGURANÇA, PRIVACIDADE, DIREITOS, LGPD E USO RESPONSÁVEL
+----------------------------------------------------------------
+8.1 Termos de Produtos de IA (vigência 26/06/2026) [73]
+[CONFIRMADO] Proibido usar IA para: enganar que conteúdo é feito por
+humano; remover/alterar metadados de proveniência, incluindo C2PA;
+aconselhamento que exija licença (jurídico, médico, financeiro) sem
+profissional qualificado; spam/malware; decisões totalmente automatizadas
+com efeitos legais significativos. Usuário declara ter direitos sobre a
+entrada. Saída: do usuário (exceto quando modifica Conteúdo Licenciado do
+Canva — ex.: editar uma foto da biblioteca → você NÃO é dono do
+resultado; numa apresentação com fotos da biblioteca você é dono do todo,
+não das fotos). Saídas podem não ser únicas. "Canva não verificou a
+precisão da Saída". Limites de uso são "controles operacionais e não
+direitos fixos". Entradas podem ser compartilhadas com parceiros de
+tecnologia; uso para treinamento controlado nas configurações de
+privacidade.
+
+8.2 Política de Uso Aceitável (atualizada 07/08/2025) [75]
+Proíbe, entre outros: risco de dano físico ou mental; conteúdo que
+explore crianças; discriminação; conteúdo sexual explícito; fraude;
+violação de propriedade intelectual e privacidade; "informação ou
+desinformação falsa, enganosa"; ameaça a processos democráticos.
+
+8.3 Acordo de Licença de Conteúdo [74] [CONFIRMADO]
+- Conteúdo gerado por IA da biblioteca do Canva é marcado na fonte e
+  segue a licença Grátis/Pro.
+- Proibido: usar Conteúdo de forma que coloque a pessoa retratada "em má
+  situação", incluindo anúncios de produtos farmacêuticos, de saúde,
+  ervas, suplementos, higiene pessoal, contracepção; e "conteúdo que
+  contenha a imagem de uma pessoa se esse uso implicar que o modelo...
+  sofre de uma enfermidade, doença ou condição física ou mental".
+- Proibido usar Conteúdo para treinar IA ou para identificação de pessoas.
+- Releases de modelo geralmente não são obtidos para Conteúdo Grátis;
+  responsabilidade do usuário.
+- Educação: Conteúdo Pro só para fins educacionais não comerciais;
+  "Education Content" (selo "Resource") só uso educacional.
+→ Para S5 [SUGESTÃO]: preferir ícones, ilustrações, fotos próprias com
+autorização ou imagens geradas sem pessoas identificáveis; nunca usar foto
+de pessoa da biblioteca para "ilustrar doente".
+
+8.4 Uso comercial e vender produtos [52][53]
+[CONFIRMADO] Só designs originais; não vender Conteúdo do Canva de forma
+isolada (filtro, recorte, cor ou borda = isolado); modelos com Conteúdo
+Pro só como link de modelo do Canva; eBooks: imagens Pro sem edição até
+480.000 pixels; clip-art com conteúdo do Canva: proibido; design para
+cliente: transferir para um único cliente. Imagens geradas por IA não são
+cobertas pelo Acordo de Licença; "talvez você não detenha os direitos
+autorais"; buscar assessoria jurídica para vender [52].
+[CONFIRMADO] "Não mencione marcas, personagens ou pessoas conhecidas nos
+seus comandos (a menos que tenha autorização expressa)"; "ao editar fotos
+de uma pessoa reconhecível, é importante obter a autorização dela"; "é
+recomendável informar que [o conteúdo] foi criado com a ajuda da IA";
+IA pode não servir como marca registrada (resultado não exclusivo) [53].
+[CONFIRMADO] Pessoas, personagens ou marcas reconhecíveis: "você precisará
+de autorização dos detentores dos direitos, pois o Canva não pode
+concedê-la" [17].
+[VERIFICAR] Brasil: Lei 9.610/98 (autor = pessoa física); leitura
+majoritária é que saída sem contribuição criativa humana relevante não tem
+proteção autoral — sem decisão judicial localizada (ver arquivo de Imagem
+com IA desta mesma onda).
+
+8.5 Rotulagem e metadados de IA [18][23][73]
+[CONFIRMADO] O Canva "só adiciona metadados de conteúdo gerado por IA
+quando um recurso cria conteúdo totalmente novo ou faz alterações
+significativas, como a Mídia Mágica ou a Edição Mágica" [23]; Dream Lab
+inclui "indicação visível" [18]; Termos citam C2PA [73].
+[VERIFICAR] Em quais formatos de exportação o C2PA é preservado:
+NÃO ENCONTRADO em fonte oficial; blogs divergem [VERIFICAR].
+[SUGESTÃO] Ensinar: rotular "Imagem criada com IA (Canva)" na legenda;
+seguir regras da plataforma (Instagram/TikTok/YouTube).
+
+8.6 Privacidade e LGPD [56][76][73]
+[CONFIRMADO] Política de Privacidade atualizada em 02/11/2026: Canva pode
+analisar atividade, conteúdo e uploads para "treinar nossos algoritmos,
+modelos e produtos de IA"; o usuário gerencia em "Sua conta" > "Controles
+de privacidade" [56][76]; memórias geridas em "Personalização de IA".
+Dados armazenados/processados em EUA, Austrália, Singapura, UE, Reino
+Unido, Filipinas, Nova Zelândia e outros. Usuários no Brasil têm direitos
+de acesso, correção, exclusão etc. Canva Educação: sem anúncios para
+alunos e "não usaremos o Conteúdo do Usuário do Canva Educação para
+treinamento de IA" [76].
+[CONFIRMADO] Em equipe, o titular pode reatribuir a propriedade do
+conteúdo e o admin pode mover/editar itens compartilhados; conta com
+e-mail corporativo pode passar ao controle da organização [76].
+[CONFIRMADO] Conectores dão ao Canva IA acesso de leitura aos apps
+conectados; dados do Google seguem a "Política de Dados do Usuário dos
+Serviços de API do Google" [12][8].
+[SUGESTÃO — LGPD (Lei 13.709/2018)] Nunca subir dados pessoais de
+pacientes, alunos ou clientes (nomes, fotos, prontuários, CPF) para gerar
+peças; anonimizar; usar conta institucional; desligar o uso de dados para
+treinamento quando a política da instituição exigir; não conectar e-mail
+ou drive com dados sensíveis ao Canva IA.
+
+8.7 Educação em saúde (S5) — regras do curso [SUGESTÃO + base 73/74/86/92/93/94]
+1. O conteúdo clínico vem de fonte oficial (Ministério da Saúde, secretaria,
+   protocolo da instituição) e é revisado por profissional habilitado
+   ANTES de entrar no Canva.
+2. A IA só formata, simplifica a linguagem (com revisão) e diagrama. Não
+   pede à IA para "criar orientação de saúde", dose, diagnóstico ou
+   tratamento (proibido pelos Termos, seção 8.1).
+3. Linguagem simples: frases curtas, voz ativa, palavras do dia a dia,
+   uma ideia por bloco, ação clara ("O que fazer"); guias Fiocruz/SES-DF;
+   índice CDC (meta ≥ 90/100) [93][94][95].
+4. Imagens: ícones/ilustrações; sem foto de pessoa da biblioteca como
+   doente [74]; sem imagens anatômicas geradas por IA sem validação.
+5. Acessibilidade: fonte ≥ 12 pt (meta ≥ 14 pt para impresso), contraste,
+   alt text, PDF etiquetado.
+6. Privacidade: sem dados de pacientes.
+7. Rodapé com fonte, data, responsável técnico e "material revisado por
+   [profissional/registro]".
+8. Pré-teste com 3–5 pessoas do público.
+
+8.8 Moderação [17][18][19][11]
+Verificações automáticas de comandos; botão "Denunciar"; falsos positivos
+possíveis; "Dar feedback" para contestar [11][53].
+
+----------------------------------------------------------------
+9. LIMITAÇÕES E ERROS COMUNS
+----------------------------------------------------------------
+[CONFIRMADO]
+- Recurso não aparece: plano, admin, idioma/região, lançamento gradual,
+  aluno do Canva Educação, app desatualizado [6][7][11].
+- Comando sinalizado: conteúdo protegido, explícito ou restrito [11].
+- Edição Mágica: rostos, mãos, textos e bandeiras falham; pixelização [19].
+- Expansão: rostos, mãos, fundo transparente [20].
+- Camadas Mágicas: fotorrealismo, PDF, > 5.000 px [24].
+- Tradutor: fontes incompatíveis, texto mais longo estoura a caixa
+  ("Reduzir o tamanho da fonte para caber"), quebras de linha [27][28].
+- Redimensionar: não ajusta perfeitamente; apresentação → vídeo vira
+  páginas separadas ("Editar como vídeo") [26].
+- Canva IA ignora páginas de modelos com elementos complexos; não lê
+  "componentes" reutilizáveis; trata bloqueios parciais como totais na
+  edição [43][44].
+- Gráficos de apresentação a partir de dados não são alterados por novo
+  comando [35].
+- PPTX/DOCX: fontes e animações mudam [64]. Alt text não vai para PNG/MP4
+  [47]. PDF achatado perde etiquetas [49]. Leitor de PDF do navegador/
+  Safari pode ler mal o PDF acessível — usar Acrobat [49].
+- Legendas automáticas não podem ser editadas nem baixadas [51].
+- Offline: não cria design novo; IA, kit de marca, download exigem
+  internet; até 14 dias; não sair da conta [65].
+- Histórico de versões: só planos pagos (até 1.000 versões); Grátis não
+  tem [61].
+- Lixeira: 30 dias + 14 dias via suporte; imagens/vídeos excluídos da
+  lixeira não voltam [62].
+- Marca d'água em elementos Pro no Grátis [57].
+[SUGESTÃO] Erros pedagógicos típicos: aceitar o primeiro rascunho;
+texto demais; contraste baixo em fundos fotográficos; números e datas
+inventados; inconsistência entre versões redimensionadas; exportar PNG
+quando precisava de PDF acessível; link "Qualquer pessoa com o link —
+pode editar" esquecido aberto.
+
+----------------------------------------------------------------
+10. COMPARAÇÃO IMPARCIAL E DELIMITAÇÃO DE ESCOPO
+----------------------------------------------------------------
+[VERIFICAR — fontes secundárias, muitas com interesse comercial] [99]
+- Gamma: mais focado em gerar deck inteiro a partir de texto; formato
+  próprio; créditos; exporta PPT/PDF.
+- Adobe Express: IA Firefly (Adobe afirma treino com conteúdo licenciado/
+  domínio público); créditos generativos; menos IA específica para
+  apresentações.
+- PowerPoint + Copilot: fica no ecossistema Microsoft 365 (ver arquivo
+  "microsoft-365-copilot" desta onda).
+- Canva: suíte ampla (social, impressos, docs, vídeo, sites, planilhas),
+  forte em modelos, marca e adaptação; IA embutida.
+[CONFIRMADO] Fronteira técnica com PowerPoint: Canva exporta PPTX só de
+apresentações e com perdas de fonte/animação [64].
+[SUGESTÃO] Fronteira do curso: ensinar quando sair do Canva (deck com
+fórmulas/automação corporativa → PowerPoint; deck inteiro a partir de
+texto longo → Gamma é alternativa), sem aprofundar.
+Fora do escopo (do prompt): fundamentos amplos de imagem generativa
+(arquivo "imagem-com-ia"), vídeo avançado, campanhas completas,
+aconselhamento de saúde, PowerPoint/Gamma em profundidade, Canva Code,
+Affinity/ProSuite, API/admin (apêndice).
+
+----------------------------------------------------------------
+11. NOVIDADES DOS ÚLTIMOS 12 MESES (nov/2025 – nov/2026)
+----------------------------------------------------------------
+[CONFIRMADO salvo indicação]
+- 16/04/2026 — Canva IA 2.0 (research preview), Canva Design Model,
+  conectores (Slack, Gmail, Google Drive, Agenda, Notion, Zoom, HubSpot,
+  Microsoft, Atlassian, Linear), agendamento, pesquisa web, Brand
+  Intelligence, Sheets AI, Canva Code 2.0 (importa HTML) [79]. GA:
+  "nas próximas semanas" [79]; status atual de disponibilidade total
+  [VERIFICAR]; ajuda diz "implementados gradualmente" [11].
+- 2026 — novo modelo de uso de IA (Padrão/Premium/Ultra; IA Extra a
+  US$ 100; recargas) [1][3][4] [VERIFICAR data exata].
+- 2026 — plano Pro+ (Brasil) / Business; Equipes descontinuado para novos
+  clientes [5].
+- 2026 — Camadas Mágicas [24]; Gerador de Kit de Marca [40]; Kit de Marca
+  pessoal [41]; conteúdo "gerado por IA" com opção de ver menos [54];
+  Canva Offline [65]; Relatório de insights de IA (admins) [71].
+- 26/06/2026 — novos Termos de Produtos de IA [73].
+- Jul/2026 — Canva Code 2.0 liberado, inclusive em português (Olhar
+  Digital, 15/07/2026) [98][VERIFICAR].
+- Out/2026 — parceria com Common Sense Media: 60 lições de letramento
+  digital e IA (6º ao 12º ano, EUA) a partir de 09/10; tradução planejada
+  [84].
+- 22/10/2026 — Canva Craft [81]; 29/10/2026 — Canva Brush (Pro primeiro)
+  [82]; ProSuite (Affinity, Cavalry, Flourish, Leonardo) [83][72].
+- 02/11/2026 — Política de Privacidade atualizada [76].
+- 04/11/2026 — reestruturação (1.271 pessoas, 22%) [85].
+Tendência [SUGESTÃO]: interface e nomes mudam a cada poucos meses —
+gravar vídeos curtos e modulares; revisar o curso trimestralmente.
+
+----------------------------------------------------------------
+12. MATERIAL DIDÁTICO EXISTENTE
+----------------------------------------------------------------
+- Canva Design School / "Escola Criativa" (canva.com/designschool):
+  cursos com certificado, ex.: "Trabalhe melhor com a IA" (1 h,
+  iniciante), "Kit de Criação Visual" (1 h), "Crie campanhas em grande
+  escala" (1h29), aula "Atualize folhas de atividades e slides usando as
+  ferramentas de IA" (5 min), "Canva Code para o trabalho" (10 min) [91].
+- Central de Ajuda (93 páginas salvas nesta pasta).
+- Canva Educação: aulas prontas, Atividades Mágicas, modelos de plano de
+  aula, integração LMS (Google Sala de Aula, Canvas, Teams) [70][90].
+- Lições Common Sense Media (inglês, EUA) [84].
+- Modelos acessíveis do Canva (citados em [48]; link não testado).
+- Guias de linguagem simples: Fiocruz/Icict; SES-DF ("Linguagem Simples em
+  10 passos" e guia 2024); Fiocruz leitura fácil (acessibilidade
+  educativa) [94][95][96]; CDC Clear Communication Index [93].
+NÃO ENCONTRADO: curso oficial do Canva em português específico sobre
+educação em saúde.
+
+----------------------------------------------------------------
+13. EXERCÍCIOS, OFICINAS E PROJETOS [SUGESTÃO — tudo nesta seção]
+----------------------------------------------------------------
+Materiais: todos ORIGINAIS (textos abaixo), marcas fictícias, sem pessoas
+reais. Logotipos: criar no próprio Canva com formas/texto ou gerar com IA
+(sem marcas existentes). Imagens: geradas no Canva, ícones/elementos da
+biblioteca (licença do Canva) ou fotos próprias.
+
+Marcas fictícias de prática (Kit de Marca):
+- "Padaria Grão Dourado": cores #7A4B1E (marrom), #F2C14E (amarelo),
+  #FFF8EC (creme); fontes: 1 serifada para títulos, 1 sem serifa para
+  texto; voz: "acolhedora, de bairro, direta".
+- "Escola Municipal Horizonte": #1D4E89, #F7B32B, #FFFFFF; voz "clara,
+  respeitosa, motivadora".
+- "UBS Bem-Viver" (fictícia): #00796B, #FFFFFF, #263238; voz "simples,
+  calma, sem jargão".
+
+13a. Essentials — exercícios curtos (100–130 min no total)
+E1 (10 min) Tour: encontrar Canva IA, Modelos, Marca, Arquivo >
+   Acessibilidade, Compartilhar > Baixar e Configurações > Cobrança > Uso
+   de IA. Êxito: aluno anota onde está cada um e quanto resta de cota.
+E2 (15 min) Do brief ao comando: transformar o brief da Padaria em
+   comando de 6 partes (7.2). Êxito: comando tem tipo/formato, público,
+   objetivo, mensagem, tom, restrição.
+E3 (15 min) Gerar 1 post 1080×1350 com Canva IA e escolher entre opções
+   justificando em 3 critérios (mensagem, legibilidade, marca).
+E4 (15 min) Texto Mágico: reescrever o texto do post em "Mais formal" e
+   "Encurtar"; comparar; corrigir um dado inventado proposital.
+E5 (15 min) Imagem: Removedor de Fundo ou Borracha Mágica + Expansão
+   Mágica em foto própria; Êxito: borda limpa, sem artefato visível.
+E6 (15 min) Acessibilidade: rodar verificador, corrigir contraste e
+   fonte, escrever alt text ≤ 250 caracteres; marcar decorativos.
+E7 (10 min) Adaptar: Redimensionar para Story 1080×1920 e ajustar
+   manualmente o que quebrou.
+E8 (10 min) Exportar/compartilhar: PNG para rede social; PDF Digital
+   para envio; link "Pode visualizar". Êxito: formato correto por canal.
+Quiz de fechamento (5 questões): níveis de IA; quem é dono da saída;
+   proibição de aconselhamento médico; diferença Captura × Borracha ×
+   Removedor; por que não usar PDF achatado para acessibilidade.
+
+13b. Hands On — 4 oficinas + projeto (60–90 min)
+Cada oficina: brief, entregável, critérios verificáveis (checklist ✓/✗).
+
+OFICINA 1 — Apresentação curta (T9)
+Brief: "Equipe de atendimento da Padaria Grão Dourado precisa conhecer o
+novo horário (8h–18h a partir de 1º/12), o motivo (mais fornadas) e o
+roteiro de resposta ao cliente. 6 slides, 16:9, 5 minutos de fala."
+Passos: Canva IA > Apresentação > comando > revisar esboço > gerar >
+Aplicar a marca > Texto Mágico para notas > Apresentar (Vista de
+apresentação) > Baixar PDF com notas.
+Critérios: 6 slides; 1 ideia/slide; ≤ 25 palavras/slide; notas em todos;
+cores e fontes do kit; nenhum dado novo inventado; verificador sem
+problemas de contraste; PDF com notas exportado.
+
+OFICINA 2 — Carrossel para redes sociais (T11/C3)
+Brief: "Lançamento de pães sem lactose; público: moradores do bairro,
+30–60 anos; 5 cards 1080×1350; chamada: 'Experimente sábado, 8h, Rua das
+Flores, 120' (endereço fictício)."
+Passos: gerar card 1 → criar os demais por consistência → imagem gerada
+(Mídia Mágica/Dream Lab ou "Crie uma imagem com o Canva IA") sem pessoas
+→ Edição Mágica para ajustar → alt text → Redimensionar 1 card para Story
+→ exportar PNG (todas as páginas) → legenda com "imagem criada com IA".
+Critérios: 5 cards com mesma grade/fonte; texto ≥ 24 pt no card; CTA no
+card 5; nenhuma marca real ou celebridade; alt text em todas as imagens;
+rótulo de IA na legenda.
+
+OFICINA 3 — Material didático (E3)
+Brief: "Professor(a) do 7º ano precisa de uma folha de atividade A4 sobre
+frações equivalentes e de 3 slides de abertura; adaptar uma versão com
+linguagem mais simples para alunos com dificuldade de leitura."
+Passos: Atividades Mágicas (se Canva Educação) ou Canva IA; Texto Mágico
+"Encurtar"/"Reescrever"; Transformar em doc (gabarito); revisão de
+conteúdo pelo professor; semântica de texto H1/H2; PDF Digital acessível.
+Critérios: objetivo no formato "Os alunos poderão…"; respostas corretas
+conferidas manualmente; duas versões (padrão e simplificada); fonte
+≥ 12 pt; títulos marcados; PDF não achatado.
+
+OFICINA 4 — Folheto de educação em saúde (S5)
+Brief: "UBS Bem-Viver (fictícia) quer um folheto A5 frente e verso sobre
+lavagem correta das mãos para adultos com baixa escolaridade."
+TEXTO-BASE (original, a ser validado por profissional antes do uso real):
+ "Lave as mãos para se proteger e proteger sua família.
+  Quando lavar: antes de comer; antes de preparar comida; depois de usar
+  o banheiro; depois de tossir ou espirrar; quando chegar da rua.
+  Como lavar: 1) Molhe as mãos. 2) Passe sabão. 3) Esfregue a palma, as
+  costas da mão, entre os dedos, o polegar e as unhas. 4) Esfregue por
+  pelo menos 20 segundos. 5) Enxágue. 6) Seque com toalha limpa ou papel.
+  Dúvidas? Procure a equipe da UBS."
+ [VERIFICAR — conferir contra material oficial do Ministério da Saúde/
+ ANVISA antes de uso público; aqui é exercício.]
+Passos: colar o texto e proibir acréscimos no comando; ícones/
+ilustrações (sem fotos de pessoas da biblioteca); verificador de
+acessibilidade; aplicar CDC Clear Communication Index (pontuação);
+rodapé "Material revisado por [nome, registro profissional, data]";
+PDF para impressão (300 dpi, CMYK se a gráfica pedir) + PDF Digital.
+Critérios: 100% do texto clínico igual ao texto-base aprovado; nenhuma
+orientação nova; fonte ≥ 14 pt; contraste aprovado; 6 passos numerados
+com ícones; espaço para validação profissional; sem dados pessoais;
+índice CDC ≥ 90 ou justificativa.
+
+PROJETO FINAL (Hands On)
+Escolher um público (trabalho, marketing, educação ou saúde) e entregar
+um "kit de comunicação": 1 peça principal + 2 adaptações (formato e
+idioma ou nível de leitura) + 1 relatório de 1 página (brief, comandos
+usados, o que a IA fez, o que foi editado à mão, checagens de fatos e
+acessibilidade, licenças e rotulagem). Rubrica (0–2 cada): objetivo
+atendido; hierarquia e legibilidade; consistência de marca; precisão do
+conteúdo; acessibilidade; adequação do formato de exportação/
+compartilhamento; direitos e transparência de IA; processo documentado.
+
+13c. Materiais e briefs para download/preparo
+- Kit da marca fictícia (cores/fontes acima) em PDF de uma página
+  [SUGESTÃO — produzir].
+- Planilha CSV de exemplo para "apresentação a partir de dados" ou
+  "Criar em lote": colunas produto, preço, dia; 10 linhas fictícias
+  [SUGESTÃO — produzir].
+- Fotos próprias da equipe (sem pessoas) para oficinas de edição.
+- Checklist do índice CDC (traduzido) [93]; guias de linguagem simples
+  (nesta pasta) [94][95].
+
+----------------------------------------------------------------
+14. FOCO ESPECÍFICO — RESPOSTA ITEM A ITEM
+----------------------------------------------------------------
+1. Composição atual do Magic Studio e mudanças de nome/local:
+   seções 0, 1.3 e 1.5. Marca "Magic Studio" aposentada (404) [97];
+   "Canva IA" é o guarda-chuva [78].
+2. Recursos e planos: 1.3, 2.2 e 5. Plano por recurso: tabela de preços
+   [5] — Grátis: Canva IA (chat), Texto Mágico, Gráficos Mágicos;
+   Pro+: Formato Mágico, Tradutor, Edição/Borracha/Expansão/Captura,
+   Removedor de Fundo, Animação Mágica; Camadas Mágicas e geração de
+   design/imagem consomem cota Premium (Grátis limitado).
+3. Fluxo brief → peça: seção 0 (fluxo) e 3; oficinas 13b.
+4. Brand Kit / Brand Controls: 5.8; Controles da Marca™, aprovações e
+   vincular pastas só Pro+/Enterprise; bloqueio de elementos e modelos da
+   marca a partir do Pro; Grátis = 1 kit com 3 cores [5][39][43][44].
+5. Apresentações: 3.4 e 5.7 (roteiro/esboço, design, notas, colaboração,
+   exportação PPTX/PDF, gravação); fronteira Gamma/PowerPoint: seção 10.
+6. Materiais didáticos: 5.11, Oficina 3; Atividades Mágicas, Aulas,
+   Transformar em doc, versões por nível de leitura [68][70][29].
+7. Educação em saúde: 8.7 e Oficina 4; base legal/termos [73][74];
+   linguagem simples [92][94][95]; caso VDH [86].
+8. Direitos e termos: 8.1–8.5 (conteúdo enviado/gerado, uso comercial,
+   marcas, pessoas, biblioteca, licença, rotulagem/C2PA).
+9. Acessibilidade [46][47][48][49][50][51][77]:
+   - Contraste e tipografia: "Arquivo" > "Acessibilidade" > "Verificar
+     acessibilidade do design" — detecta fonte < 12 pt ("Aumentar o
+     tamanho da fonte para 12 pontos"), baixo contraste (sugere cores) e
+     imagens sem alt text; correção em lote em apresentações, redes
+     sociais, impressos, sites e vídeo; "não é uma ferramenta de
+     conformidade"; WCAG exige teste manual [46].
+   - Alt text: elemento > "Mais" > "Texto alternativo" (ou clique
+     direito); até 250 caracteres; "Marcar como decorativo"; o Canva pode
+     sugerir descrição; vale em PDF, PPTX, HTML, link e modo apresentador;
+     não vale em PNG/MP4/AVI nem em posts agendados pelo Planejador [47][48].
+   - Ordem de leitura e títulos: "Arquivo" > "Acessibilidade" > "Editar
+     semântica do texto" (H1, H2, H3, Parágrafo; só no computador); ordem
+     pelo painel "Posição" > "Camadas" (camada de baixo é lida primeiro);
+     exportar "PDF (Digital)" com "Corresponder ordem de leitura às
+     camadas" e SEM "Achatar PDF"; QR code: baixar PNG/SVG, reenviar e pôr
+     alt text + link curto [48][49].
+   - Idioma do leitor de tela: "Arquivo" > "Idioma" [50].
+   - Legendas: automáticas (somente visualização), 50+ idiomas incl.
+     português; não editáveis nem baixáveis [51].
+   - Conformidade institucional: Canva declara WCAG 2.1 AA nas experiências
+     centrais (VPAT no Trust Portal); testa com VoiceOver, NVDA e JAWS [77].
+   - Checagem externa: Acrobat, PAC, leitor de tela [48].
+10. Colaboração e ciclo de vida [58][59][60][61][62][63][76]:
+   - Compartilhar: "Compartilhar" > "Nível de acesso": "Apenas você",
+     "Somente a sua equipe", "Qualquer pessoa com o link"; permissão
+     "Pode editar / comentar / visualizar"; e-mail; link de página;
+     link de modelo (planos pagos); link público pode expor conteúdo
+     oculto, cortado, notas e revisões — fazer cópia limpa antes [58].
+   - Convidados sem login podem editar (avatar de animal); não podem
+     comentar, baixar, publicar ou mudar permissões [59].
+   - Comentários: elemento > "Adicionar comentário"; @menção; filtros
+     (incl. "Canva IA"); resolver/restaurar; só o dono exclui comentários
+     de outros [60].
+   - Versões: "Arquivo" > "Histórico de versões"; até 1.000; edições de IA
+     aparecem com rótulo "Canva IA"; Grátis não tem [61].
+   - Publicação: link de visualização, site do Canva, redes sociais [58].
+   - Exclusão: Lixeira 30 dias (+14 via suporte); conta excluída em 14
+     dias, irrecuperável; cancelar plano antes; contas gerenciadas não se
+     excluem sozinhas; Canva retém dados por prazo "comercialmente
+     razoável" para obrigações legais [62][63][76].
+11. Limites, português, mobile/desktop, falhas: 2.3–2.7 e 9.
+12. Práticas com brief e critérios: 13b (quatro oficinas) + projeto.
+
+----------------------------------------------------------------
+15. TRECHOS DA DOCUMENTAÇÃO OFICIAL (curtos, para citação)
+----------------------------------------------------------------
+(Até uma frase por fonte; manter aspas e referência.)
+- "O Canva IA pode cometer erros. Sempre revise as saídas" [8]
+- "Quanto mais contexto e instruções você der, melhor será o resultado." [13]
+- "Evite adicionar bandeiras, textos, rostos ou mãos" (Edição Mágica) [19]
+- "A Acessibilidade do Design não é uma garantia de conformidade com a
+  acessibilidade" [46]
+- "O achatamento remove as etiquetas de acessibilidade." [49]
+- "Qualquer pessoa pode obter resultados parecidos com os seus se usar
+  comandos semelhantes." [53]
+- "Não mencione marcas, personagens ou pessoas conhecidas nos seus
+  comandos" [53]
+- "...the content generated by AI Products is human-generated" (proibido
+  enganar sobre isso) [73]
+- "Canva has not verified the accuracy of the Output" [73]
+- "Remove, alter, or disable any provenance or metadata tags... including
+  but not limited to C2PA metadata" (proibido) [73]
+- "Você é responsável pelo conteúdo que cria." [53]
+- "These locked templates ensure accessible and brand-compliant colors,
+  fonts, and contrast ratios" (Virginia Department of Health) [86]
+
+----------------------------------------------------------------
+16. MATERIAIS PARA BAIXAR (status em 18/11/2026)
+----------------------------------------------------------------
+BAIXADOS nesta pasta:
+1. lei-15263-2025-politica-nacional-linguagem-simples.pdf — https://downloads.jfal.jus.br/portal-doc/linguagem-simples/Lei_15263-2025.pdf [92]
+2. sesdf-linguagem-simples-em-10-passos.pdf (20 MB) — https://info.saude.df.gov.br/wp-content/uploads/2023/07/Linguagem-Simples-em-10-passos.pdf [95]
+3. sesdf-guia-linguagem-simples-2024.pdf — https://info.saude.df.gov.br/wp-content/uploads/2024/12/guia_LS.pdf [95]
+4. fiocruz-icict-guia-linguagem-simples.pdf (68 p.) — https://www.arca.fiocruz.br/handle/icict/61432 (arquivo de download do item) [94] [VERIFICAR — conferir título na capa; o repositório tinha dois arquivos e o segundo (770 p.) foi descartado]
+5. fiocruz-guia-acessibilidade-leitura-facil.pdf — https://fiocruz.br/sites/fiocruz.br/files/documentos_2/guia-linguagem-facil_vfinal.pdf [96]
+NÃO BAIXADOS (bloqueio a download automatizado — baixar manualmente):
+6. CDC Clear Communication Index — User Guide (PDF) — https://www.cdc.gov/ccindex/pdf/clear-communication-user-guide.pdf (espelho 2013: https://stacks.cdc.gov/view/cdc/21459/cdc_21459_DS1.pdf) [93] — ambos responderam 403 ao script.
+7. Canva VPAT / Relatório de conformidade de acessibilidade — Trust & Security Portal (link na página canva.com/accessibility) [77] — exige navegação no portal; NÃO baixado.
+8. Lições Common Sense Media no Canva Educação (apresentações editáveis, em inglês) — acessar pela conta Canva Educação [84].
+9. Cursos da Design School (vídeos com certificado) — canva.com/designschool [91] — não baixáveis; usar link.
+NÃO ENCONTRADO: matriz oficial em PDF de recursos por plano (só HTML;
+transcrita em pagina-canva-precos-e-matriz-de-recursos.pdf); guia oficial
+do Canva em PDF sobre IA; transcrições oficiais de vídeos tutoriais.
+
+----------------------------------------------------------------
+17. PÁGINAS PARA SALVAR (todas salvas como PDF nesta pasta)
+----------------------------------------------------------------
+Preços e IA
+- pagina-canva-precos-e-matriz-de-recursos.pdf — https://www.canva.com/pt_br/precos/ + https://www.canva.com/en_us/pricing/ (TRANSCRIÇÃO da página renderizada) [5]
+- pagina-canva-entenda-uso-ia.pdf — https://www.canva.com/pt_br/help/ai-access/ [1]
+- pagina-canva-niveis-qualidade-ia.pdf — https://www.canva.com/pt_br/help/canva-ai-quality-tiers-standard-premium-ultra/ [2]
+- pagina-canva-ia-extra.pdf — https://www.canva.com/pt_br/help/ai-pass/ [3]
+- pagina-canva-recarga-ia.pdf — https://www.canva.com/pt_br/help/ai-top-ups/ [4]
+- pagina-canva-ia-comece-a-criar.pdf — https://www.canva.com/pt_br/help/using-canva-ai/ [6]
+- pagina-canva-ia-novidades.pdf — https://www.canva.com/pt_br/help/new-canva-ai/ [7]
+- pagina-canva-ia-perguntas-frequentes.pdf — https://www.canva.com/pt_br/help/new-canva-ai-faq/ [8]
+- pagina-canva-dicas-de-comandos.pdf — https://www.canva.com/pt_br/help/ai-prompting-tips/ [9]
+- pagina-canva-modelo-core-brush.pdf — https://www.canva.com/pt_br/help/switch-between-original-and-brush-canva-ai/ [10]
+- pagina-canva-ia-solucao-problemas.pdf — https://www.canva.com/pt_br/help/fix-canva-ai-issues/ [11]
+- pagina-canva-ia-conectores.pdf — https://www.canva.com/pt_br/help/connect-apps-canva-ai/ [12]
+- pagina-canva-ai-produto.pdf — https://www.canva.com/canva-ai/ [78]
+Gerar
+- pagina-canva-design-magico.pdf — https://www.canva.com/pt_br/help/use-magic-design/ [13]
+- pagina-canva-gerar-designs-com-ia.pdf — https://www.canva.com/pt_br/help/using-magic-design/ [14]
+- pagina-canva-texto-magico-sobre.pdf — https://www.canva.com/pt_br/help/about-magic-write/ [15]
+- pagina-canva-texto-magico-usar.pdf — https://www.canva.com/pt_br/help/use-magic-write/ [16]
+- pagina-canva-midia-magica.pdf — https://www.canva.com/pt_br/help/using-magic-media/ [17]
+- pagina-canva-dream-lab.pdf — https://www.canva.com/pt_br/help/generate-with-dreamlab/ [18]
+Editar imagem
+- pagina-canva-edicao-magica.pdf — https://www.canva.com/pt_br/help/using-magic-edit/ [19]
+- pagina-canva-expansao-magica.pdf — https://www.canva.com/pt_br/help/using-magic-expand/ [20]
+- pagina-canva-captura-magica.pdf — https://www.canva.com/pt_br/help/using-magic-grab/ [21]
+- pagina-canva-borracha-magica.pdf — https://www.canva.com/pt_br/help/magic-eraser/ [22]
+- pagina-canva-removedor-de-fundo.pdf — https://www.canva.com/pt_br/help/background-remover/ [23]
+- pagina-canva-camadas-magicas.pdf — https://www.canva.com/pt_br/help/editable-magic-layers/ [24]
+- pagina-canva-copia-de-estilo.pdf — https://www.canva.com/pt_br/help/style-match/ [25]
+- pagina-canva-aumentar-resolucao.pdf — https://www.canva.com/pt_br/help/upscale-image/
+Adaptar
+- pagina-canva-redimensionar-formato-magico.pdf — https://www.canva.com/pt_br/help/resize/ [26]
+- pagina-canva-tradutor.pdf — https://www.canva.com/pt_br/help/translate-canva-designs/ [27]
+- pagina-canva-tradutor-idiomas.pdf — https://www.canva.com/pt_br/help/translation-languages/ [28]
+- pagina-canva-transformar-em-doc.pdf — https://www.canva.com/pt_br/help/transform-to-doc/ [29]
+- pagina-canva-animacao-magica.pdf — https://www.canva.com/pt_br/help/using-magic-animate/ [30]
+- pagina-canva-graficos-magicos.pdf — https://www.canva.com/pt_br/help/magic-charts/ [31]
+- pagina-canva-criar-em-lote.pdf — https://www.canva.com/pt_br/help/bulk-create/ [32]
+Apresentações
+- pagina-canva-apresentacao-com-ia.pdf — https://www.canva.com/pt_br/help/using-magic-presentations/ [33]
+- pagina-canva-apresentacao-ferramentas-de-pagina.pdf — https://www.canva.com/pt_br/help/create-and-refine-presentations-with-ai-page-tools/ [34]
+- pagina-canva-apresentacao-a-partir-de-dados.pdf — https://www.canva.com/pt_br/help/generate-presentations-from-data/ [35]
+- pagina-canva-notas-e-pdf-com-notas.pdf — https://www.canva.com/pt_br/help/download-notes/ [36]
+- pagina-canva-modos-de-apresentacao.pdf — https://www.canva.com/pt_br/help/presentation-modes/ [37]
+- pagina-canva-apresentar-e-gravar.pdf — https://www.canva.com/pt_br/help/talking-presentations/ [38]
+Marca
+- pagina-canva-kit-de-marca.pdf — https://www.canva.com/pt_br/help/brand-kit/ [39]
+- pagina-canva-gerador-kit-de-marca.pdf — https://www.canva.com/pt_br/help/brand-kit-builder/ [40]
+- pagina-canva-kit-de-marca-pessoal.pdf — https://www.canva.com/pt_br/help/personal-brand-kit/ [41]
+- pagina-canva-voz-da-marca.pdf — https://www.canva.com/pt_br/help/brand-voice/ [42]
+- pagina-canva-bloqueios-modelos-da-marca.pdf — https://www.canva.com/pt_br/help/brand-template-locks/ [43]
+- pagina-canva-designs-alinhados-a-marca.pdf — https://www.canva.com/pt_br/help/create-on-brand-designs/ [44]
+- pagina-canva-imagens-com-identidade-da-marca.pdf — https://www.canva.com/pt_br/help/create-onbrand-images-with-ai/ [45]
+Acessibilidade
+- pagina-canva-verificador-acessibilidade.pdf — https://www.canva.com/pt_br/help/using-design-accessibility/ [46]
+- pagina-canva-texto-alternativo.pdf — https://www.canva.com/pt_br/help/using-alt-text/ [47]
+- pagina-canva-pdf-acessivel.pdf — https://www.canva.com/pt_br/help/create-accessible-pdfs/ [48]
+- pagina-canva-recursos-acessibilidade-pdf.pdf — https://www.canva.com/pt_br/help/pdf-accessibility-features/ [49]
+- pagina-canva-recursos-de-acessibilidade.pdf — https://www.canva.com/pt_br/help/canva-accessibility-features/ [50]
+- pagina-canva-legendas.pdf — https://www.canva.com/pt_br/help/enable-captions/ [51]
+- pagina-canva-acessibilidade-institucional.pdf — https://www.canva.com/accessibility/ [77]
+Direitos, segurança e privacidade
+- pagina-canva-uso-comercial-e-licencas.pdf — https://www.canva.com/pt_br/help/licenses-copyright-legal-commercial-use/ [52]
+- pagina-canva-estudio-magico-seguro-e-legal.pdf — https://www.canva.com/pt_br/help/using-magic-studio-safely-and-legally/ [53]
+- pagina-canva-desativar-ia-generativa.pdf — https://www.canva.com/pt_br/help/manage-ai-features/ [54]
+- pagina-canva-admin-controle-recursos-ia.pdf — https://www.canva.com/help/magic-features-admin-controls/ (EN) [55]
+- pagina-canva-preferencias-de-privacidade.pdf — https://www.canva.com/pt_br/help/manage-privacy-settings/ [56]
+- pagina-canva-marcas-dagua.pdf — https://www.canva.com/pt_br/help/watermarks-design/ [57]
+- pagina-canva-termos-produtos-ia.pdf — https://www.canva.com/policies/ai-product-terms/ [73]
+- pagina-canva-acordo-licenca-conteudo.pdf — https://www.canva.com/policies/content-license-agreement/ [74]
+- pagina-canva-politica-uso-aceitavel.pdf — https://www.canva.com/policies/acceptable-use-policy/ [75]
+- pagina-canva-politica-privacidade.pdf — https://www.canva.com/policies/privacy-policy/ [76]
+Colaboração e ciclo de vida
+- pagina-canva-compartilhar-link-email.pdf — https://www.canva.com/pt_br/help/share-via-link-or-email/ [58]
+- pagina-canva-colaborar-convidados.pdf — https://www.canva.com/pt_br/help/collaborate-with-anyone/ [59]
+- pagina-canva-comentarios.pdf — https://www.canva.com/pt_br/help/comments/ [60]
+- pagina-canva-historico-de-versoes.pdf — https://www.canva.com/pt_br/help/version-history/ [61]
+- pagina-canva-lixeira.pdf — https://www.canva.com/pt_br/help/deleted-designs/ [62]
+- pagina-canva-excluir-conta.pdf — https://www.canva.com/pt_br/help/delete-account/ [63]
+- pagina-canva-tipos-de-arquivo-download.pdf — https://www.canva.com/pt_br/help/download-file-types/ [64]
+- pagina-canva-edicao-offline.pdf — https://www.canva.com/pt_br/help/set-up-offline-access/ [65]
+- pagina-canva-configuracao-idioma.pdf — https://www.canva.com/pt_br/help/language-settings/ [66]
+Educação
+- pagina-canva-educacao-funcoes-permissoes.pdf — https://www.canva.com/pt_br/help/education-tiers-roles-access/ [67]
+- pagina-canva-atividades-magicas.pdf — https://www.canva.com/pt_br/help/magic-activities/ [68]
+- pagina-canva-criar-e-realizar-atividades-ia.pdf — https://www.canva.com/pt_br/help/create-and-play-ai-activities/ [69]
+- pagina-canva-aulas.pdf — https://www.canva.com/pt_br/help/lessons-in-canva/ [70]
+- pagina-canva-educacao-br.pdf — https://www.canva.com/pt_br/educacao/ [89]
+- pagina-canva-ia-para-professores.pdf — https://www.canva.com/pt_br/ia-para-professores/ [90]
+- pagina-canva-design-school.pdf — https://www.canva.com/designschool/ [91]
+Admin (apêndice)
+- pagina-canva-relatorio-insights-ia.pdf — https://www.canva.com/pt_br/help/view-ai-usage-report/ [71]
+- pagina-canva-prosuite.pdf — https://www.canva.com/pt_br/help/about-canva-pro-suite/ [72]
+Novidades e casos
+- pagina-canva-newsroom-canva-ai-2-0.pdf — https://www.canva.com/newsroom/news/canva-create-2026-ai/ [79]
+- pagina-canva-newsroom-magic-studio-2023.pdf — https://www.canva.com/newsroom/news/magic-studio/ [80]
+- pagina-canva-newsroom-canva-craft.pdf — https://www.canva.com/newsroom/news/canva-craft/ [81]
+- pagina-canva-newsroom-canva-brush.pdf — https://www.canva.com/newsroom/news/canva-brush/ [82]
+- pagina-canva-newsroom-prosuite.pdf — https://www.canva.com/newsroom/news/canva-prosuite-launch/ [83]
+- pagina-canva-newsroom-letramento-digital-educacao.pdf — https://www.canva.com/newsroom/news/common-sense-media-digital-literacy/ [84]
+- pagina-canva-caso-virginia-department-of-health.pdf — https://www.canva.com/case-studies/virginia-department-of-health/ [86]
+- pagina-canva-caso-keller-williams.pdf — https://www.canva.com/case-studies/keller-williams/ [87]
+- pagina-canva-caso-virgin-voyages.pdf — https://www.canva.com/case-studies/virgin-voyages/ [88]
+Externas
+- pagina-planalto-lei-15263-linguagem-simples.pdf — https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15263.htm [92]
+NÃO SALVAS: pagina-cdc-clear-communication-index (cdc.gov bloqueou acesso
+automatizado — salvar manualmente https://www.cdc.gov/ccindex/tool/index.html);
+pagina-canva-team-update (https://www.canva.com/newsroom/news/canva-team-update/ —
+lida, não salva por ser tema corporativo; salvar se a equipe quiser citar).
+
+----------------------------------------------------------------
+18. LACUNAS E PONTOS A VERIFICAR
+----------------------------------------------------------------
+1. Classificação do "Design conversacional": Premium (preços) × Ultra
+   (ajuda) [1][5].
+2. Removedor de Fundo e conectores no Canva Grátis: ajuda × tabela [5][7][12][23].
+3. Formato Mágico consome ou não a cota nos planos pagos [5][26].
+4. Números absolutos de usos por plano: NÃO publicados na versão atual.
+5. Disponibilidade total do Canva IA 2.0 (GA) e do Canva Brush além do Pro.
+6. Data exata do Canva Create 2026 (15 ou 16/04) e do Magic Studio
+   (04/10/2023).
+7. C2PA: quais exportações preservam; se Canva Craft aplica marcação.
+8. Modelo usado hoje no Dream Lab (Leonardo × Craft).
+9. Texto Mágico "dados até meados de 2021" (texto antigo da ajuda).
+10. Alunos do Canva Educação: quais recursos de IA ativos por padrão
+    ([55] × [67]).
+11. "Planos anuais parcelados (Brasil)" e Pro Lite: existência/preço no
+    Brasil (Pro Lite citado na ajuda, não aparece na página de preços BR).
+12. Título exato do PDF baixado da Fiocruz (ARCA).
+13. Texto-base da Oficina 4 deve ser validado com material oficial do
+    Ministério da Saúde/ANVISA antes de qualquer uso público.
+14. NÃO ENCONTRADO: estudo independente sobre Canva IA em educação em
+    saúde; case brasileiro com números; curso oficial em PT sobre saúde.
+15. Interface em mudança gradual: gravar aulas no mesmo mês de publicação.
+
+----------------------------------------------------------------
+19. APÊNDICE — ADMIN, API E RECURSOS AVANÇADOS
+----------------------------------------------------------------
+- Controles de IA para admins (Pro+/Business, Enterprise, Educação):
+  Configurações > "Controles e permissões" > "Permissões" > "Magic e IA":
+  Texto Mágico, Design Mágico, Atividades Mágicas, Edição Mágica, Mídia
+  Mágica, Transformar em doc, Dream Lab, Assistente de ajuda, Canva AI,
+  Insights Mágicos, Canva Code, Formas IA, Gráficos IA, "Usar conteúdo da
+  equipe para gerar respostas", Música e efeitos, Imagem a vídeo.
+  Mudanças valem para novos designs; disponibilidade depende de idioma
+  e região [55].
+- Kits de marca pessoais: admin habilita em Permissões > Marca [41].
+- Relatório de insights de IA: admins de Enterprise/Universidades/Redes
+  Escolares; > 10 usuários de IA em 30 dias; até 12 meses de dados [71].
+- Canva Shield: indenização por saída de IA só Enterprise ≥ 100 licenças
+  [5].
+- Canva no ChatGPT, Claude, Gemini, Copilot (conector) — consome a mesma
+  cota [1].
+- Canva Craft disponível via API pública para desenvolvedores [81]
+  (identificador "craft_v1_2k" segundo fonte secundária [101][VERIFICAR]).
+- Canva ProSuite (Affinity, Cavalry, Flourish, Leonardo) via Enterprise [72][83].
+- Offline em Enterprise/Redes/Universidades: admin define quem usa [65].
+
+----------------------------------------------------------------
+20. FONTES (acessadas em 18/11/2026; "pt_br" = Central de Ajuda em PT)
+----------------------------------------------------------------
+[1] Canva. Entenda seu uso de IA. https://www.canva.com/pt_br/help/ai-access/ (e EN https://www.canva.com/help/ai-access/)
+[2] Canva. Defina a qualidade do conteúdo gerado pelo Canva AI. https://www.canva.com/pt_br/help/canva-ai-quality-tiers-standard-premium-ultra/
+[3] Canva. Entenda a IA Extra. https://www.canva.com/pt_br/help/ai-pass/
+[4] Canva. Entenda a recarga de IA. https://www.canva.com/pt_br/help/ai-top-ups/
+[5] Canva. Preços (BR) https://www.canva.com/pt_br/precos/ e Pricing (US) https://www.canva.com/en_us/pricing/ — capturadas no navegador em 18/11/2026
+[6] Canva. Comece a criar com o Canva AI. https://www.canva.com/pt_br/help/using-canva-ai/
+[7] Canva. Novidades do Canva IA. https://www.canva.com/pt_br/help/new-canva-ai/
+[8] Canva. Perguntas frequentes sobre o Canva AI. https://www.canva.com/pt_br/help/new-canva-ai-faq/
+[9] Canva. Escreva instruções melhores para maximizar seu subsídio de IA. https://www.canva.com/pt_br/help/ai-prompting-tips/
+[10] Canva. Escolha um modelo no Canva IA. https://www.canva.com/pt_br/help/switch-between-original-and-brush-canva-ai/
+[11] Canva. Corrija problemas e melhore os resultados com a IA do Canva. https://www.canva.com/pt_br/help/fix-canva-ai-issues/
+[12] Canva. Conectar apps de terceiros ao Canva IA. https://www.canva.com/pt_br/help/connect-apps-canva-ai/
+[13] Canva. Usar o Design Mágico para gerar modelos de design. https://www.canva.com/pt_br/help/use-magic-design/
+[14] Canva. Gerar designs exclusivos num instante com IA. https://www.canva.com/pt_br/help/using-magic-design/
+[15] Canva. Saiba mais sobre o Texto Mágico. https://www.canva.com/pt_br/help/about-magic-write/
+[16] Canva. Usar o Texto Mágico para gerar texto. https://www.canva.com/pt_br/help/use-magic-write/
+[17] Canva. Use a Mídia Mágica... https://www.canva.com/pt_br/help/using-magic-media/
+[18] Canva. Gerar imagens com o Dream Lab. https://www.canva.com/pt_br/help/generate-with-dreamlab/
+[19] Canva. Usar a Edição Mágica... https://www.canva.com/pt_br/help/using-magic-edit/
+[20] Canva. Expandir imagens. https://www.canva.com/pt_br/help/using-magic-expand/
+[21] Canva. Captura Mágica. https://www.canva.com/pt_br/help/using-magic-grab/
+[22] Canva. Apagar ou retocar fotos. https://www.canva.com/pt_br/help/magic-eraser/
+[23] Canva. Remover o fundo de fotos e vídeos. https://www.canva.com/pt_br/help/background-remover/
+[24] Canva. Camadas Mágicas. https://www.canva.com/pt_br/help/editable-magic-layers/
+[25] Canva. Copiar e combinar estilos de imagem. https://www.canva.com/pt_br/help/style-match/
+[26] Canva. Redimensionar designs e limites de tamanho. https://www.canva.com/pt_br/help/resize/
+[27] Canva. Traduza seus designs do Canva. https://www.canva.com/pt_br/help/translate-canva-designs/
+[28] Canva. Como funcionam as traduções e os idiomas disponíveis. https://www.canva.com/pt_br/help/translation-languages/
+[29] Canva. Transforme designs em docs. https://www.canva.com/pt_br/help/transform-to-doc/
+[30] Canva. Aplicar animações num instante. https://www.canva.com/pt_br/help/using-magic-animate/
+[31] Canva. Use os Gráficos Mágicos. https://www.canva.com/pt_br/help/magic-charts/
+[32] Canva. Criar designs em lote. https://www.canva.com/pt_br/help/bulk-create/
+[33] Canva. Crie uma apresentação com o Canva IA. https://www.canva.com/pt_br/help/using-magic-presentations/
+[34] Canva. Crie e aprimore apresentações com as ferramentas de IA e Página. https://www.canva.com/pt_br/help/create-and-refine-presentations-with-ai-page-tools/
+[35] Canva. Gerar apresentações por IA a partir dos seus dados. https://www.canva.com/pt_br/help/generate-presentations-from-data/
+[36] Canva. Baixar designs com notas. https://www.canva.com/pt_br/help/download-notes/
+[37] Canva. Modos de apresentação. https://www.canva.com/pt_br/help/presentation-modes/
+[38] Canva. Gravar e excluir apresentações com vídeo. https://www.canva.com/pt_br/help/talking-presentations/
+[39] Canva. Como configurar o Kits de Marca. https://www.canva.com/pt_br/help/brand-kit/
+[40] Canva. Configure o seu kit de marca automaticamente. https://www.canva.com/pt_br/help/brand-kit-builder/
+[41] Canva. Criar um kit de marca pessoal. https://www.canva.com/pt_br/help/personal-brand-kit/
+[42] Canva. Configure a voz da marca da sua equipe. https://www.canva.com/pt_br/help/brand-voice/
+[43] Canva. Aplicar bloqueios aos modelos da marca. https://www.canva.com/pt_br/help/brand-template-locks/
+[44] Canva. Gere designs alinhados com a marca... https://www.canva.com/pt_br/help/create-on-brand-designs/
+[45] Canva. Crie imagens com a identidade visual da sua marca usando IA. https://www.canva.com/pt_br/help/create-onbrand-images-with-ai/
+[46] Canva. Aplicar a acessibilidade aos designs. https://www.canva.com/pt_br/help/using-design-accessibility/
+[47] Canva. Criar e editar texto alternativo. https://www.canva.com/pt_br/help/using-alt-text/
+[48] Canva. Crie PDFs acessíveis com o Canva. https://www.canva.com/pt_br/help/create-accessible-pdfs/
+[49] Canva. Recursos de acessibilidade de PDF. https://www.canva.com/pt_br/help/pdf-accessibility-features/
+[50] Canva. Recursos de acessibilidade do Canva. https://www.canva.com/pt_br/help/canva-accessibility-features/
+[51] Canva. Ative... legendas. https://www.canva.com/pt_br/help/enable-captions/
+[52] Canva. Use o Canva para criar produtos digitais e físicos para vender. https://www.canva.com/pt_br/help/licenses-copyright-legal-commercial-use/
+[53] Canva. Como usar o Estúdio Mágico de forma segura e legal. https://www.canva.com/pt_br/help/using-magic-studio-safely-and-legally/
+[54] Canva. Desative os recursos de IA generativa... https://www.canva.com/pt_br/help/manage-ai-features/
+[55] Canva. Change access to Magic and AI features (EN). https://www.canva.com/help/magic-features-admin-controls/
+[56] Canva. Gerenciar suas preferências de privacidade. https://www.canva.com/pt_br/help/manage-privacy-settings/
+[57] Canva. Meu design está com marcas d'água... https://www.canva.com/pt_br/help/watermarks-design/
+[58] Canva. Como compartilhar designs por e-mail ou links. https://www.canva.com/pt_br/help/share-via-link-or-email/
+[59] Canva. Compartilhe seu design e colabore com qualquer pessoa. https://www.canva.com/pt_br/help/collaborate-with-anyone/
+[60] Canva. Adicionar, excluir e resolver comentários. https://www.canva.com/pt_br/help/comments/
+[61] Canva. Revisar e restaurar versões antigas. https://www.canva.com/pt_br/help/version-history/
+[62] Canva. Restaurar ou excluir designs e arquivos da lixeira. https://www.canva.com/pt_br/help/deleted-designs/
+[63] Canva. Excluir conta. https://www.canva.com/pt_br/help/delete-account/
+[64] Canva. Escolher o tipo de arquivo para download certo. https://www.canva.com/pt_br/help/download-file-types/
+[65] Canva. Configurar e usar a edição off-line. https://www.canva.com/pt_br/help/set-up-offline-access/
+[66] Canva. Configurações de idioma. https://www.canva.com/pt_br/help/language-settings/
+[67] Canva. Canva Educação, funções e permissões. https://www.canva.com/pt_br/help/education-tiers-roles-access/
+[68] Canva. Obtenha melhores resultados com as Atividades Mágicas. https://www.canva.com/pt_br/help/magic-activities/
+[69] Canva. Experimente o recurso Criar & Realizar atividades de IA. https://www.canva.com/pt_br/help/create-and-play-ai-activities/
+[70] Canva. Publicar aulas no Canva. https://www.canva.com/pt_br/help/lessons-in-canva/
+[71] Canva. Visualize o uso da Canva IA em toda a sua organização. https://www.canva.com/pt_br/help/view-ai-usage-report/
+[72] Canva. Conheça o Canva ProSuite. https://www.canva.com/pt_br/help/about-canva-pro-suite/
+[73] Canva. AI Product Terms (vigentes desde 26/06/2026). https://www.canva.com/policies/ai-product-terms/
+[74] Canva. Content License Agreement. https://www.canva.com/policies/content-license-agreement/
+[75] Canva. Acceptable Use Policy (atualizada 07/08/2025). https://www.canva.com/policies/acceptable-use-policy/
+[76] Canva. Privacy Policy (atualizada 02/11/2026). https://www.canva.com/policies/privacy-policy/
+[77] Canva. Accessibility at Canva. https://www.canva.com/accessibility/
+[78] Canva. Canva AI (página de produto). https://www.canva.com/canva-ai/
+[79] Canva Newsroom. Introducing Canva AI 2.0 (Canva Create 2026; autora Anna Wood). https://www.canva.com/newsroom/news/canva-create-2026-ai/
+[80] Canva Newsroom. Introducing Magic Studio. https://www.canva.com/newsroom/news/magic-studio/
+[81] Canva Newsroom. Introducing Canva Craft. https://www.canva.com/newsroom/news/canva-craft/
+[82] Canva Newsroom. Introducing Canva Brush. https://www.canva.com/newsroom/news/canva-brush/
+[83] Canva Newsroom. Craft, upgraded: introducing the Canva ProSuite. https://www.canva.com/newsroom/news/canva-prosuite-launch/
+[84] Canva Newsroom. Digital literacy lessons are coming to Canva Education. https://www.canva.com/newsroom/news/common-sense-media-digital-literacy/
+[85] Canva Newsroom. An important update on our team. https://www.canva.com/newsroom/news/canva-team-update/
+[86] Canva. Case: Virginia Department of Health. https://www.canva.com/case-studies/virginia-department-of-health/ (lista de cases: https://www.canva.com/case-studies/)
+[87] Canva. Case: Keller Williams. https://www.canva.com/case-studies/keller-williams/
+[88] Canva. Case: Virgin Voyages. https://www.canva.com/case-studies/virgin-voyages/
+[89] Canva. Canva Educação (BR). https://www.canva.com/pt_br/educacao/
+[90] Canva. IA para professores. https://www.canva.com/pt_br/ia-para-professores/
+[91] Canva. Design School / Escola Criativa. https://www.canva.com/designschool/
+[92] Brasil. Lei nº 15.263, de 14/11/2025 (Política Nacional de Linguagem Simples; DOU 17/11/2025). https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15263.htm
+[93] CDC. Clear Communication Index (20 itens; aprovado ≥ 90). https://www.cdc.gov/ccindex/tool/index.html ; guia PDF https://www.cdc.gov/ccindex/pdf/clear-communication-user-guide.pdf
+[94] Fiocruz/Icict. Guia de Linguagem Simples (2023). https://www.arca.fiocruz.br/handle/icict/61432
+[95] SES-DF. Linguagem Simples em 10 passos; Guia de Linguagem Simples (2024). https://info.saude.df.gov.br/wp-content/uploads/2023/07/Linguagem-Simples-em-10-passos.pdf ; https://info.saude.df.gov.br/wp-content/uploads/2024/12/guia_LS.pdf
+[96] Fiocruz. Guia de acessibilidade para ações educativas — leitura fácil. https://fiocruz.br/sites/fiocruz.br/files/documentos_2/guia-linguagem-facil_vfinal.pdf
+[97] Canva. https://www.canva.com/magic-studio/ e https://www.canva.com/pt_br/estudio-magico/ — erro 404 em 18/11/2026 (teste direto).
+[98] Imprensa BR (secundárias): Canaltech "Brasil é fundamental para construir o futuro do Canva" https://canaltech.com.br/mercado/brasil-e-fundamental-para-construir-o-futuro-do-canva-diz-executivo/ ; Forbes Brasil (mai/2026) https://forbes.com.br/forbes-mkt/2026/05/a-estrategia-do-canva-para-dominar-o-imaginario-e-as-telas-dos-brasileiros/ ; Olhar Digital (15/07/2026) https://olhardigital.com.br/2026/07/15/reviews/canva-libera-code-2-0-e-facilita-criacao-de-sites-e-apps-para-qualquer-pessoa/
+[99] Comparações (secundárias, algumas com interesse comercial): https://www.theneuron.ai/guides/best-ai-presentation-makers/ ; https://www.presentations.ai/blog/canva-vs-gamma ; https://aiproductivity.ai/blog/canva-vs-adobe-express-2026/ ; https://solotoolkit.tools/canva-ai-review-2026-magic-studio/
+[100] Estudos sobre IA em materiais para pacientes (não avaliam Canva): JCM 2025, doi:10.3390/jcm14196968 ; Coronary heart disease PEM, https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12638036/ ; spinal fusion, https://pubmed.ncbi.nlm.nih.gov/41207966/
+[101] Datas de Craft/Brush (secundárias): https://betanews.com/article/canva-craft-ai-image-model-designarena-api/ ; https://www.testingcatalog.com/canva-launches-craft-image-model-with-2k-output-and-api/ ; https://animaapp.com/blog/ai-en/canva-brush/
+[102] Reestruturação nov/2026 (secundária): https://thenextweb.com/news/canva-restructure-1271-jobs-22-percent-layoffs
+
+CHECKLIST FINAL
+[x] Sustenta ementa, Essentials e Hands On para todos os públicos
+    (trabalho/apresentações, comunicação/marketing, educação, saúde).
+[x] Recursos, planos e limites têm nome e data atuais (18/11/2026);
+    números absolutos de cota NÃO publicados (registrado).
+[x] Cada ação tem passos, material e critério de êxito (seções 3, 13).
+[x] Direitos, acessibilidade, educação e saúde cobertos (8, 14).
+[x] Todos os 12 focos com resposta ou NÃO ENCONTRADO (14, 18).
+[x] Sugestões marcadas [SUGESTÃO]; links das páginas oficiais testados
+    (HTTP 200) e arquivados em PDF; bloqueios (CDC) registrados.
+================================================================

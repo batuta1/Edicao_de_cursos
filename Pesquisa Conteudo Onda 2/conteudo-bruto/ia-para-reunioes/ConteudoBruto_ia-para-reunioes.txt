@@ -1,0 +1,954 @@
+================================================================
+CONTEÚDO BRUTO — IA para Reuniões
+Registros no catálogo: ia-para-reunioes-essentials e ia-para-reunioes-hands-on
+Pesquisa realizada em: 18 de novembro de 2026
+Ferramentas-âncora: Otter.ai, Fireflies.ai e Microsoft 365 Copilot (Teams)
+Prompt: versão 7 (18/11/2026), alinhada à planilha v0.4
+================================================================
+
+Convenções deste arquivo
+- [CONFIRMADO] = a fonte citada diz isso literalmente (ou em tradução fiel).
+- [VERIFICAR] = evidência insuficiente, secundária ou contraditória.
+- [SUGESTÃO] = elaboração da pesquisa para a equipe; não é fato de fonte.
+- NÃO ENCONTRADO = procurado e não localizado em fonte confiável.
+- Números entre colchetes [n] remetem à seção 20 (Fontes).
+- Rótulos de menu entre aspas indicam a origem: EN = ajuda em inglês;
+  PT = ajuda em português do Brasil. A interface real pode variar por
+  idioma, plano, tenant e lançamento gradual.
+- Este arquivo NÃO é aconselhamento jurídico. Os trechos legais citam
+  fontes oficiais e marcam incertezas; a equipe deve validar com jurídico.
+- Os preços são em dólar (USD) quando a fonte oficial só mostra USD.
+  Impostos brasileiros (IOF em cartão internacional etc.) não estão incluídos.
+
+----------------------------------------------------------------
+0. RESUMO EXECUTIVO
+----------------------------------------------------------------
+
+[CONFIRMADO] As três âncoras resolvem a mesma tarefa (capturar → transcrever →
+resumir → extrair decisões e tarefas → compartilhar), mas por caminhos
+diferentes:
+- Otter.ai: assistente de reunião independente. Entra na chamada como
+  participante ("Otter Notetaker") ou grava SEM bot pelo app desktop
+  (Mac/Windows), pelo celular ou por importação de arquivo. Plano gratuito
+  "Basic" com 300 min/mês e limite de 30 min por conversa. [1][4]
+- Fireflies.ai: assistente independente concorrente. Bot "Fireflies.ai
+  Notetaker", app desktop, app móvel, extensão Chrome (só Google Meet) e
+  upload. Plano Free com transcrição "ilimitada*" mas 400 min de
+  armazenamento por equipe. [13][17][19]
+- Microsoft 365 Copilot no Teams: recurso DENTRO do Teams corporativo.
+  Depende de licença (Copilot ou Teams Premium para o "intelligent recap")
+  e da política do administrador do tenant. Não funciona em reuniões
+  hospedadas fora da organização do participante. [23][24][27]
+
+[CONFIRMADO] Português do Brasil — situação em 18/11/2026:
+- Otter: o português entrou em 10/11/2026 entre 13 idiomas "live now";
+  o anúncio NÃO especifica pt-BR versus pt-PT. Modo multilíngue (troca de
+  idioma na mesma reunião) é "coming soon". [3]
+- Fireflies: lista pt, pt-BR e pt-PT entre 100+ idiomas. [16]
+- Teams: transcrição ao vivo lista "Portuguese (Brazil)"; Copilot no Teams
+  lista "Portuguese" sem variante regional. [26][28]
+→ Consequência: o curso deve ensinar a CONFERIR a transcrição em pt-BR,
+  porque nenhuma das três âncoras publica taxa de erro para pt-BR.
+  Estudos independentes mostram erro muito maior em fala espontânea do que
+  em fala lida (ver seção 14, item 6). [36][37]
+
+[CONFIRMADO] Consentimento é o tema mais quente de 2026:
+- EUA: ação coletiva "In re Otter.AI Privacy Litigation" (lead case
+  Brewer v. Otter.ai, N.D. Cal. 5:25-cv-06911). Fontes secundárias relatam
+  decisão de 13/08/2026 que manteve parte das alegações (escuta/wiretap)
+  e enviou o caso à fase de provas; não há condenação. [38] [VERIFICAR no
+  PACER antes de citar datas]
+- EUA: ações sob a lei biométrica de Illinois (BIPA) contra a Fireflies
+  (Cruz v. Fireflies.AI; Fricker v. Fireflies.AI, 2026), alegando criação
+  de "voiceprints" de não usuários sem consentimento. Pendentes. [39]
+  [VERIFICAR]
+- Brasil: STF, Tema 237 (RE 583.937): é lícita, como prova, a gravação
+  feita por um dos interlocutores sem conhecimento do outro, ressalvadas
+  situações de sigilo legal. [33] [VERIFICAR texto da tese no portal do
+  STF] ISSO NÃO resolve a LGPD: transcrição, resumo e armazenamento em
+  nuvem estrangeira são tratamento de dados pessoais e exigem base legal,
+  transparência, finalidade e segurança (LGPD arts. 6º, 7º, 11, 33). [32]
+[SUGESTÃO] Mensagem central do curso: "licitude de gravar ≠ permissão para
+mandar a conversa a um fornecedor de IA". Sempre avisar, pedir
+concordância e oferecer alternativa.
+
+[CONFIRMADO] Saúde: a Resolução CFM 2.454/2026 (publicada 27/02/2026;
+vigência 180 dias após a publicação, art. 23) exige informar o paciente
+quando a IA for apoio relevante (art. 5º §1º), respeitar a recusa informada
+(art. 5º §3º), comunicar e explicar "qualquer utilização de IA" (art. 11),
+proteger dados sensíveis (art. 6º) e registrar no prontuário o uso de IA
+"como apoio à decisão médica" (art. 4º, V). [34] A resolução NÃO trata
+expressamente de "escriba" ou transcrição de consulta. [VERIFICAR com CRM]
+
+[CONFIRMADO] Treinamento de IA com dados do cliente — as políticas diferem:
+- Otter: a política (vigente desde 16/06/2026) diz que treina sua IA
+  proprietária com gravações de áudio "desidentificadas" e usa provedores
+  de rotulagem de dados. [2]
+- Fireflies: diz que NÃO usa dados pessoais/conteúdo de reunião para
+  treinar modelos e proíbe fornecedores de fazê-lo (política atualizada em
+  28/09/2026). [14][18]
+- Microsoft: dados ficam no tenant e na região da organização; gravações e
+  transcrições em OneDrive/SharePoint sob políticas Purview. [25]
+  [VERIFICAR página "Data, privacy, and security for intelligent recap"]
+
+[SUGESTÃO] Fluxo-espinha do curso (tarefa observável do prompt):
+PAUTA → CONVITE COM AVISO DE IA → CONSENTIMENTO NO INÍCIO → CAPTURA
+(bot, desktop sem bot, celular ou upload) → TRANSCRIÇÃO → RESUMO →
+CONFERÊNCIA (voltar ao timestamp; separar fala de inferência; corrigir
+falantes) → ATA COM DECISÕES E TAREFAS (responsável + prazo + trecho de
+origem) → COMPARTILHAMENTO MÍNIMO → ACOMPANHAMENTO → DESCARTE/RETENÇÃO.
+
+----------------------------------------------------------------
+1. IDENTIDADE E HISTÓRICO
+----------------------------------------------------------------
+
+1.1 Otter.ai
+[CONFIRMADO] Empresa dos EUA (Otter.ai, Inc.). Produto atual se apresenta
+como "Otter Meeting Agent" / assistente de reunião. Nome do bot: "Otter
+Notetaker" (antigo "OtterPilot" — [VERIFICAR] data da renomeação). [1][5]
+[CONFIRMADO] Linha do tempo 2026 (fontes oficiais Otter):
+- 28/04/2026: Meeting Agent por voz, AI Chat reconstruído, servidor MCP
+  (permite que ChatGPT/Claude consultem o histórico de reuniões). [12]
+  [VERIFICAR disponibilidade por plano]
+- 21/07/2026: "Live Assist" — agente de coaching em tempo real; lançado
+  para Enterprise. [10]
+- 27/10/2026: "Work Mode" (briefing pré-reunião a partir de reuniões
+  passadas, tarefas abertas e arquivos conectados; rascunhos pós-reunião)
+  para todos os pagantes; Live Assist expandido aos demais pagantes "nas
+  próximas semanas". [11]
+- 10/11/2026: 27 novos idiomas (13 já disponíveis, incluindo português;
+  14 "em breve"); modo multilíngue em prévia. Total previsto: 31. [3]
+[VERIFICAR] Receita anual de US$ 100 mi (mar/2025) e captação de US$ 320 mi
+— só fontes secundárias. Não usar no curso.
+
+1.2 Fireflies.ai
+[CONFIRMADO] Empresa dos EUA (Fireflies.AI Corp.). Bot "Fireflies.ai
+Notetaker". Assistente de IA "AskFred" → em 11/11/2026 rebatizado/expandido
+para "Fred", "AI teammate" que atua também em e-mail, Slack e agenda. [21]
+[CONFIRMADO] 11/11/2026: anúncio de Fred, Fireflies Scheduler (agendamento
+gratuito), Fireflies Clips (gravador de tela na extensão Chrome), FredBots/
+AI Skills, Live Assist, Voice Agents (entrevistas, triagens) e o dispositivo
+físico "Fireflies Fly" (pré-venda; previsto para início de 2027). Vários
+recursos com liberação gradual "nas próximas semanas". [21]
+[CONFIRMADO] App desktop (Mac e Windows) lançado em novembro de 2025. [22]
+[VERIFICAR data exata]
+
+1.3 Microsoft 365 Copilot em reuniões do Teams
+[CONFIRMADO] Três camadas diferentes (não confundir no curso):
+a) Transcrição do Teams — recurso padrão das licenças Microsoft 365 com
+   Teams; precisa estar liberada pela política do administrador. [26]
+b) "Intelligent recap" (recap inteligente) — notas e tarefas por IA,
+   marcadores de fala, capítulos; exige Teams Premium OU licença Microsoft
+   Copilot. [24][25]
+c) Copilot em reuniões — chat privado com a IA durante e após a reunião;
+   exige licença Microsoft (365) Copilot (complemento). [23][27]
+[CONFIRMADO] Recursos adicionais com licença Copilot: recap em áudio
+(prévia pública; até 8 reuniões; guardado 60 dias no OneDrive), recap em
+vídeo (reunião ≥ 10 min, gravada e transcrita), recap multilíngue (prévia
+pública; inclui português), recap sem salvar transcrição (resumo em Word que
+expira por padrão em 120 dias). [24][29]
+[VERIFICAR] Agente "Facilitator" (notas colaborativas e pauta ao vivo): GA
+em 2025 para licenciados Copilot; capacidade nova de responder com busca
+na web prevista para dez/2026 — só fontes secundárias. [31]
+
+----------------------------------------------------------------
+2. ACESSO, PLANOS, PREÇOS E LIMITES (consulta em 18/11/2026)
+----------------------------------------------------------------
+
+2.1 Otter.ai (fonte: otter.ai/pricing [1]; preços em USD)
+| Plano      | Preço anual (/usuário/mês) | Mensal          | Min/mês reunião | Limite/conversa | Importações       | AI Chat/mês |
+| Basic      | grátis                      | grátis          | 300             | 30 min          | 3 na vida         | 20 (3/conversa) |
+| Pro        | US$ 8,33                    | US$ 16,99       | 1.200           | 90 min          | 10/mês            | 50          |
+| Business   | US$ 19,99                   | US$ 30 (promo 24)| ilimitado      | 4 h             | ilimitadas (6.000 min/mês) | 200 |
+| Enterprise | sob consulta                | —               | ilimitado       | 4 h             | ilimitadas        | 200         |
+[CONFIRMADO] Outros limites por plano: membros do workspace (Basic/Pro até
+5; Business até 25; Enterprise ilimitado); reuniões simultâneas (1/2/3/3);
+exportação (Basic: mp3, txt; Pro+: mp3, txt, pdf, docx, srt; Business+:
+exportação em lote); vocabulário personalizado (Basic: 5 termos; Pro: 100
+nomes + 100 termos; Business/Enterprise: até 800+800 de equipe); histórico
+(Basic: 25 conversas mais recentes; Pro+: ilimitado). [1]
+[CONFIRMADO] Integrações: Basic já inclui Zoom, MS Teams, Google Meet, apps
+iOS/Android, servidor MCP; Pro adiciona Salesforce, HubSpot, Zapier;
+Enterprise adiciona SSO/SCIM, API/webhooks, AI Chat com Gmail/Drive/Notion/
+Jira e "HIPAA compliance" como complemento. [1]
+[CONFIRMADO] Preços promocionais com asterisco (US$ 8,49 e 4,17) valem
+"apenas com cartão emitido na Índia". [1] → NÃO usar no curso.
+[VERIFICAR] Desconto estudantil de 20% no Pro — só fontes secundárias. [44]
+[SUGESTÃO] Para o aluno brasileiro: o Basic basta para o Essentials, mas o
+limite de 30 min por conversa corta reuniões reais; nas oficinas use
+gravações curtas (≤ 25 min).
+
+2.2 Fireflies.ai (fonte: fireflies.ai/pricing, visão anual [13])
+| Plano      | Preço (/assento/mês, anual) | Armazenamento        | Créditos IA | Limite de gravação |
+| Free       | US$ 0                       | 400 min por EQUIPE   | 20          | [VERIFICAR] 2 h    |
+| Pro        | US$ 10                      | 8.000 min por assento| 20          | [VERIFICAR] 2 h    |
+| Business   | US$ 19                      | ilimitado            | 30          | 3 h (confirmado)   |
+| Enterprise | US$ 39 (só anual)           | ilimitado            | 50          | [VERIFICAR] 4 h    |
+[CONFIRMADO] Free inclui: transcrição "ilimitada*", Zoom/Meet/Teams, 100+
+idiomas, notas em tempo real, busca, AskFred, upload de áudio/vídeo, app
+desktop, app móvel, extensão Chrome, acesso à API. [13]
+[CONFIRMADO] Pro adiciona: download de transcrições, resumos e gravações;
+assistente pessoal/e-mail; AI Skills; Voice Agents; gestor de tarefas;
+integrações ilimitadas. Business adiciona: Multi-language Mode,
+"conversation intelligence", análise de equipe, grupos de usuários,
+gravação de vídeo. Enterprise adiciona: rules engine, SSO+SCIM, logs de
+auditoria, "HIPAA-ready (Enterprise, with BAA)", armazenamento privado,
+retenção personalizada, modo "Transcript + Summary only". [13]
+[VERIFICAR] Preços mensais (Pro US$ 18; Business US$ 29) — só fontes
+secundárias; a página oficial na visão mensal não foi capturada. [44]
+[CONFIRMADO] Renomear o bot custa US$ 5/mês (5 usuários, nome compartilhado)
+ou US$ 5/usuário/mês (nomes individuais). [17]
+[CONFIRMADO] "Unlimited Transcription" gratuita condicionada a compartilhar
+os recaps com todos os convidados. [17] → [SUGESTÃO] alertar o aluno:
+essa condição pode conflitar com a minimização de dados.
+[CONFIRMADO] Upload: MP3, M4A, WAV, MP4, WEBM; Free até 100 MB e 150 min
+por arquivo; pagos até 2 GB e 150 min. [19][20] [VERIFICAR limites atuais]
+
+2.3 Microsoft 365 Copilot / Teams (fontes [23][24][30])
+[CONFIRMADO] Microsoft 365 Copilot (empresa): R$ 171,80 por usuário/mês,
+pago anualmente, sem impostos; exige plano Microsoft 365 qualificado; inclui
+"Copilot no Teams". Copilot Chat (gratuito para contas Entra com plano
+qualificado) NÃO inclui Copilot no Teams. [30]
+[CONFIRMADO] Licenças por recurso:
+- Transcrição: Microsoft 365 com Teams + política de transcrição ligada. [26]
+- Intelligent recap: Teams Premium OU Microsoft Copilot. [24]
+- Copilot durante/após reunião, recap em áudio, recap sem transcrição:
+  Microsoft Copilot. [23][24][29]
+[VERIFICAR] Preço do Teams Premium (≈ US$ 10/usuário/mês nos EUA) e do
+"Copilot Business" (US$ 21) — só fontes secundárias. Em reais: NÃO
+ENCONTRADO em página oficial.
+[CONFIRMADO] Licença é por pessoa: cada participante precisa da própria para
+usar o Copilot; convidados externos não acessam o recap (podem recebê-lo
+via "Share" > "Share via Outlook"). Não disponível em reuniões com
+criptografia ponta a ponta nem em GCC High. [23][24][25]
+
+2.4 Resumo de acesso para o aluno [SUGESTÃO]
+- Aluno sem empresa: Otter Basic ou Fireflies Free (contas pessoais, dados
+  vão para os EUA). Para o Teams: só demonstração (vídeo/prints), salvo se
+  a organização dele já licencia.
+- Aluno corporativo: verificar primeiro se a empresa PERMITE notetakers de
+  terceiros (muitas bloqueiam bots externos no Teams/Zoom). Se houver
+  Copilot, preferir o Teams por manter dados no tenant.
+- Saúde: só com ferramenta aprovada pela instituição; HIPAA/BAA não é
+  equivalente a conformidade com LGPD/CFM.
+
+----------------------------------------------------------------
+3. PRIMEIROS PASSOS (passo a passo com origem dos menus)
+----------------------------------------------------------------
+
+3.1 Otter — conta e bot em reuniões online (EN [1][5]; [VERIFICAR] ajuda
+bloqueada para captura automática; rótulos vindos de trechos indexados)
+1. Crie conta em otter.ai (Google, Microsoft ou e-mail) e conecte a agenda
+   (Google ou Microsoft) quando solicitado.
+2. Ajuste quem o bot acompanha: "Account Settings" → "Meetings" (também
+   pela aba "Meetings" da página inicial). Opções de entrada automática:
+   todas as reuniões com link de vídeo; só as que você organiza; externas
+   ou internas; ou só as que você ativar manualmente. [5]
+3. Ajuste o compartilhamento automático: compartilhar com todos os
+   convidados; só com convidados do domínio do workspace; ou não
+   compartilhar ("Don't share"). Configuração por evento sobrepõe o
+   padrão. [5][9]
+4. Faça mudanças pelo menos 30 min antes do início para garantir a entrada
+   do bot. [5] [VERIFICAR]
+5. Sinal de êxito: "Otter Notetaker" aparece na lista de participantes; a
+   transcrição ao vivo aparece no app; ao final chegam notas/resumo.
+Erros comuns: anfitrião não admite o bot (sala de espera); reunião
+ultrapassa o limite do plano (30 min no Basic) e a gravação para; bot entra
+em reunião que não deveria (regra "todas as reuniões").
+
+3.2 Otter — sem bot (presencial ou chamada) [4]
+1. Instale o app desktop (macOS 13+ / Windows 10+) ou o app móvel.
+2. Clique em gravar; o app captura o áudio do computador/microfone; um
+   controle sempre visível permite pausar/retomar/parar. [4]
+3. Avise verbalmente os participantes — ninguém vê bot. [SUGESTÃO]
+4. Sinal de êxito: conversa aparece na lista com transcrição e resumo.
+
+3.3 Otter — importar gravação existente [7][8]
+1. Na web: "Import" na página inicial → "Browse" (ou arrastar). Arquivos
+   até 5 GB; consomem minutos do plano (Basic: 3 importações na vida). [7]
+2. Marque/nomeie falantes após o processamento; falantes já marcados são
+   reconhecidos em gravações futuras. [7] [VERIFICAR: reconhecimento de
+   voz recorrente pode envolver dado biométrico — ver seção 8]
+3. Exportar: TXT, DOCX, PDF, SRT com opções de nomes de falantes,
+   timestamps e destaques; no Basic só TXT (a página de preços diz mp3/txt).
+   [1][8] [VERIFICAR divergência]
+
+3.4 Fireflies — conta, agenda e bot (EN [17][18])
+1. Crie conta em fireflies.ai e conecte Google Calendar ou Outlook/Office
+   365 (únicas agendas suportadas para entrada automática). [17]
+2. Defina a entrada automática: "Settings" > "Recording & Privacy" →
+   "Automatically joins all meetings with a calendar link", "Only joins
+   when invited" ou "Let each teammate choose" (admin). [18] Excluir
+   reuniões por palavra no título ("Bar Rules"/"Recording Rules"). [17][18]
+3. Ligue o aviso: "Meeting Compliance" (disclaimer antes da reunião). [17]
+4. Alternativas: convidar o bot pelo convite do calendário ou "Add to live
+   meeting" no painel. [17]
+5. Sinal de êxito: "Fireflies.ai Notetaker" na lista de participantes e
+   mensagem no chat da reunião; ao final, notas na aba "Meetings".
+Remover o bot: lista de participantes → "More" → "Remove"; a transcrição
+para, mas a parte gravada gera notas. [17]
+Google Meet pode exigir admitir o bot na seção "With potential risks". [17]
+
+3.5 Fireflies — desktop sem bot e upload [18][19]
+1. App desktop: "Take Notes"; janela de consentimento já marca por padrão:
+   mensagem no chat (macOS), mensagem de áudio de consentimento e marca
+   d'água "AI Taking Notes". Ajuste em "Settings → Meeting Preference →
+   Recording". [18]
+2. Upload: "Meetings" → "Uploads" → "Browse Files" (ou arrastar) →
+   escolher o idioma falado → "Upload". O arquivo aparece no canal
+   "Uploads". [19]
+3. Idioma: definir padrão, detecção automática, multilíngue ou por reunião
+   (guia separado "Set Your Meeting Transcription Language"). [16]
+   ATENÇÃO: "Settings → Personal → Language & Appearance" muda só o idioma
+   da interface, não o da transcrição. [16]
+
+3.6 Microsoft Teams — transcrição (EN [26])
+1. Na reunião (desktop): "More actions" → "Transcribe" → confirmar o
+   idioma falado → "Confirm". Gravar a reunião também inicia a
+   transcrição.
+2. Trocar idioma: "More actions" → seta ao lado de "Transcribing" → "Show
+   transcript" → "Language settings" → "Spoken language in this meeting" →
+   "Update". Muda para todos.
+3. Todos veem aviso de transcrição; cada participante pode ocultar sua
+   identidade nas legendas/transcrição.
+4. Depois: "Chat" → chat da reunião → "Recap" → "Transcript" →
+   "Download" (.docx ou .vtt). Excluir: ícone de lixeira no "Recap"
+   (organizador/coorganizador).
+5. Transcrição ao vivo só no Teams desktop; no celular só após a reunião.
+
+3.7 Microsoft Teams — Copilot e recap (EN [25][27])
+1. Organizador define em "Online meeting options" → "Copilot and other
+   AI": "During and after the meeting" (exige transcrição), "Only during
+   the meeting" (sem salvar; some ao fim), ou "Off" (desliga Copilot,
+   gravação e transcrição). [27] O admin pode travar o padrão (seção 19).
+2. Durante: ícone "Copilot" nos controles → "View prompts" ou pergunta
+   livre; quem entra 5+ min atrasado recebe "Open Copilot" com resumo. [27]
+3. Depois: chat da reunião → "Open Copilot" (canto superior direito) ou
+   aba "Recap" → "Copilot". Respostas citam as fontes. [27]
+4. Recap: "View recap" na miniatura do evento no chat, ou "Recap" no chat
+   após o fim. Abas: "AI summary"/"AI notes", "Speakers", "@ Mentions",
+   tópicos/capítulos, gravação, transcrição. [25]
+5. Requisitos do recap com IA: transcrição em idioma suportado e reunião
+   ≥ 5 min; não há recap para reuniões ad hoc. [25]
+6. Sinal de êxito: aba "Recap" com notas de IA e tarefas sugeridas.
+
+3.8 Critério de êxito do primeiro uso [SUGESTÃO]
+O aluno consegue mostrar: (a) prova do aviso/consentimento; (b) transcrição
+gerada; (c) resumo; (d) 3 decisões e 3 tarefas conferidas no timestamp;
+(e) configuração de compartilhamento revisada.
+
+----------------------------------------------------------------
+4. GLOSSÁRIO PARA LEIGOS
+----------------------------------------------------------------
+- Assistente de reunião / notetaker: software que grava, transcreve e
+  resume reuniões.
+- Bot de reunião: "participante" automático que entra na chamada para
+  gravar (ex.: "Otter Notetaker", "Fireflies.ai Notetaker").
+- Gravação sem bot (bot-free): app no computador/celular captura o áudio
+  localmente e envia para a nuvem; ninguém vê um participante extra. [4][22]
+- Transcrição: texto do que foi falado. Diarização/identificação de
+  falantes: separar "quem disse o quê".
+- Timestamp: marca de tempo que liga um trecho do texto ao momento do áudio.
+- Resumo / recap: síntese gerada por IA. "Intelligent recap" é o nome da
+  Microsoft. [24]
+- Itens de ação / tarefas: o que alguém se comprometeu a fazer.
+- Alucinação: conteúdo que a IA apresenta como dito, mas não foi.
+  Omissão: algo dito que a IA deixou de fora (mais frequente em notas
+  clínicas, segundo estudos — seção 6.3). [40]
+- WER (Word Error Rate): % de palavras erradas, faltando ou sobrando numa
+  transcrição em relação a uma referência humana. [36]
+- Vocabulário personalizado / dicionário: lista de nomes e termos técnicos
+  que melhora o reconhecimento. [1][45]
+- Retenção: por quanto tempo a ferramenta guarda áudio, texto e resumo.
+- Tenant: o "ambiente" Microsoft 365 da organização, controlado pelo admin.
+- DPA (Data Processing Agreement): contrato de tratamento de dados entre
+  cliente e fornecedor. BAA: contrato equivalente da lei de saúde dos EUA
+  (HIPAA) — não substitui a LGPD.
+- MCP (Model Context Protocol): padrão que deixa outras IAs consultarem os
+  dados de uma ferramenta (Otter tem servidor MCP). [1][12]
+- Dado pessoal sensível (LGPD art. 5º, II): saúde, biometria, origem
+  racial, religião, opinião política, filiação sindical, vida sexual etc. [32]
+
+----------------------------------------------------------------
+5. FUNCIONALIDADES (comparadas)
+----------------------------------------------------------------
+| Recurso                         | Otter.ai                      | Fireflies.ai                          | Teams + Copilot                    |
+| Bot entra na chamada            | Sim (Zoom, Teams, Meet) [1]   | Sim (Zoom, Meet, Teams, Webex) [17]   | Não precisa (nativo) [26]          |
+| Sem bot                         | App desktop, celular [4]      | App desktop, celular, ext. Chrome (Meet) [22] | Nativo                     |
+| Presencial                      | Celular/desktop [4]           | Celular/desktop [22]                  | Teams Rooms (identifica falantes na sala) [VERIFICAR] |
+| Upload de gravação              | Sim, até 5 GB [7]             | Sim (MP3, M4A, WAV, MP4, WEBM) [19]   | Não (resumo só de reunião Teams) [VERIFICAR] |
+| Transcrição ao vivo             | Sim [1]                       | Sim [13]                              | Sim (desktop) [26]                 |
+| Identificação de falantes       | Sim; aprende falantes marcados [7] | Sim                              | Sim; "Speakers" no recap [25]      |
+| Resumo / notas por IA           | Sim                           | Sim                                   | Teams Premium ou Copilot [24]      |
+| Tarefas                         | Sim                           | Sim (gestor de tarefas no Pro) [13]   | Sim (tarefas sugeridas) [24]       |
+| Perguntar à reunião (chat)      | AI Chat (20–200/mês) [1]      | AskFred/Fred (créditos) [13][21]      | Copilot (licença) [27]             |
+| Perguntar a várias reuniões     | Sim [1]                       | Sim, por canal [19]                   | [VERIFICAR] via Copilot Chat       |
+| Clipes                          | [VERIFICAR] "clips"           | Soundbites, playlists [19]            | Recap em vídeo [24]                |
+| Busca                           | Avançada no Pro [1]           | Busca global [13]                     | Por transcrição/Copilot            |
+| Exportação                      | txt/pdf/docx/srt/mp3 [1]      | DOCX, PDF, SRT, CSV, JSON [VERIFICAR] | .docx/.vtt da transcrição [26]     |
+| Integrações                     | Salesforce, HubSpot, Zapier, Slack [1] | CRMs, Slack, Zapier etc. [13] | Ecossistema Microsoft 365          |
+| Coaching ao vivo                | Live Assist [10][11]          | Live Assist [21]                      | Facilitator [31]                   |
+| Briefing antes da reunião       | Work Mode [11]                | Fred [21]                             | Copilot (prompts) [VERIFICAR]      |
+| Idiomas                         | 17 hoje; 31 previstos [3]     | 100+ [16]                             | Transcrição: muitos, inclui pt-BR [26] |
+| Multilíngue na mesma reunião    | "Em breve" [3]                | Multi-language Mode (Business+) [13]  | Recap multilíngue (prévia) [24]    |
+
+----------------------------------------------------------------
+6. CASOS REAIS (resultados e riscos)
+----------------------------------------------------------------
+6.1 Negócios
+[CONFIRMADO, material de fabricante] Otter e Fireflies vendem casos de
+vendas/CRM (atualização automática de oportunidades, coaching de vendas).
+Não localizamos estudo independente com métricas de produtividade. NÃO
+ENCONTRADO estudo independente de ROI.
+[CONFIRMADO] Risco real documentado: compartilhamento automático de notas
+com todos os convidados — a Otter tem artigo de ajuda específico para
+"Otter is still automatically sharing conversations after I turned off the
+settings" (configuração por evento sobrepõe a padrão). [9]
+[VERIFICAR] Relatos públicos (2024–2025) de bots que continuaram em
+reuniões após a saída do usuário e enviaram resumo a todos, incluindo
+conversa posterior confidencial — só imprensa/redes. Usar como exemplo
+hipotético, não como fato.
+
+6.2 Jornalismo e pesquisa
+[CONFIRMADO] Código de Ética dos Jornalistas Brasileiros (FENAJ, 2007),
+art. 11, III: o jornalista não pode divulgar informações obtidas de maneira
+inadequada, "com o uso de identidades falsas, câmeras escondidas ou
+microfones ocultos", salvo incontestável interesse público e esgotadas
+outras possibilidades de apuração. [35] → gravar entrevista com app sem
+aviso exige justificativa ética.
+[VERIFICAR] A FENAJ informa revisão do código prevista para 2027 e nova
+redação do art. 7º, I aprovada em 13/12/2025.
+[SUGESTÃO] Riscos específicos: sigilo da fonte (art. 5º, XIV da CF) —
+gravar em nuvem de terceiro expõe a fonte a pedidos judiciais ao
+fornecedor; transcrição errada de citação direta = erro publicado. Regra:
+toda aspa publicada é conferida no áudio.
+
+6.3 Saúde
+[CONFIRMADO] Ensaio randomizado com escribas ambientais de IA (PMC12768499,
+2025/2026): clínicos relataram imprecisões clinicamente significativas
+"ocasionalmente"; omissões foram o problema mais citado. [40]
+[VERIFICAR] Estudos citados em fontes secundárias: piloto JMIR Med Inform
+(abr/2026): omissões em 18% das notas, alucinações em 11,5%; npj Digital
+Medicine 2025: 1,47% das frases com alucinação, 44% delas "maiores". Ler
+os originais antes de usar números. [40]
+[CONFIRMADO] Brasil: CFM 2.454/2026 — ver seção 8.6. [34]
+[SUGESTÃO] Caso de ensino: o resumo da IA registra "paciente nega alergia"
+quando o paciente disse "não lembro se tenho alergia". A conferência no
+timestamp evita o erro no prontuário.
+
+6.4 Litígios (2025–2026) — ver seção 8.4.
+
+----------------------------------------------------------------
+7. BOAS PRÁTICAS
+----------------------------------------------------------------
+7.1 Das fabricantes
+- Fireflies: avisar e obter consentimento onde exigido; o bot não pode ser
+  escondido; usar "Meeting Compliance"; se um participante recusar, o
+  Notetaker não entra (modo desktop); definir acesso padrão "Only
+  Participants"/"Only Teammates"/"Only me"; links públicos com senha e
+  validade; retenção por tipo (vídeo, áudio, transcrição, resumo). [17][18]
+- Otter: escolher auto-entrada restrita; revisar compartilhamento por
+  evento; admins Enterprise podem travar padrões e permitir só "Don't
+  share". [5][9]
+- Microsoft: conteúdo de IA "pode ser impreciso, incompleto ou
+  inadequado"; verificar fontes citadas pelo Copilot; usar rótulos de
+  confidencialidade para impedir cópia/exportação. [25][27]
+
+7.2 Método de trabalho [SUGESTÃO, apoiado em 7.1]
+ANTES
+1. Pauta com objetivo, decisões esperadas e lista de participantes.
+2. Convite com aviso: "Esta reunião será transcrita por [ferramenta]
+   para gerar ata. Se preferir que não seja, responda até [hora]."
+3. Escolher a ferramenta conforme sensibilidade (pública / interna /
+   confidencial / dados sensíveis → sem IA de terceiro).
+4. Cadastrar nomes próprios e jargões no vocabulário personalizado.
+DURANTE
+5. Abrir a reunião pedindo concordância e registrando-a (fala gravada).
+6. Microfone individual, uma pessoa por vez, nomear-se antes de falar em
+   reunião presencial; repetir em voz alta decisões e prazos ("Decisão: …;
+   responsável: …; prazo: …").
+7. Pausar a captura em trechos fora de escopo (pessoais, RH, saúde).
+DEPOIS
+8. Conferir (seção 14, item 7) antes de enviar qualquer coisa.
+9. Compartilhar a ata revisada, não a transcrição bruta, só com quem
+   precisa.
+10. Definir retenção e apagar o áudio quando a ata estiver aprovada.
+
+7.3 Prompts úteis (pós-reunião) [SUGESTÃO; exemplos oficiais da Microsoft
+em [27]]
+- "Liste as decisões tomadas, cada uma com o trecho literal e o
+  timestamp de onde aparece."
+- "Liste tarefas com responsável e prazo SÓ quando ditos explicitamente;
+  marque 'não definido' quando faltar."
+- "O que ficou sem decisão ou em desacordo?" (Microsoft sugere "Where do
+  we disagree on this topic?") [27]
+- "Separe o que foi dito do que você está inferindo."
+
+----------------------------------------------------------------
+8. SEGURANÇA, PRIVACIDADE, CONSENTIMENTO E LEGISLAÇÃO
+----------------------------------------------------------------
+8.1 Políticas de dados das âncoras
+OTTER [2]
+[CONFIRMADO] Treina "proprietary AI technology on de-identified audio
+recordings"; transcrições podem conter dados pessoais; compartilha com
+provedores de IA de backend e com provedores de rotulagem de dados; usa AWS
+(EUA); pode transferir dados para fora do país do usuário; retenção "pelo
+tempo necessário" (sem prazo); direito de exclusão. Alguns
+compartilhamentos com parceiros de publicidade/analytics "may broadly be
+considered a 'sale'" em leis estaduais dos EUA. Política vigente desde
+16/06/2026.
+FIREFLIES [14][15][18]
+[CONFIRMADO] Não usa dados para treinar modelos e proíbe fornecedores de
+fazê-lo; "Zero Data Retention" com fornecedores de IA; SOC 2 Type II, GDPR,
+ISO/IEC 42001; AES-256 em repouso, TLS 1.2+ em trânsito; HIPAA-ready só no
+Enterprise com BAA; armazenamento privado (região própria) no Enterprise;
+exclusão de reunião é permanente; dados da conta apagados em até 30 dias
+após exclusão da conta; não usuários gravados devem pedir exclusão ao
+anfitrião. Política atualizada em 28/09/2026.
+MICROSOFT [23][25]
+[CONFIRMADO] Dados do evento ficam na região geográfica da organização;
+gravações em OneDrive/SharePoint sob Purview; notas, tarefas e "meeting
+memory" expiram pela política da organização; organizador pode "Delete
+recap content" (irreversível); apagar só a transcrição NÃO apaga a meeting
+memory; prompts/respostas do Copilot podem ser retidos para compliance
+mesmo sem gravação (Purview). [VERIFICAR] compromissos de não treinamento
+— página "Data, privacy, and security for Microsoft 365 Copilot".
+
+8.2 Consentimento — Brasil (NÃO é parecer jurídico)
+[CONFIRMADO] LGPD (Lei 13.709/2018) se aplica a voz, transcrição e resumo
+que identifiquem pessoas: princípios de finalidade, necessidade,
+transparência e segurança (art. 6º); bases legais (art. 7º; para dados
+sensíveis, art. 11); transferência internacional (art. 33 e seguintes);
+direitos do titular (art. 18). [32]
+[CONFIRMADO, fonte secundária] STF, Tema 237 (RE 583.937/RJ): gravação
+ambiental por um dos interlocutores sem conhecimento do outro é lícita
+como prova, ressalvado sigilo legal (ex.: advogado-cliente). [33]
+[VERIFICAR] Lei 9.296/1996, art. 10-A (incluído pela Lei 13.964/2019):
+crime de captação ambiental sem autorização judicial quando exigida; § 1º
+diz não haver crime quando a captação é feita por um dos interlocutores.
+Conferir literal no Planalto.
+[SUGESTÃO] Pontos que o curso deve deixar explícitos:
+- Bot de terceiro entrar numa reunião da qual o usuário NÃO participa
+  (ex.: bot "representa" alguém ausente) é captação por quem não é
+  interlocutor → zona de risco alto.
+- Licitude como prova ≠ conformidade LGPD ≠ ética profissional.
+- Voz e "perfil de falante" reutilizado entre reuniões podem caracterizar
+  dado biométrico (sensível). [VERIFICAR posição da ANPD — NÃO ENCONTRADO
+  guia específico.]
+- ANPD: IA está entre os temas prioritários de fiscalização 2026–2027
+  (Resolução CD/ANPD 30/2025, fonte secundária). [42] [VERIFICAR]
+  Guia orientativo de IA da ANPD: NÃO ENCONTRADO publicado em versão final.
+
+8.3 Relações de trabalho [VERIFICAR com jurídico]
+[SUGESTÃO] Usar notetaker para registrar reunião de trabalho ≠ monitorar
+empregados (fora do escopo). Reuniões de feedback, disciplinares, de RH ou
+com dados de saúde do empregado: não usar IA de terceiro sem política
+interna e base legal clara. NÃO ENCONTRADO norma do MTE ou orientação do
+MPT específica sobre transcrição por IA.
+
+8.4 Litígios nos EUA (sinal de risco, não lei brasileira)
+[VERIFICAR] In re Otter.AI Privacy Litigation (N.D. Cal., 5:25-cv-06911):
+alegações de escuta sem consentimento de todas as partes (California
+Invasion of Privacy Act), Wiretap Act federal e BIPA; decisão parcial em
+13/08/2026; resposta da Otter em 17/09/2026; certificação de classe prevista
+para 2027; nenhuma condenação. [38]
+[VERIFICAR] Cruz v. Fireflies.AI e Fricker v. Fireflies.AI (Illinois,
+2026): BIPA, voiceprints de não usuários; moção para extinguir em
+jul/2026; sem decisão confirmada. [39]
+[CONFIRMADO, fonte secundária] Os termos de uso de Otter e Fireflies põem
+no TITULAR DA CONTA a responsabilidade de obter consentimento dos
+participantes. [39]
+
+8.5 Controles práticos (checklist) [SUGESTÃO, baseado em 2.x e 8.1]
+[ ] Entrada automática restrita (só reuniões que organizo / manual)
+[ ] Compartilhamento automático desligado ou só para participantes
+[ ] Aviso de gravação ligado (Meeting Compliance / mensagem no chat)
+[ ] Conta corporativa (SSO) em vez de pessoal para dados de trabalho
+[ ] DPA assinado; país de armazenamento conhecido
+[ ] Treinamento de IA com meus dados: sim/não (ler política)
+[ ] Retenção definida (Fireflies por tipo; Teams pela política; Otter
+    manual) e rotina de exclusão
+[ ] Convidados externos: o que recebem?
+[ ] Links públicos: senha e validade
+
+8.6 Saúde
+[CONFIRMADO] Resolução CFM 2.454/2026 [34]:
+- art. 4º: IA só como apoio; julgamento crítico; conhecer limitações;
+  registrar no prontuário o uso de IA "como apoio à decisão médica" (V).
+- art. 5º §1º: paciente tem direito de ser informado, de forma clara e
+  acessível, quando IA for apoio relevante; §3º: respeitar recusa
+  informada.
+- art. 6º: confidencialidade e segurança dos dados; compartilhar dados
+  sensíveis com IA só quando estritamente necessário; §3º: vedado usar IA
+  sem padrões mínimos de segurança para dados sensíveis.
+- art. 7º: médico permanece integralmente responsável.
+- art. 11: qualquer utilização de IA deve ser comunicada e explicada.
+- art. 23: vigência 180 dias após a publicação (27/02/2026 → por volta de
+  26/08/2026). [VERIFICAR contagem exata]
+[SUGESTÃO] Regras para o curso (trilha S3): resumo de IA nunca é
+prontuário sem revisão e assinatura do profissional; proibido pedir à IA
+diagnóstico ou "impressão clínica"; usar só ferramenta aprovada pela
+instituição; não usar contas pessoais gratuitas com dados de pacientes;
+outras profissões (enfermagem, psicologia) têm conselhos próprios —
+NÃO ENCONTRADO norma específica do COFEN/CFP sobre transcrição por IA.
+
+----------------------------------------------------------------
+9. LIMITAÇÕES E ERROS COMUNS
+----------------------------------------------------------------
+[CONFIRMADO]
+- Teams: recap de IA exige transcrição em idioma suportado e ≥ 5 min; não
+  existe para reuniões ad hoc; menções por nome só funcionam se o nome na
+  transcrição bater com o nome de exibição; formato do resumo varia por
+  idioma. [25]
+- Teams: Copilot não funciona em reuniões de outra organização; histórico
+  de conversa com Copilot se perde em reuniões recorrentes quando uma
+  ocorrência posterior é transcrita. [27]
+- Teams: transcrição para quando todos saem; palavrões viram asteriscos;
+  anônimos e participantes por telefone não veem a transcrição. [26]
+- Teams: recap em vídeo exige gravação e ≥ 10 min; recap em áudio pode
+  pular capítulos e conter falhas. [24]
+- Otter Basic: 30 min por conversa; 25 conversas visíveis; 3 importações
+  na vida. [1]
+- Fireflies Free: 400 min de armazenamento por equipe. [13]
+- Bots precisam ser admitidos; plataformas podem bloquear. [17]
+[CONFIRMADO, estudos] Fala espontânea pt-BR erra muito mais que fala lida:
+Whisper teve WER médio de 0,460 no CORAA (espontânea) e 0,160 no Common
+Voice (lida). [36]
+[SUGESTÃO] Erros típicos a ensinar: falante trocado; nome próprio errado;
+número/valor/data errado; negação perdida ("não" sumiu); fala sobreposta
+omitida; ironia lida como decisão; tarefa atribuída a quem só comentou;
+prazo inventado; resumo que "suaviza" desacordo.
+
+----------------------------------------------------------------
+10. COMPARAÇÃO IMPARCIAL E CRITÉRIOS DE ESCOLHA
+----------------------------------------------------------------
+[SUGESTÃO, baseada nas seções 2, 5 e 8]
+| Critério                          | Otter          | Fireflies       | Teams + Copilot          |
+| Custo de entrada                  | Grátis (limitado) | Grátis (limitado) | Licença corporativa   |
+| Dados ficam na organização        | Não            | Não (exceto Enterprise c/ storage privado) | Sim (tenant) |
+| Usa dados p/ treinar IA           | Sim, desidentificados [2] | Diz que não [14] | [VERIFICAR] |
+| Português                         | Recente (nov/26), variante não declarada | pt-BR listado | pt-BR na transcrição |
+| Funciona em Zoom/Meet             | Sim            | Sim             | Não (só Teams)           |
+| Presencial                        | Sim            | Sim             | Limitado (Teams Rooms)   |
+| Melhor para                       | Uso individual/pequenas equipes; vendas | Equipes multiplataforma; análise | Empresas já em Microsoft 365 |
+Fora do escopo, mas citáveis como alternativas: Zoom AI Companion, Gemini
+no Google Meet ("Take notes for me"), tl;dv, Read.ai, Granola, Jamie,
+Plaud (gravador físico). [VERIFICAR antes de citar recursos]
+
+----------------------------------------------------------------
+11. NOVIDADES (últimos 6 meses até 18/11/2026)
+----------------------------------------------------------------
+- 11/11/2026 — Fireflies: Fred "AI teammate", Scheduler, Clips, Voice
+  Agents, Live Assist, dispositivo Fly (2027). [21]
+- 10/11/2026 — Otter: +27 idiomas (13 ativos, inclui português);
+  multilíngue em prévia. [3]
+- 27/10/2026 — Otter: Work Mode; Live Assist para todos os pagantes. [11]
+- 28/09/2026 — Fireflies: política de privacidade atualizada. [14]
+- 13/08/2026 — decisão parcial no caso Otter (fonte secundária). [38]
+- 11/08/2026 e 26/10/2026 — Microsoft atualiza documentação de Copilot em
+  reuniões (padrão "On with saved transcript required"). [23]
+- ~26/08/2026 — CFM 2.454/2026 entra em vigor. [34]
+- 21/07/2026 — Otter Live Assist (Enterprise). [10]
+- 16/06/2026 — Otter: nova política de privacidade. [2]
+- Dez/2026 (previsto) — Microsoft Facilitator com respostas da web. [31]
+  [VERIFICAR]
+
+----------------------------------------------------------------
+12. MATERIAL DIDÁTICO OFICIAL E DE APOIO
+----------------------------------------------------------------
+- Microsoft Learn — módulo "Make your meetings more productive with AI"
+  (learn.microsoft.com/en-us/training/modules/make-your-meetings-more-
+  productive-ai/). [VERIFICAR idioma pt-BR]
+- Microsoft Support — "Get started with Copilot in Teams meetings";
+  "Recap in Microsoft Teams"; "View live transcription". [25][26][27]
+- Otter Help Center — "Otter Quick Start Guide". [VERIFICAR; bloqueado para
+  captura automática]
+- Fireflies Guide — "What is Fireflies.ai", mobile app, upload. [19]
+- Fireflies blog "Are AI Notetakers Safe? Privacy Risks, Consent Laws"
+  (2026) — material de fabricante; usar com cautela.
+- Corpora públicos para prática: ver seção 16 (AMI, CORAA).
+
+----------------------------------------------------------------
+13. EXERCÍCIOS, OFICINAS E PROJETOS [SUGESTÃO]
+----------------------------------------------------------------
+13a. Exercícios curtos (Essentials, 3–8 min cada)
+1. Classifique 6 situações (reunião de vendas externa; 1:1 de feedback;
+   consulta médica; entrevista jornalística on the record; reunião de
+   condomínio; aula pública) em: pode usar IA / pode com aviso e
+   concordância / não usar. Gabarito com justificativa (LGPD, CFM, FENAJ).
+2. Leia um trecho de transcrição com 5 erros plantados (falante trocado,
+   número, negação, nome, prazo inventado) e encontre-os. Gabarito: lista
+   dos 5 erros com o áudio de referência.
+3. Do resumo da IA, separe frases "ditas" de frases "inferidas".
+4. Escreva o aviso de IA para um convite de reunião (≤ 2 frases).
+5. Identifique no print de configurações (Otter/Fireflies) qual opção
+   compartilha notas com todos os convidados.
+6. Escolha a ferramenta para 3 perfis (autônomo com Zoom; empresa com
+   Microsoft 365 Copilot; hospital) e justifique.
+
+13b. Oficinas (Hands On, 4 oficinas de 10–15 min)
+OF1 — Preparar e capturar: configurar entrada automática restrita,
+  compartilhamento desligado e aviso de gravação; capturar 5–10 min de
+  reunião simulada (roteiro fornecido, 3 vozes) ou importar arquivo.
+  Êxito: print das configurações + transcrição gerada.
+OF2 — Conferir a transcrição: comparar com gabarito (transcrição humana
+  do roteiro), corrigir falantes e 10 termos; calcular erro simples (nº
+  de palavras erradas / total). Êxito: transcrição corrigida + taxa.
+OF3 — Da transcrição à ata: gerar resumo; extrair decisões e tarefas com
+  responsável, prazo e timestamp; marcar "não definido". Êxito: ata no
+  modelo (seção 16) sem item sem fonte.
+OF4 — Compartilhar e descartar: definir quem recebe, criar link com
+  permissão mínima, programar/realizar exclusão do áudio. Êxito: print
+  da permissão + registro de exclusão.
+
+13c. Projetos (final do Hands On)
+P1 (negócios) — ciclo completo de uma reunião de projeto simulada:
+  pauta → aviso → captura → conferência → ata → e-mail de follow-up.
+P2 (jornalismo/pesquisa) — entrevista simulada: transcrever, conferir 5
+  citações diretas no áudio, registrar consentimento e plano de guarda.
+P3 (saúde, simulado, SEM paciente real) — reunião de equipe
+  multiprofissional fictícia: ata de passagem de plantão revisada,
+  com marcação do que precisa de validação profissional; proibido
+  diagnóstico gerado pela IA.
+Critérios de avaliação: consentimento registrado; erros corrigidos;
+decisões/tarefas rastreáveis ao timestamp; compartilhamento mínimo;
+retenção definida.
+
+----------------------------------------------------------------
+14. FOCO ESPECÍFICO (respostas aos 12 itens do prompt)
+----------------------------------------------------------------
+1. Fluxo antes/durante/depois — ver seções 0 e 7.2. Base oficial:
+   opções de Copilot por reunião [27]; aviso de compliance Fireflies [17];
+   retenção/exclusão [18][25]. Descarte: Teams "Delete recap content";
+   Fireflies retenção automática por tipo; Otter exclusão manual (NÃO
+   ENCONTRADO retenção automática no Otter fora do Enterprise
+   [VERIFICAR]).
+2. Otter — ver 2.1, 3.1–3.3, 5. "Clips": NÃO ENCONTRADO em fonte
+   oficial atual [VERIFICAR]. Idiomas: [3].
+3. Fireflies — ver 2.2, 3.4–3.5, 5. Canais ("Channels"), Soundbites,
+   Topic Trackers, AskFred/Fred, conversation intelligence (Business). [13][19][21]
+4. Teams/Copilot — ver 2.3, 3.6–3.7, 19. Licenças e política do tenant:
+   [23][24].
+5. Presencial/híbrida/online; Windows/macOS/mobile; upload vs bot —
+   Otter desktop macOS 13+/Windows 10+ [4]; Fireflies desktop macOS 12+/
+   Windows 10+ e iOS 15.1+ [22] [VERIFICAR]; Teams transcrição ao vivo só
+   desktop [26]. Híbrida: sala com microfone ruim é a principal causa de
+   erro de falante [SUGESTÃO]; Teams Rooms com perfil de voz identifica
+   pessoas na sala [VERIFICAR — dado biométrico].
+6. Qualidade em pt-BR — NÃO ENCONTRADO métricas publicadas pelas três
+   fabricantes para pt-BR. Estudos independentes: Lanaro et al. (ICAART
+   2026): ~14 mil áudios; WER médio no CORAA (fala espontânea, sotaques):
+   Phi-4 0,416; Whisper 0,460; Qwen 0,617; no Common Voice (lida): 0,134 /
+   0,160 / 0,219. [36] CORAA (2021): 290,77 h de fala espontânea e
+   preparada pt-BR; modelo de referência WER 24,18% no CORAA. [37]
+   Gris et al. (2023, citado em [36]): Whisper WER 14,50% em histórias de
+   vida (Museu da Pessoa). → Mensagem: fala real de reunião erra 1 em cada
+   3–5 palavras em modelos abertos; produtos comerciais não divulgam.
+   Sotaques regionais específicos: NÃO ENCONTRADO estudo dedicado recente.
+7. Método de conferência [SUGESTÃO]: (1) ler o resumo; (2) para cada
+   decisão/tarefa/número, clicar no trecho e ouvir o timestamp; (3) marcar
+   [DITO] ou [INFERIDO]; (4) corrigir falante e nomes; (5) manter na ata o
+   timestamp de origem; (6) registrar quem revisou e quando. Teams cita as
+   fontes nas respostas do Copilot [27]; Otter/Fireflies ligam texto ao
+   áudio [VERIFICAR rótulos].
+8. Consentimento e legislação — seção 8.2–8.4; saúde 8.6; jornalismo 6.2.
+9. Saúde — seção 8.6 e 6.3.
+10. Controles — seção 8.1 e 8.5; admin em 19.
+11. Casos e critérios de escolha — seções 6 e 10. Material de fabricante
+    marcado como tal.
+12. Práticas com áudio autorizado — seção 13 e 16 (AMI Corpus, CORAA,
+    roteiro próprio gravado pela equipe).
+
+----------------------------------------------------------------
+15. TRECHOS-CHAVE (curtos, com fonte)
+----------------------------------------------------------------
+- Microsoft: conteúdo de IA "might be inaccurate, incomplete, or
+  inappropriate". [25]
+- Microsoft: desligar o Copilot na reunião também desliga gravação e
+  transcrição. [23]
+- Otter: treina IA "on de-identified audio recordings". [2]
+- Fireflies: o Notetaker não pode ser escondido; participantes devem ser
+  informados. [17]
+- CFM art. 11: "Qualquer utilização de IA deverá ser comunicada e
+  explicada aos pacientes". [34]
+- FENAJ art. 11, III: vedado divulgar informação obtida com "microfones
+  ocultos", salvo interesse público incontestável. [35]
+
+----------------------------------------------------------------
+16. MATERIAIS PARA BAIXAR
+----------------------------------------------------------------
+Baixados nesta pasta:
+1. cfm-resolucao-2454-2026-ia-medicina.pdf — Resolução CFM 2.454/2026
+   (cópia da pasta imagem-com-ia). https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2026/2454_2026.pdf [34]
+2. fenaj-codigo-etica-jornalistas-2007.pdf — https://fenaj.org.br/wp-content/uploads/2014/06/04-codigo_de_etica_dos_jornalistas_brasileiros.pdf [35]
+3. estudo-asr-portugues-brasileiro-scitepress-2026.pdf — Lanaro et al.,
+   ICAART 2026 (CC BY-NC-ND 4.0). https://www.scitepress.org/Papers/2026/146373/146373.pdf [36]
+4. coraa-corpus-fala-portugues-brasileiro.pdf — Candido Junior et al.,
+   arXiv 2110.15731. https://arxiv.org/pdf/2110.15731 [37]
+Não baixados (baixar manualmente):
+5. CORAA (áudios + transcrições pt-BR, CC BY-NC-ND 4.0) —
+   https://github.com/nilc-nlp/CORAA — amostras de fala espontânea com
+   gabarito; uso não comercial e sem derivações → [VERIFICAR] se curso
+   pago pode usar; alternativa: só para demonstração interna.
+6. AMI Meeting Corpus (reuniões em inglês com transcrição manual) —
+   https://groups.inf.ed.ac.uk/ami/corpus/ — licença divergente entre
+   fontes (CC BY 4.0 vs. CC BY-NC-SA) [41] [VERIFICAR].
+7. Mozilla Common Voice pt (fala lida, CC0) —
+   https://commonvoice.mozilla.org/pt/datasets — útil para teste de
+   sotaques, não de reunião.
+8. Modelos de pauta e ata: NÃO ENCONTRADO modelo oficial público
+   adequado. [SUGESTÃO] equipe cria modelo próprio com colunas: Decisão |
+   Trecho literal | Timestamp | Responsável | Prazo | Status | Revisado por.
+9. [SUGESTÃO] Áudio de prática: gravar internamente 3 reuniões simuladas
+   (negócios, entrevista, passagem de plantão fictícia), 8–20 min, com
+   atores que assinam termo de cessão; produzir transcrição humana como
+   gabarito. É a opção mais segura juridicamente.
+
+----------------------------------------------------------------
+17. PÁGINAS PARA SALVAR (salvas como PDF nesta pasta, 18/11/2026)
+----------------------------------------------------------------
+Salvas automaticamente:
+- pagina-otter-precos.pdf — https://otter.ai/pricing [1]
+- pagina-otter-politica-privacidade.pdf — https://otter.ai/privacy-policy [2]
+- pagina-otter-27-novos-idiomas.pdf — [3]
+- pagina-otter-app-desktop-sem-bot.pdf — https://otter.ai/desktop [4]
+- pagina-otter-live-assist-jul-2026.pdf — [10]
+- pagina-otter-work-mode-live-assist-out-2026.pdf — [11]
+- pagina-fireflies-precos.pdf — https://fireflies.ai/pricing [13]
+- pagina-fireflies-politica-privacidade.pdf — [14]
+- pagina-fireflies-seguranca.pdf — [15]
+- pagina-fireflies-idiomas-suportados.pdf — [16]
+- pagina-fireflies-como-entra-nas-reunioes.pdf — [17]
+- pagina-fireflies-uso-responsavel-seguro.pdf — [18]
+- pagina-fireflies-upload-arquivos.pdf — [19]
+- pagina-fireflies-plano-gratuito.pdf — [20]
+- pagina-microsoft-admin-copilot-reunioes-teams.pdf — [23]
+- pagina-microsoft-admin-intelligent-recap.pdf — [24]
+- pagina-microsoft-recap-no-teams.pdf — [25]
+- pagina-microsoft-transcricao-ao-vivo-teams.pdf — [26]
+- pagina-microsoft-comecar-copilot-reunioes.pdf — [27]
+- pagina-microsoft-faq-copilot-teams.pdf — [28]
+- pagina-microsoft-recap-sem-salvar-transcricao.pdf — [29]
+- pagina-microsoft-copilot-precos-br.pdf — [30]
+- pagina-lgpd-lei-13709.pdf — [32]
+- pagina-cfm-noticia-ia-medicina.pdf — https://portal.cfm.org.br/noticias/cfm-normatiza-uso-da-ia-na-medicina/
+SALVAR MANUALMENTE (o site exibiu verificação de segurança/anti-robô ou
+bloqueou a captura automática):
+- Otter Help "Manage your Otter Notetaker settings" — https://help.otter.ai/hc/en-us/articles/13675989227543 [5]
+- Otter Help "Recording Permissions with Otter" — https://help.otter.ai/hc/en-us/articles/39339238308503 [6]
+- Otter Help "Import an audio or video file" — https://help.otter.ai/hc/en-us/articles/360047733574 [7]
+- Otter Help "Export conversations" — https://help.otter.ai/hc/en-us/articles/360047733634 [8]
+- Otter Help "Turn off automatic sharing" — https://help.otter.ai/hc/en-us/articles/14952683922711 [9]
+- Fireflies press release 11/11/2026 (GlobeNewswire) — [21]
+- STF Tema 237 no portal do STF (buscar "Tema 237") — [33]
+- Lei 9.296/1996 (Planalto) — https://www.planalto.gov.br/ccivil_03/leis/l9296.htm [43]
+
+----------------------------------------------------------------
+18. LACUNAS E PONTOS A VERIFICAR
+----------------------------------------------------------------
+1. Otter: o português lançado em 10/11/2026 é pt-BR? Testar com áudio
+   brasileiro e perguntar ao suporte. [3]
+2. Otter Help bloqueado para captura: confirmar rótulos de menu (seção
+   3.1–3.3) com conta real e prints.
+3. Fireflies: preços mensais e limite de gravação por plano (Free/Pro/
+   Enterprise). [13]
+4. Fireflies: Multi-language Mode inclui português? [16]
+5. Microsoft: preço do Teams Premium em R$; política de não treinamento do
+   Copilot (página oficial de privacidade); idioma pt-BR no intelligent
+   recap (doc diz "Portuguese").
+6. Status dos processos Otter e Fireflies nos EUA (PACER).
+7. STF Tema 237 e Lei 9.296/96 art. 10-A: conferir texto oficial.
+8. ANPD: existência de guia/nota técnica sobre IA, voz e biometria.
+9. CFM: posição dos CRMs sobre escribas de IA; normas COFEN/CFP.
+10. Licença de uso de CORAA e AMI em curso comercial.
+11. Estudos de escribas clínicos: ler originais (JMIR, npj Digital
+    Medicine) antes de citar números.
+12. Facilitator (Microsoft): status em dez/2026.
+13. Rótulos em português das interfaces (todas as fontes de menu estão em
+    inglês).
+14. Otter: retenção automática configurável fora do Enterprise.
+
+----------------------------------------------------------------
+19. APÊNDICE TÉCNICO (admins/API)
+----------------------------------------------------------------
+19.1 Teams — política de Copilot (Teams admin center → "Meetings" →
+"Meeting policies" → "Recording & transcription" → "Copilot") [23]
+| Valor no admin center               | PowerShell                       | Comportamento |
+| On                                  | Enabled                          | Padrão "Only during the meeting"; organizador pode mudar |
+| On with saved transcript required   | EnabledWithTranscript (PADRÃO)   | "During and after the meeting" obrigatório |
+| On with transcript saved by default | EnabledWithTranscriptDefaultOn   | Padrão "During and after"; organizador pode mudar |
+| Off                                 | Disabled                         | Padrão "Off"; organizador pode mudar |
+Exemplo: Set-CsTeamsMeetingPolicy -Identity <política> -Copilot Enabled
+Transcrição: "-AllowTranscription" em CsTeamsMeetingPolicy. [23]
+Copilot indisponível em reuniões com criptografia ponta a ponta e em GCC
+High. Eventos até 1.000 participantes. [23]
+19.2 Teams — dicionário personalizado para transcrição (Copilot):
+learn.microsoft.com/en-us/microsoftteams/copilot-custom-dictionary;
+dicionário em português mapeia para transcrição pt-BR. [45] [VERIFICAR]
+19.3 Otter Enterprise: SSO, SCIM, Domain Capture, API e webhooks, servidor
+MCP; admins podem travar auto-join e opções de compartilhamento. [1][9]
+19.4 Fireflies: API GraphQL (docs.fireflies.ai), rate limits na API e em
+upload em lote; Enterprise: rules engine, SSO+SCIM, logs de auditoria
+via API, super admin, retenção de 1 semana a 1 ano. [13][14]
+
+----------------------------------------------------------------
+20. FONTES (consultadas em 18/11/2026)
+----------------------------------------------------------------
+[1] Otter.ai — Pricing. https://otter.ai/pricing
+[2] Otter.ai — Privacy Policy (vigente 16/06/2026). https://otter.ai/privacy-policy
+[3] Otter.ai — "Otter.ai Announces Its Biggest Multilingual Leap Yet: 27 New Languages…" (10/11/2026). https://otter.ai/blog/otter-ai-announces-its-biggest-multilingual-leap-yet-27-new-languages-and-multilingual-capabilities
+[4] Otter.ai — Desktop app. https://otter.ai/desktop
+[5] Otter Help — Manage your Otter Notetaker settings. https://help.otter.ai/hc/en-us/articles/13675989227543-Manage-your-Otter-Notetaker-settings (lido via trechos indexados; acesso direto bloqueado)
+[6] Otter Help — Recording Permissions with Otter. https://help.otter.ai/hc/en-us/articles/39339238308503-Recording-Permissions-with-Otter (não lido na íntegra)
+[7] Otter Help — Import an audio or video file. https://help.otter.ai/hc/en-us/articles/360047733574-Import-an-audio-or-video-file (trechos indexados)
+[8] Otter Help — Export conversations. https://help.otter.ai/hc/en-us/articles/360047733634-Export-conversations (trechos indexados)
+[9] Otter Help — Turn off automatic sharing / Manage workspace auto-share / "Otter is still automatically sharing…". https://help.otter.ai/hc/en-us/articles/14952683922711 ; /32589333117591 ; /26768881676823 (trechos indexados)
+[10] Otter.ai — "Otter.ai Introduces Live Assist…" (21/07/2026). https://otter.ai/blog/otter-ai-introduces-live-assist-the-first-live-coaching-agent-for-every-call
+[11] Otter.ai — "Otter Rethinks the Meeting…" (27/10/2026). https://otter.ai/blog/otter-rethinks-the-meeting-new-ai-preps-you-coaches-you-and-follows-through
+[12] Otter.ai — "Otter Meeting Agent…" e "Connect AI-to-AI with Otter's MCP" (abr/2026). https://otter.ai/blog/otter-meeting-agent-your-new-collaborative-teammate ; https://otter.ai/blog/otter-for-enterprise-connect-ai-to-ai-with-otters-mcp (não lidos na íntegra)
+[13] Fireflies.ai — Pricing (visão anual). https://fireflies.ai/pricing
+[14] Fireflies.ai — Privacy Policy (atualizada 28/09/2026). https://fireflies.ai/privacy-policy
+[15] Fireflies.ai — Security. https://fireflies.ai/security
+[16] Fireflies Guide — Learn about Fireflies supported languages. https://guide.fireflies.ai/articles/2973706448-learn-about-fireflies-supported-languages
+[17] Fireflies Guide — How Fireflies joins and records your meetings (FAQs). https://guide.fireflies.ai/articles/9554534786-how-fireflies-joins-and-records-your-meetings-faqs
+[18] Fireflies Guide — Responsible and secure meeting notetaking with Fireflies. https://guide.fireflies.ai/articles/7434774675-responsible-and-secure-meeting-notetaking-with-fireflies
+[19] Fireflies Guide — How to Upload and Transcribe Audio or Video Files. https://guide.fireflies.ai/articles/3893959957-how-to-upload-and-transcribe-audio-or-video-files-in-fireflies
+[20] Fireflies Guide — What's included in the Fireflies Free plan. https://guide.fireflies.ai/articles/4027724828-learn-about-the-fireflies-free-plan
+[21] Fireflies.ai — Press release "Fireflies.ai Evolves From AI Notetaker to AI Teammate…" (11/11/2026), GlobeNewswire. https://www.globenewswire.com/news-release/2026/11/11/3400748/0/en/
+[22] Fireflies.ai — blog "Bot-Free Meetings" e "Fireflies launches Live Assist and desktop app". https://fireflies.ai/blog/bot-free-meeting-recorder ; https://fireflies.ai/blog/fireflies-launches-live-assist-and-desktop-app (requisitos de SO via fontes secundárias — VERIFICAR)
+[23] Microsoft Learn — Manage Microsoft Copilot in Teams meetings and events (ms.date 11/08/2026; atualizado 26/10/2026). https://learn.microsoft.com/en-us/microsoftteams/copilot-teams-transcription
+[24] Microsoft Learn — Intelligent recap for Teams calls, meetings, and events (ms.date 07/05/2026; atualizado 15/10/2026). https://learn.microsoft.com/en-us/microsoftteams/intelligent-recap-calls-meetings
+[25] Microsoft Support — Recap in Microsoft Teams. https://support.microsoft.com/en-us/teams/meetings/recap-in-microsoft-teams
+[26] Microsoft Support — View live transcription in Microsoft Teams meetings. https://support.microsoft.com/en-us/office/view-live-transcription-in-microsoft-teams-meetings-dc1a8f23-2e20-4684-885e-2152e06a4a8b
+[27] Microsoft Support — Get started with Copilot in Microsoft Teams meetings. https://support.microsoft.com/en-us/office/get-started-with-copilot-in-microsoft-teams-meetings-0bf9dd3c-96f7-44e2-8bb8-790bedf066b1
+[28] Microsoft Support — Frequently asked questions about Copilot in Microsoft Teams. https://support.microsoft.com/en-us/office/frequently-asked-questions-about-copilot-in-microsoft-teams-e8737767-4087-4ae6-b1d8-10264152b05a
+[29] Microsoft Learn — Intelligent recap in Teams meetings without saving transcripts. https://learn.microsoft.com/en-us/microsoftteams/intelligent-recap-without-saving-transcripts
+[30] Microsoft — Planos e preços do Microsoft 365 Copilot (pt-BR). https://www.microsoft.com/pt-br/microsoft-365-copilot/pricing/enterprise
+[31] Message Center MC1155927 (Facilitator) via m365admin.handsontek.net e windowsforum.com — fontes secundárias. https://m365admin.handsontek.net/facilitator-agent-generally-available-teams-meetings/
+[32] Brasil — Lei 13.709/2018 (LGPD). https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm
+[33] STF — Tema 237 / RE 583.937 (via fontes secundárias: artuniadvogados.com.br, ambitojuridico.com.br). VERIFICAR em https://portal.stf.jus.br
+[34] CFM — Resolução 2.454/2026. https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2026/2454_2026.pdf
+[35] FENAJ — Código de Ética dos Jornalistas Brasileiros (2007). https://fenaj.org.br/wp-content/uploads/2014/06/04-codigo_de_etica_dos_jornalistas_brasileiros.pdf
+[36] Lanaro, L. S. et al. "Comparing Automatic Speech Recognition Quality for Brazilian Portuguese in Multimodal Large Models". ICAART 2026, p. 673–682. DOI 10.5220/0014637300004052. https://www.scitepress.org/Papers/2026/146373/146373.pdf
+[37] Candido Junior, A. et al. "CORAA: a large corpus of spontaneous and prepared speech manually validated for speech recognition in Brazilian Portuguese". arXiv:2110.15731. https://arxiv.org/pdf/2110.15731
+[38] In re Otter.AI Privacy Litigation — fontes secundárias: https://www.recordinglaw.com/news/otter-ai-notetaker-wiretap-class-action-cipa/ ; https://scribbl.co/post/otter-ai-lawsuit
+[39] Ações BIPA contra Fireflies — fontes secundárias: https://topclassactions.com/lawsuit-settlements/lawsuit-news/fireflies-ai-sued-over-alleged-unlawful-data-collection-from-meeting-participants/ ; https://www.amundsendavislaw.com/labor-employment-law-update/employers-beware-uptick-in-bipa-lawsuits-targeting-ai-note-taking-software
+[40] "Ambient AI Scribes in Clinical Practice: A Randomized Trial" (PMC12768499). https://pmc.ncbi.nlm.nih.gov/articles/PMC12768499/ ; demais números via fontes secundárias (VERIFICAR).
+[41] AMI Meeting Corpus. https://groups.inf.ed.ac.uk/ami/corpus/ ; https://openslr.org/16
+[42] ANPD — Mapa de Temas Prioritários 2026–2027 (via conjur.com.br, martinelli.adv.br — fontes secundárias). VERIFICAR em https://www.gov.br/anpd
+[43] Brasil — Lei 9.296/1996. https://www.planalto.gov.br/ccivil_03/leis/l9296.htm (não lida nesta pesquisa)
+[44] Compilações de preços de terceiros (2026): https://candor.inc/blog/otter-ai-pricing ; https://candor.inc/blog/fireflies-ai-pricing ; https://www.usecarly.com/blog/fireflies-ai-pricing/
+[45] Microsoft Learn — Manage custom dictionaries for Microsoft Teams meetings and events. https://learn.microsoft.com/en-us/microsoftteams/copilot-custom-dictionary (trecho indexado)
+
+----------------------------------------------------------------
+CHECKLIST FINAL
+----------------------------------------------------------------
+[x] Sustenta ementa, Essentials e Hands On (seções 0–14).
+[x] Cobre consentimento, LGPD, retenção, saúde e rastreabilidade (8, 14).
+[x] Todos os itens do foco têm resposta ou NÃO ENCONTRADO (14).
+[~] Cada ação tem passo a passo, material e critério de êxito — menus da
+    Otter dependem de confirmação manual (Help Center bloqueado).
+[x] Planos, idiomas, região, menus e datas estão claros (2, 3, 11).
+[x] Sugestões não estão [CONFIRMADO]. Links: páginas da seção 17 abriram
+    e foram salvas; os marcados "SALVAR MANUALMENTE" não puderam ser
+    capturados automaticamente.
