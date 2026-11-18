@@ -49,7 +49,7 @@ Planilha: 5 etapas com `x` (E1–2, E3, E4, E5, E6).
 |---|---|---|
 | Nenhum `x` | Aguardando | 0% |
 | 1 a 4 `x` | Em produção | 20% a 80% (nº de `x` ÷ 5) |
-| 5 `x`, ou "Meta" = `publicado` | Concluído | 100% |
+| 5 `x` | Concluído | 100% |
 
 ## ⚠️ Antes do merge (hoje)
 

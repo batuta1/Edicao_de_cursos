@@ -23,7 +23,7 @@ Roda na branch que tem `Cursos/` (hoje a `main`). Em outra pasta de trabalho: `E
 | 3. Autores | `autores/casar.py`, `preencher.py` | Casa "Curso" com a pasta por slug (ou título do Rise); grava `{"autor": "João"}` só onde está `null`. Commit `update de autores e registro dos cursos` só desses arquivos |
 | 4. Notion | `notion/` | Atualiza Status, Responsável e Progresso por API; não cria linhas |
 
-Regras: Progresso = etapas E1–E6 com `x` ÷ 5; `publicado` na Meta = Concluído (100%); Responsável = coluna "Responsável", senão o `x` de João/Marina; os dois ou nenhum = vazio (no Notion não apaga o que existe).
+Regras: Progresso = etapas E1–E6 com `x` ÷ 5; Responsável = coluna "Responsável", senão o `x` de João/Marina; os dois ou nenhum = vazio (no Notion não apaga o que existe).
 
 Relatórios (ignorados pelo git): `relatorios/nao-casados.md` e `relatorios/notion.md`.
 

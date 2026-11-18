@@ -57,7 +57,7 @@ class Regras(unittest.TestCase):
         self.assertEqual((s["status"], round(s["progresso"], 2)), ("Em produção", 0.6))
         todas = {"E1–2 Ementa": "x", "E3 P": "x", "E4 R": "x", "E5 R": "x", "E6 T": "x"}
         self.assertEqual(leitura.situacao(self.linha(**todas))["status"], "Concluído")
-        self.assertEqual(leitura.situacao(self.linha(**{"Meta até 12 dez": "publicado"})), {"status": "Concluído", "progresso": 1.0})
+        self.assertEqual(leitura.situacao(self.linha(**{"Meta até 12 dez": "publicado"})), {"status": "Aguardando", "progresso": 0.0})   # a meta não é o estado
 
 
 class Casamento(unittest.TestCase):

@@ -9,15 +9,14 @@ from .. import caminhos
 from ..texto import chave
 
 BASE = "https://api.notion.com/v1"
-VERSAO_DA_API = "2022-06-28"
+VERSAO_DA_API = "2025-09-03"           # separa banco (database) de fonte de dados (data source)
 PAGINA_PADRAO = "40d4a1ed76b480b18f67febbce8ade93"      # "Produção de cursos" (link da D1.2)
 COLUNAS = {"nome": "Nome do curso", "status": "Status", "responsavel": "Responsável", "progresso": "Progresso"}
 
-
-DICA_BANCO_VINCULADO = (
-    "a integração vê a página, mas não os dados do banco: ele é uma VISÃO (banco vinculado) de outro banco. "
-    "No Notion, abra o banco original (na visão: ícone ↗ ao lado do título, ou ⋯ → Fonte de dados) e adicione a integração "
-    "em ⋯ → Conexões NESSE banco/página. Depois rode de novo. Se o banco original tiver outro ID, use NOTION_DATABASE_ID no .env.")
+DICA_SEM_FONTE = (
+    "a integração vê a página, mas não achou a fonte de dados (a tabela com as linhas dos cursos): o banco da página é uma VISÃO de outro banco. "
+    "No Notion, abra o banco original (na visão: ícone ↗ ao lado do título) e adicione a integração em ⋯ → Conexões NESSE banco. "
+    "Se já fez isso, copie o ID da fonte de dados para NOTION_DATA_SOURCE_ID no .env.")
 
 
 class ErroNotion(RuntimeError):
@@ -47,30 +46,47 @@ class Notion:
                 raise ErroNotion(f"{metodo} {caminho}: {r.status_code} {msg}")
             return r.json()
 
-    # ---- banco ----
-    def banco(self, id_):
-        """O banco de dados. Se o ID for de uma página, procura o banco dentro dela."""
-        try:
-            return self._req("GET", f"/databases/{id_}")
-        except ErroNotion as e:
-            if "data sources" in str(e):
-                raise ErroNotion(DICA_BANCO_VINCULADO) from e
-        filhos = self._req("GET", f"/blocks/{id_}/children?page_size=100")["results"]
-        bancos = [b for b in filhos if b["type"] == "child_database"]
-        if not bancos:
-            raise ErroNotion("o link não é um banco nem uma página com banco dentro (a integração foi compartilhada com ele?)")
-        try:
-            return self._req("GET", f"/databases/{bancos[0]['id']}")
-        except ErroNotion as e:
-            if "data sources" in str(e):
-                raise ErroNotion(DICA_BANCO_VINCULADO) from e
-            raise
+    # ---- fonte de dados (a tabela com as linhas) ----
+    def _fonte(self, id_):
+        return self._req("GET", f"/data_sources/{id_}")
 
-    def linhas(self, banco_id):
+    def _fonte_do_banco(self, banco):
+        fontes = banco.get("data_sources") or []
+        return self._fonte(fontes[0]["id"]) if fontes else None
+
+    def _por_busca(self):
+        achadas = self._req("POST", "/search", data=json.dumps({"filter": {"property": "object", "value": "data_source"}, "page_size": 50}))["results"]
+        if len(achadas) == 1:
+            return self._fonte(achadas[0]["id"])
+        if not achadas:
+            raise ErroNotion(DICA_SEM_FONTE)
+        nomes = ", ".join(f'"{"".join(t["plain_text"] for t in a.get("title", []))}" ({a["id"]})' for a in achadas)
+        raise ErroNotion(f"a integração enxerga mais de uma fonte de dados: {nomes}. Escolha uma com NOTION_DATA_SOURCE_ID no .env.")
+
+    def banco(self, id_):
+        """A fonte de dados (tabela) dos cursos. Aceita ID de fonte, de banco ou de página; se o banco for uma visão, procura por busca."""
+        try:
+            return self._fonte(id_)
+        except ErroNotion:
+            pass
+        try:
+            achada = self._fonte_do_banco(self._req("GET", f"/databases/{id_}"))
+            if achada:
+                return achada
+        except ErroNotion:
+            pass
+        filhos = self._req("GET", f"/blocks/{id_}/children?page_size=100")["results"]
+        for b in (b for b in filhos if b["type"] == "child_database"):
+            achada = self._fonte_do_banco(self._req("GET", f"/databases/{b['id']}"))
+            if achada:
+                return achada
+        return self._por_busca()
+
+    def linhas(self, fonte_id):
         saida, cursor = [], None
         while True:
             corpo = {"page_size": 100, **({"start_cursor": cursor} if cursor else {})}
-            r = self._req("POST", f"/databases/{banco_id}/query", data=json.dumps(corpo))
+            r = self._req("POST", f"/data_sources/{fonte_id}/query", data=json.dumps(corpo))
             saida += r["results"]
             if not r.get("has_more"):
                 return saida

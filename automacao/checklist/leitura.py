@@ -59,9 +59,9 @@ def etapas(linha):
 
 
 def situacao(linha):
-    """{"status", "progresso"} com progresso de 0 a 1. `publicado` na Meta vale como concluído."""
+    """{"status", "progresso"} com progresso de 0 a 1, só pelas etapas E1–E6.
+    A coluna "Meta até 12 dez" (`publicado`) é o objetivo, não o estado: não entra na conta."""
     feitas, total = etapas(linha)
-    publicado = chave(valor(linha, "Meta")) == "publicado"
-    if publicado or (total and feitas == total):
+    if total and feitas == total:
         return {"status": "Concluído", "progresso": 1.0}
     return {"status": "Em produção" if feitas else "Aguardando", "progresso": (feitas / total) if total else 0.0}

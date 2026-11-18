@@ -21,7 +21,7 @@ def _relatorio(resultados, dry_run):
 def sincronizar(modelo, dry_run=False, banco_id=None, saida=print, cliente=None):
     """Devolve a lista de resultados por curso. Levanta ErroNotion se o banco ou as colunas não servirem."""
     cliente = cliente or api.Notion()
-    banco = cliente.banco(banco_id or os.environ.get("NOTION_DATABASE_ID") or api.PAGINA_PADRAO)
+    banco = cliente.banco(banco_id or os.environ.get("NOTION_DATA_SOURCE_ID") or os.environ.get("NOTION_DATABASE_ID") or api.PAGINA_PADRAO)
     mapa = api.mapear_colunas(banco["properties"])
     nome_col = mapa["nome"][0]
     indice = {}

@@ -18,11 +18,11 @@ def id_do_link(texto):
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     ambiente.carregar()
-    alvo = id_do_link(argv[0]) if argv else (os.environ.get("NOTION_DATABASE_ID") or api.PAGINA_PADRAO)
+    alvo = id_do_link(argv[0]) if argv else (os.environ.get("NOTION_DATA_SOURCE_ID") or os.environ.get("NOTION_DATABASE_ID") or api.PAGINA_PADRAO)
     try:
         cliente = api.Notion()
         banco = cliente.banco(alvo)
-        print("Banco:", "".join(t["plain_text"] for t in banco.get("title", [])), banco["id"])
+        print("Fonte de dados:", "".join(t["plain_text"] for t in banco.get("title", [])), banco["id"])
         for nome, p in banco["properties"].items():
             extra = ""
             if p["type"] in ("status", "select", "multi_select"):
