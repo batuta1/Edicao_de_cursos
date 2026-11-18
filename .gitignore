@@ -31,3 +31,16 @@ $RECYCLE.BIN/
 __pycache__/
 *.pyc
 _plan/
+
+# Scripts (automacao e extrator): arquivos gerados e segredos
+scripts/extrator_scorm/fichas/
+scripts/extrator_scorm/controle.json
+scripts/extrator_scorm/controle.anterior.json
+scripts/extrator_scorm/resumo.json
+scripts/automacao/relatorios/*.md
+scripts/automacao/notion/config.json
+.env
+.venv/
+
+# Skills do Claude: so locais, nunca vao para o repositorio
+.claude/skill/

@@ -1,0 +1,21 @@
+[project]
+name = "edicao-de-cursos"
+version = "0.2.0"
+description = "Scripts do repositório: automação do checklist (planilha → autores → Notion) e extrator de dados SCORM"
+requires-python = ">=3.10"
+dependencies = [
+    "openpyxl>=3.1",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+tela = ["tkinterdnd2>=0.7.0"]    # só para arrastar arquivos na tela do extrator (opcional)
+
+# Os pacotes moram em scripts/ e ficam importáveis em qualquer pasta depois do `uv sync` (instalação editável):
+#   uv run python -m automacao ...      uv run python -m extrator_scorm ...
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts/automacao", "scripts/extrator_scorm", "scripts/comum"]
