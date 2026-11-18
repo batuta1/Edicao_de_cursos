@@ -146,9 +146,9 @@ def texto_da_varredura(r):
 
 
 def main(argv=None, saida=print):
-    p = argparse.ArgumentParser(prog="python -m extrator.lote.varredura",
+    p = argparse.ArgumentParser(prog="python -m extrator_scorm.lote.varredura",
                                 description="Lista os pacotes SCORM de uma pasta (só lê, nada é gravado).")
-    p.add_argument("pasta", help="pasta de cursos (por exemplo Edicao_de_cursos/Cursos)")
+    p.add_argument("pasta", help="pasta de cursos (por exemplo Cursos)")
     p.add_argument("--ignorar", action="append", default=[], metavar="CAMINHO",
                    help="caminho relativo a ignorar, além do laboratório (pode repetir)")
     args = p.parse_args(sys.argv[1:] if argv is None else argv)

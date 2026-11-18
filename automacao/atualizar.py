@@ -32,7 +32,7 @@ def executar(dry_run=False, notion=True, commit=True, fetch=True, etapas=ETAPAS,
     commit = commit and not dry_run
     etapas = [e for e in ETAPAS if e in etapas and (notion or e != "notion")]
     if ("extrator" in etapas or "autores" in etapas) and not caminhos.CURSOS.is_dir():
-        raise SystemExit(f"{caminhos.CURSOS} não existe nesta branch (Cursos/ está na main). Rode na main ou use EDICAO_RAIZ (veja documentacao/).")
+        raise SystemExit(f"{caminhos.CURSOS} não existe nesta branch (Cursos/ está na main). Rode na main ou use EDICAO_RAIZ (veja documentacao/automacao-notion.md).")
     # 1. checklist (csv): as etapas autores e notion precisam dele, mesmo quando o checklist não foi pedido
     csv_ = None
     if "checklist" in etapas and not dry_run:

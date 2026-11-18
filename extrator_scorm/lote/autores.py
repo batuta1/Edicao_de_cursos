@@ -139,10 +139,10 @@ def criar_vazios(pasta, ignorar=varredura.IGNORAR_PADRAO):
 
 
 def main(argv=None, saida=print):
-    p = argparse.ArgumentParser(prog="python -m extrator.lote.autores",
+    p = argparse.ArgumentParser(prog="python -m extrator_scorm.lote.autores",
                                 description=f"Cria o {NOME_DO_ARQUIVO} (com autor vazio) em cada versão de curso que ainda não tem um. Nunca sobrescreve.")
     p.add_argument("--criar", action="store_true", help="cria os arquivos que faltam (sem isso, só mostra quantos faltam)")
-    p.add_argument("pasta", help="pasta de cursos (por exemplo ../Edicao_de_cursos/Cursos)")
+    p.add_argument("pasta", help="pasta de cursos (por exemplo Cursos)")
     args = p.parse_args(sys.argv[1:] if argv is None else argv)
     try:
         if args.criar:

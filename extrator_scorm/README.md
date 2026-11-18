@@ -14,7 +14,7 @@ flowchart LR
     A --> B["B. Ler o manifesto"]
     B --> C["C. Achar e decodificar<br/>o JSON do curso"]
     C --> D["D. Montar a ficha"]
-    D --> J[("saida_extrator/<br/>NOME-DO-ZIP.json")]
+    D --> J[("fichas/_individuais/<br/>NOME-DO-ZIP.json")]
 ```
 
 | Fase | Arquivo | O que faz |
@@ -42,7 +42,7 @@ flowchart TD
     J --> F["ficha: capítulos e blocos<br/>sem o texto do conteúdo"]
 ```
 
-A fase C tenta `runtime-data.js`, depois `index.html`. Se nenhum dos dois servir, procura em qualquer `.js` ou `.html` de `scormcontent/` um base64 grande que seja um curso Rise (e avisa). Detalhes em [documentos/identificar-scorm.md](../documentos/identificar-scorm.md).
+A fase C tenta `runtime-data.js`, depois `index.html`. Se nenhum dos dois servir, procura em qualquer `.js` ou `.html` de `scormcontent/` um base64 grande que seja um curso Rise (e avisa).
 
 ## O que o zip pode ser (fase A)
 
@@ -58,7 +58,7 @@ flowchart TD
 
 ## O que sai
 
-Um arquivo por pacote, em `saida_extrator/` (pasta fora do git). Rodar de novo regrava o mesmo arquivo. No modo em lote, as fichas ficam em `saida_extrator/fichas/<caminho do pacote>.json`, junto do `controle.json` e do `resumo.json`.
+Um arquivo por pacote, em `extrator_scorm/fichas/_individuais/` (fora do git). Rodar de novo regrava o mesmo arquivo. No modo em lote, as fichas ficam em `extrator_scorm/fichas/<caminho do pacote>.json`, junto do `controle.json` e do `resumo.json` (também fora do git); a lista das últimas versões vai para `Cursos/registro-de-cursos.json`.
 
 | Bloco do JSON | Conteúdo |
 |---|---|
@@ -83,16 +83,16 @@ O que mais existe dentro do SCORM, e onde fica, está catalogado em [estrutura/d
 ## Como rodar
 
 ```bash
-uv run extrair.py                               # abre a tela (aba Pasta de cursos, com o caminho padrão)
-uv run extrair.py ../Edicao_de_cursos/Cursos    # lote: todos os cursos, com controle e resumo
-uv run extrair.py caminho/do/pacote.zip         # um pacote só: grava saida_extrator/pacote.json
+uv run python -m extrator_scorm                          # abre a tela (aba Pasta de cursos)
+uv run python -m extrator_scorm Cursos                   # lote: todos os cursos, com controle e resumo
+uv run python -m extrator_scorm caminho/do/pacote.zip    # um pacote só: grava fichas/_individuais/pacote.json
 ```
 
-Guia passo a passo: [documentos/como-rodar-extrator.md](../documentos/como-rodar-extrator.md).
+Guia passo a passo: [documentacao/extrator-scorm.md](../documentacao/extrator-scorm.md).
 
 ## O modo em lote (MVP1.1)
 
-O [MVP1.1](../_planejamento/versoes/MVP1.1/README.md) leva o mesmo extrator para a pasta `Cursos/` inteira. As fases A a D acima não mudam; entram etapas antes e depois delas. Só lê a pasta de cursos.
+O modo em lote leva o mesmo extrator para a pasta `Cursos/` inteira. As fases A a D acima não mudam; entram etapas antes e depois delas. Só lê a pasta de cursos.
 
 ```mermaid
 flowchart TD
@@ -116,12 +116,12 @@ flowchart TD
 
 **Fontes da tela:** Ubuntu (comum) e SUSE Mono (relatório e JSON), de `fontes/arquivos/`, registradas no fontconfig antes de a janela abrir (`interface/fontes.py`). Por isso o projeto fixa o Python 3.14 do sistema em `.python-version`: o Python do `uv` (Tk 9 sem Xft) só enxerga 60 fontes antigas do X11.
 
-**Autor de cada versão** (`lote/autores.py`, [D04-10](../_planejamento/duvidas/D04-funcionalidades-a-verificar.md#duvida-10)): um nome por versão, **declarado em `Edicao_de_cursos`**, num `autor.json` dentro de cada pasta de versão (`Cursos/<Empresa>/<curso>/scorm/vN/autor.json`, com `{"autor": "Nome"}` ou `{"autor": null}`). O extrator só lê; `uv run python -m extrator.lote.autores --criar PASTA` cria os que faltam, vazios. Vale o `autor.json`; sem ele, o autor do Rise se for uma pessoa (a conta «Iaclube Help» não conta); sem esse, `null`. O autor do commit no git vai em `autor_sugerido.git`, só como pista. Resumo e `ultimas_versoes.json` ganham `autor`, `autor_origem` e `autor_sugerido`; o relatório lista o que ficou sem autor e as versões sem arquivo.
+**Autor de cada versão** (`lote/autores.py`): um nome por versão, **declarado em `Edicao_de_cursos`**, num `autor.json` dentro de cada pasta de versão (`Cursos/<Empresa>/<curso>/scorm/vN/autor.json`, com `{"autor": "Nome"}` ou `{"autor": null}`). O extrator só lê; `uv run python -m extrator_scorm.lote.autores --criar PASTA` cria os que faltam, vazios. Vale o `autor.json`; sem ele, o autor do Rise se for uma pessoa (a conta «Iaclube Help» não conta); sem esse, `null`. O autor do commit no git vai em `autor_sugerido.git`, só como pista. Resumo e `registro-de-cursos.json` ganham `autor`, `autor_origem` e `autor_sugerido`; o relatório lista o que ficou sem autor e as versões sem arquivo.
 
-**Um JSON só:** toda execução grava `ultimas_versoes.json`, com a ficha **completa** da última versão (maior `vN`) de cada curso, em ordem de empresa e curso (`cursos[]` com `empresa`, `curso`, `versao`, `pacote`, `ficha`); `sem_ficha` lista a última versão que deu erro e `fora_do_padrao` os pacotes sem curso e versão. É o que o `resumo.json` **não** é: o resumo só traz números.
+**Um JSON só:** toda execução grava `registro-de-cursos.json`, com a ficha **completa** da última versão (maior `vN`) de cada curso, em ordem de empresa e curso (`cursos[]` com `empresa`, `curso`, `versao`, `pacote`, `ficha`); `sem_ficha` lista a última versão que deu erro e `fora_do_padrao` os pacotes sem curso e versão. É o que o `resumo.json` **não** é: o resumo só traz números.
 
 **Conteúdo repetido:** depois de ler, o resumo compara a `impressao_do_curso` de todos os pacotes que não são cópia idêntica e grava em `duplicados` os grupos de mesmo conteúdo (pasta e zip, zips, pastas; mesma versão ou não). Em `Cursos/`: 19 grupos, todos «pasta e zip» na mesma versão.
 
-Pastas SCORM são **lidas direto, sem virar zip** ([D04-6](../_planejamento/duvidas/D04-funcionalidades-a-verificar.md#duvida-6)): a ficha é a mesma que a do zip de mesmo conteúdo, só o bloco `pacote` muda. Para saber se dois pacotes são a mesma versão do curso, o `sha256` do arquivo não serve (a pasta extraída tem as quebras de linha dos arquivos do player trocadas); por isso a ficha traz `impressao_do_curso`, calculada sobre o JSON do curso.
+Pastas SCORM são **lidas direto, sem virar zip**: a ficha é a mesma que a do zip de mesmo conteúdo, só o bloco `pacote` muda. Para saber se dois pacotes são a mesma versão do curso, o `sha256` do arquivo não serve (a pasta extraída tem as quebras de linha dos arquivos do player trocadas); por isso a ficha traz `impressao_do_curso`, calculada sobre o JSON do curso.
 
 Se a pasta não tiver nenhum pacote, o lote avisa e **não grava nada**, para um caminho errado não apagar o controle da execução anterior.

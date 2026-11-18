@@ -37,4 +37,4 @@ uv run python -m extrator_scorm
 
 Abre a janela do extrator de SCORM. Não é necessária para a automação.
 
-Próximo: [02-rodar-tudo.md](02-rodar-tudo.md)
+Próximo: [automacao-notion.md](automacao-notion.md) (planilha → Notion) ou [extrator-scorm.md](extrator-scorm.md) (mapear os SCORM).

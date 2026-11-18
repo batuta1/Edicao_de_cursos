@@ -1,30 +1,33 @@
-# Documentação básica
+# Documentação
 
-Para quem nunca rodou isso. Leia na ordem; cada arquivo é curto.
+Dois documentos, um para cada parte do repositório. Cada um começa com os comandos principais.
 
-| # | Arquivo | Para quê |
-|---|---|---|
-| 1 | [01-instalar.md](01-instalar.md) | Deixar o computador pronto (uma vez) |
-| 2 | [02-rodar-tudo.md](02-rodar-tudo.md) | O comando principal e o que ele faz |
-| 3 | [03-rodar-por-etapas.md](03-rodar-por-etapas.md) | "Quero só X": um comando para cada vontade |
-| 4 | [04-notion-token.md](04-notion-token.md) | Ligar o Notion (uma vez) |
-| 5 | [05-problemas-comuns.md](05-problemas-comuns.md) | Mensagem de erro → o que fazer |
-| 6 | [06-onde-ficam-as-coisas.md](06-onde-ficam-as-coisas.md) | Mapa de pastas e arquivos |
+| Quero mexer com… | Leia só este |
+|---|---|
+| 📋 **Planilha de produção e Notion** (autores, Status, Progresso) | **[automacao-notion.md](automacao-notion.md)** |
+| 📦 **Mapear os cursos SCORM** (ler `Cursos/`, gerar o registro de cursos) | **[extrator-scorm.md](extrator-scorm.md)** |
 
-## Em uma frase
+Antes de qualquer um: [instalar.md](instalar.md) (uma vez).
 
-Você roda **um comando**. Ele pega a planilha de produção (`checklist-producao-de-cursos-60-dias-*.xlsx`) da branch `joao`, converte para `csv`, preenche quem é o autor de cada curso e atualiza Status, Responsável e Progresso no Notion.
+As duas partes são independentes: uma funciona sem a outra.
 
-## Começo rápido (3 linhas)
+## Começo rápido
 
 ```bash
-uv sync
-uv run python -m automacao --dry-run
-uv run python -m automacao
+uv sync                                                  # instala (uma vez)
+uv run python -m automacao --so notion --dry-run         # ensaio do Notion
+uv run python -m extrator_scorm Cursos --so-ultimas      # mapeia os SCORM (na main)
 ```
 
-1. `uv sync`: instala as dependências (uma vez).
-2. `--dry-run`: **ensaio**. Mostra o que faria, não muda nada.
-3. Sem `--dry-run`: faz de verdade (commits só locais; nunca faz push).
+## Como as duas partes se ligam
 
-⚠️ Hoje o código está na branch `structuring` e a pasta `Cursos/` está na `main`. Até juntar as duas, leia a seção "Antes do merge" em [02-rodar-tudo.md](02-rodar-tudo.md).
+Só por um arquivo: `Cursos/registro-de-cursos.json` (feito pelo extrator, lido pela etapa `autores` da automação). Uma funciona sem a outra.
+
+| | Automação do Notion | Extrator de SCORM |
+|---|---|---|
+| Pasta | `automacao/` | `extrator_scorm/` |
+| Pergunta | Em que pé está a produção e quem cuida de cada curso? | Quais cursos existem e como são por dentro? |
+| Lê | planilha da branch `joao`, Notion | `Cursos/` |
+| Produz | `csv`, `autor.json`, Notion atualizado | `Cursos/registro-de-cursos.json` |
+
+⚠️ Hoje o código está na `structuring` e `Cursos/` só existe na `main`. Até o merge: a automação roda `--so checklist` e `--so notion`; o extrator precisa da `main` (ou da cópia temporária explicada em [automacao-notion.md](automacao-notion.md#antes-do-merge-testar-tudo-numa-cópia-da-main)).

@@ -1,6 +1,6 @@
 # Automação checklist → Notion
 
-> Guia passo a passo para iniciantes: [`documentacao/`](../documentacao/README.md).
+> Guia passo a passo para iniciantes: [`documentacao/automacao-notion.md`](../documentacao/automacao-notion.md).
 
 Um comando lê o checklist de produção (branch `joao`), atualiza `autor.json` dos cursos e o banco "Produção de cursos" do Notion.
 

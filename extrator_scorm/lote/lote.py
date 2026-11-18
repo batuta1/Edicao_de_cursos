@@ -221,7 +221,7 @@ def _linhas_dos_autores(a):
                       + (f" ... e mais {len(a['sem_autor']) - MAXIMO_DE_DUPLICADOS_NO_TEXTO}" if len(a["sem_autor"]) > MAXIMO_DE_DUPLICADOS_NO_TEXTO else ""))
     if a["sem_arquivo"]:
         linhas.append(f"    {len(a['sem_arquivo'])} versões ainda não têm o {autores.NOME_DO_ARQUIVO} (para criá-los vazios: "
-                      "uv run python -m extrator.lote.autores --criar PASTA_DE_CURSOS)")
+                      "uv run python -m extrator_scorm.lote.autores --criar Cursos)")
     linhas += [f"    PROBLEMA em {x['versao']}: {x['mensagem']}" for x in a["problemas"]]
     return linhas
 
@@ -234,7 +234,7 @@ def codigo_de_saida(r):
 def main(argv=None, saida=print):
     p = argparse.ArgumentParser(prog="extrair_lote.py", description="Lê todos os pacotes SCORM de uma pasta de cursos (só lê a pasta) "
                                 "e grava as fichas, a lista de controle e o resumo estratégico na raiz do extrator, e o registro dos cursos em Cursos/.")
-    p.add_argument("pasta", help="pasta de cursos (por exemplo ../Edicao_de_cursos/Cursos)")
+    p.add_argument("pasta", help="pasta de cursos (por exemplo Cursos)")
     p.add_argument("--forcar", action="store_true", help="extrair tudo de novo, ignorando a lista de controle")
     p.add_argument("--ignorar", action="append", default=[], metavar="CAMINHO", help="caminho relativo a ignorar, além do laboratório")
     p.add_argument("--so-ultimas", action="store_true", help="extrair só a última versão (maior vN) de cada curso; o resumo continua completo")
