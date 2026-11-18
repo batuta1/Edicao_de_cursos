@@ -324,6 +324,13 @@ número absoluto. Junte a base do CNJ com a do Censo e entregue um resumo de uma
 - [ ] Premissas e limitações escritas; nenhuma frase de causa ("porque o povo é mais litigioso").
 - [ ] Gráfico com eixo em zero e fonte.
 
+## Descrição
+
+- **Objetivos da Aula:** juntar duas bases públicas por chave, calcular taxa por habitante e
+  comunicar com premissas e limitações.
+- **Habilidades Esperadas:** conduzir sozinho uma análise de duas bases, do envio ao resumo
+  executivo, conferindo os números contra as fontes oficiais.
+
 ---
 
 ## A Parte dos Dez — Armadilhas que você já sabe desarmar
