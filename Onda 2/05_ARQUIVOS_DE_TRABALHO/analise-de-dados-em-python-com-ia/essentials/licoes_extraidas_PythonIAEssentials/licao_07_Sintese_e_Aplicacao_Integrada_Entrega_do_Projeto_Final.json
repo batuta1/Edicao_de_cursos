@@ -1,0 +1,567 @@
+{
+  "numero_da_licao": 7,
+  "position_original": 6,
+  "title": "Síntese e Aplicação Integrada: Entrega do Projeto Final",
+  "lesson": {
+    "description": "",
+    "id": "4501b41a-a870-4aba-82da-400a5370e198",
+    "items": [
+      {
+        "id": "ueys09g2dpc9wphroghslont",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xgm971yjkjw20ysrb5be4ekq",
+            "heading": "Uma pasta que outra pessoa roda com um comando",
+            "paragraph": "<p>A atividade integradora fecha o caso-guia, juntando segurança (Módulo 2), pedido (Módulo 3), reprodutibilidade (Módulo 4) e validação (Módulo 5). O produto é a pasta <strong>ipca-projeto</strong>: alguém a recebe, lê o README, executa <code>uv run analise.py</code> e obtém 4,83% para 2024 e 4,26% para 2025 — os mesmos números do IBGE, com os testes passando.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e6783eeb-d67b-4be4-9248-9e1f009011b3"
+      },
+      {
+        "id": "gnbhgm7pecdqadwm0vd8jz88",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f9fjuzlfu6j3oz8ynhzpkx4z",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "7fe79903-91a1-4755-a907-588f72f2f223"
+      },
+      {
+        "id": "dpemoa02urzttfh40vz51si9",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "xuz7mtgj950p532m2a30sbpr",
+            "number": "1",
+            "paragraph": "<p>Entregar um projeto de análise reprodutível e validado.</p>"
+          },
+          {
+            "id": "fg1dim3rsdogge7rn4bbnuvv",
+            "number": "2",
+            "paragraph": "<p>Documentar como rodar, como verificar e quais são as limitações.</p>"
+          },
+          {
+            "id": "cjxdg3bdh4gp273ggda49czf",
+            "number": "3",
+            "paragraph": "<p>Avaliar o próprio projeto por critérios objetivos.</p>"
+          },
+          {
+            "id": "ykun2041dg58p5wwmultv9pf",
+            "number": "4",
+            "paragraph": "<p>Tratar pequenas diferenças em relação ao número oficial como limitação, e não como erro a esconder.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "a57518a4-a1e4-43d1-a2c4-0de721cfeb7b"
+      },
+      {
+        "id": "iyv4938v2p6i1jyv3b5b6n3h",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zonjjr0n5b40bf7ke9ec09sw",
+            "heading": "Os cinco critérios da entrega",
+            "paragraph": "<p>Vire cada cartão. São os critérios que você vai conferir no fim da atividade:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "3f8b1144-f222-478f-b2c3-0bcd5c6ee2e9"
+      },
+      {
+        "id": "pvl0qiwk6so72zcf6vp3ioxs",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "lkrafdbxw02nw36r92dklgvh",
+            "back": {
+              "type": "description",
+              "description": "<p><strong>dados/brutos/ipca.csv</strong> exatamente como veio do Banco Central.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Dados brutos intocados</p>"
+            }
+          },
+          {
+            "id": "d44x9t1qzgbz8e0211runs52",
+            "back": {
+              "type": "description",
+              "description": "<p><strong>uv.lock</strong> na pasta e o projeto rodando do zero com <code>uv run analise.py</code>.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>uv.lock presente</p>"
+            }
+          },
+          {
+            "id": "qwlh7s064bvi4qhq5xd0bh2l",
+            "back": {
+              "type": "description",
+              "description": "<p>Asserts de 4,83% (2024) e 4,26% (2025) passando, com tolerância de ± 0,01.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Asserts de validação</p>"
+            }
+          },
+          {
+            "id": "xt7z4f592l2fbzif26neqnvv",
+            "back": {
+              "type": "description",
+              "description": "<p>Gráfico de barras anual de 2020 a 2025 salvo em <strong>resultados/</strong>.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Resultados e gráficos gerados</p>"
+            }
+          },
+          {
+            "id": "xfvkjt42jh8aihj5m1ufjdel",
+            "back": {
+              "type": "description",
+              "description": "<p>README com objetivo, dados, como rodar, verificação e limitações.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>README completo</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "7fdd215e-e6b5-4719-bd0a-13f9d8431cbc"
+      },
+      {
+        "id": "d1qnpc6zs6dt9zvcsy1mehxg",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qu2xjyqg4bb4chlu5j3aj46z",
+            "heading": "O README que deixa o projeto de pé",
+            "paragraph": "<p>Quem receber a pasta não vai ter acesso à sua conversa com o agente. Tudo o que essa pessoa precisa saber está no README. Abra cada item:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "511e6674-0488-4697-9a9d-6be3e59d2366"
+      },
+      {
+        "id": "fb14254f-c90c-465a-ab08-d978a2df922b",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "530f8322-aef1-499e-bf39-974c892092c7",
+            "title": "Como estruturar o README",
+            "description": "<p>Seções: <strong>Objetivo</strong>, <strong>Dados</strong> (fonte, data de download, formato), <strong>Como rodar</strong> (comandos exatos), <strong>Verificação</strong> (números oficiais e asserts), <strong>Resultados</strong> e <strong>Limitações</strong>.</p><p></p><p>“Como rodar” precisa ter os comandos exatos — no projeto, <code>uv run analise.py</code>.</p>"
+          },
+          {
+            "id": "402fc4cb-9a63-4273-989d-9212419a7cd5",
+            "title": "Lidando com pequenas diferenças nos resultados",
+            "description": "<p>Diferenças de até 0,01 ponto percentual entre o acumulado calculado e o valor publicado podem ocorrer em alguns anos anteriores a 2024, porque as taxas mensais são divulgadas arredondadas em duas casas decimais.</p><p></p><p>Essa diferença vai para as Limitações do README e para a tolerância do teste — nunca é eliminada ajustando o número.</p>"
+          },
+          {
+            "id": "7d32ba2f-c010-46cd-8e9f-838d8e6f3495",
+            "title": "O teste do README",
+            "description": "<p>O melhor teste é outra pessoa executar o projeto seguindo só o README, sem perguntar nada a você.</p><p></p><p>Se ela travar em algum passo, o que faltou vai para o README — não para uma explicação por mensagem.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "28274872-a1af-4d0a-8a9b-fba8627741b7"
+      },
+      {
+        "id": "40868d56-a52e-431e-9460-7bd85ccf9bbd",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "5ee0409e-ff80-4337-bd8c-51b25f6a270c",
+            "type": "intro",
+            "title": "Atividade integradora (16 min)",
+            "isHidden": false,
+            "description": "<p>Cinco passos, cada um retomando um módulo. Use o mesmo agente e a mesma pasta <strong>ipca-projeto</strong>.</p>"
+          },
+          {
+            "id": "98187707-7de1-4123-8131-0319052debde",
+            "type": "summary",
+            "title": "🏁 Ponto de controle",
+            "isHidden": false,
+            "description": "<p>Os cinco critérios atendidos; idealmente, outra pessoa executa o projeto seguindo apenas o README.</p>"
+          },
+          {
+            "id": "60fa1129-641b-4b7e-b42c-8f77ae732dc6",
+            "type": "step",
+            "title": "(Módulo 2) Modo restrito e controles de dados",
+            "isHidden": false,
+            "description": "<p>Confirme o modo restrito do agente e a decisão sobre os controles de dados da conta.</p>"
+          },
+          {
+            "id": "189c5288-4f91-4148-b50c-3cbfb5dd9cb2",
+            "type": "step",
+            "title": "(Módulo 3) Atualizar o arquivo de instruções",
+            "isHidden": false,
+            "description": "<p>Atualize o <strong>CLAUDE.md</strong> ou <strong>AGENTS.md</strong> com as premissas do IPCA: formato do arquivo, composição das taxas, dados brutos intocados.</p>"
+          },
+          {
+            "id": "3623faf0-afd5-4299-a428-d4b00f903937",
+            "type": "step",
+            "title": "(Módulo 4) Gráfico e execução do zero",
+            "isHidden": false,
+            "description": "<p>Peça o gráfico de barras anual de 2020 a 2025 salvo em <strong>resultados/</strong> e rode tudo do zero.</p>"
+          },
+          {
+            "id": "3c4bf8c3-3aba-460f-b471-3a566bbe5bd5",
+            "type": "step",
+            "title": "(Módulo 5) Asserts e revisão",
+            "isHidden": false,
+            "description": "<p>Mantenha os asserts de 2024 e 2025 e registre a revisão independente no README.</p>"
+          },
+          {
+            "id": "985ebc29-5069-4416-b03c-6a47c52b6215",
+            "type": "step",
+            "title": "Escrever o README e rodar uma última vez",
+            "isHidden": false,
+            "description": "<p>Peça o <strong>README.md</strong> com objetivo, dados, como rodar (<code>uv run analise.py</code>), verificação e limitações. Depois apague <strong>resultados/</strong>, rode do zero e confirme que os asserts passam.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "c54df280-4fc1-40aa-9796-acb8420cc6c5"
+      },
+      {
+        "id": "llew89qf77c0jpvj2w8kam8y",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b5hha6z6kg0ezh4h7ksbisna",
+            "heading": "Checklist da entrega",
+            "paragraph": "<p>Antes de dar o projeto por pronto, confira cada critério. Clique em cada aba:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "9e674183-be66-45ae-ad76-3d64056a1d43"
+      },
+      {
+        "id": "a2fce869-cd9e-4eec-87dc-62cca7979b75",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "2b8b79b5-d6b8-4f5a-a6fc-f22cba4b8682",
+            "title": "Dados brutos intocados",
+            "description": "<p><strong>ipca.csv</strong> inalterado em <strong>dados/brutos/</strong>.</p><p></p><p>Toda transformação acontece no script; o arquivo original serve de referência para qualquer auditoria.</p>"
+          },
+          {
+            "id": "967319c2-f6e2-4a6b-ad86-afdf70885623",
+            "title": "Ambiente reprodutível",
+            "description": "<p><strong>uv.lock</strong> presente e o projeto rodando do zero.</p><p></p><p>Teste: apague <strong>resultados/</strong> e execute <code>uv run analise.py</code>.</p>"
+          },
+          {
+            "id": "6194ca88-b8f4-42e9-95cf-ffb38ee385aa",
+            "title": "Validação dos resultados",
+            "description": "<p>Asserts de <strong>4,83%</strong> e <strong>4,26%</strong> passando.</p><p></p><p>Se algum falhar, investigue a premissa (leitura, fórmula, escala) antes de mexer no teste.</p>"
+          },
+          {
+            "id": "3222dc99-0172-4f14-ad0c-040a40206448",
+            "title": "Resultados gerados",
+            "description": "<p>Gráfico anual salvo em <strong>resultados/</strong>, gerado pelo script — não salvo à mão.</p><p></p><p>Se ele só aparece quando você pede ao agente, o passo ainda não está no script.</p>"
+          },
+          {
+            "id": "f7f6add9-b28b-4c5b-a5be-95fd1c792873",
+            "title": "Documentação e limitações",
+            "description": "<p>README com como rodar, verificação e limitações.</p><p></p><p>Nas limitações: a possível diferença de 0,01 p.p. por arredondamento e a fonte oficial usada na conferência (IBGE).</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "42bbc66e-db74-46bd-9372-640ce09fcafb"
+      },
+      {
+        "id": "f8450066-32ae-4813-9fbf-3b6cef09f13b",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "a08f2c2d-0481-4f24-8796-a73160db1072",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual dos itens a seguir é indispensável para garantir que outra pessoa consiga executar o projeto do zero e obter os mesmos resultados?",
+            "answers": [
+              {
+                "id": "503a4169-d159-4737-a88a-0312114e1ba2",
+                "title": "Ter o gráfico salvo em diferentes formatos",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "658d88f6-8259-4c74-9de3-d97785be9d28",
+                "title": "Manter o arquivo uv.lock atualizado e um README detalhado",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "58e57674-14bc-4559-85b4-3f2febe2a458",
+                "title": "Usar apenas dados públicos",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "b8ea2700-dbc8-49ee-9d13-960dc6458387",
+                "title": "Incluir comentários detalhados no código.",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto. O uv.lock recria as mesmas versões das bibliotecas, e o README diz exatamente como rodar e como verificar.",
+            "feedbackIncorrect": "Não. Gráficos em vários formatos, dados públicos e comentários ajudam, mas não fazem o projeto rodar em outro computador. O que faz é o uv.lock com um README que diga como rodar e verificar."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "f1e25d78-ba05-463a-b9d0-954f2b2d037a"
+      },
+      {
+        "id": "ba0b457e-6a3c-463e-a149-b1641026504d",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "8357d28a-52a6-4c3e-8fe4-9765a35ff47d",
+            "paragraph": "<p><strong>Mão na massa.</strong> Para fechar o <strong>ipca-projeto</strong> — e qualquer projeto seu —, peça ao agente:</p><p><em>“Escreva o README.md deste projeto com as seções: Objetivo, Dados (fonte, data de download, formato), Como rodar (comandos exatos), Verificação (números oficiais e asserts), Resultados e Limitações. Depois apague resultados/, rode tudo do zero e confirme que os asserts passam.”</em></p><p>Confira se “Como rodar” traz <code>uv run analise.py</code> — e não comandos de outro gerenciador.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "5e0c4ab9-c91c-4de9-9e7b-33ce8c767881"
+      },
+      {
+        "id": "be924095-7efe-4f73-8cda-c9aa5b0a7f04",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "eb3c4311-95b5-4f02-85e6-87a295ae4cc5",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "08d4feb4-d1d7-4691-be6c-333b858bb19f"
+      },
+      {
+        "id": "fypvprn3lj9iefa0e125qi8o",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "hyexxbwm57sgem2yik5flre2",
+            "paragraph": "<p>O curso apresentou a análise de dados com agentes de código como um método: pedir com brief, aprovar com segurança, registrar para reproduzir e validar antes de confiar. Pratique com bases públicas de gabarito conhecido, mantenha os dados brutos intocados e os dados pessoais fora de contas pessoais.</p><p>Para aprofundar: o <em>Hands On</em> deste curso trabalha bases da CVM e do INMET; <em>Claude Code no VSCode</em> e <em>ChatGPT CODEX</em> aprofundam as ferramentas. Para modelagem estatística e previsão, recorra a um especialista.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "98c284c3-4ade-4af9-bb88-29e6410a9f52"
+      },
+      {
+        "id": "be27ad01-efe6-4529-879d-6575d9d731c0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "c52f9f76-5862-49ce-8f61-135727a13619",
+            "paragraph": "<p><strong>Síntese:</strong> o agente escreve o código; o projeto só é confiável quando roda de novo e confere com a fonte.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2318c0aa-6e86-400e-a481-fdd3b254299e"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Síntese e Aplicação Integrada: Entrega do Projeto Final",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "I27fLqYVIPy0NLQkgsBdub8JkShnUs-m",
+    "createdAt": "2026-11-18T01:01:14.067Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 6,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:03:20.282Z"
+  }
+}

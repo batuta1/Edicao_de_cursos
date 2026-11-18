@@ -1,0 +1,556 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Por que Código? Conceitos Fundamentais e o Papel do Agente",
+  "lesson": {
+    "description": "",
+    "id": "c8fb2b8f-eccf-41ff-8d69-e50742f70377",
+    "items": [
+      {
+        "id": "mxf07vmihst4crschvs08n9s",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "uhsukttjhc486b18rcz0zdey",
+            "heading": "Da conversa para uma receita guardada em arquivo",
+            "paragraph": "<p>Com o ambiente pronto no Módulo 0, o foco passa para os conceitos. Na análise sem código, estudada em <em>IA para Análise de Dados</em>, o resultado fica numa conversa com o assistente. Isso funciona para uma pergunta única. Mas quando o mesmo indicador precisa ser refeito todo mês, por outra pessoa, a partir de vários arquivos, a conversa não basta: é preciso uma receita guardada em arquivo, que rode outra vez e dê o mesmo resultado. É isso que o código faz — e é isso que o agente escreve por você.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d9816451-da8e-40c2-84e6-b34c56c64a6c"
+      },
+      {
+        "id": "qlu6a3k2dx9y1b3q5v7irmh1",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "w4vjkbt2c8yegfw5hjsnhh9m",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "940b242d-9cea-4a6d-b75f-394d6bdff26f"
+      },
+      {
+        "id": "s31aq26mea5a67xlsrxu8v48",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "d0xsd0g090zx3r5c7ovlnzzi",
+            "number": "1",
+            "paragraph": "<p>Identificar situações em que a análise deve passar para o código.</p>"
+          },
+          {
+            "id": "u3tmmht8f6hc8x10pqff7r4u",
+            "number": "2",
+            "paragraph": "<p>Definir agente de código e descrever o seu papel na interação.</p>"
+          },
+          {
+            "id": "kmpaoow1aukr70bm4x9sjxic",
+            "number": "3",
+            "paragraph": "<p>Diferenciar script, notebook, biblioteca e ambiente virtual.</p>"
+          },
+          {
+            "id": "b47hrh1ob9xiot2y08o7cdtn",
+            "number": "4",
+            "paragraph": "<p>Enunciar o princípio “rodou não é o mesmo que acertou”.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "3c48b2d5-5df5-4d98-9f8a-92d71f400fb6"
+      },
+      {
+        "id": "3453bc13-2b2b-4486-ae06-3fefb5c326e4",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "7c569b67-03fb-4857-952c-8af0b746a55d",
+            "type": "intro",
+            "title": "Quando a análise deve virar código",
+            "isHidden": false,
+            "description": "<p>Três perguntas decidem. Basta um “sim” para valer a pena passar para código.</p>"
+          },
+          {
+            "id": "dc5e3db1-5786-4981-b361-d2a926f05e30",
+            "type": "summary",
+            "title": "A decisão",
+            "isHidden": false,
+            "description": "<p>Repetição, volume ou auditoria: qualquer um desses motivos justifica transformar a conversa numa receita em arquivo, que roda de novo com o mesmo resultado.</p>"
+          },
+          {
+            "id": "5d959e6a-c2ca-472a-95c9-213967e62f33",
+            "type": "step",
+            "title": "Precisa ser refeita?",
+            "isHidden": false,
+            "description": "<p>A análise se repete todo mês, ou outra pessoa vai precisar refazê-la? Uma conversa não se reexecuta; um script, sim.</p>"
+          },
+          {
+            "id": "5fcb7b34-015e-4d1f-b298-b7cd7327f207",
+            "type": "step",
+            "title": "Envolve vários arquivos ou arquivos grandes?",
+            "isHidden": false,
+            "description": "<p>Doze planilhas mensais, ou uma base grande demais para o chat? O código lê todas do mesmo jeito, sem limite de envio.</p>"
+          },
+          {
+            "id": "701c5f2a-a5d6-4d1d-8e08-16b300fbec66",
+            "type": "step",
+            "title": "Precisa ser auditada linha a linha?",
+            "isHidden": false,
+            "description": "<p>Alguém vai perguntar como você chegou ao número? No código, cada passo fica escrito e pode ser conferido.</p>"
+          },
+          {
+            "id": "85f15645-02f6-49a9-8df5-772444404fee",
+            "type": "step",
+            "title": "Se nenhuma resposta for “sim”",
+            "isHidden": false,
+            "description": "<p>Pergunta única, planilha pequena, gráfico para uma conversa: a análise sem código do curso <em>IA para Análise de Dados</em> resolve, com menos esforço.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b0d8ee22-98bc-4cd6-bd3b-172866cf2ce6"
+      },
+      {
+        "id": "f3l9lbpdpc5jbr3npvr7e5oz",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ox5dy1erz3g4xf847ial3ebv",
+            "heading": "O agente de código e o seu papel",
+            "paragraph": "<p>Um agente de código é um programa de IA que, segundo a documentação do Claude Code, lê o código, edita arquivos, executa comandos e se integra às ferramentas de desenvolvimento no seu computador. O Claude Code (Anthropic) e o Codex (OpenAI) recebem o pedido em português, escrevem o programa em Python, executam e mostram o resultado. Abra cada lado:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b998dd5b-9b45-458a-82f3-5bac5df50482"
+      },
+      {
+        "id": "cd418b74-8aec-49ea-bd54-717dc7ff472e",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "4cdaa365-f3b7-4c69-8d0e-e03e65812bdf",
+            "title": "O que o agente faz",
+            "description": "<p>Escreve o script, instala as bibliotecas, executa e mostra a saída. Também explica o código, se você pedir, em português simples.</p><p></p><p>Tudo fica em arquivos na pasta do projeto: outra pessoa pode abrir, ler e rodar de novo.</p>"
+          },
+          {
+            "id": "ee8ed217-cbdd-4c66-bc8a-0e1b868c07d6",
+            "title": "O que fica com você",
+            "description": "<p>Você não digita código: aprova as ações, lê o que foi produzido no nível de leigo e confere os números com a fonte oficial.</p><p></p><p>Isso importa porque um código pode executar sem nenhum erro sobre uma premissa equivocada — e só quem conhece o problema percebe.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "15df1638-6bc7-4ba4-aab8-afe3da04e814"
+      },
+      {
+        "id": "lgc3gpa6l764jxruq2iiemeu",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "oxkevdbori75mnyuot3cw1a1",
+            "heading": "Seis termos, seis analogias",
+            "paragraph": "<p>Vire cada cartão. As analogias ajudam a lembrar o papel de cada peça do projeto:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "3dc88c54-bad3-4546-8581-b00877bad929"
+      },
+      {
+        "id": "n5690j6427s1zzqspjaotm16",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "j7tdmdv4853tivjsxyyoateb",
+            "back": {
+              "type": "description",
+              "description": "<p>Receita completa num arquivo, executada do início ao fim.<br><em>Analogia: receita impressa.</em></p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Script (.py)</strong>"
+            }
+          },
+          {
+            "id": "vvld42h09p56lpu4r2z7zof9",
+            "back": {
+              "type": "description",
+              "description": "<p>Caderno com células de código, texto e gráficos.<br><em>Analogia: caderno de laboratório.</em></p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Notebook (.ipynb)</strong>"
+            }
+          },
+          {
+            "id": "uokp9jwd1es76qtwflj1mcw6",
+            "back": {
+              "type": "description",
+              "description": "<p>Biblioteca de tabelas.<br><em>Analogia: a planilha dentro do Python.</em></p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>pandas</strong>"
+            }
+          },
+          {
+            "id": "bktv9hsd1m186c8utecukzxg",
+            "back": {
+              "type": "description",
+              "description": "<p>Biblioteca de gráficos.<br><em>Analogia: o módulo de gráficos.</em></p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Matplotlib</strong>"
+            }
+          },
+          {
+            "id": "pgfka0fua9gky1re4jje6ne4",
+            "back": {
+              "type": "description",
+              "description": "<p>Instala Python e bibliotecas e registra versões.<br><em>Analogia: lista de compras com marca e tamanho.</em></p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>uv</strong>"
+            }
+          },
+          {
+            "id": "emosygub5h40huiur4ldceet",
+            "back": {
+              "type": "description",
+              "description": "<p>Conjunto de bibliotecas exclusivo do projeto.<br><em>Analogia: gaveta separada por cliente.</em></p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Ambiente virtual</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "50750887-df8e-4ea5-bca5-2fcbc35ef0e9"
+      },
+      {
+        "id": "xgguc0rrscsch2n4duxf0vsz",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ovfprt5pe7d8r4gik68lailj",
+            "heading": "Script, notebook e ambiente virtual",
+            "paragraph": "<p>O curso adota o <strong>script</strong> como formato principal. Clique em cada aba para entender por quê:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "21784415-91bd-4bd7-a9cb-d41e488a9fdb"
+      },
+      {
+        "id": "021e55c0-9940-487c-9e7d-218119c09c5c",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "a2ac2ece-d433-4aa3-88d3-68513ffe3cd0",
+            "title": "Script",
+            "description": "<p>Receita completa num arquivo <strong>.py</strong>, executada do início ao fim, sempre na mesma ordem. É o formato do <strong>ipca-projeto</strong>.</p><p></p><p>Menos visual que um notebook, mas é o que garante que o mesmo comando produza o mesmo resultado.</p>"
+          },
+          {
+            "id": "a55b9352-8d15-4a3d-a454-45231db60cc4",
+            "title": "Notebook",
+            "description": "<p>Caderno <strong>.ipynb</strong> com células de código, texto e gráficos. Ótimo para explorar, arriscado para reproduzir.</p><p></p><p>Um estudo de 2021 tentou executar 863.878 notebooks públicos do GitHub: só <strong>24,11%</strong> rodaram sem erro e apenas <strong>4,03%</strong> reproduziram os resultados originais. As causas mais comuns: dependências não declaradas, células executadas fora de ordem e caminhos de arquivo fixos.</p>"
+          },
+          {
+            "id": "958f2461-9dc5-4b96-b354-ef8b733018e3",
+            "title": "Ambiente virtual",
+            "description": "<p>Conjunto de bibliotecas exclusivo do projeto — uma gaveta separada por cliente. O uv cria e mantém essa gaveta sozinho.</p><p></p><p>Assim, atualizar uma biblioteca em outro projeto não quebra este, e quem receber a pasta instala exatamente as mesmas versões.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "48dca231-efca-4731-be37-c854b0afe216"
+      },
+      {
+        "id": "9b170e04-79e6-49ad-a005-c315f57bf5bf",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "1bc29e97-d46b-49d8-a767-374b3984ba53",
+            "paragraph": "<p><strong>Rodou não é o mesmo que acertou.</strong> Um código pode executar sem nenhum erro sobre uma premissa equivocada — é por isso que o curso termina com testes e conferência com o IBGE.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "5ee4069b-6b0d-4254-8ae5-26af1be2822e"
+      },
+      {
+        "id": "d3c04b33-ba8f-452f-af46-d0a5b4e8375c",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "3c26da2a-9db7-4ac6-ae9f-6ddd5ece5bf6",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Em qual situação a passagem para código mais se justifica?",
+            "answers": [
+              {
+                "id": "1fd8d37c-22df-4bd4-8f55-3d5f980cc3d4",
+                "title": "Uma pergunta única sobre uma planilha pequena.",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "81d3dd62-e75d-4f37-96bc-3d8b1e7e3be9",
+                "title": "Um indicador mensal que precisa ser refeito todo mês, a partir de doze arquivos, por pessoas diferentes.",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "9a2737eb-340e-420d-ae63-1bf155304076",
+                "title": "Um gráfico rápido para uma conversa.",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "dfbb8920-2811-47b7-86a3-0b18a3465daf",
+                "title": "Uma análise exploratória feita uma única vez, sem necessidade de repetição.",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto. Repetição periódica, vários arquivos e mais de um executor: os três motivos para passar para código aparecem juntos.",
+            "feedbackIncorrect": "Não. A resposta é o indicador mensal: repetição periódica, doze arquivos e pessoas diferentes. Pergunta única, gráfico rápido ou exploração sem repetição se resolvem na conversa."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "cb9f137c-e1a3-4864-9a2c-9d32d8e39068"
+      },
+      {
+        "id": "d4f5bd1d-900f-4a43-90a6-c526740e1150",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "152872e9-3458-4a06-a814-10693ba97b74",
+            "paragraph": "<p><strong>Mão na massa.</strong> Pense numa análise que você faz hoje e peça a avaliação ao agente:</p><p><em>“Tenho esta análise que hoje faço [descrever: com que frequência, quantos arquivos, quem refaz]. Diga se vale transformá-la em um projeto em Python, que pastas e arquivos o projeto teria e o que eu precisaria aprovar durante a criação.”</em></p><p>Compare a estrutura que ele sugerir com a do <strong>ipca-projeto</strong>, que você vai montar a partir do Módulo 3.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2fd917c5-8975-44de-95c5-68e507f6bbaf"
+      },
+      {
+        "id": "be50f5be-8192-47b6-9cbc-9e8fc4e19ec7",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "961ab9f7-a55b-4cf4-a2a3-55b3d78543bb",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "058ccbda-0984-4130-bff2-06644e0ffbd3"
+      },
+      {
+        "id": "oggmwt7759jw3er30lvsyqnh",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "r3f5szzk0gfcewmplu7eg2qi",
+            "paragraph": "<p>Um agente que lê, cria, altera, apaga e executa no seu computador precisa de limites. No Módulo 2 você configura o modo restrito, entende o que dá e o que não dá para desfazer e aprende a decidir cada pedido de aprovação.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "278134fc-29ef-4454-a189-7e5f7ca6a8e3"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Por que Código? Conceitos Fundamentais e o Papel do Agente",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "I27fLqYVIPy0NLQkgsBdub8JkShnUs-m",
+    "createdAt": "2026-11-18T01:01:14.067Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:02:00.151Z"
+  }
+}

@@ -1,0 +1,25 @@
+<!--titulo: Qual é a premissa errada-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Diagnóstico</span>
+  <h1 id="t">O código rodou. Qual premissa falhou?</h1>
+  <p class="sub">Cinco resultados que saíram sem nenhuma mensagem de erro. Para cada um, aponte a armadilha — todas estão nas bases do curso.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'No ranking da CVM, uma empresa com lucro de R$ 653 milhões aparece acima da Petrobras (R$ 36,6 bilhões).', r: 'escala', p: 'Oito empresas informam em reais e as demais em milhares. Quem pega: comparar com o número oficial e listar a escala nas premissas.' },
+      { t: 'A soma dos casos novos de 2025 na base do CNJ dá cerca de 81 milhões; o relatório publica 40,9 milhões.', r: 'total', p: 'Linhas de total por ramo foram somadas junto com os tribunais. Quem pega: contar as linhas e comparar com o número oficial.' },
+      { t: 'O IPCA acumulado de 2024 saiu 4,73%; o IBGE publica 4,83%.', r: 'formula', p: 'As taxas foram somadas em vez de compostas. Quem pega: abrir o código e ler a fórmula principal.' },
+      { t: 'O Raio X falava em 72 linhas, mas o cálculo considerou só 48 meses.', r: 'leitura', p: 'Parte do arquivo ficou de fora. Quem pega: contar as linhas antes e depois de cada filtro.' },
+      { t: 'O filtro por “SÃO PAULO” no cadastro da CVM devolveu bem menos empresas do que o esperado.', r: 'codif', p: 'O arquivo é latin-1 e foi lido com outro alfabeto: “SÃO” virou “S�O”. Quem pega: conferir as primeiras linhas e pedir a releitura em latin-1.' }
+    ],
+    opcoes: { escala: 'Escala', total: 'Linha de total', formula: 'Fórmula', leitura: 'Leitura parcial', codif: 'Codificação' },
+    dicaErro: 'Releia o caso: o que poderia mudar o número sem gerar nenhum erro de execução?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'premissas encontradas',
+    aoConcluir: function () { concluir('final', 'Cinco armadilhas, nenhuma mensagem de erro. É por isso que a rotina de cinco conferências vem antes do resumo.'); }
+  });
+</script>

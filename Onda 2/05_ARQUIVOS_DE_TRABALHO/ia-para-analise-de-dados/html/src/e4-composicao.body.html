@@ -1,0 +1,43 @@
+<!--titulo: Somar ou compor taxas-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Calculadora</span>
+  <h1 id="t">Somar ou compor? Faça a conta</h1>
+  <p class="sub">Digite taxas mensais (em %), separadas por espaço ou ponto e vírgula. A calculadora mostra a soma simples e a composição — a fórmula que o IBGE usa.</p>
+  <label for="taxas" class="nota" style="display:block;margin:0 0 6px">Taxas mensais (%)</label>
+  <input type="text" id="taxas" value="1 1" inputmode="decimal" autocomplete="off">
+  <div class="opcoes" style="margin-top:10px" role="group" aria-label="Exemplos prontos">
+    <button type="button" class="btn" data-ex="1 1">1% e 1%</button>
+    <button type="button" class="btn" data-ex="1 1 1 1 1 1 1 1 1 1 1 1">1% por 12 meses</button>
+    <button type="button" class="btn" data-ex="0,5 0,5 0,5 0,5 0,5 0,5 0,5 0,5 0,5 0,5 0,5 0,5">0,5% por 12 meses</button>
+  </div>
+  <div class="grid" style="margin-top:16px">
+    <div class="item"><h2>Soma simples</h2><p class="placar" id="soma" aria-live="polite"></p><p class="nota" style="margin-top:4px">Errada para inflação acumulada.</p></div>
+    <div class="item certo"><h2>Composição</h2><p class="placar" id="comp" aria-live="polite"></p><p class="nota" style="margin-top:4px">Produto de (1 + taxa/100), menos 1.</p></div>
+  </div>
+  <div class="feedback info" id="msg" aria-live="polite"></div>
+  <p class="nota">No caso-guia: compondo as taxas mensais de 2024, o resultado é 4,83%, igual ao IBGE; somando, 4,73%.</p>
+</section>
+<script>
+  function fmt(x) { return x.toFixed(2).replace('.', ',') + '%'; }
+  function calc() {
+    var bruto = document.getElementById('taxas').value.trim();
+    var partes = bruto ? bruto.split(/[\s;]+/) : [];
+    var v = [], erro = false;
+    partes.forEach(function (p) { var n = parseFloat(p.replace(',', '.')); if (isNaN(n)) erro = true; else v.push(n); });
+    var m = document.getElementById('msg');
+    if (erro || !v.length) {
+      document.getElementById('soma').textContent = '—'; document.getElementById('comp').textContent = '—';
+      m.textContent = 'Use só números, como 0,21 ou 1.5, separados por espaço.'; return;
+    }
+    var s = v.reduce(function (a, b) { return a + b; }, 0);
+    var c = (v.reduce(function (a, b) { return a * (1 + b / 100); }, 1) - 1) * 100;
+    document.getElementById('soma').textContent = fmt(s);
+    document.getElementById('comp').textContent = fmt(c);
+    m.textContent = v.length + ' mês(es). Diferença: ' + (c - s).toFixed(2).replace('.', ',') + ' ponto percentual. Quanto mais meses e maiores as taxas, maior a diferença.';
+  }
+  document.getElementById('taxas').addEventListener('input', calc);
+  document.querySelectorAll('button[data-ex]').forEach(function (b) {
+    b.addEventListener('click', function () { document.getElementById('taxas').value = b.getAttribute('data-ex'); calc(); });
+  });
+  calc();
+</script>

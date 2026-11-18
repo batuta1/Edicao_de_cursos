@@ -1,0 +1,819 @@
+{
+  "numero_da_licao": 8,
+  "position_original": 7,
+  "title": "Quiz",
+  "lesson": {
+    "description": "Teste seu entendimento sobre como tornar análises de dados com IA mais reprodutíveis e seguras, desde estruturar o projeto e validar o uv com uv --version até garantir que o uv.lock e um README claro estejam no lugar. Veja também se você reconhece riscos como pacotes maliciosos, aplica regras de privacidade como a LGPD e sabe usar asserts para verificar que o resultado não apenas rodou, mas está correto.",
+    "id": "Q0YnAZCX5vASNOcfnO39OO7jrts7E842",
+    "items": [
+      {
+        "answers": [
+          {
+            "id": "82942af2-a89e-43d8-a872-d7ed466be10d",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Incorreto. A afirmação é verdadeira: dado pessoal identificável não entra em conta pessoal, porque os planos de consumidor podem reter conversas e usá-las para treinar modelos."
+          },
+          {
+            "id": "c9363bb0-1355-4cf9-8d41-b0e98b7b7f86",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. Pelo semáforo da LGPD, dado identificável não entra em conta pessoal; planos corporativos não treinam modelos por padrão."
+          }
+        ],
+        "correct": "c9363bb0-1355-4cf9-8d41-b0e98b7b7f86",
+        "corrects": [
+          "c9363bb0-1355-4cf9-8d41-b0e98b7b7f86"
+        ],
+        "id": "728398b1-5ce7-4f44-b5eb-bde098349519",
+        "title": "O uso de dados pessoais em contas não corporativas pode violar a LGPD.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "37c07618-e1c7-47d5-9c9a-29d0a644e490"
+      },
+      {
+        "answers": [
+          {
+            "id": "5a05230f-ea4b-4088-a906-d323bc7f9919",
+            "title": "Executar novamente o script após apagar a pasta de resultados.",
+            "correct": false,
+            "feedback": "Não. Rodar do zero testa a reprodução, mas não recria nada: sem o registro de versões, outra máquina pode instalar bibliotecas diferentes."
+          },
+          {
+            "id": "fa1b964f-a05d-4cf1-a282-551b835d5243",
+            "title": "Salvar os resultados do projeto em uma pasta separada do código.",
+            "correct": false,
+            "feedback": "Separar resultados do código melhora a organização do projeto, mas não recria o ambiente de bibliotecas nem registra versões de dependências."
+          },
+          {
+            "id": "d38b9270-5666-44a9-a2f3-d255d2b0b05b",
+            "title": "Registrar as dependências do projeto em um arquivo como o uv.lock.",
+            "correct": true,
+            "feedback": "Essa prática preserva as versões exatas das bibliotecas, permitindo recriar o mesmo ambiente e obter resultados consistentes."
+          },
+          {
+            "id": "fb6005c8-3e3c-4f09-b4b9-c8e566eadd77",
+            "title": "Documentar o fluxo da análise em um arquivo README.md detalhado.",
+            "correct": false,
+            "feedback": "A documentação ajuda outras pessoas a entenderem e executarem o projeto, mas sozinha não garante que as bibliotecas estejam nas mesmas versões."
+          }
+        ],
+        "correct": "d38b9270-5666-44a9-a2f3-d255d2b0b05b",
+        "corrects": [
+          "d38b9270-5666-44a9-a2f3-d255d2b0b05b"
+        ],
+        "id": "5f4a53e9-09a4-4eb5-a5ae-391a4dd72e07",
+        "title": "Em um projeto de análise de dados que precisa ser executado por outras pessoas em computadores diferentes, qual prática ajuda diretamente a recriar o mesmo ambiente de bibliotecas usado na análise original?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "888227c3-bddd-4cea-970e-89d06d8d55ae"
+      },
+      {
+        "answers": [
+          {
+            "id": "01e99ed7-d17c-4da6-a995-badc7e0395f6",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Incorreto. A afirmação é verdadeira: os asserts de 4,83% e 4,26% são o critério objetivo de que o projeto reproduz o IBGE."
+          },
+          {
+            "id": "c1ce492d-2bbe-4eac-ac9f-269ae4ea6e8f",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. Se os asserts passam, o resultado confere com o número oficial, dentro da tolerância de ± 0,01."
+          }
+        ],
+        "correct": "c1ce492d-2bbe-4eac-ac9f-269ae4ea6e8f",
+        "corrects": [
+          "c1ce492d-2bbe-4eac-ac9f-269ae4ea6e8f"
+        ],
+        "id": "eca3cc9c-3118-49b7-87c7-93050fa49615",
+        "title": "Os asserts de validação devem passar corretamente para indicar que os resultados principais conferem com os números oficiais.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "f020ed41-233e-4353-b546-f36573afeb52"
+      },
+      {
+        "answers": [
+          {
+            "id": "3c46be1a-e9dc-4608-a8d3-d4ea4d2aad58",
+            "matchTitle": "Arquivos originais usados como referência, que não devem ser modificados durante a análise.",
+            "title": "dados/brutos/"
+          },
+          {
+            "id": "7f691437-3f6d-4d99-a76f-7720bbb9f691",
+            "matchTitle": "Tabelas, gráficos e outros artefatos produzidos pela execução da análise.",
+            "title": "resultados/"
+          },
+          {
+            "id": "a323d77d-9f14-4e19-b99d-aa74bba538cd",
+            "matchTitle": "Script que lê os dados brutos, faz as transformações e grava as saídas do projeto.",
+            "title": "analise.py"
+          }
+        ],
+        "id": "72abfc5f-74c0-44d6-ac09-32b43de0501b",
+        "title": "Associe cada pasta ou arquivo do ipca-projeto ao que ele guarda.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "cb85483b-510d-4fb2-979b-53fdb7623e15",
+        "feedbackCorrect": "Correto. Dados brutos ficam intocados em dados/brutos/, o código fica em analise.py e tudo o que o script produz vai para resultados/.",
+        "feedbackIncorrect": "Reveja: dados/brutos/ guarda os arquivos originais, intocados; analise.py é o script que transforma os dados; resultados/ recebe tabelas e gráficos gerados."
+      },
+      {
+        "answers": [
+          {
+            "id": "40f3a66c-4de2-452d-a652-d17cb736572b",
+            "title": "Porque ele permite que o agente execute imediatamente a análise, mesmo sem apresentar um plano prévio.",
+            "correct": false,
+            "feedback": "Isso contraria a prática recomendada de exigir um plano antes de qualquer execução para manter controle e segurança no processo."
+          },
+          {
+            "id": "a981dca8-cee3-4b0f-bbc1-f2f29104eb29",
+            "title": "Porque ele documenta objetivo, dados e regras com clareza, reduz riscos e torna a análise mais confiável e auditável.",
+            "correct": true,
+            "feedback": "Essa alternativa resume corretamente o valor central de um brief bem estruturado para orientar, controlar e registrar a análise."
+          },
+          {
+            "id": "25956797-fd5e-41ee-9b32-e00f9cfe54ab",
+            "title": "Porque ele substitui a necessidade de verificar fontes oficiais e números de referência durante a validação.",
+            "correct": false,
+            "feedback": "O brief ajuda a registrar a verificação, mas não substitui a conferência de fontes e referências oficiais; na prática, ele reforça essa etapa."
+          },
+          {
+            "id": "53016224-3ed8-41c2-95a4-41bc3f659cdc",
+            "title": "Porque ele permite escolher com antecedência a aparência visual dos gráficos principais do projeto.",
+            "correct": false,
+            "feedback": "Não. A aparência dos gráficos não é o que torna a análise segura e auditável; objetivo, dados, regras, verificação e plano é que são."
+          }
+        ],
+        "correct": "a981dca8-cee3-4b0f-bbc1-f2f29104eb29",
+        "corrects": [
+          "a981dca8-cee3-4b0f-bbc1-f2f29104eb29"
+        ],
+        "id": "01691369-c5c1-4c91-99af-c74ed9a3416b",
+        "title": "Por que exigir um brief de análise bem estruturado antes da execução de uma análise com IA é uma prática essencial para projetos reprodutíveis e seguros?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "109d56ce-c404-430b-be19-1ab3ac472d60"
+      },
+      {
+        "answers": [
+          {
+            "id": "ceb48faa-9d8e-4732-bca7-66747a763133",
+            "title": "Uma exploração inicial de dados feita por uma pessoa para entender um gráfico específico.",
+            "correct": false,
+            "feedback": "Exploração inicial pode envolver análise útil, mas sozinha não indica necessidade de migrar para código se não houver repetição, auditoria ou múltiplos arquivos."
+          },
+          {
+            "id": "ddc81801-0c16-4aba-9d0f-b7be7a4a1bf2",
+            "title": "Uma consulta rápida para tirar uma dúvida em um único arquivo pequeno.",
+            "correct": false,
+            "feedback": "Essa situação pode ser resolvida de forma pontual sem exigir automação, reprodutibilidade ampla ou padronização entre pessoas."
+          },
+          {
+            "id": "42ac7fad-6394-4c7b-8e84-1f975122701f",
+            "title": "Um indicador mensal que precisa ser refeito por pessoas diferentes a partir de vários arquivos.",
+            "correct": true,
+            "feedback": "Essa situação reúne repetição, múltiplos arquivos e necessidade de padronização entre usuários, o que justifica a migração para código."
+          },
+          {
+            "id": "54f63a89-2f55-461c-975f-143f725d97ac",
+            "title": "Uma conversa para interpretar um resultado já pronto em uma planilha compartilhada.",
+            "correct": false,
+            "feedback": "Interpretar um resultado pronto pode exigir raciocínio analítico, mas não necessariamente demanda transformar o processo em código."
+          }
+        ],
+        "correct": "42ac7fad-6394-4c7b-8e84-1f975122701f",
+        "corrects": [
+          "42ac7fad-6394-4c7b-8e84-1f975122701f"
+        ],
+        "id": "4e620828-bc06-4208-b0fe-196b05905344",
+        "title": "Em qual situação a análise mais se justifica para migrar da conversa para o código?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "07a21312-aae5-4aaa-8449-a0dc29279652"
+      },
+      {
+        "answers": [
+          {
+            "id": "4ea2edad-6034-4e45-8029-faaa8d8a6d9e",
+            "title": "Validação concluída, porque o script foi executado até o fim sem interrupções.",
+            "correct": false,
+            "feedback": "Executar até o fim não comprova que o resultado está correto. Justamente por isso, erros silenciosos exigem verificações adicionais além da simples ausência de mensagens de erro."
+          },
+          {
+            "id": "c2864b6e-4d63-44e4-a6d3-ed31480480d4",
+            "title": "Contagem de controle, porque a junção alterou os valores do resultado final.",
+            "correct": false,
+            "feedback": "Contagem de controle é uma prática de validação usada para detectar problemas no processo, não a classificação do problema em si. Ela pode ajudar a identificar a inconsistência, mas não nomeia o caso descrito."
+          },
+          {
+            "id": "a36707b8-250a-4116-8c79-24535a645b86",
+            "title": "Falha de execução, porque o relatório final apresentou valores divergentes.",
+            "correct": false,
+            "feedback": "Valores divergentes indicam um problema no resultado, mas não caracterizam falha de execução quando o script termina normalmente. A diferença central é que, no erro silencioso, não há interrupção nem mensagem explícita de erro."
+          },
+          {
+            "id": "cd1f4c10-a3b7-45e1-aac8-cfbc28be2c24",
+            "title": "Erro silencioso, porque a execução parece normal mesmo com resultado incorreto.",
+            "correct": true,
+            "feedback": "Essa é a classificação correta: o script roda sem falhar, mas entrega um resultado errado."
+          }
+        ],
+        "correct": "cd1f4c10-a3b7-45e1-aac8-cfbc28be2c24",
+        "corrects": [
+          "cd1f4c10-a3b7-45e1-aac8-cfbc28be2c24"
+        ],
+        "id": "c540267c-ed27-4cf3-bfde-380ec54ca6a0",
+        "title": "Em uma análise automatizada, o script termina a execução sem mostrar mensagens de erro, mas o relatório final traz valores incorretos por causa de uma junção feita de forma errada. Como esse caso deve ser classificado?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "0f156f2f-b7ea-474e-b938-c7ab598c9302"
+      },
+      {
+        "answers": [
+          {
+            "id": "cdde3c39-923f-4c7e-90d5-968fd3212284",
+            "title": "Separar dados, scripts, resultados e documentação em pastas organizadas com nomes claros e padrão definido.",
+            "correct": true,
+            "feedback": "Essa organização facilita localizar arquivos, entender o fluxo do trabalho, repetir etapas e verificar como os resultados foram produzidos."
+          },
+          {
+            "id": "23701012-bde9-4f97-834b-21548c533288",
+            "title": "Manter dados, scripts e resultados no mesmo local para acelerar o acesso durante a análise.",
+            "correct": false,
+            "feedback": "Centralizar tudo em um único local pode parecer prático no curto prazo, mas dificulta identificar versões, etapas e origens dos resultados ao longo do projeto."
+          },
+          {
+            "id": "fa5a93bc-2b75-4a42-a949-7e1a5b444aca",
+            "title": "Concentrar o projeto na escolha da ferramenta mais avançada, mesmo sem definir uma organização de pastas e registros.",
+            "correct": false,
+            "feedback": "Ferramentas podem ajudar na execução, mas sem uma estrutura clara de pastas e registros o projeto perde previsibilidade, histórico e facilidade de repetição."
+          },
+          {
+            "id": "486487a6-add7-4a14-adc4-e7a3e9b6e733",
+            "title": "Priorizar apenas o relatório final e deixar a organização dos arquivos para a etapa de entrega.",
+            "correct": false,
+            "feedback": "O relatório final é importante, mas adiar a organização compromete o acompanhamento das etapas e torna mais difícil reproduzir o processo completo depois."
+          }
+        ],
+        "correct": "cdde3c39-923f-4c7e-90d5-968fd3212284",
+        "corrects": [
+          "cdde3c39-923f-4c7e-90d5-968fd3212284"
+        ],
+        "id": "7e8e1241-d255-4226-abba-d2067ff1067b",
+        "title": "Ao iniciar um projeto de análise de dados com apoio de um agente de código, qual estrutura é mais adequada para garantir rastreabilidade e reprodutibilidade do trabalho?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "1cbc1215-1adc-40f1-a9fe-500d9120b8a1"
+      },
+      {
+        "answers": [
+          {
+            "id": "c111f640-d257-47e0-aba6-b15b12386df9",
+            "title": "Aprovar a instalação se o nome do pacote parecer relacionado à análise solicitada.",
+            "correct": false,
+            "feedback": "O nome parecer adequado não confirma que o pacote exista nem que seja seguro. Pacotes maliciosos podem usar nomes plausíveis para induzir aprovação indevida."
+          },
+          {
+            "id": "958ea9ba-585f-4feb-8b1d-0051eeabb865",
+            "title": "Aprovar a instalação se o pacote for necessário para acessar dados de uma fonte oficial.",
+            "correct": false,
+            "feedback": "Mesmo quando a tarefa envolve uma fonte oficial, um pacote desconhecido continua exigindo validação. A confiabilidade da fonte de dados não garante a segurança do pacote solicitado."
+          },
+          {
+            "id": "da22c63d-194c-461b-8c6c-99f40335a814",
+            "title": "Recusar a instalação até verificar o pacote em uma fonte confiável, como o PyPI.",
+            "correct": true,
+            "feedback": "Essa é a ação mais segura porque um pacote desconhecido pode ser inexistente ou malicioso, e a verificação prévia reduz o risco antes de qualquer instalação."
+          },
+          {
+            "id": "151470c0-d54f-438c-ae60-c608fa259ebe",
+            "title": "Aprovar a instalação se o agente informar que usará o pacote apenas na pasta de trabalho.",
+            "correct": false,
+            "feedback": "Restringir a pasta de trabalho não elimina o risco de instalar um pacote malicioso. O problema está na origem e confiabilidade do pacote, não apenas no local de uso."
+          }
+        ],
+        "correct": "da22c63d-194c-461b-8c6c-99f40335a814",
+        "corrects": [
+          "da22c63d-194c-461b-8c6c-99f40335a814"
+        ],
+        "id": "54b950c4-2a55-4c3c-87fd-e0ad95962bbd",
+        "title": "Ao avaliar a solicitação de um agente de código para instalar um pacote com nome desconhecido, qual é a decisão mais segura para reduzir o risco de código malicioso?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "9614b4b7-39ed-47e0-94cb-7cf3baaa28e9"
+      },
+      {
+        "answers": [
+          {
+            "id": "af609e4b-1c3f-4c17-baf6-097b99794220",
+            "title": "asserts"
+          }
+        ],
+        "id": "1356e198-edc1-482e-a57f-30e3a7d58c32",
+        "title": "Testes automáticos, como __________, são comandos que interrompem o script caso um resultado esperado não seja atingido.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "95ba3b68-e281-4a65-97ee-b65f05169700",
+        "feedbackCorrect": "Correto. Asserts são usados para verificar automaticamente condições esperadas e interrompem o script quando encontram uma inconsistência.",
+        "feedbackIncorrect": "Incorreto. O termo esperado é \"asserts\", que são testes automáticos usados para validar condições no script e sinalizar resultados inesperados."
+      },
+      {
+        "answers": [
+          {
+            "id": "7aedefd8-b266-4012-a19d-e191f46d0baf",
+            "title": "Capacidade de executar a análise em um notebook para visualizar os resultados com mais facilidade.",
+            "correct": false,
+            "feedback": "Usar notebook pode apoiar a exploração e a visualização, mas não caracteriza a definição de reprodutibilidade."
+          },
+          {
+            "id": "a8c3bd42-81ed-474b-bf7c-de256545ebca",
+            "title": "Capacidade de documentar cada etapa da análise em scripts e em um arquivo README.",
+            "correct": false,
+            "feedback": "Documentação ajuda outras pessoas a entender e repetir o processo, mas não define por si só o que é reprodutibilidade."
+          },
+          {
+            "id": "ed3daa5a-c8db-4b06-9838-102fdcc4f9cd",
+            "title": "Capacidade de obter os mesmos resultados ao executar o mesmo código sobre os mesmos dados.",
+            "correct": true,
+            "feedback": "Essa é a definição correta de reprodutibilidade em análise de dados."
+          },
+          {
+            "id": "9e2a9bc0-9872-494b-963a-3db1d8e67db2",
+            "title": "Capacidade de organizar scripts e gráficos em pastas separadas para facilitar o projeto.",
+            "correct": false,
+            "feedback": "Organizar arquivos é uma boa prática importante, mas descreve estruturação do projeto, não a definição de reprodutibilidade."
+          }
+        ],
+        "correct": "ed3daa5a-c8db-4b06-9838-102fdcc4f9cd",
+        "corrects": [
+          "ed3daa5a-c8db-4b06-9838-102fdcc4f9cd"
+        ],
+        "id": "d7e86dad-f08e-4d24-99db-db668b458beb",
+        "title": "Qual definição descreve corretamente a reprodutibilidade em projetos de análise de dados?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "300100c0-1e25-40e9-a55a-628a99e79aef"
+      },
+      {
+        "answers": [
+          {
+            "id": "caf0328b-6e35-4031-9143-7aafd81c9d3c",
+            "title": "Descrever o objetivo da análise, deixar o agente identificar o formato dos dados e ajustar as regras conforme encontrar o conteúdo.",
+            "correct": false,
+            "feedback": "A alternativa inclui um elemento importante, o objetivo, mas erra ao confiar em descobertas automáticas e ao permitir que regras sejam definidas durante a execução."
+          },
+          {
+            "id": "2f9005da-0047-4ec3-a7e6-284e813defed",
+            "title": "Informar apenas o nome do arquivo de dados, pedir agilidade na execução e revisar a fonte oficial ao final da análise.",
+            "correct": false,
+            "feedback": "A alternativa parece plausível porque menciona dados e fonte, mas deixa de incluir detalhes essenciais de leitura do arquivo, não registra restrições com clareza e não exige o plano antes da execução."
+          },
+          {
+            "id": "21367a37-f274-45bb-acfd-061be3f783bc",
+            "title": "Registrar a pasta de saída, solicitar explicação em linguagem simples e escolher previamente o estilo visual dos gráficos principais.",
+            "correct": false,
+            "feedback": "Esses pontos podem ser úteis em um projeto, mas não cobrem as práticas centrais cobradas na questão, especialmente a especificação dos dados, a exigência do plano e a fonte de verificação."
+          },
+          {
+            "id": "7eb48b96-b401-4893-8f69-21a933b492be",
+            "title": "Informar formato, separador, decimal e codificação dos dados, explicitar restrições, exigir o plano antes da execução e indicar o número oficial com sua fonte.",
+            "correct": true,
+            "feedback": "Correto. Formato dos dados, restrições, exigência de plano e número oficial com a fonte: é o brief do Módulo 3."
+          }
+        ],
+        "correct": "7eb48b96-b401-4893-8f69-21a933b492be",
+        "corrects": [
+          "7eb48b96-b401-4893-8f69-21a933b492be"
+        ],
+        "id": "92f91a90-1e0b-4ffa-bd52-7ad65440fe37",
+        "title": "Ao redigir um brief de análise para um agente automatizado, qual alternativa melhor aplica as práticas recomendadas para evitar erros de interpretação e retrabalho?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "51378121-c2ba-4d8e-beb7-db18fd386886"
+      },
+      {
+        "answers": [
+          {
+            "id": "8acd6f41-b082-459e-887e-2e5a820f5dea",
+            "title": "Modo Manual",
+            "correct": true,
+            "feedback": "É o modo padrão seguro para iniciar cada sessão, pois permite apenas leituras sem pedir aprovação."
+          },
+          {
+            "id": "24725b15-951b-4af9-a66d-4fab5119410c",
+            "title": "Modo bypassPermissions",
+            "correct": false,
+            "feedback": "Esse modo libera todas as permissões e é destinado apenas a máquinas isoladas, portanto não representa uma forma segura de iniciar uma sessão restrita."
+          },
+          {
+            "id": "fd00785d-f248-4230-9708-4f14328e3b25",
+            "title": "Modo acceptEdits",
+            "correct": false,
+            "feedback": "Esse modo libera leituras, edições e comandos comuns de arquivo após aprovação do plano, oferecendo mais flexibilidade do que um início em modo restrito."
+          },
+          {
+            "id": "7f74767c-3b50-4321-8116-4784420f1a20",
+            "title": "Modo plan",
+            "correct": false,
+            "feedback": "Quase. O modo plan também é restritivo e é o indicado antes de executar. Para o início de cada sessão, o curso adota o modo Manual (default), que só roda leituras sem perguntar."
+          }
+        ],
+        "correct": "8acd6f41-b082-459e-887e-2e5a820f5dea",
+        "corrects": [
+          "8acd6f41-b082-459e-887e-2e5a820f5dea"
+        ],
+        "id": "b1a9b20e-c0b9-4b78-b221-6314da403967",
+        "title": "Ao iniciar uma nova sessão no Claude Code, qual modo de permissão oferece a configuração mais segura para começar a análise em modo restrito?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "ff00d414-7019-489a-b9e4-20f56d06f5f8"
+      },
+      {
+        "answers": [
+          {
+            "id": "ec7096d9-ce70-465a-bd9b-1d53d6e95876",
+            "matchTitle": "Indica qual decisão ou pergunta do projeto deve ser apoiada pela análise.",
+            "title": "Objetivo"
+          },
+          {
+            "id": "418b59ea-0dbd-4610-9e33-fb29cb317078",
+            "matchTitle": "Especifica arquivo, formato, separador, decimal, codificação e dicionário da base utilizada.",
+            "title": "Dados"
+          },
+          {
+            "id": "a93808b6-4bd0-46cc-bbc4-e74dee4c13d5",
+            "matchTitle": "Define limitações que o agente deve respeitar, como não modificar os dados brutos.",
+            "title": "Regras"
+          },
+          {
+            "id": "dc3e99dc-0aef-4470-bd1f-ff483cce7e2c",
+            "matchTitle": "Determina a pasta ou os arquivos em que tabelas, gráficos e outros resultados devem ser salvos.",
+            "title": "Saídas"
+          },
+          {
+            "id": "14d0ee9b-2eee-402d-9ea3-82a5b4ae20b1",
+            "matchTitle": "Aponta o número oficial ou a fonte de referência que servirá para conferir se o resultado foi reproduzido corretamente.",
+            "title": "Verificação"
+          },
+          {
+            "id": "b8c66b70-4095-4f44-86af-03a1a31bcc7b",
+            "matchTitle": "Estabelece que o agente deve apresentar um plano antes de executar qualquer ação e aguardar aprovação.",
+            "title": "Exigência de plano"
+          }
+        ],
+        "id": "879c0e9a-1a32-40fb-ab94-d8c0994e630b",
+        "title": "Relacione cada componente essencial do brief de análise à função que ele desempenha no planejamento do trabalho com o agente. Considere como cada item contribui para a clareza, o controle da execução e a reprodutibilidade dos resultados.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "bbf44601-ae20-48c7-9ff0-525f3e58451f",
+        "feedbackCorrect": "Correto. Os seis componentes essenciais do brief de análise são objetivo, dados, regras, saídas, verificação e exigência de plano, e cada um cumpre uma função distinta para orientar o agente com clareza, reduzir erros e garantir reprodutibilidade.",
+        "feedbackIncorrect": "Incorreto. Para acertar, é preciso relacionar cada componente do brief à sua função específica no processo: objetivo define a decisão apoiada, dados descrevem a base, regras impõem restrições, saídas indicam onde salvar resultados, verificação aponta a referência oficial e exigência de plano obriga o agente a planejar antes de agir."
+      },
+      {
+        "answers": [
+          {
+            "id": "b889b876-cc8a-407a-b01d-6e51a55c3d46",
+            "title": "Indica que o projeto está pronto para compartilhamento, porque um script sem erro dispensa revisão dos resultados.",
+            "correct": false,
+            "feedback": "Compartilhar ou concluir um projeto exige revisar resultados, critérios e premissas; rodar sem erro não elimina a necessidade de validação."
+          },
+          {
+            "id": "9f2ee79b-4607-4284-ad9f-b54bfd21b2e6",
+            "title": "Indica apenas que o código rodou tecnicamente, mas os resultados ainda precisam ser validados.",
+            "correct": true,
+            "feedback": "Executar sem erro mostra funcionamento técnico, mas não confirma que as premissas, transformações e conclusões estejam corretas."
+          },
+          {
+            "id": "f5cc323c-d953-4499-8524-45e60aea197e",
+            "title": "Indica que o ambiente virtual e as bibliotecas estão corretos, portanto o resultado final pode ser aceito.",
+            "correct": false,
+            "feedback": "Ter ambiente e dependências configurados corretamente ajuda na execução, mas isso não garante que os cálculos, filtros ou interpretações estejam certos."
+          },
+          {
+            "id": "cd052197-85ec-4173-82ad-e24ed1a276b3",
+            "title": "Indica que os resultados estão corretos, porque a execução completa confirma a lógica da análise.",
+            "correct": false,
+            "feedback": "A execução completa mostra que o código conseguiu rodar, mas não comprova que a lógica escolhida representa corretamente o problema ou que as premissas estejam certas."
+          }
+        ],
+        "correct": "9f2ee79b-4607-4284-ad9f-b54bfd21b2e6",
+        "corrects": [
+          "9f2ee79b-4607-4284-ad9f-b54bfd21b2e6"
+        ],
+        "id": "f2ea96c3-3ff3-479b-a1fb-796f6bed494e",
+        "title": "Durante a revisão de uma análise automatizada, o script executa do início ao fim sem apresentar erros. O que essa situação indica sobre a confiabilidade do resultado?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "e11bd384-8ac5-48d5-b288-ef072c4fa7a2"
+      },
+      {
+        "answers": [
+          {
+            "id": "4b6b5fad-e79e-4cdb-aa2e-5a3f29f5e070",
+            "title": "Garantir interpretações corretas dos dados sem exigir validação humana",
+            "correct": false,
+            "feedback": "Agentes de código podem apoiar a análise, mas não garantem sozinhos que a interpretação dos dados esteja correta em todos os contextos."
+          },
+          {
+            "id": "d04cafc7-b61b-4e27-9254-f047b7e87841",
+            "title": "Organizar arquivos do projeto sem contribuir para repetir a análise depois",
+            "correct": false,
+            "feedback": "Organizar arquivos pode fazer parte do trabalho analítico, mas isso não representa o principal benefício dos agentes de código destacado aqui, que inclui permitir repetição consistente do processo."
+          },
+          {
+            "id": "230725c9-55ab-4014-b29d-c8a3344d3aee",
+            "title": "Substituir a necessidade de revisar resultados antes da entrega final",
+            "correct": false,
+            "feedback": "Embora agentes de código apoiem a execução da análise, a revisão dos resultados continua sendo necessária para garantir qualidade e adequação ao contexto."
+          },
+          {
+            "id": "80543009-06d4-46f3-ace2-9dd205d31e89",
+            "title": "Automatizar etapas da análise e facilitar a repetição do processo com consistência",
+            "correct": true,
+            "feedback": "Essa opção descreve corretamente o benefício central dos agentes de código nas análises de dados: automação com reprodutibilidade."
+          }
+        ],
+        "correct": "80543009-06d4-46f3-ace2-9dd205d31e89",
+        "corrects": [
+          "80543009-06d4-46f3-ace2-9dd205d31e89"
+        ],
+        "id": "cfe6ca90-12a1-476b-9a4f-fbc5ec721a73",
+        "title": "Qual benefício descreve melhor o uso de agentes de código em análises de dados para profissionais que buscam consistência nos resultados?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "a118f3d7-e40e-4aa5-876f-f4d5015b47c8"
+      },
+      {
+        "answers": [
+          {
+            "id": "aa1aaae6-1210-4821-b540-0586b18768c4",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Incorreto. A afirmação é verdadeira: o uv.lock registra as versões exatas das bibliotecas, e quem recebe a pasta instala as mesmas."
+          },
+          {
+            "id": "f8bb8574-51e8-420c-8096-6452e35c59ba",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. O uv.lock registra as versões usadas no projeto, o que permite recriar o ambiente e executar o trabalho com mais consistência em outra máquina."
+          }
+        ],
+        "correct": "f8bb8574-51e8-420c-8096-6452e35c59ba",
+        "corrects": [
+          "f8bb8574-51e8-420c-8096-6452e35c59ba"
+        ],
+        "id": "e0e2b420-5fa4-49d2-ad2f-9dc99c84a669",
+        "title": "A presença do arquivo uv.lock na pasta do projeto ajuda a garantir que o ambiente possa ser replicado por outra pessoa.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "6da581ac-4c6a-438e-a20f-9fc59961bfb3"
+      },
+      {
+        "answers": [
+          {
+            "id": "d4b9f022-e683-4f88-bc0b-7ee8a4530484",
+            "title": "Claude Code CLI no terminal, com qualquer conta ativa no serviço.",
+            "correct": false,
+            "feedback": "Não. Duas falhas: a pessoa quer evitar o terminal, e o plano gratuito do Claude não inclui Claude Code."
+          },
+          {
+            "id": "02e72041-0b11-43f1-a7f7-75a62c276681",
+            "title": "Claude Code no aplicativo Claude Desktop, desde que a conta tenha o plano Claude Pro ou superior.",
+            "correct": true,
+            "feedback": "Correto. É a rota A: app de desktop, sem terminal, compatível com Windows 10 1809+, desde que a conta tenha Claude Pro ou superior."
+          },
+          {
+            "id": "cdb5f02d-0e55-4067-a4ec-7630b566a553",
+            "title": "Terminal com Codex CLI, porque é a rota mais simples para quem não programa.",
+            "correct": false,
+            "feedback": "Não. A rota de terminal é indicada para quem já usa comandos; para quem quer evitar o terminal, as rotas A e B são as recomendadas."
+          },
+          {
+            "id": "7bf762af-66cf-4a5c-a6f0-dba2d3056128",
+            "title": "ChatGPT Codex no aplicativo de desktop, porque exige o plano Plus em todos os casos.",
+            "correct": false,
+            "feedback": "Não. O Codex no app de desktop é uma boa rota, mas a justificativa está errada: há acesso limitado no Free (o Plus é para uso pleno)."
+          }
+        ],
+        "correct": "02e72041-0b11-43f1-a7f7-75a62c276681",
+        "corrects": [
+          "02e72041-0b11-43f1-a7f7-75a62c276681"
+        ],
+        "id": "15521660-5ae3-4f53-9f1c-88fedb278fed",
+        "title": "Você usa Windows 10 versão 1809, prefere evitar o terminal e quer escolher uma rota de trabalho alinhada ao seu sistema e ao seu plano para iniciar a análise de dados com IA. Qual opção atende melhor a esse objetivo?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "ecbb9028-f0e3-4338-9f90-f4eb0ebeb373"
+      },
+      {
+        "answers": [
+          {
+            "id": "7fb2a87c-ac78-43ff-8b5c-087297e97323",
+            "title": "uv --version"
+          }
+        ],
+        "id": "1eb864cd-f2b9-44d4-a379-aa6b67a95c39",
+        "title": "Para confirmar que o uv foi instalado corretamente, execute o comando __________.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e6b1c60d-eb29-4609-be54-414a7996fb2a",
+        "feedbackCorrect": "Correto. O comando uv --version exibe o número da versão instalada, confirmando que o uv está disponível no ambiente.",
+        "feedbackIncorrect": "Incorreto. A validação da instalação é feita executando uv --version, pois esse comando confirma que o uv foi instalado e reconhecido pelo sistema."
+      },
+      {
+        "answers": [
+          {
+            "id": "3b0a1d10-20f9-4059-8cd8-b74d1730a57c",
+            "title": "README"
+          },
+          {
+            "id": "a6a0eeb9-13e0-4ecd-8b63-9047c0a4f198",
+            "title": "readme"
+          },
+          {
+            "id": "ed8d6511-652d-402b-a2b2-15281dcd625e",
+            "title": "README.md"
+          },
+          {
+            "id": "fa529656-3ed9-40c6-bf7c-1c0ccb9f34b9",
+            "title": "readme.md"
+          }
+        ],
+        "id": "a13f1323-99a6-4462-8393-933210b249ca",
+        "title": "Para documentar detalhadamente o projeto, o __________ deve incluir instruções claras de como rodar, critérios de verificação e limitações.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "80507497-55d8-4d2a-a906-d3ccb9355eae",
+        "feedbackCorrect": "Correto. O README é o arquivo central de documentação do projeto e deve orientar como executá-lo, como verificar os resultados e quais limitações precisam ser consideradas.",
+        "feedbackIncorrect": "Incorreto. O termo que completa a frase é README, pois esse é o arquivo que reúne as instruções de execução, os critérios de verificação e as limitações do projeto."
+      }
+    ],
+    "settings": {
+      "passingScore": 80,
+      "retryCount": -1,
+      "revealAnswers": "all",
+      "shuffleAnswerChoices": false,
+      "randomizeQuestionOrder": false
+    },
+    "title": "Quiz",
+    "type": "quiz",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "I27fLqYVIPy0NLQkgsBdub8JkShnUs-m",
+    "createdAt": "2026-11-18T01:05:32.857Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Quiz",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": null,
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 7,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:05:32.857Z"
+  }
+}

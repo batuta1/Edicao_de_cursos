@@ -1,0 +1,25 @@
+<!--titulo: Conversa ou código-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Decida</span>
+  <h1 id="t">Conversa ou código?</h1>
+  <p class="sub">Cinco análises do dia a dia. Para cada uma, decida se basta a conversa com o assistente ou se vale um projeto em Python.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'Indicador de inadimplência refeito todo mês, por duas pessoas da equipe.', r: 'codigo', p: 'Repetição periódica e mais de um executor: o script garante o mesmo cálculo todo mês.' },
+      { t: 'Uma pergunta única sobre uma planilha de 200 linhas.', r: 'conversa', p: 'Pergunta única e arquivo pequeno: a conversa resolve com menos esforço.' },
+      { t: 'Consolidar 12 arquivos mensais de vendas num relatório trimestral.', r: 'codigo', p: 'Vários arquivos: o código lê todos do mesmo jeito, sem limite de envio.' },
+      { t: 'Um gráfico rápido para a reunião de amanhã, que não vai se repetir.', r: 'conversa', p: 'Uso pontual, sem repetição nem auditoria: a conversa basta.' },
+      { t: 'Um número que o auditor vai pedir para refazer linha a linha.', r: 'codigo', p: 'Auditoria: no código, cada passo fica escrito e pode ser conferido.' }
+    ],
+    opcoes: { conversa: 'Basta a conversa', codigo: 'Vale um projeto em código' },
+    dicaErro: 'Pergunte: precisa ser refeita? Envolve vários arquivos? Precisa ser auditada?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'decisões certas',
+    aoConcluir: function () { concluir('final', 'Repetição, volume ou auditoria: basta um desses motivos para a análise virar código.'); }
+  });
+</script>

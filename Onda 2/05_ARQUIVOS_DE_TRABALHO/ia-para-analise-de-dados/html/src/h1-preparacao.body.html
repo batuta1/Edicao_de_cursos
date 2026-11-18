@@ -1,0 +1,22 @@
+<!--titulo: Preparação do Hands On-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Preparação</span>
+  <h1 id="t">Tudo pronto para a Oficina 1?</h1>
+  <p class="sub">Abra a pasta <strong>hands-on-dados</strong> ao lado desta página. Marque cada item só depois de conferir. O curso segue com os seis marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  checklist([
+    'Decidi sobre “Melhorar o modelo para todo mundo” em Configurações > Controles de dados.',
+    'ipca.csv salvo na pasta (se abriu na tela, usei Arquivo > Salvar como).',
+    'dfp_cia_aberta_DRE_con_2024.csv extraído do ZIP da CVM (só este CSV).',
+    'JN_23-Jun-2026.csv e Variáveis - JN.csv extraídos do ZIP do CNJ.',
+    'populacao-uf.csv salvo na pasta.',
+    'Plano de envios anotado: dia 1, Oficinas 1 a 3; dia 2, Oficina 4 e Projeto Final.'
+  ], 'lista', 'placar', 'barra', 'itens prontos', function () {
+    concluir('final', 'Preparação concluída. Cada oficina começa com uma conversa nova e um envio.');
+  });
+</script>

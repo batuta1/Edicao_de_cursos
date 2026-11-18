@@ -1,0 +1,21 @@
+<!--titulo: Critérios da atividade integradora-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade integradora</span>
+  <h1 id="t">Confira os cinco critérios</h1>
+  <p class="sub">Deixe a conversa do IPCA aberta ao lado. Marque cada critério só depois de conferir na própria conversa. O curso segue com os cinco marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  checklist([
+    'Raio X correto: 72 linhas, de janeiro de 2020 a dezembro de 2025.',
+    '2024 = 4,83% e 2025 = 4,26%, calculados por composição.',
+    'Gráfico de barras anual com eixo em zero, título que enuncia a conclusão e fonte no rodapé.',
+    'Premissas listadas: separador, decimal e fórmula de composição.',
+    'Resumo executivo sem afirmação de causa e com a limitação de arredondamento registrada.'
+  ], 'lista', 'placar', 'barra', 'critérios conferidos', function () {
+    concluir('final', 'Análise completa e conferida com o IBGE. A responsabilidade pelo número é sua — e agora você sabe sustentá-lo.');
+  });
+</script>

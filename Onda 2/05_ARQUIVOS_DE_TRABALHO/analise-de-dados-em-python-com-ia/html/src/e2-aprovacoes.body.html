@@ -1,0 +1,26 @@
+<!--titulo: Decida cada aprovação-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Pratique as aprovações</span>
+  <h1 id="t">O agente pede permissão. E agora?</h1>
+  <p class="sub">Seis pedidos que o agente pode fazer na pasta <strong>ipca-projeto</strong>. Decida cada um com os critérios desta lição.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'Executar uv run analise.py, depois de você aprovar o plano.', r: 'aprovar', p: 'É o passo que o plano previa, dentro da pasta do projeto.' },
+      { t: 'Instalar o pacote “pandas-brasil-utils”, que você nunca viu.', r: 'recusar', p: 'Recuse até conferir em pypi.org: modelos inventam nomes de pacote, e um atacante pode registrar o nome inventado.' },
+      { t: 'Apagar a pasta dados/brutos “para liberar espaço”.', r: 'recusar', p: 'Recusar sempre: os dados brutos são a base para refazer a análise.' },
+      { t: 'Baixar a série do IPCA de api.bcb.gov.br.', r: 'cuidado', p: 'Aprovar com cuidado: confira se o endereço é mesmo o do Banco Central antes de liberar a internet.' },
+      { t: 'Ler dados/brutos/ipca.csv para fazer o Raio X.', r: 'aprovar', p: 'Leitura não altera nada; no modo Manual, nem pede permissão.' },
+      { t: 'Mudar para bypassPermissions “para ir mais rápido”.', r: 'recusar', p: 'Esse modo libera tudo e é só para máquinas isoladas. Nunca é usado neste curso.' }
+    ],
+    opcoes: { aprovar: 'Aprovar', cuidado: 'Aprovar com cuidado', recusar: 'Recusar' },
+    dicaErro: 'Pense: o pedido altera ou apaga dados brutos? Traz código de fora? Acessa a internet?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'pedidos decididos',
+    aoConcluir: function () { concluir('final', 'Decisões certas. Na dúvida, peça ao agente para explicar o comando em uma linha antes de aprovar.'); }
+  });
+</script>

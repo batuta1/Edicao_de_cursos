@@ -1,0 +1,519 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Preparação e Verificação Inicial",
+  "lesson": {
+    "description": "",
+    "id": "2e6aaf56-4664-45cd-b4c1-8235ad4fbdc1",
+    "items": [
+      {
+        "id": "s4j0qgb4crh7fj7d1k7jyoxs",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "mppa61p54orbm7bf0v98bwn5",
+            "heading": "Antes do primeiro pedido: rota, uv e pasta do projeto",
+            "paragraph": "<p>Neste curso, um agente de código — Claude Code ou Codex — escreve e executa o Python por você. Você não digita código: pede, aprova e confere. O caso-guia é o <strong>ipca-projeto</strong>, um projeto que reproduz o IPCA acumulado de 2024 (4,83%) e 2025 (4,26%) publicado pelo IBGE e que roda de novo, do zero, com um comando. Antes disso, três coisas precisam estar prontas: a rota de trabalho, o gerenciador uv e a pasta com os dados brutos.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "c2f00e66-3fd0-43be-ac47-5e19431e8f88"
+      },
+      {
+        "id": "kzmuzkzgfndlx7u6luxuxqsg",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f622cqw1olyelqh39omhpps7",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e561d932-c402-4550-8ca8-2af77f8f25a2"
+      },
+      {
+        "id": "n624zmv1kprk4st5svhevxw0",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "dtptodkykqk4rym5we0qa4a5",
+            "number": "1",
+            "paragraph": "<p>Escolher uma rota de trabalho compatível com o próprio plano e sistema operacional.</p>"
+          },
+          {
+            "id": "hg18r8iaamc8g12a3u2iqse1",
+            "number": "2",
+            "paragraph": "<p>Instalar o gerenciador uv e verificar a instalação.</p>"
+          },
+          {
+            "id": "u82t4umxou6t1tfpmt4e2x6x",
+            "number": "3",
+            "paragraph": "<p>Montar a pasta do projeto com os dados brutos.</p>"
+          },
+          {
+            "id": "xytk79ffvbyjmsevvbup05c2",
+            "number": "4",
+            "paragraph": "<p>Conferir, pelo ponto de controle, que o ambiente está pronto para o Módulo 1.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "7027b624-424c-49a5-84cf-b1ecf318ccd9"
+      },
+      {
+        "id": "ut9wxjcex229ik0x7566jrog",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ty57j69ruy72fqzbnmtqsvgs",
+            "paragraph": "<p>O curso pode ser feito por três rotas. Recomenda-se a <strong>A</strong> ou a <strong>B</strong>, em que o agente funciona dentro de um aplicativo de desktop, sem terminal. Não há rota inteiramente gratuita garantida: o Claude Code não está incluído no plano gratuito do Claude, e o Codex no plano gratuito do ChatGPT é oferecido de forma limitada e sujeita a liberação gradual.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "3b1bcf30-9470-4873-ae89-c5a64407c2ed"
+      },
+      {
+        "id": "zt1dpe2wtacd83ib596xdfbc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "oaag95syekk08q8svnefegtn",
+            "heading": "As três rotas (planos em 17/11/2026)",
+            "paragraph": "<p>Escolha uma rota e siga com ela até o fim do curso. Clique em cada aba:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "6550fa2a-ada3-4d92-8f8e-c7bf298fc2bd"
+      },
+      {
+        "id": "ddcc3237-1004-4fc1-9b49-b0ae6df59cd0",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f2d1bc46-d6c1-4fa4-a7ff-33c8fbd046a6",
+            "title": "A — Claude Code (app)",
+            "description": "<p><strong>Onde:</strong> app Claude Desktop, aba <strong>Code</strong>.</p><p><strong>Plano:</strong> Claude Pro (R$ 110/mês; R$ 92/mês no anual) ou superior. O plano gratuito do Claude não inclui Claude Code.</p><p></p><ul><li><strong>Requisitos:</strong> macOS 13+ ou Windows 10 1809+, com 4 GB de RAM.</li><li>No Windows, recomenda-se instalar o Git for Windows.</li></ul>"
+          },
+          {
+            "id": "effaa6db-4b5a-4fa3-a9c8-1d449bc28c93",
+            "title": "B — Codex (app)",
+            "description": "<p><strong>Onde:</strong> app de desktop do ChatGPT, modo <strong>Codex</strong>.</p><p><strong>Plano:</strong> acesso limitado no Free, sujeito a liberação gradual; Plus (R$ 99,90/mês) para uso pleno.</p><p></p><ul><li><strong>Requisitos:</strong> macOS, Windows ou Linux.</li><li>Boa escolha para quem já assina o ChatGPT Plus.</li></ul>"
+          },
+          {
+            "id": "dae1a07e-3846-4264-9c3e-a65594ad87b0",
+            "title": "C — Terminal",
+            "description": "<p><strong>Onde:</strong> Claude Code CLI ou Codex CLI, no terminal.</p><p><strong>Plano:</strong> os mesmos das rotas A e B.</p><p></p><ul><li><strong>Requisitos:</strong> o instalador oficial de cada ferramenta.</li><li>Indicada só para quem já usa terminal: o curso inteiro funciona pelas rotas A e B.</li></ul>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "02397375-e5fe-4688-b4cf-656940eb3b0b"
+      },
+      {
+        "id": "etqgd7bl864uqsw1dn7atdcw",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bkqr6sm5u6sdciqw06wta94j",
+            "heading": "Três nomes desta preparação",
+            "paragraph": "<p>Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "3d6d7951-07ce-4102-abdd-751aaa5c7bca"
+      },
+      {
+        "id": "ez9197k8iu4ai2mtnvzm2y3d",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "e51fsbr745kib11j0w683a5g",
+            "back": {
+              "type": "description",
+              "description": "<p>Gerenciador da empresa Astral que instala o Python e as bibliotecas e registra as versões usadas — uma lista de compras com marca e tamanho anotados. É o único ponto do curso que exige o terminal.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>uv</strong>"
+            }
+          },
+          {
+            "id": "ghx43x26pjaub1btv09ka1yt",
+            "back": {
+              "type": "description",
+              "description": "<p>Os arquivos como vieram da fonte, sem nenhuma alteração. Ficam em <strong>dados/brutos</strong> e nunca são editados: é deles que qualquer pessoa refaz a análise.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>dados brutos</strong>"
+            }
+          },
+          {
+            "id": "f053puk7gt2muhy0l5ozgmub",
+            "back": {
+              "type": "description",
+              "description": "<p>A pasta do caso-guia, que atravessa os Módulos 3 a 6. Começa hoje só com <strong>dados/brutos/ipca.csv</strong>; no fim do curso terá script, versões registradas, testes e README.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>ipca-projeto</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "4b1d7bf6-d0bc-4f89-b96b-6955b0438134"
+      },
+      {
+        "id": "d9694f2d-56be-48e1-9b76-aaa47f7bf84f",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "7db758dd-62bd-41c8-b857-84e30281ca95",
+            "type": "intro",
+            "title": "Verificação inicial (7 min)",
+            "isHidden": false,
+            "description": "<p>Três passos: abrir o agente, instalar o uv e montar a pasta com o arquivo do Banco Central.</p>"
+          },
+          {
+            "id": "46cd32a6-bb10-4bc4-b04b-2b600f20e304",
+            "type": "summary",
+            "title": "Pronto para o Módulo 1",
+            "isHidden": false,
+            "description": "<p>Agente aberto na rota escolhida, <strong>uv --version</strong> mostrando um número de versão e <strong>ipca-projeto/dados/brutos/ipca.csv</strong> no lugar.</p>"
+          },
+          {
+            "id": "1b3e2612-cfb8-4a3c-ae08-0114474014ae",
+            "type": "step",
+            "title": "Abrir a rota escolhida",
+            "isHidden": false,
+            "description": "<p>Rota A: <strong>Claude (app de desktop) &gt; Code &gt; selecionar pasta</strong>. Rota B: <strong>ChatGPT (app de desktop) &gt; menu de modos &gt; Codex</strong>.</p>"
+          },
+          {
+            "id": "504bd6f1-c719-4f90-ac51-771f49978113",
+            "type": "step",
+            "title": "Instalar o uv e verificar",
+            "isHidden": false,
+            "description": "<p><strong>Windows</strong> — abra o PowerShell e execute:<br><code>powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"</code><br><strong>macOS</strong> — abra o Terminal e execute:<br><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code><br>Depois, execute <code>uv --version</code>: deve aparecer um número de versão.</p>"
+          },
+          {
+            "id": "8fc380aa-dfb0-4fa6-bd54-20a01d58b7b5",
+            "type": "step",
+            "title": "Montar a pasta e baixar os dados",
+            "isHidden": false,
+            "description": "<p>Crie a pasta <strong>ipca-projeto/dados/brutos</strong> e salve nela <strong>ipca.csv</strong>, baixado de:<br>api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2025<br>Se o navegador mostrar o conteúdo na tela, use <strong>Arquivo &gt; Salvar como</strong> com a extensão .csv.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "75c30ac3-9e15-4243-92b6-2ac7df7c98ed"
+      },
+      {
+        "id": "h31jn2xs27t8mp3e3k9yxwzu",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "t33yk3o6g7172riric7scyny",
+            "heading": "Se travar na preparação",
+            "paragraph": "<p>Três tropeços comuns e a saída de cada um:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "ed9849a5-7bbc-4fcb-a693-912dfa365efb"
+      },
+      {
+        "id": "c782d616-9d34-4fb9-8c90-df36af9edcfa",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "bb03d40b-a094-4540-8023-3ae618e920a3",
+            "title": "Mensagem de que \"irm\" não é reconhecido",
+            "description": "<p>O comando foi colado no Prompt de Comando. Abra o <strong>PowerShell</strong> e cole de novo.</p><p></p><p>No Windows, procure “PowerShell” no menu Iniciar.</p>"
+          },
+          {
+            "id": "6c2c5ba1-6fa9-4eb3-9141-f12ca6fb33a7",
+            "title": "uv não encontrado após a instalação",
+            "description": "<p>Feche e reabra o terminal: a instalação só vale para janelas abertas depois dela.</p><p></p><p>Depois, execute <code>uv --version</code> outra vez.</p>"
+          },
+          {
+            "id": "68017453-77bb-4283-974f-64a73cfb8a2a",
+            "title": "Aplicativo pede assinatura ao abrir Code ou Codex",
+            "description": "<p>A conta não tem o plano exigido pela rota. Confira as abas de rotas acima.</p><p></p><p>Lembre: o plano gratuito do Claude não inclui Claude Code, e o Codex no Free é limitado.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "92c9fee1-aa8e-4cbf-9a01-dcde488dbd3b"
+      },
+      {
+        "id": "aa45deee-c117-4582-a806-a39941499509",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "5fea9980-a636-48b9-afda-bdffa429d245",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual situação indica que o ambiente está pronto para o Módulo 1?",
+            "answers": [
+              {
+                "id": "6523bbe4-87db-4c30-8b8a-8aa78dbdc57a",
+                "title": "uv --version exibe um número de versão e ipca-projeto/dados/brutos/ipca.csv está presente na pasta.",
+                "correct": true,
+                "feedback": "Correto. É exatamente o ponto de controle: agente aberto, uv respondendo com a versão e o arquivo bruto no lugar certo."
+              },
+              {
+                "id": "ad113614-961c-45ec-817e-40605dcb051a",
+                "title": "Apenas o aplicativo do agente está instalado.",
+                "correct": false,
+                "feedback": "Não. Sem o uv e sem o arquivo em dados/brutos, o agente não tem como montar o projeto."
+              },
+              {
+                "id": "5513d090-6bc2-4113-8403-fe2c0b8b6a9d",
+                "title": "O arquivo ipca.csv foi baixado, mas não está na pasta correta.",
+                "correct": false,
+                "feedback": "Não. O caminho importa: o brief do Módulo 3 aponta para dados/brutos/ipca.csv."
+              },
+              {
+                "id": "1b8dc8ff-bf07-49eb-a523-457508032362",
+                "title": "uv foi instalado, mas não foi testado.",
+                "correct": false,
+                "feedback": "Não. Só uv --version confirma que a instalação funcionou — e que o terminal já reconhece o comando."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "30f1ce38-79d8-466d-958b-be6f89e5bdf0"
+      },
+      {
+        "id": "9e2b23e5-cdde-4c83-acc5-aceb7415edef",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "5f8b83ca-136a-46ab-87d7-56d969e5f430",
+            "paragraph": "<p><strong>Mão na massa.</strong> Com o agente aberto na pasta <strong>ipca-projeto</strong>, envie:</p><p><em>“Estou começando a usar você para análise de dados e não sei programar. Antes de qualquer tarefa, liste em linguagem simples o que você pode fazer nesta pasta (ler, criar, alterar, apagar, executar), o que precisa da minha aprovação e como eu desfaço uma alteração.”</em></p><p>Guarde a resposta: no Módulo 2 você vai conferir se ela bate com os modos de permissão oficiais.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "ac569a11-053d-4ea3-9161-fe93bcc8c1ae"
+      },
+      {
+        "id": "c281842b-10c9-432f-86f3-21ec5bea5243",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "f22e9972-398a-4529-9172-4e25ff28c36c",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d4c83091-dd19-4836-9167-d5f83afb162b"
+      },
+      {
+        "id": "nqu33u3zw0stqxncjnsbpja0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "lunc1j54f7rqiw0lbawtepc2",
+            "paragraph": "<p>No Módulo 1 você vê quando uma análise deve sair da conversa e virar código, o que exatamente um agente faz no seu computador e por que, aqui, rodar não é o mesmo que acertar.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "bfa87950-e345-42c9-ac5a-f7211d13b5c8"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Preparação e Verificação Inicial",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "I27fLqYVIPy0NLQkgsBdub8JkShnUs-m",
+    "createdAt": "2026-11-18T01:01:14.067Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:01:45.028Z"
+  }
+}

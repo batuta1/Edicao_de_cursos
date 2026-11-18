@@ -1,0 +1,36 @@
+{
+ "licao": 4,
+ "posicao": 14,
+ "blocos": [
+  {
+   "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+   "itens": [
+    {
+     "title": "Você vai comparar o número de processos de São Paulo (44,4 milhões de habitantes) com o de Roraima. Que medida torna a comparação justa?",
+     "answers": [
+      {
+       "title": "O total de processos de cada estado",
+       "correct": false,
+       "feedback": "Não. O estado mais populoso sempre terá mais processos; o total mede tamanho, não incidência."
+      },
+      {
+       "title": "A média de processos por tribunal",
+       "correct": false,
+       "feedback": "Não. A média ainda depende do tamanho de cada estado e pode ser puxada por um tribunal grande."
+      },
+      {
+       "title": "Os processos por 100 mil habitantes",
+       "correct": true,
+       "feedback": "Correto. Dividir pela população e multiplicar por 100 mil põe estados de tamanhos diferentes na mesma régua."
+      },
+      {
+       "title": "A variação percentual do total entre dois anos",
+       "correct": false,
+       "feedback": "Não. A variação mostra crescimento, mas não corrige a diferença de tamanho entre os estados."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

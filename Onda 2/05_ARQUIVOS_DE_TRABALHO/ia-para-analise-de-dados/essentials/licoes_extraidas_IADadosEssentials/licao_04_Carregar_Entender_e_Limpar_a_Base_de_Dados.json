@@ -1,0 +1,593 @@
+{
+  "numero_da_licao": 4,
+  "position_original": 3,
+  "title": "Carregar, Entender e Limpar a Base de Dados",
+  "lesson": {
+    "description": "",
+    "id": "a0209bea-7305-4b84-bff9-2e3331d5e27a",
+    "items": [
+      {
+        "id": "muuu1js38xxgvdoa3k5jq9sh",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jwxho1j971ih8246nyteir0x",
+            "heading": "Primeiro o Raio X, depois o cálculo",
+            "paragraph": "<p>Com os controles de dados configurados no Módulo 2, começa o trabalho com arquivos. A maior parte dos erros de análise nasce aqui, antes de qualquer conta: um arquivo lido com o separador errado vira uma coluna só; lido com a codificação errada, “RECUPERAÇÃO” vira “RECUPERA��O”. Nesta lição você envia o IPCA e o cadastro da CVM, confere o que o ChatGPT realmente leu e corrige a leitura quando ela sai torta.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "9c130c56-ffb3-45cb-8d8e-95371c1d3d6f"
+      },
+      {
+        "id": "hzc0fkcsh7oojqj31p955nva",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "lvy6xdy94f3yyymogx2s7rwn",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "bca508b1-74fd-4869-84f7-4eba47b34487"
+      },
+      {
+        "id": "owaiob1au0g40z031i444o33",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "fiplz68xa0kf9xgx38r99t52",
+            "number": "1",
+            "paragraph": "<p>Enviar uma base e expandir a tabela interativa.</p>"
+          },
+          {
+            "id": "ry18sq0brcsst6ueclhey2jd",
+            "number": "2",
+            "paragraph": "<p>Solicitar o “Raio X” da base antes de qualquer cálculo.</p>"
+          },
+          {
+            "id": "vbdi0r0xdisxaso9itevh4bq",
+            "number": "3",
+            "paragraph": "<p>Reconhecer separador, decimal, codificação e cabeçalho típicos de dados públicos brasileiros.</p>"
+          },
+          {
+            "id": "yyxev15tyhd0ud36i8zrgdsq",
+            "number": "4",
+            "paragraph": "<p>Corrigir a leitura de um arquivo com acentos corrompidos.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2bb66cf3-37ce-421f-af02-3a8e8da81f22"
+      },
+      {
+        "id": "hmyhikd1oumis78r8ivcj7kq",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zkitv49woof8ichn2cvk1qxr",
+            "paragraph": "<p>O envio é feito em <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong>. Ao carregar uma planilha, segundo a central de ajuda, “o ChatGPT cria automaticamente uma visualização interativa da tabela”: o ícone de duas setas, no canto superior direito, amplia a tabela, e você pode selecionar linhas ou colunas com Ctrl (Windows) ou Command (Mac) para perguntar só sobre o trecho destacado.</p><p>Antes de qualquer cálculo, peça o <strong>Raio X</strong> da base: número de linhas e colunas, tipo de cada coluna (número, texto, data), período coberto e valores vazios. É como conferir o conteúdo de uma caixa antes de assinar o recebimento. A central de ajuda recomenda nomes de coluna claros e um registro por linha — e avisa que um arquivo pode ser enviado com sucesso e, ainda assim, não ser analisado por inteiro.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "7f1574f4-5361-49c2-8807-d276bc5f5114"
+      },
+      {
+        "id": "f17e63b5-70f3-43f5-b655-f83d9f9a9402",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "d4466ba4-731d-43af-a6b2-c06257450fa9",
+            "type": "intro",
+            "title": "Do envio ao Raio X",
+            "isHidden": false,
+            "description": "<p>O caminho completo do primeiro envio, do botão + até a conferência do que foi lido.</p>"
+          },
+          {
+            "id": "acb25a86-5161-490b-939b-b4ce91d8b9c1",
+            "type": "summary",
+            "title": "O que você sabe ao final",
+            "isHidden": false,
+            "description": "<p>Quantas linhas e colunas o ChatGPT leu, que tipo ele deu a cada coluna e se faltou alguma coisa. Só então vale a pena calcular.</p>"
+          },
+          {
+            "id": "4fc635c3-3e74-4b55-ab4f-0497f695205b",
+            "type": "step",
+            "title": "Abrir o envio",
+            "isHidden": false,
+            "description": "<p>Em <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong>, escolha o arquivo na pasta <strong>analise-ia</strong>.</p>"
+          },
+          {
+            "id": "9f925c65-c969-4dc7-aa00-08ed2fc9399d",
+            "type": "step",
+            "title": "Escrever o pedido junto com o arquivo",
+            "isHidden": false,
+            "description": "<p>Envie o arquivo já com o pedido do Raio X — assim um único envio resolve a leitura e o diagnóstico. Aguarde a visualização interativa da tabela aparecer.</p>"
+          },
+          {
+            "id": "fdb5620c-d43a-45a5-b9b5-bf872ace787e",
+            "type": "step",
+            "title": "Ampliar e Conferir a Tabela",
+            "isHidden": false,
+            "description": "<p>Clique no ícone de duas setas, no canto superior direito, para ampliar a tabela. Com Ctrl (Windows) ou Command (Mac), selecione linhas ou colunas para perguntar só sobre elas.</p>"
+          },
+          {
+            "id": "b8becf61-fa59-412e-8260-564baf2510aa",
+            "type": "step",
+            "title": "Realizar o Raio X",
+            "isHidden": false,
+            "description": "<p>Peça: “Antes de calcular qualquer coisa, informe número de linhas e colunas, tipo de cada coluna, período coberto e valores vazios.” Compare a resposta com o que você sabe da base — o IPCA de 2020 a 2025 tem de ter 72 meses.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "c3eae1b1-11ea-4e84-8c7e-df75c7769f90"
+      },
+      {
+        "id": "65064e61-e2cf-498d-a354-6f668a4a7af9",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f01acdfc-8016-4363-b47f-c00d84737b9c",
+            "paragraph": "<p>Enviado não é o mesmo que lido. Um arquivo pode subir sem erro e não ser analisado por inteiro — o Raio X é o que denuncia isso.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "5f3e71be-a3e1-493e-93a4-c1313eab6ead"
+      },
+      {
+        "id": "vu9el3x6c2unz5y6llu6niwi",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "i4ahs3npe0mjm7oqh11jq2d4",
+            "heading": "Cinco armadilhas dos dados públicos brasileiros",
+            "paragraph": "<p>As bases do Banco Central, do IBGE, da CVM e do CNJ seguem convenções que confundem a leitura automática. Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2cfe5b41-2b52-43e2-9318-f9c819501990"
+      },
+      {
+        "id": "xlq3vgi3x53in1zp4xfxtohz",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "y15zm0ei3md6ctbgf28l8aun",
+            "back": {
+              "type": "description",
+              "description": "<p>Banco Central, IBGE, CVM e CNJ separam colunas com “;”. Se a leitura assumir vírgula, tudo vira uma única coluna.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Separador ponto e vírgula</p>"
+            }
+          },
+          {
+            "id": "mbzuyo7bfrkia708m7wzfqpg",
+            "back": {
+              "type": "description",
+              "description": "<p>O Banco Central escreve “0,21”. Sem avisar o ChatGPT, o valor pode ser lido como texto — e texto não soma.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Vírgula decimal</p>"
+            }
+          },
+          {
+            "id": "owv3fche1jl443x44du5bq8o",
+            "back": {
+              "type": "description",
+              "description": "<p>A codificação é o “alfabeto” em que o arquivo foi gravado. CVM e CNJ usam latin-1; lido com o alfabeto errado, os acentos se corrompem.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Codificação latin-1</p>"
+            }
+          },
+          {
+            "id": "ig2yfndi1yx1h1cdkaw3wl8q",
+            "back": {
+              "type": "description",
+              "description": "<p>No IBGE/SIDRA, a primeira linha traz códigos e a segunda, os nomes das colunas. Sem aviso, a primeira linha de dados é tratada como cabeçalho.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Cabeçalho em duas linhas</p>"
+            }
+          },
+          {
+            "id": "c3ob9ok1fw6hjjjaa3a4g7q7",
+            "back": {
+              "type": "description",
+              "description": "<p>Na CVM, parte das empresas informa valores em milhares (“MIL”). Lido sem conversão, o valor fica mil vezes menor do que é.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Escala (\"MIL\")</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "1081b0fa-4087-4c96-a8de-6ba53b4d6af9"
+      },
+      {
+        "id": "salqev5emrvze6z3dvhz2oys",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "lqngfspzt7um7hurxenoed49",
+            "heading": "Quando a leitura sai errada",
+            "paragraph": "<p>Cada problema tem um pedido de correção. Abra para ver o que dizer ao ChatGPT:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "bdf943af-8cf7-480d-978e-6d940ed46e7a"
+      },
+      {
+        "id": "8315c12f-25cf-4d46-9527-f41bf00c4f59",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "1417df1e-7199-4929-9fde-6b526182f73e",
+            "title": "Acentos corrompidos",
+            "description": "<p>Peça: “Releia o arquivo com codificação latin-1”. Confira de novo as primeiras linhas.</p>"
+          },
+          {
+            "id": "af81fd02-979a-46dc-8a05-5eeb7afd4952",
+            "title": "Número tratado como texto",
+            "description": "<p>Peça: “Converta a coluna valor considerando vírgula decimal”. Depois, confirme que o tipo da coluna passou a ser número.</p>"
+          },
+          {
+            "id": "811dbee2-51f0-494a-a2d8-8474abdce42f",
+            "title": "Mensagem de limite de envio atingido",
+            "description": "<p>Aguarde o horário indicado na mensagem. Atenção: tentativas que falham também podem contar para o limite diário.</p>"
+          },
+          {
+            "id": "f84fa80a-76bb-42bd-a532-3e537d59cb9b",
+            "title": "Resultado aparentemente parcial",
+            "description": "<p>Peça o número de linhas lidas e compare com o Raio X. Se não bater, parte do arquivo ficou de fora.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2a99e667-3b8e-46f3-94fe-9f67883e9266"
+      },
+      {
+        "id": "3ce16b58-863b-417f-bad5-6a4d9314a166",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "30d92957-6a2e-4f5f-a251-aad21457827a",
+            "type": "intro",
+            "title": "Raio X de duas bases (16 min, dois envios)",
+            "isHidden": false,
+            "description": "<p>Você vai diagnosticar duas bases com perfis diferentes: <strong>ipca.csv</strong>, curta e numérica, e <strong>cad_cia_aberta.csv</strong>, longa, com texto acentuado em latin-1.</p>"
+          },
+          {
+            "id": "24b77618-8f58-495b-a12a-003ac6650114",
+            "type": "summary",
+            "title": "O que conferir no fim",
+            "isHidden": false,
+            "description": "<p>As duas bases lidas por inteiro, com tipos corretos e acentos legíveis. Esse diagnóstico é o ponto de partida de todos os cálculos dos próximos módulos.</p>"
+          },
+          {
+            "id": "61e79d29-38f8-47a7-8f01-4fd2e0362933",
+            "type": "step",
+            "title": "Enviar o IPCA com o pedido de Raio X",
+            "isHidden": false,
+            "description": "<p>Em <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong>, envie <strong>ipca.csv</strong> com o pedido: “Antes de calcular qualquer coisa, informe número de linhas e colunas, tipo de cada coluna, período coberto e valores vazios.”</p>"
+          },
+          {
+            "id": "a2c9b604-06a7-4359-9874-ffc5de42e43d",
+            "type": "step",
+            "title": "Expandir a tabela",
+            "isHidden": false,
+            "description": "<p>Amplie a tabela pelo ícone de duas setas e confira as primeiras linhas: datas no formato dd/mm/aaaa e valores como 0,21.</p>"
+          },
+          {
+            "id": "933d1d34-6bd2-4c84-b959-491c0ed144b4",
+            "type": "step",
+            "title": "Enviar o cadastro da CVM",
+            "isHidden": false,
+            "description": "<p>Na mesma conversa, envie <strong>cad_cia_aberta.csv</strong> e peça as cinco primeiras linhas. Se os acentos aparecerem corrompidos, peça a releitura em <strong>latin-1</strong>.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "8b9a5cf2-8745-4371-b3d6-bc4ff43cbe52"
+      },
+      {
+        "id": "903ed3e3-d97d-45e2-88cb-3190d6a32645",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "faf6f120-fa63-4359-b42e-995a51d30dcd",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> <strong>ipca.csv</strong> com 72 linhas, colunas <strong>data</strong> e <strong>valor</strong>, de janeiro de 2020 a dezembro de 2025, e <strong>valor</strong> reconhecido como número; cadastro da CVM exibido com acentos corretos.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "408f1690-1113-4337-99db-a73cbd24adef"
+      },
+      {
+        "id": "5dcc4132-2052-4a69-9557-40c09c4b4945",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "de592864-0f58-4388-9b37-c01b2fe44cbc",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Ao pedir as primeiras linhas do cadastro da CVM, os nomes das empresas aparecem com caracteres estranhos no lugar dos acentos. O que fazer?",
+            "answers": [
+              {
+                "id": "ae7ae73b-f4f6-46ce-a564-6ffe22a59e09",
+                "title": "Solicitar a releitura do arquivo com codificação latin-1",
+                "correct": true,
+                "feedback": "Correto. A CVM grava em latin-1; lido com outro “alfabeto”, o arquivo corrompe os acentos. Pedir a releitura nessa codificação resolve."
+              },
+              {
+                "id": "75d3b345-c26d-4c12-ad6e-74da01caafa0",
+                "title": "Tentar abrir o arquivo em outro navegador",
+                "correct": false,
+                "feedback": "Não. O problema está em como o arquivo foi lido pelo ChatGPT, não no navegador."
+              },
+              {
+                "id": "c064df13-c523-40be-99bc-93f3e745a6d8",
+                "title": "Ignorar o problema e seguir com a análise",
+                "correct": false,
+                "feedback": "Não. Nomes corrompidos atrapalham filtros e buscas — “SÃO PAULO” corrompido deixa de ser encontrado."
+              },
+              {
+                "id": "50a2aa58-6c8c-4c5a-ab98-afe86757a5b8",
+                "title": "Converter o arquivo para PDF antes de enviar",
+                "correct": false,
+                "feedback": "Não. PDF piora a extração: a própria OpenAI recomenda planilha ou texto quando a exatidão importa."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "a24436fd-2c2a-44ac-9b50-1bad539ca187"
+      },
+      {
+        "id": "74cdcc68-99a0-4aaa-9c37-bc5e9d939962",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "30133368-ed62-4f1a-8da5-bb804e2560ed",
+            "paragraph": "<p><strong>Mão na massa.</strong> Ao enviar qualquer base pública, declare o formato já no pedido. Troque os colchetes pelo que vale para o seu arquivo:</p><p><em>“Este arquivo usa [ponto e vírgula] como separador, [vírgula] como decimal, datas no formato [dd/mm/aaaa] e codificação [latin-1]. Leia respeitando isso e, antes de qualquer cálculo, informe: número de linhas e colunas, tipo de cada coluna, período coberto e valores vazios por coluna.”</em></p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "f88b5306-50fd-431e-85b0-cfa61a210962"
+      },
+      {
+        "id": "232b0cf9-143c-4453-b66f-24e2601840bf",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "8fd72c21-40e6-462a-98b8-533fef456484",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "8e11c181-e9fe-4343-b51f-ed10113a3f73"
+      },
+      {
+        "id": "quvm74xyntw7vv8zeg84cs9y",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bkbknuf2z5tg502pirz18cj6",
+            "paragraph": "<p>Com a base lida corretamente, a pergunta muda de “o arquivo está certo?” para “o que os números dizem?”. No Módulo 4 você escolhe entre média e mediana, compara grupos por taxas e calcula o IPCA acumulado de 2024 e 2025.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "032cfdf5-2397-4aaf-8e8a-f68b8d2ba041"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Carregar, Entender e Limpar a Base de Dados",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "i9Y1M2p_qcZAfxIwUwetNFkrlb5BJC5O",
+    "createdAt": "2026-11-18T01:26:02.887Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 3,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:27:09.006Z"
+  }
+}

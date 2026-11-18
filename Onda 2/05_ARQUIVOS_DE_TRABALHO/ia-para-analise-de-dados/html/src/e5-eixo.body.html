@@ -1,0 +1,38 @@
+<!--titulo: Onde começa o eixo-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Simulador</span>
+  <h1 id="t">Mova o início do eixo</h1>
+  <p class="sub">Duas barras com valores ilustrativos: 40 e 36 milhões — uma diferença real de 11%. Arraste o controle e veja o que acontece com o desenho.</p>
+  <label for="ini" class="nota" style="display:block;margin:0 0 6px">Início do eixo: <strong id="iniTxt">0</strong> milhões</label>
+  <input type="range" id="ini" min="0" max="34" step="1" value="0" style="width:100%">
+  <div id="graf" style="margin-top:16px" aria-hidden="true"></div>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+  <p class="nota">Em gráfico de barras, o comprimento da barra precisa ser proporcional ao valor. Por isso o eixo começa em zero — a primeira pergunta da lista de conferência.</p>
+</section>
+<style>
+  .linha { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .linha span.n { width: 70px; font-size: 14px; color: var(--suave); }
+  .trilho { flex: 1; background: var(--azul-claro); border-radius: 8px; height: 30px; position: relative; overflow: hidden; }
+  .trilho i { display: block; height: 100%; background: var(--azul); border-radius: 8px; transition: width .2s ease; }
+  .linha b { width: 60px; text-align: right; font-size: 14px; }
+</style>
+<script>
+  var A = 40, B = 36, MAX = 42;
+  function desenhar() {
+    var ini = parseInt(document.getElementById('ini').value, 10);
+    document.getElementById('iniTxt').textContent = ini;
+    var la = (A - ini) / (MAX - ini), lb = (B - ini) / (MAX - ini);
+    document.getElementById('graf').innerHTML =
+      '<div class="linha"><span class="n">Estado A</span><div class="trilho"><i style="width:' + (100 * la) + '%"></i></div><b>40 mi</b></div>' +
+      '<div class="linha"><span class="n">Estado B</span><div class="trilho"><i style="width:' + (100 * lb) + '%"></i></div><b>36 mi</b></div>';
+    var razao = la / lb, m = document.getElementById('msg');
+    if (ini === 0) {
+      m.textContent = 'Eixo em zero: a barra A é 1,11 vez a barra B — exatamente a proporção real.'; m.className = 'feedback ok';
+    } else {
+      m.textContent = 'Eixo em ' + ini + ' milhões: a barra A parece ' + razao.toFixed(1).replace('.', ',') + ' vezes a barra B, embora seja só 11% maior. É o eixo truncado.';
+      m.className = razao > 1.5 ? 'feedback erro' : 'feedback aviso';
+    }
+  }
+  document.getElementById('ini').addEventListener('input', desenhar);
+  desenhar();
+</script>

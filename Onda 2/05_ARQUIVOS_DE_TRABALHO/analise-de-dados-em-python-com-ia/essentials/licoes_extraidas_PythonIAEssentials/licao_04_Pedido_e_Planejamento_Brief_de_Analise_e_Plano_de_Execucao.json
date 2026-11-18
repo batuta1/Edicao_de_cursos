@@ -1,0 +1,592 @@
+{
+  "numero_da_licao": 4,
+  "position_original": 3,
+  "title": "Pedido e Planejamento: Brief de Análise e Plano de Execução",
+  "lesson": {
+    "description": "",
+    "id": "a3ca8cbc-30ef-4e6f-ab26-388b624a5fda",
+    "items": [
+      {
+        "id": "l8pyvnng9ii49x5d9enkxqmq",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "iwp55t9kwhwogxfwcn3temml",
+            "heading": "Brief primeiro, plano depois, execução por último",
+            "paragraph": "<p>Com o agente configurado no Módulo 2, começa o trabalho no caso-guia. O erro mais comum de quem começa é pedir “calcule o IPCA acumulado” e deixar o agente decidir o resto: qual separador, onde salvar, se pode mexer no arquivo original, como saber se acertou. Nesta lição você escreve um <strong>brief</strong> de seis itens, exige o plano antes de qualquer execução e registra as premissas num arquivo que o agente lê no início de cada sessão — como o manual afixado na mesa de um estagiário.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "f8a28ee7-ca37-4d43-a785-a2546ad03a06"
+      },
+      {
+        "id": "t7obfe411kc5uk47qmf68hhg",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xlf2a8x84lurwi9bypp5jnny",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b6754033-af86-47e9-b48c-843964a13e91"
+      },
+      {
+        "id": "pp5wsgn3ggh1hoj5fvr0nb4t",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "pjdrku9mzhpqzvg3iva5lmt0",
+            "number": "1",
+            "paragraph": "<p>Redigir um brief de análise com seis itens.</p>"
+          },
+          {
+            "id": "ef6jegkotm4o3w9ie49ayoio",
+            "number": "2",
+            "paragraph": "<p>Registrar premissas permanentes em <strong>CLAUDE.md</strong> ou <strong>AGENTS.md</strong>.</p>"
+          },
+          {
+            "id": "ye2aigzj78lavo2skwmmxvy2",
+            "number": "3",
+            "paragraph": "<p>Exigir o plano antes da execução.</p>"
+          },
+          {
+            "id": "bx78jeepfqwl0kzbdayygj8h",
+            "number": "4",
+            "paragraph": "<p>Solicitar e ler a explicação do código por blocos.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "c7afc10c-0102-4fb2-8035-7fe3fd031674"
+      },
+      {
+        "id": "csyyqrn6poky6j0w1s0504wv",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "irnfovh8peat8fnd2k8yyzl0",
+            "heading": "Os seis itens de um brief",
+            "paragraph": "<p>A documentação da Anthropic recomenda anotar só o que o agente não descobre sozinho e oferecer a ele “algo que possa rodar e que responda passa ou falha”. Vire cada cartão — o exemplo é o brief do <strong>ipca-projeto</strong>:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e127c49b-c63d-49d4-b3a8-d1c4e62547af"
+      },
+      {
+        "id": "ntxuapw1uk4j82mjlbflcoi9",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "jclev4o9c4f4hj0k1rh8oksl",
+            "back": {
+              "type": "description",
+              "description": "<p>A decisão que a análise apoia. Ex.: calcular o IPCA acumulado de cada ano de 2020 a 2025.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Objetivo</strong>"
+            }
+          },
+          {
+            "id": "paa9oro4trd9pev9893df37q",
+            "back": {
+              "type": "description",
+              "description": "<p>Arquivo, formato e dicionário. Ex.: dados/brutos/ipca.csv, ponto e vírgula, vírgula decimal.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Dados</strong>"
+            }
+          },
+          {
+            "id": "wwxi8n5n3g8vb78mffd46xxr",
+            "back": {
+              "type": "description",
+              "description": "<p>O que o agente não pode fazer. Ex.: não alterar dados/brutos.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Regras</strong>"
+            }
+          },
+          {
+            "id": "ce031u8t8c99mp4e0gy851bz",
+            "back": {
+              "type": "description",
+              "description": "<p>Onde salvar tabelas e gráficos. Ex.: resultados/.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Saídas</strong>"
+            }
+          },
+          {
+            "id": "dd7q1bh5mgqxjisa98y05yrh",
+            "back": {
+              "type": "description",
+              "description": "<p>O número oficial a reproduzir — o “passa ou falha”. Ex.: 2024 = 4,83% e 2025 = 4,26% (IBGE).</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Verificação</strong>"
+            }
+          },
+          {
+            "id": "ktid0u1n5sl2ud4rw4bxnayb",
+            "back": {
+              "type": "description",
+              "description": "<p>“Mostre o plano em até seis passos e espere minha aprovação.” Nada é criado antes do seu sim.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Exigência de Plano</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "4641a7e5-d5ae-4b7d-8745-a41aa25d53fb"
+      },
+      {
+        "id": "mme1hd3et0oxx7ndwv2yrvdl",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "sb4tu1f5yrlwxxinzbdh3h1b",
+            "heading": "Quatro cuidados ao escrever o brief",
+            "paragraph": "<p>Abra cada um:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "f45c1ac1-6072-4421-b3c7-0dedeac792a6"
+      },
+      {
+        "id": "a322a50a-4c06-4fa2-be45-24667709da9c",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "e1114c5c-35cb-499e-8868-f5d14f4141d9",
+            "title": "Seja específico nos dados",
+            "description": "<p>Dados públicos brasileiros usam ponto e vírgula, vírgula decimal e, com frequência, codificação latin-1. Declare isso no brief.</p><p></p><p>Há um motivo a mais: a ferramenta de edição de notebooks do Claude Code recusa arquivos que não estejam em UTF-8 — outra razão para um script que lê o arquivo bruto sem alterá-lo.</p>"
+          },
+          {
+            "id": "111265ab-cd3f-4c2a-ba1d-a62fc5034e79",
+            "title": "Anote só o que o agente não descobre",
+            "description": "<p>O agente lê os arquivos da pasta sozinho; o que ele não sabe é o seu contexto: o que não pode ser alterado, onde salvar, qual número oficial bater.</p><p></p><p>Brief curto e específico funciona melhor que um texto longo sobre o projeto.</p>"
+          },
+          {
+            "id": "25bfe9bd-83fc-4558-893e-9a21364c45f4",
+            "title": "Exija sempre o plano",
+            "description": "<p>Termine o brief com “mostre o plano em até seis passos e espere minha aprovação”, com o agente em modo de planejamento.</p><p></p><p>Você lê o plano antes que qualquer arquivo seja criado — e corrige a premissa enquanto ainda é barato.</p>"
+          },
+          {
+            "id": "1e07a4a1-f130-426e-86fc-3e3e0ebe27f8",
+            "title": "Declare a fonte de verificação",
+            "description": "<p>Inclua o número oficial e a fonte: 4,83% em 2024 e 4,26% em 2025, do IBGE.</p><p></p><p>É o critério de “passa ou falha” que o agente pode checar sozinho — e que vira assert no Módulo 5.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b2677c9d-c305-46a3-b6e5-8203e9fb4133"
+      },
+      {
+        "id": "dde7b9b4-1e73-4ef1-abb8-4b6dc06b9a83",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "a03d2ccd-4cb9-4f1f-a20e-729e717a7a64",
+            "type": "intro",
+            "title": "Plano do caso-guia (16 min)",
+            "isHidden": false,
+            "description": "<p>Com o agente em modo de planejamento na pasta <strong>ipca-projeto</strong>, você envia o brief e gera o arquivo de instruções.</p>"
+          },
+          {
+            "id": "ff9f8d91-f098-4244-b92c-ec3197714762",
+            "type": "summary",
+            "title": "🏁 Ponto de controle",
+            "isHidden": false,
+            "description": "<p>Plano exibido em até seis passos, arquivo de instruções criado e nenhum arquivo de análise gerado antes da aprovação.</p>"
+          },
+          {
+            "id": "9b6d3643-3c1f-471b-afc0-4b952f3130c1",
+            "type": "step",
+            "title": "Enviar o brief",
+            "isHidden": false,
+            "description": "<p>Envie: “Objetivo: calcular o IPCA acumulado de cada ano de 2020 a 2025. Dados: dados/brutos/ipca.csv (ponto e vírgula, vírgula decimal). Não altere dados/brutos. Saídas em resultados/. Verificação: 2024 deve dar 4,83% e 2025, 4,26% (IBGE). Mostre o plano em até seis passos e espere minha aprovação.”</p>"
+          },
+          {
+            "id": "ed33a31d-c2d7-4398-98ef-7c15b4fc5a11",
+            "type": "step",
+            "title": "Ler o plano sem aprovar ainda",
+            "isHidden": false,
+            "description": "<p>Confira se o plano lê o arquivo bruto sem alterá-lo, salva em resultados/ e compara com 4,83% e 4,26%. A aprovação fica para o Módulo 4.</p>"
+          },
+          {
+            "id": "50f51636-7041-46e1-af40-fcc3509331f0",
+            "type": "step",
+            "title": "Gerar o arquivo de instruções",
+            "isHidden": false,
+            "description": "<p>No Claude Code, use <code>/init</code> para gerar o rascunho do <strong>CLAUDE.md</strong>; no Codex, peça para criar o <strong>AGENTS.md</strong>. Em ambos, inclua as premissas do brief.</p>"
+          },
+          {
+            "id": "1398f825-201a-4cbc-8b3e-0f3c9e7b1e7f",
+            "type": "step",
+            "title": "Confirmar que o agente lê o arquivo",
+            "isHidden": false,
+            "description": "<p>No Claude Code, <code>/context all</code> confirma que o <strong>CLAUDE.md</strong> foi carregado. O Codex lê o <strong>AGENTS.md</strong> antes de qualquer trabalho.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "da5c16e8-d859-42d3-9a5f-662ace2bfc62"
+      },
+      {
+        "id": "sg2ogl70eutbj1y3xo2kbjst",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "kzv6om82q5xolkxav25vpuf1",
+            "heading": "Se travar no planejamento",
+            "paragraph": "<p>Três situações comuns e a saída de cada uma. Clique em cada aba:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "57c603a9-935c-4eea-acb0-aafba975cc92"
+      },
+      {
+        "id": "fc3cf15d-10a8-4adb-8f9e-3b24679e9348",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "8c6d2c10-7b84-4d55-b73b-5bb518646ff3",
+            "title": "O agente começa a editar sem mostrar o plano",
+            "description": "<p>Volte ao modo de planejamento e repita o pedido com “mostre o plano e espere aprovação”.</p><p></p><p>Se algum arquivo já foi criado, peça para desfazer antes de seguir.</p>"
+          },
+          {
+            "id": "d023a12d-fe9d-4d78-a9e6-1a511db75557",
+            "title": "CLAUDE.md não aparece em /context all",
+            "description": "<p>Confira se o arquivo está na raiz da pasta aberta pelo agente (a pasta <strong>ipca-projeto</strong>, não uma subpasta).</p><p></p><p>Depois, rode <code>/context all</code> de novo.</p>"
+          },
+          {
+            "id": "1b9a5321-fbc7-4b10-b190-a85efeec1d02",
+            "title": "Explicação técnica demais",
+            "description": "<p>Peça: “em português simples, blocos de no máximo cinco linhas”.</p><p></p><p>Em cada bloco, procure três coisas: de onde o dado é lido, que linhas são descartadas e que fórmula gera o número final.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "f198b88f-0d6e-45fb-98b0-c2bb814fd114"
+      },
+      {
+        "id": "gx1rukoka84xgao7mdmyqttr",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "irmf8jokf6y1tpve9aooihuq",
+            "paragraph": "<p>Antes de aprovar qualquer execução, confira:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "38d6b08a-6dff-4e50-b6d0-fec0263db2b9"
+      },
+      {
+        "id": "fmxbavdjt0daac94788hea4b",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "uurozia82x4z6ktlp1q4dgnf",
+            "number": "1",
+            "paragraph": "<p>O plano foi apresentado em até seis passos.</p>"
+          },
+          {
+            "id": "dthr8m1cp1yzvnx20pr708wv",
+            "number": "2",
+            "paragraph": "<p>O arquivo de instruções (<strong>CLAUDE.md</strong> ou <strong>AGENTS.md</strong>) foi criado com as premissas do brief e está na raiz da pasta.</p>"
+          },
+          {
+            "id": "ipv98izw8xx9fa6idot5id25",
+            "number": "3",
+            "paragraph": "<p>Nenhum arquivo de análise foi gerado antes da sua aprovação.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "07043fac-b5b5-433a-9022-1de2819ae572"
+      },
+      {
+        "id": "a6d5f472-66ba-46fc-99fe-a46731eb8bd0",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "56f50243-113d-4c38-ba26-06fc12d3fd83",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual destes itens não pode faltar num brief de análise?",
+            "answers": [
+              {
+                "id": "485d82d3-498e-4640-ab61-b0fa3ca03870",
+                "title": "O objetivo da análise",
+                "correct": true,
+                "feedback": "Correto. O objetivo — a decisão que a análise apoia — orienta todos os outros itens. Junto com dados, regras, saídas, verificação e exigência de plano, completa o brief."
+              },
+              {
+                "id": "4eafd8c4-96eb-448d-a56c-f12211d118b8",
+                "title": "O plano de execução apresentado pelo agente",
+                "correct": false,
+                "feedback": "Não. O plano é o que o agente devolve depois de ler o brief. O que entra no brief é a exigência de ver o plano antes da execução."
+              },
+              {
+                "id": "fe52cf87-d8d1-4d5e-9def-2707d4b0db5d",
+                "title": "A cor dos gráficos a serem gerados",
+                "correct": false,
+                "feedback": "Não. A cor é detalhe de apresentação; o brief trata de objetivo, dados, regras, saídas, verificação e exigência de plano."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "24455da7-d129-48ae-9b97-f1fb32a8231c"
+      },
+      {
+        "id": "4f046355-d39e-4acd-a574-06bea42e137c",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "55facd60-ebde-437f-9039-b895f4efa3ef",
+            "paragraph": "<p><strong>Mão na massa.</strong> Modelo de brief para as suas análises — troque o que está entre colchetes:</p><p><em>“Objetivo: [decisão que a análise apoia]. Dados: [caminho], formato [separador, decimal, codificação], dicionário [onde está]. Regras: não alterar dados/brutos. Saídas: [pasta e arquivos]. Verificação: [número oficial e fonte]. Mostre o plano em até seis passos e espere minha aprovação.”</em></p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "742bd582-97dc-459e-87c4-3d8f2f283395"
+      },
+      {
+        "id": "1aa2a55a-0f8e-46c3-9afd-e32138ed6820",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "c1fe65da-517c-444a-a311-59dad3c889eb",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "c287eb37-f70e-48b7-971c-63f7e2801805"
+      },
+      {
+        "id": "c8xi87pk7pkljmndf2dsfh26",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xq5vdiy9mel0ijzh0gx1neff",
+            "paragraph": "<p>No Módulo 4 você aprova o plano, acompanha o agente criar <strong>analise.py</strong> e instalar as bibliotecas pelo uv — e faz o teste decisivo: apagar os resultados e rodar tudo do zero.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "8284746f-4123-4d34-a0a1-3fe1325b7f0b"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Pedido e Planejamento: Brief de Análise e Plano de Execução",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "I27fLqYVIPy0NLQkgsBdub8JkShnUs-m",
+    "createdAt": "2026-11-18T01:01:14.067Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 3,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:02:35.012Z"
+  }
+}

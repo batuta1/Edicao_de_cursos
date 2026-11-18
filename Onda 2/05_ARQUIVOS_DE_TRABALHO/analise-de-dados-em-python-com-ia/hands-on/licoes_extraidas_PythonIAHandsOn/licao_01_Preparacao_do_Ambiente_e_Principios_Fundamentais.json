@@ -1,0 +1,494 @@
+{
+  "numero_da_licao": 1,
+  "position_original": 0,
+  "title": "Preparação do Ambiente e Princípios Fundamentais",
+  "lesson": {
+    "description": "",
+    "id": "cdad881c-21f9-453c-8952-7974e3c938c0",
+    "items": [
+      {
+        "id": "hfbx65i9nrzl5jm6kk7h4yl8",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fscd2wzu2ud2mwna3486k4xz",
+            "heading": "Três bases públicas, quatro armadilhas, um projeto que roda de novo",
+            "paragraph": "<p>Em menos de duas horas, você vai pôr um agente de IA para escrever Python sobre dados reais da inflação, da bolsa e do clima — e vai conferir tudo o que ele fizer. São três bases públicas (Banco Central, CVM e INMET), quatro armadilhas reais e um projeto final que outra pessoa consegue rodar com um comando. Duração: 105 minutos, sem contar a espera do agente instalando e executando.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "97de5aae-e1a7-4eb5-a08e-ad00f9613e09"
+      },
+      {
+        "id": "pnhew0bvm5z925wle2dfkjbg",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "x75ziqgfv4hcg5zcibn2n8do",
+            "paragraph": "<p>Nesta preparação (7 min), você vai:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "df8ff54b-1425-4d12-ac7b-5fc4c6f2e557"
+      },
+      {
+        "id": "gxtfvsrgke0hbq2eeqqrdegz",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "bodbhokkvc8hk1il81rny0x0",
+            "number": "1",
+            "paragraph": "<p>Abrir o agente da sua rota em modo seguro, na pasta do projeto.</p>"
+          },
+          {
+            "id": "n4asojdcp0x2q7fl1t2fkmtq",
+            "number": "2",
+            "paragraph": "<p>Baixar as quatro bases para <strong>dados/brutos</strong>, sem extrair os ZIPs.</p>"
+          },
+          {
+            "id": "fk2ag2z30egvanggt4u2c87c",
+            "number": "3",
+            "paragraph": "<p>Conferir o uv no terminal.</p>"
+          },
+          {
+            "id": "w61zk6zucx7d8f3l7joc65i9",
+            "number": "4",
+            "paragraph": "<p>Revisar os dez hábitos que cada oficina vai pôr em prática.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "4723fe57-d801-48aa-a928-2d8b615816f8"
+      },
+      {
+        "id": "f184542c-b57e-433b-8cc1-eec50274616b",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "58b91805-bd67-4c0b-84ba-4d9285ad04e7",
+            "type": "intro",
+            "title": "Preparação (7 min)",
+            "isHidden": false,
+            "description": "<p>Dois passos: baixar as bases e abrir o agente em modo seguro. Comece pelo download do INMET, que é o maior.</p>"
+          },
+          {
+            "id": "ea230178-0d44-4202-b45f-3c715b85b0e3",
+            "type": "summary",
+            "title": "Pronto para a Oficina 1",
+            "isHidden": false,
+            "description": "<p>Na pasta <strong>projeto-dados/dados/brutos</strong>: <strong>ipca.csv</strong>, <strong>dfp_cia_aberta_2024.zip</strong>, <strong>cad_cia_aberta.csv</strong> e <strong>inmet-2024.zip</strong>. Agente aberto em modo seguro e <code>uv --version</code> respondendo.</p>"
+          },
+          {
+            "id": "1d7b9804-3c6a-49b4-931f-215471c595ec",
+            "type": "step",
+            "title": "Baixar as bases sem extrair",
+            "isHidden": false,
+            "description": "<p>Baixe para <strong>projeto-dados/dados/brutos</strong>, <strong>sem extrair os ZIPs</strong> (o agente lê direto deles): <strong>ipca.csv</strong>, <strong>dfp_cia_aberta_2024.zip</strong>, <strong>cad_cia_aberta.csv</strong> e <strong>inmet-2024.zip</strong>, pelos endereços abaixo. O do INMET tem 103 MB: comece por ele.</p>"
+          },
+          {
+            "id": "dd26ca9e-e962-4b05-82f5-e6726a5637ff",
+            "type": "step",
+            "title": "Abrir o agente em modo seguro",
+            "isHidden": false,
+            "description": "<p>Abra o agente na pasta <strong>projeto-dados</strong> em modo seguro: no Claude Code, modo Manual ou <code>plan</code>; no Codex, <strong>Work in &gt; This computer</strong> e <code>/permissions</code> em somente leitura.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "13a42376-8f64-4260-a4e5-4a556db816cd"
+      },
+      {
+        "id": "wmicw19gcvyf7xk42vhjih1c",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "el75k4672m69p9ltpuum1l1z",
+            "heading": "O que você precisa ter aberto agora",
+            "paragraph": "<ul><li>O agente da sua rota: <strong>Claude (app de desktop) &gt; Code</strong> (plano Pro ou superior) ou <strong>ChatGPT (app de desktop) &gt; menu de modos &gt; Codex</strong>.</li><li>O terminal, só para conferir o uv (<code>uv --version</code>).</li><li>Uma pasta chamada <strong>projeto-dados</strong>, com a subpasta <strong>dados/brutos</strong>.</li></ul>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "33b320bd-d478-471a-a14c-f80898d89797"
+      },
+      {
+        "id": "gm35i9ourhq4c2tegc6fcrc5",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ldsctib4bd6iy58dhsv0trau",
+            "heading": "As bases e seus endereços",
+            "paragraph": "<ul><li><strong>ipca.csv</strong> (1,5 KB): <a href=\"https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv&dataInicial=01/01/2020&dataFinal=31/12/2025\">api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2025</a></li><li><strong>dfp_cia_aberta_2024.zip</strong> (13,4 MB): <a href=\"https://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip\">dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip</a></li><li><strong>cad_cia_aberta.csv</strong> (1,5 MB): <a href=\"https://dados.cvm.gov.br/dados/CIA_ABERTA/CAD/DADOS/cad_cia_aberta.csv\">dados.cvm.gov.br/dados/CIA_ABERTA/CAD/DADOS/cad_cia_aberta.csv</a></li><li><strong>inmet-2024.zip</strong> (102,8 MB): <a href=\"https://portal.inmet.gov.br/uploads/dadoshistoricos/2024.zip\">portal.inmet.gov.br/uploads/dadoshistoricos/2024.zip</a> — salve com o nome <strong>inmet-2024.zip</strong>.</li></ul>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "9e79abb4-5e95-432f-a630-d6cc6228c1ea"
+      },
+      {
+        "id": "2dfd1a9d-6a77-4ba5-861a-721f1bc0c0f0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "6c9b23ad-7f4f-4bfe-b70f-a5904ef50cf9",
+            "paragraph": "<p>🔑 <strong>Regra de ouro:</strong> o agente faz; você aprova, lê e confere. Dado bruto ninguém toca.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "5b9ba370-2056-4450-9280-5a314a4e8746"
+      },
+      {
+        "id": "zdva1me7r56fyv0lgpds9paz",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "c97c7agjgf7p3dm65vi5qm8d",
+            "heading": "A Parte dos Dez — hábitos de quem analisa com agente",
+            "paragraph": "<p>Cada oficina pratica alguns destes hábitos. Abra cada um:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "a6beb9f4-0ba8-442b-a81f-fe4bfca63b10"
+      },
+      {
+        "id": "119851d3-73c9-4206-abed-b175fb1c13f3",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "b52aaceb-7cac-4b71-93ef-9c6432585883",
+            "title": "Plano antes de execução, sempre",
+            "description": "<p>Termine todo pedido com “mostre o plano e espere minha aprovação”, com o agente em modo <code>plan</code> ou somente leitura. Ler o plano custa um minuto; desfazer um script errado custa muito mais.</p>"
+          },
+          {
+            "id": "39bb3fcc-5984-42fe-bb2f-a090572f90ac",
+            "title": "Dado bruto não se edita",
+            "description": "<p>Os arquivos de <strong>dados/brutos</strong> ficam como vieram da fonte. Se precisar extrair um ZIP, extraia em <strong>dados/tratados/</strong>; toda transformação acontece no script.</p>"
+          },
+          {
+            "id": "c8aaa26c-93b8-4ef8-a157-3b1826b26d12",
+            "title": "Declare encoding, separador e decimal",
+            "description": "<p>Escreva no arquivo de instruções (<strong>CLAUDE.md</strong> ou <strong>AGENTS.md</strong>) o formato de cada base: Banco Central e INMET usam ponto e vírgula e vírgula decimal; CVM e INMET, latin-1.</p>"
+          },
+          {
+            "id": "c0b60dfd-8200-46d4-96a1-b371fa4858c1",
+            "title": "Pacote desconhecido: confira antes",
+            "description": "<p>Pacote de nome desconhecido: recuse e procure em pypi.org antes. Modelos de código às vezes inventam nomes de pacote, e um atacante pode registrar o nome inventado.</p>"
+          },
+          {
+            "id": "3a4f2964-7f19-4f6a-9f17-073222595865",
+            "title": "Um assert para cada número",
+            "description": "<p>Todo número que vai para o relatório ganha um assert: se o valor sair diferente do esperado, o script para em vez de entregar o erro com cara de certo.</p>"
+          },
+          {
+            "id": "29eaebcb-a469-40f9-bd9a-1e3521e8e7fa",
+            "title": "Conte linhas antes e depois",
+            "description": "<p>Peça a contagem de linhas antes e depois de cada filtro e de cada junção. É assim que se pega uma empresa duplicada antes que ela infle a soma.</p>"
+          },
+          {
+            "id": "d7dd376e-4c48-4145-9fdd-c7e7d3cc0507",
+            "title": "Escala e duplicata antes do ranking",
+            "description": "<p>Antes de qualquer ranking, confira a escala (MIL ou UNIDADE) e as linhas duplicadas. Na CVM, sem converter a escala, a Vivara vira a “maior lucradora do país”.</p>"
+          },
+          {
+            "id": "58ab9337-5d6c-444e-9bef-92431bb017e1",
+            "title": "Rode do zero antes de entregar",
+            "description": "<p>Apague <strong>resultados/</strong> e rode com <code>uv run</code>. Se os números reaparecerem iguais, o projeto não depende de nada que só existe no seu computador.</p>"
+          },
+          {
+            "id": "e9830981-7744-4e73-b51e-1194ff9a2738",
+            "title": "Segunda opinião de quem não viu a conversa",
+            "description": "<p>Peça uma revisão a quem não acompanhou o trabalho: <code>/code-review</code> no Claude Code, ou uma sessão nova no Codex com o pedido de auditor da Oficina 4.</p>"
+          },
+          {
+            "id": "22cf285d-9660-4d1d-ae71-6aef59aa54d2",
+            "title": "README com como rodar e limitações",
+            "description": "<p>O README diz como rodar (comandos exatos), como verificar e quais são as limitações. Quem recebe a pasta não tem acesso à sua conversa com o agente.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "a6024958-8b51-4fb2-bcec-a4ca8ea3be4e"
+      },
+      {
+        "id": "lroxdsv5xonwjm9li946poo5",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "a5mdj1tt36s95py9wjgzg02q",
+            "heading": "Quatro termos das oficinas",
+            "paragraph": "<p>Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d42e789c-8647-48fd-b524-33d4909dbf81"
+      },
+      {
+        "id": "b0t0p4o3dows98bjhqvwa23z",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "k4hu1mmicyktlxtr45manpwz",
+            "back": {
+              "type": "description",
+              "description": "<p>Uma linha de teste que é um alarme: se o número sair diferente do esperado, o script para e avisa, em vez de entregar um relatório errado com cara de certo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>assert</strong>"
+            }
+          },
+          {
+            "id": "ms0r5lh9mkskp1dpbuk3sdja",
+            "back": {
+              "type": "description",
+              "description": "<p>O arquivo como veio da fonte, guardado em dados/brutos. Nunca é editado — é dele que qualquer pessoa refaz a análise.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>dado bruto</strong>"
+            }
+          },
+          {
+            "id": "r91bf427apdu2s2r9sg2lv18",
+            "back": {
+              "type": "description",
+              "description": "<p>Rodar o projeto do zero, em outro momento ou outro computador, e obter os mesmos números. O teste: apagar resultados/ e executar com uv run.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>reprodutibilidade</strong>"
+            }
+          },
+          {
+            "id": "l08wy3rr8wbcmqu0kmwvln24",
+            "back": {
+              "type": "description",
+              "description": "<p>O roteiro que o agente apresenta antes de executar. Você lê, corrige se preciso e só então aprova (acceptEdits no Claude Code ou aprovação de cada comando no Codex).</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>plano de execução</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "a81e1b19-9347-4a7c-8170-c06a427e76f4"
+      },
+      {
+        "id": "95a7542e-0d20-4e83-ad88-d721f2276601",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "fe69077c-19bf-4682-a78d-e0da4a6b5e06",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Por que os arquivos de dados/brutos nunca são editados?",
+            "answers": [
+              {
+                "id": "53bc599d-45c1-4da4-a273-9e750d6439c9",
+                "title": "Para economizar espaço em disco",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "0b2021c3-d304-41e9-baae-c5f8d9113028",
+                "title": "Para garantir a integridade e reprodutibilidade",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "337573d9-4acd-497a-9b37-e8c4df4d3d45",
+                "title": "Para o agente ler mais rápido",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "56b70168-ee1d-4ad6-909f-a0b0319f6ae6",
+                "title": "Para acelerar o processamento",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto. O dado bruto é o ponto de partida que qualquer pessoa usa para refazer e conferir a análise. Editado, ninguém sabe mais de onde o número veio.",
+            "feedbackIncorrect": "Não. A razão é integridade e reprodutibilidade: o dado bruto é a referência para refazer e conferir tudo. Espaço e velocidade não têm relação com isso."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "f6317f80-04f9-4707-9d3e-e801f684d27b"
+      },
+      {
+        "id": "ux524dpu5da6ug7c1e0j7ihy",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ps4usz1dn7fywo6dsp9f0u31",
+            "paragraph": "<p>Na próxima lição vêm as três primeiras oficinas: transformar o cálculo do IPCA num projeto que roda de novo, fazer o ranking de lucro da CVM sem cair na escala e cruzar duas tabelas sem inflar a soma.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "fcbabefa-ca04-48eb-adfd-52dd9c8129bf"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Antes de Arregaçar as Mangas: Preparação e Hábitos",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "uOXCh7O_-NUlK9gOATzdFF7SpG8QGqkd",
+    "createdAt": "2026-11-18T01:17:48.296Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 0,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:18:29.261Z"
+  }
+}

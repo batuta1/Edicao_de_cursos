@@ -1,0 +1,613 @@
+{
+  "numero_da_licao": 5,
+  "position_original": 4,
+  "title": "Reprodutibilidade em Projetos de Análise",
+  "lesson": {
+    "description": "",
+    "id": "79776fba-fc04-4605-95e1-4379de5fe98a",
+    "items": [
+      {
+        "id": "emykicrcdyyejflxal3f5rh4",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jzfvth90vo4nmhnuzrnri2zu",
+            "heading": "O teste é simples: apagar e rodar de novo",
+            "paragraph": "<p>Com o plano aprovado, o agente cria o script e calcula o IPCA. Mas “funcionou no meu computador, hoje” não basta. <strong>Reprodutibilidade</strong> é outra pessoa — ou você mesmo, meses depois — obter o mesmo resultado executando o mesmo código sobre os mesmos dados. Lembra do estudo do Módulo 1? Só 4,03% dos notebooks públicos reproduziram os resultados originais. Esta lição transforma esse cuidado em práticas concretas na pasta <strong>ipca-projeto</strong>, e termina com o teste decisivo: apagar os resultados e rodar tudo do zero.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "211c4854-2306-4fe1-ae4c-47b3e2cb0016"
+      },
+      {
+        "id": "bo9hd3gmw40kixiwpfngyw0m",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zwe6zicl5o8lvra6xnuho9zq",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e634bc4d-bd22-4120-baaa-286d7b20244a"
+      },
+      {
+        "id": "lq2fmzjz8wfa2j77n1xmxj6b",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "r91nagcpxqi7r15g7xxn07f4",
+            "number": "1",
+            "paragraph": "<p>Definir reprodutibilidade.</p>"
+          },
+          {
+            "id": "f9rf2qbxdv1txl1f33rbbw09",
+            "number": "2",
+            "paragraph": "<p>Organizar as pastas de um projeto de análise.</p>"
+          },
+          {
+            "id": "sob0j64tfw2n996xt3i0069n",
+            "number": "3",
+            "paragraph": "<p>Registrar as versões das bibliotecas com o uv.</p>"
+          },
+          {
+            "id": "t8ckxssr728v9dgh4ocp2l64",
+            "number": "4",
+            "paragraph": "<p>Testar o projeto rodando do zero.</p>"
+          },
+          {
+            "id": "prhx4h0zx6u6qbxxc327z82s",
+            "number": "5",
+            "paragraph": "<p>Guardar o histórico do projeto com controle de versão (Git), um registro por etapa.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "aea09074-afdd-4b07-98e1-6877f9227572"
+      },
+      {
+        "id": "nc1q5kl25w78g8lhkaza2arg",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "skdigxoew5y4gwt9uv9jtzll",
+            "heading": "Quatro conceitos",
+            "paragraph": "<p>Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e53da0e8-0a16-4806-983a-79d5bfb512b3"
+      },
+      {
+        "id": "ym48ehm1366aqgcaaxso25ze",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "av2dau25zal7xadyj5pxcy94",
+            "back": {
+              "type": "description",
+              "description": "<span>Outra pessoa — ou você, meses depois — obter o mesmo resultado executando o mesmo código sobre os mesmos dados.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Reprodutibilidade</strong>"
+            }
+          },
+          {
+            "id": "filx9ghjfv138g9fpq2ofruw",
+            "back": {
+              "type": "description",
+              "description": "<span>O arquivo original fica em dados/brutos/ e nunca é editado. Toda transformação acontece no script, que gera os resultados em outra pasta.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Dados brutos intocados</strong>"
+            }
+          },
+          {
+            "id": "bl4352cc3fbtsg5kv3coj642",
+            "back": {
+              "type": "description",
+              "description": "<span>Arquivo gerado pelo uv com a versão exata de cada biblioteca. Quem recebe a pasta instala as mesmas versões — e obtém os mesmos números.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Registro de versões (uv.lock)</strong>"
+            }
+          },
+          {
+            "id": "dxk5j4av0mv5mu5ac7h6q0ad",
+            "back": {
+              "type": "description",
+              "description": "<span>O Git registra cada alteração do projeto (um commit por etapa). Recupera o que o /rewind não alcança, como arquivos alterados por comando de terminal.</span>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Controle de versão</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "bb363b24-8fea-4aab-85b6-258808a1fabe"
+      },
+      {
+        "id": "si7c4o0burv9zxwd75p8nxy8",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ybed1me6k92qh7wfwtx8r2z4",
+            "heading": "Como fica no ipca-projeto",
+            "paragraph": "<p>As <em>Good Enough Practices in Scientific Computing</em> (Wilson et al., 2017), escritas para iniciantes, recomendam guardar os dados brutos, registrar todos os passos, separar dados, resultados e código, explicitar dependências e usar controle de versão. Clique em cada aba para ver a prática traduzida no projeto:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "fa0aa3fa-07ce-4e4f-896f-c557321d9313"
+      },
+      {
+        "id": "a66cb475-8607-4b88-bd3d-cd19d2447b65",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "b38e788f-3ba1-47f0-91f7-c67bee711f52",
+            "title": "Estrutura de Pastas",
+            "description": "<p>Dados brutos em <strong>dados/brutos/</strong>, resultados em <strong>resultados/</strong> e o código em <strong>analise.py</strong>, na raiz.</p><p></p><p>Assim, apagar os resultados nunca põe em risco os dados originais.</p>"
+          },
+          {
+            "id": "19c036f4-29ef-4c7e-8d8f-6a770a66fde9",
+            "title": "Registro de Passos",
+            "description": "<p><strong>analise.py</strong> guarda cada transformação; <strong>README.md</strong> explica como rodar. As premissas ficam no <strong>CLAUDE.md</strong> ou <strong>AGENTS.md</strong>.</p><p></p><p>Nenhum passo acontece “à mão”, fora do script.</p>"
+          },
+          {
+            "id": "2b40d6bc-2b87-425f-8dd5-013ac88da2ab",
+            "title": "Registro de Versões",
+            "description": "<p><strong>pyproject.toml</strong> e <strong>uv.lock</strong>, gerados pelo uv, registram as bibliotecas (pandas, Matplotlib) e as versões exatas.</p><p></p><p>É o que impede que a análise funcione só no computador de quem a fez.</p>"
+          },
+          {
+            "id": "434bd72a-c513-4162-8524-5658134bb53c",
+            "title": "Teste de Reprodução",
+            "description": "<p>Apague <strong>resultados/</strong> e execute <code>uv run analise.py</code>. Se os mesmos números reaparecerem, o projeto roda do zero.</p><p></p><p>Quinze segundos de teste que valem mais que qualquer revisão visual.</p>"
+          },
+          {
+            "id": "7517ba4f-4e0e-446f-b995-a18d913ad4f4",
+            "title": "Histórico e Auditoria",
+            "description": "<p>Git, com um registro (commit) por etapa. Cada mudança fica datada e pode ser desfeita.</p><p></p><p>Peça ao agente: “Faça um commit com a mensagem [etapa]” ao fim de cada módulo.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "0546e506-b76d-4ef1-bb71-eaeb55134045"
+      },
+      {
+        "id": "dknz5ukt8sv0ngxad9h5a1r2",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qm1wb5zezos2c8d73nl6i3b8",
+            "heading": "As regras de Sandve et al. (2013)",
+            "paragraph": "<p>As dez regras de Sandve et al. para pesquisa computacional reprodutível incluem as cinco abaixo. Abra cada uma:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "91b3cb73-01f1-480f-a769-534707ea63af"
+      },
+      {
+        "id": "3989fe59-cfe0-44ca-b23e-9d1a7e8ef677",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "cba8ba18-a75c-48a9-9694-dff936e71bca",
+            "title": "Guardar dados brutos",
+            "description": "<p>Guarde os arquivos originais e os dados por trás de cada gráfico.</p><p></p><p>No projeto: <strong>dados/brutos/ipca.csv</strong> nunca é editado — e a regra está escrita no arquivo de instruções.</p>"
+          },
+          {
+            "id": "d515bc93-2e54-4514-a100-e1fb86f3c78c",
+            "title": "Registrar como cada resultado foi produzido",
+            "description": "<p>Cada número final precisa ter um caminho escrito até o dado bruto.</p><p></p><p>No projeto: o script e o README contam esse caminho.</p>"
+          },
+          {
+            "id": "a11e29e4-b68a-45ff-ba5d-e1632bb83452",
+            "title": "Evitar passos manuais",
+            "description": "<p>Editar a planilha à mão “só para corrigir um valor” é um passo que ninguém consegue refazer.</p><p></p><p>No projeto: qualquer correção vira linha de código, com comentário.</p>"
+          },
+          {
+            "id": "4db3bdb2-1959-4065-8dae-7086b114fe0f",
+            "title": "Arquivar versões exatas",
+            "description": "<p>A mesma biblioteca, em outra versão, pode dar outro resultado ou simplesmente quebrar.</p><p></p><p>No projeto: <strong>uv.lock</strong>.</p>"
+          },
+          {
+            "id": "69f5bada-c6d5-4cd0-9408-78499f076c02",
+            "title": "Versionar os scripts",
+            "description": "<p>Cada versão do script fica guardada no histórico, com data e motivo da mudança.</p><p></p><p>No projeto: Git, um commit por etapa. (Sandve também recomenda anotar sementes aleatórias — irrelevante no IPCA, importante em simulações.)</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b10902b1-a0ea-4005-bef7-1004e5feeffd"
+      },
+      {
+        "id": "d9c6cc1e-45fc-4a73-a63b-bc800238d15c",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "c9aaee22-b8f7-4c3e-b8a4-f760191e1660",
+            "type": "intro",
+            "title": "Executar e rodar do zero (6 min)",
+            "isHidden": false,
+            "description": "<p>Você aprova o plano do Módulo 3, acompanha a execução e faz o teste de reprodução.</p>"
+          },
+          {
+            "id": "df0b832d-2c7f-4b71-8862-4b69cae05068",
+            "type": "summary",
+            "title": "🏁 Ponto de controle",
+            "isHidden": false,
+            "description": "<p>Os mesmos números reaparecem após a nova execução, e <strong>uv.lock</strong> está presente na pasta <strong>ipca-projeto</strong>.</p>"
+          },
+          {
+            "id": "241a71bc-8fc8-4c5a-b816-a375f771a2fe",
+            "type": "step",
+            "title": "Aprovar o plano",
+            "isHidden": false,
+            "description": "<p>Aprove o plano do Módulo 3 (modo <code>acceptEdits</code> no Claude Code, ou aprovação dos comandos no Codex) e acompanhe a criação de <strong>analise.py</strong> e a instalação de pandas e Matplotlib pelo uv.</p>"
+          },
+          {
+            "id": "5b9f967d-22b9-4b5b-89c1-c24ea062d2c0",
+            "type": "step",
+            "title": "Ver a primeira execução",
+            "isHidden": false,
+            "description": "<p>Confira os números da saída: 4,83% em 2024 e 4,26% em 2025.</p>"
+          },
+          {
+            "id": "d8f1e683-6486-4107-8159-a769ada936b0",
+            "type": "step",
+            "title": "Apagar os resultados",
+            "isHidden": false,
+            "description": "<p>Apague a pasta <strong>resultados/</strong> — só ela. <strong>dados/brutos</strong> fica intocada.</p>"
+          },
+          {
+            "id": "9946f74b-fc08-47cd-999b-ad570cc85a70",
+            "type": "step",
+            "title": "Rodar do zero",
+            "isHidden": false,
+            "description": "<p>Peça: “Rode tudo de novo do zero com uv run e mostre a saída.” Os mesmos números têm de reaparecer.</p>"
+          },
+          {
+            "id": "0358f9b8-7a4c-405b-a865-c215b47d079c",
+            "type": "step",
+            "title": "Conferir o registro de versões",
+            "isHidden": false,
+            "description": "<p>Confirme a presença do arquivo <strong>uv.lock</strong> na pasta do projeto, garantindo o registro das versões utilizadas.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "301b5f97-b016-4a39-b88c-417a3e5c294a"
+      },
+      {
+        "id": "mrk4zpxfx7tjv94snim2su91",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "uyn1cbhtwd2ynglnshef5bjp",
+            "paragraph": "<p>Antes de avançar, confira o projeto:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "11f34ded-2297-49eb-9761-48031d2cd71a"
+      },
+      {
+        "id": "ianvk9garyoirijtg1kl9zj8",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "w8poojfb78z1hmmp8pw63lro",
+            "number": "1",
+            "paragraph": "<p>Dados brutos permanecem intocados em <strong>dados/brutos/</strong>.</p>"
+          },
+          {
+            "id": "uc2gk1i4vzaqgbtm8rde8hj7",
+            "number": "2",
+            "paragraph": "<p><strong>analise.py</strong> e <strong>README.md</strong> registram os passos.</p>"
+          },
+          {
+            "id": "xo3tcetulgp1qy1qy33pua3n",
+            "number": "3",
+            "paragraph": "<p><strong>uv.lock</strong> e <strong>pyproject.toml</strong> presentes na pasta do projeto.</p>"
+          },
+          {
+            "id": "s7mjmwytnli0ciu94389n3gx",
+            "number": "4",
+            "paragraph": "<p>Os mesmos números reaparecem depois de apagar <strong>resultados/</strong> e rodar <code>uv run analise.py</code>.</p>"
+          },
+          {
+            "id": "hsymi2qhce72rbwe532af54i",
+            "number": "5",
+            "paragraph": "<p>O Git tem um registro (commit) por etapa.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "1be36eb9-d844-4038-8c3d-c7dad41f046c"
+      },
+      {
+        "id": "c8a667fa-60fd-4f7e-8d08-f9baa55284b4",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "5ce1e27d-e7b9-45cd-81aa-ba4f671d7895",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual prática impede que a análise funcione apenas no computador de quem a fez?",
+            "answers": [
+              {
+                "id": "e8208580-837b-4866-befb-0c1295ceac78",
+                "title": "Salvar o gráfico em PNG.",
+                "correct": false,
+                "feedback": "Não. O PNG é só a imagem do resultado; não ajuda ninguém a rodar a análise de novo."
+              },
+              {
+                "id": "7185fe96-b9be-4edd-9ca9-244b4cf00d35",
+                "title": "Registrar as versões das bibliotecas (uv.lock) e testar rodando do zero.",
+                "correct": true,
+                "feedback": "Correto. O uv.lock fixa as versões, e rodar do zero prova que nada depende do seu computador."
+              },
+              {
+                "id": "e7b60ce5-fc2f-4053-b7dc-d052eb080c9a",
+                "title": "Usar um notebook.",
+                "correct": false,
+                "feedback": "Não. Notebooks são justamente o formato com mais problemas de reprodução: só 24,11% dos notebooks públicos rodaram sem erro no estudo de 2021."
+              },
+              {
+                "id": "b24abd7e-e44b-4cc9-ae0b-a03ec363d2d8",
+                "title": "Compartilhar apenas o script analise.py.",
+                "correct": false,
+                "feedback": "Não. Sem o registro de versões, quem recebe o script pode ter outra versão do pandas — e outro resultado."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b39049f3-e7e9-4291-abb5-94fb18fff90f"
+      },
+      {
+        "id": "d52002c7-94e3-4266-99d5-41f510ad24a5",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "f8ad0225-59ed-4e18-a441-c886a6ad841f",
+            "paragraph": "<p><strong>Mão na massa.</strong> Para levar qualquer análise sua ao mesmo padrão, peça ao agente:</p><p><em>“Organize este projeto para que outra pessoa o rode do zero: dados brutos intocados, código em um script, versões registradas pelo uv, resultados em pasta própria e um README com a seção ‘Como rodar’. Depois apague os resultados, rode tudo de novo e mostre a saída.”</em></p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "86bb8a57-03c3-4b36-96b6-b7f6d589d06e"
+      },
+      {
+        "id": "ea8c2585-f6b8-4814-aa54-70ba5c03a40d",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "c51a6aae-4f87-4d35-a17e-4ebbfcc46f0c",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "3273cc49-0a64-4656-b55b-da5019ea872a"
+      },
+      {
+        "id": "abdsip3asanwdexlu7c0955k",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ee9goy15gtbv0c039489dir2",
+            "paragraph": "<p>O projeto roda de novo e dá o mesmo número. Mas rodou não é o mesmo que acertou. No Módulo 5 você vê o que a pesquisa mede sobre o acerto de agentes de dados, entende o erro silencioso e cria testes que interrompem o script quando o número sai errado.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "246b6c18-9228-4f57-99e5-af868e3ea26b"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Reprodutibilidade em Projetos de Análise",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "I27fLqYVIPy0NLQkgsBdub8JkShnUs-m",
+    "createdAt": "2026-11-18T01:01:14.067Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 4,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:02:50.147Z"
+  }
+}

@@ -1,0 +1,555 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Segurança e Dados: Configuração do Agente e Riscos",
+  "lesson": {
+    "description": "",
+    "id": "6654d52e-a33a-4f57-a17d-f375dc748226",
+    "items": [
+      {
+        "id": "rp07q2bq3ak0x1mkby0lpr72",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "svv7qfb6nrzdle323ls0z1cd",
+            "heading": "Um agente com acesso aos seus arquivos precisa de limites",
+            "paragraph": "<p>O agente definido no Módulo 1 pode ler, criar, alterar e apagar arquivos e executar comandos no seu computador. As permissões decidem o que ele faz sem perguntar. Em julho de 2025, um agente da Replit apagou o banco de dados de produção de um usuário durante um período de congelamento de código. Esta lição vem antes do primeiro uso real do agente para que você comece sempre em modo restrito, saiba o que dá para desfazer e decida cada pedido de aprovação com critério.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "6ec48837-6fa5-483b-b69b-556c7bf2f34e"
+      },
+      {
+        "id": "s9rfty7lhe60tte7ihswkkcw",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "hz4bu9z0xd3l1irgqn2kkz4p",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "857fdf0a-c057-4c98-b919-7c1a8f6164f4"
+      },
+      {
+        "id": "e6pvhax6wlqbfhvchw2ahgg1",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "lf83psl36fzyvtfb79buogww",
+            "number": "1",
+            "paragraph": "<p>Configurar o agente em modo restrito.</p>"
+          },
+          {
+            "id": "u6t4xa41l7106orm8xaib6gq",
+            "number": "2",
+            "paragraph": "<p>Explicar os limites dos mecanismos de desfazer alterações.</p>"
+          },
+          {
+            "id": "pmrr6xarxxpvqk6glxsvm3ty",
+            "number": "3",
+            "paragraph": "<p>Reconhecer os riscos documentados de agentes de código, inclusive pacotes inexistentes.</p>"
+          },
+          {
+            "id": "pomk1hcglx04nyaovv260rle",
+            "number": "4",
+            "paragraph": "<p>Aplicar as regras de dados de cada ferramenta e da LGPD.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d6909dde-eb16-42b5-bd66-c293e69b9f44"
+      },
+      {
+        "id": "rl3yto8tc8qsmj4fofmir79k",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "d0t950vvremrftl6xmfrod4q",
+            "heading": "Modos de permissão",
+            "paragraph": "<p>Cada ferramenta tem seus modos. Clique na aba da sua rota:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2d63648c-87f5-4553-b927-53f93193f693"
+      },
+      {
+        "id": "ec95fb61-77b8-4bb5-87ea-cf8be1b87380",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "92b289f1-1f9d-4927-b71f-a1c9f68550d2",
+            "title": "Claude Code",
+            "description": "<p><strong>Manual (<code>default</code>):</strong> executa sem perguntar apenas leituras. Use no início de cada sessão.<br><strong><code>plan</code>:</strong> lê e planeja, sem editar. Use antes de executar.<br><strong><code>acceptEdits</code>:</strong> aceita edições e comandos comuns de arquivo. Use depois de aprovar o plano.<br><strong><code>bypassPermissions</code>:</strong> libera tudo; destina-se a máquinas isoladas. <strong>Nunca</strong> é usado neste curso.</p><p></p><p>No terminal, <strong>Shift+Tab</strong> alterna os modos.</p>"
+          },
+          {
+            "id": "fae79b89-9926-4aa6-8d28-4809a8217325",
+            "title": "Codex",
+            "description": "<p>No Codex, a rede fica <strong>desligada por padrão</strong> e o agente escreve apenas na pasta de trabalho; para sair dela, pede aprovação.</p><p></p><p>O comando <code>/permissions</code> alterna para somente leitura — o equivalente ao modo restrito do curso no início de cada sessão.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e8c11c2c-9717-4277-8d21-7a9ab1e2a729"
+      },
+      {
+        "id": "ybzaw6f064re4bw8q73fi8mm",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ot0564tvprgu9gr82l4dvf2f",
+            "heading": "O que dá — e o que não dá — para desfazer",
+            "paragraph": "<p>Desfazer existe, mas tem limites documentados. Abra cada item:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "5c8bfbcd-3b87-4f56-a29a-334e867a0e7c"
+      },
+      {
+        "id": "055c0c7f-95eb-4a42-bb68-0cfe900ad26e",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "a849e1fe-cb51-4d02-bbaa-ff86754a6f6c",
+            "title": "Como funciona o /rewind (ou /undo) no Claude Code",
+            "description": "<p>O Claude Code oferece <code>/rewind</code> (ou <code>/undo</code>) para voltar alterações do agente. Limitação documentada: um arquivo alterado <strong>apenas por comandos de terminal</strong> não é rastreado e só pode ser recuperado por controle de versão.</p><p></p><p>Por isso o projeto do curso usa Git, com um registro por etapa (Módulo 4).</p>"
+          },
+          {
+            "id": "5c5edb65-e15c-4568-92cf-3e614fe34e8e",
+            "title": "Exemplos de incidentes reais",
+            "description": "<p>Em julho de 2025, dois incidentes públicos: um agente da Replit apagou o banco de dados de produção de um usuário durante um congelamento de código, e o Gemini CLI moveu arquivos para uma pasta inexistente, perdendo-os.</p><p></p><p>Lição prática: modo restrito, dados brutos fora do alcance de edição e nenhuma aprovação de “apagar” sem ler o comando.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "299a2f24-6d22-4e5e-977e-e6d172d7e168"
+      },
+      {
+        "id": "l6ylas0fix13eibh2n7bmgb6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ja79kojvphgukm8l198scaoe",
+            "heading": "Três riscos documentados",
+            "paragraph": "<p>Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "77a792cb-7fc3-4cca-98ac-fdb787a2548c"
+      },
+      {
+        "id": "lnzxa1cz2zf4d1ovqeh19778",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "e2zoe9jjg86scvjl48j3aahe",
+            "back": {
+              "type": "description",
+              "description": "<ul><li>Estudo no USENIX Security 2025: 19,7% dos pacotes sugeridos por modelos de código não existiam; com modelos de 2026, entre 3,6% e 5,0% das menções.</li><li>Um atacante pode registrar o nome inventado com código malicioso. Confira em pypi.org antes de instalar.</li></ul>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Pacotes inexistentes</strong>"
+            }
+          },
+          {
+            "id": "son2lfyutzkt77vxlo32zhsn",
+            "back": {
+              "type": "description",
+              "description": "<ul><li>Agentes já apagaram e moveram arquivos de forma irreversível.</li><li><code>/rewind</code> não recupera o que foi alterado só por comando de terminal; o controle de versão, sim.</li></ul>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Perda de dados</strong>"
+            }
+          },
+          {
+            "id": "zewfr1tstx0jk6vpqikffqnm",
+            "back": {
+              "type": "description",
+              "description": "<ul><li>Claude (Free, Pro, Max e Ultra): retenção de 5 anos se você permite o uso para melhoria dos modelos; 30 dias se não permite. O Claude Code guarda transcrições locais em texto simples por 30 dias.</li><li>ChatGPT pessoal: treino ativado por padrão; o Codex tem a configuração separada “Incluir ambientes”. Dado pessoal identificável não entra em conta pessoal (LGPD).</li></ul>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Exposição de dados sensíveis</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "eb4c3f71-dbd4-400f-8f5f-ff6786c18819"
+      },
+      {
+        "id": "agujap2nxgj5xnt7hr39e7xh",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jjrh1si853t1mx0e1lnefyhf",
+            "paragraph": "<p>O agente vai pedir aprovação várias vezes. Use esta referência para decidir — é o gabarito do exercício logo abaixo:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "4d0cfa12-4e80-48a0-a7a3-9468a18615ab"
+      },
+      {
+        "id": "envoengdlf3l0qsgmrw91t77",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "nlz7wqghs3yukrgbe3j29yw6",
+            "number": "1",
+            "paragraph": "<p><strong>Ler dados/brutos/ipca.csv</strong> — Aprovar</p>"
+          },
+          {
+            "id": "jz20hun2x41gyu496rmait0d",
+            "number": "2",
+            "paragraph": "<p><strong>Instalar pandas</strong> — Aprovar</p>"
+          },
+          {
+            "id": "zs7hv3why31aj2i1vgd5wdgj",
+            "number": "3",
+            "paragraph": "<p><strong>Instalar pacote de nome desconhecido</strong> — Recusar até conferir em pypi.org</p>"
+          },
+          {
+            "id": "n4jk03xu4v7q9thwim9e1gjc",
+            "number": "4",
+            "paragraph": "<p><strong>Apagar dados/brutos</strong> — Recusar sempre</p>"
+          },
+          {
+            "id": "tcthqykys6qlwxg6n5yzp6qj",
+            "number": "5",
+            "paragraph": "<p><strong>Acessar a internet para baixar arquivo do Banco Central</strong> — Aprovar com cuidado, conferindo o endereço</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "5c215615-1493-43ef-af5d-268ef3e76e2d"
+      },
+      {
+        "id": "b1404c5d-0f30-4590-a57d-91377c9b45a1",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "009d5652-f74e-4b80-a839-4d8a42520fca",
+            "type": "intro",
+            "title": "Configurar antes de usar e decidir aprovações (15 min)",
+            "isHidden": false,
+            "description": "<p>Três passos antes do primeiro uso real do agente no <strong>ipca-projeto</strong>.</p>"
+          },
+          {
+            "id": "61a5814f-cb84-4c6d-a1a0-3d7fa72e015a",
+            "type": "summary",
+            "title": "🏁 Ponto de controle",
+            "isHidden": false,
+            "description": "<p>Modo restrito ativo e decisão de privacidade registrada. Gabarito da classificação: (1) aprovar; (2) aprovar; (3) recusar até conferir em pypi.org; (4) recusar sempre; (5) aprovar com cuidado, conferindo o endereço.</p>"
+          },
+          {
+            "id": "727a78f3-caa3-44f6-9150-f0052b416fff",
+            "type": "step",
+            "title": "Abrir agente em modo restrito",
+            "isHidden": false,
+            "description": "<p>Abra o agente na pasta <strong>ipca-projeto</strong> em modo de planejamento (Claude Code, modo <code>plan</code>) ou somente leitura (Codex, <code>/permissions</code>).</p>"
+          },
+          {
+            "id": "c1acae2b-72cf-41aa-bcdd-dee458d97728",
+            "type": "step",
+            "title": "Conferir e decidir sobre privacidade",
+            "isHidden": false,
+            "description": "<p>Confira a opção de treino da conta — ChatGPT: <strong>ChatGPT &gt; Perfil &gt; Configurações &gt; Controles de dados</strong>; Claude: configurações de privacidade da conta — e decida.</p>"
+          },
+          {
+            "id": "d6fadd33-6344-4968-9878-5a7f79c32672",
+            "type": "step",
+            "title": "Classificar pedidos do agente",
+            "isHidden": false,
+            "description": "<p>Classifique como “aprovar”, “aprovar com cuidado” ou “recusar”: (1) ler <strong>dados/brutos/ipca.csv</strong>; (2) instalar <strong>pandas</strong>; (3) instalar um pacote de nome desconhecido; (4) apagar <strong>dados/brutos</strong>; (5) acessar a internet para baixar um arquivo do Banco Central.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "34f5f6a9-65b7-4c65-b1ba-a81f0ee8b7cc"
+      },
+      {
+        "id": "1beecd5f-0b00-466f-a8d4-4b0d46b5310c",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "6bff8af9-6505-4ba3-ba0a-059097e38630",
+            "type": "MULTIPLE_CHOICE",
+            "title": "O agente pede aprovação para quatro ações. Qual deve ser recusada sempre?",
+            "answers": [
+              {
+                "id": "4946490f-a5dc-448f-bb50-c56134a39b24",
+                "title": "Instalar pandas",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "8b751598-37c7-4c52-9325-795a0d3b211e",
+                "title": "Apagar dados/brutos",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "93c2b01c-f4b0-44e1-a705-e6eec193a03b",
+                "title": "Ler dados/brutos/ipca.csv",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "a801ca6b-96ad-498d-b79b-cbac590d128e",
+                "title": "Baixar arquivo do Banco Central",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto. Os dados brutos são a base de tudo: apagá-los impede refazer a análise, e um apagamento por comando de terminal nem sempre se desfaz.",
+            "feedbackIncorrect": "Não. Ler o arquivo e instalar pandas se aprovam; baixar do Banco Central se aprova com cuidado, conferindo o endereço. Apagar dados/brutos se recusa sempre."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "9ac8c880-be23-41ed-97f6-94d8d303965c"
+      },
+      {
+        "id": "aae7db04-9bad-4507-be59-9a2daeda6ada",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e61995f1-ba0e-48b3-b0ec-803a2a7c5be6",
+            "paragraph": "<p><strong>Mão na massa.</strong> Envie ao agente no início de cada sessão — ou guarde no arquivo de instruções do Módulo 3:</p><p><em>“Antes de executar qualquer comando, explique em uma linha o que ele faz, que arquivos altera e se acessa a internet. Nunca altere nem apague nada em dados/brutos. Se sugerir instalar um pacote, informe o endereço dele em pypi.org.”</em></p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d874bc9c-4020-4cfc-8e26-cdef4b89251a"
+      },
+      {
+        "id": "e851001d-5df5-4a3b-969e-d08a45ec0ba5",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "47fcf9f0-7386-4c08-802a-9784f28cb5e7",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "843bde9e-1176-4960-827d-45883ffcf0c2"
+      },
+      {
+        "id": "wi7o71b08s6c10og1wd3xs9i",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "x53fmqrdu0tj8n9l6vryihuj",
+            "paragraph": "<p>Com o agente em modo restrito, começa o trabalho no caso-guia. No Módulo 3 você escreve o brief do <strong>ipca-projeto</strong>, exige o plano antes da execução e registra as premissas num arquivo de instruções.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "3f7c51be-63cd-4dd5-9faa-fef2471c456b"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Segurança e Dados: Configuração do Agente e Riscos",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "I27fLqYVIPy0NLQkgsBdub8JkShnUs-m",
+    "createdAt": "2026-11-18T01:01:14.067Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:02:15.016Z"
+  }
+}

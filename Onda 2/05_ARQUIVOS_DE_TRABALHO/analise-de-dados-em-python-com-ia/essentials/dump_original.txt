@@ -1,0 +1,866 @@
+
+######## licao_01_Preparacao_e_Verificacao_Inicial.json  title='Preparação e Verificação Inicial'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Preparando o Ambiente para Análise de Dados com IA
+items.0.items.0.paragraph = <p>Antes de começar a analisar dados com agentes de código, é fundamental garantir que seu ambiente esteja devidamente preparado. Uma preparação cuidadosa é o primeiro passo para garantir segurança, organização e reprodutibilidade em projetos de análise de dados em Python, mesmo para quem não tem experiência prévia em programação. Com o ambiente certo, você terá mais confiança para avançar e aproveitar ao máximo as ferramentas de IA.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você aprenderá os passos essenciais para iniciar seu projeto de análise de dados, desde a escolha da rota de trabalho até a validação do ambiente.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Escolher a rota de trabalho adequada para seu sistema operacional e plano.</p>
+items.2.items.1.paragraph = <p>Instalar o gerenciador uv e verificar a instalação.</p>
+items.2.items.2.paragraph = <p>Montar a estrutura inicial do projeto, incluindo a organização dos dados brutos.</p>
+items.2.items.3.paragraph = <p>Validar se o ambiente está pronto para avançar na análise.</p>
+
+--- [3] text/text/paragraph
+items.3.items.0.paragraph = <p>Para realizar este curso, você pode escolher entre três rotas principais: Claude Code (aplicativo de desktop), Codex (aplicativo de desktop do ChatGPT) ou o terminal (CLI). As rotas A e B, que utilizam aplicativos de desktop, são recomendadas por dispensarem o uso do terminal, tornando o processo mais acessível para quem não programa. No entanto, é importante observar que nenhuma das opções é totalmente gratuita: o acesso ao Claude Code e ao Codex pode exigir planos pagos ou estar sujeito a limitações.</p>
+
+--- [4] text/text/heading paragraph
+items.4.items.0.heading = Comparação das Rotas para Uso de Claude Code e ChatGPT Codex
+items.4.items.0.paragraph = <p>Confira abaixo as três principais rotas para utilizar Claude Code e ChatGPT Codex, avaliando compatibilidade, requisitos e perfis de usuário para escolher a opção mais adequada ao seu sistema operacional e necessidades.</p>
+
+--- [5] interactive/interactive/tabs
+items.5.items.0.title = Claude Code
+items.5.items.0.description = <p>O Claude Code está disponível no aplicativo Claude Desktop, na aba Code. Para uso completo, é necessário o plano Claude Pro (R$ 110/mês ou R$ 92/mês no plano anual) ou superior. É recomendado para quem busca praticidade e integração direta com o sistema operacional.</p><p></p><ul><li><strong>Requisitos técnicos:</strong> macOS 13 ou superior, ou Windows 10 versão 1809 ou superior, com pelo menos 4 GB de RAM.</li><li>Para Windows, recomenda-se instalar o Git for Windows para compatibilidade total.</li></ul>
+items.5.items.1.title = ChatGPT Codex
+items.5.items.1.description = <p>O modo Codex está disponível no aplicativo de desktop do ChatGPT. Pode ser acessado gratuitamente com limitações, ou com uso pleno no plano Plus (R$ 99,90/mês). Funciona em macOS, Windows ou Linux, sendo uma opção flexível para diferentes perfis.</p><p></p><ul><li>Ideal para quem já utiliza o ChatGPT e deseja integrar análise de dados ao fluxo de trabalho.</li><li>Instalação simples, sem necessidade de configurações avançadas.</li></ul>
+items.5.items.2.title = Terminal
+items.5.items.2.description = <p>Permite o uso do Claude Code CLI ou Codex CLI, sendo indicado para quem prefere trabalhar diretamente com comandos. Os planos necessários são os mesmos das rotas anteriores, e o acesso depende do instalador oficial de cada ferramenta.</p><p></p><ul><li>Recomendado para usuários com familiaridade com o terminal ou que buscam maior controle do ambiente.</li><li>Apesar de mais técnica, pode oferecer flexibilidade adicional em alguns cenários.</li></ul>
+
+--- [6] text/text/heading paragraph
+items.6.items.0.heading = Conceitos-chave para preparação do ambiente
+items.6.items.0.paragraph = <p>Antes de iniciar um projeto de análise de dados, é importante conhecer alguns conceitos fundamentais relacionados à preparação do ambiente. Estes conceitos ajudam a garantir organização, reprodutibilidade e eficiência no desenvolvimento do projeto.</p>
+
+--- [7] interactive/flashcard/flashcard
+items.7.items.0.back.description = <p>O gerenciador uv instala o Python, as bibliotecas e registra as versões usadas, funcionando como uma lista de compras detalhada para seu projeto.</p>
+items.7.items.0.front.description = <strong>uv</strong>
+items.7.items.1.back.description = <p>Arquivos originais, sem alterações, essenciais para garantir a reprodutibilidade da análise de dados.</p>
+items.7.items.1.front.description = <strong>dados brutos</strong>
+items.7.items.2.back.description = <p>Estrutura de pastas do projeto que será montada nesta lição, organizando os dados e arquivos necessários.</p>
+items.7.items.2.front.description = <strong>ipca-projeto</strong>
+
+--- [8] interactive/interactive-fullscreen/process
+items.8.items.0.title = Preparando o Ambiente para o Projeto
+items.8.items.0.description = <p>Nesta etapa, você irá preparar o ambiente escolhendo a rota de trabalho, instalando o gerenciador uv e organizando a estrutura inicial do projeto. Siga cada passo com atenção para garantir que tudo esteja pronto para as próximas lições.</p>
+items.8.items.1.title = Resumo do Processo
+items.8.items.1.description = <p>Ao final deste processo, você terá o ambiente pronto, com o uv instalado, a estrutura de pastas organizada e os dados brutos disponíveis para análise.</p>
+items.8.items.2.title = Abrir a Rota Escolhida
+items.8.items.2.description = <p>Abra o aplicativo correspondente à rota selecionada: Claude (app de desktop) &gt; Code &gt; selecionar pasta, ou ChatGPT (app de desktop) &gt; menu de modos &gt; Codex. Certifique-se de estar no ambiente correto antes de prosseguir.</p>
+items.8.items.3.title = Instalar o uv e Verificar Instalação
+items.8.items.3.description = <p>No Windows, abra o PowerShell e execute:<br>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"<br>No macOS, abra o Terminal e execute:<br>curl -LsSf https://astral.sh/uv/install.sh | sh<br>Após a instalação, execute o comando uv --version para confirmar que o uv foi instalado corretamente.</p>
+items.8.items.4.title = Montar a Pasta do Projeto e Baixar Dados
+items.8.items.4.description = <p>Crie a pasta ipca-projeto/dados/brutos em seu computador. Baixe o arquivo ipca.csv do endereço:<br>api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2025<br>Salve o arquivo ipca.csv dentro da pasta criada para garantir a organização dos dados brutos.</p>
+
+--- [9] text/text/heading paragraph
+items.9.items.0.heading = Soluções rápidas para problemas frequentes ao preparar o ambiente
+items.9.items.0.paragraph = <p>Encontre abaixo respostas para dúvidas comuns que podem surgir durante a preparação do ambiente de desenvolvimento.</p>
+
+--- [10] interactive/interactive/accordion
+items.10.items.0.title = Mensagem de que "irm" não é reconhecido
+items.10.items.0.description = <p>Se ao tentar instalar o uv aparecer a mensagem de que "irm" não é reconhecido, isso significa que o comando foi colado no Prompt de Comando. Abra o PowerShell e tente novamente.</p><p></p><p>O PowerShell é o terminal recomendado para executar comandos no Windows, garantindo que todas as funções estejam disponíveis.</p>
+items.10.items.1.title = uv não encontrado após a instalação
+items.10.items.1.description = <p>Se o comando uv não for reconhecido após a instalação, feche e reabra o terminal. Isso atualiza as variáveis de ambiente e permite que o sistema reconheça o novo comando.</p><p></p><p>Esse passo simples costuma resolver a maioria dos problemas relacionados ao reconhecimento do uv.</p>
+items.10.items.2.title = Aplicativo pede assinatura ao abrir Code ou Codex
+items.10.items.2.description = <p>Se o aplicativo solicitar uma assinatura ao tentar abrir Code ou Codex, sua conta provavelmente não possui o plano exigido. Consulte a tabela de rotas para verificar qual plano é necessário para sua escolha.</p><p></p><p>Verifique se está utilizando o plano correto para evitar interrupções no uso do agente de código.</p>
+
+--- [11] knowledgeCheck/knowledgeCheck/multiple choice
+items.11.items.0.title = Qual dos seguintes indica que o ambiente está pronto para seguir para a próxima etapa?
+items.11.items.0.answers.0.title = uv --version exibe um número de versão e ipca-projeto/dados/brutos/ipca.csv está presente na pasta.
+items.11.items.0.answers.0.feedback = Esta opção indica que tanto a ferramenta uv está instalada e funcionando quanto o arquivo necessário está no local correto, mostrando que o ambiente está pronto.
+items.11.items.0.answers.1.title = Apenas o aplicativo do agente está instalado.
+items.11.items.0.answers.1.feedback = Ter apenas o aplicativo do agente instalado não garante que todas as dependências e arquivos necessários estejam presentes.
+items.11.items.0.answers.2.title = O arquivo ipca.csv foi baixado, mas não está na pasta correta.
+items.11.items.0.answers.2.feedback = O arquivo precisa estar na pasta correta para que o ambiente esteja pronto para a próxima etapa.
+items.11.items.0.answers.3.title = uv foi instalado, mas não foi testado.
+items.11.items.0.answers.3.feedback = É importante testar a instalação do uv para garantir que está funcionando corretamente.
+
+--- [12] text/impact/b
+items.12.items.0.paragraph = <p>Claro! Aqui está uma explicação simples sobre o que posso fazer nesta pasta:</p><ul><li><strong>Ler:</strong> Posso visualizar e analisar os arquivos existentes na pasta.</li><li><strong>Criar:</strong> Posso criar novos arquivos ou documentos, se você pedir.</li><li><strong>Alterar:</strong> Posso modificar arquivos existentes, mas só faço isso com sua autorização.</li><li><strong>Apagar:</strong> Só apago arquivos se você aprovar antes.</li><li><strong>Executar:</strong> Não executo programas ou scripts automaticamente; sempre peço sua permissão.</li></ul><p><strong>O que precisa da sua aprovação:</strong> Qualquer alteração, exclusão ou execução de arquivos só acontece depois que você confirmar.</p><p><strong>Como desfazer uma alteração:</strong> Se algo for alterado e você quiser desfazer, posso tentar restaurar a versão anterior do arquivo, se houver backup, ou orientá-lo a recuperar o arquivo manualmente.</p>
+
+--- [13] divider/continue/continue
+items.13.items.0.title = Continue
+
+--- [14] text/text/paragraph
+items.14.items.0.paragraph = <p>Agora que seu ambiente está pronto, você está preparado para entender quando e por que migrar sua análise de dados para o código, além de conhecer o papel do agente de código nesse processo. Na próxima lição, vamos explorar esses conceitos fundamentais.</p>
+
+######## licao_02_Por_que_Codigo_Conceitos_Fundamentais_e_o_Papel_do_Agente.json  title='Por que Código? Conceitos Fundamentais e o Papel do Agente'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Por que Migrar da Conversa para o Código?
+items.0.items.0.paragraph = <p>Em muitos casos, conversar com um assistente de inteligência artificial é suficiente para responder perguntas pontuais ou explorar dados de maneira rápida. No entanto, quando a análise de dados precisa ser refeita por diferentes pessoas, envolve múltiplos arquivos ou exige rastreabilidade e auditoria, migrar para o código se torna essencial. Ao transformar a conversa em código, você garante automação, reprodutibilidade e controle total sobre o processo, tornando seu projeto mais confiável e transparente.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você irá explorar conceitos fundamentais sobre análise de código, agentes de código e ambientes de desenvolvimento. Veja os principais tópicos que serão abordados:</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Identificar situações em que a análise deve passar para o código.</p>
+items.2.items.1.paragraph = <p>Definir o que é um agente de código e o papel do participante.</p>
+items.2.items.2.paragraph = <p>Diferenciar script, notebook, biblioteca e ambiente virtual.</p>
+items.2.items.3.paragraph = <p>Compreender o princípio "rodou não é o mesmo que acertou".</p>
+
+--- [3] interactive/interactive-fullscreen/process
+items.3.items.0.title = Como decidir se sua análise deve migrar para código
+items.3.items.0.description = <p>Aprenda, passo a passo, como avaliar se o seu processo de análise de dados deve ser migrado para código, garantindo eficiência, padronização e rastreabilidade.</p>
+items.3.items.1.title = Resumo
+items.3.items.1.description = <p>Migrar para código é recomendado quando há necessidade de repetição, múltiplos arquivos, rastreabilidade ou auditoria. Assim, você garante qualidade e confiabilidade na análise de dados.</p>
+items.3.items.2.title = Repetição ou múltiplos usuários
+items.3.items.2.description = <p>Pergunte-se se a análise precisa ser refeita periodicamente ou por outra pessoa. Se sim, o código permite que o processo seja reproduzido de forma padronizada e eficiente.</p>
+items.3.items.3.title = Vários arquivos ou arquivos grandes
+items.3.items.3.description = <p>Avalie se sua análise envolve múltiplos arquivos ou arquivos de grande porte. O código facilita a manipulação automatizada e organizada desses dados.</p>
+items.3.items.4.title = Necessidade de auditoria e rastreabilidade
+items.3.items.4.description = <p>Considere se é necessário auditar cada etapa ou garantir rastreabilidade dos resultados. O código documenta todas as ações, tornando o processo transparente.</p>
+items.3.items.5.title = Decisão de migrar
+items.3.items.5.description = <p>Se uma ou mais respostas forem “sim”, migrar para código transforma a conversa em uma receita reprodutível, pronta para ser executada novamente com segurança.</p>
+
+--- [4] text/text/heading paragraph
+items.4.items.0.heading = Vantagens e Riscos de Transformar Conversa em Código
+items.4.items.0.paragraph = <p>Explore, clicando nos tópicos, as principais vantagens e riscos ao transformar uma conversa em código.</p>
+
+--- [5] interactive/interactive/accordion
+items.5.items.0.title = Vantagens
+items.5.items.0.description = <p>Ao migrar para o código, você pode reexecutar a análise sempre que necessário, garantindo resultados consistentes. O processo se torna auditável, facilitando revisões e validações por outros usuários. Além disso, a automação reduz erros manuais e economiza tempo.</p><p></p><p>Documentar o processo em código permite que outras pessoas entendam e reproduzam a análise, promovendo colaboração e transparência.</p>
+items.5.items.1.title = Riscos
+items.5.items.1.description = <p>Mesmo que um código execute sem apresentar erros, ele pode estar baseado em premissas equivocadas. Isso significa que a ausência de falhas técnicas não garante que os resultados estejam corretos.</p><p></p><p>É fundamental validar cada etapa e revisar as premissas adotadas, pois confiar apenas na execução pode levar a conclusões erradas.</p>
+
+--- [6] text/text/heading paragraph
+items.6.items.0.heading = Flashcards: Formatos e Ferramentas em Projetos de Análise de Dados com IA
+items.6.items.0.paragraph = <p>Revise os principais formatos de arquivos e ferramentas utilizadas em projetos de análise de dados com Inteligência Artificial. Cada item traz uma breve explicação e uma analogia para facilitar a memorização.</p>
+
+--- [7] interactive/flashcard/flashcard
+items.7.items.0.back.description = <p>Receita completa num arquivo, executada do início ao fim.<br><em>Analogia: receita impressa.</em></p>
+items.7.items.0.front.description = <strong>Script (.py)</strong>
+items.7.items.1.back.description = <p>Caderno com células de código, texto e gráficos.<br><em>Analogia: caderno de laboratório.</em></p>
+items.7.items.1.front.description = <strong>Notebook (.ipynb)</strong>
+items.7.items.2.back.description = <p>Biblioteca de tabelas.<br><em>Analogia: a planilha dentro do Python.</em></p>
+items.7.items.2.front.description = <strong>pandas</strong>
+items.7.items.3.back.description = <p>Biblioteca de gráficos.<br><em>Analogia: o módulo de gráficos.</em></p>
+items.7.items.3.front.description = <strong>Matplotlib</strong>
+items.7.items.4.back.description = <p>Instala Python e bibliotecas e registra versões.<br><em>Analogia: lista de compras com marca e tamanho.</em></p>
+items.7.items.4.front.description = <strong>uv</strong>
+items.7.items.5.back.description = <p>Conjunto de bibliotecas exclusivo do projeto.<br><em>Analogia: gaveta separada por cliente.</em></p>
+items.7.items.5.front.description = <strong>Ambiente virtual</strong>
+
+--- [8] text/text/heading paragraph
+items.8.items.0.heading = Principais Formatos de Trabalho em Análise de Dados
+items.8.items.0.paragraph = <p>Conheça os principais formatos de trabalho utilizados em análise de dados, suas características, vantagens e limitações, para escolher o mais adequado conforme o objetivo do seu projeto.</p>
+
+--- [9] interactive/interactive/tabs
+items.9.items.0.title = Script
+items.9.items.0.description = <p>O script executa todas as etapas do início ao fim, garantindo que o processo seja sempre o mesmo. Isso facilita a reprodutibilidade e a automação, tornando-o ideal para projetos que precisam ser refeitos diversas vezes.</p><p></p><p>Por ser linear, o script é menos interativo e pode não ser a melhor escolha para exploração inicial de dados, mas é excelente para padronizar entregas.</p>
+items.9.items.1.title = Notebook
+items.9.items.1.description = <p>O notebook permite documentar cada etapa da análise, combinando código, texto e gráficos em um só lugar. Isso facilita a compreensão e a comunicação dos resultados.</p><p></p><p>No entanto, estudos mostram que notebooks são mais propensos a erros de execução fora de ordem e dependências não declaradas, o que pode comprometer a reprodutibilidade.</p>
+items.9.items.2.title = Ambiente virtual
+items.9.items.2.description = <p>O ambiente virtual isola as bibliotecas e dependências do projeto, evitando conflitos com outros projetos ou com o sistema operacional. Isso garante que a análise rode da mesma forma em diferentes máquinas.</p><p></p><p>A configuração inicial pode exigir atenção, mas o benefício de manter o ambiente controlado compensa o esforço, especialmente em projetos colaborativos.</p>
+
+--- [10] text/impact/b
+items.10.items.0.paragraph = <p>Rodou não é o mesmo que acertou. Um código pode executar sem nenhum erro sobre uma premissa equivocada.</p>
+
+--- [11] knowledgeCheck/knowledgeCheck/multiple choice
+items.11.items.0.title = Em qual situação a passagem para código mais se justifica?
+items.11.items.0.answers.0.title = Uma pergunta única sobre uma planilha pequena.
+items.11.items.0.answers.1.title = Um indicador mensal que precisa ser refeito todo mês, a partir de doze arquivos, por pessoas diferentes.
+items.11.items.0.answers.2.title = Um gráfico rápido para uma conversa.
+items.11.items.0.answers.3.title = Uma análise exploratória sem necessidade de repetição.
+items.11.items.0.feedbackCorrect = Correto! Quando o trabalho é repetitivo, envolve múltiplos arquivos e pessoas, automatizar com código traz mais eficiência e confiabilidade.
+items.11.items.0.feedbackIncorrect = Incorreto. A passagem para código se justifica principalmente quando há repetição frequente e colaboração, como no caso do indicador mensal feito por várias pessoas.
+
+--- [12] text/impact/b
+items.12.items.0.paragraph = <p>Para decidir se vale a pena transformar sua análise em um projeto em Python, considere os seguintes pontos:</p><ul><li><strong>Frequência:</strong> Se você realiza essa análise com frequência (diária, semanal, mensal), automatizá-la pode economizar tempo e reduzir erros.</li><li><strong>Quantidade de arquivos:</strong> Se envolve muitos arquivos ou dados, um script em Python pode facilitar o processamento em lote.</li><li><strong>Quem refaz:</strong> Se outras pessoas também precisam refazer a análise, um projeto em Python pode padronizar o processo e facilitar o compartilhamento.</li></ul><p><strong>Estrutura sugerida para o projeto em Python:</strong></p><ul><li><strong>Pasta principal do projeto</strong></li><li><strong>data/</strong> – para armazenar os arquivos de entrada e saída</li><li><strong>src/</strong> – scripts Python principais</li><li><strong>notebooks/</strong> – notebooks Jupyter para análises exploratórias (opcional)</li><li><strong>tests/</strong> – scripts de teste para garantir que o código funciona corretamente</li><li><strong>README.md</strong> – documentação do projeto</li><li><strong>requirements.txt</strong> – lista de dependências do projeto</li></ul><p><strong>O que aprovar durante a criação:</strong></p><ul><li>Escopo da análise a ser automatizada</li><li>Estrutura de pastas e arquivos do projeto</li><li>Ferramentas e bibliotecas Python a serem utilizadas</li><li>Critérios de sucesso e validação dos resultados</li><li>Plano de testes e manutenção</li></ul><p>Se a análise é repetitiva, envolve muitos arquivos ou precisa ser compartilhada, vale sim transformá-la em um projeto em Python.</p>
+
+--- [13] divider/continue/continue
+items.13.items.0.title = Continue
+
+--- [14] text/text/paragraph
+items.14.items.0.paragraph = <p>Agora que você compreende quando e por que migrar sua análise para o código, além dos conceitos fundamentais de scripts, ambientes e agentes, está na hora de aprender como configurar o agente de código com segurança e entender os principais riscos desse processo. Na próxima lição, vamos abordar segurança, permissões e privacidade no uso dos agentes de código.</p>
+
+######## licao_03_Seguranca_e_Dados_Configuracao_do_Agente_e_Riscos.json  title='Segurança e Dados: Configuração do Agente e Riscos'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Segurança em Análises Automatizadas: Protegendo seus Dados e Decisões
+items.0.items.0.paragraph = <p>Ao utilizar agentes de código para análise de dados, a configuração correta das permissões e a compreensão dos riscos envolvidos são essenciais para garantir a integridade dos resultados e a proteção das informações. Pequenas decisões sobre permissões podem ter grande impacto, tanto na segurança dos dados quanto na confiabilidade do projeto. Nesta lição, você vai aprender como proteger seu ambiente e tomar decisões seguras ao interagir com agentes de código.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você aprenderá conceitos essenciais para operar agentes de código de forma segura e em conformidade com normas de privacidade.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Configurar o agente de código em modo restrito.</p>
+items.2.items.1.paragraph = <p>Explicar os limites dos mecanismos de desfazer alterações.</p>
+items.2.items.2.paragraph = <p>Reconhecer riscos documentados de agentes de código, como pacotes inexistentes e perda de dados.</p>
+items.2.items.3.paragraph = <p>Aplicar regras de dados e privacidade, incluindo conformidade com a LGPD.</p>
+
+--- [3] text/text/heading paragraph
+items.3.items.0.heading = Modos de Permissão dos Agentes de Código
+items.3.items.0.paragraph = <p>Conheça os diferentes modos de permissão dos agentes de código e como cada um afeta a segurança do seu projeto. Expanda cada aba para entender como configurar e utilizar cada modo de forma segura.</p>
+
+--- [4] interactive/interactive/tabs
+items.4.items.0.title = Claude Code
+items.4.items.0.description = <p>No Claude Code, existem quatro modos principais de permissão: Manual (default), plan, acceptEdits e bypassPermissions. O modo Manual executa apenas leituras sem pedir aprovação, sendo o padrão seguro para iniciar cada sessão. O modo plan permite apenas leituras e planejamento, sem editar arquivos, ideal para revisar antes de executar qualquer ação.</p><p></p><p>O modo acceptEdits libera leituras, edições e comandos comuns de arquivo após a aprovação do plano, oferecendo mais flexibilidade, mas exigindo atenção redobrada. O modo bypassPermissions libera todas as permissões e só deve ser usado em máquinas isoladas, nunca neste curso. Para alternar entre modos no terminal, use Shift+Tab.</p>
+items.4.items.1.title = Codex
+items.4.items.1.description = <p>No Codex, as permissões são gerenciadas para garantir que o agente só escreva na pasta de trabalho, mantendo a rede desligada por padrão. Para sair da pasta de trabalho, o agente solicita aprovação, aumentando a segurança dos dados do projeto. O comando /permissions permite alternar para o modo somente leitura, restringindo ainda mais as ações do agente.</p><p></p><p>Essas configurações ajudam a evitar alterações não autorizadas e a proteger arquivos sensíveis. Sempre confira o modo ativo antes de executar comandos e prefira modos restritos ao iniciar um novo projeto ou análise.</p>
+
+--- [5] text/text/heading paragraph
+items.5.items.0.heading = Limitações do Desfazer e Como Agir em Caso de Erro
+items.5.items.0.paragraph = <p>Entenda as limitações dos mecanismos de desfazer e saiba como agir em situações de erro. Expanda cada item para conhecer detalhes e exemplos práticos.</p>
+
+--- [6] interactive/interactive/accordion
+items.6.items.0.title = Como funciona o /rewind (ou /undo) no Claude Code
+items.6.items.0.description = <p>O comando /rewind (ou /undo) permite desfazer alterações feitas pelo agente, mas possui limitações importantes. Arquivos alterados apenas por comandos de terminal não são rastreados pelo mecanismo de desfazer e só podem ser recuperados por controle de versão.</p><p></p><p>Por isso, é fundamental manter o controle manual e utilizar sistemas de versionamento sempre que possível, especialmente em projetos críticos.</p>
+items.6.items.1.title = Exemplos de incidentes reais
+items.6.items.1.description = <p>Em julho de 2025, dois incidentes públicos ilustraram os riscos: um agente da Replit apagou o banco de dados de produção de um usuário durante um congelamento de código, e o Gemini CLI moveu arquivos para uma pasta inexistente, resultando em perda definitiva dos dados.</p><p></p><p>Esses casos reforçam a importância de revisar cuidadosamente cada ação do agente e de nunca confiar apenas nos mecanismos automáticos de desfazer.</p>
+
+--- [7] text/text/heading paragraph
+items.7.items.0.heading = Principais Riscos ao Utilizar Agentes de Código para Análise de Dados
+items.7.items.0.paragraph = <p>Memorize os principais riscos ao utilizar agentes de código para análise de dados. Reveja cada flashcard para fixar os conceitos essenciais.</p>
+
+--- [8] interactive/flashcard/flashcard
+items.8.items.0.back.description = <ul><li>Muitos modelos sugerem pacotes que não existem.</li><li>Instalar um pacote desconhecido pode abrir brechas para código malicioso.</li></ul>
+items.8.items.0.front.description = <strong>Pacotes inexistentes</strong>
+items.8.items.1.back.description = <ul><li>Agentes podem apagar ou mover arquivos de forma irreversível.</li><li>O risco é maior especialmente sem confirmação ou controle manual.</li></ul>
+items.8.items.1.front.description = <strong>Perda de dados</strong>
+items.8.items.2.back.description = <ul><li>O uso de dados pessoais em contas não corporativas pode violar a LGPD.</li><li>Isso pode expor informações confidenciais.</li></ul>
+items.8.items.2.front.description = <strong>Exposição de dados sensíveis</strong>
+
+--- [9] text/text/paragraph
+items.9.items.0.paragraph = <p>Veja abaixo uma lista de exemplos de solicitações comuns feitas por agentes e como avaliá-las para garantir a segurança e integridade do seu projeto. Utilize esta referência rápida para tomar decisões seguras.</p>
+
+--- [10] list/list/numbered
+items.10.items.0.paragraph = <p><strong>Ler dados/brutos/ipca.csv</strong> — Aprovar</p>
+items.10.items.1.paragraph = <p><strong>Instalar pandas</strong> — Aprovar</p>
+items.10.items.2.paragraph = <p><strong>Instalar pacote de nome desconhecido</strong> — Recusar até conferir em pypi.org</p>
+items.10.items.3.paragraph = <p><strong>Apagar dados/brutos</strong> — Recusar sempre</p>
+items.10.items.4.paragraph = <p><strong>Acessar a internet para baixar arquivo do Banco Central</strong> — Aprovar com cuidado, conferindo o endereço</p>
+
+--- [11] interactive/interactive-fullscreen/process
+items.11.items.0.title = Preparando o ambiente seguro
+items.11.items.0.description = <p>Antes de iniciar qualquer análise, é fundamental garantir que o agente esteja configurado corretamente e que as decisões sobre permissões e privacidade sejam tomadas de forma consciente.</p>
+items.11.items.1.title = Ambiente seguro e decisões registradas
+items.11.items.1.description = <p>Ao seguir esses passos, você garante que o agente opere em modo restrito e que todas as decisões de privacidade estejam documentadas, reduzindo riscos e protegendo seu projeto.</p>
+items.11.items.2.title = Abrir agente em modo restrito
+items.11.items.2.description = <p>Acesse o agente na pasta do projeto, utilizando o modo de planejamento (Claude Code) ou somente leitura (Codex, /permissions). Isso limita as ações automáticas e protege seus arquivos.</p>
+items.11.items.3.title = Conferir e decidir sobre privacidade
+items.11.items.3.description = <p>Verifique a opção de treino da conta: no ChatGPT, acesse Perfil &gt; Configurações &gt; Controles de dados; no Claude, revise as configurações de privacidade da conta. Decida se permite ou não o uso dos dados para melhoria dos modelos.</p>
+items.11.items.4.title = Classificar pedidos do agente
+items.11.items.4.description = <p>Para cada solicitação do agente, classifique como aprovar, aprovar com cuidado ou recusar, seguindo os exemplos apresentados. Essa triagem é essencial para evitar riscos desnecessários.</p>
+
+--- [12] knowledgeCheck/knowledgeCheck/multiple choice
+items.12.items.0.title = Qual das seguintes ações deve ser sempre recusada ao usar um agente de código em análise de dados?
+items.12.items.0.answers.0.title = Instalar pandas
+items.12.items.0.answers.1.title = Apagar dados/brutos
+items.12.items.0.answers.2.title = Ler dados/brutos/ipca.csv
+items.12.items.0.answers.3.title = Baixar arquivo do Banco Central
+items.12.items.0.feedbackCorrect = Correto! Apagar dados brutos pode causar perda irreversível de informações e deve ser sempre recusado para garantir a integridade dos dados.
+items.12.items.0.feedbackIncorrect = Incorreto. A ação que deve ser sempre recusada é apagar dados brutos, pois isso pode comprometer a integridade e a disponibilidade das informações para análise.
+
+--- [13] text/impact/b
+items.13.items.0.paragraph = Antes de executar qualquer comando, forneça uma explicação breve sobre sua função, quais arquivos serão modificados e se haverá acesso à internet. Nunca modifique ou exclua arquivos na pasta dados/brutos. Caso recomende a instalação de um pacote, inclua o link correspondente no site pypi.org.
+
+--- [14] divider/continue/continue
+items.14.items.0.title = Continue
+
+--- [15] text/text/paragraph
+items.15.items.0.paragraph = <p>Agora que você domina as práticas de segurança e privacidade no uso de agentes de código, está na hora de aprender como planejar detalhadamente suas análises, desde a elaboração do brief até a exigência de planos claros antes da execução. Na próxima lição, você vai estruturar pedidos e organizar instruções para garantir clareza e alinhamento em todo o projeto.</p>
+
+######## licao_04_Pedido_e_Planejamento_Brief_de_Analise_e_Plano_de_Execucao.json  title='Pedido e Planejamento: Brief de Análise e Plano de Execução'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Estruturando o Pedido: O Caminho para Análises Reprodutíveis e Seguras
+items.0.items.0.paragraph = <p>Um pedido bem estruturado é o ponto de partida para garantir que sua análise de dados com IA seja confiável, auditável e alinhada ao objetivo do projeto. Ao detalhar claramente o brief e exigir um plano antes de qualquer execução, você reduz riscos, evita retrabalho e assegura que todas as etapas estejam documentadas, mesmo sem experiência prévia em programação. O planejamento cuidadoso e o registro de premissas são essenciais para a segurança e a reprodutibilidade do seu projeto de análise.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você aprenderá habilidades essenciais para gerenciar projetos e interagir de forma eficaz com agentes automatizados. Veja os principais tópicos abordados:</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Redigir um brief de análise com seis itens essenciais.</p>
+items.2.items.1.paragraph = <p>Registrar premissas permanentes em arquivos de instruções do projeto.</p>
+items.2.items.2.paragraph = <p>Exigir e analisar o plano de execução antes de aprovar qualquer ação do agente.</p>
+items.2.items.3.paragraph = <p>Solicitar explicações claras e acessíveis sobre o código gerado pelo agente.</p>
+
+--- [3] text/text/heading paragraph
+items.3.items.0.heading = Componentes Fundamentais de um Brief de Análise
+items.3.items.0.paragraph = <p>Conheça os seis componentes essenciais que tornam um brief de análise eficaz e bem estruturado.</p>
+
+--- [4] interactive/flashcard/flashcard
+items.4.items.0.back.description = <p>Define a decisão a ser apoiada pela análise.</p>
+items.4.items.0.front.description = <strong>Objetivo</strong>
+items.4.items.1.back.description = <p>Especifica o arquivo, formato, separador, decimal, codificação e dicionário dos dados.</p>
+items.4.items.1.front.description = <strong>Dados</strong>
+items.4.items.2.back.description = <p>Lista restrições, como não alterar dados brutos.</p>
+items.4.items.2.front.description = <strong>Regras</strong>
+items.4.items.3.back.description = <p>Indica onde salvar tabelas, gráficos e outros resultados.</p>
+items.4.items.3.front.description = <strong>Saídas</strong>
+items.4.items.4.back.description = <p>Aponta o número oficial ou referência que deve ser reproduzida.</p>
+items.4.items.4.front.description = <strong>Verificação</strong>
+items.4.items.5.back.description = <p>Solicita que o agente apresente o plano antes de executar qualquer ação.</p>
+items.4.items.5.front.description = <strong>Exigência de Plano</strong>
+
+--- [5] text/text/heading paragraph
+items.5.items.0.heading = Dicas para um Brief Claro e Eficiente
+items.5.items.0.paragraph = <p>Confira orientações práticas para garantir que seu brief seja compreendido e útil para o agente, evitando erros e retrabalho.</p>
+
+--- [6] interactive/interactive/accordion
+items.6.items.0.title = Seja específico nos dados
+items.6.items.0.description = <p>Explique o formato do arquivo, separadores, decimais e codificação, especialmente ao lidar com dados públicos brasileiros. Detalhes como ponto e vírgula como separador, vírgula decimal e codificação latin-1 ou UTF-8 devem ser sempre declarados.</p><p></p><p>Essas informações evitam erros de leitura e garantem que o agente processe os dados corretamente desde o início.</p>
+items.6.items.1.title = Não confie em descobertas automáticas
+items.6.items.1.description = <p>Anote no brief tudo o que o agente não deduz sozinho, como restrições de pasta, regras de não alteração ou formatos específicos. Não presuma que o agente saberá detalhes do seu contexto sem instruções explícitas.</p><p></p><p>Quanto mais claro e completo for o brief, menor o risco de interpretações erradas e retrabalho.</p>
+items.6.items.2.title = Exija sempre o plano
+items.6.items.2.description = <p>Reforce a necessidade de aprovação prévia antes de qualquer execução. Solicite que o agente apresente o plano detalhado em até seis passos e aguarde sua validação antes de prosseguir.</p><p></p><p>Essa prática garante controle sobre o processo e evita alterações não autorizadas nos dados.</p>
+items.6.items.3.title = Declare a fonte de verificação
+items.6.items.3.description = <p>Sempre inclua no brief o número oficial a ser reproduzido e a fonte, como IBGE ou outro órgão de referência. Isso serve como critério objetivo para validar o resultado da análise.</p><p></p><p>Ter uma referência clara facilita a conferência dos resultados e aumenta a confiabilidade do projeto.</p>
+
+--- [7] interactive/interactive-fullscreen/process
+items.7.items.0.title = Introdução ao Processo de Pedido e Planejamento
+items.7.items.0.description = <p>O processo de pedido e planejamento envolve estruturar o brief, registrar premissas e controlar a execução do agente para garantir clareza e segurança.</p>
+items.7.items.1.title = Resumo do Processo
+items.7.items.1.description = <p>Ao seguir esse processo, você garante que o agente só execute tarefas após aprovação, com todas as premissas registradas e acessíveis, promovendo segurança e reprodutibilidade.</p>
+items.7.items.2.title = Escreva o brief de análise
+items.7.items.2.description = <p>Inclua objetivo, dados, regras, saídas, verificação e a exigência de plano. Certifique-se de que cada item está claro e completo.</p>
+items.7.items.3.title = Envie o brief e exija o plano
+items.7.items.3.description = <p>Com o agente em modo de planejamento, envie o brief e solicite que o plano seja apresentado em até seis passos antes de qualquer execução.</p>
+items.7.items.4.title = Gere o arquivo de instruções
+items.7.items.4.description = <p>Utilize o comando apropriado (/init no Claude Code ou crie manualmente o AGENTS.md no Codex) para registrar as premissas do brief em um arquivo de instruções.</p>
+items.7.items.5.title = Confirme o carregamento do arquivo
+items.7.items.5.description = <p>Verifique se o arquivo de instruções foi carregado corretamente pelo agente antes de autorizar qualquer ação. Isso garante que todas as premissas estejam ativas na sessão.</p>
+
+--- [8] text/text/heading paragraph
+items.8.items.0.heading = Soluções rápidas para obstáculos comuns ao redigir e registrar o brief e o plano de execução
+items.8.items.0.paragraph = <p>Encontre respostas práticas para problemas frequentes durante a elaboração e documentação do brief e do plano de execução. Use estas orientações para manter o processo organizado e eficiente.</p>
+
+--- [9] interactive/interactive/tabs
+items.9.items.0.title = O agente começa a editar sem mostrar o plano
+items.9.items.0.description = <p>Se o agente iniciar edições sem apresentar o plano, volte ao modo de planejamento imediatamente. Repita o pedido, reforçando: “mostre o plano e espere aprovação”.</p><p></p><p>Isso garante que nenhuma ação seja tomada sem sua validação prévia, mantendo o controle do processo.</p>
+items.9.items.1.title = CLAUDE.md não aparece em /context all
+items.9.items.1.description = <p>Se o arquivo de instruções CLAUDE.md não for listado em /context all, verifique se ele está na raiz da pasta aberta pelo agente.</p><p></p><p>Arquivos fora da raiz podem não ser carregados corretamente, comprometendo o registro das premissas.</p>
+items.9.items.2.title = Explicação técnica demais
+items.9.items.2.description = <p>Se a explicação do agente estiver muito técnica, solicite: “em português simples, blocos de no máximo cinco linhas”.</p><p></p><p>Assim, você garante que a explicação seja acessível e compreensível, mesmo sem conhecimento prévio em programação.</p>
+
+--- [10] text/text/paragraph
+items.10.items.0.paragraph = <p>Antes de iniciar a execução do seu pedido, é fundamental garantir que todos os critérios essenciais foram atendidos. Confira os pontos abaixo para assegurar que o planejamento está adequado:</p>
+
+--- [11] list/list/numbered
+items.11.items.0.paragraph = <p>O plano deve ser apresentado pelo agente em até seis passos claros, facilitando o entendimento e acompanhamento do processo.</p>
+items.11.items.1.paragraph = <p>Certifique-se de que o arquivo de instruções (CLAUDE.md ou AGENTS.md) foi criado e carregado corretamente, garantindo que todas as orientações estejam documentadas.</p>
+items.11.items.2.paragraph = <p>Não gere nenhum arquivo de análise antes que o plano seja aprovado, evitando retrabalho e garantindo que todas as etapas estejam alinhadas com as expectativas.</p>
+
+--- [12] knowledgeCheck/knowledgeCheck/multiple choice
+items.12.items.0.title = Qual item NÃO pode faltar em um brief de análise para garantir clareza e reprodutibilidade?
+items.12.items.0.answers.0.title = O objetivo da análise
+items.12.items.0.answers.0.feedback = O objetivo da análise é fundamental para garantir clareza e reprodutibilidade, pois orienta todo o processo e define o que se espera alcançar.
+items.12.items.0.answers.1.title = O plano de execução apresentado pelo agente
+items.12.items.0.answers.1.feedback = Embora importante, o plano de execução pode variar e não é o elemento central para garantir clareza e reprodutibilidade.
+items.12.items.0.answers.2.title = A cor dos gráficos a serem gerados
+items.12.items.0.answers.2.feedback = A cor dos gráficos é um detalhe estético e não impacta diretamente a clareza ou reprodutibilidade da análise.
+
+--- [13] text/impact/b
+items.13.items.0.paragraph = <p><strong>Objetivo:</strong> [decisão que a análise apoia].</p><p><strong>Dados:</strong> [caminho], formato [separador, decimal, codificação], dicionário [onde está].</p><p><strong>Regras:</strong> não alterar dados/brutos.</p><p><strong>Saídas:</strong> [pasta e arquivos].</p><p><strong>Verificação:</strong> [número oficial e fonte].</p><p>Mostre o plano em até seis passos e espere minha aprovação.</p>
+
+--- [14] divider/continue/continue
+items.14.items.0.title = Continue
+
+--- [15] text/text/paragraph
+items.15.items.0.paragraph = <p>Agora que você domina a elaboração de briefs de análise, o registro de premissas e a exigência de planos claros, está na hora de avançar para a organização do projeto, aprendendo como garantir a reprodutibilidade dos resultados em qualquer ambiente. Na próxima lição, vamos estruturar pastas, registrar versões e testar a execução do projeto do zero.</p>
+
+######## licao_05_Reprodutibilidade_em_Projetos_de_Analise.json  title='Reprodutibilidade em Projetos de Análise'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Por que a Reprodutibilidade É Fundamental em Projetos de Análise?
+items.0.items.0.paragraph = <p>A reprodutibilidade é um dos pilares da análise de dados confiável. Ela garante que diferentes pessoas, em diferentes momentos, possam obter os mesmos resultados ao executar o mesmo código sobre os mesmos dados. Isso é fundamental para assegurar integridade, transparência e confiança nos resultados, especialmente em ambientes profissionais e regulatórios.</p><p>Sem reprodutibilidade, análises podem se tornar dependentes do ambiente ou da máquina de quem as executou, dificultando auditorias, revisões e a continuidade do trabalho. Por isso, adotar práticas que promovam a reprodutibilidade é essencial para qualquer projeto de análise de dados que busca ser robusto e confiável.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você aprenderá conceitos e práticas essenciais para garantir a reprodutibilidade em projetos de análise de dados, desde a organização de arquivos até o uso de controle de versão.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Definir o conceito de reprodutibilidade em projetos de análise.</p>
+items.2.items.1.paragraph = <p>Organizar pastas e arquivos para garantir integridade e clareza.</p>
+items.2.items.2.paragraph = <p>Registrar as versões das bibliotecas utilizadas (uv.lock).</p>
+items.2.items.3.paragraph = <p>Testar a execução do projeto do zero para validar a reprodutibilidade.</p>
+items.2.items.4.paragraph = <p>Utilizar controle de versão para acompanhar o histórico do projeto.</p>
+
+--- [3] text/text/heading paragraph
+items.3.items.0.heading = Conceitos-Chave de Reprodutibilidade
+items.3.items.0.paragraph = <p>Revise os principais conceitos que sustentam um projeto reprodutível em análise de dados.</p>
+
+--- [4] interactive/flashcard/flashcard
+items.4.items.0.back.description = <span>Capacidade de obter o mesmo resultado ao executar o mesmo código sobre os mesmos dados, mesmo após meses ou por outras pessoas.</span>
+items.4.items.0.front.description = <strong>Reprodutibilidade</strong>
+items.4.items.1.back.description = <span>Os dados originais não são modificados; todas as manipulações são feitas em cópias ou resultados derivados.</span>
+items.4.items.1.front.description = <strong>Dados brutos intocados</strong>
+items.4.items.2.back.description = <span>Arquivo que garante que todas as bibliotecas usadas estejam na mesma versão, permitindo replicar o ambiente.</span>
+items.4.items.2.front.description = <strong>Registro de versões (uv.lock)</strong>
+items.4.items.3.back.description = <span>Sistema (como Git) que registra cada alteração no projeto, facilitando auditoria e recuperação de etapas anteriores.</span>
+items.4.items.3.front.description = <strong>Controle de versão</strong>
+
+--- [5] text/text/heading paragraph
+items.5.items.0.heading = Boas Práticas de Organização de Projetos
+items.5.items.0.paragraph = <p>Explore as principais práticas para organizar um projeto de análise de dados reprodutível. Clique em cada aba para conhecer detalhes importantes de cada aspecto.</p>
+
+--- [6] interactive/interactive/tabs
+items.6.items.0.title = Estrutura de Pastas
+items.6.items.0.description = <p>Separar dados brutos, resultados e código em pastas distintas é uma das práticas mais recomendadas para garantir organização e integridade. Por exemplo, mantenha os arquivos originais em dados/brutos/, salve os resultados em resultados/ e armazene scripts em scripts/.</p><p></p><p>Essa separação facilita a localização de arquivos, evita alterações acidentais nos dados originais e torna o projeto mais compreensível para qualquer pessoa que venha a utilizá-lo no futuro.</p>
+items.6.items.1.title = Registro de Passos
+items.6.items.1.description = <p>Documentar cada etapa do projeto é essencial para garantir rastreabilidade. Mantenha scripts como analise.py e um README.md detalhando todas as ações realizadas, desde a preparação dos dados até a geração dos resultados.</p><p></p><p>Essa documentação permite que outras pessoas entendam o fluxo do projeto e reproduzam as análises sem depender de conhecimento prévio ou de informações externas.</p>
+items.6.items.2.title = Registro de Versões
+items.6.items.2.description = <p>Utilizar arquivos como pyproject.toml e uv.lock é fundamental para registrar todas as dependências do projeto. Esses arquivos garantem que as bibliotecas usadas estejam nas mesmas versões, evitando incompatibilidades futuras.</p><p></p><p>Com o registro de versões, qualquer pessoa pode recriar o ambiente do projeto e obter os mesmos resultados, independentemente do computador utilizado.</p>
+items.6.items.3.title = Teste de Reprodução
+items.6.items.3.description = <p>Testar a reprodutibilidade do projeto é uma etapa indispensável. Apague os resultados e execute tudo novamente para garantir que o projeto roda do zero e gera os mesmos resultados.</p><p></p><p>Esse teste simples é a prova final de que o projeto está bem estruturado e pode ser replicado por qualquer pessoa, a qualquer momento.</p>
+items.6.items.4.title = Histórico e Auditoria
+items.6.items.4.description = <p>O controle de versão, como o Git, permite registrar cada etapa do projeto, facilitando auditorias e revisões. Cada alteração fica documentada, tornando possível recuperar versões anteriores ou identificar a origem de eventuais problemas.</p><p></p><p>Manter um histórico detalhado aumenta a transparência e a confiabilidade do projeto, além de facilitar colaborações e revisões independentes.</p>
+
+--- [7] text/text/heading paragraph
+items.7.items.0.heading = Regras e Recomendações para Reprodutibilidade
+items.7.items.0.paragraph = <p>Expanda cada item para conhecer recomendações práticas que ajudam a garantir a reprodutibilidade do seu projeto de análise de dados.</p>
+
+--- [8] interactive/interactive/accordion
+items.8.items.0.title = Guardar dados brutos
+items.8.items.0.description = <p>Nunca altere os arquivos originais de dados. Eles devem permanecer sempre intocados na pasta designada, servindo como referência para qualquer análise futura.</p><p></p><p>Trabalhar sempre com cópias ou resultados derivados evita perdas e garante que a base de dados permaneça confiável.</p>
+items.8.items.1.title = Registrar cada passo
+items.8.items.1.description = <p>Documente todas as transformações e análises realizadas. Use scripts e o README.md para detalhar cada etapa, facilitando a compreensão e a reprodução do processo.</p><p></p><p>Esse registro detalhado é fundamental para auditorias e para que outras pessoas possam seguir o mesmo caminho.</p>
+items.8.items.2.title = Evitar manipulação manual
+items.8.items.2.description = <p>Automatize todos os processos sempre que possível. Evite editar arquivos manualmente, pois isso dificulta a rastreabilidade e pode comprometer a reprodutibilidade.</p><p></p><p>Scripts automatizados garantem que as etapas possam ser repetidas de forma idêntica por qualquer pessoa.</p>
+items.8.items.3.title = Arquivar versões exatas
+items.8.items.3.description = <p>Utilize o uv.lock para garantir que todas as bibliotecas estejam nas versões corretas. Isso evita problemas de incompatibilidade e facilita a reprodução do ambiente.</p><p></p><p>Arquivar as versões exatas é uma das práticas mais importantes para projetos de análise reprodutíveis.</p>
+items.8.items.4.title = Testar rodando do zero
+items.8.items.4.description = <p>Sempre apague os resultados e execute o projeto novamente para verificar se tudo funciona do zero. Esse teste simples é a melhor forma de garantir a integridade do projeto.</p><p></p><p>Se os resultados forem os mesmos, você pode confiar que o projeto está realmente reprodutível.</p>
+
+--- [9] interactive/interactive-fullscreen/process
+items.9.items.0.title = Início do Processo
+items.9.items.0.description = <p>Acompanhe o roteiro para validar se seu projeto é realmente reprodutível, seguindo cada etapa cuidadosamente.</p>
+items.9.items.1.title = Resumo do Processo
+items.9.items.1.description = <p>Ao final, se os resultados forem idênticos e o arquivo <strong>uv.lock</strong> estiver presente, seu projeto é considerado reprodutível.</p>
+items.9.items.2.title = Aprovar plano e instalar bibliotecas
+items.9.items.2.description = <p>Aprove o plano de análise e acompanhe a criação do script <strong>analise.py</strong>, além da instalação das bibliotecas <strong>pandas</strong> e <strong>Matplotlib</strong> via <strong>uv</strong>.</p>
+items.9.items.3.title = Executar script inicial
+items.9.items.3.description = <p>Execute o script para gerar os resultados iniciais do projeto.</p>
+items.9.items.4.title = Apagar resultados gerados
+items.9.items.4.description = <p>Apague a pasta de resultados (<strong>resultados/</strong>) para simular um ambiente limpo.</p>
+items.9.items.5.title = Rodar novamente do zero
+items.9.items.5.description = <p>Execute novamente o script com <strong>uv run analise.py</strong> e confira se os mesmos números aparecem nos resultados.</p>
+items.9.items.6.title = Verificar arquivo de versões
+items.9.items.6.description = <p>Confirme a presença do arquivo <strong>uv.lock</strong> na pasta do projeto, garantindo o registro das versões utilizadas.</p>
+
+--- [10] text/text/paragraph
+items.10.items.0.paragraph = <p>Confira se seu projeto atende aos critérios essenciais de reprodutibilidade antes de avançar.</p>
+
+--- [11] list/list/numbered
+items.11.items.0.paragraph = <p>Dados brutos permanecem intocados em <strong>dados/brutos/</strong>.</p>
+items.11.items.1.paragraph = <p>Scripts e <strong>README.md</strong> documentam todas as etapas.</p>
+items.11.items.2.paragraph = <p><strong>uv.lock</strong> e <strong>pyproject.toml</strong> presentes na pasta do projeto.</p>
+items.11.items.3.paragraph = <p>Resultados são gerados corretamente após rodar do zero.</p>
+items.11.items.4.paragraph = <p>Controle de versão registra cada etapa do projeto.</p>
+
+--- [12] knowledgeCheck/knowledgeCheck/multiple choice
+items.12.items.0.title = Qual prática impede que a análise funcione apenas no computador de quem a fez?
+items.12.items.0.answers.0.title = Salvar o gráfico em PNG.
+items.12.items.0.answers.0.feedback = Salvar o gráfico em PNG apenas exporta uma imagem dos resultados, não garante que o código rode em outros ambientes.
+items.12.items.0.answers.1.title = Registrar as versões das bibliotecas (uv.lock) e testar rodando do zero.
+items.12.items.0.answers.1.feedback = Registrar as versões das bibliotecas e testar a execução do zero garante que outras pessoas possam reproduzir a análise em diferentes computadores.
+items.12.items.0.answers.2.title = Usar um notebook.
+items.12.items.0.answers.2.feedback = Usar um notebook facilita a organização do código, mas não garante que ele funcione em outros ambientes.
+items.12.items.0.answers.3.title = Compartilhar apenas o script analise.py.
+items.12.items.0.answers.3.feedback = Compartilhar apenas o script não garante que as dependências estejam corretas em outros computadores.
+
+--- [13] text/impact/b
+items.13.items.0.paragraph = <ul><li>Organize o projeto de forma que outra pessoa possa executá-lo do zero:</li><ul><li>Mantenha os dados brutos intocados em uma pasta específica.</li><li>Coloque todo o código em um script separado.</li><li>Registre as versões das dependências utilizando o <strong>uv</strong>.</li><li>Salve os resultados em uma pasta própria, separada dos dados brutos.</li><li>Inclua um arquivo <strong>README</strong> com uma seção "Como rodar" explicando o passo a passo para executar o projeto.</li></ul><li>Depois, apague a pasta de resultados, execute novamente todo o processo e mostre a saída obtida.</li></ul>
+
+--- [14] divider/continue/continue
+items.14.items.0.title = Continue
+
+--- [15] text/text/paragraph
+items.15.items.0.paragraph = <p>Agora que você domina as práticas de reprodutibilidade em projetos de análise, está pronto para avançar para a validação dos resultados. Na próxima lição, vamos explorar como testar, controlar e revisar os resultados de sua análise para garantir ainda mais confiança e qualidade nos projetos realizados com agentes de código.</p>
+
+######## licao_06_Validacao_de_Resultados_Testes_Controles_e_Revisao_Independe.json  title='Validação de Resultados: Testes, Controles e Revisão Independente'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Garantindo a Confiabilidade: Validação de Resultados em Análises Automatizadas
+items.0.items.0.paragraph = <p>Em projetos de análise de dados conduzidos por agentes de código, validar os resultados é fundamental para garantir confiança e qualidade. A simples execução sem erros não assegura que os resultados estejam corretos. Por isso, é essencial compreender o conceito de erro silencioso e adotar múltiplas camadas de verificação. Assim, você evita decisões baseadas em dados incorretos e fortalece a credibilidade do seu projeto.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você aprenderá sobre as melhores práticas para garantir a precisão e confiabilidade dos resultados ao utilizar agentes de código. Os tópicos abordados ajudarão você a identificar limitações, interpretar testes e documentar revisões de forma eficaz.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Relatar as limitações dos agentes de código quanto à precisão dos resultados.</p>
+items.2.items.1.paragraph = <p>Explicar o conceito de erro silencioso e sua importância.</p>
+items.2.items.2.paragraph = <p>Solicitar e interpretar testes automáticos (asserts) e contagens de controle.</p>
+items.2.items.3.paragraph = <p>Realizar comparações com números oficiais para ancorar resultados.</p>
+items.2.items.4.paragraph = <p>Acionar e documentar revisões independentes do código.</p>
+
+--- [3] text/text/heading paragraph
+items.3.items.0.heading = Desafios na Validação de Agentes de Código em Análise de Dados
+items.3.items.0.paragraph = <p>Revise os principais desafios e limitações enfrentados ao validar resultados de agentes de código em análise de dados. Use estes flashcards para memorizar conceitos essenciais antes de avançar para as práticas de validação.</p>
+
+--- [4] interactive/flashcard/flashcard
+items.4.items.0.back.description = <p>Estudos independentes mostram que sistemas como DA-Code e KramaBench acertam menos de 60% das tarefas de análise de dados em cenários reais.</p>
+items.4.items.0.front.description = <p>Taxa de acerto</p>
+items.4.items.1.back.description = <p>Muitos agentes produzem resultados aparentemente normais mesmo quando erram; em auditoria, 69,8% das execuções erradas não relataram falha.</p>
+items.4.items.1.front.description = <p>Erro silencioso</p>
+items.4.items.2.back.description = <p>Programadores superestimam o desempenho dos agentes; a sensação de acerto não substitui medições objetivas.</p>
+items.4.items.2.front.description = <p>Percepção versus realidade</p>
+
+--- [5] text/text/heading paragraph
+items.5.items.0.heading = Detectando e Prevenindo Erros Silenciosos
+items.5.items.0.paragraph = <p>Explore as seções abaixo para entender o que são erros silenciosos, por que são perigosos e como identificá-los em suas análises automatizadas.</p>
+
+--- [6] interactive/interactive/accordion
+items.6.items.0.title = O que é erro silencioso?
+items.6.items.0.description = <p>O erro silencioso ocorre quando o script executa sem apresentar mensagens de erro, mas entrega resultados incorretos. Um exemplo comum é juntar rankings sem parear corretamente as linhas, levando a conclusões erradas sem qualquer alerta.</p><p></p><p>Esses erros são especialmente traiçoeiros porque passam despercebidos, já que o processo parece ter funcionado normalmente.</p>
+items.6.items.1.title = Por que são perigosos?
+items.6.items.1.description = <p>Erros silenciosos podem comprometer decisões importantes, pois os resultados aparentam estar corretos e confiáveis. Como não há indicação clara de falha, o usuário pode seguir adiante sem perceber que os dados estão errados.</p><p></p><p>Isso pode afetar relatórios, tomadas de decisão e até auditorias, tornando a validação uma etapa indispensável.</p>
+items.6.items.2.title = Como detectar?
+items.6.items.2.description = <p>Para identificar erros silenciosos, utilize práticas como asserts, contagens de controle, comparações com números oficiais e revisão independente. Essas ferramentas ajudam a garantir que o resultado não apenas "roda", mas está realmente correto.</p><p></p><p>Implementar essas verificações reduz drasticamente o risco de confiar em resultados incorretos.</p>
+
+--- [7] text/text/heading paragraph
+items.7.items.0.heading = Práticas de Validação: Como Solicitar ao Agente
+items.7.items.0.paragraph = <p>Expanda cada aba para conhecer as principais práticas de validação e veja exemplos de como pedir ao agente de código para implementá-las em seu projeto.</p>
+
+--- [8] interactive/interactive/tabs
+items.8.items.0.title = Testes automáticos (asserts)
+items.8.items.0.description = <p><strong>Como solicitar:</strong> “Adicione asserts: linhas lidas = 72; IPCA 2024 = 4,83 ± 0,01”</p><p></p><p>Asserts são comandos que interrompem o script caso um resultado esperado não seja atingido. Eles facilitam a identificação de falhas rapidamente, evitando que erros passem despercebidos.</p><p></p><p>Ao solicitar asserts, você garante que condições críticas sejam verificadas automaticamente durante a execução do código.</p>
+items.8.items.1.title = Contagens de controle
+items.8.items.1.description = <p><strong>Como solicitar:</strong> “Imprima o número de linhas antes e depois de cada filtro”</p><p></p><p>Contagens de controle permitem acompanhar como os dados estão sendo transformados ao longo do processo. Isso ajuda a identificar perdas ou duplicidades inesperadas.</p><p></p><p>Solicitar essas contagens torna mais fácil rastrear onde um possível erro pode ter ocorrido durante a análise.</p>
+items.8.items.2.title = Comparação com número oficial
+items.8.items.2.description = <p><strong>Como solicitar:</strong> “Compare com IBGE, CVM, CNJ ou INMET”</p><p></p><p>Comparar resultados com números oficiais de fontes externas confiáveis é uma maneira eficaz de ancorar a análise e garantir sua precisão.</p><p></p><p>Essa prática aumenta a segurança dos resultados e facilita a validação por terceiros.</p>
+items.8.items.3.title = Revisão independente
+items.8.items.3.description = <p><strong>Como solicitar:</strong> Claude Code: /code-review; Codex: nova sessão com “revise como auditor que não confia no autor”</p><p></p><p>A revisão independente envolve um avaliador externo, que não participou da elaboração do código, para checar possíveis falhas não percebidas pelo autor original.</p><p></p><p>Esse processo adiciona uma camada extra de segurança e aumenta a confiabilidade do projeto.</p>
+
+--- [9] interactive/interactive-fullscreen/process
+items.9.items.0.title = Introdução à Validação de Resultados
+items.9.items.0.description = <p>Neste processo, você vai aplicar diferentes práticas de validação para garantir que os resultados do seu projeto de análise de dados estejam corretos e documentados.</p>
+items.9.items.1.title = Resumo da Validação de Resultados
+items.9.items.1.description = <p>Ao seguir esse roteiro, você valida não só o funcionamento dos testes automáticos, mas também a importância da revisão independente e da documentação dos resultados.</p>
+items.9.items.2.title = Solicitar assert com valor errado
+items.9.items.2.description = <p>Peça ao agente para adicionar um assert com um valor propositalmente incorreto, como IPCA 2024 = 4,99%, e execute o script. Isso serve para testar se o mecanismo de validação está funcionando.</p>
+items.9.items.3.title = Observar o AssertionError
+items.9.items.3.description = <p>Durante a execução, verifique se ocorre um AssertionError. Esse erro indica que o script detectou a inconsistência, sinalizando que a validação automática está ativa.</p>
+items.9.items.4.title = Corrigir e revisar
+items.9.items.4.description = <p>Corrija o valor do assert para o correto (4,83%), execute novamente o script e solicite uma revisão independente do arquivo de análise.</p>
+items.9.items.5.title = Documentar no README.md
+items.9.items.5.description = <p>Registre no README.md pelo menos um apontamento identificado durante a revisão independente, garantindo rastreabilidade e transparência no projeto.</p>
+
+--- [10] text/text/paragraph
+items.10.items.0.paragraph = <p>Confira a seguir uma lista de critérios essenciais para garantir a validação dos resultados em seu projeto:</p>
+
+--- [11] list/list/numbered
+items.11.items.0.paragraph = <p>AssertionError ocorre ao testar um assert com valor errado.</p>
+items.11.items.1.paragraph = <p>Execução sem erro ao corrigir o valor do assert.</p>
+items.11.items.2.paragraph = <p>Revisão independente realizada e apontamento registrado no README.md.</p>
+
+--- [12] knowledgeCheck/knowledgeCheck/multiple choice
+items.12.items.0.title = Qual prática é fundamental para detectar erros silenciosos em análises conduzidas por agentes de código?
+items.12.items.0.answers.0.title = Salvar gráficos em diferentes formatos
+items.12.items.0.answers.0.feedback = Salvar gráficos em diferentes formatos é útil para apresentação, mas não contribui diretamente para detectar erros silenciosos no código.
+items.12.items.0.answers.1.title = Solicitar asserts e contagens de controle no script
+items.12.items.0.answers.1.feedback = Asserts e contagens de controle ajudam a verificar se os resultados intermediários estão corretos, facilitando a detecção de erros silenciosos.
+items.12.items.0.answers.2.title = Usar apenas dados públicos
+items.12.items.0.answers.2.feedback = Usar dados públicos pode ser importante por questões éticas, mas não garante a detecção de erros silenciosos no processamento do código.
+items.12.items.0.answers.3.title = Compartilhar o script com colegas
+items.12.items.0.answers.3.feedback = Compartilhar o script pode ajudar na revisão, mas não substitui mecanismos automáticos como asserts e contagens de controle para detectar erros silenciosos.
+
+--- [13] text/impact/b
+items.13.items.0.paragraph = <p>Revise o script como um auditor desconfiado do autor. Aqui estão cinco formas de o número final estar errado:</p><ol><li><strong>Leitura:</strong> O arquivo de entrada pode estar corrompido ou incompleto.</li><li><strong>Filtro:</strong> O filtro pode estar removendo linhas importantes ou mantendo linhas erradas.</li><li><strong>Junção:</strong> A junção de dados pode estar duplicando ou omitindo registros.</li><li><strong>Escala:</strong> Pode haver erro na multiplicação ou divisão de valores (por exemplo, usando a unidade errada).</li><li><strong>Fórmula:</strong> A fórmula usada para calcular o número final pode estar incorreta.</li></ol><p>Para cada caso, um exemplo de assert:</p><ul><li><strong>Leitura:</strong> <code>assert len(df) &gt; 0, "Arquivo de entrada vazio ou não lido corretamente"</code></li><li><strong>Filtro:</strong> <code>assert df['coluna_filtro'].isin(valores_esperados).all(), "Filtro aplicado incorretamente"</code></li><li><strong>Junção:</strong> <code>assert df_merged.duplicated(subset=chave_primaria).sum() == 0, "Junção gerou duplicatas"</code></li><li><strong>Escala:</strong> <code>assert df['valor'].max() &lt; 1e6, "Erro de escala detectado"</code></li><li><strong>Fórmula:</strong> <code>assert resultado == resultado_esperado, "Fórmula de cálculo incorreta"</code></li></ul><p>Exemplo de execução dos asserts em Python:</p><pre>python script.py</pre><p>Saída esperada:</p><pre>Todos os asserts passaram. Número final: 12345</pre>
+
+--- [14] divider/continue/continue
+items.14.items.0.title = Continue
+
+--- [15] text/text/paragraph
+items.15.items.0.paragraph = Agora que você domina as práticas de validação de resultados, está pronto para integrar todos os conhecimentos e entregar um projeto de análise reprodutível e validado. Na próxima lição, vamos consolidar as etapas, revisar os critérios de entrega e garantir que seu projeto possa ser executado por qualquer pessoa com segurança e confiança.
+
+######## licao_07_Sintese_e_Aplicacao_Integrada_Entrega_do_Projeto_Final.json  title='Síntese e Aplicação Integrada: Entrega do Projeto Final'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Consolidando o Projeto: Da Teoria à Entrega Reprodutível
+items.0.items.0.paragraph = <p>Chegou o momento de integrar tudo o que você aprendeu ao longo do curso para entregar um projeto de análise de dados verdadeiramente reprodutível, validado e transparente. A síntese não é apenas um fechamento, mas um exercício prático em que a confiabilidade do seu trabalho será testada por outras pessoas. O objetivo é garantir que qualquer pessoa, ao receber sua pasta de projeto, consiga executar tudo do zero e obter os mesmos resultados, conferindo-os com a fonte oficial.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você aprenderá os principais passos para entregar um projeto de análise de dados reprodutível, bem documentado e validado, pronto para ser utilizado por outras pessoas.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Entregar um projeto de análise reprodutível e validado, pronto para ser executado por terceiros.</p>
+items.2.items.1.paragraph = <p>Documentar detalhadamente o projeto, incluindo README, limitações e instruções de uso.</p>
+items.2.items.2.paragraph = <p>Avaliar o projeto utilizando critérios objetivos de qualidade e reprodutibilidade.</p>
+items.2.items.3.paragraph = <p>Realizar a conferência final dos resultados, garantindo transparência e confiabilidade.</p>
+
+--- [3] text/text/heading paragraph
+items.3.items.0.heading = Critérios de Reprodutibilidade e Validação do Projeto Final
+items.3.items.0.paragraph = <p>Revise os principais critérios que o projeto final deve atender para ser considerado reprodutível e validado. Use estes cartões para memorizar os pontos essenciais antes de avançar para a entrega prática.</p>
+
+--- [4] interactive/flashcard/flashcard
+items.4.items.0.back.description = <p>O arquivo original (ex: dados/brutos/ipca.csv) permanece sem alterações.</p>
+items.4.items.0.front.description = <p>Dados brutos intocados</p>
+items.4.items.1.back.description = <p>O arquivo de registro de versões garante que o ambiente pode ser replicado.</p>
+items.4.items.1.front.description = <p>uv.lock presente</p>
+items.4.items.2.back.description = <p>Testes automáticos (ex: IPCA 2024 = 4,83%) passam sem erro.</p>
+items.4.items.2.front.description = <p>Asserts de validação</p>
+items.4.items.3.back.description = <p>Os resultados e os gráficos solicitados são salvos corretamente na pasta de resultados.</p>
+items.4.items.3.front.description = <p>Resultados e gráficos gerados</p>
+items.4.items.4.back.description = <p>O README inclui objetivo, dados, instruções de execução, verificação e limitações.</p>
+items.4.items.4.front.description = <p>README completo</p>
+
+--- [5] text/text/heading paragraph
+items.5.items.0.heading = Recomendações para Documentação Eficaz em Projetos
+items.5.items.0.paragraph = <p>Uma boa documentação é essencial para garantir que qualquer pessoa consiga entender, executar e validar um projeto. A seguir, veja recomendações práticas para estruturar o README, registrar limitações e garantir transparência e replicabilidade.</p>
+
+--- [6] interactive/interactive/accordion
+items.6.items.0.title = Como estruturar o README
+items.6.items.0.description = <p>Inclua seções de Objetivo, Dados (fonte, data, formato), Como rodar (comandos exatos), Verificação (números oficiais e asserts), Resultados e Limitações. Uma estrutura clara facilita a compreensão e a execução do projeto por qualquer pessoa.</p><p></p><p>Evite deixar dúvidas sobre onde estão os arquivos, como executar o código e quais são os critérios de sucesso. Quanto mais detalhado e objetivo, melhor.</p>
+items.6.items.1.title = Lidando com pequenas diferenças nos resultados
+items.6.items.1.description = <p>Diferenças de até 0,01 ponto percentual podem ocorrer devido ao arredondamento das taxas mensais em alguns anos anteriores a 2024. Essa limitação deve ser registrada no README e tratada com tolerância nos testes, sem ajustar artificialmente os números.</p><p></p><p>Explique claramente que pequenas variações são esperadas e não representam erro do projeto, mas sim uma característica dos dados oficiais.</p>
+items.6.items.2.title = Transparência e replicabilidade
+items.6.items.2.description = <p>A documentação deve permitir que qualquer pessoa rode o projeto do zero apenas seguindo o README. Isso garante transparência e facilita auditorias ou revisões independentes.</p><p></p><p>Evite termos técnicos desnecessários e priorize instruções claras, passo a passo, para que até quem não programou o projeto consiga reproduzir os resultados.</p>
+
+--- [7] interactive/interactive-fullscreen/process
+items.7.items.0.title = Introdução ao Processo de Consolidação e Validação do Projeto
+items.7.items.0.description = <p>Siga o roteiro para consolidar, documentar e validar seu projeto, garantindo que está pronto para entrega e execução por terceiros.</p>
+items.7.items.1.title = Resumo do Processo
+items.7.items.1.description = <p>Ao seguir todos esses passos, você garante que seu projeto está documentado, validado e pronto para ser executado por qualquer pessoa, com transparência e confiança.</p>
+items.7.items.2.title = Confirmação de modo restrito
+items.7.items.2.description = <p>Certifique-se de que o agente está em modo restrito e que os controles de dados estão ativos, conforme aprendido no Módulo 2. Isso evita alterações não autorizadas e protege os dados brutos.</p>
+items.7.items.3.title = Atualização das premissas
+items.7.items.3.description = <p>Atualize o arquivo de instruções (CLAUDE.md ou AGENTS.md) com as premissas do IPCA, conforme orientado no Módulo 3. Mantenha o registro claro das regras e premissas do projeto.</p>
+items.7.items.4.title = Geração e execução dos resultados
+items.7.items.4.description = <p>Solicite e gere o gráfico de barras anual de 2020 a 2025, salvando-o em resultados/. Execute o projeto do zero, garantindo que todos os passos sejam reprodutíveis, conforme praticado no Módulo 4.</p>
+items.7.items.5.title = Validação e revisão independente
+items.7.items.5.description = <p>Mantenha os asserts de 2024 e 2025 no código e registre a revisão independente realizada, conforme o processo do Módulo 5. Isso reforça a confiabilidade dos resultados.</p>
+items.7.items.6.title = Documentação e conferência final
+items.7.items.6.description = <p>Solicite o README.md com todas as seções obrigatórias. Apague a pasta resultados/, rode tudo novamente do zero e confirme que os asserts passam. Só então considere o projeto pronto para entrega.</p>
+
+--- [8] text/text/heading paragraph
+items.8.items.0.heading = Checklist de Avaliação do Projeto
+items.8.items.0.paragraph = <p>Antes de entregar seu projeto, utilize as abas abaixo para conferir se todos os critérios essenciais de qualidade e confiabilidade foram atendidos. Expanda cada item para visualizar os pontos de verificação detalhados.</p>
+
+--- [9] interactive/interactive/tabs
+items.9.items.0.title = Dados brutos intocados
+items.9.items.0.description = <p>O arquivo <strong>ipca.csv</strong> deve permanecer inalterado na pasta <strong>dados/brutos/</strong>. Isso garante que a fonte dos dados está preservada para futuras auditorias.</p><p></p><p>Qualquer manipulação ou alteração deve ser feita apenas em cópias ou nos resultados, nunca no arquivo original.</p>
+items.9.items.1.title = Ambiente reprodutível
+items.9.items.1.description = <p>O arquivo <strong>uv.lock</strong> precisa estar presente na pasta do projeto. Ele registra as versões das bibliotecas utilizadas, permitindo que o ambiente seja replicado em outros computadores.</p><p></p><p>O projeto deve rodar do zero sem erros, garantindo que qualquer pessoa consiga executar todos os passos apenas seguindo a documentação.</p>
+items.9.items.2.title = Validação dos resultados
+items.9.items.2.description = <p>Os asserts de <strong>4,83%</strong> e <strong>4,26%</strong> devem passar corretamente, indicando que os resultados principais estão corretos e conferem com os números oficiais.</p><p></p><p>Se algum assert falhar, revise o código e os dados antes de considerar o projeto pronto para entrega.</p>
+items.9.items.3.title = Resultados gerados
+items.9.items.3.description = <p>O gráfico anual solicitado deve estar salvo na pasta <strong>resultados/</strong>. Isso demonstra que o projeto gera as saídas esperadas de forma automatizada.</p><p></p><p>Verifique se todos os arquivos de saída estão presentes e corretamente nomeados, conforme as instruções do README.</p>
+items.9.items.4.title = Documentação e limitações
+items.9.items.4.description = <p>O <strong>README</strong> precisa incluir instruções claras de como rodar, critérios de verificação e as limitações do projeto. Isso facilita o uso e a revisão por terceiros.</p><p></p><p>Não esqueça de registrar limitações como possíveis diferenças de arredondamento e as fontes oficiais utilizadas para conferência.</p>
+
+--- [10] knowledgeCheck/knowledgeCheck/multiple choice
+items.10.items.0.title = Qual dos itens a seguir é indispensável para garantir que outra pessoa consiga executar o projeto do zero e obter os mesmos resultados?
+items.10.items.0.answers.0.title = Ter o gráfico salvo em diferentes formatos
+items.10.items.0.answers.1.title = Manter o arquivo uv.lock atualizado e um README detalhado
+items.10.items.0.answers.2.title = Usar apenas dados públicos
+items.10.items.0.answers.3.title = Incluir comentários detalhados no código
+items.10.items.0.feedbackCorrect = Correto! Manter o arquivo uv.lock atualizado e um README detalhado são essenciais para garantir que qualquer pessoa consiga executar o projeto do zero e obter os mesmos resultados.
+items.10.items.0.feedbackIncorrect = Incorreto. O mais importante para garantir a reprodutibilidade é manter o arquivo uv.lock atualizado e um README detalhado, pois eles asseguram que as dependências e instruções estejam claras para qualquer pessoa.
+
+--- [11] text/impact/b
+items.11.items.0.paragraph = <h2>Objetivo</h2><p>Este projeto tem como objetivo analisar e processar um conjunto de dados específico, realizando verificações automáticas para garantir a integridade dos resultados.</p><h2>Dados</h2><ul><li><strong>Fonte:</strong> [Insira aqui a fonte dos dados, por exemplo, IBGE, Kaggle, etc.]</li><li><strong>Data de download:</strong> [Insira a data em que os dados foram baixados]</li><li><strong>Formato:</strong> [Descreva o formato dos dados, por exemplo, CSV, XLSX, JSON, etc.]</li></ul><h2>Como rodar</h2><ol><li>Clone o repositório:<br><code>git clone [URL do repositório]</code></li><li>Entre na pasta do projeto:<br><code>cd [nome-do-projeto]</code></li><li>Instale as dependências:<br><code>pip install -r requirements.txt</code></li><li>Execute o processamento:<br><code>python main.py</code></li></ol><h2>Verificação</h2><ul><li>Os resultados são comparados com números oficiais para garantir a precisão.</li><li>Asserts automáticos são utilizados para validar os dados processados. Exemplo:<br><code>assert total_linhas == 10000  # Número oficial esperado</code></li></ul><h2>Resultados</h2><ul><li>[Inclua aqui um resumo dos principais resultados obtidos após o processamento dos dados, como estatísticas, gráficos ou tabelas.]</li></ul><h2>Limitações</h2><ul><li>Os dados podem conter inconsistências ou estar desatualizados.</li><li>O processamento depende da estrutura original dos dados, que pode mudar.</li><li>Os asserts cobrem apenas verificações básicas e podem não detectar todos os problemas.</li></ul><h2>Reprodução do experimento</h2><ol><li>Apague a pasta <code>resultados/</code>:</li><li><code>rm -rf resultados/</code></li><li>Rode todos os comandos novamente conforme a seção "Como rodar".</li><li>Confirme que todos os asserts passam e os resultados são reproduzidos corretamente.</li></ol>
+
+--- [12] divider/continue/continue
+items.12.items.0.title = Continue
+
+--- [13] text/text/paragraph
+items.13.items.0.paragraph = A entrega do projeto marca a consolidação de todas as práticas de segurança, organização, validação e documentação aprendidas ao longo do curso. Para continuar evoluindo, pratique com bases públicas de gabarito conhecido, mantenha sempre os dados brutos intocados e evite usar dados pessoais em contas não corporativas. Se desejar aprofundar, explore outras bases como CVM e INMET, e ferramentas como Claude Code no VSCode ou ChatGPT CODEX. Para modelagem estatística e previsão, recorra a especialistas.
+
+--- [14] text/impact/b
+items.14.items.0.paragraph = <p>Síntese: o agente escreve o código; o projeto só é confiável quando roda novamente e os resultados conferem com a fonte.</p>
+
+######## licao_08_Quiz.json  title='Quiz'
+
+--- [0] MULTIPLE_CHOICE/None/None
+items.0.answers.0.title = False
+items.0.answers.0.feedback = Incorreto. A afirmação é verdadeira: o conteúdo informa que o uso de dados pessoais em contas não corporativas pode violar a LGPD, trazendo riscos de privacidade e exposição de dados sensíveis.
+items.0.answers.1.title = True
+items.0.answers.1.feedback = Correto. O conteúdo destaca que o uso de dados pessoais em contas não corporativas pode violar a LGPD e expor informações confidenciais.
+items.0.title = O uso de dados pessoais em contas não corporativas pode violar a LGPD.
+
+--- [1] MULTIPLE_CHOICE/None/None
+items.1.answers.0.title = Executar novamente o script após apagar a pasta de resultados.
+items.1.answers.0.feedback = Rodar o projeto do zero valida a reprodutibilidade, mas depende de o ambiente já estar corretamente configurado com as versões certas das bibliotecas.
+items.1.answers.1.title = Salvar os resultados do projeto em uma pasta separada do código.
+items.1.answers.1.feedback = Separar resultados do código melhora a organização do projeto, mas não recria o ambiente de bibliotecas nem registra versões de dependências.
+items.1.answers.2.title = Registrar as dependências do projeto em um arquivo como o uv.lock.
+items.1.answers.2.feedback = Essa prática preserva as versões exatas das bibliotecas, permitindo recriar o mesmo ambiente e obter resultados consistentes.
+items.1.answers.3.title = Documentar o fluxo da análise em um arquivo README.md detalhado.
+items.1.answers.3.feedback = A documentação ajuda outras pessoas a entenderem e executarem o projeto, mas sozinha não garante que as bibliotecas estejam nas mesmas versões.
+items.1.title = Em um projeto de análise de dados que precisa ser executado por outras pessoas em computadores diferentes, qual prática ajuda diretamente a recriar o mesmo ambiente de bibliotecas usado na análise original?
+
+--- [2] MULTIPLE_CHOICE/None/None
+items.2.answers.0.title = False
+items.2.answers.0.feedback = Incorreto. Os asserts de validação são um critério objetivo de avaliação do projeto. Quando passam corretamente, sinalizam que os resultados principais conferem com os números oficiais.
+items.2.answers.1.title = True
+items.2.answers.1.feedback = Correto. O material afirma que os asserts de validação devem passar corretamente, pois isso indica que os resultados principais estão coerentes com os números oficiais.
+items.2.title = Os asserts de validação devem passar corretamente para indicar que os resultados principais conferem com os números oficiais.
+
+--- [3] MATCHING/None/None
+items.3.answers.0.matchTitle = Arquivos originais usados como referência, que não devem ser modificados durante a análise.
+items.3.answers.0.title = dados/brutos/
+items.3.answers.1.matchTitle = Tabelas, gráficos e outros artefatos produzidos pela execução da análise.
+items.3.answers.1.title = resultados/
+items.3.answers.2.matchTitle = Arquivos como analise.py, responsáveis por executar transformações e gerar saídas do projeto.
+items.3.answers.2.title = scripts/
+items.3.title = Associe cada pasta do projeto ao conteúdo que deve ser armazenado nela para manter a integridade dos dados e a clareza da organização. Considere as boas práticas de separar arquivos originais, saídas geradas e scripts em locais distintos.
+items.3.feedbackCorrect = Correto. Em um projeto reprodutível, dados brutos ficam intocados em dados/brutos/, os produtos gerados vão para resultados/ e o código deve ficar em scripts/. Essa separação melhora a clareza, evita alterações acidentais e facilita a continuidade do trabalho por outras pessoas.
+items.3.feedbackIncorrect = Incorreto. A organização reprodutível depende de separar claramente insumos, código e saídas. Dados originais devem permanecer em dados/brutos/, scripts ficam em scripts/ e os resultados gerados devem ser armazenados em resultados/, para preservar a integridade e tornar o projeto compreensível.
+
+--- [4] MULTIPLE_CHOICE/None/None
+items.4.answers.0.title = Porque ele permite que o agente execute imediatamente a análise, mesmo sem apresentar um plano prévio.
+items.4.answers.0.feedback = Isso contraria a prática recomendada de exigir um plano antes de qualquer execução para manter controle e segurança no processo.
+items.4.answers.1.title = Porque ele documenta objetivo, dados e regras com clareza, reduz riscos e torna a análise mais confiável e auditável.
+items.4.answers.1.feedback = Essa alternativa resume corretamente o valor central de um brief bem estruturado para orientar, controlar e registrar a análise.
+items.4.answers.2.title = Porque ele substitui a necessidade de verificar fontes oficiais e números de referência durante a validação.
+items.4.answers.2.feedback = O brief ajuda a registrar a verificação, mas não substitui a conferência de fontes e referências oficiais; na prática, ele reforça essa etapa.
+items.4.answers.3.title = Porque ele permite escolher com antecedência a aparência visual dos gráficos principais do projeto.
+items.4.answers.3.feedback = A aparência visual pode ser definida em alguns projetos, mas isso não explica o motivo central de um brief ser essencial para segurança, confiabilidade e auditabilidade da análise.
+items.4.title = Por que exigir um brief de análise bem estruturado antes da execução de uma análise com IA é uma prática essencial para projetos reprodutíveis e seguros?
+
+--- [5] MULTIPLE_CHOICE/None/None
+items.5.answers.0.title = Uma exploração inicial de dados feita por uma pessoa para entender um gráfico específico.
+items.5.answers.0.feedback = Exploração inicial pode envolver análise útil, mas sozinha não indica necessidade de migrar para código se não houver repetição, auditoria ou múltiplos arquivos.
+items.5.answers.1.title = Uma consulta rápida para tirar uma dúvida em um único arquivo pequeno.
+items.5.answers.1.feedback = Essa situação pode ser resolvida de forma pontual sem exigir automação, reprodutibilidade ampla ou padronização entre pessoas.
+items.5.answers.2.title = Um indicador mensal que precisa ser refeito por pessoas diferentes a partir de vários arquivos.
+items.5.answers.2.feedback = Essa situação reúne repetição, múltiplos arquivos e necessidade de padronização entre usuários, o que justifica a migração para código.
+items.5.answers.3.title = Uma conversa para interpretar um resultado já pronto em uma planilha compartilhada.
+items.5.answers.3.feedback = Interpretar um resultado pronto pode exigir raciocínio analítico, mas não necessariamente demanda transformar o processo em código.
+items.5.title = Em qual situação a análise mais se justifica para migrar da conversa para o código?
+
+--- [6] MULTIPLE_CHOICE/None/None
+items.6.answers.0.title = Validação concluída, porque o script foi executado até o fim sem interrupções.
+items.6.answers.0.feedback = Executar até o fim não comprova que o resultado está correto. Justamente por isso, erros silenciosos exigem verificações adicionais além da simples ausência de mensagens de erro.
+items.6.answers.1.title = Contagem de controle, porque a junção alterou os valores do resultado final.
+items.6.answers.1.feedback = Contagem de controle é uma prática de validação usada para detectar problemas no processo, não a classificação do problema em si. Ela pode ajudar a identificar a inconsistência, mas não nomeia o caso descrito.
+items.6.answers.2.title = Falha de execução, porque o relatório final apresentou valores divergentes.
+items.6.answers.2.feedback = Valores divergentes indicam um problema no resultado, mas não caracterizam falha de execução quando o script termina normalmente. A diferença central é que, no erro silencioso, não há interrupção nem mensagem explícita de erro.
+items.6.answers.3.title = Erro silencioso, porque a execução parece normal mesmo com resultado incorreto.
+items.6.answers.3.feedback = Essa é a classificação correta: o script roda sem falhar, mas entrega um resultado errado.
+items.6.title = Em uma análise automatizada, o script termina a execução sem mostrar mensagens de erro, mas o relatório final traz valores incorretos por causa de uma junção feita de forma errada. Como esse caso deve ser classificado?
+
+--- [7] MULTIPLE_CHOICE/None/None
+items.7.answers.0.title = Separar dados, scripts, resultados e documentação em pastas organizadas com nomes claros e padrão definido.
+items.7.answers.0.feedback = Essa organização facilita localizar arquivos, entender o fluxo do trabalho, repetir etapas e verificar como os resultados foram produzidos.
+items.7.answers.1.title = Manter dados, scripts e resultados no mesmo local para acelerar o acesso durante a análise.
+items.7.answers.1.feedback = Centralizar tudo em um único local pode parecer prático no curto prazo, mas dificulta identificar versões, etapas e origens dos resultados ao longo do projeto.
+items.7.answers.2.title = Concentrar o projeto na escolha da ferramenta mais avançada, mesmo sem definir uma organização de pastas e registros.
+items.7.answers.2.feedback = Ferramentas podem ajudar na execução, mas sem uma estrutura clara de pastas e registros o projeto perde previsibilidade, histórico e facilidade de repetição.
+items.7.answers.3.title = Priorizar apenas o relatório final e deixar a organização dos arquivos para a etapa de entrega.
+items.7.answers.3.feedback = O relatório final é importante, mas adiar a organização compromete o acompanhamento das etapas e torna mais difícil reproduzir o processo completo depois.
+items.7.title = Ao iniciar um projeto de análise de dados com apoio de um agente de código, qual estrutura é mais adequada para garantir rastreabilidade e reprodutibilidade do trabalho?
+
+--- [8] MULTIPLE_CHOICE/None/None
+items.8.answers.0.title = Aprovar a instalação se o nome do pacote parecer relacionado à análise solicitada.
+items.8.answers.0.feedback = O nome parecer adequado não confirma que o pacote exista nem que seja seguro. Pacotes maliciosos podem usar nomes plausíveis para induzir aprovação indevida.
+items.8.answers.1.title = Aprovar a instalação se o pacote for necessário para acessar dados de uma fonte oficial.
+items.8.answers.1.feedback = Mesmo quando a tarefa envolve uma fonte oficial, um pacote desconhecido continua exigindo validação. A confiabilidade da fonte de dados não garante a segurança do pacote solicitado.
+items.8.answers.2.title = Recusar a instalação até verificar o pacote em uma fonte confiável, como o PyPI.
+items.8.answers.2.feedback = Essa é a ação mais segura porque um pacote desconhecido pode ser inexistente ou malicioso, e a verificação prévia reduz o risco antes de qualquer instalação.
+items.8.answers.3.title = Aprovar a instalação se o agente informar que usará o pacote apenas na pasta de trabalho.
+items.8.answers.3.feedback = Restringir a pasta de trabalho não elimina o risco de instalar um pacote malicioso. O problema está na origem e confiabilidade do pacote, não apenas no local de uso.
+items.8.title = Ao avaliar a solicitação de um agente de código para instalar um pacote com nome desconhecido, qual é a decisão mais segura para reduzir o risco de código malicioso?
+
+--- [9] FILL_IN_THE_BLANK/None/None
+items.9.answers.0.title = asserts
+items.9.title = Testes automáticos, como __________, são comandos que interrompem o script caso um resultado esperado não seja atingido.
+items.9.feedbackCorrect = Correto. Asserts são usados para verificar automaticamente condições esperadas e interrompem o script quando encontram uma inconsistência.
+items.9.feedbackIncorrect = Incorreto. O termo esperado é "asserts", que são testes automáticos usados para validar condições no script e sinalizar resultados inesperados.
+
+--- [10] MULTIPLE_CHOICE/None/None
+items.10.answers.0.title = Capacidade de executar a análise em um notebook para visualizar os resultados com mais facilidade.
+items.10.answers.0.feedback = Usar notebook pode apoiar a exploração e a visualização, mas não caracteriza a definição de reprodutibilidade.
+items.10.answers.1.title = Capacidade de documentar cada etapa da análise em scripts e em um arquivo README.
+items.10.answers.1.feedback = Documentação ajuda outras pessoas a entender e repetir o processo, mas não define por si só o que é reprodutibilidade.
+items.10.answers.2.title = Capacidade de obter os mesmos resultados ao executar o mesmo código sobre os mesmos dados.
+items.10.answers.2.feedback = Essa é a definição correta de reprodutibilidade em análise de dados.
+items.10.answers.3.title = Capacidade de organizar scripts e gráficos em pastas separadas para facilitar o projeto.
+items.10.answers.3.feedback = Organizar arquivos é uma boa prática importante, mas descreve estruturação do projeto, não a definição de reprodutibilidade.
+items.10.title = Qual definição descreve corretamente a reprodutibilidade em projetos de análise de dados?
+
+--- [11] MULTIPLE_CHOICE/None/None
+items.11.answers.0.title = Descrever o objetivo da análise, deixar o agente identificar o formato dos dados e ajustar as regras conforme encontrar o conteúdo.
+items.11.answers.0.feedback = A alternativa inclui um elemento importante, o objetivo, mas erra ao confiar em descobertas automáticas e ao permitir que regras sejam definidas durante a execução.
+items.11.answers.1.title = Informar apenas o nome do arquivo de dados, pedir agilidade na execução e revisar a fonte oficial ao final da análise.
+items.11.answers.1.feedback = A alternativa parece plausível porque menciona dados e fonte, mas deixa de incluir detalhes essenciais de leitura do arquivo, não registra restrições com clareza e não exige o plano antes da execução.
+items.11.answers.2.title = Registrar a pasta de saída, solicitar explicação em linguagem simples e escolher previamente o estilo visual dos gráficos principais.
+items.11.answers.2.feedback = Esses pontos podem ser úteis em um projeto, mas não cobrem as práticas centrais cobradas na questão, especialmente a especificação dos dados, a exigência do plano e a fonte de verificação.
+items.11.answers.3.title = Informar formato, separador, decimal e codificação dos dados, explicitar restrições, exigir o plano antes da execução e indicar o número oficial com sua fonte.
+items.11.answers.3.feedback = Essa alternativa reúne as quatro práticas centrais para produzir um brief claro, controlado e verificável.
+items.11.title = Ao redigir um brief de análise para um agente automatizado, qual alternativa melhor aplica as práticas recomendadas para evitar erros de interpretação e retrabalho?
+
+--- [12] MULTIPLE_CHOICE/None/None
+items.12.answers.0.title = Modo Manual
+items.12.answers.0.feedback = É o modo padrão seguro para iniciar cada sessão, pois permite apenas leituras sem pedir aprovação.
+items.12.answers.1.title = Modo bypassPermissions
+items.12.answers.1.feedback = Esse modo libera todas as permissões e é destinado apenas a máquinas isoladas, portanto não representa uma forma segura de iniciar uma sessão restrita.
+items.12.answers.2.title = Modo acceptEdits
+items.12.answers.2.feedback = Esse modo libera leituras, edições e comandos comuns de arquivo após aprovação do plano, oferecendo mais flexibilidade do que um início em modo restrito.
+items.12.answers.3.title = Modo plan
+items.12.answers.3.feedback = O modo plan também é restritivo, mas a pergunta pede a configuração mais segura para iniciar a sessão, e o modo Manual é o padrão seguro indicado para esse começo.
+items.12.title = Ao iniciar uma nova sessão no Claude Code, qual modo de permissão oferece a configuração mais segura para começar a análise em modo restrito?
+
+--- [13] MATCHING/None/None
+items.13.answers.0.matchTitle = Indica qual decisão ou pergunta do projeto deve ser apoiada pela análise.
+items.13.answers.0.title = Objetivo
+items.13.answers.1.matchTitle = Especifica arquivo, formato, separador, decimal, codificação e dicionário da base utilizada.
+items.13.answers.1.title = Dados
+items.13.answers.2.matchTitle = Define limitações que o agente deve respeitar, como não modificar os dados brutos.
+items.13.answers.2.title = Regras
+items.13.answers.3.matchTitle = Determina a pasta ou os arquivos em que tabelas, gráficos e outros resultados devem ser salvos.
+items.13.answers.3.title = Saídas
+items.13.answers.4.matchTitle = Aponta o número oficial ou a fonte de referência que servirá para conferir se o resultado foi reproduzido corretamente.
+items.13.answers.4.title = Verificação
+items.13.answers.5.matchTitle = Estabelece que o agente deve apresentar um plano antes de executar qualquer ação e aguardar aprovação.
+items.13.answers.5.title = Exigência de plano
+items.13.title = Relacione cada componente essencial do brief de análise à função que ele desempenha no planejamento do trabalho com o agente. Considere como cada item contribui para a clareza, o controle da execução e a reprodutibilidade dos resultados.
+items.13.feedbackCorrect = Correto. Os seis componentes essenciais do brief de análise são objetivo, dados, regras, saídas, verificação e exigência de plano, e cada um cumpre uma função distinta para orientar o agente com clareza, reduzir erros e garantir reprodutibilidade.
+items.13.feedbackIncorrect = Incorreto. Para acertar, é preciso relacionar cada componente do brief à sua função específica no processo: objetivo define a decisão apoiada, dados descrevem a base, regras impõem restrições, saídas indicam onde salvar resultados, verificação aponta a referência oficial e exigência de plano obriga o agente a planejar antes de agir.
+
+--- [14] MULTIPLE_CHOICE/None/None
+items.14.answers.0.title = Indica que o projeto está pronto para compartilhamento, porque um script sem erro dispensa revisão dos resultados.
+items.14.answers.0.feedback = Compartilhar ou concluir um projeto exige revisar resultados, critérios e premissas; rodar sem erro não elimina a necessidade de validação.
+items.14.answers.1.title = Indica apenas que o código rodou tecnicamente, mas os resultados ainda precisam ser validados.
+items.14.answers.1.feedback = Executar sem erro mostra funcionamento técnico, mas não confirma que as premissas, transformações e conclusões estejam corretas.
+items.14.answers.2.title = Indica que o ambiente virtual e as bibliotecas estão corretos, portanto o resultado final pode ser aceito.
+items.14.answers.2.feedback = Ter ambiente e dependências configurados corretamente ajuda na execução, mas isso não garante que os cálculos, filtros ou interpretações estejam certos.
+items.14.answers.3.title = Indica que os resultados estão corretos, porque a execução completa confirma a lógica da análise.
+items.14.answers.3.feedback = A execução completa mostra que o código conseguiu rodar, mas não comprova que a lógica escolhida representa corretamente o problema ou que as premissas estejam certas.
+items.14.title = Durante a revisão de uma análise automatizada, o script executa do início ao fim sem apresentar erros. O que essa situação indica sobre a confiabilidade do resultado?
+
+--- [15] MULTIPLE_CHOICE/None/None
+items.15.answers.0.title = Garantir interpretações corretas dos dados sem exigir validação humana
+items.15.answers.0.feedback = Agentes de código podem apoiar a análise, mas não garantem sozinhos que a interpretação dos dados esteja correta em todos os contextos.
+items.15.answers.1.title = Organizar arquivos do projeto sem contribuir para repetir a análise depois
+items.15.answers.1.feedback = Organizar arquivos pode fazer parte do trabalho analítico, mas isso não representa o principal benefício dos agentes de código destacado aqui, que inclui permitir repetição consistente do processo.
+items.15.answers.2.title = Substituir a necessidade de revisar resultados antes da entrega final
+items.15.answers.2.feedback = Embora agentes de código apoiem a execução da análise, a revisão dos resultados continua sendo necessária para garantir qualidade e adequação ao contexto.
+items.15.answers.3.title = Automatizar etapas da análise e facilitar a repetição do processo com consistência
+items.15.answers.3.feedback = Essa opção descreve corretamente o benefício central dos agentes de código nas análises de dados: automação com reprodutibilidade.
+items.15.title = Qual benefício descreve melhor o uso de agentes de código em análises de dados para profissionais que buscam consistência nos resultados?
+
+--- [16] MULTIPLE_CHOICE/None/None
+items.16.answers.0.title = False
+items.16.answers.0.feedback = Incorreto. A afirmação é verdadeira porque o uv.lock é um dos elementos indispensáveis para a reprodutibilidade, já que registra as versões das dependências e ajuda outra pessoa a replicar o ambiente do projeto.
+items.16.answers.1.title = True
+items.16.answers.1.feedback = Correto. O uv.lock registra as versões usadas no projeto, o que permite recriar o ambiente e executar o trabalho com mais consistência em outra máquina.
+items.16.title = A presença do arquivo uv.lock na pasta do projeto ajuda a garantir que o ambiente possa ser replicado por outra pessoa.
+
+--- [17] MULTIPLE_CHOICE/None/None
+items.17.answers.0.title = Claude Code CLI no terminal, com qualquer conta ativa no serviço.
+items.17.answers.0.feedback = Essa opção se relaciona ao tema de escolha de rota, mas não atende à preferência declarada de evitar o terminal e também simplifica incorretamente a exigência de plano.
+items.17.answers.1.title = Claude Code no aplicativo Claude Desktop, desde que a conta tenha o plano Claude Pro ou superior.
+items.17.answers.1.feedback = Essa opção corresponde a uma rota de desktop recomendada para quem quer evitar o terminal e é compatível com Windows 10 versão 1809 ou superior, desde que o plano exigido esteja disponível.
+items.17.answers.2.title = Terminal com Codex CLI, porque é a rota mais simples para quem não programa.
+items.17.answers.2.feedback = Essa resposta trata de uma rota válida, mas aplica incorretamente a ideia de simplicidade, já que a rota por terminal é indicada para quem já tem mais familiaridade com comandos.
+items.17.answers.3.title = ChatGPT Codex no aplicativo de desktop, porque exige o plano Plus em todos os casos.
+items.17.answers.3.feedback = Essa opção é plausível por envolver uma rota de desktop compatível com Windows, mas erra ao afirmar que o acesso sempre exige o plano Plus, já que há acesso gratuito com limitações.
+items.17.title = Você usa Windows 10 versão 1809, prefere evitar o terminal e quer escolher uma rota de trabalho alinhada ao seu sistema e ao seu plano para iniciar a análise de dados com IA. Qual opção atende melhor a esse objetivo?
+
+--- [18] FILL_IN_THE_BLANK/None/None
+items.18.answers.0.title = uv --version
+items.18.title = Para confirmar que o uv foi instalado corretamente, execute o comando __________.
+items.18.feedbackCorrect = Correto. O comando uv --version exibe o número da versão instalada, confirmando que o uv está disponível no ambiente.
+items.18.feedbackIncorrect = Incorreto. A validação da instalação é feita executando uv --version, pois esse comando confirma que o uv foi instalado e reconhecido pelo sistema.
+
+--- [19] FILL_IN_THE_BLANK/None/None
+items.19.answers.0.title = README
+items.19.answers.1.title = readme
+items.19.answers.2.title = README.md
+items.19.answers.3.title = readme.md
+items.19.title = Para documentar detalhadamente o projeto, o __________ deve incluir instruções claras de como rodar, critérios de verificação e limitações.
+items.19.feedbackCorrect = Correto. O README é o arquivo central de documentação do projeto e deve orientar como executá-lo, como verificar os resultados e quais limitações precisam ser consideradas.
+items.19.feedbackIncorrect = Incorreto. O termo que completa a frase é README, pois esse é o arquivo que reúne as instruções de execução, os critérios de verificação e as limitações do projeto.

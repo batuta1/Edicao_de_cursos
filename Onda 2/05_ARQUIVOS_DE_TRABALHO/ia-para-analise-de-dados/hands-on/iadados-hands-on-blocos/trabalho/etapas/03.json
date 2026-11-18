@@ -1,0 +1,2947 @@
+{
+  "course": {
+    "description": "Ready to unlock the power of real Brazilian data with just your computer and ChatGPT? In under an hour, you'll dive into public datasets on inflation, the stock market, the judiciary, and demographics—learning how to analyze, chart, and validate numbers just like the pros. This course guides you through the most common pitfalls in data analysis and shows you step-by-step how to avoid them, so you can confidently interpret results and make data-driven decisions. No prior experience in data science or AI required—just curiosity and a willingness to explore!",
+    "lessons": [
+      {
+        "description": "",
+        "id": "976a3739-a7fa-4eb5-9701-331d672e9a00",
+        "items": [
+          {
+            "id": "ep0ttrfvuotuowb39ziiaj1g",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "c2lnb60gq8ivdtv1t5af3tiz",
+                "heading": "Quatro bases públicas, quatro armadilhas",
+                "paragraph": "<p>Em menos de duas horas, você vai analisar quatro bases públicas de verdade — inflação, bolsa, Judiciário e Censo — conversando com o ChatGPT, e conferir cada número com quem o publicou: IBGE, CVM e CNJ. Cada oficina desarma uma armadilha que pega muita gente boa; no Projeto Final, você junta duas bases sozinho e entrega um resumo de uma página. Duração total: 105 minutos, divididos em dois dias se você usa o plano Free (ele permite 3 envios de arquivo por dia).</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "ecb26903-f233-411b-9e96-42c1eacb710f"
+          },
+          {
+            "id": "dbglm0ssi079i3ev3wf6glmd",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "s9v1g86wmm597vtpmozkbv30",
+                "paragraph": "<p>Nesta preparação (7 min), você vai:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "6058c0e7-f8cc-4b2d-803f-944e8bee90cd"
+          },
+          {
+            "id": "uwb5t9l45651t44m0lzz4j7m",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "vfpw20c90yo60925w22t7xk2",
+                "number": "1",
+                "paragraph": "<p>Decidir sobre os controles de dados do ChatGPT antes do primeiro envio.</p>"
+              },
+              {
+                "id": "js8p7f5oro2sdw8fyseby9ab",
+                "number": "2",
+                "paragraph": "<p>Baixar as quatro bases públicas para a pasta <strong>hands-on-dados</strong>.</p>"
+              },
+              {
+                "id": "ww0et9afloakhzaclvbrb9yy",
+                "number": "3",
+                "paragraph": "<p>Extrair dos arquivos .zip só os CSV que as oficinas usam.</p>"
+              },
+              {
+                "id": "hg7pv2vu0s3obi4dnlht7tn7",
+                "number": "4",
+                "paragraph": "<p>Planejar os envios para caber no limite diário do plano Free.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "227d316e-6e4a-4fae-99f7-7a9dc2edd0ec"
+          },
+          {
+            "id": "75d7b3eb-1012-484a-969a-dcff6e5ea8d8",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "46904acc-f3ec-40a4-a182-14bfcc695f30",
+                "paragraph": "<p>Aqui não tem palestra: você vai analisar dados reais conversando com o ChatGPT. São quatro bases públicas, quatro armadilhas que pegam muita gente boa e um relatório no fim.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "2e086bee-b284-45e9-8e57-60569ff3e32c"
+          },
+          {
+            "id": "kod3j7m4qg0unjapjv8yrg0t",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "h1n7qdwa6vb69u9ctdtv4n69",
+                "paragraph": "<p><strong>O que você precisa ter aberto agora:</strong></p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "c343f0a8-14a3-4dc4-a53a-a01b15adbb31"
+          },
+          {
+            "id": "ylpp189d8mftjns32pvg372c",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "qatlymd66q8kqv0dkt80sa70",
+                "number": "1",
+                "paragraph": "<p><strong>chatgpt.com</strong> com sua conta (o Free serve).</p>"
+              },
+              {
+                "id": "deigt88s09yv4w1hc4i1w44x",
+                "number": "2",
+                "paragraph": "<p>Uma pasta no computador chamada <strong>hands-on-dados</strong>.</p>"
+              },
+              {
+                "id": "j459l0kh6gzs2uwj61iwt3an",
+                "number": "3",
+                "paragraph": "<p>O programa de descompactar do seu sistema (o do Windows ou do Mac já resolve).</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "51860655-0a6b-4d3d-9b2c-77741a082232"
+          },
+          {
+            "id": "d87c1864-fd26-4cc1-92ff-494316bdda08",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "993cfb4c-42e2-4dd3-be65-2634ff95d8bd",
+                "type": "intro",
+                "title": "Preparação (7 min)",
+                "isHidden": false,
+                "description": "<p>Dois passos antes da primeira oficina: decidir sobre os controles de dados e baixar as bases.</p>"
+              },
+              {
+                "id": "47ef3d5a-0c54-46ef-93e5-f7601a7f19a7",
+                "type": "summary",
+                "title": "Pronto para a Oficina 1",
+                "isHidden": false,
+                "description": "<p>Na pasta <strong>hands-on-dados</strong> devem estar: <strong>ipca.csv</strong>, <strong>dfp_cia_aberta_DRE_con_2024.csv</strong>, <strong>JN_23-Jun-2026.csv</strong>, <strong>Variáveis - JN.csv</strong> e <strong>populacao-uf.csv</strong>.</p>"
+              },
+              {
+                "id": "7cdccb34-5bef-4fe6-bdb3-56aa5c61d351",
+                "type": "step",
+                "title": "Controles de dados",
+                "isHidden": false,
+                "description": "<p>Abra <strong>ChatGPT &gt; Perfil (canto inferior esquerdo) &gt; Configurações &gt; Controles de dados</strong> e decida sobre <strong>Melhorar o modelo para todo mundo</strong>. As bases do curso são públicas; dados de trabalho seguem o semáforo do Essentials.</p>"
+              },
+              {
+                "id": "886c22d1-66d5-4025-9b1e-2ad8962522e2",
+                "type": "step",
+                "title": "Baixar e extrair as bases",
+                "isHidden": false,
+                "description": "<p>Baixe as bases da tabela abaixo para a pasta <strong>hands-on-dados</strong>. Para extrair um .zip: no Windows, <strong>Botão direito no arquivo &gt; Extrair tudo</strong>; no Mac, dois cliques no arquivo. Se o navegador mostrar o conteúdo na tela em vez de baixar, use <strong>Navegador &gt; Arquivo &gt; Salvar como</strong>.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "d17c27a8-4614-4e2f-93e5-e7bb841a7f68"
+          },
+          {
+            "id": "ft40j7w9vsfytfwgdq9724ch",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ssj9hzzja136h9be3ah19fe8",
+                "paragraph": "<p><strong>As bases das oficinas:</strong></p><table><thead><tr><th>Arquivo final</th><th>Endereço</th><th>Observação</th></tr></thead><tbody><tr><td>ipca.csv</td><td>api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2025</td><td>Se abrir na tela: Navegador &gt; Arquivo &gt; Salvar como</td></tr><tr><td>dfp_cia_aberta_DRE_con_2024.csv</td><td>dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip</td><td>ZIP de 13 MB; guarde só este CSV (6,8 MB)</td></tr><tr><td>JN_23-Jun-2026.csv e Variáveis - JN.csv</td><td>www.cnj.jus.br/wp-content/uploads/2026/09/17-set-2026.zip</td><td>ZIP de 4,2 MB</td></tr><tr><td>populacao-uf.csv</td><td>apisidra.ibge.gov.br/values/t/4709/n3/all/v/93/p/2022?formato=csv</td><td>Se abrir na tela: Navegador &gt; Arquivo &gt; Salvar como</td></tr></tbody></table>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "b50e21d7-cc93-4d76-b086-b7eb88db0dff"
+          },
+          {
+            "id": "68ad10b9-ea00-4199-910d-e636e6ced49b",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "c8b6bb89-9292-4da1-8e71-7e24b45f8c2d",
+                "paragraph": "<p>🔑 <strong>Regra de ouro:</strong> a IA calcula rápido; quem assina o número é você. Nenhuma oficina termina sem conferir com a fonte oficial.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "c6b47251-79c0-4a37-b64e-8c1fe0e93949"
+          },
+          {
+            "id": "omj4buwowjjgs46aqz7c9d7q",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "sfwndg8mgcqosuthfrxzix4u",
+                "heading": "Três travas que aparecem em todas as oficinas",
+                "paragraph": "<p>Guarde estas três saídas. Elas resolvem a maior parte dos tropeços com envio e leitura de arquivo:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "25a20d4e-e77f-4614-aebc-8b891a335604"
+          },
+          {
+            "id": "20ff7706-5e9e-4b11-b37c-5d8fab2c2582",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "ee5e98d7-ecab-4a7e-83ef-490b6346d85e",
+                "title": "“Limite de upload atingido”",
+                "description": "<p>Espere o horário indicado na mensagem; tentativa que falha pode contar no limite. Por isso o plano de envios abaixo divide o curso em dois dias.</p>"
+              },
+              {
+                "id": "fe058d1d-f45f-44a1-8aef-6e641fdc61a8",
+                "title": "O número veio como texto",
+                "description": "<p>Digite: “Converta a coluna valor usando vírgula como decimal”.</p>"
+              },
+              {
+                "id": "907607e0-4010-4c98-baf4-fa679ea0f35c",
+                "title": "Não acho o código",
+                "description": "<p>Peça: “Mostre o código Python que você executou”.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "ace06965-213a-49df-b4a8-3fe39d2e1f3c"
+          },
+          {
+            "id": "4115743f-a645-4429-b64c-c845ffb64bb6",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "6de76eeb-4f98-4f60-b224-99e608de9bf5",
+                "paragraph": "<p>📌 <strong>Plano de envios no Free:</strong></p><ul><li><strong>Dia 1</strong> — Oficinas 1, 2 e 3 (três envios)</li><li><strong>Dia 2</strong> — Oficina 4 e Projeto Final (três envios)</li></ul>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "d98375b8-46c6-4192-9943-e900450b4983"
+          },
+          {
+            "id": "03c4d966-5633-436e-82e6-4007912b6a16",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "9e20cb82-df21-489c-952f-8735f62c4582",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Qual destes itens NÃO faz parte da preparação deste curso?",
+                "answers": [
+                  {
+                    "id": "3418ca41-eecd-4a7d-896b-fa5ae65ca2ae",
+                    "title": "Abrir ChatGPT e configurar as preferências de dados",
+                    "correct": false,
+                    "feedback": "Faz parte, sim: decidir sobre “Melhorar o modelo para todo mundo” é o primeiro passo da preparação."
+                  },
+                  {
+                    "id": "a274e2e0-65ed-432a-aff1-d9464f088f03",
+                    "title": "Baixar as bases públicas e extrair os arquivos",
+                    "correct": false,
+                    "feedback": "Faz parte, sim: as quatro bases precisam estar na pasta antes das oficinas, e duas vêm em .zip."
+                  },
+                  {
+                    "id": "bb7ce25a-2c36-4ca8-8af9-bf27385bd7a0",
+                    "title": "Instalar um software avançado de estatística",
+                    "correct": true,
+                    "feedback": "Correto. Nada precisa ser instalado: o cálculo acontece dentro do ChatGPT, que escreve e executa o código por você."
+                  },
+                  {
+                    "id": "f26ce549-fcb1-494b-86e9-2c98c8ee5d23",
+                    "title": "Criar uma pasta chamada hands-on-dados",
+                    "correct": false,
+                    "feedback": "Faz parte, sim: a pasta hands-on-dados guarda as bases e os gráficos que você vai baixar."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "bf8cd3ba-05a8-4ad6-a5cc-3c664d82cad9"
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Antes de Arregaçar as Mangas: Preparação e Bases Públicas",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1",
+        "createdAt": "2026-11-18T01:35:19.281Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 0,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-11-18T01:35:45.258Z"
+      },
+      {
+        "description": "",
+        "id": "dd528ad1-e9b5-4ba0-bb6a-5f4d0a5da6ad",
+        "items": [
+          {
+            "id": "br61rp9x9ctdq23v4zvu9808",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "uwj5v2w7s5hmd3n3eyonoz6h",
+                "heading": "Quatro oficinas, quatro armadilhas reais",
+                "paragraph": "<p>Cada oficina parte de um problema de trabalho — um reajuste, um ranking para a diretoria, um total de processos, um gráfico para apresentação — e usa uma base pública. Em todas, o ChatGPT executa o código sem erro e, mesmo assim, o primeiro número que sai pode estar errado: taxa somada em vez de composta, escala misturada, linha de total contada duas vezes, eixo cortado. Você vai achar a armadilha, corrigir e conferir com quem publicou o dado.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "b9722f4b-f72d-4c70-ae82-e8107e68b768"
+          },
+          {
+            "id": "gl09syh8c3ee3mud5e9k0br0",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "jqzmgq6crw6555tl26ao2dtd",
+                "paragraph": "<p>Ao final destas oficinas, você será capaz de:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "c6cf7723-317c-40ae-89ec-c01530d76e15"
+          },
+          {
+            "id": "yu6p5m6t8mzkqritry5bn67w",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "kxli81lwdwd2olxa0xliw2fj",
+                "number": "1",
+                "paragraph": "<p>Calcular a inflação acumulada por composição e explicar por que a soma das taxas erra.</p>"
+              },
+              {
+                "id": "ybfrf88m42usqksl95x4f5g2",
+                "number": "2",
+                "paragraph": "<p>Montar um ranking de lucro da CVM convertendo escalas diferentes para a mesma unidade.</p>"
+              },
+              {
+                "id": "nzjgzi51ftlmyrhz5dooedei",
+                "number": "3",
+                "paragraph": "<p>Encontrar e excluir linhas de total antes de somar uma base do CNJ.</p>"
+              },
+              {
+                "id": "sczt6alhfdaoi8kj13u51qi7",
+                "number": "4",
+                "paragraph": "<p>Escolher, entre três gráficos do mesmo dado, o que não engana — e justificar a escolha.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "d4b3041f-eca7-4013-aba6-843004d33d34"
+          },
+          {
+            "id": "sijc7drtn2oayhh3cj6s1gpw",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ewsm8hkwdoo9z4iblxk05fby",
+                "heading": "O mapa da mão na massa",
+                "paragraph": "<ul><li><strong>Oficina 1:</strong> Quanto vale hoje um reajuste de 2024? (16 min)</li><li><strong>Oficina 2:</strong> Quem lucrou mais na bolsa em 2024 — de verdade? (22 min)</li><li><strong>Oficina 3:</strong> Quantos processos novos o Judiciário recebeu em 2025? (22 min)</li><li><strong>Oficina 4:</strong> Como mostrar a população dos estados sem enganar ninguém? (16 min)</li></ul><p>Cada oficina usa uma base e desarma uma armadilha; o Projeto Final, na próxima lição, junta duas bases sozinho.</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "dddb1ea3-e7d1-4d35-a8ef-7dd333639978"
+          },
+          {
+            "id": "cad85666-fba4-4708-9f6c-09d639346bc7",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "1159e808-434d-4ce8-9f19-e42564772512",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "7fc4509d-910c-4bcf-b8e3-4e6e92c1c803"
+          },
+          {
+            "id": "03f0a354-948e-4ec2-992f-738aa91041c0",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "f3ae3473-fd9f-4318-ae42-14414fbc56d1",
+                "type": "intro",
+                "title": "Oficina 1 — Calcule a inflação sem erro de soma",
+                "isHidden": false,
+                "description": "<p>🎯 <strong>O problema:</strong> seu reajuste de janeiro de 2024 vai ser comparado com a inflação. Um colega somou as taxas mensais do IPCA e chegou a um número. Está certo? (16 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>ipca.csv</strong> (72 linhas, separador ponto e vírgula, vírgula decimal) e uma conversa nova no ChatGPT.</p>"
+              },
+              {
+                "id": "9997b996-bce0-4cc6-a868-4ecb834bdff5",
+                "type": "summary",
+                "title": "✅ Deu certo?",
+                "isHidden": false,
+                "description": "<p>🏁 Na conversa, 2024 = <strong>4,83%</strong> e 2025 = <strong>4,26%</strong> (iguais ao IBGE); a soma simples de 2024 dá <strong>4,73%</strong> — e você sabe dizer por que está errada.</p>"
+              },
+              {
+                "id": "37302321-1e7c-4f66-a3e9-af9f98f828ba",
+                "type": "step",
+                "title": "Enviar o arquivo",
+                "isHidden": false,
+                "description": "<p>Clique em <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong> e envie <strong>ipca.csv</strong>.</p>"
+              },
+              {
+                "id": "969219b1-d8b1-4711-b7c4-1daade3a9aa1",
+                "type": "step",
+                "title": "Pedir o Raio X",
+                "isHidden": false,
+                "description": "<p>Digite: \"Antes de calcular, diga linhas, colunas, tipos e período. A coluna valor usa vírgula decimal.\"</p>"
+              },
+              {
+                "id": "e52d92cb-1815-4100-9727-d664605aae49",
+                "type": "step",
+                "title": "Calcular o acumulado por composição",
+                "isHidden": false,
+                "description": "<p>Digite: \"Calcule o IPCA acumulado de cada ano de 2020 a 2025 compondo as taxas mensais. Mostre a fórmula.\"</p>"
+              },
+              {
+                "id": "356bbfd0-3779-4b3a-b07d-986f945a392d",
+                "type": "step",
+                "title": "Somar e comparar",
+                "isHidden": false,
+                "description": "<p>Digite: \"Agora some as taxas mensais de 2024. Por que o resultado é diferente?\"</p>"
+              },
+              {
+                "id": "24be78b6-09d8-409a-9c91-10451a1e08bf",
+                "type": "step",
+                "title": "Achar a multiplicação no código",
+                "isHidden": false,
+                "description": "<p>Abra o código no fim da resposta (<strong>Resposta &gt; comando de exibir código</strong> — o rótulo pode aparecer como “Ver análise”; se não aparecer, peça “Mostre o código Python que você executou”) e ache a multiplicação.</p>"
+              },
+              {
+                "id": "8b9c0808-fa23-46f3-a18c-ecf3566cc2b6",
+                "type": "step",
+                "title": "Fazer o gráfico",
+                "isHidden": false,
+                "description": "<p>Digite: \"Faça um gráfico de barras anual, eixo começando em zero, título com a conclusão e a fonte no rodapé.\"</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "12fbc80b-1005-4aed-9d5f-9941c7d8ef7a"
+          },
+          {
+            "id": "d098a0a4-18ea-4e70-9a0d-63f9385e20d8",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "0de6d631-d641-4bf1-91a7-c0e2b0f37e7c",
+                "paragraph": "<p>💡 <strong>Dica:</strong> taxa se compõe como juros: 1% em janeiro e 1% em fevereiro dá 2,01%, não 2%. Em doze meses, a diferença aparece.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "c889acb7-c0f0-4680-9852-c9eee43de54d"
+          },
+          {
+            "id": "0fb209ec-b687-44f2-b906-889e052c725d",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "4598bfef-2e99-42c6-898d-c9fc7ac7210e",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Por que não basta somar as taxas mensais de inflação para calcular o acumulado anual?",
+                "answers": [
+                  {
+                    "id": "42acb7d0-c67b-43e3-a879-208c46686a8f",
+                    "title": "Porque as taxas devem ser compostas, como juros.",
+                    "correct": true,
+                    "feedback": "Correto. Cada mês incide sobre o preço já reajustado do mês anterior: por isso se multiplica (1 + taxa/100) mês a mês. Em 2024, a composição dá 4,83%; a soma, 4,73%."
+                  },
+                  {
+                    "id": "b9832ca5-feef-46a3-b742-fe27c141b8f8",
+                    "title": "Porque os dados do arquivo estão errados.",
+                    "correct": false,
+                    "feedback": "Não. Os dados estão certos — é o mesmo arquivo que, composto, dá exatamente os 4,83% do IBGE. O erro está no método."
+                  },
+                  {
+                    "id": "e2c0e060-0f03-486f-a7c1-1d21ef83294b",
+                    "title": "Porque só se pode somar taxas trimestrais.",
+                    "correct": false,
+                    "feedback": "Não. Essa regra não existe: taxas de qualquer período se compõem."
+                  },
+                  {
+                    "id": "67ddd918-b82b-4bd8-b14d-66d284cae85e",
+                    "title": "Porque o ChatGPT não consegue somar taxas.",
+                    "correct": false,
+                    "feedback": "Não. O ChatGPT soma sem problema — foi o que ele fez no passo 4. A soma é que é o cálculo errado para inflação acumulada."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "23a4d46f-8f09-42a7-8432-7800052dc977"
+          },
+          {
+            "id": "wvmxyd40dnh29fvyw80aczmo",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "ttywvixq8pss3jnyl3xtly8b",
+                "heading": "🚑 Se travar na Oficina 1",
+                "paragraph": "<p>Abra o problema que apareceu:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "d33ae038-45dc-4f6d-923a-474e6d96a58e"
+          },
+          {
+            "id": "dd3cabd5-b81b-4f30-959e-97a55ad2f586",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "fb45c3d0-7d05-4f4d-93ab-9221c0c26727",
+                "title": "“Limite de upload atingido”",
+                "description": "<p>Espere o horário indicado na mensagem; tentativa que falha pode contar no limite.</p>"
+              },
+              {
+                "id": "483ef649-be45-47ac-9cdd-030468fa3c77",
+                "title": "O número veio como texto",
+                "description": "<p>Digite: “Converta a coluna valor usando vírgula como decimal”.</p>"
+              },
+              {
+                "id": "b54dd59e-a76b-4a08-91db-081e4040d6fd",
+                "title": "Não acho o código",
+                "description": "<p>Peça: “Mostre o código Python que você executou”.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "737ebf70-87e1-4729-954b-84bdc3e1acb5"
+          },
+          {
+            "id": "0250301f-9045-4d3f-8fc4-e17022eb058f",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "3f0e0399-77e9-4a9b-9b75-a7d749cce9f9",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "11c4da57-cd8a-48d9-a3c4-0862ebfb7e11"
+          },
+          {
+            "id": "e3a117a4-251e-492e-9fce-4fc968c5d007",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "1f2ed70c-0fb2-4d0c-9842-a7bf3825abcb",
+                "type": "intro",
+                "title": "Oficina 2 — Descubra quem lucrou mais (de verdade)",
+                "isHidden": false,
+                "description": "<p>🎯 <strong>O problema:</strong> a diretoria pediu o ranking das companhias abertas mais lucrativas de 2024, direto da CVM. O primeiro ranking que sai tem uma surpresa no topo. Vamos descobrir se ela é real. (22 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>dfp_cia_aberta_DRE_con_2024.csv</strong> (32.776 linhas, codificação latin-1) e uma conversa nova no ChatGPT.</p>"
+              },
+              {
+                "id": "a5ef4478-004f-4c36-b663-e2cf97251454",
+                "type": "summary",
+                "title": "✅ Deu certo?",
+                "isHidden": false,
+                "description": "<p>🏁 Top 5 em reais: Petrobras <strong>R$ 36,6 bi</strong>, Vale R$ 31,6 bi, Banco do Brasil R$ 26,4 bi, Bradesco R$ 17,3 bi, Itaúsa R$ 14,8 bi; a Vivara cai para R$ 653 milhões. Petrobras: receita R$ 490,8 bi; consolidado R$ 37,0 bi.</p>"
+              },
+              {
+                "id": "13891347-70b1-4c71-8356-6a205c696c72",
+                "type": "step",
+                "title": "Enviar e pedir o Raio X",
+                "isHidden": false,
+                "description": "<p>Envie o arquivo por <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong> e digite: “O arquivo está em latin-1 e usa ponto e vírgula. Faça o Raio X.”</p>"
+              },
+              {
+                "id": "c3b774e5-946d-44ce-91b1-6ef0d902bd28",
+                "type": "step",
+                "title": "Filtrar o lucro da controladora",
+                "isHidden": false,
+                "description": "<p>Digite: \"Filtre ORDEM_EXERC = ÚLTIMO e CD_CONTA = 3.11.01 (lucro atribuído aos sócios da controladora). Quantas linhas e quantas empresas?\"</p>"
+              },
+              {
+                "id": "ea6b95e8-af32-4aad-94c8-b33696dbae6b",
+                "type": "step",
+                "title": "Montar o primeiro ranking",
+                "isHidden": false,
+                "description": "<p>Digite: \"Ordene pelo VL_CONTA e mostre as 5 primeiras, com a coluna ESCALA_MOEDA.\"</p>"
+              },
+              {
+                "id": "f52f33af-2076-4c5b-9e99-d6c9fafbfdd3",
+                "type": "step",
+                "title": "Desconfiar do primeiro lugar",
+                "isHidden": false,
+                "description": "<p>Repare: a Vivara aparece em 1º lugar. Pergunte: “Quais valores existem em ESCALA_MOEDA e quantas empresas há em cada um?”</p>"
+              },
+              {
+                "id": "28715934-3eb5-41d2-9949-dcdfd96fdb0d",
+                "type": "step",
+                "title": "Converter tudo para reais",
+                "isHidden": false,
+                "description": "<p>Digite: \"Converta tudo para reais (MIL vezes 1.000; UNIDADE vezes 1) e refaça o top 5 em bilhões.\"</p>"
+              },
+              {
+                "id": "52d6bd56-7722-4eda-b68e-f9dcebf11994",
+                "type": "step",
+                "title": "Entender controladora × consolidado",
+                "isHidden": false,
+                "description": "<p>Digite: \"Mostre a receita (3.01) e o lucro consolidado (3.11) da Petrobras e explique a diferença para 3.11.01.\"</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "b8731aa9-6732-408f-90e0-c38d47396a96"
+          },
+          {
+            "id": "5a0809c4-a3b8-429e-84e4-43ce924d7b8e",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "567be4f7-22e5-4e2d-8e76-8ff79663ede2",
+                "paragraph": "<p>💡 <strong>Dica:</strong> “controladora” é a parte do lucro que pertence aos acionistas da própria empresa; o “consolidado” inclui também a fatia dos sócios minoritários das empresas controladas.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "f3eb82bb-a7c9-4a64-b21c-1f26219bb24e"
+          },
+          {
+            "id": "908f33c6-cc3b-4e6d-a2a6-bc0f983ee703",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "8d15468a-e25c-4f29-be31-a3a310811340",
+                "type": "MULTIPLE_CHOICE",
+                "title": "No primeiro ranking, a Vivara aparece acima da Petrobras. Por que conferir a coluna ESCALA_MOEDA antes de levar o ranking à diretoria?",
+                "answers": [
+                  {
+                    "id": "8de40aa7-1687-4ed4-9d4c-4d5e1c39e3a7",
+                    "title": "Porque ela diz se cada empresa informou os valores em milhares (MIL) ou em reais (UNIDADE).",
+                    "correct": true,
+                    "feedback": "Correto. Oito empresas informam em reais e as demais em milhares. Sem converter, R$ 653 milhões da Vivara aparecem acima dos R$ 36,6 bilhões da Petrobras."
+                  },
+                  {
+                    "id": "135a83f9-f70e-49a6-8b51-5fa8cb3a8ab9",
+                    "title": "Porque ela define a ordem em que as empresas aparecem.",
+                    "correct": false,
+                    "feedback": "Não. A ordem vem do VL_CONTA; a ESCALA_MOEDA diz em que unidade esse valor está — e é isso que distorce a ordem."
+                  },
+                  {
+                    "id": "f32f9ca5-60ad-49c5-aead-5335a2cc6c77",
+                    "title": "Porque o ChatGPT não consegue ler essa coluna sozinho.",
+                    "correct": false,
+                    "feedback": "Não. O ChatGPT lê a coluna normalmente; ele só não a usa se você não pedir. A premissa é sua."
+                  },
+                  {
+                    "id": "dbb1645a-4171-4ca8-bbb8-62e5ef2ff9db",
+                    "title": "Porque ela corrige os acentos quebrados do arquivo.",
+                    "correct": false,
+                    "feedback": "Não. Acentos se corrigem relendo em latin-1; a ESCALA_MOEDA trata da unidade dos valores."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "44280d4c-b316-4158-9df0-96d6a5823897"
+          },
+          {
+            "id": "layj56bkmukl7yqq4fuzpe3y",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "q2kkt6i38w61mf71vqwv47js",
+                "heading": "🚑 Se travar na Oficina 2",
+                "paragraph": "<p>Abra o problema que apareceu:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "3f0c5b23-6bd4-4d78-bd6c-76410d507c5a"
+          },
+          {
+            "id": "0e2f4655-4484-4481-b635-645a40513744",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "43ed4bd7-f228-4e38-852e-edf4a91b9684",
+                "title": "Acentos quebrados (“�LTIMO”)",
+                "description": "<p>Digite: “Releia com codificação latin-1”.</p>"
+              },
+              {
+                "id": "23adf490-764b-4519-b6f9-d88f34a293a5",
+                "title": "Mais de uma linha por empresa",
+                "description": "<p>Duas empresas vêm repetidas; peça “uma linha por CD_CVM”.</p>"
+              },
+              {
+                "id": "c86d7b38-6936-4ad5-8e3a-1c63ed55b0f6",
+                "title": "“Não consegui analisar o arquivo inteiro”",
+                "description": "<p>Peça o número de linhas lidas e compare com 32.776.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "0483a48b-fdf7-498a-a63c-01744863fa6a"
+          },
+          {
+            "id": "572eb27a-8605-4ebc-9020-5227f817a4f3",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "cae239ac-5c63-422e-8db0-8ae45aa174bd",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "949e8757-852d-4ec2-aa43-125500e64f30"
+          },
+          {
+            "id": "738d6aaf-83da-4a85-8a08-999e07de73c1",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "f3d7194a-65d0-42ae-b608-f6ddaf9070e4",
+                "type": "intro",
+                "title": "Oficina 3 — O número que dobrou",
+                "isHidden": false,
+                "description": "<p>🎯 <strong>O problema:</strong> o relatório Justiça em Números diz que o Judiciário recebeu 40,9 milhões de casos novos em 2025. Você baixou a base do próprio CNJ e somou. Deu o dobro. Quem errou? (22 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>JN_23-Jun-2026.csv</strong> (11,6 MB, 1.314 colunas, latin-1) e <strong>Variáveis - JN.csv</strong> aberto no seu computador, só para consulta.</p>"
+              },
+              {
+                "id": "3fd8edfc-7869-44a1-8abf-eecb4d833287",
+                "type": "summary",
+                "title": "✅ Deu certo?",
+                "isHidden": false,
+                "description": "<p>🏁 Soma direta ≈ <strong>81 milhões</strong>; sem as linhas de total, <strong>40.940.966</strong> (≈ 40,9 milhões, igual ao relatório). Só os Tribunais de Justiça: 28.288.316.</p>"
+              },
+              {
+                "id": "e08b58f8-7c90-455c-b23e-3436b1eaea76",
+                "type": "step",
+                "title": "Enviar e pedir o Raio X",
+                "isHidden": false,
+                "description": "<p>Envie o arquivo por <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong> e digite: “Está em latin-1, com ponto e vírgula. Quantas linhas, colunas e quais anos?”</p>"
+              },
+              {
+                "id": "037cbfbd-2919-4118-bd0b-3ffa60cfa82f",
+                "type": "step",
+                "title": "Somar do jeito ingênuo",
+                "isHidden": false,
+                "description": "<p>Digite: \"Some a coluna cn para o ano 2025.\"</p>"
+              },
+              {
+                "id": "3399e426-af47-4a90-b65b-c9ef70e0a094",
+                "type": "step",
+                "title": "Listar as siglas",
+                "isHidden": false,
+                "description": "<p>Digite: \"Liste os valores distintos da coluna sigla em 2025.\"</p>"
+              },
+              {
+                "id": "73039ec0-850b-4f47-a0d0-01ceb6e9bb14",
+                "type": "step",
+                "title": "Reconhecer as linhas de total",
+                "isHidden": false,
+                "description": "<p>Repare em <strong>TJ</strong>, <strong>TRF</strong>, <strong>TRT</strong>, <strong>TRE</strong>, <strong>TJM</strong> e <strong>JMU</strong>: são <strong>linhas de total</strong> do ramo, não tribunais.</p>"
+              },
+              {
+                "id": "efab6eec-14bd-45e0-bfe8-b74ae2c505e8",
+                "type": "step",
+                "title": "Somar sem as linhas de total",
+                "isHidden": false,
+                "description": "<p>Digite: \"Refaça a soma de 2025 excluindo as siglas TJ, TRF, TRT, TRE, TJM, JMU e nd. Mostre por ramo de justiça.\"</p>"
+              },
+              {
+                "id": "07d6f8f3-3901-4565-b8b9-f25986c618ae",
+                "type": "step",
+                "title": "Registrar a limitação",
+                "isHidden": false,
+                "description": "<p>Procure <strong>cn</strong> no dicionário (<strong>Variáveis - JN.csv</strong>): a descrição não ajuda. Anote isso como limitação.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "b05172fc-d546-4393-abe6-9c178b26fa2e"
+          },
+          {
+            "id": "7ea865e0-84c9-4174-a504-7f3660eff3e8",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "dcf82feb-6a41-4c56-8308-44c832e20cb3",
+                "paragraph": "<p>⚠️ <strong>Cuidado:</strong> o arquivo não avisa que tem linha de total. Um código perfeito pode errar se a premissa estiver errada.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "656596ed-0f51-4049-8d29-aeb916154b4b"
+          },
+          {
+            "id": "932dd095-739b-45c7-80fc-d21b1705c735",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "dc894c0d-b1e6-4f4b-9939-87af930e7768",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Você somou a coluna cn de 2025 em todas as linhas da base do CNJ e chegou a cerca de 81 milhões. O que explica o resultado?",
+                "answers": [
+                  {
+                    "id": "f208e8cc-cedf-43da-b3a2-79686a1dd7ca",
+                    "title": "As linhas de total de cada ramo (TJ, TRF, TRT, TRE, TJM, JMU) foram somadas junto com os tribunais.",
+                    "correct": true,
+                    "feedback": ""
+                  },
+                  {
+                    "id": "84f6b4db-d65e-415f-99c6-1f11441b0fe8",
+                    "title": "O resultado está certo; o relatório do CNJ é que arredondou.",
+                    "correct": false,
+                    "feedback": ""
+                  },
+                  {
+                    "id": "9331300b-3e30-4b2c-8a57-be45d9e8522e",
+                    "title": "Só os tribunais estaduais foram contados.",
+                    "correct": false,
+                    "feedback": ""
+                  },
+                  {
+                    "id": "f49a3ae6-71d1-4a6a-bc08-4d634565e81a",
+                    "title": "O arquivo não permite soma automática, e o ChatGPT estimou.",
+                    "correct": false,
+                    "feedback": ""
+                  }
+                ],
+                "feedbackType": "CORRECT_INCORRECT",
+                "feedbackCorrect": "Correto. Cada ramo aparece duas vezes: tribunal a tribunal e na linha de total. Sem essas linhas, a soma dá 40.940.966 — igual ao relatório.",
+                "feedbackIncorrect": "Não. A soma dobra porque as linhas de total de cada ramo (TJ, TRF, TRT, TRE, TJM, JMU) entram junto com os tribunais. Excluídas, o total bate com os 40,9 milhões do relatório."
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "8c88966a-d8cd-4369-8837-6e29169ba041"
+          },
+          {
+            "id": "y2qbtdx2d84zw8g89ap27hop",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "svp455m5euj7xrtudwcjlmcg",
+                "heading": "🚑 Se travar na Oficina 3",
+                "paragraph": "<p>Abra o problema que apareceu:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "d9dbff2b-041e-4dac-9120-e3fcd8951ff7"
+          },
+          {
+            "id": "e8b847e9-ff12-49dd-b0dd-663411ccd0b0",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "a98bb268-62f9-4736-bd28-ac7a24f26cf3",
+                "title": "A análise demora ou para",
+                "description": "<p>Peça para usar só as colunas <strong>ano</strong>, <strong>justica</strong>, <strong>sigla</strong> e <strong>cn</strong>.</p>"
+              },
+              {
+                "id": "665f250c-a268-42ec-8529-2237eaf74516",
+                "title": "A IA “corrige” sozinha e não explica",
+                "description": "<p>Digite: “Liste exatamente as linhas que você excluiu”.</p>"
+              },
+              {
+                "id": "62a47b05-b34c-4fb8-8cde-fdc4c519e19f",
+                "title": "Resultado perto, mas não igual",
+                "description": "<p>Os tribunais superiores (<strong>STJ</strong>, <strong>TST</strong>, <strong>TSE</strong>, <strong>STM</strong>) também entram no total. Confira se eles ficaram na soma.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "842fd2b4-153b-48f7-a4a4-d32cf603b63f"
+          },
+          {
+            "id": "1a84b762-9756-48bc-b4b8-81fb9f9d6d2f",
+            "settings": {
+              "v": 2
+            },
+            "type": "divider",
+            "items": [
+              {
+                "id": "23e2a6c0-f384-47f1-abef-2ceddfbe6764",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ],
+            "family": "continue",
+            "variant": "continue",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "6180dd80-2f74-4a63-8f62-696a69ab8938"
+          },
+          {
+            "id": "dc6ae707-fd0e-4142-aa21-1d349ceae618",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "959704e7-fe3f-4532-b094-584a5271813d",
+                "type": "intro",
+                "title": "Oficina 4 — Três gráficos, uma verdade",
+                "isHidden": false,
+                "description": "<p>🎯 <strong>O problema:</strong> você precisa mostrar a população dos estados numa apresentação. O mesmo dado pode virar um gráfico honesto ou um gráfico que engana. Vamos fazer os dois e escolher. (16 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>populacao-uf.csv</strong> (cabeçalho em duas linhas) e uma conversa nova no ChatGPT.</p>"
+              },
+              {
+                "id": "70b6507e-cb84-4169-9f0a-208b9ffa25ab",
+                "type": "summary",
+                "title": "✅ Deu certo?",
+                "isHidden": false,
+                "description": "<p>🏁 Total <strong>203.080.756</strong>; São Paulo ≈ 21,9%; PNG salvo em <strong>hands-on-dados</strong>; e duas frases suas explicando por que o eixo em 7 milhões engana e a pizza de 27 fatias confunde.</p>"
+              },
+              {
+                "id": "d91fe480-8595-45ef-b1c1-16451c7abf42",
+                "type": "step",
+                "title": "Enviar e somar",
+                "isHidden": false,
+                "description": "<p>Envie <strong>populacao-uf.csv</strong> e digite: “A primeira linha tem códigos e a segunda os nomes das colunas. Some a população.”</p>"
+              },
+              {
+                "id": "2f9c55cd-4401-46f7-90f8-b25381e89bb7",
+                "type": "step",
+                "title": "Calcular a participação",
+                "isHidden": false,
+                "description": "<p>Digite: \"Calcule a participação de cada UF no total e ordene.\"</p>"
+              },
+              {
+                "id": "be97bc8e-699d-4566-a85b-288bef0a422e",
+                "type": "step",
+                "title": "Gráfico honesto",
+                "isHidden": false,
+                "description": "<p>Digite: “Barras horizontais das 10 maiores, ordenadas, eixo em zero, título com a conclusão, fonte IBGE Censo 2022 no rodapé.” Clique em <strong>Gráfico &gt; Alternar para gráfico interativo</strong> e passe o mouse sobre as barras.</p>"
+              },
+              {
+                "id": "47a0561a-fc4c-4864-a721-f953a009dfea",
+                "type": "step",
+                "title": "Gráfico com eixo truncado",
+                "isHidden": false,
+                "description": "<p>Digite: \"A mesma figura com o eixo começando em 7 milhões.\"</p>"
+              },
+              {
+                "id": "aa83a8a0-18d5-49a2-a9be-a96295933849",
+                "type": "step",
+                "title": "Pizza de 27 fatias",
+                "isHidden": false,
+                "description": "<p>Digite: \"Uma pizza com as 27 UFs.\"</p>"
+              },
+              {
+                "id": "a682daca-f215-4b0c-8a80-8e0168e55bd1",
+                "type": "step",
+                "title": "Escolher e baixar",
+                "isHidden": false,
+                "description": "<p>Escolha a versão honesta e baixe em <strong>Gráfico &gt; ícone de download (canto superior direito)</strong>. Salve na pasta <strong>hands-on-dados</strong>.</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "d14525bb-e87e-41dc-9d2b-0a00018eff09"
+          },
+          {
+            "id": "bc10a501-b8e0-449e-8b64-bb30ea207d4d",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "220b0779-26b9-41d8-9229-2db7e410e85e",
+                "paragraph": "<p>🤓 <strong>Curiosidade técnica (pode pular):</strong> só barras, linhas, pizza e dispersão ficam interativos; os outros tipos chegam como imagem.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "26982269-b4c7-4a6b-a657-a3bbca25ac22"
+          },
+          {
+            "id": "405f998f-698e-406c-a420-218e6cba4e9f",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "f3410aee-0db5-4d38-801b-99a5839d6626",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Por que um gráfico de barras com eixo começando em 7 milhões pode enganar quem vê?",
+                "answers": [
+                  {
+                    "id": "8916cc67-a2c0-44f7-8306-1fe105391414",
+                    "title": "Porque distorce a percepção das diferenças entre os estados.",
+                    "correct": true,
+                    "feedback": "Correto. Com o eixo cortado em 7 milhões, o comprimento das barras deixa de ser proporcional à população, e diferenças modestas parecem enormes."
+                  },
+                  {
+                    "id": "4d13ff2f-49f9-4688-8db4-617d144e7dd2",
+                    "title": "Porque mostra as UFs em ordem alfabética.",
+                    "correct": false,
+                    "feedback": "Não. O gráfico do exercício está ordenado por população; o que engana é o eixo."
+                  },
+                  {
+                    "id": "a5255de0-5d00-457c-8db7-1fd124aab4db",
+                    "title": "Porque mostra só as 10 maiores UFs.",
+                    "correct": false,
+                    "feedback": "Não. Mostrar as 10 maiores é uma escolha legítima, desde que o título diga isso. O problema está no início do eixo."
+                  },
+                  {
+                    "id": "63e71102-324a-4de3-8e36-590604bd6bb5",
+                    "title": "Porque usa cores inadequadas.",
+                    "correct": false,
+                    "feedback": "Não. Cores ruins atrapalham a leitura, mas não alteram a proporção entre as barras como o eixo cortado."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "ba21637a-a0b0-4186-925c-dfc210a20726"
+          },
+          {
+            "id": "xkyh9gsom17hya0i82wozki3",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "cele3pd0jxhtgkq01qask8ys",
+                "heading": "🚑 Se travar na Oficina 4",
+                "paragraph": "<p>Abra o problema que apareceu:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "7346fbd3-f323-4c22-ad23-dce4009cd430"
+          },
+          {
+            "id": "5bec125c-9327-4e2f-af16-3da43d4e160d",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "57262928-877f-4704-954b-495ce86c5aaf",
+                "title": "A primeira UF virou cabeçalho",
+                "description": "<p>Digite: “Use a segunda linha como cabeçalho”.</p>"
+              },
+              {
+                "id": "123df250-ffac-49e6-8cf7-b59f92d78213",
+                "title": "O gráfico não fica interativo",
+                "description": "<p>Só barras, linhas, pizza e dispersão alternam para interativo; os outros tipos chegam como imagem.</p>"
+              },
+              {
+                "id": "ba164584-5fa2-4c27-9402-82d2ee11beb2",
+                "title": "Cores difíceis de distinguir",
+                "description": "<p>Peça “paleta segura para daltônicos” ou informe um código hexadecimal de cor.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "4c82b708-56b6-4507-9af6-f1213df8df8f"
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "heading paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "l8gvua6psxp86zmnbop2d3ys",
+            "globalBlockId": "b3f451e3-09d4-47f5-9b1e-f4c6ce6fe487",
+            "items": [
+              {
+                "id": "xmx6ndoisxu3pfxy5w5rdzrs",
+                "heading": "Quer ir além? Desafios opcionais da Oficina 4",
+                "paragraph": "<p>Se sobrou tempo, abra cada desafio. Cada um traz o número que valida o resultado:</p>"
+              }
+            ]
+          },
+          {
+            "type": "interactive",
+            "family": "interactive",
+            "variant": "accordion",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "09833e23-b6e6-47c7-aaf0-dbe96b46ce1f",
+            "globalBlockId": "959e29f5-7721-4389-bdf5-089d70e0cc47",
+            "items": [
+              {
+                "id": "aab752b1-a1e3-4ebc-9c2d-d3484cd38ef1",
+                "title": "Texto alternativo",
+                "description": "<p>Peça um texto alternativo de duas frases para o gráfico.</p><p></p><p><strong>Validação:</strong> cita o maior e o menor estado.</p>"
+              },
+              {
+                "id": "ba54c351-dbe4-4c35-a320-49abd310b01d",
+                "title": "Média e mediana",
+                "description": "<p>Peça a média e a mediana da população das UFs.</p><p></p><p><strong>Validação:</strong> média ≈ 7,52 milhões; mediana 3,94 milhões.</p>"
+              },
+              {
+                "id": "971ba634-33bc-48ef-9aa9-d9d95cbd639e",
+                "title": "Cor por código hexadecimal",
+                "description": "<p>Troque a cor das barras por um código hexadecimal.</p><p></p><p><strong>Validação:</strong> o PNG baixado tem a cor escolhida.</p>"
+              }
+            ]
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Oficinas 1 a 4: Inflação, Bolsa, Judiciário e Censo",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1",
+        "createdAt": "2026-11-18T01:35:19.281Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 1,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-11-18T01:36:20.361Z"
+      },
+      {
+        "description": "",
+        "id": "b50fd29f-edd5-4c34-b898-f6026ec6b9a5",
+        "items": [
+          {
+            "id": "phmu80jzgvnaa42bxg5gdbtt",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "elyg3718cx721eyohr6w2rwl",
+                "heading": "A missão: processos por habitante, não em número absoluto",
+                "paragraph": "<p>Um escritório quer saber em quais estados se ajuízam mais processos <strong>por habitante</strong>, e não em número absoluto. Você vai juntar a base do CNJ (Oficina 3) com a do Censo (Oficina 4), calcular a taxa por 100 mil habitantes e entregar um resumo de uma página, com gráfico e premissas. Desta vez, sem roteiro de armadilha: você aplica sozinho o que desarmou nas oficinas. (22 min, dois envios)</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "bef2d41e-03c8-4687-b150-a74cbee504e3"
+          },
+          {
+            "id": "zaq6hx3q5v7uwhcstc05jxv5",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "fslws3a3jc6e6r2gw5yee7c4",
+                "paragraph": "<p>Ao final do Projeto Final, você terá:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "1e0522b6-5f1e-4841-83e9-3ce9f9145b54"
+          },
+          {
+            "id": "y0nqj1dhrip9zw613yqk6600",
+            "settings": {
+              "paddingTop": 0
+            },
+            "type": "list",
+            "items": [
+              {
+                "id": "vm6kmzkhmiksroxk6t9y6iwj",
+                "number": "1",
+                "paragraph": "<p>Cruzado duas bases públicas (CNJ e IBGE) e conferido quantas UFs casaram.</p>"
+              },
+              {
+                "id": "yd7ayekoaoa6zqsvud5jsgbt",
+                "number": "2",
+                "paragraph": "<p>Calculado casos novos por 100 mil habitantes para as 27 UFs.</p>"
+              },
+              {
+                "id": "nniq32wk0cw1nom0haj3i6zd",
+                "number": "3",
+                "paragraph": "<p>Escrito um resumo executivo com premissas e limitações, sem frase de causa.</p>"
+              },
+              {
+                "id": "da6gpisizqu8i22knbg18kt3",
+                "number": "4",
+                "paragraph": "<p>Conferido pelo menos três números com a checklist de gabarito.</p>"
+              }
+            ],
+            "family": "list",
+            "variant": "numbered",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "9dec7925-afe8-4f2f-9c38-43da2f1c0d1b"
+          },
+          {
+            "id": "c8394339-62bf-47d7-a94f-ef3332ef6347",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "a0da19a9-9b89-4935-8f97-7ec62d629b1d",
+                "paragraph": "<p>🔑 <strong>Regra de ouro:</strong> a IA calcula rápido; quem assina o número é você. O projeto só termina depois de conferir com a checklist.</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "e753b633-cd6f-42c2-8641-405edbe048be"
+          },
+          {
+            "id": "pq9ne9c7mvvv8jhz644i2h3s",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "callbqn56k8dey3tn5ftb28d",
+                "heading": "A Parte dos Dez — armadilhas que você já sabe desarmar",
+                "paragraph": "<p>Antes de começar o projeto, revise as regras que as oficinas ensinaram. Cinco delas decidem este projeto; abra cada uma:</p>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "7e23a7c2-c665-4c90-be0f-08941f2b2196"
+          },
+          {
+            "id": "3cefe577-eac1-4d94-bdf1-a90ceb0a2ed9",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "640cb1c7-c845-45f9-89f2-c5823ed7eb32",
+                "title": "Faça o Raio X antes de qualquer conta.",
+                "description": "<p>Declare separador, decimal e codificação no pedido e peça linhas, colunas, tipos e período antes de calcular.</p><p></p><p>No projeto: a base do CNJ é latin-1 com ponto e vírgula; a do IBGE tem cabeçalho em duas linhas.</p>"
+              },
+              {
+                "id": "08e7d3d7-7664-4c26-93f3-e3a15232d1b7",
+                "title": "Compare por taxa quando os tamanhos forem diferentes.",
+                "description": "<p>Estado populoso tem mais processos só por ser maior. Divida pela população e multiplique por 100 mil.</p><p></p><p>No projeto: São Paulo lidera em número absoluto (6,8 milhões de casos novos), mas não na taxa.</p>"
+              },
+              {
+                "id": "8d0b74e7-e39d-466f-aaee-761c55a40167",
+                "title": "Abra o código do número que vai para o relatório.",
+                "description": "<p>Peça o código do cálculo que vai para o resumo e localize a divisão pela população.</p><p></p><p>Também vale perguntar quantas UFs casaram na junção: se não forem 27, alguma sigla ficou de fora.</p>"
+              },
+              {
+                "id": "a9e82289-d3d6-4c45-bd34-d60407989b7b",
+                "title": "Confira pelo menos um número com quem publicou.",
+                "description": "<p>Compare pelo menos um número com o publicado.</p><p></p><p>No projeto: a soma dos 27 TJs tem de dar 28.288.316, o mesmo total da Oficina 3.</p>"
+              },
+              {
+                "id": "f660cf39-efcb-48a1-92ff-e6c3abbe32ea",
+                "title": "Escreva premissas e limitações — elas protegem você.",
+                "description": "<p>Anos diferentes nas duas bases, o que “casos novos” inclui e a ausência de causa: tudo isso vai escrito.</p><p></p><p>Premissa declarada é o que permite a outra pessoa conferir — e defender — o seu número.</p>"
+              }
+            ],
+            "family": "interactive",
+            "variant": "accordion",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "124c0331-83da-418d-b69d-f2225e8c0e68"
+          },
+          {
+            "id": "b4fb3ba0-834f-40fd-b9a7-02951d2de8b4",
+            "settings": {
+              "v": 2,
+              "paddingTop": 0,
+              "zoomOnClick": true,
+              "audioPosition": "bottom",
+              "paddingBottom": 3,
+              "paddingLinked": true,
+              "markerColorContrast": "AUTO",
+              "snippetColorContrast": "AUTO"
+            },
+            "type": "interactive",
+            "items": [
+              {
+                "id": "f436cfbd-4c5b-49dc-85eb-315470436668",
+                "type": "intro",
+                "title": "Projeto Final (22 min, dois envios)",
+                "isHidden": false,
+                "description": "<p>Uma conversa nova, duas bases e seis passos. Os textos entre aspas são para digitar como estão.</p>"
+              },
+              {
+                "id": "d2240337-51d0-4d64-9f0f-614a214ccd3f",
+                "type": "summary",
+                "title": "🏁 Como saber que terminou",
+                "isHidden": false,
+                "description": "<p>Resumo de cinco linhas, gráfico com as 27 taxas e pelo menos três números conferidos com a checklist logo abaixo.</p>"
+              },
+              {
+                "id": "b9feacc4-6a9a-402d-b402-f10c779af473",
+                "type": "step",
+                "title": "Enviar as duas bases",
+                "isHidden": false,
+                "description": "<p>Abra uma conversa nova e envie <strong>JN_23-Jun-2026.csv</strong> e <strong>populacao-uf.csv</strong> por <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong>.</p>"
+              },
+              {
+                "id": "209e7e8d-a364-48da-8a7e-e01662c6fc47",
+                "type": "step",
+                "title": "Filtrar os Tribunais de Justiça",
+                "isHidden": false,
+                "description": "<p>Digite: “Casos novos (cn) de 2025 dos Tribunais de Justiça estaduais, um por UF, excluindo a linha de total TJ. TJDFT corresponde ao Distrito Federal.”</p>"
+              },
+              {
+                "id": "5ce92c92-32e3-4db5-800e-ecb7683ffe27",
+                "type": "step",
+                "title": "Juntar com a população e calcular a taxa",
+                "isHidden": false,
+                "description": "<p>Digite: “Junte com a população do Censo 2022 por UF e calcule casos novos por 100 mil habitantes. Quantas UFs casaram?”</p>"
+              },
+              {
+                "id": "ebce55b6-f383-4566-b7af-e895e2731019",
+                "type": "step",
+                "title": "Gerar o gráfico",
+                "isHidden": false,
+                "description": "<p>Peça um gráfico de barras horizontais com as 27 taxas, ordenado, eixo em zero e as duas fontes (CNJ e IBGE) no rodapé.</p>"
+              },
+              {
+                "id": "cac2d50b-1a3b-46a6-8480-890afe4103e8",
+                "type": "step",
+                "title": "Pedir o resumo executivo",
+                "isHidden": false,
+                "description": "<p>Digite: “Resumo executivo de 5 linhas para o escritório, com premissas e limitações: população de 2022 contra processos de 2025; casos novos incluem execuções e recursos.”</p>"
+              },
+              {
+                "id": "5e020fc9-f661-4477-ad7b-e1c642953dec",
+                "type": "step",
+                "title": "Conferir com a checklist",
+                "isHidden": false,
+                "description": "<p>Confira pelo menos três números com a checklist abaixo. Se algum não bater, pergunte ao ChatGPT quais linhas entraram no cálculo.</p>"
+              },
+              {
+                "id": "b0158a4b-ee76-44cb-9e58-06b894a21664",
+                "type": "step",
+                "title": "Comparar com o modelo de resumo",
+                "isHidden": false,
+                "description": "<p>Ponha o resumo do ChatGPT ao lado do modelo abaixo: ele traz pergunta, achado, comparação, premissas, limitações e fontes?</p>"
+              }
+            ],
+            "family": "interactive-fullscreen",
+            "variant": "process",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "c83177af-fce8-4bde-b5ba-27113f0e7b63"
+          },
+          {
+            "id": "ecfc4f3b-79b2-44f2-9f1b-b1002713855e",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "b4a28a80-aac7-43b4-a810-c10e0c0dd0a4",
+                "paragraph": "<p><strong>Modelo de resumo executivo</strong> — preencha os colchetes com os seus números:</p><p><strong>Pergunta:</strong> em quais UFs se ajuízam mais casos novos por habitante?</p><p><strong>Achado principal:</strong> [UF com maior taxa] ([taxa] por 100 mil) — [UF com menor taxa] ([taxa]).</p><p><strong>Comparação:</strong> São Paulo lidera em número absoluto, mas não na taxa.</p><p><strong>Premissas:</strong> casos novos (cn) dos TJs em 2025; população do Censo 2022; linha de total TJ excluída.</p><p><strong>Limitações:</strong> anos diferentes nas duas bases; casos novos incluem execuções e recursos; não indica causa.</p><p><strong>Fontes:</strong> CNJ, Justiça em Números (base de 17/09/2026); IBGE, Censo 2022 (tabela 4709).</p>"
+              }
+            ],
+            "family": "impact",
+            "variant": "b",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "e3d87834-a7cc-4e60-b77d-8efb71aaf5a5"
+          },
+          {
+            "id": "ohd8ezfszvfa3s8fq0txsyuh",
+            "settings": {},
+            "type": "text",
+            "items": [
+              {
+                "id": "mw0lp4rs5phq9c4epq62650a",
+                "heading": "🏁 Checklist de gabarito",
+                "paragraph": "<ul><li>27 tribunais, 27 UFs casadas e soma dos TJs = <strong>28.288.316</strong>.</li><li>Maiores taxas: TJRO ≈ 20.421, TJRS ≈ 19.986 e TJDFT ≈ 19.691 por 100 mil.</li><li>Menores taxas: TJPA ≈ 6.745, TJCE ≈ 7.893 e TJPE ≈ 8.037.</li><li>O resumo diz que São Paulo lidera em número absoluto (6,8 milhões), mas não na taxa.</li><li>Premissas e limitações escritas; nenhuma frase de causa.</li><li>Gráfico com eixo em zero e as duas fontes.</li></ul>"
+              }
+            ],
+            "family": "text",
+            "variant": "heading paragraph",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "0e2045a1-6429-43c1-865c-a0ee5d87b1f9"
+          },
+          {
+            "type": "html",
+            "family": "html",
+            "variant": "inline",
+            "settings": {
+              "autoResize": true,
+              "hasCustomCompletion": true,
+              "height": 40,
+              "width": "1"
+            },
+            "metadata": {},
+            "id": "30449b6b-3bd0-43c9-adee-2e84f1c96e9a",
+            "globalBlockId": "3020d7a8-b673-4451-9247-b34d831aa660",
+            "items": [
+              {
+                "id": "8b21fcaa-e901-4f04-a6e1-b8ab18989a22",
+                "srcdoc": "<!doctype html>\n<html lang=\"pt-BR\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Projeto Final: conferência</title>\n<style>\n  :root {\n    --azul: #152f4d; --azul-2: #2b5582; --azul-claro: #e8eef5;\n    --areia: #f6f3ee; --tinta: #1d2733; --suave: #55626f; --linha: #d5dde6;\n    --ok: #1f7a4d; --ok-claro: #e7f5ee; --erro: #a33a2b; --erro-claro: #fbecea;\n    --aviso: #8a5a00; --aviso-claro: #fdf3e1;\n    --verde: #1f7a4d; --amarelo: #b07800; --vermelho: #a33a2b;\n  }\n  * { box-sizing: border-box; }\n  html, body { margin: 0; padding: 0; background: transparent; }\n  body { font-family: \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; color: var(--tinta); line-height: 1.45; font-size: 15px; }\n  .card { padding: 24px 20px 22px; border-radius: 18px; background: linear-gradient(180deg, #ffffff 0%, var(--areia) 100%); border: 1px solid var(--linha); }\n  .rotulo { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--azul-2); background: var(--azul-claro); padding: 4px 10px; border-radius: 999px; }\n  h1 { margin: 12px 0 4px; font-size: 22px; line-height: 1.25; color: var(--azul); }\n  h2 { margin: 0 0 6px; font-size: 16px; color: var(--azul); }\n  .sub { margin: 0 0 18px; color: var(--suave); }\n  .nota { margin: 14px 0 0; font-size: 13px; color: var(--suave); }\n  button { font: inherit; }\n  .btn { font-size: 14px; font-weight: 600; color: var(--azul); background: #fff; border: 1.5px solid var(--azul-2); border-radius: 999px; padding: 8px 14px; cursor: pointer; transition: background .15s ease; }\n  .btn:hover { background: var(--azul-claro); }\n  .btn[aria-pressed=\"true\"], .btn.sel { background: var(--azul); border-color: var(--azul); color: #fff; }\n  .btn:disabled { opacity: .45; cursor: default; }\n  .btn.principal { background: var(--azul); color: #fff; border-color: var(--azul); }\n  .btn.principal:hover { background: var(--azul-2); }\n  button:focus-visible, input:focus-visible, label:focus-within { outline: 3px solid #f0b45a; outline-offset: 2px; }\n  .opcoes { display: flex; flex-wrap: wrap; gap: 8px; }\n  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }\n  .item { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 14px; }\n  .item.certo { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }\n  .item.errado { border-color: var(--erro); box-shadow: inset 4px 0 0 var(--erro); }\n  .feedback { margin-top: 10px; font-size: 14px; border-radius: 10px; }\n  .feedback:empty { display: none; }\n  .feedback.ok { background: var(--ok-claro); color: var(--ok); padding: 10px 12px; }\n  .feedback.erro { background: var(--erro-claro); color: var(--erro); padding: 10px 12px; }\n  .feedback.info { background: var(--azul-claro); color: var(--azul); padding: 10px 12px; }\n  .feedback.aviso { background: var(--aviso-claro); color: var(--aviso); padding: 10px 12px; }\n  .final { margin-top: 18px; padding: 14px 16px; border-radius: 12px; background: var(--ok-claro); color: var(--ok); font-weight: 600; }\n  .final:empty { display: none; }\n  .barra { height: 8px; border-radius: 999px; background: var(--azul-claro); overflow: hidden; margin: 4px 0 16px; }\n  .barra > span { display: block; height: 100%; width: 0; background: var(--azul); transition: width .25s ease; }\n  .saida { white-space: pre-wrap; font-family: Consolas, \"Courier New\", monospace; font-size: 13.5px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 12px; padding: 14px; margin: 0; }\n  .item p.f { margin: 0 0 10px; font-weight: 600; color: var(--azul); }\n  .extra { margin: 0 0 10px; font-size: 14px; }\n  .extra .trecho { margin: 6px 0 0; padding: 8px 10px; border-left: 3px solid var(--azul-2); background: var(--azul-claro); border-radius: 0 8px 8px 0; }\n  .placar { font-weight: 700; color: var(--azul); margin: 0; }\n  .chk { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }\n  .chk input { width: 20px; height: 20px; margin: 1px 0 0; flex: 0 0 auto; accent-color: var(--azul); }\n  .chk.feito { border-color: var(--ok); background: var(--ok-claro); }\n  input[type=\"text\"], input[type=\"number\"], textarea, select { font: inherit; width: 100%; border: 1px solid var(--linha); border-radius: 10px; padding: 8px 10px; background: #fff; color: var(--tinta); }\n  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }\n\n</style>\n<script>\n// Funções comuns aos blocos HTML dos cursos da trilha T8 (Análise de Dados).\n\n// Avisa o Rise (uma vez) que a atividade foi concluída: libera o Continue \"completeBlock\".\nvar __concluido = false;\nfunction concluir(idFinal, texto) {\n  if (__concluido) return;\n  __concluido = true;\n  if (idFinal) document.getElementById(idFinal).textContent = texto;\n  window.parent.postMessage({ type: 'complete' }, '*');\n}\n\n// Copia o texto de um elemento; se a LMS bloquear a área de transferência, deixa o texto selecionado.\nfunction ligarCopia(idBotao, idSaida, idMsg, rotulo) {\n  document.getElementById(idBotao).addEventListener('click', function () {\n    var el = document.getElementById(idSaida), msg = document.getElementById(idMsg);\n    var texto = el.value !== undefined ? el.value : el.textContent;\n    function ok() { msg.textContent = rotulo + ' copiado.'; msg.className = 'feedback info'; }\n    function falhou() {\n      if (el.select) { el.select(); } else {\n        var r = document.createRange(); r.selectNodeContents(el);\n        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);\n      }\n      var copiou = false; try { copiou = document.execCommand('copy'); } catch (e) {}\n      if (copiou) { ok(); } else { msg.textContent = 'O texto está selecionado: use Ctrl+C (ou Cmd+C) para copiar.'; msg.className = 'feedback info'; }\n    }\n    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(texto).then(ok, falhou); } else { falhou(); }\n  });\n}\n\n// Atividade de classificação: cada caso tem uma resposta certa entre as opções.\n// cfg = { casos: [{t, extra?, r, p}], opcoes: {chave: rotulo}, dicaErro, idLista, idPlacar, idBarra,\n//         rotuloPlacar, aoConcluir: function () {} }\nfunction classificador(cfg) {\n  var certos = {}, lista = document.getElementById(cfg.idLista);\n  cfg.casos.forEach(function (caso, i) {\n    var c = document.createElement('div'); c.className = 'item';\n    var titulo = document.createElement('p'); titulo.className = 'f'; titulo.id = cfg.idLista + '-c' + i;\n    titulo.textContent = caso.t;\n    c.appendChild(titulo);\n    if (caso.extra) {\n      var ex = document.createElement('div'); ex.className = 'extra'; ex.innerHTML = caso.extra; c.appendChild(ex);\n    }\n    var g = document.createElement('div'); g.className = 'opcoes'; g.setAttribute('role', 'group');\n    g.setAttribute('aria-labelledby', titulo.id);\n    var fb = document.createElement('div'); fb.className = 'feedback'; fb.setAttribute('aria-live', 'polite');\n    Object.keys(cfg.opcoes).forEach(function (k) {\n      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = cfg.opcoes[k];\n      b.setAttribute('data-k', k); b.setAttribute('aria-pressed', 'false');\n      b.addEventListener('click', function () {\n        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });\n        if (Array.isArray(caso.r) ? caso.r.indexOf(k) >= 0 : k === caso.r) {\n          certos[i] = true; c.className = 'item certo';\n          fb.textContent = 'Correto. ' + caso.p; fb.className = 'feedback ok';\n        } else {\n          delete certos[i]; c.className = 'item errado';\n          fb.textContent = 'Não é “' + cfg.opcoes[k] + '”. ' + (caso.dica || cfg.dicaErro); fb.className = 'feedback erro';\n        }\n        placar();\n      });\n      g.appendChild(b);\n    });\n    c.appendChild(g); c.appendChild(fb); lista.appendChild(c);\n  });\n  function placar() {\n    var n = Object.keys(certos).length, total = cfg.casos.length;\n    document.getElementById(cfg.idPlacar).textContent = n + ' de ' + total + ' ' + cfg.rotuloPlacar;\n    document.getElementById(cfg.idBarra).style.width = (100 * n / total) + '%';\n    if (n === total && cfg.aoConcluir) cfg.aoConcluir();\n  }\n  placar();\n}\n\n// Checklist: libera quando todos os itens estão marcados.\nfunction checklist(itens, idLista, idPlacar, idBarra, rotuloPlacar, aoConcluir) {\n  var marcados = {}, lista = document.getElementById(idLista);\n  itens.forEach(function (txt, i) {\n    var l = document.createElement('label'); l.className = 'chk';\n    var c = document.createElement('input'); c.type = 'checkbox';\n    var s = document.createElement('span'); s.textContent = txt;\n    c.addEventListener('change', function () {\n      if (c.checked) { marcados[i] = true; l.classList.add('feito'); } else { delete marcados[i]; l.classList.remove('feito'); }\n      atualizar();\n    });\n    l.appendChild(c); l.appendChild(s); lista.appendChild(l);\n  });\n  function atualizar() {\n    var n = Object.keys(marcados).length;\n    document.getElementById(idPlacar).textContent = n + ' de ' + itens.length + ' ' + rotuloPlacar;\n    document.getElementById(idBarra).style.width = (100 * n / itens.length) + '%';\n    if (n === itens.length) aoConcluir();\n  }\n  atualizar();\n}\n\n</script>\n</head>\n<body>\n<section class=\"card\" aria-labelledby=\"t\">\n  <span class=\"rotulo\">Projeto Final</span>\n  <h1 id=\"t\">Onde se litiga mais por habitante: conferência</h1>\n  <p class=\"sub\">Deixe a conversa do projeto aberta ao lado. Marque cada item só depois de conferir o número na resposta do ChatGPT. O curso segue com os seis marcados.</p>\n  <p class=\"placar\" id=\"placar\" aria-live=\"polite\"></p>\n  <div class=\"barra\" aria-hidden=\"true\"><span id=\"barra\"></span></div>\n  <div id=\"lista\"></div>\n  <div class=\"final\" id=\"final\" role=\"status\" aria-live=\"polite\"></div>\n</section>\n<script>\n  checklist([\n    '27 tribunais, 27 UFs casadas e soma dos TJs = 28.288.316.',\n    'Maiores taxas: TJRO ≈ 20.421, TJRS ≈ 19.986 e TJDFT ≈ 19.691 por 100 mil.',\n    'Menores taxas: TJPA ≈ 6.745, TJCE ≈ 7.893 e TJPE ≈ 8.037.',\n    'O resumo diz que São Paulo lidera em número absoluto (6,8 milhões), mas não na taxa.',\n    'Premissas e limitações escritas; nenhuma frase de causa.',\n    'Gráfico com eixo em zero e as duas fontes (CNJ e IBGE).'\n  ], 'lista', 'placar', 'barra', 'itens conferidos', function () {\n    concluir('final', 'Projeto entregue e conferido. Você juntou duas bases públicas e assinou um número que sabe defender.');\n  });\n</script>\n\n</body>\n</html>\n"
+              }
+            ]
+          },
+          {
+            "type": "divider",
+            "family": "continue",
+            "variant": "continue",
+            "settings": {
+              "v": 2
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "433364ba-7e69-4f58-932c-31f98a348a80",
+            "globalBlockId": "fe7e5e59-c369-4e79-8db1-45b74d387abd",
+            "items": [
+              {
+                "id": "f0c39abe-023a-466a-8257-b1812b744f17",
+                "type": "completeBlock",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ]
+          },
+          {
+            "id": "9f9b09ee-9941-4c8e-bb27-1ecb33f986a4",
+            "settings": {},
+            "type": "knowledgeCheck",
+            "items": [
+              {
+                "id": "02dfa7ca-ed25-4227-9814-a924e0d42852",
+                "type": "MULTIPLE_CHOICE",
+                "title": "Qual destes itens NÃO deve entrar num resumo executivo confiável?",
+                "answers": [
+                  {
+                    "id": "8912d2fe-cde9-46ac-a867-314ce892b259",
+                    "title": "Citação das fontes oficiais dos dados usados",
+                    "correct": false,
+                    "feedback": "Esse deve entrar: as fontes (CNJ e IBGE, com a data da base) permitem que outra pessoa refaça e confira o número."
+                  },
+                  {
+                    "id": "f8f731a5-9b6c-44df-a0ea-b2518cdb1b8f",
+                    "title": "Indicação das premissas e limitações",
+                    "correct": false,
+                    "feedback": "Esse deve entrar: premissas e limitações — como os anos diferentes das duas bases — protegem a conclusão."
+                  },
+                  {
+                    "id": "6721ad1f-4562-4d00-ab2b-33c361f23961",
+                    "title": "Um gráfico claro e fiel aos dados",
+                    "correct": false,
+                    "feedback": "Esse deve entrar: o gráfico com eixo em zero e as duas fontes faz parte da entrega."
+                  },
+                  {
+                    "id": "3417ee83-eef0-409c-9495-2b143ef3fb82",
+                    "title": "Opinião pessoal sobre as causas dos resultados",
+                    "correct": true,
+                    "feedback": "Correto. A taxa mostra onde se litiga mais por habitante, não por quê. Afirmar causa sem evidência é o que o resumo deve evitar."
+                  }
+                ],
+                "feedbackType": "CHOICE"
+              }
+            ],
+            "family": "knowledgeCheck",
+            "variant": "multiple choice",
+            "metadata": {
+              "createdVia": "ai",
+              "contentValidation": {
+                "pass": true,
+                "version": "1.173.0"
+              }
+            },
+            "globalBlockId": "a5540c4e-95bc-46b8-9233-87980bc81d54"
+          },
+          {
+            "type": "divider",
+            "family": "continue",
+            "variant": "continue",
+            "settings": {
+              "v": 2
+            },
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "864f4a03-2b8e-4c1e-92be-ca615583ed17",
+            "globalBlockId": "0c9ea170-9e76-46b1-8851-669f10b2684f",
+            "items": [
+              {
+                "id": "6e896b95-6df7-470d-bd31-607b17ded880",
+                "type": "",
+                "title": "Continue",
+                "buttonColor": "brand",
+                "completeHint": "Complete the content above before moving on."
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "family": "text",
+            "variant": "heading paragraph",
+            "settings": {},
+            "metadata": {
+              "createdVia": "ai"
+            },
+            "id": "ynwrc97hl9dk6ebdez5754oy",
+            "globalBlockId": "b830ad62-3775-4e64-9415-d457e6f88ecd",
+            "items": [
+              {
+                "id": "goo33xgtkezpky6ur0x80560",
+                "heading": "Conseguiu! E agora?",
+                "paragraph": "<p>Você conferiu inflação com o IBGE, lucro com a CVM e processos com o CNJ, e desarmou quatro armadilhas reais. Repita o ciclo com uma base da sua área antes de usar dados de trabalho — e sempre dentro da política de dados da sua organização.</p><p>Próximo passo: <em>Análise de Dados em Python com IA</em> leva tudo isso para um projeto reprodutível, que roda de novo do zero com um comando.</p>"
+              }
+            ]
+          }
+        ],
+        "settings": {
+          "isGeneratingAIContent": false,
+          "isRequiredForCompletion": true
+        },
+        "title": "Projeto Final: Onde se Litiga Mais por Habitante",
+        "type": "blocks",
+        "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "courseId": "1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1",
+        "createdAt": "2026-11-18T01:35:19.281Z",
+        "deleted": false,
+        "duplicatedFromId": "",
+        "experiments": null,
+        "headerImage": {},
+        "icon": "Article",
+        "isPartnerContentAuthor": null,
+        "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "media": {},
+        "metadata": {
+          "createdVia": "ai"
+        },
+        "originalId": null,
+        "piles": [],
+        "position": 2,
+        "ready": true,
+        "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "transferredAt": null,
+        "updatedAt": "2026-11-18T01:36:30.142Z"
+      }
+    ],
+    "title": "IA para Análise de Dados - Hands On",
+    "exportSettings": {
+      "completeWith": "reporting",
+      "identifier": "1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1_rise",
+      "resetLearnerData": false,
+      "quizId": null,
+      "storylineId": null,
+      "completionPercentage": 100,
+      "reporting": "passed-incomplete",
+      "updateResumeData": true,
+      "hideLmsUi": false,
+      "title": "IA para Análise de Dados - Hands On",
+      "format": "zip",
+      "target": "scorm12",
+      "locales": [],
+      "activeLMS": 0,
+      "exportType": "lms",
+      "targetName": "SCORM 1.2",
+      "isTranslated": false,
+      "quizComplete": false,
+      "activeEdition": 0,
+      "loadOnlyInLMS": true,
+      "isRemotePackage": false,
+      "disableCoverPage": false,
+      "enableExitCourse": false,
+      "storylineComplete": false,
+      "localesPackageType": "single",
+      "notifyLearnersOfUpdates": false,
+      "enableTelemetryCollection": true
+    },
+    "lmsOptions": {
+      "enableTelemetryCollection": true,
+      "disableCoverPage": false,
+      "enableExitCourse": false
+    },
+    "id": "1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1",
+    "originalId": null,
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "selectedAuthorId": "",
+    "color": "#152f4d",
+    "navigationMode": "",
+    "copyOf": "",
+    "order": "1794965845964",
+    "fonts": null,
+    "media": {
+      "image": {
+        "key": "rise/courses/1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1/gnkU0NrV4Hhf2F23.jpeg",
+        "width": 70,
+        "height": 89,
+        "crushedKey": "wiqwqizP8wsM0u6v51Mz8dnUSS.jpg",
+        "sourcedFrom": "USER",
+        "useCrushedKey": true
+      }
+    },
+    "coverImage": {
+      "media": {
+        "image": {
+          "key": "rise/courses/1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1/eLE9e1rjbrjNAQdO.jpg",
+          "crushedKey": "stock-image.jpg",
+          "dimensions": {
+            "originalWidth": 1360,
+            "originalHeight": 765
+          },
+          "originalUrl": "stock-image.jpg",
+          "sourcedFrom": "AI",
+          "useCrushedKey": true,
+          "src": ""
+        }
+      }
+    },
+    "jobs": [],
+    "labelSetId": "",
+    "deleted": false,
+    "createdAt": "2026-11-18T01:32:55.540Z",
+    "updatedAt": "2026-11-18T01:37:25.964Z",
+    "markComplete": false,
+    "isDefault": false,
+    "ready": true,
+    "reviewId": "",
+    "headingTypefaceId": "l3OkM5EhWOfcM9t9NRpKxV9u",
+    "bodyTypefaceId": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+    "uiTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+    "sidebarMode": "open",
+    "tenantId": "59833a41-7aa6-40d9-b4a8-439946c15810",
+    "showLessonCount": true,
+    "showNavigationButtons": true,
+    "allowSearch": true,
+    "animateBlockEntrance": true,
+    "transferredAt": null,
+    "allowCopy": false,
+    "enableVideoPlaybackSpeed": null,
+    "jobType": null,
+    "partnerContentId": null,
+    "cardImage": {},
+    "theme": {
+      "colors": [
+        "#152f4d"
+      ],
+      "brandId": "59f64ff4-b18c-4a67-94b3-d3378c1fc409",
+      "themeId": "classic",
+      "coverImage": "",
+      "navigation": true,
+      "showAuthor": true,
+      "allowSearch": true,
+      "colorAccent": "#152f4d",
+      "appliedBrand": {
+        "logoKey": "rise/brands/59833a41-7aa6-40d9-b4a8-439946c15810/59f64ff4-b18c-4a67-94b3-d3378c1fc409/gnkU0NrV4Hhf2F23.jpeg",
+        "colorAccent": "#152f4d",
+        "bodyTypefaceId": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+        "additionalColors": [
+          "#152f4d"
+        ],
+        "headingTypefaceId": "l3OkM5EhWOfcM9t9NRpKxV9u"
+      },
+      "blockCorners": "ROUNDED",
+      "buttonScheme": "LIGHT",
+      "uiTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "coverPageType": "SPLIT_LEFT_IMAGE",
+      "accentContrast": "AUTO",
+      "bodyTypefaceId": "Wstu1lVkR_rUsAuU6x1N_UImwchzygj2",
+      "navigationType": "COMPACT",
+      "blockPaddingTop": 30,
+      "coverImageAlpha": 50,
+      "navigationStyle": "LIGHT_ACCENT",
+      "showLessonCount": true,
+      "lessonHeaderSize": "MEDIUM",
+      "buttonInlineStyle": "ROUNDED",
+      "coverImageDefault": "https://cdn.articulate.com/assets/rise/assets/themes/classic/cover-image/7_wfh.jpg",
+      "headingTypefaceId": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "lessonHeaderColor": null,
+      "lessonHeaderImage": "",
+      "lessonHeaderStyle": "ACCENT",
+      "sidebarStartsOpen": true,
+      "blockPaddingBottom": 30,
+      "markLessonsComplete": false,
+      "animateBlockEntrance": true,
+      "navigationRestricted": false,
+      "buttonNavigationStyle": "FULL",
+      "showNavigationButtons": true,
+      "compactShowLessonCount": true,
+      "lessonHeaderImageAlpha": 0.6,
+      "lessonHeaderImageColor": "DARK",
+      "enableVideoPlaybackSpeed": true,
+      "customColorLessonHeaderContrast": "AUTO"
+    },
+    "lessonHeaderImage": {},
+    "overlayNavigationImage": {},
+    "type": null,
+    "experiments": null,
+    "settings": {
+      "isAIConceptToCourse": true
+    },
+    "defaultLocaleId": null,
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "blockBackgroundImage": {},
+    "otherTypefaceIds": null,
+    "contentUpdatedAt": "2026-11-18T01:37:20.201Z",
+    "authorType": "standard",
+    "lastPublishedAt": null,
+    "localizationMetadata": {},
+    "awaitingContent": false,
+    "features": {
+      "rise-rte-fonts": true,
+      "ai-learner-chatbot": true,
+      "rise-audio-release": true,
+      "rise-process-accessibility": true,
+      "rise-matching-accessibility": true,
+      "rise-ai-tutor-required-disclosures": true
+    },
+    "aiTutorConfig": null,
+    "authors": [
+      {
+        "id": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+        "avatar": "small_1782404657678.jpg",
+        "authorName": "Iaclube Help"
+      }
+    ],
+    "aiLearnerCourseApiKey": null,
+    "aiLearnerSubscriptionId": null,
+    "mondrian": {},
+    "bodyTypeface": "Montserrat",
+    "headingTypeface": "Ubuntu Sans Mono",
+    "uiTypeface": "Lato"
+  },
+  "labelSet": {
+    "iso639Code": "en",
+    "labels": {
+      "exitMessage": "You may now leave this page.",
+      "salutation": "👋 Bye!",
+      "a11yAiScenarioChooseResponse": "Choose a response",
+      "a11yAiScenarioConversation": "Conversation",
+      "a11yAiScenarioConversationComplete": "Conversation complete",
+      "a11yAiScenarioFailedThreshold": "You did not reach the passing threshold.",
+      "a11yAiScenarioGoalAchieved": "achieved",
+      "a11yAiScenarioGoalNotAchieved": "not achieved",
+      "a11yAiScenarioGoalPartial": "partially correct",
+      "a11yAiScenarioMute": "Mute",
+      "a11yAiScenarioPassedThreshold": "You met or exceeded the passing threshold.",
+      "a11yAiScenarioPause": "Pause",
+      "a11yAiScenarioPlay": "Play",
+      "a11yAiScenarioReplayAudio": "Replay audio",
+      "a11yAiScenarioResponseOptions": "Response options",
+      "a11yAiScenarioRestart": "Restart",
+      "a11yAiScenarioRetryScenario": "Retry scenario",
+      "a11yAiScenarioSentBy": "Sent by",
+      "a11yAiScenarioStartScenario": "Start scenario",
+      "a11yAiScenarioSubmitResponse": "Submit response",
+      "a11yAiScenarioUnmute": "Unmute",
+      "a11yAiTutorArticulateLogo": "Articulate - open in new tab",
+      "a11yAiTutorAskButton": "Ask AI Tutor",
+      "a11yAiTutorAssistantMessage": "AI Tutor response",
+      "a11yAiTutorChatWindow": "AI Tutor chat window",
+      "a11yAiTutorCloseTipsModal": "Close tips modal",
+      "a11yAiTutorFeedbackDismiss": "Dismiss feedback",
+      "a11yAiTutorFeedbackInput": "Type your feedback",
+      "a11yAiTutorFeedbackSubmit": "Submit feedback",
+      "a11yAiTutorFeedbackWhyUnhelpful": "Why is it unhelpful?",
+      "a11yAiTutorHide": "Hide AI Tutor chat",
+      "a11yAiTutorInput": "Type your message for AI Tutor",
+      "a11yAiTutorSection": "AI Tutor",
+      "a11yAiTutorSeeTips": "See tips for using AI Tutor",
+      "a11yAiTutorSendButton": "Send message to AI Tutor",
+      "a11yAiTutorStartOver": "Return to AI Tutor home screen",
+      "a11yAiTutorThumbsDown": "Rate response as not helpful",
+      "a11yAiTutorThumbsDownSubmitted": "Not helpful, feedback submitted",
+      "a11yAiTutorThumbsUp": "Rate response as helpful",
+      "a11yAiTutorThumbsUpSubmitted": "Helpful, feedback submitted",
+      "a11yAiTutorUserMessage": "User message",
+      "a11yAnswerLive": "Your answer",
+      "a11yAuthorPrefix": "By",
+      "a11yBlockArrowSequence": "Arrow sequence",
+      "a11yBlockChartAxisX": "x-axis",
+      "a11yBlockChartAxisY": "y-axis",
+      "a11yBlockChartBar": "Bar chart",
+      "a11yBlockChartInstructions": "Use arrow keys to navigate data points. Screen reader users may need to switch modes to interact.",
+      "a11yBlockChartLine": "Line chart",
+      "a11yBlockChartPie": "Pie chart",
+      "a11yBlockChartPreposition": "of",
+      "a11yBlockCode": "Custom Interaction",
+      "a11yBlockCodeSnippet": "Code",
+      "a11yBlockEmbed": "Embedded Content",
+      "a11yBlockFlashcardBack": "Back of card",
+      "a11yBlockFlashcardFront": "Front of card",
+      "a11yBlockFlashcardGrid": "Flashcard grid",
+      "a11yBlockFlashcardStack": "Flashcard carousel",
+      "a11yBlockFlashcardStackRoleDescription": "Carousel",
+      "a11yBlockFlashcardStackSlideControls": "Slide controls",
+      "a11yBlockFlashcardStackSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockFlashcardStackSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockFlashcardStackSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockFlashcardStackSlidePreposition": "of",
+      "a11yBlockFlashcardStackSlideRoleDescription": "Slide",
+      "a11yBlockImageCarousel": "Image Carousel",
+      "a11yBlockImageCarouselRoleDescription": "Carousel",
+      "a11yBlockImageCarouselSlideControls": "Slide controls",
+      "a11yBlockImageCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockImageCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockImageCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockImageCarouselSlidePreposition": "of",
+      "a11yBlockImageCarouselSlideRoleDescription": "Slide",
+      "a11yBlockKnowledgeCheck": "Knowledge check",
+      "a11yBlockKnowledgeCheckFIB": "Knowledge check: Fill in the blank",
+      "a11yBlockKnowledgeCheckM": "Knowledge check: Matching",
+      "a11yBlockKnowledgeCheckMC": "Knowledge check: Multiple choice",
+      "a11yBlockKnowledgeCheckMR": "Knowledge check: Multiple response",
+      "a11yBlockProcessCarousel": "Carousel",
+      "a11yBlockProcessRoleDescription": "Carousel",
+      "a11yBlockProcessSlideControls": "Slide controls",
+      "a11yBlockProcessSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockProcessSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockProcessSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockProcessSlideControlsIntroduction": "Introduction",
+      "a11yBlockProcessSlideControlsSummary": "Summary",
+      "a11yBlockProcessSlidePreposition": "of",
+      "a11yBlockProcessSlideRoleDescription": "Slide",
+      "a11yBlockQuoteCarousel": "Quote Carousel",
+      "a11yBlockQuoteCarouselRoleDescription": "Carousel",
+      "a11yBlockQuoteCarouselSlideControls": "Slide controls",
+      "a11yBlockQuoteCarouselSlideControlsGoToNext": "Go to next slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToPrevious": "Go to previous slide",
+      "a11yBlockQuoteCarouselSlideControlsGoToSlide": "Go to slide",
+      "a11yBlockQuoteCarouselSlidePreposition": "of",
+      "a11yBlockQuoteCarouselSlideRoleDescription": "Slide",
+      "a11yBlockStoryline": "Storyline",
+      "a11yBlockSurveyCharCount": "Character count:",
+      "a11yBlockSurveyConfirmation": "Thanks! Your responses were sent.",
+      "a11yBlockSurveySubmitting": "Submitting survey responses.",
+      "a11yBlockSurveyValidationError": "Please answer all required questions to continue",
+      "a11yBlockTimeline": "Timeline",
+      "a11yBlockVideoSidePanelTablist": "Video details",
+      "a11yCarouselNext": "Next",
+      "a11yCarouselPrevious": "Previous",
+      "a11yCertificateDownloadFailed": "Failed to download certificate",
+      "a11yContentRevealed": "New content shown",
+      "a11yCorrectLive": "Correct answer",
+      "a11yCoverCourseCompleted": "Course Completed",
+      "a11yCoverCourseLength": "Course Length",
+      "a11yCoverRequirementComplete": "Requirement complete",
+      "a11yCoverRequirementFailed": "Requirement failed",
+      "a11yCoverRequirementIncomplete": "Requirement incomplete",
+      "a11yExcelIcon": "Microsoft Excel spreadsheet",
+      "a11yFileIcon": "File",
+      "a11yGroupAudioPlayer": "Audio player",
+      "a11yGroupScenario": "Interactive scenario",
+      "a11yGroupVideoPlayer": "Video player",
+      "a11yLabeledGraphicBlock": "Labeled graphic",
+      "a11yLabeledGraphicButtonMarker": "Marker",
+      "a11yLabeledGraphicIconArrowDown": "Down arrow",
+      "a11yLabeledGraphicIconArrowDownLeft": "Down left arrow",
+      "a11yLabeledGraphicIconArrowDownRight": "Down right arrow",
+      "a11yLabeledGraphicIconArrowLeft": "Left arrow",
+      "a11yLabeledGraphicIconArrowRight": "Right arrow",
+      "a11yLabeledGraphicIconArrowUp": "Up arrow",
+      "a11yLabeledGraphicIconArrowUpLeft": "Up left arrow",
+      "a11yLabeledGraphicIconArrowUpRight": "Up right arrow",
+      "a11yLabeledGraphicIconCheck": "Check mark",
+      "a11yLabeledGraphicIconDot": "Dot",
+      "a11yLabeledGraphicIconHeart": "Heart",
+      "a11yLabeledGraphicIconInformation": "Information",
+      "a11yLabeledGraphicIconPin": "Map pin",
+      "a11yLabeledGraphicIconPlus": "Plus",
+      "a11yLabeledGraphicIconQuestion": "Question mark",
+      "a11yLabeledGraphicIconX": "X",
+      "a11yLabeledGraphicUnviewed": "Not viewed",
+      "a11yLabeledGraphicViewed": "Viewed",
+      "a11yMatchingColumn1": "Matching column 1",
+      "a11yMatchingColumn2": "Matching column 2",
+      "a11yMatchingItemMatchedWith": "Matched with",
+      "a11yMatchingItemMatchWith": "Match with",
+      "a11yMatchingItemSelectableItem": "Selectable item",
+      "a11yMatchingItemShowLess": "Show less",
+      "a11yMatchingItemShowMore": "Show more",
+      "a11yMediaCaptions": "Captions",
+      "a11yMediaCaptionsOff": "Captions off",
+      "a11yMediaCurrentTime": "Current time",
+      "a11yMediaDownload": "Download",
+      "a11yMediaDuration": "Duration",
+      "a11yMediaErrorVideo": "This video could not be loaded.",
+      "a11yMediaExitFullscreen": "Exit fullscreen",
+      "a11yMediaExitPictureInPicture": "Exit picture-in-picture",
+      "a11yMediaFullscreen": "Fullscreen",
+      "a11yMediaMoreOptions": "More options",
+      "a11yMediaMoreOptionsBack": "Back to more options",
+      "a11yMediaMute": "Mute",
+      "a11yMediaPause": "Pause",
+      "a11yMediaPictureInPicture": "Picture-in-picture",
+      "a11yMediaPlay": "Play",
+      "a11yMediaPlaybackRate": "Playback Rate",
+      "a11yMediaPlaybackRateNormal": "Normal",
+      "a11yMediaPlayVideo": "Play video",
+      "a11yMediaRemainingTime": "Remaining time",
+      "a11yMediaReplay": "Replay",
+      "a11yMediaSeek": "Seek",
+      "a11yMediaSeekDisabled": "Forward seeking is disabled",
+      "a11yMediaUnmute": "Unmute",
+      "a11yMediaVolume": "Volume",
+      "a11yNavigationMenuClose": "Close navigation menu",
+      "a11yNavigationMenuOpen": "Open navigation menu",
+      "a11yNoticeLinkNewTab": "(opens in a new tab)",
+      "a11yPageMarker": "Top of page",
+      "a11yPDFIcon": "PDF file",
+      "a11yPPTIcon": "PowerPoint presentation",
+      "a11yPreposition": "of",
+      "a11yProgressSummaryRequirementCompleted": "Requirement completed, check mark",
+      "a11yProgressSummaryRequirementNotCompleted": "Requirement not completed, empty square",
+      "a11yQuizFailed": "Failed",
+      "a11yQuizFeedback": "Feedback",
+      "a11yQuizPassed": "Passed",
+      "a11yQuizReviewCorrectlyChecked": "Correctly checked",
+      "a11yQuizReviewCorrectlySelected": "Correctly selected",
+      "a11yQuizReviewCorrectlyUnchecked": "Correctly unchecked",
+      "a11yQuizReviewCorrectlyUnselected": "Correctly unselected",
+      "a11yQuizReviewIncorrectlyChecked": "Incorrectly checked",
+      "a11yQuizReviewIncorrectlySelected": "Incorrectly selected",
+      "a11yQuizReviewIncorrectlyUnchecked": "Incorrectly unchecked",
+      "a11yQuizReviewIncorrectlyUnselected": "Incorrectly unselected",
+      "a11yRegionMainLesson": "Lesson content",
+      "a11yRegionMainOverview": "Course overview",
+      "a11yRegionNavLesson": "Navigation menu",
+      "a11yRegionNavOverview": "Table of contents",
+      "a11yRestrictedNav": "This lesson is currently unavailable",
+      "a11yRTFIcon": "Rich Text File",
+      "a11ySearchClose": "Close search menu",
+      "a11ySearchInput": "Search",
+      "a11ySearchInputClear": "clear search term",
+      "a11ySearchOpen": "Open search menu",
+      "a11ySortingCategories": "Categories",
+      "a11ySortingCategoriesComplete": "Categories. Interaction completed.",
+      "a11ySortingCategory": "category",
+      "a11ySortingComplete": "cards correct",
+      "a11ySortingCompleteOf": "of",
+      "a11ySortingCorrect": "Correct",
+      "a11ySortingCurrentItem": "Current item",
+      "a11ySortingIncorrect": "Incorrect. Choose another category.",
+      "a11ySortingNextItem": "Next item",
+      "a11yStatusAdditionalContent": "Additional content has been loaded",
+      "a11yStatusContinued": "Continued",
+      "a11yUnzoomImage": "Unzoom image",
+      "a11yWordIcon": "Microsoft Word document",
+      "a11yZipIcon": "Zip file",
+      "a11yZoomImage": "Zoom image",
+      "aiScenarioChooseResponsePrompt": "Choose the best response…",
+      "aiScenarioContinue": "Continue",
+      "aiScenarioErrorBody": "Please try again in a little while.",
+      "aiScenarioErrorTitle": "Something went wrong",
+      "aiScenarioGoal": "Goal #",
+      "aiScenarioGoals": "Goals",
+      "aiScenarioInvalidBody": "The scenario has validation errors and cannot be played.",
+      "aiScenarioInvalidTitle": "Invalid scenario",
+      "aiScenarioPassing": "Passing",
+      "aiScenarioRetry": "Retry",
+      "aiScenarioSenderCharacter": "Character",
+      "aiScenarioSenderYou": "You",
+      "aiScenarioStart": "Start",
+      "aiScenarioUnavailableBody": "Check back soon — it may still be getting set up.",
+      "aiScenarioUnavailableTitle": "This scenario isn't available yet",
+      "aiScenarioWrapUp": "That's a wrap—see how you did.",
+      "aiScenarioYourScore": "Your score",
+      "aiTutorAcceptableUsePolicyLink": "Acceptable Use Policy",
+      "aiTutorAskButton": "Ask AI Tutor",
+      "aiTutorBlankHeading": "Hey there, need a hand?",
+      "aiTutorBlankPillExplain": "Explain this in simpler terms",
+      "aiTutorBlankPillSearch": "Search course content",
+      "aiTutorBlankPillSummarize": "Summarize this training",
+      "aiTutorDataUseDisclosure": "Prompts are stored and analyzed. The organization that shared this training may receive aggregated or AI-generated insights.",
+      "aiTutorDisabledWhileQuiz": "AI Tutor is disabled while a quiz is in progress.",
+      "aiTutorDisclaimer": "AI isn't perfect—double check important information.",
+      "aiTutorErrorGeneral": "Something went wrong. Try refreshing the page or submitting a new request.",
+      "aiTutorErrorUnavailable": "AI Tutor is currently unavailable.",
+      "aiTutorFeedbackDetailsPlaceholder": "Share additional details (optional)",
+      "aiTutorFeedbackImprovementNote": "Your feedback helps improve this feature.",
+      "aiTutorFeedbackLearnMore": "Learn more",
+      "aiTutorFeedbackPopoverTitle": "Tell us more",
+      "aiTutorFeedbackReasonIncorrect": "Incorrect information",
+      "aiTutorFeedbackReasonNoAnswer": "Didn't answer my question",
+      "aiTutorFeedbackReasonNotHelpful": "Explanation wasn't helpful for me",
+      "aiTutorFeedbackReasonNotRelevant": "Response wasn't relevant",
+      "aiTutorFeedbackReasonOther": "Other",
+      "aiTutorFeedbackSubmit": "Submit",
+      "aiTutorFeedbackThankYou": "Thank you for your feedback",
+      "aiTutorFeedbackToast": "Thanks for your feedback",
+      "aiTutorGeneratingResponse": "Generating response",
+      "aiTutorHideTooltip": "Hide",
+      "aiTutorInputPlaceholder": "Type your message",
+      "aiTutorPrivacyLink": "privacy policy",
+      "aiTutorSeeTips": "See tips",
+      "aiTutorStartOverTooltip": "Start over",
+      "aiTutorTermsLink": "terms of use",
+      "aiTutorTermsPrefix": "By using this service, you agree to the Articulate",
+      "aiTutorTipsGotIt": "Got it",
+      "aiTutorTipsTip1": "AI can make mistakes. Use it as a guide, but verify what matters.",
+      "aiTutorTipsTip2": "Focus on topics covered in the course. Ask specific questions for best results.",
+      "aiTutorTipsTip3": "Don't share personal or sensitive information.",
+      "aiTutorTipsTitle": "What to know",
+      "audioCollapsePlayer": "Collapse audio player",
+      "audioExpandPlayer": "Expand audio player",
+      "audioHideTranscript": "Hide transcript",
+      "audioNoTranscriptAvailable": "No transcript available",
+      "audioPlaySpeed": "Play speed",
+      "audioShowTranscript": "Show transcript",
+      "audioTranscript": "Audio transcript",
+      "bannerButtonDismiss": "Dismiss",
+      "bannerCourseUpdated": "You're viewing the latest version.",
+      "bannerCourseUpdatedEmphasis": "Course updated.",
+      "bannerCourseUpdatedProgressReset": "You're viewing the latest version.",
+      "bannerCourseUpdatedProgressResetEmphasis": "Course updated and learner progress reset.",
+      "blocksClickToFlip": "Click to flip",
+      "blocksPreposition": "of",
+      "certificateDownload": "Download certificate",
+      "certificateDownloadInProgress": "Downloading...",
+      "certificateRetryDownload": "Retry download",
+      "courseCompletionOverdue": "Overdue",
+      "courseExit": "EXIT COURSE",
+      "courseFinish": "Finish",
+      "courseHome": "Home",
+      "courseResume": "RESUME COURSE",
+      "courseSkipToLesson": "SKIP TO LESSON",
+      "courseStart": "START COURSE",
+      "coverCompleteAllLessons": "Complete all lessons in this course",
+      "coverCompleted": "Completed",
+      "coverCompleteLessonsInCourse": "lessons in this course",
+      "coverCompleteLessonsName": "Complete",
+      "coverCompleteLessonsPreposition": "of",
+      "coverCourseRequirements": "Course Requirements",
+      "coverHour": "Hour",
+      "coverHours": "Hours",
+      "coverLesson": "Lesson",
+      "coverLessons": "Lessons",
+      "coverMinute": "Minute",
+      "coverMinutes": "Minutes",
+      "coverNoAttemptsRemaining": "No attempts remaining",
+      "coverPublished": "Published",
+      "coverQuizPercentOrHigher": "% or higher",
+      "coverQuizScoreOf": "Score of",
+      "coverUpdated": "Updated",
+      "curtainLoading": "Your content is loading.",
+      "curtainOffline": "Your computer is offline.",
+      "curtainOfflineReconnecting": "Attempting to reconnect…",
+      "curtainSessionTimedOut": "Your session has timed out.",
+      "curtainSessionTimedOutRefresh": "Refresh",
+      "curtainSessionTimedOutRestart": "Click refresh to restart your session.",
+      "curtainSomethingWrong": "Something went wrong.",
+      "curtainSomethingWrongRefresh": "Refresh",
+      "curtainSomethingWrongTryAgain": "Click to refresh and try again.",
+      "customBlockVideoError": "Video didn't load",
+      "embedLinkGroup": "Embedded web content",
+      "embedPlayerGroup": "Embedded media player",
+      "embedReadMore": "Read more",
+      "embedViewOn": "VIEW ON",
+      "knowledgeCheckCorrectAnswerRequiredBlock": "Requires a correct answer to continue",
+      "knowledgeCheckCorrectAnswerRequiredNav": "Complete previous knowledge checks to unlock this lesson",
+      "knowledgeCheckMaxRetriesReached": "You have reached the maximum amount of retries.",
+      "knowledgeCheckRetriesAttemptsRemaining": "Attempts remaining:",
+      "l10nChooseLanguage": "Choose your course language",
+      "l10nChooseLanguageContinue": "Continue",
+      "labeledGraphicMarkerLabel": "Labeled graphic marker",
+      "lessonComplete": "COMPLETE",
+      "lessonName": "Lesson",
+      "lessonPreposition": "of",
+      "lessonRestricted": "Lessons must be completed in order",
+      "lessonUntitled": "Untitled Lesson",
+      "noResults": "No results for",
+      "numberedDividerGroup": "Numbered divider",
+      "overviewPageTitleSuffix": "Overview",
+      "pauseButtonLabel": "Pause",
+      "playButtonLabel": "Play",
+      "presentationCheckpointAnswerSent": "Answer sent",
+      "presentationCheckpointAnswerThanks": "Thanks for your answer",
+      "presentationCheckpointAverage": "Average",
+      "presentationCheckpointChangeAnswer": "Change my answer",
+      "presentationCheckpointContinueHint": "Use the slide controls to continue.",
+      "presentationCheckpointLinearScale": "Linear scale",
+      "presentationCheckpointMultipleChoice": "Multiple choice",
+      "presentationCheckpointMultipleResponse": "Multiple response",
+      "presentationCheckpointOpenResponse": "Open response",
+      "presentationCheckpointOpenResponseEmpty": "Written answers stack up here as they come in",
+      "presentationCheckpointResponse": "response",
+      "presentationCheckpointResponsePlural": "responses",
+      "presentationCheckpointResultsPlaceholder": "Responses fill in here while you present.",
+      "presentationCheckpointSubmitError": "Your answer wasn't sent. Check your connection and try again.",
+      "presentationCheckpointWaitingForNext": "Waiting for the next question.",
+      "presentationCheckpointWordCloud": "Word cloud",
+      "presentationCheckpointWordCloudEmpty": "Audience responses, sized by how often they come up",
+      "presentationLiveSessionGuest": "Guest",
+      "presentationLiveSessionLiveBadge": "Live",
+      "presentationLiveSessionScanToJoin": "Scan to join",
+      "presentationLiveSessionWaitingMessage": "Follow along on the main screen. Questions appear here as the presenter runs them.",
+      "presentationLiveSessionWaitingTitle": "You are in",
+      "presentationPdfUnsupportedBlock": "This block type is not supported in presentation PDFs.",
+      "processComplete": "Complete",
+      "processLandmark": "Process",
+      "processLessonName": "Lesson",
+      "processNextStep": "NEXT STEP",
+      "processStart": "START",
+      "processStartAgain": "START AGAIN",
+      "processStepName": "Step",
+      "processStepPreposition": "of",
+      "processSwipe": "Swipe to continue",
+      "progressPieClickToComplete": "Click to complete",
+      "progressPieClickToReset": "Click to reset",
+      "progressPieCompleted": "Completed",
+      "progressPieQuizFailed": "Failed",
+      "progressPieUnstarted": "Unstarted",
+      "progressSummary": "Progress Summary",
+      "progressSummaryBackToLearning": "Back to my learning",
+      "progressSummaryCompleted": "Completed:",
+      "progressSummaryCompletionRequirement": "Completion Requirement",
+      "progressSummaryCongratulations": "Congratulations!",
+      "progressSummaryNextUp": "Next up",
+      "progressSummaryNoAttemptsRemaining": "No attempts remaining.",
+      "progressSummaryNoTitle": "(No Title)",
+      "progressSummaryPercentComplete": "% Complete",
+      "progressSummaryPercentCompletion": "% Completion",
+      "progressSummaryQuizRequirement": "Quiz Requirement",
+      "progressSummaryRequirementsMet": "You've met all the requirements.",
+      "progressSummaryScoreOf": "Score of",
+      "progressSummaryScoreOfPreposition": "% on",
+      "progressSummaryStartOver": "Start Over",
+      "progressSummaryViewQuiz": "View quiz",
+      "progressSummaryYouCompleted": "You completed:",
+      "progressSummaryYouScored": "You scored",
+      "quizAcceptableResponses": "Acceptable responses",
+      "quizAnswerPlaceholder": "Type your answer here",
+      "quizContinue": "Continue",
+      "quizCorrect": "Correct",
+      "quizIncorrect": "Incorrect",
+      "quizNext": "NEXT",
+      "quizPassing": "PASSING",
+      "quizQuestion": "Question",
+      "quizRequireAnswer": "Please answer the question to continue",
+      "quizRequirePassingScore": "Must pass quiz before continuing",
+      "quizRestart": "Restart",
+      "quizResults": "Quiz Results",
+      "quizScore": "Your score",
+      "quizSkipAhead": "Skip Ahead to Lesson",
+      "quizStart": "START QUIZ",
+      "quizSubmit": "SUBMIT",
+      "quizTakeAgain": "TAKE AGAIN",
+      "quizTimerElapsed": "Time elapsed",
+      "quizTimerExpired": "Time expired",
+      "quizTimerExpiredAction": "OK",
+      "quizTimerExpiredMessage": "You have reached the time limit for this quiz. Your results will be automatically submitted",
+      "quizTimerHide": "Hide",
+      "quizTimerLimit": "Time limit",
+      "quizTimerMinute": "Minute",
+      "quizTimerMinutePlural": "Minutes",
+      "quizTimerRemaining": "Time left",
+      "quizTimerShow": "Show timer",
+      "quizUntitled": "Untitled Quiz",
+      "result": "result",
+      "results": "results",
+      "scenarioComplete": "Scenario Complete!",
+      "scenarioContinue": "CONTINUE",
+      "scenarioStartOver": "START OVER",
+      "scenarioTryAgain": "TRY AGAIN",
+      "search": "search",
+      "seekSliderLabel": "Seek",
+      "sortingCardsCorrect": "Cards Correct",
+      "sortingLandmark": "Sorting Activity",
+      "sortingReplay": "REPLAY",
+      "surveyConfirmation": "Thanks! Your responses were sent.",
+      "surveyFreeResponseRequired": "Please enter a response",
+      "surveyMultipleChoiceRequired": "Please select an answer",
+      "surveyMultipleResponseRequired": "Please select at least one answer",
+      "surveyPlaceholder": "Share your thoughts",
+      "surveyRatingRequired": "Please select a rating",
+      "surveyRequired": "Required",
+      "surveySubmit": "Submit",
+      "surveySubmitting": "Submitting...",
+      "surveyValidationError": "Please answer all required questions to continue.",
+      "trialBadgePoweredBy": "Powered by",
+      "trialBadgeTooltip": "Purchase to remove badging and watermarks from published content",
+      "videoBlock": "block",
+      "videoBlocks": "blocks",
+      "videoChapterName": "Chapter",
+      "videoChapters": "Chapters",
+      "videoChapterUntitled": "Untitled chapter",
+      "videoChapterWholeVideo": "Whole video",
+      "videoCheckpointAddBlock": "Add a block",
+      "videoCheckpointBookendEnd": "End",
+      "videoCheckpointBookendStart": "Start",
+      "videoCheckpointContinue": "Continue",
+      "videoCheckpointDefaultTitle": "Checkpoint",
+      "videoCheckpointDone": "Done",
+      "videoCheckpointLocked": "Complete the activities above to continue.",
+      "videoCheckpointNew": "New checkpoint",
+      "videoCheckpointNoContent": "No content added to this checkpoint.",
+      "videoCheckpointPausedAt": "Paused at",
+      "videoCheckpointPlaysAfter": "Plays after video",
+      "videoCheckpointPlaysBefore": "Plays before video",
+      "videoCheckpointRequireCorrectAnswer": "A knowledge check here requires a correct answer to continue.",
+      "videoCheckpointRequired": "Require interactions",
+      "videoCheckpointRequiredEmpty": "There are currently no interactive blocks to require.",
+      "videoCheckpointResume": "Resume video",
+      "videoCheckpoints": "Checkpoints",
+      "videoCheckpointStart": "Start video",
+      "videoCheckpointStartDismiss": "Start video",
+      "videoCheckpointUntitled": "Untitled checkpoint",
+      "videoHideTranscript": "Hide transcript",
+      "videoNoChapters": "No chapters yet",
+      "videoNoChaptersMessage": "Add timestamps in the block settings to organize your video.",
+      "videoOutline": "Video outline",
+      "videoOutlineAddChapterAt": "Add chapter at",
+      "videoOutlineChapter": "chapter",
+      "videoOutlineChapters": "chapters",
+      "videoOutlineCheckpoint": "checkpoint",
+      "videoOutlineCheckpoints": "checkpoints",
+      "videoShowLessChapters": "Show less chapters",
+      "videoShowMoreChapters": "Show more chapters",
+      "videoTranscript": "Transcript",
+      "videoTranscriptAutoScroll": "Auto-scroll transcript",
+      "videoViewTranscript": "View transcript"
+    },
+    "id": "VhNWbYblvhwawL6qDtUlbJ0n",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "name": "English",
+    "defaultId": 1,
+    "defaultSet": true,
+    "deleted": false,
+    "createdAt": "2026-06-07T16:36:41.888Z",
+    "updatedAt": "2026-06-07T16:36:41.888Z",
+    "transferredAt": null
+  },
+  "settings": {
+    "completionPercentage": 100,
+    "reporting": "passed-incomplete",
+    "resetLearnerData": false,
+    "loadOnlyInLMS": true,
+    "filename": "ia-para-analise-de-dados-hands-on-scorm12-tLjAkJ_g.zip",
+    "coursePackageVersion": "tLjAkJ_g",
+    "exporterAuthId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "cdnUri": "https://cdn.articulate.com",
+    "courseUpdateCallbackUrl": "https://rise-runtime.360.prod.art-internal.com/publish/course/1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1",
+    "format": "zip",
+    "identifier": "1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1_rise",
+    "isRemotePackage": false,
+    "reviewContentUrl": "https://360.articulate.com/review/content",
+    "s3Metadata": {
+      "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+      "tenant-id": "59833a41-7aa6-40d9-b4a8-439946c15810"
+    },
+    "telemetryUri": "https://metrics.articulate.com",
+    "title": "IA para Análise de Dados - Hands On"
+  },
+  "deliveryPolicy": {
+    "status": "resolved",
+    "schemaVersion": 1,
+    "evaluatedAt": "2026-11-18T01:37:26.523Z",
+    "access": "allowed",
+    "protection": "none"
+  },
+  "exportAggregate": {
+    "subscriptionId": "59833a41-7aa6-40d9-b4a8-439946c15810",
+    "exportId": "dUTkuYnvN8K45NszbTDskelqk_R_oLlN",
+    "courseId": "1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1",
+    "courseType": "course",
+    "courseTheme": "classic",
+    "courseCreatedVia": "ai",
+    "courseLessons": {
+      "total": 3,
+      "ai": 3,
+      "blocks": {
+        "total": 3,
+        "ai": 3
+      }
+    },
+    "courseBlocks": {
+      "total": 51,
+      "ai": 51,
+      "text": {
+        "total": 25,
+        "ai": 25
+      },
+      "list": {
+        "total": 4,
+        "ai": 4
+      },
+      "interactive": {
+        "total": 12,
+        "ai": 12
+      },
+      "knowledgeCheck": {
+        "total": 6,
+        "ai": 6
+      },
+      "divider": {
+        "total": 4,
+        "ai": 4
+      }
+    }
+  },
+  "fonts": [
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "odEbaqB-9smJ3djS.woff",
+      "style": "italic",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "400"
+    },
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "LM161uPxEAP6TYht.woff",
+      "style": "normal",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "700"
+    },
+    {
+      "id": "l3OkM5EhWOfcM9t9NRpKxV9u",
+      "name": "Ubuntu Sans Mono",
+      "default": false,
+      "key": "d3AXvJ6ebo6lNjzY.woff",
+      "style": "normal",
+      "family": "rise-tf-00006c00003300004f00006b00004d00003500004500006800005700004f00006600006300004d00003900007400003900004e00005200007000004b000078000056000039000075",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-SemiBold.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "600"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Medium.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "500"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Black.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "900"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Bold.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "700"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Italic.woff",
+      "style": "italic",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Regular.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "400"
+    },
+    {
+      "id": "Lxkz2_hh5Lj36BahL12QIpT8qKsjknf6",
+      "name": "Montserrat",
+      "default": true,
+      "key": "Montserrat-Light.woff",
+      "style": "normal",
+      "family": "rise-tf-00004c00007800006b00007a00003200005f00006800006800003500004c00006a00003300003600004200006100006800004c00003100003200005100004900007000005400003800007100004b00007300006a00006b00006e000066000036",
+      "weight": "300"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Regular.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "400"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Light.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "300"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Italic.woff",
+      "style": "italic",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "400"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Bold.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "700"
+    },
+    {
+      "id": "_vy9IVqRPwz6wQlKi0wsA9dsYpZ7gsQ3",
+      "name": "Lato",
+      "default": true,
+      "key": "Lato2-Black.woff",
+      "style": "normal",
+      "family": "rise-tf-00005f00007600007900003900004900005600007100005200005000007700007a00003600007700005100006c00004b00006900003000007700007300004100003900006400007300005900007000005a000037000067000073000051000033",
+      "weight": "900"
+    }
+  ],
+  "partnerContent": []
+}

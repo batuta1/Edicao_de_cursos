@@ -1,0 +1,395 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Validating and Summarizing Results: From Numbers to Insights",
+  "lesson": {
+    "description": "",
+    "id": "b50fd29f-edd5-4c34-b898-f6026ec6b9a5",
+    "items": [
+      {
+        "id": "phmu80jzgvnaa42bxg5gdbtt",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "elyg3718cx721eyohr6w2rwl",
+            "heading": "A missão: processos por habitante, não em número absoluto",
+            "paragraph": "<p>Um escritório quer saber em quais estados se ajuízam mais processos <strong>por habitante</strong>, e não em número absoluto. Você vai juntar a base do CNJ (Oficina 3) com a do Censo (Oficina 4), calcular a taxa por 100 mil habitantes e entregar um resumo de uma página, com gráfico e premissas. Desta vez, sem roteiro de armadilha: você aplica sozinho o que desarmou nas oficinas. (22 min, dois envios)</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "bef2d41e-03c8-4687-b150-a74cbee504e3"
+      },
+      {
+        "id": "zaq6hx3q5v7uwhcstc05jxv5",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fslws3a3jc6e6r2gw5yee7c4",
+            "paragraph": "<p>Ao final do Projeto Final, você terá:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "1e0522b6-5f1e-4841-83e9-3ce9f9145b54"
+      },
+      {
+        "id": "y0nqj1dhrip9zw613yqk6600",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "vm6kmzkhmiksroxk6t9y6iwj",
+            "number": "1",
+            "paragraph": "<p>Cruzado duas bases públicas (CNJ e IBGE) e conferido quantas UFs casaram.</p>"
+          },
+          {
+            "id": "yd7ayekoaoa6zqsvud5jsgbt",
+            "number": "2",
+            "paragraph": "<p>Calculado casos novos por 100 mil habitantes para as 27 UFs.</p>"
+          },
+          {
+            "id": "nniq32wk0cw1nom0haj3i6zd",
+            "number": "3",
+            "paragraph": "<p>Escrito um resumo executivo com premissas e limitações, sem frase de causa.</p>"
+          },
+          {
+            "id": "da6gpisizqu8i22knbg18kt3",
+            "number": "4",
+            "paragraph": "<p>Conferido pelo menos três números com a checklist de gabarito.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "9dec7925-afe8-4f2f-9c38-43da2f1c0d1b"
+      },
+      {
+        "id": "c8394339-62bf-47d7-a94f-ef3332ef6347",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "a0da19a9-9b89-4935-8f97-7ec62d629b1d",
+            "paragraph": "<p>🔑 <strong>Regra de ouro:</strong> a IA calcula rápido; quem assina o número é você. O projeto só termina depois de conferir com a checklist.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e753b633-cd6f-42c2-8641-405edbe048be"
+      },
+      {
+        "id": "pq9ne9c7mvvv8jhz644i2h3s",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "callbqn56k8dey3tn5ftb28d",
+            "heading": "A Parte dos Dez — armadilhas que você já sabe desarmar",
+            "paragraph": "<p>Antes de começar o projeto, revise as regras que as oficinas ensinaram. Cinco delas decidem este projeto; abra cada uma:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "7e23a7c2-c665-4c90-be0f-08941f2b2196"
+      },
+      {
+        "id": "3cefe577-eac1-4d94-bdf1-a90ceb0a2ed9",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "640cb1c7-c845-45f9-89f2-c5823ed7eb32",
+            "title": "Faça o Raio X antes de qualquer conta.",
+            "description": "<p>Declare separador, decimal e codificação no pedido e peça linhas, colunas, tipos e período antes de calcular.</p><p></p><p>No projeto: a base do CNJ é latin-1 com ponto e vírgula; a do IBGE tem cabeçalho em duas linhas.</p>"
+          },
+          {
+            "id": "08e7d3d7-7664-4c26-93f3-e3a15232d1b7",
+            "title": "Compare por taxa quando os tamanhos forem diferentes.",
+            "description": "<p>Estado populoso tem mais processos só por ser maior. Divida pela população e multiplique por 100 mil.</p><p></p><p>No projeto: São Paulo lidera em número absoluto (6,8 milhões de casos novos), mas não na taxa.</p>"
+          },
+          {
+            "id": "8d0b74e7-e39d-466f-aaee-761c55a40167",
+            "title": "Abra o código do número que vai para o relatório.",
+            "description": "<p>Peça o código do cálculo que vai para o resumo e localize a divisão pela população.</p><p></p><p>Também vale perguntar quantas UFs casaram na junção: se não forem 27, alguma sigla ficou de fora.</p>"
+          },
+          {
+            "id": "a9e82289-d3d6-4c45-bd34-d60407989b7b",
+            "title": "Confira pelo menos um número com quem publicou.",
+            "description": "<p>Compare pelo menos um número com o publicado.</p><p></p><p>No projeto: a soma dos 27 TJs tem de dar 28.288.316, o mesmo total da Oficina 3.</p>"
+          },
+          {
+            "id": "f660cf39-efcb-48a1-92ff-e6c3abbe32ea",
+            "title": "Escreva premissas e limitações — elas protegem você.",
+            "description": "<p>Anos diferentes nas duas bases, o que “casos novos” inclui e a ausência de causa: tudo isso vai escrito.</p><p></p><p>Premissa declarada é o que permite a outra pessoa conferir — e defender — o seu número.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "124c0331-83da-418d-b69d-f2225e8c0e68"
+      },
+      {
+        "id": "b4fb3ba0-834f-40fd-b9a7-02951d2de8b4",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f436cfbd-4c5b-49dc-85eb-315470436668",
+            "type": "intro",
+            "title": "Projeto Final (22 min, dois envios)",
+            "isHidden": false,
+            "description": "<p>Uma conversa nova, duas bases e seis passos. Os textos entre aspas são para digitar como estão.</p>"
+          },
+          {
+            "id": "d2240337-51d0-4d64-9f0f-614a214ccd3f",
+            "type": "summary",
+            "title": "🏁 Como saber que terminou",
+            "isHidden": false,
+            "description": "<p>Resumo de cinco linhas, gráfico com as 27 taxas e pelo menos três números conferidos com a checklist logo abaixo.</p>"
+          },
+          {
+            "id": "b9feacc4-6a9a-402d-b402-f10c779af473",
+            "type": "step",
+            "title": "Enviar as duas bases",
+            "isHidden": false,
+            "description": "<p>Abra uma conversa nova e envie <strong>JN_23-Jun-2026.csv</strong> e <strong>populacao-uf.csv</strong> por <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong>.</p>"
+          },
+          {
+            "id": "209e7e8d-a364-48da-8a7e-e01662c6fc47",
+            "type": "step",
+            "title": "Filtrar os Tribunais de Justiça",
+            "isHidden": false,
+            "description": "<p>Digite: “Casos novos (cn) de 2025 dos Tribunais de Justiça estaduais, um por UF, excluindo a linha de total TJ. TJDFT corresponde ao Distrito Federal.”</p>"
+          },
+          {
+            "id": "5ce92c92-32e3-4db5-800e-ecb7683ffe27",
+            "type": "step",
+            "title": "Juntar com a população e calcular a taxa",
+            "isHidden": false,
+            "description": "<p>Digite: “Junte com a população do Censo 2022 por UF e calcule casos novos por 100 mil habitantes. Quantas UFs casaram?”</p>"
+          },
+          {
+            "id": "ebce55b6-f383-4566-b7af-e895e2731019",
+            "type": "step",
+            "title": "Gerar o gráfico",
+            "isHidden": false,
+            "description": "<p>Peça um gráfico de barras horizontais com as 27 taxas, ordenado, eixo em zero e as duas fontes (CNJ e IBGE) no rodapé.</p>"
+          },
+          {
+            "id": "cac2d50b-1a3b-46a6-8480-890afe4103e8",
+            "type": "step",
+            "title": "Pedir o resumo executivo",
+            "isHidden": false,
+            "description": "<p>Digite: “Resumo executivo de 5 linhas para o escritório, com premissas e limitações: população de 2022 contra processos de 2025; casos novos incluem execuções e recursos.”</p>"
+          },
+          {
+            "id": "5e020fc9-f661-4477-ad7b-e1c642953dec",
+            "type": "step",
+            "title": "Conferir com a checklist",
+            "isHidden": false,
+            "description": "<p>Confira pelo menos três números com a checklist abaixo. Se algum não bater, pergunte ao ChatGPT quais linhas entraram no cálculo.</p>"
+          },
+          {
+            "id": "b0158a4b-ee76-44cb-9e58-06b894a21664",
+            "type": "step",
+            "title": "Comparar com o modelo de resumo",
+            "isHidden": false,
+            "description": "<p>Ponha o resumo do ChatGPT ao lado do modelo abaixo: ele traz pergunta, achado, comparação, premissas, limitações e fontes?</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "c83177af-fce8-4bde-b5ba-27113f0e7b63"
+      },
+      {
+        "id": "ecfc4f3b-79b2-44f2-9f1b-b1002713855e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "b4a28a80-aac7-43b4-a810-c10e0c0dd0a4",
+            "paragraph": "<p><strong>Modelo de resumo executivo</strong> — preencha os colchetes com os seus números:</p><p><strong>Pergunta:</strong> em quais UFs se ajuízam mais casos novos por habitante?</p><p><strong>Achado principal:</strong> [UF com maior taxa] ([taxa] por 100 mil) — [UF com menor taxa] ([taxa]).</p><p><strong>Comparação:</strong> São Paulo lidera em número absoluto, mas não na taxa.</p><p><strong>Premissas:</strong> casos novos (cn) dos TJs em 2025; população do Censo 2022; linha de total TJ excluída.</p><p><strong>Limitações:</strong> anos diferentes nas duas bases; casos novos incluem execuções e recursos; não indica causa.</p><p><strong>Fontes:</strong> CNJ, Justiça em Números (base de 17/09/2026); IBGE, Censo 2022 (tabela 4709).</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e3d87834-a7cc-4e60-b77d-8efb71aaf5a5"
+      },
+      {
+        "id": "ohd8ezfszvfa3s8fq0txsyuh",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "mw0lp4rs5phq9c4epq62650a",
+            "heading": "🏁 Checklist de gabarito",
+            "paragraph": "<ul><li>27 tribunais, 27 UFs casadas e soma dos TJs = <strong>28.288.316</strong>.</li><li>Maiores taxas: TJRO ≈ 20.421, TJRS ≈ 19.986 e TJDFT ≈ 19.691 por 100 mil.</li><li>Menores taxas: TJPA ≈ 6.745, TJCE ≈ 7.893 e TJPE ≈ 8.037.</li><li>O resumo diz que São Paulo lidera em número absoluto (6,8 milhões), mas não na taxa.</li><li>Premissas e limitações escritas; nenhuma frase de causa.</li><li>Gráfico com eixo em zero e as duas fontes.</li></ul>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "0e2045a1-6429-43c1-865c-a0ee5d87b1f9"
+      },
+      {
+        "id": "9f9b09ee-9941-4c8e-bb27-1ecb33f986a4",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "02dfa7ca-ed25-4227-9814-a924e0d42852",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual destes itens NÃO deve entrar num resumo executivo confiável?",
+            "answers": [
+              {
+                "id": "8912d2fe-cde9-46ac-a867-314ce892b259",
+                "title": "Citação das fontes oficiais dos dados usados",
+                "correct": false,
+                "feedback": "Esse deve entrar: as fontes (CNJ e IBGE, com a data da base) permitem que outra pessoa refaça e confira o número."
+              },
+              {
+                "id": "f8f731a5-9b6c-44df-a0ea-b2518cdb1b8f",
+                "title": "Indicação das premissas e limitações",
+                "correct": false,
+                "feedback": "Esse deve entrar: premissas e limitações — como os anos diferentes das duas bases — protegem a conclusão."
+              },
+              {
+                "id": "6721ad1f-4562-4d00-ab2b-33c361f23961",
+                "title": "Um gráfico claro e fiel aos dados",
+                "correct": false,
+                "feedback": "Esse deve entrar: o gráfico com eixo em zero e as duas fontes faz parte da entrega."
+              },
+              {
+                "id": "3417ee83-eef0-409c-9495-2b143ef3fb82",
+                "title": "Opinião pessoal sobre as causas dos resultados",
+                "correct": true,
+                "feedback": "Correto. A taxa mostra onde se litiga mais por habitante, não por quê. Afirmar causa sem evidência é o que o resumo deve evitar."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "a5540c4e-95bc-46b8-9233-87980bc81d54"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Projeto Final: Onde se Litiga Mais por Habitante",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1",
+    "createdAt": "2026-11-18T01:35:19.281Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:36:30.142Z"
+  }
+}

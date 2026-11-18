@@ -1,0 +1,21 @@
+<!--titulo: Entrega do ipca-projeto-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade integradora</span>
+  <h1 id="t">O ipca-projeto está pronto para entregar?</h1>
+  <p class="sub">Abra a pasta <strong>ipca-projeto</strong> e a conversa com o agente ao lado. Marque cada critério só depois de conferir. O curso segue com os cinco marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  checklist([
+    'dados/brutos/ipca.csv intocado.',
+    'uv.lock presente, e o projeto roda do zero com uv run analise.py.',
+    'Asserts de 4,83% (2024) e 4,26% (2025) passando.',
+    'Gráfico de barras anual de 2020 a 2025 em resultados/.',
+    'README com como rodar, verificação e limitações (inclusive a diferença de arredondamento).'
+  ], 'lista', 'placar', 'barra', 'critérios atendidos', function () {
+    concluir('final', 'Projeto entregue. O último teste é de outra pessoa: rodar seguindo só o README.');
+  });
+</script>

@@ -1,0 +1,22 @@
+<!--titulo: Projeto Final: conferência-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Projeto Final</span>
+  <h1 id="t">O clima do Distrito Federal: conferência</h1>
+  <p class="sub">Deixe a saída de <strong>uv run clima_df.py</strong> aberta ao lado. Marque cada item só depois de conferir. O curso segue com os seis marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  checklist([
+    '5 estações: A001 Brasília, A042 Brazlândia, A045 Águas Emendadas, A046 Gama, A047 Paranoá.',
+    '8.784 linhas em cada estação, garantidas por assert.',
+    'Vazios na temperatura: 26, 235, 453, 66 e 416, na ordem das estações.',
+    'Médias anuais ≈ 21,98 / 22,32 / 21,85 / 22,60 / 22,29 °C, na mesma ordem.',
+    'Maior máxima horária: Gama, 37,5 °C.',
+    'uv run clima_df.py reproduz tudo do zero; dados/brutos intocado; README com limitações.'
+  ], 'lista', 'placar', 'barra', 'itens conferidos', function () {
+    concluir('final', 'Projeto final entregue: cinco arquivos, asserts passando e um README que outra pessoa consegue seguir.');
+  });
+</script>

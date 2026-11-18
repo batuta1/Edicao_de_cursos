@@ -1,0 +1,63 @@
+<!--titulo: O mesmo arquivo, três leituras-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Veja a leitura acontecer</span>
+  <h1 id="t">O mesmo arquivo, lido de três jeitos</h1>
+  <p class="sub">Estas são as três primeiras linhas de <strong>ipca.csv</strong>, como vêm do Banco Central. Mude as opções e veja o que o ChatGPT “enxerga” em cada caso.</p>
+  <pre class="saida" aria-label="Conteúdo bruto do arquivo">"data";"valor"
+"01/01/2020";"0,21"
+"01/02/2020";"0,25"</pre>
+  <div class="grid" style="margin-top:14px">
+    <div class="item">
+      <h2 id="h-sep">Separador assumido</h2>
+      <div class="opcoes" role="group" aria-labelledby="h-sep">
+        <button type="button" class="btn" data-g="sep" data-v="virgula" aria-pressed="true">Vírgula</button>
+        <button type="button" class="btn" data-g="sep" data-v="pv" aria-pressed="false">Ponto e vírgula</button>
+      </div>
+    </div>
+    <div class="item">
+      <h2 id="h-dec">Decimal assumido</h2>
+      <div class="opcoes" role="group" aria-labelledby="h-dec">
+        <button type="button" class="btn" data-g="dec" data-v="ponto" aria-pressed="true">Ponto (0.21)</button>
+        <button type="button" class="btn" data-g="dec" data-v="virgula" aria-pressed="false">Vírgula (0,21)</button>
+      </div>
+    </div>
+  </div>
+  <h2 style="margin-top:18px">O que foi lido</h2>
+  <div id="tabela" aria-live="polite"></div>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+  <p class="nota">O mesmo vale para a codificação: o cadastro da CVM está em latin-1. Lido com outro “alfabeto”, “SÃO PAULO” vira “S�O PAULO” — e um filtro por estado deixa a empresa de fora.</p>
+</section>
+<style>
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; font-size: 14px; }
+  th, td { border: 1px solid var(--linha); padding: 6px 10px; text-align: left; }
+  th { background: var(--azul-claro); color: var(--azul); }
+  td.num { text-align: right; font-family: Consolas, "Courier New", monospace; }
+  td.txt { font-family: Consolas, "Courier New", monospace; color: var(--erro); }
+</style>
+<script>
+  var est = { sep: 'virgula', dec: 'ponto' };
+  document.querySelectorAll('button[data-g]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var g = b.getAttribute('data-g');
+      document.querySelectorAll('button[data-g="' + g + '"]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      est[g] = b.getAttribute('data-v'); mostrar();
+    });
+  });
+  function mostrar() {
+    var t = document.getElementById('tabela'), m = document.getElementById('msg');
+    if (est.sep === 'virgula') {
+      t.innerHTML = '<table><tr><th>"data";"valor"</th></tr><tr><td class="txt">"01/01/2020";"0</td></tr><tr><td class="txt">"01/02/2020";"0</td></tr></table>';
+      m.textContent = 'Separador errado: tudo virou uma coluna só, cortada na vírgula do 0,21. Nenhum cálculo faz sentido daqui.';
+      m.className = 'feedback erro';
+    } else if (est.dec === 'ponto') {
+      t.innerHTML = '<table><tr><th>data</th><th>valor</th></tr><tr><td>01/01/2020</td><td class="txt">"0,21" (texto)</td></tr><tr><td>01/02/2020</td><td class="txt">"0,25" (texto)</td></tr></table>';
+      m.textContent = 'Colunas certas, mas o valor ficou como texto: “0,21” não soma nem compõe. Peça: “Converta a coluna valor considerando vírgula decimal”.';
+      m.className = 'feedback aviso';
+    } else {
+      t.innerHTML = '<table><tr><th>data</th><th>valor</th></tr><tr><td>01/01/2020</td><td class="num">0,21</td></tr><tr><td>01/02/2020</td><td class="num">0,25</td></tr></table>';
+      m.textContent = 'Leitura correta: duas colunas, valor como número. É isso que o Raio X precisa confirmar — 72 linhas, de janeiro de 2020 a dezembro de 2025.';
+      m.className = 'feedback ok';
+    }
+  }
+  mostrar();
+</script>

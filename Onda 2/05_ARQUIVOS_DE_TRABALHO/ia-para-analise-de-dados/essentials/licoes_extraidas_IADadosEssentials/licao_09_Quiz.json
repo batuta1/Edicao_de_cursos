@@ -1,0 +1,943 @@
+{
+  "numero_da_licao": 9,
+  "position_original": 8,
+  "title": "Quiz",
+  "lesson": {
+    "description": "Teste seu entendimento de como usar o ChatGPT e o Julius AI para carregar, explorar e interpretar dados sem programação, além de reconhecer formatos aceitos e limites de upload de arquivos. Veja também se você identifica gráficos enganosos, sabe quando usar média ou mediana e entende como proteger dados sensíveis ao analisar informações com IA.",
+    "id": "l5g-e8lLwn_L87ei3L0Sab-spBiMhR-j",
+    "items": [
+      {
+        "answers": [
+          {
+            "id": "6d953f89-6424-46cd-aaa1-386021fe9bba",
+            "title": "Achados, gráficos principais, metas futuras e comparação com concorrentes.",
+            "correct": false,
+            "feedback": "Esses itens podem aparecer em apresentações gerenciais, mas não representam os elementos essenciais que garantem transparência metodológica e rastreabilidade do resumo executivo."
+          },
+          {
+            "id": "a588d410-9861-439f-9021-1c39e0126e5a",
+            "title": "Achados, premissas, modelo preditivo e justificativa das decisões.",
+            "correct": false,
+            "feedback": "Premissas e achados são relevantes, mas modelo preditivo e justificativa das decisões não são componentes essenciais de todo resumo executivo, especialmente quando o objetivo é comunicar resultados de forma clara e responsável."
+          },
+          {
+            "id": "9654bc86-1952-439c-ac12-079df28e2ac3",
+            "title": "Achados, premissas, limitações e fonte dos dados.",
+            "correct": true,
+            "feedback": "Esses são os elementos essenciais para comunicar o resultado com clareza, contexto, transparência e possibilidade de conferência."
+          },
+          {
+            "id": "2502c87a-af72-4b84-985e-11a7d5c6c7ab",
+            "title": "Achados, causas prováveis, limitações e opinião do analista.",
+            "correct": false,
+            "feedback": "Limitações são parte importante do resumo, mas incluir causas prováveis e opinião do analista compromete a objetividade quando essas interpretações não estão comprovadas pelos dados."
+          }
+        ],
+        "correct": "9654bc86-1952-439c-ac12-079df28e2ac3",
+        "corrects": [
+          "9654bc86-1952-439c-ac12-079df28e2ac3"
+        ],
+        "id": "52d4c42b-3ffc-408e-bf86-b4560d2bf95d",
+        "title": "Ao redigir um resumo executivo sobre uma análise feita com apoio de IA, quais elementos devem estar presentes para que ele seja claro e responsável?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "fd742925-8613-4ce8-872c-01dec8e86a86"
+      },
+      {
+        "answers": [
+          {
+            "id": "409c6e53-838a-4945-9fb8-09117c7cb9b7",
+            "title": "conferência"
+          }
+        ],
+        "id": "779f2cbb-f82e-4c60-92ec-b40dee018083",
+        "title": "Nas sete etapas da análise com IA, existe um princípio que atravessa todas elas: o número só vale depois da __________.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "c8e2fcb5-50e8-4a5f-a9db-cee9fa687ebe",
+        "feedbackCorrect": "Correto. A conferência não é uma etapa a mais: ela atravessa carregar, entender, limpar, explorar, visualizar, interpretar e comunicar.",
+        "feedbackIncorrect": "A resposta é “conferência”. O princípio do curso é que o número só vale depois de conferido — com o código, as premissas e o número oficial."
+      },
+      {
+        "answers": [
+          {
+            "id": "b2958636-f46c-4d19-91ba-8a7a04c3a8f9",
+            "title": "IPCA mensal = verde; vendas por região sem pessoas identificáveis = vermelho; lista de clientes com nomes e CPF = amarelo.",
+            "correct": false,
+            "feedback": "A alternativa mistura um acerto com classificações inadequadas. Vendas por região sem pessoas identificáveis não são, em regra, vermelhas, e uma lista com nomes e CPF não pode ser tratada como amarela porque contém dados pessoais identificáveis."
+          },
+          {
+            "id": "89043c59-16a0-4418-b918-84ec798d7d66",
+            "title": "IPCA mensal = amarelo; vendas por região sem pessoas identificáveis = verde; lista de clientes com nomes e CPF = vermelho.",
+            "correct": false,
+            "feedback": "A opção parece plausível porque distingue dados pessoais de não pessoais, mas erra ao tratar o IPCA como amarelo e ao classificar automaticamente vendas por região como verde. O IPCA é dado público, enquanto vendas por região costumam depender de política organizacional e não são necessariamente públicas."
+          },
+          {
+            "id": "bd2ab226-7cfa-4d32-85ac-a9fe4a45bf29",
+            "title": "IPCA mensal = verde; vendas por região sem pessoas identificáveis = amarelo; lista de clientes com nomes e CPF = vermelho.",
+            "correct": true,
+            "feedback": "Essa classificação segue corretamente o semáforo: dado público é verde, dado interno sem pessoa identificável é amarelo e dado pessoal identificável é vermelho."
+          },
+          {
+            "id": "e92a7664-fe90-4f6d-abf6-f21f92e5ce99",
+            "title": "IPCA mensal = verde; vendas por região sem pessoas identificáveis = verde; lista de clientes com nomes e CPF = verde.",
+            "correct": false,
+            "feedback": "A opção usa a ideia de que dados úteis para análise podem ser enviados livremente, mas ignora que listas com nomes e CPF são dados pessoais identificáveis e que vendas por região, embora não identifiquem pessoas, podem ser dados internos sujeitos à política da organização."
+          }
+        ],
+        "correct": "bd2ab226-7cfa-4d32-85ac-a9fe4a45bf29",
+        "corrects": [
+          "bd2ab226-7cfa-4d32-85ac-a9fe4a45bf29"
+        ],
+        "id": "c85d2048-786d-49f8-b418-eee2e52412a2",
+        "title": "Ao classificar informações antes de enviá-las para análise em uma ferramenta de IA, qual opção aplica corretamente o semáforo de dados?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "e3d4c5eb-096b-4190-8c02-ecc2ab95f205"
+      },
+      {
+        "answers": [
+          {
+            "id": "8ff6e0bd-4601-45ae-9e82-e25cf2bb3233",
+            "title": "Escala do valor informada de forma diferente entre as empresas.",
+            "correct": true,
+            "feedback": "Correto. Na base de 2024, oito empresas informam valores em reais e as demais em milhares; sem converter, um lucro de R$ 653 milhões aparece acima da Petrobras."
+          },
+          {
+            "id": "38027692-0e78-4461-9013-c70f3370b152",
+            "title": "Leitura parcial dos registros durante a importação da base.",
+            "correct": false,
+            "feedback": "Não. Leitura parcial deixaria linhas de fora, mas não faria uma empresa saltar para o topo. A primeira suspeita é a escala."
+          },
+          {
+            "id": "28e177c0-0e72-414a-84fc-1232b7ad1b9e",
+            "title": "Erro de ordenação causado pela posição da coluna no arquivo.",
+            "correct": false,
+            "feedback": "Não. A posição da coluna não muda o valor ordenado. O valor que entrou na ordenação é que está na escala errada."
+          },
+          {
+            "id": "9eec5397-5b4a-4445-9115-abdb01a38c71",
+            "title": "Fraude contábil identificada automaticamente pelo assistente.",
+            "correct": false,
+            "feedback": "Não. O assistente não identifica fraude, e antes de qualquer suspeita desse tipo deve-se descartar a explicação técnica mais simples: a escala."
+          }
+        ],
+        "correct": "8ff6e0bd-4601-45ae-9e82-e25cf2bb3233",
+        "corrects": [
+          "8ff6e0bd-4601-45ae-9e82-e25cf2bb3233"
+        ],
+        "id": "59fb3eca-5249-405c-9fef-947fa3f92dc7",
+        "title": "Ao ordenar o lucro das companhias abertas da CVM, uma empresa pouco conhecida aparece muito acima das demais. Qual é a primeira hipótese a investigar?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "999a374e-68f2-4aa5-b52c-933dd4b160bd"
+      },
+      {
+        "answers": [
+          {
+            "id": "651d5b08-4bf2-4298-a826-ed960c6897c4",
+            "title": "Preparação do ambiente, envio da base, raio X dos dados, cálculo principal, geração de gráfico, conferência de resultados, premissas e limitações, resumo executivo.",
+            "correct": true,
+            "feedback": "Essa é a ordem correta do ciclo completo, começando pela preparação e terminando na comunicação dos achados com transparência."
+          },
+          {
+            "id": "3590ebbc-75b8-4de4-a741-863195b78308",
+            "title": "Envio da base, preparação do ambiente, cálculo principal, raio X dos dados, geração de gráfico, conferência de resultados, premissas e limitações, resumo executivo.",
+            "correct": false,
+            "feedback": "Essa opção inclui etapas reais do processo, mas coloca a preparação do ambiente depois do envio da base e antecipa o cálculo antes do diagnóstico inicial, comprometendo a confiabilidade da análise."
+          },
+          {
+            "id": "f878ceb7-041b-4a73-84ac-e07af818bc2e",
+            "title": "Preparação do ambiente, envio da base, geração de gráfico, raio X dos dados, cálculo principal, conferência de resultados, premissas e limitações, resumo executivo.",
+            "correct": false,
+            "feedback": "Essa opção antecipa a criação do gráfico antes do diagnóstico e do cálculo, o que quebra a lógica do processo analítico e pode gerar uma visualização sem base validada."
+          },
+          {
+            "id": "1195cc14-4779-4cce-be76-c59504d15cf6",
+            "title": "Preparação do ambiente, envio da base, raio X dos dados, cálculo principal, conferência de resultados, geração de gráfico, premissas e limitações, resumo executivo.",
+            "correct": false,
+            "feedback": "Não. No fluxo da atividade integradora, o gráfico vem antes da conferência com o IBGE, porque a conferência final cobre tabela e gráfico juntos."
+          }
+        ],
+        "correct": "651d5b08-4bf2-4298-a826-ed960c6897c4",
+        "corrects": [
+          "651d5b08-4bf2-4298-a826-ed960c6897c4"
+        ],
+        "id": "450473a4-364d-425e-8157-59efe00ab002",
+        "title": "Ao aplicar o ciclo completo de análise de dados ao IPCA de 2020 a 2025, qual sequência de etapas melhor garante uma análise precisa, coerente e transparente do início ao fim?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "206c8a84-aae5-410d-a2d2-0ba4ffce8fca"
+      },
+      {
+        "answers": [
+          {
+            "id": "f63067f4-f5d9-44f3-b17b-71abbe7e2156",
+            "title": "Plus: custa R$ 99,90 por mês e não inclui análise de dados.",
+            "correct": false,
+            "feedback": "O preço do plano Plus está correto, mas a afirmação sobre não incluir análise de dados está errada. O plano Plus inclui esse recurso."
+          },
+          {
+            "id": "7436f716-4279-42aa-bc5f-68143bf49af3",
+            "title": "Go: custa R$ 39,99 por mês e permite 3 envios de arquivo por dia.",
+            "correct": false,
+            "feedback": "A opção mistura uma informação correta sobre preço com uma informação incorreta sobre o limite de envio. O conteúdo sobre 3 envios por dia foi associado ao plano Free, não ao Go."
+          },
+          {
+            "id": "96b2e74b-385d-482a-8597-196270f9a535",
+            "title": "Free: permite análise de dados de forma limitada e 3 envios de arquivo por dia.",
+            "correct": true,
+            "feedback": "Essa opção corresponde corretamente às informações apresentadas para o plano Free."
+          },
+          {
+            "id": "46fac6cb-0160-4c58-b080-1913624b064f",
+            "title": "Plus: permite análise de dados de forma limitada e 3 envios de arquivo por dia.",
+            "correct": false,
+            "feedback": "Não. Essa descrição é a do plano Free. No Plus, a análise de dados está incluída."
+          }
+        ],
+        "correct": "96b2e74b-385d-482a-8597-196270f9a535",
+        "corrects": [
+          "96b2e74b-385d-482a-8597-196270f9a535"
+        ],
+        "id": "d58cc5a7-a4cf-4e6e-889f-2d2dff2bd10e",
+        "title": "Você acessou o ChatGPT para confirmar se pode iniciar uma análise com arquivos. Qual opção identifica corretamente um plano e a informação correspondente sobre envio de arquivos?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "971816bf-f5c3-48b8-b485-fc7d34e7d582"
+      },
+      {
+        "answers": [
+          {
+            "id": "342d2b48-4b40-45bb-8ac3-31ba063102ae",
+            "title": "Carregar bases de dados, explorar informações, gerar visualizações e apoiar a interpretação dos resultados.",
+            "correct": true,
+            "feedback": "Essa alternativa descreve corretamente o uso das ferramentas de IA no processo de análise de dados sem programação."
+          },
+          {
+            "id": "5b0032df-85d4-4d13-86f1-9ddbfb0a442d",
+            "title": "Editar imagens promocionais, produzir peças visuais e planejar campanhas digitais com dados resumidos.",
+            "correct": false,
+            "feedback": "Essa alternativa usa aplicações digitais plausíveis, mas muda o foco da análise de dados para atividades de marketing e design, que não respondem ao que foi perguntado."
+          },
+          {
+            "id": "fc5aba43-b2d1-4e40-b92d-f6ca28b02693",
+            "title": "Criar bancos de dados do zero e configurar servidores para armazenar grandes volumes de informação.",
+            "correct": false,
+            "feedback": "Essa alternativa menciona tarefas relacionadas a dados, mas desloca o foco para infraestrutura técnica, que não representa o uso central dessas ferramentas para análise sem programação."
+          },
+          {
+            "id": "f7f2bf6d-bc8f-4b26-8033-a8bc26ec2bb5",
+            "title": "Substituir a verificação dos dados e publicar resultados automaticamente em qualquer contexto.",
+            "correct": false,
+            "feedback": "Essa alternativa parece plausível porque envolve automação com IA, mas erra ao sugerir que a ferramenta elimina a necessidade de conferir dados e contexto antes de comunicar resultados."
+          }
+        ],
+        "correct": "342d2b48-4b40-45bb-8ac3-31ba063102ae",
+        "corrects": [
+          "342d2b48-4b40-45bb-8ac3-31ba063102ae"
+        ],
+        "id": "13eabbd5-9620-4ed6-b5b9-ab4f1c3e7b56",
+        "title": "Ao usar IA para análise de dados sem programação, qual ação representa corretamente o uso do ChatGPT e do Julius AI no fluxo de trabalho?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "17767da1-30fc-4dae-9d3c-18908c91fd78"
+      },
+      {
+        "answers": [
+          {
+            "id": "44d72b30-ac53-4a24-8916-4d5efeb44b70",
+            "title": "Planilhas (.csv, .xlsx, .ods), imagens (.png, .jpg), textos e PDFs.",
+            "correct": false,
+            "feedback": "Essa opção aproveita a associação comum entre documentos e imagens, mas imagens não aparecem entre os formatos aceitos listados para esse recurso."
+          },
+          {
+            "id": "f4b5f39c-dc1a-4a2f-9df4-b92afae54650",
+            "title": "Planilhas (.csv, .xls, .xlsx, .tsv, .ods), arquivos de dados (.json, .xml), textos e PDFs.",
+            "correct": true,
+            "feedback": "Essa opção reúne corretamente os formatos aceitos para análise de dados."
+          },
+          {
+            "id": "a57d286d-c7a0-4912-ac33-0cbd376cc0ed",
+            "title": "Arquivos de dados (.json, .xml), bancos SQL, textos e planilhas (.csv, .tsv).",
+            "correct": false,
+            "feedback": "A opção inclui formatos corretos, mas insere bancos SQL como se fossem um formato aceito de envio, o que não corresponde à lista especificada."
+          },
+          {
+            "id": "b40be642-0f35-42e5-9eb9-09b5df0160f6",
+            "title": "Planilhas (.csv, .xls, .xlsx), apresentações (.pptx), áudios e PDFs.",
+            "correct": false,
+            "feedback": "Essa opção parece plausível porque inclui formatos comuns de trabalho e mantém alguns itens corretos, mas acrescenta tipos de arquivo que não fazem parte da lista aceita apresentada no conteúdo."
+          }
+        ],
+        "correct": "f4b5f39c-dc1a-4a2f-9df4-b92afae54650",
+        "corrects": [
+          "f4b5f39c-dc1a-4a2f-9df4-b92afae54650"
+        ],
+        "id": "f445f587-f4b8-41f4-8c81-f9ccb2746673",
+        "title": "Quais formatos de arquivo são aceitos pelo recurso de análise de dados do ChatGPT para envio de bases e documentos?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "0faec299-5549-40cc-815d-8ee95496b290"
+      },
+      {
+        "answers": [
+          {
+            "id": "4e0ce9a3-23a8-47eb-ba1e-e8505bfc34a8",
+            "title": "zero"
+          }
+        ],
+        "id": "bc0f98bb-daf3-4324-85db-3e19e333a398",
+        "title": "Para evitar distorções visuais em um gráfico, o eixo deve começar em __________.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "a8c00be9-d825-4346-89b9-a032788d8f99",
+        "feedbackCorrect": "Correto. O eixo deve começar em zero para evitar exageros visuais nas diferenças entre os valores e garantir uma comparação justa dos dados.",
+        "feedbackIncorrect": "Incorreto. A revisão de gráficos honestos recomenda que o eixo comece em zero, pois um eixo truncado pode ampliar visualmente diferenças pequenas e distorcer a interpretação dos dados."
+      },
+      {
+        "answers": [
+          {
+            "id": "1c786ced-2c03-4d30-97e4-b99f4f869486",
+            "title": "Perfil > Biblioteca > Controles de dados > Melhorar o modelo para todo mundo",
+            "correct": false,
+            "feedback": "A Biblioteca está relacionada a arquivos salvos, não ao caminho de configuração do compartilhamento de dados para treinamento."
+          },
+          {
+            "id": "c0c4ea1e-3395-4631-b031-5b5fac17b581",
+            "title": "Perfil > Configurações > Privacidade da conta > Histórico de chats",
+            "correct": false,
+            "feedback": "Esses itens soam relacionados à privacidade, mas não correspondem ao caminho específico da opção que controla o uso dos dados para treinamento."
+          },
+          {
+            "id": "009c2db0-72da-4758-8dd0-79af0a7f5c65",
+            "title": "Perfil > Configurações > Controles de dados > Melhorar o modelo para todo mundo",
+            "correct": true,
+            "feedback": "Esse é o caminho correto para localizar a opção de compartilhamento de dados para treinamento no ChatGPT."
+          },
+          {
+            "id": "073fe3b4-e65a-4929-a3f8-34a0168444b2",
+            "title": "Perfil > Configurações > Chat temporário > Melhorar o modelo para todo mundo",
+            "correct": false,
+            "feedback": "Chat temporário é um recurso relacionado ao tipo de conversa, mas não é o caminho de menu usado para alterar o compartilhamento de dados para treinamento."
+          }
+        ],
+        "correct": "009c2db0-72da-4758-8dd0-79af0a7f5c65",
+        "corrects": [
+          "009c2db0-72da-4758-8dd0-79af0a7f5c65"
+        ],
+        "id": "295f1b81-055b-438a-bfb2-cace65e355b8",
+        "title": "Para desativar o compartilhamento de dados usados para treinamento no ChatGPT, qual caminho de menu você deve seguir?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "d2915718-7289-4aaf-be93-f047912810d7"
+      },
+      {
+        "answers": [
+          {
+            "id": "8cd5680d-7176-4b93-bc70-0fc38545b131",
+            "title": "Pseudonimizar ou agregar os dados antes do envio e evitar contas pessoais para informações identificáveis.",
+            "correct": true,
+            "feedback": "Essa é a prática mais adequada porque reduz a exposição de dados pessoais e sensíveis e fortalece a conformidade com exigências legais e éticas."
+          },
+          {
+            "id": "b9b69005-63c0-4716-a82d-1949d509726f",
+            "title": "Compartilhar planilhas com nomes e contatos quando o objetivo for apenas obter uma análise estatística rápida.",
+            "correct": false,
+            "feedback": "Mesmo que a finalidade seja estatística, nomes e contatos continuam sendo dados pessoais identificáveis. O correto é remover identificadores ou trabalhar com dados agregados."
+          },
+          {
+            "id": "68742884-4bae-4e95-8d0f-db4045a90d3c",
+            "title": "Enviar os dados completos em chat temporário, pois isso já garante sigilo suficiente para qualquer informação.",
+            "correct": false,
+            "feedback": "O chat temporário reduz retenção no histórico e uso para treinamento, mas não torna adequado enviar dados pessoais identificáveis sem tratamento prévio. A proteção exige avaliar a sensibilidade e aplicar medidas como pseudonimização ou agregação."
+          },
+          {
+            "id": "76a2bc0f-4ebe-44c3-8b1b-fc6e6953c6a3",
+            "title": "Usar apenas a exclusão posterior das conversas, porque apagar o conteúdo elimina o risco no tratamento inicial.",
+            "correct": false,
+            "feedback": "Excluir conversas depois do uso é uma medida limitada e não substitui o cuidado prévio com dados sensíveis. O risco já pode ter ocorrido no momento do envio."
+          }
+        ],
+        "correct": "8cd5680d-7176-4b93-bc70-0fc38545b131",
+        "corrects": [
+          "8cd5680d-7176-4b93-bc70-0fc38545b131"
+        ],
+        "id": "b9c2c68b-1b68-4553-a6f5-d8067c0e3019",
+        "title": "Ao usar ferramentas de IA para análise de dados, qual prática melhor protege informações pessoais e sensíveis e reduz riscos legais e éticos?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "db710ab4-7566-498c-8fc3-0a7196b5e0fa"
+      },
+      {
+        "answers": [
+          {
+            "id": "14dbab4f-9cfa-4720-a7d9-9f2576fc6d96",
+            "title": "Porque o efeito 3D pode distorcer a percepção das proporções e comprometer uma leitura fiel dos dados.",
+            "correct": true,
+            "feedback": "Essa justificativa relaciona corretamente o risco técnico de distorção visual ao dever ético de representar os dados com fidelidade."
+          },
+          {
+            "id": "d0c8fd9e-e617-4e2e-a006-54a471da10e8",
+            "title": "Porque o efeito 3D permite usar uma escala contínua para mostrar categorias com mais detalhe.",
+            "correct": false,
+            "feedback": "A alternativa mistura termos relacionados a visualização de dados, mas aplica o conceito de escala contínua de forma inadequada ao contexto. O problema do 3D está na distorção visual, não na escolha entre categorias e continuidade."
+          },
+          {
+            "id": "e90f0991-75d4-4115-aaaf-3a9a44c374e6",
+            "title": "Porque o efeito 3D facilita destacar categorias quando há muitas legendas no gráfico.",
+            "correct": false,
+            "feedback": "Destacar categorias pode parecer útil, mas o efeito 3D não é a escolha correta para esse objetivo e pode prejudicar a leitura. A justificativa ignora o impacto negativo na percepção dos valores."
+          },
+          {
+            "id": "ae3d4847-39d8-46d3-aacb-6cbb4538fb66",
+            "title": "Porque o efeito 3D é mais indicado apenas quando o gráfico será baixado em PNG.",
+            "correct": false,
+            "feedback": "O formato de download pode ser uma decisão prática, mas não justifica tecnicamente nem eticamente evitar 3D. A questão pede uma razão ligada à fidelidade visual e à interpretação correta dos dados."
+          }
+        ],
+        "correct": "14dbab4f-9cfa-4720-a7d9-9f2576fc6d96",
+        "corrects": [
+          "14dbab4f-9cfa-4720-a7d9-9f2576fc6d96"
+        ],
+        "id": "159e64ea-7373-4245-ad72-d01077953320",
+        "title": "Ao revisar um gráfico para apresentação executiva, qual justificativa técnica e ética apoia melhor a decisão de evitar efeitos 3D?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "ae3e7c27-4af2-4378-9689-728bcdf63c49"
+      },
+      {
+        "answers": [
+          {
+            "id": "3b239a6f-a4e7-443a-93e9-cfbe68c68b58",
+            "title": "Registrar a diferença como limitação do cálculo e manter o resultado transparente.",
+            "correct": true,
+            "feedback": "Essa é a conduta correta porque reconhece a diferença, preserva a integridade do cálculo e documenta a limitação de forma clara."
+          },
+          {
+            "id": "0eb8b8ac-cd3f-472f-838d-d18a46125240",
+            "title": "Ajustar o resultado final para coincidir com o número oficial divulgado.",
+            "correct": false,
+            "feedback": "Essa opção parece plausível porque busca alinhamento com a referência oficial, mas compromete a integridade da análise ao alterar o resultado em vez de documentar a diferença encontrada."
+          },
+          {
+            "id": "9abcde53-6a7a-4fa2-a4bd-f042ab5dfd10",
+            "title": "Priorizar o gráfico e o resumo executivo, pois a diferença é pequena para a decisão final.",
+            "correct": false,
+            "feedback": "Essa opção menciona entregáveis relevantes da análise, mas aplica esses elementos no contexto errado ao desconsiderar a importância de registrar limitações numéricas, mesmo quando pequenas."
+          },
+          {
+            "id": "e14caecd-c420-4c6b-91b1-876771b53510",
+            "title": "Refazer a apresentação dos dados sem mencionar a diferença encontrada na conferência.",
+            "correct": false,
+            "feedback": "Essa opção mantém parte do processo de análise, mas falha ao omitir uma informação relevante para a credibilidade e para a interpretação correta dos resultados."
+          }
+        ],
+        "correct": "3b239a6f-a4e7-443a-93e9-cfbe68c68b58",
+        "corrects": [
+          "3b239a6f-a4e7-443a-93e9-cfbe68c68b58"
+        ],
+        "id": "bfcf42fb-c4ff-4197-958e-6c1f7c164c46",
+        "title": "Ao comparar o IPCA acumulado calculado com o número oficial e encontrar uma diferença pequena, como 0,01 ponto percentual, qual ação demonstra uma análise completa e confiável?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "9aa54e2b-e47d-470f-8f90-ebb96363996e"
+      },
+      {
+        "answers": [
+          {
+            "id": "2feeaa6e-89fd-41c4-b09e-32e775728408",
+            "title": "ipca.csv, populacao-uf.csv e cad_cia_aberta.csv",
+            "correct": true,
+            "feedback": "Esse é o conjunto correto das três bases públicas que devem estar na pasta analise-ia para iniciar a análise."
+          },
+          {
+            "id": "fc3694b6-2f59-4204-be37-c1acfd187f17",
+            "title": "ipca.csv, populacao-uf.csv e cadastro_cvm.csv",
+            "correct": false,
+            "feedback": "A opção mistura dois nomes corretos com um arquivo plausível ligado à CVM, porém o nome correto do terceiro arquivo é cad_cia_aberta.csv."
+          },
+          {
+            "id": "16c4f6de-1396-4442-9892-38709efc9d27",
+            "title": "ipca_mensal.csv, populacao-uf.csv e cad_cia_aberta.csv",
+            "correct": false,
+            "feedback": "A opção é convincente porque usa uma descrição compatível com o conteúdo do arquivo IPCA, mas o nome que deve estar na pasta é ipca.csv."
+          },
+          {
+            "id": "bc7deef5-25f4-459c-9091-96ca3ddee106",
+            "title": "ipca.csv, populacao-brasil.csv e cad_cia_aberta.csv",
+            "correct": false,
+            "feedback": "A opção parece plausível porque mantém dois arquivos corretos e troca um nome por outro relacionado ao tema de população, mas o arquivo esperado é populacao-uf.csv."
+          }
+        ],
+        "correct": "2feeaa6e-89fd-41c4-b09e-32e775728408",
+        "corrects": [
+          "2feeaa6e-89fd-41c4-b09e-32e775728408"
+        ],
+        "id": "0dbac76e-b9e5-4641-bf4a-64f6107c57d3",
+        "title": "Você baixou as três bases públicas por link direto e vai conferir se a pasta analise-ia está organizada corretamente. Qual conjunto de arquivos deve estar nessa pasta para prosseguir com a análise?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "1755dd02-7188-41d7-92c5-e0c69ec35eab"
+      },
+      {
+        "answers": [
+          {
+            "id": "f5fc7f1d-01f4-4ef3-8512-5d4ab4c8fbe4",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Incorreto. A afirmação é verdadeira: quando o eixo não começa em zero, diferenças pequenas parecem grandes."
+          },
+          {
+            "id": "ccae37db-a7bd-43d7-a6de-ecaa07901b2e",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. O eixo truncado pode ampliar visualmente diferenças pequenas, levando o leitor a perceber variações maiores do que os dados realmente mostram."
+          }
+        ],
+        "correct": "ccae37db-a7bd-43d7-a6de-ecaa07901b2e",
+        "corrects": [
+          "ccae37db-a7bd-43d7-a6de-ecaa07901b2e"
+        ],
+        "id": "880d8ea3-7e0b-44d8-a096-7b7665b81ff9",
+        "title": "Um eixo truncado pode fazer diferenças pequenas entre valores parecerem maiores do que realmente são.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "470e2fd9-f838-4eca-8b83-456d8e72a271"
+      },
+      {
+        "answers": [
+          {
+            "id": "457f36a2-84e5-4897-92ec-0efbf722e15a",
+            "title": "A inflação caiu 4,26%.",
+            "correct": false,
+            "feedback": "Essa opção usa a taxa final como se fosse a variação entre os anos. O valor de 4,26% descreve o nível da inflação em 2025, não a mudança ocorrida entre 2024 e 2025."
+          },
+          {
+            "id": "989bee5a-4ce3-4c4b-886a-b948b02be624",
+            "title": "A inflação caiu 11,8 pontos percentuais.",
+            "correct": false,
+            "feedback": "Essa opção mistura a ideia de variação proporcional com a unidade de ponto percentual. A queda proporcional aproximada entre 4,83% e 4,26% é de cerca de 11,8%, mas isso não corresponde a 11,8 pontos percentuais."
+          },
+          {
+            "id": "39a2b40c-e309-4690-ae60-093050c1dfcc",
+            "title": "A inflação caiu 0,57 ponto percentual.",
+            "correct": true,
+            "feedback": "A diferença entre 4,83% e 4,26% é de 0,57 ponto percentual."
+          },
+          {
+            "id": "9a04aa27-e394-419f-b7b0-8c8a2661fd0a",
+            "title": "A inflação caiu 0,57%.",
+            "correct": false,
+            "feedback": "Essa opção confunde a diferença entre duas taxas com uma variação expressa em porcentagem. Quando se compara 4,83% com 4,26%, a forma correta de comunicar a diferença direta entre as taxas é em ponto percentual."
+          }
+        ],
+        "correct": "39a2b40c-e309-4690-ae60-093050c1dfcc",
+        "corrects": [
+          "39a2b40c-e309-4690-ae60-093050c1dfcc"
+        ],
+        "id": "f58c3ab3-df34-41de-bc76-81dbd4acbf2d",
+        "title": "A taxa de inflação caiu de 4,83% em 2024 para 4,26% em 2025. Qual frase descreve corretamente essa mudança?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "cb7f59df-3014-433a-b9d5-e0917cc8fd6c"
+      },
+      {
+        "answers": [
+          {
+            "id": "24cf1806-51b4-403b-8436-c8ef59a85980",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Incorreto. A afirmação é verdadeira: segundo a documentação oficial, o ChatGPT escreve e executa código Python num notebook Jupyter com estado, em vez de estimar os números."
+          },
+          {
+            "id": "5a43449c-2678-4a26-a51a-0da3758390be",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. Por isso o número vem de um cálculo real — e por isso é preciso conferir as suposições que o código adotou."
+          }
+        ],
+        "correct": "5a43449c-2678-4a26-a51a-0da3758390be",
+        "corrects": [
+          "5a43449c-2678-4a26-a51a-0da3758390be"
+        ],
+        "id": "954ca6ad-6d8e-49bd-b971-000b4421cc7a",
+        "title": "O ChatGPT produz os números de uma análise ao escrever e executar código Python em um ambiente de notebook Jupyter com estado.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "855ed905-7cc1-4e69-a49e-fa9454874581"
+      },
+      {
+        "answers": [
+          {
+            "id": "7c9a8a10-9e93-412c-b44c-f1ee21cc4776",
+            "title": "visualização interativa"
+          }
+        ],
+        "id": "c936d98d-3033-4a1e-b922-f2275e46caeb",
+        "title": "Ao carregar o arquivo desejado no ChatGPT, é preciso aguardar a criação da __________ da tabela.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "73b6c834-c4eb-4533-9361-fe1ee6d6da18",
+        "feedbackCorrect": "Correto! Após o upload do arquivo, o ChatGPT gera automaticamente uma visualização interativa da tabela, permitindo conferir e explorar os dados antes da análise.",
+        "feedbackIncorrect": "Incorreto. O termo esperado é \"visualização interativa\", pois após selecionar e enviar o arquivo, o ChatGPT cria automaticamente essa visualização da tabela para apoiar a conferência inicial dos dados."
+      },
+      {
+        "answers": [
+          {
+            "id": "2dca3d96-b40c-46d4-b998-d6e679a30c86",
+            "title": "Comparar com número oficial; contar linhas antes e depois; recalcular um total manualmente; listar premissas e filtros; ler o cálculo no código.",
+            "correct": false,
+            "feedback": "Comparar com número oficial faz parte da rotina, mas não é o primeiro passo. Antes disso, é necessário verificar integridade da base e do cálculo para que a comparação externa faça sentido."
+          },
+          {
+            "id": "76831752-55a3-434f-aa9a-796184d57c87",
+            "title": "Contar linhas antes e depois; recalcular um total manualmente; ler o cálculo no código; comparar com número oficial; listar premissas e filtros.",
+            "correct": true,
+            "feedback": "Essa é a ordem correta dos cinco passos da rotina de conferência para validar resultados."
+          },
+          {
+            "id": "d2b1e976-8b36-4290-beac-20ea4490ed34",
+            "title": "Contar linhas antes e depois; recalcular um total manualmente; indicar a causa do resultado; comparar com número oficial; listar premissas e filtros.",
+            "correct": false,
+            "feedback": "A rotina inclui recalcular e comparar, mas não inclui indicar a causa do resultado. Na validação, o foco é conferir a consistência dos dados e cálculos antes de interpretar causas."
+          },
+          {
+            "id": "407bb92c-9ac1-4f06-866a-b7f87e4d448d",
+            "title": "Contar linhas antes e depois; aplicar novos filtros; ler o cálculo no código; comparar com número oficial; listar premissas e filtros.",
+            "correct": false,
+            "feedback": "Contar linhas, ler o código, comparar com número oficial e listar premissas são ações corretas, mas o segundo passo da rotina é recalcular um total manualmente, não aplicar novos filtros."
+          }
+        ],
+        "correct": "76831752-55a3-434f-aa9a-796184d57c87",
+        "corrects": [
+          "76831752-55a3-434f-aa9a-796184d57c87"
+        ],
+        "id": "8974f447-7263-49bd-bfad-2d9f2b5223b5",
+        "title": "Ao validar o resultado de uma análise feita com apoio de IA, qual sequência representa corretamente a rotina de cinco conferências?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "1b6c2726-68ce-45d0-bced-b10459af7111"
+      },
+      {
+        "answers": [
+          {
+            "id": "e34ba111-d705-4f39-a296-41c5cd69531a",
+            "matchTitle": "População das UFs: cerca de 7,52 milhões numa medida e 3,94 milhões na outra, por causa de São Paulo",
+            "title": "Média × mediana"
+          },
+          {
+            "id": "bcb8c5be-13bb-4a59-b20b-ce2bfe2d71ec",
+            "matchTitle": "Há mais processos onde há mais habitantes, o que não prova que população provoca processos",
+            "title": "Correlação × causa"
+          },
+          {
+            "id": "4bf977dd-697d-4a99-bb80-f0e9428fd42f",
+            "matchTitle": "Processos de cada tribunal divididos pela população do estado, para comparar estados de tamanhos diferentes",
+            "title": "Taxa por 100 mil"
+          },
+          {
+            "id": "c263e058-4b83-464c-8f5d-d62fb919dcc6",
+            "matchTitle": "O IPCA passou de 4,83% para 4,26%: queda de 0,57 na unidade correta",
+            "title": "% × ponto percentual"
+          }
+        ],
+        "id": "d9c5a4f3-4ebb-4c10-9733-dd358feb5bbe",
+        "title": "Associe cada conceito ao exemplo, tirado das bases do curso, que o ilustra.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "4bde9ad1-0f1e-4d30-8f9f-fb1eb1e10a1a",
+        "feedbackCorrect": "Correto. Cada exemplo mostra uma escolha que o ChatGPT não faz por você: qual medida descreve o caso típico, como comparar grupos de tamanhos diferentes, como expressar diferença entre taxas e o que não se pode concluir de uma associação.",
+        "feedbackIncorrect": "Reveja os pares: média × mediana é o caso das UFs puxado por São Paulo; taxa por 100 mil é dividir pela população; ponto percentual é a queda do IPCA; correlação × causa é processos e habitantes."
+      },
+      {
+        "answers": [
+          {
+            "id": "b999b59a-9287-4960-9503-efc607eae12d",
+            "matchTitle": "Confirma se a base foi carregada por completo e sem perda de partes da tabela",
+            "title": "Número de linhas e colunas"
+          },
+          {
+            "id": "50439698-6756-405d-a3e5-41214304f7b0",
+            "matchTitle": "Indica se números, textos e datas foram reconhecidos no formato adequado para uso analítico",
+            "title": "Tipo de cada coluna"
+          },
+          {
+            "id": "6b9b2555-8cb6-47b1-ac1a-24636ea62bc8",
+            "matchTitle": "Mostra se as datas presentes correspondem ao intervalo esperado dos registros analisados",
+            "title": "Período coberto"
+          },
+          {
+            "id": "8cacbc0e-16aa-47f9-a163-8a0387446640",
+            "matchTitle": "Revela a existência de campos ausentes que podem distorcer resultados ou impedir conclusões confiáveis",
+            "title": "Valores vazios"
+          }
+        ],
+        "id": "ced10dbc-7e5e-4f89-b235-b55fa19c9c1c",
+        "title": "Você vai relacionar cada verificação do Raio X inicial ao principal aspecto da integridade dos dados que ela ajuda a confirmar. Considere como cada checagem evita erros de leitura ou análise antes de qualquer cálculo.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d370b959-024d-454b-9ce9-4502b7b34d70",
+        "feedbackCorrect": "Correto. No Raio X inicial, cada verificação tem uma função específica: linhas e colunas confirmam a completude da base, tipos de dados validam a interpretação correta das colunas, período coberto confirma o alcance temporal dos registros e valores vazios apontam lacunas que podem afetar a análise.",
+        "feedbackIncorrect": "Incorreto. No Raio X inicial, não basta reconhecer os itens da lista; é preciso entender a função de cada um na conferência da integridade dos dados. Relembre: linhas e colunas verificam completude, tipos de dados validam a leitura das colunas, período coberto confirma o intervalo analisado e valores vazios revelam ausências na base."
+      },
+      {
+        "answers": [
+          {
+            "id": "76fab328-937b-49b9-89c2-7489af087423",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Incorreto. A afirmação é verdadeira: o número oficial funciona como gabarito e revela premissas erradas, como escala ou linhas de total."
+          },
+          {
+            "id": "2d6da4db-a12e-4916-8c7c-91e353550ae3",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. Conferir os números na fonte oficial é uma prática essencial para tornar a análise de dados mais precisa e confiável."
+          }
+        ],
+        "correct": "2d6da4db-a12e-4916-8c7c-91e353550ae3",
+        "corrects": [
+          "2d6da4db-a12e-4916-8c7c-91e353550ae3"
+        ],
+        "id": "fa871165-9db1-4e07-98e0-dad6ff2ae978",
+        "title": "Conferir os números na fonte oficial ajuda a aumentar a confiabilidade da análise de dados.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "3a8fc7c8-6c56-404d-875d-4c2917ef798b"
+      },
+      {
+        "answers": [
+          {
+            "id": "b2449a90-2d76-45eb-bda1-a023951c3c5c",
+            "title": "mediana"
+          }
+        ],
+        "id": "3b254e38-e1d9-43d4-a170-b65712c54db1",
+        "title": "Quando há valores extremos que distorcem a média, a medida que melhor reflete o valor central real é a __________.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "a99f8b5b-7146-4d18-9c85-c97f886c5144",
+        "feedbackCorrect": "Correto. A mediana é a medida mais adequada nesse caso porque representa o valor central da lista ordenada e é menos sensível a valores extremos.",
+        "feedbackIncorrect": "Incorreto. A resposta esperada é \"mediana\", pois valores extremos podem distorcer a média, enquanto a mediana mostra melhor o valor central real."
+      },
+      {
+        "answers": [
+          {
+            "id": "c91ce8f9-ed9c-456f-b136-4c752871d3ac",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. Quando os acentos aparecem corrompidos, a ação indicada é pedir ao ChatGPT que releia o arquivo usando codificação latin-1 para restaurar os caracteres corretamente."
+          },
+          {
+            "id": "29d0e489-d385-4f6c-a10a-2b37b4af7e11",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Incorreto. A afirmação é verdadeira: bases como as da CVM e do CNJ são gravadas em latin-1, e pedir a releitura nessa codificação restaura os acentos."
+          }
+        ],
+        "correct": "c91ce8f9-ed9c-456f-b136-4c752871d3ac",
+        "corrects": [
+          "c91ce8f9-ed9c-456f-b136-4c752871d3ac"
+        ],
+        "id": "00ddb952-cf93-418d-b62c-e670851e357a",
+        "title": "Acentos corrompidos em um arquivo podem ser corrigidos solicitando a releitura com codificação latin-1.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "05a491b3-c632-47a8-8237-de37566362e7"
+      }
+    ],
+    "settings": {
+      "passingScore": 80,
+      "retryCount": -1,
+      "revealAnswers": "all",
+      "shuffleAnswerChoices": false,
+      "randomizeQuestionOrder": false
+    },
+    "title": "Quiz",
+    "type": "quiz",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "i9Y1M2p_qcZAfxIwUwetNFkrlb5BJC5O",
+    "createdAt": "2026-11-18T01:29:04.105Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Quiz",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": null,
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 8,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:29:04.105Z"
+  }
+}

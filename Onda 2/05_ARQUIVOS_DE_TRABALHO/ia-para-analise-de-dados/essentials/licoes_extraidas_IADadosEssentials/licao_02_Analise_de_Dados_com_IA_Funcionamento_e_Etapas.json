@@ -1,0 +1,736 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Análise de Dados com IA: Funcionamento e Etapas",
+  "lesson": {
+    "description": "",
+    "id": "396814fe-8262-46ff-8b74-c81b64c09e2a",
+    "items": [
+      {
+        "id": "h5kgz9v857auuju9sw3fx0cf",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "e2tuowchqc1rxcvq0mbyt4up",
+            "heading": "O ChatGPT não estima: ele calcula com código",
+            "paragraph": "<p>Com a conta verificada no Módulo 0, o foco passa para o funcionamento do recurso. Quando você envia uma planilha e pergunta um total, o ChatGPT não “chuta” um número: ele escreve uma receita de cálculo em Python, executa essa receita sobre o arquivo e relata o resultado. Isso tem uma consequência prática que atravessa o curso inteiro — o cálculo pode estar certo e a premissa errada. Por isso, aqui, o número só vale depois da conferência.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "efb92ab8-b72b-44bc-8c8b-0e4bc6e38f69"
+      },
+      {
+        "id": "bogevzhq8qnd3ixwe1rf8v03",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "g6imxwozi69txsi4cdtp7odm",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e1403d64-658c-42c1-bd05-3b12287b2313"
+      },
+      {
+        "id": "mr2q79s3x4k6zhikemkqpiks",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "f0pn74ao0wyl58mgo92ekqsb",
+            "number": "1",
+            "paragraph": "<p>Explicar que o ChatGPT escreve e executa código para produzir os números de uma análise.</p>"
+          },
+          {
+            "id": "j1cncorgzw1l8a3iyz2b4nx3",
+            "number": "2",
+            "paragraph": "<p>Identificar os formatos aceitos e os limites do recurso.</p>"
+          },
+          {
+            "id": "tj0poy497sxtbrfg9edk2e2f",
+            "number": "3",
+            "paragraph": "<p>Descrever o papel do Julius AI como segunda opinião.</p>"
+          },
+          {
+            "id": "atw9fdqwnrcaavy0jk54mt5f",
+            "number": "4",
+            "paragraph": "<p>Enunciar as sete etapas de uma análise e o princípio da conferência.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "f50fe2c3-78f7-4ee3-85a3-ad95716417b8"
+      },
+      {
+        "id": "rsk7uykxsnuz9v0ul869ieb1",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "nlsif9thzxp6yelrdf3v42b5",
+            "paragraph": "<p>Análise de dados com inteligência artificial, no sentido deste curso, é enviar uma base a um assistente e fazer perguntas em linguagem natural, sem escrever fórmulas. O ChatGPT não estima os números: segundo a documentação oficial, para tarefas de análise de dados ele “escreve e executa código Python em um ambiente de notebook Jupyter com estado”. Em termos simples, o assistente redige uma receita de cálculo — o código —, executa-a sobre o arquivo e relata o resultado.</p><p>“Com estado” significa que cada passo lembra o anterior, como num caderno de laboratório. Se o ambiente for reiniciado, essa memória se perde e o arquivo precisa ser enviado de novo — o que, no plano Free, gasta mais um dos três envios do dia.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "6cbd7b1c-de82-45d3-b360-a71a65e7d506"
+      },
+      {
+        "id": "e2fp5jflsf33shvalvx4ru2o",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "r5owq3l1tavoeas4b75f41s4",
+            "heading": "O que acontece por trás da resposta",
+            "paragraph": "<p>Três fatos sobre o recurso que explicam tanto a força quanto os riscos dele. Abra cada um:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d017ea1b-8f4b-46d0-8685-9d41d1f0b23e"
+      },
+      {
+        "id": "c0613162-935e-474e-8df1-bbbd83bb84f4",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f831180c-e0d3-40d8-b005-ec9846c57d6c",
+            "title": "Execução de Código Python",
+            "description": "<p>Para cada pergunta, o assistente gera o código necessário, executa-o sobre o arquivo enviado e apresenta o resultado. O número vem de um cálculo real — mas o cálculo segue as suposições que o código adotou sobre o arquivo (qual coluna, qual separador, quais linhas).</p>"
+          },
+          {
+            "id": "95bc7dc5-7e20-4e0f-be8b-c234016e3056",
+            "title": "Memória e Ambiente \"Com Estado\"",
+            "description": "<p>Cada passo da análise lembra o anterior, como num caderno de laboratório: você pode pedir “agora some só 2024” sem reenviar a base. Se o ambiente for reiniciado, essa memória se perde e o arquivo precisa ser enviado novamente.</p>"
+          },
+          {
+            "id": "53f99799-d16b-4b81-965a-df9d8b75e66c",
+            "title": "Evolução do Recurso",
+            "description": "<p>O recurso já se chamou <strong>Code Interpreter</strong> e, depois, <strong>Advanced Data Analysis</strong>. Hoje não é ativado em nenhuma configuração: entra em ação quando você anexa um arquivo e pede uma análise. Se encontrar esses nomes em tutoriais antigos, trata-se do mesmo recurso.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "21e0059f-a0ae-4080-95e7-d74d354b4d6c"
+      },
+      {
+        "id": "u8tfoidprvu75sk47gxbrent",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "p7uelcbqtxsyujwi1w3h1xtz",
+            "heading": "Nomes que você vai encontrar",
+            "paragraph": "<p>Alguns aparecem em inglês na interface e em tutoriais. Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "6847708c-ed4b-4e05-8246-78b9166132f1"
+      },
+      {
+        "id": "c6kszwv23fphnglhe4w1tjlt",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "lmxl3j2ocs0b316q0lxv0l1a",
+            "back": {
+              "type": "description",
+              "description": "<p>Primeiro nome do recurso de análise de dados do ChatGPT. Aparece em tutoriais antigos.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Code Interpreter</strong>"
+            }
+          },
+          {
+            "id": "w89tknan1066e8c4i2vvr3fr",
+            "back": {
+              "type": "description",
+              "description": "<p>Segundo nome do mesmo recurso. Hoje ele se chama apenas Análise de dados e é acionado ao anexar um arquivo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Advanced Data Analysis</strong>"
+            }
+          },
+          {
+            "id": "acgrx5klmhm1scn8gd1gqpc8",
+            "back": {
+              "type": "description",
+              "description": "<p>Rótulo do Julius AI para o código que ele acabou de escrever (enquanto escreve, aparece “Generating code”). Abrir esse trecho mostra como o número foi calculado.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Generated code</strong>"
+            }
+          },
+          {
+            "id": "r1xaxxhyu3g9u440pqxe8ydz",
+            "back": {
+              "type": "description",
+              "description": "<p>Painel do Julius AI que mostra as tabelas produzidas durante a análise de dados.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Data Explorer</strong>"
+            }
+          },
+          {
+            "id": "oyhbifswhby923v54bdoylqt",
+            "back": {
+              "type": "description",
+              "description": "<p>Significa que o ambiente de execução lembra os passos anteriores, como um caderno de laboratório.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Com estado</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2c4b511a-5ca9-4edd-8ef2-771a373f7f23"
+      },
+      {
+        "id": "e9gi2czrlragpzo390l6jlvo",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "cp315yq2wle5btxt6vzv1qln",
+            "heading": "Formatos aceitos e limites do recurso",
+            "paragraph": "<p>Antes de enviar qualquer arquivo, saiba o que o recurso lê bem, o que lê mal e o que ele não consegue fazer:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "ab46d69e-d44f-484f-822f-9a99239b12ec"
+      },
+      {
+        "id": "264de131-78b8-42f9-9463-8952f03b3b10",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "ca98dedb-ebaa-4cda-acf6-e5e573ea098c",
+            "title": "Formatos Aceitos",
+            "description": "<p>Planilhas (<strong>.csv, .xls, .xlsx, .tsv, .ods</strong>), arquivos de dados (<strong>.json, .xml</strong>), textos e PDFs. A própria OpenAI adverte que valores de tabelas em PDF digitalizado ou em imagem podem não ser extraídos de forma confiável: quando a exatidão importar, envie planilha ou arquivo de texto.</p>"
+          },
+          {
+            "id": "d1313bfd-7bac-48b0-874b-4bede718a8af",
+            "title": "Limite de envio",
+            "description": "<p>Não há nada a ativar: o recurso entra em ação quando você anexa um arquivo e pede uma análise. O limite que pesa é o de envios — no plano Free, 3 arquivos por dia, como visto no Módulo 0.</p>"
+          },
+          {
+            "id": "da4ab0bb-cd89-4c8b-8e0a-4b67fba5b73e",
+            "title": "Sem acesso à internet",
+            "description": "<p>O ambiente Python “não pode fazer solicitações externas na web”. Colar o endereço de uma base não basta: ela precisa ser baixada antes e enviada como arquivo — por isso as bases do curso ficam na pasta <strong>analise-ia</strong>.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "77b97ea1-19d9-4c63-b3ae-ade5be7d02ef"
+      },
+      {
+        "id": "f7ccemiafdka69ynveucic9k",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "tfq5dmp9bmdf59gt4xbie6di",
+            "paragraph": "<p>O <strong>Julius AI</strong> é um espaço de trabalho especializado no mesmo tipo de tarefa. Escreve código em Python ou R, mostra cada etapa com os rótulos “Generating code” e “Generated code” e oferece o <strong>Data Explorer</strong>, painel com as tabelas produzidas durante a análise.</p><p>Neste curso ele é uma <strong>segunda opinião opcional</strong>: se o ChatGPT e o Julius chegam ao mesmo número partindo do mesmo arquivo, a confiança aumenta; se divergem, há uma premissa a investigar. A interface é em inglês, mas as respostas saem em português se você pedir. O plano gratuito dá 75 créditos iniciais e 25 por dia, e os arquivos são apagados após uma hora de inatividade.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "f001756c-8352-4249-86e8-0a12f4a976b7"
+      },
+      {
+        "id": "2854b55f-bc50-4c80-b7e2-704387ee978d",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fe4abbff-df22-4d83-a2e9-636fad150fb7",
+            "paragraph": "<p><strong>O número só vale depois da conferência.</strong> A OpenAI recomenda revisar “o código gerado, as saídas e as suposições antes de confiar no resultado” — um código correto pode operar sobre uma premissa equivocada.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "8f7f28cb-0c04-4b0c-9a0b-873649cacf6c"
+      },
+      {
+        "id": "60840680-4a0a-417c-b982-da805243836d",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "0821a3f5-68dd-44f9-b05d-910a03d6bd42",
+            "type": "intro",
+            "title": "As sete etapas de uma análise",
+            "isHidden": false,
+            "description": "<p>Toda análise do curso percorre as mesmas sete etapas, nesta ordem. A conferência não é uma etapa a mais: ela atravessa todas.</p>"
+          },
+          {
+            "id": "0894a883-1a8b-40a0-a93a-eeeb5e5a7d93",
+            "type": "summary",
+            "title": "A conferência atravessa tudo",
+            "isHidden": false,
+            "description": "<p>Carregar, entender, limpar, explorar, visualizar, interpretar e comunicar. Em cada uma, a pergunta de controle é a mesma: como eu sei que este número está certo?</p>"
+          },
+          {
+            "id": "798e2694-e374-46e4-805e-f7f4a78c8079",
+            "type": "step",
+            "title": "1. Carregar",
+            "isHidden": false,
+            "description": "<p>Enviar o arquivo e verificar se ele foi aberto por inteiro. (Módulo 3)</p>"
+          },
+          {
+            "id": "81aad967-485e-4251-b184-275dbb2e0b69",
+            "type": "step",
+            "title": "2. Entender",
+            "isHidden": false,
+            "description": "<p>Responder “o que há no arquivo?”: linhas, colunas, tipos, período e vazios — o Raio X da base. (Módulo 3)</p>"
+          },
+          {
+            "id": "c80e6d34-def0-4b87-b5a4-274bcc40a7a5",
+            "type": "step",
+            "title": "3. Limpar",
+            "isHidden": false,
+            "description": "<p>Responder “o arquivo foi lido corretamente?”: separador, decimal, codificação e cabeçalho. (Módulo 3)</p>"
+          },
+          {
+            "id": "07d772af-0806-497c-af3e-e7742775b881",
+            "type": "step",
+            "title": "4. Explorar",
+            "isHidden": false,
+            "description": "<p>Responder “o que os números dizem?”, escolhendo a medida certa: média ou mediana, valor ou taxa, nominal ou real. (Módulo 4)</p>"
+          },
+          {
+            "id": "f2a97fdb-af8d-43b1-9c1c-f8065c1c3465",
+            "type": "step",
+            "title": "5. Visualizar",
+            "isHidden": false,
+            "description": "<p>Responder “como mostrar sem distorcer?”: gráfico honesto, com eixo, título e fonte corretos. (Módulo 5)</p>"
+          },
+          {
+            "id": "4d337b0f-af42-4166-b29b-28841580f330",
+            "type": "step",
+            "title": "6. Interpretar",
+            "isHidden": false,
+            "description": "<p>Responder “o que se pode e o que não se pode concluir?”, comparando o resultado com o número oficial. (Módulo 6)</p>"
+          },
+          {
+            "id": "6021165a-12a8-4508-90bb-a4eaf38e4b6f",
+            "type": "step",
+            "title": "7. Comunicar",
+            "isHidden": false,
+            "description": "<p>Entregar achados, premissas, limitações e fonte num resumo que outra pessoa consiga conferir. (Módulo 6)</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "0d250e00-9cda-4c9b-97e2-b506425f0cb7"
+      },
+      {
+        "id": "ow3262aoukf9kela162yyagd",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "k83swajgnfvaoljzyzfiy9fv",
+            "heading": "O que pode dar errado em cada etapa",
+            "paragraph": "<p>Abra cada etapa para ver o tipo de erro que ela evita — todos aparecem nas bases do curso:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "4354c9e9-4775-4600-bb8a-4fc0e4bca2a1"
+      },
+      {
+        "id": "cd9ab141-d14d-4f21-aefb-96f51ba7b1d4",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "8e52e987-7839-4226-9484-52cb05573501",
+            "title": "Carregar",
+            "description": "<p>Um arquivo pode ser enviado com sucesso e, ainda assim, não ser analisado por inteiro. Confira se o número de linhas lidas bate com o esperado.</p>"
+          },
+          {
+            "id": "97191684-afba-45ed-8203-9fa243a41e7b",
+            "title": "Entender",
+            "description": "<p>Antes de calcular, peça o Raio X: linhas, colunas, tipo de cada coluna, período coberto e valores vazios. É conferir o conteúdo da caixa antes de assinar o recebimento.</p>"
+          },
+          {
+            "id": "91629b6f-fba6-4f9b-a95c-1e1f65d5cc0b",
+            "title": "Limpar",
+            "description": "<p>Dados públicos brasileiros usam ponto e vírgula, vírgula decimal e, às vezes, codificação latin-1. Lidos do jeito errado, o número vira texto e “RECUPERAÇÃO” vira “RECUPERA��O”.</p>"
+          },
+          {
+            "id": "08ad5eb1-7874-4bfd-bb84-0202e6895937",
+            "title": "Explorar",
+            "description": "<p>O ChatGPT calcula qualquer medida em segundos; escolher a medida certa é com você. Uma média puxada por São Paulo não representa a UF típica.</p>"
+          },
+          {
+            "id": "d3bbcfe1-ba53-4e5d-9651-7bfb67d49cf0",
+            "title": "Visualizar",
+            "description": "<p>Um eixo que não começa em zero transforma uma diferença pequena em abismo. Pedir à IA que “confira o gráfico” não substitui a sua leitura.</p>"
+          },
+          {
+            "id": "b45a7a5c-f3f0-440c-8382-584be4fc4230",
+            "title": "Interpretar",
+            "description": "<p>O código pode rodar sem erro sobre uma premissa errada — por exemplo, somando linhas de total junto com as linhas de detalhe. Compare com o número oficial antes de concluir.</p>"
+          },
+          {
+            "id": "aa380fae-de12-4bec-9ddb-aa4df6a8a43e",
+            "title": "Comunicar",
+            "description": "<p>Um resumo honesto traz achados, premissas, limitações e fonte com data de extração — e não afirma causa onde só há correlação.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "9f742ad5-0fb9-4f40-a65e-80ad434a9b86"
+      },
+      {
+        "id": "fa1e4efb-3f18-45fc-8704-6b7521fcb776",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "07fee958-1cc5-47c1-bd3e-8ffbebb930c8",
+            "paragraph": "<p>📌 O comando que exibe o código executado aparece ao final da resposta do ChatGPT (guias externos o chamam de “Ver análise”; o rótulo pode variar). Se não o encontrar, peça: “Mostre o código Python que foi executado”.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "68aec4f5-23fd-45d9-bbae-872b1b681530"
+      },
+      {
+        "id": "8b09c2d2-cc23-42a7-9ca8-375c14d20372",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "693e03cc-7ef1-4612-9df7-33f2a1b5904a",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Um analista envia uma planilha ao ChatGPT e recebe um total. Qual procedimento é coerente com a orientação oficial da OpenAI?",
+            "answers": [
+              {
+                "id": "b1f5d373-554e-4b7a-af65-9d3d44ac7be3",
+                "title": "Aceitar o total, pois foi calculado por código.",
+                "correct": false,
+                "feedback": "Não. Ter sido calculado por código não garante nada: o código pode estar correto sobre uma premissa errada (coluna, separador, linhas incluídas)."
+              },
+              {
+                "id": "5db5f692-36fe-4342-9e3c-0350efdc7484",
+                "title": "Revisar o código, as saídas e as suposições, e conferir o total com uma fonte independente.",
+                "correct": true,
+                "feedback": "Correto. É a recomendação da OpenAI — revisar código, saídas e suposições — somada à conferência com uma fonte independente, como o número oficial."
+              },
+              {
+                "id": "6517137c-a24b-412e-a369-571bdf2577f1",
+                "title": "Repetir a pergunta até obter o mesmo número duas vezes.",
+                "correct": false,
+                "feedback": "Não. Repetir a pergunta não verifica nada: a mesma premissa errada produz o mesmo número errado."
+              },
+              {
+                "id": "5b81e818-c364-44bd-bbcb-12f1b132f9fb",
+                "title": "Ativar o modo de análise avançada nas configurações.",
+                "correct": false,
+                "feedback": "Não. Essa configuração não existe: o recurso é acionado ao anexar um arquivo e pedir a análise."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d6802ddc-e7c0-431b-bc31-4f22102542e1"
+      },
+      {
+        "id": "d68fa5ab-0366-4cac-8385-fa25ffea3ba1",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "9cbb6ada-f8e7-4b1e-86fc-b2d97142bffe",
+            "paragraph": "<p><strong>Gabarito:</strong> (b). Código executado pode estar correto sobre uma premissa errada; a alternativa (c) não verifica nada; a alternativa (d) descreve uma configuração inexistente.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d539d077-b8b1-4889-a9f8-4968a43a2732"
+      },
+      {
+        "id": "86ca5703-b640-4cc3-ae26-ce38b8606934",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "3a00c920-afb1-4434-9284-04173ec3a886",
+            "paragraph": "<p><strong>Mão na massa.</strong> Na próxima vez que for enviar uma planilha, comece com este pedido:</p><p><em>“Vou enviar uma planilha. Antes de calcular, explique em linguagem simples que passos de código você vai executar, que suposições vai adotar sobre o arquivo e como eu posso conferir o resultado depois.”</em></p><p>Guarde a lista de suposições que ele devolver: é ela que você vai conferir quando o número chegar.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2afcd8ba-8447-4da7-b04a-0b3c4f24254e"
+      },
+      {
+        "id": "b586f0de-29c8-4cb6-bdc1-277ffca60b9d",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "8c597e80-702a-4bf6-8021-c0e5e81ebf13",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "cce4851c-5019-48fa-8ca4-328bb5a3e3b2"
+      },
+      {
+        "id": "k6uu2el1zaa4nl7kxeyd2i27",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "uh5v2uw0r17dqc44w7vhtz4d",
+            "paragraph": "<p>O Módulo 2 vem antes do primeiro envio real por um motivo: decidir o que pode ir para o ChatGPT e para o Julius, em que tipo de conta, e como preparar uma base que tenha dados pessoais.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "83588748-dcd3-48d1-bb9d-aa30b07e0020"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Análise de Dados com IA: Funcionamento e Etapas",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "i9Y1M2p_qcZAfxIwUwetNFkrlb5BJC5O",
+    "createdAt": "2026-11-18T01:26:02.887Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:26:49.045Z"
+  }
+}

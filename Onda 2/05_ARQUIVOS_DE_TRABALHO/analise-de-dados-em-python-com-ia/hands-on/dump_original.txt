@@ -1,0 +1,397 @@
+
+######## licao_01_Preparacao_do_Ambiente_e_Principios_Fundamentais.json  title='Preparação do Ambiente e Princípios Fundamentais'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Preparando o Terreno: Por que Ambiente e Regras Importam
+items.0.items.0.paragraph = <p>Antes de mergulhar na automação de análises de dados com IA e Python, é fundamental entender a importância de um ambiente bem preparado e de princípios sólidos. Um ambiente organizado não só evita erros, mas também garante que seus projetos sejam reprodutíveis e confiáveis. Ao seguir regras claras desde o início, você constrói uma base segura para qualquer análise automatizada, mesmo sem experiência prévia em programação.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você vai descobrir os passos essenciais para começar a automatizar análises de dados com IA. Veja o que será abordado:</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Como configurar seu agente de IA e ambiente Python</p>
+items.2.items.1.paragraph = <p>Organização e preservação dos dados brutos</p>
+items.2.items.2.paragraph = <p>Checklist de preparação e boas práticas fundamentais</p>
+items.2.items.3.paragraph = <p>Princípios de reprodutibilidade e validação com asserts</p>
+
+--- [3] interactive/interactive-fullscreen/process
+items.3.items.0.title = Introdução à Preparação
+items.3.items.0.description = <p>Antes de iniciar qualquer análise, é preciso garantir que todos os arquivos e ferramentas estejam prontos. Isso evita retrabalho e facilita a automação dos processos.</p>
+items.3.items.1.title = Resumo da Preparação
+items.3.items.1.description = <p>Com os arquivos baixados e o agente configurado corretamente, você estará pronto para avançar para as próximas etapas da análise automatizada.</p>
+items.3.items.2.title = Baixar e Organizar Arquivos
+items.3.items.2.description = <p>Baixe os seguintes arquivos para a pasta <strong>projeto-dados/dados/brutos</strong>, sem extrair os arquivos ZIP. O agente de IA consegue ler diretamente dos ZIPs. Priorize o download do arquivo <strong>inmet-2024.zip</strong>, pois ele é o maior (mais de 100 MB) e pode demorar mais.</p>
+items.3.items.3.title = Configurar o Agente de IA
+items.3.items.3.description = <p>Abra o agente de IA na pasta <strong>projeto-dados</strong> em modo seguro. No Claude Code, utilize o modo Manual ou plan; no Codex, selecione Work in &gt; This computer e configure /permissions em somente leitura.</p>
+
+--- [4] text/text/heading paragraph
+items.4.items.0.heading = O que você precisa ter aberto agora
+items.4.items.0.paragraph = <ul><li>Tenha acesso ao agente da sua rota, como Claude ou ChatGPT, utilizando a versão apropriada.</li><li>Deixe o terminal disponível para verificar a versão do <strong>uv</strong>.</li><li>Organize uma pasta chamada <strong>projeto-dados</strong>, que deve conter uma subpasta chamada <strong>dados/brutos</strong>.</li></ul>
+
+--- [5] text/text/heading paragraph
+items.5.items.0.heading = Arquivos e Endereços para Download
+items.5.items.0.paragraph = <ul><li><strong>ipca.csv</strong>: disponível em <a href="https://api.bcb.gov.br">api.bcb.gov.br</a>, tamanho de 1,5 KB.</li><li><strong>dfp_cia_aberta_2024.zip</strong>: disponível em <a href="https://dados.cvm.gov.br">dados.cvm.gov.br</a>, tamanho de 13,4 MB.</li><li><strong>cad_cia_aberta.csv</strong>: disponível em <a href="https://dados.cvm.gov.br">dados.cvm.gov.br</a>, tamanho de 1,5 MB.</li><li><strong>inmet-2024.zip</strong>: disponível em <a href="https://portal.inmet.gov.br">portal.inmet.gov.br</a>, tamanho de 102,8 MB.</li></ul>
+
+--- [6] text/impact/b
+items.6.items.0.paragraph = <p><strong>Regra de ouro:</strong> o agente faz; você aprova, lê e confere. Dado bruto ninguém toca.</p>
+
+--- [7] text/text/heading paragraph
+items.7.items.0.heading = Boas Práticas Fundamentais para Análise Automatizada
+items.7.items.0.paragraph = <p>Explore cada uma das boas práticas essenciais para garantir análises automatizadas seguras, confiáveis e reprodutíveis. Cada hábito a seguir ajuda a evitar erros comuns e a manter a integridade dos dados e dos resultados.</p>
+
+--- [8] interactive/interactive/accordion
+items.8.items.0.title = Plano antes de execução, sempre
+items.8.items.0.description = <p>Antes de pedir qualquer código ao agente, defina um plano claro do que será feito. Isso evita retrabalho e facilita a validação dos resultados.</p>
+items.8.items.1.title = Dado bruto não se edita
+items.8.items.1.description = <p>Jamais altere os arquivos originais. Toda transformação deve ser feita em cópias, garantindo que o dado bruto permaneça intacto para futuras conferências.</p>
+items.8.items.2.title = Separador e decimal conforme instrução
+items.8.items.2.description = <p>Sempre confira o separador de campo e o formato decimal conforme o arquivo de instruções. Pequenos detalhes podem causar grandes erros em análises automatizadas.</p>
+items.8.items.3.title = Pacote desconhecido: confira antes
+items.8.items.3.description = <p>Antes de aprovar a instalação de qualquer pacote Python sugerido pelo agente, verifique sua existência e reputação no pypi.org. Isso evita riscos de segurança e incompatibilidades.</p>
+items.8.items.4.title = Um assert para cada número
+items.8.items.4.description = <p>Inclua um comando assert para cada número que será apresentado no relatório. Assim, você garante que os resultados estejam corretos e dentro do esperado.</p>
+items.8.items.5.title = Conte linhas antes e depois
+items.8.items.5.description = <p>Conte o número de linhas antes e depois de cada filtro ou junção de dados. Isso ajuda a identificar perdas ou duplicidades inesperadas.</p>
+items.8.items.6.title = Escala e duplicata antes do ranking
+items.8.items.6.description = <p>Antes de criar rankings, normalize os dados e elimine duplicatas. Isso garante que a classificação seja justa e baseada em informações corretas.</p>
+items.8.items.7.title = Rode do zero antes de entregar
+items.8.items.7.description = <p>Sempre execute o projeto do início ao fim em um ambiente limpo antes de considerar o trabalho finalizado. Assim, você garante que tudo funciona como deveria.</p>
+items.8.items.8.title = Segunda opinião independente
+items.8.items.8.description = <p>Peça para alguém que não participou da conversa revisar o projeto. Uma segunda opinião pode identificar erros ou pontos de melhoria que passaram despercebidos.</p>
+items.8.items.9.title = README claro e completo
+items.8.items.9.description = <p>Inclua um arquivo README explicando como rodar o projeto e suas limitações. Isso facilita o uso por outras pessoas e a manutenção futura.</p>
+
+--- [9] text/text/heading paragraph
+items.9.items.0.heading = Termos e Conceitos-Chave
+items.9.items.0.paragraph = <p>Revise os principais termos e conceitos que serão fundamentais para sua jornada em análise automatizada de dados. Use os flashcards para memorizar e reforçar o entendimento.</p>
+
+--- [10] interactive/flashcard/flashcard
+items.10.items.0.back.description = <p>Comando que verifica se um valor está correto no script; essencial para garantir a validade dos resultados.</p>
+items.10.items.0.front.description = <strong>assert</strong>
+items.10.items.1.back.description = <p>Dados originais, sem qualquer alteração; devem ser preservados para garantir integridade e reprodutibilidade.</p>
+items.10.items.1.front.description = <strong>dado bruto</strong>
+items.10.items.2.back.description = <p>Capacidade de repetir uma análise e obter os mesmos resultados, fundamental para confiança e validação.</p>
+items.10.items.2.front.description = <strong>reprodutibilidade</strong>
+items.10.items.3.back.description = <p>Roteiro detalhado das etapas a serem seguidas antes de iniciar a automação, evitando erros e retrabalho.</p>
+items.10.items.3.front.description = <strong>plano de execução</strong>
+
+--- [11] knowledgeCheck/knowledgeCheck/multiple choice
+items.11.items.0.title = Por que não se deve editar o dado bruto?
+items.11.items.0.answers.0.title = Para economizar espaço em disco
+items.11.items.0.answers.1.title = Para garantir a integridade e reprodutibilidade
+items.11.items.0.answers.2.title = Para facilitar a leitura do agente
+items.11.items.0.answers.3.title = Para acelerar o processamento
+items.11.items.0.feedbackCorrect = Correto! Editar o dado bruto compromete a integridade e a possibilidade de reproduzir a análise.
+items.11.items.0.feedbackIncorrect = Incorreto. Editar o dado bruto compromete a integridade e a possibilidade de reproduzir a análise.
+
+--- [12] text/text/paragraph
+items.12.items.0.paragraph = <p>Agora que você já preparou o ambiente e conhece os princípios fundamentais, está pronto para colocar a mão na massa! Na próxima lição, você vai criar projetos práticos usando dados reais de inflação, ranking de lucros e cruzamento de bases públicas, aplicando tudo o que aprendeu até aqui. Prepare-se para ver a automação em ação e transformar teoria em prática.</p>
+
+######## licao_02_Projetos_Praticos_Inflacao_Mercado_e_Cruzamento_de_Dados.json  title='Projetos Práticos: Inflação, Mercado e Cruzamento de Dados'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Mão na Massa: Automatizando Análises Reais de Dados
+items.0.items.0.paragraph = <p>Chegou a hora de transformar sua preparação em ação! Nesta lição, você vai colocar a mão na massa com projetos práticos que mostram como a automação com IA e Python pode simplificar tarefas complexas de análise de dados. Vamos trabalhar com exemplos reais de inflação, mercado financeiro e cruzamento de bases, sempre focando em reprodutibilidade, validação e segurança dos resultados.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você vai explorar projetos práticos que vão do cálculo automatizado do IPCA até o cruzamento seguro de diferentes bases de dados. Cada projeto foi pensado para desenvolver habilidades essenciais em automação, validação e documentação de scripts.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Automatizar cálculo do IPCA</p>
+items.2.items.1.paragraph = <p>Gerar ranking de lucro de empresas</p>
+items.2.items.2.paragraph = <p>Cruzar bases de dados com segurança</p>
+items.2.items.3.paragraph = <p>Implementar asserts e documentar scripts</p>
+
+--- [3] divider/continue/continue
+items.3.items.0.title = Continue
+
+--- [4] text/text/heading paragraph
+items.4.items.0.heading = Oficina 1 – Seu Primeiro Projeto Reprodutível
+items.4.items.0.paragraph = <p>Todo mês alguém precisa calcular manualmente o acumulado do IPCA em uma planilha. Nesta oficina, você vai aprender a automatizar esse processo com um script reprodutível, garantindo que qualquer pessoa possa rodar o cálculo com um comando — e que o resultado seja validado automaticamente.</p>
+
+--- [5] interactive/interactive-fullscreen/process
+items.5.items.0.title = Introdução à Automação do Cálculo do IPCA
+items.5.items.0.description = <p>Neste módulo, você aprenderá como automatizar o cálculo do IPCA utilizando Claude Code ou Codex, seguindo um fluxo estruturado para garantir reprodutibilidade, validação e documentação dos resultados.</p>
+items.5.items.1.title = Resumo do Processo
+items.5.items.1.description = <p>Ao final, você terá um script validado, com resultados e gráficos salvos, pronto para ser reutilizado e auditado.</p>
+items.5.items.2.title = Inicializar o projeto e atualizar instruções
+items.5.items.2.description = <p>No Claude Code, digite <code>/init</code>; depois peça para incluir no CLAUDE.md (no Codex, crie AGENTS.md com o mesmo texto):<br>"Dados em dados/brutos nunca são alterados. CSVs do Banco Central usam ponto e vírgula e vírgula decimal. Saídas vão para resultados/. Rodar com uv run."</p>
+items.5.items.3.title = Enviar o briefing detalhado
+items.5.items.3.description = <p>Copie e envie o briefing exato do próximo bloco para o agente.</p>
+items.5.items.4.title = Aprovar o plano do agente
+items.5.items.4.description = <p>Leia o plano gerado pelo agente. Para aprovar, mude para acceptEdits (Claude Code, Shift+Tab no terminal) ou aprove cada comando (Codex).</p>
+items.5.items.5.title = Instalar bibliotecas necessárias
+items.5.items.5.description = <p>Quando o agente pedir para instalar pandas e matplotlib, aprove.</p>
+items.5.items.6.title = Rodar o script do zero
+items.5.items.6.description = <p>Apague a pasta resultados/ e digite: "Rode do zero com uv run e mostre a saída completa."</p>
+items.5.items.7.title = Solicitar explicação do código
+items.5.items.7.description = <p>Digite: "Explique analise_ipca.py em blocos de até cinco linhas."</p>
+
+--- [6] text/impact/b
+items.6.items.0.paragraph = <p><strong>Plano para o script analise_ipca.py:</strong></p><ol><li><strong>Leitura dos dados:</strong> Ler o arquivo CSV do IPCA mensal, garantindo que 72 linhas sejam lidas.</li><li><strong>Cálculo do IPCA anual acumulado:</strong> Para cada ano de 2020 a 2025, calcular o IPCA acumulado por composição dos índices mensais.</li><li><strong>Validação dos dados:</strong> Incluir asserts para garantir que:<ul><li>Foram lidas 72 linhas.</li><li>O IPCA acumulado de 2024 seja 4,83 (tolerância de 0,01).</li><li>O IPCA acumulado de 2025 seja 4,26 (tolerância de 0,01).</li></ul></li><li><strong>Salvar resultados:</strong> Salvar a tabela com os resultados anuais em <code>resultados/ipca_anual.csv</code>.</li><li><strong>Gerar gráfico:</strong> Criar um gráfico de barras com os valores anuais e salvar em <code>resultados/ipca_anual.png</code>.</li><li><strong>Dependências:</strong> Utilizar <code>uv</code> para instalar as bibliotecas necessárias (<code>pandas</code>, <code>matplotlib</code>).</li></ol><p>Por favor, revise e aprove o plano antes de prosseguir com a implementação.</p>
+
+--- [7] text/text/heading paragraph
+items.7.items.0.heading = Dicas, Pontos de Controle e Solução de Problemas
+items.7.items.0.paragraph = <p>Explore as dicas, pontos de controle e soluções para problemas comuns nesta oficina. Expanda cada item para ver orientações detalhadas e desafios extras para aprofundar seu aprendizado.</p>
+
+--- [8] interactive/interactive/accordion
+items.8.items.0.title = Dica sobre uso de assert
+items.8.items.0.description = <p>💡 Dica: assert é um alarme. Se o número sair diferente do esperado, o script para e grita em vez de entregar um relatório errado com cara de certo.</p><p></p><p>Use asserts para garantir que os resultados estejam corretos antes de confiar no relatório final.</p>
+items.8.items.1.title = Critério de êxito e ponto de controle
+items.8.items.1.description = <p>🏁 Ponto de controle: no terminal do agente, a saída mostra 4,83 (2024) e 4,26 (2025), os asserts passam, e projeto-dados tem uv.lock e a pasta resultados/.</p><p></p><p>Esses são os sinais de que seu projeto está correto e pronto para ser reutilizado.</p>
+items.8.items.2.title = O que fazer se travar
+items.8.items.2.description = <p>Problemas comuns e soluções rápidas:</p><p></p><ul><li>O agente quer instalar um pacote de nome estranho: Recuse e procure o nome em pypi.org antes.</li><li>uv não encontrado: Feche e reabra o terminal; se persistir, reinstale pelo comando oficial.</li><li>Um assert de ano antigo falha por 0,01: Esperado, pois as taxas mensais vêm arredondadas; registre como limitação e use tolerância.</li></ul>
+items.8.items.3.title = Desafios opcionais (validação incluída)
+items.8.items.3.description = <p>Quer ir além? Tente estes desafios:</p><p></p><ol><li>Peça git init e um commit "oficina 1". Validação: git log mostra o commit.</li><li>Peça um notebook .ipynb equivalente. Validação: abre e reproduz 4,83%.</li><li>Peça que o script receba o ano como parâmetro. Validação: uv run analise_ipca.py 2024 imprime 4,83.</li></ol>
+
+--- [9] divider/continue/continue
+items.9.items.0.title = Continue
+
+--- [10] text/text/heading paragraph
+items.10.items.0.heading = Oficina 2 – O Ranking que Mentia, Agora em Código
+items.10.items.0.paragraph = <p>O desafio agora é gerar um ranking confiável dos maiores lucros das empresas abertas, direto dos dados da CVM. Aqui, você vai aprender a evitar armadilhas comuns, como erros de escala, que podem distorcer completamente os resultados financeiros.</p>
+
+--- [11] interactive/interactive-fullscreen/process
+items.11.items.0.title = Introdução à Automação do Ranking de Lucros
+items.11.items.0.description = <p>Neste módulo, você aprenderá a automatizar o processo de criação de um ranking de lucros a partir de um arquivo CSV compactado em ZIP, filtrando e tratando os dados para garantir precisão e atualização anual sem distorções.</p>
+items.11.items.1.title = Resumo do Processo
+items.11.items.1.description = <p>Ao final, você terá um ranking de lucros validado, pronto para ser atualizado com novos dados a cada ano, sem risco de distorções causadas por diferentes escalas monetárias.</p>
+items.11.items.2.title = Ler arquivo direto do ZIP
+items.11.items.2.description = <p>Crie um script chamado <strong>ranking_lucro.py</strong> que leia o arquivo <strong>dfp_cia_aberta_DRE_con_2024.csv</strong> diretamente do ZIP, utilizando a codificação <strong>latin-1</strong> e separador ponto e vírgula. O script deve filtrar as linhas onde <strong>ORDEM_EXERC = ÚLTIMO</strong> e <strong>CD_CONTA = 3.11.01</strong>, e imprimir a quantidade de linhas e de empresas encontradas. Planeje o passo a passo antes de executar.</p>
+items.11.items.3.title = Aprovar e rodar, anotando números
+items.11.items.3.description = <p>Aprove o plano elaborado e execute o script. Anote os resultados esperados: <strong>460 linhas</strong> e <strong>458 empresas</strong>.</p>
+items.11.items.4.title = Identificar duplicatas e escalas
+items.11.items.4.description = <p>Solicite ao script que mostre as linhas duplicadas e a contagem dos valores presentes na coluna <strong>ESCALA_MOEDA</strong>.</p>
+items.11.items.5.title = Tratar duplicatas e converter escala
+items.11.items.5.description = <p>Remova as duplicatas do conjunto de dados, converta os valores para reais (multiplicando por 1.000 se <strong>ESCALA_MOEDA</strong> for MIL, ou por 1 se for UNIDADE), salve o top 20 empresas em uma pasta <strong>resultados/</strong> e adicione verificações (asserts) para garantir: 458 empresas únicas, Petrobras com lucro de 36.606.000.000, e <strong>ESCALA_MOEDA</strong> contendo apenas MIL e UNIDADE.</p>
+items.11.items.6.title = Rodar do zero
+items.11.items.6.description = <p>Apague a pasta <strong>resultados/</strong> e execute todo o processo novamente, garantindo que tudo funcione do início ao fim.</p>
+
+--- [12] text/impact/b
+items.12.items.0.paragraph = <p><strong>Dica:</strong> Sem converter a escala, a Vivara (R$ 653 milhões, informados em reais) vira a "maior lucradora do país". O código roda — a premissa é que estava errada.</p>
+
+--- [13] text/text/heading paragraph
+items.13.items.0.heading = Validação, Erros Comuns e Desafios Extras
+items.13.items.0.paragraph = <p>Confira os critérios de sucesso, soluções para problemas frequentes e desafios opcionais para aprofundar sua análise de rankings financeiros.</p>
+
+--- [14] interactive/interactive/accordion
+items.14.items.0.title = Critério de êxito e ponto de controle
+items.14.items.0.description = <p>🏁 Ponto de controle: na saída, 452 empresas em MIL e 8 em UNIDADE; top 5 — Petrobras R$ 36,6 bi, Vale R$ 31,6 bi, Banco do Brasil R$ 26,4 bi, Bradesco R$ 17,3 bi, Itaúsa R$ 14,8 bi; asserts passando.</p><p></p><p>Esses resultados confirmam que o ranking está correto e validado.</p>
+items.14.items.1.title = Soluções para problemas comuns
+items.14.items.1.description = <p>- UnicodeDecodeError: Digite: "Leia com encoding latin-1".<br>- O agente quer extrair o ZIP em dados/brutos: Peça para ler direto do ZIP ou extrair em dados/tratados/.<br>- Valores enormes no topo: Confira ESCALA_MOEDA antes de qualquer outra hipótese.</p><p></p><p>Essas dicas ajudam a evitar erros frequentes ao lidar com arquivos grandes e variados.</p>
+items.14.items.2.title = Desafios opcionais (validação incluída)
+items.14.items.2.description = <p>1. Conte as empresas com prejuízo. Validação: 95.<br>2. Some o lucro das 458. Validação: ≈ R$ 303,9 bi.<br>3. Exporte o top 20 para Excel com openpyxl. Validação: o .xlsx abre com 20 linhas.</p><p></p><p>Experimente esses desafios para ampliar sua compreensão e domínio das ferramentas.</p>
+
+--- [15] divider/continue/continue
+items.15.items.0.title = Continue
+
+--- [16] text/text/heading paragraph
+items.16.items.0.heading = Oficina 3 – Cruzando Tabelas sem Inflar Resultados
+items.16.items.0.paragraph = <p>Agora o desafio é cruzar diferentes bases de dados para responder perguntas por setor, sem correr o risco de inflar resultados por erros de junção. Você vai aprender a identificar e tratar duplicidades, garantindo que cada empresa conte apenas uma vez na análise.</p>
+
+--- [17] interactive/interactive-fullscreen/process
+items.17.items.0.title = Introdução à Análise Segura de Dados
+items.17.items.0.description = <p>Neste módulo, você aprenderá como cruzar dados de forma segura, evitando duplicidades e garantindo a confiabilidade dos resultados em análises setoriais.</p>
+items.17.items.1.title = Resumo da Análise Segura de Dados
+items.17.items.1.description = <p>Você terá uma análise setorial confiável, com validação automática e sem risco de inflar resultados por erro de junção.</p>
+items.17.items.2.title = Analisar Duplicidade no Cadastro
+items.17.items.2.description = <p>Digite: "Leia cad_cia_aberta.csv (latin-1). Quantas linhas e quantos CD_CVM únicos? Quantos códigos aparecem mais de uma vez?"</p><p>Anote: 2.680 linhas, 2.569 códigos, 107 repetidos.</p>
+items.17.items.3.title = Tratar Duplicidades e Juntar Tabelas
+items.17.items.3.description = <p>Digite: "Antes de juntar, deixe uma linha por CD_CVM, preferindo SIT = ATIVO. Junte com o lucro da Oficina 2 e informe quantas empresas ficaram sem cadastro."</p>
+items.17.items.4.title = Calcular Lucros por Setor e Validar
+items.17.items.4.description = <p>Digite: "Some o lucro por SETOR_ATIV, salve em resultados/ e adicione asserts: linhas depois da junção = 458; soma dos setores mais as sem cadastro = soma total da Oficina 2."</p>
+items.17.items.5.title = Rodar o Processo do Zero
+items.17.items.5.description = <p>Rode todo o processo do zero para garantir reprodutibilidade.</p>
+
+--- [18] text/impact/b
+items.18.items.0.paragraph = <p><strong>Atenção:</strong> Juntar dados usando uma chave repetida pode duplicar empresas e inflar a soma dos valores sem nenhum aviso. O uso do assert "linhas antes = linhas depois" é uma forma de se proteger contra esse problema.</p>
+
+--- [19] text/text/heading paragraph
+items.19.items.0.heading = Validação, Solução de Problemas e Desafios Extras
+items.19.items.0.paragraph = <p>Confira os critérios de sucesso, soluções para problemas comuns e desafios extras para dominar o cruzamento de bases de dados.</p>
+
+--- [20] interactive/interactive/accordion
+items.20.items.0.title = Critério de êxito e ponto de controle
+items.20.items.0.description = <p>🏁 Ponto de controle: 4 empresas sem cadastro; setores no topo — Bancos R$ 60,9 bi, Petróleo e Gás R$ 50,9 bi, Energia Elétrica R$ 36,5 bi, Extração Mineral R$ 31,4 bi; asserts passando.</p><p></p><p>Esses resultados mostram que a junção foi feita corretamente e os dados estão validados.</p>
+items.20.items.1.title = Soluções para problemas comuns
+items.20.items.1.description = <p>- Soma por setor maior que a soma total: Junção com chave repetida — volte ao passo 3.<br>- "Comércio" aparece com R$ 667 bi: A escala não foi convertida antes da junção.<br>- Setor vazio: Mostre essas empresas e decida mantê-las como "sem setor".</p><p></p><p>Essas orientações ajudam a identificar e corrigir rapidamente os principais erros de cruzamento.</p>
+items.20.items.2.title = Desafios opcionais (validação incluída)
+items.20.items.2.description = <p>1. Liste as 4 empresas sem cadastro. Validação: quatro nomes.<br>2. Conte empresas por setor. Validação: a soma bate com as empresas casadas.<br>3. Faça um gráfico de barras dos 10 setores. Validação: eixo em zero e fonte CVM no rodapé.</p><p></p><p>Explore esses desafios para aprofundar sua análise e visualização de dados.</p>
+
+--- [21] text/text/heading paragraph
+items.21.items.0.heading = Conceitos-Chave em Projetos Automatizados
+items.21.items.0.paragraph = <p>Revise os principais conceitos que garantem a qualidade e a segurança dos seus projetos automatizados. Expanda cada flashcard para reforçar seu entendimento.</p>
+
+--- [22] interactive/flashcard/flashcard
+items.22.items.0.back.description = <p>Assert é um teste automático no código que interrompe a execução se o resultado não for o esperado.</p>
+items.22.items.0.front.description = <b>assert</b>
+items.22.items.1.back.description = <p>Indica se os valores estão em reais, milhares ou unidades; converter corretamente evita distorções nos resultados.</p>
+items.22.items.1.front.description = <b>escala de moeda</b>
+items.22.items.2.back.description = <p>Quando a mesma chave aparece mais de uma vez, pode causar contagem duplicada e inflar resultados sem aviso.</p>
+items.22.items.2.front.description = <b>duplicidade de chaves</b>
+items.22.items.3.back.description = <p>Capacidade de rodar o projeto do zero e obter sempre o mesmo resultado, garantindo confiança na análise.</p>
+items.22.items.3.front.description = <b>reprodutibilidade</b>
+
+--- [23] knowledgeCheck/knowledgeCheck/multiple choice
+items.23.items.0.title = Quando você deve usar asserts em seus scripts de análise de dados?
+items.23.items.0.answers.0.title = Apenas ao final do projeto
+items.23.items.0.answers.0.feedback = Usar asserts apenas ao final do projeto pode permitir que erros passem despercebidos durante o desenvolvimento.
+items.23.items.0.answers.1.title = Sempre que quiser validar resultados críticos
+items.23.items.0.answers.1.feedback = Asserts devem ser usados sempre que for necessário garantir que resultados críticos estejam corretos, interrompendo o script se algo sair do esperado.
+items.23.items.0.answers.2.title = Só quando houver erro visível
+items.23.items.0.answers.2.feedback = Esperar por um erro visível pode ser arriscado, pois nem todos os problemas são facilmente perceptíveis.
+items.23.items.0.answers.3.title = Apenas para checar arquivos de entrada
+items.23.items.0.answers.3.feedback = Asserts podem ser usados para checar arquivos de entrada, mas seu uso não deve se limitar a isso.
+
+--- [24] text/text/paragraph
+items.24.items.0.paragraph = <p>Parabéns por concluir os projetos práticos! No próximo módulo, você vai aprofundar seus conhecimentos em validação avançada, revisão independente e aplicar tudo isso em um projeto final com dados climáticos. Prepare-se para elevar ainda mais a qualidade e a confiabilidade das suas análises automatizadas.</p>
+
+######## licao_03_Validacao_Revisao_Independente_e_Boas_Praticas_Finais.json  title='Validação, Revisão Independente e Boas Práticas Finais'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Garantindo Qualidade: Validação, Revisão e Boas Práticas Finais
+items.0.items.0.paragraph = <p>Chegou o momento de transformar suas análises automatizadas em soluções realmente confiáveis. Nesta lição, você vai aprender como validar seus resultados, implementar revisões independentes e aplicar boas práticas que garantem a qualidade e a reprodutibilidade dos seus projetos. Vamos consolidar tudo que foi visto até aqui para que seus scripts sejam robustos, auditáveis e prontos para qualquer desafio.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta etapa, você irá aprofundar seu domínio sobre validação e revisão de análises automatizadas. Veja os principais objetivos desta lição:</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Como validar e revisar análises automatizadas</p>
+items.2.items.1.paragraph = <p>Implementar revisões independentes para identificar falhas</p>
+items.2.items.2.paragraph = <p>Consolidar aprendizados em um projeto final com dados climáticos</p>
+items.2.items.3.paragraph = <p>Aplicar as 10 boas práticas essenciais para automação confiável</p>
+
+--- [3] divider/continue/continue
+items.3.items.0.title = Continue
+
+--- [4] text/text/heading paragraph
+items.4.items.0.heading = Validação Cruzada e Revisão Independente
+items.4.items.0.paragraph = <p>Mesmo com automação, erros silenciosos podem passar despercebidos e comprometer todo o resultado. Por isso, a validação cruzada e a revisão independente são etapas indispensáveis para garantir que seus scripts entreguem respostas corretas e confiáveis. Entenda como essas práticas elevam o padrão das suas análises e evitam surpresas desagradáveis.</p>
+
+--- [5] text/text/heading paragraph
+items.5.items.0.heading = Como Validar e Revisar Análises Automatizadas
+items.5.items.0.paragraph = <p>Explore cada item para entender como garantir a qualidade dos seus projetos automatizados. Cada etapa é fundamental para evitar erros e entregar resultados confiáveis.</p>
+
+--- [6] interactive/interactive/accordion
+items.6.items.0.title = Por que validar?
+items.6.items.0.description = <p>Validar significa conferir se os resultados fazem sentido e se não há erros ocultos. Um erro visível é fácil de notar, mas o erro silencioso pode passar despercebido e comprometer toda a análise.</p><p></p><p>Ao validar, você garante que o script está funcionando como deveria e que os números finais são confiáveis.</p>
+items.6.items.1.title = O que é revisão independente?
+items.6.items.1.description = <p>Revisão independente é quando outra pessoa, que não participou do desenvolvimento, revisa o projeto. Essa pessoa pode usar ferramentas como Claude Code ou Codex para auditar o código e identificar falhas que passaram despercebidas.</p><p></p><p>Esse processo é essencial para garantir imparcialidade e aumentar a confiança nos resultados.</p>
+items.6.items.2.title = Dicas para implementar asserts
+items.6.items.2.description = <p>Asserts são testes automáticos que verificam se os dados e resultados estão corretos em cada etapa. Use asserts para contar linhas antes e depois de filtros, conferir totais e garantir que não há duplicatas.</p><p></p><p>Esses pontos de controle funcionam como alarmes, alertando sobre qualquer desvio inesperado.</p>
+items.6.items.3.title = O papel do README e da documentação
+items.6.items.3.description = <p>O README.md é o manual mínimo do seu projeto. Ele deve explicar como rodar o script, quais são as limitações e como verificar se tudo funcionou corretamente.</p><p></p><p>Uma boa documentação facilita a revisão, a reprodução dos resultados e o entendimento por qualquer pessoa que acessar o projeto.</p>
+
+--- [7] interactive/interactive-fullscreen/process
+items.7.items.0.title = Introdução à Revisão Independente
+items.7.items.0.description = <p>Este guia apresenta um passo a passo para realizar uma revisão independente em análises de dados, garantindo imparcialidade, correção e documentação adequada do processo.</p>
+items.7.items.1.title = Resumo do Processo de Revisão Independente
+items.7.items.1.description = <p>Seguindo esses passos, você garante que sua análise foi revisada de forma imparcial, documentada e pronta para ser reproduzida por qualquer pessoa.</p>
+items.7.items.2.title = Solicitar tabela comparativa
+items.7.items.2.description = <p>Peça ao agente: "Faça uma tabela com o top 5 de receita (conta 3.01) e o top 5 de lucro lado a lado." Isso ajuda a identificar se os dados estão pareados corretamente.</p>
+items.7.items.3.title = Verificar pareamento dos dados
+items.7.items.3.description = <p>Confira se as linhas da tabela correspondem à mesma empresa em receita e lucro. Se houver inconsistências, o pareamento está incorreto e precisa ser ajustado.</p>
+items.7.items.4.title = Refazer análise com chave única
+items.7.items.4.description = <p>Solicite: "Refaça juntando por CD_CVM, uma linha por empresa com as duas colunas, e adicione um assert que confira um só CD_CVM por linha." Isso garante que cada empresa apareça apenas uma vez, evitando duplicidades.</p>
+items.7.items.5.title = Executar revisão independente
+items.7.items.5.description = <p>Peça a revisão independente usando o comando ou pedido de auditoria:</p><p>Revise ranking_lucro.py e setores.py como um auditor que não confia no autor. Liste cinco formas de o número final estar errado e escreva um teste para cada uma. Rode e mostre a saída completa.</p>
+items.7.items.6.title = Documentar no README.md
+items.7.items.6.description = <p>Registre no README.md o que a revisão apontou e quais correções foram feitas. Isso fecha o ciclo de validação e facilita futuras auditorias.</p>
+
+--- [8] text/impact/b
+items.8.items.0.paragraph = <p><strong>Curiosidade técnica:</strong> O <code>/code-review</code> do Claude Code executa a revisão em um subagente que nunca teve acesso à conversa anterior — por isso, ele não herda as mesmas premissas de quem escreveu o código.</p>
+
+--- [9] text/text/heading paragraph
+items.9.items.0.heading = Pontos de Controle, Problemas Comuns e Desafios Extras
+items.9.items.0.paragraph = <p>Confira os principais pontos de controle, soluções para problemas frequentes e desafios opcionais para aprofundar seu aprendizado. Expanda cada item para saber mais.</p>
+
+--- [10] interactive/interactive/accordion
+items.10.items.0.title = Critério de êxito da revisão
+items.10.items.0.description = <p>O ponto de controle é ter a Petrobras em uma única linha na tabela final, com receita de R$ 490,8 bi e lucro de R$ 36,6 bi. Além disso, a revisão deve gerar pelo menos um teste novo, registrado no README.md.</p><p></p><p>Esses critérios garantem que a análise está correta e que a revisão foi efetiva.</p>
+items.10.items.1.title = Soluções para problemas comuns
+items.10.items.1.description = <p>Se o comando /code-review não aparecer, use uma sessão nova com o pedido de auditor. Se o revisor só elogiar, peça explicitamente para apontar cinco riscos. Se o teste novo falhar, investigue antes de corrigir o teste.</p><p></p><p>Essas ações ajudam a resolver rapidamente obstáculos comuns durante a revisão.</p>
+items.10.items.2.title = Desafios opcionais para revisão
+items.10.items.2.description = <p>Peça a mesma revisão em outra ferramenta (Codex ou Claude Code) e compare as listas. Faça um commit "oficina 4" e confira no git log se há quatro commits. Solicite resultados/relatorio.md com tabelas e limitações, citando escala e duplicatas.</p><p></p><p>Esses desafios ampliam sua visão sobre revisão e documentação de projetos automatizados.</p>
+
+--- [11] divider/continue/continue
+items.11.items.0.title = Continue
+
+--- [12] text/text/heading paragraph
+items.12.items.0.heading = Projeto Final – Clima do Distrito Federal em 2024
+items.12.items.0.paragraph = <p>Agora é hora de consolidar tudo o que você aprendeu! O projeto final desafia você a automatizar a análise de dados climáticos reais, aplicando validação, revisão independente e documentação. Prepare-se para entregar um projeto reprodutível, auditável e pronto para uso por qualquer pessoa.</p>
+
+--- [13] interactive/interactive-fullscreen/process
+items.13.items.0.title = Introdução à Análise Automatizada dos Dados Climáticos
+items.13.items.0.description = <p>Este guia apresenta um passo a passo para realizar a análise automatizada de dados climáticos do INMET, garantindo padronização, validação e documentação do processo.</p>
+items.13.items.1.title = Resumo do Processo
+items.13.items.1.description = <p>Ao seguir esse passo a passo, você entrega um projeto completo, validado e pronto para ser auditado e reutilizado.</p>
+items.13.items.2.title = Atualizar instruções do projeto
+items.13.items.2.description = <p>Inclua no arquivo de instruções: "INMET: latin-1; ponto e vírgula; vírgula decimal; 8 linhas de metadados antes do cabeçalho; hora em UTC; há valores vazios."</p>
+items.13.items.3.title = Enviar briefing detalhado
+items.13.items.3.description = <p>Peça ao agente:</p><p>""" Crie clima_df.py que lê, direto de dados/brutos/inmet-2024.zip, os arquivos com DF no nome. Para cada estação: conte as linhas e os vazios da coluna de temperatura do ar (bulbo seco), calcule a média anual dessa coluna e a máxima da coluna de temperatura máxima na hora anterior. Salve a tabela e um gráfico de barras das médias em resultados/. Mostre o plano e espere. """</p>
+items.13.items.4.title = Implementar asserts e rodar do zero
+items.13.items.4.description = <p>Garanta que cada estação tenha 8.784 linhas e que os vazios sejam contabilizados corretamente. Rode o script do zero para validar todo o fluxo.</p>
+items.13.items.5.title = Solicitar explicação do código
+items.13.items.5.description = <p>Peça ao agente para explicar o código em blocos pequenos, facilitando o entendimento e a revisão.</p>
+items.13.items.6.title = Criar README.md
+items.13.items.6.description = <p>Inclua instruções de uso, verificação dos resultados e limitações do projeto no README.md.</p>
+items.13.items.7.title = Rodar revisão independente
+items.13.items.7.description = <p>Execute a revisão independente conforme o processo anterior, garantindo a qualidade final do projeto.</p>
+
+--- [14] text/text/heading paragraph
+items.14.items.0.heading = Critérios de Sucesso do Projeto Final
+items.14.items.0.paragraph = <p>O projeto final deve abranger cinco estações: A001 Brasília, A042 Brazlândia, A045 Águas Emendadas, A046 Gama e A047 Paranoá. Para cada estação, é obrigatório conter 8.784 linhas, sendo essa quantidade assegurada por verificações apropriadas.</p><p>Existem valores ausentes na temperatura nas posições 26, 235, 453, 66 e 416, seguindo essa ordem. As médias anuais de temperatura aproximam-se de 21,98, 22,32, 21,85, 22,60 e 22,29 °C, respectivamente, para cada estação.</p><p>O valor mais alto de temperatura máxima horária ocorre em Gama, atingindo 37,5 °C.</p><p>Todo o processo deve ser reprodutível do início ao fim, sem modificar os dados brutos. Além disso, deve ser elaborado um documento explicando as limitações encontradas durante o desenvolvimento do projeto.</p>
+
+--- [15] text/text/heading paragraph
+items.15.items.0.heading = Falhas Comuns em Automação de Dados – Você Sabe Identificar?
+items.15.items.0.paragraph = <p>Revise os principais conceitos para evitar armadilhas em automação de dados. Expanda cada flashcard para reforçar seu entendimento sobre validação e entrega de projetos.</p>
+
+--- [16] interactive/flashcard/flashcard
+items.16.items.0.back.description = Um erro silencioso não aparece facilmente e pode comprometer toda a análise sem ser notado, ao contrário do erro visível.
+items.16.items.0.front.description = <b>Erro silencioso vs erro visível</b>
+items.16.items.1.back.description = O assert funciona como um alarme automático, avisando quando algo inesperado acontece no fluxo do script.
+items.16.items.1.front.description = <b>Assert como alarme</b>
+items.16.items.2.back.description = Documentar o projeto com README.md garante que qualquer pessoa entenda, rode e revise o trabalho sem dúvidas.
+items.16.items.2.front.description = <b>Importância da documentação mínima</b>
+items.16.items.3.back.description = Executar o script do zero assegura que tudo está funcionando e que não há dependências ocultas ou dados alterados.
+items.16.items.3.front.description = <b>Por que rodar do zero antes de entregar</b>
+
+--- [17] text/text/heading paragraph
+items.17.items.0.heading = As 10 Boas Práticas para Análise Automatizada com IA
+items.17.items.0.paragraph = <p>Conheça e aplique os hábitos essenciais para garantir qualidade, segurança e reprodutibilidade em qualquer projeto de análise automatizada. Expanda cada item para ver exemplos e dicas práticas.</p>
+
+--- [18] interactive/interactive/accordion
+items.18.items.0.title = Plano antes de execução, sempre
+items.18.items.0.description = <p>Sempre escreva um plano detalhado antes de começar a executar qualquer análise. Isso evita retrabalho e facilita a validação dos resultados.</p><p></p><p>Ter um roteiro claro ajuda a prever desafios e organizar as etapas do projeto.</p>
+items.18.items.1.title = Dado bruto não se edita
+items.18.items.1.description = <p>Nunca altere os dados originais. Preserve sempre uma cópia intacta para garantir a reprodutibilidade e a confiabilidade das análises.</p><p></p><p>Se precisar transformar dados, faça isso em uma cópia separada.</p>
+items.18.items.2.title = Declare encoding, separador e decimal
+items.18.items.2.description = <p>Sempre informe o encoding, o separador de campos e o formato decimal dos arquivos. Isso evita erros de leitura e interpretação dos dados.</p><p></p><p>Essas informações devem estar claras no README e nas instruções do projeto.</p>
+items.18.items.3.title = Pacote desconhecido: confira antes
+items.18.items.3.description = <p>Antes de aprovar o uso de qualquer pacote novo, verifique sua existência e confiabilidade em fontes como o pypi.org.</p><p></p><p>Isso reduz riscos de dependências problemáticas ou incompatíveis.</p>
+items.18.items.4.title = Um assert para cada número
+items.18.items.4.description = <p>Implemente um assert para cada número importante que vai para o relatório. Assim, você garante que todos os resultados são conferidos automaticamente.</p><p></p><p>Esses testes evitam que erros passem despercebidos.</p>
+items.18.items.5.title = Conte linhas antes e depois
+items.18.items.5.description = <p>Conte o número de linhas antes e depois de cada filtro ou junção de dados. Isso ajuda a identificar perdas ou duplicidades inesperadas.</p><p></p><p>Esses controles são essenciais para a integridade dos dados.</p>
+items.18.items.6.title = Escala e duplicata antes do ranking
+items.18.items.6.description = <p>Verifique a escala dos valores e elimine duplicatas antes de gerar qualquer ranking. Isso garante que os resultados sejam justos e comparáveis.</p><p></p><p>Ignorar essa etapa pode inflar ou distorcer os resultados finais.</p>
+items.18.items.7.title = Rode do zero antes de entregar
+items.18.items.7.description = <p>Sempre execute o projeto do início ao fim em um ambiente limpo antes de entregar. Isso garante que tudo está funcionando e que não há dependências ocultas.</p><p></p><p>Esse hábito evita surpresas na hora da entrega ou da revisão.</p>
+items.18.items.8.title = Segunda opinião de quem não viu
+items.18.items.8.description = <p>Sempre peça uma revisão independente de alguém que não participou do projeto. Isso aumenta a confiança e a imparcialidade dos resultados.</p><p></p><p>Ferramentas como Claude Code e Codex facilitam esse processo.</p>
+items.18.items.9.title = README com como rodar e limitações
+items.18.items.9.description = <p>Inclua sempre um README.md explicando como rodar o projeto, como verificar os resultados e quais são as limitações conhecidas.</p><p></p><p>Uma boa documentação é fundamental para a transparência e a reprodutibilidade.</p>
+
+--- [19] knowledgeCheck/knowledgeCheck/multiple choice
+items.19.items.0.title = Quando solicitar revisão independente?
+items.19.items.0.answers.0.title = Sempre que terminar um projeto automatizado
+items.19.items.0.answers.0.feedback = Solicitar revisão independente sempre que terminar um projeto automatizado garante a qualidade e a confiabilidade do trabalho, independentemente de erros visíveis ou do tamanho do projeto.
+items.19.items.0.answers.1.title = Apenas se houver erro visível
+items.19.items.0.answers.1.feedback = Esperar por erros visíveis pode deixar passar problemas ocultos. A revisão deve ser feita sempre, não só quando há erros aparentes.
+items.19.items.0.answers.2.title = Só quando solicitado pelo cliente
+items.19.items.0.answers.2.feedback = A revisão independente é uma boa prática interna e não deve depender apenas da solicitação do cliente.
+items.19.items.0.answers.3.title = Apenas em projetos grandes
+items.19.items.0.answers.3.feedback = Projetos de qualquer tamanho podem se beneficiar da revisão independente para garantir qualidade e reprodutibilidade.
+
+--- [20] text/text/paragraph
+items.20.items.0.paragraph = <p>Parabéns por chegar até aqui! Você agora domina as etapas essenciais para validar, revisar e entregar projetos automatizados com qualidade e segurança. Lembre-se: reprodutibilidade, documentação e revisão independente são os pilares para análises confiáveis. Continue aplicando essas práticas em novos desafios e transforme a automação de dados em um diferencial no seu trabalho.</p>

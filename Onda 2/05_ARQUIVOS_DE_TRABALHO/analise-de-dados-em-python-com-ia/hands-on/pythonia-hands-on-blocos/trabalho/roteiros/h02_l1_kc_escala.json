@@ -1,0 +1,36 @@
+{
+ "licao": 1,
+ "posicao": 15,
+ "blocos": [
+  {
+   "modelo": "knowledgecheck-knowledgecheck-multiple-choice.json",
+   "itens": [
+    {
+     "title": "Na Oficina 2, o primeiro filtro imprimiu 460 linhas e 458 empresas, e a Vivara apareceu no topo do ranking. O que o script precisa fazer antes de ordenar?",
+     "answers": [
+      {
+       "title": "Ordenar de novo, agora pelo nome da empresa",
+       "correct": false,
+       "feedback": "Não. A ordem não é o problema; o valor que entra nela é que está em escalas diferentes e com duplicatas."
+      },
+      {
+       "title": "Remover as duplicatas e converter tudo para reais pela ESCALA_MOEDA",
+       "correct": true,
+       "feedback": "Correto. São 2 linhas a mais que empresas e 8 empresas informando em UNIDADE: sem tratar as duas coisas, o ranking mente."
+      },
+      {
+       "title": "Excluir a Vivara, porque o valor dela parece estranho",
+       "correct": false,
+       "feedback": "Não. Excluir sem explicar é esconder a premissa. A Vivara está certa — R$ 653 milhões — só informada em reais."
+      },
+      {
+       "title": "Extrair o ZIP em dados/brutos para conferir o arquivo",
+       "correct": false,
+       "feedback": "Não. Dado bruto não se edita; se precisar extrair, use dados/tratados/. O problema está na escala, não no ZIP."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

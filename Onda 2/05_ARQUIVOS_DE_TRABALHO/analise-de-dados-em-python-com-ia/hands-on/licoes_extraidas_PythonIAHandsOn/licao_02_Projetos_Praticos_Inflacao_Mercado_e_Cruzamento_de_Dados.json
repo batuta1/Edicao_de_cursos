@@ -1,0 +1,901 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Projetos Práticos: Inflação, Mercado e Cruzamento de Dados",
+  "lesson": {
+    "description": "",
+    "id": "6d2ec0a3-793f-4a53-ab49-ddc9d0806f55",
+    "items": [
+      {
+        "id": "nx0r8ham7cttm7ctg0tmrxve",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "p65vsho5giscrnrwijlv9o1k",
+            "heading": "Três oficinas, três scripts que se defendem sozinhos",
+            "paragraph": "<p>As oficinas vão em sequência e cada uma deixa na pasta <strong>projeto-dados</strong> um script com testes que passam. Na Oficina 1, o cálculo do IPCA vira um projeto que roda de novo. Na 2, o ranking de lucro da CVM, que mente se você não converter a escala. Na 3, o lucro por setor, que infla em silêncio se a junção usar uma chave repetida. Em todas, o agente escreve o código; você aprova, lê e confere.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "785893d8-28f4-4ce0-a8ef-724864e2f4e3"
+      },
+      {
+        "id": "hlauccxwo8sv5wiokx0qbhpq",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "i92lv6z935w5fu3d4l1d8iot",
+            "paragraph": "<p>Ao final destas oficinas, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d3302825-bae4-44f6-98f2-0146b847b740"
+      },
+      {
+        "id": "y9gbwce5gmf6bbpx19q61ek9",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "njs9wguskxo7j2nbo0vfqq2x",
+            "number": "1",
+            "paragraph": "<p>Transformar um cálculo mensal num script reprodutível, com asserts, rodando com <code>uv run</code>.</p>"
+          },
+          {
+            "id": "a5zizpuprmkt5vb4jb4mbmne",
+            "number": "2",
+            "paragraph": "<p>Montar um ranking da CVM tratando duplicatas e convertendo a escala antes de ordenar.</p>"
+          },
+          {
+            "id": "ceun8cdj9me6xcj9glskfy68",
+            "number": "3",
+            "paragraph": "<p>Cruzar duas tabelas por uma chave única, sem inflar a soma.</p>"
+          },
+          {
+            "id": "dynhbxswi1q23didq4w5waa8",
+            "number": "4",
+            "paragraph": "<p>Provar cada resultado com asserts e contagens de controle, e rodar do zero antes de entregar.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "6133928d-03ac-467c-bfb7-1e561774d6b6"
+      },
+      {
+        "id": "23cb2f57-6daa-4581-a2f0-2dc4c35fadc9",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "1364cd0f-6e6c-4930-9c85-23893b6caf45",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "48dda2c3-7094-488a-b6cb-578ac9de94f0"
+      },
+      {
+        "id": "opi66j9khji3put4ejxoiptw",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ymm2obl17n8c2z2shkq0i9xd",
+            "heading": "Oficina 1 — Seu primeiro projeto reprodutível",
+            "paragraph": "<p>🎯 <strong>O problema:</strong> todo mês alguém refaz à mão o acumulado do IPCA numa planilha. Vamos deixar isso num script que qualquer pessoa roda com um comando — e que se recusa a terminar se o número estiver errado. (16 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>dados/brutos/ipca.csv</strong> (ponto e vírgula, vírgula decimal), o agente em modo de planejamento e o uv.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "8b502fd1-73e7-4ffd-88d5-aa1c4d88fbaa"
+      },
+      {
+        "id": "fe09c96e-22d8-45d2-9b3b-66b890df6b60",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "af39b422-9b4e-4b98-bf4a-14c0ca67abcf",
+            "type": "intro",
+            "title": "👐 Mão na massa — Oficina 1",
+            "isHidden": false,
+            "description": "<p>Seis passos. Os textos entre aspas são para digitar como estão; o brief do passo 2 está logo abaixo deste bloco.</p>"
+          },
+          {
+            "id": "ffa8cd3a-df38-454a-a8e3-7bd6560e8c51",
+            "type": "summary",
+            "title": "O que fica na pasta",
+            "isHidden": false,
+            "description": "<p><strong>analise_ipca.py</strong> com três asserts, <strong>resultados/ipca_anual.csv</strong> e <strong>resultados/ipca_anual.png</strong>, <strong>uv.lock</strong> e o arquivo de instruções. Confira os números no ponto de controle logo abaixo.</p>"
+          },
+          {
+            "id": "80724e59-999d-42b2-8d43-25777f225a04",
+            "type": "step",
+            "title": "Criar o arquivo de instruções",
+            "isHidden": false,
+            "description": "<p>No Claude Code, digite <code>/init</code>; depois peça para incluir no <strong>CLAUDE.md</strong> (no Codex, crie <strong>AGENTS.md</strong> com o mesmo texto): “Dados em dados/brutos nunca são alterados. CSVs do Banco Central usam ponto e vírgula e vírgula decimal. Saídas vão para resultados/. Rodar com uv run.”</p>"
+          },
+          {
+            "id": "32b904a8-2670-4ec1-8e3e-cc1da0d91fef",
+            "type": "step",
+            "title": "Enviar o brief",
+            "isHidden": false,
+            "description": "<p>Copie e envie o brief do bloco abaixo.</p>"
+          },
+          {
+            "id": "681d816e-96cf-44ef-a8a8-f162d8203b65",
+            "type": "step",
+            "title": "Ler e aprovar o plano",
+            "isHidden": false,
+            "description": "<p>Leia o plano. Para aprovar, mude para <code>acceptEdits</code> (Claude Code, <strong>Shift+Tab</strong> no terminal) ou aprove cada comando (Codex).</p>"
+          },
+          {
+            "id": "b57420ae-7fb9-4172-a3f6-4961b9e228f2",
+            "type": "step",
+            "title": "Aprovar as bibliotecas",
+            "isHidden": false,
+            "description": "<p>Quando o agente pedir para instalar <strong>pandas</strong> e <strong>matplotlib</strong>, aprove.</p>"
+          },
+          {
+            "id": "b9eef180-5939-4f0d-b657-21d1769148c3",
+            "type": "step",
+            "title": "Rodar o script do zero",
+            "isHidden": false,
+            "description": "<p>Apague a pasta <strong>resultados/</strong> e digite: “Rode do zero com uv run e mostre a saída completa.”</p>"
+          },
+          {
+            "id": "5ac1e9c1-04b4-4253-af6c-c19dae4d8d60",
+            "type": "step",
+            "title": "Pedir a explicação do código",
+            "isHidden": false,
+            "description": "<p>Digite: “Explique analise_ipca.py em blocos de até cinco linhas.”</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "595b2cc9-e434-43fc-9583-c8c4348a1bb9"
+      },
+      {
+        "id": "c63ae303-3d75-4305-81dd-fbdc42e86abc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "6aa262b8-2e4f-4535-b576-5f1a0e8ab0f1",
+            "paragraph": "<p><strong>Brief da Oficina 1</strong> — copie e envie ao agente:</p><p><em>“Crie analise_ipca.py que calcula o IPCA acumulado de cada ano de 2020 a 2025 por composição, salva a tabela em resultados/ipca_anual.csv e um gráfico de barras em resultados/ipca_anual.png. Inclua asserts: 72 linhas lidas; 2024 = 4,83 e 2025 = 4,26, com tolerância de 0,01. Use uv para as bibliotecas. Mostre o plano e espere minha aprovação.”</em></p><p>No plano que voltar, confira: lê <strong>dados/brutos/ipca.csv</strong> sem alterá-lo, compõe as taxas (não soma) e tem os três asserts.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "4e433562-823a-4a8e-a1f3-32adc668d21c"
+      },
+      {
+        "id": "gv250bz4bvzroy97uqtfo73x",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "xz72s9keg2nl7oe3foc391hb",
+            "heading": "Dica, ponto de controle e socorro — Oficina 1",
+            "paragraph": "<p>Abra o que precisar:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "053ab61b-eec2-417f-ab23-ffb72b29da09"
+      },
+      {
+        "id": "5bb82666-f337-436b-b9f1-89f87dcc20a7",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "6631c19f-ed53-4a36-854d-84aa859ee22d",
+            "title": "💡 Assert é um alarme",
+            "description": "<p>Se o número sair diferente do esperado, o script para e grita em vez de entregar um relatório errado com cara de certo.</p><p></p><p>Por isso o brief pede assert para as 72 linhas e para os dois números do IBGE.</p>"
+          },
+          {
+            "id": "91b30110-1fb7-453e-b0df-fa3867e4ebcf",
+            "title": "🏁 Deu certo?",
+            "description": "<p>No terminal do agente, a saída mostra 4,83 (2024) e 4,26 (2025), os asserts passam, e <strong>projeto-dados</strong> tem <strong>uv.lock</strong> e a pasta <strong>resultados/</strong>.</p><p></p><p>Se algo faltar, peça ao agente para mostrar o comando executado e a saída completa.</p>"
+          },
+          {
+            "id": "057a01eb-48a0-423e-986a-89c7b0992407",
+            "title": "🚑 Se travar",
+            "description": "<ul><li><strong>O agente quer instalar um pacote de nome estranho:</strong> recuse e procure o nome em pypi.org antes.</li><li><strong>uv não encontrado:</strong> feche e reabra o terminal; se persistir, reinstale pelo comando oficial.</li><li><strong>Um assert de ano antigo falha por 0,01:</strong> esperado — as taxas mensais vêm arredondadas; registre como limitação e use tolerância.</li></ul>"
+          },
+          {
+            "id": "8b13a8d0-ddbf-446a-870b-4ca853b422a8",
+            "title": "🚀 Quer ir além? (opcional)",
+            "description": "<ol><li>Peça <code>git init</code> e um commit “oficina 1”. Validação: <code>git log</code> mostra o commit.</li><li>Peça um notebook .ipynb equivalente. Validação: abre e reproduz 4,83%.</li><li>Peça que o script receba o ano como parâmetro. Validação: <code>uv run analise_ipca.py 2024</code> imprime 4,83.</li></ol>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "9a853c6d-265e-45a2-9e17-a8f438a5337d"
+      },
+      {
+        "id": "02fd9265-e966-451f-840d-2322013af9a0",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "bb8f34ec-aa46-4635-ba3d-1c550f0fe9e4",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "1abe854c-9bc1-482f-b3bd-d06fcfe6322f"
+      },
+      {
+        "id": "uozapjeof8r2g2jj7uidrclw",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "d0fxd5gmn7l4maszm5hpl45j",
+            "heading": "Oficina 2 — O ranking que mentia, agora em código",
+            "paragraph": "<p>🎯 <strong>O problema:</strong> a diretoria quer o top 5 de lucro das companhias abertas de 2024, direto da CVM — e quer refazer no ano que vem trocando um arquivo só. (22 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>dados/brutos/dfp_cia_aberta_2024.zip</strong> (19 arquivos CSV em latin-1).</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "35cf4330-b57f-4d9d-8dad-e1d1f9296010"
+      },
+      {
+        "id": "54b20416-118c-42b4-9788-2561367ced53",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "b616b14c-f316-4223-8547-20cf9c3e6c23",
+            "type": "intro",
+            "title": "👐 Mão na massa — Oficina 2",
+            "isHidden": false,
+            "description": "<p>Cinco passos. Os textos entre aspas são para digitar como estão; não traduza nomes de colunas.</p>"
+          },
+          {
+            "id": "7726992c-65cf-4ee5-b62a-32d55ed68970",
+            "type": "summary",
+            "title": "O que fica na pasta",
+            "isHidden": false,
+            "description": "<p><strong>ranking_lucro.py</strong>, que lê direto do ZIP, remove duplicatas, converte a escala e para se a Petrobras não der 36.606.000.000 — e o top 20 em <strong>resultados/</strong>.</p>"
+          },
+          {
+            "id": "c6c2ee4f-d319-4955-aaae-a6d906420f05",
+            "type": "step",
+            "title": "Ler direto do ZIP",
+            "isHidden": false,
+            "description": "<p>Digite: “Crie ranking_lucro.py que lê dfp_cia_aberta_DRE_con_2024.csv direto do ZIP (latin-1, ponto e vírgula), filtra ORDEM_EXERC = ÚLTIMO e CD_CONTA = 3.11.01 e imprime quantas linhas e quantas empresas. Mostre o plano.”</p>"
+          },
+          {
+            "id": "4d62a5ec-30d2-489b-97af-2336bffda1ca",
+            "type": "step",
+            "title": "Aprovar, rodar e anotar",
+            "isHidden": false,
+            "description": "<p>Aprove e rode. Anote: <strong>460 linhas</strong>, <strong>458 empresas</strong> — há mais linhas que empresas.</p>"
+          },
+          {
+            "id": "a734421c-0171-4d3e-82c7-82ea47dfc5c9",
+            "type": "step",
+            "title": "Investigar duplicatas e escala",
+            "isHidden": false,
+            "description": "<p>Digite: “Mostre as linhas duplicadas e a contagem de ESCALA_MOEDA.”</p>"
+          },
+          {
+            "id": "d2360f3c-0a7b-4046-aad6-9d14bccb74df",
+            "type": "step",
+            "title": "Corrigir e blindar com asserts",
+            "isHidden": false,
+            "description": "<p>Digite: “Remova duplicatas, converta para reais (MIL vezes 1.000; UNIDADE vezes 1), salve o top 20 em resultados/ e adicione asserts: 458 empresas; Petrobras = 36.606.000.000; ESCALA_MOEDA só com MIL e UNIDADE.”</p>"
+          },
+          {
+            "id": "4492befd-5ab4-43a6-9a93-b64e01d0b6c9",
+            "type": "step",
+            "title": "Rodar do zero",
+            "isHidden": false,
+            "description": "<p>Apague <strong>resultados/</strong> e rode do zero.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "16b1cb05-edca-4b0e-9c41-14dea02453c0"
+      },
+      {
+        "id": "00daf660-8e38-4dfc-b7d4-13c791e7a096",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "28b0b34e-611b-4e49-851f-4429a6655f29",
+            "paragraph": "<p>💡 <strong>Dica:</strong> sem converter a escala, a Vivara (R$ 653 milhões, informados em reais) vira a “maior lucradora do país”. O código roda — a premissa é que estava errada.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "eb4c4cc6-4a19-4e5e-bc34-434f278a9aab"
+      },
+      {
+        "id": "di99s5xe48xli8xb5nakq5s6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zljmg6cjflbn40qb8ppr1zgq",
+            "heading": "Ponto de controle e socorro — Oficina 2",
+            "paragraph": "<p>Abra o que precisar:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "155bd9cd-e878-470c-970c-4f7f8d21e4ed"
+      },
+      {
+        "id": "6ce5c8f0-f339-44b9-a0d5-81e038d711d6",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "1174af64-e16c-40d8-8841-0dff24c0ad64",
+            "title": "🏁 Deu certo?",
+            "description": "<p>Na saída, 452 empresas em MIL e 8 em UNIDADE; top 5 — Petrobras R$ 36,6 bi, Vale R$ 31,6 bi, Banco do Brasil R$ 26,4 bi, Bradesco R$ 17,3 bi, Itaúsa R$ 14,8 bi; asserts passando.</p><p></p><p>Se a Petrobras não bater com 36.606.000.000, o assert para o script — é exatamente para isso que ele existe.</p>"
+          },
+          {
+            "id": "344457f0-7043-4071-927d-d669253568d2",
+            "title": "🚑 Se travar",
+            "description": "<ul><li><strong>UnicodeDecodeError:</strong> digite “Leia com encoding latin-1”.</li><li><strong>O agente quer extrair o ZIP em dados/brutos:</strong> peça para ler direto do ZIP ou extrair em dados/tratados/.</li><li><strong>Valores enormes no topo:</strong> confira ESCALA_MOEDA antes de qualquer outra hipótese.</li></ul>"
+          },
+          {
+            "id": "95e36c25-89fe-4835-a06b-18f79a145edf",
+            "title": "🚀 Quer ir além? (opcional)",
+            "description": "<ol><li>Conte as empresas com prejuízo. Validação: 95.</li><li>Some o lucro das 458. Validação: ≈ R$ 303,9 bi.</li><li>Exporte o top 20 para Excel com openpyxl. Validação: o .xlsx abre com 20 linhas.</li></ol>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "85280c02-9f66-42d7-80ab-cd9eb66ca3bb"
+      },
+      {
+        "id": "460cc679-f0de-4042-9d61-fcad5332a0c0",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "2c10d96f-6fe2-4fa7-8388-56427a3ac7da",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "a9e59555-9dc1-4799-a3a2-5e7bb8440e27"
+      },
+      {
+        "id": "vrabrlrogigqjpl4uvgn7dex",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "htngov1mfcjao0vl0tcyftef",
+            "heading": "Oficina 3 — Cruze duas tabelas sem inflar a soma",
+            "paragraph": "<p>🎯 <strong>O problema:</strong> agora a pergunta é por setor — e o setor está no cadastro da CVM, não na demonstração de resultado. Juntar duas tabelas é onde mais se erra em silêncio. (22 min)</p><p>🧰 <strong>Você vai usar:</strong> o script da Oficina 2 e <strong>dados/brutos/cad_cia_aberta.csv</strong> (latin-1).</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "e68e9509-29a5-46b2-b072-fe396b4ecfba"
+      },
+      {
+        "id": "04a782ef-631d-4f2b-825b-f01413fb43eb",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f6dd6951-d980-4978-b06f-fa7c1cee89d2",
+            "type": "intro",
+            "title": "👐 Mão na massa — Oficina 3",
+            "isHidden": false,
+            "description": "<p>Cinco passos. O cuidado central: deixar uma linha por empresa no cadastro <em>antes</em> de juntar.</p>"
+          },
+          {
+            "id": "50f9e53c-439e-46dd-923c-1d95d774a96c",
+            "type": "summary",
+            "title": "O que fica na pasta",
+            "isHidden": false,
+            "description": "<p>Um script que deixa uma linha por CD_CVM antes de juntar, soma o lucro por setor e para se a junção mudar o número de empresas — e a tabela por setor em <strong>resultados/</strong>.</p>"
+          },
+          {
+            "id": "6efe2e01-a324-49e6-974e-ec1ca36481de",
+            "type": "step",
+            "title": "Medir as duplicidades do cadastro",
+            "isHidden": false,
+            "description": "<p>Digite: “Leia cad_cia_aberta.csv (latin-1). Quantas linhas e quantos CD_CVM únicos? Quantos códigos aparecem mais de uma vez?”</p><p>Anote: <strong>2.680 linhas, 2.569 códigos, 107 repetidos</strong>.</p>"
+          },
+          {
+            "id": "5e8f91f9-729a-490d-be19-7e93ba319db1",
+            "type": "step",
+            "title": "Uma linha por empresa, depois a junção",
+            "isHidden": false,
+            "description": "<p>Digite: \"Antes de juntar, deixe uma linha por CD_CVM, preferindo SIT = ATIVO. Junte com o lucro da Oficina 2 e informe quantas empresas ficaram sem cadastro.\"</p>"
+          },
+          {
+            "id": "e1c99749-4c78-4251-acde-9c70dc0b0c66",
+            "type": "step",
+            "title": "Somar por setor e blindar",
+            "isHidden": false,
+            "description": "<p>Digite: \"Some o lucro por SETOR_ATIV, salve em resultados/ e adicione asserts: linhas depois da junção = 458; soma dos setores mais as sem cadastro = soma total da Oficina 2.\"</p>"
+          },
+          {
+            "id": "0a02df9f-e624-43c9-b990-ee27519e8c17",
+            "type": "step",
+            "title": "Rodar do zero",
+            "isHidden": false,
+            "description": "<p>Apague <strong>resultados/</strong> e rode tudo do zero.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "497db870-3cef-4177-8749-969f86bea03b"
+      },
+      {
+        "id": "8e4f247f-6f10-4d3b-b583-1363a48328bb",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "3f757f89-a4ee-45f2-9982-7c9147c3144f",
+            "paragraph": "<p>⚠️ <strong>Cuidado:</strong> juntar pela chave repetida duplica empresas e infla a soma sem nenhum aviso. O assert “linhas antes = linhas depois” é sua defesa.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "0f0f378f-03be-428f-a025-45dd950906cf"
+      },
+      {
+        "id": "a3mjr0tjxifrpd1rxs4gzi3x",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rdbu6y0lauv6mio2zznmkx4j",
+            "heading": "Ponto de controle e socorro — Oficina 3",
+            "paragraph": "<p>Abra o que precisar:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "24bfe912-d0f5-4b71-a898-b2f674f599fe"
+      },
+      {
+        "id": "43b1a3e7-ba12-4099-99f3-562976ce12e5",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "d5bbbbbf-a48e-482f-b2e7-29e59a50ba54",
+            "title": "🏁 Deu certo?",
+            "description": "<p>4 empresas sem cadastro; setores no topo — Bancos R$ 60,9 bi, Petróleo e Gás R$ 50,9 bi, Energia Elétrica R$ 36,5 bi, Extração Mineral R$ 31,4 bi; asserts passando.</p><p></p><p>A soma dos setores mais as empresas sem cadastro tem de bater com a soma total da Oficina 2.</p>"
+          },
+          {
+            "id": "23743a4b-e743-43b5-929a-7447fb4d93bb",
+            "title": "🚑 Se travar",
+            "description": "<ul><li><strong>Soma por setor maior que a soma total:</strong> junção com chave repetida — volte ao passo 3.</li><li><strong>“Comércio” aparece com R$ 667 bi:</strong> a escala não foi convertida antes da junção.</li><li><strong>Setor vazio:</strong> mostre essas empresas e decida mantê-las como “sem setor”.</li></ul>"
+          },
+          {
+            "id": "2d776565-7d89-4648-a012-a45d40021456",
+            "title": "🚀 Quer ir além? (opcional)",
+            "description": "<ol><li>Liste as 4 empresas sem cadastro. Validação: quatro nomes.</li><li>Conte empresas por setor. Validação: a soma bate com as empresas casadas.</li><li>Faça um gráfico de barras dos 10 setores. Validação: eixo em zero e fonte CVM no rodapé.</li></ol>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b542932c-e0db-4b42-8269-1b7ad8aa5f36"
+      },
+      {
+        "id": "b8p47r08mq1c84s9lgs6edj8",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wf22ihsz5sdoy76qtm9icwza",
+            "heading": "Quatro termos que as oficinas usaram",
+            "paragraph": "<p>Vire cada cartão para revisar:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b0c7ac75-141f-40f8-a9d0-f3e6781f57c9"
+      },
+      {
+        "id": "bhv168sa6298wsestq1pkv0f",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "dbkdkksidvb7wx24hgqj2psi",
+            "back": {
+              "type": "description",
+              "description": "<p>Teste no código que interrompe a execução se o resultado não for o esperado. Na Oficina 2: Petrobras = 36.606.000.000.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<b>assert</b>"
+            }
+          },
+          {
+            "id": "huauj80eq0kjov92495r7oi5",
+            "back": {
+              "type": "description",
+              "description": "<p>Coluna ESCALA_MOEDA da CVM: 452 empresas informam em MIL e 8 em UNIDADE. Sem converter, o ranking se inverte.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<b>escala de moeda</b>"
+            }
+          },
+          {
+            "id": "bun6x2ljht5xkkkb7ww4j6ku",
+            "back": {
+              "type": "description",
+              "description": "<p>No cadastro da CVM, 107 códigos aparecem mais de uma vez. Juntar por eles duplica empresas e infla a soma sem aviso.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<b>duplicidade de chaves</b>"
+            }
+          },
+          {
+            "id": "c56lzoberox1lf1v3njwo7us",
+            "back": {
+              "type": "description",
+              "description": "<p>Apagar resultados/ e rodar com uv run: os mesmos números têm de reaparecer, com os asserts passando.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<b>reprodutibilidade</b>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "0d52aeec-472e-4fb4-9ae9-76365af0ed04"
+      },
+      {
+        "id": "ea56e46d-f739-47e8-af8c-10524ced3876",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "6d9a3946-dff0-4770-a945-705b65c78da6",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Nas Oficinas 1 a 3, quando faz sentido escrever um assert?",
+            "answers": [
+              {
+                "id": "adf2b715-77c3-4935-be0b-2986bf072e9b",
+                "title": "Apenas ao final do projeto",
+                "correct": false,
+                "feedback": "Não. Um assert no fim pega o número final, mas deixa passar a junção duplicada no meio do caminho."
+              },
+              {
+                "id": "d3e2f899-0e28-4da8-82ea-b24ef2f6d5ae",
+                "title": "Para cada número que vai para o relatório e a cada passo crítico, como uma junção",
+                "correct": true,
+                "feedback": "Correto. Foi o que você fez: 72 linhas e 4,83%, 458 empresas e a Petrobras, linhas antes = linhas depois da junção."
+              },
+              {
+                "id": "301c2647-b1bd-4b52-9b5a-e9993c824a46",
+                "title": "Só quando houver erro visível",
+                "correct": false,
+                "feedback": "Não. O assert serve justamente para o erro que não é visível — o script que roda e entrega o número errado."
+              },
+              {
+                "id": "12dacfe7-99d0-4274-8ba4-fdca92773d33",
+                "title": "Apenas para checar arquivos de entrada",
+                "correct": false,
+                "feedback": "Não. Checar a entrada é um bom começo (72 linhas), mas os números de saída também precisam de assert."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b78ab3dc-d8a7-493c-a582-179e47ef9a5f"
+      },
+      {
+        "id": "do2apk0b9fl0845zfom5t7tv",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "prvy3b2afu3f1c46obuxhx34",
+            "paragraph": "<p>Na próxima lição: a Oficina 4, em que você pega um erro silencioso com uma segunda opinião, e o Projeto Final com cinco arquivos de clima do INMET.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "769ffc85-eca3-450f-b4b6-940a2a8be0dd"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Oficinas 1 a 3: Inflação, Ranking da Bolsa e Cruzamento de Tabelas",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "uOXCh7O_-NUlK9gOATzdFF7SpG8QGqkd",
+    "createdAt": "2026-11-18T01:17:48.296Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:18:59.274Z"
+  }
+}

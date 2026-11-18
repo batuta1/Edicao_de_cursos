@@ -1,0 +1,570 @@
+{
+  "numero_da_licao": 6,
+  "position_original": 5,
+  "title": "Validação de Resultados: Testes, Controles e Revisão Independente",
+  "lesson": {
+    "description": "",
+    "id": "dae1dd15-b714-43d6-a15c-15e85aca58a1",
+    "items": [
+      {
+        "id": "fpyd3au3fwbkap8atk4xu07z",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "hvso40xo2vdq82netbol8voe",
+            "heading": "Rodou não é o mesmo que acertou",
+            "paragraph": "<p>O projeto do Módulo 4 roda do zero e repete o número. Falta provar que o número está certo. Avaliações independentes mostram que agentes de análise de dados ainda erram com frequência em tarefas reais — e, pior, que a maioria dos erros chega com aparência normal, sem nenhum aviso. Nesta lição você vê essas evidências e monta quatro defesas no <strong>ipca-projeto</strong>: testes automáticos, contagens de controle, número oficial e revisão independente.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "9b990286-1682-4a69-a719-9bec4d5e4353"
+      },
+      {
+        "id": "zjximxbsloghrskq1odwos01",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ogcc1twh7unnjiubyh256mq8",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "38d77b91-1a20-4842-ba95-85e6fdaa1408"
+      },
+      {
+        "id": "y937par93j9si55zbkwl730g",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "pk7uocfhzxtt2gnw49gxskzg",
+            "number": "1",
+            "paragraph": "<p>Relatar evidências independentes sobre a taxa de acerto de agentes em análise de dados.</p>"
+          },
+          {
+            "id": "c0gkoxhcoshtz6ak8809lhb5",
+            "number": "2",
+            "paragraph": "<p>Explicar o que é um erro silencioso.</p>"
+          },
+          {
+            "id": "jzvtqqlzzj7edzef8n6ntfi3",
+            "number": "3",
+            "paragraph": "<p>Solicitar testes automáticos (asserts) e contagens de controle.</p>"
+          },
+          {
+            "id": "t0iwkl5zxlvn9hqzpbmb03uf",
+            "number": "4",
+            "paragraph": "<p>Comparar o resultado com o número oficial.</p>"
+          },
+          {
+            "id": "s9t6ob7uumflcreqif5rcpnn",
+            "number": "5",
+            "paragraph": "<p>Acionar uma revisão independente do código.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "3471f596-12fd-4058-bf70-682127c3fbf8"
+      },
+      {
+        "id": "hvl67y4j5mtgr87l6og24f7b",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "s90umhjonmhjl08lruuxdmyx",
+            "heading": "O que as avaliações independentes medem",
+            "paragraph": "<p>Três achados que justificam conferir tudo. Vire cada cartão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "cfb80ace-f465-42ce-9690-8c0c892b9322"
+      },
+      {
+        "id": "wid79tmn7vg36eudpxxt3bbj",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "fqoo3qqiiu4t2t4ofwp52ezc",
+            "back": {
+              "type": "description",
+              "description": "<p>DA-Code (2024): o melhor sistema acertou 30,5% das tarefas. DSBench: 34,12% das tarefas de análise. KramaBench (ICLR 2026): 55% de acerto de ponta a ponta.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Taxa de acerto</p>"
+            }
+          },
+          {
+            "id": "sv27d1iyqf78f9c5y9rz0b5u",
+            "back": {
+              "type": "description",
+              "description": "<p>Numa auditoria de 2026, 69,8% das execuções erradas de um agente de dados entregaram resultado com aparência normal, sem relatar falha.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Erro silencioso</p>"
+            }
+          },
+          {
+            "id": "sl659rv4cyc2czhbdj96gkzy",
+            "back": {
+              "type": "description",
+              "description": "<p>Ensaio controlado do METR (2025): com IA, programadores experientes levaram 19% mais tempo nas tarefas — e achavam que tinham ganhado 20%.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Percepção versus realidade</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "60be41d7-1799-490b-96d8-7efd8a06de8f"
+      },
+      {
+        "id": "gpi92cthv7q71licwnqev1t1",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "li5xnmw0qdy012pkig33ztuv",
+            "heading": "O erro silencioso",
+            "paragraph": "<p>Mais grave que o erro visível é o que não avisa. Abra cada item:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "6f7a8fb8-e4c6-43d8-b1dc-863ae2089696"
+      },
+      {
+        "id": "bdf4a141-a296-4da3-b3bd-dc73dbf33242",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "951e2c39-a1ac-472c-b1b3-9a75c94c5d8a",
+            "title": "O que é erro silencioso?",
+            "description": "<p>O script executa sem nenhuma mensagem de erro e entrega um resultado errado. Exemplo da auditoria de 2026: juntar dois rankings sem parear as linhas.</p><p></p><p>No caso-guia, seria somar as taxas mensais em vez de compô-las: o código roda e devolve 4,73% em vez de 4,83%.</p>"
+          },
+          {
+            "id": "5521a90f-3a1f-4d57-9f33-e07e229e5f24",
+            "title": "Por que são perigosos?",
+            "description": "<p>O resultado tem cara de certo. Sem um critério externo, ninguém desconfia — e a sensação de acerto engana, como mostrou o METR.</p><p></p><p>O número segue para o relatório e para a decisão.</p>"
+          },
+          {
+            "id": "930e5b71-cb81-4367-adc5-c84c968ca802",
+            "title": "Como detectar?",
+            "description": "<p>Com verificações que não dependem da sua impressão: asserts, contagens de controle, número oficial e revisão independente.</p><p></p><p>A Anthropic recomenda pedir evidência — o comando executado e a saída — em vez de aceitar a afirmação de que “todos os testes passaram”.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "0425f0c4-d642-4da8-aaae-53bdbfe4c2c7"
+      },
+      {
+        "id": "r4mkr472iur0hxwz2nu7myxc",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ooem2rv2tpfx5vbmgnobpapn",
+            "heading": "As quatro defesas e como pedir cada uma",
+            "paragraph": "<p>Clique em cada aba. Os textos entre aspas são para enviar ao agente como estão:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "ef5308cb-fa1d-4d16-b69e-343e2999807c"
+      },
+      {
+        "id": "f78a2928-a626-4572-a6e8-c690ccad884e",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "7c41ceb4-4580-4119-bdf3-7dbb0ddd24a6",
+            "title": "Testes automáticos (asserts)",
+            "description": "<p><strong>Como pedir:</strong> “Adicione asserts: linhas lidas = 72; IPCA 2024 = 4,83 ± 0,01”</p><p></p><p>Um assert é uma linha de teste que interrompe o script quando uma condição não se verifica — por exemplo, se o IPCA de 2024 não der 4,83%.</p><p></p><p>A tolerância (± 0,01) existe por causa do arredondamento das taxas mensais.</p>"
+          },
+          {
+            "id": "62a215c5-8f16-4022-84f9-1fd5c7364d5d",
+            "title": "Contagens de controle",
+            "description": "<p><strong>Como pedir:</strong> “Imprima o número de linhas antes e depois de cada filtro”</p><p></p><p>Uma queda ou um salto inesperado no número de linhas mostra onde dados foram perdidos ou duplicados.</p><p></p><p>É a defesa contra junções mal pareadas, como a da auditoria de 2026.</p>"
+          },
+          {
+            "id": "0f9d468b-caf9-425c-b7ce-2db0c154d0db",
+            "title": "Comparação com número oficial",
+            "description": "<p><strong>Como fazer:</strong> comparar com IBGE, CVM, CNJ ou INMET.</p><p></p><p>O número oficial ancora o resultado numa fonte externa. No caso-guia, 4,83% (2024) e 4,26% (2025), do IBGE.</p><p></p><p>É o mesmo princípio do curso <em>IA para Análise de Dados</em>, agora automatizado.</p>"
+          },
+          {
+            "id": "1d4cf48f-5b55-469f-bcb5-09d20ab65ccd",
+            "title": "Revisão independente",
+            "description": "<p><strong>Como pedir:</strong> Claude Code: <code>/code-review</code>; Codex: nova sessão com “revise como auditor que não confia no autor”.</p><p></p><p>Um avaliador que não acompanhou a conversa procura falhas que quem escreveu não vê.</p><p></p><p>Registre no README ao menos um apontamento da revisão.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2c4ca8dc-e8f8-47cc-b2ff-56f881db0ce0"
+      },
+      {
+        "id": "9b82f2fc-2323-4fe7-bb83-5fb583e05073",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "8377404f-770d-4f94-9b5e-52a4f37aafe9",
+            "type": "intro",
+            "title": "O assert que falha (16 min)",
+            "isHidden": false,
+            "description": "<p>Você vai ver um teste falhar de propósito, corrigir e pedir uma revisão independente.</p>"
+          },
+          {
+            "id": "afd27c08-cb55-4964-b9ee-b625e082f49d",
+            "type": "summary",
+            "title": "🏁 Ponto de controle",
+            "isHidden": false,
+            "description": "<p><strong>AssertionError</strong> na primeira execução; execução sem erro na segunda; apontamento da revisão registrado no <strong>README.md</strong>.</p>"
+          },
+          {
+            "id": "66a3dcd7-02fd-4f8b-8880-22a7c29e40a8",
+            "type": "step",
+            "title": "Pedir um assert errado de propósito",
+            "isHidden": false,
+            "description": "<p>Peça ao agente um assert com valor errado (IPCA 2024 = 4,99%) e execute o script.</p>"
+          },
+          {
+            "id": "94f01d67-ef71-40b7-844d-ec273d180023",
+            "type": "step",
+            "title": "Ver o teste parar o script",
+            "isHidden": false,
+            "description": "<p>A execução deve parar com <strong>AssertionError</strong>. É a prova de que o teste funciona: se o número sair errado um dia, o script não segue em silêncio.</p>"
+          },
+          {
+            "id": "3a02ecf9-635f-453d-a171-12aba1bc50d0",
+            "type": "step",
+            "title": "Corrigir e pedir a revisão",
+            "isHidden": false,
+            "description": "<p>Corrija o assert para 4,83%, execute de novo e peça uma revisão independente de <strong>analise.py</strong> (<code>/code-review</code> ou nova sessão no Codex).</p>"
+          },
+          {
+            "id": "8a9510ac-c337-4700-a867-5090ae2bc05e",
+            "type": "step",
+            "title": "Registrar no README",
+            "isHidden": false,
+            "description": "<p>Registre no <strong>README.md</strong> ao menos um apontamento da revisão, e o que foi feito a respeito.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b49678d1-b055-4681-be21-71fb278c9afc"
+      },
+      {
+        "id": "vup1rsjeow8syx8wudc4octm",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qcac11z4us08y2zmnd4j22to",
+            "paragraph": "<p>Confira antes de seguir:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "8670196a-ed4a-41f9-928d-d24c140b73ae"
+      },
+      {
+        "id": "mr7oq6ub4ee92yffk0kzw85y",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "lk97tkz0pw0p1ta4yv3jza40",
+            "number": "1",
+            "paragraph": "<p><strong>AssertionError</strong> na execução com o valor errado (4,99%).</p>"
+          },
+          {
+            "id": "lpqa4da11gcuf6xagkwy6p2c",
+            "number": "2",
+            "paragraph": "<p>Execução sem erro depois de corrigir para 4,83%.</p>"
+          },
+          {
+            "id": "hevb3etoinkc4614spoolyvs",
+            "number": "3",
+            "paragraph": "<p>Revisão independente feita e um apontamento registrado no <strong>README.md</strong>.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "1b56c586-6aea-4b1f-a15b-8ce6db9c3f18"
+      },
+      {
+        "id": "c8c2f98b-64a5-4285-aa64-ff1bc55fc832",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "17b60b47-303f-40b4-9bc6-54ebe240dd90",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual prática é fundamental para detectar erros silenciosos em análises conduzidas por agentes de código?",
+            "answers": [
+              {
+                "id": "b34bcd4e-ddd4-45d3-92e8-aeb826dce928",
+                "title": "Salvar gráficos em diferentes formatos",
+                "correct": false,
+                "feedback": "Não. O formato do gráfico não muda o número que está nele."
+              },
+              {
+                "id": "e6ae289b-20ae-4ab5-83e0-1ee5357012af",
+                "title": "Solicitar asserts e contagens de controle no script",
+                "correct": true,
+                "feedback": "Correto. O assert interrompe o script quando o número sai errado, e a contagem de controle mostra em que passo as linhas sumiram ou duplicaram."
+              },
+              {
+                "id": "4592e260-2696-4fad-bdf5-1810c79a92b9",
+                "title": "Usar apenas dados públicos",
+                "correct": false,
+                "feedback": "Não. Dados públicos resolvem a questão de privacidade, não a de correção: o código erra do mesmo jeito sobre uma base pública."
+              },
+              {
+                "id": "140c847b-368f-49f9-8206-c9a91a489a10",
+                "title": "Compartilhar o script com colegas",
+                "correct": false,
+                "feedback": "Não. Ajuda, mas depende de alguém notar. Asserts e contagens verificam toda vez que o script roda."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "2be62121-f3ea-40c1-a45d-7743e7b58c95"
+      },
+      {
+        "id": "606c1838-ba68-4299-82a5-b27db55d6301",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ac805e22-8944-4586-a7eb-0b5956fbb4f4",
+            "paragraph": "<p><strong>Mão na massa.</strong> Para qualquer script que vá para um relatório, peça ao agente:</p><p><em>“Revise [script] como um auditor que não confia no autor. Liste cinco formas de o número final estar errado (leitura, filtro, junção, escala, fórmula) e escreva um assert para cada uma. Rode e mostre o comando executado e a saída completa.”</em></p><p>Confira a saída você mesmo: é a evidência que a Anthropic recomenda exigir.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "10c49f9e-295d-49da-a312-563af2eb2e30"
+      },
+      {
+        "id": "4ebe5856-95dc-4002-867f-d939d1bcf946",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "4aa212f8-3d76-4e35-8bba-39e533d6f320",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "cc59826b-19e2-4d77-b2e0-e058dddee6cc"
+      },
+      {
+        "id": "dh1l82o1qo4y0hy5ih4n29z2",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "rlwaxguufhss1cgm70u1lscg",
+            "paragraph": "<p>No Módulo 6 você fecha o <strong>ipca-projeto</strong>: gráfico, asserts, README completo e o teste final — outra pessoa rodando o projeto só com as instruções do README.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d799a5e1-9754-453a-8334-03812dc7c787"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Validação de Resultados: Testes, Controles e Revisão Independente",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "I27fLqYVIPy0NLQkgsBdub8JkShnUs-m",
+    "createdAt": "2026-11-18T01:01:14.067Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 5,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:03:05.189Z"
+  }
+}

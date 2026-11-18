@@ -1,0 +1,1108 @@
+{
+  "numero_da_licao": 2,
+  "position_original": 1,
+  "title": "Analyzing Public Data: Step-by-Step with ChatGPT",
+  "lesson": {
+    "description": "",
+    "id": "dd528ad1-e9b5-4ba0-bb6a-5f4d0a5da6ad",
+    "items": [
+      {
+        "id": "br61rp9x9ctdq23v4zvu9808",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "uwj5v2w7s5hmd3n3eyonoz6h",
+            "heading": "Quatro oficinas, quatro armadilhas reais",
+            "paragraph": "<p>Cada oficina parte de um problema de trabalho — um reajuste, um ranking para a diretoria, um total de processos, um gráfico para apresentação — e usa uma base pública. Em todas, o ChatGPT executa o código sem erro e, mesmo assim, o primeiro número que sai pode estar errado: taxa somada em vez de composta, escala misturada, linha de total contada duas vezes, eixo cortado. Você vai achar a armadilha, corrigir e conferir com quem publicou o dado.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b9722f4b-f72d-4c70-ae82-e8107e68b768"
+      },
+      {
+        "id": "gl09syh8c3ee3mud5e9k0br0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jqzmgq6crw6555tl26ao2dtd",
+            "paragraph": "<p>Ao final destas oficinas, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "c6cf7723-317c-40ae-89ec-c01530d76e15"
+      },
+      {
+        "id": "yu6p5m6t8mzkqritry5bn67w",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "kxli81lwdwd2olxa0xliw2fj",
+            "number": "1",
+            "paragraph": "<p>Calcular a inflação acumulada por composição e explicar por que a soma das taxas erra.</p>"
+          },
+          {
+            "id": "ybfrf88m42usqksl95x4f5g2",
+            "number": "2",
+            "paragraph": "<p>Montar um ranking de lucro da CVM convertendo escalas diferentes para a mesma unidade.</p>"
+          },
+          {
+            "id": "nzjgzi51ftlmyrhz5dooedei",
+            "number": "3",
+            "paragraph": "<p>Encontrar e excluir linhas de total antes de somar uma base do CNJ.</p>"
+          },
+          {
+            "id": "sczt6alhfdaoi8kj13u51qi7",
+            "number": "4",
+            "paragraph": "<p>Escolher, entre três gráficos do mesmo dado, o que não engana — e justificar a escolha.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d4b3041f-eca7-4013-aba6-843004d33d34"
+      },
+      {
+        "id": "sijc7drtn2oayhh3cj6s1gpw",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ewsm8hkwdoo9z4iblxk05fby",
+            "heading": "O mapa da mão na massa",
+            "paragraph": "<ul><li><strong>Oficina 1:</strong> Quanto vale hoje um reajuste de 2024? (16 min)</li><li><strong>Oficina 2:</strong> Quem lucrou mais na bolsa em 2024 — de verdade? (22 min)</li><li><strong>Oficina 3:</strong> Quantos processos novos o Judiciário recebeu em 2025? (22 min)</li><li><strong>Oficina 4:</strong> Como mostrar a população dos estados sem enganar ninguém? (16 min)</li></ul><p>Cada oficina usa uma base e desarma uma armadilha; o Projeto Final, na próxima lição, junta duas bases sozinho.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "dddb1ea3-e7d1-4d35-a8ef-7dd333639978"
+      },
+      {
+        "id": "cad85666-fba4-4708-9f6c-09d639346bc7",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "1159e808-434d-4ce8-9f19-e42564772512",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "7fc4509d-910c-4bcf-b8e3-4e6e92c1c803"
+      },
+      {
+        "id": "03f0a354-948e-4ec2-992f-738aa91041c0",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f3ae3473-fd9f-4318-ae42-14414fbc56d1",
+            "type": "intro",
+            "title": "Oficina 1 — Calcule a inflação sem erro de soma",
+            "isHidden": false,
+            "description": "<p>🎯 <strong>O problema:</strong> seu reajuste de janeiro de 2024 vai ser comparado com a inflação. Um colega somou as taxas mensais do IPCA e chegou a um número. Está certo? (16 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>ipca.csv</strong> (72 linhas, separador ponto e vírgula, vírgula decimal) e uma conversa nova no ChatGPT.</p>"
+          },
+          {
+            "id": "9997b996-bce0-4cc6-a868-4ecb834bdff5",
+            "type": "summary",
+            "title": "✅ Deu certo?",
+            "isHidden": false,
+            "description": "<p>🏁 Na conversa, 2024 = <strong>4,83%</strong> e 2025 = <strong>4,26%</strong> (iguais ao IBGE); a soma simples de 2024 dá <strong>4,73%</strong> — e você sabe dizer por que está errada.</p>"
+          },
+          {
+            "id": "37302321-1e7c-4f66-a3e9-af9f98f828ba",
+            "type": "step",
+            "title": "Enviar o arquivo",
+            "isHidden": false,
+            "description": "<p>Clique em <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong> e envie <strong>ipca.csv</strong>.</p>"
+          },
+          {
+            "id": "969219b1-d8b1-4711-b7c4-1daade3a9aa1",
+            "type": "step",
+            "title": "Pedir o Raio X",
+            "isHidden": false,
+            "description": "<p>Digite: \"Antes de calcular, diga linhas, colunas, tipos e período. A coluna valor usa vírgula decimal.\"</p>"
+          },
+          {
+            "id": "e52d92cb-1815-4100-9727-d664605aae49",
+            "type": "step",
+            "title": "Calcular o acumulado por composição",
+            "isHidden": false,
+            "description": "<p>Digite: \"Calcule o IPCA acumulado de cada ano de 2020 a 2025 compondo as taxas mensais. Mostre a fórmula.\"</p>"
+          },
+          {
+            "id": "356bbfd0-3779-4b3a-b07d-986f945a392d",
+            "type": "step",
+            "title": "Somar e comparar",
+            "isHidden": false,
+            "description": "<p>Digite: \"Agora some as taxas mensais de 2024. Por que o resultado é diferente?\"</p>"
+          },
+          {
+            "id": "24be78b6-09d8-409a-9c91-10451a1e08bf",
+            "type": "step",
+            "title": "Achar a multiplicação no código",
+            "isHidden": false,
+            "description": "<p>Abra o código no fim da resposta (<strong>Resposta &gt; comando de exibir código</strong> — o rótulo pode aparecer como “Ver análise”; se não aparecer, peça “Mostre o código Python que você executou”) e ache a multiplicação.</p>"
+          },
+          {
+            "id": "8b9c0808-fa23-46f3-a18c-ecf3566cc2b6",
+            "type": "step",
+            "title": "Fazer o gráfico",
+            "isHidden": false,
+            "description": "<p>Digite: \"Faça um gráfico de barras anual, eixo começando em zero, título com a conclusão e a fonte no rodapé.\"</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "12fbc80b-1005-4aed-9d5f-9941c7d8ef7a"
+      },
+      {
+        "id": "d098a0a4-18ea-4e70-9a0d-63f9385e20d8",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "0de6d631-d641-4bf1-91a7-c0e2b0f37e7c",
+            "paragraph": "<p>💡 <strong>Dica:</strong> taxa se compõe como juros: 1% em janeiro e 1% em fevereiro dá 2,01%, não 2%. Em doze meses, a diferença aparece.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "c889acb7-c0f0-4680-9852-c9eee43de54d"
+      },
+      {
+        "id": "0fb209ec-b687-44f2-b906-889e052c725d",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "4598bfef-2e99-42c6-898d-c9fc7ac7210e",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Por que não basta somar as taxas mensais de inflação para calcular o acumulado anual?",
+            "answers": [
+              {
+                "id": "42acb7d0-c67b-43e3-a879-208c46686a8f",
+                "title": "Porque as taxas devem ser compostas, como juros.",
+                "correct": true,
+                "feedback": "Correto. Cada mês incide sobre o preço já reajustado do mês anterior: por isso se multiplica (1 + taxa/100) mês a mês. Em 2024, a composição dá 4,83%; a soma, 4,73%."
+              },
+              {
+                "id": "b9832ca5-feef-46a3-b742-fe27c141b8f8",
+                "title": "Porque os dados do arquivo estão errados.",
+                "correct": false,
+                "feedback": "Não. Os dados estão certos — é o mesmo arquivo que, composto, dá exatamente os 4,83% do IBGE. O erro está no método."
+              },
+              {
+                "id": "e2c0e060-0f03-486f-a7c1-1d21ef83294b",
+                "title": "Porque só se pode somar taxas trimestrais.",
+                "correct": false,
+                "feedback": "Não. Essa regra não existe: taxas de qualquer período se compõem."
+              },
+              {
+                "id": "67ddd918-b82b-4bd8-b14d-66d284cae85e",
+                "title": "Porque o ChatGPT não consegue somar taxas.",
+                "correct": false,
+                "feedback": "Não. O ChatGPT soma sem problema — foi o que ele fez no passo 4. A soma é que é o cálculo errado para inflação acumulada."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "23a4d46f-8f09-42a7-8432-7800052dc977"
+      },
+      {
+        "id": "wvmxyd40dnh29fvyw80aczmo",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ttywvixq8pss3jnyl3xtly8b",
+            "heading": "🚑 Se travar na Oficina 1",
+            "paragraph": "<p>Abra o problema que apareceu:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d33ae038-45dc-4f6d-923a-474e6d96a58e"
+      },
+      {
+        "id": "dd3cabd5-b81b-4f30-959e-97a55ad2f586",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "fb45c3d0-7d05-4f4d-93ab-9221c0c26727",
+            "title": "“Limite de upload atingido”",
+            "description": "<p>Espere o horário indicado na mensagem; tentativa que falha pode contar no limite.</p>"
+          },
+          {
+            "id": "483ef649-be45-47ac-9cdd-030468fa3c77",
+            "title": "O número veio como texto",
+            "description": "<p>Digite: “Converta a coluna valor usando vírgula como decimal”.</p>"
+          },
+          {
+            "id": "b54dd59e-a76b-4a08-91db-081e4040d6fd",
+            "title": "Não acho o código",
+            "description": "<p>Peça: “Mostre o código Python que você executou”.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "737ebf70-87e1-4729-954b-84bdc3e1acb5"
+      },
+      {
+        "id": "0250301f-9045-4d3f-8fc4-e17022eb058f",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "3f0e0399-77e9-4a9b-9b75-a7d749cce9f9",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "11c4da57-cd8a-48d9-a3c4-0862ebfb7e11"
+      },
+      {
+        "id": "e3a117a4-251e-492e-9fce-4fc968c5d007",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "1f2ed70c-0fb2-4d0c-9842-a7bf3825abcb",
+            "type": "intro",
+            "title": "Oficina 2 — Descubra quem lucrou mais (de verdade)",
+            "isHidden": false,
+            "description": "<p>🎯 <strong>O problema:</strong> a diretoria pediu o ranking das companhias abertas mais lucrativas de 2024, direto da CVM. O primeiro ranking que sai tem uma surpresa no topo. Vamos descobrir se ela é real. (22 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>dfp_cia_aberta_DRE_con_2024.csv</strong> (32.776 linhas, codificação latin-1) e uma conversa nova no ChatGPT.</p>"
+          },
+          {
+            "id": "a5ef4478-004f-4c36-b663-e2cf97251454",
+            "type": "summary",
+            "title": "✅ Deu certo?",
+            "isHidden": false,
+            "description": "<p>🏁 Top 5 em reais: Petrobras <strong>R$ 36,6 bi</strong>, Vale R$ 31,6 bi, Banco do Brasil R$ 26,4 bi, Bradesco R$ 17,3 bi, Itaúsa R$ 14,8 bi; a Vivara cai para R$ 653 milhões. Petrobras: receita R$ 490,8 bi; consolidado R$ 37,0 bi.</p>"
+          },
+          {
+            "id": "13891347-70b1-4c71-8356-6a205c696c72",
+            "type": "step",
+            "title": "Enviar e pedir o Raio X",
+            "isHidden": false,
+            "description": "<p>Envie o arquivo por <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong> e digite: “O arquivo está em latin-1 e usa ponto e vírgula. Faça o Raio X.”</p>"
+          },
+          {
+            "id": "c3b774e5-946d-44ce-91b1-6ef0d902bd28",
+            "type": "step",
+            "title": "Filtrar o lucro da controladora",
+            "isHidden": false,
+            "description": "<p>Digite: \"Filtre ORDEM_EXERC = ÚLTIMO e CD_CONTA = 3.11.01 (lucro atribuído aos sócios da controladora). Quantas linhas e quantas empresas?\"</p>"
+          },
+          {
+            "id": "ea6b95e8-af32-4aad-94c8-b33696dbae6b",
+            "type": "step",
+            "title": "Montar o primeiro ranking",
+            "isHidden": false,
+            "description": "<p>Digite: \"Ordene pelo VL_CONTA e mostre as 5 primeiras, com a coluna ESCALA_MOEDA.\"</p>"
+          },
+          {
+            "id": "f52f33af-2076-4c5b-9e99-d6c9fafbfdd3",
+            "type": "step",
+            "title": "Desconfiar do primeiro lugar",
+            "isHidden": false,
+            "description": "<p>Repare: a Vivara aparece em 1º lugar. Pergunte: “Quais valores existem em ESCALA_MOEDA e quantas empresas há em cada um?”</p>"
+          },
+          {
+            "id": "28715934-3eb5-41d2-9949-dcdfd96fdb0d",
+            "type": "step",
+            "title": "Converter tudo para reais",
+            "isHidden": false,
+            "description": "<p>Digite: \"Converta tudo para reais (MIL vezes 1.000; UNIDADE vezes 1) e refaça o top 5 em bilhões.\"</p>"
+          },
+          {
+            "id": "52d6bd56-7722-4eda-b68e-f9dcebf11994",
+            "type": "step",
+            "title": "Entender controladora × consolidado",
+            "isHidden": false,
+            "description": "<p>Digite: \"Mostre a receita (3.01) e o lucro consolidado (3.11) da Petrobras e explique a diferença para 3.11.01.\"</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b8731aa9-6732-408f-90e0-c38d47396a96"
+      },
+      {
+        "id": "5a0809c4-a3b8-429e-84e4-43ce924d7b8e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "567be4f7-22e5-4e2d-8e76-8ff79663ede2",
+            "paragraph": "<p>💡 <strong>Dica:</strong> “controladora” é a parte do lucro que pertence aos acionistas da própria empresa; o “consolidado” inclui também a fatia dos sócios minoritários das empresas controladas.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "f3eb82bb-a7c9-4a64-b21c-1f26219bb24e"
+      },
+      {
+        "id": "908f33c6-cc3b-4e6d-a2a6-bc0f983ee703",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "8d15468a-e25c-4f29-be31-a3a310811340",
+            "type": "MULTIPLE_CHOICE",
+            "title": "No primeiro ranking, a Vivara aparece acima da Petrobras. Por que conferir a coluna ESCALA_MOEDA antes de levar o ranking à diretoria?",
+            "answers": [
+              {
+                "id": "8de40aa7-1687-4ed4-9d4c-4d5e1c39e3a7",
+                "title": "Porque ela diz se cada empresa informou os valores em milhares (MIL) ou em reais (UNIDADE).",
+                "correct": true,
+                "feedback": "Correto. Oito empresas informam em reais e as demais em milhares. Sem converter, R$ 653 milhões da Vivara aparecem acima dos R$ 36,6 bilhões da Petrobras."
+              },
+              {
+                "id": "135a83f9-f70e-49a6-8b51-5fa8cb3a8ab9",
+                "title": "Porque ela define a ordem em que as empresas aparecem.",
+                "correct": false,
+                "feedback": "Não. A ordem vem do VL_CONTA; a ESCALA_MOEDA diz em que unidade esse valor está — e é isso que distorce a ordem."
+              },
+              {
+                "id": "f32f9ca5-60ad-49c5-aead-5335a2cc6c77",
+                "title": "Porque o ChatGPT não consegue ler essa coluna sozinho.",
+                "correct": false,
+                "feedback": "Não. O ChatGPT lê a coluna normalmente; ele só não a usa se você não pedir. A premissa é sua."
+              },
+              {
+                "id": "dbb1645a-4171-4ca8-bbb8-62e5ef2ff9db",
+                "title": "Porque ela corrige os acentos quebrados do arquivo.",
+                "correct": false,
+                "feedback": "Não. Acentos se corrigem relendo em latin-1; a ESCALA_MOEDA trata da unidade dos valores."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "44280d4c-b316-4158-9df0-96d6a5823897"
+      },
+      {
+        "id": "layj56bkmukl7yqq4fuzpe3y",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "q2kkt6i38w61mf71vqwv47js",
+            "heading": "🚑 Se travar na Oficina 2",
+            "paragraph": "<p>Abra o problema que apareceu:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "3f0c5b23-6bd4-4d78-bd6c-76410d507c5a"
+      },
+      {
+        "id": "0e2f4655-4484-4481-b635-645a40513744",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "43ed4bd7-f228-4e38-852e-edf4a91b9684",
+            "title": "Acentos quebrados (“�LTIMO”)",
+            "description": "<p>Digite: “Releia com codificação latin-1”.</p>"
+          },
+          {
+            "id": "23adf490-764b-4519-b6f9-d88f34a293a5",
+            "title": "Mais de uma linha por empresa",
+            "description": "<p>Duas empresas vêm repetidas; peça “uma linha por CD_CVM”.</p>"
+          },
+          {
+            "id": "c86d7b38-6936-4ad5-8e3a-1c63ed55b0f6",
+            "title": "“Não consegui analisar o arquivo inteiro”",
+            "description": "<p>Peça o número de linhas lidas e compare com 32.776.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "0483a48b-fdf7-498a-a63c-01744863fa6a"
+      },
+      {
+        "id": "572eb27a-8605-4ebc-9020-5227f817a4f3",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "cae239ac-5c63-422e-8db0-8ae45aa174bd",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "949e8757-852d-4ec2-aa43-125500e64f30"
+      },
+      {
+        "id": "738d6aaf-83da-4a85-8a08-999e07de73c1",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f3d7194a-65d0-42ae-b608-f6ddaf9070e4",
+            "type": "intro",
+            "title": "Oficina 3 — O número que dobrou",
+            "isHidden": false,
+            "description": "<p>🎯 <strong>O problema:</strong> o relatório Justiça em Números diz que o Judiciário recebeu 40,9 milhões de casos novos em 2025. Você baixou a base do próprio CNJ e somou. Deu o dobro. Quem errou? (22 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>JN_23-Jun-2026.csv</strong> (11,6 MB, 1.314 colunas, latin-1) e <strong>Variáveis - JN.csv</strong> aberto no seu computador, só para consulta.</p>"
+          },
+          {
+            "id": "3fd8edfc-7869-44a1-8abf-eecb4d833287",
+            "type": "summary",
+            "title": "✅ Deu certo?",
+            "isHidden": false,
+            "description": "<p>🏁 Soma direta ≈ <strong>81 milhões</strong>; sem as linhas de total, <strong>40.940.966</strong> (≈ 40,9 milhões, igual ao relatório). Só os Tribunais de Justiça: 28.288.316.</p>"
+          },
+          {
+            "id": "e08b58f8-7c90-455c-b23e-3436b1eaea76",
+            "type": "step",
+            "title": "Enviar e pedir o Raio X",
+            "isHidden": false,
+            "description": "<p>Envie o arquivo por <strong>ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos</strong> e digite: “Está em latin-1, com ponto e vírgula. Quantas linhas, colunas e quais anos?”</p>"
+          },
+          {
+            "id": "037cbfbd-2919-4118-bd0b-3ffa60cfa82f",
+            "type": "step",
+            "title": "Somar do jeito ingênuo",
+            "isHidden": false,
+            "description": "<p>Digite: \"Some a coluna cn para o ano 2025.\"</p>"
+          },
+          {
+            "id": "3399e426-af47-4a90-b65b-c9ef70e0a094",
+            "type": "step",
+            "title": "Listar as siglas",
+            "isHidden": false,
+            "description": "<p>Digite: \"Liste os valores distintos da coluna sigla em 2025.\"</p>"
+          },
+          {
+            "id": "73039ec0-850b-4f47-a0d0-01ceb6e9bb14",
+            "type": "step",
+            "title": "Reconhecer as linhas de total",
+            "isHidden": false,
+            "description": "<p>Repare em <strong>TJ</strong>, <strong>TRF</strong>, <strong>TRT</strong>, <strong>TRE</strong>, <strong>TJM</strong> e <strong>JMU</strong>: são <strong>linhas de total</strong> do ramo, não tribunais.</p>"
+          },
+          {
+            "id": "efab6eec-14bd-45e0-bfe8-b74ae2c505e8",
+            "type": "step",
+            "title": "Somar sem as linhas de total",
+            "isHidden": false,
+            "description": "<p>Digite: \"Refaça a soma de 2025 excluindo as siglas TJ, TRF, TRT, TRE, TJM, JMU e nd. Mostre por ramo de justiça.\"</p>"
+          },
+          {
+            "id": "07d6f8f3-3901-4565-b8b9-f25986c618ae",
+            "type": "step",
+            "title": "Registrar a limitação",
+            "isHidden": false,
+            "description": "<p>Procure <strong>cn</strong> no dicionário (<strong>Variáveis - JN.csv</strong>): a descrição não ajuda. Anote isso como limitação.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "b05172fc-d546-4393-abe6-9c178b26fa2e"
+      },
+      {
+        "id": "7ea865e0-84c9-4174-a504-7f3660eff3e8",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dcf82feb-6a41-4c56-8308-44c832e20cb3",
+            "paragraph": "<p>⚠️ <strong>Cuidado:</strong> o arquivo não avisa que tem linha de total. Um código perfeito pode errar se a premissa estiver errada.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "656596ed-0f51-4049-8d29-aeb916154b4b"
+      },
+      {
+        "id": "932dd095-739b-45c7-80fc-d21b1705c735",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "dc894c0d-b1e6-4f4b-9939-87af930e7768",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você somou a coluna cn de 2025 em todas as linhas da base do CNJ e chegou a cerca de 81 milhões. O que explica o resultado?",
+            "answers": [
+              {
+                "id": "f208e8cc-cedf-43da-b3a2-79686a1dd7ca",
+                "title": "As linhas de total de cada ramo (TJ, TRF, TRT, TRE, TJM, JMU) foram somadas junto com os tribunais.",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "84f6b4db-d65e-415f-99c6-1f11441b0fe8",
+                "title": "O resultado está certo; o relatório do CNJ é que arredondou.",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "9331300b-3e30-4b2c-8a57-be45d9e8522e",
+                "title": "Só os tribunais estaduais foram contados.",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "f49a3ae6-71d1-4a6a-bc08-4d634565e81a",
+                "title": "O arquivo não permite soma automática, e o ChatGPT estimou.",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto. Cada ramo aparece duas vezes: tribunal a tribunal e na linha de total. Sem essas linhas, a soma dá 40.940.966 — igual ao relatório.",
+            "feedbackIncorrect": "Não. A soma dobra porque as linhas de total de cada ramo (TJ, TRF, TRT, TRE, TJM, JMU) entram junto com os tribunais. Excluídas, o total bate com os 40,9 milhões do relatório."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "8c88966a-d8cd-4369-8837-6e29169ba041"
+      },
+      {
+        "id": "y2qbtdx2d84zw8g89ap27hop",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "svp455m5euj7xrtudwcjlmcg",
+            "heading": "🚑 Se travar na Oficina 3",
+            "paragraph": "<p>Abra o problema que apareceu:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d9dbff2b-041e-4dac-9120-e3fcd8951ff7"
+      },
+      {
+        "id": "e8b847e9-ff12-49dd-b0dd-663411ccd0b0",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "a98bb268-62f9-4736-bd28-ac7a24f26cf3",
+            "title": "A análise demora ou para",
+            "description": "<p>Peça para usar só as colunas <strong>ano</strong>, <strong>justica</strong>, <strong>sigla</strong> e <strong>cn</strong>.</p>"
+          },
+          {
+            "id": "665f250c-a268-42ec-8529-2237eaf74516",
+            "title": "A IA “corrige” sozinha e não explica",
+            "description": "<p>Digite: “Liste exatamente as linhas que você excluiu”.</p>"
+          },
+          {
+            "id": "62a47b05-b34c-4fb8-8cde-fdc4c519e19f",
+            "title": "Resultado perto, mas não igual",
+            "description": "<p>Os tribunais superiores (<strong>STJ</strong>, <strong>TST</strong>, <strong>TSE</strong>, <strong>STM</strong>) também entram no total. Confira se eles ficaram na soma.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "842fd2b4-153b-48f7-a4a4-d32cf603b63f"
+      },
+      {
+        "id": "1a84b762-9756-48bc-b4b8-81fb9f9d6d2f",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "23e2a6c0-f384-47f1-abef-2ceddfbe6764",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "6180dd80-2f74-4a63-8f62-696a69ab8938"
+      },
+      {
+        "id": "dc6ae707-fd0e-4142-aa21-1d349ceae618",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "959704e7-fe3f-4532-b094-584a5271813d",
+            "type": "intro",
+            "title": "Oficina 4 — Três gráficos, uma verdade",
+            "isHidden": false,
+            "description": "<p>🎯 <strong>O problema:</strong> você precisa mostrar a população dos estados numa apresentação. O mesmo dado pode virar um gráfico honesto ou um gráfico que engana. Vamos fazer os dois e escolher. (16 min)</p><p>🧰 <strong>Você vai usar:</strong> <strong>populacao-uf.csv</strong> (cabeçalho em duas linhas) e uma conversa nova no ChatGPT.</p>"
+          },
+          {
+            "id": "70b6507e-cb84-4169-9f0a-208b9ffa25ab",
+            "type": "summary",
+            "title": "✅ Deu certo?",
+            "isHidden": false,
+            "description": "<p>🏁 Total <strong>203.080.756</strong>; São Paulo ≈ 21,9%; PNG salvo em <strong>hands-on-dados</strong>; e duas frases suas explicando por que o eixo em 7 milhões engana e a pizza de 27 fatias confunde.</p>"
+          },
+          {
+            "id": "d91fe480-8595-45ef-b1c1-16451c7abf42",
+            "type": "step",
+            "title": "Enviar e somar",
+            "isHidden": false,
+            "description": "<p>Envie <strong>populacao-uf.csv</strong> e digite: “A primeira linha tem códigos e a segunda os nomes das colunas. Some a população.”</p>"
+          },
+          {
+            "id": "2f9c55cd-4401-46f7-90f8-b25381e89bb7",
+            "type": "step",
+            "title": "Calcular a participação",
+            "isHidden": false,
+            "description": "<p>Digite: \"Calcule a participação de cada UF no total e ordene.\"</p>"
+          },
+          {
+            "id": "be97bc8e-699d-4566-a85b-288bef0a422e",
+            "type": "step",
+            "title": "Gráfico honesto",
+            "isHidden": false,
+            "description": "<p>Digite: “Barras horizontais das 10 maiores, ordenadas, eixo em zero, título com a conclusão, fonte IBGE Censo 2022 no rodapé.” Clique em <strong>Gráfico &gt; Alternar para gráfico interativo</strong> e passe o mouse sobre as barras.</p>"
+          },
+          {
+            "id": "47a0561a-fc4c-4864-a721-f953a009dfea",
+            "type": "step",
+            "title": "Gráfico com eixo truncado",
+            "isHidden": false,
+            "description": "<p>Digite: \"A mesma figura com o eixo começando em 7 milhões.\"</p>"
+          },
+          {
+            "id": "aa83a8a0-18d5-49a2-a9be-a96295933849",
+            "type": "step",
+            "title": "Pizza de 27 fatias",
+            "isHidden": false,
+            "description": "<p>Digite: \"Uma pizza com as 27 UFs.\"</p>"
+          },
+          {
+            "id": "a682daca-f215-4b0c-8a80-8e0168e55bd1",
+            "type": "step",
+            "title": "Escolher e baixar",
+            "isHidden": false,
+            "description": "<p>Escolha a versão honesta e baixe em <strong>Gráfico &gt; ícone de download (canto superior direito)</strong>. Salve na pasta <strong>hands-on-dados</strong>.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "d14525bb-e87e-41dc-9d2b-0a00018eff09"
+      },
+      {
+        "id": "bc10a501-b8e0-449e-8b64-bb30ea207d4d",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "220b0779-26b9-41d8-9229-2db7e410e85e",
+            "paragraph": "<p>🤓 <strong>Curiosidade técnica (pode pular):</strong> só barras, linhas, pizza e dispersão ficam interativos; os outros tipos chegam como imagem.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "26982269-b4c7-4a6b-a657-a3bbca25ac22"
+      },
+      {
+        "id": "405f998f-698e-406c-a420-218e6cba4e9f",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "f3410aee-0db5-4d38-801b-99a5839d6626",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Por que um gráfico de barras com eixo começando em 7 milhões pode enganar quem vê?",
+            "answers": [
+              {
+                "id": "8916cc67-a2c0-44f7-8306-1fe105391414",
+                "title": "Porque distorce a percepção das diferenças entre os estados.",
+                "correct": true,
+                "feedback": "Correto. Com o eixo cortado em 7 milhões, o comprimento das barras deixa de ser proporcional à população, e diferenças modestas parecem enormes."
+              },
+              {
+                "id": "4d13ff2f-49f9-4688-8db4-617d144e7dd2",
+                "title": "Porque mostra as UFs em ordem alfabética.",
+                "correct": false,
+                "feedback": "Não. O gráfico do exercício está ordenado por população; o que engana é o eixo."
+              },
+              {
+                "id": "a5255de0-5d00-457c-8db7-1fd124aab4db",
+                "title": "Porque mostra só as 10 maiores UFs.",
+                "correct": false,
+                "feedback": "Não. Mostrar as 10 maiores é uma escolha legítima, desde que o título diga isso. O problema está no início do eixo."
+              },
+              {
+                "id": "63e71102-324a-4de3-8e36-590604bd6bb5",
+                "title": "Porque usa cores inadequadas.",
+                "correct": false,
+                "feedback": "Não. Cores ruins atrapalham a leitura, mas não alteram a proporção entre as barras como o eixo cortado."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "ba21637a-a0b0-4186-925c-dfc210a20726"
+      },
+      {
+        "id": "xkyh9gsom17hya0i82wozki3",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "cele3pd0jxhtgkq01qask8ys",
+            "heading": "🚑 Se travar na Oficina 4",
+            "paragraph": "<p>Abra o problema que apareceu:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "7346fbd3-f323-4c22-ad23-dce4009cd430"
+      },
+      {
+        "id": "5bec125c-9327-4e2f-af16-3da43d4e160d",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "57262928-877f-4704-954b-495ce86c5aaf",
+            "title": "A primeira UF virou cabeçalho",
+            "description": "<p>Digite: “Use a segunda linha como cabeçalho”.</p>"
+          },
+          {
+            "id": "123df250-ffac-49e6-8cf7-b59f92d78213",
+            "title": "O gráfico não fica interativo",
+            "description": "<p>Só barras, linhas, pizza e dispersão alternam para interativo; os outros tipos chegam como imagem.</p>"
+          },
+          {
+            "id": "ba164584-5fa2-4c27-9402-82d2ee11beb2",
+            "title": "Cores difíceis de distinguir",
+            "description": "<p>Peça “paleta segura para daltônicos” ou informe um código hexadecimal de cor.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.173.0"
+          }
+        },
+        "globalBlockId": "4c82b708-56b6-4507-9af6-f1213df8df8f"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Oficinas 1 a 4: Inflação, Bolsa, Judiciário e Censo",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "1cKeX_UIzFaodGrM8v_ui0saFlX5DMW1",
+    "createdAt": "2026-11-18T01:35:19.281Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 1,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-18T01:36:20.361Z"
+  }
+}

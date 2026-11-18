@@ -1,0 +1,345 @@
+
+######## licao_01_Getting_Started_Preparing_and_Uploading_Public_Datasets.json  title='Getting Started: Preparing and Uploading Public Datasets'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Welcome to Your Hands-On Data Journey
+items.0.items.0.paragraph = <p>Get ready to dive into real-world data analysis using ChatGPT, even if you have zero technical background. In this course, you’ll work directly with authentic public datasets from Brazil’s economy, markets, judiciary, and demographics. With step-by-step guidance, you’ll learn how to prepare, upload, and analyze data—empowering you to uncover insights and make informed decisions. Let’s start your journey to practical data skills!</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>In this lesson, you will accomplish several key tasks to get started with data handling in ChatGPT. Follow each step to ensure a smooth workflow.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Set Up Essential Tools</p>
+items.2.items.1.paragraph = <p>Download Public Datasets</p>
+items.2.items.2.paragraph = <p>Prepare Files for Upload</p>
+items.2.items.3.paragraph = <p>Upload Data to ChatGPT</p>
+
+--- [3] text/impact/b
+items.3.items.0.paragraph = Aqui não tem palestra: você vai analisar dados reais conversando com o ChatGPT. São quatro bases públicas, quatro armadilhas que pegam muita gente boa e um relatório no fim.
+
+--- [4] text/text/paragraph
+items.4.items.0.paragraph = <p>Antes de iniciar, certifique-se de que você possui todos os itens necessários para acompanhar as atividades propostas.</p>
+
+--- [5] list/list/numbered
+items.5.items.0.paragraph = <p>Acesse o site chatgpt.com e faça login com sua conta (a versão gratuita é suficiente).</p>
+items.5.items.1.paragraph = <p>Crie uma pasta no seu computador chamada <strong>hands-on-dados</strong>.</p>
+items.5.items.2.paragraph = <p>Tenha disponível um programa para descompactar arquivos; o descompactador padrão do Windows ou do Mac já é suficiente.</p>
+
+--- [6] interactive/interactive-fullscreen/process
+items.6.items.0.title = Preparação Inicial para o Curso
+items.6.items.0.description = <p>Antes de começar o curso, siga estes dois passos simples para garantir que tudo esteja pronto para as atividades práticas.</p>
+items.6.items.1.title = Resumo da Preparação Inicial
+items.6.items.1.description = <p>Após configurar o ChatGPT e baixar as bases de dados, você estará pronto para iniciar as atividades práticas do curso.</p>
+items.6.items.2.title = Configuração do ChatGPT e Privacidade
+items.6.items.2.description = <p>Abra o ChatGPT e acesse <strong>Perfil</strong> (no canto inferior esquerdo). Em seguida, vá para <strong>Configurações</strong> &gt; <strong>Controles de dados</strong> e decida se deseja ativar a opção <em>Melhorar o modelo para todo mundo</em>. Lembre-se: as bases do curso são públicas, mas dados de trabalho seguem o semáforo do Essentials.</p>
+items.6.items.3.title = Download e Extração das Bases de Dados
+items.6.items.3.description = <p>Baixe as bases de dados indicadas na tabela para a pasta <strong>hands-on-dados</strong>. Para extrair um arquivo .zip: no Windows, clique com o botão direito no arquivo e selecione <strong>Extrair tudo</strong>; no Mac, basta dar dois cliques no arquivo.</p>
+
+--- [7] text/text/paragraph
+items.7.items.0.paragraph = <p><strong>Bases públicas que você vai analisar neste curso:</strong></p><table><thead><tr><th>Arquivo final</th><th>Endereço</th><th>Observação</th></tr></thead><tbody><tr><td>ipca.csv</td><td>api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=csv&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2025</td><td>Navegador &gt; Arquivo &gt; Salvar como</td></tr><tr><td>dfp_cia_aberta_DRE_con_2024.csv</td><td>dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/dfp_cia_aberta_2024.zip</td><td>ZIP de 13 MB; guarde só este CSV (6,8 MB)</td></tr><tr><td>JN_23-Jun-2026.csv e Variáveis - JN.csv</td><td>www.cnj.jus.br/wp-content/uploads/2026/09/17-set-2026.zip</td><td>ZIP de 4,2 MB</td></tr><tr><td>populacao-uf.csv</td><td>apisidra.ibge.gov.br/values/t/4709/n3/all/v/93/p/2022?formato=csv</td><td>Navegador &gt; Arquivo &gt; Salvar como</td></tr></tbody></table>
+
+--- [8] text/impact/b
+items.8.items.0.paragraph = <p><strong>Regra de ouro:</strong> a IA calcula rápido; quem assina o número é você. Nenhuma oficina termina sem conferir com a fonte oficial.</p>
+
+--- [9] text/text/heading paragraph
+items.9.items.0.heading = Dicas rápidas para evitar problemas comuns ao preparar e enviar dados
+items.9.items.0.paragraph = <p>Explore cada dica abaixo para se antecipar a obstáculos frequentes ao trabalhar com arquivos e uploads. Essas soluções vão ajudar você a economizar tempo e evitar frustrações durante o processo.</p>
+
+--- [10] interactive/interactive/accordion
+items.10.items.0.title = Limite de upload atingido
+items.10.items.0.description = <p>Espere o horário indicado na mensagem; tentativa que falha pode contar no limite.</p>
+items.10.items.1.title = O número veio como texto
+items.10.items.1.description = <p>Digite: "Converta a coluna valor usando vírgula como decimal"</p>
+items.10.items.2.title = Não acho o código
+items.10.items.2.description = <p>Peça: "Mostre o código Python que você executou"</p>
+
+--- [11] text/impact/b
+items.11.items.0.paragraph = <p><strong>Plano de envios no Free:</strong></p><ul><li><strong>Dia 1</strong> — Oficinas 1, 2 e 3 (três envios)</li><li><strong>Dia 2</strong> — Oficina 4 e Projeto Final (três envios)</li></ul>
+
+--- [12] knowledgeCheck/knowledgeCheck/multiple choice
+items.12.items.0.title = Qual das opções abaixo NÃO é uma etapa da preparação inicial para análise de dados com ChatGPT?
+items.12.items.0.answers.0.title = Abrir ChatGPT e configurar as preferências de dados
+items.12.items.0.answers.0.feedback = Abrir o ChatGPT e configurar as preferências de dados pode ser uma etapa inicial para começar a análise de dados com a ferramenta.
+items.12.items.0.answers.1.title = Baixar as bases públicas e extrair os arquivos
+items.12.items.0.answers.1.feedback = Baixar bases públicas e extrair arquivos é uma etapa comum na preparação de dados para análise.
+items.12.items.0.answers.2.title = Instalar um software avançado de estatística
+items.12.items.0.answers.2.feedback = Instalar um software avançado de estatística não é necessário para a preparação inicial com ChatGPT, pois a análise pode ser feita diretamente na plataforma.
+items.12.items.0.answers.3.title = Criar uma pasta chamada hands-on-dados
+items.12.items.0.answers.3.feedback = Criar uma pasta para organizar os arquivos é uma etapa recomendada na preparação inicial para análise de dados.
+
+######## licao_02_Analyzing_Public_Data_Step_by_Step_with_ChatGPT.json  title='Analyzing Public Data: Step-by-Step with ChatGPT'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = From Data to Insight: Hands-On Analysis with ChatGPT
+items.0.items.0.paragraph = <p>Welcome to the heart of your data journey! In this lesson, you’ll transform raw public datasets into actionable insights using ChatGPT. Get ready to dive into real numbers from inflation, the stock market, the judiciary, and demographics—learning not just how to analyze, but how to avoid the most common mistakes that trip up even experienced analysts. Let’s turn data into decisions, one step at a time.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Nesta lição, você aprenderá habilidades essenciais para analisar dados públicos de forma eficiente e precisa utilizando o ChatGPT.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Seguir procedimentos passo a passo para analisar dados públicos com o ChatGPT.</p>
+items.2.items.1.paragraph = <p>Trabalhar com bases reais de inflação, bolsa, Judiciário e demografia.</p>
+items.2.items.2.paragraph = <p>Identificar e evitar erros comuns de análise, como soma incorreta, confusão de escala e dupla contagem.</p>
+items.2.items.3.paragraph = <p>Gerar gráficos e resumos precisos para comunicar resultados.</p>
+
+--- [3] text/text/heading paragraph
+items.3.items.0.heading = Mapa das Oficinas Práticas do Módulo
+items.3.items.0.paragraph = <ul><li><strong>Oficina 1:</strong> Quanto vale hoje um reajuste de 2024? (16 min)</li><li><strong>Oficina 2:</strong> Quem lucrou mais na bolsa em 2024 — de verdade? (22 min)</li><li><strong>Oficina 3:</strong> Quantos processos novos o Judiciário recebeu em 2025? (22 min)</li><li><strong>Oficina 4:</strong> Como mostrar a população dos estados sem enganar ninguém? (16 min)</li></ul><p><strong>Nota:</strong> Cada oficina usa uma base e desarma uma armadilha; o Projeto Final junta duas bases sozinho.</p>
+
+--- [4] divider/continue/continue
+items.4.items.0.title = Continue
+
+--- [5] interactive/interactive-fullscreen/process
+items.5.items.0.title = Introdução: Calcule a inflação sem erro de soma
+items.5.items.0.description = <p>Nesta oficina, você aprenderá a calcular corretamente a inflação acumulada (IPCA) sem cometer o erro comum de somar taxas mensais diretamente. Siga o passo a passo para entender o processo e visualizar os resultados.</p>
+items.5.items.1.title = Resumo: Diferença entre soma simples e composição de taxas
+items.5.items.1.description = <p>Ao final, você terá entendido a diferença entre soma simples e composição de taxas, e terá visualizado o resultado em um gráfico.</p>
+items.5.items.2.title = Envio do arquivo IPCA
+items.5.items.2.description = <p>Clique em ChatGPT &gt; Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos e envie o arquivo <strong>ipca.csv</strong>.</p>
+items.5.items.3.title = Checagem inicial dos dados
+items.5.items.3.description = <p>Digite: "Antes de calcular, diga linhas, colunas, tipos e período. A coluna valor usa vírgula decimal."</p>
+items.5.items.4.title = Cálculo do IPCA acumulado
+items.5.items.4.description = <p>Digite: "Calcule o IPCA acumulado de cada ano de 2020 a 2025 compondo as taxas mensais. Mostre a fórmula."</p>
+items.5.items.5.title = Soma simples das taxas
+items.5.items.5.description = <p>Digite: "Agora some as taxas mensais de 2024. Por que o resultado é diferente?"</p>
+items.5.items.6.title = Conferência do código
+items.5.items.6.description = <p>Abra o código no fim da resposta (Resposta &gt; comando de exibir código — o rótulo pode aparecer como "Ver análise"; se não aparecer, peça "Mostre o código Python que você executou") e ache a multiplicação.</p>
+items.5.items.7.title = Geração do gráfico
+items.5.items.7.description = <p>Digite: "Faça um gráfico de barras anual, eixo começando em zero, título com a conclusão e a fonte no rodapé."</p>
+
+--- [6] text/impact/b
+items.6.items.0.paragraph = <p><strong>Dica:</strong> A taxa se compõe como juros: 1% em janeiro e 1% em fevereiro resulta em 2,01%, não 2%. Em doze meses, essa diferença se torna mais evidente.</p>
+
+--- [7] knowledgeCheck/knowledgeCheck/multiple choice
+items.7.items.0.title = Por que não basta somar as taxas mensais de inflação para calcular o acumulado anual?
+items.7.items.0.answers.0.title = Porque as taxas devem ser compostas, como juros.
+items.7.items.0.answers.0.feedback = As taxas de inflação são percentuais aplicados sobre valores que mudam a cada mês. Por isso, para calcular o acumulado anual, é necessário compor as taxas, assim como se faz com juros compostos.
+items.7.items.0.answers.1.title = Porque os dados do arquivo estão errados.
+items.7.items.0.answers.1.feedback = A precisão dos dados não influencia o método de cálculo do acumulado anual de inflação. O motivo correto está relacionado à forma de cálculo das taxas.
+items.7.items.0.answers.2.title = Porque só se pode somar taxas trimestrais.
+items.7.items.0.answers.2.feedback = Não existe uma regra que permita somar apenas taxas trimestrais. O método correto é compor as taxas, independentemente do período.
+items.7.items.0.answers.3.title = Porque o ChatGPT não consegue somar taxas.
+items.7.items.0.answers.3.feedback = A limitação do ChatGPT não é o motivo. O cálculo correto exige a composição das taxas, não apenas a soma.
+
+--- [8] text/text/heading paragraph
+items.8.items.0.heading = Dúvidas ou travou? Veja como resolver problemas comuns nesta etapa:
+items.8.items.0.paragraph = <p>Encontre abaixo soluções para os problemas mais comuns que podem ocorrer nesta etapa.</p>
+
+--- [9] interactive/interactive/accordion
+items.9.items.0.title = Limite de upload atingido
+items.9.items.0.description = <p>Espere o horário indicado na mensagem; tentativa que falha pode contar no limite.</p>
+items.9.items.1.title = O número veio como texto
+items.9.items.1.description = <p>Digite: "Converta a coluna valor usando vírgula como decimal"</p>
+items.9.items.2.title = Não acho o código
+items.9.items.2.description = <p>Peça: "Mostre o código Python que você executou"</p>
+
+--- [10] divider/continue/continue
+items.10.items.0.title = Continue
+
+--- [11] interactive/interactive-fullscreen/process
+items.11.items.0.title = Introdução: Descobrindo Quem Mais Lucrou na Bolsa em 2024
+items.11.items.0.description = <p>Nesta oficina, você aprenderá a analisar dados financeiros para descobrir quais empresas mais lucraram na bolsa em 2024. Siga os passos para filtrar, classificar e interpretar corretamente os resultados, considerando diferentes escalas e tipos de lucro.</p>
+items.11.items.1.title = Resumo: Interpretando Rankings Financeiros
+items.11.items.1.description = <p>Ao final deste processo, você terá aprendido a interpretar corretamente rankings financeiros, levando em conta as diferentes escalas e tipos de lucro apresentados nos relatórios das empresas.</p>
+items.11.items.2.title = Envio do Arquivo DFP
+items.11.items.2.description = <p>Envie o arquivo pelo ChatGPT acessando Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos. Em seguida, digite: "O arquivo está em latin-1 e usa ponto e vírgula. Faça o Raio X."</p>
+items.11.items.3.title = Filtragem dos Dados
+items.11.items.3.description = <p>Digite: "Filtre ORDEM_EXERC = ÚLTIMO e CD_CONTA = 3.11.01 (lucro atribuído aos sócios da controladora). Quantas linhas e quantas empresas?"</p>
+items.11.items.4.title = Ranking Inicial
+items.11.items.4.description = <p>Digite: "Ordene pelo VL_CONTA e mostre as 5 primeiras, com a coluna ESCALA_MOEDA."</p>
+items.11.items.5.title = Checagem da Escala
+items.11.items.5.description = <p>Observe se a Vivara aparece em 1º lugar. Pergunte: "Quais valores existem em ESCALA_MOEDA e quantas empresas há em cada um?"</p>
+items.11.items.6.title = Conversão para Reais
+items.11.items.6.description = <p>Digite: "Converta tudo para reais (MIL vezes 1.000; UNIDADE vezes 1) e refaça o top 5 em bilhões."</p>
+items.11.items.7.title = Receita e Lucro Consolidado
+items.11.items.7.description = <p>Digite: "Mostre a receita (3.01) e o lucro consolidado (3.11) da Petrobras e explique a diferença para 3.11.01."</p>
+
+--- [12] text/impact/b
+items.12.items.0.paragraph = <p><strong>Dica:</strong> 'Controladora' é a parte do lucro que pertence aos acionistas da própria empresa; o 'consolidado' inclui também a fatia dos sócios minoritários das empresas controladas.</p>
+
+--- [13] knowledgeCheck/knowledgeCheck/multiple choice
+items.13.items.0.title = Ao analisar o ranking de lucros, por que é importante conferir a coluna 'ESCALA_MOEDA'?
+items.13.items.0.answers.0.title = Para saber se os valores estão em reais, milhares ou unidades.
+items.13.items.0.answers.0.feedback = Conferir a coluna 'ESCALA_MOEDA' é essencial para interpretar corretamente os valores apresentados, pois ela indica se os lucros estão expressos em reais, milhares ou unidades.
+items.13.items.0.answers.1.title = Para descobrir a ordem das empresas.
+items.13.items.0.answers.1.feedback = A ordem das empresas é determinada pelo valor do lucro, não pela coluna 'ESCALA_MOEDA'.
+items.13.items.0.answers.2.title = Porque o ChatGPT não lê escalas.
+items.13.items.0.answers.2.feedback = A limitação do ChatGPT não é relevante para a análise dos dados no ranking de lucros.
+items.13.items.0.answers.3.title = Para corrigir erros de acentuação.
+items.13.items.0.answers.3.feedback = A coluna 'ESCALA_MOEDA' não tem relação com erros de acentuação.
+
+--- [14] text/text/heading paragraph
+items.14.items.0.heading = Problemas comuns ao analisar os dados da bolsa? Confira as soluções:
+items.14.items.0.paragraph = <p>Ao trabalhar com dados da bolsa, alguns problemas são recorrentes. Veja abaixo como identificá-los e solucioná-los:</p>
+
+--- [15] interactive/interactive/accordion
+items.15.items.0.title = Acentos quebrados ("ଛLTIMO")
+items.15.items.0.description = <p>Se os acentos aparecem de forma incorreta, digite: "Releia com codificação latin-1" para corrigir o problema de codificação dos caracteres.</p>
+items.15.items.1.title = Mais de uma linha por empresa
+items.15.items.1.description = <p>Se duas empresas aparecem repetidas, solicite "uma linha por CD_CVM" para garantir que cada empresa seja representada apenas uma vez.</p>
+items.15.items.2.title = "Não consegui analisar o arquivo inteiro"
+items.15.items.2.description = <p>Se não for possível analisar o arquivo completo, peça o número de linhas lidas e compare com 32.776 para verificar se o arquivo foi processado por completo.</p>
+
+--- [16] divider/continue/continue
+items.16.items.0.title = Continue
+
+--- [17] interactive/interactive-fullscreen/process
+items.17.items.0.title = Introdução: Analisando Processos Novos do Judiciário em 2025
+items.17.items.0.description = <p>Nesta oficina, você aprenderá a analisar quantos processos novos o Judiciário recebeu em 2025, utilizando um arquivo do CNJ. Siga os passos para evitar erros comuns na contagem e interpretação dos dados.</p>
+items.17.items.1.title = Resumo: Evitando a Dupla Contagem
+items.17.items.1.description = <p>Ao seguir estes passos, você aprenderá a evitar a armadilha da dupla contagem ao analisar grandes bases de dados do Judiciário, garantindo resultados mais precisos e confiáveis.</p>
+items.17.items.2.title = Envio do arquivo CNJ
+items.17.items.2.description = <p>Envie o arquivo pelo ChatGPT acessando Caixa de mensagem &gt; + &gt; Adicionar fotos e arquivos. Em seguida, digite: "Está em latin-1, com ponto e vírgula. Quantas linhas, colunas e quais anos?"</p>
+items.17.items.3.title = Soma inicial dos processos
+items.17.items.3.description = <p>Digite: "Some a coluna cn para o ano 2025."</p>
+items.17.items.4.title = Listagem de siglas distintas
+items.17.items.4.description = <p>Digite: "Liste os valores distintos da coluna sigla em 2025."</p>
+items.17.items.5.title = Identificação de linhas de total
+items.17.items.5.description = <p>Observe as siglas TJ, TRF, TRT, TRE, TJM e JMU: elas representam linhas de total do ramo, não tribunais individuais.</p>
+items.17.items.6.title = Soma ajustada por ramo de justiça
+items.17.items.6.description = <p>Digite: "Refaça a soma de 2025 excluindo as siglas TJ, TRF, TRT, TRE, TJM, JMU e nd. Mostre por ramo de justiça."</p>
+items.17.items.7.title = Limitação do dicionário de dados
+items.17.items.7.description = <p>Procure o campo cn no dicionário de dados: a descrição não esclarece o suficiente. Anote essa limitação para referência futura.</p>
+
+--- [18] text/impact/b
+items.18.items.0.paragraph = <p><strong>Atenção:</strong> o arquivo não indica que possui uma linha de total. Mesmo um código perfeito pode apresentar erros se a premissa estiver incorreta.</p>
+
+--- [19] knowledgeCheck/knowledgeCheck/multiple choice
+items.19.items.0.title = Se você somar todas as linhas do arquivo do Judiciário sem filtros, o que pode acontecer?
+items.19.items.0.answers.0.title = O total será duplicado devido a linhas de total dos ramos de justiça.
+items.19.items.0.answers.1.title = Os resultados serão sempre corretos.
+items.19.items.0.answers.2.title = Só os tribunais estaduais serão contados.
+items.19.items.0.answers.3.title = O arquivo não permite soma automática.
+items.19.items.0.feedbackCorrect = Correto! Somar todas as linhas sem filtros pode duplicar o total devido à presença de linhas de total dos ramos de justiça.
+items.19.items.0.feedbackIncorrect = Incorreto. Se você somar todas as linhas sem filtros, o total será duplicado por causa das linhas de total dos ramos de justiça.
+
+--- [20] text/text/heading paragraph
+items.20.items.0.heading = Travou na análise dos dados do Judiciário? Veja como sair dessa:
+items.20.items.0.paragraph = <p>Enfrentando dificuldades na análise dos dados do Judiciário? Confira dicas rápidas para resolver os principais problemas:</p>
+
+--- [21] interactive/interactive/accordion
+items.21.items.0.title = A análise demora ou para
+items.21.items.0.description = <p>Peça para usar só as colunas <strong>ano</strong>, <strong>justica</strong>, <strong>sigla</strong> e <strong>cn</strong> para agilizar o processamento dos dados.</p>
+items.21.items.1.title = A IA 'corrige' sozinha e não explica
+items.21.items.1.description = <p>Digite: "Liste exatamente as linhas que você excluiu" para entender quais dados foram removidos pela IA.</p>
+items.21.items.2.title = Resultado perto, mas não igual
+items.21.items.2.description = <p>Lembre-se de que os tribunais superiores (<strong>STJ</strong>, <strong>TST</strong>, <strong>TSE</strong>, <strong>STM</strong>) também entram no total. Verifique se eles estão sendo considerados na análise.</p>
+
+--- [22] divider/continue/continue
+items.22.items.0.title = Continue
+
+--- [23] interactive/interactive-fullscreen/process
+items.23.items.0.title = Introdução à Oficina 4: Como mostrar a população dos estados sem enganar ninguém
+items.23.items.0.description = <p>Nesta oficina, você aprenderá a apresentar dados populacionais dos estados brasileiros de maneira clara e ética, evitando práticas que possam induzir ao erro. Siga os passos para analisar, visualizar e comunicar informações de forma transparente.</p>
+items.23.items.1.title = Resumo da Oficina
+items.23.items.1.description = <p>Você vai aprender a identificar gráficos que podem enganar e a apresentar dados de forma clara e ética.</p>
+items.23.items.2.title = Envio do arquivo População
+items.23.items.2.description = <p>Envie o arquivo de dados populacionais e digite: "A primeira linha tem códigos e a segunda os nomes das colunas. Some a população."</p>
+items.23.items.3.title = Participação por UF
+items.23.items.3.description = <p>Digite: "Calcule a participação de cada UF no total e ordene."</p>
+items.23.items.4.title = Gráfico de barras
+items.23.items.4.description = <p>Digite: "Barras horizontais das 10 maiores, ordenadas, eixo em zero, título com a conclusão, fonte IBGE Censo 2022 no rodapé." Clique em Gráfico &gt; Alternar para gráfico interativo e passe o mouse sobre as barras.</p>
+items.23.items.5.title = Gráfico com eixo alterado
+items.23.items.5.description = <p>Digite: "A mesma figura com o eixo começando em 7 milhões."</p>
+items.23.items.6.title = Gráfico de pizza
+items.23.items.6.description = <p>Digite: "Uma pizza com as 27 UFs."</p>
+items.23.items.7.title = Escolha e download
+items.23.items.7.description = <p>Escolha a versão honesta e baixe em Gráfico &gt; ícone de download (canto superior direito).</p>
+
+--- [24] text/impact/b
+items.24.items.0.paragraph = <p><strong>Curiosidade técnica (pode pular):</strong> só barras, linhas, pizza e dispersão ficam interativos; os outros tipos chegam como imagem.</p>
+
+--- [25] knowledgeCheck/knowledgeCheck/multiple choice
+items.25.items.0.title = Por que um gráfico de barras com eixo começando em 7 milhões pode enganar quem vê?
+items.25.items.0.answers.0.title = Porque distorce a percepção das diferenças entre os estados.
+items.25.items.0.answers.0.feedback = Quando o eixo de um gráfico de barras não começa em zero, as diferenças entre os valores parecem maiores do que realmente são, levando a uma interpretação distorcida dos dados.
+items.25.items.0.answers.1.title = Porque mostra os dados em ordem alfabética.
+items.25.items.0.answers.1.feedback = A ordem alfabética dos dados não afeta diretamente a percepção das diferenças entre os valores representados.
+items.25.items.0.answers.2.title = Porque não inclui todos os estados.
+items.25.items.0.answers.2.feedback = A ausência de alguns estados pode ser um problema, mas não está relacionada ao eixo do gráfico começar em 7 milhões.
+items.25.items.0.answers.3.title = Porque usa cores inadequadas.
+items.25.items.0.answers.3.feedback = O uso de cores inadequadas pode dificultar a leitura, mas não distorce a percepção das diferenças como o eixo começando em 7 milhões faz.
+
+--- [26] text/text/heading paragraph
+items.26.items.0.heading = Soluções para Problemas com Gráficos
+items.26.items.0.paragraph = <p>Se encontrar problemas ao gerar ou interpretar gráficos, confira as soluções para os casos mais comuns abaixo:</p>
+
+--- [27] interactive/interactive/accordion
+items.27.items.0.title = A primeira UF virou cabeçalho
+items.27.items.0.description = <p>Digite: "Use a segunda linha como cabeçalho"</p>
+items.27.items.1.title = O gráfico não fica interativo
+items.27.items.1.description = <p>Apenas os tipos barras, linhas, pizza e dispersão alternam entre modos interativos.</p>
+items.27.items.2.title = Cores difíceis de distinguir
+items.27.items.2.description = <p>Peça por uma "paleta segura para daltônicos" ou informe um código hexadecimal de cor.</p>
+
+######## licao_03_Validating_and_Summarizing_Results_From_Numbers_to_Insights.json  title='Validating and Summarizing Results: From Numbers to Insights'
+
+--- [0] text/text/heading paragraph
+items.0.items.0.heading = Transforming Analysis into Reliable Insights
+items.0.items.0.paragraph = <p>As you reach the final stage of your data journey, it’s time to focus on what truly makes your work valuable: validation and clear communication. Checking your results against official sources and documenting your assumptions are the steps that transform raw analysis into trusted, actionable insights. In this lesson, you’ll learn how to ensure your findings are accurate, transparent, and ready to inform real decisions.</p>
+
+--- [1] text/text/paragraph
+items.1.items.0.paragraph = <p>Neste módulo, você irá consolidar suas habilidades ao aprender e aplicar práticas essenciais para a análise de dados e comunicação de resultados.</p>
+
+--- [2] list/list/numbered
+items.2.items.0.paragraph = <p>Validar resultados de análise comparando com fontes oficiais.</p>
+items.2.items.1.paragraph = <p>Documentar premissas e limitações das análises.</p>
+items.2.items.2.paragraph = <p>Resumir descobertas de forma clara, destacando achados e restrições.</p>
+items.2.items.3.paragraph = <p>Realizar um projeto prático, unindo diferentes bases de dados e comunicando o resultado em uma página executiva.</p>
+
+--- [3] text/impact/b
+items.3.items.0.paragraph = <p><strong>Regra de ouro:</strong> a IA calcula rápido; quem assina o número é você. Nenhuma oficina termina sem conferir com a fonte oficial.</p>
+
+--- [4] text/text/heading paragraph
+items.4.items.0.heading = Práticas para Validar e Comunicar Resultados de Forma Confiável
+items.4.items.0.paragraph = <p>Confira as principais práticas para garantir que seus resultados sejam validados e comunicados de maneira confiável e transparente.</p>
+
+--- [5] interactive/interactive/accordion
+items.5.items.0.title = Faça o Raio X antes de qualquer conta.
+items.5.items.0.description = <p>Sempre revise as características do arquivo antes de começar a analisar: confira o número de linhas, colunas, separador, decimal e codificação.</p><p></p><p>Esse cuidado inicial evita erros simples que podem comprometer toda a análise.</p>
+items.5.items.1.title = Compare por taxa quando os tamanhos forem diferentes.
+items.5.items.1.description = <p>Quando comparar grupos de tamanhos distintos, use taxas ou proporções em vez de totais absolutos.</p><p></p><p>Assim, você garante que a comparação seja justa e significativa.</p>
+items.5.items.2.title = Abra o código do número que vai para o relatório.
+items.5.items.2.description = <p>Sempre confira qual código ou fórmula foi usada para gerar o resultado final apresentado no relatório.</p><p></p><p>Isso ajuda a identificar possíveis erros e aumenta a confiança no resultado.</p>
+items.5.items.3.title = Confira pelo menos um número com quem publicou.
+items.5.items.3.description = <p>Busque o dado oficial na fonte original para garantir que seu resultado está correto.</p><p></p><p>Essa validação é fundamental para evitar conclusões equivocadas.</p>
+items.5.items.4.title = Escreva premissas e limitações — elas protegem você.
+items.5.items.4.description = <p>Explique de onde vêm os dados, quais filtros e anos usou, e possíveis restrições ou incertezas.</p><p></p><p>Premissas e limitações bem documentadas tornam seu trabalho mais transparente e confiável.</p>
+
+--- [6] interactive/interactive-fullscreen/process
+items.6.items.0.title = Introdução ao Projeto: Onde se litiga mais por habitante
+items.6.items.0.description = <p>Neste projeto, você irá analisar onde há mais litígios judiciais por habitante no Brasil, seguindo um roteiro passo a passo para unir, validar e comunicar dados judiciais e populacionais.</p>
+items.6.items.1.title = Resumo do Processo
+items.6.items.1.description = <p>Ao seguir este roteiro, você conseguirá unir dados judiciais e populacionais, calcular taxas de litígio por habitante, validar os resultados e comunicar os achados de forma clara e executiva.</p>
+items.6.items.2.title = Inicie o projeto
+items.6.items.2.description = <p>Abra uma nova conversa e envie os arquivos <strong>JN_23-Jun-2026.csv</strong> e <strong>populacao-uf.csv</strong> para o ChatGPT.</p>
+items.6.items.3.title = Filtre os dados judiciais
+items.6.items.3.description = <p>Solicite: "Casos novos (cn) de 2025 dos Tribunais de Justiça estaduais, um por UF, excluindo a linha de total TJ. TJDFT corresponde ao Distrito Federal."</p>
+items.6.items.4.title = Una com a base populacional
+items.6.items.4.description = <p>Solicite: "Junte com a população do Censo 2022 por UF e calcule casos novos por 100 mil habitantes. Quantas UFs casaram?"</p>
+items.6.items.5.title = Gere o gráfico comparativo
+items.6.items.5.description = <p>Peça um gráfico de barras horizontais com as 27 taxas, eixo em zero e as duas fontes no rodapé.</p>
+items.6.items.6.title = Resuma os achados executivamente
+items.6.items.6.description = <p>Solicite: "Resumo executivo de 5 linhas para o escritório, com premissas e limitações: população de 2022 contra processos de 2025; casos novos incluem execuções e recursos."</p>
+items.6.items.7.title = Valide com checklist
+items.6.items.7.description = <p>Confira pelo menos três números com a checklist fornecida para garantir a precisão do seu resultado.</p>
+items.6.items.8.title = Conclua e revise
+items.6.items.8.description = <p>Revise o relatório, o gráfico e o resumo para garantir clareza, precisão e transparência antes de finalizar.</p>
+
+--- [7] text/impact/b
+items.7.items.0.paragraph = <p><strong>Pergunta:</strong> Em quais UFs se ajuízam mais casos novos por habitante?</p><p><strong>Achado principal:</strong> [UF com maior taxa] ([taxa] por 100 mil) — [UF com menor taxa] ([taxa]).</p><p><strong>Comparação:</strong> São Paulo lidera em número absoluto, mas não na taxa.</p><p><strong>Premissas:</strong> Casos novos (cn) dos TJs em 2025; população do Censo 2022; linha de total TJ excluída.</p><p><strong>Limitações:</strong> Anos diferentes nas duas bases; casos novos incluem execuções e recursos; não indica causa.</p><p><strong>Fontes:</strong> CNJ, Justiça em Números (base de 17/09/2026); IBGE, Censo 2022 (tabela 4709).</p>
+
+--- [8] text/text/heading paragraph
+items.8.items.0.heading = Checklist para Finalização do Projeto
+items.8.items.0.paragraph = <ul><li>Verifique se há 27 tribunais e 27 unidades federativas corretamente associadas.</li><li>Confirme que a soma dos tribunais de justiça é de 28.288.316.</li><li>Inclua as maiores taxas: TJRO (20.421), TJRS (19.986) e TJDFT (19.691) por 100 mil habitantes.</li><li>Inclua as menores taxas: TJPA (6.745), TJCE (7.893) e TJPE (8.037) por 100 mil habitantes.</li><li>No resumo, destaque que São Paulo lidera em número absoluto (6,8 milhões), mas não em taxa.</li><li>Escreva as premissas e limitações sem frases que indiquem causa.</li><li>Garanta que o gráfico tenha o eixo começando em zero.</li><li>Indique as duas fontes utilizadas.</li></ul>
+
+--- [9] knowledgeCheck/knowledgeCheck/multiple choice
+items.9.items.0.title = Qual das opções abaixo NÃO deve faltar em um resumo executivo confiável de análise de dados?
+items.9.items.0.answers.0.title = Citação das fontes oficiais dos dados usados
+items.9.items.0.answers.0.feedback = Citar as fontes oficiais dos dados é fundamental para garantir a credibilidade e a rastreabilidade das informações apresentadas.
+items.9.items.0.answers.1.title = Indicação das premissas e limitações
+items.9.items.0.answers.1.feedback = Apontar premissas e limitações é essencial para contextualizar os resultados e evitar interpretações equivocadas.
+items.9.items.0.answers.2.title = Um gráfico claro e fiel aos dados
+items.9.items.0.answers.2.feedback = Apresentar gráficos claros e fiéis aos dados facilita a compreensão dos resultados e aumenta a transparência da análise.
+items.9.items.0.answers.3.title = Opinião pessoal sobre as causas dos resultados
+items.9.items.0.answers.3.feedback = Opiniões pessoais não devem fazer parte de um resumo executivo confiável, pois podem introduzir vieses e comprometer a objetividade da análise.

@@ -1,0 +1,26 @@
+<!--titulo: Semáforo de dados-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Pratique o semáforo</span>
+  <h1 id="t">Que cor tem esta base?</h1>
+  <p class="sub">Seis bases que aparecem no trabalho. Dê uma cor a cada uma antes de pensar em enviar ao ChatGPT.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  classificador({
+    casos: [
+      { t: 'População por UF do Censo 2022, baixada do IBGE', r: 'verde', p: 'Dado público e agregado: pode ser enviado.' },
+      { t: 'Custos mensais por departamento da sua empresa, sem nome de ninguém', r: 'amarelo', p: 'Dado interno sem pessoa identificável: só sob a política da organização e em conta corporativa.' },
+      { t: 'Lista de processos do escritório com o nome das partes', r: 'vermelho', p: 'Identifica pessoas e está sob sigilo profissional: não vai para conta pessoal; pseudonimize ou agregue antes.' },
+      { t: 'Resultados de exames de saúde de funcionários, por matrícula', r: 'vermelho', p: 'Dado pessoal sensível: a matrícula leva à pessoa. Nunca em conta pessoal.' },
+      { t: 'Metas de vendas por região, ainda não divulgadas', r: 'amarelo', p: 'Não identifica ninguém, mas é informação interna: depende da política da organização.' },
+      { t: 'Taxa de casos novos por 100 mil habitantes publicada pelo CNJ', r: 'verde', p: 'Número oficial já publicado e agregado: pode ser enviado.' }
+    ],
+    opcoes: { verde: 'Verde', amarelo: 'Amarelo', vermelho: 'Vermelho' },
+    dicaErro: 'Pergunte: o dado é público? Identifica alguém? É interno da organização?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'bases classificadas',
+    aoConcluir: function () { concluir('final', 'Semáforo aplicado. Na dúvida entre duas cores, fique com a mais restritiva.'); }
+  });
+</script>

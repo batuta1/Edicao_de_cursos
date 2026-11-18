@@ -1,0 +1,41 @@
+<!--titulo: Monte o seu brief-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Monte o seu brief</span>
+  <h1 id="t">Seis itens, um pedido completo</h1>
+  <p class="sub">Os campos já vêm com o brief do <strong>ipca-projeto</strong>. Troque pelo seu caso e veja o pedido se formar. Depois, copie e envie ao agente em modo de planejamento.</p>
+  <div class="grid" id="campos"></div>
+  <h2 style="margin-top:18px">Seu brief</h2>
+  <pre class="saida" id="saida" aria-live="polite"></pre>
+  <p style="margin:10px 0 0"><button type="button" class="btn principal" id="copiar">Copiar o brief</button></p>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+  <p class="nota">Campo vazio vira lacuna — e o agente preenche a lacuna por conta própria. É aí que nasce a premissa errada.</p>
+</section>
+<script>
+  var itens = [
+    { k: 'Objetivo', v: 'calcular o IPCA acumulado de cada ano de 2020 a 2025' },
+    { k: 'Dados', v: 'dados/brutos/ipca.csv (ponto e vírgula, vírgula decimal)' },
+    { k: 'Regras', v: 'não altere dados/brutos' },
+    { k: 'Saídas', v: 'resultados/' },
+    { k: 'Verificação', v: '2024 deve dar 4,83% e 2025, 4,26% (IBGE)' },
+    { k: 'Plano', v: 'mostre o plano em até seis passos e espere minha aprovação' }
+  ];
+  var box = document.getElementById('campos');
+  itens.forEach(function (it, i) {
+    var c = document.createElement('div'); c.className = 'item';
+    var l = document.createElement('label'); l.setAttribute('for', 'c' + i); l.textContent = it.k;
+    l.style.cssText = 'display:block;font-weight:600;color:var(--azul);margin-bottom:6px';
+    var inp = document.createElement('input'); inp.type = 'text'; inp.id = 'c' + i; inp.value = it.v;
+    inp.addEventListener('input', montar);
+    c.appendChild(l); c.appendChild(inp); box.appendChild(c);
+  });
+  function montar() {
+    var linhas = itens.map(function (it, i) {
+      var v = document.getElementById('c' + i).value.trim();
+      if (it.k === 'Plano') return v ? v.charAt(0).toUpperCase() + v.slice(1) + '.' : '[falta: exigência de plano]';
+      return it.k + ': ' + (v ? v : '[falta: ' + it.k.toLowerCase() + ']') + '.';
+    });
+    document.getElementById('saida').textContent = linhas.join('\n');
+  }
+  montar();
+  ligarCopia('copiar', 'saida', 'msg', 'Brief');
+</script>

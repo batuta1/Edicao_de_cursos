@@ -1,0 +1,37 @@
+<!--titulo: A pasta do ipca-projeto-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Mapa do projeto</span>
+  <h1 id="t">O que há na pasta ipca-projeto</h1>
+  <p class="sub">Clique em cada item para ver o que ele guarda e qual prática de reprodutibilidade ele cumpre.</p>
+  <div class="arvore" role="list" id="arvore"></div>
+  <div class="feedback info" id="msg" aria-live="polite">Escolha um item da pasta.</div>
+</section>
+<style>
+  .arvore { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 12px 14px; font-family: Consolas, "Courier New", monospace; font-size: 14px; }
+  .arvore button { display: block; width: 100%; text-align: left; background: none; border: 0; border-radius: 8px; padding: 5px 8px; color: var(--tinta); cursor: pointer; font-family: inherit; }
+  .arvore button:hover { background: var(--azul-claro); }
+  .arvore button[aria-pressed="true"] { background: var(--azul); color: #fff; }
+</style>
+<script>
+  var nos = [
+    ['ipca-projeto/', 0, 'A pasta que você entrega. Quem a recebe roda tudo com um comando, seguindo o README.'],
+    ['dados/brutos/ipca.csv', 1, 'O arquivo como veio do Banco Central. Nunca é editado. Prática: guardar os dados brutos intocados.'],
+    ['resultados/', 1, 'Tabelas e gráficos gerados pelo script. Pode ser apagada a qualquer hora: o teste de reprodução é justamente apagar e rodar de novo.'],
+    ['analise.py', 1, 'A receita completa, executada do início ao fim. Prática: registrar os passos e evitar passos manuais.'],
+    ['pyproject.toml', 1, 'Lista as bibliotecas do projeto (pandas, Matplotlib). Gerado pelo uv.'],
+    ['uv.lock', 1, 'As versões exatas de cada biblioteca. Prática: arquivar as versões — é o que faz o projeto rodar igual em outro computador.'],
+    ['README.md', 1, 'Objetivo, dados, como rodar (uv run analise.py), verificação e limitações. Prática: registrar como cada resultado foi produzido.'],
+    ['CLAUDE.md ou AGENTS.md', 1, 'As premissas permanentes que o agente lê em toda sessão: formato do arquivo, dados brutos intocados, onde salvar.'],
+    ['.git/', 1, 'O histórico, com um registro (commit) por etapa. Recupera o que o /rewind não alcança.']
+  ];
+  var box = document.getElementById('arvore');
+  nos.forEach(function (n) {
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role', 'listitem'); b.setAttribute('aria-pressed', 'false');
+    b.textContent = (n[1] ? '   ├─ ' : '') + n[0]; b.style.whiteSpace = 'pre';
+    b.addEventListener('click', function () {
+      box.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      var m = document.getElementById('msg'); m.textContent = n[0] + ' — ' + n[2];
+    });
+    box.appendChild(b);
+  });
+</script>

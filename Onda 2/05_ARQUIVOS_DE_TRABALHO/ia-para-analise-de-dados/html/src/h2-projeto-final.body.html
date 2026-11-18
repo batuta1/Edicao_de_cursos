@@ -1,0 +1,22 @@
+<!--titulo: Projeto Final: conferência-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Projeto Final</span>
+  <h1 id="t">Onde se litiga mais por habitante: conferência</h1>
+  <p class="sub">Deixe a conversa do projeto aberta ao lado. Marque cada item só depois de conferir o número na resposta do ChatGPT. O curso segue com os seis marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+<script>
+  checklist([
+    '27 tribunais, 27 UFs casadas e soma dos TJs = 28.288.316.',
+    'Maiores taxas: TJRO ≈ 20.421, TJRS ≈ 19.986 e TJDFT ≈ 19.691 por 100 mil.',
+    'Menores taxas: TJPA ≈ 6.745, TJCE ≈ 7.893 e TJPE ≈ 8.037.',
+    'O resumo diz que São Paulo lidera em número absoluto (6,8 milhões), mas não na taxa.',
+    'Premissas e limitações escritas; nenhuma frase de causa.',
+    'Gráfico com eixo em zero e as duas fontes (CNJ e IBGE).'
+  ], 'lista', 'placar', 'barra', 'itens conferidos', function () {
+    concluir('final', 'Projeto entregue e conferido. Você juntou duas bases públicas e assinou um número que sabe defender.');
+  });
+</script>
