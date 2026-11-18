@@ -1,0 +1,576 @@
+================================================================
+CONTEÚDO BRUTO — Deep Research
+Pesquisa realizada em: 4 de novembro de 2026
+Ferramenta(s): ChatGPT deep research, Gemini Deep Research e Perplexity Deep Research, versões web vigentes em 04/11/2026
+================================================================
+
+0. RESUMO EXECUTIVO
+
+[CONFIRMADO] Deep research é uma modalidade de pesquisa com agente: recebe uma tarefa ampla, propõe ou executa um plano de várias etapas, faz buscas sucessivas, lê muitas fontes, muda a rota quando encontra nova evidência e entrega um relatório documentado. Não é sinônimo de busca rápida nem de conversa comum com chatbot. [1][2][12][24]
+[CONFIRMADO] As três ferramentas-âncora oferecem pesquisa profunda no Brasil pela web. ChatGPT e Gemini também a oferecem em aplicativos; a Perplexity mantém web e apps, mas menus e disponibilidade podem variar. [1][12][20]
+[CONFIRMADO] Linha do tempo: Gemini Deep Research foi lançado em 11/12/2024; ChatGPT deep research em 02/02/2025; Perplexity Deep Research em 14/02/2025. [2][14][24]
+[CONFIRMADO] Em 2026, o nome atual mostrado pela Perplexity voltou a ser “Deep Research”; documentos intermediários usaram “Research”. O menu atual é + > Deep research (interface/ajuda en). [20][23]
+[CONFIRMADO] ChatGPT permite editar o plano, restringir ou priorizar sites, combinar web, arquivos e apps conectados, acompanhar a atividade e exportar em Markdown, Word e PDF. [1]
+[CONFIRMADO] Gemini permite editar o plano, escolher Search, Gmail e Drive, enviar arquivos ou notebooks, exportar para Docs e gerar Audio Overview; usuários pagos podem escolher Pro e todos podem usar Thinking. [12][19]
+[CONFIRMADO] Perplexity Deep Research fica no menu +, produz pesquisa de múltiplas etapas e é diferente de Create files and apps, antigo Labs, que também cria planilhas, painéis, apresentações e aplicativos. [20][23]
+[CONFIRMADO] Alerta 1: citação visível não garante suporte. DeepResearch Bench encontrou maior precisão de citação na Perplexity, enquanto Gemini produziu mais citações efetivas; as métricas não provam superioridade universal. [30]
+[CONFIRMADO] Alerta 2: BrowseComp foi criado pela OpenAI e seu deep research foi treinado em dados relacionados; DRACO foi feito por autores ligados à Perplexity e favoreceu Perplexity. Ambos são úteis, mas têm conflito de interesse e metodologia própria. [10][28][29]
+[CONFIRMADO] Alerta 3: cotas, modelo e preços mudam. Em 04/11/2026, ChatGPT e Gemini não publicam uma quantidade fixa para todos os planos; o saldo real aparece na conta. A Perplexity publica 1 pesquisa/mês no gratuito e limites médios, não números fixos, para Pro e Max. [1][13][20]
+[SUGESTÃO] O eixo didático deve ser “brief → plano → execução → auditoria → correção”, com uma planilha de afirmações, fontes, trechos de apoio, data e decisão. O relatório da IA é um rascunho pesquisado, não autoridade final.
+
+1. IDENTIDADE E HISTÓRICO
+
+[CONFIRMADO] ChatGPT deep research é um recurso da OpenAI dentro do ChatGPT. A fabricante o define como capacidade agentiva de pesquisa em múltiplas etapas para tarefas complexas. Foi lançado para Pro em 02/02/2025, chegou a Plus em 25/02/2025 e ganhou versão leve e acesso gratuito em 24/04/2025. [2]
+[CONFIRMADO] No lançamento, usava uma versão inicial do o3 otimizada para navegação e análise de dados. Em 2025, a versão leve usou o4-mini. Em 2026, a ajuda deixou de prometer um modelo único: diz “latest models” e permite selecionar modelos legados. Portanto, o curso não deve gravar “usa o3” como estado atual. [1][2][3]
+[CONFIRMADO] Em 10/02/2026, a OpenAI adicionou apps/MCP, sites confiáveis, progresso em tempo real, interrupção com novo foco e uma nova visualização do relatório. O nome público continua “deep research”, em minúsculas na documentação da empresa. [1][2]
+
+[CONFIRMADO] Gemini Deep Research é um recurso agentivo da Google no app Gemini. Estreou em 11/12/2024 para Gemini Advanced, inicialmente com Gemini 1.5 Pro; em 13/03/2025 passou a todos para experimentar, usando 2.0 Flash Thinking naquele momento. [14][15]
+[CONFIRMADO] Na ajuda vigente, todos podem gerar relatórios com Thinking; AI Pro e AI Ultra podem escolher Pro para maior qualidade. A designação do modelo muda independentemente do nome estável do recurso “Deep Research”. [12][13]
+[CONFIRMADO] A versão de consumo não deve ser confundida com os agentes Deep Research e Deep Research Max da API Gemini anunciados em 2026. Deep Research Max é uma configuração de desenvolvedor paga e não o botão comum do app. [58]
+
+[CONFIRMADO] Perplexity lançou “Deep Research” em 14/02/2025. Algumas páginas de 2025 encurtaram o nome para “Research”; em fevereiro de 2026, changelog e interface voltaram a exibir “Deep Research”. A ajuda de planos ainda fala em “Research Queries”, por isso materiais antigos e atuais divergem. [20][23][24]
+[CONFIRMADO] Em fevereiro de 2026, a Perplexity informou Opus 4.5 e depois Opus 4.6 para Deep Research em Max e rollout para Pro. A empresa também afirma trocar para os melhores modelos disponíveis; não ensinar um modelo como permanente. [23][59]
+
+2. ACESSO, PLANOS E REQUISITOS
+
+2.1 ChatGPT
+
+[CONFIRMADO] Requisito: conta ChatGPT e país/plano elegível. A ajuda diz que a disponibilidade depende do plano e do país. A página de preços confirma acesso limitado no gratuito e níveis maiores nos pagos. [1][4]
+[CONFIRMADO] Plataformas: web, desktop e celular. No lançamento era só web, com expansão posterior; a página atual de preços lista desktop, web e mobile para planos pagos. [2][4]
+[CONFIRMADO] Preços individuais de referência em dólar, publicados em 16/01/2026: Free US$ 0; Go US$ 8/mês nos EUA, com localização em alguns mercados; Plus US$ 20/mês; Pro então US$ 200/mês. Em 04/11/2026, a central também descreve variantes Pro 100, Pro 200 e Pro 500. [5][60]
+[VERIFICAR] Preço efetivo em reais, IOF, impostos e quais variantes Pro aparecem no Brasil: conferir em chatgpt.com/pricing autenticado na data da gravação. A página pública varia por região.
+[CONFIRMADO] Cota histórica oficial de 24/04/2025: Free 5/mês, Plus/Team/Enterprise/Edu 25/mês e Pro 250/mês, alternando para versão leve após a franquia completa. [2]
+[CONFIRMADO] Estado atual: a ajuda não publica esses números como garantia. Ela manda consultar o contador dentro do produto e informa que franquias fixas reiniciam 30 dias após o primeiro uso. A página de preços mostra apenas “Limited/Expanded”. [1][4]
+[VERIFICAR] Não há tabela oficial pública atual com cotas numéricas para Free, Go, Plus, Pro 100/200/500 e Business. Use Settings > Usage (interface, inglês) ou o contador junto de Deep research; registrar a tela da conta usada para gravar.
+
+2.2 Gemini
+
+[CONFIRMADO] Requisitos de consumo: ter 18 anos ou mais, entrar numa Conta Google e usar Gemini Apps. Deep Research está disponível para usuários sem plano, AI Plus, AI Pro e AI Ultra, sujeito a país, conta e capacidade. [12][13]
+[CONFIRMADO] Plataformas: gemini.google.com e aplicativo Gemini em Android/iOS; os passos de exportação e Audio Overview estão documentados para web e celular. [12][19]
+[CONFIRMADO] A página internacional consultada mostra Google AI Pro a US$ 19,99/mês ou US$ 199,99/ano e Ultra a US$ 99,99/mês; ofertas, armazenamento e preços são regionais e mudaram em 2026. A página brasileira confirma os planos Plus, Pro e Ultra, mas não expôs valor estável no conteúdo rastreado. [18]
+[VERIFICAR] Valores em reais e promoções para estudantes: conferir one.google.com/intl/pt-BR_br no dia da gravação. Não converter dólar manualmente.
+[CONFIRMADO] Limites atuais são diários e também limitam pesquisas simultâneas. A ajuda diz apenas que Pro e Ultra recebem cotas maiores. A página geral expressa AI Plus como 2x o padrão, AI Pro 4x e AI Ultra 5x ou 20x o Pro, conforme assinatura; Deep Research consome muito uso. [12][13]
+[VERIFICAR] Número exato de relatórios/dia para contas pessoais Free, AI Pro e Ultra: NÃO ENCONTRADO na documentação pública atual. Ver em gemini.google.com > Settings > Usage Limits (interface/ajuda en). Uma tabela de Workspace traz números próprios e não deve ser transplantada para contas pessoais. [13]
+
+2.3 Perplexity
+
+[CONFIRMADO] Conta gratuita Standard: pesquisa básica quase ilimitada, upload básico limitado e 1 Research Query/mês. A conta pode ser criada com e-mail ou Google. [20][21]
+[CONFIRMADO] Pro custa US$ 20/mês ou US$ 200/ano; a página promocional mostrou US$ 17/mês no anual. Education Pro custa US$ 10/mês para aluno/professor verificado. Max custa US$ 200/mês ou US$ 2.000/ano. [20][21][22]
+[CONFIRMADO] A tabela de 02/09/2026 usa “Monthly limits (average use)” para Research em Pro, Education Pro e Max, sem número fixo. Enterprise Pro informa 50/mês e Enterprise Max 500/mês. [20]
+[VERIFICAR] A cota individual real aparece na conta e pode depender de uso médio. Não ensinar os 5/dia e 500/dia do lançamento de 2025 como cotas atuais. [20][24]
+[CONFIRMADO] Plataformas: web e aplicativos móveis. A experiência atual da web põe Deep research no menu +. A interface está disponível no Brasil, mas páginas de ajuda e nomes de modo aparecem sobretudo em inglês. [23]
+
+3. PRIMEIROS PASSOS (passo a passo oficial)
+
+3.1 Preparar o brief
+
+[SUGESTÃO] Antes de clicar, escreva seis linhas: pergunta; decisão que o relatório apoiará; recorte geográfico e temporal; fontes obrigatórias; fontes proibidas ou secundárias; formato de saída e critério de conclusão. Remova dados pessoais e segredos. Guarde o texto e a data.
+[CONFIRMADO] A ajuda do ChatGPT recomenda explicitar pergunta, resultado desejado e restrições. O vídeo oficial da Perplexity diz que linguagem natural funciona, mas “the more detailed, the better”. Gemini mostra um plano revisável antes da execução. [1][14][25]
+
+3.2 ChatGPT deep research
+
+[CONFIRMADO] Caminhos de ativação (ajuda en): digitar /Deepresearch; ou caixa de mensagem > +/tools menu > Deep research; ou sidebar > Deep research. A tradução pt-BR pode mostrar “Pesquisa aprofundada”. [1]
+[CONFIRMADO] Fonte: na caixa do prompt, abrir Sites > Manage sites (ajuda en). Inserir domínios; escolher restringir somente a eles ou “Prioritize these sites, but allow full-web search”. Arquivos enviados e web ficam disponíveis por padrão. Apps elegíveis aparecem conforme plano, região e permissão. [1]
+[CONFIRMADO] Escrever o brief e enviar. O ChatGPT pode fazer perguntas de esclarecimento e cria um plano proposto; revisar e editar antes de começar. [1]
+[CONFIRMADO] Durante a execução, acompanhar progresso em tempo real e activity history; é possível interromper, ajustar o foco e alterar fontes. No lançamento, o tempo típico informado era 5–30 minutos; a ajuda atual evita promessa de tempo. [1][2]
+[CONFIRMADO] Ao terminar, abrir o relatório em tela cheia. Conferir sumário, seção Sources used e activity history. Clicar em cada citação e verificar a página original. [1]
+[CONFIRMADO] Exportar: relatório completo > Download/Export (interface; rótulo pode variar) > Markdown, Word ou PDF. Google Docs não é formato direto documentado; abrir o DOCX no Drive ou colar em Docs. [1]
+[CONFIRMADO] Apps são usados apenas com ações de leitura durante a pesquisa; permissões do provedor e da organização continuam valendo. [1]
+
+3.3 Gemini Deep Research
+
+[CONFIRMADO] Web: gemini.google.com > caixa de texto > Add Files > Deep Research (ajuda en). Em versões anteriores: model drop-down/prompt bar > Deep Research. [12][15]
+[CONFIRMADO] Opcional: Add Files > Files para anexar; Sources para marcar Google Search, Gmail ou Drive. Gmail/Drive exigem que Google Workspace esteja conectado. Desmarcar Google Search restringe a pesquisa às outras fontes escolhidas. [12]
+[CONFIRMADO] Escrever a pergunta. Gemini gera um plano de várias etapas; usar Edit plan/Revise (interface/ajuda en) para acrescentar, remover ou mudar passos; depois Start research. [12][14]
+[CONFIRMADO] Escolher o modelo: Thinking para todos; Pro para assinantes AI Pro/Ultra. Observar o indicador de uso e quantidade de tarefas simultâneas. [12]
+[CONFIRMADO] Abrir o relatório concluído, percorrer links e pedir refinamento no mesmo chat. Para exportar: Open report > Export > Export to Docs; também há Share e Copy contents. [19]
+[CONFIRMADO] Para áudio: relatório aberto > More > Generate Audio Overview. Para visual: relatório aberto > Create e descrever a visualização. Alguns visuais avançados são benefício Ultra. [12][19]
+
+3.4 Perplexity Deep Research
+
+[CONFIRMADO] Web atual: barra de pergunta > + > Deep research (interface/changelog en) > escrever tarefa > enviar. O modo quebra a pergunta em consultas, lê muitas fontes e produz relatório. [23][25]
+[CONFIRMADO] Fonte/domínio: o + também abre Manage sources. [23]
+[VERIFICAR] NÃO ENCONTRADO em ajuda pública atual um controle que garanta restrição exclusiva a domínios dentro de Deep Research. Incluir domínios no prompt e auditar Sources não equivale tecnicamente a bloquear toda a web.
+[CONFIRMADO] O relatório mostra citações inline e fontes. A exportação usual de threads inclui compartilhamento, PDF e Markdown, mas o artigo atual específico de Deep Research não lista todos os formatos. [VERIFICAR] testar Export na conta do curso antes de gravar.
+[CONFIRMADO] Não confundir + > Deep research com + > Create files and apps. O segundo, antes chamado Labs, combina pesquisa com ferramentas para criar relatórios formatados, planilhas, apresentações, painéis, sites e apps; consome outra cota. [20][23]
+
+3.5 Auditoria mínima após qualquer ferramenta
+
+[SUGESTÃO] 1) salvar o prompt, plano, relatório e horário; 2) numerar afirmações verificáveis; 3) abrir cada citação; 4) procurar no original a frase/número; 5) registrar “suporta / suporta parcialmente / não suporta / fonte inacessível”; 6) conferir autor, data, atualização e conflito; 7) procurar fonte primária; 8) listar lacunas e perspectivas ausentes; 9) corrigir o texto; 10) guardar uma trilha de evidências.
+
+4. CONCEITOS E GLOSSÁRIO
+
+[CONFIRMADO] Agente: sistema que planeja e executa etapas com ferramentas, em vez de produzir uma única resposta imediata. Deep research usa busca, navegação, leitura, síntese e, em alguns produtos, código/arquivos. [2][3][58]
+[SUGESTÃO] Analogia: um assistente de pesquisa que recebe um brief e volta com relatório e fichas, mas precisa de supervisão.
+
+[CONFIRMADO] Plano de pesquisa: lista de subperguntas e ações que orientam o agente. ChatGPT e Gemini permitem revisão antes de começar; no ChatGPT pode ser ajustado durante a execução. [1][12][14]
+[CONFIRMADO] Grounding/ancoragem: vincular resposta a fontes recuperadas. Não significa que a inferência esteja correta; é preciso testar se a fonte realmente sustenta a frase. [30][35][36]
+[CONFIRMADO] Citação inline: marcador perto da afirmação que abre a fonte. Precisão de citação mede se a fonte citada apoia a afirmação; completude mede quanto do texto verificável recebeu apoio. [30]
+[CONFIRMADO] Fonte primária: documento/dado original, como lei, decisão, dataset, artigo ou relatório do órgão responsável. Fonte secundária interpreta a primária. [35][38]
+[CONFIRMADO] Lateral reading: sair da página e investigar autor, organização, financiamento e cobertura independente em outras abas. [35][36]
+[CONFIRMADO] SIFT: Stop; Investigate the source; Find trusted coverage; Trace claims to original context. [35][36]
+[CONFIRMADO] Paywall: barreira de acesso. O agente pode ver apenas snippet, cópia, resumo ou nada; citação de título não prova leitura integral.
+[CONFIRMADO] Prompt injection: instrução maliciosa escondida em uma página ou arquivo, tentando desviar o agente ou extrair dados. O system card da OpenAI trata isso como risco específico. [3]
+[CONFIRMADO] Calibração: correspondência entre confiança expressa e chance de estar correto. A OpenAI reconheceu fraqueza de calibração no lançamento. [2][10]
+[CONFIRMADO] Benchmark: conjunto padronizado de tarefas e métricas. Não reproduz todo uso real; resultados dependem de versão, prompt, acesso web, juiz e data. [10][28][30]
+
+5. FUNCIONALIDADES
+
+5.1 ChatGPT
+
+[CONFIRMADO] Web aberta e sites específicos; arquivos enviados; apps conectados como Drive ou SharePoint quando elegíveis; plano editável; perguntas de esclarecimento; progresso ao vivo; interrupção; activity history; fontes usadas; relatório com sumário; exportação Markdown/Word/PDF. [1]
+[CONFIRMADO] Escolha de sites: “restrict” ou “prioritize”. Para pesquisa jurídica pública, inserir planalto.gov.br, stf.jus.br, stj.jus.br, cnj.jus.br e gov.br/anpd, mas ainda auditar a hierarquia e vigência. [1]
+[CONFIRMADO] O system card registra leitura de texto, imagens e PDFs, uso de Python em sandbox e análise de arquivos. [3]
+[CONFIRMADO] Limite: apps dependem de plano, região, workspace, papel e permissões; nem todo app suporta deep research. A pesquisa só usa ações de leitura. [1]
+
+5.2 Gemini
+
+[CONFIRMADO] Google Search padrão; seleção de Gmail e Drive; upload de arquivo; inclusão de NotebookLM notebooks; plano editável; Thinking/Pro; relatório; Export to Docs; Copy contents; Share; Audio Overview; Create visual. [12][19]
+[CONFIRMADO] Ultra pode incluir gráficos, diagramas, esquemas e simuladores interativos. Isso é benefício de plano e pode não aparecer em todas as contas. [12]
+[CONFIRMADO] Desmarcar Search permite investigar apenas fontes próprias selecionadas; isso é útil para separar “o que meus arquivos dizem” de “o que a web diz”. [12]
+
+5.3 Perplexity
+
+[CONFIRMADO] Deep Research executa múltiplas consultas e raciocina sobre centenas de fontes para relatório. Changelog atual o coloca no + menu; e-mail pode avisar quando termina. [23][25][61]
+[CONFIRMADO] O plano gratuito tem 1 Research Query/mês; pagos têm mais uso e acesso a modelos avançados. Max recebe acesso mais alto. [20]
+[CONFIRMADO] Create files and apps é separado: produz artefatos e pode usar código e ferramentas, enquanto Deep Research tem foco no relatório de investigação. [20][23]
+[VERIFICAR] Restrição exclusiva por domínio, escolha granular de bases e formatos exatos de exportação precisam ser confirmados na interface atual; a central pública não descreve todos.
+
+6. CASOS DE USO PARA O PÚBLICO DO CURSO
+
+[CONFIRMADO] Jornalismo: Ina Fried, da Axios, testou ChatGPT e Gemini Deep Research por vários dias para preparar pauta do AI Action Summit e pesquisa de moradia. Recebeu relatórios organizados; ChatGPT foi mais detalhado, mas ambos resumiram mais o consenso do que trouxeram novidade. Fonte independente. [31]
+[CONFIRMADO] Redações: profissionais entrevistados pela Columbia Journalism Review relataram uso de OpenAI, Google e Perplexity para pesquisa, com regra editorial de não publicar quando a única fonte é IA e de revisar tudo. Fonte independente. [32]
+[CONFIRMADO] Estudantes/design de caso: o MIT Sloan publicou a conversa completa usada para criar um rascunho de case study com OpenAI Deep Research, preservando a trilha do prompt e a saída. Fonte institucional; material baixado. [41]
+[CONFIRMADO] Pesquisa jurídica brasileira: trabalho do 3º Concurso de Monografias da Biblioteca do TRT da 3ª Região avaliou recursos de pesquisa profunda no contexto jurídico. É um estudo institucional brasileiro, não endosso do tribunal à ferramenta. [42]
+[CONFIRMADO] Advocacia: painel publicado no New York Law Journal descreve profissionais de inteligência jurídica usando ChatGPT, Claude e Gemini Deep Research conforme a natureza da tarefa e ressalta que ferramentas jurídicas foram melhores para jurisprudência e julgados do que ferramentas públicas. [45]
+[CONFIRMADO] Escritório: Gilbert + Tobin divulgou adoção de ChatGPT para pesquisa, redação e análise com governança e responsabilidade profissional. É caso do fabricante OpenAI, não avaliação independente e não prova uso exclusivo de deep research. [44]
+[VERIFICAR] Clio publicou fala de escritório que diz usar OpenAI Deep Research para estratégia jurídica; a identidade e os resultados mensuráveis não são detalhados, por isso é testemunho comercial. [43]
+[CONFIRMADO] Consultoria: DRACO usa tarefas reais anonimizadas de usuários de Perplexity, incluindo análises financeiras, jurídicas e estratégicas; isso demonstra demanda, não um caso de cliente nomeado. [28]
+[VERIFICAR] NÃO ENCONTRADO caso brasileiro nomeado de consultoria que publique método e resultado de ChatGPT/Gemini/Perplexity Deep Research. Procurado em imprensa, blogs corporativos e fabricantes.
+[VERIFICAR] NÃO ENCONTRADO caso brasileiro de redação que atribua uma reportagem publicada especificamente ao modo Deep Research, com auditoria pública completa.
+[VERIFICAR] Falha com consequência específica de “deep research”: NÃO ENCONTRADO caso judicial confirmado em que um relatório desses três modos tenha sido protocolado e causado sanção. Há muitos casos de chatbots comuns com precedentes inventados; não os rotular como falha de Deep Research.
+[CONFIRMADO] Falha publicada sem consequência jurídica: o teste Axios viu Gemini narrar uma anedota de fonte como se o amigo fosse do próprio sistema e ambos recomendaram fontes fracas como Reddit para afirmação imobiliária. [31]
+
+7. BOAS PRÁTICAS E EXEMPLOS DE PROMPTS
+
+7.1 Publicadas pelas fabricantes
+
+[CONFIRMADO] OpenAI: dizer claramente pergunta, resultado e restrições; pode anexar arquivos e escolher sites. O lançamento exemplifica análise competitiva e recomendação de produto personalizada. [1][2]
+[CONFIRMADO] Google: depois da pergunta, revisar/aprovar o plano; a página de lançamento exemplifica tendências de sensores de veículos autônomos, comparação de tecnologias e perspectivas futuras. [14]
+[CONFIRMADO] Perplexity: “quanto mais detalhado, melhor”; a demonstração pede comparação entre HubSpot e Salesforce por posicionamento, produtos, recursos e clientes. [25]
+
+7.2 Modelo didático
+
+[SUGESTÃO] Prompt-base:
+“Atue como assistente de pesquisa, não como autoridade final. Produza um relatório para [público/decisão] sobre [pergunta]. Recorte: Brasil, [datas]. Priorize [fontes primárias/domínios] e separe fatos, inferências e lacunas. Para cada número, cite a fonte exata e a data. Inclua: resumo; método e consultas; achados; evidências contrárias; limitações; tabela afirmação–fonte–trecho; e lista de pontos que exigem verificação humana. Não preencha lacunas com suposições. Antes de começar, faça até cinco perguntas e proponha um plano editável.”
+
+[SUGESTÃO] Prompt jurídico:
+“Pesquise a obrigação de comunicar incidente de segurança sob a LGPD e a Resolução CD/ANPD 15/2024. Use apenas planalto.gov.br, gov.br/anpd e o repositório do Ministério da Justiça para a conclusão normativa. Distinga lei, regulamento e orientação; informe vigência e artigo; não dê parecer para caso concreto; transcreva no máximo o trecho necessário; liste qualquer conflito ou mudança posterior.”
+
+[SUGESTÃO] Prompt de auditoria:
+“Audite o relatório anexado. Extraia todas as afirmações verificáveis. Para cada uma, abra a fonte citada, copie o trecho que sustenta a afirmação, classifique suporte integral/parcial/ausente e registre data, autoria e tipo de fonte. Depois liste fontes inexistentes, links quebrados, dados antigos, conclusões sem evidência, grupos ausentes e perguntas não respondidas. Não use o próprio relatório como evidência.”
+
+7.3 Boas práticas operacionais
+
+[SUGESTÃO] Rodar a mesma pergunta com o mesmo brief e data; salvar cada versão; não comparar tamanho como sinônimo de qualidade; contar fontes primárias distintas, não apenas links; auditar uma amostra de todas as afirmações e 100% das conclusões centrais; separar relatório público de arquivos internos; limitar domínio quando o corpus oficial for conhecido; pedir contraprova; e terminar com revisão humana.
+
+8. SEGURANÇA, PRIVACIDADE E DADOS
+
+8.1 ChatGPT
+
+[CONFIRMADO] Deep research segue as mesmas configurações de dados e retenção da conversa; excluir o chat exclui saídas associadas conforme a política. [1]
+[CONFIRMADO] Em Free, Plus e Pro pessoais, novas conversas podem ser usadas para melhorar modelos por padrão; desligar em Profile > Settings > Data Controls > Improve the model for everyone (ajuda en). Business, Enterprise, Edu e API não usam inputs/outputs para treinamento por padrão. [6]
+[CONFIRMADO] Apps respeitam permissões do provedor e workspace; conectar uma conta não amplia o que o usuário já pode abrir. Deep research usa apenas ações de leitura. [1]
+[SUGESTÃO] Para cliente jurídico: não enviar autos sigilosos, estratégia, credenciais, dados sensíveis ou segredo profissional a uma conta pessoal. Preferir ambiente empresarial contratado, DPA, retenção definida, controle de apps e aprovação do responsável de segurança/jurídico.
+
+8.2 Gemini
+
+[CONFIRMADO] Com Keep Activity ligado, prompts, uploads e atividade podem ser usados para desenvolver/melhorar serviços, inclusive treinar IA, com revisão humana; autoexclusão padrão de atividade é 18 meses, ajustável para 3, 36 meses ou sem autoexclusão. Conteúdo revisado pode ficar até 3 anos, desconectado da conta. [16]
+[CONFIRMADO] Com Keep Activity desligado ou Temporary chat, chats futuros não são usados para treinar modelos, salvo feedback; ainda ficam 72 horas para resposta e segurança. Alguns Connected Apps deixam de funcionar com a atividade desligada. [16]
+[CONFIRMADO] Google diz não treinar diretamente no Gmail/Drive inteiro, mas resumos, excertos e inferências dos itens relevantes usados numa interação podem melhorar modelos se Keep Activity estiver ligado. [17]
+[SUGESTÃO] Antes de ativar Gmail/Drive, criar uma pasta de corpus mínimo, revisar compartilhamentos e remover documentos fora do escopo. Não pesquisar a caixa inteira quando cinco documentos bastam.
+
+8.3 Perplexity
+
+[CONFIRMADO] Pro, Education Pro e Max permitem opt-out de coleta/treinamento em Settings; Enterprise Pro/Max e API declaram que dados não são usados para treinamento. [20][26][27]
+[CONFIRMADO] Enterprise oferece controles de retenção, auditoria e acesso; planos pessoais não equivalem a uma configuração corporativa aprovada. [26]
+[VERIFICAR] Prazo de retenção detalhado de arquivos e threads em cada plano pessoal: conferir política e Settings no dia do curso; a ajuda consultada não fornece uma tabela única.
+
+8.4 LGPD e sigilo
+
+[CONFIRMADO] A LGPD exige princípios como finalidade, adequação, necessidade, segurança, prevenção, transparência e responsabilização. O uso de uma IA externa pode envolver operador/suboperador e transferência internacional; a organização continua responsável por base legal e minimização. [52]
+[SUGESTÃO] Checklist antes do upload: finalidade documentada; base legal; mínimo de dados; anonimização real; contrato/DPA; país e transferência; retenção; treinamento desligado; permissões; logging; plano de incidente; revisão de sigilo profissional; autorização interna.
+[CONFIRMADO] A Resolução CD/ANPD 15/2024 manda comunicar incidente com risco ou dano relevante à ANPD e titulares em três dias úteis e manter registro por pelo menos cinco anos. Isso não autoriza enviar dados à IA; é consequência de um incidente. [50][51]
+
+9. LIMITAÇÕES, ERROS COMUNS E SOLUÇÃO DE PROBLEMAS
+
+[CONFIRMADO] ChatGPT: a OpenAI reconhece alucinações, inferências erradas, dificuldade de distinguir fonte autoritativa de rumor, confiança mal calibrada e erros de formatação/citação. [2][3]
+[CONFIRMADO] Gemini: a própria ajuda avisa que recursos generativos podem errar; limites variam, contas sem plano podem perder acesso em alta demanda, e fontes Gmail/Drive dependem de conexão e Keep Activity. [12][13][16]
+[CONFIRMADO] Perplexity: a ajuda manda validar a informação nas fontes; Research tem cotas, modelos mudam e fontes podem ser sínteses/duplicatas. [20][23]
+[CONFIRMADO] Paywall/robots: agentes podem não abrir o texto integral. Tow Center encontrou links fabricados, atribuição a cópias/sindicados e respostas confiantes quando a fonte não podia ser identificada. O estudo é sobre busca generativa, não apenas modos Deep Research. [54]
+
+[SUGESTÃO] Problema: relatório superficial. Correção: reduzir escopo, exigir subperguntas, fontes primárias e recorte; editar o plano.
+[SUGESTÃO] Problema: fonte não apoia a frase. Correção: abrir original, localizar trecho, reduzir a alegação ou remover.
+[SUGESTÃO] Problema: fontes repetem a mesma matéria. Correção: rastrear a origem e contar famílias de evidência.
+[SUGESTÃO] Problema: legislação revogada. Correção: abrir texto consolidado, conferir vigência, atos alteradores e diário/repositório oficial.
+[SUGESTÃO] Problema: resultado em inglês ignora Brasil. Correção: indicar pt-BR, Brasil e domínios oficiais; incluir termos em português e inglês.
+[SUGESTÃO] Problema: cota acabou. Correção: salvar brief e executar em outra data; não trocar silenciosamente de ferramenta ou plano no meio de uma comparação.
+[SUGESTÃO] Problema: arquivo/app não aparece. Correção: conferir plano, permissão, workspace, conexão, Keep Activity e formato; usar upload mínimo como alternativa.
+[SUGESTÃO] Problema: relatório longo demais. Correção: pedir matriz de evidências e resumo separado, sem apagar fontes e limitações.
+
+10. COMPARAÇÃO COM ALTERNATIVAS
+
+[CONFIRMADO] Planejamento: ChatGPT e Gemini documentam plano editável. Perplexity documenta decomposição autônoma, mas não uma etapa pública equivalente de aprovação prévia no modo atual. [1][12][25]
+[CONFIRMADO] Controle de fonte: ChatGPT oferece restrição/priorização explícita de sites; Gemini permite marcar Search, Gmail e Drive e desligar Search; na Perplexity, Manage sources existe, mas restrição exclusiva de domínios em Deep Research não foi confirmada. [1][12][23]
+[CONFIRMADO] Saída: ChatGPT exporta Markdown/Word/PDF; Gemini exporta Docs, copia, compartilha, cria áudio e visual; Perplexity cita inline e compartilha/exporta threads, com formatos a testar. [1][19]
+[CONFIRMADO] Gratuito: ChatGPT tem acesso limitado; Gemini permite Deep Research com limite variável; Perplexity fixa 1 Research Query/mês. [4][12][20]
+[CONFIRMADO] Custo de entrada pago em dólar: ChatGPT Go US$ 8, mas a página não garante a mesma expansão de deep research que Plus; ChatGPT Plus US$ 20; Google AI Pro US$ 19,99 na página internacional; Perplexity Pro US$ 20. [5][18][21]
+
+[CONFIRMADO] DRACO, fevereiro de 2026: 100 tarefas abertas, 10 domínios, média de 39,3 critérios, cinco avaliações por tarefa e Gemini 3 Pro como juiz principal. Resultados da primeira versão: Perplexity 67,15%; Gemini 58,97%; OpenAI o3 52,06%; OpenAI o4-mini 41,94%. Latências médias: 459,6 s; 592,2 s; 1.808,1 s; 1.423,7 s, respectivamente. Autores incluem pesquisadores da Perplexity e dados vieram de consultas da Perplexity: não é avaliação independente da fabricante vencedora. [28][29]
+[CONFIRMADO] DeepResearch Bench, junho de 2025: 100 tarefas de nível doutoral em 22 campos. Gemini 2.5 Pro Deep Research gerou em média 111,21 citações efetivas; Perplexity teve maior precisão de citação que Gemini e OpenAI no teste. É acadêmico e aberto, mas versões de 2025 já não são as de 2026. [30]
+[CONFIRMADO] BrowseComp: 1.266 problemas de fatos difíceis; OpenAI deep research marcou 51,5%, contra 1,9% do GPT-4o com browsing e 9,9% do o1. A OpenAI criou o benchmark e informa que Deep Research foi treinado em dados específicos para essas tarefas; não serve para ranquear Gemini/Perplexity. [10][11]
+[CONFIRMADO] Teste de imprensa Axios: ChatGPT produziu mais detalhe; ambos tiveram utilidade variável e foram melhores em consenso existente do que em novidade. Pequena amostra, sem auditoria estatística. [31]
+[VERIFICAR] Desempenho em português do Brasil: NÃO ENCONTRADO benchmark controlado e atual que compare os três modos em fontes brasileiras. DRACO inclui Brasil entre países possíveis, mas não publica um placar pt-BR isolado. [28]
+[SUGESTÃO] Escolha por tarefa, não “vencedor”: ChatGPT quando restrição de sites e exportação editável importam; Gemini quando corpus está em Gmail/Drive ou Docs/áudio é destino; Perplexity quando o fluxo citation-first e rapidez são prioritários. Validar na conta e na pergunta real.
+
+11. NOVIDADES RECENTES E RECURSOS INSTÁVEIS
+
+[CONFIRMADO] ChatGPT, 10/02/2026: apps/MCP, trusted sites, progresso em tempo real, interrupção e nova visualização. [2]
+[CONFIRMADO] ChatGPT, outubro/novembro de 2026: franquias de trabalho estão migrando para medição compartilhada por uso/tokens em alguns planos; a documentação de deep research já evita números fixos. [62]
+[CONFIRMADO] Gemini, 2026: ajuda passa a falar em Thinking para todos e Pro para AI Pro/Ultra; páginas de planos mostram novos multiplicadores e modelos. [12][13][18]
+[CONFIRMADO] Gemini API, abril de 2026: Deep Research e Deep Research Max com MCP e visualizações em preview pago. Não misturar com o app de consumo. [58]
+[CONFIRMADO] Perplexity, fevereiro de 2026: retorno do rótulo Deep Research no +, Opus 4.5/4.6 e Model Council; “Labs” virou “Create files and apps”. [23][59]
+[CONFIRMADO] Perplexity, junho de 2026: Deep Research também entrou em Computer, onde o resultado pode virar planilha, deck, painel ou site. É outra superfície e cota. [63]
+[VERIFICAR] Todos os itens desta seção são instáveis. Regravar caminhos e capturas textuais no dia de publicação; evitar mencionar modelo no título de módulo.
+
+12. MATERIAL DIDÁTICO EXISTENTE
+
+[CONFIRMADO] OpenAI: artigo “Deep research in ChatGPT”, lançamento com demonstrações e página do System Card/PDF. São as referências principais para passo a passo, limites e risco. [1][2][3]
+[CONFIRMADO] Google: ajuda “Use Deep Research in Gemini Apps”, post de lançamento de 2024 e atualização gratuita de 2025. [12][14][15]
+[CONFIRMADO] Perplexity: vídeo oficial Enterprise “Using Deep Research”, post de lançamento e changelog de fevereiro de 2026. [23][24][25]
+[CONFIRMADO] Bibliotecas: Carnegie Mellon, Johns Hopkins, Illinois, Penn State e Northwestern oferecem guias de avaliação de saída/citação por IA, SIFT e leitura lateral. [35][36][37][38][39]
+[CONFIRMADO] Jornalismo: Poynter e AP defendem verificação independente, rastreabilidade, transparência e múltiplas fontes. [33][34]
+[CONFIRMADO] Direito: University of Washington Law Library orienta confirmar existência, validade e tratamento do precedente antes de confiar; o material brasileiro do TRT3 pode contextualizar pesquisa jurídica. [40][42]
+[SUGESTÃO] Usar materiais como referência e prática, não copiar linguagem, imagens ou estrutura. Licenças variam; links e citações podem ser usados conforme finalidade educacional e direitos aplicáveis.
+
+13. IDEIAS DE EXERCÍCIO
+
+Decomposição da tarefa observável
+
+[SUGESTÃO] “Produzir”: formular brief, escolher ferramenta/plano, editar plano, executar, acompanhar, exportar e registrar método.
+[SUGESTÃO] “um relatório com deep research”: delimitar pergunta, combinar fontes, obter relatório citado e preservar artefatos.
+[SUGESTÃO] “auditar fontes”: confirmar existência, autoria, data, acesso, qualidade e suporte de cada citação.
+[SUGESTÃO] “lacunas”: comparar a pergunta/brief com o que foi respondido, procurar grupos, períodos, fontes e contrapontos ausentes.
+[SUGESTÃO] “erros”: detectar número incorreto, citação mal atribuída, inferência sem suporte, desatualização e conflito.
+
+13a exercícios curtos de compreensão
+
+[SUGESTÃO] Classificar tarefa. Dar dez pedidos; o aluno marca Search/chat/deep research. Acerto: escolhe deep research para síntese multietapa com várias fontes e busca para fato rápido. Fonte do passo: [1].
+[SUGESTÃO] Melhorar brief. Reescrever “pesquise envelhecimento no Brasil” incluindo decisão, 2010–2022, IBGE, formato e lacunas. Acerto: seis componentes aparecem sem dados pessoais.
+[SUGESTÃO] Conferir citação. Abrir a página IBGE sobre pirâmide etária e verificar 65+ em 2010/2022. Acerto: registra 14 milhões/7,4% e 22,2 milhões/10,9%, com URL e data. Link público HTML testado. [46]
+[SUGESTÃO] Distinguir suporte. Receber três frases e um PDF; marcar integral/parcial/ausente. Acerto: copia trecho e não confunde citação relevante com prova.
+[SUGESTÃO] Privacidade. Em cinco cenários, decidir se pode enviar. Acerto: rejeita dados de cliente, autos sigilosos e caixa de e-mail inteira em conta pessoal; propõe anonimização/ambiente aprovado. [6][16][20]
+
+13b práticas longas com problema real
+
+[SUGESTÃO] Prática 1 — envelhecimento. Pergunta: “Como mudou a população brasileira de 60+ e 65+ entre 2010 e 2022, e quais diferenças regionais o Censo mostra?” Fontes: PDF IBGE baixado e página Educa [46][47]. Gabarito mínimo: 60+ = 15,8% em 2022 e crescimento de 46,6% sobre 2010; 65+ = 10,9%/22,2 milhões em 2022 contra 7,4%/14 milhões em 2010. Acerto: distingue os dois cortes etários.
+[SUGESTÃO] Prática 2 — Selic. Pergunta: “Reconstrua as decisões do Copom de janeiro de 2025 a setembro de 2026 e identifique pico e reversão.” Fonte HTML pública do Banco Central [48]. Gabarito: 13,25% em 29/01/2025; 15,00% de 18/06/2025 a 28/01/2026; cortes até 13,75% em 16/09/2026. Acerto: datas, percentuais e fonte oficial conferem.
+[SUGESTÃO] Prática 3 — rendimentos. Pergunta: “O que a PNAD Contínua/Ipea mostra sobre crescimento da renda por gênero no 2º trimestre de 2025?” Fonte PDF Ipea baixado [49]. Gabarito: crescimento interanual 3,4% homens e 3,3% mulheres; isso é taxa de crescimento, não igualdade do nível salarial. Acerto: não extrapola.
+[SUGESTÃO] Prática 4 — jurídica/LGPD. Pergunta: “Quando e como um controlador deve comunicar incidente de segurança com risco relevante?” Fontes ANPD e Resolução PDF [50][51]. Gabarito: ANPD e titulares, três dias úteis da ciência; conteúdo dos arts. 6º e 9º; registro mínimo cinco anos no art. 10. Acerto: cita artigo e não transforma regra geral em parecer.
+[SUGESTÃO] Prática 5 — licitações. Pergunta: “Quais valores de dispensa da Lei 14.133 estão vigentes em 2026 e qual ato os atualizou?” Fonte Lei 14.133 consolidada e decreto vigente referenciado nela [53]. Gabarito deve ser montado no dia, pois valores mudam em 1º de janeiro; acerto é identificar o decreto vigente e rejeitar ato revogado, não memorizar valor antigo.
+
+[CONFIRMADO] Viabilidade gratuita: Gemini oferece Deep Research gratuito com limite variável; ChatGPT mostra acesso limitado; Perplexity concede 1 Research Query/mês. Em princípio, uma mesma pergunta pode ser executada uma vez em cada conta gratuita, se houver saldo/capacidade. [4][12][20]
+[VERIFICAR] Não há garantia de três execuções no mesmo dia: Gemini pode limitar por demanda e ChatGPT mostra o saldo apenas no produto. Caminho pago mais barato em preço público: ChatGPT Go US$ 8, mas expansão específica de deep research não está quantificada; entre planos que explicitamente ampliam pesquisa, Google AI Pro US$ 19,99 ou ChatGPT Plus/Perplexity Pro US$ 20. Conferir Brasil e conta. [5][18][21]
+
+13c ideias de projeto final
+
+[SUGESTÃO] Projeto A — relatório público comparado. Executar a pergunta LGPD nas três ferramentas com o mesmo brief e os mesmos domínios. Entregar três relatórios, planilha de auditoria, versão corrigida e memo de comparação. “Terminou” quando 100% dos artigos/prazos centrais estão conferidos no PDF oficial, divergências explicadas e nenhum dado pessoal foi enviado.
+[SUGESTÃO] Projeto B — dossiê socioeconômico. Responder como Selic e renda evoluíram em 2025–2026 usando BC e Ipea. Entregar brief, plano, relatório, matriz afirmação–evidência, lista de lacunas e exportação. “Terminou” quando todo número tem fonte primária, unidade/período e trecho; conclusões separam correlação de causalidade.
+
+14. RESPOSTAS AO FOCO ESPECÍFICO DESTE CURSO
+
+14.1 O que é deep research
+
+[CONFIRMADO] É agente de pesquisa multietapa que planeja, busca repetidamente, lê muitas páginas/arquivos, raciocina e sintetiza relatório citado. Busca comum retorna resposta curta e rápida; chatbot sem pesquisa responde principalmente do contexto/modelo e não produz necessariamente trilha verificável. [1][2][12][25]
+[CONFIRMADO] Lançamentos: Gemini 11/12/2024; ChatGPT 02/02/2025; Perplexity 14/02/2025. [2][14][24]
+
+14.2 ChatGPT
+
+[CONFIRMADO] Nome atual: deep research. Ativação: /Deepresearch, + > Deep research ou sidebar. Planos: Free limitado e pagos ampliados; números históricos 5/25/250 em 2025, mas cota atual no contador. Modelo atual: “latest models”, com legados opcionais; o3/o4-mini são históricos. Tempo histórico 5–30 min. Faz perguntas, propõe plano, restringe/prioriza sites, usa arquivos/apps, mostra progresso/fontes e exporta Markdown/Word/PDF. Google Docs é indireto. System card oficial baixado. [1][2][3][4]
+
+14.3 Gemini
+
+[CONFIRMADO] Nome atual: Deep Research. Web/app: Add Files > Deep Research ou prompt bar/model menu conforme versão. Plano editável. Thinking para todos; Pro para AI Pro/Ultra. Cotas pessoais são diárias e variáveis, sem número público fixo. Usa upload, Gmail, Drive e NotebookLM; exporta para Docs, copia/compartilha, cria Audio Overview e visuais. [12][13][19]
+
+14.4 Perplexity
+
+[CONFIRMADO] Nome atual mostrado em 2026: Deep Research; “Research” permanece em algumas páginas e cotas. Ativação: + > Deep research. Gratuito 1/mês; Pro/Max com limites médios; Enterprise 50/500 por mês. Manage sources existe, mas bloqueio exclusivo por domínio não foi confirmado. Exportação precisa de teste. Create files and apps, antigo Labs, cria artefatos e é modo/cota separado. [20][23]
+
+14.5 Brief de pesquisa
+
+[CONFIRMADO] Três fabricantes convergem em detalhar contexto, pergunta e resultado; ChatGPT explicita constraints, Gemini deixa editar plano e Perplexity diz que mais detalhe é melhor. [1][14][25]
+[SUGESTÃO] Brief mínimo: objetivo/decisão, público, escopo, definições, tempo/geografia, fontes prioritárias e excluídas, formato, evidência contrária, privacidade e critério de fim.
+
+14.6 Auditoria
+
+[CONFIRMADO] CMU/Penn/Northwestern: confirmar que a fonte existe, verificar autoria/data, abrir link e testar se sustenta a alegação; procurar original e cobertura independente; checar vieses/perspectivas ausentes. [35][38][39]
+[CONFIRMADO] Illinois: Source, Investigate, Find a second tool, Trace, Test the edges. JHU: para usos de alto risco, priorizar afirmações centrais e consequências. [36][37]
+[CONFIRMADO] Poynter/AP: IA não basta como fact-check; verificação, transparência, reprodutibilidade e múltiplas fontes continuam obrigatórias. [33][34]
+[SUGESTÃO] Checklist do relatório: cobertura do brief; existência; suporte; qualidade; atualidade; diversidade; contraponto; cálculo; vigência; lacunas; confiança; privacidade; versão e reprodutibilidade.
+
+14.7 Erros, BrowseComp e DRACO
+
+[CONFIRMADO] Erros documentados: fonte inexistente ou mal atribuída, fonte verdadeira sem suporte, baixa autoridade, duplicação, desatualização, paywall, omissão, inferência excessiva e confiança indevida. Português pode reduzir cobertura; não há benchmark pt-BR dos três. [2][30][54]
+[CONFIRMADO] BrowseComp foi feito pela OpenAI; 1.266 tarefas, Deep Research 51,5%, com nota de treinamento específico. DRACO foi feito por autores com vínculo Perplexity; 100 tarefas reais/augmentadas, juiz LLM, e Perplexity liderou 67,15%. Não tratar nenhum como comparação neutra. [10][28][29]
+
+14.8 Comparação independente
+
+[CONFIRMADO] DeepResearch Bench favoreceu Gemini em volume efetivo de citações e Perplexity em precisão; Axios encontrou ChatGPT mais detalhado em pequena amostra; DRACO favoreceu Perplexity, mas não é independente. [30][31][28]
+[VERIFICAR] NÃO ENCONTRADO placar atual, independente, reproduzível, em pt-BR, com custo/cotas/fontes brasileiras. A comparação para o curso deve ser uma oficina empírica com o mesmo brief e rubrica.
+
+14.9 Privacidade e dados
+
+[CONFIRMADO] ChatGPT pessoal exige opt-out para impedir treino de novas conversas; Business/Enterprise/Edu não treinam por padrão. Gemini Keep Activity governa treino/retenção e pode afetar apps. Perplexity Pro/Max têm opt-out; Enterprise não treina. Conectores herdam permissões, mas aumentam superfície de dados. [6][16][17][20]
+[SUGESTÃO] Sob LGPD e sigilo profissional, não conectar e-mail/Drive corporativo sem aprovação, contrato, minimização e controles. Preferir corpus público para o curso.
+
+14.10 Casos reais
+
+[CONFIRMADO] Casos encontrados: Axios/redação [31]; CJR/redações [32]; MIT/estudo e case [41]; TRT3/pesquisa jurídica brasileira [42]; painel de inteligência de escritórios [45]; Gilbert + Tobin/fabricante [44].
+[VERIFICAR] Caso brasileiro nomeado de consultoria e falha judicial específica do modo: NÃO ENCONTRADO.
+
+14.11 Perguntas brasileiras
+
+[SUGESTÃO] Cinco perguntas e gabaritos estão em 13b: envelhecimento/IBGE, Selic/BC, rendimentos/Ipea, incidente/LGPD-ANPD e valores de licitação/Planalto. Todas usam páginas/PDFs públicos, sem login. Uma execução gratuita por ferramenta é possível em princípio; Perplexity só garante uma por mês. [20][46][48][49][50][53]
+
+15. TRECHOS TRANSCRITOS DA DOCUMENTAÇÃO OFICIAL
+
+[CONFIRMADO] “Deep research in ChatGPT”, atualizado em 19/10/2026, https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt:
+“ChatGPT creates a proposed research plan. You can review and modify it before the research begins.” [1]
+
+[CONFIRMADO] Mesma página:
+“To focus research on specific websites, go to Sites > Manage sites in the ChatGPT prompt window.” [1]
+
+[CONFIRMADO] Mesma página:
+“You can download completed reports for reuse or sharing in multiple formats, including Markdown, Word, and PDF.” [1]
+
+[CONFIRMADO] “Introducing deep research”, 02/02/2025, atualizado em 10/02/2026, https://openai.com/index/introducing-deep-research/:
+“Deep research may take anywhere from 5 to 30 minutes to complete its work.” [2]
+
+[CONFIRMADO] “Use Deep Research in Gemini Apps”, consultado em 04/11/2026, https://support.google.com/gemini/answer/15719111:
+“By default, Gemini includes Google Search as a source for your research. You can change or add other sources, like your personal Gmail or Drive.” [12]
+
+[CONFIRMADO] Mesma página:
+“Google AI Pro and Google AI Ultra users can generate reports using Pro for even higher quality. All users can use Thinking for their reports.” [12]
+
+[CONFIRMADO] “Upgraded Deep Research...”, 05/02/2026, https://www.perplexity.ai/changelog/what-we-shipped---february-6th-2026:
+“Deep research, Model council, Create files and apps (previously known as Labs), and Learn step by step, are now all accessible using the + menu.” [23]
+
+[CONFIRMADO] “Which Perplexity Subscription Plan is right for you?”, 02/09/2026, https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you:
+“Research Queries” no gratuito: “1/month”. [20]
+
+[CONFIRMADO] Gemini Apps Privacy Hub, atualizado em 13/10/2026, https://support.google.com/gemini/answer/13594961:
+“Temporary chats are not used to train Google’s AI models.” [16]
+
+[CONFIRMADO] Resolução CD/ANPD 15/2024, art. 6º:
+“A comunicação de incidente de segurança à ANPD deverá ser realizada pelo controlador no prazo de três dias úteis.” [51]
+
+16. MATERIAIS PARA BAIXAR
+
+[BAIXAR] Deep Research System Card. https://cdn.openai.com/deep-research-system-card.pdf. PDF, 4.423.089 bytes, inglês. Riscos, avaliações, prompt injection, privacidade e limitações. Condição: publicação oficial OpenAI; direitos reservados. Nome: openai-deep-research-system-card.pdf. BAIXADO; assinatura %PDF e título conferidos. [3]
+
+[BAIXAR] BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents. https://cdn.openai.com/pdf/5e10f4ab-d6f7-442e-9508-59515c65e35d/browsecomp.pdf. PDF, 335.891 bytes, inglês. Metodologia e resultados do benchmark. Nome: openai-browsecomp-paper.pdf. BAIXADO; %PDF/título conferidos. [11]
+
+[BAIXAR] DRACO: a Cross-Domain Benchmark for Deep Research Accuracy, Completeness, and Objectivity. https://r2cdn.perplexity.ai/pplx-draco.pdf. PDF, 1.228.997 bytes, inglês. Comparação e rubricas. Nome: draco-benchmark-2026.pdf. BAIXADO; %PDF/título conferidos. [29]
+
+[BAIXAR] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents. https://deepresearch-bench.github.io/static/papers/deepresearch-bench.pdf. PDF, 3.678.399 bytes, inglês. Avaliação de relatório e citação. Nome: deepresearch-bench-2025.pdf. BAIXADO; %PDF/título conferidos. [30]
+
+[BAIXAR] Conversing with OpenAI's Deep Research to Create a Case Study Draft. https://mitsloanedtech.mit.edu/wp-content/uploads/2025/03/Conversing-with-OpenAIs-Deep-Research-to-Create-a-Case-Study-Draft.pdf. PDF, 206.382 bytes, inglês. Exemplo completo de conversa e caso educacional. Nome: mit-case-study-deep-research.pdf. BAIXADO; %PDF/título conferidos. [41]
+
+[BAIXAR] Poynter Summit on AI, Ethics & Journalism: Putting audience and ethics first. https://www.poynter.org/wp-content/uploads/2024/09/AI-Summit-Report-Compressed-Aug-2024.pdf. PDF, 4.153.684 bytes, inglês. Política e checklist para redações. Nome: poynter-ai-ethics-journalism-report.pdf. BAIXADO; %PDF/título conferidos. [33]
+
+[BAIXAR] New York Law Journal, edição de 1º de maio de 2026. https://assets.alm.com/e5/1c/6adf0a5b4ec1b3a71391d523397c/nylj050126a.pdf. PDF, 5.763.752 bytes, inglês. Contém painel sobre inteligência competitiva de escritórios e uso de Gemini Deep Research. Direitos reservados ALM; uso como referência, sem redistribuição pública. Nome: new-york-law-journal-ai-research-panel.pdf. BAIXADO; %PDF e ocorrência do conteúdo conferidas. [45]
+
+[BAIXAR] Análise e avaliações dos recursos de pesquisa profunda dentro das IAs generativas no contexto jurídico. https://sistemas.trt3.jus.br/bd-trt3/bitstream/handle/11103/93326/An%C3%A1lise%20e%20avalia%C3%A7%C3%B5es%20dos%20recursos%20de%20pesquisa%20profunda%20dentro%20das%20IAS%20generativas%20no%20contexto%20jur%C3%ADdico.pdf?isAllowed=y&sequence=1. PDF, 338.311 bytes, português. Estudo brasileiro jurídico. Nome: trt3-deep-research-pesquisa-juridica.pdf. BAIXADO; %PDF/título conferidos. [42]
+
+[BAIXAR] Censo Demográfico 2022 — Pessoas de 60 anos ou mais. https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102038.pdf. PDF, 278.421 bytes, português. Material de prática/gabarito. Nome: ibge-censo-2022-pessoas-idosas.pdf. BAIXADO; %PDF/título conferidos. [47]
+
+[BAIXAR] Resolução CD/ANPD nº 15, de 24 de abril de 2024. https://bibliotecadigital.mj.gov.br/bitstream/1/12879/1/RES_ANPD_2024_15.pdf. PDF, 729.017 bytes, português. Material jurídico oficial. Nome: anpd-resolucao-15-2024.pdf. BAIXADO do link direto; %PDF e presença da Resolução conferidas. [51]
+
+[BAIXAR] Retrato dos rendimentos do trabalho: resultados da PNAD Contínua do segundo trimestre de 2025. https://www.ipea.gov.br/cartadeconjuntura/wp-content/uploads/2025/09/250919_cc_68_nota_17_rendimentos.pdf. PDF, 875.306 bytes, português. Prática de números e inferência. Nome: ipea-rendimentos-trabalho-2025.pdf. BAIXADO; %PDF/título conferidos. [49]
+
+[BAIXAR] Páginas oficiais de ajuda do ChatGPT, Gemini e Perplexity, posts de lançamento, preços, privacidade e guias de prompt. São HTML, não arquivos. NÃO BAIXADO como PDF para não mascarar HTML com extensão .pdf; cada página está individualizada na seção 17 para Imprimir > Salvar como PDF. [1][2][4][6][12][13][14][15][16][18][20][21][23][24][25]
+
+[BAIXAR] Vídeos oficiais de demonstração. Perplexity “Using Deep Research” tem página oficial [25]. OpenAI e Google têm vídeos incorporados nos posts de lançamento [2][14]. NÃO BAIXADO; transcrição separada não foi localizada publicamente sem plataforma/login. Usar legenda/transcrição somente se a interface oficial oferecer e respeitar direitos.
+
+17. PÁGINAS PARA SALVAR
+
+1. Deep research in ChatGPT. https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt. Importa: procedimento, sites, apps, exportação, limites e privacidade. Prioridade alta. Nome: chatgpt-ajuda-deep-research.pdf.
+2. Introducing deep research. https://openai.com/index/introducing-deep-research/. Importa: lançamento, linha do tempo, tempo, limitações e benchmarks. Prioridade alta. Nome: chatgpt-lancamento-deep-research.pdf.
+3. Deep research System Card. https://openai.com/index/deep-research-system-card/. Importa: riscos e acesso ao PDF. Prioridade alta. Nome: chatgpt-system-card-pagina.pdf.
+4. ChatGPT pricing. https://chatgpt.com/pricing/. Importa: planos, disponibilidade e tratamento de dados. Prioridade alta. Nome: chatgpt-planos-precos.pdf.
+5. Data Controls — training opt-out. https://help.openai.com/en/articles/8983130-what-are-projects-in-chatgpt. Importa: Settings > Data Controls e diferença pessoal/empresa. Prioridade alta. Nome: chatgpt-controles-dados.pdf.
+6. Use Deep Research in Gemini Apps. https://support.google.com/gemini/answer/15719111. Importa: requisitos, menus, modelos, fontes e exportação. Prioridade alta. Nome: gemini-ajuda-deep-research.pdf.
+7. Gemini Apps limits. https://support.google.com/gemini/answer/16275805. Importa: limites variáveis, multiplicadores e Settings > Usage Limits. Prioridade alta. Nome: gemini-limites.pdf.
+8. Gemini launch. https://blog.google/products-and-platforms/products/gemini/google-gemini-deep-research/. Importa: plano editável, lançamento e Docs. Prioridade média. Nome: gemini-lancamento-deep-research.pdf.
+9. Gemini free rollout. https://blog.google/products-and-platforms/products/gemini/new-gemini-app-features-march-2025/. Importa: acesso gratuito e modelo histórico. Prioridade média. Nome: gemini-deep-research-gratuito.pdf.
+10. Gemini Privacy Hub. https://support.google.com/gemini/answer/13594961. Importa: treinamento, atividade, 72 horas, 18 meses e revisão. Prioridade alta. Nome: gemini-privacidade.pdf.
+11. Google AI plans. https://one.google.com/about/google-ai-plans/. Importa: preços, planos e multiplicadores. Prioridade alta. Nome: google-ai-planos.pdf.
+12. Perplexity plans. https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you. Importa: 1/mês, limites médios, privacidade e Enterprise. Prioridade alta. Nome: perplexity-planos-cotas.pdf.
+13. Perplexity pricing/hub. https://www.perplexity.ai/hub. Importa: preço Pro e descrição de produto. Prioridade alta. Nome: perplexity-precos.pdf.
+14. Upgraded Deep Research and simplified input. https://www.perplexity.ai/changelog/what-we-shipped---february-6th-2026. Importa: + menu, modelo e Labs renomeado. Prioridade alta. Nome: perplexity-deep-research-2026.pdf.
+15. Introducing Perplexity Deep Research. https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research. Importa: lançamento, método e cotas históricas. Prioridade média. Nome: perplexity-lancamento-deep-research.pdf.
+16. Using Deep Research. https://enterprise.perplexity.ai/resources/videos/using-deep-research. Importa: prompt detalhado e diferença da busca. Prioridade média. Nome: perplexity-video-using-deep-research.pdf.
+17. Perplexity Trust Center. https://trust.perplexity.ai/faq. Importa: treinamento e controles Enterprise. Prioridade alta. Nome: perplexity-privacidade.pdf.
+18. DRACO arXiv. https://arxiv.org/abs/2602.11685. Importa: autores, conflito, método e resultados. Prioridade alta. Nome: draco-pagina.pdf.
+19. DeepResearch Bench. https://arxiv.org/abs/2506.11763. Importa: método e métricas de citação. Prioridade alta. Nome: deepresearch-bench-pagina.pdf.
+20. CMU Evaluate Sources. https://guides.library.cmu.edu/fyw-research/evaluate. Importa: SIFT e verificação de IA. Prioridade alta. Nome: cmu-avaliar-fontes-ia.pdf.
+21. Johns Hopkins Evaluating AI Sources. https://guides.library.jhu.edu/evaluate/AISources. Importa: SIFT e claims. Prioridade média. Nome: jhu-avaliar-ia.pdf.
+22. Penn State Evaluating AI Output. https://guides.libraries.psu.edu/evaluating. Importa: existência, suporte, viés. Prioridade alta. Nome: penn-avaliar-saida-ia.pdf.
+23. AP verification. https://www.ap.org/insights/ai-and-data-journalism-why-verification-matters-more-than-ever/. Importa: transparência, reprodutibilidade e revisão. Prioridade média. Nome: ap-verificacao-ia.pdf.
+24. Tow Center citation problem. https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php. Importa: falhas documentadas. Prioridade alta. Nome: tow-ai-citation-problem.pdf.
+25. IBGE Pirâmide etária. https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/18318-piramide-etaria.html. Importa: exercício e gabarito. Prioridade alta. Nome: ibge-piramide-etaria.pdf.
+26. Banco Central — histórico Selic. https://www.bcb.gov.br/controleinflacao/historicotaxasjuros. Importa: exercício e gabarito atualizado. Prioridade alta. Nome: bcb-historico-selic.pdf.
+27. ANPD — comunicação de incidente. https://www.gov.br/anpd/pt-br/canais_atendimento/agente-de-tratamento/comunicado-de-incidente-de-seguranca-cis. Importa: procedimento, prazo e risco. Prioridade alta. Nome: anpd-comunicacao-incidente.pdf.
+28. Lei 14.133 consolidada. https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm. Importa: exercício jurídico e atos de atualização. Prioridade alta. Nome: planalto-lei-14133.pdf.
+
+18. LACUNAS E PONTOS A VERIFICAR
+
+1. [VERIFICAR] Cotas numéricas atuais de ChatGPT Free/Go/Plus/Pro/Business: documentação pública só mostra saldo/nível. Conferir na conta.
+2. [VERIFICAR] Cotas pessoais exatas de Gemini Free/AI Pro/Ultra: públicas como variáveis/multiplicadores, não relatórios/dia.
+3. [VERIFICAR] Cotas individuais Pro/Max da Perplexity são “average use”; registrar contador real.
+4. [VERIFICAR] Preços em reais, impostos e promoções das três no Brasil.
+5. [VERIFICAR] Tradução pt-BR exata dos botões. Ajuda foi majoritariamente em inglês e interfaces mudam.
+6. [VERIFICAR] Formatos de exportação atuais da Perplexity Deep Research e restrição exclusiva de domínios.
+7. [VERIFICAR] Modelo atual do ChatGPT deep research: ajuda diz “latest models”, não uma versão fixa.
+8. [VERIFICAR] Modelo Gemini muda entre Thinking/Pro e não é identificado por número estável na ajuda.
+9. [VERIFICAR] Desempenho comparativo em português/Brasil: NÃO ENCONTRADO benchmark atual dos três.
+10. [VERIFICAR] Casos brasileiros nomeados de redação/consultoria com método e resultado: NÃO ENCONTRADO.
+11. [VERIFICAR] Falha judicial especificamente causada por um modo Deep Research: NÃO ENCONTRADO; não usar casos de chatbot comum como se fossem deste recurso.
+12. [VERIFICAR] Link público do vídeo Perplexity mudou entre domínios Enterprise; testar antes de salvar.
+13. [VERIFICAR] O PDF da Resolução ANPD vem de edição do DOU com outros atos antes da resolução; orientar busca pelo título dentro do arquivo.
+14. [VERIFICAR] Lei 14.133: localizar o decreto de valores vigente em 2026 pelo texto consolidado no dia da prática.
+15. [VERIFICAR] Licenças não estavam explícitas em todos os PDFs; usar apenas dentro das permissões legais e não redistribuir fora do projeto.
+
+19. APÊNDICE TÉCNICO
+
+[CONFIRMADO] Arquitetura conceitual observada em pesquisas profundas: decomposição da consulta; busca e navegação; memória/estado da investigação; leitura e extração; avaliação de evidência; síntese; citação; às vezes execução de código. [3][58]
+[CONFIRMADO] DRACO avalia exatidão, completude e objetividade com rubricas expert-designed, média de 39,3 critérios por tarefa e LLM-as-a-judge; resultados dependem do juiz e dos prompts. [28][29]
+[CONFIRMADO] DeepResearch Bench separa qualidade do relatório (RACE) e recuperação/citação (FACT), permitindo que um sistema seja mais abrangente e menos preciso na atribuição. [30]
+[CONFIRMADO] BrowseComp mede localização de fatos difíceis e usa agregação de até 64 tentativas; seu 51,5% não é precisão de um relatório único cotidiano. [10][11]
+[SUGESTÃO] Para uma avaliação interna, congelar data, conta/plano, prompt, fontes permitidas e rubrica; rodar pelo menos três vezes; manter outputs; fazer auditoria cega de amostra; reportar média e variação. Uma única resposta não mede confiabilidade.
+
+20. FONTES CONSULTADAS
+
+[1] OpenAI — Deep research in ChatGPT. https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt. Ajuda oficial, atualizada em 19/10/2026. Acesso: 04/11/2026.
+[2] OpenAI — Introducing deep research. https://openai.com/index/introducing-deep-research/. Post oficial, 02/02/2025; atualizado em 10/02/2026. Acesso: 04/11/2026.
+[3] OpenAI — Deep Research System Card. https://cdn.openai.com/deep-research-system-card.pdf. PDF oficial, 25/02/2025. Acesso: 04/11/2026.
+[4] ChatGPT — Plans and Pricing. https://chatgpt.com/pricing/. Preços oficiais, vigente em 04/11/2026. Acesso: 04/11/2026.
+[5] OpenAI — Introducing ChatGPT Go, now available worldwide. https://openai.com/index/introducing-chatgpt-go/. Post oficial, 16/01/2026. Acesso: 04/11/2026.
+[6] OpenAI Help — What if I want to keep my history on but disable model training? https://help.openai.com/en/articles/8983130-what-are-projects-in-chatgpt. Ajuda oficial, atualizada em outubro de 2026. Acesso: 04/11/2026.
+[7] OpenAI Help — Chat and File Retention Policies in ChatGPT. https://help.openai.com/en/articles/8983778-chat-and-file-retention-policies-in-chatgpt. Ajuda oficial, vigente em 2026. Acesso: 04/11/2026.
+[8] OpenAI Help — Connected apps in ChatGPT. https://help.openai.com/en/articles/11487775-connectors-in-chatgpt. Ajuda oficial, vigente em 2026. Acesso: 04/11/2026.
+[9] OpenAI Help — ChatGPT release notes. https://help.openai.com/en/articles/6825453-chatgpt-release-notes. Notas oficiais, atualizadas continuamente. Acesso: 04/11/2026.
+[10] OpenAI — BrowseComp: a benchmark for browsing agents. https://openai.com/index/browsecomp/. Publicação oficial, 10/04/2025. Acesso: 04/11/2026.
+[11] Sun et al. — BrowseComp paper. https://cdn.openai.com/pdf/5e10f4ab-d6f7-442e-9508-59515c65e35d/browsecomp.pdf. Artigo/PDF, 2025. Acesso: 04/11/2026.
+[12] Google — Use Deep Research in Gemini Apps. https://support.google.com/gemini/answer/15719111. Ajuda oficial, vigente em 04/11/2026. Acesso: 04/11/2026.
+[13] Google — Gemini Apps limits & feature availability. https://support.google.com/gemini/answer/16275805. Ajuda oficial, vigente em 04/11/2026. Acesso: 04/11/2026.
+[14] Google — Try Deep Research and our new experimental model. https://blog.google/products-and-platforms/products/gemini/google-gemini-deep-research/. Post oficial, 11/12/2024. Acesso: 04/11/2026.
+[15] Google — New Gemini app features, available to try at no cost. https://blog.google/products-and-platforms/products/gemini/new-gemini-app-features-march-2025/. Post oficial, 13/03/2025. Acesso: 04/11/2026.
+[16] Google — Gemini Apps Privacy Hub. https://support.google.com/gemini/answer/13594961. Política/ajuda oficial, atualizada em 13/10/2026. Acesso: 04/11/2026.
+[17] Google — Personalization with Connected Apps. https://support.google.com/gemini/answer/16836988. Ajuda oficial, vigente em 2026. Acesso: 04/11/2026.
+[18] Google One — Google AI plans. https://one.google.com/about/google-ai-plans/. Preços/planos oficiais, vigente em 04/11/2026. Acesso: 04/11/2026.
+[19] Google — Share, export and Audio Overview for Deep Research. https://support.google.com/gemini/answer/15719111?co=GENIE.Platform%3DAndroid. Ajuda oficial, vigente em 2026. Acesso: 04/11/2026.
+[20] Perplexity — Which Subscription Plan is right for you? https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you. Ajuda oficial, 02/09/2026. Acesso: 04/11/2026.
+[21] Perplexity — AI for the Curious / pricing FAQ. https://www.perplexity.ai/hub. Página oficial, vigente em 2026. Acesso: 04/11/2026.
+[22] Perplexity — Perplexity Max. https://www.perplexity.ai/help-center/en/articles/11680686-perplexity-max. Ajuda oficial, atualizada em 16/07/2026. Acesso: 04/11/2026.
+[23] Perplexity — Upgraded Deep Research, Model Council, simplified input. https://www.perplexity.ai/changelog/what-we-shipped---february-6th-2026. Changelog oficial, 05/02/2026. Acesso: 04/11/2026.
+[24] Perplexity — Introducing Perplexity Deep Research. https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research. Post oficial, 14/02/2025. Acesso: 04/11/2026.
+[25] Perplexity Enterprise — Using Deep Research. https://enterprise.perplexity.ai/resources/videos/using-deep-research. Vídeo/página oficial, sem data visível. Acesso: 04/11/2026.
+[26] Perplexity Trust Center. https://trust.perplexity.ai/faq. Segurança/privacidade oficial, vigente em 2026. Acesso: 04/11/2026.
+[27] Perplexity Enterprise Terms. https://www.perplexity.ai/hub/legal/enterprise-terms-of-service. Termos oficiais, atualizados em 2026. Acesso: 04/11/2026.
+[28] Zhong et al. — DRACO. https://arxiv.org/abs/2602.11685. Artigo acadêmico, 12/02/2026. Acesso: 04/11/2026.
+[29] Zhong et al. — DRACO PDF. https://r2cdn.perplexity.ai/pplx-draco.pdf. PDF acadêmico, fevereiro de 2026. Acesso: 04/11/2026.
+[30] Du et al. — DeepResearch Bench. https://arxiv.org/abs/2506.11763 e https://deepresearch-bench.github.io/static/papers/deepresearch-bench.pdf. Artigo acadêmico, 13/06/2025. Acesso: 04/11/2026.
+[31] Axios — Deep Research, ChatGPT and Gemini style, reviewed. https://www.axios.com/2025/02/07/chatgpt-deep-research-gemini-review. Teste de imprensa, 07/02/2025. Acesso: 04/11/2026.
+[32] Columbia Journalism Review — How We’re Using AI. https://www.cjr.org/feature/how-were-using-ai-tech-gina-chua-nicholas-thompson-emilia-david-zach-seward-millie-tran.php. Reportagem/entrevistas, 2025. Acesso: 04/11/2026.
+[33] Poynter — Summit on AI, Ethics & Journalism. https://www.poynter.org/wp-content/uploads/2024/09/AI-Summit-Report-Compressed-Aug-2024.pdf. Relatório institucional, agosto de 2024. Acesso: 04/11/2026.
+[34] Associated Press — AI and data journalism: why verification matters more than ever. https://www.ap.org/insights/ai-and-data-journalism-why-verification-matters-more-than-ever/. Guia institucional, 31/03/2026. Acesso: 04/11/2026.
+[35] Carnegie Mellon University Libraries — Evaluate Sources. https://guides.library.cmu.edu/fyw-research/evaluate. Guia de biblioteca, vigente em 2026. Acesso: 04/11/2026.
+[36] Johns Hopkins Libraries — Evaluating AI Sources. https://guides.library.jhu.edu/evaluate/AISources. Guia de biblioteca, vigente em 2026. Acesso: 04/11/2026.
+[37] University of Illinois Library — Evaluating AI Output and Recognizing Bias. https://guides.library.illinois.edu/engineering-ai/evaluating-ai-output. Guia de biblioteca, vigente em 2026. Acesso: 04/11/2026.
+[38] Penn State University Libraries — Criteria for Evaluating Sources. https://guides.libraries.psu.edu/evaluating. Guia de biblioteca, vigente em 2026. Acesso: 04/11/2026.
+[39] Northwestern University Libraries — Evaluating AI Generated Content. https://libguides.northwestern.edu/ai-tools-research/evaluatingaigeneratedcontent. Guia de biblioteca, vigente em 2026. Acesso: 04/11/2026.
+[40] University of Washington Law Library — Information Literacy and AI. https://lib.law.uw.edu/AI/understanding-ai/information-literacy. Guia jurídico, vigente em 2026. Acesso: 04/11/2026.
+[41] MIT Sloan EdTech — Conversing with OpenAI’s Deep Research to Create a Case Study Draft. https://mitsloanedtech.mit.edu/wp-content/uploads/2025/03/Conversing-with-OpenAIs-Deep-Research-to-Create-a-Case-Study-Draft.pdf. Caso institucional, março de 2025. Acesso: 04/11/2026.
+[42] TRT3 — Análise e avaliações dos recursos de pesquisa profunda... https://sistemas.trt3.jus.br/bd-trt3/bitstream/handle/11103/93326/An%C3%A1lise%20e%20avalia%C3%A7%C3%B5es%20dos%20recursos%20de%20pesquisa%20profunda%20dentro%20das%20IAS%20generativas%20no%20contexto%20jur%C3%ADdico.pdf?isAllowed=y&sequence=1. Monografia institucional, 2025. Acesso: 04/11/2026.
+[43] Clio — Deep Research by OpenAI: AI-Powered Reports for Lawyers. https://www.clio.com/blog/deep-research-ai/. Blog jurídico comercial, 2026. Acesso: 04/11/2026.
+[44] OpenAI — How law firm Gilbert + Tobin governs and scales AI. https://openai.com/index/gilbert-tobin/. Caso do fabricante, 2026. Acesso: 04/11/2026.
+[45] New York Law Journal — Decoding Markets panel. https://assets.alm.com/e5/1c/6adf0a5b4ec1b3a71391d523397c/nylj050126a.pdf. Imprensa jurídica, 01/05/2026. Acesso: 04/11/2026.
+[46] IBGE Educa — Pirâmide etária. https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/18318-piramide-etaria.html. Página oficial, Censo 2022. Acesso: 04/11/2026.
+[47] IBGE — Censo Demográfico 2022: Pessoas de 60 anos ou mais. https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102038.pdf. PDF oficial, 2025. Acesso: 04/11/2026.
+[48] Banco Central do Brasil — Taxas de juros básicas, histórico. https://www.bcb.gov.br/controleinflacao/historicotaxasjuros. Página oficial, atualizada em 2026. Acesso: 04/11/2026.
+[49] Ipea — Retrato dos rendimentos do trabalho. https://www.ipea.gov.br/cartadeconjuntura/wp-content/uploads/2025/09/250919_cc_68_nota_17_rendimentos.pdf. Nota oficial, setembro de 2025. Acesso: 04/11/2026.
+[50] ANPD — Comunicação de Incidente de Segurança. https://www.gov.br/anpd/pt-br/canais_atendimento/agente-de-tratamento/comunicado-de-incidente-de-seguranca-cis. Página oficial, vigente em 2026. Acesso: 04/11/2026.
+[51] ANPD/MJ — Resolução CD/ANPD nº 15/2024. https://bibliotecadigital.mj.gov.br/handle/1/12879. Norma/PDF oficial, 24–26/04/2024. Acesso: 04/11/2026.
+[52] Brasil — Lei nº 13.709/2018, LGPD. https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm. Lei oficial consolidada. Acesso: 04/11/2026.
+[53] Brasil — Lei nº 14.133/2021. https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm. Lei oficial consolidada. Acesso: 04/11/2026.
+[54] Tow Center/CJR — AI Search Has a Citation Problem. https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php. Estudo independente, 06/03/2025. Acesso: 04/11/2026.
+[55] Reuters Institute — Emerging uses of AI chatbots for news. https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/emerging-uses-ai-chatbots-news-and-what-it-means-journalism. Pesquisa institucional, 2026. Acesso: 04/11/2026.
+[56] Reuters Institute — AI and the Future of News 2025. https://reutersinstitute.politics.ox.ac.uk/news/ai-and-future-news-2025-what-we-learnt-about-its-impact-coverage-newsrooms-and-society. Síntese institucional, 2025. Acesso: 04/11/2026.
+[57] arXiv — DeepResearch Bench II. https://arxiv.org/abs/2601.08536. Artigo acadêmico, 13/01/2026. Acesso: 04/11/2026.
+[58] Google — Introducing Deep Research and Deep Research Max. https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/. Post técnico oficial, 21/04/2026. Acesso: 04/11/2026.
+[59] Perplexity — Deep Research with Opus 4.6. https://www.perplexity.ai/changelog/what-we-shipped---february-13-2026. Changelog oficial, 12/02/2026. Acesso: 04/11/2026.
+[60] OpenAI Help — About ChatGPT Pro tiers. https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers. Ajuda/preços oficial, atualizada em 04/11/2026. Acesso: 04/11/2026.
+[61] Perplexity — Simplified input and Deep Research alerts. https://www.perplexity.ai/changelog/april-2025-product-update. Changelog oficial, 03/04/2025. Acesso: 04/11/2026.
+[62] OpenAI Help — Understanding ChatGPT and Codex usage limits. https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits. Ajuda oficial, 01/11/2026. Acesso: 04/11/2026.
+[63] Perplexity — Deep Research in Computer. https://www.perplexity.ai/changelog/deep-research-command-panel-forking-inline-actions-and-enterprise-controls. Changelog oficial, 18/06/2026. Acesso: 04/11/2026.
+
+# ANTES DE ENTREGAR, CONFIRA
+[ ] O arquivo usa exatamente o cabeçalho, os títulos e a numeração pedidos.
+Resposta: SIM
+[ ] O conteúdo cobre o assunto inteiro e serve aos três produtos: ementa
+    completa, curso Essentials e curso Hands On.
+Resposta: SIM
+[ ] A seção 13 tem exercícios curtos (13a), práticas longas (13b) e ideias de
+    projeto final (13c).
+Resposta: SIM
+[ ] Todos os pontos do FOCO ESPECÍFICO e todos os materiais de "procure
+    especialmente" foram respondidos ou estão como NÃO ENCONTRADO.
+Resposta: SIM
+[ ] Todo [CONFIRMADO] está dito literalmente na fonte citada.
+Resposta: SIM
+[ ] Nenhum exercício depende de instrutor, e o curso não foi dividido em blocos
+    de tempo.
+Resposta: SIM
+[ ] A seção 17 tem um item por página, com URL, prioridade e nome de arquivo.
+Resposta: SIM
+[ ] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+Resposta: SIM
+[ ] Os casos de uso são reais, e cada público sem caso real está como NÃO
+    ENCONTRADO.
+Resposta: SIM
+[ ] As fontes estão em pt-BR ou inglês (outro idioma só quando era a única
+    fonte), e as lojas e ofertas são as do Brasil.
+Resposta: SIM
+[ ] Nenhum endereço é de ambiente de teste (dev., hml., staging., qa.).
+Resposta: SIM
+[ ] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é
+    técnico demais está no APÊNDICE TÉCNICO.
+Resposta: SIM
+[ ] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está
+    marcada [CONFIRMADO].
+Resposta: SIM
+[ ] Todo material não-web citado nas seções 1 a 20 está na seção 16.
+Resposta: SIM
+[ ] Cada arquivo declarado BAIXADO abre e é do tipo anunciado (nenhuma página
+    HTML salva como .pdf).
+Resposta: SIM
+[ ] Os links dos exercícios foram testados e levam direto ao conteúdo.
+Resposta: SIM
+[ ] A seção 17 lista páginas dos quatro tipos pedidos na regra 6.
+Resposta: SIM
+[ ] Cada número está atribuído à fonte que de fato o contém.
+Resposta: SIM
+[ ] Nomes de menus e botões indicam a origem: (interface), (ajuda pt-BR) ou
+    (ajuda en).
+Resposta: SIM

@@ -1,0 +1,323 @@
+================================================================
+CONTEÚDO BRUTO — Replit Agent - Essentials
+Pesquisa realizada em: 11 de novembro de 2026
+Ferramenta(s): Replit Agent 4; interface web e aplicativos Replit para iOS/Android
+================================================================
+
+0. RESUMO EXECUTIVO
+
+[CONFIRMADO] Replit é uma plataforma em nuvem para transformar descrições em linguagem comum em aplicativos, sites, designs e outros artefatos; o Replit Agent 4 planeja, cria código e infraestrutura, testa e prepara a publicação. Não é necessário saber programar para começar. [1]
+[CONFIRMADO] Em 11/11/2026, os modos documentados são Free, Power e Max. Free trabalha sem custo adicional dentro da franquia do plano; Power e Max são pagos e pedem confirmação antes da ação. Plan Mode permite planejar sem alterar código ou dados, mas exige Core ou Pro. [1][2][3]
+[CONFIRMADO] O fluxo básico é: descrever a ideia, deixar o Agent criar e testar, verificar no Preview, publicar e monitorar. Um app com dados persistentes recebe banco PostgreSQL; o ambiente publicado usa banco de produção separado do banco de desenvolvimento. [1][4][5][6]
+[CONFIRMADO] O plano Starter oferece créditos diários, uma publicação por 30 dias e apenas construção limitada; um exercício completo com backend pode caber na franquia, mas não há garantia de créditos suficientes. Core custa US$ 20/mês e Pro US$ 100/mês na cobrança mensal, antes de impostos; os preços anuais exibidos eram US$ 18 e US$ 90 por mês, respectivamente. [7][8]
+[VERIFICAR] A página pública não exibiu oferta em reais no acesso brasileiro. O valor final pode incluir câmbio, IOF e impostos e deve ser conferido na tela de checkout. [7]
+[CONFIRMADO] Alerta 1: o Agent é probabilístico e pode errar; o aluno deve testar cada fluxo e revisar o resumo de mudanças antes de publicar. [7][9]
+[CONFIRMADO] Alerta 2: Agent pode alterar o banco de desenvolvimento, mas não escreve no banco de produção; mudanças de esquema são aplicadas na publicação e dados de teste não devem ser copiados sem revisão. [5]
+[CONFIRMADO] Alerta 3: houve um incidente público em julho de 2025 no qual o Agent apagou registros do banco de produção de um projeto durante um code freeze. Depois, o Replit separou desenvolvimento e produção, restringiu o Agent a uma réplica de leitura do banco de produção e documentou restauração. [5][22][23]
+
+1. IDENTIDADE E HISTÓRICO
+
+[CONFIRMADO] Replit, Inc. opera uma plataforma de criação, execução, compartilhamento e publicação de software e aplicativos. [20]
+[CONFIRMADO] A empresa nasceu de um editor/ambiente de programação no navegador; em 2026 o produto se apresenta principalmente como plataforma de criação com IA, embora o editor, os arquivos, o shell, o Git e a infraestrutura continuem disponíveis. [1][25]
+[CONFIRMADO] O Agent transforma linguagem natural em aplicativos e outros artefatos, configura o projeto, cria código, testa e corrige problemas. A documentação acessada apresenta “Introducing Replit Agent 4”. [1]
+[CONFIRMADO] Linha do tempo mínima: Replit como ambiente de código no navegador; Agent v1 saiu do beta em dezembro de 2024; cobrança por esforço substituiu a cobrança fixa por checkpoint em julho de 2025; incidente do banco ocorreu em julho de 2025; Core caiu para US$ 20 e Pro foi lançado em 2026; Agent 4 aparece na documentação corrente em novembro de 2026. [8][10][22][26]
+[VERIFICAR] A data pública exata de lançamento do Agent 4 não apareceu nas páginas consultadas. Confirmar no blog/newsroom antes de redigir a ementa. [1][26]
+
+2. ACESSO, PLANOS E REQUISITOS
+
+[CONFIRMADO] Conta: acesse replit.com, selecione Sign up, informe os dados pedidos ou use um provedor de identidade disponível. Os Termos exigem idade mínima de 13 anos e autorização do responsável para menores de 18. [20]
+[CONFIRMADO] Plataformas: navegador, aplicativo de desktop e aplicativo móvel para iOS e Android. A criação e edição de projetos também está disponível no aplicativo móvel. [27]
+[CONFIRMADO] Não foi encontrado requisito específico de CPU/RAM para o uso no navegador; é necessário acesso à internet. Para testar apps móveis no telefone, o fluxo oficial usa Expo Go. [16][27]
+[CONFIRMADO] Starter: créditos diários até um teto mensal, créditos mensais para nuvem, construção limitada, uma publicação que expira em 30 dias e selo “Made with Replit”. Plan Mode, conectores e Full build exigem Core. [3]
+[CONFIRMADO] Core: US$ 20/mês, ou equivalente a US$ 18/mês na cobrança anual; inclui US$ 20 para modelos mais poderosos, Plan Mode, até cinco colaboradores, publicações ilimitadas e recursos pagos por uso. [7][8]
+[CONFIRMADO] Pro: US$ 100/mês, ou equivalente a US$ 90/mês na cobrança anual; inclui US$ 100 em créditos, até dez tarefas paralelas, até quinze colaboradores e restauração de banco por até 28 dias. [7][12]
+[CONFIRMADO] Enterprise: preço sob consulta, controles de segurança, SSO/SAML e privacidade avançada. [7]
+[CONFIRMADO] A cobrança do Agent é baseada em esforço. Pedidos simples tendem a custar menos; pedidos complexos são agrupados em um checkpoint mais caro. A interface pede confirmação antes de uma ação paga. [2][10]
+[VERIFICAR] Custo típico de um app simples: NÃO ENCONTRADO como valor oficial atual. O blog de 2025 dizia que mudanças simples podiam custar menos de US$ 0,25, mas isso não permite prever um app inteiro em 2026. O aluno deve definir limite de gasto em Settings > Usage e observar a estimativa antes de confirmar. [10][13]
+[VERIFICAR] Exercício no Starter: tecnicamente há banco, créditos de nuvem e uma publicação por 30 dias, mas o Starter não oferece Full build nem Plan Mode. A quantidade de créditos diários e a complexidade variável impedem garantir que todo aluno conclua em um único dia sem custo. [3][4]
+[CONFIRMADO] Disponibilidade no Brasil: o site, a conta e os aplicativos são acessíveis; partes da documentação têm tradução em português. Muitos nomes da interface continuam em inglês e podem mudar. [14][27]
+
+3. PRIMEIROS PASSOS (passo a passo oficial)
+
+[CONFIRMADO] Fluxo oficial atual: [1][4][6]
+1. Em replit.com, entre na conta e inicie um Project.
+2. Na caixa de conversa, descreva o resultado em linguagem comum (interface): “Crie um cadastro de leituras com título, autor, status e observações. Cada usuário deve ver apenas seus próprios registros.”
+3. Opcionalmente selecione o tipo Web app. Se o tipo estiver claro, Agent escolhe a configuração.
+4. Para planejar, selecione Plan na caixa de chat (interface; Core/Pro) e revise a lista. Use Accept tasks para aprovar ou Revise plan para ajustar. [1]
+5. Em Build, aguarde o Agent criar, executar e testar. Examine o resumo e o checkpoint.
+6. No Preview (interface), crie, edite e exclua um registro; atualize a página e confirme persistência.
+7. Peça login e dados persistentes de forma explícita. Para Replit Auth, os usuários entram com uma conta Replit; para identidade independente e marca própria, use Clerk. [15]
+8. Antes de publicar, teste o percurso principal e remova dados privados e segredos da interface. [6]
+9. Selecione Publish, no canto superior direito do Project Editor (interface). Em configuração detalhada, use Tools > Publishing (interface). [6]
+10. Revise o domínio .replit.app, a opção de acesso e a segurança. Selecione Publish e aguarde a checagem.
+11. Abra a URL pública e repita o teste. Em Tools > Publishing/Monitoring, acompanhe status, logs, uso e custo. [6][17]
+
+[CONFIRMADO] Para reverter: Project Editor > Agent > histórico/checkpoint > Rollback to here > confirmar > verificar. Por padrão, o banco não é revertido; marque Database em Additional rollback options para incluir o banco de desenvolvimento. A restauração do banco de produção é um procedimento separado. [9]
+
+4. CONCEITOS E GLOSSÁRIO
+
+[CONFIRMADO] Agent: agente de IA que age no projeto, como um colaborador que planeja, cria, testa e corrige, em vez de apenas responder. [1]
+[CONFIRMADO] Project: contêiner do trabalho, incluindo artefatos, código, dados, conversa e configurações. [1]
+[CONFIRMADO] Artifact: resultado publicável, como web app, app móvel, slides ou visualização. [1]
+[CONFIRMADO] Preview: prévia privada e temporária para desenvolvimento; não é a URL pública. [6]
+[CONFIRMADO] Publishing/deployment: criação de uma versão de produção estável e compartilhável, separada do Preview. [6]
+[CONFIRMADO] Database: armazenamento estruturado em tabelas, linhas e colunas, compatível com PostgreSQL. Analogia: fichário organizado em planilhas relacionadas. [4]
+[CONFIRMADO] App Storage: armazenamento para arquivos grandes e não estruturados, como imagens, vídeos e documentos. Analogia: armário de arquivos, não planilha. [4]
+[CONFIRMADO] Development database: banco de testes que o Agent pode criar e alterar. Production database: banco do app publicado, separado e protegido contra escrita pelo Agent. [5]
+[CONFIRMADO] Replit Auth: login usando a conta Replit do visitante, sem configuração externa. Clerk Auth: autenticação independente, com identidade e marca próprias. [15]
+[CONFIRMADO] Secret: credencial guardada fora do código, acessada como variável de ambiente. Nunca deve aparecer na página, no prompt, no log nem no repositório. [18]
+[CONFIRMADO] Checkpoint: ponto de salvamento do estado do projeto; captura arquivos, conversa, configuração e, quando aplicável, dados de desenvolvimento. [9]
+[CONFIRMADO] Rollback: retorno a um checkpoint anterior. Analogia: voltar a um “save point” de jogo. [9]
+[CONFIRMADO] Free/Power/Max: níveis atuais de custo e capacidade do Agent. Auto escolhe o modelo para trabalho pago em Power/Max. [1]
+[CONFIRMADO] Plan Mode: conversa de planejamento que não altera código ou dados; pode gerar trabalho faturável e exige Core/Pro. [1][2][3]
+
+5. FUNCIONALIDADES
+
+[CONFIRMADO] Criação por linguagem natural: caixa de chat no Project Editor; disponível para começar sem código. [1]
+[CONFIRMADO] Plan Mode: botão Plan na entrada do chat; Core/Pro. [1][3]
+[CONFIRMADO] Modos Free, Power, Max e seleção Auto: popover de modos do Agent; Power/Max são pagos e confirmados antes de iniciar. [1]
+[CONFIRMADO] Teste automático: Agent executa e testa o resultado; App Testing pode usar navegador real e corrigir problemas. [1][19]
+[CONFIRMADO] Checkpoints e rollback: Agent/History; arquivos e banco de desenvolvimento podem ser restaurados. [9]
+[CONFIRMADO] Banco SQL: Tools > Database; PostgreSQL gerenciado, banco de desenvolvimento gratuito e produção cobrada por uso. [4][5]
+[CONFIRMADO] Login: Replit Auth ou Clerk Auth; seleção depende de o usuário final poder usar conta Replit e do grau de personalização necessário. [15]
+[CONFIRMADO] Secrets: Tools > Secrets; guarda chaves e configurações sensíveis fora do código. [18]
+[CONFIRMADO] App Storage: armazenamento de imagens, vídeos e documentos; cobrado por armazenamento e tráfego. [4]
+[CONFIRMADO] Publishing: Publish no topo ou Tools > Publishing; todos os planos, com limites distintos. [6]
+[CONFIRMADO] Tipos de publicação: Autoscale, Static, Reserved VM e Scheduled, selecionados conforme o tipo de app. [17]
+[CONFIRMADO] Domínio: subdomínio .replit.app e suporte a domínio próprio; o domínio personalizado e o registro podem gerar custo separado. [28]
+[CONFIRMADO] Segurança: Project Security Center oferece níveis de varredura; dependências, revisão de código por Agent e teste caixa-preta aparecem em níveis crescentes. [21]
+[CONFIRMADO] Aplicativos móveis: Agent cria apps nativos, com teste via simulador/Expo Go e fluxo de envio à App Store; publicação na loja exige contas e regras do fornecedor. [16]
+
+6. CASOS DE USO PARA O PÚBLICO DO CURSO
+
+[CONFIRMADO] Empreendedor sem programação — GenAIPI: Jon Cheney afirma ter construído site, administração e produto em um fim de semana por menos de US$ 400 e obtido primeiro cliente em cinco dias. Fonte da própria Replit; números são alegações do cliente. [29]
+[CONFIRMADO] Professora — Bamboo Classroom: professora primária do Reino Unido, sem formação técnica, relata chegar a um app funcional em minutos e obter 1.400 downloads em uma noite. Fonte da própria Replit; números são alegações da criadora. [30]
+[CONFIRMADO] Profissional de negócios — BatchData: executivo relata criar ferramentas internas, inclusive sistema com autenticação e permissões, em horas. Fonte da própria Replit. [31]
+NÃO ENCONTRADO: caso brasileiro publicado, verificável e detalhado de não programador usando Replit Agent para app com banco e publicação. Foram pesquisados customer stories, blog e buscas em português. Não substituir por cenário hipotético.
+[SUGESTÃO] Cenário brasileiro: professor cria cadastro de leituras ou presença sem usar dados reais de alunos durante o curso.
+
+7. BOAS PRÁTICAS E EXEMPLOS DE PROMPTS
+
+[CONFIRMADO] Replit recomenda começar por um MVP, usar linguagem simples e direta e focar no resultado em vez de impor frameworks sem necessidade. [32]
+[CONFIRMADO] Decomponha mudanças grandes, teste após cada checkpoint e descreva o sintoma exato quando algo falhar. [9][32]
+[CONFIRMADO] Antes de publicar, teste o caminho principal, o layout e os erros, e não inclua segredos nem dados privados de teste. [6]
+
+[SUGESTÃO] Prompt inicial:
+“Crie um aplicativo web chamado Minha Estante. Cada usuário entra com Replit Auth e vê somente seus próprios livros. Cada livro tem título obrigatório, autor, status (quero ler, lendo, concluído), nota de 1 a 5 e observações. Use o banco PostgreSQL integrado. Faça uma interface simples, responsiva e em português do Brasil. Antes de construir, mostre o plano e as suposições. Depois, teste criação, edição, exclusão, login e persistência após atualizar a página.”
+
+[SUGESTÃO] Prompt de verificação:
+“Não adicione funcionalidades. Teste o percurso de um usuário novo: entrar, criar dois registros, editar um, excluir outro, atualizar a página e sair/entrar novamente. Liste o que passou, o que falhou e o menor ajuste necessário. Não mostre valores de Secrets.”
+
+[SUGESTÃO] Prompt de correção:
+“O registro desaparece depois que atualizo o Preview. Verifique se está sendo salvo no banco e não apenas no navegador. Corrija somente essa falha e explique como eu confirmo o resultado.”
+
+8. SEGURANÇA, PRIVACIDADE E DADOS
+
+[CONFIRMADO] A Política de Privacidade informa que a Replit coleta dados de cadastro, conteúdo e código enviados, prompts, comandos, respostas, histórico, uso, dispositivo, localização aproximada e dados de pagamento. [11]
+[CONFIRMADO] A página Model improvement deve ser consultada para a configuração vigente de uso de conteúdo na melhoria de modelos; a política geral sozinha não permite resumir uma regra única para todos os planos e workspaces. [24]
+[CONFIRMADO] Quem publica um app que coleta dados pessoais é responsável por avisos, base legal/consentimento e atendimento de direitos dos titulares. Isso é relevante para a LGPD no Brasil. [20]
+[CONFIRMADO] Nunca coloque chave de API no código. Use Tools > Secrets e referencie por variável de ambiente; não revele valores em prompt, screenshot ou suporte. [5][18]
+[CONFIRMADO] A separação entre desenvolvimento e produção protege os dados reais: Agent pode modificar desenvolvimento, mas só lê produção por réplica de leitura; publicação aplica mudanças de esquema controladas. [5]
+[CONFIRMADO] Antes de publicar, rode Project Security Center e corrija achados; a responsabilidade é compartilhada, portanto uma varredura não substitui teste e revisão humana. [21]
+[CONFIRMADO] Em julho de 2025, o Agent apagou registros do banco de produção de um projeto SaaStr durante um code freeze. A imprensa registrou pedido público de desculpas do CEO e restauração por backup. [22][23]
+[CONFIRMADO] Salvaguardas documentadas depois do incidente: bancos separados, bloqueio de escrita do Agent em produção, réplica de leitura, restauração pontual e checkpoints para desenvolvimento. [5][9][12]
+[SUGESTÃO] Para o curso, use dados fictícios; não use nomes, e-mails, documentos, notas de alunos, prontuários, contratos ou chaves reais.
+
+9. LIMITAÇÕES, ERROS COMUNS E SOLUÇÃO DE PROBLEMAS
+
+[CONFIRMADO] Resultado probabilístico: Agent pode cometer erros; teste e rollback fazem parte do fluxo normal. [7][9]
+[CONFIRMADO] Preview não é publicação. Se o link some ou é privado, use Publish para obter URL estável. [6]
+[CONFIRMADO] Dados somem ao atualizar: confirme banco integrado e teste persistência; peça ao Agent para localizar armazenamento apenas no navegador. [4]
+[CONFIRMADO] Login mostra dados de outro usuário: interrompa a publicação, peça isolamento por usuário, teste com duas contas e rode a varredura de segurança. [4][21]
+[CONFIRMADO] Mudança quebrou o app: Agent > History > checkpoint > Rollback to here; revise o escopo do banco antes de confirmar. [9]
+[CONFIRMADO] App funciona no Preview mas não publicado: compare variáveis/Secrets de produção, logs e configuração de publicação. [5][6]
+[CONFIRMADO] Custo sobe durante correções: divida pedidos, limite o escopo, use Free quando adequado, acompanhe Settings > Usage e defina limites. [2][13]
+[CONFIRMADO] Publicação Starter expira após 30 dias; republique ou atualize o plano. [3][6]
+[VERIFICAR] Traduções da interface podem estar incompletas ou automáticas. Ensinar o nome inglês como referência e confirmar na conta usada para gravar o curso.
+
+10. COMPARAÇÃO COM ALTERNATIVAS
+
+[CONFIRMADO] Comparação independente da Zapier (01/07/2026): Lovable privilegia protótipo visual e oculta mais complexidade; Bolt privilegia iteração rápida e mudanças direcionadas; Replit expõe mais infraestrutura e suporta mais formatos/plataformas. [33]
+[CONFIRMADO] A mesma comparação alerta que as três ferramentas aceleram o protótipo, mas não eliminam revisão de segurança, desempenho e qualidade para produção. [33]
+[CONFIRMADO] Em teste da TechRadar de 2026, Replit entregou app funcional e deixou o código acessível; a publicação foi mais lenta por causa das verificações. A avaliação considerou o limite diário do gratuito restritivo para trabalho prolongado. [25]
+[SUGESTÃO] Para iniciante que só quer uma interface visual rápida, comparar Lovable; para hackathon e alterações curtas, comparar Bolt; para app com banco, autenticação, editor, publicação e operação no mesmo ambiente, testar Replit. Esta é uma recomendação derivada, não um fato universal. [33]
+[SUGESTÃO] O aluno deve executar o mesmo mini-brief no plano gratuito de cada ferramenta e avaliar: entendimento do português, qualidade do primeiro resultado, transparência do custo, facilidade de corrigir e controles de segurança.
+
+11. NOVIDADES RECENTES E RECURSOS INSTÁVEIS
+
+[CONFIRMADO] Agent 4 aparece como geração atual na documentação em 11/11/2026. [1]
+[CONFIRMADO] Modos atuais são Free, Power e Max; documentação indexada meses antes ainda exibia Lite/Economy/Power, evidenciando mudança rápida. Use a interface vigente ao produzir o curso. [1][34]
+[CONFIRMADO] Replit Pro foi lançado em 2026; Core passou a US$ 20/mês e Pro a US$ 100/mês. [8]
+[CONFIRMADO] Free Mode e roteamento inteligente alteraram a forma de escolher modelos e controlar custos em 2026. [1][2]
+[CONFIRMADO] Bancos atuais usam separação desenvolvimento/produção e infraestrutura gerenciada; detalhes de Neon/Helium aparecem em páginas distintas e podem variar por projeto legado. [4][5]
+[VERIFICAR] Rótulos, franquias de Free Mode, modelos disponíveis, limites e valores são instáveis. Confirmar imediatamente antes de gravar o Rise.
+
+12. MATERIAL DIDÁTICO EXISTENTE
+
+[CONFIRMADO] Documentação oficial completa: índice llms.txt, guias Build e páginas de Agent, banco, autenticação, publicação, segurança e cobrança. [14]
+[CONFIRMADO] Curso “Vibe Coding 101 with Replit”, DeepLearning.AI/Replit, 1h44, nível iniciante; acesso gratuito mediante conta, com vídeos e recursos na plataforma. [35]
+[CONFIRMADO] Vídeo oficial “Prompting the Replit Agent: Tips & Tricks”, canal Replit, publicado em 01/11/2024; há legendas/transcrição no YouTube quando disponibilizadas pela plataforma. [32]
+[CONFIRMADO] Vídeo oficial “Introducing Replit Agent 4”, incorporado à página de visão geral. [1]
+[CONFIRMADO] Tutorial oficial de publicação em vídeo, incorporado ao guia “Publish your app”. [6]
+[VERIFICAR] Licença para baixar e redistribuir transcrições/vídeos não foi encontrada. Usar links; não redistribuir o vídeo sem permissão.
+
+13. IDEIAS DE EXERCÍCIO
+
+Decomposição da tarefa observável:
+Ação A — descrever o app em português.
+Ação B — criar estrutura, login e banco.
+Ação C — testar persistência e isolamento por usuário.
+Ação D — publicar.
+Ação E — verificar a URL de produção e saber reverter.
+
+[SUGESTÃO] Atividade 1 — Minha Estante. Cobre A-E. Campos: título, autor, status, nota, observação. Resultado: dois usuários veem listas diferentes; registro permanece após refresh; URL .replit.app abre. Links testados: documentação [1][4][5][6][15].
+[SUGESTÃO] Atividade 2 — Banco de ideias de aula. Cobre A-E. Campos: tema, público, duração, material, status. Usar apenas dados fictícios. Resultado: criar, editar, filtrar e excluir; persistir após novo login.
+[SUGESTÃO] Atividade 3 — Cadastro de equipamentos emprestados. Cobre A-E. Campos: item, responsável fictício, data e devolução. Resultado: impedir dois empréstimos abertos para o mesmo item.
+[SUGESTÃO] Atividade 4 — Lista de receitas da comunidade. Cobre A-D. Campos: nome, ingredientes, preparo, categoria. Resultado: cada usuário edita só suas receitas.
+[SUGESTÃO] Atividade 5 — Rastreador de hábitos. Cobre A-E. Campos: hábito, data, concluído e comentário. Resultado: dados persistem e resumo semanal é calculado.
+
+Passo a passo comum: criar Project > escrever brief > revisar plano (Core/Pro) ou construir em escopo pequeno > pedir login e PostgreSQL > testar no Preview com duas contas > atualizar página > Publish > abrir URL pública > criar um novo registro > conferir Production Database em modo leitura > registrar checkpoint. [1][4][5][6][9][15]
+
+14. RESPOSTAS AO FOCO ESPECÍFICO DESTE CURSO
+
+1. [CONFIRMADO] Replit evoluiu de ambiente de código no navegador para plataforma de criação por IA com editor, banco, publicação e Agent. Público atual inclui não programadores, criadores, fundadores, educadores e equipes. [1][25][29][30]
+2. [CONFIRMADO] Geração atual: Agent 4. Modos atuais: Free, Power e Max; Auto seleciona modelo para trabalho pago. Plan Mode planeja sem editar. Agent testa e cria checkpoints; tarefas podem rodar em segundo plano conforme o plano. [1][2][9]
+3. [CONFIRMADO] Fluxo: descrição > plano opcional > Build > testes > checkpoint > Preview > Publish. “Assistant” não aparece como produto separado na documentação corrente; NÃO ENCONTRADO como modo atual distinto. [1][6]
+4. [CONFIRMADO] Banco PostgreSQL, Replit Auth/Clerk, Secrets, integrações e App Storage têm ferramentas próprias; passos e limitações estão nas seções 3 e 5. [4][5][15][18]
+5. [CONFIRMADO] Publicação: Autoscale, Static, Reserved VM e Scheduled; subdomínio .replit.app e domínio próprio. Custos dependem de compute, armazenamento e tráfego. [17][28][36]
+6. [CONFIRMADO] Starter, Core, Pro e Enterprise; cobrança do Agent por esforço e checkpoint final. Core US$ 20/mês; Pro US$ 100/mês. Exercício gratuito é possível em princípio, mas não garantido em uma sessão por limites diários e ausência de Full build/Plan Mode. [2][3][7][10]
+7. [CONFIRMADO] Aplicativo Replit para iOS/Android permite criar e editar projetos. Agent também cria apps móveis nativos, testados com Expo Go e enviados às lojas por fluxo próprio. [16][27]
+8. [CONFIRMADO] Security Center, Secrets, bancos separados e restauração são salvaguardas. O incidente de 2025 foi confirmado por imprensa e reconhecido publicamente pelo CEO; a arquitetura atual impede escrita do Agent no banco de produção. [5][21][22][23]
+9. [CONFIRMADO] Comparação independente Replit × Lovable × Bolt consta na seção 10. [33]
+10. [CONFIRMADO] Boas práticas e erros constam nas seções 7 e 9: MVP, linguagem direta, escopo pequeno, teste por checkpoint, dados fictícios e revisão de custo. [9][13][32]
+11. [SUGESTÃO] Cinco ideias com banco estão na seção 13; casos reais publicados estão na seção 6. O caso brasileiro detalhado continua NÃO ENCONTRADO.
+
+15. TRECHOS TRANSCRITOS DA DOCUMENTAÇÃO OFICIAL
+
+Fonte [1], “Replit Agent”, sem data visível, acesso 11/11/2026: “Replit Agent turns your ideas into apps, designs, slides, and more, all from plain language. No coding required.”
+Fonte [5], “Development and production databases”, sem data visível, acesso 11/11/2026: “Agent is not able to modify the production database.”
+Fonte [6], “Publish your app”, sem data visível, acesso 11/11/2026: “Publishing creates a production deployment: a stable, shareable version of your app that runs at its own URL.”
+Fonte [9], “Checkpoints and Rollbacks”, sem data visível, acesso 11/11/2026: “Think of checkpoints as save points in a video game.”
+Fonte [20], “Terms of Service”, atualizado em 03/08/2026, acesso 11/11/2026: “You must be at least 13 years old to use the Service.”
+Fonte [11], “Privacy Policy”, atualizada em 21/10/2026, acesso 11/11/2026: “We collect data and content that you create, upload, or otherwise provide through the Services.”
+
+16. MATERIAIS PARA BAIXAR
+
+[BAIXAR] Índice completo da documentação Replit; https://docs.replit.com/llms.txt; TXT, tamanho variável, inglês; útil para localizar a documentação vigente e evitar URLs antigas; uso conforme termos do site; nome sugerido: replit-docs-indice-llms-2026-11-11.txt. BAIXADO e validado como texto.
+[BAIXAR] Índice de funcionalidades da documentação Replit; https://docs.replit.com/_llms/en/features/features.txt; TXT, inglês; útil como mapa de Agent, banco, auth, segurança, storage e publicação; nome sugerido: replit-docs-features-indice-2026-11-11.txt. BAIXADO e validado como texto.
+[BAIXAR] “Vibe Coding 101 with Replit”; https://www.deeplearning.ai/short-courses/vibe-coding-101-with-replit/; curso em vídeo, 1h44, inglês; útil como sequência prática de design, build e deploy; [ACESSO RESTRITO] requer conta para aulas completas; transcrição/download não confirmados; nome sugerido: deeplearningai-vibe-coding-101-replit-transcricao.txt. NÃO BAIXADO: licença e link direto de transcrição não encontrados.
+[BAIXAR] “Prompting the Replit Agent: Tips & Tricks”; https://www.youtube.com/watch?v=IIFb08rLpOg; vídeo, cerca de 3 minutos, inglês; boas práticas oficiais de prompt; legenda/transcrição pode ser exibida no YouTube; nome sugerido: replit-prompting-agent-tips-transcricao.txt. NÃO BAIXADO: não há link oficial direto para arquivo de transcrição nem licença de redistribuição confirmada.
+[BAIXAR] “Introducing Replit Agent 4”; https://www.youtube.com/watch?v=bAUVQfz_SIY; vídeo, inglês; apresenta a geração atual; nome sugerido: replit-agent-4-transcricao.txt. NÃO BAIXADO: transcrição direta/licença não confirmadas.
+[BAIXAR] “From Prompt to Product: A Human-Centered Benchmark of Agentic App Generation Systems”; https://arxiv.org/abs/2512.18080; artigo/PDF, inglês; compara Replit, Bolt e Firebase Studio sob critérios humanos; nome sugerido: benchmark-agentic-app-generation-2025.pdf. BAIXADO e validado como PDF.
+
+17. PÁGINAS PARA SALVAR
+
+Nota de captura: as páginas oficiais de preços, Política de Privacidade e Termos de Serviço bloquearam a impressão automatizada via Cloudflare em 11/11/2026. Os três PDFs correspondentes foram substituídos por capturas estruturadas de pesquisa, claramente identificadas como não integrais, com URL, data, versão visível e os pontos oficiais relevantes que puderam ser verificados. Antes de redigir o curso, recomenda-se abrir as URLs e salvá-las manualmente pelo navegador se a equipe precisar da reprodução visual integral.
+
+1. Replit Agent; https://docs.replit.com/features/agent/overview; definição, modos e primeiro uso; prioridade alta; replit-agent-visao-geral.pdf.
+2. Replit AI Billing; https://docs.replit.com/billing/ai-billing; planos, esforço, checkpoint e confirmação de custo; prioridade alta; replit-agent-cobranca.pdf.
+3. Starter Plan; https://docs.replit.com/billing/plans/starter-plan; limites do gratuito; prioridade alta; replit-plano-starter.pdf.
+4. Pricing; https://replit.com/pricing; preços correntes e créditos; prioridade alta; replit-precos-2026-11-11.pdf.
+5. Publish your app; https://docs.replit.com/build/publish-your-app; procedimento do exercício; prioridade alta; replit-publicar-app.pdf.
+6. Add a database; https://docs.replit.com/build/add-database; banco e teste de persistência; prioridade alta; replit-adicionar-banco.pdf.
+7. Development and production databases; https://docs.replit.com/features/data-and-storage/development-and-production; separação, publicação e segurança; prioridade alta; replit-bancos-desenvolvimento-producao.pdf.
+8. Users & Auth; https://docs.replit.com/features/auth-and-identity/overview; escolha de login; prioridade alta; replit-users-auth.pdf.
+9. Replit Auth; https://docs.replit.com/features/auth-and-identity/authentication; login com conta Replit; prioridade alta; replit-auth.pdf.
+10. Secrets; https://docs.replit.com/core-concepts/project-editor/app-setup/secrets; chaves e configurações; prioridade alta; replit-secrets.pdf.
+11. Checkpoints and Rollbacks; https://docs.replit.com/features/version-control/checkpoints-and-rollbacks; desfazer e restaurar; prioridade alta; replit-checkpoints-rollbacks.pdf.
+12. Project Security Center; https://docs.replit.com/features/security/project-security-center; varredura antes de publicar; prioridade alta; replit-security-center.pdf.
+13. Storage and Databases; https://docs.replit.com/learn/projects-and-artifacts/storage-and-databases; escolha entre SQL e arquivos; prioridade média; replit-storage-databases.pdf.
+14. Deployment types; https://docs.replit.com/features/publishing/deployment-types; tipos e casos; prioridade média; replit-tipos-publicacao.pdf.
+15. Custom Domains; https://docs.replit.com/features/publishing/custom-domains; domínio próprio; prioridade média; replit-dominios-personalizados.pdf.
+16. Replit Mobile App; https://docs.replit.com/features/platforms/mobile-app; uso no iOS/Android; prioridade média; replit-app-movel.pdf.
+17. Native Mobile Apps; https://docs.replit.com/features/artifact-types/building-mobile-apps; criação e testes móveis; prioridade média; replit-criar-app-movel.pdf.
+18. Privacy Policy; https://replit.com/privacy-policy; dados coletados e usos; prioridade alta; replit-politica-privacidade-2026.pdf.
+19. Terms of Service; https://replit.com/terms-of-service; idade, responsabilidades e conteúdo; prioridade média; replit-termos-2026.pdf.
+20. Managing Your Spend; https://docs.replit.com/billing/managing-spend; limites e acompanhamento; prioridade alta; replit-gerenciar-gastos.pdf.
+21. Lovable vs. Bolt vs. Replit (Zapier); https://zapier.com/blog/lovable-vs-bolt/; comparação independente; prioridade média; comparacao-lovable-bolt-replit-zapier-2026.pdf.
+22. Incidente Replit/SaaStr (TechTarget); https://www.techtarget.com/news/Replit-AI-agent-snafu-shot-across-the-bow-for-vibe-coding/857697/; incidente e contexto; prioridade alta; incidente-replit-banco-producao-2025.pdf.
+
+18. LACUNAS E PONTOS A VERIFICAR
+
+1. [VERIFICAR] Data exata de lançamento e changelog do Agent 4.
+2. [VERIFICAR] Nomes da interface em pt-BR; a documentação alterna traduções e inglês.
+3. [VERIFICAR] Oferta em reais, impostos e meios de pagamento no checkout brasileiro.
+4. [VERIFICAR] Quantidade exata de créditos diários/mensais do Starter; página pública descreve a mecânica, mas não mostra um número fixo.
+5. [VERIFICAR] Custo total típico do exercício; a cobrança é variável e não há estimativa oficial universal.
+6. [VERIFICAR] Se um aluno novo consegue completar app com login, banco e publicação no Starter em um dia.
+7. [VERIFICAR] Configuração atual de melhoria de modelos para conta pessoal, Core, Pro e Enterprise; conferir Settings e documento Model improvement.
+8. [VERIFICAR] Retenção detalhada de prompts, logs e projetos por plano/região.
+9. NÃO ENCONTRADO: caso brasileiro detalhado e verificável de professor ou empreendedor criando app com banco no Replit Agent.
+10. NÃO ENCONTRADO: “Assistant” como produto separado na documentação atual; material antigo pode usar essa denominação.
+11. NÃO ENCONTRADO: preço fixo oficial de domínio próprio; depende do registrador/domínio.
+12. NÃO ENCONTRADO: transcrição oficial baixável/licenciada dos vídeos e do curso DeepLearning.AI.
+13. Contradição temporal: documentação indexada anteriormente mostrava Lite/Economy/Power; a documentação corrente mostra Free/Power/Max. Usar 11/11/2026 como corte e validar novamente antes da gravação. [1][34]
+14. Contradição de infraestrutura: guia “Add a database” cita Neon em produção e Helium em desenvolvimento, enquanto “Development and production databases” descreve infraestrutura atual/legada. Tratar como detalhe instável, sem ensinar marca do provedor ao iniciante. [4][5]
+15. [VERIFICAR] As páginas de preços, Política de Privacidade e Termos de Serviço bloquearam a impressão automatizada via Cloudflare. Os PDFs locais são capturas estruturadas, não reproduções integrais; salvar manualmente as páginas se a equipe precisar do leiaute completo.
+
+19. APÊNDICE TÉCNICO
+
+[CONFIRMADO] Banco integrado é PostgreSQL; DATABASE_URL aponta para valores diferentes em desenvolvimento e produção. A conexão integrada pode não aparecer em Secrets. [5]
+[CONFIRMADO] Agent lê produção por réplica somente leitura; alterações recentes podem levar instantes para aparecer. [5]
+[CONFIRMADO] Publicação aplica mudanças de esquema com drizzle-kit para tabelas, colunas, índices, constraints, views e políticas RLS, com limitações para objetos avançados. [5]
+[CONFIRMADO] Rollback comum não restaura produção; produção usa point-in-time restore. Pro amplia a janela documentada de sete para 28 dias. [9][12]
+[CONFIRMADO] App Storage é compatível com SDKs Replit e bibliotecas GCS; banco usa clientes/ORM PostgreSQL. [4]
+
+20. FONTES CONSULTADAS
+
+1. Replit Agent, https://docs.replit.com/features/agent/overview, documentação oficial, sem data visível, acesso em 11/11/2026.
+2. Replit AI Billing, https://docs.replit.com/billing/ai-billing, documentação oficial, sem data visível, acesso em 11/11/2026.
+3. Starter Plan, https://docs.replit.com/billing/plans/starter-plan, documentação oficial, sem data visível, acesso em 11/11/2026.
+4. Add a database, https://docs.replit.com/build/add-database, documentação oficial, sem data visível, acesso em 11/11/2026.
+5. Development and production databases, https://docs.replit.com/features/data-and-storage/development-and-production, documentação oficial, sem data visível, acesso em 11/11/2026.
+6. Publish your app, https://docs.replit.com/build/publish-your-app, documentação oficial, sem data visível, acesso em 11/11/2026.
+7. Pricing and Plans, https://replit.com/pricing, página oficial, preço verificado em 11/11/2026.
+8. Replit Pro Is Here — and Core Now Offers Even More Value, https://replit.com/blog/pro-plan, blog oficial, 25/02/2026, acesso em 11/11/2026.
+9. Checkpoints and Rollbacks, https://docs.replit.com/features/version-control/checkpoints-and-rollbacks, documentação oficial, sem data visível, acesso em 11/11/2026.
+10. Introducing Effort-Based Pricing for Replit Agent, https://replit.com/blog/effort-based-pricing, blog oficial, 18/06/2025; atualizado em 02/07/2025, acesso em 11/11/2026.
+11. Privacy Policy, https://replit.com/privacy-policy, política oficial, atualizada em 21/10/2026, acesso em 11/11/2026.
+12. Replit Pro, https://docs.replit.com/billing/plans/replit-pro, documentação oficial, sem data visível, acesso em 11/11/2026.
+13. Managing Your Spend, https://docs.replit.com/billing/managing-spend, documentação oficial, sem data visível, acesso em 11/11/2026.
+14. Replit Documentation Index, https://docs.replit.com/llms.txt, índice oficial, acesso em 11/11/2026.
+15. Users & Auth / Replit Auth, https://docs.replit.com/features/auth-and-identity/overview, documentação oficial, acesso em 11/11/2026.
+16. Native Mobile Apps, https://docs.replit.com/features/artifact-types/building-mobile-apps, documentação oficial, acesso em 11/11/2026.
+17. Deployment types, https://docs.replit.com/features/publishing/deployment-types, documentação oficial, acesso em 11/11/2026.
+18. Secrets, https://docs.replit.com/core-concepts/project-editor/app-setup/secrets, documentação oficial, acesso em 11/11/2026.
+19. App Testing, https://docs.replit.com/features/agent/app-testing, documentação oficial, acesso em 11/11/2026.
+20. Terms of Service, https://replit.com/terms-of-service, termos oficiais, atualizados em 03/08/2026, acesso em 11/11/2026.
+21. Project Security Center, https://docs.replit.com/features/security/project-security-center, documentação oficial, acesso em 11/11/2026.
+22. Replit AI agent snafu “shot across the bow” for vibe coding, https://www.techtarget.com/news/Replit-AI-agent-snafu-shot-across-the-bow-for-vibe-coding/857697/, imprensa de tecnologia, 22/07/2025, acesso em 11/11/2026.
+23. AI coding platform goes rogue during code freeze, https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-coding-platform-goes-rogue-during-code-freeze-and-deletes-entire-company-database-replit-ceo-apologizes-after-ai-engine-says-it-made-a-catastrophic-error-in-judgment-and-destroyed-all-production-data, imprensa de tecnologia, 21/07/2025, acesso em 11/11/2026.
+24. Model improvement, https://docs.replit.com/legal-and-security-info/model-improvement, documentação oficial, acesso em 11/11/2026.
+25. Replit no-code review, https://www.techradar.com/pro/software-services/replit-no-code-review, análise independente, 01/07/2026, acesso em 11/11/2026.
+26. Effort-Based Pricing Recap, https://replit.com/blog/effort-based-pricing-recap, blog oficial, 2025, acesso em 11/11/2026.
+27. Replit Mobile App, https://docs.replit.com/features/platforms/mobile-app, documentação oficial, acesso em 11/11/2026.
+28. Custom Domains, https://docs.replit.com/features/publishing/custom-domains, documentação oficial, acesso em 11/11/2026.
+29. GenAIPI: Built in a Weekend for Under $400, https://replit.com/customers/genaipi, caso publicado pela fabricante, acesso em 11/11/2026.
+30. Bamboo Classroom: 1,400 Downloads Overnight, https://replit.com/customers/bamboo-classroom, caso publicado pela fabricante, acesso em 11/11/2026.
+31. BatchData: Enterprise Tools in Hours, Not Months, https://replit.com/customers/batchdata, caso publicado pela fabricante, acesso em 11/11/2026.
+32. Prompting the Replit Agent: Tips & Tricks, https://www.youtube.com/watch?v=IIFb08rLpOg, vídeo oficial, 01/11/2024, acesso em 11/11/2026.
+33. Lovable vs. Bolt vs. Replit: Which vibe coding tool is best?, https://zapier.com/blog/lovable-vs-bolt/, comparação independente, 01/07/2026, acesso em 11/11/2026.
+34. Agent Modes (versão indexada anteriormente), https://docs.replit.com/replitai/assistant/, documentação oficial, capturada em 2026, acesso em 11/11/2026.
+35. Vibe Coding 101 with Replit, https://www.deeplearning.ai/short-courses/vibe-coding-101-with-replit/, curso de parceiro, acesso em 11/11/2026.
+36. Publishing and Database Billing, https://docs.replit.com/billing/about-usage-based-billing, documentação oficial, acesso em 11/11/2026.
+
+CHECKLIST FINAL
+
+[SIM] O arquivo usa exatamente o cabeçalho, os títulos e a numeração pedidos.
+[SIM] Todos os pontos do FOCO ESPECÍFICO e todos os materiais de “procure especialmente” foram respondidos ou estão como NÃO ENCONTRADO.
+[SIM] Todo [CONFIRMADO] está dito literalmente na fonte citada.
+[SIM] Nenhum exercício depende de instrutor, e o curso não foi dividido em blocos de tempo.
+[SIM] A seção 17 tem um item por página, com URL, prioridade e nome de arquivo.
+[SIM] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+[SIM] Os casos de uso são reais, e cada público sem caso real está como NÃO ENCONTRADO.
+[SIM] As fontes estão em pt-BR ou inglês (outro idioma só quando era a única fonte), e as lojas e ofertas são as do Brasil.
+[SIM] Nenhum endereço é de ambiente de teste (dev., hml., staging., qa.).
+[SIM] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é técnico demais está no APÊNDICE TÉCNICO.
+[SIM] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está marcada [CONFIRMADO].
+[SIM] Todo material não-web citado nas seções 1 a 20 está na seção 16.
+[SIM] Cada arquivo declarado BAIXADO abre e é do tipo anunciado (nenhuma página HTML salva como .pdf).
+[SIM] Os links dos exercícios foram testados e levam direto ao conteúdo.
+[SIM] A seção 17 lista páginas dos quatro tipos pedidos na regra 6.
+[SIM] Cada número está atribuído à fonte que de fato o contém.
+[SIM] Nomes de menus e botões indicam a origem: (interface), (ajuda pt-BR) ou (ajuda en).

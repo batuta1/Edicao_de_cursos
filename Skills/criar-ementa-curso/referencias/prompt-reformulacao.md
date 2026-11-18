@@ -38,8 +38,12 @@ Para cada módulo/aula/oficina, siga rigorosamente este esquema:
    nesta versão. Se algum achado foi deliberadamente não endereçado, declare a decisão e o
    motivo em nota, em vez de deixá-lo sumir.
 2. Foco no diferencial: destaque o que o OBJETO BASE tem de específico, não só o básico.
-3. Pílula Hands-on: cada aula termina com uma micro-tarefa prática que valida o
-   conhecimento, executável no tempo indicado.
+3. Fechamento coerente com a trilha:
+   - **Essentials:** terminar cada módulo com verificação formativa e aplicação conceitual
+     resolvidas dentro do curso (cenário, múltipla escolha ou classificação). Não usar os nomes
+     "Pílula Hands-on" ou "Mão na massa" e não exigir operação da ferramenta.
+   - **Hands-on:** terminar cada oficina com uma tarefa prática executável, resultado observável e
+     critério de êxito.
 4. Troubleshooting: inclua "Solução de Problemas" exatamente nos pontos que a auditoria
    marcou como críticos.
 5. Módulo 0: pré-requisitos e verificação inicial, como pré-filtro antes de qualquer
@@ -53,7 +57,7 @@ pessoa e leve). Reformular não é trocar de trilha.
 # RESTRIÇÕES
 - Não invente funcionalidades, botões, menus ou dados. Em caso de incerteza, descreva de
   forma genérica e sinalize que precisa ser conferido.
-- Mantenha a coerência entre objetivos, conteúdo e exercício de cada aula.
+- Mantenha a coerência entre objetivos, conteúdo e avaliação de cada aula.
 - Respeite a carga horária alvo; se a expansão estourar o limite, declare o estouro e
   proponha o que cortar ou mover para anexo.
 

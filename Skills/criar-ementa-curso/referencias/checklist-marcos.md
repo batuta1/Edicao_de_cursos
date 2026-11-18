@@ -90,11 +90,32 @@ entregar.
 - [ ] Marcadores `▼▼▼`/`▲▲▲` cercam cada módulo (Essentials) ou cada oficina + Projeto Final
       (Hands-on). Identificação, Parte dos Dez e Encerramento **não** recebem marcador.
 - [ ] Modelos editáveis estão em aspas triplas, não crases triplas.
-- [ ] Essentials: cada módulo tem a subseção "Mão na massa" com prompt-base editável.
-- [ ] Essentials: requisitos técnicos citados quando aplicável (versão do Office; plano pago do
-      Claude — o gratuito não habilita o recurso).
+- [ ] Cada bloco declara tipo, configuração e conteúdo integral; questões incluem gabarito,
+      feedbacks e nova tentativa.
+- [ ] Todo Statement tem uma única frase curta e nenhum Statement contém exercício, prompt,
+      breadcrumb, gabarito ou feedback.
+- [ ] Essentials: não há "Mão na massa", "Pílula Hands-on" nem tarefa de operação externa; cada
+      lição tem verificação formativa e aplicação conceitual dentro do Rise.
+- [ ] Hands-on: cada oficina tem passos executáveis, breadcrumbs, ponto de controle e
+      troubleshooting; prompts longos estão em Text, não em Statement.
+- [ ] Requisitos técnicos são citados somente quando validados pelo material-fonte.
 - [ ] O curso não virou um curso sobre Rise 360, fidelidade ou conversão de roteiros.
 
 **Verde:** o arquivo pode ir para o Articulate junto com o `promptArticulate.md`.
 **Vermelho:** falta camada de montagem ou o conteúdo divergiu — reprocesse a Fase 7 sobre o
 roteiro final daquela trilha.
+
+## 🚩 Marco 9 — PDFs dos roteiros (`roteiros/pdf/`)
+- [ ] Existem quatro PDFs: Essentials, Hands-on e as duas versões Articulate.
+- [ ] Cada PDF foi gerado do Markdown de mesmo nome depois do Marco 8.
+- [ ] `pdfinfo` abre os quatro arquivos sem erro e reporta ao menos uma página.
+- [ ] A extração de texto confirma título, primeira seção e encerramento; nenhum roteiro foi
+      truncado.
+- [ ] Todas as páginas foram renderizadas em PNG e inspecionadas visualmente.
+- [ ] Não há texto cortado, sobreposição, tabela ilegível, glifo ausente ou página vazia indevida.
+- [ ] O `README.md` lista Markdown como fonte editável e PDF como entrega para leitura.
+- [ ] Nenhum `.docx` foi gerado.
+
+**Verde:** os quatro pares `.md`/`.pdf` correspondem e podem ser entregues.
+**Vermelho:** qualquer PDF ilegível ou divergente — corrija o Markdown ou o renderizador, gere os
+quatro novamente e repita a inspeção.

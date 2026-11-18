@@ -1,0 +1,30 @@
+<!--titulo: Chat, automação ou agente?-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Chat, automação ou agente?</h1>
+  <p class="sub">Para cada situação, pergunte-se quem decide as etapas: a pessoa, mensagem a mensagem; quem programou o fluxo, de antemão; ou o modelo, dentro de limites. Você recebe a correção na hora e pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Situações: exemplos do comparativo do Módulo 1 do roteiro, mais duas variações no mesmo critério.
+  classificador({
+    casos: [
+      { t: 'Pedir ao assistente a explicação de uma cláusula de um contrato', r: 'chat', p: 'A pessoa conduz, mensagem a mensagem: é uma pergunta pontual.' },
+      { t: 'Gerar todo dia 1º o mesmo relatório, a partir da mesma planilha', r: 'automacao', p: 'As etapas são sempre as mesmas e foram programadas de antemão.' },
+      { t: 'Ler três atas, extrair decisões e responsáveis e montar um briefing, escolhendo a ordem do trabalho', r: 'agente', p: 'Várias etapas, e o modelo decide o caminho conforme o que encontra.' },
+      { t: 'Disparar um alerta quando um prazo cadastrado no sistema vence', r: 'automacao', p: 'Regra fixa, definida por quem configurou o sistema: processo repetitivo e estável.' },
+      { t: 'Ler uma norma pública, montar um checklist de conformidade e marcar ambiguidades para revisão', r: 'agente', p: 'Tarefa de várias etapas cujo caminho varia conforme o que se encontra na norma.' },
+      { t: 'Pedir um rascunho curto de e-mail recusando um convite', r: 'chat', p: 'Rascunho curto, em uma troca de mensagens: não há etapas para o modelo decidir.' }
+    ],
+    opcoes: { chat: 'Chat', automacao: 'Automação', agente: 'Agente' },
+    dicaErro: 'Pergunte-se: quantas etapas há, e quem decide qual vem a seguir?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'classificadas corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Todas classificadas. Lembre a recomendação da Anthropic: comece pela solução mais simples e use agente só quando a flexibilidade compensar o custo e a demora.');
+    }
+  });
+</script>

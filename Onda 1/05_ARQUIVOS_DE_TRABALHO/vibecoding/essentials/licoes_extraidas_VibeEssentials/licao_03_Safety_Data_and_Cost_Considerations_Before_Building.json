@@ -1,0 +1,816 @@
+{
+  "numero_da_licao": 3,
+  "position_original": 2,
+  "title": "Safety, Data, and Cost Considerations Before Building",
+  "lesson": {
+    "description": "",
+    "id": "69aeb8d4-61c2-4175-b141-a4fd1c101ea7",
+    "items": [
+      {
+        "id": "waoquuujyuvtj2tf9l2xv4vg",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "qnpe6j9elsgpvn60oow9o5mc",
+            "heading": "Os riscos vêm antes do primeiro pedido",
+            "paragraph": "<p>Retomando a analogia: tudo o que está no salão da loja pode ser visto e tocado pelo cliente. Antes de pedir a primeira construção, esta lição estabelece os critérios que valem para todo o curso — onde nunca colocar um segredo, por que esconder um dado da tela não o protege, que dados podem entrar num protótipo à luz da LGPD e como um pedido amplo esgota os créditos do dia.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "f2fdd50d-b312-49dc-87ff-67f56a4da3e9"
+      },
+      {
+        "id": "ym2yy9u0f2xol7zzvbg8yhfa",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zldof89feaq6z1amj2n85x5y",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "5e723f4b-0232-47be-83f1-13be1cf3d2b1"
+      },
+      {
+        "id": "spmnnvy9a9hl1l0wjby640k8",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "s4cxbj9ail92c0ya72vl0jet",
+            "number": "1",
+            "paragraph": "<p>Explicar por que o front-end é inspecionável e onde ficam os segredos.</p>"
+          },
+          {
+            "id": "zgdyu8c4a0po1u33skndk4zb",
+            "number": "2",
+            "paragraph": "<p>Explicar o papel da RLS e o limite da varredura de segurança do Lovable.</p>"
+          },
+          {
+            "id": "rike8pt9mf03odr49iwsrc0a",
+            "number": "3",
+            "paragraph": "<p>Aplicar a regra de dados fictícios à luz da LGPD.</p>"
+          },
+          {
+            "id": "ve3cekbg6dwxxgoqrpm5q8ld",
+            "number": "4",
+            "paragraph": "<p>Configurar a recusa ao uso dos dados para treinamento.</p>"
+          },
+          {
+            "id": "jxlt0wzbnitgzbee1sdaumwc",
+            "number": "5",
+            "paragraph": "<p>Estimar o custo de um pedido e preferir alterações pequenas.</p>"
+          },
+          {
+            "id": "ge1qwoh266inodok0bm2eetc",
+            "number": "6",
+            "paragraph": "<p>Classificar uma ideia de aplicativo como adequada, adequada com ajuste ou inadequada ao curso.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "e93523f4-0446-4f05-a9ea-a4472193f339"
+      },
+      {
+        "id": "x4svzm9l0d2rpdms897pyy1b",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "w7ua99kgjhf8i8huqtlbzy8f",
+            "paragraph": "<p>Tudo o que vai para o front-end pode ser inspecionado e manipulado por qualquer usuário com as ferramentas comuns do navegador. Decorre daí a primeira regra: <strong>chaves secretas, senhas e regras sensíveis nunca ficam no front-end — nem no texto do pedido à IA</strong>. No Lovable, valores sensíveis são guardados em More &gt; Cloud &gt; Secrets, criptografados, e usados apenas pelo servidor. O curso não utiliza segredos; a regra é apresentada para que nenhum seja digitado por engano.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "e9b07f6b-e6d8-40ef-a49d-13251fe7f538"
+      },
+      {
+        "id": "cfuu6bcxf41ry6gl6tfov7ve",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "o05s9g3dtz4qurq5hfyxgp5y",
+            "heading": "Termos de segurança que você precisa conhecer",
+            "paragraph": "<p>Vire cada cartão para ver o termo e a regra que vem com ele:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "31c26834-426a-446c-b7c8-5f1f00e5c0f0"
+      },
+      {
+        "id": "ottgg26e7xvqsr50k9ljjm14",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "lmvq0n05d7xni3y6x777jqb1",
+            "back": {
+              "type": "description",
+              "description": "<p>A parte que roda no navegador — o salão. Tudo o que está nela pode ser inspecionado ou alterado pelo usuário.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Front-end</strong>"
+            }
+          },
+          {
+            "id": "dyl6seh00y7r6uc02wceze1u",
+            "back": {
+              "type": "description",
+              "description": "<p>Valor sensível, como senha ou chave de API. Fica guardado no servidor (More &gt; Cloud &gt; Secrets), nunca no front-end nem no pedido à IA.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Segredo (secret)</strong>"
+            }
+          },
+          {
+            "id": "o2x1ixe77xq7cnxlieyviyeu",
+            "back": {
+              "type": "description",
+              "description": "<p>Regra do banco de dados que define quais registros cada usuário pode ler ou alterar. Sem ela, qualquer pessoa autenticada pode, em tese, ler os registros de outra.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>RLS (Row Level Security)</strong>"
+            }
+          },
+          {
+            "id": "ysx8enbtrrcb1jc53wmctjvi",
+            "back": {
+              "type": "description",
+              "description": "<p>Nome real, CPF, endereço, dado de saúde, nota escolar, dado de criança ou credencial real. Nenhum deles entra no aplicativo do curso nem no pedido à IA.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<strong>Dado pessoal</strong>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "9ef3f00e-7562-49ec-bf7b-b99482a8fe9e"
+      },
+      {
+        "id": "vkmytgfo38vui3kehz066zyq",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "sk4yfeu94sllhlueedrmsszs",
+            "heading": "O que o Lovable protege — e o que fica com você",
+            "paragraph": "<p>Abra cada item para ver onde a ferramenta ajuda e onde termina a proteção que ela oferece:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "abe07ea8-ddf7-450a-8733-9c82cecf8c86"
+      },
+      {
+        "id": "c6d99fde-62c0-4d70-b859-4a12cfa9e091",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "622faa77-4b1e-4d64-906d-707265607f37",
+            "title": "Onde ficam os segredos",
+            "description": "<p>Senhas e chaves de API nunca aparecem no front-end nem nos pedidos. No Lovable, ficam em More &gt; Cloud &gt; Secrets, criptografadas e acessíveis apenas ao servidor.</p><p></p><p>Antes de enviar um pedido, releia: há alguma senha, chave ou credencial no texto? Se houver, apague.</p>"
+          },
+          {
+            "id": "4e4ba005-2515-4025-959f-c81ba47e2d7f",
+            "title": "Esconder não é proteger",
+            "description": "<p>Esconder um dado da tela não o protege. Se o banco não tiver regra de acesso por usuário (RLS), qualquer pessoa autenticada pode, em tese, ler os registros de outra, ainda que a interface não os mostre.</p><p></p><p>Por isso o curso exige, na lição 5, um teste com duas contas para comprovar o isolamento.</p>"
+          },
+          {
+            "id": "c75f2073-fbf4-42bd-86b1-33695a072011",
+            "title": "O limite da varredura de segurança",
+            "description": "<p>O Lovable executa uma varredura rápida de segurança a cada publicação. A própria documentação, porém, adverte que essas ferramentas “não substituem uma revisão completa de segurança” — e a opção de bloquear publicações com achados críticos pode estar desativada.</p><p></p><p>A varredura é um alarme, não um atestado: o teste com duas contas continua obrigatório.</p>"
+          },
+          {
+            "id": "ae5c08ce-dee5-488f-9506-14fc20113e84",
+            "title": "Um incidente real",
+            "description": "<p>A Lovable divulgou que, entre 3 de fevereiro e 20 de abril de 2026, uma falha permitiu que usuários autenticados com o link de certos projetos públicos acessassem o histórico de conversa e o código-fonte. A empresa informou a correção e que projetos privados e o Lovable Cloud não foram afetados.</p><p></p><p>Artigos acadêmicos de 2026 sintetizam as falhas recorrentes em aplicativos criados por vibe coding: autenticação e autorização inadequadas, segredos expostos e código aceito sem revisão.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "a1f09aa6-5f04-40b9-a766-1b2f644bef48"
+      },
+      {
+        "id": "b0b8c7f0-ae99-4886-b302-847181fc3b0e",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "27d839c6-be4e-49b2-a384-759627423ce8",
+            "paragraph": "<p>⚠️ <strong>Atenção:</strong> a varredura ajuda, mas não pega tudo. Confira sempre quem vê o quê — e nunca confie que “escondido” significa “protegido”.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "88258fe7-9fd8-416d-8fb7-659b75bac93f"
+      },
+      {
+        "id": "s8c34j6mx3t1v66fneg10nh6",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "hi4rzvks2kl6r9ht3b760c5h",
+            "heading": "Dados pessoais, LGPD e treinamento",
+            "paragraph": "<p>Abra cada item para ver as regras sobre dados que valem durante todo o curso:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "a6a66fe1-f348-4350-a446-f9bc0e9100c2"
+      },
+      {
+        "id": "baa34e4d-5d52-4cc8-8de5-de580fb70f0a",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "23e545d7-5983-49c6-a870-3a300bc469df",
+            "title": "LGPD: o que ela exige",
+            "description": "<p>A Lei Geral de Proteção de Dados (LGPD) rege o tratamento de dados pessoais no Brasil, com princípios como finalidade, necessidade e segurança, e a ANPD orienta agentes de pequeno porte a adotar medidas técnicas e administrativas de segurança.</p><p></p><p>Um protótipo educacional não deve converter-se em sistema de produção sem análise de base legal, transparência, contratos, retenção e segurança.</p>"
+          },
+          {
+            "id": "099f31f6-6735-4388-9101-67322fc3f99a",
+            "title": "Somente dados fictícios",
+            "description": "<p>Para um curso introdutório, a consequência é simples: somente dados fictícios. Nenhum nome real, CPF, endereço, dado de saúde, nota escolar, dado de criança ou credencial real entra no aplicativo, nem no pedido à IA.</p><p></p><p>Se a ideia envolve pessoas reais, invente a turma, os clientes ou os pacientes — e deixe explícito que não é um sistema real.</p>"
+          },
+          {
+            "id": "8732aa1d-02e7-413c-bb31-d370cc509371",
+            "title": "Recusa ao treinamento",
+            "description": "<p>Desde 9 de setembro de 2026, os dados de clientes dos planos Free e Pro podem ser usados para treinar os modelos da Lovable, com possibilidade de recusa em Account settings &gt; Preferences &gt; AI model training. Os planos Business e Enterprise ficam excluídos por padrão.</p><p></p><p>Segundo a documentação, os dados dos usuários finais guardados no banco do aplicativo não são usados nesse treinamento. A decisão de recusar é sua — tome-a de modo informado e registre-a.</p>"
+          },
+          {
+            "id": "4b938e0a-a7b7-4a7d-ace3-79e4107927f1",
+            "title": "Projeto privado",
+            "description": "<p>Mantenha o projeto privado no seu workspace durante todo o curso. O incidente de 2026 atingiu justamente projetos públicos.</p><p></p><p>Publicar o aplicativo (abrir o endereço lovable.app) é diferente de tornar o projeto público: o primeiro expõe o app; o segundo, o projeto — conversa e código.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "9f6d194c-bb4c-4771-b7d9-c467a87fa79c"
+      },
+      {
+        "id": "7263a794-09c4-4987-9a10-7724f5a75479",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "1e79f220-005d-4df3-b596-db1cfe33dbb6",
+            "type": "intro",
+            "title": "Configuração e triagem de ideias (6 min)",
+            "isHidden": false,
+            "description": "<p>Dois passos: decidir sobre o treinamento com os seus dados e classificar quatro ideias de aplicativo segundo as regras desta lição.</p>"
+          },
+          {
+            "id": "e95050c3-b6ac-4b92-bfe7-12ff98a535a3",
+            "type": "summary",
+            "title": "Critério de êxito",
+            "isHidden": false,
+            "description": "<p>Escolha sobre o treinamento registrada; as quatro classificações coincidem com o gabarito, apresentado mais adiante nesta lição.</p><p>🏁 Ponto de controle: em Lovable &gt; Account settings &gt; Preferences &gt; AI model training, a opção está no estado que você escolheu.</p>"
+          },
+          {
+            "id": "abd70a0b-aca3-4376-bd12-617c21096279",
+            "type": "step",
+            "title": "Decida sobre o treinamento",
+            "isHidden": false,
+            "description": "<p>Abra Lovable &gt; Account settings &gt; Preferences &gt; AI model training e decida, de modo informado, se recusa o uso dos seus dados para treinar os modelos da Lovable. Registre a escolha.</p>"
+          },
+          {
+            "id": "981cd211-0bf6-4b90-a811-b3e4eecc9f7f",
+            "type": "step",
+            "title": "Classifique as quatro ideias",
+            "isHidden": false,
+            "description": "<p>Classifique cada ideia como adequada ao curso, adequada com ajuste ou inadequada:<br>1. Lista pessoal de tarefas com login, dados inventados.<br>2. Controle de notas da turma real, com nomes dos alunos.<br>3. Catálogo de produtos fictícios com área de administração.<br>4. Cadastro de clientes com CPF e telefone, para uso imediato na empresa.</p>"
+          },
+          {
+            "id": "1f5dca3d-9701-4105-af35-fcd059535c7b",
+            "type": "step",
+            "title": "Indique o ajuste",
+            "isHidden": false,
+            "description": "<p>Para cada ideia “adequada com ajuste”, escreva qual ajuste a torna segura — por exemplo, trocar pessoas reais por nomes fictícios.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "02e168c3-c682-42f1-8d6b-14412d5bdde7"
+      },
+      {
+        "id": "3eb55b78-56b9-48f1-8941-58d32c9e7033",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "df5778f4-cc94-46c3-8148-b96d1f8bd26b",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Qual destas práticas é aceitável ao construir o protótipo do curso no Lovable?",
+            "answers": [
+              {
+                "id": "f186da52-4ac0-4371-ae65-5bc2fadd2143",
+                "title": "Usar os nomes reais dos alunos num controle de notas da turma",
+                "correct": false,
+                "feedback": "Não. Nomes reais de alunos — possivelmente menores — são dados pessoais. A turma precisa ser inventada."
+              },
+              {
+                "id": "e112ea3a-d091-40e2-8dc3-de58f05da37f",
+                "title": "Cadastrar os CPFs dos clientes da sua empresa",
+                "correct": false,
+                "feedback": "Não. São dados pessoais reais; usá-los exigiria análise de LGPD e segurança, incompatível com um protótipo de curso."
+              },
+              {
+                "id": "499adefb-6e4f-429f-8fd3-76a381caf3e5",
+                "title": "Usar apenas nomes e dados inventados para todos os usuários",
+                "correct": true,
+                "feedback": "Correto. Dados fictícios são a regra do curso: nenhum dado pessoal real entra no aplicativo nem no pedido à IA."
+              },
+              {
+                "id": "b692fb16-bfbc-4034-9d61-95542a54b71c",
+                "title": "Incluir a sua senha pessoal num pedido à IA",
+                "correct": false,
+                "feedback": "Não. Senhas e chaves nunca vão no pedido: o que você escreve na conversa vai para os servidores da empresa."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "79d5ad5d-d931-46d1-813f-6bc6f2ce5da3"
+      },
+      {
+        "id": "q7r0lzlnj0b7tt47i8zivp3x",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "sqfy5edhaprsxibkoa038nav",
+            "paragraph": "<p>Por fim, o custo. Cada alteração feita pela IA consome créditos, e um pedido amplo pode consumir a cota diária e, ainda por cima, gerar um aplicativo difícil de entender. Alterações pequenas são, ao mesmo tempo, mais baratas e mais fáceis de conferir — por isso o curso constrói em camadas e distribui as construções em três dias.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "5c198352-f2f7-4161-800f-355d047974bc"
+      },
+      {
+        "id": "e85aci19u9b2afsbc02zt2v9",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wq9cp9xhvv8oqkshbwbfrrb6",
+            "heading": "Construir sem esgotar os créditos",
+            "paragraph": "<p>Vire cada cartão para ver três hábitos que preservam o saldo:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "41b6d2b7-c21e-4788-b06a-d9a48ea4ccbc"
+      },
+      {
+        "id": "h4xh8q1vf8f84owduthtamzo",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "h9x1w4mcgmi3a5spapf6oz4z",
+            "back": {
+              "type": "description",
+              "description": "<p>Abra More &gt; Usage antes de cada etapa e anote o saldo. Assim você aprende quanto cada tipo de pedido custa.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Consulte o saldo antes</p>"
+            }
+          },
+          {
+            "id": "e8y8uqq7nz6i78fw32zipfh1",
+            "back": {
+              "type": "description",
+              "description": "<p>Dividir um pedido grande em partes menores gasta menos e deixa claro o que mudou a cada passo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Uma mudança por pedido</p>"
+            }
+          },
+          {
+            "id": "tfk9mcl5huhmqn5p2jvt8bsx",
+            "back": {
+              "type": "description",
+              "description": "<p>O custo varia com a alteração: mudar a cor de um botão pode custar 0,50; adicionar autenticação, 1,20; uma mensagem no Plan, 1. Planeje o dia conforme o saldo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Quanto custa cada mudança</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "300c3a7c-305a-46cc-8431-e75c378897c1"
+      },
+      {
+        "id": "hisz1dckh9wk6n3rgqtnogb9",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "fve70mdzdnkjqxi5pdlzoz21",
+            "heading": "Gabarito da triagem de ideias",
+            "paragraph": "<p>Compare as suas classificações com o gabarito, uma aba por ideia:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "5e393133-de03-48c5-bd78-7f4e83bff8d4"
+      },
+      {
+        "id": "d38101c4-e487-4ce2-b812-4be268c48f42",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f87e1ba1-1169-4407-bbfd-7823b6808e6a",
+            "title": "1. Lista pessoal de tarefas",
+            "description": "<p><strong>Adequada.</strong> Dados inventados, login e uma regra simples: cada conta vê só as próprias tarefas.</p><p></p><p>É exatamente o “Minhas Tarefas”, que você constrói a partir da próxima lição.</p>"
+          },
+          {
+            "id": "9047c9f4-ad3d-4dc8-8e28-4880ab910fa3",
+            "title": "2. Notas da turma real",
+            "description": "<p><strong>Inadequada.</strong> Envolve dados pessoais de alunos, possivelmente menores.</p><p></p><p><strong>Ajuste possível:</strong> turma inventada e nomes fictícios, deixando explícito que não é um sistema real.</p>"
+          },
+          {
+            "id": "f9ac8692-5a45-4e3e-b4fe-b5439e90b53a",
+            "title": "3. Catálogo fictício",
+            "description": "<p><strong>Adequada, sem pagamentos.</strong> Produtos e administradores fictícios não expõem ninguém.</p><p></p><p>Pagamentos ficam fora do escopo: envolvem dinheiro e, portanto, revisão profissional.</p>"
+          },
+          {
+            "id": "10c94b5b-9371-4f6f-bdf2-5f3e86c94197",
+            "title": "4. Cadastro de clientes",
+            "description": "<p><strong>Inadequada.</strong> Dados pessoais reais (CPF e telefone) e uso imediato em produção.</p><p></p><p>Um sistema assim exige análise de LGPD e de segurança antes de existir — não cabe num protótipo de curso.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "dd953520-06c1-4305-ac17-0e1b6d96a725"
+      },
+      {
+        "id": "426606eb-1938-4574-93f2-ed233cca6a70",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "d33b8e1e-9cdc-4927-ad0b-7c065ce598c9",
+            "paragraph": "<p>🏁 <strong>Critério de êxito:</strong> escolha sobre o treinamento registrada e as quatro classificações coincidindo com o gabarito.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "196d2252-531c-4e69-b744-51ef90db52f7"
+      },
+      {
+        "id": "471b2937-9bd8-4b4d-b1be-5a00cf931676",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "283e8305-14a8-475f-93be-fe04c9b9beed",
+            "type": "intro",
+            "title": "Mão na massa: triagem da sua ideia",
+            "isHidden": false,
+            "description": "<p>Aplique as regras desta lição a uma ideia de aplicativo sua, antes de qualquer pedido. Copie o modelo e responda a cada linha:<br>Ideia de aplicativo: [uma frase]<br>Há dados pessoais reais? [não | sim: quais — substituir por fictícios]<br>Há senha, chave ou segredo no pedido? [não | sim — remover]<br>Quem poderá acessar o endereço público? [descrever]<br>Regra de acesso por usuário necessária? [sim | não]<br>Decisão: [adequada | adequada com ajuste: qual | inadequada]</p>"
+          },
+          {
+            "id": "a6d2b66c-771e-4c8b-bc4c-982fc92270f4",
+            "type": "summary",
+            "title": "Decisão registrada",
+            "isHidden": false,
+            "description": "<p>Com a ficha preenchida, você tem uma decisão justificada sobre a ideia — e sabe o que precisa mudar antes de construí-la. Guarde a ficha: ela será útil na atividade integradora da lição 7.</p>"
+          },
+          {
+            "id": "ca0051cf-3d0a-4bd9-9628-32e54bcff7fc",
+            "type": "step",
+            "title": "Ideia de aplicativo",
+            "isHidden": false,
+            "description": "<p>Descreva o aplicativo em uma frase.</p>"
+          },
+          {
+            "id": "9683ffa0-4b60-4726-81c4-7495ab3bd9ca",
+            "type": "step",
+            "title": "Há dados pessoais reais?",
+            "isHidden": false,
+            "description": "<p>Nomes, CPFs, endereços, notas, dados de saúde ou de crianças? Se sim, indique quais e substitua por dados fictícios.</p>"
+          },
+          {
+            "id": "ca3e7cad-caff-47ef-a232-ba6933eac4d4",
+            "type": "step",
+            "title": "Há segredo no pedido?",
+            "isHidden": false,
+            "description": "<p>Há senha, chave ou outro segredo na ideia ou no texto do pedido? Se sim, remova antes de seguir.</p>"
+          },
+          {
+            "id": "756d4f1d-4930-49c8-a0cf-923957396ff8",
+            "type": "step",
+            "title": "Quem acessará o endereço público?",
+            "isHidden": false,
+            "description": "<p>Descreva quem poderá abrir o endereço lovable.app depois da publicação.</p>"
+          },
+          {
+            "id": "ff752707-41b8-4b26-b7a1-11906054fe23",
+            "type": "step",
+            "title": "Precisa de regra de acesso por usuário?",
+            "isHidden": false,
+            "description": "<p>Cada pessoa deve ver apenas os próprios registros? Se sim, o aplicativo precisa de regras RLS — e do teste com duas contas.</p>"
+          },
+          {
+            "id": "c7cfef68-2c5a-4200-b50d-9cc225a98cbd",
+            "type": "step",
+            "title": "Decisão",
+            "isHidden": false,
+            "description": "<p>Classifique: adequada, adequada com ajuste (indique qual) ou inadequada. Registre o motivo.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "12757350-922a-45dc-910f-2f0e0d0a33f4"
+      },
+      {
+        "id": "a3640b1d-e1b9-4507-95fc-16a9184890c2",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "c8b44325-1e1c-4a6e-8eef-c8d556b3115b",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "d8bc0ac0-8341-4a6c-8f3e-484210b3f003"
+      },
+      {
+        "id": "lyra26bjvggpa9vi0bym52vu",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "hud37jyx4ai2dhk94tokugw9",
+            "paragraph": "<p>Os critérios de segurança, dados e custo estão definidos. Na próxima lição, você escreve a ficha de requisitos do “Minhas Tarefas”, escolhe o modo certo para cada tipo de alteração e envia o primeiro pedido de construção — só a interface, sem banco nem login.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "00baddc6-8251-48df-b5b8-12983f4d3bd3"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Segurança, Dados e Custos antes de Construir",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "s5rjpyoVh4hWZIEjJr-eXu3a8b0Nh7Sa",
+    "createdAt": "2026-11-04T17:24:45.928Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 2,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-04T17:26:12.099Z"
+  }
+}

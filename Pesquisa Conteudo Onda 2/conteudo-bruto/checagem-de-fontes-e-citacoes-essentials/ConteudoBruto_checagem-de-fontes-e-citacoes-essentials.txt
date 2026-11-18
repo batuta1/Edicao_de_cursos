@@ -1,0 +1,518 @@
+================================================================
+CONTEÚDO BRUTO — Checagem de Fontes e Citações
+Pesquisa realizada em: 4 de novembro de 2026
+Ferramenta(s): Scite (plataforma web atual, parte da Research Solutions) e Perplexity (plataforma web atual)
+================================================================
+
+0. RESUMO EXECUTIVO
+
+[CONFIRMADO] Checar uma citação exige responder três perguntas diferentes: a obra existe, o conteúdo foi representado corretamente e o conjunto de evidências apoia, contesta ou apenas menciona a afirmação. Resolver um DOI ou encontrar um título prova existência, não apoio semântico. [24][25]
+[CONFIRMADO] O Scite é especializado em literatura acadêmica. Suas Smart Citations mostram o trecho citante e classificam a relação como supporting, contrasting ou mentioning. Reports, Search, Assistant, Collections e Reference Check ajudam a localizar evidência, alertas editoriais e retratações. [4][5][6]
+[CONFIRMADO] A Perplexity é útil para descoberta e triangulação: Pro Search faz buscas sucessivas, sintetiza e cita fontes; Academic restringe o tipo de busca. A própria ajuda manda validar os links. [17]
+[CONFIRMADO] Em julho de 2026 a Perplexity anunciou Check Sources e o painel Sources para confrontar afirmações com a evidência subjacente. [19]
+[CONFIRMADO] Um estudo de 2023 com 636 referências encontrou 55% de referências fabricadas no GPT-3.5 e 18% no GPT-4; entre referências reais, 43% e 24%, respectivamente, tinham erro substantivo. Os números valem para aquela versão, prompts e amostra, não para ferramentas atuais. [22]
+[CONFIRMADO] Em teste jornalístico de 2025, oito motores de busca com IA erraram coletivamente mais de 60% das 1.600 tentativas de identificar a notícia original; a Perplexity teve o melhor resultado do grupo, mas ainda errou 37%. O teste mede atribuição de notícias, não toda resposta factual. [21]
+[CONFIRMADO] Em 2026 o STJ registrou precedentes brasileiros envolvendo legislação, julgados e trechos inventados por IA e reiterou que a conferência deve ser feita em sua base oficial. [42][46]
+[SUGESTÃO] O curso deve ensinar um fluxo fixo: extrair a afirmação; identificar a citação; confirmar metadados; abrir o original; localizar o trecho; ler contexto e método; buscar contestação, correção ou retratação; registrar decisão e evidência.
+[SUGESTÃO] Três alertas centrais: citação inline não é prova; rótulo automático não substitui leitura; fonte oficial e versão atual prevalecem em direito, normas e dados mutáveis.
+
+1. IDENTIDADE E HISTÓRICO
+
+1.1 Conceito do assunto
+
+[SUGESTÃO] “Checagem de fontes e citações” pode ser definida para leigos como uma inspeção em três camadas: identidade (é uma obra real?), fidelidade (ela diz isso?) e estado da evidência (continua válida, foi contestada, corrigida ou retratada?). A analogia é conferir uma encomenda: destinatário e rastreio confirmam que o pacote existe; abrir a caixa confirma se o conteúdo é o prometido; consultar alertas confirma se houve recall.
+
+1.2 Scite
+
+[CONFIRMADO] Scite é uma plataforma de pesquisa acadêmica operada pela Scite, LLC, identificada nos termos como “a Research Solutions Company”. A entrada para a Research Solutions foi anunciada em 27/11/2023. [3][12]
+[CONFIRMADO] A ideia foi publicada academicamente em 2021 e descreve um índice que extrai o contexto da citação e classifica sua intenção. A versão da época usava supporting, disputing e mentioning; a interface atual usa supporting, contrasting e mentioning. [4][6]
+[CONFIRMADO] Em 04/11/2026 a página de cobertura informa 1,7 bilhão ou mais de Smart Citations, 323 milhões ou mais de artigos indexados, 50 milhões ou mais de fontes em texto integral e mais de 44 parceiros editoriais. A base combina acordos com editoras e corpus de acesso aberto. [5]
+[VERIFICAR] Páginas atuais do próprio Scite exibem números levemente diferentes — 1,6 ou 1,7 bilhão de citações e 300 ou 323 milhões de artigos — provavelmente por arredondamento ou atualização não sincronizada. Para material didático, datar e preferir a página Coverage. [4][5]
+[CONFIRMADO] Em maio de 2026 o Scite lançou um plano Pro individual e transformou Dashboards em Collections como forma principal de organizar grupos de artigos. [13]
+[CONFIRMADO] Em setembro de 2026 Collections ganhou notas e compartilhamento público; Dashboards continuavam compartilháveis. [14]
+
+1.3 Perplexity
+
+[CONFIRMADO] A Perplexity se apresenta como mecanismo de respostas que pesquisa a web em tempo real e devolve síntese com citações. Funciona na web, em aplicativos móveis e no navegador Comet. [20]
+[CONFIRMADO] Pro Search faz múltiplas buscas, seleciona fontes, sintetiza e inclui citações. Os focos/modos listados na ajuda de 21/07/2026 incluem Web, Academic, Finance e Files. [17]
+[CONFIRMADO] Check Sources, anunciado para todos em 27/07/2026, verifica afirmações contra a evidência subjacente; o painel Sources abre a fonte e o trecho ao lado da resposta. [19]
+
+2. ACESSO, PLANOS E REQUISITOS
+
+2.1 Scite
+
+[CONFIRMADO] A plataforma funciona no navegador. É necessário criar conta para iniciar o teste. A extensão é oferecida gratuitamente para navegadores compatíveis. [2][7][9]
+[CONFIRMADO] Em 04/11/2026 o plano Basic custava US$ 12 por mês, cobrado anualmente, e incluía Assistant e Search completos, 250 créditos MCP/mês, Reports, Collections de até 1.000 artigos, alertas e dashboards. [1]
+[CONFIRMADO] O plano Pro custava US$ 40 por mês, cobrado anualmente, e acrescentava API, 2.500 créditos MCP/mês, Collections de até 10.000 e bases de patentes, ensaios clínicos e grants. [1]
+[CONFIRMADO] Enterprise tinha preço sob consulta, acesso por SSO, IP, domínio ou e-mail, usuários ilimitados com uso compartilhado e controles organizacionais. [1]
+[CONFIRMADO] Basic e Pro ofereciam teste de sete dias. A página de checkout informa inscrição automática no plano ao fim do teste e necessidade de cancelar antes para evitar cobrança. [1][2]
+[VERIFICAR] Não foi encontrado preço oficial em reais. Impostos, câmbio e preço exibido no checkout brasileiro precisam ser conferidos no dia da gravação.
+[CONFIRMADO] NÃO ENCONTRADO acesso nacional do Scite pelo Portal de Periódicos da CAPES. Foram consultadas a página de preços do Scite, a busca/lista pública do Portal e os guias CAPES; nenhuma fonte oficial localizada afirma uma licença CAPES. Uma universidade pode contratar Enterprise separadamente. [1][31][50]
+[SUGESTÃO] Os exercícios gratuitos devem ter rota alternativa em DOI, Crossref, PubMed, SciELO e portais jurídicos. As práticas específicas de Smart Citations e Reference Check podem ser demonstradas no teste de sete dias, com aviso sobre cartão e cancelamento.
+
+2.2 Perplexity
+
+[CONFIRMADO] O plano Standard/Free oferece buscas básicas praticamente ilimitadas, três Pro Searches por dia e uma Research query por mês na tabela atual da ajuda. [18]
+[CONFIRMADO] O preço mensal público era US$ 20 para Pro e US$ 200 para Max; na cobrança anual, a página promocional exibia equivalentes de US$ 17 e US$ 167 por mês. Education Pro custava US$ 10/mês com verificação. [18][20]
+[CONFIRMADO] Testes e promoções exigem cartão e renovam automaticamente se não forem cancelados. [18]
+[CONFIRMADO] Pro, Education Pro e Max permitem optar por não participar da coleta para treinamento; Enterprise informa que dados não são usados para treinamento. [18]
+[VERIFICAR] A interface e os limites variam com frequência. Confirmar no Brasil, antes da publicação, os rótulos do seletor Academic, Check Sources e Sources.
+
+3. PRIMEIROS PASSOS (passo a passo oficial)
+
+3.1 Checagem mínima antes de usar IA
+
+[SUGESTÃO] Passo 1 — copie a afirmação exata e a referência separadamente.
+[SUGESTÃO] Passo 2 — procure DOI, título entre aspas, autor e ano em uma base adequada.
+[SUGESTÃO] Passo 3 — compare título, autores, periódico/editora, ano, volume e páginas. Um único campo divergente pode ser erro de transcrição, não inexistência.
+[SUGESTÃO] Passo 4 — abra o texto original e use Localizar/Find para termos distintivos da afirmação.
+[SUGESTÃO] Passo 5 — leia o parágrafo, a seção, método e limitações; registre se apoia, contesta, apenas contextualiza ou não trata da alegação.
+[SUGESTÃO] Passo 6 — procure atualização, correção, retratação e estudos posteriores.
+[SUGESTÃO] Passo 7 — guarde URL, data, trecho e decisão em uma ficha de auditoria.
+
+3.2 Scite — primeiro uso
+
+[CONFIRMADO] Caminho atual de alto nível: scite.ai > criar conta/iniciar sessão > Search, Assistant, Reports, Collections ou Reference Check. A página Getting Started fornece links diretos para cada superfície, mas não documenta cada clique interno. (ajuda en) [7]
+[SUGESTÃO] Busca de artigo: Search (ajuda en) > colar DOI ou título exato > abrir resultado > Report > filtrar citation statements por Supporting, Contrasting e Mentioning > abrir a fonte citante e ler contexto. Os nomes vêm da página atual de recursos; a posição dos controles deve ser conferida na interface. [4]
+[CONFIRMADO] Report mostra o texto exato das citações recebidas e permite filtrar por classificação, seção, ano e tipo de fonte. (ajuda en) [4]
+[CONFIRMADO] Reference Check: Reference Check (ajuda en) > upload de um manuscrito PDF > aguardar análise > abrir relatório > inspecionar referências com retratação, nota editorial ou evidência contrastante. A página atual confirma o fluxo geral; o tutorial de 2021 usa Product > Reference Check > Upload PDF > Profile > Reference Checks e pode estar desatualizado. [4][10]
+[CONFIRMADO] O tutorial informa que o pareamento pode perder referências por formato do PDF, ausência de DOI ou falha de correspondência. [10]
+[CONFIRMADO] Collections: criar Collection > adicionar artigos por resultados de busca, lista/CSV de DOI, Zotero ou Mendeley > monitorar novas citações e alertas editoriais. (ajuda en) [4]
+[VERIFICAR] Alertas: tutorial de 2021 orienta Search > Save search > ativar novos Smart Citations/publicações; gestão em Profile > Saved Searches. O recurso continua listado no plano atual, mas os rótulos e caminhos precisam de conferência visual. [1][52]
+[CONFIRMADO] Extensão: instalar a extensão > em página acadêmica, ver badges/widgets; também é possível selecionar texto, clicar com botão direito e escolher “Ask scite.ai Assistant”. (ajuda en) [9]
+
+3.3 Perplexity — checar uma afirmação
+
+[CONFIRMADO] Fluxo oficial de Pro Search: abrir Perplexity > escolher Pro Search/modo de busca na caixa > formular pergunta > ler síntese e citações > abrir links > fazer perguntas de acompanhamento. (ajuda en) [17]
+[SUGESTÃO] Para evidência científica: seletor de busca > Academic (ajuda en) > perguntar “Localize a fonte original desta afirmação; forneça DOI, título, autores, ano e um trecho que a apoie ou conteste” > abrir cada citação. [17]
+[SUGESTÃO] Para domínio específico, escreva no prompt “use apenas fontes em scielo.br e gov.br” ou uma consulta com site:domínio. Não foi encontrada documentação atual que garanta um filtro visual de domínio na interface do consumidor; conferir a lista de fontes e descartar resultados fora do escopo.
+[CONFIRMADO] Quando disponível: resposta > Check Sources (interface/changelog en) > revisar resultado da verificação; Sources > abrir a fonte e o trecho. O anúncio de julho de 2026 diz que o recurso estava sendo liberado para todos. [19]
+[SUGESTÃO] Compare em duas colunas: “a resposta afirma” e “a fonte afirma”. Marque existência, suporte, contexto, data, conflitos e estado editorial.
+
+3.4 Ferramentas gratuitas para existência
+
+[CONFIRMADO] DOI.org: digitar https://doi.org/ seguido do DOI. Se registrado, o resolver redireciona para a página do objeto. O redirecionamento confirma o identificador, não a validade da alegação. [24]
+[CONFIRMADO] Crossref: Search Metadata > colar título/DOI/autor; ou usar Simple Text Query com referência completa. Conferir metadados e relações de atualização. [25]
+[CONFIRMADO] PubMed: pesquisar título entre aspas, DOI ou autor; abrir registro; conferir Publication types e links “Retraction in”/“Retraction of” quando existirem. [28]
+[CONFIRMADO] Google Scholar: buscar título entre aspas; usar author: e pesquisa avançada; abrir os links PDF ou HTML quando disponíveis. É ferramenta de descoberta, não autoridade final de metadados. [29]
+[CONFIRMADO] SciELO: pesquisar título/autor/DOI; abrir artigo; observar banner “ARTIGO RETRATADO”, correções e documentos relacionados. O exemplo jurídico da seção 13 exibe o rótulo e o aviso relacionado. [30]
+[CONFIRMADO] Portal CAPES: buscar “Assunto”, “Lista de bases e coleções”, livros ou periódicos; filtrar resultados e abrir o texto quando a instituição tiver acesso. O guia atual descreve filtros por título, autor, fonte, revisão por pares e acesso aberto. [31]
+[CONFIRMADO] BDTD: usar busca simples ou avançada; conferir metadados; seguir o link para o repositório da instituição, onde fica o texto integral. [32]
+[CONFIRMADO] Currículo Lattes: Plataforma Lattes > Buscar currículo > nome/palavra-chave/filtros > abrir currículo. Serve para identidade e trajetória declarada pelo autor, não para provar sozinho a existência do texto. [33]
+
+4. CONCEITOS E GLOSSÁRIO
+
+[SUGESTÃO] Afirmação/claim: proposição verificável. Analogia: a frase que está “no banco dos réus”.
+[SUGESTÃO] Fonte primária: registro original — artigo, decisão, lei, base ou documento. É a “certidão”, não o relato de quem a viu.
+[SUGESTÃO] Fonte secundária: interpreta ou resume a primária.
+[SUGESTÃO] Referência bibliográfica: endereço estruturado da obra; pode conter autor, título, ano, veículo, volume, páginas e identificador.
+[CONFIRMADO] DOI: identificador persistente de um objeto; o resolver encaminha ao endereço atual registrado. [24]
+[SUGESTÃO] Existência bibliográfica: a obra e os metadados correspondem a um registro verificável.
+[SUGESTÃO] Suporte semântico: o conteúdo realmente sustenta a afirmação no escopo e nas condições declaradas.
+[SUGESTÃO] Citação fora de contexto: trecho verdadeiro deslocado de população, período, hipótese, ironia, limitação ou conclusão que muda seu sentido.
+[SUGESTÃO] Retratação: retirada formal do registro científico; o texto pode continuar acessível, mas deve estar claramente marcado.
+[CONFIRMADO] Crossmark: botão/registro Crossref que informa o status atual e correções, retratações ou atualizações. [27]
+[CONFIRMADO] Smart Citation: contexto extraído de uma citação, com metadados e classificação automática da relação como Supporting, Contrasting ou Mentioning na interface atual. [4][6]
+[SUGESTÃO] Supporting: o trecho citante apresenta evidência favorável a aspecto do trabalho citado; não significa que todo o artigo seja “verdadeiro”.
+[SUGESTÃO] Contrasting: o trecho apresenta resultado ou argumento em tensão com o citado; não equivale automaticamente a refutação total.
+[SUGESTÃO] Mentioning: a referência é usada sem apoio ou contraste identificado.
+[SUGESTÃO] Leitura lateral: sair da página e investigar autor, organização e cobertura em outras abas, em vez de avaliar só a aparência interna.
+[CONFIRMADO] SIFT: Stop; Investigate the source; Find better coverage; Trace claims, quotes and media to the original context. [34]
+[SUGESTÃO] Alucinação/fabricação de referência: saída plausível que atribui metadados ou conteúdo a uma obra inexistente ou diferente.
+[SUGESTÃO] Nota editorial: aviso do periódico — correção, expressão de preocupação, retratação ou outro status — que altera como a obra deve ser usada.
+
+5. FUNCIONALIDADES
+
+5.1 Scite
+
+[CONFIRMADO] Search: busca metadados e citation statements de texto integral; filtros incluem seção, tipo ou periódico e alertas de novos resultados. Plano: teste/Basic/Pro conforme página de preços. [1][4]
+[CONFIRMADO] Reports: reúne todas as citações detectadas para um artigo, texto do contexto, classificação e filtros. [4]
+[CONFIRMADO] Assistant: responde com base na coleção acadêmica do Scite e liga alegações a fontes. O handbook oficial recomenda prompts específicos e configuração de estratégia. [4][15]
+[CONFIRMADO] Reference Check: recebe PDF de manuscrito e sinaliza referências retratadas, com nota editorial ou achados contrastantes. [4]
+[CONFIRMADO] Collections: agrupa, importa e monitora artigos; alertas incluem supporting/contrasting e retratações. Limite de 1.000 no Basic e 10.000 no Pro. [1][4]
+[CONFIRMADO] Browser extension: widgets/badges em páginas acadêmicas e atalho de texto selecionado para o Assistant; gratuita. [9]
+[CONFIRMADO] Alerts/Dashboards: disponíveis no Basic; tutoriais antigos descrevem Saved Searches, Set Alert e Create Dashboard. [1][52]
+[CONFIRMADO] Integrações: Zotero, extensão, API e MCP. API é Pro; MCP requer plano pago ou teste. [8]
+[SUGESTÃO] Critério de sucesso: o aluno não deve registrar apenas contagens. Para cada rótulo relevante, abre o citante e o citado e explica em uma frase qual aspecto é apoiado ou contestado.
+
+5.2 Perplexity
+
+[CONFIRMADO] Pro Search: busca em várias etapas, síntese com citações e follow-ups. [17]
+[CONFIRMADO] Academic: modo/foco de fontes voltado à literatura acadêmica. [17]
+[CONFIRMADO] Check Sources: verificação de alegações contra evidência, anunciado em julho de 2026. [19]
+[CONFIRMADO] Sources panel: fonte e passagem ao lado da resposta. [19]
+[SUGESTÃO] Restrição por domínio: instrução explícita no prompt mais auditoria da lista final. Não tratar como filtro garantido sem confirmação na interface.
+[SUGESTÃO] Matriz de comparação: dividir a resposta em afirmações atômicas, associar cada citação e marcar “apoia”, “contesta”, “menciona”, “não localizado” ou “fonte inadequada”.
+
+6. CASOS DE USO PARA O PÚBLICO DO CURSO
+
+[CONFIRMADO] Pesquisadores/autores: Reference Check foi concebido para avaliar bibliografia de manuscrito antes da publicação; o relatório de exemplo mostra supporting, contrasting e mentioning. Fonte da fabricante. [4][16]
+[CONFIRMADO] Estudantes: o estudo de Walters e Wilder propõe que reconhecer referências fabricadas ajuda estudantes a verificar e desenvolver a pesquisa, em vez de confiar na bibliografia gerada. Fonte independente. [22]
+[CONFIRMADO] Jornalistas: o Tow Center testou a recuperação da notícia original por motores de busca com IA e mostrou que citações visíveis não eliminam erros de atribuição. Fonte independente. [21]
+[CONFIRMADO] Fact-checkers: Aos Fatos publica processo que inclui localizar origem, consultar fontes confiáveis/oficiais e contextualizar documentos; Lupa declara dupla edição e política de correção; Comprova exige revisão cruzada por redações distintas. [37][38][39]
+[CONFIRMADO] Advogados e assessores: o STJ recomenda a base oficial para conferir número, relator, órgão, data e inteiro teor; petições com precedentes inventados já geraram ofício à OAB e multa por má-fé. [42][46]
+[CONFIRMADO] Professores de Direito: artigo brasileiro da SciELO/UFPR preserva o texto retratado e o vincula ao aviso de retratação, permitindo exercício público sobre estado editorial. [30]
+[CONFIRMADO] Analistas: Collections pode monitorar um conjunto de estudos e novas citações; Perplexity pode reunir fontes preliminares, desde que cada dado seja aberto e conferido. [4][17]
+[VERIFICAR] NÃO ENCONTRADO caso público brasileiro que documente uma redação jornalística publicando citação bibliográfica inventada especificamente pela Perplexity. Foram consultados sites de Lupa, Aos Fatos, Comprova e buscas de imprensa. O estudo Tow é teste internacional, não caso de publicação brasileira. [21][37][38][39]
+
+7. BOAS PRÁTICAS E EXEMPLOS DE PROMPTS
+
+7.1 Publicados pela fabricante
+
+[CONFIRMADO] O handbook do Scite recomenda definir tarefa, escopo, período, tipo de evidência e formato; prompts genéricos produzem estratégia de busca genérica. [15]
+[CONFIRMADO] O blog do Scite recomenda pedir verificação de existência, metadados/DOI, retratações, notas editoriais e correspondência entre afirmação e fonte. Também avisa que o rótulo vale para o citation statement, não para o artigo inteiro. [53]
+
+7.2 Prompts elaborados para o curso
+
+[SUGESTÃO] Perplexity — existência: “Verifique se a referência abaixo existe. Procure título, autores, ano, periódico/editora e DOI em fontes primárias. Se não localizar, diga exatamente onde pesquisou. Não complete campos por inferência: {referência}.”
+[SUGESTÃO] Perplexity — suporte: “Quebre a afirmação abaixo em alegações atômicas. Para cada uma, indique qual fonte citada a apoia, transcreva no máximo uma frase curta, forneça link para o original e aponte limitações ou contestação: {afirmação}.”
+[SUGESTÃO] Perplexity — domínio: “Use somente fontes oficiais nos domínios stj.jus.br e planalto.gov.br. Para cada resultado, inclua número do processo ou norma, órgão, data e link para o inteiro teor. Se sair desses domínios, sinalize.”
+[SUGESTÃO] Scite Assistant — evidência: “Find studies that support or contrast the claim {claim}. Separate human primary studies, reviews and commentary. Include DOI, year, population, outcome and limitations.”
+[SUGESTÃO] Auditoria: “Não avalie a credibilidade por contagem de citações. Mostre o trecho citante, a seção, a classificação automática e por que o contexto apoia ou contesta a alegação.”
+[SUGESTÃO] Regra operacional: nunca copiar a bibliografia produzida pela IA diretamente para trabalho, notícia, relatório ou petição. Exportar só após conferência do registro e do original.
+
+8. SEGURANÇA, PRIVACIDADE E DADOS
+
+[CONFIRMADO] Os termos do Scite atribuem ao usuário a responsabilidade final de decidir se uma obra é aceitável para citação. [12]
+[CONFIRMADO] A política de privacidade do Scite, efetiva em 26/03/2026, descreve coleta de dados de conta, dispositivo, navegador, cookies e fontes públicas/terceiras. [11]
+[CONFIRMADO] Os termos informam que Customer Data — entradas, saídas, consultas e uso — não é usada para treinar ou ajustar os sistemas de IA. [12]
+[CONFIRMADO] A Perplexity informa opt-out de treinamento para Pro/Education Pro/Max e ausência de uso para treinamento nos planos Enterprise. [18]
+[SUGESTÃO] Não enviar manuscrito sigiloso, peça sob segredo de justiça, dado pessoal sensível ou documento de cliente sem base jurídica, autorização e avaliação contratual. Use versão anonimizada quando possível.
+[SUGESTÃO] LGPD: registrar finalidade, necessidade, operadores, transferência internacional, retenção e canal de exercício de direitos. Política pública não substitui análise jurídica ou contrato institucional.
+[VERIFICAR] NÃO ENCONTRADO prazo público simples de retenção aplicável a todo upload do Scite atual. O tutorial de 2021 dizia que o PDF era temporariamente privado e apagado após o relatório, mas metadados do relatório persistiam; confirmar com suporte antes de material sigiloso. [10]
+[SUGESTÃO] Para exercícios, usar apenas documentos públicos e dados fictícios; apagar uploads ao terminar quando a interface permitir.
+
+9. LIMITAÇÕES, ERROS COMUNS E SOLUÇÃO DE PROBLEMAS
+
+[CONFIRMADO] Smart Citation é classificação automática de um trecho citante. O artigo técnico reconhece perda de nuance e desempenho desigual entre classes; portanto não equivale a juízo final sobre toda a obra. [6]
+[CONFIRMADO] Cobertura depende de texto obtido por acordos editoriais e acesso aberto; ausência de rótulo ou citação não prova ausência de contestação no mundo. [5][6]
+[CONFIRMADO] Reference Check pode não reconhecer algumas referências por formatação do PDF, DOI ausente ou falha de pareamento. [10]
+[CONFIRMADO] Perplexity aconselha validar as fontes ligadas. O teste Tow mostra que uma resposta com links ainda pode atribuir incorretamente a origem. [17][21]
+[SUGESTÃO] Erro: aceitar DOI que resolve. Correção: conferir metadados e conteúdo.
+[SUGESTÃO] Erro: usar abstract para afirmação específica. Correção: abrir método, resultados e limitações.
+[SUGESTÃO] Erro: concluir “apoia” por título parecido. Correção: localizar população, intervenção, comparação e desfecho.
+[SUGESTÃO] Erro: confundir ausência no Google com inexistência. Correção: cruzar Crossref, base disciplinar, catálogo/repositório e site do veículo.
+[SUGESTÃO] Erro: citar versão antiga. Correção: procurar Crossmark, “Correction”, “Erratum”, “Retraction”, versão de registro e data de atualização.
+[SUGESTÃO] Erro jurídico: usar ementa de terceiro. Correção: abrir inteiro teor no tribunal, conferir número, relator, órgão, julgamento, publicação e trecho.
+[SUGESTÃO] Erro: usar contagem de supporting/contrasting como placar. Correção: ponderar desenho, amostra, data, pertinência e qualidade.
+
+10. COMPARAÇÃO COM ALTERNATIVAS
+
+[CONFIRMADO] Scite se diferencia por mostrar contexto citante e classificação em escala; Crossref é fonte de metadados e relações editoriais; PubMed é índice biomédico; SciELO combina busca e texto de periódicos; Google Scholar tem ampla descoberta. [4][25][28][29][30]
+[SUGESTÃO] Para “existe?”, começar com DOI/Crossref/base disciplinar. Para “o que estudos posteriores disseram?”, Scite. Para “qual é a fonte original na web?”, Perplexity mais leitura lateral. Para “está retratado?”, Crossmark/Crossref/base do periódico. Para direito brasileiro, portal oficial.
+[SUGESTÃO] Scite não substitui revisão sistemática nem avaliação metodológica; Perplexity não substitui base bibliográfica; Google Scholar não substitui metadados oficiais; Lattes não prova publicação; resumo de IA não substitui original.
+[VERIFICAR] Scite não anuncia cobertura especializada de jurisprudência ou doutrina brasileira nas páginas de cobertura e recursos consultadas. Patentes e outros conjuntos entram no Pro, mas não foram encontradas bases STF/STJ/TJs. Tratar como fora da fronteira e usar portais oficiais. [1][4][5]
+
+11. NOVIDADES RECENTES E RECURSOS INSTÁVEIS
+
+[CONFIRMADO] Maio/2026: novo plano Scite Pro e Collections substituindo o papel principal de Dashboards. [13]
+[CONFIRMADO] Setembro/2026: notas em Collections, ferramentas MCP para evidência/texto/referências e links públicos de Collections. [14]
+[CONFIRMADO] Julho/2026: Perplexity anunciou Check Sources e Sources panel em distribuição para todos. [19]
+[VERIFICAR] Os caminhos de alertas do Scite vêm de tutoriais de 2021; o recurso existe, mas a interface pode ter migrado para Collections. [13][52]
+[VERIFICAR] Números de cobertura do Scite e limites da Perplexity mudam; atualizar na semana da gravação. [5][18]
+[SUGESTÃO] Gravar navegação sem depender de coordenadas visuais e manter caixas “interface em 04/11/2026”.
+
+12. MATERIAL DIDÁTICO EXISTENTE
+
+[CONFIRMADO] Scite mantém página Getting Started, Features, Demos, tutorial de Reference Check, vídeos e handbook de prompts do Assistant. [4][7][10][15][49]
+[CONFIRMADO] O PDF técnico do Scite explica coleta, pareamento e classificação de citation statements; serve à equipe, não precisa entrar em profundidade no Essentials. [6]
+[CONFIRMADO] A central da Perplexity tem guias de Pro Search e planos; o changelog documenta Check Sources. [17][18][19]
+[CONFIRMADO] Check, Please! é o curso canônico associado ao SIFT e possui materiais sob CC BY onde indicado. Bibliotecas universitárias mantêm adaptações. [34]
+[CONFIRMADO] Há material pt-BR da Secretaria da Educação do Ceará que adapta SIFT como Pause, Investigue a fonte, Busque mais informações e Conheça o contexto. [35]
+[CONFIRMADO] Guias oficiais CAPES, STJ e manual AFP em português fornecem procedimentos e critérios reutilizáveis como referência didática. [31][40][43][50]
+
+13. IDEIAS DE EXERCÍCIO
+
+Decomposição da tarefa observável
+
+[SUGESTÃO] Ação A — checar se uma citação existe: identificar metadados, resolver DOI e triangular registros.
+[SUGESTÃO] Ação B — checar o que a fonte diz: abrir original, localizar trecho e ler contexto.
+[SUGESTÃO] Ação C — decidir se apoia ou contesta: comparar escopo, método, resultados, limitações e literatura posterior.
+[SUGESTÃO] Ação D — verificar estado atual: procurar correção, retratação, nota editorial ou versão substituta.
+[SUGESTÃO] Ação E — documentar: registrar consulta, links, trecho e decisão reproduzível.
+
+13a exercícios curtos de compreensão
+
+[SUGESTÃO] 1. DOI não é gabarito. Ação A. Abrir https://doi.org/10.1162/qss_a_00146 e conferir título/autores/ano. Depois responder por que o redirecionamento não prova que qualquer afirmação atribuída ao artigo está correta. Resultado: metadados coincidem; limite explicado. Link testado: página/registro do artigo, acesso público; PDF correspondente foi baixado. [6][24]
+[SUGESTÃO] 2. Correta. Ações A–C. Afirmação: “O Scite classifica citation statements em supporting, contrasting/disputing e mentioning.” Citação: Nicholson et al., 2021, DOI 10.1162/qss_a_00146. Resultado: obra existe e descreve as classes; aluno observa mudança de disputing no artigo para contrasting na interface atual. [4][6]
+[SUGESTÃO] 3. Existe, mas não sustenta. Ações A–C. Afirmação proposital: “O classificador do Scite tem 99% de acurácia para todas as classes e cobre toda publicação científica.” Mesma citação. Resultado: artigo existe, mas não apoia universalidade nem 99%; relata desempenho desigual e limitações. [6]
+[SUGESTÃO] 4. Inexistente. Ação A. Referência didática fictícia: SILVA, Ana. Auditoria universal de citações por IA. Revista Brasileira de Evidência Digital, 2026. DOI 10.9999/ia-clube.2026.001. Procurar DOI.org, Crossref, Google Scholar e SciELO. Resultado: nenhum registro localizado; registrar bases e data, sem concluir além do escopo pesquisado. Este exemplo é deliberadamente inventado. [24][25][29]
+[SUGESTÃO] 5. Retratado em português. Ações A, B e D. Abrir o artigo “O sistema de direitos fundamentais e sua abertura na ordem constitucional brasileira”, DOI 10.5380/rinc.v9i1.83825, na SciELO. Resultado: artigo existe, mas está marcado “ARTIGO RETRATADO” e ligado ao aviso DOI 10.5380/rinc.v11i1.94614. Link testado: página HTML pública, sem login. [30]
+
+13b práticas longas com problema real
+
+[SUGESTÃO] Oficina 1 — auditoria de cinco pares. Ações A–E. Usar os cinco pares acima; preencher ficha: afirmação, referência, existência, trecho, contexto, status, decisão e evidência. “Terminou” quando outra pessoa consegue reproduzir cada decisão só com a ficha.
+[SUGESTÃO] Oficina 2 — resultado contestado depois. Ações B–D. Afirmação original: power posing altera hormônios e tolerância ao risco; fonte original DOI 10.1177/0956797610383437. Comparar com Ranehill et al., DOI 10.1177/0956797614553946, N=200, que encontrou sensação autorrelatada de poder, mas não efeito significativo em hormônios ou tarefas comportamentais. Resultado: “contestado em desfechos específicos”, não “todo o tema é falso”. Link testado: PDF público da Universidade de Zurique. [48]
+[SUGESTÃO] Oficina 3 — petição sem alucinação. Ações A–E. Receber a alegação “o STJ decidiu X no HC 1.023.732”. Pesquisar SCON, abrir inteiro teor, conferir número, relator, órgão, data e trecho; comparar com a reportagem oficial. Resultado: ficha jurídica com link oficial e passagem correspondente. [42][46]
+[SUGESTÃO] Oficina 4 — resposta da Perplexity. Ações A–C. Perguntar em Academic sobre erros de referências geradas por IA; abrir cada citação e conferir amostra, modelo, data e medida. Resultado: tabela textual que distingue 55%/18% da amostra de 2023 de desempenho atual. [17][22]
+
+13c ideias de projeto final
+
+[SUGESTÃO] Projeto 1 — dossiê científico auditável. Material: quatro afirmações dos pares e PDFs/páginas públicas. Entrega: ficha completa, relatório Scite quando houver teste, confirmação Crossref/SciELO, estado editorial e conclusão calibrada. Critérios de terminou: 100% dos metadados conferidos; cada decisão ligada a trecho; retratação/contestação registradas; nenhuma conclusão baseada só em IA.
+[SUGESTÃO] Projeto 2 — dossiê jurídico auditável. Material: HC 1.023.732 e artigo 436 do CPP mencionados pelo STJ. Entrega: consulta oficial do processo, texto legal no Planalto, comparação com a citação falsa e protocolo reutilizável. Critérios de terminou: links oficiais, versão/data, inteiro teor, transcrição curta e explicação da divergência. [44][46]
+
+14. RESPOSTAS AO FOCO ESPECÍFICO DESTE CURSO
+
+14.1 O problema
+
+[CONFIRMADO] Erros incluem obra inexistente; obra real com autor/título/ano/páginas incorretos; fonte que não apoia a alegação; trecho fora de contexto; atribuição à fonte errada; obra retratada; fonte desatualizada. [22][42][46]
+[CONFIRMADO] Walters e Wilder: 84 textos, 636 referências, 42 temas; 55% das referências do GPT-3.5 e 18% do GPT-4 eram fabricadas. Entre reais, 43% e 24% tinham ao menos um erro substantivo. Coleta em abril de 2023. [22]
+[CONFIRMADO] Lehr et al.: em 1.000 referências solicitadas como reais, 5,40% das completas e 36,00% das incompletas eram alucinações; agregando versões, referências incompletas tiveram 62,41% de alucinação contra 14,30% das completas. Estudo de 2024; desenho específico. [23]
+[CONFIRMADO] Tow Center: 1.600 testes, oito ferramentas; mais de 60% das identificações da notícia original estavam erradas; Perplexity errou 37%. Publicado 06/03/2025. [21]
+[SUGESTÃO] Não misturar as porcentagens: tarefas, modelos, datas e denominadores são diferentes.
+
+14.2 Scite — identidade, dono, Smart Citations e base
+
+[CONFIRMADO] Scite, LLC é parte da Research Solutions desde 2023. Smart Citations extraem contexto e classificam supporting, contrasting e mentioning. [3][4][12]
+[CONFIRMADO] Cobertura atual declarada: 323M+ artigos, 50M+ fontes integrais, 1,7B+ Smart Citations, 44+ parceiros; acordos editoriais mais acesso aberto. [5]
+[CONFIRMADO] NÃO ENCONTRADO nome oficial em português para os três rótulos na interface. As páginas atuais consultadas estão em inglês; no curso, manter os termos e explicar “apoia/contesta/menciona”.
+
+14.3 Funcionalidades Scite para checagem
+
+[CONFIRMADO] Search, Reports, Assistant, Reference Check, extensão, Collections e alertas foram confirmados nas páginas atuais. [1][4][7][9]
+[VERIFICAR] Passos finos de alertas e menus de Reference Check vêm de tutoriais de 2021. Usar os caminhos da seção 3 como roteiro de validação, não como captura definitiva. [10][52]
+
+14.4 Planos e acesso Scite
+
+[CONFIRMADO] Basic US$12/mês anual; Pro US$40/mês anual; Enterprise sob consulta; teste sete dias com renovação. [1][2]
+[CONFIRMADO] NÃO ENCONTRADO convênio CAPES ou lista pública confiável de universidades brasileiras com Scite. Consultar biblioteca local. [31][50]
+[SUGESTÃO] Parte dos exercícios pode ser feita grátis; treino Scite completo depende de teste ou licença.
+
+14.5 Perplexity como checagem
+
+[CONFIRMADO] Pro Search e Academic são documentados; Check Sources e Sources panel foram anunciados em 2026. [17][19]
+[SUGESTÃO] Restringir domínio por instrução e auditar links. Comparar cada alegação ao trecho original.
+[CONFIRMADO] Limites documentados: necessidade de validar links; erros de atribuição no estudo Tow. [17][21]
+
+14.6 Verificação gratuita e oficial
+
+[CONFIRMADO] DOI.org resolve identificador; Crossref confere metadados e relações; Retraction Watch no Crossref fornece dados de retratação; Crossmark mostra status; PubMed sinaliza tipos/notas; SciELO preserva rótulos editoriais; CAPES/BDTD/Lattes ajudam a localizar e identificar. [24][25][26][27][28][30][31][32][33]
+[SUGESTÃO] Ordem: DOI/Crossref > base disciplinar > site do periódico/repositório > autor. Para retratação: Crossmark/Crossref + aviso do editor.
+
+14.7 Métodos publicados
+
+[CONFIRMADO] SIFT: Stop, Investigate, Find better coverage, Trace to original. [34]
+[CONFIRMADO] Leitura lateral orienta abrir outras abas para investigar fonte, consenso e origem. [36]
+[CONFIRMADO] Existe adaptação pt-BR em material da SEDUC-CE; não é tradução oficial revisada por Caulfield. [35]
+
+14.8 Jornalismo brasileiro
+
+[CONFIRMADO] Aos Fatos: selecionar alegação relevante, contatar origem, buscar fontes confiáveis/oficiais/alternativas e contextualizar. [37]
+[CONFIRMADO] Lupa: método inspirado em Chequeado/PolitiFact, dupla edição, transparência e correções. [38]
+[CONFIRMADO] Comprova: apuração por jornalistas de veículos diferentes e validação cruzada por pelo menos três redações adicionais. [39]
+[CONFIRMADO] AFP: manual em português prioriza precisão, clareza, transparência, equilíbrio e correção imediata. [40]
+[VERIFICAR] NÃO ENCONTRADO procedimento público específico das três agências brasileiras para checar bibliografias acadêmicas com Scite. Seus métodos gerais são aplicáveis.
+
+14.9 Citações jurídicas brasileiras
+
+[CONFIRMADO] STF: Pesquisa de Jurisprudência > bases Acórdãos, Súmulas, Decisões monocráticas e Informativos > número/termo > inteiro teor. [41]
+[CONFIRMADO] STJ: SCON > Pesquisa no STJ > número/termos/campos > abrir inteiro teor; conferir processo, relator, órgão e julgamento. [42][43]
+[VERIFICAR] CJF: a Jurisprudência Unificada e ferramentas novas estavam em transição; confirmar URL e escopo no dia da gravação.
+[SUGESTÃO] TJs: usar o portal oficial do tribunal competente; não existe uma única interface nacional estável.
+[CONFIRMADO] Planalto: Busca Avançada > tipo/número/data/status > texto; a base é informativa e não substitui o Diário Oficial. [44]
+[CONFIRMADO] LexML permite delimitar Legislação, Jurisprudência e Proposições. [45]
+[VERIFICAR] Scite não demonstrou cobertura de jurisprudência/doutrina brasileira; usar portais oficiais. [4][5]
+
+14.10 Casos reais
+
+[CONFIRMADO] STJ, HC 1.023.732, agosto/2025: defesa citou leis e precedentes inexistentes e atribuiu texto falso ao art. 436, §1º, CPP; habeas corpus não conhecido e OAB oficiada. [46]
+[CONFIRMADO] STJ, HC 1.094.270: referências incorretas e trechos inexistentes; ministro afirmou que IA não dispensa verificação humana; OAB oficiada. [46]
+[CONFIRMADO] STJ, processo em segredo, junho/2026: precedentes fictícios, inclusive “AgInt no AREsp 1.234.567/XX”; multa de cinco salários mínimos por má-fé. [46]
+[CONFIRMADO] TJSC, 2025: autor admitiu uso de ChatGPT em recurso com jurisprudência e doutrina inexistentes; houve multa e comunicação à OAB. [47]
+[CONFIRMADO] Ciência: os 84 textos avaliados por Walters e Wilder continham referências fabricadas e erros bibliográficos; consequência demonstrada é risco à integridade e necessidade de conferência. [22]
+[CONFIRMADO] Artigo jurídico brasileiro DOI 10.5380/rinc.v9i1.83825 foi retratado por transcrições sem aspas e referência adequada, conforme aviso editorial. Não é caso atribuído a IA. [30]
+[VERIFICAR] NÃO ENCONTRADO caso brasileiro bem documentado de reportagem publicada com citação acadêmica fabricada por IA. O estudo Tow documenta falhas em motores de resposta ao localizar notícias. [21]
+
+14.11 Pares afirmação + citação
+
+[SUGESTÃO] Par 1 correta: definição das três classes — Nicholson et al., DOI 10.1162/qss_a_00146. Gabarito: apoia. [6]
+[SUGESTÃO] Par 2 existe/não sustenta: alegação de “99% em todas as classes e cobertura universal” com a mesma fonte. Gabarito: não apoia. [6]
+[SUGESTÃO] Par 3 contestada: power posing altera hormônios e risco; original DOI 10.1177/0956797610383437 versus replicação DOI 10.1177/0956797614553946. Gabarito: contestada para hormônios e risco; efeito autorrelatado parcial permaneceu. [48]
+[SUGESTÃO] Par 4 inexistente: referência fictícia DOI 10.9999/ia-clube.2026.001. Gabarito: não localizada nas bases indicadas; exemplo deliberado. [24][25][29]
+[SUGESTÃO] Par 5 retratada: DOI 10.5380/rinc.v9i1.83825. Gabarito: existe, está retratado e ligado ao aviso 10.5380/rinc.v11i1.94614. [30]
+
+15. TRECHOS TRANSCRITOS DA DOCUMENTAÇÃO OFICIAL
+
+[CONFIRMADO] Scite Features, sem data visível: “Know whether a finding has been supported or contradicted — before you cite it.” URL: https://scite.ai/features [4]
+[CONFIRMADO] Perplexity Pro Search, atualizada em 21/07/2026: “It's crucial to validate the sources linked.” URL: https://www.perplexity.ai/help-center/en/articles/10352903-what-is-pro-search [17]
+[CONFIRMADO] STJ, 03/11/2026: “as bases oficiais de jurisprudência... sempre foi a melhor maneira de obter informações confiáveis”. URL na fonte. [42]
+[CONFIRMADO] Scite Terms, sem data visível: “It is the ultimate responsibility of each user to determine whether to cite an Article”. URL: https://scite.ai/terms [12]
+[CONFIRMADO] AFP, 2025: “A precisão é primordial, assim como a clareza e a transparência”. URL na fonte. [40]
+
+16. MATERIAIS PARA BAIXAR
+
+[BAIXAR] scite: a smart citation index that displays the context of citations and classifies their intent using deep learning. Link: https://www.biorxiv.org/content/10.1101/2021.03.15.435418v1.full.pdf. PDF, 33 páginas, 1,44 MB, inglês. Base técnica das Smart Citations. Licença do preprint conforme bioRxiv. Nome: scite-smart-citation-index-2021.pdf. BAIXADO; assinatura %PDF e abertura com pdfinfo confirmadas. [6]
+[BAIXAR] Assistant — Harness the power of research. Link: https://www.researchsolutions.com/hubfs/LLM-Prompt-Handbook-Scite-Assistant.pdf. PDF, 14 páginas, 7,64 MB, inglês. Handbook oficial de prompts. Nome: scite-assistant-prompt-handbook.pdf. BAIXADO; %PDF e 14 páginas confirmados. [15]
+[BAIXAR] scite Report sample. Link: https://cdn.scite.ai/sample_files/scite_pdf_analysis_example.pdf. PDF, 7 páginas, 67 KB, inglês. Exemplo de relatório para exercícios. Nome: scite-reference-check-sample.pdf. BAIXADO; %PDF e 7 páginas confirmados. [16]
+[BAIXAR] Guia rápido do Novo Portal de Periódicos. Link direto: https://www.periodicos.capes.gov.br/images/documents/Guia%20r%C3%A1pido%20do%20Novo%20Portal%20de%20Peri%C3%B3dicosv3_atualizada.pdf. PDF, 42 páginas, 3,75 MB, pt-BR. Busca e filtros CAPES. Nome: capes-guia-rapido-novo-portal.pdf. BAIXADO; %PDF e 42 páginas confirmados. [31]
+[BAIXAR] Guia rápido do Acesso CAFe 2025. Link: https://www.periodicos.capes.gov.br/images/documents/Guia%20r%C3%A1pido%20do%20Acesso%20CAFe%20_2025_VF.pdf. PDF, 16 páginas, 2,63 MB, pt-BR. Acesso remoto institucional. Nome: capes-guia-acesso-cafe-2025.pdf. BAIXADO; %PDF e 16 páginas confirmados. [50]
+[BAIXAR] SOS Pesquisa de Jurisprudência. Link: https://processo.stj.jus.br/docs_internet/jurisprudencia/ajuda/2025_folder_sos_pesquisa_1.pdf. PDF, 19 páginas, 1,53 MB, pt-BR. Guia oficial STJ. Nome: stj-guia-pesquisa-jurisprudencia-2025.pdf. BAIXADO; %PDF e 19 páginas confirmados. [43]
+[BAIXAR] ChatGPT as Research Scientist. Link: https://banaji.sites.fas.harvard.edu/research/publications/articles/Lehr_etal_ChatGPTScientist_2024.pdf. PDF, 9 páginas, 287 KB, inglês. Estudo independente com taxas de alucinação. Nome: estudo-chatgpt-research-scientist-2024.pdf. BAIXADO; %PDF e 9 páginas confirmados. [23]
+[BAIXAR] Fabrication and errors in the bibliographic citations generated by ChatGPT. Link: https://www.nature.com/articles/s41598-023-41032-5.pdf. PDF, inglês, tamanho não informado. Estudo de 636 referências. Nome: estudo-fabricacao-citacoes-chatgpt-2023.pdf. NÃO BAIXADO: host devolveu página HTML/bloqueio; o arquivo inválido foi removido. A versão HTML pública foi conferida no PMC. [22]
+[BAIXAR] Is Psychological Science Self-Correcting? Link: https://pmc.ncbi.nlm.nih.gov/articles/PMC10460510/pdf/nihms-1913977.pdf. PDF, inglês. Contextualiza citações após replicações. Nome: estudo-citacoes-apos-replicacoes-2023.pdf. NÃO BAIXADO: endpoint devolveu verificação HTML, removida. [54]
+[BAIXAR] Assessing the Robustness of Power Posing. Link: https://www.zne.uzh.ch/dam/jcr%3Ae5fc4c3c-d50e-4aa9-96ab-4389e426d20d/%20Psychological%20Science-2015-Ranehill-0956797614553946.pdf. PDF, 4 páginas, inglês. Material do par contestado. Nome: power-posing-replicacao-2015.pdf. NÃO BAIXADO nesta execução; link direto testado e conteúdo PDF confirmado. [48]
+[BAIXAR] Manual de estilo de verificação digital da AFP 2025. Link: https://checamos.afp.com/sites/default/files/2025-08/manual-de-estilo-de-verificacao-digital-afp_pt-2025.pdf. PDF, pt-BR. Manual editorial. Nome: afp-manual-verificacao-digital-2025.pdf. NÃO BAIXADO: servidor recusou o download automatizado; página HTML pública disponível. [40]
+[BAIXAR] Central de ajuda e documentação do Scite. NÃO ENCONTRADO material único em PDF. A documentação atual é web e deve ser salva pela seção 17. [4][7]
+[BAIXAR] Tutoriais/vídeos oficiais do Scite. Link: https://scite.ai/demos. Vídeos, inglês. Úteis para confirmar interface. Transcrição para download: NÃO ENCONTRADO na página consultada. Nome sugerido por vídeo: scite-demo-recurso.mp4 ou scite-demo-recurso.txt. NÃO BAIXADO. [49]
+[BAIXAR] Página de planos do Scite. É página web, não arquivo; incluída na seção 17 como PDF salvo pelo navegador. [1]
+[BAIXAR] Páginas Perplexity sobre Academic e domínio. Academic aparece na ajuda Pro Search. Documento oficial atual específico de filtro de domínio na interface: NÃO ENCONTRADO. [17]
+[BAIXAR] Documentação Crossref Retraction Watch. É página web; seção 17. Exportação CSV completa existe no repositório indicado pela documentação, mas não é necessária para os exercícios. [26]
+[BAIXAR] Material oficial SIFT. Curso canônico é web; PDF oficial único em pt-BR: NÃO ENCONTRADO. Há adaptação pt-BR da SEDUC-CE e material pt-PT da Universidade Portucalense. [34][35]
+[BAIXAR] Guias Lupa, Aos Fatos e Comprova. Os métodos localizados são páginas web; PDFs oficiais específicos: NÃO ENCONTRADO. Salvar as páginas da seção 17. [37][38][39]
+
+17. PÁGINAS PARA SALVAR
+
+[CONFIRMADO] Scite Pricing. URL: https://scite.ai/pricing. Trecho: preços, teste, limites e planos. Prioridade: alta. Nome: scite-planos-precos-2026.pdf. [1]
+[CONFIRMADO] Scite Features. URL: https://scite.ai/features. Trecho: recursos atuais e nomes. Prioridade: alta. Nome: scite-recursos-2026.pdf. [4]
+[CONFIRMADO] Scite Coverage. URL: https://scite.ai/coverage. Trecho: números e composição da base. Prioridade: alta. Nome: scite-cobertura-2026.pdf. [5]
+[CONFIRMADO] Getting Started with Scite. URL: https://scite.ai/getting-started. Trecho: entradas para Search, Reports, Collections e Reference Check. Prioridade: alta. Nome: scite-primeiros-passos.pdf. [7]
+[CONFIRMADO] How do I use the scite Reference Check? URL: https://scite.ai/blog/how-do-i-use-the-scite-reference-check. Trecho: upload, relatório, privacidade e limitações; interface antiga. Prioridade: média. Nome: scite-reference-check-tutorial-2021.pdf. [10]
+[CONFIRMADO] Scite Privacy Policy. URL: https://scite.ai/policy. Trecho: dados e direitos. Prioridade: alta. Nome: scite-politica-privacidade-2026.pdf. [11]
+[CONFIRMADO] Scite Terms. URL: https://scite.ai/terms. Trecho: responsabilidade, dados e cobrança. Prioridade: alta. Nome: scite-termos-2026.pdf. [12]
+[CONFIRMADO] What is Pro Search? URL: https://www.perplexity.ai/help-center/en/articles/10352903-what-is-pro-search. Trecho: fluxo, Academic e validação. Prioridade: alta. Nome: perplexity-pro-search-academic-2026.pdf. [17]
+[CONFIRMADO] Which Perplexity Subscription Plan is right for you? URL: https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you. Trecho: limites, privacidade e trial. Prioridade: alta. Nome: perplexity-planos-limites-2026.pdf. [18]
+[CONFIRMADO] Check Sources and Sources panel. URL: https://www.perplexity.ai/changelog/role-based-access-controls-api-credentials-and-brain-for-max. Trecho: recursos de checagem. Prioridade: alta. Nome: perplexity-check-sources-2026.pdf. [19]
+[CONFIRMADO] Crossref Retraction Watch. URL: https://www.crossref.org/documentation/retrieve-metadata/retraction-watch/. Trecho: dados, API, tipos e atualização. Prioridade: alta. Nome: crossref-retraction-watch.pdf. [26]
+[CONFIRMADO] Crossmark. URL: https://www.crossref.org/crossmark/. Trecho: status atual do registro. Prioridade: média. Nome: crossref-crossmark.pdf. [27]
+[CONFIRMADO] PubMed Help. URL: https://pubmed.ncbi.nlm.nih.gov/help/. Trecho: busca e tipos de publicação. Prioridade: alta. Nome: pubmed-ajuda-busca-retracao.pdf. [28]
+[CONFIRMADO] Google Scholar Help. URL: https://scholar.google.com.au/intl/en/scholar/help.html. Trecho: aspas, author: e pesquisa avançada. Prioridade: média. Nome: google-scholar-ajuda.pdf. [29]
+[CONFIRMADO] Artigo retratado SciELO. URL: https://www.scielo.br/j/rinc/a/CJS9hPVpckgqVNxRwyx4NYy/abstract/?format=html&lang=pt. Trecho: banner, DOI e documento relacionado. Prioridade: alta. Nome: scielo-artigo-retratado-exercicio.pdf. [30]
+[CONFIRMADO] BDTD. URL: https://www.gov.br/ibict/pt-br/site-ibict-2025/assuntos/informacao-cientifica/bdtd. Trecho: escopo e acesso aos repositórios. Prioridade: média. Nome: ibict-bdtd.pdf. [32]
+[CONFIRMADO] SIFT — Four Moves. URL: https://guides.lib.virginia.edu/c.php?g=1483059&p=11057026. Trecho: quatro movimentos e licença. Prioridade: alta. Nome: sift-four-moves.pdf. [34]
+[CONFIRMADO] Aos Fatos — como faz checagem. URL: https://www.aosfatos.org/webstories/como-o-aos-fatos-faz-uma-checagem/. Trecho: etapas. Prioridade: alta. Nome: aos-fatos-metodo.pdf. [37]
+[CONFIRMADO] Sobre a Lupa. URL: https://www.agencialupa.org/sobre-a-lupa/. Trecho: método, edição e correções. Prioridade: média. Nome: lupa-metodo.pdf. [38]
+[CONFIRMADO] Comprova — metodologia. URL: https://projetocomprova.com.br/about/metodologia/. Trecho: apuração e cross-checking. Prioridade: alta. Nome: comprova-metodologia.pdf. [39]
+[CONFIRMADO] Pesquisa de Jurisprudência STF. URL: https://portal.stf.jus.br/pesquisa/. Trecho: bases e acesso. Prioridade: alta. Nome: stf-pesquisa-jurisprudencia.pdf. [41]
+[CONFIRMADO] STJ evita citações falsas. URL: https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/03112026-Consulta-a-pagina-de-jurisprudencia-do-STJ-ajuda-a-evitar-citacoes-falsas-geradas-por-IA.aspx. Trecho: autenticação e consequências. Prioridade: alta. Nome: stj-citacoes-falsas-ia-2026.pdf. [42]
+[CONFIRMADO] Planalto Busca Avançada. URL: https://www4.planalto.gov.br/legislacao/portal-legis/busca-avancada. Trecho: filtros e texto legal. Prioridade: alta. Nome: planalto-busca-legislacao.pdf. [44]
+[CONFIRMADO] STJ — primeiros precedentes sobre IA. URL: https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/18102026-Quando-a-inteligencia-artificial-vira-questao-de-Justica-as-primeiras-decisoes-do-STJ-sobre-o-uso-de-IA.aspx. Trecho: casos e sanções. Prioridade: alta. Nome: stj-precedentes-ia-2026.pdf. [46]
+
+18. LACUNAS E PONTOS A VERIFICAR
+
+[VERIFICAR] Confirmar interface Scite em conta brasileira: posições de Search, Reports, Reference Check, Collections, Set Alert e cancelamento.
+[VERIFICAR] Confirmar se o teste Scite exige cartão no fluxo brasileiro e a antecedência de cancelamento aplicável; páginas de checkout e termos devem prevalecer.
+[VERIFICAR] Confirmar equivalentes pt-BR dos rótulos; não foram encontrados nomes oficiais em português.
+[VERIFICAR] Confirmar preços em reais, impostos e limites exibidos no dia.
+[VERIFICAR] Confirmar disponibilidade de Scite na instituição do aluno; não foi encontrado convênio CAPES nacional.
+[VERIFICAR] Confirmar retenção de PDFs atuais no Scite com suporte/contrato antes de material confidencial.
+[VERIFICAR] Confirmar interface Perplexity Check Sources/Sources e se o usuário Free recebeu o rollout.
+[VERIFICAR] Filtro visual atual de domínios na Perplexity consumidor: NÃO ENCONTRADO; usar prompt e auditoria.
+[VERIFICAR] URL e estado da Jurisprudência Unificada/CJF no dia da gravação.
+[VERIFICAR] Cobertura Scite de doutrina/jurisprudência brasileira: NÃO ENCONTRADO anúncio; tratar como fora do escopo.
+[VERIFICAR] Tradução oficial brasileira revisada por Mike Caulfield para SIFT: NÃO ENCONTRADO; usar original e identificar adaptação SEDUC-CE.
+[VERIFICAR] Caso brasileiro publicado de erro de citação por IA em reportagem: NÃO ENCONTRADO.
+[VERIFICAR] Baixar manual AFP, estudo Walters/Wilder, estudo de replicações e PDF Ranehill manualmente se o navegador permitir; automação retornou bloqueio para os três primeiros.
+
+19. APÊNDICE TÉCNICO
+
+[CONFIRMADO] O pipeline descrito no artigo do Scite recupera documentos, identifica citation statements e referências, pareia referências a uma base bibliográfica e classifica os trechos com aprendizagem profunda. [6]
+[CONFIRMADO] O artigo de 2021 reportou forte desequilíbrio de classes: mentioning era muito mais frequente que supporting e disputing, o que ajuda a explicar desempenho desigual. [6]
+[CONFIRMADO] A base Crossref expõe metadados e relações por REST API; Retraction Watch aparece em campos de atualização e em conjunto CSV, atualizado em dias úteis. [25][26]
+[SUGESTÃO] Esses detalhes explicam cobertura e falsos negativos, mas APIs, MCP e integração não devem ocupar o corpo do curso introdutório.
+
+20. FONTES CONSULTADAS
+
+[1] Scite Pricing. https://scite.ai/pricing. Página oficial, sem data visível; acesso em 04/11/2026.
+[2] Scite Checkout/FAQ. https://scite.ai/checkout. Página oficial, sem data visível; acesso em 04/11/2026.
+[3] On Joining Research Solutions. https://scite.ai/blog/on-joining-research-solutions. Blog oficial, 27/11/2023; acesso em 04/11/2026.
+[4] Scite Features. https://scite.ai/features. Página oficial, sem data visível; acesso em 04/11/2026.
+[5] Scite Coverage. https://scite.ai/coverage. Página oficial, sem data visível; acesso em 04/11/2026.
+[6] Nicholson et al. scite: a smart citation index... https://doi.org/10.1162/qss_a_00146. Artigo acadêmico aberto, 2021; acesso em 04/11/2026.
+[7] Getting Started with Scite. https://scite.ai/getting-started. Página oficial, sem data visível; acesso em 04/11/2026.
+[8] Scite Integrations. https://scite.ai/integrations. Página oficial, sem data visível; acesso em 04/11/2026.
+[9] Scite Browser Extension. https://scite.ai/extension-install. Página oficial, sem data visível; acesso em 04/11/2026.
+[10] How do I use the scite Reference Check? https://scite.ai/blog/how-do-i-use-the-scite-reference-check. Tutorial oficial, 2021; acesso em 04/11/2026.
+[11] Scite Privacy Policy. https://scite.ai/policy. Política oficial, efetiva em 26/03/2026; acesso em 04/11/2026.
+[12] Scite Terms of Service. https://scite.ai/terms. Termos oficiais, sem data visível; acesso em 04/11/2026.
+[13] May 2026 Release Notes. https://scite.ai/blog/may-2026-release-notes. Blog oficial, 02/06/2026; acesso em 04/11/2026.
+[14] September 2026 Release Notes. https://scite.ai/blog/september-2026-release-notes. Blog oficial, 06/10/2026; acesso em 04/11/2026.
+[15] LLM Prompt Handbook — Scite Assistant. https://www.researchsolutions.com/hubfs/LLM-Prompt-Handbook-Scite-Assistant.pdf. PDF oficial, s.d.; acesso em 04/11/2026.
+[16] Scite PDF analysis example. https://cdn.scite.ai/sample_files/scite_pdf_analysis_example.pdf. PDF oficial, s.d.; acesso em 04/11/2026.
+[17] What is Pro Search? https://www.perplexity.ai/help-center/en/articles/10352903-what-is-pro-search. Ajuda oficial, atualizada em 21/07/2026; acesso em 04/11/2026.
+[18] Which Perplexity Subscription Plan is right for you? https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you. Ajuda oficial, 02/09/2026; acesso em 04/11/2026.
+[19] Role-based access controls, API credentials, and Brain for Max. https://www.perplexity.ai/changelog/role-based-access-controls-api-credentials-and-brain-for-max. Changelog oficial, 27/07/2026; acesso em 04/11/2026.
+[20] Perplexity Hub/FAQ. https://www.perplexity.ai/hub. Página oficial, sem data visível; acesso em 04/11/2026.
+[21] Tow Center. We compared eight AI search engines... https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php. Pesquisa independente, 06/03/2025; acesso em 04/11/2026.
+[22] Walters; Wilder. Fabrication and errors in the bibliographic citations generated by ChatGPT. https://pmc.ncbi.nlm.nih.gov/articles/PMC10484980/. Artigo acadêmico aberto, 07/09/2023; acesso em 04/11/2026.
+[23] Lehr et al. ChatGPT as Research Scientist. https://banaji.sites.fas.harvard.edu/research/publications/articles/Lehr_etal_ChatGPTScientist_2024.pdf. Artigo acadêmico/PDF, 2024; acesso em 04/11/2026.
+[24] DOI Foundation — What is a DOI? https://doi.org/the-identifier/what-is-a-doi/. Documentação oficial, s.d.; acesso em 04/11/2026.
+[25] Crossref — Retrieve metadata. https://www.crossref.org/documentation/retrieve-metadata/. Documentação oficial, s.d.; acesso em 04/11/2026.
+[26] Crossref — Retraction Watch. https://www.crossref.org/documentation/retrieve-metadata/retraction-watch/. Documentação oficial, s.d.; acesso em 04/11/2026.
+[27] Crossref — Crossmark. https://www.crossref.org/crossmark/. Documentação oficial, s.d.; acesso em 04/11/2026.
+[28] PubMed Help. https://pubmed.ncbi.nlm.nih.gov/help/. Documentação oficial, atualizada em 30/09/2026; acesso em 04/11/2026.
+[29] Google Scholar Help. https://scholar.google.com.au/intl/en/scholar/help.html. Ajuda oficial, s.d.; acesso em 04/11/2026.
+[30] SciELO — Artigo retratado: O sistema de direitos fundamentais... https://www.scielo.br/j/rinc/a/CJS9hPVpckgqVNxRwyx4NYy/abstract/?format=html&lang=pt. Registro/artigo, 2022; aviso de retratação 2024; acesso em 04/11/2026.
+[31] CAPES — Guia rápido do Novo Portal de Periódicos. https://www.periodicos.capes.gov.br/images/documents/Guia%20r%C3%A1pido%20do%20Novo%20Portal%20de%20Peri%C3%B3dicosv3_atualizada.pdf. PDF oficial, s.d.; acesso em 04/11/2026.
+[32] IBICT — Biblioteca Digital Brasileira de Teses e Dissertações. https://www.gov.br/ibict/pt-br/site-ibict-2025/assuntos/informacao-cientifica/bdtd. Página oficial, modificada em 19/08/2026; acesso em 04/11/2026.
+[33] CNPq — Plataforma Lattes. https://www.gov.br/cnpq/pt-br/acesso-a-informacao/acoes-e-programas/plataforma-lattes. Página oficial, s.d.; acesso em 04/11/2026.
+[34] UVA Library — SIFT Source Evaluation. https://guides.lib.virginia.edu/c.php?g=1483059&p=11057026. Guia universitário adaptado de Caulfield, s.d.; acesso em 04/11/2026.
+[35] SEDUC-CE — UCO Cultura Digital. https://www.ced.seduc.ce.gov.br/wp-content/uploads/sites/82/2023/07/UCO-Cultura-Digital.pdf. Material educacional oficial pt-BR, 2023; acesso em 04/11/2026.
+[36] University of Wisconsin-Green Bay — Lateral Reading. https://library.uwgb.edu/evalinfo. Guia universitário, s.d.; acesso em 04/11/2026.
+[37] Aos Fatos — Como o Aos Fatos faz uma checagem. https://www.aosfatos.org/webstories/como-o-aos-fatos-faz-uma-checagem/. Metodologia institucional, 21/02/2022; acesso em 04/11/2026.
+[38] Agência Lupa — Sobre a Lupa. https://www.agencialupa.org/sobre-a-lupa/. Metodologia institucional, s.d.; acesso em 04/11/2026.
+[39] Projeto Comprova — Metodologia. https://projetocomprova.com.br/about/metodologia/. Metodologia institucional, s.d.; acesso em 04/11/2026.
+[40] AFP — Manual de estilo de verificação digital. https://checamos.afp.com/Manual-de-estilo-de-verificacao-digital-da-AFP. Manual institucional, 2025; acesso em 04/11/2026.
+[41] STF — Pesquisa de Jurisprudência e dicas. https://portal.stf.jus.br/pesquisa/. Portal oficial, s.d.; acesso em 04/11/2026.
+[42] STJ — Consulta à página de jurisprudência evita citações falsas feitas por IA. https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/03112026-Consulta-a-pagina-de-jurisprudencia-do-STJ-ajuda-a-evitar-citacoes-falsas-geradas-por-IA.aspx. Notícia oficial, 03/11/2026; acesso em 04/11/2026.
+[43] STJ — SOS Pesquisa de Jurisprudência. https://processo.stj.jus.br/docs_internet/jurisprudencia/ajuda/2025_folder_sos_pesquisa_1.pdf. Guia oficial PDF, 2025; acesso em 04/11/2026.
+[44] Planalto — Busca Avançada de Legislação. https://www4.planalto.gov.br/legislacao/portal-legis/busca-avancada. Base oficial, s.d.; acesso em 04/11/2026.
+[45] LexML — FAQ. https://projeto.lexml.gov.br/documentacao/faq. Documentação oficial, s.d.; acesso em 04/11/2026.
+[46] STJ — Os precedentes do STJ diante do avanço da inteligência artificial. https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/18102026-Quando-a-inteligencia-artificial-vira-questao-de-Justica-as-primeiras-decisoes-do-STJ-sobre-o-uso-de-IA.aspx. Reportagem oficial, 18/10/2026; acesso em 04/11/2026.
+[47] TJSC — TJSC multa autor de recurso por jurisprudência falsa gerada por IA. https://www.tjsc.jus.br/pt/web/imprensa/-/tjsc-multa-autor-de-recurso-por-jurisprudencia-falsa-gerada-por-ia. Notícia oficial, fevereiro/2025; acesso em 04/11/2026.
+[48] Ranehill et al. Assessing the Robustness of Power Posing. https://www.zne.uzh.ch/dam/jcr%3Ae5fc4c3c-d50e-4aa9-96ab-4389e426d20d/%20Psychological%20Science-2015-Ranehill-0956797614553946.pdf. Artigo/PDF, 2015; acesso em 04/11/2026.
+[49] Scite Demos. https://scite.ai/demos. Vídeos oficiais, s.d.; acesso em 04/11/2026.
+[50] CAPES — Guia rápido do Acesso CAFe 2025. https://www.periodicos.capes.gov.br/images/documents/Guia%20r%C3%A1pido%20do%20Acesso%20CAFe%20_2025_VF.pdf. PDF oficial, 2025; acesso em 04/11/2026.
+[51] Scite MCP. https://scite.ai/mcp. Página oficial, s.d.; acesso em 04/11/2026.
+[52] Scite — How can I set alerts on a search/topic? https://scite.ai/blog/how-can-i-set-alerts-on-a-search-topic-of-interest. Tutorial oficial, 25/03/2021; acesso em 04/11/2026.
+[53] Scite — How to use ChatGPT to find references. https://scite.ai/blog/how-to-use-chatgpt-to-find-references. Blog oficial, 2026; acesso em 04/11/2026.
+[54] von Hippel. Is Psychological Science Self-Correcting? https://pmc.ncbi.nlm.nih.gov/articles/PMC10460510/. Artigo acadêmico aberto, 2023; acesso em 04/11/2026.
+
+# ANTES DE ENTREGAR, CONFIRA
+[ ] O arquivo usa exatamente o cabeçalho, os títulos e a numeração pedidos.
+Resposta: SIM
+[ ] O conteúdo cobre o assunto inteiro e serve aos três produtos: ementa
+    completa, curso Essentials e curso Hands On.
+Resposta: SIM
+[ ] A seção 13 tem exercícios curtos (13a), práticas longas (13b) e ideias de
+    projeto final (13c).
+Resposta: SIM
+[ ] Todos os pontos do FOCO ESPECÍFICO e todos os materiais de "procure
+    especialmente" foram respondidos ou estão como NÃO ENCONTRADO.
+Resposta: SIM
+[ ] Todo [CONFIRMADO] está dito literalmente na fonte citada.
+Resposta: SIM
+[ ] Nenhum exercício depende de instrutor, e o curso não foi dividido em blocos
+    de tempo.
+Resposta: SIM
+[ ] A seção 17 tem um item por página, com URL, prioridade e nome de arquivo.
+Resposta: SIM
+[ ] Cada ação da tarefa observável tem passo a passo e pelo menos um exercício.
+Resposta: SIM
+[ ] Os casos de uso são reais, e cada público sem caso real está como NÃO
+    ENCONTRADO.
+Resposta: SIM
+[ ] As fontes estão em pt-BR ou inglês (outro idioma só quando era a única
+    fonte), e as lojas e ofertas são as do Brasil.
+Resposta: SIM
+[ ] Nenhum endereço é de ambiente de teste (dev., hml., staging., qa.).
+Resposta: SIM
+[ ] Pelo menos dois terços do arquivo tratam do que o aluno vê e faz; o que é
+    técnico demais está no APÊNDICE TÉCNICO.
+Resposta: SIM
+[ ] Nenhuma elaboração sua (prompt, exercício, recomendação, comparação) está
+    marcada [CONFIRMADO].
+Resposta: SIM
+[ ] Todo material não-web citado nas seções 1 a 20 está na seção 16.
+Resposta: SIM
+[ ] Cada arquivo declarado BAIXADO abre e é do tipo anunciado (nenhuma página
+    HTML salva como .pdf).
+Resposta: SIM
+[ ] Os links dos exercícios foram testados e levam direto ao conteúdo.
+Resposta: SIM
+[ ] A seção 17 lista páginas dos quatro tipos pedidos na regra 6.
+Resposta: SIM
+[ ] Cada número está atribuído à fonte que de fato o contém.
+Resposta: SIM
+[ ] Nomes de menus e botões indicam a origem: (interface), (ajuda pt-BR) ou
+    (ajuda en).
+Resposta: SIM

@@ -22,6 +22,10 @@ duração estimada de cada aula e o tempo total do curso.
 - Avaliação / Feedback: 4 min
 
 # TAREFA
+Antes do cálculo, preserve a natureza da trilha: verificações e cenários do Essentials usam
+"Avaliação / Feedback" ou "Discussão Orientada", conforme a atividade; não os renomeie como
+"Pílula Hands-on". Essa categoria fica reservada a uma microprática executada de fato.
+
 1. Resumo Executivo
    - Tabela: Duração Total do Curso | Nº de Aulas/Módulos | Nº Total de Atividades |
      Proporção Teoria:Prática | Status | Recomendação de distribuição (semanas × horas).

@@ -1,0 +1,26 @@
+<!--titulo: Como saber que terminou-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Projeto Final</span>
+  <h1 id="t">🏁 Como saber que terminou</h1>
+  <p class="sub">Depois de fazer o Projeto Final com o documento do seu perfil, marque cada item que você cumpriu. Seja honesto: um item sem marcar aponta o passo a refazer. O Continue libera quando todos estiverem marcados.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Itens do checklist "Como saber que terminou" do Projeto Final do roteiro.
+  checklist([
+    'Avaliação de risco escrita antes de enviar',
+    'Ordem de serviço com O, F, L, C e P e ponto de parada',
+    'Plano lido e aprovado só depois de conferido',
+    'Uma correção de escopo feita no meio e respeitada',
+    'Nenhum envio, login ou site aprovado',
+    'Instrução da nota listada em “Instruções suspeitas encontradas”',
+    'Três itens conferidos no documento, sem divergência no final',
+    'Uma frase sobre os limites do agente nesta tarefa'
+  ], 'lista', 'placar', 'barra', 'itens cumpridos', function () {
+    concluir('final', 'Ciclo completo: ordem de serviço, diário de bordo e conferência. Você já pode continuar.');
+  });
+</script>

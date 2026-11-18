@@ -19,5 +19,7 @@ A pasta é organizada **primeiro por etapa, depois por tema**. Cada curso novo g
 | `mcp` (Hands-on) | ✅ Finalizado — `01_FINALIZADO_subir-na-LMS/mcp/` (v2; veja os pontos de atenção no relatório) |
 | `perplexity` (Essentials) | ✅ Finalizado — `01_FINALIZADO_subir-na-LMS/perplexity/` (v2; veja os pontos de atenção no relatório) |
 | `perplexity` (Hands-on) | ✅ Finalizado — `01_FINALIZADO_subir-na-LMS/perplexity/` (v1; veja os pontos de atenção no relatório) |
+| `agentes-de-ia` (Essentials e Hands-on) | ✅ Finalizado — `01_FINALIZADO_subir-na-LMS/agentes-de-ia/` (v1; rótulos [conferir] pendentes — veja os pontos de atenção) |
+| `vibecoding` (Essentials e Hands-on) | ✅ Finalizado — `01_FINALIZADO_subir-na-LMS/vibecoding/` (v1; vieram em inglês e foram traduzidos; rótulos do player seguem em inglês e rótulos [conferir] pendentes — veja os pontos de atenção) |
 
 Quando um curso muda de etapa, mova só a subpasta do tema. Antes de publicar, veja a seção "Pontos de atenção" de cada relatório completo.

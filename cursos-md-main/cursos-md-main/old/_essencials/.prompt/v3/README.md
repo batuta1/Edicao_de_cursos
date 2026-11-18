@@ -1,2 +1,0 @@
-- `Prompt-PlanoDeAula-Essentials.md`
-  - Tentativa de pula o passo do plano de aula simples e ir direto para o roteiro.

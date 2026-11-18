@@ -1,0 +1,882 @@
+{
+  "numero_da_licao": 4,
+  "position_original": 3,
+  "title": "Specifying and Prototyping Your Application",
+  "lesson": {
+    "description": "",
+    "id": "bf5003ca-c61e-4059-9256-c83f4d59189f",
+    "items": [
+      {
+        "id": "dosn9x78hknsevgb9wx3xho7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "dlmzuv8j0iin6614xsxbxkjj",
+            "heading": "Ninguém encomenda uma loja sem planta",
+            "paragraph": "<p>Retomando a analogia: antes de chamar a equipe de obra, alguém desenha a planta. No vibe coding, a planta é a ficha de requisitos — e ela decide boa parte do resultado. Nesta lição você preenche a ficha do “Minhas Tarefas”, escolhe o modo certo para cada tipo de alteração e envia o primeiro pedido de construção: só a interface, sem banco nem login.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "c8c9ceb2-8f91-4770-81bf-e1821ccb2f61"
+      },
+      {
+        "id": "sm6vajb1ezm0qbr1tt1lgrjb",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "atv0owbdhlrnk0ozhovlo5zl",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "ab4d974c-22a9-4c72-89c7-6526b235745b"
+      },
+      {
+        "id": "dim3ex9fy6pcrdmxx16mv4ia",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "g35m4xvzsk8xikle9a2r9p73",
+            "number": "1",
+            "paragraph": "<p>Preencher uma ficha de requisitos a partir das quatro perguntas oficiais.</p>"
+          },
+          {
+            "id": "fwsu8pq6aq73nke87qk82qrg",
+            "number": "2",
+            "paragraph": "<p>Escolher entre os modos Chat, Plan e Build conforme a alteração pretendida.</p>"
+          },
+          {
+            "id": "hdqyv1yer1v8ouv8ndw7jkq3",
+            "number": "3",
+            "paragraph": "<p>Gerar uma interface sem back-end.</p>"
+          },
+          {
+            "id": "uzyy4c85rzi7h4ax2ss9fdwz",
+            "number": "4",
+            "paragraph": "<p>Conferir a interface no computador e no celular.</p>"
+          },
+          {
+            "id": "wrahhhmuwh2ptcde9oxhld3q",
+            "number": "5",
+            "paragraph": "<p>Construir em camadas, registrando o crédito consumido em cada etapa.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "3e20bd59-a97b-48ee-8e03-af0c1f3d74dc"
+      },
+      {
+        "id": "kqj0we8coqx7spv2gg9wjtzk",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "zrj59a4hilch5f6em7uqnw4j",
+            "paragraph": "<p>A documentação do Lovable recomenda responder, antes de construir, a quatro perguntas: <strong>o que será criado, para quem, por quê e qual é a ação principal</strong>. Recomenda, ainda, mapear a jornada do usuário, trabalhar por partes e fazer uma mudança por vez, conferindo o resultado antes da seguinte. A ficha de requisitos organiza essas respostas e acrescenta dados, regra de acesso, o que fica fora do escopo e critérios de pronto.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "a15cb9ea-b58e-4575-a047-e64d73871719"
+      },
+      {
+        "id": "l4yrehaarsf3r2hhzvkket8k",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "t80zhq69jis7ftqcchh9rfxi",
+            "heading": "Os campos da ficha de requisitos",
+            "paragraph": "<p>Vire cada cartão para ver a pergunta que cada campo responde. Os quatro primeiros são as perguntas oficiais; os demais completam a ficha:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "d46f9ea1-4650-452f-8df2-de695e38b7d3"
+      },
+      {
+        "id": "aoqwxhj62gdwtkq6s13l1y6f",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "bej8i74t6c81juh466qo39h7",
+            "back": {
+              "type": "description",
+              "description": "<p>O nome e, em uma frase, o que o aplicativo faz.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>O que será criado?</p>"
+            }
+          },
+          {
+            "id": "l9za136t4oixp9ng6oj29n40",
+            "back": {
+              "type": "description",
+              "description": "<p>Quem vai usar o aplicativo.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Para quem?</p>"
+            }
+          },
+          {
+            "id": "df274txh596jls5afplkn6pu",
+            "back": {
+              "type": "description",
+              "description": "<p>O problema que o aplicativo resolve.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Por quê?</p>"
+            }
+          },
+          {
+            "id": "gyhku0yxuqcbudzvdbc9kkjo",
+            "back": {
+              "type": "description",
+              "description": "<p>A tarefa que o usuário mais vai repetir. No “Minhas Tarefas”, adicionar uma tarefa.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Qual é a ação principal?</p>"
+            }
+          },
+          {
+            "id": "poa5r6j00q5tmf53267jd9rw",
+            "back": {
+              "type": "description",
+              "description": "<p>As telas de que o aplicativo precisa — no exemplo, login e lista de tarefas.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Telas</p>"
+            }
+          },
+          {
+            "id": "f8ezqef1iky06m9l0vyqpxqh",
+            "back": {
+              "type": "description",
+              "description": "<p>O que precisa ser guardado: os campos de cada registro.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Dados</p>"
+            }
+          },
+          {
+            "id": "ackyx4paya5jonw9nz3sxo5d",
+            "back": {
+              "type": "description",
+              "description": "<p>Quem pode ver ou alterar o quê — a regra que depois vira política RLS.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Regra de acesso</p>"
+            }
+          },
+          {
+            "id": "xgvxi99npkyjqvyi93i4zjhi",
+            "back": {
+              "type": "description",
+              "description": "<p>O que o aplicativo não terá nesta versão. Escrito na ficha, vira limite para você e para a IA.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Fora do escopo</p>"
+            }
+          },
+          {
+            "id": "jmznh2tge5hx5scqce8n7cfn",
+            "back": {
+              "type": "description",
+              "description": "<p>A aparência desejada e as ações que, testadas, provam que o aplicativo está pronto.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Visual e critérios de pronto</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "35060e98-2ec6-4b79-b53d-560ce7bf97dd"
+      },
+      {
+        "id": "qwqhfq36gly6pwt9hh3f4vfw",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pcm4j22xn1h89imlcrmhlgei",
+            "heading": "A ficha do “Minhas Tarefas”",
+            "paragraph": "<p>Abra cada item para ver a ficha completa do aplicativo do curso, por que cada campo importa e os erros mais comuns:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "eda9d0af-8694-472d-8cfe-a7d5db3199a1"
+      },
+      {
+        "id": "43b2c2b8-3eb4-4eb2-9b09-febb05ddc0d1",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "d2aab375-623a-4199-9281-36444f44f7d0",
+            "title": "Ficha preenchida: Minhas Tarefas",
+            "description": "<p>Nome: Minhas Tarefas<br>Para quem: uma pessoa que quer organizar os próprios afazeres<br>Problema: anotar, concluir e remover tarefas<br>Ação principal: adicionar uma tarefa<br>Telas: login e lista de tarefas<br>Dados: título, concluída (sim/não), dono, data de criação<br>Regra de acesso: cada conta vê apenas os próprios registros<br>Fora do escopo: colaboração, anexos, pagamentos, notificações, dados reais<br>Visual: simples, alto contraste, legível no celular<br>Critérios de pronto: criar conta, entrar, criar tarefa, concluir, sair, entrar com outra conta e não ver os dados da primeira</p><p></p><p>É esta ficha que orienta as construções das lições 4 a 6.</p>"
+          },
+          {
+            "id": "578e816f-1b29-41e4-bad9-366aba7cf191",
+            "title": "Por que cada campo importa",
+            "description": "<p>“Fora do escopo” impede que o aplicativo cresça a cada pedido. “Regra de acesso” obriga a pensar em privacidade antes de construir — ela vira as políticas RLS da lição 5. “Critérios de pronto” transforma “acho que funciona” em ações testáveis.</p><p></p><p>Repare no último critério: entrar com outra conta e não ver os dados da primeira. É o teste de isolamento, previsto desde a planta.</p>"
+          },
+          {
+            "id": "7642cc44-61c4-4bbb-ab10-da3d39c56663",
+            "title": "Erros comuns",
+            "description": "<p>Ação principal vaga (“gerenciar coisas”), regra de acesso em branco, telas esquecidas e, sobretudo, nada escrito em “fora do escopo” — o caminho para pedidos sem fim.</p><p></p><p>O erro mais caro, porém, é pular a ficha e pedir tudo de uma vez: os créditos do dia acabam e o resultado é um aplicativo que ninguém consegue depurar.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "ae1758f4-15b8-4835-a503-88072fa02ae9"
+      },
+      {
+        "id": "2fd87d5c-040f-4f03-b12e-1c8cec2c5148",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "17598aeb-75a9-4139-b00f-aac094da9410",
+            "type": "intro",
+            "title": "Preencher a sua ficha de requisitos",
+            "isHidden": false,
+            "description": "<p>Use a ficha do “Minhas Tarefas” como modelo para escrever a de uma ideia sua. Nenhum crédito é gasto nesta etapa.</p>"
+          },
+          {
+            "id": "b99fb929-547f-4d69-b032-6b16b4dfa309",
+            "type": "summary",
+            "title": "Ficha pronta",
+            "isHidden": false,
+            "description": "<p>Com a ficha completa, você tem a planta da obra: ela orienta os pedidos, a conferência de cada etapa e o teste final. Guarde-a para a atividade integradora da lição 7.</p>"
+          },
+          {
+            "id": "04988af3-6c1e-4a11-9941-18634adb9e4b",
+            "type": "step",
+            "title": "Leia a ficha de exemplo",
+            "isHidden": false,
+            "description": "<p>Releia a ficha do “Minhas Tarefas” e observe como cada campo é preenchido com informação concreta e curta.</p>"
+          },
+          {
+            "id": "417aaea5-c2af-43fa-9438-b817138834cc",
+            "type": "step",
+            "title": "Responda às quatro perguntas",
+            "isHidden": false,
+            "description": "<p>Para a sua ideia, responda: o que será criado, para quem, por quê e qual é a ação principal.</p>"
+          },
+          {
+            "id": "45f4f8c5-3ed5-4363-a316-6cb91676af9e",
+            "type": "step",
+            "title": "Complete os demais campos",
+            "isHidden": false,
+            "description": "<p>Acrescente telas, dados, regra de acesso, visual e critérios de pronto, seguindo a estrutura do exemplo. Lembre a lição 3: somente dados fictícios.</p>"
+          },
+          {
+            "id": "0e9746f6-e1da-4db3-981c-6de6830498c9",
+            "type": "step",
+            "title": "Confira o “fora do escopo”",
+            "isHidden": false,
+            "description": "<p>Liste ao menos três itens que o aplicativo não terá. Confira também se os critérios de pronto são ações que você consegue testar.</p>"
+          },
+          {
+            "id": "ef43b11e-48a6-4b91-99f1-990ca9fee4ba",
+            "type": "step",
+            "title": "Guarde a ficha",
+            "isHidden": false,
+            "description": "<p>Salve a ficha num bloco de notas. Ela é o roteiro dos seus pedidos e da conferência de cada resultado.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "ce7e3f9f-9254-42b4-b209-47eb559d4a67"
+      },
+      {
+        "id": "47749da1-27dc-43b2-b1b4-50831120d2f0",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "aca4b83f-512c-4990-ab4a-4395a51d44d8",
+            "paragraph": "<p>🔑 <strong>Regra de ouro:</strong> quanto mais clara a ficha, menos pedidos de correção — e menos créditos gastos.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "aa055bc8-e4ea-4d81-9af4-24ed67933b16"
+      },
+      {
+        "id": "xyo07giyqqww2mwt73so6f76",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wqxy0uujil6ut0f0rw2uda8c",
+            "heading": "Chat, Plan ou Build: qual usar?",
+            "paragraph": "<p>A escolha do modo também importa. O Chat serve para esclarecer uma dúvida sem alterar nada; o Plan pesquisa o projeto, propõe um plano e espera aprovação, ao custo de 1 crédito por mensagem; o Build executa. Para mudanças grandes, recomenda-se planejar antes de construir.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "c53dd47c-d6fa-49f1-9af0-13c0f057e50f"
+      },
+      {
+        "id": "nnc7h40kb6asymnatkllxh95",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "z87cixrgvhcervd7v89eutak",
+            "heading": "Quando usar cada recurso",
+            "paragraph": "<p>Abra cada item para ver em que situação cada modo — e a barra da prévia — é a escolha certa:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "84534122-3e67-47d3-9a7a-fb80f87174d2"
+      },
+      {
+        "id": "1c1db89b-ed9e-4152-a7ac-e393ab390668",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "0ba76907-c2db-4eda-a31c-f07af71b0684",
+            "title": "Chat",
+            "description": "<p>Para esclarecer uma dúvida sem alterar nada: o que é possível, o que uma mensagem significa, qual seria o próximo passo.</p><p></p><p>Use o Chat quando ainda não sabe o que pedir.</p>"
+          },
+          {
+            "id": "793354e3-9365-45d9-93f8-c4a43bf7c086",
+            "title": "Plan",
+            "description": "<p>Para mudanças grandes: o Lovable pesquisa o projeto, propõe um plano e espera aprovação. Cada mensagem custa 1 crédito.</p><p></p><p>Um crédito para saber se a IA entendeu sai mais barato que vários para desfazer uma construção errada.</p>"
+          },
+          {
+            "id": "b9683b42-6f43-496b-8a1b-b8bf6b9c713f",
+            "title": "Build",
+            "description": "<p>Para executar: um pedido claro e pequeno, ou um plano já aprovado. Antes chamado “Agent”.</p><p></p><p>O primeiro protótipo desta lição vai direto em Build, porque o pedido é pequeno e explícito: só a interface.</p>"
+          },
+          {
+            "id": "ab258a4a-0872-4dba-9b37-f21a0d23d71b",
+            "title": "Barra da prévia (Select elements)",
+            "description": "<p>Para mudanças de texto, a barra da prévia (Preview toolbar &gt; Select elements) permite editar diretamente, dentro de uma franquia diária, sem gastar créditos de construção.</p><p></p><p>Clique no texto na prévia e edite: é o caminho para trocar o rótulo de um botão ou corrigir uma palavra.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "2b61f6f8-b038-483c-a247-f3cb203000c2"
+      },
+      {
+        "id": "d2d1fab8-c692-417d-aaaa-fd8f99440503",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "1b9bb132-f2cc-4e9c-bf4c-3bd7f9e1e06f",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Você quer fazer uma mudança grande na estrutura do aplicativo. Qual recurso usar primeiro?",
+            "answers": [
+              {
+                "id": "749e00e6-c5b6-461e-9ae9-9c450c63f916",
+                "title": "Chat",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "ce4cba24-df3c-4c72-91c8-2240352ebdb3",
+                "title": "Plan",
+                "correct": true,
+                "feedback": ""
+              },
+              {
+                "id": "21ab004c-8563-443b-b29a-dbd09774bf33",
+                "title": "Build",
+                "correct": false,
+                "feedback": ""
+              },
+              {
+                "id": "19af41b0-1266-480a-8cce-d9b709f4a9e4",
+                "title": "Barra da prévia (Select elements)",
+                "correct": false,
+                "feedback": ""
+              }
+            ],
+            "feedbackType": "CORRECT_INCORRECT",
+            "feedbackCorrect": "Correto. Para mudanças grandes, recomenda-se planejar antes de construir: o Plan propõe o que vai fazer e espera aprovação, por 1 crédito.",
+            "feedbackIncorrect": "Não. Para mudanças grandes, o primeiro passo é o Plan: ele propõe um plano e espera a sua aprovação. O Chat não prepara a mudança, o Build executa sem que você revise o plano e a barra da prévia serve só para textos."
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "0c0123c9-3c38-4567-9f44-eef8fe463554"
+      },
+      {
+        "id": "1297eb6b-3756-4e73-94a0-f3aa0ced2105",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f45ccedc-ca2a-476c-a7c0-3fc1cf492a38",
+            "type": "intro",
+            "title": "Ficha, primeiro Build e conferência (10 min)",
+            "isHidden": false,
+            "description": "<p>A estratégia do curso é construir em camadas: primeiro só a interface, sem banco nem login; na lição 5, o back-end. Essa separação reduz o custo de cada pedido e torna cada resultado conferível.</p>"
+          },
+          {
+            "id": "6a3e42fc-5e96-402b-814a-494de3efe983",
+            "type": "summary",
+            "title": "Critério de êxito",
+            "isHidden": false,
+            "description": "<p>Os cinco itens da conferência marcados. O botão pode ainda não guardar as tarefas ao recarregar a página: isso é esperado e será resolvido na lição 5.</p><p>🏁 Ponto de controle: no editor do Lovable, a prévia exibe o “Minhas Tarefas” sem tela de login; em History, há uma única versão nova.</p>"
+          },
+          {
+            "id": "d6755199-3903-455c-9a0a-2727a60333ee",
+            "type": "step",
+            "title": "Revise a ficha e anote o saldo",
+            "isHidden": false,
+            "description": "<p>Revise a ficha do “Minhas Tarefas” e anote o saldo em Lovable &gt; More &gt; Usage.</p>"
+          },
+          {
+            "id": "a757e172-a66c-4289-a9d7-2851c804028e",
+            "type": "step",
+            "title": "Envie o pedido em Build",
+            "isHidden": false,
+            "description": "<p>Selecione o modo Build, cole o prompt-base da seção “Mão na massa”, mais abaixo, e envie. Aguarde a primeira versão na prévia, à direita do editor.</p>"
+          },
+          {
+            "id": "1ae98f78-fcf6-4524-9154-fdef8922386e",
+            "type": "step",
+            "title": "Teste a tela",
+            "isHidden": false,
+            "description": "<p>Na prévia, digite uma tarefa e clique em Adicionar. Confira cabeçalho, campo de título, botão e mensagem de lista vazia.</p>"
+          },
+          {
+            "id": "8df0d6c9-eae8-42c6-8f40-09f195e1d12c",
+            "type": "step",
+            "title": "Confira no celular",
+            "isHidden": false,
+            "description": "<p>Alterne para Preview toolbar &gt; Mobile view e confira se tudo continua legível em tela pequena.</p>"
+          },
+          {
+            "id": "288f4f71-2583-4320-9a16-1e3cca4f1bc8",
+            "type": "step",
+            "title": "Confira pela tabela de critérios",
+            "isHidden": false,
+            "description": "<p>Confira o protótipo pelos critérios abaixo e anote quanto crédito a construção consumiu.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "85b668fe-c055-4ce9-991a-e6d524d7daea"
+      },
+      {
+        "id": "dv34mfudzma2y3s24d0rvxvy",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "pl84579xyorbq2j3qvvafzfy",
+            "heading": "Conferência do protótipo",
+            "paragraph": "<ul><li>A prévia mostra cabeçalho, campo de título e botão Adicionar.</li><li>Há mensagem de lista vazia.</li><li>Em Mobile view, os elementos continuam legíveis.</li><li>A tela está em português do Brasil, com alto contraste.</li><li>A tarefa digitada aparece na lista ao clicar em Adicionar.</li><li>Não foram criados banco de dados nem login.</li><li>O crédito consumido foi anotado.</li></ul>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "b3a5b2d0-c303-48e0-9b8d-b19fb7fb7036"
+      },
+      {
+        "id": "o84a1vcrx0di698orbk6uuyv",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ffzlo9tyk6eisgx2mbqen9v3",
+            "heading": "Se o protótipo não sair como previsto",
+            "paragraph": "<p>Veja, nas abas, o que fazer em cada situação:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "73025f49-c58f-4125-8c05-5675c1776ac3"
+      },
+      {
+        "id": "b68910ab-83ae-4089-9e40-fc2495abf79c",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "d2a5aab9-8c9c-4830-a7b4-98a9e3b67662",
+            "title": "Criou login ou banco",
+            "description": "<p>Se o Lovable criou login ou banco mesmo assim, use History &gt; Revert para voltar à versão anterior e reenvie o pedido com “Não adicione banco nem login” numa linha própria.</p><p></p><p>Construir em camadas só funciona se cada camada vier sozinha.</p>"
+          },
+          {
+            "id": "0cc006f0-e558-4e64-bc41-33ebb161742f",
+            "title": "Texto do botão diferente",
+            "description": "<p>Corrija em Preview toolbar &gt; Select elements: clique no texto e edite, sem gastar crédito de construção.</p><p></p><p>Confira o resultado também em Mobile view.</p>"
+          },
+          {
+            "id": "64077466-4e54-49b6-9a62-7f0c5d309e37",
+            "title": "Créditos insuficientes",
+            "description": "<p>Aguarde a renovação no dia seguinte. A prévia e a conversa ficam salvas.</p><p></p><p>Por isso o curso distribui as construções em três dias.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "f9b53f94-f31e-48a3-b41e-3653343a4a58"
+      },
+      {
+        "id": "d3fbff5f-311a-4cb0-a50e-3cec692b03d7",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "5bc46bb2-566d-4ff2-82b7-477d96ab7bb8",
+            "paragraph": "<p>🏁 <strong>Ponto de controle:</strong> a prévia exibe o “Minhas Tarefas” sem tela de login, legível em Mobile view; em History, há uma única versão nova e o crédito consumido está anotado.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "5e4535ed-ab3d-4d2a-b981-48be48cde946"
+      },
+      {
+        "id": "21c01b1a-f613-4887-931e-f07c49008e84",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "8d4b226f-87cd-4b47-91ea-18f3d9bd3c68",
+            "type": "intro",
+            "title": "Mão na massa: o prompt-base",
+            "isHidden": false,
+            "description": "<p>Este é o pedido do primeiro Build. Ele aplica a ficha e a estratégia de camadas: descreve só a interface e diz, numa linha própria, o que não fazer.</p>"
+          },
+          {
+            "id": "8810611e-8e53-4e28-87f0-ae1355558fdf",
+            "type": "summary",
+            "title": "Para a sua própria ideia",
+            "isHidden": false,
+            "description": "<p>A mesma estrutura serve para qualquer aplicativo: nome, só a interface (com os elementos da tela), visual, idioma — e, numa linha própria, “Não adicione banco de dados nem login ainda”.</p>"
+          },
+          {
+            "id": "3dc8b062-7aa3-4907-b528-16f02ff666b2",
+            "type": "step",
+            "title": "Copie o prompt",
+            "isHidden": false,
+            "description": "<p>Copie o prompt-base:</p><p>\"\"\"Crie um aplicativo web chamado Minhas Tarefas. Por enquanto, faça só a interface: cabeçalho, campo para o título da tarefa, botão Adicionar, lista de tarefas e uma mensagem quando a lista estiver vazia. Visual simples, alto contraste, legível no celular, em português do Brasil.<br>Não adicione banco de dados nem login ainda.\"\"\"</p>"
+          },
+          {
+            "id": "1e212f0e-3e1b-4da6-acb3-47311964f29c",
+            "type": "step",
+            "title": "Envie em Build",
+            "isHidden": false,
+            "description": "<p>Cole o prompt no modo Build e envie. Aguarde a prévia.</p>"
+          },
+          {
+            "id": "55309ef2-5b22-4f8e-83ed-c7d643bd607b",
+            "type": "step",
+            "title": "Confira no computador e no celular",
+            "isHidden": false,
+            "description": "<p>Confira o resultado na prévia normal e em Mobile view.</p>"
+          },
+          {
+            "id": "45821ac4-eed4-4771-8f3a-f701461b7577",
+            "type": "step",
+            "title": "Anote o crédito e confira os critérios",
+            "isHidden": false,
+            "description": "<p>Anote quantos créditos a construção consumiu e confirme os itens da conferência do protótipo.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "7adf6e4a-c79b-4a11-8bb4-e1ae73de6672"
+      },
+      {
+        "id": "711f40db-6ac2-4cb4-82fc-28069e380349",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "d6cc2f00-2699-499c-b954-f444f70dfc9d",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "e79666e7-e0a7-4592-8003-8f83f616a48d"
+      },
+      {
+        "id": "b9h7phkoug6iu49s8fl0oy1q",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "s3y00zjvscudthf384lu1zkd",
+            "paragraph": "<p>A interface está pronta — mas esquece tudo ao recarregar a página, e qualquer pessoa usaria a mesma lista. Na próxima lição, você instala a catraca e as gavetas com crachá: login por e-mail e senha, banco de dados e regras RLS, comprovadas com duas contas.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "c8fefa08-5fed-42c7-8a05-8431cad7eafd"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Especificar e Gerar o Primeiro Protótipo",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "s5rjpyoVh4hWZIEjJr-eXu3a8b0Nh7Sa",
+    "createdAt": "2026-11-04T17:24:45.928Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 3,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-04T17:26:36.919Z"
+  }
+}

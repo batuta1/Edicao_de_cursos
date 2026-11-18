@@ -1,0 +1,109 @@
+<!--titulo: Ficha de revisão-->
+<style>
+  .campo { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
+  .campo > p { margin: 0 0 8px; font-weight: 600; color: var(--azul); }
+  .linha3 { display: grid; gap: 8px; grid-template-columns: 1fr; margin-bottom: 8px; }
+  .linha3 .q { font-size: 14px; margin: 0 0 4px; color: var(--suave); }
+  .acoes { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px; }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Ficha</span>
+  <h1 id="t">Ficha de revisão</h1>
+  <p class="sub">Preencha enquanto confere a tabela da lição 5 contra o Guia do TCU. Ao final, gere a ficha em texto para guardar na pasta Treino_Agente.</p>
+
+  <div class="campo">
+    <p id="q1">Objetivo atendido (tabela com as colunas pedidas)?</p>
+    <div class="opcoes" role="group" aria-labelledby="q1" data-campo="obj"></div>
+  </div>
+
+  <div class="campo">
+    <p>Linhas conferidas e resultado de cada uma</p>
+    <div class="linha3" id="amostra"></div>
+  </div>
+
+  <div class="campo">
+    <p id="q3">Alguma fonte externa usada?</p>
+    <div class="opcoes" role="group" aria-labelledby="q3" data-campo="fonte"></div>
+  </div>
+
+  <div class="campo">
+    <p id="q4">Alguma ação fora do escopo?</p>
+    <div class="opcoes" role="group" aria-labelledby="q4" data-campo="acao"></div>
+  </div>
+
+  <div class="campo">
+    <p><label for="corr">Correções pedidas e resultado</label></p>
+    <input type="text" id="corr" placeholder="Ex.: linha 6 — página corrigida de 4 para 5; conferida após a correção">
+  </div>
+
+  <div class="feedback" id="regra" aria-live="polite"></div>
+  <div class="acoes">
+    <button type="button" class="btn principal" id="gerar">Gerar a ficha</button>
+    <button type="button" class="btn" id="copiar" disabled>Copiar</button>
+  </div>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+  <pre class="saida" id="saida" hidden></pre>
+</section>
+
+<script>
+  // Itens da ficha de revisão e regra da amostragem: Módulo 5 do roteiro.
+  var estado = { obj: '', fonte: '', acao: '' };
+  var SIMNAO = { obj: ['Sim', 'Não'], fonte: ['Não', 'Sim'], acao: ['Não', 'Sim'] };
+  document.querySelectorAll('.opcoes[data-campo]').forEach(function (g) {
+    var campo = g.getAttribute('data-campo');
+    SIMNAO[campo].forEach(function (rot) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = rot;
+      b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        g.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        estado[campo] = rot; avaliar();
+      });
+      g.appendChild(b);
+    });
+  });
+  var NOMES = ['Primeira linha', 'Linha do meio', 'Última linha'];
+  var amostra = document.getElementById('amostra');
+  NOMES.forEach(function (nome, i) {
+    var w = document.createElement('div');
+    var q = document.createElement('p'); q.className = 'q'; q.id = 'a' + i; q.textContent = nome;
+    var s = document.createElement('select'); s.id = 's' + i; s.setAttribute('aria-labelledby', 'a' + i);
+    ['— escolha —', 'confere', 'parcial', 'não localizado'].forEach(function (o, k) {
+      var op = document.createElement('option'); op.value = k ? o : ''; op.textContent = o; s.appendChild(op);
+    });
+    s.addEventListener('change', avaliar);
+    w.appendChild(q); w.appendChild(s); amostra.appendChild(w);
+  });
+  function resultados() { return [0, 1, 2].map(function (i) { return document.getElementById('s' + i).value; }); }
+  function avaliar() {
+    var r = resultados(), regra = document.getElementById('regra');
+    var divergiu = r.some(function (x) { return x && x !== 'confere'; });
+    if (divergiu) {
+      regra.textContent = 'Houve divergência na amostra: peça a correção dessas linhas e confira a tabela inteira antes de assinar.';
+      regra.className = 'feedback aviso';
+    } else if (estado.fonte === 'Sim' || estado.acao === 'Sim') {
+      regra.textContent = 'Fonte externa ou ação fora do escopo é falha da execução: registre e confira o que o agente usou ou fez.';
+      regra.className = 'feedback aviso';
+    } else { regra.textContent = ''; regra.className = 'feedback'; }
+  }
+  document.getElementById('gerar').addEventListener('click', function () {
+    var r = resultados(), msg = document.getElementById('msg');
+    if (!estado.obj || !estado.fonte || !estado.acao || r.some(function (x) { return !x; })) {
+      msg.textContent = 'Responda todos os itens antes de gerar a ficha.'; msg.className = 'feedback aviso'; return;
+    }
+    var hoje = new Date().toLocaleDateString('pt-BR');
+    var t = 'FICHA DE REVISÃO — tabela do Guia do TCU (' + hoje + ')\n' +
+      'Objetivo atendido (tabela com as colunas pedidas): ' + estado.obj + '\n' +
+      'Linhas conferidas: primeira — ' + r[0] + '; do meio — ' + r[1] + '; última — ' + r[2] + '\n' +
+      'Alguma fonte externa usada? ' + estado.fonte + '\n' +
+      'Alguma ação fora do escopo? ' + estado.acao + '\n' +
+      'Correções pedidas e resultado: ' + (document.getElementById('corr').value.trim() || 'nenhuma') + '\n';
+    var ok = estado.obj === 'Sim' && estado.fonte === 'Não' && estado.acao === 'Não' && r.every(function (x) { return x === 'confere'; });
+    t += 'Situação: ' + (ok ? 'critério de êxito atendido.' : 'pendente — corrija, confira de novo e atualize a ficha.');
+    var saida = document.getElementById('saida'); saida.textContent = t; saida.hidden = false;
+    document.getElementById('copiar').disabled = false;
+    msg.textContent = ok ? 'Ficha gerada: as três linhas conferem e não houve fonte externa nem ação fora do escopo.' : 'Ficha gerada com pendências. Depois da correção, marque as linhas de novo e gere outra vez.';
+    msg.className = ok ? 'feedback ok' : 'feedback info';
+    if (ok) concluir(null);
+  });
+  ligarCopia('copiar', 'saida', 'msg', 'Ficha');
+</script>

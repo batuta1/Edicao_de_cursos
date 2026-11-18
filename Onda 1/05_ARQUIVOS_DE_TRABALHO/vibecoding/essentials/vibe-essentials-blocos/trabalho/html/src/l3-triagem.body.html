@@ -1,0 +1,30 @@
+<!--titulo: Triagem de ideias de aplicativo-->
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Triagem de ideias de aplicativo</h1>
+  <p class="sub">Classifique cada ideia para o curso. Pergunte-se: há dados pessoais reais? Há dinheiro envolvido? O uso é imediato, em produção? Você recebe a correção na hora e pode tentar de novo.</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Ideias 1 a 4: exercício do Módulo 2 do roteiro, com o gabarito do roteiro.
+  // Ideia 5: variação no mesmo critério (pagamentos fora do escopo), para exercitar "com ajuste".
+  classificador({
+    casos: [
+      { t: '1. Lista pessoal de tarefas com login, dados inventados', r: 'ok', p: 'Dados inventados, login e uma regra simples de acesso: é o “Minhas Tarefas”.' },
+      { t: '2. Controle de notas da turma real, com nomes dos alunos', r: 'nao', p: 'Dados pessoais de alunos, possivelmente menores. Ajuste possível: turma inventada e nomes fictícios, deixando explícito que não é sistema real.' },
+      { t: '3. Catálogo de produtos fictícios com área de administração', r: 'ok', p: 'Produtos e administradores fictícios, sem pagamentos, não expõem ninguém.' },
+      { t: '4. Cadastro de clientes com CPF e telefone, para uso imediato na empresa', r: 'nao', p: 'Dados pessoais reais e uso em produção sem análise de LGPD e de segurança.' },
+      { t: '5. Catálogo de produtos fictícios com pagamento por cartão', r: 'ajuste', p: 'O catálogo serve; o pagamento, não. Ajuste: retirar os pagamentos — dinheiro exige revisão profissional.' }
+    ],
+    opcoes: { ok: 'Adequada', ajuste: 'Adequada com ajuste', nao: 'Inadequada' },
+    dicaErro: 'Releia: há dados pessoais reais, dinheiro ou uso imediato em produção?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'classificadas corretamente',
+    aoConcluir: function () {
+      concluir('final', 'Todas classificadas. Somente dados fictícios — e nada de pagamentos ou uso em produção sem revisão profissional.');
+    }
+  });
+</script>

@@ -1,0 +1,41 @@
+<!--titulo: Intervir ou deixar seguir?-->
+<style>
+  .opcoes button[data-k="seguir"][aria-pressed="true"] { background: var(--verde); border-color: var(--verde); }
+  .opcoes button[data-k="intervir"][aria-pressed="true"] { background: var(--vermelho); border-color: var(--vermelho); }
+  .tela { font-family: Consolas, "Courier New", monospace; font-size: 13px; background: #fff; border: 1px dashed var(--azul-2); border-radius: 10px; padding: 8px 10px; margin: 0 0 10px; color: var(--tinta); }
+</style>
+<section class="card" aria-labelledby="t">
+  <span class="rotulo">Atividade</span>
+  <h1 id="t">Intervir ou deixar seguir?</h1>
+  <p class="sub">O agente está executando a ordem de serviço do Guia do TCU (só o PDF anexo, nada de envio, nada de outros arquivos). Para cada trecho do diário de bordo, decida: deixar seguir ou intervir?</p>
+  <p class="placar" id="placar" aria-live="polite"></p>
+  <div class="barra" aria-hidden="true"><span id="barra"></span></div>
+  <div class="grid" id="lista"></div>
+  <div class="final" id="final" role="status" aria-live="polite"></div>
+</section>
+
+<script>
+  // Sinais e motivos de intervenção: Módulo 4 do roteiro.
+  classificador({
+    casos: [
+      { t: 'Plano', extra: '<p class="tela">1. Ler o PDF anexo · 2. Listar as regras · 3. Registrar a página · 4. Montar a tabela · 5. Aguardar sua aprovação</p>',
+        r: 'seguir', p: 'O plano bate com a ordem de serviço e para antes de executar.' },
+      { t: 'Ação atual', extra: '<p class="tela">Abrindo navegador: pesquisando “guia IA generativa TCU”…</p>',
+        r: 'intervir', p: 'Fonte inadequada: a ordem diz “somente o arquivo anexo”. Intervenha com “não use internet”.' },
+      { t: 'Evidência', extra: '<p class="tela">Lendo página 3 de 7 · tabela parcial: 4 linhas, todas com a coluna Página preenchida</p>',
+        r: 'seguir', p: 'Evidência dentro da fonte permitida e produto parcial no formato pedido.' },
+      { t: 'Pedido de aprovação', extra: '<p class="tela">Posso salvar a tabela também como regras_tcu.xlsx e enviar uma cópia para o seu e-mail?</p>',
+        r: 'intervir', p: 'A ordem proíbe criar outros arquivos e enviar qualquer coisa — e enviar é ação consequencial. Negue.' },
+      { t: 'Consumo', extra: '<p class="tela">Reiniciando a leitura do documento (3ª vez)… créditos usados nesta tarefa: subindo</p>',
+        r: 'intervir', p: 'Erro repetido e gasto crescente numa tarefa sobre um PDF de 7 páginas. Pergunte o que já foi concluído e peça para reaproveitar.' },
+      { t: 'Pergunta do agente', extra: '<p class="tela">A regra da página 5 aparece duas vezes com redação diferente. Mantenho as duas linhas ou uno numa só?</p>',
+        r: 'seguir', p: 'É uma dúvida legítima, dentro do escopo: responda e deixe seguir. Perguntar antes é o comportamento que você quer.' }
+    ],
+    opcoes: { seguir: 'Deixar seguir', intervir: 'Intervir' },
+    dicaErro: 'Compare com a ordem de serviço: o agente está dentro das Fontes e dos Limites? Há gasto ou erro fora do normal?',
+    idLista: 'lista', idPlacar: 'placar', idBarra: 'barra', rotuloPlacar: 'decisões corretas',
+    aoConcluir: function () {
+      concluir('final', 'Tudo certo. Intervir é parte normal do trabalho: declare a correção, confirme o novo limite e peça o plano atualizado.');
+    }
+  });
+</script>

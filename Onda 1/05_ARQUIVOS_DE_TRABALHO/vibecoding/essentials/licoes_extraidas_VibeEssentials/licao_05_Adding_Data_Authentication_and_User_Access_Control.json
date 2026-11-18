@@ -1,0 +1,730 @@
+{
+  "numero_da_licao": 5,
+  "position_original": 4,
+  "title": "Adding Data, Authentication, and User Access Control",
+  "lesson": {
+    "description": "",
+    "id": "ed00d230-93b4-4c16-86c5-8b440ee48c04",
+    "items": [
+      {
+        "id": "jkyvv4ta5ndo4kd15r5m6tbj",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "bsxu1buoye8p9ln445uj7hez",
+            "heading": "A catraca e as gavetas com crachá",
+            "paragraph": "<p>O protótipo da lição anterior esquece tudo ao recarregar a página — e qualquer pessoa que abrisse o link usaria a mesma lista. Retomando a analogia, esta lição instala a catraca (login) e os fichários com gavetas trancadas (banco de dados com regras RLS). E termina com o teste que nenhuma tela substitui: duas contas fictícias, cada uma vendo apenas o que é seu.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "e762ba6b-c94a-4fbf-b7f3-ed307049a954"
+      },
+      {
+        "id": "s604yj1ponv58q4cq8hk0mhd",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "jk4eo09cfh2p8tb1qeyj9h77",
+            "paragraph": "<p>Ao final desta lição, você será capaz de:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "5005cbef-76a1-4c8c-a92d-0b5e40bedde0"
+      },
+      {
+        "id": "tbn1hbzvf975ucvsr5tt3kzb",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "list",
+        "items": [
+          {
+            "id": "njyzx1aeot6d4n7suqirt53c",
+            "number": "1",
+            "paragraph": "<p>Explicar o que é o Lovable Cloud e por que dispensa conta própria no Supabase.</p>"
+          },
+          {
+            "id": "upb9omrocqva5a2oij3c7wpg",
+            "number": "2",
+            "paragraph": "<p>Acrescentar login e banco de dados ao aplicativo.</p>"
+          },
+          {
+            "id": "rjvcwubyin3175hfv6gd61ba",
+            "number": "3",
+            "paragraph": "<p>Conduzir a alteração pelo fluxo Plan, aprovação e Build.</p>"
+          },
+          {
+            "id": "k2hm4ncaggu0ogkfp3e5i9jn",
+            "number": "4",
+            "paragraph": "<p>Pedir regras RLS para que cada usuário acesse apenas os próprios registros.</p>"
+          },
+          {
+            "id": "bh23z9r7pksvkphmud07m76q",
+            "number": "5",
+            "paragraph": "<p>Conferir tabelas e usuários na administração do Lovable Cloud.</p>"
+          },
+          {
+            "id": "z0hzvs7uetgqkjj4diij2fy1",
+            "number": "6",
+            "paragraph": "<p>Comprovar, com duas contas, que cada usuário vê apenas os próprios registros.</p>"
+          }
+        ],
+        "family": "list",
+        "variant": "numbered",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "b95e2373-d43c-445e-84dc-1ca6f56813e3"
+      },
+      {
+        "id": "oqldoh0pkpv0okehsnsgbzak",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "mf584od6u9b4r1p01y4auwzg",
+            "paragraph": "<p>O back-end padrão do Lovable é o <strong>Lovable Cloud</strong>, construído sobre a base de código aberto do Supabase e ativado pelo próprio Lovable quando um pedido exige banco de dados ou login — às vezes solicitando aprovação. Não é preciso criar conta no Supabase: a documentação responde literalmente “Do I need Supabase? No.” Conectar um projeto Supabase próprio é alternativa para quem já o possui, mas não há migração de um clique entre as duas opções. Por isso se recomenda decidir no início — e, neste curso, permanecer no Lovable Cloud.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "c0517d7c-5b59-4a8d-bfa2-d932dfd1c8be"
+      },
+      {
+        "id": "oa98aadgn9gdm6qqm9x8uzw1",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "ebozrqtw6cpryp70mxjz4dt6",
+            "heading": "Conceitos do back-end",
+            "paragraph": "<p>Vire cada cartão para ver os termos que aparecem nesta lição:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "0de6aad2-73bd-4986-9fa4-b7fbaed004fe"
+      },
+      {
+        "id": "o0gi13nxkym71e92bchsp1j3",
+        "settings": {
+          "paddingTop": 0
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "wwg16v5wmqz3pfqn8w91akbe",
+            "back": {
+              "type": "description",
+              "description": "<p>O back-end padrão do Lovable: banco de dados, login e administração, ativados pelo próprio Lovable quando o pedido exige.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Lovable Cloud</p>"
+            }
+          },
+          {
+            "id": "kk3ni83p8001k69bn17alp1q",
+            "back": {
+              "type": "description",
+              "description": "<p>A base de código aberto sobre a qual o Lovable Cloud é construído. Você não precisa de conta própria nele.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Supabase</p>"
+            }
+          },
+          {
+            "id": "w954hikpqay6v5k8fyb19htk",
+            "back": {
+              "type": "description",
+              "description": "<p>Um fichário: cada linha é uma ficha, cada coluna um campo. No curso, a tabela tasks, com title, completed, user_id e created_at.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Tabela</p>"
+            }
+          },
+          {
+            "id": "t7exciv2i31ljnl48sjgia8y",
+            "back": {
+              "type": "description",
+              "description": "<p>A catraca: confere quem entra. No curso, login por e-mail e senha.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>Autenticação</p>"
+            }
+          },
+          {
+            "id": "zavpr1dmdem2ds1bgjosnzu9",
+            "back": {
+              "type": "description",
+              "description": "<p>O crachá: regra do banco que limita cada usuário aos próprios registros — ler, criar, atualizar e excluir apenas o que é seu.</p>"
+            },
+            "front": {
+              "type": "description",
+              "description": "<p>RLS (Row Level Security)</p>"
+            }
+          }
+        ],
+        "family": "flashcard",
+        "variant": "flashcard",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "811d6555-f537-4e74-97d9-1ff79d543821"
+      },
+      {
+        "id": "i8w8rbjgpm3phs683htwj1mt",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "y7cnv89mzu213b4iw3hi1dqw",
+            "heading": "Como o back-end entra no aplicativo",
+            "paragraph": "<p>Abra cada item para entender as decisões por trás do pedido desta lição:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "8c61ace7-e44b-4132-8cfb-7d193f96c3d5"
+      },
+      {
+        "id": "b26b0907-11b5-4abc-9a94-12f6350b84ea",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "3b6e1393-fd4f-40a9-92ea-3f9a93912169",
+            "title": "A ativação do Lovable Cloud",
+            "description": "<p>O Lovable ativa o Lovable Cloud quando um pedido exige banco de dados ou login, às vezes pedindo a sua aprovação. Se pedir, aprove.</p><p></p><p>Não há migração de um clique entre o Lovable Cloud e um Supabase próprio: no curso, permaneça no Cloud.</p>"
+          },
+          {
+            "id": "5944eb4a-aeaf-4c7e-b4e4-1ba2ea639feb",
+            "title": "Duas etapas: Plan e depois Build",
+            "description": "<p>Primeiro, no modo Plan, pede-se a menor alteração possível para acrescentar login e a tabela de tarefas, com regras RLS e a descrição de como testar com duas contas. O plano é lido e aprovado. Depois, no modo Build, aplica-se o plano.</p><p></p><p>Ao ler o plano, confira três coisas: ele fala em e-mail e senha, na tabela de tarefas e em RLS?</p>"
+          },
+          {
+            "id": "9be4c847-3b0f-4992-904f-cd1b257f9d95",
+            "title": "Por que especificar “e-mail e senha”",
+            "description": "<p>Sem essa indicação, o Lovable pode gerar outras formas de entrada, o que amplia o escopo do aplicativo.</p><p></p><p>Na ficha, a regra é a mesma: o que não foi pedido não deve aparecer.</p>"
+          },
+          {
+            "id": "b3141fdb-3c08-4b71-a679-7eef584b0b73",
+            "title": "O teste decisivo: duas contas",
+            "description": "<p>Duas contas fictícias, cada uma com uma tarefa; cada conta deve ver apenas a sua. É esse teste — e não a aparência da tela — que comprova que as gavetas estão trancadas.</p><p></p><p>Se a conta B enxergar a tarefa da conta A, há falha de segurança: o aplicativo não pode ser publicado.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "e25f1995-fad6-419e-bcff-51ab37b0d055"
+      },
+      {
+        "id": "78234046-df3f-43cc-baa4-f19c6c1e0174",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "f6b8052a-1c56-4249-9d90-46c0aecd225c",
+            "type": "intro",
+            "title": "Back-end e teste de isolamento (12 min)",
+            "isHidden": false,
+            "description": "<p>Siga os passos na ordem. Os prompts dos passos de Plan e Build estão na seção “Mão na massa”, mais abaixo.</p>"
+          },
+          {
+            "id": "3aac549c-fd47-45d9-898e-f34140ffad82",
+            "type": "summary",
+            "title": "Critério de êxito",
+            "isHidden": false,
+            "description": "<p>A conta B vê apenas a própria tarefa; a tarefa persiste após recarregar; a tabela mostra duas linhas de donos distintos.</p><p>🏁 Ponto de controle: em Lovable &gt; More &gt; Cloud &gt; Database &gt; tasks, há duas linhas com valores diferentes na coluna user_id.</p>"
+          },
+          {
+            "id": "f8a48c7b-b9fd-48db-8183-9e263fcf06fe",
+            "type": "step",
+            "title": "Anote o saldo",
+            "isHidden": false,
+            "description": "<p>Anote o saldo de créditos antes de começar.</p>"
+          },
+          {
+            "id": "6514468a-d129-4d35-b8dc-e520d5253b13",
+            "type": "step",
+            "title": "Peça o plano",
+            "isHidden": false,
+            "description": "<p>Selecione Plan, envie a primeira parte do prompt-base e leia o plano: ele menciona e-mail e senha, a tabela e RLS?</p>"
+          },
+          {
+            "id": "67c849c4-3505-4694-8be4-4617792b7a45",
+            "type": "step",
+            "title": "Aprove e construa",
+            "isHidden": false,
+            "description": "<p>Aprove o plano e, em Build, envie a segunda parte do prompt-base. Se o Lovable pedir para ativar o Lovable Cloud, aprove.</p>"
+          },
+          {
+            "id": "de3a0c7d-7afd-4ea7-a85e-44d114676619",
+            "type": "step",
+            "title": "Confira a tabela",
+            "isHidden": false,
+            "description": "<p>Abra Lovable &gt; More &gt; Cloud &gt; Database e confirme a tabela tasks.</p>"
+          },
+          {
+            "id": "819de155-d21f-4cd9-8ca9-0620b26a057f",
+            "type": "step",
+            "title": "Crie as duas contas de teste",
+            "isHidden": false,
+            "description": "<p>Em Lovable &gt; More &gt; Cloud &gt; Users &gt; Add user, crie teste.a@exemplo.com e teste.b@exemplo.com, com senhas de teste anotadas fora do Lovable. Assim você não depende de confirmação por e-mail.</p>"
+          },
+          {
+            "id": "f08c72e7-7efa-4ee2-aa25-9cae4c37ef3d",
+            "type": "step",
+            "title": "Faça o teste de isolamento",
+            "isHidden": false,
+            "description": "<p>Na prévia, entre com a conta A, crie “Tarefa da conta A” e saia; entre com a conta B, crie “Tarefa da conta B” e verifique a lista. Recarregue a página e confira que a tarefa permanece.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "811f0aa1-5657-4814-aa43-71847187c41e"
+      },
+      {
+        "id": "cy9rvqp10i5uhkm8r63r3l1m",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "wprnw5u5y3jk3ihhjc6axqdl",
+            "heading": "Conferência do back-end",
+            "paragraph": "<ul><li>Plano lido e aprovado antes do Build.</li><li>Tabela tasks presente em More &gt; Cloud &gt; Database.</li><li>Duas contas de teste criadas.</li><li>Cada conta vê apenas a própria tarefa.</li><li>A tarefa permanece depois de recarregar a página.</li><li>Crédito consumido anotado.</li></ul>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "3cf7b50b-fa6c-47eb-adaa-474c1cc833e9"
+      },
+      {
+        "id": "e141fbae-f66c-41b9-8ee7-f2372479d5f2",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "a938a6c0-9319-4885-827c-f3ce2f3749bd",
+            "paragraph": "<p>⚠️ <strong>Cuidado:</strong> excluir linhas pela interface do banco é irreversível, e reverter o código (lição 6) não recupera dados apagados.</p>"
+          }
+        ],
+        "family": "impact",
+        "variant": "b",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "2200b57c-ea25-47f2-b0a2-260a850dc483"
+      },
+      {
+        "id": "tastfmnqe7kg7f9i2ti9q4om",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "a6cu65lk2soorrij8im1s4si",
+            "heading": "A administração da loja",
+            "paragraph": "<p>Concluída a construção, confere-se o resultado na administração do Lovable Cloud. Veja, nas abas, onde fica cada coisa:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "b7dc1dba-b81e-4a99-945a-e0da737269cf"
+      },
+      {
+        "id": "b45776d1-547b-457d-ab1f-3168f7030303",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "5f1b71d5-22a2-4184-8168-37933e9234f5",
+            "title": "Database",
+            "description": "<p>Em More &gt; Cloud &gt; Database ficam as tabelas. É possível ver, adicionar, excluir e exportar linhas.</p><p></p><p>Uma tarefa criada pela tela deve aparecer como linha na tabela tasks — com o user_id da conta que a criou.</p>"
+          },
+          {
+            "id": "61301f93-3eae-4baa-ac02-a570c8b3e740",
+            "title": "Users",
+            "description": "<p>Em More &gt; Cloud &gt; Users ficam as contas do aplicativo. O botão Add user cria contas diretamente, sem confirmação por e-mail.</p><p></p><p>É o caminho para criar as contas fictícias do teste de isolamento.</p>"
+          },
+          {
+            "id": "3779b7e3-a802-4b6c-ab9b-d938d5871b16",
+            "title": "Auth settings",
+            "description": "<p>Em More &gt; Cloud &gt; Users &gt; Auth settings ficam as configurações de login.</p><p></p><p>Se o login não funcionar, é um dos lugares a conferir antes de pedir investigação em Plan.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "tabs",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "9100fe86-5d39-4357-8f0b-1da0b5c26325"
+      },
+      {
+        "id": "a7c8b391-efc3-4427-850c-9e9b14a3e00e",
+        "settings": {},
+        "type": "knowledgeCheck",
+        "items": [
+          {
+            "id": "b7e1ff42-1469-44c1-9ec6-73a5408c9165",
+            "type": "MULTIPLE_CHOICE",
+            "title": "Depois de criar as políticas RLS, você testa o aplicativo com duas contas. Qual resultado comprova que elas funcionam?",
+            "answers": [
+              {
+                "id": "1d281637-ed14-4539-bec9-076e1b923ead",
+                "title": "As duas contas veem todas as tarefas, não importa quem as criou",
+                "correct": false,
+                "feedback": "Não. Isso é falha de isolamento: com RLS funcionando, cada conta vê apenas os próprios registros. Não publique e peça investigação em Plan."
+              },
+              {
+                "id": "6756637d-a757-4410-bb88-8556c8deaab2",
+                "title": "Cada conta vê apenas as próprias tarefas",
+                "correct": true,
+                "feedback": "Correto. É esse resultado — e não a aparência da tela — que comprova que as gavetas estão trancadas."
+              },
+              {
+                "id": "3cde8256-97a0-484b-9520-6d721054160b",
+                "title": "Só a primeira conta consegue adicionar tarefas",
+                "correct": false,
+                "feedback": "Não. A RLS não privilegia uma conta: cada usuário pode ler, criar, atualizar e excluir as próprias tarefas."
+              },
+              {
+                "id": "f88d4c7e-58ac-44f8-befb-1c53b70a8329",
+                "title": "As tarefas somem quando a conta sai",
+                "correct": false,
+                "feedback": "Não. Sair da conta não apaga nada: a RLS controla quem acessa os registros, não se eles persistem. A tarefa deve continuar lá na próxima entrada."
+              }
+            ],
+            "feedbackType": "CHOICE"
+          }
+        ],
+        "family": "knowledgeCheck",
+        "variant": "multiple choice",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "7619d135-c93d-40b3-800c-a95fc6c935c4"
+      },
+      {
+        "id": "mhqho9n0lfuwwrhzcl8avgyk",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "s8dras0ng48zevihshippm4m",
+            "heading": "Se o teste falhar",
+            "paragraph": "<p>Abra o item que corresponde à sua situação. Em todos os casos, a regra é investigar antes de corrigir:</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "heading paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "4665cde8-c1b5-4259-8966-b2e09d08a872"
+      },
+      {
+        "id": "d0406a5c-72cc-4fef-b386-c9ce0b7fc842",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "04601d48-8b40-48cf-a8a3-fcc331a9ca7f",
+            "title": "A conta B vê a tarefa da conta A",
+            "description": "<p>Trate como falha de segurança: não publique. Peça em Plan: “Investigue por que a conta B vê tarefas da conta A e proponha a correção das políticas RLS.” Depois, repita o teste.</p>"
+          },
+          {
+            "id": "c501533d-34cd-466c-8687-36e1b787d7fc",
+            "title": "O login não funciona",
+            "description": "<p>Confira More &gt; Cloud &gt; Users e Auth settings. Copie a mensagem exata e peça investigação em Plan antes de corrigir.</p>"
+          },
+          {
+            "id": "b49c2f8b-735e-49a8-bc83-c3ac874a9ead",
+            "title": "“Add user” não aparece",
+            "description": "<p>Crie as contas pela tela de cadastro do próprio aplicativo, com e-mails que você controle.</p>"
+          }
+        ],
+        "family": "interactive",
+        "variant": "accordion",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "2a812e30-10c2-46c0-9034-613fbacb399e"
+      },
+      {
+        "id": "28c8df5c-be17-4382-b932-8b472f1c16bf",
+        "settings": {
+          "v": 2,
+          "paddingTop": 0,
+          "zoomOnClick": true,
+          "audioPosition": "bottom",
+          "paddingBottom": 3,
+          "paddingLinked": true,
+          "markerColorContrast": "AUTO",
+          "snippetColorContrast": "AUTO"
+        },
+        "type": "interactive",
+        "items": [
+          {
+            "id": "9e218988-cf7d-4975-89e3-e1d4705df919",
+            "type": "intro",
+            "title": "Mão na massa: o prompt-base em duas partes",
+            "isHidden": false,
+            "description": "<p>O pedido é dividido em duas mensagens: a primeira, em Plan, pede o plano; a segunda, em Build, aplica o plano aprovado. Mantenha os nomes das colunas exatamente como estão.</p>"
+          },
+          {
+            "id": "8e394ed5-35d4-465a-9f51-0f0a8af25692",
+            "type": "summary",
+            "title": "Um modelo reutilizável",
+            "isHidden": false,
+            "description": "<p>Plan antes de Build, “e-mail e senha” explícito, RLS por usuário, teste com duas contas e “não altere o visual”: essa estrutura vale para qualquer aplicativo que precise de login e dados por usuário.</p>"
+          },
+          {
+            "id": "a1868065-17ab-44d6-ae77-f155b752ed03",
+            "type": "step",
+            "title": "Parte 1 — em Plan",
+            "isHidden": false,
+            "description": "<p>No modo Plan, envie:</p><p>\"\"\"Analise o app e proponha a menor alteração possível para adicionar autenticação por e-mail e senha e uma tabela de tarefas. Cada usuário deve acessar apenas as próprias tarefas. Inclua regras RLS e descreva como testar com duas contas. Não implemente até eu aprovar.\"\"\"</p>"
+          },
+          {
+            "id": "966bc7a9-61bb-4a92-ab23-ef39052d3615",
+            "type": "step",
+            "title": "Leia e aprove",
+            "isHidden": false,
+            "description": "<p>Leia o plano. Aprove somente se ele mencionar e-mail e senha, a tabela de tarefas e RLS.</p>"
+          },
+          {
+            "id": "6e32dfb4-7c61-489e-8ad5-559e555dcc08",
+            "type": "step",
+            "title": "Parte 2 — em Build",
+            "isHidden": false,
+            "description": "<p>No modo Build, depois de aprovar, envie:</p><p>\"\"\"Aplique o plano aprovado. Adicione login por e-mail e senha, logout e uma tabela tasks com title, completed, user_id e created_at. Crie políticas RLS para que cada usuário só possa ler, criar, atualizar e excluir as próprias tarefas. Não altere o visual.\"\"\"</p>"
+          },
+          {
+            "id": "8c715962-58f4-4d62-b00b-9f5b4ce2cb54",
+            "type": "step",
+            "title": "Teste com duas contas",
+            "isHidden": false,
+            "description": "<p>Siga os passos do teste de isolamento: duas contas, uma tarefa em cada, e cada conta vendo apenas a sua.</p>"
+          }
+        ],
+        "family": "interactive-fullscreen",
+        "variant": "process",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "d0b50272-46e9-4c5f-b007-0076e8e0f9f4"
+      },
+      {
+        "id": "c5a0e11b-b674-4b84-a1b2-6b03ec5c9917",
+        "settings": {
+          "v": 2
+        },
+        "type": "divider",
+        "items": [
+          {
+            "id": "b5f56af0-a984-46e2-8422-6765db0f169a",
+            "type": "",
+            "title": "Continue",
+            "buttonColor": "brand",
+            "completeHint": "Complete the content above before moving on."
+          }
+        ],
+        "family": "continue",
+        "variant": "continue",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "81785dfb-b979-4f65-ae75-bde41cdfa663"
+      },
+      {
+        "id": "c59oijzdp7gcg5es1l2utl1h",
+        "settings": {},
+        "type": "text",
+        "items": [
+          {
+            "id": "z3gkqz7lcc5yuvdfqu32gmx6",
+            "paragraph": "<p>O aplicativo agora guarda as tarefas e tranca cada gaveta — e você comprovou isso com duas contas. Na próxima lição, você abre as portas: publica o aplicativo depois da varredura, testa como visitante, aprende a reformar com a loja aberta e reconhece quando o método não basta.</p>"
+          }
+        ],
+        "family": "text",
+        "variant": "paragraph",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "53003cbf-c138-4156-ab5d-8e600ae0a1a5"
+      }
+    ],
+    "settings": {
+      "isGeneratingAIContent": false,
+      "isRequiredForCompletion": true
+    },
+    "title": "Banco de Dados, Login e Controle de Acesso",
+    "type": "blocks",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "s5rjpyoVh4hWZIEjJr-eXu3a8b0Nh7Sa",
+    "createdAt": "2026-11-04T17:24:45.928Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Article",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 4,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-04T17:26:56.916Z"
+  }
+}

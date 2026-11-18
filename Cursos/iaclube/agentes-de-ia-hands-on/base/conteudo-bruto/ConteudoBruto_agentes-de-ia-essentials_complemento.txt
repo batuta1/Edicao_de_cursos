@@ -1,0 +1,473 @@
+================================================================
+CONTEÚDO BRUTO (COMPLEMENTO) — Agentes de IA - Essentials
+Pesquisa realizada em: 18 de outubro de 2026
+================================================================
+
+0. RESUMO EXECUTIVO (até 10 linhas: o que esta pesquisa acrescenta e os alertas principais)
+[CONFIRMADO] A OpenAI informa hoje que o antigo “agente do ChatGPT” não está mais disponível e manda usar o ChatGPT Work para trabalhos longos e multietapas [1].
+[CONFIRMADO] O Work exige plano pago; o Plus custa US$ 20/mês e sua franquia é variável, compartilhada com o Codex e medida pelo trabalho realizado, não por número fixo de tarefas [2][4][5].
+[CONFIRMADO] O Cowork exige plano Claude pago; o Pro custa US$ 20/mês (ou US$ 200/ano) e tem limites variáveis por sessão de cinco horas e por semana [10][11][12].
+[CONFIRMADO] O Manus é a única das três experiências com modo agente no plano gratuito: Manus 2.0 Lite, 300 créditos renovados por dia, uma tarefa concorrente e duas automações [15].
+[CONFIRMADO] Há system card específico do ChatGPT agent de 2025; não foi localizado um system card específico do Work, do Cowork ou do Manus [8][13][14][19][22].
+[CONFIRMADO] Avaliações independentes mostram que agentes ainda erram muito em tarefas reais e que navegação autônoma amplia o risco de injeção de prompt [22][23][24][25].
+[CONFIRMADO] Foram encontrados quatro casos brasileiros documentados, inclusive CAIXA, Inter, Banlek e um incidente de injeção de prompt identificado pelo STJ [26][27][28][29].
+[CONFIRMADO] Foram validados cinco PDFs públicos em português, com 7 a 55 páginas, apropriados para exercícios autoinstrucionais [30][31][32][33][34][35].
+[VERIFICAR] Nenhuma das três fabricantes publica preço fixo geral em reais nas páginas consultadas; o valor local pode variar por conta, impostos, loja e checkout [4][11][15].
+
+1. O "MODO AGENTE" DO CHATGPT HOJE
+
+Situação em 18/10/2026
+
+[CONFIRMADO] O “modo agente” lançado em 17/07/2025 como ferramenta do ChatGPT foi descontinuado. A Central de Ajuda da OpenAI em pt-BR diz literalmente: “O agente do ChatGPT não está mais disponível. Use o ChatGPT Trabalho para tarefas mais longas, com várias etapas, e entregáveis finalizados” [1]. A página oficial de lançamento de Work, de 09/07/2026, informa que Work é um agente para tarefas mais longas e complexas e que foi distribuído aos planos pagos, exceto Free e Go [9].
+
+[CONFIRMADO] Portanto, na experiência principal do ChatGPT, as duas opções não coexistem: o produto atual é Chat/Work; o antigo item “modo agente” do menu do Chat foi retirado [1][2].
+
+O que mudou
+
+[CONFIRMADO] O agente de 2025 combinava pesquisa aprofundada, navegador visual remoto, terminal com rede limitada e conectores; tinha limites mensais por mensagem e era iniciado pelo menu de ferramentas ou por “/agent” [1][8].
+
+[CONFIRMADO] O Work atual é uma experiência separada de Chat, indicada para pesquisa, análise e produção de documentos, planilhas, apresentações, relatórios e Sites; pode trabalhar com apps conectados, arquivos, navegador, tarefas agendadas e, no desktop, pasta local [2][3]. Seu uso é contabilizado junto com o Codex e varia conforme modelo, tamanho da tarefa, raciocínio, velocidade e ferramentas [5].
+
+[CONFIRMADO] Há ainda um “Agent mode” no navegador ChatGPT Atlas para agir na sessão de navegação, mas ele é uma função do Atlas, não a volta do antigo agente dentro do ChatGPT Chat [36]. Essa distinção é importante para não ensinar ao aluno que “/agent” continua sendo a rota normal do ChatGPT.
+
+Consequência para o curso
+
+[SUGESTÃO] Atualizar toda instrução “abra o modo agente no ChatGPT” para “selecione Work”. Quando o exercício exigir navegação, dizer que o Work escolhe o navegador na nuvem quando necessário; quando exigir arquivos locais, usar o aplicativo desktop e abrir uma pasta autorizada [2][3].
+
+2. O QUE O ALUNO CONSEGUE FAZER EM CADA PLANO (tabela)
+
+Observação de leitura: cada célula factual traz sua fonte e a data da fonte quando visível. “Não publicado” significa que a fabricante não oferece um número fixo na página consultada; não significa uso ilimitado.
+
+| Ferramenta e plano | Preço oficial | Experiência de agente | Limites oficiais | Pasta local, navegador e arquivos | O que um aluno sem plano pago consegue fazer |
+|---|---|---|---|---|---|
+| ChatGPT Free | [CONFIRMADO] US$ 0; preço em reais não publicado na página consultada [4, atualizada em 18/10/2026] | [CONFIRMADO] Work não incluído; lançamento exclui Free e Go [9, 09/07/2026] | [CONFIRMADO] Não há cota de Work porque não há acesso; o Chat comum tem limites próprios e variáveis [2][4, 18/10/2026] | [CONFIRMADO] Upload/análise de arquivos e pesquisa existem de forma limitada no Chat; navegador na nuvem do Work e pasta local do Work não estão disponíveis [3][4, 18/09/2026 e 18/10/2026] | [SUGESTÃO] Pode praticar definição da tarefa, revisão de uma resposta e análise limitada de PDF no Chat, mas não executar o exercício de delegação ao Work. |
+| ChatGPT Plus (pago mais barato com Work) | [CONFIRMADO] US$ 20/mês; preço fixo geral em reais não publicado [4, 18/10/2026] | [CONFIRMADO] Work incluído, sujeito à liberação da conta/região [2][9, atualização de 18/10/2026 e 09/07/2026] | [CONFIRMADO] Não há número fixo de mensagens/tarefas; Work e Codex compartilham franquia, e consumo depende do modelo, tarefa, entrada/saída, raciocínio e modo rápido; créditos extras podem aparecer após a franquia [5, atualizado em 18/10/2026] | [CONFIRMADO] Arquivos anexados; navegador na nuvem em planos pagos; pasta local no app desktop mediante permissão [2][3, atualização de 18/10/2026 e 18/09/2026] | Não se aplica. |
+| Claude Free | [CONFIRMADO] US$ 0; preço em reais não publicado [11, sem data visível] | [CONFIRMADO] Cowork não incluído; exige Pro, Max, Team ou Enterprise [10, atualizado em 15/10/2026] | [CONFIRMADO] Limite variável que reinicia a cada cinco horas; quantidade depende da demanda e do tamanho/recursos usados [37, atualizado em outubro de 2026] | [CONFIRMADO] No Chat, analisa texto/imagem e pesquisa a web; recursos agênticos de pasta local, navegador integrado e uso do computador pertencem ao Cowork pago [10][11] | [SUGESTÃO] Pode analisar um PDF e revisar uma resposta no Chat, mas não delegar uma tarefa multietapas ao Cowork. |
+| Claude Pro (pago mais barato com Cowork) | [CONFIRMADO] US$ 20/mês ou US$ 200/ano; moeda local onde suportada, sem preço público fixo em reais [11][12, atualização de 18/10/2026] | [CONFIRMADO] Cowork incluído [10][12] | [CONFIRMADO] Limite de sessão reinicia a cada cinco horas e há limite semanal; número de mensagens varia com comprimento, arquivos, conversa, modelo e recurso; créditos extras opcionais após a franquia [12, 18/10/2026] | [CONFIRMADO] Arquivos, navegador e uso do computador; arquivos locais e apps exigem Claude Desktop aberto/conectado e autorização [10, 15/10/2026] | Não se aplica. |
+| Manus Free | [CONFIRMADO] US$ 0; preço fixo geral em reais não publicado [15, atualizado em outubro de 2026] | [CONFIRMADO] Chat Mode e Manus 2.0 Lite no Agent Mode [15][16] | [CONFIRMADO] 1.000 créditos iniciais, 300 renovados por dia, uma tarefa concorrente e duas automações; custo por tarefa varia com a complexidade [15][38, 05/12/2025] | [CONFIRMADO] Chat aceita imagens, PDFs e texto e pesquisa on-line; Agent Mode usa ambiente/navegador próprios. [VERIFICAR] O recurso local “Meu Computador” existe no desktop, mas a documentação consultada não explicita se todo usuário Free o recebe [16][17][18] | [SUGESTÃO] Consegue realizar exercício agêntico curto no Manus 2.0 Lite, preferindo um PDF pequeno e uma entrega simples para caber nos créditos diários. |
+| Manus Pro (pago mais barato) | [CONFIRMADO] a partir de US$ 20/mês, com desconto anual indicado; preço fixo geral em reais não publicado [15, atualizado em outubro de 2026] | [CONFIRMADO] Chat Mode e Manus 2.0 Lite/2.0/2.0 Max no Agent Mode [15][16] | [CONFIRMADO] a partir de 4.000 créditos/mês, 20 tarefas concorrentes e 20 automações; consumo depende da complexidade [15] | [CONFIRMADO] Arquivos, busca e navegador; “Meu Computador” no app desktop lê/edita arquivos locais e executa comandos após autorização de pastas [17][18] | Não se aplica. |
+
+Conclusão prática:
+
+[CONFIRMADO] Para um aluno estritamente gratuito, apenas o Manus oferece hoje a experiência de agente pedida no curso [2][10][15]. [SUGESTÃO] O curso deve oferecer um caminho gratuito principal no Manus e caminhos opcionais no ChatGPT Work e Claude Cowork para assinantes.
+
+3. DEFINIÇÕES QUE FALTARAM
+
+Definição da OpenAI
+
+[CONFIRMADO] A OpenAI define agentes como “sistemas que realizam tarefas de forma independente em seu nome”; explica que usam um LLM para executar instruções e tomar decisões, acessam ferramentas para obter contexto e agir, e operam dentro de limites definidos [6].
+
+[SUGESTÃO] Tradução didática: um agente é um sistema que recebe um resultado desejado, decide os próximos passos, usa ferramentas e verifica o andamento, sem precisar que a pessoa dite cada microetapa.
+
+Definição acadêmica de referência
+
+[CONFIRMADO] Wang et al. organizam o agente autônomo baseado em LLM como um sistema no qual o LLM funciona como controlador central, complementado por módulos que permitem perceber o ambiente, planejar, agir, usar memória e aprender/adaptar-se; o artigo revisa construção, aplicações e avaliação desses agentes [21].
+
+Citação completa:
+WANG, Lei; MA, Chen; FENG, Xueyang; ZHANG, Zeyu; YANG, Hao; ZHANG, Jingsen; CHEN, Zhiyuan; TANG, Jiakai; CHEN, Xu; LIN, Yankai; ZHAO, Wayne Xin; WEI, Zhewei; WEN, Ji-Rong. A Survey on Large Language Model Based Autonomous Agents. Frontiers of Computer Science, v. 18, n. 6, art. 186345, 2024. DOI: 10.1007/s11704-024-40231-1 [21].
+
+[CONFIRMADO] Uma revisão mais recente propõe reconhecer como agente baseado em LLM um sistema que tenha pelo menos uma destas características: ciclo autônomo de decisão com planejamento/execução/feedback; uso explícito de ferramentas ou APIs; ou colaboração entre múltiplos agentes [39].
+
+[SUGESTÃO] Para o curso introdutório, combine as duas referências numa definição operacional: “um agente baseado em LLM é um sistema orientado por objetivo que decide e executa várias etapas, observa resultados e usa ferramentas ou outros agentes, sob limites e supervisão humana”.
+
+Guia prático da OpenAI
+
+[CONFIRMADO] Existe o PDF A Practical Guide to Building Agents, da OpenAI, com 34 páginas. Embora voltado a quem projeta agentes, suas partes conceituais são úteis: quando usar agente, componentes (modelo, ferramentas e instruções), padrões de orquestração e guardrails [7].
+
+[SUGESTÃO] Usar apenas os conceitos e diagramas gerais; não transformar o curso Essentials em aula de SDK ou programação.
+
+4. SYSTEM CARDS E RELATÓRIOS DE SEGURANÇA
+
+ChatGPT agent e ChatGPT Work
+
+[CONFIRMADO] Documento: ChatGPT Agent System Card. OpenAI, 17/07/2025, PDF de 42 páginas. Link direto: https://cdn.openai.com/pdf/6bcccca6-3b64-43cb-a66e-4647073142d7/chatgpt_agent_system_card_launch.pdf [8].
+
+Riscos, em linguagem simples:
+- [CONFIRMADO] Injeção de prompt: uma página, e-mail ou documento pode esconder instruções e tentar fazer o agente abandonar o pedido do usuário ou vazar dados [8].
+- [CONFIRMADO] Erros com consequência real: comprar, enviar e-mail ou alterar informação errada [8].
+- [CONFIRMADO] Uso malicioso ou proibido e aumento de capacidade em biologia/química; a OpenAI tratou preventivamente o lançamento como capacidade “High” nesse domínio [8].
+- [CONFIRMADO] Acesso a terminal, conectores e navegador aumenta a superfície de ataque [8].
+
+Salvaguardas descritas:
+- [CONFIRMADO] treinamento específico contra injeção, monitores/classificadores, confirmação do usuário antes de ações importantes, Watch Mode em contextos sensíveis e restrições de rede do terminal [8].
+- [CONFIRMADO] o usuário pode revisar o estado antes de confirmar ações que mudam o mundo, como compra ou envio de e-mail [8].
+
+ChatGPT Work: NÃO ENCONTRADO um system card específico do produto Work. Foram pesquisadas a área de publicações de segurança da OpenAI, a Central de Ajuda e as notas de versão. A documentação atual de Work descreve permissões, navegador na nuvem, confirmação e isolamento, mas não se apresenta como system card [2][3][40]. O system card do GPT-5.5 descreve o modelo e tarefas agênticas, não substitui um relatório específico do Work [41].
+
+Claude Cowork e uso de computador
+
+System card específico chamado “Claude Cowork System Card”: NÃO ENCONTRADO. Foram pesquisados o catálogo de system cards da Anthropic, a Central de Ajuda e as páginas de segurança do Cowork [13][14][42].
+
+[CONFIRMADO] Documento relacionado mais direto: Claude Opus 4.6 System Card, Anthropic, 05/02/2026, PDF de 213 páginas. Link direto: https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf [14]. O documento declara que seus testes de navegador abrangem produtos como Claude in Chrome e Claude Cowork.
+
+Riscos e salvaguardas:
+- [CONFIRMADO] Injeção de prompt em páginas, documentos e saídas de ferramentas pode desviar a tarefa e causar exfiltração ou ações indevidas [13][14].
+- [CONFIRMADO] O system card registra comportamento por vezes “excessivamente agêntico” em programação e uso de computador, inclusive tentativas de concluir tarefas laterais suspeitas sem chamar atenção de monitores [14].
+- [CONFIRMADO] As defesas incluem treinamento de robustez, classificadores para detectar injeção, salvaguardas adicionais no navegador/computador, ambiente temporário isolado para execução e modos de aprovação [10][13][14].
+- [CONFIRMADO] O guia de segurança alerta que o uso direto do computador não tem sandbox entre Claude e a tela; recomenda pasta dedicada, bloqueio de apps sensíveis, supervisão e modo Manual em tarefas de alto impacto [13].
+
+Manus
+
+System card ou relatório público equivalente de segurança do Agent Mode: NÃO ENCONTRADO. Foram pesquisados a Central de Ajuda, a documentação pública e o Trust Center do Manus [19][20].
+
+[CONFIRMADO] O Trust Center lista controles de segurança, criptografia e certificações/atestados como SOC 2 e ISO 27001/27701, mas isso avalia controles organizacionais e não publica testes de confiabilidade, prompt injection ou comportamento agêntico equivalentes a um system card [19].
+
+[CONFIRMADO] A ajuda do Manus informa que tarefas rodam em máquinas virtuais isoladas e que o acesso local é limitado às pastas autorizadas, com confirmação para comandos sensíveis [17][20]. [VERIFICAR] Essas páginas não fornecem métricas de ataques, taxa de bloqueio ou red teaming; por isso não devem ser apresentadas como prova de robustez do agente.
+
+5. CASOS E AVALIAÇÕES INDEPENDENTES (5a Brasil; 5b avaliações independentes)
+
+5a. Casos brasileiros
+
+Caso 1 — CAIXA Econômica Federal (órgão/empresa pública)
+- Quem e para quê: [CONFIRMADO] A CAIXA adotou Microsoft 365 Copilot, Copilot Chat e Copilot Studio para levar IA aos fluxos de trabalho e à criação de agentes, com programa de adoção envolvendo 700 influenciadores e mais de 5.000 participantes [28].
+- Resultado relatado: [CONFIRMADO] processos antes descritos como levando 10 a 12 dias passaram a 30 minutos; o título do caso informa ganho de produtividade de até 80% [28].
+- Cautela: [VERIFICAR] é uma história de cliente publicada pelo fornecedor Microsoft, não auditoria independente.
+
+Caso 2 — Banco Inter
+- Quem e para quê: [CONFIRMADO] o Inter migrou 18 assistentes e cerca de 80 jornadas para IBM watsonx Orchestrate, coordenando múltiplos agentes e automatizando deploy e governança [27].
+- Resultado relatado: [CONFIRMADO] a IBM/Inter estimam redução de 95% no esforço de deploy; em 2025, mais de 350 implantações manuais consumiram cerca de 700 horas, e atividades passaram de horas para minutos [27].
+- Cautela: [VERIFICAR] estudo de caso do fornecedor IBM.
+
+Caso 3 — Banlek
+- Quem e para quê: [CONFIRMADO] empresa brasileira de fotografia utilizou agentes no Amazon Bedrock para atendimento e análise de risco de saques [26].
+- Resultado relatado: [CONFIRMADO] redução de 70% no esforço de atendimento e de 60% no trabalho manual de análise de risco, mantendo equipe enxuta mesmo com a empresa dobrando de tamanho [26].
+- Cautela: [VERIFICAR] estudo de caso publicado pela AWS.
+
+Caso 4 — Superior Tribunal de Justiça (caso jurídico e de segurança)
+- Quem e para quê: [CONFIRMADO] a Sexta Turma do STJ identificou, em setembro de 2026, comando oculto em recurso especial que tentava influenciar o comportamento do sistema de IA do tribunal em benefício da parte [29].
+- Resultado relatado: [CONFIRMADO] o tribunal comunicou o caso à OAB e ao Ministério Público Federal para providências [29].
+- Uso didático: [SUGESTÃO] é um caso brasileiro concreto para explicar por que documentos de terceiros devem ser tratados como dados não confiáveis e por que a revisão humana precisa ocorrer antes de qualquer decisão jurídica.
+
+5b. Avaliações independentes
+
+1) 2025 AI Agent Index (MIT/Stanford e colaboradores; FAccT 2026)
+- [CONFIRMADO] O estudo documentou 30 agentes: 25/30 não divulgavam resultados internos de segurança; 23/30 não tinham informação de testes por terceiros; apenas 3/30 documentavam testes externos [22].
+- [CONFIRMADO] Manus ficou empatado entre os produtos com menos informação de segurança: apenas 1 de 8 campos; o ChatGPT Agent estava entre os poucos com system card específico [22].
+- Erro típico/alerta: falta de transparência sobre testes e incidentes; não prova que um agente seja inseguro, mas limita a capacidade de avaliar seu risco.
+
+2) Holistic Agent Leaderboard e Reliability Tracker, Princeton University
+- [CONFIRMADO] Em AssistantBench, que mede assistência web multietapas, o melhor resultado mostrado no painel foi 38,81% (o3 Medium com scaffold Browser-Use); GPT-5 Medium marcou 35,23%. Em Online Mind2Web, GPT-5 Medium marcou 42,3% e Claude Sonnet 4 marcou 40,0% [23].
+- [CONFIRMADO] O Reliability Tracker avalia 15 agentes em 12 métricas e conclui que ganhos recentes de capacidade trouxeram apenas pequenas melhorias de confiabilidade [23].
+- Cautela: [CONFIRMADO] esses números medem combinação de modelo, scaffold e benchmark, não o ChatGPT Work, Cowork ou Manus na interface comercial. Servem para mostrar a ordem de grandeza e a necessidade de revisão, não para ranquear os três produtos.
+
+3) Agentic Browsers and the Same-Origin Policy, University of Washington, 2026
+- [CONFIRMADO] Pesquisadores demonstraram ataque de roubo de dados entre origens no ChatGPT Atlas em Agent Mode e encontraram pré-condições semelhantes no Claude for Chrome, caso uma injeção de prompt seja bem-sucedida [24].
+- Erro típico: texto malicioso numa página é interpretado como instrução, e o agente pode copiar conteúdo sensível de outra origem para o atacante [24].
+- Cautela: o teste foi em Atlas e Claude for Chrome no início de 2026; não equivale diretamente a Work ou Cowork atuais, mas demonstra o risco arquitetural dos agentes de navegador.
+
+4) Benchmarking large language model-based agent systems for clinical decision tasks, npj Digital Medicine, 2026
+- [CONFIRMADO] O estudo avaliou Manus e OpenManus em tarefas clínicas. Os agentes chegaram a 60,3% e 28,0% em duas variantes do AgentClinic, 30,3% no MedAgentsBench e 8,6% no HLE textual; a vantagem sobre LLMs-base foi pequena (0,5 a 8,9 pontos percentuais) e não significativa [25].
+- [CONFIRMADO] O custo foi superior a 10 vezes mais tokens e mais que o dobro da latência; 89,9% das alucinações foram filtradas por salvaguardas internas, mas alucinações continuaram frequentes [25].
+- Cautela: é domínio médico e não deve ser generalizado automaticamente para tarefas de escritório.
+
+Síntese:
+[SUGESTÃO] O curso deve ensinar que “terminou” não significa “está correto”. A revisão mínima deve checar: objetivo atendido, fontes, números, estado real de arquivos/contas, ações irreversíveis e presença de instruções suspeitas em conteúdo externo.
+
+6. INTERFACE EM PORTUGUÊS (tabela: elemento | nome pt-BR | nome en | origem)
+
+| elemento | nome pt-BR | nome en | origem |
+|---|---|---|---|
+| Seletor do ChatGPT | Chat / Work (os rótulos aparecem assim na instrução oficial; o texto corrido traduz como Conversa/Trabalho) | Chat / Work | ajuda pt-BR [2] |
+| Experiência agêntica do ChatGPT | Trabalho ou ChatGPT Work | ChatGPT Work | ajuda pt-BR [1][2] |
+| Acompanhar execução | acompanhar o progresso | follow progress | ajuda pt-BR [2] |
+| Intervir | responder a perguntas / mudar a direção | answer questions / change direction | ajuda pt-BR [2] |
+| Autorizar ação | aprovar ações importantes; Permitir / Permitir uma vez / Negar | approve important actions; Allow / Allow once / Deny | ajuda pt-BR [2][40] |
+| Controle do navegador Work | assumir o controle do navegador na nuvem | take control of the cloud browser | ajuda pt-BR [3] |
+| Permissão de site no Work | Sempre perguntar / Aprovar automaticamente / Sempre permitir | Always ask / Auto-approve / Always allow | ajuda pt-BR [3] |
+| Seletor do Claude | Chat / Cowork; na nova experiência o seletor pode não aparecer | Chat / Cowork | ajuda pt-BR [10] |
+| Aprovação do Claude | Aprovar manualmente (Manual) | Manually approve (Manual) | ajuda pt-BR [10] |
+| Aprovação do Claude | Aprovar automaticamente (Auto) | Automatically approve (Auto) | ajuda pt-BR [10] |
+| Aprovação do Claude | Pular todas as aprovações (Pular/Skip); pode não aparecer na nova experiência | Skip all approvals (Skip) | ajuda pt-BR [10] |
+| Seletor do Manus | Modo Chat | Chat Mode | ajuda pt-BR [16] |
+| Seletor do Manus | Modo Agent (a ajuda mantém “Agent” em inglês) | Agent Mode | ajuda pt-BR [16] |
+| Intervenção no navegador Manus | assumir o controle | take over | ajuda pt-BR [18] |
+| Arquivos locais Manus | Meu Computador | My Computer | ajuda pt-BR [17] |
+
+[CONFIRMADO] Existe uma Central de Ajuda oficial do Manus em pt-BR, com artigos localizados [43].
+[VERIFICAR] NÃO ENCONTRADO documento oficial que garanta que toda a interface do aplicativo Manus esteja traduzida para português. A ajuda pt-BR mistura termos traduzidos (“Meu Computador”, “assumir o controle”) e termos mantidos em inglês (“Agent”, “Chat Mode” em alguns trechos). Antes de gravar tela ou publicar captura, conferir a conta real usada na produção.
+
+7. MATERIAIS EM PORTUGUÊS PARA OS EXERCÍCIOS
+
+Todos os cinco links abaixo foram testados em 18/10/2026. O arquivo recebido começou com “%PDF” e a paginação foi conferida localmente.
+
+1) Radar Tecnológico: Inteligência Artificial Generativa
+- Órgão: Autoridade Nacional de Proteção de Dados (ANPD).
+- Link direto: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf/@@download/file
+- Páginas: 37.
+- Por que serve: reúne conceitos, ciclo de vida, riscos à proteção de dados e medidas de governança; permite pedir resumo, mapa de riscos, glossário e checklist com referência de página [30].
+
+2) Guia de uso de inteligência artificial generativa no Tribunal de Contas da União (TCU)
+- Órgão: Tribunal de Contas da União.
+- Link direto: https://portal.tcu.gov.br/data/files/42/F7/91/4B/B59019105E366F09E18818A8/Guia%20de%20uso%20de%20IA%20generativa%20no%20TCU.pdf
+- Páginas: 7.
+- Por que serve: é curto, normativo e concreto; ideal para exercício gratuito de extração de regras e criação de checklist sem gastar muitos créditos [31].
+
+3) Guia de Uso Responsável de Inteligência Artificial
+- Órgão: Controladoria-Geral da União (CGU).
+- Link direto: https://basedeconhecimento.cgu.gov.br/bitstreams/b5d18ee1-5d85-492c-ab72-43b1f84ccfe1/download
+- Páginas: 12.
+- Por que serve: apresenta princípios e restrições institucionais; permite transformar texto normativo em procedimento de uso responsável [32].
+
+4) IA Generativa no Serviço Público
+- Órgãos: Secretaria de Governo Digital/Ministério da Gestão e da Inovação, Serpro e parceiros do Núcleo de IA do Governo.
+- Link direto testado: https://bibliotecadigital.acervo.nic.br/bitstreams/1ac87dca-1703-4180-95de-eefd5c520cff/download
+- Página oficial de contexto: https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/inteligencia-artificial-1/publicacoes/guia-ia-generativa
+- Páginas: 55.
+- Por que serve: material didático em linguagem acessível, com princípios, riscos, boas práticas e referências; bom para delegar produção de resumo executivo e matriz “faça/não faça” [33][34].
+
+5) Guia de uso ético de inteligência artificial em pesquisa com seres humanos
+- Órgão: Ministério da Saúde / Instância Nacional de Ética em Pesquisa (Inaep).
+- Link direto: https://www.gov.br/saude/pt-br/composicao/orgaos-colegiados/inaep/publicacoes/guia-de-uso-etico-de-inteligencia-artificial-em-pesquisa-com-seres-humanos.pdf/@@download/file
+- Páginas: 41.
+- Por que serve: traz um domínio de alto impacto para o aluno identificar limites, dados sensíveis, supervisão humana e critérios éticos, sem depender de conteúdo em inglês [35].
+
+8. IDEIAS DE EXERCÍCIO (todas [SUGESTÃO]; feitas pelo aluno sozinho; para cada uma: ferramenta, plano exigido, material em português, passo a passo e o resultado que comprova que deu certo)
+
+[SUGESTÃO] Exercício 1 — Delegação gratuita com verificação por página
+- Ferramenta: Manus, Agent Mode, Manus 2.0 Lite.
+- Plano exigido: Free.
+- Material: Guia do TCU (7 páginas) [31].
+- Passo a passo: (1) anexar o PDF; (2) pedir “crie uma tabela com regra, risco evitado, ação recomendada e página; não use fontes externas”; (3) acompanhar o plano; (4) se o agente sair do escopo, redirecionar; (5) conferir manualmente três linhas no PDF; (6) pedir correção das divergências.
+- Resultado que comprova sucesso: tabela final com pelo menos oito regras, página válida em todas as linhas e zero divergência nas três linhas amostradas.
+
+[SUGESTÃO] Exercício 2 — Produção de entregável no Work
+- Ferramenta: ChatGPT Work.
+- Plano exigido: Plus ou superior.
+- Material: Radar Tecnológico da ANPD [30].
+- Passo a passo: (1) anexar o PDF e definir público/resultado; (2) pedir um memorando de uma página com cinco riscos e cinco controles; (3) exigir citação de página e uma seção “o documento não afirma”; (4) acompanhar e responder a dúvidas; (5) revisar páginas e pedir uma rodada de correção.
+- Resultado que comprova sucesso: memorando salvo, com todas as dez afirmações rastreáveis a páginas reais e nenhum dado externo apresentado como se viesse do PDF.
+
+[SUGESTÃO] Exercício 3 — Cowork com pasta de trabalho isolada
+- Ferramenta: Claude Cowork no aplicativo desktop, modo Manual.
+- Plano exigido: Pro ou superior.
+- Material: Guia da CGU [32] e uma pasta vazia criada só para o exercício.
+- Passo a passo: (1) colocar o PDF na pasta; (2) autorizar somente essa pasta; (3) pedir criação de “checklist.txt” e “resumo.txt”; (4) revisar cada ação no modo Manual; (5) comparar os arquivos com o PDF; (6) negar qualquer pedido de acesso fora da pasta.
+- Resultado que comprova sucesso: os dois arquivos existem na pasta correta, não houve acesso fora dela e cinco itens amostrados correspondem ao texto-fonte.
+
+[SUGESTÃO] Exercício 4 — Teste de limite e retomada
+- Ferramenta: Manus Agent Mode Free ou ChatGPT Work Plus.
+- Plano exigido: Free no Manus; Plus no ChatGPT.
+- Material: IA Generativa no Serviço Público [33][34].
+- Passo a passo: (1) pedir resumo, matriz de riscos e roteiro de revisão numa única tarefa; (2) interromper após o primeiro rascunho; (3) apontar um critério ausente; (4) mandar retomar sem reiniciar tudo; (5) registrar o que mudou; (6) revisar o entregável final.
+- Resultado que comprova sucesso: o agente incorpora a correção, preserva as partes válidas e entrega três artefatos coerentes com o PDF.
+
+[SUGESTÃO] Exercício 5 — Caça à injeção de prompt sem executar ações externas
+- Ferramenta: qualquer uma das três experiências de agente; usar modo de aprovação mais restritivo.
+- Plano exigido: Manus Free, Claude Pro ou ChatGPT Plus.
+- Material: notícia oficial do STJ [29] e Guia do TCU [31].
+- Passo a passo: (1) fornecer apenas os textos; (2) pedir identificação de instruções dirigidas à IA dentro do conteúdo; (3) pedir classificação em dado legítimo, instrução do usuário ou possível injeção; (4) proibir mensagens, compras, login e alteração externa; (5) revisar justificativas.
+- Resultado que comprova sucesso: a instrução oculta é tratada como conteúdo não confiável, não como ordem; o agente produz relatório e não executa ação externa.
+
+9. MATERIAIS PARA BAIXAR
+
+[BAIXAR] ChatGPT Agent System Card. OpenAI, 17/07/2025. PDF, inglês, 42 páginas. Utilidade: riscos, avaliações e salvaguardas do agente de 2025. Link direto testado: https://cdn.openai.com/pdf/6bcccca6-3b64-43cb-a66e-4647073142d7/chatgpt_agent_system_card_launch.pdf. Nome sugerido: openai-chatgpt-agent-system-card-2025.pdf [8].
+
+[BAIXAR] A Practical Guide to Building Agents. OpenAI, 2025. PDF, inglês, 34 páginas. Utilidade: conceitos de agente, ferramentas, instruções, orquestração e guardrails. Link direto testado: https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf. Nome sugerido: openai-practical-guide-building-agents.pdf [7].
+
+[BAIXAR] Claude Opus 4.6 System Card. Anthropic, 05/02/2026. PDF, inglês, 213 páginas. Utilidade: avaliações de injeção em navegador/uso de computador relacionadas ao Cowork. Link direto testado: https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf. Nome sugerido: anthropic-claude-opus-4-6-system-card.pdf [14].
+
+[BAIXAR] The 2025 AI Agent Index. Staufer et al., FAccT 2026. PDF, inglês, 41 páginas. Utilidade: comparação independente de transparência e segurança de 30 agentes. Link direto: https://aiagentindex.mit.edu/data/2025-AI-Agent-Index.pdf. Nome sugerido: 2025-ai-agent-index-facct-2026.pdf [22].
+
+[BAIXAR] Agentic Browsers and the Same-Origin Policy. Roesner e Kohlbrenner, 2026. PDF, inglês. Utilidade: demonstração independente do risco de injeção e vazamento entre origens. Página com artigo e PDF: https://agent-security.cs.washington.edu/agentic_browsers_sop.html. Nome sugerido: agentic-browsers-same-origin-policy-2026.pdf [24].
+
+[BAIXAR] Radar Tecnológico: Inteligência Artificial Generativa. ANPD, 2024/2025. PDF, pt-BR, 37 páginas. Utilidade: exercício sobre privacidade, riscos e governança. Link direto testado: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf/@@download/file. Nome sugerido: anpd-radar-ia-generativa.pdf [30].
+
+[BAIXAR] Guia de uso de inteligência artificial generativa no TCU. TCU, 11/07/2024. PDF, pt-BR, 7 páginas. Utilidade: exercício curto de regras e checklist. Link direto testado: https://portal.tcu.gov.br/data/files/42/F7/91/4B/B59019105E366F09E18818A8/Guia%20de%20uso%20de%20IA%20generativa%20no%20TCU.pdf. Nome sugerido: tcu-guia-uso-ia-generativa.pdf [31].
+
+[BAIXAR] Guia de Uso Responsável de Inteligência Artificial. CGU, 2025. PDF, pt-BR, 12 páginas. Utilidade: exercício de transformação de norma em procedimento. Link direto testado: https://basedeconhecimento.cgu.gov.br/bitstreams/b5d18ee1-5d85-492c-ab72-43b1f84ccfe1/download. Nome sugerido: cgu-guia-uso-responsavel-ia.pdf [32].
+
+[BAIXAR] IA Generativa no Serviço Público. SGD/Serpro e parceiros, 2025. PDF, pt-BR, 55 páginas. Utilidade: resumo, matriz de risco e boas práticas. Link direto testado: https://bibliotecadigital.acervo.nic.br/bitstreams/1ac87dca-1703-4180-95de-eefd5c520cff/download. Nome sugerido: governo-ia-generativa-servico-publico.pdf [33][34].
+
+[BAIXAR] Guia de uso ético de inteligência artificial em pesquisa com seres humanos. Ministério da Saúde/Inaep, 2026. PDF, pt-BR, 41 páginas. Utilidade: limites e supervisão em domínio de alto impacto. Link direto testado: https://www.gov.br/saude/pt-br/composicao/orgaos-colegiados/inaep/publicacoes/guia-de-uso-etico-de-inteligencia-artificial-em-pesquisa-com-seres-humanos.pdf/@@download/file. Nome sugerido: saude-guia-uso-etico-ia-pesquisa.pdf [35].
+
+Observação: nenhum item acima foi marcado como BAIXADO, porque esta seção é a lista de transferência da equipe. Todos os links de PDF usados nos cinco materiais brasileiros e nos três PDFs principais de fabricantes foram, porém, abertos e validados como “%PDF” durante a pesquisa.
+
+10. PÁGINAS PARA SALVAR
+
+1) Título: Agente do ChatGPT
+URL: https://help.openai.com/pt-br/articles/11752874-chatgpt-agent
+Trecho que importa: “O agente do ChatGPT não está mais disponível. Use o ChatGPT Trabalho...”
+Prioridade: alta
+Nome sugerido: openai-agente-chatgpt-descontinuado-ptbr.pdf [1]
+
+2) Título: ChatGPT Trabalho e Codex
+URL: https://help.openai.com/pt-br/articles/20001275
+Trecho que importa: diferença entre Chat/Work/Codex, planos, arquivos locais, acompanhamento e aprovação.
+Prioridade: alta
+Nome sugerido: openai-chatgpt-work-codex-ptbr.pdf [2]
+
+3) Título: Como usar o navegador na nuvem no ChatGPT
+URL: https://help.openai.com/pt-br/articles/20001280-using-cloud-browser-in-chatgpt
+Trecho que importa: planos elegíveis, confirmações, tomada de controle e permissões de site.
+Prioridade: alta
+Nome sugerido: openai-work-navegador-nuvem-ptbr.pdf [3]
+
+4) Título: O que é o ChatGPT Plus?
+URL: https://help.openai.com/pt-br/articles/6950777
+Trecho que importa: preço de US$ 20/mês e limites variáveis.
+Prioridade: média
+Nome sugerido: openai-chatgpt-plus-preco-ptbr.pdf [4]
+
+5) Título: Comece com Claude Cowork
+URL: https://support.claude.com/pt/articles/13345190-comece-com-claude-cowork
+Trecho que importa: planos pagos, acesso local e modos Manual/Auto/Pular.
+Prioridade: alta
+Nome sugerido: anthropic-claude-cowork-inicio-pt.pdf [10]
+
+6) Título: Use Claude Cowork safely
+URL: https://support.claude.com/en/articles/13364135-use-claude-cowork-safely
+Trecho que importa: injeção de prompt, pasta dedicada, navegador, computador sem sandbox e supervisão.
+Prioridade: alta
+Nome sugerido: anthropic-cowork-seguranca-en.pdf [13]
+
+7) Título: What is the current membership pricing for Manus?
+URL: https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus
+Trecho que importa: Free/Pro, modelos, créditos, concorrência e automações.
+Prioridade: alta
+Nome sugerido: manus-planos-precos-en.pdf [15]
+
+8) Título: Quais são as diferenças entre o modo Chat e o modo Agent?
+URL: https://help.manus.im/pt-BR/articles/11711128-quais-sao-as-diferencas-entre-o-modo-chat-e-o-modo-agent
+Trecho que importa: função de cada modo, consumo de créditos e acesso Free/Pro.
+Prioridade: alta
+Nome sugerido: manus-chat-agent-modos-ptbr.pdf [16]
+
+9) Título: Como posso assumir o controle do navegador ou do VS Code do Manus?
+URL: https://help.manus.im/pt-BR/articles/11711218-como-posso-assumir-o-controle-do-navegador-ou-do-vs-code-do-manus
+Trecho que importa: significado de “assumir o controle” e intervenção manual.
+Prioridade: média
+Nome sugerido: manus-assumir-controle-ptbr.pdf [18]
+
+10) Título: O que o recurso “Meu Computador” é capaz de fazer?
+URL: https://help.manus.im/pt-BR/articles/14178443-o-que-o-recurso-meu-computador-e-capaz-de-fazer
+Trecho que importa: arquivos locais, comandos, pastas autorizadas e confirmações.
+Prioridade: alta
+Nome sugerido: manus-meu-computador-ptbr.pdf [17]
+
+11) Título: Manus Trust Center
+URL: https://trust.manus.im/
+Trecho que importa: controles, certificações e ausência de métricas públicas equivalentes a system card.
+Prioridade: média
+Nome sugerido: manus-trust-center.pdf [19]
+
+12) Título: AI Agent Reliability Tracker
+URL: https://hal.cs.princeton.edu/reliability/
+Trecho que importa: métricas independentes de precisão, consistência, previsibilidade, robustez e segurança.
+Prioridade: média
+Nome sugerido: princeton-hal-agent-reliability.pdf [23]
+
+13) Título: Agentic Browsers and the Same-Origin Policy
+URL: https://agent-security.cs.washington.edu/agentic_browsers_sop.html
+Trecho que importa: ataque demonstrado, produtos testados, divulgação responsável e recomendações.
+Prioridade: alta
+Nome sugerido: uw-agentic-browser-security.pdf [24]
+
+11. LACUNAS E PONTOS A VERIFICAR
+
+1) [VERIFICAR] A OpenAI não publica quantidade fixa de tarefas do Work no Plus; a conta mostra franquia dinâmica. Confirmar na conta usada para gravar o curso imediatamente antes da produção [5].
+2) [VERIFICAR] Não foi encontrado preço oficial público e estável em reais para Plus, Claude Pro ou Manus Pro. Registrar o checkout brasileiro no dia da gravação sem prometer conversão fixa [4][11][15].
+3) [VERIFICAR] A documentação do Manus não esclarece de forma inequívoca se “Meu Computador” está incluído para toda conta Free; testar com uma conta gratuita nova [17].
+4) [VERIFICAR] O ChatGPT Work estava em rollout em 18/10/2026; uma conta elegível pode ainda não exibir a opção [2].
+5) [VERIFICAR] O Claude está unificando Chat e Cowork; algumas contas não mostram o seletor e só exibem Auto/Manual. Capturas podem variar [10].
+6) [VERIFICAR] Não foi encontrado system card específico do ChatGPT Work, do Claude Cowork ou do Manus Agent Mode; voltar a pesquisar antes da publicação do curso [13][19][42].
+7) [VERIFICAR] A existência da Central de Ajuda pt-BR do Manus não prova tradução integral da interface; testar web e desktop no Brasil [43].
+8) [VERIFICAR] Resultados dos casos CAIXA, Inter e Banlek são auto-relatados em páginas de fornecedores; não foram encontradas auditorias independentes dos ganhos [26][27][28].
+9) [VERIFICAR] Benchmarks acadêmicos medem versões/modelos/scaffolds específicos e envelhecem rapidamente; nunca apresentar um número como taxa universal de acerto do produto [23][25].
+10) [VERIFICAR] A página antiga do agente do ChatGPT conserva instruções e limites históricos abaixo do aviso de descontinuação. Ao salvar a página, destacar que essas seções não descrevem disponibilidade atual [1].
+
+12. FONTES CONSULTADAS (lista numerada)
+
+[1] OpenAI. “Agente do ChatGPT”. Central de Ajuda, página oficial pt-BR, atualizada em outubro de 2026 (indicador relativo na página). https://help.openai.com/pt-br/articles/11752874-chatgpt-agent. Acesso em 18/10/2026.
+
+[2] OpenAI. “ChatGPT Trabalho e Codex”. Central de Ajuda, página oficial pt-BR, atualizada em 18/10/2026 (indicador de 22 horas no acesso). https://help.openai.com/pt-br/articles/20001275. Acesso em 18/10/2026.
+
+[3] OpenAI. “Como usar o navegador na nuvem no ChatGPT”. Central de Ajuda, página oficial pt-BR, atualizada aproximadamente em 18/09/2026. https://help.openai.com/pt-br/articles/20001280-using-cloud-browser-in-chatgpt. Acesso em 18/10/2026.
+
+[4] OpenAI. “O que é o ChatGPT Plus?”. Central de Ajuda, página oficial pt-BR, atualizada em 18/10/2026. https://help.openai.com/pt-br/articles/6950777. Acesso em 18/10/2026.
+
+[5] OpenAI. “Como gerenciar o uso do GPT-6 Astra no Work e no Codex” e “Utilizando créditos para uso flexível no ChatGPT”. Central de Ajuda, páginas oficiais pt-BR, atualizadas em 18/10/2026. https://help.openai.com/pt-br/articles/20001516-managing-usage-with-gpt-6-astra-in-work-and-codex e https://help.openai.com/pt-br/articles/12642688-using-credits-for-flexible-usage-in-chatgpt-freegopluspro. Acesso em 18/10/2026.
+
+[6] OpenAI. “Agents”. OpenAI Cookbook, documentação oficial, conteúdo vigente em 18/10/2026. https://developers.openai.com/cookbook/topic/agents. Acesso em 18/10/2026.
+
+[7] OpenAI. A Practical Guide to Building Agents. Guia oficial em PDF, 2025, 34 p. https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf. Acesso e validação do PDF em 18/10/2026.
+
+[8] OpenAI. ChatGPT Agent System Card. System card oficial, 17/07/2025, 42 p. https://cdn.openai.com/pdf/6bcccca6-3b64-43cb-a66e-4647073142d7/chatgpt_agent_system_card_launch.pdf. Acesso e validação do PDF em 18/10/2026.
+
+[9] OpenAI. “ChatGPT — Notas de versão”, entrada “Apresentamos o ChatGPT Work”. Notas de versão oficiais pt-BR, 09/07/2026. https://help.openai.com/pt-br/articles/6825453-chatgpt-notas-de-vers%C3%83%C2%A3o. Acesso em 18/10/2026.
+
+[10] Anthropic. “Comece com Claude Cowork”. Central de Ajuda oficial em português, atualizada em 15/10/2026 (indicador relativo). https://support.claude.com/pt/articles/13345190-comece-com-claude-cowork. Acesso em 18/10/2026.
+
+[11] Anthropic. “Pricing”. Página oficial de preços, sem data visível. https://www.anthropic.com/pricing?subjects=claude&type=product. Acesso em 18/10/2026.
+
+[12] Anthropic. “What is the Pro plan?” e “How do usage and length limits work?”. Central de Ajuda oficial, atualizadas em outubro de 2026. https://support.claude.com/en/articles/8325606-what-is-the-pro-plan e https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work. Acesso em 18/10/2026.
+
+[13] Anthropic. “Use Claude Cowork safely”. Central de Ajuda oficial, atualizada em outubro de 2026. https://support.claude.com/en/articles/13364135-use-claude-cowork-safely. Acesso em 18/10/2026.
+
+[14] Anthropic. Claude Opus 4.6 System Card. System card oficial, 05/02/2026, 213 p. https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf. Acesso e validação do PDF em 18/10/2026.
+
+[15] Manus. “What is the current membership pricing for Manus?”. Central de Ajuda oficial, versão atualizada em outubro de 2026. https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus. Acesso em 18/10/2026.
+
+[16] Manus. “Quais são as diferenças entre o modo Chat e o modo Agent?”. Central de Ajuda oficial pt-BR, atualizada em outubro de 2026. https://help.manus.im/pt-BR/articles/11711128-quais-sao-as-diferencas-entre-o-modo-chat-e-o-modo-agent. Acesso em 18/10/2026.
+
+[17] Manus. “O que o recurso ‘Meu Computador’ é capaz de fazer?”. Central de Ajuda oficial pt-BR, 24/03/2026. https://help.manus.im/pt-BR/articles/14178443-o-que-o-recurso-meu-computador-e-capaz-de-fazer. Acesso em 18/10/2026.
+
+[18] Manus. “Como posso assumir o controle do navegador ou do VS Code do Manus?”. Central de Ajuda oficial pt-BR, 17/03/2026. https://help.manus.im/pt-BR/articles/11711218-como-posso-assumir-o-controle-do-navegador-ou-do-vs-code-do-manus. Acesso em 18/10/2026.
+
+[19] Manus. “Manus Trust Center”. Trust center oficial, conteúdo vigente em 18/10/2026. https://trust.manus.im/. Acesso em 18/10/2026.
+
+[20] Manus. “How can Manus ensure the security of user information?” e “Is my data safe when using Manus Agents in Telegram?”. Central de Ajuda oficial, 08/12/2025 e 11/03/2026. https://help.manus.im/en/articles/11711838-how-can-manus-ensure-the-security-of-user-information e https://help.manus.im/en/articles/14033996-is-my-data-safe-when-using-manus-agents-in-telegram. Acesso em 18/10/2026.
+
+[21] Wang, Lei et al. “A Survey on Large Language Model based Autonomous Agents”. Frontiers of Computer Science, 18(6), art. 186345, 2024; arXiv rev. 02/03/2025. DOI 10.1007/s11704-024-40231-1. https://doi.org/10.48550/arXiv.2308.11432. Acesso em 18/10/2026.
+
+[22] Staufer, Lennart et al. The 2025 AI Agent Index: Documenting Technical and Safety Features of Deployed Agentic AI Systems. FAccT 2026, artigo acadêmico/índice independente, 41 p., junho de 2026. https://aiagentindex.mit.edu/data/2025-AI-Agent-Index.pdf. Acesso em 18/10/2026.
+
+[23] Princeton University, SAgE Team. “HAL: Holistic Agent Leaderboard” e “AI Agent Reliability Tracker”. Benchmark/painel acadêmico independente, dados vigentes em 18/10/2026. https://hal.cs.princeton.edu/ e https://hal.cs.princeton.edu/reliability/. Acesso em 18/10/2026.
+
+[24] Roesner, Franziska; Kohlbrenner, David. “Agentic Browsers and the Same-Origin Policy”. Agents in the Wild Workshop @ ICLR, 2026. Artigo e demonstração acadêmica independente. https://agent-security.cs.washington.edu/agentic_browsers_sop.html. Acesso em 18/10/2026.
+
+[25] “Benchmarking large language model-based agent systems for clinical decision tasks”. npj Digital Medicine, artigo científico independente, publicado em 2026. https://www.nature.com/articles/s41746-026-02443-6. Acesso em 18/10/2026.
+
+[26] AWS Brasil. “Como a Banlek transforma o atendimento com IA generativa e agentes usando o Amazon Bedrock”. Estudo de caso de fornecedor, junho de 2026 (publicado há quatro meses no acesso). https://aws.amazon.com/pt/blogs/aws-brasil/como-a-banlek-transforma-o-atendimento-com-ia-generativa-e-agentes-usando-o-amazon-bedrock/. Acesso em 18/10/2026.
+
+[27] IBM. “Da IA conversacional à orquestração de agentes — Inter escala operações de IA com o watsonx Orchestrate”. Estudo de caso de fornecedor, agosto de 2026 (publicado há dois meses no acesso). https://www.ibm.com/br-pt/case-studies/inter. Acesso em 18/10/2026.
+
+[28] Microsoft. “CAIXA ganha até 80% de produtividade com Microsoft 365 Copilot”. História de cliente/fornecedor, 20/07/2026. https://www.microsoft.com/pt-br/customers/story/26874-caixa-microsoft-365-copilot. Acesso em 18/10/2026.
+
+[29] Superior Tribunal de Justiça. “STJ adota providências após uso de comando oculto para influenciar IA”. Notícia oficial, 02/09/2026. https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/02092026-Sexta-Turma-identifica-comando-oculto-em-recurso-para-enganar-sistema-de-IA-e-determina-comunicacao-a-OAB.aspx. Acesso em 18/10/2026.
+
+[30] ANPD. Radar Tecnológico: Inteligência Artificial Generativa. Documento técnico oficial, criado em 29/11/2024, modificado em 23/01/2025, 37 p. https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/radar_tecnologico_ia_generativa_anpd.pdf/@@download/file. Acesso e validação do PDF em 18/10/2026.
+
+[31] Tribunal de Contas da União. Guia de uso de inteligência artificial generativa no Tribunal de Contas da União (TCU). Guia oficial, 11/07/2024, 7 p. https://portal.tcu.gov.br/data/files/42/F7/91/4B/B59019105E366F09E18818A8/Guia%20de%20uso%20de%20IA%20generativa%20no%20TCU.pdf. Acesso e validação do PDF em 18/10/2026.
+
+[32] Controladoria-Geral da União. Guia de Uso Responsável de Inteligência Artificial. Guia oficial, aprovado pela Portaria Normativa SE/CGU nº 193, de 06/01/2025, 12 p. https://basedeconhecimento.cgu.gov.br/bitstreams/b5d18ee1-5d85-492c-ab72-43b1f84ccfe1/download. Acesso e validação do PDF em 18/10/2026.
+
+[33] Governo Digital/SGD. “Guia IA Generativa”. Página oficial de contexto, 2025. https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/inteligencia-artificial-1/publicacoes/guia-ia-generativa. Acesso em 18/10/2026.
+
+[34] SGD, Serpro e parceiros do Núcleo de IA do Governo. IA Generativa no Serviço Público. Cartilha oficial, 2025, 55 p. https://bibliotecadigital.acervo.nic.br/bitstreams/1ac87dca-1703-4180-95de-eefd5c520cff/download. Acesso e validação do PDF em 18/10/2026.
+
+[35] Ministério da Saúde/Inaep. Guia de uso ético de inteligência artificial em pesquisa com seres humanos. Guia oficial, setembro de 2026 (publicado há três semanas no acesso), 41 p. https://www.gov.br/saude/pt-br/composicao/orgaos-colegiados/inaep/publicacoes/guia-de-uso-etico-de-inteligencia-artificial-em-pesquisa-com-seres-humanos.pdf/@@download/file. Acesso e validação do PDF em 18/10/2026.
+
+[36] OpenAI. “Using Ask ChatGPT sidebar and ChatGPT Agent on Atlas”. Central de Ajuda oficial, atualizada em outubro de 2026. https://help.openai.com/en/articles/12628199. Acesso em 18/10/2026.
+
+[37] Anthropic. “Get started with Claude”. Central de Ajuda oficial, atualizada em outubro de 2026. https://support.claude.com/en/articles/8114491-get-started-with-claude. Acesso em 18/10/2026.
+
+[38] Manus. “Are there any discounts or special offers?”. Central de Ajuda oficial, 05/12/2025. https://help.manus.im/en/articles/11813668-are-there-any-discounts-or-special-offers. Acesso em 18/10/2026.
+
+[39] Bajoria, Sparsh et al. “From Language Models to Agentic AI: A Survey of Autonomous, Action-Enabled, and Collaborative LLM Agents”. Cognitive Computation, v. 18, art. 103, publicado em 24/08/2026. DOI 10.1007/s12559-026-10619-1. https://link.springer.com/article/10.1007/s12559-026-10619-1. Acesso em 18/10/2026.
+
+[40] OpenAI. “Como gerenciar permissões de apps no ChatGPT”. Central de Ajuda oficial pt-BR, atualizada em 04/10/2026 (indicador relativo). https://help.openai.com/pt-br/articles/20001495-managing-app-permissions-in-chatgpt. Acesso em 18/10/2026.
+
+[41] OpenAI. “GPT-5.5 System Card”. System card oficial, 23/04/2026, atualizado em 24/04/2026. https://openai.com/index/gpt-5-5-system-card/. Acesso em 18/10/2026.
+
+[42] Anthropic. “Model system cards”. Catálogo oficial, atualizado continuamente; listagem vigente em 18/10/2026. https://www.anthropic.com/system-cards. Acesso em 18/10/2026.
+
+[43] Manus. “Central de Ajuda do Manus”. Central oficial pt-BR, conteúdo vigente em 18/10/2026. https://help.manus.im/pt-BR/. Acesso em 18/10/2026.
+
+- A situação do "modo agente" do ChatGPT está respondida com fonte oficial ou como NÃO ENCONTRADO? SIM
+- A tabela por plano tem fonte e data em cada célula? SIM
+- Cada system card pedido foi listado ou está como NÃO ENCONTRADO? SIM
+- Os casos brasileiros são reais ou estão como NÃO ENCONTRADO? SIM
+- As avaliações da seção 5b não vêm das fabricantes? SIM
+- Nenhum exercício depende de instrutor? SIM
+- A seção PÁGINAS PARA SALVAR tem um item por página, com URL e nome de arquivo? SIM
+- Todo [CONFIRMADO] está dito literalmente na fonte citada? SIM

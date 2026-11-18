@@ -1,0 +1,949 @@
+{
+  "numero_da_licao": 8,
+  "position_original": 7,
+  "title": "Quiz",
+  "lesson": {
+    "description": "Verifique o que você aprendeu sobre vibe coding com o Lovable: os modos Chat, Plan e Build, segurança e dados, login e RLS, publicação e os limites do método.",
+    "id": "m6wr8jPeAhp7S1Bn0kdr77UlUYX-2DdL",
+    "items": [
+      {
+        "answers": [
+          {
+            "id": "c87be79d-d127-41ef-ac5a-2603b0c9f0d0",
+            "title": "Verdadeiro",
+            "correct": false,
+            "feedback": "Não. A própria documentação do Lovable adverte que a varredura “não substitui uma revisão completa de segurança” — e a opção de bloquear publicações com achados críticos pode estar desativada. Ela é um alarme, não um atestado."
+          },
+          {
+            "id": "af08e7e4-fee2-4de9-aa44-e8fd330b46b4",
+            "title": "Falso",
+            "correct": true,
+            "feedback": "Correto. A varredura ajuda, mas a documentação adverte que ela não substitui uma revisão completa de segurança. O teste com duas contas continua obrigatório."
+          }
+        ],
+        "correct": "af08e7e4-fee2-4de9-aa44-e8fd330b46b4",
+        "corrects": [
+          "af08e7e4-fee2-4de9-aa44-e8fd330b46b4"
+        ],
+        "id": "4e5a3031-3dcc-4c7e-9cbd-1c2c8decde61",
+        "title": "A varredura automática de segurança do Lovable substitui uma revisão de segurança completa antes de publicar o aplicativo.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "580fe0e6-ea95-4154-870d-5fd8d5655620"
+      },
+      {
+        "answers": [
+          {
+            "id": "522db210-5b86-4280-9bfc-1de3ab0b680c",
+            "title": "No-code",
+            "correct": false,
+            "feedback": "Não. No-code pressupõe montar a aplicação com componentes visuais, arrastando blocos — e ela descreveu o aplicativo em linguagem natural."
+          },
+          {
+            "id": "e1c52752-564a-4942-b98d-00bc188ea391",
+            "title": "Vibe coding",
+            "correct": true,
+            "feedback": "Correto. O aplicativo foi criado a partir da descrição do resultado em linguagem natural, aceitando-se o código gerado pela IA."
+          },
+          {
+            "id": "498f9a2c-9cf9-43cc-bb51-222487540e77",
+            "title": "Low-code",
+            "correct": false,
+            "feedback": "Não. Low-code mistura montagem visual com algum código escrito à mão, o que não aconteceu."
+          },
+          {
+            "id": "2cd1445b-5954-485e-8b20-971d5d8a1e76",
+            "title": "Programação assistida por IA",
+            "correct": false,
+            "feedback": "Não. Na programação assistida, a pessoa continua lendo e compreendendo o código gerado — e ela não leu o código."
+          }
+        ],
+        "correct": "e1c52752-564a-4942-b98d-00bc188ea391",
+        "corrects": [
+          "e1c52752-564a-4942-b98d-00bc188ea391"
+        ],
+        "id": "7f74e9fd-5d0a-4cb8-b187-043bbc0d1b50",
+        "title": "Uma gerente de produto descreve em linguagem natural um aplicativo de controle de tarefas, deixa a IA gerar o código e ajusta o resultado com novos pedidos, sem ler o código. Que método é esse?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "cee3937d-dd99-4b30-879b-111eca39f135"
+      },
+      {
+        "answers": [
+          {
+            "id": "66fd13b9-a8f1-4f48-a181-2e282b220c21",
+            "title": "Recarregar a prévia para que o endereço público puxe a versão nova.",
+            "correct": false,
+            "feedback": "Não. A prévia é só o ensaio: recarregá-la não muda a versão pública."
+          },
+          {
+            "id": "69337741-fedf-4cef-ae79-61548ebdcabb",
+            "title": "Entrar de novo no endereço público para carregar a versão nova.",
+            "correct": false,
+            "feedback": "Não. Entrar de novo não publica nada: a versão pública continua sendo o retrato anterior."
+          },
+          {
+            "id": "11e97c59-0370-4a3b-98e7-f731f0874264",
+            "title": "Salvar o projeto para que o endereço público seja atualizado.",
+            "correct": false,
+            "feedback": "Não. O trabalho no editor não chega ao endereço público sem uma nova publicação."
+          },
+          {
+            "id": "14daa227-9616-473f-bc52-daf14faafb86",
+            "title": "Publicar as mudanças (Publish > Publish changes) para que o endereço público mostre a versão nova.",
+            "correct": true,
+            "feedback": "Correto. A versão pública não acompanha a prévia: depois de qualquer mudança, é preciso usar Publish > Publish changes."
+          }
+        ],
+        "correct": "14daa227-9616-473f-bc52-daf14faafb86",
+        "corrects": [
+          "14daa227-9616-473f-bc52-daf14faafb86"
+        ],
+        "id": "14b974a2-7cf6-4627-af87-b0deb0dfe5b8",
+        "title": "Você alterou o aplicativo e conferiu a mudança na prévia. Uma colega abre o endereço público, mas continua vendo a versão antiga. O que fazer para que ela veja a atualização?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "8f6af1b7-e5b0-4211-b769-0e63b568d992"
+      },
+      {
+        "answers": [
+          {
+            "id": "5b661a00-0d37-4753-b64e-8aa087eadabf",
+            "title": "Adicionar registros pelo painel do banco para que os usuários consigam entrar.",
+            "correct": false,
+            "feedback": "Não. O painel do banco gerencia dados, não a entrada dos usuários. Login é autenticação."
+          },
+          {
+            "id": "8921fb62-845f-47f0-bb66-21857d3c0428",
+            "title": "Ativar só o login social, para simplificar os testes.",
+            "correct": false,
+            "feedback": "Não. O curso especifica login por e-mail e senha; outras formas de entrada ampliam o escopo do aplicativo."
+          },
+          {
+            "id": "5a9afb1c-a7d5-4a51-a95b-42ab5c197f60",
+            "title": "Criar a tabela de tarefas antes de escolher a forma de login.",
+            "correct": false,
+            "feedback": "Não. A tabela faz parte dos dados do aplicativo, mas não define como os usuários entram."
+          },
+          {
+            "id": "63755979-2779-4536-9b62-93221cb889da",
+            "title": "Pedir explicitamente login por e-mail e senha no Lovable Cloud.",
+            "correct": true,
+            "feedback": "Correto. Especifica-se “e-mail e senha” porque, sem essa indicação, o Lovable pode gerar outras formas de entrada, o que amplia o escopo."
+          }
+        ],
+        "correct": "63755979-2779-4536-9b62-93221cb889da",
+        "corrects": [
+          "63755979-2779-4536-9b62-93221cb889da"
+        ],
+        "id": "5b62d2ab-4356-482f-a19f-f949219c2352",
+        "title": "Você vai acrescentar login a um aplicativo do Lovable. Qual configuração deixa o login claro e previsível, como recomenda o curso?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "f064531b-af38-4582-9142-f236484aa2f7"
+      },
+      {
+        "answers": [
+          {
+            "id": "cc6bcbc7-c9b9-4146-8237-3ea36ae04348",
+            "title": "Guardar senhas e chaves de API no servidor, fora do front-end e dos pedidos à IA.",
+            "correct": true,
+            "feedback": "Correto. Valores sensíveis ficam no servidor — no Lovable, em More > Cloud > Secrets — e nunca no front-end nem no texto do pedido."
+          },
+          {
+            "id": "46e7969c-0ab3-4121-8001-ee3ecfe066ff",
+            "title": "Deixar as senhas no código do front-end e confiar no login para proteger o acesso.",
+            "correct": false,
+            "feedback": "Não. Tudo o que está no front-end pode ser inspecionado com as ferramentas do navegador; o login não protege um segredo já exposto."
+          },
+          {
+            "id": "64ba434d-51be-4eed-ace1-339cca259150",
+            "title": "Incluir os segredos nos pedidos enquanto o aplicativo ainda é protótipo.",
+            "correct": false,
+            "feedback": "Não. Segredos nunca vão no pedido, em nenhuma fase: o que você escreve na conversa vai para os servidores da empresa."
+          },
+          {
+            "id": "4a2437f1-d3c6-4152-a81c-b589a0dc5eb5",
+            "title": "Colocar as chaves de API no front-end, desde que não apareçam na tela.",
+            "correct": false,
+            "feedback": "Não. Esconder da tela não protege: o que vai para o navegador pode ser inspecionado mesmo sem aparecer."
+          }
+        ],
+        "correct": "cc6bcbc7-c9b9-4146-8237-3ea36ae04348",
+        "corrects": [
+          "cc6bcbc7-c9b9-4146-8237-3ea36ae04348"
+        ],
+        "id": "b81011f7-b425-46bd-9608-bfff0bb903b3",
+        "title": "Você está revisando o protótipo de um aplicativo antes de publicá-lo. Qual prática protege as informações sensíveis?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "99f4ee69-ed73-46e1-89b5-bd2040782f3f"
+      },
+      {
+        "answers": [
+          {
+            "id": "368b4ead-ad14-4f9e-b45d-ca582fb24a1d",
+            "matchTitle": "Registra cada versão do código, para ver o que mudou e quando um problema apareceu",
+            "title": "History"
+          },
+          {
+            "id": "14674d8a-b07f-4a56-aeb2-9a60bba69ade",
+            "matchTitle": "Marca uma versão importante antes de uma mudança arriscada, como ponto seguro para voltar",
+            "title": "Bookmarks"
+          },
+          {
+            "id": "1470814e-bea8-4cc4-86e8-ed42b19f0e9a",
+            "matchTitle": "Volta o código a uma versão anterior, mas não recupera dados apagados do banco",
+            "title": "Revert"
+          },
+          {
+            "id": "b7de6d58-4812-4d77-b816-573558d3df41",
+            "matchTitle": "Retrato do projeto que a publicação coloca no endereço público",
+            "title": "Snapshot"
+          }
+        ],
+        "id": "12cbd106-ffac-4598-b27e-64e9b085b537",
+        "title": "Associe cada recurso de versões à função que ele cumpre na manutenção do aplicativo.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "82651dd9-c8a9-400f-999a-100bba326d95",
+        "feedbackCorrect": "Correto. History registra as versões, Bookmarks marcam pontos seguros, Revert volta o código (não os dados) e o snapshot é o retrato que a publicação coloca no ar.",
+        "feedbackIncorrect": "Não. Reveja: History registra as versões; Bookmarks marcam versões importantes; Revert volta o código, sem recuperar dados; o snapshot é o retrato criado pela publicação."
+      },
+      {
+        "answers": [
+          {
+            "id": "08fdbe3c-7503-4ed8-910d-a680d7451869",
+            "title": "Especificar, proteger, planejar, testar, publicar, iterar",
+            "correct": false,
+            "feedback": "Não. Planejar (o modo Plan) faz parte da construção, mas a etapa do ciclo é construir."
+          },
+          {
+            "id": "9206eadb-0d0f-48dc-826c-6c0f7b653ea9",
+            "title": "Especificar, proteger, construir, testar, publicar, iterar",
+            "correct": true,
+            "feedback": "Correto. Especifica-se com a ficha, verificam-se dados e segurança antes de construir, constrói-se em camadas, comprova-se o isolamento, publica-se após a varredura e itera-se com mudanças mínimas."
+          },
+          {
+            "id": "0a07ad04-4749-49c5-baa2-2d17a54092b8",
+            "title": "Especificar, construir, proteger, testar, publicar, iterar",
+            "correct": false,
+            "feedback": "Não. Dados e segurança são verificados antes de construir, não depois."
+          },
+          {
+            "id": "ae926adc-e675-4948-93cc-af60dc8d4e56",
+            "title": "Especificar, proteger, construir, publicar, testar, iterar",
+            "correct": false,
+            "feedback": "Não. O teste com duas contas vem antes da publicação: um aplicativo com falha de isolamento não é publicado."
+          }
+        ],
+        "correct": "9206eadb-0d0f-48dc-826c-6c0f7b653ea9",
+        "corrects": [
+          "9206eadb-0d0f-48dc-826c-6c0f7b653ea9"
+        ],
+        "id": "b847f99c-1014-4eb9-b175-6d7e8dd4e4cb",
+        "title": "Qual sequência apresenta, na ordem certa, as seis etapas do ciclo de vibe coding do curso?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "1e8062e6-4376-43fb-8ae7-9e2954427812"
+      },
+      {
+        "answers": [
+          {
+            "id": "e325298f-6683-4872-bff6-2d19aeb52105",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. Escrito na ficha, o “fora do escopo” vira limite para você e para a IA — e evita pedidos sem fim."
+          },
+          {
+            "id": "39ca29f9-b117-4100-97ce-b4bef7b35917",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Não. O “fora do escopo” deixa claro o que não será construído; sem ele, o aplicativo tende a crescer a cada pedido, gastando créditos."
+          }
+        ],
+        "correct": "e325298f-6683-4872-bff6-2d19aeb52105",
+        "corrects": [
+          "e325298f-6683-4872-bff6-2d19aeb52105"
+        ],
+        "id": "980f9a2a-43fc-422e-91d7-43c04260e17d",
+        "title": "Escrever na ficha de requisitos o que fica fora do escopo ajuda a evitar que o aplicativo cresça a cada pedido.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "891918a2-fe98-4a48-99c3-927e548c3fc1"
+      },
+      {
+        "answers": [
+          {
+            "id": "5e843bcc-d78d-4b7b-8132-9b91443a01bb",
+            "title": "As duas contas criam tarefas, mas só a primeira vê as tarefas salvas.",
+            "correct": false,
+            "feedback": "Não. A RLS vale igualmente para cada usuário autenticado; não privilegia uma conta."
+          },
+          {
+            "id": "d70124ef-e0f5-4491-b1a7-c6d2ee44eb38",
+            "title": "Cada conta perde o acesso às próprias tarefas ao recarregar a página.",
+            "correct": false,
+            "feedback": "Não. Isso indica que o aplicativo não está gravando no banco — problema de persistência, não de isolamento."
+          },
+          {
+            "id": "f85c0ef2-03db-4ddd-8453-f82fd206b0f2",
+            "title": "Cada conta vê apenas as tarefas criadas por ela mesma.",
+            "correct": true,
+            "feedback": "Correto. É o resultado esperado da RLS: cada usuário acessa apenas os próprios registros."
+          },
+          {
+            "id": "c55eff1a-b0fc-4aa9-be40-5b376ecc38d2",
+            "title": "Cada conta vê todas as tarefas do aplicativo depois de entrar.",
+            "correct": false,
+            "feedback": "Não. Isso é falha de isolamento: a RLS não está limitando o acesso por usuário. Não publique."
+          }
+        ],
+        "correct": "f85c0ef2-03db-4ddd-8453-f82fd206b0f2",
+        "corrects": [
+          "f85c0ef2-03db-4ddd-8453-f82fd206b0f2"
+        ],
+        "id": "e5bd2b0d-8bd6-446a-9f38-a57545bf5f9a",
+        "title": "Ao testar o aplicativo com duas contas depois de configurar as regras RLS, qual resultado mostra que o isolamento entre usuários está funcionando?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "77aca9b3-c0fe-4a95-8db7-c7e6ebccb253"
+      },
+      {
+        "answers": [
+          {
+            "id": "c5fad25d-0e79-429f-a921-dd08e6350851",
+            "title": "Acrescentar banco de dados e login na mesma hora, para o protótipo ficar mais completo.",
+            "correct": false,
+            "feedback": "Não. Cada camada é conferida antes da seguinte; pedir tudo junto encarece o pedido e dificulta encontrar o que deu errado."
+          },
+          {
+            "id": "b34497f7-ebc0-408f-85c5-43b4e6dd1f14",
+            "title": "Editar textos pela barra da prévia e dar o protótipo por encerrado.",
+            "correct": false,
+            "feedback": "Não. A barra da prévia é útil para textos, mas o protótipo ainda precisa ser conferido pelos critérios e no celular."
+          },
+          {
+            "id": "4f62c21b-1b98-4143-bd06-49f6a77f745a",
+            "title": "Conferi-lo pelos critérios da ficha, no computador e em Mobile view, e só então passar à camada seguinte.",
+            "correct": true,
+            "feedback": "Correto. Confere-se cada resultado antes do pedido seguinte; só depois vêm o banco e o login."
+          },
+          {
+            "id": "c0a5dbf6-2b92-4e74-99ee-a70daedfd378",
+            "title": "Mudar para o Chat e seguir discutindo ideias antes de olhar o protótipo.",
+            "correct": false,
+            "feedback": "Não. O Chat ajuda a esclarecer dúvidas, mas não substitui a conferência do protótipo que já existe."
+          }
+        ],
+        "correct": "4f62c21b-1b98-4143-bd06-49f6a77f745a",
+        "corrects": [
+          "4f62c21b-1b98-4143-bd06-49f6a77f745a"
+        ],
+        "id": "dfa671d1-3cb3-4660-b0b3-712aa1721d21",
+        "title": "Você gerou o primeiro protótipo da interface. Qual é o próximo passo, segundo a estratégia de camadas do curso?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "968187a3-ed14-4c34-980c-360f717741e1"
+      },
+      {
+        "answers": [
+          {
+            "id": "b117913c-5e77-4b8e-aaa3-f763fecd7821",
+            "title": "Estudantes que querem aprender sintaxe avançada de programação para software de computador",
+            "correct": false,
+            "feedback": "Não. O curso não ensina programação: parte da linguagem natural."
+          },
+          {
+            "id": "d443e13a-bed5-47cd-9be9-37974b3ca19e",
+            "title": "Administradores de TI que gerenciam redes e equipamentos de várias unidades",
+            "correct": false,
+            "feedback": "Não. Gerenciar redes e equipamentos não é o foco do curso, que trata de construir aplicativos web por descrição."
+          },
+          {
+            "id": "413ffa3c-3469-4e04-aeae-876300041b32",
+            "title": "Não programadores com ideias de produto, empreendedores e professores",
+            "correct": true,
+            "feedback": "Correto. É o público do curso, que exige apenas uso básico de um assistente de IA e nenhum conhecimento de programação."
+          },
+          {
+            "id": "4ae975a4-067b-497e-8cd6-a42c882064e4",
+            "title": "Engenheiros de software que querem trocar o navegador por ferramentas instaladas localmente",
+            "correct": false,
+            "feedback": "Não. O curso é para quem não programa, e o Lovable é usado justamente pelo navegador, sem instalação."
+          }
+        ],
+        "correct": "413ffa3c-3469-4e04-aeae-876300041b32",
+        "corrects": [
+          "413ffa3c-3469-4e04-aeae-876300041b32"
+        ],
+        "id": "003fb022-a931-4df5-bcde-5e39125df76b",
+        "title": "A quem se destina este curso de vibe coding com o Lovable?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "f9c5fde6-baab-4ddc-8acd-7990b741d8cd"
+      },
+      {
+        "answers": [
+          {
+            "id": "c7db3874-bad0-46dc-8f8e-b6ee8e9ddb7d",
+            "matchTitle": "Salão, onde o cliente vê e toca telas, botões e formulários",
+            "title": "Front-end"
+          },
+          {
+            "id": "e0d09a10-2b08-4be3-a1d7-d17217995ad2",
+            "matchTitle": "Estoque e administração, fora do alcance do cliente",
+            "title": "Back-end"
+          },
+          {
+            "id": "29c8a87b-a874-4b77-a837-283ee16ca90e",
+            "matchTitle": "Fichários, em que cada tabela é um fichário e cada linha uma ficha",
+            "title": "Banco de dados"
+          },
+          {
+            "id": "e993710c-f2db-4ecd-bff4-f9c175cbf3f8",
+            "matchTitle": "Catraca da entrada, que confere quem entra",
+            "title": "Autenticação"
+          }
+        ],
+        "id": "698cc8bb-c831-4071-be19-616d0a5d4d95",
+        "title": "Associe cada parte de um aplicativo web à parte da loja que ela representa na analogia do curso.",
+        "type": "MATCHING",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "bd86dcae-df74-4613-a246-aa03e38895a5",
+        "feedbackCorrect": "Correto. O front-end é o salão, o back-end é o estoque e a administração, o banco de dados são os fichários e a autenticação é a catraca.",
+        "feedbackIncorrect": "Não. Pergunte-se, para cada par: é o que o cliente vê (salão), o que fica nos fundos (estoque), o que guarda os registros (fichários) ou o que confere quem entra (catraca)?"
+      },
+      {
+        "answers": [
+          {
+            "id": "6473dca4-29c7-4803-9464-84d27a2bc0d3",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. O Chat conversa e esclarece sem alterar o código."
+          },
+          {
+            "id": "93643198-001b-476f-a32a-03d9c64e6676",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Não. O Chat é justamente o modo que conversa e esclarece sem alterar o código. Quem executa alterações é o Build."
+          }
+        ],
+        "correct": "6473dca4-29c7-4803-9464-84d27a2bc0d3",
+        "corrects": [
+          "6473dca4-29c7-4803-9464-84d27a2bc0d3"
+        ],
+        "id": "f9659694-db2b-4aac-84b9-512a0727627f",
+        "title": "No Lovable, o modo Chat serve para tirar dúvidas e esclarecer ideias sem alterar o aplicativo.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "43031698-d964-43a2-8bba-d9dc78d5f15e"
+      },
+      {
+        "answers": [
+          {
+            "id": "4030a7d8-67a0-450b-8ac1-c7a12f4cec6a",
+            "title": "Verdadeiro",
+            "correct": true,
+            "feedback": "Correto. Nesses casos — e também em decisões de alto impacto e grandes volumes — são necessárias revisão profissional, testes e governança."
+          },
+          {
+            "id": "0899dca2-b0c6-4750-bf8e-a643ee28a0a5",
+            "title": "Falso",
+            "correct": false,
+            "feedback": "Não. Estudos de 2026 associam o método a código difícil de compreender e a falhas de segurança quando os resultados são aceitos sem revisão. Em aplicativos de alto risco, são necessárias revisão profissional, testes e governança."
+          }
+        ],
+        "correct": "4030a7d8-67a0-450b-8ac1-c7a12f4cec6a",
+        "corrects": [
+          "4030a7d8-67a0-450b-8ac1-c7a12f4cec6a"
+        ],
+        "id": "ee593144-7ce4-4179-a687-338f60eac59a",
+        "title": "Usado isoladamente, vibe coding não basta para aplicativos que envolvem dinheiro, saúde, dados educacionais sensíveis ou exigências regulatórias.",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "0a3a0599-4bbd-459e-be2f-731309a523a2"
+      },
+      {
+        "answers": [
+          {
+            "id": "56c76069-f04f-4b7e-ad76-04bee78319f6",
+            "title": "créditos de construção"
+          },
+          {
+            "id": "ad0bdd56-3b24-4c7f-bdf1-8451404726c8",
+            "title": "build credits"
+          }
+        ],
+        "id": "ef795571-eb71-4f76-91f1-8d355a5cd7e2",
+        "title": "No Lovable, os __________ são consumidos cada vez que você pede à IA uma alteração no aplicativo.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "57735cd5-d596-4906-9a09-94e5786fa579",
+        "feedbackCorrect": "Correto. Os créditos de construção (build credits) são a unidade de cobrança de cada alteração feita pela IA; o custo varia conforme a alteração.",
+        "feedbackIncorrect": "Não. A resposta é “créditos de construção” (build credits): a unidade de cobrança de cada alteração feita pela IA. Cloud credits e AI credits são cotas mensais de outros recursos."
+      },
+      {
+        "answers": [
+          {
+            "id": "1332ae8f-a0e3-489e-9265-ea454f551bcb",
+            "title": "Porque define o que será criado, para quem, por quê e qual é a ação principal, antes do primeiro pedido.",
+            "correct": true,
+            "feedback": "Correto. A ficha responde às quatro perguntas recomendadas pelo Lovable e acrescenta dados, regra de acesso, fora do escopo e critérios de pronto."
+          },
+          {
+            "id": "8880fe59-3d6e-4ee1-9a86-3dec9bec1a1f",
+            "title": "Porque serve para testar o protótipo pronto nos dispositivos, antes de qualquer decisão.",
+            "correct": false,
+            "feedback": "Não. A conferência vem depois da construção; a ficha vem antes, para orientá-la."
+          },
+          {
+            "id": "9484ba30-6984-4615-aa46-fb781ca8d4fd",
+            "title": "Porque permite começar a construir já e definir o propósito do aplicativo depois de publicá-lo.",
+            "correct": false,
+            "feedback": "Não. A ficha existe justamente para definir o aplicativo antes da construção."
+          },
+          {
+            "id": "dea8108b-bc7b-4126-bada-83575ea72cf2",
+            "title": "Porque serve principalmente para escolher cores e fontes antes de definir usuários e ação principal.",
+            "correct": false,
+            "feedback": "Não. O visual é só um dos campos; o centro da ficha é o propósito, o público e a ação principal."
+          }
+        ],
+        "correct": "1332ae8f-a0e3-489e-9265-ea454f551bcb",
+        "corrects": [
+          "1332ae8f-a0e3-489e-9265-ea454f551bcb"
+        ],
+        "id": "91fb1690-4d52-4bea-9cae-06fcf4de6d5b",
+        "title": "Por que preencher a ficha de requisitos antes de construir é um bom primeiro passo?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "d3d5ac51-ec67-4007-aa65-599865a99628"
+      },
+      {
+        "answers": [
+          {
+            "id": "f7d4ff0c-1e5b-46a0-8df4-b8a1a035aedb",
+            "title": "publicação"
+          }
+        ],
+        "id": "ba3351a9-b5ad-490d-b39b-cf78a18a48a2",
+        "title": "No ciclo do curso, o aplicativo é especificado, protegido, construído e testado antes da __________, que o abre ao público.",
+        "type": "FILL_IN_THE_BLANK",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "globalBlockId": "f53fe784-2d3b-4d3c-b639-ea4a000ae8c4",
+        "feedbackCorrect": "Correto. A publicação vem depois do teste com duas contas e da leitura da varredura; em seguida, itera-se com mudanças mínimas.",
+        "feedbackIncorrect": "Não. A resposta é “publicação”: depois de especificar, proteger, construir e testar, publica-se — e então se itera."
+      },
+      {
+        "answers": [
+          {
+            "id": "d2455add-2191-4b85-a4ac-65363a0297de",
+            "title": "Usar nomes reais, desde que campos sensíveis como o CPF fiquem de fora.",
+            "correct": false,
+            "feedback": "Não. Nomes reais já são dados pessoais."
+          },
+          {
+            "id": "70879478-9655-4aa5-b641-f6d90dd2703f",
+            "title": "Usar registros reais de clientes, desde que o protótipo fique só com a equipe.",
+            "correct": false,
+            "feedback": "Não. Restringir o acesso à equipe não elimina os riscos de usar dados pessoais reais num protótipo."
+          },
+          {
+            "id": "44fdf11a-9096-4348-b69c-5d3d15ba1be6",
+            "title": "Usar dados pessoais no protótipo, desde que fiquem escondidos da tela.",
+            "correct": false,
+            "feedback": "Não. Esconder da tela não protege, e os dados continuam sendo reais."
+          },
+          {
+            "id": "736ab9e1-5b0e-4403-a576-5824545b37d2",
+            "title": "Usar somente nomes e dados pessoais fictícios no protótipo.",
+            "correct": true,
+            "feedback": "Correto. Somente dados fictícios: nenhum dado pessoal real entra no aplicativo nem no pedido à IA."
+          }
+        ],
+        "correct": "736ab9e1-5b0e-4403-a576-5824545b37d2",
+        "corrects": [
+          "736ab9e1-5b0e-4403-a576-5824545b37d2"
+        ],
+        "id": "f63e42c8-d18c-4189-a8b9-94f0a863e0ed",
+        "title": "Qual prática atende à regra de dados do curso, à luz da LGPD, ao criar um protótipo?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "e862abd4-734b-4c26-81f3-6d521069a949"
+      },
+      {
+        "answers": [
+          {
+            "id": "25b27d8d-0fb0-47e4-89e7-cea6dae3870d",
+            "title": "Confirmar o endereço, publicar e esperar o retorno dos usuários para descobrir problemas.",
+            "correct": false,
+            "feedback": "Não. Esperar os usuários encontrarem os problemas pula as verificações que existem para evitá-los."
+          },
+          {
+            "id": "a72df634-08f5-40e9-b191-4b453ae8ed47",
+            "title": "Marcar um Bookmark, revisar o History e se preparar para usar Revert se algo der errado.",
+            "correct": false,
+            "feedback": "Não. Esses recursos ajudam a voltar atrás, mas não verificam se o aplicativo está seguro antes de publicar."
+          },
+          {
+            "id": "786e5967-5115-4f05-8f47-1d00e5b5a3fb",
+            "title": "Ler a varredura de segurança, abrir o endereço público numa janela anônima e testar com as contas de teste.",
+            "correct": true,
+            "feedback": "Correto. A varredura vem antes de confirmar, a janela anônima simula um visitante sem login e as contas de teste confirmam o isolamento."
+          },
+          {
+            "id": "97cddf31-f124-4e31-8ce4-251c84814083",
+            "title": "Recarregar a prévia, salvar a versão e ver se o layout parece completo.",
+            "correct": false,
+            "feedback": "Não. A prévia não mostra a experiência pública nem verifica quem vê o quê."
+          }
+        ],
+        "correct": "786e5967-5115-4f05-8f47-1d00e5b5a3fb",
+        "corrects": [
+          "786e5967-5115-4f05-8f47-1d00e5b5a3fb"
+        ],
+        "id": "c47f6660-5e2d-4b32-a8a5-8a2d663aa85e",
+        "title": "Na hora de publicar, qual conjunto de ações verifica melhor se o aplicativo é seguro e funciona para quem vai usá-lo?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "b3c3c75a-a12c-48a0-afac-63ca5b852122"
+      },
+      {
+        "answers": [
+          {
+            "id": "30051057-71f9-4ee7-879f-62c0cc6f4d99",
+            "title": "Usar somente dados fictícios e deixar a análise de privacidade para depois da publicação.",
+            "correct": false,
+            "feedback": "Não. Os dados fictícios estão certos, mas a verificação de dados e segurança vem antes de construir, não depois de publicar."
+          },
+          {
+            "id": "8fe3d4fb-2ad2-458d-a3d3-af11bf65226e",
+            "title": "Usar anotações internas da equipe e confirmar que o aplicativo terá endereço público.",
+            "correct": false,
+            "feedback": "Não. O endereço público é questão de publicação; e anotações internas podem conter dados reais."
+          },
+          {
+            "id": "ab755e53-7302-4182-9898-21c316027af2",
+            "title": "Usar uma amostra de dados de clientes e confirmar que o aplicativo terá tela de login.",
+            "correct": false,
+            "feedback": "Não. O login não torna aceitável usar dados reais de clientes num protótipo."
+          },
+          {
+            "id": "05d13e5f-a3e7-4458-ae24-a11ef2ddb860",
+            "title": "Usar somente dados fictícios e conferir as regras de privacidade antes de construir.",
+            "correct": true,
+            "feedback": "Correto. É a etapa “proteger” do ciclo: dados e segurança são verificados antes do primeiro pedido."
+          }
+        ],
+        "correct": "05d13e5f-a3e7-4458-ae24-a11ef2ddb860",
+        "corrects": [
+          "05d13e5f-a3e7-4458-ae24-a11ef2ddb860"
+        ],
+        "id": "835964d3-7d58-494c-b52a-8046292462a6",
+        "title": "Antes de construir um aplicativo a partir de uma ideia, qual ação demonstra a prática correta de privacidade?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "031d516f-6872-4185-bf73-285a1e8e84d4"
+      },
+      {
+        "answers": [
+          {
+            "id": "64d1ce90-fe68-47b2-bd9c-53b037b3e845",
+            "title": "Criar aplicativos web descrevendo em linguagem natural o resultado desejado, aceitando em grande parte o código gerado pela IA.",
+            "correct": true,
+            "feedback": "Correto. É a definição do curso: descrição em linguagem natural e aceitação, em grande parte, do código gerado."
+          },
+          {
+            "id": "97f86e66-cdd5-433e-8c81-e9e8769f3ad7",
+            "title": "Criar aplicativos web combinando pedidos em linguagem natural com código obrigatoriamente escrito à mão.",
+            "correct": false,
+            "feedback": "Não. A linguagem natural está certa, mas escrever código à mão não é exigência do vibe coding."
+          },
+          {
+            "id": "09529b46-1ba0-4c42-9cf6-d9ab8c3867d1",
+            "title": "Criar aplicativos web escolhendo configurações de servidor antes da publicação.",
+            "correct": false,
+            "feedback": "Não. Configurar servidores não define o método; o que o define é construir a partir de descrições."
+          },
+          {
+            "id": "ef501334-62ff-4b59-9cf4-e1a3052e6621",
+            "title": "Acelerar aplicativos web reescrevendo o código à mão numa linguagem de programação.",
+            "correct": false,
+            "feedback": "Não. Reescrever código à mão é o oposto do vibe coding, que parte da linguagem natural."
+          }
+        ],
+        "correct": "64d1ce90-fe68-47b2-bd9c-53b037b3e845",
+        "corrects": [
+          "64d1ce90-fe68-47b2-bd9c-53b037b3e845"
+        ],
+        "id": "60437ca9-6ffa-4c66-8c67-34526e44927b",
+        "title": "Qual afirmação descreve melhor o vibe coding?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "3f4c0d3b-06e2-4fb7-91d2-98e4be877e6f"
+      },
+      {
+        "answers": [
+          {
+            "id": "52ee8035-d5c6-4861-a63f-7cc1190378fc",
+            "title": "Build",
+            "correct": true,
+            "feedback": "Correto. O Build executa as alterações — por exemplo, aplica o plano aprovado no Plan."
+          },
+          {
+            "id": "cd051155-d998-4b4d-8a6e-0effe2c41e98",
+            "title": "Caixa de prompt",
+            "correct": false,
+            "feedback": "Não. A caixa de prompt é onde você escreve os pedidos; não é um modo de trabalho."
+          },
+          {
+            "id": "ca68416c-e979-4b14-987b-6ed29f7285b5",
+            "title": "Plan",
+            "correct": false,
+            "feedback": "Não. O Plan propõe e aguarda aprovação; não executa as alterações."
+          },
+          {
+            "id": "513b8ac0-ca76-444d-aa7c-95ab7da68fda",
+            "title": "Chat",
+            "correct": false,
+            "feedback": "Não. O Chat conversa e esclarece sem alterar o código."
+          }
+        ],
+        "correct": "52ee8035-d5c6-4861-a63f-7cc1190378fc",
+        "corrects": [
+          "52ee8035-d5c6-4861-a63f-7cc1190378fc"
+        ],
+        "id": "54a622d6-94a0-4299-a619-185a3e41f5ba",
+        "title": "Você vai trabalhar num aplicativo no Lovable. Qual modo escolher quando quer que a IA execute alterações já aprovadas?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "f34d67ad-d7f8-4e4f-8b6a-c59ffbe28626"
+      },
+      {
+        "answers": [
+          {
+            "id": "c38f7081-b4dc-4397-91c3-56217db0f888",
+            "title": "Revisar o plano aprovado, conferir os campos e seguir para a versão final.",
+            "correct": false,
+            "feedback": "Não. Ler o plano é necessário, mas não testa se as restrições funcionam na prática."
+          },
+          {
+            "id": "43f7fb54-584e-43f4-8015-5308b1c10017",
+            "title": "Criar duas contas de teste, entrar com cada uma e confirmar que cada conta vê apenas os próprios registros.",
+            "correct": true,
+            "feedback": "Correto. É o teste de isolamento — e é ele, não a aparência da tela, que comprova que as gavetas estão trancadas."
+          },
+          {
+            "id": "99292dce-4982-4a4c-95a4-a2d82de2f9c2",
+            "title": "Publicar, abrir o endereço público e confirmar que a tela de login aparece para visitantes.",
+            "correct": false,
+            "feedback": "Não. Isso confere a catraca, mas não mostra se um usuário autenticado consegue ver os dados de outro."
+          },
+          {
+            "id": "4125858e-1202-42fa-830d-15e5e4f51219",
+            "title": "Criar uma conta de teste, adicionar registros e confirmar que o filtro funciona na prévia.",
+            "correct": false,
+            "feedback": "Não. Com uma conta só, não há como saber se um usuário vê os registros de outro."
+          }
+        ],
+        "correct": "43f7fb54-584e-43f4-8015-5308b1c10017",
+        "corrects": [
+          "43f7fb54-584e-43f4-8015-5308b1c10017"
+        ],
+        "id": "c05863f2-18b0-4370-a259-7062d763988e",
+        "title": "Você está testando um aplicativo recém-construído antes de publicar. Qual é a melhor forma de verificar se o controle de acesso funciona para cada usuário?",
+        "type": "MULTIPLE_CHOICE",
+        "metadata": {
+          "createdVia": "ai",
+          "contentValidation": {
+            "pass": true,
+            "version": "1.164.0"
+          }
+        },
+        "feedbackType": "CHOICE",
+        "globalBlockId": "5460faac-e3f8-42d1-8e75-515a0390a257"
+      }
+    ],
+    "settings": {
+      "passingScore": 80,
+      "retryCount": -1,
+      "revealAnswers": "all",
+      "shuffleAnswerChoices": false,
+      "randomizeQuestionOrder": false
+    },
+    "title": "Quiz",
+    "type": "quiz",
+    "author": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "courseId": "s5rjpyoVh4hWZIEjJr-eXu3a8b0Nh7Sa",
+    "createdAt": "2026-11-04T17:29:05.735Z",
+    "deleted": false,
+    "duplicatedFromId": "",
+    "experiments": null,
+    "headerImage": {},
+    "icon": "Quiz",
+    "isPartnerContentAuthor": null,
+    "lastUpdatedBy": null,
+    "media": {},
+    "metadata": {
+      "createdVia": "ai"
+    },
+    "originalId": null,
+    "piles": [],
+    "position": 7,
+    "ready": true,
+    "selectedAuthorId": "aid|0feaf791-84f0-5524-a138-a41d69197057",
+    "transferredAt": null,
+    "updatedAt": "2026-11-04T17:29:05.735Z"
+  }
+}

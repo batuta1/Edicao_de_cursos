@@ -1,0 +1,81 @@
+<!--titulo: Ficha de requisitos e pedido em Plan-->
+<section class="card" aria-labelledby="t" id="raiz" data-plano="sim">
+  <span class="rotulo">Ferramenta</span>
+  <h1 id="t">Monte sua ficha de requisitos</h1>
+  <p class="sub">Preencha os campos ou parta de um exemplo. A ferramenta confere os pontos que mais costumam faltar e gera a ficha e o pedido em Plan do Projeto Final, prontos para copiar. Nada aqui é enviado a lugar nenhum.</p>
+  <div class="opcoes" role="group" aria-label="Exemplos">
+    <button type="button" class="btn" data-ex="tarefas">Exemplo: Minhas Tarefas</button>
+    <button type="button" class="btn" data-ex="leituras">Exemplo: Diário de Leituras</button>
+    <button type="button" class="btn" data-ex="ideias">Exemplo: Banco de Ideias</button>
+    <button type="button" class="btn" data-ex="limpar">Limpar</button>
+  </div>
+  <div class="grid" id="campos" style="margin-top:14px"></div>
+  <h2 style="margin-top:18px">Conferência</h2>
+  <div id="checks"></div>
+  <h2 style="margin-top:18px">Sua ficha</h2>
+  <pre class="saida" id="saida"></pre>
+  <p class="nota"><button type="button" class="btn principal" id="copiar">Copiar ficha</button></p>
+  <div class="feedback" id="msg" aria-live="polite"></div>
+  <div id="blocoPlano" hidden>
+    <h2 style="margin-top:18px">Pedido em Plan</h2>
+    <p class="nota" style="margin-top:0">Gerado a partir da ficha, no modelo do curso. Use “;” para separar os campos da tabela.</p>
+    <pre class="saida" id="plano"></pre>
+    <p class="nota"><button type="button" class="btn principal" id="copiarPlano">Copiar pedido</button></p>
+    <div class="feedback" id="msgPlano" aria-live="polite"></div>
+  </div>
+</section>
+
+<script>
+  // Campos e exemplo "Minhas Tarefas": ficha do Módulo 3 do roteiro; perfis: Módulo 6 / Projeto Final.
+  var CAMPOS = [
+    ['nome', 'Nome'], ['quem', 'Para quem'], ['problema', 'Problema'], ['acao', 'Ação principal'],
+    ['telas', 'Telas'], ['dados', 'Dados'], ['regra', 'Regra de acesso'], ['fora', 'Fora do escopo'],
+    ['visual', 'Visual'], ['pronto', 'Critérios de pronto']
+  ];
+  var EX = {
+    tarefas: { nome: 'Minhas Tarefas', quem: 'uma pessoa que quer organizar os próprios afazeres', problema: 'anotar, concluir e remover tarefas', acao: 'adicionar uma tarefa', telas: 'login e lista de tarefas', dados: 'título; concluída (sim/não); dono; data de criação', regra: 'cada conta vê apenas os próprios registros', fora: 'colaboração, anexos, pagamentos, notificações, dados reais', visual: 'simples, alto contraste, legível no celular', pronto: 'criar conta, entrar, criar tarefa, concluir, sair, entrar com outra conta e não ver os dados da primeira' },
+    leituras: { nome: 'Diário de Leituras', quem: 'um professor que quer registrar as próprias leituras', problema: 'acompanhar livros lidos e em andamento', acao: 'registrar um livro', telas: 'login e lista de livros', dados: 'título do livro; autor; páginas lidas; status (lendo/concluído)', regra: 'cada conta vê apenas os próprios registros', fora: 'dados de alunos, notas, compartilhamento, notificações, dados reais de terceiros', visual: 'simples, alto contraste, legível no celular', pronto: 'criar conta, entrar, registrar livro, filtrar “Lendo / Concluídos”, sair, entrar com outra conta e não ver os livros da primeira' },
+    ideias: { nome: 'Banco de Ideias de Produto', quem: 'um empreendedor que quer guardar ideias para avaliar depois', problema: 'registrar e acompanhar ideias de produto', acao: 'registrar uma ideia', telas: 'login e lista de ideias', dados: 'ideia; problema; público; estágio (ideia/teste/descartada)', regra: 'cada conta vê apenas os próprios registros', fora: 'pagamentos, dados de clientes reais, colaboração, notificações', visual: 'simples, alto contraste, legível no celular', pronto: 'criar conta, entrar, registrar ideia, filtrar por estágio, sair, entrar com outra conta e não ver as ideias da primeira' }
+  };
+  var box = document.getElementById('campos');
+  CAMPOS.forEach(function (c) {
+    var d = document.createElement('div'); d.className = 'item';
+    d.innerHTML = '<label for="f-' + c[0] + '"><p class="f">' + c[1] + '</p></label>';
+    var i = document.createElement('textarea'); i.id = 'f-' + c[0]; i.rows = 2;
+    i.addEventListener('input', montar); d.appendChild(i); box.appendChild(d);
+  });
+  function v(id) { return document.getElementById('f-' + id).value.trim(); }
+  function itens(t) { return t.split(/[,;]| e /).map(function (x) { return x.trim(); }).filter(Boolean); }
+  function montar() {
+    document.getElementById('saida').textContent = CAMPOS.map(function (c) { return c[1] + ': ' + (v(c[0]) || '[preencher]'); }).join('\n');
+    var pronto = v('pronto').toLowerCase(), dados = v('dados').toLowerCase();
+    var checks = [
+      [CAMPOS.every(function (c) { return v(c[0]); }), 'Todos os campos preenchidos'],
+      [itens(v('fora')).length >= 3, '“Fora do escopo” com pelo menos três itens'],
+      [/rea(l|is)/.test(v('fora').toLowerCase()) || /fict/.test(dados + v('regra').toLowerCase()), 'Dados reais declarados fora do escopo (somente dados fictícios)'],
+      [/(outra|segunda) conta|duas contas/.test(pronto), 'Critérios de pronto incluem entrar com outra conta e não ver os dados da primeira'],
+      [!/cpf|telefone|senha|cart[aã]o/.test(dados), 'Nenhum campo sensível (CPF, telefone, senha, cartão) entre os dados']
+    ];
+    var el = document.getElementById('checks'); el.innerHTML = '';
+    checks.forEach(function (k) {
+      var p = document.createElement('div'); p.className = 'feedback ' + (k[0] ? 'ok' : 'aviso');
+      p.style.marginTop = '6px'; p.textContent = (k[0] ? '✓ ' : '• Falta: ') + k[1]; el.appendChild(p);
+    });
+    var campos = itens(v('dados')).map(function (x) { return x.replace(/\s*\(.*\)$/, ''); }).join(', ');
+    var tabela = (v('nome') || 'registros').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+    document.getElementById('plano').textContent = 'Quero criar o aplicativo ' + (v('nome') || '[nome]') + ', para ' + (v('quem') || '[quem]') + ', cuja ação principal é ' + (v('acao') || '[ação]') + '. Proponha um plano único com: interface simples em português do Brasil, login por e-mail e senha, uma tabela ' + (tabela || '[nome_da_tabela]') + ' com os campos ' + (campos || '[campos]') + ' e user_id, e políticas RLS para que cada usuário só possa ler, criar, atualizar e excluir os próprios registros. Fora do escopo: ' + (v('fora') || '[itens]') + '. Descreva como testar com duas contas. Não implemente até eu aprovar.';
+  }
+  document.querySelectorAll('[data-ex]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var e = EX[b.getAttribute('data-ex')] || {};
+      CAMPOS.forEach(function (c) { document.getElementById('f-' + c[0]).value = e[c[0]] || ''; });
+      montar();
+    });
+  });
+  if (document.getElementById('raiz').getAttribute('data-plano') === 'sim') {
+    document.getElementById('blocoPlano').hidden = false;
+    ligarCopia('copiarPlano', 'plano', 'msgPlano', 'Pedido');
+  }
+  ligarCopia('copiar', 'saida', 'msg', 'Ficha');
+  montar();
+</script>
