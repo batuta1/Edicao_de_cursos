@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<manifest identifier="Z8gE8VzC54li0t7wSL6MTTW3PdZXGKuCXDcRhb5A" version="1"
+  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                      http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <adlcp:location>metadata.xml</adlcp:location>
+  </metadata>
+  <organizations default="articulate_rise">
+      <organization identifier="articulate_rise">
+      <title>Claude Chat - Essentials</title>
+      <item identifier="i1" identifierref="r1" isvisible="true">
+        <title>Claude Chat - Essentials</title>
+        <adlcp:datafromlms>datafromlms</adlcp:datafromlms>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="r1" type="webcontent" adlcp:scormtype="sco" href="scormdriver/indexAPI.html">
+      <!-- SCORMDRIVER STUFF -->
+      <file href="scormdriver/indexAPI.html" />
+      <file href="scormdriver/preloadIntegrity.js" />
+      <file href="scormdriver/driverOptions.js" />
+      <file href="scormdriver/AICCComm.html" />
+      <file href="scormdriver/auto-scripts/AutoBookmark.js" />
+      <file href="scormdriver/auto-scripts/AutoCompleteSCO.js" />
+      <file href="scormdriver/auto-scripts/CourseExit.js" />
+      <file href="scormdriver/blank.html" />
+      <file href="scormdriver/goodbye.html" />
+      <file href="scormdriver/scormdriver.js" />
+      <file href="scormdriver/browsersniff.js" />
+
+      <!-- RUNTIME COMMON STUFF -->
+      <file href="scormcontent/index.html" />
+
+      
+        <file href="scormcontent/lib/lzwcompress.js"/>
+      
+
+      <!-- FRONTEND BUNDLE ASSETS -->
+      <file href="scormcontent/lib/rise/f1a1fca2.js" />
+<file href="scormcontent/lib/rise/b5c246db.css" />
+<file href="scormcontent/lib/rise/ef1de386.js" />
+<file href="scormcontent/lib/rise/564dd28d.css" />
+<file href="scormcontent/lib/rise/5b5d68a5.js" />
+<file href="scormcontent/lib/rise/9aede266.ttf" />
+<file href="scormcontent/lib/rise/bff47411.woff" />
+<file href="scormcontent/lib/rise/f54a4bbb.js" />
+<file href="scormcontent/lib/rise/02cf473f.js" />
+<file href="scormcontent/lib/rise/db622a80.js" />
+<file href="scormcontent/lib/rise/bd7e1c12.js" />
+<file href="scormcontent/lib/rise/4fda90c0.js" />
+<file href="scormcontent/lib/rise/57b3c295.js" />
+<file href="scormcontent/lib/rise/1c3e1f47.js" />
+<file href="scormcontent/lib/rise/299f5ddb.js" />
+<file href="scormcontent/lib/rise/ebbde940.js" />
+<file href="scormcontent/lib/rise/3c1c89b9.js" />
+<file href="scormcontent/lib/rise/b2fa32e8.js" />
+<file href="scormcontent/lib/rise/674a2edc.js" />
+<file href="scormcontent/lib/rise/61bd4112.js" />
+<file href="scormcontent/lib/rise/4241978b.js" />
+<file href="scormcontent/lib/rise/5fe14f00.js" />
+<file href="scormcontent/lib/rise/39f25c26.js" />
+<file href="scormcontent/lib/learn_dist/entry.js" />
+<file href="scormcontent/lib/learn_dist/9b1f8619.js" />
+<file href="scormcontent/lib/learn_dist/a505eb4f.css" />
+<file href="scormcontent/lib/learn_dist/a9b6c0d9.js" />
+<file href="scormcontent/lib/mondrian/entry.js" />
+<file href="scormcontent/lib/mondrian/1ea44d0e.js" />
+<file href="scormcontent/lib/mondrian/cdc0f476.js" />
+<file href="scormcontent/lib/mondrian/207cf44a.js" />
+<file href="scormcontent/lib/mondrian/3868877e.js" />
+<file href="scormcontent/lib/mondrian/5d56aa22.js" />
+<file href="scormcontent/lib/sandbox/sandbox.html" />
+<file href="scormcontent/lib/sandbox/c77685df.js" />
+<file href="scormcontent/lib/sandbox/4adfab46.css" />
+
+
+      <!-- RUNTIME CONTENT STUFF -->
+      <file href="scormcontent/lib/fonts/Ha7gs9W_IPfv3z5I.woff" />
+<file href="scormcontent/lib/fonts/-f-CijZ2QE1SqaGk.woff" />
+<file href="scormcontent/lib/fonts/Gql57AWhvX6RuCJ7.woff" />
+<file href="scormcontent/lib/fonts/Montserrat-SemiBold.woff" />
+<file href="scormcontent/lib/fonts/Montserrat-Medium.woff" />
+<file href="scormcontent/lib/fonts/Montserrat-Black.woff" />
+<file href="scormcontent/lib/fonts/Montserrat-Bold.woff" />
+<file href="scormcontent/lib/fonts/Montserrat-Italic.woff" />
+<file href="scormcontent/lib/fonts/Montserrat-Regular.woff" />
+<file href="scormcontent/lib/fonts/Montserrat-Light.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Regular.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Light.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Italic.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Bold.woff" />
+<file href="scormcontent/lib/fonts/Lato2-Black.woff" />
+<file href="scormcontent/assets/small_1782404657678.jpg" />
+<file href="scormcontent/assets/OZB2cbYlLJZSVxDE.jpg" />
+
+    </resource>
+  </resources>
+</manifest>
