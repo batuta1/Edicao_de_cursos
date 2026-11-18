@@ -1,0 +1,1311 @@
+================================================================
+CONTEÚDO BRUTO — Zapier
+Registros no catálogo: zapier-essentials e zapier-hands-on
+Pesquisa realizada em: 18 de novembro de 2026
+Ferramenta-âncora: Zapier
+Onda 2 (ranking #50, 84 pontos)
+Trilhas: T10 pos. 8 (Automação e agentes com n8n); C6 pos. 3
+(Automação e assistentes de conteúdo); F4 pos. 8 (Automação,
+atendimento e agentes no negócio)
+Produtos sustentados: ementa completa, Essentials (100–130 min) e
+Hands On (60–90 min, 4 oficinas + projeto)
+Prompt: versão 7 (18/11/2026)
+================================================================
+
+Convenções deste arquivo
+- [CONFIRMADO] = a fonte citada diz isso literalmente (ou em tradução fiel).
+- [VERIFICAR] = evidência insuficiente, secundária ou contraditória.
+- [SUGESTÃO] = elaboração da pesquisa para a equipe; não é fato de fonte.
+- NÃO ENCONTRADO = procurado e não localizado em fonte confiável.
+- Números entre colchetes [n] remetem à seção 20 (Fontes).
+- Rótulos de menu entre aspas vêm da ajuda oficial em inglês (EN).
+  A interface do Zapier existe SÓ em inglês [31]; por isso os rótulos
+  são mantidos em inglês, com tradução entre parênteses quando útil.
+- "Atualizado em" = data de atualização exibida no próprio artigo de
+  ajuda. Todas as consultas de preço, tarefa e limite foram feitas em
+  18/11/2026, salvo outra data indicada.
+- Preços em dólar (USD). O Zapier não publica preço em reais.
+
+----------------------------------------------------------------
+0. RESUMO EXECUTIVO
+----------------------------------------------------------------
+
+!!! ALERTA DE CALENDÁRIO — A COBRANÇA MUDA EM 01/12/2026 !!!
+
+[CONFIRMADO] Em 23/09/2026 (ZapConnect 2026) o Zapier lançou os
+"Next Gen Zaps": fluxos descritos em linguagem natural (num cliente MCP
+como Claude, ChatGPT, Gemini ou Cursor, ou no "Workflow Manager"),
+gravados como código TypeScript e executados pelo Zapier. Estão em
+ACESSO ANTECIPADO, por pedido, só em planos pagos. [3][4][45]
+[CONFIRMADO] "Starting December 1, 2026, Next Gen Zaps use tasks."
+Até lá são gratuitos no acesso antecipado. Na mesma data mudam as
+regras de tarefa do Zapier MCP, do Zapier SDK e do AI by Zapier via
+MCP/SDK. [2][3][33][37]
+[CONFIRMADO] A própria ajuda recomenda: "Do not run your most sensitive
+workflows through Next Gen Zaps during early access." [3]
+→ Consequência para o curso: os Zaps "clássicos" (Classic Zaps), feitos
+no editor visual, continuam funcionando sem mudança e são o que o
+público leigo deve aprender primeiro. Next Gen Zaps entram como
+"novidade/visão de futuro" no Essentials e, no máximo, como demo no
+Hands On. Revalidar telas e preços depois de 01/12/2026 antes de gravar.
+
+!!! ALERTA DE PRODUTO — "AGENTS" ESTÁ SENDO ABSORVIDO !!!
+
+[CONFIRMADO] O Zapier está migrando o produto Agents (agents.zapier.com)
+para o passo "AI by Zapier" dentro do editor de Zaps. "Zapier has not
+set a date to turn off Agents yet." Cada agente convertido vira um Zap
+com um gatilho nativo e um único passo AI by Zapier. [32]
+[CONFIRMADO] "Zapier Interfaces is now Zapier Forms." Projetos antigos
+continuam funcionando. [10]
+[CONFIRMADO] A ajuda ainda lista Chatbots, Canvas, Copilot, Tables,
+Forms, Lead Router (beta), Functions (beta), MCP, SDK e Sidekick (beta).
+O status oficial lista Tables, Canvas, Forms, Chatbots, Agents, MCP,
+Copilot e Developer Platform; Functions e Lead Router como beta. [43][60]
+
+[CONFIRMADO] PLANOS (zapier.com/pricing, 18/11/2026) [1]:
+- Free: US$ 0; 100 tarefas/mês; Zaps de DOIS passos (1 gatilho + 1 ação);
+  verificação a cada 15 min; sem Filter, Paths, Formatter, Webhooks e
+  apps premium; sem cobrança excedente (para no limite).
+- Pro (na ajuda: "Professional"): a partir de US$ 19,99/mês (anual) ou
+  US$ 29,99/mês (mensal) para 750 tarefas; 1 usuário; Zaps multi-passo;
+  verificação a cada 2 min.
+- Team: a partir de US$ 69/mês (anual) ou US$ 103,50/mês (mensal) para
+  2.000 tarefas; até 25 usuários; verificação a cada 1 min; SSO SAML;
+  log de auditoria de 6 meses.
+- Enterprise: preço sob consulta; usuários ilimitados; auditoria 1 ano.
+[CONFIRMADO] Teste grátis de 14 dias do Pro, sem cartão: 1.000 tarefas,
+só os primeiros 30 passos de um Zap rodam; sem Autoreplay e sem
+pay-per-task. Depois volta ao Free. [30]
+→ Implicação para o Hands On: o plano Free NÃO permite Filter, Paths,
+Formatter, Delay, Looping, Webhooks nem Zaps com mais de uma ação. As
+oficinas 2–4 exigem o teste Pro de 14 dias (ou conta paga da empresa).
+Planejar: aluno cria a conta no dia da aula 1 do Hands On, não antes.
+
+[CONFIRMADO] O QUE CONSOME TAREFA (Classic Zaps) [2]:
+- Conta 1 tarefa: cada AÇÃO bem-sucedida, por execução.
+- NÃO conta: gatilho ("Zap triggers never use tasks"), verificações de
+  polling, Filter, Paths, Formatter, Delay, Looping, Sub-Zap trigger,
+  Digest, Storage, Zapier Manager, passos de Tables e Forms, testes no
+  editor ("Testing does not use tasks, even though testing an action
+  step performs the action in your app"), passos com erro ou parados.
+- Taxas especiais: AI by Zapier 1×/3×/5× conforme o nível do modelo;
+  Code by Zapier 1 tarefa por execução padrão; Lead Router 5 tarefas
+  por lead; MCP 2 tarefas por chamada de ferramenta bem-sucedida.
+- Agents (legado) usa cota própria de "atividades", não tarefas.
+[CONFIRMADO] Pay-per-task: excedente cobrado a 1,25× (planos anuais) ou
+2,5× (mensais) do valor base da tarefa; tudo para em 3× a cota. Alertas
+por e-mail em 80% e 100%. Sem pay-per-task, novas execuções ficam
+retidas ("held") até o ciclo virar. [1][2]
+
+[CONFIRMADO] SEGURANÇA E DADOS [38][39][40]:
+- Criptografia TLS 1.2+ em trânsito e AES-256 em repouso; SOC 2 Type II
+  e SOC 3; 2FA em todos os planos; SSO/SCIM no Enterprise (SSO também
+  no Team pela página de preços).
+- "We don't train on the data that runs through your workflows, on any
+  plan." [38]
+- Dados hospedados na AWS nos EUA; não há opção de armazenamento só na
+  UE. O Zapier é "data processor"; o cliente é "data controller". [39]
+- Histórico de execuções: 29 a 69 dias na conta (apagado na 1ª
+  segunda-feira do mês); backups até 4 meses. [40]
+- Não aceita dados de saúde regulados (PHI/HIPAA) nem assina BAA. [39]
+- A página de privacidade NÃO menciona a LGPD (cita GDPR, UK GDPR, CCPA).
+  → Para o Brasil: transferência internacional (LGPD art. 33) — ver 8.6.
+
+[SUGESTÃO] Fluxo observável do curso (tarefa do prompt):
+MAPEAR O PROCESSO (gatilho → decisões → ações → dono) → ESCOLHER APPS E
+EVENTOS → CONECTAR CONTAS (de teste) → TESTAR O GATILHO (dado de
+amostra) → MAPEAR CAMPOS → FILTRAR/TRANSFORMAR → TESTAR CADA AÇÃO (em
+destino de teste) → PUBLICAR → MONITORAR (Zap history) → CORRIGIR E
+REPROCESSAR (replay) → DOCUMENTAR (nome, notas, versão).
+
+[SUGESTÃO] Recorte recomendado:
+- Essentials (100–130 min): conceitos, mapa de produtos, anatomia de um
+  Zap, tarefas e planos, um Zap de 2 passos no Free, lógica (Filter,
+  Paths, Formatter) mostrada em demo, testes, histórico, erros comuns,
+  segurança/LGPD, IA no Zapier (Copilot, AI by Zapier, Next Gen Zaps)
+  e comparação com n8n/Make/Power Automate.
+- Hands On (60–90 min): conta de teste Pro (14 dias) + 4 oficinas
+  (captura de lead; filtro + formatação; agenda/lembrete com Delay ou
+  Schedule; monitorar, quebrar e recuperar) + projeto final documentado.
+
+----------------------------------------------------------------
+1. IDENTIDADE E HISTÓRICO
+----------------------------------------------------------------
+[CONFIRMADO] O Zapier se descreve como "the infrastructure for
+AI-powered automation": conecta apps, dados e processos a modelos de IA
+(ChatGPT, Claude, Gemini), com ferramentas no-code, low-code e de código,
+e 9.000+ apps. [9]
+[CONFIRMADO] Página inicial: "Over 9,000 apps"; "trusted by over 3
+million businesses"; SOC 2 Type II, SOC 3, GDPR, CCPA. [48]
+[CONFIRMADO, fonte secundária] Fundado em 2011 como projeto paralelo em
+Columbia (Missouri, EUA) por Wade Foster, Bryan Helmig e Mike Knoop;
+entrou na Y Combinator em junho de 2012; empresa 100% remota desde a
+fundação; sede legal em San Francisco; lucrativa desde 2014; avaliada
+em US$ 5 bi numa venda secundária de ações em jan/2021; ~730
+funcionários em 2025. [56]
+[CONFIRMADO, sec.] Aquisições: Makerpad (2021), Vowel (2024), NoCodeOps
+(2024), Utopian Labs (out/2025). Canvas lançado em 2023; Zapier Central
+(bots de IA, antecessor do Agents) em mar/2024. [56]
+
+Linha do tempo 2026 (fontes oficiais) [VERIFICAR as datas marcadas]
+- jan/2026: produto "Interfaces" passa a se chamar "Forms" na página de
+  preços [VERIFICAR data exata; fonte de rastreio de preços, sec.]. A
+  ajuda confirma a troca de nome (artigo atualizado em 29/05/2026). [10]
+- 17/03/2026: programa de educação gratuita em IA para 1 milhão de
+  pessoas [VERIFICAR; fonte sec. citando press release].
+- 15/06/2026 e 30/06/2026: mudanças no AI by Zapier (passos legados sem
+  ferramentas; passos legados com fonte de conhecimento em modelo
+  Standard pausados). [33]
+- 21/07/2026: uso de tarefas do Lead Router passa a aparecer no
+  histórico. [2]
+- 23/09/2026: ZapConnect 2026 (virtual, gratuito) — Next Gen Zaps,
+  Agentic Management, governança de IA. [44][45]
+- 01/10/2026: artigo oficial de migração Agents → AI by Zapier. [32]
+- 01/12/2026: Next Gen Zaps e SDK passam a consumir tarefas; mudanças no
+  MCP. [2][3]
+
+----------------------------------------------------------------
+2. ACESSO, PLANOS, PREÇOS, TAREFAS E LIMITES (consulta 18/11/2026)
+----------------------------------------------------------------
+2.1 Acesso
+[CONFIRMADO] Navegador (zapier.com); cadastro com e-mail, Google ou
+Microsoft [VERIFICAR opções de login social na tela de cadastro].
+Interface e central de ajuda somente em inglês: "Zapier is only
+available in English." Sugere tradutor do navegador. [31]
+[SUGESTÃO] Na aula, mostrar a interface em inglês e um glossário
+bilíngue (seção 4). Evitar tradução automática do navegador nas
+gravações: ela altera rótulos de botões e confunde o aluno.
+[CONFIRMADO] Extensão do Chrome disponível ("Use the Zapier Chrome
+extension"). [60]
+[NÃO ENCONTRADO] App móvel oficial para criar Zaps.
+
+2.2 Tabela de planos [1]
+| Item              | Free        | Pro          | Team         | Enterprise |
+|-------------------|-------------|--------------|--------------|------------|
+| Preço de entrada  | US$ 0       | 19,99 anual / 29,99 mensal (750 t) | 69 anual / 103,50 mensal (2.000 t) | sob consulta |
+| Tarefas/mês       | 100         | 750 a 2 mi   | 2.000 a 2 mi | cota anual |
+| Usuários          | 1           | 1            | 25           | ilimitado  |
+| Polling           | 15 min      | 2 min        | 1 min        | 1 min      |
+| Zaps multi-passo  | Não (2 passos) | Sim       | Sim          | Sim        |
+| Paths/Filter/Formatter | Não    | Sim          | Sim          | Sim        |
+| Webhooks          | Não         | Sim          | Sim          | Sim        |
+| Apps premium      | Não         | Sim          | Sim          | Sim        |
+| Registros Tables  | 2.500/conta | 100.000      | 500.000      | consulta   |
+| Views por tabela  | 3           | 50           | 50           | 50+        |
+| Páginas de Forms  | 10/conta    | 50           | 150          | consulta   |
+| SSO SAML          | Não         | Não          | Sim          | Sim        |
+| Log de auditoria  | Não         | Não          | 6 meses      | 1 ano      |
+
+[CONFIRMADO] Faixas selecionadas (US$/mês, anual | mensal) [1]:
+- Pro: 750 t = 19,99 | 29,99; 1.500 t = 39 | 58,50; 2.000 t = 49 |
+  73,50; 5.000 t = 89 | 133,50; 10.000 t = 129 | 193,50; 50.000 t =
+  289 | 433,50; 100.000 t = 489 | 733,50; 2 mi = 3.389 | 5.099.
+- Team: 2.000 t = 69 | 103,50; 5.000 t = 119 | 178,50; 10.000 t = 169
+  | 253,50; 50.000 t = 399 | 598,50; 100.000 t = 599 | 898,50; 2 mi =
+  3.999 | 5.999.
+[CONFIRMADO] Free: Zaps, Tables e Forms ilimitados; Copilot com limite
+diário de mensagens; Code by Zapier com 1 s de execução por passo;
+Agents 400 atividades/mês (10 por execução); 2 chatbots; Tables 100
+campos por tabela; Forms com upload de 5 MB e até 3 arquivos. [1]
+[CONFIRMADO] Add-ons fora da cota de tarefas: Agents (Pro 1.500
+atividades/mês, a partir de ~US$ 33,33/mês anual); Chatbots (~5 por
+~US$ 13,33/mês; ~20 por ~US$ 66,67/mês, anual). [1]
+[VERIFICAR] Valor exato por tarefa excedente: a página zapier.com/
+pricing/rates retornou 404 em 18/11/2026. A regra (1,25× anual, 2,5×
+mensal) está na página de preços. [1]
+[VERIFICAR] Preço em reais: cobrança em USD no cartão internacional,
+com IOF sobre compras internacionais (3,5% em 2026 — confirmar com a
+Receita/banco) e variação cambial. NÃO ENCONTRADO preço oficial em BRL.
+
+2.3 Tarefas — regras completas [2] (atualizado em 13/11/2026)
+[CONFIRMADO] "Only successful actions count toward your task usage."
+[CONFIRMADO] Também contam: passos de ações em caminhos de tratamento de
+erro; passos reexecutados num replay completo; ações dentro de Sub-Zaps;
+"Call a Sub-Zap" e "Return From a Sub-Zap" (1 cada).
+[CONFIRMADO] Busca ("Search") configurada para seguir mesmo sem achar
+nada = 1 tarefa; configurada para NÃO seguir = 0.
+[CONFIRMADO] Não contam: gatilhos, polling, Filter, Paths, Formatter,
+Delay, Looping, Sub-Zap app, Digest, Zapier Manager, Storage, Tables,
+Forms, testes, passos com erro/parados ou que não rodaram.
+[CONFIRMADO] Taxas especiais:
+- AI by Zapier: Standard 1×, Advanced 3×, Premium 5× (padrão em passos
+  novos), BYOK 1×. Fórmula: tarefas = (1 × taxa) + (chamadas de
+  ferramenta × taxa). Ex.: Premium com 2 chamadas = 15 tarefas. Limite
+  padrão de 75 tarefas por execução (ajustável até 500). [33]
+- Code by Zapier: 1 tarefa por execução com tempo padrão. [2]
+- Lead Router: 5 tarefas por lead roteado com sucesso. [2]
+- Zapier MCP: 2 tarefas por chamada de ferramenta bem-sucedida; a partir
+  de 01/12/2026 chamadas a apps gratuitos "By Zapier" (Tables, Forms)
+  não contam. [2][37]
+- Next Gen Zaps (a partir de 01/12/2026): mesmas taxas dos Classic + 1
+  tarefa por chamada externa; filtros, formatação, loops e ramificações
+  não contam. [2]
+- Zapier SDK fora de Next Gen Zap (a partir de 01/12/2026): 1 tarefa
+  por ação, chamada externa e gatilho "inbox-lease". [2]
+[NÃO ENCONTRADO] Regra de tarefa específica para Chatbots e Canvas
+(Chatbots e Agents têm cotas próprias de add-on). [1][2]
+
+[SUGESTÃO] Exercício de cálculo (para o Essentials):
+Zap: Forms (gatilho) → Filter → Formatter → Google Sheets (criar
+linha) → Slack (enviar mensagem). 40 envios/mês, 30 passam no filtro.
+Tarefas = 30 × 2 ações = 60/mês (gatilho, Filter e Formatter = 0).
+Os 10 filtrados = 0. Cabe no Free? NÃO — o Free só tem 2 passos e não
+tem Filter/Formatter; cabe no Pro de 750 tarefas.
+
+2.4 Limites gerais (Classic Zaps)
+- Até 100 passos por Zap; acima disso, as execuções ficam retidas
+  ("Step limit reached"). [12][22]
+- Paths: até 10 ramos por grupo; até 3 níveis aninhados. [12]
+- Looping: limite de 500 itens por loop no Classic [CONFIRMADO via
+  artigo de Next Gen: "Loops have no 500-item limit"]. [4][45]
+- Delay: mínimo 1 min; máximo 30 dias retido. [13]
+- Flood protection: ajustável até 1.500 eventos de uma vez (Pro+). [20]
+- Histórico: garantia de até 60 dias de dados; exibe até 10.000
+  execuções; replay em lote de até 5.000 execuções. [17][18]
+- Desligamento automático: Zap com 95% de execuções com erro em 7 dias
+  é desligado; Team recebe e-mail e 24 h de carência; Enterprise 72 h.
+  [21]
+- Webhook: payload até 10 MB (gatilho) e 2 MB ("Catch Raw Hook")
+  [VERIFICAR — números de snippets de busca da ajuda].
+- Storage by Zapier: chaves até 32 caracteres; até 500 chaves por
+  conta Storage; valor até 25 KB; chaves inativas apagadas após 2 meses
+  [VERIFICAR — espelhos da ajuda; há divergência de tamanho de valor].
+- Tables (caracteres por campo): Text 255; Long Text 10.000; Link 2.048;
+  Decimal 7 casas. AI Fields só em planos pagos. [28]
+
+2.5 Next Gen Zaps — acesso e limites [3][5]
+[CONFIRMADO] Pro, Team e Enterprise; acesso antecipado por pedido em
+zapier.com/workflow/early-access. No Team, só dono/admin pede.
+[CONFIRMADO] Limites: código TypeScript até 200.000 caracteres; 1
+gatilho por fluxo; espera/delay até 1 ano; execução falha se os passos
+somarem > 30 min (esperas não contam); compartilhamento só como
+"viewer"; não copia entre contas; histórico de execuções por 60 dias;
+fluxo apagado some em 60 dias (sem restauração); NÃO entra no "Export my
+data"; sem controle de concorrência (execuções podem se sobrepor); sem
+Sub-Zaps; sem variáveis; sem "Delay After Queue". [5][6]
+
+----------------------------------------------------------------
+3. PRIMEIROS PASSOS (passo a passo com origem dos menus)
+----------------------------------------------------------------
+3.1 Criar conta e entender o painel
+1. Acesse zapier.com → "Sign up" → crie a conta [rótulo VERIFICAR na
+   tela atual]. Contas novas começam no teste Pro de 14 dias por
+   padrão, sem cartão. [30]
+2. Barra lateral esquerda: "Create" (criar), "Automations" (Zaps; Next
+   Gen Zaps quando liberado), Tables, Forms, Canvas, Chatbots, Agents,
+   "Apps" (conexões), "Zap history" [VERIFICAR ordem e rótulos exatos na
+   interface de 18/11/2026; artigos citam "Automations" → "Next Gen
+   Zaps" → "+ Create"]. [3][8]
+3. Histórico: zapier.com/app/history. Cobrança/plano:
+   zapier.com/app/billing/plans. [18][22]
+
+3.2 Primeiro Zap (Classic, 2 passos — funciona no Free) [8][7]
+Exemplo oficial do guia: mensagem no Slack quando uma planilha Google é
+atualizada. [8]
+1. Barra lateral → "Create a Zap" (ou partir de template, Copilot ou
+   passo copiado). [8]
+2. Gatilho: escolha o app (ex.: Google Sheets) e o evento (ex.: "New
+   Spreadsheet Row" [VERIFICAR rótulo]); conecte a conta ("Sign in" /
+   conexão); selecione planilha e aba. [SUGESTÃO]
+3. "Test trigger": o Zapier traz um registro existente como dado de
+   amostra. "They will not trigger for old data" — dados anteriores à
+   ativação não disparam o Zap em produção; o teste só usa amostra. [25]
+4. Ação: app (ex.: Slack) e evento (ex.: "Send Channel Message"
+   [VERIFICAR]); conecte a conta; mapeie campos — clique no campo e
+   escolha dados do gatilho (mapeamento de campos). [SUGESTÃO]
+5. "Test step": ATENÇÃO — o teste executa a ação de verdade no app
+   ("testing an action step performs the action in your app"), mas não
+   consome tarefa. [2]
+6. "Publish" (canto superior direito). Zaps novos começam como rascunho
+   salvo automaticamente. [23]
+Critério de êxito: em até 15 min (Free) uma linha nova na planilha gera
+a mensagem no canal de teste, e o Zap history mostra "Successful". [25][19]
+
+3.3 Usar um template
+[CONFIRMADO] Templates oficiais em zapier.com/templates, p.ex.
+"Capture new form responses, log them in Google Sheets, and notify team
+in Slack" e "Capture new leads, log details in Google Sheets, notify
+team via Gmail, and send message to Slack". [50][51]
+[CONFIRMADO] Existem "guided templates" (modelos guiados com passo a
+passo) — ajuda "Use a guided template". [60]
+[SUGESTÃO] Template com 3+ passos exige plano pago/teste (Free = 2).
+
+3.4 Copilot (criar por descrição)
+[CONFIRMADO] Copilot aparece em Zaps, Forms, Canvas, Tables, Agents,
+Functions, busca da home e "Get help". Está em beta aberto. No Free há
+limite diário de mensagens (aviso em 80%, zera 00:00 UTC). "While
+building and testing with Zapier Copilot, you will not use any of your
+plan's tasks". Recomenda testar bem para evitar "unintentional Zap
+loops". [34]
+[CONFIRMADO] Boas práticas oficiais: entradas curtas, usar modo "Ask",
+rodar testes manualmente, limpar o chat. [34]
+
+3.5 Criar um formulário (Zapier Forms) [10]
+1. Zapier Forms → "+ Create" → Copilot, a partir de uma tabela, ou
+   formulário em branco.
+2. Adicione campos (barra lateral de componentes → "Fields").
+3. Após envio: mensagem de confirmação, redirecionar, outra página ou
+   rodar um Zap.
+4. Formulário em branco precisa de uma tabela conectada (Tables) para
+   guardar respostas.
+5. Teste: abra o link, envie um registro de teste, confira validação,
+   mensagem e gravação na tabela.
+6. "Share" → link ou código de incorporação; ajuste permissões.
+
+3.6 Next Gen Zaps (só pago + acesso antecipado) [3][4]
+1. Barra lateral → "Automations" → "Next Gen Zaps" → "+ Create" (criar
+   ou importar Classic Zap — a importação cria CÓPIA; desligue o
+   original para evitar duplicidade).
+2. Ou via MCP: configure Zapier MCP e peça ao cliente para usar a skill
+   "zapier:build-workflows". "Claude can take 3 to 12 hours to refresh
+   its tools list on its own" (reiniciar o Claude Desktop atualiza na
+   hora).
+3. "Agentic management" vem LIGADO por padrão: diagnostica falhas e
+   prepara correção; você escolhe aplicar automático ou pedir
+   aprovação. Correções viram novas versões.
+
+----------------------------------------------------------------
+4. GLOSSÁRIO PARA LEIGOS (EN → PT)
+----------------------------------------------------------------
+- Automação: regra "QUANDO acontecer X, FAÇA Y" que o computador executa
+  sozinho, sempre igual, sem alguém copiar e colar. [SUGESTÃO]
+- Zap: "an automated workflow that connects your apps and services
+  together" — fluxo automatizado com 1 gatilho e 1+ ações. [7]
+- Classic Zap / Next Gen Zap: Zap montado no editor visual / fluxo
+  descrito em linguagem natural, escrito em código e executado pelo
+  Zapier (acesso antecipado). [4]
+- Trigger (gatilho): "an event that starts a Zap". Ex.: novo e-mail. [7]
+- Action (ação): "an event a Zap performs after it is triggered". [7]
+- Step (passo): cada bloco do Zap (gatilho, ação, filtro, busca...).
+  "Single-step" = 1 gatilho + 1 ação; "multi-step" = mais. [7]
+- Task (tarefa): "an action your Zap successfully completes" — unidade
+  de cobrança. [7]
+- Zap run (execução): cada vez que o Zap é disparado e roda. [7]
+- Field mapping (mapeamento de campos): ligar um dado do gatilho (ex.:
+  "E-mail") a um campo da ação. [SUGESTÃO — termo não definido na
+  página de conceitos]
+- Sample/test data (dado de amostra): registro existente que o Zapier
+  puxa para você montar e testar os passos. [7]
+- Connection / app connection (conexão): autorização salva para o
+  Zapier agir em uma conta sua (OAuth, chave de API). [38][42]
+- Polling trigger: o Zapier pergunta ao app de tempos em tempos (15, 2
+  ou 1 min conforme o plano). [25]
+- Instant trigger (raio ⚡): o app avisa o Zapier na hora (webhook). [25]
+- Webhook: "notificação" enviada por um sistema a uma URL; no Zapier,
+  "Catch Hook" recebe e "POST/Custom Request" envia. [27]
+- Deduplication (deduplicação): o Zapier compara o ID de cada registro
+  com os já vistos e só dispara para IDs novos — dentro do MESMO Zap. [26]
+- Filter (filtro): só deixa seguir se a condição for verdadeira. [11]
+- Paths (caminhos): ramificação "se A faça isto; se B faça aquilo". [12]
+- Formatter: transforma texto, número, data. [16]
+- Delay: espera antes da próxima ação. [13]
+- Schedule: gatilho por horário. [15]
+- Looping: repete ações para cada item de uma lista. [14]
+- Sub-Zap: Zap reutilizável chamado por outros Zaps. [60]
+- Storage / Tables: memória simples chave-valor / banco de dados do
+  Zapier. [28]
+- Replay: reexecutar uma execução que falhou (ou inteira). [17]
+- Autoreplay: replay automático de execuções com erro (pago). [17]
+- Held / On hold (retida): execução parada esperando correção (limite
+  de tarefas, conta desconectada etc.). [19][22]
+- Halted / Safely halted: parada intencional (ex.: busca sem
+  resultado). [19]
+- Flood protection: trava que retém muitas execuções de uma vez. [20]
+- Draft / Version: rascunho / versão publicada. [23]
+- Zap loop: Zap que dispara a si mesmo (ou dois Zaps que se disparam
+  mutuamente), gastando tarefas sem parar. [24]
+- Idempotência: fazer a mesma operação 2× tem o mesmo efeito de 1×
+  (ex.: "encontrar ou criar" em vez de "criar"). [SUGESTÃO]
+- Rate limit: limite de chamadas por minuto imposto pelo app de
+  destino; erro HTTP 429. [21]
+- Human in the Loop: passo que pausa o Zap para uma pessoa aprovar ou
+  completar dados. [29]
+- Premium app: app que só pode ser usado em plano pago. [1]
+- MCP (Model Context Protocol): padrão aberto que liga assistentes de
+  IA a ferramentas; Zapier MCP dá ao assistente acesso a 9.000+ apps. [37]
+
+----------------------------------------------------------------
+5. FUNCIONALIDADES (mapa de produtos e recursos, 18/11/2026)
+----------------------------------------------------------------
+5.1 Mapa atual de produtos (Foco 1)
+| Produto | O que é (fonte oficial) | Status | Fronteira p/ o curso |
+|---|---|---|---|
+| Zaps (Classic) | gatilho + ações no editor visual [7][9] | GA | NÚCLEO do curso |
+| Next Gen Zaps | IA constrói, Zapier roda; código TS; Workflow Manager [4] | acesso antecipado, pago | novidade/demo |
+| Tables | "a database built for automation" [9] | GA | Hands On (registro) |
+| Forms (ex-Interfaces) | formulários/páginas que disparam Zaps [10] | GA | Hands On (captura) |
+| Chatbots | chatbot com conhecimento/lógica [60] | ativo; add-on [1] | citar só |
+| Agents | agentes em agents.zapier.com — sendo migrados p/ AI by Zapier [32] | migração, sem data de fim | fora (curso de agentes) |
+| AI by Zapier | passo de IA no Zap; ferramentas; níveis de modelo [33] | GA | Essentials (demo) |
+| Copilot | assistente de construção, beta aberto [34] | beta | Essentials/Hands On |
+| Canvas | diagrama do sistema de automação; liga Zaps, tables, chatbots, agents [60] | GA | mapear processo |
+| Sidekick | assistente de IA em sidekick.zapier.com; só Free e Pro; beta [35] | beta | citar só |
+| MCP | conecta Claude/ChatGPT/Gemini/Cursor aos apps [37] | GA | fora (apêndice) |
+| SDK | acesso de agentes/devs aos apps via código [9] | — | fora |
+| Lead Router | roteamento de leads, 5 tarefas/lead [2][43] | beta | citar só |
+| Functions | código com gatilhos [43] | beta | fora |
+| AI Guardrails | detecção de PII, prompt injection, toxicidade [36] | GA | segurança |
+| Human in the Loop | aprovação humana no meio do Zap [29] | GA, pago | boas práticas |
+| Developer Platform | criar integrações próprias [9] | GA | fora |
+[CONFIRMADO] A página "What is Zapier?" (13/11/2026) define só
+Workflows, MCP, SDK, Tables e Developer Platform. Forms, Chatbots,
+Canvas e Copilot aparecem em outras áreas da ajuda e no status. [9][43]
+
+5.2 Ferramentas embutidas (Foco 4) — plano e exemplos
+| Ferramenta | Plano | Tarefa? | Exemplo oficial | Fonte |
+|---|---|---|---|---|
+| Filter | Pro+ | não | só clientes que compraram produto X entram na lista | [11] |
+| Paths | Pro+ | não (só ações nos ramos) | "find-or-create": achou → atualiza; não achou → cria | [12] |
+| Formatter | Pro+ | não | 11/05/2025 → 2025-05-11; telefone → +16232349012 | [16] |
+| Delay | Pro+ | não | follow-up 1 semana após formulário | [13] |
+| Schedule | [VERIFICAR plano] | não | relatório no 1º dia útil do mês | [15] |
+| Looping | Pro+, beta | não | uma ação para cada item de lista | [14] |
+| Storage | [VERIFICAR] | não | guardar contador/último ID | [2] |
+| Tables | todos (limites por plano) | não | registrar leads | [1][28] |
+| Webhooks | Pro+ | ações contam | receber dados de sistema próprio | [1][27] |
+| Human in the Loop | Pro+ | [VERIFICAR] | revisar texto de IA antes de publicar | [29] |
+
+Detalhes:
+- Filter [11]: no editor, "+" → "Filter"; em "Configure & test" escolha
+  campo, regra e valor; "+ And" (todas) ou "Add Or rule group"
+  (qualquer); "Continue" mostra se o dado de teste passaria. Regras
+  "(Text)" só funcionam com texto. Aviso quando o filtro sempre passa.
+- Paths [12]: "+" → "Paths" cria "Path A" e "Path B"; "Path rules" →
+  regras personalizadas, "Always run" ou "Fallback" (só um por grupo,
+  sempre o ramo mais à direita; não combina com "Always run"). Paths
+  precisa ser o ÚLTIMO passo; não dá para ter passos comuns depois dos
+  ramos (duplique ou use Sub-Zap). Use o campo "Zap Data was found" (e
+  não "Zap search was found status").
+- Formatter [16]: Date/Time (formatar, somar/subtrair, comparar);
+  Numbers (formatar número, telefone E.164, matemática, aleatório,
+  fórmulas tipo planilha); Text (dividir, extrair, substituir, regex,
+  maiúsc./minúsc., contar, HTML/Markdown, reduzir texto para IA);
+  Utilities (Lookup Table, line items, escolher de lista, importar CSV).
+  "Formatter with AI" monta o passo a partir de descrição.
+  Dica oficial: sempre preencher "From Format" ao converter datas; se o
+  app devolve UTC, converter para o fuso local.
+  [SUGESTÃO] Para o Brasil: datas DD/MM/AAAA, decimal com vírgula
+  ("26,24" → 26.24), telefone +55, fuso America/Sao_Paulo.
+- Delay [13]: "Delay For" (tempo fixo), "Delay Until" (data/hora;
+  se já passou, escolher tolerância: 15 min, 1 h, 1 dia ou sempre),
+  "Delay After Queue" (fila: processa uma execução por vez com
+  intervalo — evita rate limit, duplicidade e conflito; fila pode ser
+  compartilhada entre Zaps pelo nome). Mudar o Zap durante a espera
+  impede a continuação.
+- Schedule [15]: "Every hour/day/week/month" ou frequência
+  personalizada; opção de pular fins de semana; usa o fuso da CONTA
+  (mudou o fuso → desligue e religue o Zap); pode atrasar alguns
+  minutos; histórico em UTC.
+- Looping [14]: "Create Loop From Text / Line Items / Numbers"; teste
+  cria só o 1º loop; em produção cada iteração vira uma execução;
+  para rodar algo uma vez no fim, filtro "loop_iteration_is_last =
+  True"; não mapear "preview_loop_values".
+- Webhooks [27]: "Catch Hook" gera URL única — "Treat it as a password
+  or any other secret!"; aceita form, JSON, XML; JSON aninhado vira
+  campo com "__"; "/silent" devolve corpo vazio; o Zapier sempre
+  responde sucesso, mesmo sem Zap ativo; IPs estáticos em Pro+.
+- Human in the Loop [29]: "Collect Data", "Request Approval" e gatilho
+  "New Approval Requested". Revisores precisam de conta Zapier
+  [VERIFICAR — snippet de busca].
+- Tratamento de erro: "custom error handler" gera status "Handled
+  error" e evita o desligamento automático. [21]
+
+5.3 IA no Zapier (Foco 9)
+- AI by Zapier [33]: passo de IA dentro do Zap; níveis Standard (1×),
+  Advanced (3×), Premium (5×, padrão), BYOK (1×). Modelos listados em
+  13/11/2026: Standard — GPT-4.1 nano/mini, GPT-4o Mini, GPT-5
+  nano/mini, GPT-5.4 Mini/Nano, Gemini 2.5 Flash/Flash Lite; Advanced —
+  GPT-4.1, o3-mini, Claude 4.5 Haiku, Gemini 2.5 Pro; Premium — GPT-4o,
+  GPT-5, GPT-5.2, GPT-5.4, Claude 4.5/4.6 Sonnet, Claude 4.5/4.6/4.7/
+  4.8 Opus. Free: só Standard para pré-visualizar, sem ferramentas e
+  SEM publicar Zap com passo AI by Zapier.
+- Copilot [34]: constrói e edita; beta aberto.
+- Agents → AI by Zapier [32]: migração com botões "Migrate your Zap" →
+  "Open Zap" → revisar → "Test Zap" (testes completos consomem tarefas
+  nesta migração) → "Publish" → "Publish agent" → "Turn off agent"
+  (senão há ações duplicadas). Agente-para-agente vira Sub-Zap; agente
+  disparado por chat ainda sem equivalente.
+- AI Guardrails [36]: ações "Detect PII", "Sentiment Detection",
+  "Detect Toxicity" (AWS Comprehend) e "Detect Prompt Attack" (Amazon
+  Bedrock). PII só em INGLÊS e ESPANHOL — não cobre português. Dados
+  ficam 7 dias nos logs e 29–69 dias nas execuções.
+- Next Gen Zaps [4]: "AI is used only in steps that need judgment" —
+  o resto é determinístico.
+- Revisão humana: Human in the Loop após passo de IA; aprovação por
+  ferramenta no AI by Zapier; correções do Agentic Management de maior
+  risco exigem aprovação. [3][29][32]
+[SUGESTÃO] Fronteira com o curso de Agentes de IA: aqui, IA é UM PASSO
+dentro de um processo determinístico (classificar, resumir, extrair);
+o agente que decide sozinho quais ferramentas usar fica para o curso de
+agentes (T10 / iaclube agentes-de-ia).
+
+----------------------------------------------------------------
+6. CASOS REAIS (resultados e riscos) — demo × produção
+----------------------------------------------------------------
+Todos os números abaixo são AUTODECLARADOS em material do Zapier.
+6.1 Zappy Awards 2026 [46]
+- Marketing — Youtech (Justin Hallman): casou conversões por telefone e
+  do CRM com cliques de busca paga e enviou ao Google Ads; US$ 213 mil
+  em receita telefônica antes não rastreada atribuída à mídia paga.
+- Vendas — BioRender: IA extrai pontos das chamadas no Gong, código
+  preenche proposta, rascunho no Gmail a partir de botão no Slack;
+  3.468 rascunhos usados por 42 pessoas; follow-up de 15–20 min → ~3.
+- Atendimento — Mercari: camada de classificação e roteamento de
+  tickets com casos de baixa confiança enviados a humanos; ~47.000
+  tickets/mês resolvidos; 3.000+ h liberadas; 97% de 1ª resposta.
+- Operações — Galgo: revisão por exceção de fotos de entrega com
+  GPT-5-mini e log de auditoria; evidência inválida de ~8% para <2% em
+  3.000+ fotos/mês.
+- RH — Figma: eventos de checagem de antecedentes (Checkr) num painel
+  com triagem diária por IA; monitoramento de 3+ h/semana → <15 min/dia.
+- RH/recrutamento — Hims & Hers: 19 fluxos (Ashby, Airtable, Slack)
+  substituíram relatório manual; até 50 h/semana de recrutadores.
+- TI — Compucom: IA lê fotos de equipamentos; erros de inventário de
+  25% → ~1%.
+- Adoção — Jobber: +122% de construtores ativos em 30 dias; Klaviyo:
+  0 → 57 fluxos em 3 meses, 80% de adoção.
+6.2 Vetano (pequeno negócio, 3 pessoas) [47]
+- Boas-vindas: cadastro → mensagem no Slack → Next Gen Zap envia o
+  e-mail certo (talento × empresa), pula contas de teste, valida
+  endereço (ZeroBounce), evita boas-vindas duplicadas; se o validador
+  cair, envia mesmo assim. Antes de ligar um Zap novo, envia e-mail de
+  teste ao fundador para aprovação; Zaps antigos são DESLIGADOS, não
+  apagados.
+- Resultado no dia da feira: 71 execuções, zero erros, ~12 s por
+  e-mail. 19.569 e-mails com 0,37% de rejeição.
+- Riscos citados: erro de filtro anterior mandou mensagem ao público
+  errado; dependência de serviço externo; tudo enviado a prospects
+  passa por revisão humana.
+6.3 Página inicial [48]
+- Remote: "2,200 days of work per month"; Vendasta: 282 dias de
+  trabalho manual/ano; Superhuman: 42+ h/semana.
+6.4 Brasil
+[NÃO ENCONTRADO] Estudo de caso oficial do Zapier com empresa
+brasileira ou em português.
+[SUGESTÃO] Métricas para os alunos medirem nos próprios casos: tempo
+manual economizado por execução × execuções/mês; tarefas consumidas;
+taxa de erro (execuções com erro ÷ total); tempo até a 1ª resposta;
+nº de duplicidades; custo mensal (plano ÷ execuções úteis).
+[SUGESTÃO] Riscos por área: marketing (enviar ao público errado,
+spam, consentimento LGPD); conteúdo (publicar texto de IA sem
+revisão); atendimento (resposta automática errada, dado sensível em
+canal aberto); finanças (pagamento/fatura duplicado — o curso NÃO deve
+automatizar decisão financeira, só registro e notificação).
+
+----------------------------------------------------------------
+7. BOAS PRÁTICAS (oficiais e sugeridas)
+----------------------------------------------------------------
+[CONFIRMADO] Oficiais:
+- Testar cada passo antes de publicar; o teste de ação executa de
+  verdade. [2]
+- Copilot: testar bem para evitar loops; manter entradas curtas. [34]
+- Nomear versões ao publicar e usar notas no Zap ("Describe how your
+  Zap works by adding notes"). [23][60]
+- Webhook URL é segredo. [27]
+- Para muitos eventos simultâneos: "Delay After Queue". [13][22]
+- Para loops: valor único + Filter; campo "Processed by Zap"; "Find or
+  Create" em sincronizações de mão dupla. [24]
+- Ao importar para Next Gen Zap ou migrar agente, DESLIGAR o original.
+  [3][32]
+- Next Gen Zaps: começar com fluxos de baixo risco, sem pastas
+  jurídicas/financeiras; processar listas grandes em lotes. [3]
+- Compartilhar conexões só com quem precisa; parar de compartilhar
+  pausa os Zaps publicados que dependem da conexão. [42]
+  [SUGESTÃO/VERIFICAR] Preferir conta de serviço (e-mail da empresa) —
+  recomendação vista só em snippet de outro artigo da ajuda.
+[SUGESTÃO] Checklist "antes de publicar" (para material didático):
+1. O Zap tem nome claro: [Área] Gatilho → Resultado (ex.: "[MKT] Novo
+   lead no form → planilha + Slack").
+2. O gatilho é o evento certo (novo × atualizado)?
+3. Todos os campos obrigatórios estão mapeados, sem texto fixo de teste.
+4. Há filtro para descartar testes (ex.: e-mail contém "@teste").
+5. Datas, números e telefones formatados para o destino.
+6. A ação é idempotente (buscar antes de criar) ou há marcação de
+   "já processado"?
+7. O Zap escreve no mesmo app que o dispara? Se sim, há proteção contra
+   loop?
+8. Testou com dado fictício em destino de teste (canal/planilha de
+   teste)?
+9. Quem recebe o alerta de erro? Quem é o dono?
+10. Dado pessoal: precisa mesmo trafegar? Está minimizado?
+11. Publicou com nome de versão e nota explicando o fluxo.
+
+----------------------------------------------------------------
+8. SEGURANÇA, PRIVACIDADE E LGPD (Foco 8)
+----------------------------------------------------------------
+8.1 Plataforma [38]
+[CONFIRMADO] "Your data is encrypted everywhere it moves and everywhere
+it's stored" — TLS 1.2+ e AES-256. SOC 2 Type II e SOC 3, auditoria
+anual (SOC 3 público; SOC 2 sob NDA). Teste de intrusão anual; bug
+bounty. 2FA "on every plan". SSO SAML e SCIM. Trust Center
+(trust.zapier.com).
+[CONFIRMADO] "Zapier stores encrypted app credentials (OAuth, API keys,
+and more) in account-owned connections." Agentes e MCP não recebem
+tokens brutos de terceiros. [38]
+[CONFIRMADO] IA: "We don't train on the data that runs through your
+workflows, on any plan." Pode aprender com a ESTRUTURA dos fluxos (não
+o conteúdo). [38]
+[NÃO ENCONTRADO] Certificação ISO 27001 na página de segurança.
+
+8.2 Credenciais e menor privilégio [SUGESTÃO, com base em 38/42]
+- Conectar com conta de serviço/teste, não com a conta pessoal do
+  diretor; dar ao app só as permissões necessárias na tela OAuth.
+- Nunca colar senha ou chave de API em campos de texto de passos,
+  notas ou prompts de IA; usar a conexão do app.
+- Revisar periodicamente "Apps"/conexões e revogar as não usadas.
+- [CONFIRMADO] Página "App Connections": testar, reconectar, renomear,
+  transferir posse e apagar conexões; filtros "Owned by me" / "Shared
+  with me". Compartilhar uma conexão (Team/Enterprise) deixa colegas
+  usarem a conta em Zaps e agentes "without having access to your
+  credentials"; deixar de compartilhar pausa os Zaps que dependem dela.
+  Limite: 5.000 conexões por usuário. Compartilhar um Zap sem as
+  conexões impede os outros de ver/editar esses passos. [42]
+- [VERIFICAR] Enterprise pode bloquear compartilhamento com toda a conta
+  (só snippet de busca).
+- Se o dono perde acesso à conexão, execuções ficam retidas ("Connection
+  access revoked"). [22]
+- Enterprise: restrições de apps ("App access policy"), restrições de
+  publicação com aprovação de admin, papéis. [22][23][48]
+
+8.3 Dados, retenção e exclusão [39][40]
+[CONFIRMADO] Hospedagem AWS EUA; sem opção de residência só UE.
+[CONFIRMADO] Retenção (atualizado 17/04/2026):
+- Histórico de Zaps: logs 7 dias; conta 29–69 dias (Company/Enterprise
+  podem encurtar para 7–30 dias); backups até 4 meses; dados de TESTE
+  ficam até você apagar o Zap.
+- Tables e Forms: até você apagar; backups até 4 meses.
+- Chatbots: conversas apagadas após 60 dias.
+- Agents: conversas e logs até apagar o agente.
+- Canvas: removido em 30 dias após exclusão.
+- MCP: até apagar o servidor ou a conta.
+- Next Gen Zaps: histórico 60 dias; não entram no "Export my data". [5]
+[CONFIRMADO] Exportar/apagar dados da conta: seção "Data Management" →
+"Export my data"; link de download vale 24 h; apagar dados é
+permanente. O ZIP traz Zaps, Agents, Chatbots, MCP etc. [41]
+[CONFIRMADO] Apagar conteúdo num produto não apaga cópias em outros
+produtos nem nos apps conectados. [40]
+
+8.4 Contrato e papéis [39]
+[CONFIRMADO] Cliente = "data controller"; Zapier = "data processor".
+DPA publicado com Cláusulas Contratuais Padrão (UE); "Zapier can't sign
+DPAs from other companies." Lista de suboperadores pública. Certificado
+no EU-US Data Privacy Framework (+ extensões Reino Unido e Suíça).
+"Zapier does not sell or market your data to third parties."
+[CONFIRMADO] Não suporta PHI/HIPAA e não assina BAA. [39]
+
+8.5 Dados sensíveis
+[SUGESTÃO] Não passar pelo Zapier, em curso ou em produção sem análise
+jurídica: dados de saúde, dados de crianças, dados biométricos,
+documentos (CPF completo, RG), dados bancários e senhas. AI Guardrails
+NÃO detecta PII em português. [36]
+
+8.6 LGPD (Brasil)
+[CONFIRMADO] A página de privacidade do Zapier não menciona a LGPD. [39]
+[CONFIRMADO] LGPD (Lei 13.709/2018): art. 33 — transferência
+internacional só nos casos previstos (p.ex. país adequado, cláusulas-
+padrão contratuais). [57]
+[CONFIRMADO, sec.] Resolução CD/ANPD nº 19/2024 (23/08/2024): prazo de
+12 meses (até 23/08/2025) para incorporar as cláusulas-padrão da ANPD
+nos contratos que usam cláusulas como mecanismo. [58]
+[VERIFICAR] Resolução CD/ANPD nº 32/2026 reconhecendo a UE como
+adequada (fonte secundária). Os EUA NÃO constam como país adequado
+[VERIFICAR no site da ANPD].
+→ Implicação: a empresa brasileira (controladora) que envia dados
+pessoais ao Zapier (EUA) precisa de base legal para o tratamento e de
+mecanismo de transferência; o DPA do Zapier usa SCCs da UE, não as
+cláusulas da ANPD [VERIFICAR com jurídico]. Para o curso: usar SÓ
+dados fictícios e recomendar consulta ao encarregado (DPO).
+[SUGESTÃO] Mini-checklist LGPD para cada Zap: (1) que dados pessoais
+passam? (2) finalidade e base legal; (3) dá para minimizar (só e-mail,
+sem CPF)? (4) quem acessa o histórico (29–69 dias)? (5) apps de destino
+estão no registro de operações? (6) como atender pedido de exclusão do
+titular (apagar execuções + dados nos apps)?
+
+----------------------------------------------------------------
+9. LIMITAÇÕES E ERROS (Focos 5 e 6)
+----------------------------------------------------------------
+9.1 Status de execução [19] (atualizado 15/10/2026)
+- Successful (sucesso) — todos os passos ok.
+- Filtered — filtro/caminho não atendido; parou ali.
+- Errored — falhou; Zap com erros repetidos pode ser desligado.
+- Handled error — tratador de erro rodou.
+- On hold — retida (conta desconectada, limite...); dados guardados;
+  pode reprocessar.
+- Running — em andamento.
+- Delayed — em espera de Delay.
+- Scheduled — Autoreplay vai tentar de novo.
+- Safely halted — parada intencional (busca sem resultado).
+- Needs review — aguardando Human in the Loop / agente.
+- Skipped — passo não rodou porque anterior parou (só status de passo).
+
+9.2 Diagnóstico [21] (atualizado 15/10/2026)
+- Zap history → abrir execução com erro → passo com erro → abas
+  "Troubleshoot" (gera instruções com IA) ou "Logs" (código HTTP,
+  mensagem, endpoint, requisição).
+- No editor: ícone "Zap runs" → "Go to step"; ícone "Status" na barra
+  lateral (Warning, Error, Info).
+- Códigos: 400 entrada inválida; 401 reconectar conta; 403 permissão;
+  404 registro não existe; 422 formato errado (usar Formatter); 429
+  rate limit; 500 erro do app (reprocessar; se repetir, ver status do
+  Zapier e do app). Timeouts podem vir sem código.
+- Status da plataforma: status.zapier.com (em 18/11/2026: "We're fully
+  operational"; componentes Instant Triggers, Polling Triggers,
+  Searches & Writes, Zap Editor, Zap History etc.). [43]
+
+9.3 Execuções retidas ("held") [22] (atualizado 11/11/2026)
+Motivos: excesso de dados (flood protection, 100+ itens numa checagem);
+app desconectado; acesso à conexão revogado; limite de tarefas;
+problema de pagamento; downgrade/fim de teste; política de apps
+(Enterprise); Zap com mais de 100 passos. "while a run is held, Zapier
+continues to store trigger data" → corrigir e reprocessar sem perda.
+
+9.4 Replay / reprocessamento [17] (atualizado 29/05/2026)
+- "Errored steps": reprocessa só passos com erro (único no Free).
+- "Entire Zap" (pago): reexecuta tudo, inclusive gatilho e passos que
+  já tinham dado certo → RISCO DE DUPLICIDADE e consome tarefas de
+  novo.
+- Autoreplay (pago): conta ("Use account setting") ou por Zap ("Always
+  replay"/"Never replay"); em Team/Enterprise, ligado por super admin
+  ou dono. Não reprocessa "safely halted".
+- Requisitos: Zap ligado e alterações publicadas; não dá para
+  reprocessar se o app/evento do gatilho mudou.
+- "Use a previous Zap run as a test record" — usar execução real
+  anterior como dado de teste. [60]
+
+9.5 Duplicidade, idempotência, ordem, rate limit e loops (Foco 5)
+- Deduplicação só dentro do mesmo Zap; dois Zaps com o mesmo gatilho
+  disparam ambos. [26]
+- Ação duplicada depende do app: cria outro registro, dá erro,
+  atualiza ou ignora — "Zapier recommends testing". [26]
+- Timeout seguido de replay pode duplicar. [VERIFICAR — snippet]
+- Gatilho de "atualização" + ação que atualiza o mesmo registro = loop.
+  [24][25]
+- Ordem: o Zapier não garante ordem entre execuções paralelas
+  [VERIFICAR — NÃO ENCONTRADO texto explícito]; "Delay After Queue"
+  serializa. [13]
+- Rate limit (429): usar "Delay After Queue"; ajustar flood
+  protection. [13][20][21]
+- Next Gen Zaps: sem controle de concorrência; correções oficiais =
+  fila "pendente → processado" com Zap agendado, ou campo de status
+  "sending → sent" (não é garantia absoluta). [6]
+
+9.6 Versões, desligamento e recuperação (Foco 6) [23]
+- Rascunho ("draft") editável sem desligar o Zap; só 1 rascunho.
+- Cada "Publish" cria versão; histórico: Free nenhum; Pro 1 mês; Team
+  6 meses; Enterprise 1 ano. Rollback: "Edit from this version" /
+  "Edit from vX" cria rascunho a partir da versão antiga.
+- Versões não são apagáveis/editáveis (só renomear); duplicar/exportar
+  Zap não leva versões.
+- Desligar: botão liga/desliga do Zap [VERIFICAR rótulo]; Zap desligado
+  não recebe webhooks. [4]
+
+9.7 Limitações gerais
+- Zap só dispara para dados NOVOS após ligar; para migrar históricos,
+  usar "Transfer". [25]
+- Interface só em inglês. [31]
+- AI Guardrails sem PII em português. [36]
+- Sem residência de dados no Brasil/UE. [39]
+- Free: 2 passos, 15 min, sem lógica. [1]
+
+----------------------------------------------------------------
+10. COMPARAÇÃO (Foco 10) — critérios verificáveis, 18/11/2026
+----------------------------------------------------------------
+| Critério | Zapier | n8n | Make | Power Automate |
+|---|---|---|---|---|
+| Unidade de cobrança | tarefa = ação bem-sucedida [2] | execução = fluxo inteiro, qualquer nº de passos [52] | crédito = maioria das ações 1 crédito; roteador e tratadores de erro não contam [53] | por usuário ou por bot [54] |
+| Plano gratuito | 100 tarefas, 2 passos, 15 min [1] | Community Edition auto-hospedada no GitHub; preço não exibido [52] [VERIFICAR "grátis"] | 1.000 créditos/mês; intervalo 15 min [53][VERIFICAR] | recursos básicos inclusos em contas de trabalho/escola; só conectores padrão [55] |
+| Entrada paga | Pro US$ 19,99/mês anual (750 t) [1] | Starter €20/mês anual (2.500 execuções); no Brasil a página mostra R$ 125/mês anual (Pro R$ 313/mês, 10 mil execuções) [52] | Core ~US$ 9–10,59/mês (10.000 créditos) [53][VERIFICAR, sec.] | Premium US$ 15/usuário/mês anual [54] |
+| Intervalo mínimo | 15/2/1 min por plano [25] | — [NÃO ENCONTRADO] | 1 min no Core [53][VERIFICAR] | — |
+| Nº de apps | 9.000+ [48] | [NÃO ENCONTRADO na página de preços] | [NÃO ENCONTRADO] | conectores padrão/premium [55] |
+| Auto-hospedagem | não | sim (Community; Business só self-hosted) [52] | não | não (nuvem MS; desktop flows) [54] |
+| Interface em PT-BR | não [31] | [VERIFICAR] | [VERIFICAR] | sim (Microsoft 365) [VERIFICAR] |
+| Residência de dados | EUA [39] | escolha do cliente se self-hosted | [VERIFICAR] | região do locatário M365 [VERIFICAR] |
+| RPA de desktop | não | não | não | sim (desktop flows) [54] |
+[SUGESTÃO] Quando escolher (para o aluno):
+- Zapier: maior catálogo, curva mais curta, ideal para não técnicos e
+  fluxos lineares com pouco volume; caro em alto volume (cobra por ação).
+- n8n: cobra por execução (fluxos longos ficam baratos), pode rodar no
+  próprio servidor (bom para LGPD/residência), exige mais técnica —
+  é a trilha T10 de n8n.
+- Make: visual com roteadores, crédito por ação, preço de entrada menor.
+- Power Automate: se a empresa já vive no Microsoft 365 (Outlook,
+  Teams, SharePoint) e precisa de RPA de desktop (fora do escopo aqui).
+[SUGESTÃO] Exercício de custo: fluxo de 6 ações × 1.000 execuções/mês
+= 6.000 tarefas Zapier (Pro faixa 10.000: US$ 129/mês anual) × 1.000
+execuções n8n (Starter: €20 ou R$ 125/mês anual) × ~6.000 créditos Make (Core). Mostrar
+que a escolha depende de volume, passos e hospedagem — refazer a conta
+com preços do dia.
+
+----------------------------------------------------------------
+11. NOVIDADES (até 18/11/2026)
+----------------------------------------------------------------
+- Next Gen Zaps (23/09/2026): listas sem limite de 500, ramos que se
+  separam e se juntam, loops aninhados, tratamento de erro que deixa
+  continuar, pausa para resposta humana, "self-healing workflows". "
+  Available on all paid plans (Pro, Team, Enterprise)." [45]
+- Agentic management (padrão ligado) em Next Gen Zaps. [3][4]
+- Cobrança de Next Gen Zaps, SDK e mudanças no MCP em 01/12/2026. [2]
+- Agents → AI by Zapier (migração; sem data de desligamento). [32]
+- AI by Zapier com níveis de modelo e ferramentas (jun/2026). [33]
+- Interfaces → Forms (2026). [10]
+- Sidekick (beta, Free/Pro). [35]
+- AI Guardrails (PII, prompt injection, toxicidade). [36]
+- Guided templates; usar execução anterior como dado de teste. [60]
+- Lead Router no histórico de tarefas (21/07/2026). [2]
+- Atualizações mensais de integrações: out/2026 (53), set (39), ago
+  (78, inclui ações de WhatsApp Business API), jul (52), jun (82), mai
+  (73), abr (71, inclui ações de status do WhatsApp). [44]
+- Sessões 1:1 gratuitas para montar o 1º Next Gen Zap (planos pagos).
+  [60]
+
+----------------------------------------------------------------
+12. MATERIAL DIDÁTICO OFICIAL
+----------------------------------------------------------------
+[CONFIRMADO] Zapier Learn / Academy (learn.zapier.com): todos os cursos
+gratuitos com conta Free; certificado de conclusão (LinkedIn). [49]
+- "01 Chat: Turn AI conversations into finished work" (55 min)
+- "02 Delegate: Let AI take action in your apps" (~25 min)
+- "03 Automate: Put repetitive work on autopilot" (~35 min) ← mais
+  próximo do nosso Essentials
+- "04 Engineer: Build AI systems that work reliably at scale" (~65 min)
+- "Admin Essentials: Govern AI as your people build" (~60 min)
+- "AI Transformation Leaders" (~2 h 30)
+- "Zapier Jumpstart: Go from Zero to Zapier" (~20 min) ← pré-aula
+[CONFIRMADO] Central de ajuda: categorias Getting started, Your Zapier
+account, Zap workflows, Zapier tools, Zapier AI, Custom logic and
+integrations, Apps, Forms, Tables, Canvas, Lead Router, Product
+updates. [60]
+[CONFIRMADO] Guias de templates de caso de uso: "Unified lead capture",
+"IT helpdesk", "Identify sales opportunities in support tickets",
+"Deal desk (HubSpot + Slack)". [60]
+[CONFIRMADO] Comunidade (community.zapier.com) com atualizações de
+produto. [44]
+[NÃO ENCONTRADO] Material oficial em português.
+[SUGESTÃO] Mapa do curso:
+Essentials (100–130 min)
+ M1 (15) O que é automação; quando NÃO automatizar.
+ M2 (15) Mapa de produtos Zapier 2026 e glossário.
+ M3 (20) Anatomia de um Zap + demo de 2 passos.
+ M4 (15) Tarefas, planos e cálculo de custo.
+ M5 (20) Lógica: Filter, Paths, Formatter, Delay, Schedule (demo).
+ M6 (15) Testar, publicar, monitorar, reprocessar; loops/duplicidade.
+ M7 (10) Segurança, LGPD e dados fictícios.
+ M8 (10) IA no Zapier e Next Gen Zaps; comparação com n8n/Make/PA.
+ Quiz final.
+Hands On (60–90 min): 13b.
+
+----------------------------------------------------------------
+13. EXERCÍCIOS, OFICINAS E PROJETOS (Foco 12)
+----------------------------------------------------------------
+Regras para todas as práticas [SUGESTÃO]:
+- Conta Zapier nova (teste Pro de 14 dias, sem cartão) [30], Google
+  pessoal de teste (Gmail, Planilhas, Agenda) e um workspace Slack
+  gratuito de teste [VERIFICAR plano gratuito do Slack] — ou só e-mail.
+- Dados fictícios (arquivo dados-ficticios-leads.csv nesta pasta);
+  e-mails no domínio reservado example.com (não recebe e-mail real).
+- Destinos de teste: planilha "TESTE – Leads", canal #teste-zapier,
+  e-mail para o próprio aluno. Nunca disparar para clientes reais.
+- Ao fim: desligar todos os Zaps e apagar as execuções se tiver usado
+  algum dado real.
+
+13a. EXERCÍCIOS CURTOS (Essentials)
+1. Classifique: gatilho ou ação? "Nova resposta de formulário", "Enviar
+   e-mail", "Nova linha na planilha", "Criar evento na agenda".
+   Gabarito: G, A, G, A.
+2. Conte tarefas: Zap com gatilho + Filter + Formatter + 2 ações, 100
+   execuções, 60 passam no filtro. Gabarito: 120 tarefas.
+3. Polling: no Free, um lead preenchido às 10h02 chega ao Slack até que
+   horas no pior caso? Gabarito: ~10h17 (intervalo de 15 min) [25].
+4. Status: o Zap mostra "Safely halted". Erro? Gabarito: não — parada
+   intencional (busca sem resultado) [19].
+5. Loop: Zap "linha atualizada na planilha → atualizar a mesma linha".
+   O que acontece e como evitar? Gabarito: loop; coluna "Processado" +
+   Filter "Processado está vazio" [24].
+6. Replay: 3 execuções falharam no passo 2 de 3. Qual replay usar para
+   não duplicar o passo 1? Gabarito: "Errored steps" [17].
+7. LGPD: cite 3 dados que você NÃO colocaria num Zap de teste.
+8. Escolha da ferramenta: 20 passos × 5.000 execuções/mês — Zapier ou
+   n8n? Justifique com a unidade de cobrança [2][52].
+
+13b. OFICINAS (Hands On, 4 × ~15 min + projeto)
+Oficina 1 — Captura de lead (Forms/Google Forms → Planilha)
+ Passos: criar formulário (Zapier Forms ou Google Forms) com Nome,
+ E-mail, Interesse, Consentimento; Zap: novo envio → criar linha na
+ planilha "TESTE – Leads"; testar gatilho com envio fictício; mapear
+ campos; testar ação; publicar.
+ Teste seguro: só dados do CSV fictício; planilha de teste.
+ Êxito: 3 envios novos viram 3 linhas; Zap history = 3 "Successful";
+ 0 tarefa no teste; 3 tarefas nas execuções reais. [2][10]
+Oficina 2 — Filtrar e formatar (Pro/teste)
+ Adicionar Filter "Consentimento = Sim" e "E-mail não contém @teste";
+ Formatter: nome em "Title Case", data DD/MM/AAAA → AAAA-MM-DD,
+ telefone para +55...; Paths opcional: Interesse = "Curso" → Slack
+ #teste-vendas; senão → e-mail ao aluno.
+ Êxito: envios sem consentimento aparecem como "Filtered" e não geram
+ linha; dados chegam formatados. [11][12][16]
+Oficina 3 — Agenda e conteúdo (calendário/notificação)
+ Opção A: Schedule "Every week" segunda 9h → buscar linhas da semana
+ [VERIFICAR ação de busca disponível] → enviar resumo por e-mail.
+ Opção B: novo evento no Google Agenda de teste → Delay Until 1 h antes
+ → mensagem no Slack/e-mail.
+ Opção C (conteúdo, C6): nova linha "Pauta" na planilha → AI by Zapier
+ (Standard) gera rascunho de post → Human in the Loop "Request
+ Approval" → registrar aprovado em outra aba. (Free não publica AI by
+ Zapier; usar teste Pro.) [13][15][29][33]
+ Êxito: lembrete chega no horário (tolerância de alguns minutos);
+ nada é publicado sem aprovação.
+Oficina 4 — Quebrar, monitorar e recuperar
+ 1) Desconectar/renomear a aba da planilha → enviar formulário →
+ ver "Errored"/"On hold"; 2) abrir "Troubleshoot"/"Logs"; 3) corrigir;
+ 4) "Replay" → "Errored steps"; 5) provocar duplicidade enviando o mesmo
+ e-mail 2× e corrigir com "Find or Create"/busca + Paths
+ ("Zap Data was found"); 6) publicar como nova versão nomeada
+ ("v2 – anti-duplicidade").
+ Êxito: nenhuma linha duplicada; execução reprocessada sem refazer
+ passos certos. [12][17][21][22]
+
+13c. PROJETO FINAL (Hands On)
+"Automação documentada de ponta a ponta" para uma das áreas:
+marketing (lead → planilha → Slack → e-mail de boas-vindas),
+atendimento (formulário de chamado → triagem por Paths → registro em
+Tables → aviso), finanças (registro de despesa fictícia → planilha →
+alerta se valor > X; SEM pagamento automático), ou conteúdo (pauta →
+rascunho com IA → aprovação humana → calendário editorial).
+Entregáveis: (1) mapa do processo (Canvas ou desenho) com gatilho,
+decisões, ações e dono; (2) Zap publicado com ≥ 1 Filter ou Paths e ≥ 1
+Formatter; (3) evidência de 3 testes (prints do Zap history); (4) cálculo
+de tarefas/mês e plano necessário; (5) plano de falha: quem é avisado,
+como reprocessar, como evitar duplicidade/loop; (6) mini-checklist LGPD;
+(7) versão nomeada e nota no Zap.
+Rubrica [SUGESTÃO]: funciona (30%), robustez (duplicidade/erro/loop,
+25%), documentação (20%), segurança/LGPD (15%), custo (10%).
+
+----------------------------------------------------------------
+14. RESPOSTAS AOS FOCOS ESPECÍFICOS
+----------------------------------------------------------------
+1. Mapa de produtos → 5.1 [CONFIRMADO, com status].
+2. Conceitos → 4 e 2.3 (trigger, action, task, run, step, mapping,
+   sample data, connection, polling, instant, webhook).
+3. Fluxo completo → 0 (fluxo observável), 3.2, 13b.
+4. Filter/Paths/Formatter/Delay/Schedule/Looping/Storage/Tables → 5.2
+   (Storage e plano de Schedule/Storage: [VERIFICAR]).
+5. Teste seguro, replay, duplicidade, idempotência, ordem, rate limit,
+   loops → 9.4, 9.5 (ordem entre execuções: NÃO ENCONTRADO texto
+   oficial explícito).
+6. Histórico, alertas, diagnóstico, versões, desligamento, recuperação
+   → 9.1–9.6 (configuração de e-mails de alerta de erro além do
+   desligamento automático: NÃO ENCONTRADO na ajuda consultada).
+7. Planos, tarefas, limites, excedente, usuários, pastas, governança →
+   2 (valor por tarefa excedente: [VERIFICAR]; pastas: citadas como
+   filtro do histórico [18], regras de pastas compartilhadas NÃO
+   ENCONTRADO).
+8. Segurança e LGPD → 8.
+9. IA/Agents/Copilot → 5.3.
+10. Comparação → 10.
+11. Casos → 6 (nenhum caso brasileiro oficial).
+12. Práticas com apps gratuitos e dados fictícios → 13.
+
+----------------------------------------------------------------
+15. TRECHOS LITERAIS ÚTEIS (curtos; para citação com fonte)
+----------------------------------------------------------------
+- "A Zap is an automated workflow that connects your apps and services
+  together." [7]
+- "A task is an action your Zap successfully completes." [7]
+- "Zap triggers never use tasks." [2]
+- "Testing does not use tasks, even though testing an action step
+  performs the action in your app." [2]
+- "Instant triggers do not use deduplication because apps only send new
+  data." [26]
+- "They will not trigger for old data, including data that was created
+  in your app before the Zap was turned on." [25]
+- "Treat it as a password or any other secret!" (URL de webhook) [27]
+- "while a run is held, Zapier continues to store trigger data." [22]
+- "A Next Gen Zap is a workflow that an AI tool builds for you and
+  Zapier runs." [4]
+- "Do not run your most sensitive workflows through Next Gen Zaps during
+  early access." [3]
+- "Zapier has not set a date to turn off Agents yet." [32]
+- "Zapier Interfaces is now Zapier Forms." [10]
+- "We don't train on the data that runs through your workflows, on any
+  plan." [38]
+- "Zapier is only available in English." [31]
+
+----------------------------------------------------------------
+16. MATERIAIS PARA BAIXAR
+----------------------------------------------------------------
+| Arquivo nesta pasta | Origem | Tipo |
+|---|---|---|
+| zapier-data-retention-deletion-export-2026-03-23.pdf | res.cloudinary.com/zapier-media/.../Data_Retention_Deletion_Export_2026-03-23_qgndnx.pdf | PDF oficial (jurídico) |
+| dados-ficticios-leads.csv | criado nesta pesquisa [SUGESTÃO] | CSV fictício p/ oficinas |
+Outros materiais (não baixáveis como arquivo; consultar online):
+- Cursos Zapier Learn (vídeo, gratuitos com conta) — learn.zapier.com [49]
+- Templates: zapier.com/templates/details/a7a601f443c7d57d834bf5408bb980
+  bc519752a88a090ccac27a98770ffcfc07 (Forms → Sheets → Slack) [50];
+  zapier.com/templates/details/f30e368b178eed53030cbf8b404ee186bb62988e
+  82117191fe7e89384af54b0d (lead → Sheets → Gmail → Slack) [51]
+- SOC 3 e whitepaper de segurança: trust.zapier.com (SOC 2 sob NDA). [38]
+- DPA: zapier.com/legal (Data Processing Addendum) [VERIFICAR URL].
+[NÃO ENCONTRADO] Checklists ou CSVs oficiais de exemplo do Zapier para
+download; guias oficiais em PDF sobre Zaps.
+
+----------------------------------------------------------------
+17. PÁGINAS PARA SALVAR (uma página por item; PDFs nesta pasta)
+----------------------------------------------------------------
+| Arquivo | URL | Fonte |
+|---|---|---|
+| pagina-zapier-precos.pdf | zapier.com/pricing | [1] |
+| pagina-zapier-como-tarefas-sao-contadas.pdf | help.zapier.com/hc/en-us/articles/8496196837261 | [2] |
+| pagina-zapier-next-gen-zaps-comecar.pdf | .../articles/48391476448141 | [3] |
+| pagina-zapier-o-que-e-next-gen-zap.pdf | .../articles/50439848951437 | [4] |
+| pagina-zapier-next-gen-zaps-limitacoes.pdf | .../articles/50212379954957 | [5] |
+| pagina-zapier-next-gen-zaps-duplicidade.pdf | .../articles/50042710604685 | [6] |
+| pagina-zapier-conceitos-chave.pdf | .../articles/8496181725453 | [7] |
+| pagina-zapier-guia-rapido-zaps.pdf | .../articles/22234847450893 | [8] |
+| pagina-zapier-o-que-e-zapier.pdf | .../articles/37518970271245 | [9] |
+| pagina-zapier-forms-criar.pdf | .../articles/14490267815949 | [10] |
+| pagina-zapier-filtros.pdf | .../articles/8496276332557 | [11] |
+| pagina-zapier-paths.pdf | .../articles/8496288555917 | [12] |
+| pagina-zapier-delay.pdf | .../articles/8496288754829 | [13] |
+| pagina-zapier-looping.pdf | .../articles/8496106701453 | [14] |
+| pagina-zapier-schedule.pdf | .../articles/8496288648461 | [15] |
+| pagina-zapier-formatter.pdf | .../articles/8496212590093 | [16] |
+| pagina-zapier-replay.pdf | .../articles/8496241726989 | [17] |
+| pagina-zapier-historico.pdf | .../articles/8496291148685 | [18] |
+| pagina-zapier-status-de-execucao.pdf | .../articles/20505304170637 | [19] |
+| pagina-zapier-flood-protection.pdf | .../articles/32466537676685 | [20] |
+| pagina-zapier-solucionar-erros.pdf | .../articles/8496037690637 | [21] |
+| pagina-zapier-execucoes-retidas.pdf | .../articles/37454233721869 | [22] |
+| pagina-zapier-rascunhos-e-versoes.pdf | .../articles/9693520498445 | [23] |
+| pagina-zapier-zap-em-loop.pdf | .../articles/8496232045453 | [24] |
+| pagina-zapier-como-gatilhos-funcionam.pdf | .../articles/8496244568589 | [25] |
+| pagina-zapier-dados-duplicados.pdf | .../articles/8496260269965 | [26] |
+| pagina-zapier-webhooks.pdf | .../articles/8496083355661 | [27] |
+| pagina-zapier-tables-limites.pdf | .../articles/15721386410765 | [28] |
+| pagina-zapier-human-in-the-loop.pdf | .../articles/38733184458765 | [29] |
+| pagina-zapier-teste-gratis.pdf | .../articles/8496197192461 | [30] |
+| pagina-zapier-idioma-interface.pdf | .../articles/35201074788877 | [31] |
+| pagina-zapier-migracao-agents-ai-by-zapier.pdf | .../articles/47402591569805 | [32] |
+| pagina-zapier-ai-by-zapier-niveis-modelo.pdf | .../articles/46425475442829 | [33] |
+| pagina-zapier-copilot.pdf | .../articles/38215656607757 | [34] |
+| pagina-zapier-sidekick.pdf | .../articles/45884588103309 | [35] |
+| pagina-zapier-ai-guardrails.pdf | .../articles/43960366238221 | [36] |
+| pagina-zapier-mcp.pdf | .../articles/48308034391821 | [37] |
+| pagina-zapier-seguranca-compliance.pdf | zapier.com/security-compliance | [38] |
+| pagina-zapier-privacidade-dados.pdf | zapier.com/legal/data-privacy | [39] |
+| pagina-zapier-retencao-exclusao.pdf | zapier.com/legal/data-retention-deletion | [40] |
+| pagina-zapier-exportar-apagar-dados.pdf | .../articles/8496289406349 | [41] |
+| pagina-zapier-compartilhar-conexoes.pdf | .../articles/8496290788109 | [42] |
+| pagina-zapier-status.pdf | status.zapier.com | [43] |
+| pagina-zapier-next-gen-zaps-anuncio.pdf | community.zapier.com/product-updates/the-next-generation-of-zaps-is-here-53832 | [45] |
+| pagina-zapier-zappy-awards-2026.pdf | zapier.com/blog/zappy-awards-winners-2026/ | [46] |
+| pagina-zapier-caso-vetano.pdf | zapier.com/blog/vetano-next-gen-zaps/ | [47] |
+| pagina-zapier-learn.pdf | learn.zapier.com | [49] |
+| pagina-zapier-template-forms-sheets-slack.pdf | [50] | [50] |
+| pagina-zapier-template-lead-sheets-gmail-slack.pdf | [51] | [51] |
+| pagina-n8n-precos.pdf | n8n.io/pricing/ | [52] |
+| (não gerado) pagina-make-precos.pdf | make.com/en/pricing — bloqueado por verificação anti-robô; SALVAR MANUALMENTE | [53] |
+| pagina-power-automate-precos.pdf | microsoft.com/.../power-automate/pricing | [54] |
+| pagina-microsoft-power-automate-licencas.pdf | learn.microsoft.com/power-platform/admin/power-automate-licensing/types | [55] |
+| pagina-planalto-lgpd-lei-13709.pdf | planalto.gov.br/.../l13709.htm | [57] |
+Resultado da geração (18/11/2026): 53 PDFs gerados automaticamente pelo
+Edge (impressão da página), conferidos por extração de texto. Falhou só
+pagina-make-precos.pdf (página de verificação anti-robô) — salvar à mão.
+Obs.: [42] (8496290788109) é o artigo "Manage your app connections",
+que inclui a seção "Share an app connection".
+
+----------------------------------------------------------------
+18. LACUNAS E PONTOS A VERIFICAR
+----------------------------------------------------------------
+1. REVALIDAR TUDO APÓS 01/12/2026: cobrança de Next Gen Zaps, SDK e MCP;
+   possíveis mudanças de tela.
+2. Valor em dólar por tarefa excedente (pricing/rates deu 404).
+3. Plano exigido para Schedule by Zapier e Storage by Zapier (artigos
+   não informam); limites oficiais do Storage (fontes divergem).
+4. Human in the Loop: consumo de tarefas, timeout e exigência de conta
+   Zapier para revisores (blog × ajuda divergem).
+5. Rótulos atuais da barra lateral e dos eventos de Google Sheets/Slack
+   (conferir na interface antes de gravar).
+6. Data exata da troca Interfaces → Forms (jan/2026, fonte secundária).
+7. Make: preços e créditos oficiais (página oficial não mostrou números;
+   valores de fontes secundárias). n8n: confirmar que Community Edition
+   é gratuita e licença atual.
+8. Power Automate: franquia diária de ações em licenças M365 (6.000,
+   fonte secundária) e interface em PT-BR.
+9. LGPD: mecanismo de transferência internacional para os EUA (cláusulas
+   ANPD × SCC UE no DPA do Zapier); Resolução ANPD 32/2026 (sec.).
+   Consultar jurídico/DPO.
+10. Ordem de execução entre runs paralelos — sem texto oficial.
+11. Configuração de notificações de erro por e-mail (só achado o aviso
+    de desligamento automático).
+12. Caso real brasileiro — NÃO ENCONTRADO.
+13. IOF e preço efetivo em reais.
+14. Regras de pastas e compartilhamento de Zaps no Team (só snippets).
+15. Páginas que falharem na geração automática de PDF (ver seção 17)
+    devem ser salvas manualmente pelo navegador.
+
+----------------------------------------------------------------
+19. APÊNDICE — WEBHOOKS, API, MCP E SDK (para equipe técnica)
+----------------------------------------------------------------
+- Webhooks by Zapier [27]: gatilhos "Catch Hook" (corpo interpretado),
+  "Catch Raw Hook" (corpo bruto + cabeçalhos), "Retrieve Poll" (consulta
+  REST, só basic auth, com deduplicação); ações POST/GET/PUT/Custom
+  Request com JSON/form, basic auth, headers; "Unflatten"; array de
+  objetos dispara uma execução por objeto. Teste com curl, webhook.site
+  ou RequestBin.
+- Deduplicação para desenvolvedores [59]: o campo "id" de cada objeto
+  governa a deduplicação; lista em ordem cronológica reversa; o
+  polling não pagina automaticamente.
+- Code by Zapier: 1 tarefa por execução padrão; Free com 1 s de
+  execução por passo. [1][2]
+- Zapier MCP [37]: Free a Enterprise; 2 tarefas por chamada bem-sucedida;
+  clientes Claude, ChatGPT, Gemini, Cursor, VS Code; só Streamable HTTP
+  (SSE não suportado); 1 servidor por cliente; 9.000+ apps e 40.000+
+  ações; servidor compartilhado só em Team/Enterprise.
+- Zapier SDK [9]: acesso autenticado a 9.000+ apps via código para
+  agentes/desenvolvedores; cobrança a partir de 01/12/2026. [2]
+- Next Gen Zaps [4][5]: TypeScript até 200.000 caracteres; 1 gatilho
+  (app, agenda ou webhook — "A webhook receives events only while the
+  workflow is turned on"); execução até 30 min.
+- MCP Client: conectar servidores MCP remotos a Zaps. [60]
+- Developer Platform: criar integração própria (fora do escopo). [9]
+
+----------------------------------------------------------------
+20. FONTES (consultadas em 18/11/2026; "sec." = fonte secundária;
+    datas = "Updated" exibido no artigo)
+----------------------------------------------------------------
+[1] Zapier — Plans & Pricing. https://zapier.com/pricing
+[2] Zapier Help — How is task usage measured in Zapier? (13/11/2026)
+    https://help.zapier.com/hc/en-us/articles/8496196837261
+[3] Zapier Help — Get started with Next Gen Zaps (17/11/2026)
+    https://help.zapier.com/hc/en-us/articles/48391476448141
+[4] Zapier Help — What is a Next Gen Zap? (17/11/2026)
+    https://help.zapier.com/hc/en-us/articles/50439848951437
+[5] Zapier Help — Next Gen Zap limitations (17/11/2026)
+    https://help.zapier.com/hc/en-us/articles/50212379954957
+[6] Zapier Help — Next Gen Zap is creating duplicate data (16/11/2026)
+    https://help.zapier.com/hc/en-us/articles/50042710604685
+[7] Zapier Help — Learn key concepts in Zap workflows (13/08/2026)
+    https://help.zapier.com/hc/en-us/articles/8496181725453
+[8] Zapier Help — Zap workflows quick start guide (01/10/2026)
+    https://help.zapier.com/hc/en-us/articles/22234847450893
+[9] Zapier Help — What is Zapier? (13/11/2026)
+    https://help.zapier.com/hc/en-us/articles/37518970271245
+[10] Zapier Help — Create forms in Zapier Forms (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/14490267815949
+[11] Zapier Help — Add conditions to Zap workflows with filters
+    (29/05/2026) https://help.zapier.com/hc/en-us/articles/8496276332557
+[12] Zapier Help — Add branching logic to Zap workflows with Paths
+    (01/07/2026) https://help.zapier.com/hc/en-us/articles/8496288555917
+[13] Zapier Help — Add delays to Zap workflows
+    https://help.zapier.com/hc/en-us/articles/8496288754829
+[14] Zapier Help — Loop your Zap actions (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/8496106701453
+[15] Zapier Help — Schedule Zap workflows to run at specific intervals
+    https://help.zapier.com/hc/en-us/articles/8496288648461
+[16] Zapier Help — Get started with Formatter (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/8496212590093
+[17] Zapier Help — Replay Zap runs (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/8496241726989
+[18] Zapier Help — View and manage your Zap history (15/06/2026)
+    https://help.zapier.com/hc/en-us/articles/8496291148685
+[19] Zapier Help — Review run statuses in Zap workflows (15/10/2026)
+    https://help.zapier.com/hc/en-us/articles/20505304170637
+[20] Zapier Help — Adjust flood protection limits (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/32466537676685
+[21] Zapier Help — How to troubleshoot errors in Zap workflows
+    (15/10/2026) https://help.zapier.com/hc/en-us/articles/8496037690637
+[22] Zapier Help — How to troubleshoot held Zap or step runs
+    (11/11/2026) https://help.zapier.com/hc/en-us/articles/37454233721869
+[23] Zapier Help — Create Zap drafts and versions (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/9693520498445
+[24] Zapier Help — Zap is stuck in a loop (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/8496232045453
+[25] Zapier Help — How Zap triggers work (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/8496244568589
+[26] Zapier Help — How Zapier handles duplicate data in Zap workflows
+    (29/05/2026) https://help.zapier.com/hc/en-us/articles/8496260269965
+[27] Zapier Help — How to get started with Webhooks by Zapier
+    https://help.zapier.com/hc/en-us/articles/8496083355661
+[28] Zapier Help — Zapier Tables usage limits (22/06/2026)
+    https://help.zapier.com/hc/en-us/articles/15721386410765
+[29] Zapier Help — Use Human in the Loop to pause Zap workflows
+    https://help.zapier.com/hc/en-us/articles/38733184458765
+[30] Zapier Help — Get started with your free Zapier trial (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/8496197192461
+[31] Zapier Help — Can I change Zapier's interface language?
+    (23/01/2026) https://help.zapier.com/hc/en-us/articles/35201074788877
+[32] Zapier Help — Migrating from Agents to AI by Zapier (01/10/2026)
+    https://help.zapier.com/hc/en-us/articles/47402591569805
+[33] Zapier Help — AI by Zapier model tier pricing (13/11/2026)
+    https://help.zapier.com/hc/en-us/articles/46425475442829
+[34] Zapier Help — What is Zapier Copilot? (29/05/2026)
+    https://help.zapier.com/hc/en-us/articles/38215656607757
+[35] Zapier Help — Get started with Sidekick (20/10/2026)
+    https://help.zapier.com/hc/en-us/articles/45884588103309
+[36] Zapier Help — How to get started with AI Guardrails by Zapier
+    (13/11/2026) https://help.zapier.com/hc/en-us/articles/43960366238221
+[37] Zapier Help — What is Zapier MCP? (13/11/2026)
+    https://help.zapier.com/hc/en-us/articles/48308034391821
+[38] Zapier — Security & Compliance.
+    https://www.zapier.com/security-compliance
+[39] Zapier — Data Privacy Overview. https://zapier.com/legal/data-privacy
+[40] Zapier — Data Retention, Deletion & Export (17/04/2026).
+    https://zapier.com/legal/data-retention-deletion
+[41] Zapier Help — Export or delete your Zapier account data (lido no
+    PDF gerado; "Updated 27 days ago" em 18/11/2026).
+    https://help.zapier.com/hc/en-us/articles/8496289406349
+[42] Zapier Help — Manage your app connections (lido no PDF gerado;
+    "Updated 1 month ago" em 18/11/2026).
+    https://help.zapier.com/hc/en-us/articles/8496290788109
+[43] Zapier Status. https://status.zapier.com/
+[44] Zapier Community — Product updates.
+    https://community.zapier.com/product-updates
+[45] Zapier Community — The next generation of Zaps is here (23/09/2026).
+    https://community.zapier.com/product-updates/the-next-generation-of-zaps-is-here-53832
+[46] Zapier Blog — Meet the 2026 Zappy Award winners (Rob Ayre, 23/09/2026).
+    https://zapier.com/blog/zappy-awards-winners-2026/
+[47] Zapier Blog — Vetano / Next Gen Zaps (out/2026).
+    https://zapier.com/blog/vetano-next-gen-zaps/
+[48] Zapier — página inicial. https://zapier.com/
+[49] Zapier Learn / Academy. https://learn.zapier.com/
+[50] Zapier Template — Capture new form responses, log them in Google
+    Sheets, and notify team in Slack.
+    https://zapier.com/templates/details/a7a601f443c7d57d834bf5408bb980bc519752a88a090ccac27a98770ffcfc07
+[51] Zapier Template — Capture new leads, log details in Google Sheets,
+    notify team via Gmail, and send message to Slack.
+    https://zapier.com/templates/details/f30e368b178eed53030cbf8b404ee186bb62988e82117191fe7e89384af54b0d
+[52] n8n — Pricing. https://n8n.io/pricing/
+[53] Make — Pricing. https://www.make.com/en/pricing (sem números na
+    página lida); sec.: Jetadmin, "Make.com Pricing in 2026" (set/2026)
+    https://www.jetadmin.io/blog/make-pricing/
+[54] Microsoft — Power Automate pricing.
+    https://www.microsoft.com/en-us/power-platform/products/power-automate/pricing
+[55] Microsoft Learn — Types of Power Automate licenses.
+    https://learn.microsoft.com/power-platform/admin/power-automate-licensing/types
+[56] Wikipedia — Zapier (sec.). https://en.wikipedia.org/wiki/Zapier
+[57] Planalto — Lei nº 13.709/2018 (LGPD).
+    https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm
+[58] Lefosse (sec.) — Transferência internacional de dados: prazo para
+    adoção das cláusulas-padrão da ANPD se encerra em 23 de agosto.
+    https://lefosse.com/noticias/transferencia-internacional-de-dados-prazo-para-adocao-das-clausulas-padrao-da-anpd-se-encerra-em-23-de-agosto/
+[59] Zapier Platform — How deduplication works in Zapier.
+    https://platform.zapier.com/build/deduplication
+[60] Zapier Help Center — página inicial e categorias (Getting started;
+    Zap workflows; Zapier tools; Zapier AI).
+    https://help.zapier.com/hc/en-us
+
+----------------------------------------------------------------
+CHECKLIST FINAL
+----------------------------------------------------------------
+[x] Sustenta ementa, Essentials e Hands On (seções 12–13).
+[x] Consumo de tarefas, planos e limites atuais e com fonte (2) — com
+    alerta: cobrança de Next Gen Zaps/SDK/MCP muda em 01/12/2026; valor
+    da tarefa excedente [VERIFICAR].
+[x] Cada etapa do fluxo tem passos, teste seguro e critério de êxito
+    (3, 13b).
+[x] Falhas, duplicidade, loops, segurança e LGPD cobertos (8, 9).
+[x] Todos os 12 focos têm resposta ou NÃO ENCONTRADO (14).
+[x] Sugestões marcadas [SUGESTÃO]; links das fontes primárias foram
+    abertos nesta pesquisa, exceto [53] (marcado); [41] e [42] lidos nos PDFs gerados.
+    Templates [50][51]: links vindos de busca; verificados na geração de
+    PDF (ver 17).
