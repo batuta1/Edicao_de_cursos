@@ -1,6 +1,6 @@
 ---
 name: criar-ementa-curso
-description: Cria do zero o pacote completo de um curso, em Markdown, dentro de uma pasta própria do tema — a ementa consolidada, os roteiros nas trilhas Essentials e Hands-on, a tabela MET e a carga horária calculada por aula e total. Cobre o ciclo inteiro: definir contornos (objeto base, público, pré-requisitos), escrever a versão 1.0, auditar criticamente, reformular em roteiro final com objetivos e habilidades por aula, calcular a carga horária pela MET, consolidar a ementa e, opcionalmente, gerar o roteiro pronto para o Articulate Rise 360. Use esta skill sempre que o usuário quiser criar/planejar/estruturar um curso novo, uma ementa, um plano de aula, um roteiro de curso, oficinas hands-on, módulos Essentials, calcular carga horária de curso ou aplicar a tabela de tempo por atividade — mesmo que ele não cite "ementa", por exemplo "monta um curso de Excel para professores", "preciso de um plano de aula sobre Canva", "quanto tempo dura esse curso?", "faz o roteiro das oficinas".
+description: Cria do zero o pacote completo de um curso, com fontes editáveis em Markdown e os quatro roteiros também em PDF — ementa consolidada, trilhas Essentials e Hands-on, versões operacionais para o Articulate Rise 360, tabela MET e carga horária calculada. Cobre contornos, versão 1.0, auditoria crítica, reformulação, montagem no Rise, cálculo da carga horária e validação dos PDFs. Use sempre que o usuário quiser criar, planejar ou estruturar um curso novo, uma ementa, um plano de aula, um roteiro para Rise 360, oficinas Hands-on, módulos Essentials ou calcular a duração do curso.
 ---
 
 # Criação de ementa de curso do zero
@@ -48,10 +48,15 @@ canônico para cursos, use-o em vez de inventar um.
 ├── README.md                          índice da pasta: o que é cada arquivo
 ├── ementa.md                          ◀ PRODUTO — ementa consolidada do curso
 ├── roteiros/
-│   ├── roteiro-essentials.md          ◀ PRODUTO — plano de aula completo, trilha Essentials
-│   ├── roteiro-hands-on.md            ◀ PRODUTO — curso completo, trilha Hands-on
-│   ├── roteiro-articulate-essentials.md   ◀ PRODUTO — versão Rise 360 (cues » IA:, ▼▼▼)
-│   └── roteiro-articulate-hands-on.md     ◀ PRODUTO — versão Rise 360 (cues » IA:, ▼▼▼)
+│   ├── roteiro-essentials.md          ◀ FONTE EDITÁVEL — trilha Essentials
+│   ├── roteiro-hands-on.md            ◀ FONTE EDITÁVEL — trilha Hands-on
+│   ├── roteiro-articulate-essentials.md   ◀ FONTE EDITÁVEL — produção no Rise 360
+│   ├── roteiro-articulate-hands-on.md     ◀ FONTE EDITÁVEL — produção no Rise 360
+│   └── pdf/
+│       ├── roteiro-essentials.pdf
+│       ├── roteiro-hands-on.pdf
+│       ├── roteiro-articulate-essentials.pdf
+│       └── roteiro-articulate-hands-on.pdf
 ├── carga-horaria/
 │   ├── met-tabela.md                  ◀ PRODUTO — a MET aplicada neste curso
 │   ├── carga-horaria-essentials.md    ◀ PRODUTO — breakdown por aula + total
@@ -79,8 +84,8 @@ onde `<curso>` é `<tema>-essentials` ou `<tema>-hands-on` (a empresa e o nome s
 
 | Produto desta skill | Destino |
 |---|---|
-| `roteiros/roteiro-essentials.md`, `roteiro-articulate-essentials.md` | `…/<tema>-essentials/base/roteiros/` |
-| `roteiros/roteiro-hands-on.md`, `roteiro-articulate-hands-on.md` | `…/<tema>-hands-on/base/roteiros/` |
+| `roteiros/roteiro-essentials.md`, `roteiro-articulate-essentials.md` e PDFs homônimos | `…/<tema>-essentials/base/roteiros/` |
+| `roteiros/roteiro-hands-on.md`, `roteiro-articulate-hands-on.md` e PDFs homônimos | `…/<tema>-hands-on/base/roteiros/` |
 | `carga-horaria/*-essentials.md` / `*-hands-on.md` | `base/carga-horaria/` do curso da trilha |
 | `met-tabela.md` | `base/carga-horaria/` dos dois cursos |
 | `ementa.md` | `base/ementa/` dos dois cursos (cópia em cada) |
@@ -96,7 +101,7 @@ Tema novo, sem pasta em `Cursos/`: confirme o nome com o usuário antes de criar
 | Objetivo do aluno | Compreender um assunto | Executar uma tarefa com a ferramenta |
 | Unidade | Módulo | Oficina (parte de um problema real) |
 | Registro | Formal, impessoal ("recomenda-se") | 2ª pessoa, leve ("você") |
-| Corpo | Texto descritivo (3–5 parágrafos) + exercício | Passo a passo numerado + "Deu certo?" |
+| Corpo | Explicação curta + exemplo + verificação formativa | Passo a passo numerado + "Deu certo?" |
 | Fecho | Módulo de Síntese integradora | Projeto Final + "A Parte dos Dez" |
 | Modelo | `referencias/modelo-essentials.md` | `referencias/modelo-hands-on.md` |
 
@@ -104,6 +109,11 @@ As duas compartilham a acessibilidade "Para Leigos": o participante é inteligen
 inteiramente novato — explique cada conceito desde o zero e descomplique todo termo técnico no
 momento em que ele aparece. **Em Essentials, descomplicar não é informalizar**: a clareza vem sem
 gíria, sem humor e sem tratamento direto ao leitor.
+
+**Não misture as experiências.** Essentials não contém seção "Mão na massa", "Pílula Hands-on"
+nem tarefa que obrigue o participante a sair do Rise para operar a ferramenta. A aplicação é
+conceitual, por cenário, classificação ou tomada de decisão, usando blocos nativos de avaliação.
+Hands-on concentra a execução real, os breadcrumbs, os pontos de controle e o troubleshooting.
 
 Rode as Fases 1 a 4 **uma vez por trilha**. Elas compartilham apenas o `00-contornos.md` —
 auditoria, reformulação e carga horária são independentes, porque os defeitos de um plano de aula
@@ -160,6 +170,11 @@ O roteiro final é a v1.0 com a matriz de soluções executada, mais o que o mod
   qual menu aberto).
 - **Troubleshooting** exatamente nos pontos que a auditoria marcou como críticos.
 
+Na trilha Essentials, cada módulo termina com **Verificação formativa** e, quando pertinente,
+**Aplicação conceitual**; ambas permanecem dentro do Rise e avaliam os objetivos por cenário,
+múltipla escolha ou classificação. Não crie microtarefas de interface. Na trilha Hands-on, cada
+oficina termina com execução observável e critério de êxito.
+
 Cada achado da auditoria precisa ter destino visível aqui. Achado não endereçado deve ser declarado
 como decisão consciente, não simplesmente sumir.
 
@@ -215,10 +230,9 @@ montagem. **Cada trilha tem o seu prompt-mestre, e eles não são intercambiáve
 | Essentials | `referencias/articulate-essentials.md` | `roteiros/roteiro-articulate-essentials.md` |
 | Hands-on | `referencias/articulate-hands-on.md` | `roteiros/roteiro-articulate-hands-on.md` |
 
-Os dois são prompts-mestre do projeto, reproduzidos verbatim. **Eles mandam em caso de conflito
-com os modelos das Fases 1–3** — são mais recentes e já embutem decisões que os modelos base não
-têm (a subseção "Mão na massa" de cada módulo Essentials, os requisitos técnicos de plano pago, a
-carga horária de 100–130 min).
+Os dois são prompts-mestre do projeto. **Eles mandam em caso de conflito com os modelos das Fases
+1–3** porque traduzem o conteúdo em blocos reais do Rise e separam com rigor compreensão
+conceitual (Essentials) de execução (Hands-on).
 
 Passe o roteiro final da trilha como **material-fonte** do prompt. Sem isso o prompt gera um curso
 novo do zero, que diverge do que você auditou na Fase 2 e cronometrou na Fase 4 — e aí a ementa
@@ -234,12 +248,41 @@ O que a camada de montagem acrescenta:
   Os mapas de tipo diferem entre as trilhas — Essentials tem `Knowledge Check` para múltipla
   escolha e `List` verbatim para objetivos; Hands-on tem `Process` para o passo a passo e
   `Accordion` para o "Se travar".
+- **Conteúdo integral e inequívoco** — cada bloco declara configuração, texto visível, itens,
+  gabarito e feedback. A IA que montar o curso não precisa consultar o material-fonte.
+- **Statements mínimos** — uma única frase curta, nunca exercício, prompt, instrução de navegação,
+  gabarito ou texto de vários parágrafos. Conteúdo maior vai para `Text`, `List`, `Accordion`,
+  `Process` ou `Knowledge Check`, conforme a função pedagógica.
 - **Marcadores `▼▼▼`/`▲▲▲`** cercando cada módulo (Essentials) ou cada oficina e o Projeto Final
   (Hands-on), para o Rise não dividir nem fundir lições. Identificação, Parte dos Dez e
   Encerramento não recebem marcador.
 
+## Fase 8 — PDFs dos quatro roteiros
+
+Markdown continua sendo a fonte editável e a melhor entrada para a IA do Rise; PDF é o formato de
+entrega humana. Não gere `.docx`. Carregue as dependências do workspace e use o executável Python
+retornado pelo runtime de PDF (ele já inclui `reportlab`, `pypdf` e `pdfplumber`). Depois de fechar
+os quatro `.md`, execute:
+
+```powershell
+& '<python-do-runtime-pdf>' Skills/criar-ementa-curso/scripts/render_roteiros_pdf.py `
+  roteiros/roteiro-essentials.md `
+  roteiros/roteiro-hands-on.md `
+  roteiros/roteiro-articulate-essentials.md `
+  roteiros/roteiro-articulate-hands-on.md `
+  --output-dir roteiros/pdf
+```
+
+Antes da primeira geração, siga o contrato de criação da skill de PDF disponível no ambiente.
+Depois, valide os quatro arquivos com `pdfinfo`, extraia texto com `pdftotext` ou `pdfplumber` para
+confirmar que nenhum documento ficou truncado, renderize todas as páginas em PNG com `pdftoppm` e
+inspecione visualmente. Refaça o PDF se houver texto cortado, tabela ilegível, glifo ausente,
+página vazia indevida ou hierarquia confusa. A entrega só está completa com quatro `.md` e quatro
+`.pdf` correspondentes e legíveis.
+
 Daí em diante o fluxo sai desta skill: carregar no Articulate o `promptArticulate.md` do projeto +
-o roteiro → gerar curso → verificação visual → exportar SCORM → `revisar-curso-scorm`.
+o roteiro Articulate em Markdown → gerar curso → verificação visual → exportar SCORM →
+`revisar-curso-scorm`.
 
 ## Armadilhas conhecidas
 
@@ -252,6 +295,10 @@ o roteiro → gerar curso → verificação visual → exportar SCORM → `revis
   São erros de trilha, não de gosto; confira o registro antes de entregar.
 - **Emoji fora do lugar**: nos modelos, emoji só aparece em cabeçalho de subseção e nos boxes
   previstos (🔑 💡 ⚠️ 📌 🤓 🎯 🧰 👐 ✅ 🚑 🚀 🏁). Nunca no corpo do texto.
+- **Statement virando depósito de texto**: se houver mais de uma frase curta, escolha outro bloco.
+  Statement não hospeda exercício, prompt, breadcrumb, feedback nem conteúdo obrigatório extenso.
+- **Essentials com prática de ferramenta**: converter em cenário, classificação ou decisão dentro
+  do Rise; se a execução for indispensável, ela pertence ao Hands-on.
 - **Modelo editável com crase tripla**: prompts e modelos que o aluno vai copiar são delimitados
   por **aspas triplas**, não crases — crase tripla dentro de Markdown que já está em bloco de
   código quebra a renderização.

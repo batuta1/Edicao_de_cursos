@@ -1,8 +1,8 @@
 # Modelo — Plano de Aula (trilha Essentials)
 
 > Para a versão que vai ao Rise 360, use `articulate-essentials.md` — é mais recente e **manda em
-> caso de conflito com este arquivo** (acrescenta a subseção "Mão na massa" por módulo, requisitos
-> técnicos, fio condutor explícito, e usa 100–130 min / 4–6 módulos).
+> caso de conflito com este arquivo**. Ela converte a trilha conceitual em blocos nativos do Rise,
+> sem inserir pílulas Hands-on nem tarefas de operação da ferramenta.
 
 Preencha OBJETO BASE e CONFIGURAÇÃO. O único campo obrigatório é o **OBJETO BASE**; os demais têm
 valor-padrão e podem ficar como estão.
@@ -35,7 +35,7 @@ Leigos" aqui é a de descomplicar, não a de informalizar.
 
 # CONFIGURAÇÃO (ajustar se desejar; caso contrário, manter o padrão)
 - Carga horária: [padrão: 60 a 90 minutos]
-- Natureza: [padrão: curto, introdutório e prático]
+- Natureza: [padrão: curto, introdutório e conceitual]
 - Número de módulos de conteúdo: [padrão: 4 módulos de conteúdo + 1 de síntese]
 - Material-fonte de referência: [opcional: cole ou descreva o material que servirá
   de base; se ausente, gere o conteúdo a partir de conhecimento geral sobre o tema]
@@ -74,15 +74,16 @@ Produza o Plano de Aula completo respeitando a ESTRUTURA e o ESTILO definidos a 
       módulo, o participante deverá ser capaz de:") + lista de 3 a 4 objetivos.
    d. "### Texto Descritivo" — de 3 a 5 parágrafos em prosa corrida, impessoal
       e de registro formal/acadêmico (ver ESTILO).
-   e. "### Exercício Prático" — título da atividade com tempo estimado entre
-      parênteses; procedimento em passos numerados OU questão de múltipla escolha;
-      e um "Critério de êxito" / "Gabarito" / "Fundamentação" explícito.
+   e. "### Verificação Formativa" — questão de múltipla escolha, classificação ou
+      cenário de decisão, com tempo estimado, gabarito e feedback instrutivo.
+   f. "### Aplicação Conceitual" — situação curta que exige interpretar, diferenciar,
+      relacionar ou escolher com base no conteúdo. Deve ser resolvida dentro do curso,
+      sem abrir ou operar a ferramenta estudada.
 
 7. MÓDULO FINAL DE SÍNTESE
    - Título: "# Módulo [N] — Síntese e Aplicação Integrada"
-   - Mesma estrutura dos demais, com Exercício Prático na forma de ATIVIDADE
-     INTEGRADORA que articule as competências de todos os módulos anteriores,
-     acompanhada de uma tabela de "Critérios de avaliação" (Critério | Atendido?).
+   - Mesma estrutura dos demais, com uma ATIVIDADE INTEGRADORA por cenário que articule
+     as competências anteriores, acompanhada de gabarito e feedback por decisão.
 
 8. SEÇÃO "Encerramento"
    - 2 parágrafos: o primeiro reafirma a finalidade cumprida e recomenda prática
@@ -109,11 +110,14 @@ Produza o Plano de Aula completo respeitando a ESTRUTURA e o ESTILO definidos a 
   módulo inicial e retome-o no módulo pertinente (fio condutor).
 - Use Markdown limpo: cabeçalhos, tabelas, listas e blocos de citação. Não use
   negrito em excesso. Separe seções e módulos com linhas horizontais ("---").
-- Cada exercício deve ser simples, executável no tempo indicado, e conter critério
-  de êxito objetivo.
+- Cada verificação deve ser breve, resolvida dentro do curso e conter gabarito e
+  feedback instrutivo.
 
 # RESTRIÇÕES
-- Mantenha a coerência entre objetivos, texto descritivo e exercício de cada módulo.
+- Mantenha a coerência entre objetivos, texto descritivo, verificação e aplicação de cada módulo.
+- Não crie seções chamadas "Mão na massa", "Pílula Hands-on" ou "Exercício Prático".
+- Não peça ao participante que saia do curso para clicar, configurar, instalar ou produzir um
+  artefato na ferramenta; essa experiência pertence à trilha Hands-on.
 - Não invente dados factuais sobre o OBJETO BASE; se a informação não estiver no
   material-fonte nem for de conhecimento consolidado, mantenha-se em formulações
   genéricas e indique a necessidade de validação.
