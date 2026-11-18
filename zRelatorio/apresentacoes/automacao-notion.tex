@@ -1,0 +1,313 @@
+% Apresentação: Da planilha ao Notion (registro de atividade). Implementa o roteiro de zRelatorio/apresentacoes/roteiro-automacao-notion.md.
+% Manual de Marca do IAclube: fundo gelo, azul-marinho e amarelo, Ubuntu Bold nos títulos e Montserrat nos textos, malha de 160 x 90 mm.
+% Macros e malha vêm do modelo zApresentacao/projeto-organizacao.tex (repositório scorm_data_extractor), que já compilou.
+% A fala de cada slide está nas notas do apresentador (\note); ela não aparece na tela.
+% Compilar DUAS vezes, a partir da raiz do repositório (veja zRelatorio/apresentacoes/README.md):
+%   xelatex -output-directory="zRelatorio/apresentacoes/out" -interaction=nonstopmode -halt-on-error "zRelatorio/apresentacoes/automacao-notion.tex"
+% Arquivos usados: zRelatorio/apresentacoes/fonts/Ubuntu-Bold.ttf e Montserrat-Regular.ttf (sem eles: Liberation Sans);
+% zRelatorio/apresentacoes/images/provisoria.png e provisoria-simbolo.png (logo provisória; sem eles a marca some, sem aviso na tela).
+\documentclass[aspectratio=169]{beamer}
+\usepackage{fontspec}
+% Sem babel: os acentos funcionam direto no XeLaTeX.
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+
+\usefonttheme{professionalfonts}
+\providecommand\pgfsyspdfmark[3]{}
+
+% ---------------------------------------------------------------- paleta (manual, seção 2.1)
+\definecolor{cNavy}{HTML}{09304F}     % Azul Marinho: cor da marca, fundos e textos
+\definecolor{cBlue}{HTML}{003C73}     % Azul Médio: apoio
+\definecolor{cYellow}{HTML}{FFBE1E}   % Amarelo: destaque (sempre com texto azul-marinho; nunca texto sobre fundo claro)
+\definecolor{gelo}{HTML}{F2F2F2}      % Branco Gelo: fundo claro padrão; texto sobre fundo escuro
+
+\colorlet{ink}{cNavy}
+\colorlet{inkB}{cNavy!88}
+\colorlet{inkC}{cBlue}
+\colorlet{grayNum}{cBlue!80}
+\colorlet{bgCard}{cNavy!7}
+
+% ---------------------------------------------------------------- fontes (manual, seção 6)
+% Títulos: Ubuntu Bold. Textos: Montserrat Regular. Só arquivos estáticos (o xdvipdfmx não embute fonte variável).
+% Sem os arquivos, vale a contingência do manual: Arial (aqui, a Liberation Sans). Ela deve ser avisada, nunca escondida.
+\IfFileExists{zRelatorio/apresentacoes/fonts/Ubuntu-Bold.ttf}
+  {\newfontfamily\fonteTitulo{Ubuntu-Bold.ttf}[Path=zRelatorio/apresentacoes/fonts/]}
+  {\gdef\fonteTitulo{\sffamily\bfseries}}
+\IfFileExists{zRelatorio/apresentacoes/fonts/Montserrat-Regular.ttf}
+  {\IfFileExists{zRelatorio/apresentacoes/fonts/Ubuntu-Bold.ttf}
+    {\setsansfont{Montserrat-Regular.ttf}[Path=zRelatorio/apresentacoes/fonts/,BoldFont=Ubuntu-Bold.ttf]}
+    {\setsansfont{Montserrat-Regular.ttf}[Path=zRelatorio/apresentacoes/fonts/]}}
+  {\setsansfont{Liberation Sans}}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---------------------------------------------------------------- Beamer: sem cabeçalho, sem símbolos, rodapé em três faixas
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle}{}
+\setbeamertemplate{headline}{}
+\setbeamercolor{background canvas}{bg=gelo}
+\setbeamercolor{normal text}{fg=ink,bg=gelo}
+\setbeamersize{text margin left=0pt,text margin right=0pt}
+\setbeamerfont{normal text}{family=\sffamily,size=\fontsize{10}{13}}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=3em
+\setlength{\parindent}{0pt}
+
+% Rodapé: texto claro sobre fundo escuro, mas sem negrito (exceção prevista nas orientações)
+\setbeamercolor{footL}{fg=gelo,bg=cNavy}
+\setbeamercolor{footC}{fg=gelo,bg=cBlue}
+\setbeamercolor{footR}{fg=cNavy,bg=cYellow}
+\setbeamerfont{footL}{size=\fontsize{7}{8.4}}
+\setbeamerfont{footC}{size=\fontsize{7}{8.4}}
+\setbeamerfont{footR}{size=\fontsize{7}{8.4}}
+
+\newcommand{\blocklabel}{}
+\newcommand{\setblock}[1]{\renewcommand{\blocklabel}{#1}}
+\newcommand{\eventname}{IAClube.com · Registro de atividade}
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.6ex,dp=1.2ex,center]{footL}%
+      \usebeamerfont{footL}\strut\blocklabel
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.6ex,dp=1.2ex,center]{footC}%
+      \usebeamerfont{footC}\strut\eventname
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333334\paperwidth,ht=2.6ex,dp=1.2ex,right]{footR}%
+      \usebeamerfont{footR}\strut\insertframenumber\,/\,\inserttotalframenumber
+      \hspace*{2.5ex}%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+% ---------------------------------------------------------------- malha: 160 x 90 mm, origem no canto superior esquerdo, y para baixo
+% Área útil x = 9.6 .. 150.4 ; conteúdo y = 21 .. 80 ; rodapé a partir de ~85.5.
+\newenvironment{cnv}{%
+  \begin{tikzpicture}[remember picture,overlay,x=1mm,y=-1mm]
+  \begin{scope}[shift={(current page.north west)}]}{%
+  \end{scope}\end{tikzpicture}}
+
+\tikzset{
+  varr/.style={-{Stealth[length=2.4mm,width=2.2mm]},line width=1.1pt,draw=cNavy}
+}
+
+% \tx[opções]{x}{y}{largura em mm}{texto}
+\newcommand{\tx}[5][]{%
+  \pgfmathsetlengthmacro{\txw}{(#4)*1mm}%
+  \node[anchor=north west,inner sep=0pt,outer sep=0pt,align=flush left,
+    text width=\txw,text=ink,font=\fontsize{9}{11.5}\selectfont,#1] at ({#2},{#3}) {#5};}
+
+% cor do título de um cartão: amarelo nunca vira texto sobre fundo claro
+\newcommand{\tcol}[1]{\ifcsname tcol@#1\endcsname\csname tcol@#1\endcsname\else#1\fi}
+\expandafter\def\csname tcol@cYellow\endcsname{cNavy}
+
+% \vpanel{cor da borda}{x}{y}{larg}{alt}{título}
+\newcommand{\vpanel}[6]{%
+  \node[anchor=north west,inner sep=0pt,outer sep=0pt,draw=#1,line width=0.9pt,rounded corners=1.6pt,
+    minimum width=#4mm,minimum height=#5mm] at ({#2},{#3}) {};
+  \tx[font=\fontsize{8.6}{10.2}\selectfont\bfseries,text=\tcol{#1}]{#2+3}{#3+2.9}{#4-6}{#6}}
+
+% \vchip{fundo}{x}{y}{larg}{alt}{texto} (texto claro, em negrito)  ·  \vchipo{borda}{x}{y}{larg}{alt}{texto} (só contorno)
+\newcommand{\vchip}[6]{%
+  \node[anchor=north west,inner sep=0pt,outer sep=0pt,fill=#1,draw=#1,line width=0.9pt,rounded corners=1.6pt,
+    minimum width=#4mm,minimum height=#5mm] at ({#2},{#3}) {};
+  \pgfmathsetlengthmacro{\chipw}{(#4-5)*1mm}%
+  \node[anchor=center,inner sep=0pt,outer sep=0pt,align=center,text=gelo,text width=\chipw,
+    font=\fontsize{8}{9.6}\selectfont\bfseries] at ({#2+#4/2},{#3+#5/2}) {#6};}
+\newcommand{\vchipo}[6]{%
+  \node[anchor=north west,inner sep=0pt,outer sep=0pt,draw=#1,line width=0.9pt,rounded corners=1.6pt,
+    minimum width=#4mm,minimum height=#5mm] at ({#2},{#3}) {};
+  \pgfmathsetlengthmacro{\chipw}{(#4-5)*1mm}%
+  \node[anchor=center,inner sep=0pt,outer sep=0pt,align=center,text=inkB,text width=\chipw,
+    font=\fontsize{7.4}{9}\selectfont] at ({#2+#4/2},{#3+#5/2}) {#6};}
+
+% \vband{y}{texto}: linha e frase de fechamento do slide
+\newcommand{\vband}[2]{%
+  \draw[draw=cNavy,line width=1.1pt] (9.6,{#1}) -- (150.4,{#1});
+  \tx[align=center,font=\fontsize{8.4}{10.2}\selectfont\bfseries,text=cNavy]{9.6}{#1+2.2}{140.8}{#2}}
+
+% título de cada slide: texto em azul-marinho e um traço curto embaixo; símbolo da marca, se o arquivo existir
+\newcommand{\head}[1]{%
+  \tx[font=\fontsize{13}{15.5}\selectfont\bfseries,text=cNavy]{9.6}{7}{128}{#1}
+  \draw[line width=1.4pt,draw=cYellow] (9.6,17.6) -- (24,17.6);
+  \IfFileExists{zRelatorio/apresentacoes/images/provisoria-simbolo.png}{%
+    \node[anchor=north east,fill=cNavy,rounded corners=2.4mm,minimum size=11mm,inner sep=1.5mm] at (150.4,5)
+      {\includegraphics[height=8mm]{zRelatorio/apresentacoes/images/provisoria-simbolo.png}};}{}}
+
+% cartão azul com texto claro em negrito (2:1, cantos de 36% da altura), número e legenda centrados: \cartao{x}{y}{valor}{legenda}
+\newcommand{\cartao}[4]{%
+  \node[anchor=north west,inner sep=0pt,outer sep=0pt,fill=cNavy,rounded corners=4mm,
+    minimum width=25.76mm,minimum height=22mm] at ({#1},{#2}) {};
+  \node[anchor=center,inner sep=0pt,outer sep=0pt,align=center,text width=21.76mm,text=gelo]
+    at ({#1+12.88},{#2+11}) {{\fontsize{22}{24}\selectfont\fonteTitulo #3}\\[1.2mm]{\fontsize{6.8}{8.2}\selectfont\bfseries #4}};}
+
+% marcador de lista dentro de \tx
+\newcommand{\bul}{{\color{grayNum}\textbullet}\ }
+
+\begin{document}
+
+\setblock{}
+
+% ============================================================================ 1. capa (fundo azul-marinho)
+{\setbeamercolor{background canvas}{bg=cNavy}
+ \setbeamercolor{normal text}{fg=gelo,bg=cNavy}
+\begin{frame}[plain,label=cover]{Capa}
+  \begin{tikzpicture}[remember picture,overlay]
+    % formas arredondadas nos cantos, como na capa do manual (proporção 2:1, raio de 36% da altura)
+    \fill[cBlue, rounded corners=13.7mm] ([xshift=-55mm,yshift=-16mm]current page.north east) rectangle ([xshift=20mm,yshift=22mm]current page.north east);
+    \fill[cYellow, rounded corners=9.7mm] ([xshift=-40mm,yshift=-12mm]current page.south east) rectangle ([xshift=14mm,yshift=15mm]current page.south east);
+    % assinatura da marca, se o arquivo existir
+    \IfFileExists{zRelatorio/apresentacoes/images/provisoria.png}{\node[anchor=north west] at ([xshift=12mm,yshift=-10mm]current page.north west) {\includegraphics[height=15mm]{zRelatorio/apresentacoes/images/provisoria.png}};}{}
+  \end{tikzpicture}
+  % texto da capa em posição fixa (mm a partir do canto superior esquerdo)
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west,inner sep=0pt,text width=112mm,align=flush left,text=gelo] at ([xshift=12mm,yshift=-31mm]current page.north west) {%
+      {\fonteTitulo\fontsize{24}{28}\selectfont\color{gelo}Da planilha ao Notion\par}
+      \vskip 3mm
+      {\fonteTitulo\fontsize{14}{18}\selectfont\color{cYellow}Registro de atividade\par}
+      \vskip 1mm
+      {\fontsize{11}{15}\selectfont\bfseries\color{gelo} Automação da produção de cursos\par}};
+    \node[anchor=north west,fill=cYellow,text=cNavy,rounded corners=3.6mm,minimum height=10mm,inner xsep=4mm] at ([xshift=12mm,yshift=-68.5mm]current page.north west)
+      {\fonteTitulo\fontsize{11}{12}\selectfont Responsável: Cadu};
+    \node[anchor=north west,inner sep=0pt,text=gelo] at ([xshift=12mm,yshift=-81mm]current page.north west) {\fontsize{8}{10}\selectfont\bfseries Novembro de 2026};
+  \end{tikzpicture}
+  \note{Vou contar, de forma simples, o que foi feito para ligar a planilha de produção dos cursos ao Notion e para deixar o mapeamento dos cursos organizado. É um registro da atividade: o que já está pronto, o que deu trabalho no caminho e o que ainda falta.}
+\end{frame}}
+
+\setblock{Automação da produção}
+
+% ---------------------------------------------------------------- 2. Por que automatizar?
+\begin{frame}{Por que automatizar?}
+  \begin{cnv}
+    \head{Por que automatizar?}
+    \path[fill=cNavy] (9.6,22) rectangle (150.4,29);
+    \tx[font=\fontsize{8.4}{10}\selectfont,text=gelo]{12}{23.1}{66}{\fonteTitulo Antes}
+    \tx[font=\fontsize{8.4}{10}\selectfont,text=cYellow]{82}{23.1}{66}{\fonteTitulo Depois}
+    \tx[font=\fontsize{8.8}{10.8}\selectfont,text=inkB]{12}{30.8}{66}{A planilha ficava só na linha de trabalho do João}
+    \tx[font=\fontsize{8.8}{10.8}\selectfont,text=cNavy]{82}{30.8}{66}{Busca automática da versão mais recente da planilha}
+    \path[fill=bgCard] (9.6,39) rectangle (150.4,49);
+    \tx[font=\fontsize{8.8}{10.8}\selectfont,text=inkB]{12}{40.8}{66}{O Notion era atualizado à mão, curso por curso}
+    \tx[font=\fontsize{8.8}{10.8}\selectfont,text=cNavy]{82}{40.8}{66}{O Notion é atualizado pela automação, depois de uma simulação}
+    \tx[font=\fontsize{8.8}{10.8}\selectfont,text=inkB]{12}{50.8}{66}{O autor de cada versão de curso ficava em branco}
+    \tx[font=\fontsize{8.8}{10.8}\selectfont,text=cNavy]{82}{50.8}{66}{O autor é preenchido a partir da planilha}
+    \path[fill=bgCard] (9.6,59) rectangle (150.4,69);
+    \tx[font=\fontsize{8.8}{10.8}\selectfont,text=inkB]{12}{60.8}{66}{A lista de cursos dependia de um programa em outro lugar}
+    \tx[font=\fontsize{8.8}{10.8}\selectfont,text=cNavy]{82}{60.8}{66}{O mapeamento dos cursos mora no mesmo projeto}
+    \draw[draw=cNavy,line width=1pt] (9.6,69) -- (150.4,69);
+    \vband{75}{Quatro tarefas manuais viraram passos automáticos.}
+  \end{cnv}
+  \note{Tudo começou com quatro tarefas que dependiam de trabalho manual. A planilha de produção ficava guardada só na linha de trabalho do João, então era preciso ir buscá-la. O Notion era atualizado à mão, curso por curso. O nome de quem fez cada versão de curso ficava em branco. E a lista com todos os cursos dependia de um programa que morava em outro lugar. A ideia foi trocar cada uma dessas tarefas por um passo automático, para ganhar tempo e errar menos.}
+\end{frame}
+
+% ---------------------------------------------------------------- 3. Como funciona?
+\begin{frame}{Como funciona?}
+  \begin{cnv}
+    \head{Como funciona?}
+    \vchip{cNavy}{9.6}{24}{30}{14}{1 · Planilha}
+    \vchip{cNavy}{46.53}{24}{30}{14}{2 · Lista de cursos}
+    \vchip{cNavy}{83.47}{24}{30}{14}{3 · Autores}
+    \vchip{cNavy}{120.4}{24}{30}{14}{4 · Notion}
+    \draw[varr] (40.5,31) -- (45.6,31);
+    \draw[varr] (77.4,31) -- (82.5,31);
+    \draw[varr] (114.3,31) -- (119.5,31);
+    \tx[font=\fontsize{7.8}{9.8}\selectfont,text=inkB]{9.6}{42}{30}{Busca a versão mais recente da planilha de produção e a transforma em uma tabela simples.}
+    \tx[font=\fontsize{7.8}{9.8}\selectfont,text=inkB]{46.53}{42}{30}{Lê os pacotes dos cursos prontos e monta uma lista com todos eles.}
+    \tx[font=\fontsize{7.8}{9.8}\selectfont,text=inkB]{83.47}{42}{30}{Descobre quem cuida de cada curso e anota o nome na pasta do curso.}
+    \tx[font=\fontsize{7.8}{9.8}\selectfont,text=inkB]{120.4}{42}{30}{Atualiza a situação, o responsável e o andamento de cada curso no Notion.}
+    \vband{75}{Cada etapa roda sozinha ou todas em sequência.}
+  \end{cnv}
+  \note{O trabalho segue quatro etapas, uma depois da outra. Primeiro, a automação busca a planilha mais recente e a transforma numa tabela simples. Segundo, ela lê os cursos que já estão prontos e monta uma lista com todos. Terceiro, descobre quem cuida de cada curso e anota esse nome na pasta do curso. Por último, atualiza no Notion a situação, o responsável e o andamento de cada curso. Cada etapa pode rodar sozinha, quando só uma delas interessa, ou todas em sequência.}
+\end{frame}
+
+% ---------------------------------------------------------------- 4. Como usar sem errar?
+\begin{frame}{Como usar sem errar?}
+  \begin{cnv}
+    \head{Como usar sem errar?}
+    \vchip{cNavy}{9.6}{22}{40}{11}{1 · Escolher as etapas}
+    \vchip{cBlue}{60}{22}{40}{11}{2 · Ensaio: simula, não grava}
+    \vchip{cNavy}{110.4}{22}{40}{11}{3 · Aplicar: grava de verdade}
+    \draw[varr] (50.6,27.5) -- (58.8,27.5);
+    \draw[varr] (101,27.5) -- (109.2,27.5);
+    \vpanel{cNavy}{9.6}{37}{68}{37}{O que protege}
+    \tx[font=\fontsize{8.6}{10.8}\selectfont,text=inkB]{12.6}{47.5}{62}{%
+      \bul O Aplicar só libera depois de um Ensaio.\\[1.4mm]
+      \bul Pede confirmação e mostra quantos cursos vão mudar.\\[1.4mm]
+      \bul A chave de acesso ao Notion nunca é digitada na janela.
+    }
+    \vpanel{cYellow}{82.4}{37}{68}{37}{O que a janela mostra}
+    \tx[font=\fontsize{8.6}{10.8}\selectfont,text=inkB]{85.4}{47.5}{62}{%
+      \bul Duas abas: Executar e Notion.\\[1.4mm]
+      \bul Uma tabela com cada curso, seu status e o resultado.\\[1.4mm]
+      \bul Etapa indisponível aparece com o motivo escrito.
+    }
+    \vband{76.5}{Primeiro simular, depois gravar.}
+  \end{cnv}
+  \note{Como o Notion não permite desfazer, o uso foi pensado para ser seguro. Quem usa abre uma janela, escolhe as etapas e faz primeiro um ensaio: o ensaio simula tudo e mostra numa tabela o que mudaria, mas não grava nada. Só depois do ensaio o botão de aplicar é liberado, e ainda assim a janela pede uma confirmação dizendo quantos cursos vão mudar. A chave de acesso ao Notion nunca é digitada na janela, e as alterações ficam salvas apenas neste computador. Se algo não puder rodar, a janela explica o motivo em vez de falhar em silêncio.}
+\end{frame}
+
+% ---------------------------------------------------------------- 5. O que o ensaio mostrou?
+\begin{frame}{O que o ensaio mostrou?}
+  \begin{cnv}
+    \head{O que o ensaio mostrou?}
+    \cartao{23.98}{22}{163}{pacotes de curso lidos}
+    \cartao{52.74}{22}{39}{cursos mapeados}
+    \cartao{81.5}{22}{53}{cursos já certos no Notion}
+    \cartao{110.26}{22}{43}{cursos com algo a atualizar}
+    \vpanel{cNavy}{9.6}{47}{68}{28}{No Notion}
+    \tx[font=\fontsize{8.4}{10.6}\selectfont,text=inkB]{12.6}{57.5}{62}{%
+      \bul 7 linhas da planilha não foram encontradas no Notion: 6 delas são linhas de resumo da própria planilha.
+    }
+    \vpanel{cYellow}{82.4}{47}{68}{28}{Nas pastas de cursos}
+    \tx[font=\fontsize{8.4}{10.6}\selectfont,text=inkB]{85.4}{57.5}{62}{%
+      \bul 10 de 39 ligados à planilha.\\[1.4mm]
+      \bul Os outros 29: cursos antigos, fora da aba usada, e alguns novos com nome diferente.
+    }
+    \vband{77.5}{Simulação de 18/11/2026: nada foi gravado no Notion.}
+  \end{cnv}
+  \note{Em 18 de novembro, fizemos um ensaio com os dados reais. Foram lidos 163 pacotes de curso, que correspondem a 39 cursos. Na comparação com o Notion, 53 cursos já estavam certos e 43 tinham algo a atualizar. Das linhas da planilha, 7 não foram encontradas no Notion, e seis delas são linhas de resumo da própria planilha. Do lado das pastas, 10 dos 39 cursos foram ligados à planilha; os demais incluem cursos antigos, que ficam fora da aba usada, e alguns cursos novos com nome diferente. Importante: foi só uma simulação, nada foi gravado no Notion.}
+\end{frame}
+
+% ---------------------------------------------------------------- 6. O que deu trabalho?
+\begin{frame}{O que deu trabalho?}
+  \begin{cnv}
+    \head{O que deu trabalho?}
+    \vchipo{cNavy}{9.6}{22}{64}{15}{A tabela do Notion é uma visão de outra tabela, e a automação não enxergava os dados.}
+    \draw[varr] (74.6,29.5) -- (83.6,29.5);
+    \vchip{cNavy}{85}{22}{65.4}{15}{O acesso foi liberado também para a tabela original.}
+    \vchipo{cNavy}{9.6}{40}{64}{15}{A coluna Meta diz publicado em quase todas as linhas, mas é só a meta.}
+    \draw[varr] (74.6,47.5) -- (83.6,47.5);
+    \vchip{cNavy}{85}{40}{65.4}{15}{O cálculo usa só as etapas feitas. Antes, quase tudo aparecia como concluído.}
+    \vchipo{cNavy}{9.6}{58}{64}{15}{A pasta de cursos só existe na linha principal do projeto.}
+    \draw[varr] (74.6,65.5) -- (83.6,65.5);
+    \vchip{cNavy}{85}{58}{65.4}{15}{Os testes usam uma cópia temporária da linha principal.}
+    \vband{77.5}{Cada dificuldade virou um ajuste registrado.}
+  \end{cnv}
+  \note{No caminho, apareceram três dificuldades, e cada uma virou um ajuste. A primeira: a tabela do Notion que aparece na página é só uma visão de outra tabela, e a automação não enxergava os dados. Foi preciso liberar o acesso também à tabela original. A segunda: a coluna Meta da planilha diz publicado em quase todas as linhas, mas isso é a meta, não a situação real. No começo, isso fazia quase tudo aparecer como concluído. O cálculo passou a usar só as etapas realmente feitas. A terceira: a pasta com os cursos só existe na linha principal do projeto. Para testar, usamos uma cópia temporária da linha principal, sem mexer no resto.}
+\end{frame}
+
+% ---------------------------------------------------------------- 7. E agora?
+\begin{frame}{E agora?}
+  \begin{cnv}
+    \head{E agora?}
+    \vpanel{cNavy}{9.6}{22}{68}{53}{Pronto}
+    \tx[font=\fontsize{9.4}{12.8}\selectfont,text=inkB]{12.6}{32.5}{62}{%
+      \bul Mapeamento dos cursos ligado à planilha e ao Notion\\[1.4mm]
+      \bul Janela com Ensaio e Aplicar, aberta com duplo clique\\[1.4mm]
+      \bul 15 testes automáticos passando\\[1.4mm]
+      \bul Envio para a linha principal aberto, aguardando revisão
+    }
+    \vpanel{cYellow}{82.4}{22}{68}{53}{Falta}
+    \tx[font=\fontsize{9.4}{12.8}\selectfont,text=inkB]{85.4}{32.5}{62}{%
+      \bul Gravar de verdade no Notion, começando por 1 curso\\[1.4mm]
+      \bul Aceitar o envio e rodar tudo na linha principal\\[1.4mm]
+      \bul Ajustar nomes de cursos e ignorar linhas de resumo\\[1.4mm]
+      \bul Programa com ícone próprio (.exe): fica para depois
+    }
+    \vband{78}{Próximo passo: gravar 1 curso de teste no Notion.}
+  \end{cnv}
+  \note{Para fechar, o que já está pronto e o que falta. Está pronto o mapeamento dos cursos ligado à planilha e ao Notion, a janela com ensaio e aplicação, que abre com um duplo clique, e quinze testes automáticos que passam. O envio para a linha principal já foi aberto e aguarda revisão. Falta gravar de verdade no Notion, começando por um único curso de teste, aceitar o envio e rodar tudo na linha principal, ajustar os nomes de cursos que ainda não casam e ignorar as linhas de resumo da planilha. Um programa com ícone próprio fica para depois. O próximo passo é gravar um curso de teste no Notion.}
+\end{frame}
+
+\end{document}
