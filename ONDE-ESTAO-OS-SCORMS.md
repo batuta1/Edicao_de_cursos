@@ -12,7 +12,15 @@ git checkout origin/main -- "bagunca/<tema>"
 
 ## Onde cada tema estava antes
 
-Só saíram os arquivos com cópia idêntica na `bagunca` (comparados pelo conteúdo). Versões antigas (`old/`, `03_VERSOES_ANTIGAS/`), relatórios, arquivos de trabalho, conteúdo bruto e as pastas `_processo` das ementas continuam aqui.
+Só saíram os arquivos com cópia idêntica na `bagunca` (comparados pelo conteúdo). Continuam nesta branch: as versões antigas das ondas (`Onda N/03_VERSOES_ANTIGAS/`) e de `Anthropic/ANTHROPIC (CLAUDE)/`, os relatórios (`Onda N/02_RELATORIOS/`), os arquivos de trabalho (`Onda N/05_ARQUIVOS_DE_TRABALHO/`), o conteúdo bruto e as pastas `_processo` das ementas.
+
+**Pastas que não existem mais nesta branch** (removidas na reorganização de 18 nov 2026, commit `c80be44`): `OpenAI/` (e `OpenAI.zip`), `Cursos Revisados/`, `Criacao de Cursos/`, `cursos-md-main/` (e o `.zip`) e `cursos_desserializados/`. Elas aparecem na tabela abaixo só para mostrar de onde veio cada pacote. Para recuperar alguma, use o commit anterior:
+
+```
+git checkout c80be44~1 -- "OpenAI"
+```
+
+Os PDFs que ficavam na raiz agora estão em `PDF's/`.
 
 | Tema em `bagunca/` | Pastas de onde saíram os pacotes |
 |---|---|
@@ -44,6 +52,6 @@ Só saíram os arquivos com cópia idêntica na `bagunca` (comparados pelo conte
 | `revisao-bibliografica` | `Onda 2/01_FINALIZADO_subir-na-LMS/revisao-bibliografica/` · `Onda 2/05_ARQUIVOS_DE_TRABALHO/revisao-bibliografica/essentials/revbib-essentials-blocos/saidas/` · `Onda 2/05_ARQUIVOS_DE_TRABALHO/revisao-bibliografica/hands-on/revbib-hands-on-blocos/saidas/` |
 | `vibe-coding` | `Onda 1/01_FINALIZADO_subir-na-LMS/vibecoding/` · `Onda 1/05_ARQUIVOS_DE_TRABALHO/vibecoding/essentials/vibe-essentials-blocos/saidas/` · `Onda 1/05_ARQUIVOS_DE_TRABALHO/vibecoding/hands-on/vibe-hands-on-blocos/saidas/` |
 
-Também saíram os roteiros, planos de aula e ementas desses cursos: `Pesquisa Conteudo Onda 1/Ementa Completa/` e `Pesquisa Conteudo Onda 2/Ementa Completa/` (menos `_processo/`), `Criacao de Cursos/Claude/` e `Criacao de Cursos/GPT/`, e as pastas `ementa completa/` de `OpenAI/OPENAI (ChatGPT)/`.
+Também saíram os roteiros, planos de aula e ementas desses cursos: `Pesquisa Conteudo Onda 1/Ementa Completa/` e `Pesquisa Conteudo Onda 2/Ementa Completa/` (menos `_processo/`), `Criacao de Cursos/Claude/` e `Criacao de Cursos/GPT/`, e as pastas `ementa completa/` de `OpenAI/OPENAI (ChatGPT)/` (estas três pastas foram depois removidas por inteiro).
 
 **Regra para curso novo:** o pacote final vai para `bagunca/<tema>/scorm/` na `main`, com os roteiros em `roteiros/` e a ementa em `ementa/`.
