@@ -39,6 +39,13 @@ Origem: [`_plan/detalhes/readme.md`](../detalhes/readme.md). Decisões: [`_plan/
 - ⚠️ **Risco da D5 = A:** só slug. Nomes como `ChatGPT Chat - Essentials` × `openai-chatgpt-chat-essentials` podem não casar. A F3 mede a taxa de acerto no 1º relatório; se for baixa, reabrir a D5 (o mapa manual volta como D9).
 - Regra de não-toque: nada em `bagunca/` e `Skills/`. Todo script valida o caminho de escrita.
 
+## Estado da implementação (uv)
+
+- ✅ F1, F2, F3, F5 implementadas e ensaiadas ponta a ponta num worktree descartável da `main` (2 commits: checklist; autores + registro). 8 testes passam.
+- ✅ F4 escrita (API, `inspecionar.py`, `--dry-run`); **não testada contra o Notion real**: falta o `NOTION_TOKEN`.
+- ⚠️ No ensaio, 10 das 39 pastas casaram. As 29 restantes são os cursos antigos da aba "Cadastro dos 29" (fora da D4 = A). Faltas reais: `Vibe Coding - Essentials (Lovable)` × `iaclube/vibe-coding-essentials` e `ChatGPT … Word/PowerPoint/Excel` — ver D5.
+- Rodar: `uv run python -m automacao` (detalhes em `automacao/README.md`).
+
 ## Fases
 
 | Fase | O que entrega | Depende de | Pode começar já |
