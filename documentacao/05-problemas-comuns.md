@@ -9,6 +9,7 @@
 | `git fetch ...` falha | Sem internet ou sem acesso ao GitHub | `--sem-fetch` usa o que já está baixado |
 | `NOTION_TOKEN não definido` | Falta o token | [04](04-notion-token.md) |
 | `401` / `unauthorized` | Token errado ou expirado | Gere de novo e atualize o `.env` |
+| `a integração vê a página, mas não os dados do banco` (ou `does not contain any data sources`) | O banco da página é uma **visão** de outro banco, que não foi compartilhado | Abra o banco original (ícone ↗ ao lado do título) → `⋯` → Conexões → adicione a integração |
 | `404` / "o link não é um banco..." | O banco não foi compartilhado com a integração | Notion → banco → `⋯` → Conexões → adicionar a integração |
 | `coluna "Progresso" não encontrada. Colunas do banco: ...` | O nome da coluna é diferente | Renomeie no Notion ou me avise; a lista mostra o que existe |
 | `Progresso deveria ser número` | A coluna Progresso é de outro tipo | Troque para Número (formato porcentagem) |

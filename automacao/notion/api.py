@@ -14,6 +14,12 @@ PAGINA_PADRAO = "40d4a1ed76b480b18f67febbce8ade93"      # "Produção de cursos"
 COLUNAS = {"nome": "Nome do curso", "status": "Status", "responsavel": "Responsável", "progresso": "Progresso"}
 
 
+DICA_BANCO_VINCULADO = (
+    "a integração vê a página, mas não os dados do banco: ele é uma VISÃO (banco vinculado) de outro banco. "
+    "No Notion, abra o banco original (na visão: ícone ↗ ao lado do título, ou ⋯ → Fonte de dados) e adicione a integração "
+    "em ⋯ → Conexões NESSE banco/página. Depois rode de novo. Se o banco original tiver outro ID, use NOTION_DATABASE_ID no .env.")
+
+
 class ErroNotion(RuntimeError):
     pass
 
@@ -46,13 +52,19 @@ class Notion:
         """O banco de dados. Se o ID for de uma página, procura o banco dentro dela."""
         try:
             return self._req("GET", f"/databases/{id_}")
-        except ErroNotion:
-            pass
+        except ErroNotion as e:
+            if "data sources" in str(e):
+                raise ErroNotion(DICA_BANCO_VINCULADO) from e
         filhos = self._req("GET", f"/blocks/{id_}/children?page_size=100")["results"]
         bancos = [b for b in filhos if b["type"] == "child_database"]
         if not bancos:
             raise ErroNotion("o link não é um banco nem uma página com banco dentro (a integração foi compartilhada com ele?)")
-        return self._req("GET", f"/databases/{bancos[0]['id']}")
+        try:
+            return self._req("GET", f"/databases/{bancos[0]['id']}")
+        except ErroNotion as e:
+            if "data sources" in str(e):
+                raise ErroNotion(DICA_BANCO_VINCULADO) from e
+            raise
 
     def linhas(self, banco_id):
         saida, cursor = [], None
