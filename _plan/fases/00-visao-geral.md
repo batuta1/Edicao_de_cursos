@@ -41,6 +41,13 @@ Origem: [`_plan/detalhes/readme.md`](../detalhes/readme.md). Decisões: [`_plan/
 
 ## Estado da implementação (uv)
 
+- ✅ **F6 (scripts/ + comum/):** código movido com `git mv`; `comum/` com `caminhos.py`, `autor_json.py` e `ui/` (fontes, agora carregadas também no Windows, e áreas de texto somente leitura). Os comandos não mudaram (instalação editável via `uv sync`).
+- ✅ **F7 (interface da automação):** `scripts/automacao/interface/` (controlador sem widgets + janela de 2 abas), atalhos `abrir-interface.bat` nas duas partes, `--so`/cancelar no CLI, READMEs curtos e guias atualizados. Skill `interface-tkinter` corrigida.
+- ✅ **F8 (deploy na main):** receita no `README.md` da raiz; ainda **não executada** (depende de o usuário abrir o PR).
+- ✅ Docstrings em todo o código de `scripts/`.
+
+- 🔧 Correção da D7: a coluna "Meta até 12 dez" = `publicado` é o **objetivo** (97 das 104 linhas), não o estado. Status e Progresso saem só das 5 etapas; 5/5 = Concluído. Bate com a coluna "Status" da própria planilha.
+
 - ✅ F1, F2, F3, F5 implementadas e ensaiadas ponta a ponta num worktree descartável da `main` (2 commits: checklist; autores + registro). 8 testes passam.
 - ✅ F4 escrita (API, `inspecionar.py`, `--dry-run`); **não testada contra o Notion real**: falta o `NOTION_TOKEN`.
 - ⚠️ No ensaio, 10 das 39 pastas casaram. As 29 restantes são os cursos antigos da aba "Cadastro dos 29" (fora da D4 = A). Faltas reais: `Vibe Coding - Essentials (Lovable)` × `iaclube/vibe-coding-essentials` e `ChatGPT … Word/PowerPoint/Excel` — ver D5.
@@ -55,6 +62,9 @@ Origem: [`_plan/detalhes/readme.md`](../detalhes/readme.md). Decisões: [`_plan/
 | [F3](F3-autor-json.md) | `autor.json` preenchido do `csv` | F1, F2 | depois de F1 e F2 |
 | [F4](F4-notion.md) | Notion atualizado via API | F2, F3, token | depois do token |
 | [F5](F5-orquestracao.md) | Um comando roda tudo; README; ensaio ponta a ponta | F1 a F4 | depois de F4 |
+| [F6](F6-reestruturar-scripts.md) | Tudo em `scripts/` (com `comum/`), comandos iguais | decisões da interface | ✅ |
+| [F7](F7-interface-automacao.md) | Interface tkinter da automação + atalhos `.bat` | F6 | depois da F6 |
+| [F8](F8-promover-para-main.md) | Deploy de `scripts/` na `main` (receita no `README.md` da raiz) | F6 (e F7) | depois |
 
 F1 e F2 são independentes e podem andar juntas.
 
